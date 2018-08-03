@@ -1,0 +1,16 @@
+e:\usuarios\desarrollo\documents\visual studio 2010\Projects\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\bin\Debug\SOLUCIONES_INTERNAS.exe
+e:\usuarios\desarrollo\documents\visual studio 2010\Projects\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\bin\Debug\SOLUCIONES_INTERNAS.pdb
+e:\usuarios\desarrollo\documents\visual studio 2010\Projects\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\bin\Debug\SOLUCIONES_INTERNAS.xml
+e:\usuarios\desarrollo\documents\visual studio 2010\Projects\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.Resources.resources
+e:\usuarios\desarrollo\documents\visual studio 2010\Projects\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.vbproj.GenerateResource.Cache
+e:\usuarios\desarrollo\documents\visual studio 2010\Projects\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.exe
+e:\usuarios\desarrollo\documents\visual studio 2010\Projects\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.xml
+e:\usuarios\desarrollo\documents\visual studio 2010\Projects\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.pdb
+E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.exe
+E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.xml
+E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.pdb
+E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\bin\Debug\SOLUCIONES_INTERNAS.exe
+E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\bin\Debug\SOLUCIONES_INTERNAS.pdb
+E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\bin\Debug\SOLUCIONES_INTERNAS.xml
+E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.Resources.resources
+E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.vbproj.GenerateResource.Cache
