@@ -78,6 +78,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataS_Interno.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Datos\DataS_Interno_Vistas.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\frm_Clientes.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +111,30 @@
     <Compile Include="Presentacion\frm_Colaborador.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\frm_gestion_usuarios.Designer.vb">
+      <DependentUpon>frm_gestion_usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_gestion_usuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_ingreso.Designer.vb">
+      <DependentUpon>frm_ingreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_ingreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_Listado_Orden_Trabajo.Designer.vb">
+      <DependentUpon>frm_Listado_Orden_Trabajo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Listado_Orden_Trabajo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_Listado_Tareas.Designer.vb">
+      <DependentUpon>frm_Listado_Tareas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Listado_Tareas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_Orden_Trabajo.Designer.vb">
       <DependentUpon>frm_Orden_Trabajo.vb</DependentUpon>
     </Compile>
@@ -116,6 +145,12 @@
       <DependentUpon>frm_Pieza.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frm_Pieza.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_Principal.Designer.vb">
+      <DependentUpon>frm_Principal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frm_Sector.Designer.vb">
@@ -138,14 +173,32 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Datos\DataS_Interno_Vistas.dbml.layout">
+      <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
+    </None>
     <EmbeddedResource Include="Presentacion\frm_Colaborador.resx">
       <DependentUpon>frm_Colaborador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_gestion_usuarios.resx">
+      <DependentUpon>frm_gestion_usuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_ingreso.resx">
+      <DependentUpon>frm_ingreso.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Listado_Orden_Trabajo.resx">
+      <DependentUpon>frm_Listado_Orden_Trabajo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Listado_Tareas.resx">
+      <DependentUpon>frm_Listado_Tareas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Orden_Trabajo.resx">
       <DependentUpon>frm_Orden_Trabajo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Pieza.resx">
       <DependentUpon>frm_Pieza.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Principal.resx">
+      <DependentUpon>frm_Principal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Sector.resx">
       <DependentUpon>frm_Sector.vb</DependentUpon>
@@ -174,6 +227,11 @@
     <None Include="Datos\DataS_Interno.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataS_Interno.designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datos\DataS_Interno_Vistas.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataS_Interno_Vistas.designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="My Project\Application.myapp">

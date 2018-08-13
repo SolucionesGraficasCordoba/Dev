@@ -170,4 +170,10 @@
             btnGuardar_Cliente.Focus()
         End If
     End Sub
+
+    Private Sub dgvLista_Clientes_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Clientes.CellDoubleClick
+        frm_Orden_Trabajo.txt_id_cliente.Text = dgvLista_Clientes.SelectedCells(0).Value
+        frm_Orden_Trabajo.txt_nombre_cliente.Text = dgvLista_Clientes.SelectedCells(1).Value
+        Me.Close()
+    End Sub
 End Class

@@ -30,6 +30,10 @@ Partial Class frm_Vendedor
         Me.dgvLista_vendedores = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupNuevoVendedor = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txt_telefono_vendedor = New System.Windows.Forms.TextBox()
+        Me.txt_mail_vendedor = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_apellido_vendedor = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -41,10 +45,6 @@ Partial Class frm_Vendedor
         Me.txt_id_vendedor = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txt_telefono_vendedor = New System.Windows.Forms.TextBox()
-        Me.txt_mail_vendedor = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupListadoClientes.SuspendLayout()
         CType(Me.dgvLista_vendedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupNuevoVendedor.SuspendLayout()
@@ -141,6 +141,38 @@ Partial Class frm_Vendedor
         Me.GroupNuevoVendedor.TabStop = False
         Me.GroupNuevoVendedor.Text = "Nuevo Vendedor"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(32, 174)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(49, 13)
+        Me.Label7.TabIndex = 9
+        Me.Label7.Text = "Teléfono"
+        '
+        'txt_telefono_vendedor
+        '
+        Me.txt_telefono_vendedor.Location = New System.Drawing.Point(105, 171)
+        Me.txt_telefono_vendedor.Name = "txt_telefono_vendedor"
+        Me.txt_telefono_vendedor.Size = New System.Drawing.Size(164, 20)
+        Me.txt_telefono_vendedor.TabIndex = 10
+        '
+        'txt_mail_vendedor
+        '
+        Me.txt_mail_vendedor.Location = New System.Drawing.Point(105, 130)
+        Me.txt_mail_vendedor.Name = "txt_mail_vendedor"
+        Me.txt_mail_vendedor.Size = New System.Drawing.Size(332, 20)
+        Me.txt_mail_vendedor.TabIndex = 8
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(55, 133)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(26, 13)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "Mail"
+        '
         'txt_apellido_vendedor
         '
         Me.txt_apellido_vendedor.Location = New System.Drawing.Point(105, 88)
@@ -235,38 +267,6 @@ Partial Class frm_Vendedor
         Me.Label1.Size = New System.Drawing.Size(66, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "id_vendedor"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(32, 174)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(49, 13)
-        Me.Label7.TabIndex = 9
-        Me.Label7.Text = "Teléfono"
-        '
-        'txt_telefono_vendedor
-        '
-        Me.txt_telefono_vendedor.Location = New System.Drawing.Point(105, 171)
-        Me.txt_telefono_vendedor.Name = "txt_telefono_vendedor"
-        Me.txt_telefono_vendedor.Size = New System.Drawing.Size(164, 20)
-        Me.txt_telefono_vendedor.TabIndex = 10
-        '
-        'txt_mail_vendedor
-        '
-        Me.txt_mail_vendedor.Location = New System.Drawing.Point(105, 130)
-        Me.txt_mail_vendedor.Name = "txt_mail_vendedor"
-        Me.txt_mail_vendedor.Size = New System.Drawing.Size(332, 20)
-        Me.txt_mail_vendedor.TabIndex = 8
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(55, 133)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(26, 13)
-        Me.Label3.TabIndex = 7
-        Me.Label3.Text = "Mail"
         '
         'frm_Vendedor
         '

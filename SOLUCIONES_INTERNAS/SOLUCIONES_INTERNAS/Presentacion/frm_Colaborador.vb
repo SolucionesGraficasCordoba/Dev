@@ -24,7 +24,8 @@
         Dim carga = (From col In datacontext.COLABORADOR
                                     Join sec In datacontext.SECTOR
                                     On col.SEC_id_sector Equals sec.SEC_id_sector
-                                    Select col.COL_id_colaborador, col.COL_nombre_col, col.COL_apellido_col, col.SEC_id_sector, sec.SEC_nombre_sector Order By SEC_nombre_sector Ascending)
+                                    Select col.COL_id_colaborador, col.COL_nombre_col, col.COL_apellido_col, col.SEC_id_sector, sec.SEC_nombre_sector
+                                    Order By SEC_nombre_sector Ascending)
         dgvLista_Colaboradores.DataSource = carga
     End Sub
 
@@ -43,8 +44,8 @@
             If txt_nombre_colaborador.Text.Length = 0 Or cbo_sector.Text.Length = 0 Then
                 MsgBox("Debe completar todos los campos requeridos")
                 Exit Sub
-
             End If
+
             Dim clie = New COLABORADOR
             clie.COL_nombre_col = txt_nombre_colaborador.Text
             clie.COL_apellido_col = txt_apellido_colaborador.Text
@@ -67,7 +68,6 @@
         txt_nombre_colaborador.Clear()
         txt_apellido_colaborador.Clear()
         cbo_sector.SelectedIndex = -1
-
     End Sub
 
     Private Sub btnActualizar_Colaborador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar_Colaborador.Click
@@ -112,7 +112,6 @@
         dgvLista_Colaboradores.Columns(3).DataPropertyName = "SEC_id_sector"
         dgvLista_Colaboradores.Columns(3).Visible = False
         dgvLista_Colaboradores.Columns(4).DataPropertyName = "SEC_nombre_sector"
-
     End Sub
 
     Private Sub dgvLista_Colaboradores_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvLista_Colaboradores.Click
@@ -177,4 +176,11 @@
             btnGuardar_Colaborador.Focus()
         End If
     End Sub
+
+    Private Sub dgvLista_Colaboradores_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Colaboradores.CellDoubleClick
+        frm_Tarea.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
+        frm_Tarea.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
+        Me.Close()
+    End Sub
+
 End Class

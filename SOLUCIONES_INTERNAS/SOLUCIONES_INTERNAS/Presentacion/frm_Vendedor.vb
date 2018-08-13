@@ -177,4 +177,10 @@
             btnGuardar_Vendedor.Focus()
         End If
     End Sub
+
+    Private Sub dgvLista_vendedores_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_vendedores.CellDoubleClick
+        frm_Orden_Trabajo.txtid_vendedor.Text = dgvLista_vendedores.SelectedCells(0).Value
+        frm_Orden_Trabajo.txtNombre_vendedor.Text = dgvLista_vendedores.SelectedCells(1).Value
+        Me.Close()
+    End Sub
 End Class
