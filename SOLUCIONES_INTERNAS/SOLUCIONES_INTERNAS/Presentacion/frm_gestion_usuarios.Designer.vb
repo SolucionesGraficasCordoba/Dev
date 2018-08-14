@@ -123,7 +123,7 @@ Partial Class frm_gestion_usuarios
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(49, 207)
+        Me.btnGuardar.Location = New System.Drawing.Point(63, 212)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 7
@@ -132,7 +132,7 @@ Partial Class frm_gestion_usuarios
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(138, 207)
+        Me.btnActualizar.Location = New System.Drawing.Point(152, 212)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
         Me.btnActualizar.TabIndex = 7
@@ -141,7 +141,7 @@ Partial Class frm_gestion_usuarios
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(231, 207)
+        Me.btnCancelar.Location = New System.Drawing.Point(245, 212)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 7
@@ -167,7 +167,7 @@ Partial Class frm_gestion_usuarios
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frm_gestion_usuarios"
-        Me.Text = "frm_gestion_usuarios"
+        Me.Text = "Contraseña de Usuarios"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

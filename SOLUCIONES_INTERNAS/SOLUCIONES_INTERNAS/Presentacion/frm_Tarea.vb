@@ -281,12 +281,12 @@
             datacontext.SubmitChanges()
 
             MsgBox("La tarea se ha creado correctamente", vbInformation)
-            frm_Listado_Tareas.cargargrilla()
+            ' frm_Listado_Tareas.cargargrilla()
             limpiarcontroles()
         Catch ex As Exception
             MsgBox("La tarea NO fue creada")
             limpiarcontroles()
-            frm_Listado_Tareas.cargargrilla()
+            'frm_Listado_Tareas.cargargrilla()
         End Try
     End Sub
 
@@ -545,12 +545,12 @@
 
             datacontext.SubmitChanges()
             MsgBox("Los datos se han modificado correctamente")
-            frm_Listado_Tareas.cargargrilla()
+            ' frm_Listado_Tareas.cargargrilla()
             Me.limpiarcontroles()
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar tarea")
             Me.limpiarcontroles()
-            frm_Listado_Tareas.cargargrilla()
+            ' frm_Listado_Tareas.cargargrilla()
         End Try
     End Sub
 
@@ -593,12 +593,12 @@
         frm_Colaborador.Show()
     End Sub
 
-    Private Sub btnBuscar_Numero_Orden_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_Numero_Orden.Click
+    Private Sub btnBuscar_Numero_Orden_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_Numero_Orden.Click, Button4.Click
         frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
         frm_Listado_Orden_Trabajo.Show()
     End Sub
 
-    Private Sub btnBuscar_Colaborador_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_Colaborador.Click
+    Private Sub btnBuscar_Colaborador_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_Colaborador.Click, Button3.Click
         frm_Colaborador.Text = "Seleccionar colaborador"
         frm_Colaborador.Show()
     End Sub

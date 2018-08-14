@@ -66,19 +66,6 @@
         <classShapeMoniker Id="cac13d2b-3868-439d-a17e-dee5540f7a61" />
       </nodes>
     </associationConnector>
-    <classShape Id="8e82206b-449c-440f-b691-6ed95c4b1897" absoluteBounds="10.875, 2.875, 2, 2.7324039713541666">
-      <DataClassMoniker Name="/DataS_Interno/TAREA" />
-      <nestedChildShapes>
-        <elementListCompartment Id="120fee6a-f7df-4a19-9643-f39aebe5aebd" absoluteBounds="10.89, 3.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(10 : 4.67870198567708); (10.875 : 4.67870198567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/DataS_Interno/ORDEN_TRABAJO/ORDEN_TRABAJO_TAREA" />
-      <nodes>
-        <classShapeMoniker Id="cac13d2b-3868-439d-a17e-dee5540f7a61" />
-        <classShapeMoniker Id="8e82206b-449c-440f-b691-6ed95c4b1897" />
-      </nodes>
-    </associationConnector>
     <classShape Id="5475b898-b2ef-429c-ad8f-53c3a87de90a" absoluteBounds="13.25, 7.25, 2, 1.7708968098958335">
       <DataClassMoniker Name="/DataS_Interno/USUARIO" />
       <nestedChildShapes>
@@ -91,25 +78,38 @@
         <elementListCompartment Id="7f9f9dd9-5f77-4532-a6d4-890122d96b34" absoluteBounds="10.515, 7.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11.6875 : 7.25); (11.6875 : 5.60740397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/DataS_Interno/COLABORADOR/COLABORADOR_TAREA" />
-      <nodes>
-        <classShapeMoniker Id="af8a40a2-c53b-48b0-9d62-507118c28519" />
-        <classShapeMoniker Id="8e82206b-449c-440f-b691-6ed95c4b1897" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(12.5 : 8.03929768880208); (13.25 : 8.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(12.5 : 8.03929768880208); (13.25 : 8.03929768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataS_Interno/COLABORADOR/COLABORADOR_USUARIO" />
       <nodes>
         <classShapeMoniker Id="af8a40a2-c53b-48b0-9d62-507118c28519" />
         <classShapeMoniker Id="5475b898-b2ef-429c-ad8f-53c3a87de90a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(9.75 : 7.47199625651042); (10.5 : 7.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(9.75 : 7.47199625651042); (10.5 : 7.47199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataS_Interno/SECTOR/SECTOR_COLABORADOR" />
       <nodes>
         <classShapeMoniker Id="6d1abc78-683a-4ecc-9940-a2e23cb2955e" />
         <classShapeMoniker Id="af8a40a2-c53b-48b0-9d62-507118c28519" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="d617773f-f6b4-4ec6-969a-0155f1f26bd0" absoluteBounds="11.125, 3.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/DataS_Interno/TAREA" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d6f5e618-e624-43ff-85fe-a3f00633507d" absoluteBounds="11.14, 4.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(11.8125 : 7.25); (11.8125 : 6.35740397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataS_Interno/COLABORADOR/COLABORADOR_TAREA" />
+      <nodes>
+        <classShapeMoniker Id="af8a40a2-c53b-48b0-9d62-507118c28519" />
+        <classShapeMoniker Id="d617773f-f6b4-4ec6-969a-0155f1f26bd0" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(10 : 4.92390055338542); (11.125 : 4.92390055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataS_Interno/ORDEN_TRABAJO/ORDEN_TRABAJO_TAREA" />
+      <nodes>
+        <classShapeMoniker Id="cac13d2b-3868-439d-a17e-dee5540f7a61" />
+        <classShapeMoniker Id="d617773f-f6b4-4ec6-969a-0155f1f26bd0" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

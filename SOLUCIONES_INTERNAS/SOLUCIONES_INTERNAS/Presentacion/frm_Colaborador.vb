@@ -182,5 +182,4 @@
         frm_Tarea.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
         Me.Close()
     End Sub
-
 End Class

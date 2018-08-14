@@ -27,3 +27,5 @@ E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCI
 E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Principal.resources
 E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.frm_ingreso.resources
 E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.frm_gestion_usuarios.resources
+E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Usuario.resources
+E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Actualizar_Tarea.resources

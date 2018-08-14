@@ -166,6 +166,27 @@ Partial Class frm_Tarea
         Me.txt_detalle_tarea2 = New System.Windows.Forms.TextBox()
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.Label62 = New System.Windows.Forms.Label()
+        Me.Label63 = New System.Windows.Forms.Label()
+        Me.TextBox107 = New System.Windows.Forms.TextBox()
+        Me.Label64 = New System.Windows.Forms.Label()
+        Me.TextBox108 = New System.Windows.Forms.TextBox()
+        Me.Label65 = New System.Windows.Forms.Label()
+        Me.Label66 = New System.Windows.Forms.Label()
+        Me.TextBox109 = New System.Windows.Forms.TextBox()
+        Me.TextBox110 = New System.Windows.Forms.TextBox()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label67 = New System.Windows.Forms.Label()
+        Me.TextBox111 = New System.Windows.Forms.TextBox()
+        Me.TextBox112 = New System.Windows.Forms.TextBox()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label93 = New System.Windows.Forms.Label()
+        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -264,7 +285,7 @@ Partial Class frm_Tarea
         '
         'btnCancelar_Tarea
         '
-        Me.btnCancelar_Tarea.Location = New System.Drawing.Point(600, 707)
+        Me.btnCancelar_Tarea.Location = New System.Drawing.Point(806, 704)
         Me.btnCancelar_Tarea.Name = "btnCancelar_Tarea"
         Me.btnCancelar_Tarea.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar_Tarea.TabIndex = 2
@@ -273,7 +294,7 @@ Partial Class frm_Tarea
         '
         'btnGuardar_Tarea
         '
-        Me.btnGuardar_Tarea.Location = New System.Drawing.Point(407, 707)
+        Me.btnGuardar_Tarea.Location = New System.Drawing.Point(717, 704)
         Me.btnGuardar_Tarea.Name = "btnGuardar_Tarea"
         Me.btnGuardar_Tarea.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar_Tarea.TabIndex = 4
@@ -282,7 +303,7 @@ Partial Class frm_Tarea
         '
         'btnNueva_Tarea
         '
-        Me.btnNueva_Tarea.Location = New System.Drawing.Point(308, 707)
+        Me.btnNueva_Tarea.Location = New System.Drawing.Point(618, 704)
         Me.btnNueva_Tarea.Name = "btnNueva_Tarea"
         Me.btnNueva_Tarea.Size = New System.Drawing.Size(75, 23)
         Me.btnNueva_Tarea.TabIndex = 2
@@ -291,7 +312,7 @@ Partial Class frm_Tarea
         '
         'txt_id_tarea
         '
-        Me.txt_id_tarea.Location = New System.Drawing.Point(40, 64)
+        Me.txt_id_tarea.Location = New System.Drawing.Point(40, 62)
         Me.txt_id_tarea.Name = "txt_id_tarea"
         Me.txt_id_tarea.Size = New System.Drawing.Size(66, 20)
         Me.txt_id_tarea.TabIndex = 1
@@ -307,7 +328,7 @@ Partial Class frm_Tarea
         '
         'btnBuscar_Numero_Orden
         '
-        Me.btnBuscar_Numero_Orden.Location = New System.Drawing.Point(513, 30)
+        Me.btnBuscar_Numero_Orden.Location = New System.Drawing.Point(513, 29)
         Me.btnBuscar_Numero_Orden.Name = "btnBuscar_Numero_Orden"
         Me.btnBuscar_Numero_Orden.Size = New System.Drawing.Size(54, 23)
         Me.btnBuscar_Numero_Orden.TabIndex = 41
@@ -339,7 +360,7 @@ Partial Class frm_Tarea
         '
         'btnBuscar_Colaborador
         '
-        Me.btnBuscar_Colaborador.Location = New System.Drawing.Point(513, 66)
+        Me.btnBuscar_Colaborador.Location = New System.Drawing.Point(513, 67)
         Me.btnBuscar_Colaborador.Name = "btnBuscar_Colaborador"
         Me.btnBuscar_Colaborador.Size = New System.Drawing.Size(54, 23)
         Me.btnBuscar_Colaborador.TabIndex = 37
@@ -387,37 +408,52 @@ Partial Class frm_Tarea
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.DateTimePicker2)
         Me.GroupBox1.Controls.Add(Me.Label27)
         Me.GroupBox1.Controls.Add(Me.Label28)
+        Me.GroupBox1.Controls.Add(Me.Label93)
         Me.GroupBox1.Controls.Add(Me.Label29)
         Me.GroupBox1.Controls.Add(Me.Label30)
+        Me.GroupBox1.Controls.Add(Me.Button4)
         Me.GroupBox1.Controls.Add(Me.txtObservaciones20)
         Me.GroupBox1.Controls.Add(Me.txtObservaciones19)
+        Me.GroupBox1.Controls.Add(Me.TextBox112)
         Me.GroupBox1.Controls.Add(Me.txtObservaciones18)
         Me.GroupBox1.Controls.Add(Me.txtTiempo_Estimado20)
+        Me.GroupBox1.Controls.Add(Me.TextBox111)
         Me.GroupBox1.Controls.Add(Me.txtTiempo_Real20)
         Me.GroupBox1.Controls.Add(Me.txtHora_Finalizacion20)
+        Me.GroupBox1.Controls.Add(Me.Label67)
         Me.GroupBox1.Controls.Add(Me.txt_detalle_tarea20)
         Me.GroupBox1.Controls.Add(Me.txtTiempo_Estimado19)
+        Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Controls.Add(Me.txtTiempo_Real19)
         Me.GroupBox1.Controls.Add(Me.txtHora_Finalizacion19)
+        Me.GroupBox1.Controls.Add(Me.TextBox110)
         Me.GroupBox1.Controls.Add(Me.txtObservaciones17)
         Me.GroupBox1.Controls.Add(Me.txt_detalle_tarea19)
+        Me.GroupBox1.Controls.Add(Me.TextBox109)
         Me.GroupBox1.Controls.Add(Me.txtTiempo_Estimado18)
         Me.GroupBox1.Controls.Add(Me.txtTiempo_Real18)
+        Me.GroupBox1.Controls.Add(Me.Label66)
         Me.GroupBox1.Controls.Add(Me.txtHora_Finalizacion18)
         Me.GroupBox1.Controls.Add(Me.txt_detalle_tarea18)
+        Me.GroupBox1.Controls.Add(Me.Label65)
         Me.GroupBox1.Controls.Add(Me.txtTiempo_Estimado17)
         Me.GroupBox1.Controls.Add(Me.txtTiempo_Real17)
         Me.GroupBox1.Controls.Add(Me.txtHora_Finalizacion17)
         Me.GroupBox1.Controls.Add(Me.txt_detalle_tarea17)
         Me.GroupBox1.Controls.Add(Me.Label26)
+        Me.GroupBox1.Controls.Add(Me.TextBox108)
         Me.GroupBox1.Controls.Add(Me.Label25)
         Me.GroupBox1.Controls.Add(Me.Label24)
+        Me.GroupBox1.Controls.Add(Me.Label64)
         Me.GroupBox1.Controls.Add(Me.Label23)
         Me.GroupBox1.Controls.Add(Me.Label22)
+        Me.GroupBox1.Controls.Add(Me.TextBox107)
         Me.GroupBox1.Controls.Add(Me.Label21)
         Me.GroupBox1.Controls.Add(Me.Label20)
+        Me.GroupBox1.Controls.Add(Me.Label63)
         Me.GroupBox1.Controls.Add(Me.Label19)
         Me.GroupBox1.Controls.Add(Me.Label18)
         Me.GroupBox1.Controls.Add(Me.Label17)
@@ -1400,28 +1436,215 @@ Partial Class frm_Tarea
         Me.Label31.TabIndex = 45
         Me.Label31.Text = "Fecha"
         '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(623, 65)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(70, 13)
+        Me.Label32.TabIndex = 32
+        Me.Label32.Text = "Carga horaria"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(50, 46)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(45, 13)
+        Me.Label33.TabIndex = 0
+        Me.Label33.Text = "id_tarea"
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label34.ForeColor = System.Drawing.Color.Red
+        Me.Label34.Location = New System.Drawing.Point(286, 91)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(98, 13)
+        Me.Label34.TabIndex = 24
+        Me.Label34.Text = "(Campo Requerido)"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(211, 71)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(64, 13)
+        Me.Label35.TabIndex = 34
+        Me.Label35.Text = "Colaborador"
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(187, 32)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(86, 13)
+        Me.Label36.TabIndex = 38
+        Me.Label36.Text = "Orden de trabajo"
+        '
+        'Label62
+        '
+        Me.Label62.AutoSize = True
+        Me.Label62.Location = New System.Drawing.Point(641, 33)
+        Me.Label62.Name = "Label62"
+        Me.Label62.Size = New System.Drawing.Size(37, 13)
+        Me.Label62.TabIndex = 45
+        Me.Label62.Text = "Fecha"
+        '
+        'Label63
+        '
+        Me.Label63.AutoSize = True
+        Me.Label63.Location = New System.Drawing.Point(583, -42)
+        Me.Label63.Name = "Label63"
+        Me.Label63.Size = New System.Drawing.Size(70, 13)
+        Me.Label63.TabIndex = 32
+        Me.Label63.Text = "Carga horaria"
+        '
+        'TextBox107
+        '
+        Me.TextBox107.Location = New System.Drawing.Point(659, -43)
+        Me.TextBox107.Name = "TextBox107"
+        Me.TextBox107.Size = New System.Drawing.Size(76, 20)
+        Me.TextBox107.TabIndex = 33
+        Me.TextBox107.Text = "540"
+        '
+        'Label64
+        '
+        Me.Label64.AutoSize = True
+        Me.Label64.Location = New System.Drawing.Point(10, -61)
+        Me.Label64.Name = "Label64"
+        Me.Label64.Size = New System.Drawing.Size(45, 13)
+        Me.Label64.TabIndex = 0
+        Me.Label64.Text = "id_tarea"
+        '
+        'TextBox108
+        '
+        Me.TextBox108.Location = New System.Drawing.Point(0, -43)
+        Me.TextBox108.Name = "TextBox108"
+        Me.TextBox108.Size = New System.Drawing.Size(66, 20)
+        Me.TextBox108.TabIndex = 1
+        '
+        'Label65
+        '
+        Me.Label65.AutoSize = True
+        Me.Label65.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label65.ForeColor = System.Drawing.Color.Red
+        Me.Label65.Location = New System.Drawing.Point(246, -16)
+        Me.Label65.Name = "Label65"
+        Me.Label65.Size = New System.Drawing.Size(98, 13)
+        Me.Label65.TabIndex = 24
+        Me.Label65.Text = "(Campo Requerido)"
+        '
+        'Label66
+        '
+        Me.Label66.AutoSize = True
+        Me.Label66.Location = New System.Drawing.Point(171, -36)
+        Me.Label66.Name = "Label66"
+        Me.Label66.Size = New System.Drawing.Size(64, 13)
+        Me.Label66.TabIndex = 34
+        Me.Label66.Text = "Colaborador"
+        '
+        'TextBox109
+        '
+        Me.TextBox109.Location = New System.Drawing.Point(533, -40)
+        Me.TextBox109.Name = "TextBox109"
+        Me.TextBox109.Size = New System.Drawing.Size(13, 20)
+        Me.TextBox109.TabIndex = 35
+        '
+        'TextBox110
+        '
+        Me.TextBox110.Location = New System.Drawing.Point(241, -39)
+        Me.TextBox110.Name = "TextBox110"
+        Me.TextBox110.Size = New System.Drawing.Size(226, 20)
+        Me.TextBox110.TabIndex = 36
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(473, -41)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(54, 23)
+        Me.Button3.TabIndex = 37
+        Me.Button3.Text = "..."
+        Me.Button3.UseVisualStyleBackColor = True
+        '
+        'Label67
+        '
+        Me.Label67.AutoSize = True
+        Me.Label67.Location = New System.Drawing.Point(147, -75)
+        Me.Label67.Name = "Label67"
+        Me.Label67.Size = New System.Drawing.Size(86, 13)
+        Me.Label67.TabIndex = 38
+        Me.Label67.Text = "Orden de trabajo"
+        '
+        'TextBox111
+        '
+        Me.TextBox111.Location = New System.Drawing.Point(533, -75)
+        Me.TextBox111.Name = "TextBox111"
+        Me.TextBox111.Size = New System.Drawing.Size(13, 20)
+        Me.TextBox111.TabIndex = 39
+        '
+        'TextBox112
+        '
+        Me.TextBox112.Location = New System.Drawing.Point(241, -78)
+        Me.TextBox112.Name = "TextBox112"
+        Me.TextBox112.Size = New System.Drawing.Size(226, 20)
+        Me.TextBox112.TabIndex = 40
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(473, -77)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(54, 23)
+        Me.Button4.TabIndex = 41
+        Me.Button4.Text = "..."
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Label93
+        '
+        Me.Label93.AutoSize = True
+        Me.Label93.Location = New System.Drawing.Point(601, -74)
+        Me.Label93.Name = "Label93"
+        Me.Label93.Size = New System.Drawing.Size(37, 13)
+        Me.Label93.TabIndex = 45
+        Me.Label93.Text = "Fecha"
+        '
+        'DateTimePicker2
+        '
+        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker2.Location = New System.Drawing.Point(644, -77)
+        Me.DateTimePicker2.Name = "DateTimePicker2"
+        Me.DateTimePicker2.Size = New System.Drawing.Size(82, 20)
+        Me.DateTimePicker2.TabIndex = 46
+        '
         'frm_Tarea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(917, 745)
         Me.Controls.Add(Me.dtpFecha)
+        Me.Controls.Add(Me.Label62)
         Me.Controls.Add(Me.Label31)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnBuscar_Numero_Orden)
         Me.Controls.Add(Me.txtNumero_Orden_Trabajo)
+        Me.Controls.Add(Me.Label36)
         Me.Controls.Add(Me.txt_id_orden_trabajo)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.btnBuscar_Colaborador)
         Me.Controls.Add(Me.txt_nombre_colaborador)
+        Me.Controls.Add(Me.Label35)
         Me.Controls.Add(Me.txt_id_colaborador)
+        Me.Controls.Add(Me.Label34)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.btnGuardar_Tarea)
         Me.Controls.Add(Me.btnNueva_Tarea)
         Me.Controls.Add(Me.btnCancelar_Tarea)
+        Me.Controls.Add(Me.Label33)
         Me.Controls.Add(Me.txt_id_tarea)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label32)
         Me.Controls.Add(Me.txt_Carga_Horaria1)
         Me.Controls.Add(Me.Label13)
         Me.Name = "frm_Tarea"
@@ -1576,4 +1799,25 @@ Partial Class frm_Tarea
     Friend WithEvents txt_detalle_tarea2 As System.Windows.Forms.TextBox
     Friend WithEvents dtpFecha As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label31 As System.Windows.Forms.Label
+    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label93 As System.Windows.Forms.Label
+    Friend WithEvents Button4 As System.Windows.Forms.Button
+    Friend WithEvents TextBox112 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox111 As System.Windows.Forms.TextBox
+    Friend WithEvents Label67 As System.Windows.Forms.Label
+    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents TextBox110 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox109 As System.Windows.Forms.TextBox
+    Friend WithEvents Label66 As System.Windows.Forms.Label
+    Friend WithEvents Label65 As System.Windows.Forms.Label
+    Friend WithEvents TextBox108 As System.Windows.Forms.TextBox
+    Friend WithEvents Label64 As System.Windows.Forms.Label
+    Friend WithEvents TextBox107 As System.Windows.Forms.TextBox
+    Friend WithEvents Label63 As System.Windows.Forms.Label
+    Friend WithEvents Label32 As System.Windows.Forms.Label
+    Friend WithEvents Label33 As System.Windows.Forms.Label
+    Friend WithEvents Label34 As System.Windows.Forms.Label
+    Friend WithEvents Label35 As System.Windows.Forms.Label
+    Friend WithEvents Label36 As System.Windows.Forms.Label
+    Friend WithEvents Label62 As System.Windows.Forms.Label
 End Class
