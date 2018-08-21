@@ -7,18 +7,21 @@
     Dim vble_colaborador, vble_fecha As String
 
     Private Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        
+
         dgvColaboradores.ClearSelection()
         Label6.Text = dgvColaboradores.Rows.Count
         'CARGA COMBOBOX SECTOR
         Dim combosector = (From sec In datacontext.SECTOR
-                           Select sec.SEC_id_sector, sec.SEC_nombre_sector)
+                           Select sec.SEC_id_sector, sec.SEC_nombre_sector
+                           Order By SEC_nombre_sector Ascending)
 
         cbo_sector.DataSource = combosector
         cbo_sector.DisplayMember = "SEC_nombre_sector"
         cbo_sector.ValueMember = "SEC_id_sector"
         cbo_sector.SelectedIndex = -1
     End Sub
+
+    'ARMA LA GRILLA DEL COLABORADOR
 
     Private Sub armargrillacolaborador()
         dgvColaboradores.Enabled = True
@@ -34,6 +37,7 @@
 
     End Sub
 
+    'BOTON ELIMINAR
     Private Sub btnEliminar_Tarea_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar_Tarea.Click
         If dgvColaboradores.SelectedRows.Count > 0 Then
 
@@ -67,9 +71,17 @@
 
     Public Sub dgvColaboradores_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvColaboradores.CellClick
 
+        'VALIDA QUE SE HAYA SELECCONADO UN SECTOR Y UNA FECHA
+        If dgvColaboradores.Rows.Count = 0 Then
+            MsgBox("Debe seleccionar un sector y una fecha", MsgBoxStyle.Information + MsgBoxStyle.Information, "Seleccionar")
+            cbo_sector.Focus()
+            Exit Sub
+        End If
+        'CARGA TAREAS DEL COLABORADOR SEGUN SECTOR Y FECHA
         If dgvColaboradores.SelectedRows.Count > 0 Then
             vble_id_colaborador = dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
         End If
+
         vble_colaborador = dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
         vble_fecha = dtpFecha.Text
         Dim datagridtarea = (From o In datavistas.Vista_Tarea_x_Colaborador
@@ -77,10 +89,16 @@
                            o.TAR_observaciones, o.ORT_id_orden_trabajo, o.ORT_numero_ot, o.TAR_fecha, o.TAR_carga_horaria, o.TAR_hora_fin, o.Expr1, o.COL_nombre_col
                            Where COL_nombre_col = vble_colaborador And TAR_fecha = vble_fecha)
         mostrargrillaobligaciones(datagridtarea)
+        dgvColaboradores.ClearSelection()
+        'VALIDA SI TIENE ASIGNADAS TAREAS AL COLABORADOR
+        If dgvTarea_x_Colaborador.Rows.Count = 0 Then
+            MsgBox("No se le ha asignado ninguna tarea", MsgBoxStyle.Information, "Listado de tareas")
+            Exit Sub
+        End If
         Label1.Text = dgvTarea_x_Colaborador.Rows.Count
     End Sub
 
-
+    'ARMA GRILLA DE TAREAS SEGUN COLABORADOR
     Public Sub mostrargrillaobligaciones(ByVal datasource As System.Linq.IQueryable)
         dgvTarea_x_Colaborador.AutoGenerateColumns = False
         dgvTarea_x_Colaborador.Columns.Clear()
@@ -121,9 +139,9 @@
 
         dgvTarea_x_Colaborador.DataSource = datasource
         dgvTarea_x_Colaborador.ClearSelection()
-
     End Sub
- 
+
+    'BOTON MODIFICAR (CARGA LOS DATOS EN CADA UNO DE LOS CONTROLES)
     Private Sub btnModificar_Tarea_Click(sender As System.Object, e As System.EventArgs) Handles btnModificar_Tarea.Click
         If Me.dgvTarea_x_Colaborador.SelectedRows.Count > 0 Then
             frm_Actualizar_Tarea.txt_id_tarea.Text = Me.dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
@@ -140,7 +158,14 @@
             frm_Actualizar_Tarea.txt_nombre_colaborador.Text = Me.dgvTarea_x_Colaborador.Item("COL_nombre_col", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
         Else
             MsgBox("Debe seleccionar una tarea")
+            Exit Sub
         End If
         frm_Actualizar_Tarea.Show()
+    End Sub
+
+    'BOTON CANCELAR CIERRA EL FORMULARIO ACTUAL
+    Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
+        Me.Close()
+        Me.Dispose()
     End Sub
 End Class

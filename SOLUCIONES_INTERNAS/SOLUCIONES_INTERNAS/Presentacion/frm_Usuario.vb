@@ -15,6 +15,8 @@ Public Class frm_Usuario
         dgvLista_Usuarios.ClearSelection()
         txt_usuario.Focus()
         lblTotal_Usuarios.Text = dgvLista_Usuarios.Rows.Count
+        txt_nombre_colaborador.Enabled = False
+        btnActualizar_Usuario.Enabled = False
     End Sub
 
     Public Sub cargargrilla()
@@ -44,7 +46,7 @@ Public Class frm_Usuario
         dgvLista_Usuarios.Columns(2).DataPropertyName = "USU_contraseña"
         dgvLista_Usuarios.Columns(3).DataPropertyName = "USU_perfil"
         dgvLista_Usuarios.Columns(4).DataPropertyName = "COL_id_colaborador"
-        ' dgvLista_Usuarios.Columns(4).Visible = False
+        dgvLista_Usuarios.Columns(4).Visible = False
         dgvLista_Usuarios.Columns(5).DataPropertyName = "COL_nombre_col"
     End Sub
 
@@ -52,7 +54,7 @@ Public Class frm_Usuario
         Try
             Dim buscacliente = (From cli In datacontext.USUARIO
                                 Select cli.USU_usuario, cli.USU_contraseña, cli.USU_perfil, cli.COL_id_colaborador
-                                Where USU_usuario = txt_usuario.Text.ToUpper And USU_perfil = cbo_perfil.SelectedValue).Any
+                                Where USU_usuario = txt_usuario.Text.ToUpper).Any
             If buscacliente = True Then
                 MsgBox("El usuario ingresado ya existe")
                 limpiarcontroles()
@@ -67,7 +69,7 @@ Public Class frm_Usuario
             Dim clie = New USUARIO
             clie.USU_usuario = txt_usuario.Text
             clie.USU_contraseña = txt_contraseña.Text
-            clie.USU_perfil = cbo_perfil.SelectedValue
+            clie.USU_perfil = cbo_perfil.SelectedItem
             clie.COL_id_colaborador = txt_id_colaborador.Text
 
             datacontext.USUARIO.InsertOnSubmit(clie)
@@ -76,7 +78,7 @@ Public Class frm_Usuario
             cargargrilla()
             limpiarcontroles()
         Catch ex As Exception
-            MsgBox("El colaborador NO fue creado")
+            MsgBox("El usuario NO fue creado")
             limpiarcontroles()
             cargargrilla()
         End Try
@@ -86,9 +88,11 @@ Public Class frm_Usuario
         txt_id_usuario.Clear()
         txt_usuario.Clear()
         txt_contraseña.Clear()
-        'cbo_perfil.SelectedIndex = -1
+        cbo_perfil.SelectedIndex = -1
         txt_id_colaborador.Clear()
         txt_nombre_colaborador.Clear()
+        btnActualizar_Usuario.Enabled = False
+        btnGuardar_Usuario.Enabled = True
     End Sub
 
     Private Sub btnActualizar_Usuario_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar_Usuario.Click
@@ -100,7 +104,7 @@ Public Class frm_Usuario
             Dim ActualizarCliente = (From P In datacontext.USUARIO Where P.USU_id_usuario = (txt_id_usuario.Text.ToUpper)).ToList()(0)
             ActualizarCliente.USU_usuario = txt_usuario.Text
             ActualizarCliente.USU_contraseña = txt_contraseña.Text
-            ActualizarCliente.USU_perfil = cbo_perfil.SelectedValue
+            ActualizarCliente.USU_perfil = cbo_perfil.SelectedItem
             ActualizarCliente.COL_id_colaborador = txt_id_colaborador.Text
 
             datacontext.SubmitChanges()
@@ -125,6 +129,7 @@ Public Class frm_Usuario
                     datacontext.SubmitChanges()
                     MsgBox("El usuario ha sido eliminado")
                     cargargrilla()
+                    lblTotal_Usuarios.Text = dgvLista_Usuarios.Rows.Count
             End Select
         Else
             MsgBox("Debe seleccionar un usuario")
@@ -175,12 +180,15 @@ Public Class frm_Usuario
             cbo_perfil.Text = dgvLista_Usuarios.Item("USU_perfil", dgvLista_Usuarios.SelectedRows(0).Index).Value
             txt_id_colaborador.Text = dgvLista_Usuarios.Item("COL_id_colaborador", dgvLista_Usuarios.SelectedRows(0).Index).Value
             txt_nombre_colaborador.Text = dgvLista_Usuarios.Item("COL_nombre_col", dgvLista_Usuarios.SelectedRows(0).Index).Value
+            btnActualizar_Usuario.Enabled = True
+            btnGuardar_Usuario.Enabled = False
         Else
             MsgBox("Debe seleccionar un usuario")
         End If
     End Sub
 
     Private Sub btnBuscar_Colaborador_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Colaborador.Click
+        frm_Colaborador.quienllamo_col = Me
         frm_Colaborador.Text = "Seleccionar Colaborador"
         frm_Colaborador.Show()
     End Sub

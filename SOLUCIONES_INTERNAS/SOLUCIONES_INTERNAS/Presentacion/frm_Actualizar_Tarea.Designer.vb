@@ -27,7 +27,6 @@ Partial Class frm_Actualizar_Tarea
         Me.Label57 = New System.Windows.Forms.Label()
         Me.txt_tarea = New System.Windows.Forms.TextBox()
         Me.Label61 = New System.Windows.Forms.Label()
-        Me.txt_observaciones = New System.Windows.Forms.TextBox()
         Me.txt_numero_orden = New System.Windows.Forms.TextBox()
         Me.btn_buscar_numero_orden = New System.Windows.Forms.Button()
         Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
@@ -49,11 +48,12 @@ Partial Class frm_Actualizar_Tarea
         Me.txt_Carga_Horaria = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txt_observaciones = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txt_hora_fin = New System.Windows.Forms.TextBox()
         Me.txt_tiempo_real = New System.Windows.Forms.TextBox()
         Me.btn_Actualizar_Tarea = New System.Windows.Forms.Button()
         Me.btn_Cancelar = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txt_hora_fin = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -97,14 +97,6 @@ Partial Class frm_Actualizar_Tarea
         Me.Label61.Size = New System.Drawing.Size(40, 13)
         Me.Label61.TabIndex = 148
         Me.Label61.Text = "Tareas"
-        '
-        'txt_observaciones
-        '
-        Me.txt_observaciones.Location = New System.Drawing.Point(110, 236)
-        Me.txt_observaciones.Multiline = True
-        Me.txt_observaciones.Name = "txt_observaciones"
-        Me.txt_observaciones.Size = New System.Drawing.Size(325, 76)
-        Me.txt_observaciones.TabIndex = 141
         '
         'txt_numero_orden
         '
@@ -274,6 +266,7 @@ Partial Class frm_Actualizar_Tarea
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txt_observaciones)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txt_hora_fin)
         Me.GroupBox1.Controls.Add(Me.txt_tiempo_estimado)
@@ -297,7 +290,6 @@ Partial Class frm_Actualizar_Tarea
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txt_id_colaborador)
         Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.txt_observaciones)
         Me.GroupBox1.Controls.Add(Me.Label57)
         Me.GroupBox1.Controls.Add(Me.txt_tarea)
         Me.GroupBox1.Controls.Add(Me.Label61)
@@ -308,6 +300,30 @@ Partial Class frm_Actualizar_Tarea
         Me.GroupBox1.Size = New System.Drawing.Size(460, 335)
         Me.GroupBox1.TabIndex = 178
         Me.GroupBox1.TabStop = False
+        '
+        'txt_observaciones
+        '
+        Me.txt_observaciones.Location = New System.Drawing.Point(113, 233)
+        Me.txt_observaciones.Multiline = True
+        Me.txt_observaciones.Name = "txt_observaciones"
+        Me.txt_observaciones.Size = New System.Drawing.Size(322, 78)
+        Me.txt_observaciones.TabIndex = 180
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(335, 153)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(47, 13)
+        Me.Label3.TabIndex = 178
+        Me.Label3.Text = "Hora Fin"
+        '
+        'txt_hora_fin
+        '
+        Me.txt_hora_fin.Location = New System.Drawing.Point(388, 150)
+        Me.txt_hora_fin.Name = "txt_hora_fin"
+        Me.txt_hora_fin.Size = New System.Drawing.Size(66, 20)
+        Me.txt_hora_fin.TabIndex = 179
         '
         'txt_tiempo_real
         '
@@ -334,22 +350,6 @@ Partial Class frm_Actualizar_Tarea
         Me.btn_Cancelar.Text = "Cancelar"
         Me.btn_Cancelar.UseVisualStyleBackColor = True
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(335, 153)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(47, 13)
-        Me.Label3.TabIndex = 178
-        Me.Label3.Text = "Hora Fin"
-        '
-        'txt_hora_fin
-        '
-        Me.txt_hora_fin.Location = New System.Drawing.Point(403, 150)
-        Me.txt_hora_fin.Name = "txt_hora_fin"
-        Me.txt_hora_fin.Size = New System.Drawing.Size(51, 20)
-        Me.txt_hora_fin.TabIndex = 179
-        '
         'frm_Actualizar_Tarea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -370,7 +370,6 @@ Partial Class frm_Actualizar_Tarea
     Friend WithEvents Label57 As System.Windows.Forms.Label
     Friend WithEvents txt_tarea As System.Windows.Forms.TextBox
     Friend WithEvents Label61 As System.Windows.Forms.Label
-    Friend WithEvents txt_observaciones As System.Windows.Forms.TextBox
     Friend WithEvents txt_numero_orden As System.Windows.Forms.TextBox
     Friend WithEvents btn_buscar_numero_orden As System.Windows.Forms.Button
     Friend WithEvents txtNumero_Orden_Trabajo As System.Windows.Forms.TextBox
@@ -397,4 +396,5 @@ Partial Class frm_Actualizar_Tarea
     Friend WithEvents btn_Cancelar As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txt_hora_fin As System.Windows.Forms.TextBox
+    Friend WithEvents txt_observaciones As System.Windows.Forms.TextBox
 End Class

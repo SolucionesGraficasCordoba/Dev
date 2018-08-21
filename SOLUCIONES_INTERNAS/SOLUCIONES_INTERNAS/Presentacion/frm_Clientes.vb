@@ -110,10 +110,6 @@
             txt_razonsocial_cliente.Text = dgvLista_Clientes.Item("CLI_razon_social", dgvLista_Clientes.SelectedRows(0).Index).Value
             txt_mail_cliente.Text = dgvLista_Clientes.Item("CLI_mail_cli", dgvLista_Clientes.SelectedRows(0).Index).Value
             txt_telefono_cliente.Text = dgvLista_Clientes.Item("CLI_telefono_cli", dgvLista_Clientes.SelectedRows(0).Index).Value
-           
-            'Frm_NuevoCliente.btn_guardar.Visible = False
-            'Frm_NuevoCliente.Show()
-            'Frm_NuevoCliente.txt_Ruc_Cliente.Focus()
         Else
             MsgBox("Debe seleccionar un cliente")
         End If

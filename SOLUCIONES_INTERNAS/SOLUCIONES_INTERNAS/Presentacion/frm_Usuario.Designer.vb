@@ -22,14 +22,14 @@ Partial Class frm_Usuario
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.GroupListadoClientes = New System.Windows.Forms.GroupBox()
+        Me.GroupListadoUsuarios = New System.Windows.Forms.GroupBox()
         Me.lblTotal_Usuarios = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnEliminar_Usuario = New System.Windows.Forms.Button()
         Me.txt_Buscar_Usuario = New System.Windows.Forms.TextBox()
         Me.dgvLista_Usuarios = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.GroupNuevoColaborador = New System.Windows.Forms.GroupBox()
+        Me.GroupNuevoUsuario = New System.Windows.Forms.GroupBox()
         Me.txt_id_colaborador = New System.Windows.Forms.TextBox()
         Me.btnBuscar_Colaborador = New System.Windows.Forms.Button()
         Me.txt_nombre_colaborador = New System.Windows.Forms.TextBox()
@@ -51,25 +51,25 @@ Partial Class frm_Usuario
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupListadoClientes.SuspendLayout()
+        Me.GroupListadoUsuarios.SuspendLayout()
         CType(Me.dgvLista_Usuarios, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupNuevoColaborador.SuspendLayout()
+        Me.GroupNuevoUsuario.SuspendLayout()
         Me.SuspendLayout()
         '
-        'GroupListadoClientes
+        'GroupListadoUsuarios
         '
-        Me.GroupListadoClientes.Controls.Add(Me.lblTotal_Usuarios)
-        Me.GroupListadoClientes.Controls.Add(Me.Label5)
-        Me.GroupListadoClientes.Controls.Add(Me.btnEliminar_Usuario)
-        Me.GroupListadoClientes.Controls.Add(Me.txt_Buscar_Usuario)
-        Me.GroupListadoClientes.Controls.Add(Me.dgvLista_Usuarios)
-        Me.GroupListadoClientes.Controls.Add(Me.Label4)
-        Me.GroupListadoClientes.Location = New System.Drawing.Point(25, 294)
-        Me.GroupListadoClientes.Name = "GroupListadoClientes"
-        Me.GroupListadoClientes.Size = New System.Drawing.Size(486, 318)
-        Me.GroupListadoClientes.TabIndex = 7
-        Me.GroupListadoClientes.TabStop = False
-        Me.GroupListadoClientes.Text = "Listado de Usuarios"
+        Me.GroupListadoUsuarios.Controls.Add(Me.lblTotal_Usuarios)
+        Me.GroupListadoUsuarios.Controls.Add(Me.Label5)
+        Me.GroupListadoUsuarios.Controls.Add(Me.btnEliminar_Usuario)
+        Me.GroupListadoUsuarios.Controls.Add(Me.txt_Buscar_Usuario)
+        Me.GroupListadoUsuarios.Controls.Add(Me.dgvLista_Usuarios)
+        Me.GroupListadoUsuarios.Controls.Add(Me.Label4)
+        Me.GroupListadoUsuarios.Location = New System.Drawing.Point(25, 294)
+        Me.GroupListadoUsuarios.Name = "GroupListadoUsuarios"
+        Me.GroupListadoUsuarios.Size = New System.Drawing.Size(486, 318)
+        Me.GroupListadoUsuarios.TabIndex = 7
+        Me.GroupListadoUsuarios.TabStop = False
+        Me.GroupListadoUsuarios.Text = "Listado de Usuarios"
         '
         'lblTotal_Usuarios
         '
@@ -123,35 +123,35 @@ Partial Class frm_Usuario
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Buscar"
         '
-        'GroupNuevoColaborador
+        'GroupNuevoUsuario
         '
-        Me.GroupNuevoColaborador.Controls.Add(Me.txt_id_colaborador)
-        Me.GroupNuevoColaborador.Controls.Add(Me.btnBuscar_Colaborador)
-        Me.GroupNuevoColaborador.Controls.Add(Me.txt_nombre_colaborador)
-        Me.GroupNuevoColaborador.Controls.Add(Me.Label10)
-        Me.GroupNuevoColaborador.Controls.Add(Me.Label12)
-        Me.GroupNuevoColaborador.Controls.Add(Me.Label11)
-        Me.GroupNuevoColaborador.Controls.Add(Me.Label7)
-        Me.GroupNuevoColaborador.Controls.Add(Me.Label8)
-        Me.GroupNuevoColaborador.Controls.Add(Me.Label6)
-        Me.GroupNuevoColaborador.Controls.Add(Me.cbo_perfil)
-        Me.GroupNuevoColaborador.Controls.Add(Me.txt_contraseña)
-        Me.GroupNuevoColaborador.Controls.Add(Me.Label9)
-        Me.GroupNuevoColaborador.Controls.Add(Me.btnCancelar_Usuario)
-        Me.GroupNuevoColaborador.Controls.Add(Me.btnActualizar_Usuario)
-        Me.GroupNuevoColaborador.Controls.Add(Me.btnGuardar_Usuario)
-        Me.GroupNuevoColaborador.Controls.Add(Me.btnNuevo_Usuario)
-        Me.GroupNuevoColaborador.Controls.Add(Me.txt_usuario)
-        Me.GroupNuevoColaborador.Controls.Add(Me.txt_id_usuario)
-        Me.GroupNuevoColaborador.Controls.Add(Me.Label3)
-        Me.GroupNuevoColaborador.Controls.Add(Me.Label2)
-        Me.GroupNuevoColaborador.Controls.Add(Me.Label1)
-        Me.GroupNuevoColaborador.Location = New System.Drawing.Point(25, 24)
-        Me.GroupNuevoColaborador.Name = "GroupNuevoColaborador"
-        Me.GroupNuevoColaborador.Size = New System.Drawing.Size(486, 250)
-        Me.GroupNuevoColaborador.TabIndex = 6
-        Me.GroupNuevoColaborador.TabStop = False
-        Me.GroupNuevoColaborador.Text = "Nuevo Usuario"
+        Me.GroupNuevoUsuario.Controls.Add(Me.txt_id_colaborador)
+        Me.GroupNuevoUsuario.Controls.Add(Me.btnBuscar_Colaborador)
+        Me.GroupNuevoUsuario.Controls.Add(Me.txt_nombre_colaborador)
+        Me.GroupNuevoUsuario.Controls.Add(Me.Label10)
+        Me.GroupNuevoUsuario.Controls.Add(Me.Label12)
+        Me.GroupNuevoUsuario.Controls.Add(Me.Label11)
+        Me.GroupNuevoUsuario.Controls.Add(Me.Label7)
+        Me.GroupNuevoUsuario.Controls.Add(Me.Label8)
+        Me.GroupNuevoUsuario.Controls.Add(Me.Label6)
+        Me.GroupNuevoUsuario.Controls.Add(Me.cbo_perfil)
+        Me.GroupNuevoUsuario.Controls.Add(Me.txt_contraseña)
+        Me.GroupNuevoUsuario.Controls.Add(Me.Label9)
+        Me.GroupNuevoUsuario.Controls.Add(Me.btnCancelar_Usuario)
+        Me.GroupNuevoUsuario.Controls.Add(Me.btnActualizar_Usuario)
+        Me.GroupNuevoUsuario.Controls.Add(Me.btnGuardar_Usuario)
+        Me.GroupNuevoUsuario.Controls.Add(Me.btnNuevo_Usuario)
+        Me.GroupNuevoUsuario.Controls.Add(Me.txt_usuario)
+        Me.GroupNuevoUsuario.Controls.Add(Me.txt_id_usuario)
+        Me.GroupNuevoUsuario.Controls.Add(Me.Label3)
+        Me.GroupNuevoUsuario.Controls.Add(Me.Label2)
+        Me.GroupNuevoUsuario.Controls.Add(Me.Label1)
+        Me.GroupNuevoUsuario.Location = New System.Drawing.Point(25, 24)
+        Me.GroupNuevoUsuario.Name = "GroupNuevoUsuario"
+        Me.GroupNuevoUsuario.Size = New System.Drawing.Size(486, 250)
+        Me.GroupNuevoUsuario.TabIndex = 6
+        Me.GroupNuevoUsuario.TabStop = False
+        Me.GroupNuevoUsuario.Text = "Nuevo Usuario"
         '
         'txt_id_colaborador
         '
@@ -242,6 +242,7 @@ Partial Class frm_Usuario
         '
         'cbo_perfil
         '
+        Me.cbo_perfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_perfil.FormattingEnabled = True
         Me.cbo_perfil.Items.AddRange(New Object() {"ADMINISTRADOR", "COLABORADOR", "GERENCIA", "SUPERVISOR"})
         Me.cbo_perfil.Location = New System.Drawing.Point(129, 103)
@@ -253,6 +254,7 @@ Partial Class frm_Usuario
         '
         Me.txt_contraseña.Location = New System.Drawing.Point(129, 67)
         Me.txt_contraseña.Name = "txt_contraseña"
+        Me.txt_contraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_contraseña.Size = New System.Drawing.Size(208, 20)
         Me.txt_contraseña.TabIndex = 6
         '
@@ -347,26 +349,26 @@ Partial Class frm_Usuario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(534, 637)
-        Me.Controls.Add(Me.GroupListadoClientes)
-        Me.Controls.Add(Me.GroupNuevoColaborador)
+        Me.Controls.Add(Me.GroupListadoUsuarios)
+        Me.Controls.Add(Me.GroupNuevoUsuario)
         Me.Name = "frm_Usuario"
         Me.Text = "Usuario"
-        Me.GroupListadoClientes.ResumeLayout(False)
-        Me.GroupListadoClientes.PerformLayout()
+        Me.GroupListadoUsuarios.ResumeLayout(False)
+        Me.GroupListadoUsuarios.PerformLayout()
         CType(Me.dgvLista_Usuarios, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupNuevoColaborador.ResumeLayout(False)
-        Me.GroupNuevoColaborador.PerformLayout()
+        Me.GroupNuevoUsuario.ResumeLayout(False)
+        Me.GroupNuevoUsuario.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupListadoClientes As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupListadoUsuarios As System.Windows.Forms.GroupBox
     Friend WithEvents lblTotal_Usuarios As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents btnEliminar_Usuario As System.Windows.Forms.Button
     Friend WithEvents txt_Buscar_Usuario As System.Windows.Forms.TextBox
     Friend WithEvents dgvLista_Usuarios As System.Windows.Forms.DataGridView
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents GroupNuevoColaborador As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupNuevoUsuario As System.Windows.Forms.GroupBox
     Friend WithEvents cbo_perfil As System.Windows.Forms.ComboBox
     Friend WithEvents txt_contraseña As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label

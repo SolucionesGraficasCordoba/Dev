@@ -22,14 +22,14 @@ Partial Class frm_Sector
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.GroupListadoPiezas = New System.Windows.Forms.GroupBox()
+        Me.GroupListadoSectores = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnEliminar_Sector = New System.Windows.Forms.Button()
         Me.txt_Buscar_Sector = New System.Windows.Forms.TextBox()
         Me.dgvLista_Sector = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.GroupNuevaSector = New System.Windows.Forms.GroupBox()
+        Me.GroupNuevoSector = New System.Windows.Forms.GroupBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnCancelar_Sector = New System.Windows.Forms.Button()
         Me.btnActualizar_Sector = New System.Windows.Forms.Button()
@@ -39,25 +39,25 @@ Partial Class frm_Sector
         Me.txt_id_sector = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupListadoPiezas.SuspendLayout()
+        Me.GroupListadoSectores.SuspendLayout()
         CType(Me.dgvLista_Sector, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupNuevaSector.SuspendLayout()
+        Me.GroupNuevoSector.SuspendLayout()
         Me.SuspendLayout()
         '
-        'GroupListadoPiezas
+        'GroupListadoSectores
         '
-        Me.GroupListadoPiezas.Controls.Add(Me.Label6)
-        Me.GroupListadoPiezas.Controls.Add(Me.Label5)
-        Me.GroupListadoPiezas.Controls.Add(Me.btnEliminar_Sector)
-        Me.GroupListadoPiezas.Controls.Add(Me.txt_Buscar_Sector)
-        Me.GroupListadoPiezas.Controls.Add(Me.dgvLista_Sector)
-        Me.GroupListadoPiezas.Controls.Add(Me.Label4)
-        Me.GroupListadoPiezas.Location = New System.Drawing.Point(26, 198)
-        Me.GroupListadoPiezas.Name = "GroupListadoPiezas"
-        Me.GroupListadoPiezas.Size = New System.Drawing.Size(486, 372)
-        Me.GroupListadoPiezas.TabIndex = 5
-        Me.GroupListadoPiezas.TabStop = False
-        Me.GroupListadoPiezas.Text = "Listado de Sectores"
+        Me.GroupListadoSectores.Controls.Add(Me.Label6)
+        Me.GroupListadoSectores.Controls.Add(Me.Label5)
+        Me.GroupListadoSectores.Controls.Add(Me.btnEliminar_Sector)
+        Me.GroupListadoSectores.Controls.Add(Me.txt_Buscar_Sector)
+        Me.GroupListadoSectores.Controls.Add(Me.dgvLista_Sector)
+        Me.GroupListadoSectores.Controls.Add(Me.Label4)
+        Me.GroupListadoSectores.Location = New System.Drawing.Point(26, 198)
+        Me.GroupListadoSectores.Name = "GroupListadoSectores"
+        Me.GroupListadoSectores.Size = New System.Drawing.Size(486, 372)
+        Me.GroupListadoSectores.TabIndex = 5
+        Me.GroupListadoSectores.TabStop = False
+        Me.GroupListadoSectores.Text = "Listado de Sectores"
         '
         'Label6
         '
@@ -111,23 +111,23 @@ Partial Class frm_Sector
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Buscar"
         '
-        'GroupNuevaSector
+        'GroupNuevoSector
         '
-        Me.GroupNuevaSector.Controls.Add(Me.Label8)
-        Me.GroupNuevaSector.Controls.Add(Me.btnCancelar_Sector)
-        Me.GroupNuevaSector.Controls.Add(Me.btnActualizar_Sector)
-        Me.GroupNuevaSector.Controls.Add(Me.btnGuardar_Sector)
-        Me.GroupNuevaSector.Controls.Add(Me.btnNuevo_Sector)
-        Me.GroupNuevaSector.Controls.Add(Me.txt_nombre_sector)
-        Me.GroupNuevaSector.Controls.Add(Me.txt_id_sector)
-        Me.GroupNuevaSector.Controls.Add(Me.Label2)
-        Me.GroupNuevaSector.Controls.Add(Me.Label1)
-        Me.GroupNuevaSector.Location = New System.Drawing.Point(26, 25)
-        Me.GroupNuevaSector.Name = "GroupNuevaSector"
-        Me.GroupNuevaSector.Size = New System.Drawing.Size(486, 157)
-        Me.GroupNuevaSector.TabIndex = 4
-        Me.GroupNuevaSector.TabStop = False
-        Me.GroupNuevaSector.Text = "Nueva Sector"
+        Me.GroupNuevoSector.Controls.Add(Me.Label8)
+        Me.GroupNuevoSector.Controls.Add(Me.btnCancelar_Sector)
+        Me.GroupNuevoSector.Controls.Add(Me.btnActualizar_Sector)
+        Me.GroupNuevoSector.Controls.Add(Me.btnGuardar_Sector)
+        Me.GroupNuevoSector.Controls.Add(Me.btnNuevo_Sector)
+        Me.GroupNuevoSector.Controls.Add(Me.txt_nombre_sector)
+        Me.GroupNuevoSector.Controls.Add(Me.txt_id_sector)
+        Me.GroupNuevoSector.Controls.Add(Me.Label2)
+        Me.GroupNuevoSector.Controls.Add(Me.Label1)
+        Me.GroupNuevoSector.Location = New System.Drawing.Point(26, 25)
+        Me.GroupNuevoSector.Name = "GroupNuevoSector"
+        Me.GroupNuevoSector.Size = New System.Drawing.Size(486, 157)
+        Me.GroupNuevoSector.TabIndex = 4
+        Me.GroupNuevoSector.TabStop = False
+        Me.GroupNuevoSector.Text = "Nueva Sector"
         '
         'Label8
         '
@@ -213,26 +213,26 @@ Partial Class frm_Sector
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(533, 597)
-        Me.Controls.Add(Me.GroupListadoPiezas)
-        Me.Controls.Add(Me.GroupNuevaSector)
+        Me.Controls.Add(Me.GroupListadoSectores)
+        Me.Controls.Add(Me.GroupNuevoSector)
         Me.Name = "frm_Sector"
         Me.Text = "Sector"
-        Me.GroupListadoPiezas.ResumeLayout(False)
-        Me.GroupListadoPiezas.PerformLayout()
+        Me.GroupListadoSectores.ResumeLayout(False)
+        Me.GroupListadoSectores.PerformLayout()
         CType(Me.dgvLista_Sector, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupNuevaSector.ResumeLayout(False)
-        Me.GroupNuevaSector.PerformLayout()
+        Me.GroupNuevoSector.ResumeLayout(False)
+        Me.GroupNuevoSector.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupListadoPiezas As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupListadoSectores As System.Windows.Forms.GroupBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents btnEliminar_Sector As System.Windows.Forms.Button
     Friend WithEvents txt_Buscar_Sector As System.Windows.Forms.TextBox
     Friend WithEvents dgvLista_Sector As System.Windows.Forms.DataGridView
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents GroupNuevaSector As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupNuevoSector As System.Windows.Forms.GroupBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents btnCancelar_Sector As System.Windows.Forms.Button
     Friend WithEvents btnActualizar_Sector As System.Windows.Forms.Button

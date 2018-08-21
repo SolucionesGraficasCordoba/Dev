@@ -4,285 +4,385 @@
     Private Sub frm_Tarea_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txt_id_tarea.Visible = False
         Label1.Visible = False
+        Label33.Visible = False
         txt_detalle_tarea1.Focus()
         txt_id_colaborador.Visible = False
         txt_id_orden_trabajo.Visible = False
+        txt_nombre_colaborador.Enabled = False
+        txtNumero_Orden_Trabajo.Enabled = False
 
     End Sub
 
     Private Sub btnGuardar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Tarea.Click
-        Try
 
-            If txt_detalle_tarea1.Text.Length = 0 Or txt_id_colaborador.Text.Length = 0 Then
-                MsgBox("Debe completar todos los campos requeridos")
-                Exit Sub
+        If txt_id_colaborador.Text.Length = 0 Then
+            MsgBox("Debe completar todos los campos requeridos")
+            Exit Sub
+        End If
+        Try
+            If txt_detalle_tarea1.Text.Length <> 0 Then
+                'REGISTRO 1 DE TAREA
+                Dim tar1 = New TAREA
+                tar1.TAR_tiempo_estimado = txtTiempo_Estimado1.Text
+                tar1.TAR_tiempo_real = txtTiempo_Real1.Text
+                tar1.COL_id_colaborador = txt_id_colaborador.Text
+                tar1.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar1.TAR_hora_fin = txtHora_Finalizacion1.Text
+                tar1.TAR_carga_horaria = txt_Carga_Horaria1.Text
+                tar1.TAR_detalle_tarea = txt_detalle_tarea1.Text
+                tar1.TAR_observaciones = txtObservaciones1.Text
+                tar1.TAR_fecha = dtpFecha.Text
+                datacontext.TAREA.InsertOnSubmit(tar1)
+                datacontext.SubmitChanges()
+            Else
             End If
 
-            'REGISTRO 1 DE TAREA
-            Dim tar1 = New TAREA
-            tar1.TAR_tiempo_estimado = txtTiempo_Estimado1.Text
-            tar1.TAR_tiempo_real = txtTiempo_Real1.Text
-            tar1.COL_id_colaborador = txt_id_colaborador.Text
-            tar1.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar1.TAR_hora_fin = txtHora_Finalizacion1.Text
-            tar1.TAR_carga_horaria = txt_Carga_Horaria1.Text
-            tar1.TAR_detalle_tarea = txt_detalle_tarea1.Text
-            tar1.TAR_observaciones = txtObservaciones1.Text
-            tar1.TAR_fecha = dtpFecha.Text
+            If txt_detalle_tarea2.Text.Length <> 0 Then
+                'REGISTRO 2 DE TAREA
+                Dim tar2 = New TAREA
+                tar2.TAR_tiempo_estimado = txtTiempo_Estimado2.Text
+                tar2.TAR_tiempo_real = txtTiempo_Real2.Text
+                tar2.COL_id_colaborador = txt_id_colaborador.Text
+                tar2.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar2.TAR_hora_fin = txtHora_Finalizacion2.Text
+                ' tar2.TAR_carga_horaria = txt_Carga_Horaria2.Text
+                tar2.TAR_detalle_tarea = txt_detalle_tarea2.Text
+                tar2.TAR_observaciones = txtObservaciones2.Text
+                tar2.TAR_fecha = dtpFecha.Text
 
-            'REGISTRO 2 DE TAREA
-            Dim tar2 = New TAREA
-            tar2.TAR_tiempo_estimado = txtTiempo_Estimado2.Text
-            tar2.TAR_tiempo_real = txtTiempo_Real2.Text
-            tar2.COL_id_colaborador = txt_id_colaborador.Text
-            tar2.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar2.TAR_hora_fin = txtHora_Finalizacion2.Text
-            ' tar2.TAR_carga_horaria = txt_Carga_Horaria2.Text
-            tar2.TAR_detalle_tarea = txt_detalle_tarea2.Text
-            tar2.TAR_observaciones = txtObservaciones2.Text
-            tar2.TAR_fecha = dtpFecha.Text
+                datacontext.TAREA.InsertOnSubmit(tar2)
+                datacontext.SubmitChanges()
+            Else
+            End If
 
-            'REGISTRO 3 DE TAREA
-            Dim tar3 = New TAREA
-            tar3.TAR_tiempo_estimado = txtTiempo_Estimado3.Text
-            tar3.TAR_tiempo_real = txtTiempo_Real3.Text
-            tar3.COL_id_colaborador = txt_id_colaborador.Text
-            tar3.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar3.TAR_hora_fin = txtHora_Finalizacion3.Text
-            ' tar3.TAR_carga_horaria = txt_Carga_Horaria3.Text
-            tar3.TAR_detalle_tarea = txt_detalle_tarea3.Text
-            tar3.TAR_observaciones = txtObservaciones3.Text
-            tar3.TAR_fecha = dtpFecha.Text
-          
-            'REGISTRO 4 DE TAREA
-            Dim tar4 = New TAREA
-            tar4.TAR_tiempo_estimado = txtTiempo_Estimado4.Text
-            tar4.TAR_tiempo_real = txtTiempo_Real4.Text
-            tar4.COL_id_colaborador = txt_id_colaborador.Text
-            tar4.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar4.TAR_hora_fin = txtHora_Finalizacion4.Text
-            '  tar4.TAR_carga_horaria = txt_Carga_Horaria4.Text
-            tar4.TAR_detalle_tarea = txt_detalle_tarea4.Text
-            tar4.TAR_observaciones = txtObservaciones4.Text
-            tar4.TAR_fecha = dtpFecha.Text
+            If txt_detalle_tarea3.Text.Length <> 0 Then
+                'REGISTRO 3 DE TAREA
+                Dim tar3 = New TAREA
+                tar3.TAR_tiempo_estimado = txtTiempo_Estimado3.Text
+                tar3.TAR_tiempo_real = txtTiempo_Real3.Text
+                tar3.COL_id_colaborador = txt_id_colaborador.Text
+                tar3.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar3.TAR_hora_fin = txtHora_Finalizacion3.Text
+                ' tar3.TAR_carga_horaria = txt_Carga_Horaria3.Text
+                tar3.TAR_detalle_tarea = txt_detalle_tarea3.Text
+                tar3.TAR_observaciones = txtObservaciones3.Text
+                tar3.TAR_fecha = dtpFecha.Text
 
-            'REGISTRO 5 DE TAREA
-            Dim tar5 = New TAREA
-            tar5.TAR_tiempo_estimado = txtTiempo_Estimado5.Text
-            tar5.TAR_tiempo_real = txtTiempo_Real5.Text
-            tar5.COL_id_colaborador = txt_id_colaborador.Text
-            tar5.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar5.TAR_hora_fin = txtHora_Finalizacion5.Text
-            '  tar5.TAR_carga_horaria = txt_Carga_Horaria5.Text
-            tar5.TAR_detalle_tarea = txt_detalle_tarea5.Text
-            tar5.TAR_observaciones = txtObservaciones5.Text
-            tar5.TAR_fecha = dtpFecha.Text
+                datacontext.TAREA.InsertOnSubmit(tar3)
+                datacontext.SubmitChanges()
+            Else
+            End If
 
-            'REGISTRO 6 DE TAREA
-            Dim tar6 = New TAREA
-            tar6.TAR_tiempo_estimado = txtTiempo_Estimado6.Text
-            tar6.TAR_tiempo_real = txtTiempo_Real6.Text
-            tar6.COL_id_colaborador = txt_id_colaborador.Text
-            tar6.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar6.TAR_hora_fin = txtHora_Finalizacion6.Text
-            ' tar6.TAR_carga_horaria = txt_Carga_Horaria6.Text
-            tar6.TAR_detalle_tarea = txt_detalle_tarea6.Text
-            tar6.TAR_observaciones = txtObservaciones6.Text
-            tar6.TAR_fecha = dtpFecha.Text
+            If txt_detalle_tarea4.Text.Length <> 0 Then
+                'REGISTRO 4 DE TAREA
+                Dim tar4 = New TAREA
+                tar4.TAR_tiempo_estimado = txtTiempo_Estimado4.Text
+                tar4.TAR_tiempo_real = txtTiempo_Real4.Text
+                tar4.COL_id_colaborador = txt_id_colaborador.Text
+                tar4.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar4.TAR_hora_fin = txtHora_Finalizacion4.Text
+                '  tar4.TAR_carga_horaria = txt_Carga_Horaria4.Text
+                tar4.TAR_detalle_tarea = txt_detalle_tarea4.Text
+                tar4.TAR_observaciones = txtObservaciones4.Text
+                tar4.TAR_fecha = dtpFecha.Text
 
-            'REGISTRO 7 DE TAREA
-            Dim tar7 = New TAREA
-            tar7.TAR_tiempo_estimado = txtTiempo_Estimado7.Text
-            tar7.TAR_tiempo_real = txtTiempo_Real7.Text
-            tar7.COL_id_colaborador = txt_id_colaborador.Text
-            tar7.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar7.TAR_hora_fin = txtHora_Finalizacion7.Text
-            '  tar7.TAR_carga_horaria = txt_Carga_Horaria7.Text
-            tar7.TAR_detalle_tarea = txt_detalle_tarea7.Text
-            tar7.TAR_observaciones = txtObservaciones5.Text
-            tar7.TAR_fecha = dtpFecha.Text
+                datacontext.TAREA.InsertOnSubmit(tar4)
+                datacontext.SubmitChanges()
+            Else
+            End If
 
-            'REGISTRO 8 DE TAREA
-            Dim tar8 = New TAREA
-            tar8.TAR_tiempo_estimado = txtTiempo_Estimado8.Text
-            tar8.TAR_tiempo_real = txtTiempo_Real8.Text
-            tar8.COL_id_colaborador = txt_id_colaborador.Text
-            tar8.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar8.TAR_hora_fin = txtHora_Finalizacion8.Text
-            '  tar8.TAR_carga_horaria = txt_Carga_Horaria8.Text
-            tar8.TAR_detalle_tarea = txt_detalle_tarea8.Text
-            tar8.TAR_observaciones = txtObservaciones8.Text
-            tar8.TAR_fecha = dtpFecha.Text
+            If txt_detalle_tarea5.Text.Length <> 0 Then
+                'REGISTRO 5 DE TAREA
+                Dim tar5 = New TAREA
+                tar5.TAR_tiempo_estimado = txtTiempo_Estimado5.Text
+                tar5.TAR_tiempo_real = txtTiempo_Real5.Text
+                tar5.COL_id_colaborador = txt_id_colaborador.Text
+                tar5.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar5.TAR_hora_fin = txtHora_Finalizacion5.Text
+                '  tar5.TAR_carga_horaria = txt_Carga_Horaria5.Text
+                tar5.TAR_detalle_tarea = txt_detalle_tarea5.Text
+                tar5.TAR_observaciones = txtObservaciones5.Text
+                tar5.TAR_fecha = dtpFecha.Text
 
-            'REGISTRO 9 DE TAREA
-            Dim tar9 = New TAREA
-            tar9.TAR_tiempo_estimado = txtTiempo_Estimado9.Text
-            tar9.TAR_tiempo_real = txtTiempo_Real9.Text
-            tar9.COL_id_colaborador = txt_id_colaborador.Text
-            tar9.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar9.TAR_hora_fin = txtHora_Finalizacion9.Text
-            ' tar9.TAR_carga_horaria = txt_Carga_Horaria9.Text
-            tar9.TAR_detalle_tarea = txt_detalle_tarea9.Text
-            tar9.TAR_observaciones = txtObservaciones9.Text
-            tar9.TAR_fecha = dtpFecha.Text
+                datacontext.TAREA.InsertOnSubmit(tar5)
+                datacontext.SubmitChanges()
+            Else
+            End If
 
-            'REGISTRO 10 DE TAREA
-            Dim tar10 = New TAREA
-            tar10.TAR_tiempo_estimado = txtTiempo_Estimado10.Text
-            tar10.TAR_tiempo_real = txtTiempo_Real10.Text
-            tar10.COL_id_colaborador = txt_id_colaborador.Text
-            tar10.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar10.TAR_hora_fin = txtHora_Finalizacion10.Text
-            ' tar10.TAR_carga_horaria = txt_Carga_Horaria10.Text
-            tar10.TAR_detalle_tarea = txt_detalle_tarea10.Text
-            tar10.TAR_observaciones = txtObservaciones10.Text
-            tar10.TAR_fecha = dtpFecha.Text
+            If txt_detalle_tarea6.Text.Length <> 0 Then
+                'REGISTRO 6 DE TAREA
+                Dim tar6 = New TAREA
+                tar6.TAR_tiempo_estimado = txtTiempo_Estimado6.Text
+                tar6.TAR_tiempo_real = txtTiempo_Real6.Text
+                tar6.COL_id_colaborador = txt_id_colaborador.Text
+                tar6.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar6.TAR_hora_fin = txtHora_Finalizacion6.Text
+                ' tar6.TAR_carga_horaria = txt_Carga_Horaria6.Text
+                tar6.TAR_detalle_tarea = txt_detalle_tarea6.Text
+                tar6.TAR_observaciones = txtObservaciones6.Text
+                tar6.TAR_fecha = dtpFecha.Text
 
-            'REGISTRO 11 DE TAREA
-            Dim tar11 = New TAREA
-            tar11.TAR_tiempo_estimado = txtTiempo_Estimado11.Text
-            tar11.TAR_tiempo_real = txtTiempo_Real11.Text
-            tar11.COL_id_colaborador = txt_id_colaborador.Text
-            tar11.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar11.TAR_hora_fin = txtHora_Finalizacion11.Text
-            ' tar11.TAR_carga_horaria = txt_Carga_Horaria11.Text
-            tar11.TAR_detalle_tarea = txt_detalle_tarea11.Text
-            tar11.TAR_observaciones = txtObservaciones11.Text
-            tar11.TAR_fecha = dtpFecha.Text
+                datacontext.TAREA.InsertOnSubmit(tar6)
+                datacontext.SubmitChanges()
+            Else
+            End If
 
-            'REGISTRO 2 DE TAREA
-            Dim tar12 = New TAREA
-            tar12.TAR_tiempo_estimado = txtTiempo_Estimado12.Text
-            tar12.TAR_tiempo_real = txtTiempo_Real2.Text
-            tar12.COL_id_colaborador = txt_id_colaborador.Text
-            tar12.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar12.TAR_hora_fin = txtHora_Finalizacion12.Text
-            '  tar12.TAR_carga_horaria = txt_Carga_Horaria12.Text
-            tar12.TAR_detalle_tarea = txt_detalle_tarea12.Text
-            tar12.TAR_observaciones = txtObservaciones12.Text
-            tar12.TAR_fecha = dtpFecha.Text
+            If txt_detalle_tarea7.Text.Length <> 0 Then
+                'REGISTRO 7 DE TAREA
+                Dim tar7 = New TAREA
+                tar7.TAR_tiempo_estimado = txtTiempo_Estimado7.Text
+                tar7.TAR_tiempo_real = txtTiempo_Real7.Text
+                tar7.COL_id_colaborador = txt_id_colaborador.Text
+                tar7.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar7.TAR_hora_fin = txtHora_Finalizacion7.Text
+                '  tar7.TAR_carga_horaria = txt_Carga_Horaria7.Text
+                tar7.TAR_detalle_tarea = txt_detalle_tarea7.Text
+                tar7.TAR_observaciones = txtObservaciones5.Text
+                tar7.TAR_fecha = dtpFecha.Text
 
-            'REGISTRO 13 DE TAREA
-            Dim tar13 = New TAREA
-            tar13.TAR_tiempo_estimado = txtTiempo_Estimado13.Text
-            tar13.TAR_tiempo_real = txtTiempo_Real13.Text
-            tar13.COL_id_colaborador = txt_id_colaborador.Text
-            tar13.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar13.TAR_hora_fin = txtHora_Finalizacion13.Text
-            '  tar13.TAR_carga_horaria = txt_Carga_Horaria13.Text
-            tar13.TAR_detalle_tarea = txt_detalle_tarea13.Text
-            tar13.TAR_observaciones = txtObservaciones13.Text
-            tar13.TAR_fecha = dtpFecha.Text
+                datacontext.TAREA.InsertOnSubmit(tar7)
+                datacontext.SubmitChanges()
+            Else
+            End If
 
-            'REGISTRO 14 DE TAREA
-            Dim tar14 = New TAREA
-            tar14.TAR_tiempo_estimado = txtTiempo_Estimado14.Text
-            tar14.TAR_tiempo_real = txtTiempo_Real14.Text
-            tar14.COL_id_colaborador = txt_id_colaborador.Text
-            tar14.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar14.TAR_hora_fin = txtHora_Finalizacion14.Text
-            '  tar14.TAR_carga_horaria = txt_Carga_Horaria14.Text
-            tar14.TAR_detalle_tarea = txt_detalle_tarea14.Text
-            tar14.TAR_observaciones = txtObservaciones14.Text
-            tar14.TAR_fecha = dtpFecha.Text
+            If txt_detalle_tarea8.Text.Length <> 0 Then
+                'REGISTRO 8 DE TAREA
+                Dim tar8 = New TAREA
+                tar8.TAR_tiempo_estimado = txtTiempo_Estimado8.Text
+                tar8.TAR_tiempo_real = txtTiempo_Real8.Text
+                tar8.COL_id_colaborador = txt_id_colaborador.Text
+                tar8.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar8.TAR_hora_fin = txtHora_Finalizacion8.Text
+                '  tar8.TAR_carga_horaria = txt_Carga_Horaria8.Text
+                tar8.TAR_detalle_tarea = txt_detalle_tarea8.Text
+                tar8.TAR_observaciones = txtObservaciones8.Text
+                tar8.TAR_fecha = dtpFecha.Text
 
-            'REGISTRO 15 DE TAREA
-            Dim tar15 = New TAREA
-            tar15.TAR_tiempo_estimado = txtTiempo_Estimado15.Text
-            tar15.TAR_tiempo_real = txtTiempo_Real15.Text
-            tar15.COL_id_colaborador = txt_id_colaborador.Text
-            tar15.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar15.TAR_hora_fin = txtHora_Finalizacion15.Text
-            '  tar15.TAR_carga_horaria = txt_Carga_Horaria15.Text
-            tar15.TAR_detalle_tarea = txt_detalle_tarea15.Text
-            tar15.TAR_observaciones = txtObservaciones15.Text
-            tar15.TAR_fecha = dtpFecha.Text
+                datacontext.TAREA.InsertOnSubmit(tar8)
+                datacontext.SubmitChanges()
+            Else
+            End If
 
-            'REGISTRO 16 DE TAREA
-            Dim tar16 = New TAREA
-            tar16.TAR_tiempo_estimado = txtTiempo_Estimado16.Text
-            tar16.TAR_tiempo_real = txtTiempo_Real16.Text
-            tar16.COL_id_colaborador = txt_id_colaborador.Text
-            tar16.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar16.TAR_hora_fin = txtHora_Finalizacion16.Text
-            '  tar16.TAR_carga_horaria = txt_Carga_Horaria16.Text
-            tar16.TAR_detalle_tarea = txt_detalle_tarea16.Text
-            tar16.TAR_observaciones = txtObservaciones16.Text
-            tar16.TAR_fecha = dtpFecha.Text
+            If txt_detalle_tarea9.Text.Length <> 0 Then
+                'REGISTRO 9 DE TAREA
+                Dim tar9 = New TAREA
+                tar9.TAR_tiempo_estimado = txtTiempo_Estimado9.Text
+                tar9.TAR_tiempo_real = txtTiempo_Real9.Text
+                tar9.COL_id_colaborador = txt_id_colaborador.Text
+                tar9.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar9.TAR_hora_fin = txtHora_Finalizacion9.Text
+                ' tar9.TAR_carga_horaria = txt_Carga_Horaria9.Text
+                tar9.TAR_detalle_tarea = txt_detalle_tarea9.Text
+                tar9.TAR_observaciones = txtObservaciones9.Text
+                tar9.TAR_fecha = dtpFecha.Text
 
-            'REGISTRO 17 DE TAREA
-            Dim tar17 = New TAREA
-            tar17.TAR_tiempo_estimado = txtTiempo_Estimado17.Text
-            tar17.TAR_tiempo_real = txtTiempo_Real17.Text
-            tar17.COL_id_colaborador = txt_id_colaborador.Text
-            tar17.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar17.TAR_hora_fin = txtHora_Finalizacion17.Text
-            '  tar17.TAR_carga_horaria = txt_Carga_Horaria17.Text
-            tar17.TAR_detalle_tarea = txt_detalle_tarea17.Text
-            tar17.TAR_observaciones = txtObservaciones17.Text
-            tar17.TAR_fecha = dtpFecha.Text
+                datacontext.TAREA.InsertOnSubmit(tar9)
+                datacontext.SubmitChanges()
+            Else
+            End If
 
-            'REGISTRO 18 DE TAREA
-            Dim tar18 = New TAREA
-            tar18.TAR_tiempo_estimado = txtTiempo_Estimado18.Text
-            tar18.TAR_tiempo_real = txtTiempo_Real18.Text
-            tar18.COL_id_colaborador = txt_id_colaborador.Text
-            tar18.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar18.TAR_hora_fin = txtHora_Finalizacion18.Text
-            ' tar18.TAR_carga_horaria = txt_Carga_Horaria18.Text
-            tar18.TAR_detalle_tarea = txt_detalle_tarea18.Text
-            tar18.TAR_observaciones = txtObservaciones18.Text
-            tar18.TAR_fecha = dtpFecha.Text
+            If txt_detalle_tarea10.Text.Length <> 0 Then
+                'REGISTRO 10 DE TAREA
+                Dim tar10 = New TAREA
+                tar10.TAR_tiempo_estimado = txtTiempo_Estimado10.Text
+                tar10.TAR_tiempo_real = txtTiempo_Real10.Text
+                tar10.COL_id_colaborador = txt_id_colaborador.Text
+                tar10.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar10.TAR_hora_fin = txtHora_Finalizacion10.Text
+                ' tar10.TAR_carga_horaria = txt_Carga_Horaria10.Text
+                tar10.TAR_detalle_tarea = txt_detalle_tarea10.Text
+                tar10.TAR_observaciones = txtObservaciones10.Text
+                tar10.TAR_fecha = dtpFecha.Text
 
-            'REGISTRO 19 DE TAREA
-            Dim tar19 = New TAREA
-            tar19.TAR_tiempo_estimado = txtTiempo_Estimado19.Text
-            tar19.TAR_tiempo_real = txtTiempo_Real19.Text
-            tar19.COL_id_colaborador = txt_id_colaborador.Text
-            tar19.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar19.TAR_hora_fin = txtHora_Finalizacion19.Text
-            ' tar19.TAR_carga_horaria = txt_Carga_Horaria19.Text
-            tar19.TAR_detalle_tarea = txt_detalle_tarea19.Text
-            tar19.TAR_observaciones = txtObservaciones19.Text
-            tar19.TAR_fecha = dtpFecha.Text
+                datacontext.TAREA.InsertOnSubmit(tar10)
+                datacontext.SubmitChanges()
+            Else
+            End If
 
-            'REGISTRO 20 DE TAREA
-            Dim tar20 = New TAREA
-            tar20.TAR_tiempo_estimado = txtTiempo_Estimado20.Text
-            tar20.TAR_tiempo_real = txtTiempo_Real20.Text
-            tar20.COL_id_colaborador = txt_id_colaborador.Text
-            tar20.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            tar20.TAR_hora_fin = txtHora_Finalizacion20.Text
-            '  tar20.TAR_carga_horaria = txt_Carga_Horaria20.Text
-            tar20.TAR_detalle_tarea = txt_detalle_tarea20.Text
-            tar20.TAR_observaciones = txtObservaciones20.Text
-            tar20.TAR_fecha = dtpFecha.Text
+            If txt_detalle_tarea11.Text.Length <> 0 Then
+                'REGISTRO 11 DE TAREA
+                Dim tar11 = New TAREA
+                tar11.TAR_tiempo_estimado = txtTiempo_Estimado11.Text
+                tar11.TAR_tiempo_real = txtTiempo_Real11.Text
+                tar11.COL_id_colaborador = txt_id_colaborador.Text
+                tar11.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar11.TAR_hora_fin = txtHora_Finalizacion11.Text
+                ' tar11.TAR_carga_horaria = txt_Carga_Horaria11.Text
+                tar11.TAR_detalle_tarea = txt_detalle_tarea11.Text
+                tar11.TAR_observaciones = txtObservaciones11.Text
+                tar11.TAR_fecha = dtpFecha.Text
 
-            datacontext.TAREA.InsertOnSubmit(tar1)
-            datacontext.TAREA.InsertOnSubmit(tar2)
-            datacontext.TAREA.InsertOnSubmit(tar3)
-            datacontext.TAREA.InsertOnSubmit(tar4)
-            datacontext.TAREA.InsertOnSubmit(tar5)
-            datacontext.TAREA.InsertOnSubmit(tar6)
-            datacontext.TAREA.InsertOnSubmit(tar7)
-            datacontext.TAREA.InsertOnSubmit(tar8)
-            datacontext.TAREA.InsertOnSubmit(tar9)
-            datacontext.TAREA.InsertOnSubmit(tar10)
-            datacontext.TAREA.InsertOnSubmit(tar11)
-            datacontext.TAREA.InsertOnSubmit(tar12)
-            datacontext.TAREA.InsertOnSubmit(tar13)
-            datacontext.TAREA.InsertOnSubmit(tar14)
-            datacontext.TAREA.InsertOnSubmit(tar15)
-            datacontext.TAREA.InsertOnSubmit(tar16)
-            datacontext.TAREA.InsertOnSubmit(tar17)
-            datacontext.TAREA.InsertOnSubmit(tar18)
-            datacontext.TAREA.InsertOnSubmit(tar19)
-            datacontext.TAREA.InsertOnSubmit(tar20)
-            datacontext.SubmitChanges()
+                datacontext.TAREA.InsertOnSubmit(tar11)
+                datacontext.SubmitChanges()
+            Else
+            End If
+
+            If txt_detalle_tarea12.Text.Length <> 0 Then
+                'REGISTRO 12 DE TAREA
+                Dim tar12 = New TAREA
+                tar12.TAR_tiempo_estimado = txtTiempo_Estimado12.Text
+                tar12.TAR_tiempo_real = txtTiempo_Real2.Text
+                tar12.COL_id_colaborador = txt_id_colaborador.Text
+                tar12.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar12.TAR_hora_fin = txtHora_Finalizacion12.Text
+                '  tar12.TAR_carga_horaria = txt_Carga_Horaria12.Text
+                tar12.TAR_detalle_tarea = txt_detalle_tarea12.Text
+                tar12.TAR_observaciones = txtObservaciones12.Text
+                tar12.TAR_fecha = dtpFecha.Text
+
+                datacontext.TAREA.InsertOnSubmit(tar12)
+                datacontext.SubmitChanges()
+            Else
+            End If
+
+            If txt_detalle_tarea13.Text.Length <> 0 Then
+                'REGISTRO 13 DE TAREA
+                Dim tar13 = New TAREA
+                tar13.TAR_tiempo_estimado = txtTiempo_Estimado13.Text
+                tar13.TAR_tiempo_real = txtTiempo_Real13.Text
+                tar13.COL_id_colaborador = txt_id_colaborador.Text
+                tar13.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar13.TAR_hora_fin = txtHora_Finalizacion13.Text
+                '  tar13.TAR_carga_horaria = txt_Carga_Horaria13.Text
+                tar13.TAR_detalle_tarea = txt_detalle_tarea13.Text
+                tar13.TAR_observaciones = txtObservaciones13.Text
+                tar13.TAR_fecha = dtpFecha.Text
+
+                datacontext.TAREA.InsertOnSubmit(tar13)
+                datacontext.SubmitChanges()
+            Else
+            End If
+
+            If txt_detalle_tarea14.Text.Length <> 0 Then
+                'REGISTRO 14 DE TAREA
+                Dim tar14 = New TAREA
+                tar14.TAR_tiempo_estimado = txtTiempo_Estimado14.Text
+                tar14.TAR_tiempo_real = txtTiempo_Real14.Text
+                tar14.COL_id_colaborador = txt_id_colaborador.Text
+                tar14.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar14.TAR_hora_fin = txtHora_Finalizacion14.Text
+                '  tar14.TAR_carga_horaria = txt_Carga_Horaria14.Text
+                tar14.TAR_detalle_tarea = txt_detalle_tarea14.Text
+                tar14.TAR_observaciones = txtObservaciones14.Text
+                tar14.TAR_fecha = dtpFecha.Text
+
+                datacontext.TAREA.InsertOnSubmit(tar14)
+                datacontext.SubmitChanges()
+            Else
+            End If
+
+            If txt_detalle_tarea15.Text.Length <> 0 Then
+                'REGISTRO 15 DE TAREA
+                Dim tar15 = New TAREA
+                tar15.TAR_tiempo_estimado = txtTiempo_Estimado15.Text
+                tar15.TAR_tiempo_real = txtTiempo_Real15.Text
+                tar15.COL_id_colaborador = txt_id_colaborador.Text
+                tar15.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar15.TAR_hora_fin = txtHora_Finalizacion15.Text
+                '  tar15.TAR_carga_horaria = txt_Carga_Horaria15.Text
+                tar15.TAR_detalle_tarea = txt_detalle_tarea15.Text
+                tar15.TAR_observaciones = txtObservaciones15.Text
+                tar15.TAR_fecha = dtpFecha.Text
+
+                datacontext.TAREA.InsertOnSubmit(tar15)
+                datacontext.SubmitChanges()
+            Else
+            End If
+
+            If txt_detalle_tarea16.Text.Length <> 0 Then
+                'REGISTRO 16 DE TAREA
+                Dim tar16 = New TAREA
+                tar16.TAR_tiempo_estimado = txtTiempo_Estimado16.Text
+                tar16.TAR_tiempo_real = txtTiempo_Real16.Text
+                tar16.COL_id_colaborador = txt_id_colaborador.Text
+                tar16.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar16.TAR_hora_fin = txtHora_Finalizacion16.Text
+                '  tar16.TAR_carga_horaria = txt_Carga_Horaria16.Text
+                tar16.TAR_detalle_tarea = txt_detalle_tarea16.Text
+                tar16.TAR_observaciones = txtObservaciones16.Text
+                tar16.TAR_fecha = dtpFecha.Text
+
+                datacontext.TAREA.InsertOnSubmit(tar16)
+                datacontext.SubmitChanges()
+            Else
+            End If
+
+            If txt_detalle_tarea17.Text.Length <> 0 Then
+                'REGISTRO 17 DE TAREA
+                Dim tar17 = New TAREA
+                tar17.TAR_tiempo_estimado = txtTiempo_Estimado17.Text
+                tar17.TAR_tiempo_real = txtTiempo_Real17.Text
+                tar17.COL_id_colaborador = txt_id_colaborador.Text
+                tar17.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar17.TAR_hora_fin = txtHora_Finalizacion17.Text
+                '  tar17.TAR_carga_horaria = txt_Carga_Horaria17.Text
+                tar17.TAR_detalle_tarea = txt_detalle_tarea17.Text
+                tar17.TAR_observaciones = txtObservaciones17.Text
+                tar17.TAR_fecha = dtpFecha.Text
+
+                datacontext.TAREA.InsertOnSubmit(tar17)
+                datacontext.SubmitChanges()
+            Else
+            End If
+
+            If txt_detalle_tarea18.Text.Length <> 0 Then
+                'REGISTRO 18 DE TAREA
+                Dim tar18 = New TAREA
+                tar18.TAR_tiempo_estimado = txtTiempo_Estimado18.Text
+                tar18.TAR_tiempo_real = txtTiempo_Real18.Text
+                tar18.COL_id_colaborador = txt_id_colaborador.Text
+                tar18.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar18.TAR_hora_fin = txtHora_Finalizacion18.Text
+                ' tar18.TAR_carga_horaria = txt_Carga_Horaria18.Text
+                tar18.TAR_detalle_tarea = txt_detalle_tarea18.Text
+                tar18.TAR_observaciones = txtObservaciones18.Text
+                tar18.TAR_fecha = dtpFecha.Text
+
+                datacontext.TAREA.InsertOnSubmit(tar18)
+                datacontext.SubmitChanges()
+            Else
+            End If
+
+            If txt_detalle_tarea19.Text.Length <> 0 Then
+                'REGISTRO 19 DE TAREA
+                Dim tar19 = New TAREA
+                tar19.TAR_tiempo_estimado = txtTiempo_Estimado19.Text
+                tar19.TAR_tiempo_real = txtTiempo_Real19.Text
+                tar19.COL_id_colaborador = txt_id_colaborador.Text
+                tar19.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar19.TAR_hora_fin = txtHora_Finalizacion19.Text
+                ' tar19.TAR_carga_horaria = txt_Carga_Horaria19.Text
+                tar19.TAR_detalle_tarea = txt_detalle_tarea19.Text
+                tar19.TAR_observaciones = txtObservaciones19.Text
+                tar19.TAR_fecha = dtpFecha.Text
+
+                datacontext.TAREA.InsertOnSubmit(tar19)
+                datacontext.SubmitChanges()
+            Else
+            End If
+
+            If txt_detalle_tarea20.Text.Length <> 0 Then
+                'REGISTRO 20 DE TAREA
+                Dim tar20 = New TAREA
+                tar20.TAR_tiempo_estimado = txtTiempo_Estimado20.Text
+                tar20.TAR_tiempo_real = txtTiempo_Real20.Text
+                tar20.COL_id_colaborador = txt_id_colaborador.Text
+                tar20.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar20.TAR_hora_fin = txtHora_Finalizacion20.Text
+                '  tar20.TAR_carga_horaria = txt_Carga_Horaria20.Text
+                tar20.TAR_detalle_tarea = txt_detalle_tarea20.Text
+                tar20.TAR_observaciones = txtObservaciones20.Text
+                tar20.TAR_fecha = dtpFecha.Text
+
+                datacontext.TAREA.InsertOnSubmit(tar20)
+                datacontext.SubmitChanges()
+            Else
+            End If
 
             MsgBox("La tarea se ha creado correctamente", vbInformation)
             ' frm_Listado_Tareas.cargargrilla()
             limpiarcontroles()
+            Me.Close()
         Catch ex As Exception
             MsgBox("La tarea NO fue creada")
             limpiarcontroles()
@@ -481,25 +581,7 @@
             ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion20.Text
 
             ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria1.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria2.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria3.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria4.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria5.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria6.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria7.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria8.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria9.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria10.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria11.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria12.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria13.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria14.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria15.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria16.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria17.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria18.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria19.Text
-            'ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria20.Text
+
 
             ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea1.Text
             ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea2.Text
@@ -554,24 +636,6 @@
         End Try
     End Sub
 
-    'Private Sub dgvLista_Clientes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-    '    If dgvLista_Tareas.SelectedRows.Count > 0 Then
-    '        txt_id_tarea.Text = dgvLista_Tareas.Item("TAR_id_tarea", dgvLista_Tareas.SelectedRows(0).Index).Value
-    '        txtTiempo_Estimado.Text = dgvLista_Tareas.Item("TAR_tiempo_estimado", dgvLista_Tareas.SelectedRows(0).Index).Value
-    '        txtTiempo_Real.Text = dgvLista_Tareas.Item("TAR_tiempo_real", dgvLista_Tareas.SelectedRows(0).Index).Value
-    '        txt_id_colaborador.Text = dgvLista_Tareas.Item("COL_id_colaborador", dgvLista_Tareas.SelectedRows(0).Index).Value
-    '        txt_nombre_colaborador.Text = dgvLista_Tareas.Item("COL_nombre_col", dgvLista_Tareas.SelectedRows(0).Index).Value
-    '        txt_id_orden_trabajo.Text = dgvLista_Tareas.Item("ORT_id_orden_trabajo", dgvLista_Tareas.SelectedRows(0).Index).Value
-    '        txtNumero_Orden_Trabajo.Text = dgvLista_Tareas.Item("ORT_numero_ot", dgvLista_Tareas.SelectedRows(0).Index).Value
-    '        txtHora_Finalizacion.Text = dgvLista_Tareas.Item("TAR_hora_fin", dgvLista_Tareas.SelectedRows(0).Index).Value
-    '        txt_Carga_Horaria.Text = dgvLista_Tareas.Item("TAR_carga_horaria", dgvLista_Tareas.SelectedRows(0).Index).Value
-    '        txt_detalle_tarea.Text = dgvLista_Tareas.Item("TAR_detalle_tarea", dgvLista_Tareas.SelectedRows(0).Index).Value
-    '        txtObservaciones.Text = dgvLista_Tareas.Item("TAR_observaciones", dgvLista_Tareas.SelectedRows(0).Index).Value
-    '    Else
-    '        MsgBox("Debe seleccionar una tarea")
-    '    End If
-    'End Sub
-
     Private Sub btnNuevo_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNueva_Tarea.Click
         limpiarcontroles()
     End Sub
@@ -593,13 +657,441 @@
         frm_Colaborador.Show()
     End Sub
 
-    Private Sub btnBuscar_Numero_Orden_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_Numero_Orden.Click, Button4.Click
-        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
-        frm_Listado_Orden_Trabajo.Show()
-    End Sub
 
     Private Sub btnBuscar_Colaborador_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_Colaborador.Click, Button3.Click
+        frm_Colaborador.quienllamo_col = Me
         frm_Colaborador.Text = "Seleccionar colaborador"
         frm_Colaborador.Show()
+        frm_Colaborador.GroupNuevoColaborador.Enabled = False
+        frm_Colaborador.btnEliminar_Colaborador.Enabled = False
+    End Sub
+
+    Private Sub txtHora_Finalizacion1_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion1.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion1.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion1.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion1.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion1.Text, Len(txtHora_Finalizacion1.Text) - 2)
+                Else
+                    txtHora_Finalizacion1.Text = txtHora_Finalizacion1.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion1.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion1.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion1.Text, Len(txtHora_Finalizacion1.Text) - 2)
+                Else
+                    txtHora_Finalizacion1.Text = txtHora_Finalizacion1.Text & ":"
+                    Me.txtHora_Finalizacion1.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion2_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion2.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion2.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion2.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion2.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion2.Text, Len(txtHora_Finalizacion2.Text) - 2)
+                Else
+                    txtHora_Finalizacion2.Text = txtHora_Finalizacion2.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion2.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion2.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion2.Text, Len(txtHora_Finalizacion2.Text) - 2)
+                Else
+                    txtHora_Finalizacion2.Text = txtHora_Finalizacion2.Text & ":"
+                    Me.txtHora_Finalizacion2.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion3_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion3.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion3.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion3.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion3.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion3.Text, Len(txtHora_Finalizacion3.Text) - 2)
+                Else
+                    txtHora_Finalizacion3.Text = txtHora_Finalizacion3.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion3.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion3.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion3.Text, Len(txtHora_Finalizacion3.Text) - 2)
+                Else
+                    txtHora_Finalizacion3.Text = txtHora_Finalizacion3.Text & ":"
+                    Me.txtHora_Finalizacion3.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion4_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion4.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion4.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion4.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion4.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion4.Text, Len(txtHora_Finalizacion4.Text) - 2)
+                Else
+                    txtHora_Finalizacion4.Text = txtHora_Finalizacion4.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion4.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion4.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion4.Text, Len(txtHora_Finalizacion4.Text) - 2)
+                Else
+                    txtHora_Finalizacion4.Text = txtHora_Finalizacion4.Text & ":"
+                    Me.txtHora_Finalizacion4.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion5_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion5.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion5.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion5.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion5.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion5.Text, Len(txtHora_Finalizacion5.Text) - 2)
+                Else
+                    txtHora_Finalizacion5.Text = txtHora_Finalizacion5.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion5.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion5.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion5.Text, Len(txtHora_Finalizacion5.Text) - 2)
+                Else
+                    txtHora_Finalizacion5.Text = txtHora_Finalizacion5.Text & ":"
+                    Me.txtHora_Finalizacion5.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion6_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion6.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion6.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion6.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion6.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion6.Text, Len(txtHora_Finalizacion6.Text) - 2)
+                Else
+                    txtHora_Finalizacion6.Text = txtHora_Finalizacion6.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion6.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion6.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion6.Text, Len(txtHora_Finalizacion6.Text) - 2)
+                Else
+                    txtHora_Finalizacion6.Text = txtHora_Finalizacion6.Text & ":"
+                    Me.txtHora_Finalizacion6.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion7_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion7.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion7.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion7.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion7.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion7.Text, Len(txtHora_Finalizacion7.Text) - 2)
+                Else
+                    txtHora_Finalizacion7.Text = txtHora_Finalizacion7.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion7.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion7.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion7.Text, Len(txtHora_Finalizacion7.Text) - 2)
+                Else
+                    txtHora_Finalizacion7.Text = txtHora_Finalizacion7.Text & ":"
+                    Me.txtHora_Finalizacion7.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion8_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion8.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion8.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion8.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion8.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion8.Text, Len(txtHora_Finalizacion8.Text) - 2)
+                Else
+                    txtHora_Finalizacion8.Text = txtHora_Finalizacion8.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion8.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion8.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion8.Text, Len(txtHora_Finalizacion8.Text) - 2)
+                Else
+                    txtHora_Finalizacion8.Text = txtHora_Finalizacion8.Text & ":"
+                    Me.txtHora_Finalizacion8.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion9_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion9.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion9.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion9.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion9.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion9.Text, Len(txtHora_Finalizacion9.Text) - 2)
+                Else
+                    txtHora_Finalizacion9.Text = txtHora_Finalizacion9.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion9.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion9.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion9.Text, Len(txtHora_Finalizacion9.Text) - 2)
+                Else
+                    txtHora_Finalizacion9.Text = txtHora_Finalizacion9.Text & ":"
+                    Me.txtHora_Finalizacion9.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion10_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion10.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion10.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion10.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion10.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion10.Text, Len(txtHora_Finalizacion10.Text) - 2)
+                Else
+                    txtHora_Finalizacion10.Text = txtHora_Finalizacion10.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion10.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion10.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion10.Text, Len(txtHora_Finalizacion10.Text) - 2)
+                Else
+                    txtHora_Finalizacion10.Text = txtHora_Finalizacion10.Text & ":"
+                    Me.txtHora_Finalizacion10.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion11_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion11.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion11.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion11.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion11.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion11.Text, Len(txtHora_Finalizacion11.Text) - 2)
+                Else
+                    txtHora_Finalizacion11.Text = txtHora_Finalizacion11.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion11.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion11.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion11.Text, Len(txtHora_Finalizacion11.Text) - 2)
+                Else
+                    txtHora_Finalizacion11.Text = txtHora_Finalizacion11.Text & ":"
+                    Me.txtHora_Finalizacion11.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion12_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion12.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion12.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion12.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion12.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion12.Text, Len(txtHora_Finalizacion12.Text) - 2)
+                Else
+                    txtHora_Finalizacion12.Text = txtHora_Finalizacion12.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion12.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion12.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion12.Text, Len(txtHora_Finalizacion12.Text) - 2)
+                Else
+                    txtHora_Finalizacion12.Text = txtHora_Finalizacion12.Text & ":"
+                    Me.txtHora_Finalizacion12.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion13_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion13.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion13.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion13.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion13.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion13.Text, Len(txtHora_Finalizacion13.Text) - 2)
+                Else
+                    txtHora_Finalizacion13.Text = txtHora_Finalizacion13.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion13.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion13.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion13.Text, Len(txtHora_Finalizacion13.Text) - 2)
+                Else
+                    txtHora_Finalizacion13.Text = txtHora_Finalizacion13.Text & ":"
+                    Me.txtHora_Finalizacion13.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion14_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion14.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion14.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion14.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion14.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion14.Text, Len(txtHora_Finalizacion14.Text) - 2)
+                Else
+                    txtHora_Finalizacion14.Text = txtHora_Finalizacion14.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion14.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion14.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion14.Text, Len(txtHora_Finalizacion14.Text) - 2)
+                Else
+                    txtHora_Finalizacion14.Text = txtHora_Finalizacion14.Text & ":"
+                    Me.txtHora_Finalizacion14.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion15_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion15.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion15.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion15.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion15.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion15.Text, Len(txtHora_Finalizacion15.Text) - 2)
+                Else
+                    txtHora_Finalizacion15.Text = txtHora_Finalizacion15.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion15.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion15.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion15.Text, Len(txtHora_Finalizacion15.Text) - 2)
+                Else
+                    txtHora_Finalizacion15.Text = txtHora_Finalizacion15.Text & ":"
+                    Me.txtHora_Finalizacion15.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion16_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion16.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion16.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion16.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion16.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion16.Text, Len(txtHora_Finalizacion16.Text) - 2)
+                Else
+                    txtHora_Finalizacion16.Text = txtHora_Finalizacion16.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion16.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion16.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion16.Text, Len(txtHora_Finalizacion16.Text) - 2)
+                Else
+                    txtHora_Finalizacion16.Text = txtHora_Finalizacion16.Text & ":"
+                    Me.txtHora_Finalizacion16.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion17_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion17.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion17.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion17.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion17.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion17.Text, Len(txtHora_Finalizacion17.Text) - 2)
+                Else
+                    txtHora_Finalizacion17.Text = txtHora_Finalizacion17.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion17.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion17.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion17.Text, Len(txtHora_Finalizacion17.Text) - 2)
+                Else
+                    txtHora_Finalizacion17.Text = txtHora_Finalizacion17.Text & ":"
+                    Me.txtHora_Finalizacion17.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion18_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion18.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion18.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion18.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion18.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion18.Text, Len(txtHora_Finalizacion18.Text) - 2)
+                Else
+                    txtHora_Finalizacion18.Text = txtHora_Finalizacion18.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion18.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion18.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion18.Text, Len(txtHora_Finalizacion18.Text) - 2)
+                Else
+                    txtHora_Finalizacion18.Text = txtHora_Finalizacion18.Text & ":"
+                    Me.txtHora_Finalizacion18.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion19_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion19.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion19.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion19.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion19.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion19.Text, Len(txtHora_Finalizacion19.Text) - 2)
+                Else
+                    txtHora_Finalizacion19.Text = txtHora_Finalizacion19.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion19.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion19.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion19.Text, Len(txtHora_Finalizacion19.Text) - 2)
+                Else
+                    txtHora_Finalizacion19.Text = txtHora_Finalizacion19.Text & ":"
+                    Me.txtHora_Finalizacion19.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub txtHora_Finalizacion20_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion20.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Select Case Len(txtHora_Finalizacion20.Text)
+            Case 5
+                If Microsoft.VisualBasic.Right(txtHora_Finalizacion20.Text, 2) > 59 Then
+                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                    txtHora_Finalizacion20.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion20.Text, Len(txtHora_Finalizacion20.Text) - 2)
+                Else
+                    txtHora_Finalizacion20.Text = txtHora_Finalizacion20.Text & ""
+                End If
+            Case 2
+                If Microsoft.VisualBasic.Left(txtHora_Finalizacion20.Text, 2) > 23 Then
+                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                    txtHora_Finalizacion20.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion20.Text, Len(txtHora_Finalizacion20.Text) - 2)
+                Else
+                    txtHora_Finalizacion20.Text = txtHora_Finalizacion20.Text & ":"
+                    Me.txtHora_Finalizacion20.SelectionStart = 3
+                End If
+        End Select
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden.Click
+
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
     End Sub
 End Class

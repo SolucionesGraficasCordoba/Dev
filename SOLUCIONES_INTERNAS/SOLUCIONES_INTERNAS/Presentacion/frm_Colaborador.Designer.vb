@@ -22,7 +22,7 @@ Partial Class frm_Colaborador
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.GroupListadoClientes = New System.Windows.Forms.GroupBox()
+        Me.GroupListadoColaboradores = New System.Windows.Forms.GroupBox()
         Me.lblTotal_Colaboradores = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnEliminar_Colaborador = New System.Windows.Forms.Button()
@@ -43,25 +43,25 @@ Partial Class frm_Colaborador
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupListadoClientes.SuspendLayout()
+        Me.GroupListadoColaboradores.SuspendLayout()
         CType(Me.dgvLista_Colaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupNuevoColaborador.SuspendLayout()
         Me.SuspendLayout()
         '
-        'GroupListadoClientes
+        'GroupListadoColaboradores
         '
-        Me.GroupListadoClientes.Controls.Add(Me.lblTotal_Colaboradores)
-        Me.GroupListadoClientes.Controls.Add(Me.Label5)
-        Me.GroupListadoClientes.Controls.Add(Me.btnEliminar_Colaborador)
-        Me.GroupListadoClientes.Controls.Add(Me.txt_Buscar_Colaborador)
-        Me.GroupListadoClientes.Controls.Add(Me.dgvLista_Colaboradores)
-        Me.GroupListadoClientes.Controls.Add(Me.Label4)
-        Me.GroupListadoClientes.Location = New System.Drawing.Point(30, 268)
-        Me.GroupListadoClientes.Name = "GroupListadoClientes"
-        Me.GroupListadoClientes.Size = New System.Drawing.Size(486, 372)
-        Me.GroupListadoClientes.TabIndex = 5
-        Me.GroupListadoClientes.TabStop = False
-        Me.GroupListadoClientes.Text = "Listado de Colaborador"
+        Me.GroupListadoColaboradores.Controls.Add(Me.lblTotal_Colaboradores)
+        Me.GroupListadoColaboradores.Controls.Add(Me.Label5)
+        Me.GroupListadoColaboradores.Controls.Add(Me.btnEliminar_Colaborador)
+        Me.GroupListadoColaboradores.Controls.Add(Me.txt_Buscar_Colaborador)
+        Me.GroupListadoColaboradores.Controls.Add(Me.dgvLista_Colaboradores)
+        Me.GroupListadoColaboradores.Controls.Add(Me.Label4)
+        Me.GroupListadoColaboradores.Location = New System.Drawing.Point(30, 268)
+        Me.GroupListadoColaboradores.Name = "GroupListadoColaboradores"
+        Me.GroupListadoColaboradores.Size = New System.Drawing.Size(486, 372)
+        Me.GroupListadoColaboradores.TabIndex = 5
+        Me.GroupListadoColaboradores.TabStop = False
+        Me.GroupListadoColaboradores.Text = "Listado de Colaborador"
         '
         'lblTotal_Colaboradores
         '
@@ -254,19 +254,19 @@ Partial Class frm_Colaborador
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(544, 661)
-        Me.Controls.Add(Me.GroupListadoClientes)
+        Me.Controls.Add(Me.GroupListadoColaboradores)
         Me.Controls.Add(Me.GroupNuevoColaborador)
         Me.Name = "frm_Colaborador"
         Me.Text = "Colaborador"
-        Me.GroupListadoClientes.ResumeLayout(False)
-        Me.GroupListadoClientes.PerformLayout()
+        Me.GroupListadoColaboradores.ResumeLayout(False)
+        Me.GroupListadoColaboradores.PerformLayout()
         CType(Me.dgvLista_Colaboradores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupNuevoColaborador.ResumeLayout(False)
         Me.GroupNuevoColaborador.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupListadoClientes As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupListadoColaboradores As System.Windows.Forms.GroupBox
     Friend WithEvents lblTotal_Colaboradores As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents btnEliminar_Colaborador As System.Windows.Forms.Button

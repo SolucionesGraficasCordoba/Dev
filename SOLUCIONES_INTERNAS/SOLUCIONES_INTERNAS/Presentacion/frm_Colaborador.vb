@@ -1,5 +1,6 @@
 ﻿Public Class frm_Colaborador
     Dim datacontext As New DataS_Interno
+    Public quienllamo_col As Form
 
     Private Sub frm_Colaborador_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txt_id_colaborador.Visible = False
@@ -178,8 +179,18 @@
     End Sub
 
     Private Sub dgvLista_Colaboradores_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Colaboradores.CellDoubleClick
-        frm_Tarea.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
-        frm_Tarea.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
+
+        If quienllamo_col.Name = frm_Actualizar_Tarea.Name Then
+            frm_Actualizar_Tarea.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
+            frm_Actualizar_Tarea.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
+
+        ElseIf quienllamo_col.Name = frm_Tarea.Name Then
+            frm_Tarea.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
+            frm_Tarea.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
+        ElseIf quienllamo_col.Name = frm_Usuario.Name Then
+            frm_Usuario.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
+            frm_Usuario.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
+        End If
         Me.Close()
     End Sub
 End Class

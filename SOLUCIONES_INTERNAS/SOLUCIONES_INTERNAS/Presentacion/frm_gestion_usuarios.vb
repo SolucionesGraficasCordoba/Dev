@@ -4,7 +4,7 @@
 
     Private Sub btnGuardar_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar.Click
         Try
-            Dim buscausu = (From usu In datacontext.USUARIO Select usu.USU_usuario Where USU_usuario = txt_usuario.Text.ToUpper).Any
+            Dim buscausu = (From usu In datacontext.USUARIO Select usu.USU_usuario Where USU_usuario = txt_usuario.Text).Any
             If buscausu = True Then
                 MsgBox("El usuario ingresado ya existe")
                 limpiarcontroles()
@@ -49,7 +49,7 @@
         End If
         If txt_nueva_contraseña.Text = txt_repetir_contraseña.Text Then
             Try
-                Dim Actualizarcontraseña = (From P In datacontext.USUARIO Where P.USU_usuario = (txt_usuario.Text.ToUpper)).ToList()(0)
+                Dim Actualizarcontraseña = (From P In datacontext.USUARIO Where P.USU_usuario = (txt_usuario.Text)).ToList()(0)
 
                 Actualizarcontraseña.USU_contraseña = txt_nueva_contraseña.Text
                 Actualizarcontraseña.USU_perfil = cbo_perfil.Text

@@ -98,4 +98,254 @@ Public Class frm_Principal
     Private Sub frm_Principal_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
     End Sub
+
+    Private Sub AltaUsuariosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AltaUsuariosToolStripMenuItem.Click
+        frm_Usuario.Show()
+        frm_Usuario.Text = "Nuevo Usuario"
+        frm_Usuario.GroupListadoUsuarios.Enabled = False
+        frm_Usuario.btnActualizar_Usuario.Enabled = False
+    End Sub
+
+    Private Sub CambiarContraeñaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CambiarContraeñaToolStripMenuItem.Click
+        frm_Usuario.Show()
+        frm_Usuario.Text = "Modificar Usuario"
+        frm_Usuario.btnGuardar_Usuario.Enabled = False
+        frm_Usuario.btnEliminar_Usuario.Enabled = False
+        frm_Usuario.btnNuevo_Usuario.Enabled = False
+    End Sub
+
+    Private Sub PiezaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles PiezaToolStripMenuItem.Click
+        frm_Pieza.Show()
+    End Sub
+
+    Private Sub SectorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles SectorToolStripMenuItem.Click
+        frm_Sector.Show()
+    End Sub
+
+    Private Sub AltaTareaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AltaTareaToolStripMenuItem.Click
+        frm_Tarea.Show()
+        frm_Tarea.Text = "Nueva Tarea"
+    End Sub
+
+    Private Sub ListaTareaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ListaTareaToolStripMenuItem.Click
+        frm_Listado_Tareas.Show()
+        frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
+    End Sub
+
+    Private Sub NuevoClienteToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoClienteToolStripMenuItem.Click
+        frm_Cliente.Show()
+        frm_Cliente.Text = "Nuevo Cliente"
+        frm_Cliente.GroupListadoClientes.Enabled = False
+        frm_Cliente.btnActualizar_Cliente.Enabled = False
+    End Sub
+
+    Private Sub ModificarClienteToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarClienteToolStripMenuItem.Click
+        frm_Cliente.Show()
+        frm_Cliente.Text = "Modificar Cliente"
+        frm_Cliente.btnGuardar_Cliente.Enabled = False
+        frm_Cliente.btnEliminar_Cliente.Enabled = False
+        frm_Cliente.btnNuevo_Cliente.Enabled = False
+    End Sub
+
+    Private Sub EliminarClienteToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarClienteToolStripMenuItem.Click
+        frm_Cliente.Show()
+        frm_Cliente.Text = "Eliminar Cliente"
+        frm_Cliente.GroupNuevoCliente.Enabled = False
+    End Sub
+
+    Private Sub ConsultarClienteToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarClienteToolStripMenuItem.Click
+        frm_Cliente.Show()
+        frm_Cliente.Text = "Consultar Cliente"
+        frm_Cliente.btnActualizar_Cliente.Enabled = False
+        frm_Cliente.btnEliminar_Cliente.Enabled = False
+        frm_Cliente.btnGuardar_Cliente.Enabled = False
+        frm_Cliente.btnNuevo_Cliente.Enabled = False
+        frm_Cliente.txt_razonsocial_cliente.Enabled = False
+        frm_Cliente.txt_telefono_cliente.Enabled = False
+        frm_Cliente.txt_mail_cliente.Enabled = False
+    End Sub
+
+    Private Sub EliminarUsuarioToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarUsuarioToolStripMenuItem.Click
+        frm_Usuario.Show()
+        frm_Usuario.Text = "Eliminar Usuario"
+        frm_Usuario.GroupNuevoUsuario.Enabled = False
+    End Sub
+
+    Private Sub ConsultarUsuarioToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarUsuarioToolStripMenuItem.Click
+        frm_Usuario.Show()
+        frm_Usuario.Text = "Consultar Usuario"
+        frm_Usuario.btnActualizar_Usuario.Enabled = False
+        frm_Usuario.btnEliminar_Usuario.Enabled = False
+        frm_Usuario.btnGuardar_Usuario.Enabled = False
+        frm_Usuario.btnNuevo_Usuario.Enabled = False
+        frm_Usuario.txt_usuario.Enabled = False
+        frm_Usuario.txt_contraseña.Enabled = False
+        frm_Usuario.cbo_perfil.Enabled = False
+        frm_Usuario.txt_nombre_colaborador.Enabled = False
+        frm_Usuario.btnBuscar_Colaborador.Enabled = False
+    End Sub
+
+    Private Sub CambiarContraseñaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CambiarContraseñaToolStripMenuItem.Click
+        frm_gestion_usuarios.Show()
+    End Sub
+
+    Private Sub NuevoColaboradorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoColaboradorToolStripMenuItem.Click
+        frm_Colaborador.Show()
+        frm_Colaborador.Text = "Nuevo Colaborador"
+        frm_Colaborador.GroupListadoColaboradores.Enabled = False
+        frm_Colaborador.btnActualizar_Colaborador.Enabled = False
+    End Sub
+
+    Private Sub ModificarColaboradorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarColaboradorToolStripMenuItem.Click
+        frm_Colaborador.Show()
+        frm_Colaborador.Text = "Modificar Colaborador"
+        frm_Colaborador.btnGuardar_Colaborador.Enabled = False
+        frm_Colaborador.btnEliminar_Colaborador.Enabled = False
+        frm_Colaborador.btnNuevo_Colaborador.Enabled = False
+    End Sub
+
+    Private Sub EliminarColaboradorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarColaboradorToolStripMenuItem.Click
+        frm_Colaborador.Show()
+        frm_Colaborador.Text = "Eliminar Colaborador"
+        frm_Colaborador.GroupNuevoColaborador.Enabled = False
+    End Sub
+
+    Private Sub ConsultarColaboradorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarColaboradorToolStripMenuItem.Click
+        frm_Colaborador.Show()
+        frm_Colaborador.Text = "Consultar Colaborador"
+        frm_Colaborador.btnActualizar_Colaborador.Enabled = False
+        frm_Colaborador.btnEliminar_Colaborador.Enabled = False
+        frm_Colaborador.btnGuardar_Colaborador.Enabled = False
+        frm_Colaborador.btnNuevo_Colaborador.Enabled = False
+        frm_Colaborador.txt_nombre_colaborador.Enabled = False
+        frm_Colaborador.txt_apellido_colaborador.Enabled = False
+        frm_Colaborador.cbo_sector.Enabled = False
+        frm_Colaborador.txt_nombre_colaborador.Enabled = False
+    End Sub
+
+    Private Sub NuevoVendedorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoVendedorToolStripMenuItem.Click
+        frm_Vendedor.Show()
+        frm_Vendedor.Text = "Nuevo Vendedor"
+        frm_Vendedor.GroupListadoClientes.Enabled = False
+        frm_Vendedor.btnActualizar_Vendedor.Enabled = False
+    End Sub
+
+    Private Sub ModificarVendedorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarVendedorToolStripMenuItem.Click
+        frm_Vendedor.Show()
+        frm_Vendedor.Text = "Modificar Vendedor"
+        frm_Vendedor.btnGuardar_Vendedor.Enabled = False
+        frm_Vendedor.btnEliminar_vendedor.Enabled = False
+        frm_Vendedor.btnNuevo_Vendedor.Enabled = False
+    End Sub
+
+    Private Sub EliminarVendedorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarVendedorToolStripMenuItem.Click
+        frm_Vendedor.Show()
+        frm_Vendedor.Text = "Eliminar Vendedor"
+        frm_Vendedor.GroupNuevoVendedor.Enabled = False
+    End Sub
+
+    Private Sub ConsultarVendedorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarVendedorToolStripMenuItem.Click
+        frm_Vendedor.Show()
+        frm_Vendedor.Text = "Consultar Vendedor"
+        frm_Vendedor.btnActualizar_Vendedor.Enabled = False
+        frm_Vendedor.btnEliminar_vendedor.Enabled = False
+        frm_Vendedor.btnGuardar_Vendedor.Enabled = False
+        frm_Vendedor.btnNuevo_Vendedor.Enabled = False
+        frm_Vendedor.txt_nombre_vendedor.Enabled = False
+        frm_Vendedor.txt_apellido_vendedor.Enabled = False
+        frm_Vendedor.txt_mail_vendedor.Enabled = False
+        frm_Vendedor.txt_telefono_vendedor.Enabled = False
+    End Sub
+
+    Private Sub NuevaPiezaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevaPiezaToolStripMenuItem.Click
+        frm_Pieza.Show()
+        frm_Pieza.Text = "Nueva Pieza"
+        frm_Pieza.GroupListadoPiezas.Enabled = False
+        frm_Pieza.btnActualizar_Pieza.Enabled = False
+    End Sub
+
+    Private Sub ModificarPiezaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarPiezaToolStripMenuItem.Click
+        frm_Pieza.Show()
+        frm_Pieza.Text = "Modificar Pieza"
+        frm_Pieza.btnGuardar_Pieza.Enabled = False
+        frm_Pieza.btnEliminar_Pieza.Enabled = False
+        frm_Pieza.btnNuevo_Pieza.Enabled = False
+    End Sub
+
+    Private Sub EliminarPiezaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarPiezaToolStripMenuItem.Click
+        frm_Pieza.Show()
+        frm_Pieza.Text = "Eliminar Pieza"
+        frm_Pieza.GroupNuevaPieza.Enabled = False
+    End Sub
+
+    Private Sub ConsultarPiezaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarPiezaToolStripMenuItem.Click
+        frm_Pieza.Show()
+        frm_Pieza.Text = "Consultar Pieza"
+        frm_Pieza.btnActualizar_Pieza.Enabled = False
+        frm_Pieza.btnEliminar_Pieza.Enabled = False
+        frm_Pieza.btnGuardar_Pieza.Enabled = False
+        frm_Pieza.btnNuevo_Pieza.Enabled = False
+        frm_Pieza.txt_nombre_pieza.Enabled = False
+    End Sub
+
+    Private Sub NuevoSectorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoSectorToolStripMenuItem.Click
+        frm_Sector.Show()
+        frm_Sector.Text = "Nuevo Sector"
+        frm_Sector.GroupListadoSectores.Enabled = False
+        frm_Sector.btnActualizar_Sector.Enabled = False
+    End Sub
+
+    Private Sub ModificarSectorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarSectorToolStripMenuItem.Click
+        frm_Sector.Show()
+        frm_Sector.Text = "Modificar Sector"
+        frm_Sector.btnGuardar_Sector.Enabled = False
+        frm_Sector.btnEliminar_Sector.Enabled = False
+        frm_Sector.btnNuevo_Sector.Enabled = False
+    End Sub
+
+    Private Sub EliminarSectorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarSectorToolStripMenuItem.Click
+        frm_Sector.Show()
+        frm_Sector.Text = "Eliminar Sector"
+        frm_Sector.GroupNuevoSector.Enabled = False
+    End Sub
+
+    Private Sub ConsultarSectorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarSectorToolStripMenuItem.Click
+        frm_Sector.Show()
+        frm_Sector.Text = "Consultar Sector"
+        frm_Sector.btnActualizar_Sector.Enabled = False
+        frm_Sector.btnEliminar_Sector.Enabled = False
+        frm_Sector.btnGuardar_Sector.Enabled = False
+        frm_Sector.btnNuevo_Sector.Enabled = False
+        frm_Sector.txt_nombre_sector.Enabled = False
+    End Sub
+
+    Private Sub EliminarTareaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarTareaToolStripMenuItem.Click
+        frm_Listado_Tareas.Show()
+        frm_Listado_Tareas.Text = "Eliminar Tarea"
+        frm_Listado_Tareas.btnModificar_Tarea.Enabled = False
+    End Sub
+
+    Private Sub TareaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
+        frm_Listado_Tareas.Show()
+        frm_Listado_Tareas.Text = "Modificar Tarea"
+        frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
+
+    End Sub
+
+    Private Sub ConsultarTareaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarTareaToolStripMenuItem.Click
+        frm_Listado_Tareas.Show()
+        frm_Listado_Tareas.Text = "Consultar Tarea"
+        frm_Listado_Tareas.btnModificar_Tarea.Enabled = False
+        frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
+    End Sub
+
+    Private Sub NuevaOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevaOrdenToolStripMenuItem.Click
+        frm_Orden_Trabajo.Show()
+        frm_Orden_Trabajo.Text = "Nueva Orden"
+        frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = False
+    End Sub
+
+    Private Sub OrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles OrdenToolStripMenuItem.Click
+        frm_Listado_Orden_Trabajo.Show()
+    End Sub
 End Class

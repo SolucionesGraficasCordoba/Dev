@@ -23,13 +23,12 @@ Partial Class frm_Orden_Trabajo
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.txt_nombre_cliente = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnBuscar_cliente = New System.Windows.Forms.Button()
         Me.txt_id_cliente = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.GroupListadoPiezas = New System.Windows.Forms.GroupBox()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.GroupProducto3 = New System.Windows.Forms.GroupBox()
         Me.cboPiezas3_Detalle3 = New System.Windows.Forms.ComboBox()
         Me.txt_id_detalle_orden_trabajo = New System.Windows.Forms.TextBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
@@ -61,7 +60,7 @@ Partial Class frm_Orden_Trabajo
         Me.txtTamaño3_Detalle3 = New System.Windows.Forms.TextBox()
         Me.txt_cantidad3_detalle3 = New System.Windows.Forms.TextBox()
         Me.btnGuardar_Orden_Trabajo = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupProducto2 = New System.Windows.Forms.GroupBox()
         Me.cboPiezas2_Detalle2 = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.cboFormato3_Soporte2 = New System.Windows.Forms.ComboBox()
@@ -90,7 +89,11 @@ Partial Class frm_Orden_Trabajo
         Me.Label33 = New System.Windows.Forms.Label()
         Me.txtTamaño2_Detalle2 = New System.Windows.Forms.TextBox()
         Me.txt_cantidad2_detalle2 = New System.Windows.Forms.TextBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.GroupProducto1 = New System.Windows.Forms.GroupBox()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.Label48 = New System.Windows.Forms.Label()
         Me.cboPiezas1_Detalle1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.cboFormato3_Soporte1 = New System.Windows.Forms.ComboBox()
@@ -133,24 +136,21 @@ Partial Class frm_Orden_Trabajo
         Me.Label15 = New System.Windows.Forms.Label()
         Me.dtpFecha_Orden_Trabajo = New System.Windows.Forms.DateTimePicker()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
         Me.btnBuscar_Vendedor = New System.Windows.Forms.Button()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.txtNombre_vendedor = New System.Windows.Forms.TextBox()
         Me.txtid_vendedor = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
         Me.Label47 = New System.Windows.Forms.Label()
-        Me.Label48 = New System.Windows.Forms.Label()
-        Me.Label49 = New System.Windows.Forms.Label()
-        Me.Label50 = New System.Windows.Forms.Label()
-        Me.Label51 = New System.Windows.Forms.Label()
+        Me.txt_nombre_cliente = New System.Windows.Forms.TextBox()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupListadoPiezas.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
+        Me.GroupProducto3.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.GroupProducto2.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        Me.GroupBox4.SuspendLayout()
+        Me.GroupProducto1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -158,18 +158,11 @@ Partial Class frm_Orden_Trabajo
         '
         Me.Label16.AutoSize = True
         Me.Label16.ForeColor = System.Drawing.Color.Red
-        Me.Label16.Location = New System.Drawing.Point(330, 121)
+        Me.Label16.Location = New System.Drawing.Point(342, 119)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(11, 13)
         Me.Label16.TabIndex = 19
         Me.Label16.Text = "*"
-        '
-        'txt_nombre_cliente
-        '
-        Me.txt_nombre_cliente.Location = New System.Drawing.Point(113, 118)
-        Me.txt_nombre_cliente.Name = "txt_nombre_cliente"
-        Me.txt_nombre_cliente.Size = New System.Drawing.Size(213, 20)
-        Me.txt_nombre_cliente.TabIndex = 17
         '
         'Label10
         '
@@ -182,7 +175,7 @@ Partial Class frm_Orden_Trabajo
         '
         'btnBuscar_cliente
         '
-        Me.btnBuscar_cliente.Location = New System.Drawing.Point(347, 118)
+        Me.btnBuscar_cliente.Location = New System.Drawing.Point(359, 116)
         Me.btnBuscar_cliente.Name = "btnBuscar_cliente"
         Me.btnBuscar_cliente.Size = New System.Drawing.Size(52, 23)
         Me.btnBuscar_cliente.TabIndex = 18
@@ -191,7 +184,7 @@ Partial Class frm_Orden_Trabajo
         '
         'txt_id_cliente
         '
-        Me.txt_id_cliente.Location = New System.Drawing.Point(70, 118)
+        Me.txt_id_cliente.Location = New System.Drawing.Point(417, 116)
         Me.txt_id_cliente.Name = "txt_id_cliente"
         Me.txt_id_cliente.Size = New System.Drawing.Size(37, 20)
         Me.txt_id_cliente.TabIndex = 16
@@ -208,11 +201,11 @@ Partial Class frm_Orden_Trabajo
         '
         'GroupListadoPiezas
         '
-        Me.GroupListadoPiezas.Controls.Add(Me.GroupBox3)
+        Me.GroupListadoPiezas.Controls.Add(Me.GroupProducto3)
         Me.GroupListadoPiezas.Controls.Add(Me.Label17)
         Me.GroupListadoPiezas.Controls.Add(Me.btnGuardar_Orden_Trabajo)
-        Me.GroupListadoPiezas.Controls.Add(Me.GroupBox1)
-        Me.GroupListadoPiezas.Controls.Add(Me.GroupBox4)
+        Me.GroupListadoPiezas.Controls.Add(Me.GroupProducto2)
+        Me.GroupListadoPiezas.Controls.Add(Me.GroupProducto1)
         Me.GroupListadoPiezas.Controls.Add(Me.btnCancelar_Orden_Trabajo)
         Me.GroupListadoPiezas.Controls.Add(Me.btnActualizar_Orden_Trabajo)
         Me.GroupListadoPiezas.Controls.Add(Me.btnNueva_Orden_Trabajo)
@@ -223,28 +216,29 @@ Partial Class frm_Orden_Trabajo
         Me.GroupListadoPiezas.TabStop = False
         Me.GroupListadoPiezas.Text = "Detalles de la orden"
         '
-        'GroupBox3
+        'GroupProducto3
         '
-        Me.GroupBox3.Controls.Add(Me.cboPiezas3_Detalle3)
-        Me.GroupBox3.Controls.Add(Me.txt_id_detalle_orden_trabajo)
-        Me.GroupBox3.Controls.Add(Me.GroupBox6)
-        Me.GroupBox3.Controls.Add(Me.Label45)
-        Me.GroupBox3.Controls.Add(Me.cboTipoImpresion3_Detalle3)
-        Me.GroupBox3.Controls.Add(Me.Label41)
-        Me.GroupBox3.Controls.Add(Me.Label42)
-        Me.GroupBox3.Controls.Add(Me.Label43)
-        Me.GroupBox3.Controls.Add(Me.Label44)
-        Me.GroupBox3.Controls.Add(Me.txtTamaño3_Detalle3)
-        Me.GroupBox3.Controls.Add(Me.txt_cantidad3_detalle3)
-        Me.GroupBox3.Location = New System.Drawing.Point(19, 376)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(889, 163)
-        Me.GroupBox3.TabIndex = 36
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Detalle 3"
+        Me.GroupProducto3.Controls.Add(Me.cboPiezas3_Detalle3)
+        Me.GroupProducto3.Controls.Add(Me.txt_id_detalle_orden_trabajo)
+        Me.GroupProducto3.Controls.Add(Me.GroupBox6)
+        Me.GroupProducto3.Controls.Add(Me.Label45)
+        Me.GroupProducto3.Controls.Add(Me.cboTipoImpresion3_Detalle3)
+        Me.GroupProducto3.Controls.Add(Me.Label41)
+        Me.GroupProducto3.Controls.Add(Me.Label42)
+        Me.GroupProducto3.Controls.Add(Me.Label43)
+        Me.GroupProducto3.Controls.Add(Me.Label44)
+        Me.GroupProducto3.Controls.Add(Me.txtTamaño3_Detalle3)
+        Me.GroupProducto3.Controls.Add(Me.txt_cantidad3_detalle3)
+        Me.GroupProducto3.Location = New System.Drawing.Point(19, 376)
+        Me.GroupProducto3.Name = "GroupProducto3"
+        Me.GroupProducto3.Size = New System.Drawing.Size(889, 163)
+        Me.GroupProducto3.TabIndex = 36
+        Me.GroupProducto3.TabStop = False
+        Me.GroupProducto3.Text = "Registro 3"
         '
         'cboPiezas3_Detalle3
         '
+        Me.cboPiezas3_Detalle3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboPiezas3_Detalle3.FormattingEnabled = True
         Me.cboPiezas3_Detalle3.Location = New System.Drawing.Point(94, 42)
         Me.cboPiezas3_Detalle3.Name = "cboPiezas3_Detalle3"
@@ -279,38 +273,41 @@ Partial Class frm_Orden_Trabajo
         Me.GroupBox6.Controls.Add(Me.Label38)
         Me.GroupBox6.Controls.Add(Me.Label39)
         Me.GroupBox6.Controls.Add(Me.Label40)
-        Me.GroupBox6.Location = New System.Drawing.Point(472, 19)
+        Me.GroupBox6.Location = New System.Drawing.Point(450, 19)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(418, 131)
+        Me.GroupBox6.Size = New System.Drawing.Size(433, 131)
         Me.GroupBox6.TabIndex = 55
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Soportes"
         '
         'cboFormato3_Soporte3
         '
+        Me.cboFormato3_Soporte3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato3_Soporte3.FormattingEnabled = True
         Me.cboFormato3_Soporte3.Items.AddRange(New Object() {"297 x 210", "323 x 235", "340 x 220", "356 x 215", "400 x 295", "420 x 297", "440 x 315", "473 x 323", "480 x 323", "500 x 323", "630 x 220", "650 x 313", "700 x 330"})
         Me.cboFormato3_Soporte3.Location = New System.Drawing.Point(338, 101)
         Me.cboFormato3_Soporte3.Name = "cboFormato3_Soporte3"
-        Me.cboFormato3_Soporte3.Size = New System.Drawing.Size(64, 21)
+        Me.cboFormato3_Soporte3.Size = New System.Drawing.Size(89, 21)
         Me.cboFormato3_Soporte3.TabIndex = 85
         '
         'cboFormato2_Soporte3
         '
+        Me.cboFormato2_Soporte3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato2_Soporte3.FormattingEnabled = True
         Me.cboFormato2_Soporte3.Items.AddRange(New Object() {"297 x 210", "323 x 235", "340 x 220", "356 x 215", "400 x 295", "420 x 297", "440 x 315", "473 x 323", "480 x 323", "500 x 323", "630 x 220", "650 x 313", "700 x 330"})
         Me.cboFormato2_Soporte3.Location = New System.Drawing.Point(338, 76)
         Me.cboFormato2_Soporte3.Name = "cboFormato2_Soporte3"
-        Me.cboFormato2_Soporte3.Size = New System.Drawing.Size(64, 21)
+        Me.cboFormato2_Soporte3.Size = New System.Drawing.Size(89, 21)
         Me.cboFormato2_Soporte3.TabIndex = 84
         '
         'cboFormato1_Soporte3
         '
+        Me.cboFormato1_Soporte3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato1_Soporte3.FormattingEnabled = True
         Me.cboFormato1_Soporte3.Items.AddRange(New Object() {"297 x 210", "323 x 235", "340 x 220", "356 x 215", "400 x 295", "420 x 297", "440 x 315", "473 x 323", "480 x 323", "500 x 323", "630 x 220", "650 x 313", "700 x 330"})
         Me.cboFormato1_Soporte3.Location = New System.Drawing.Point(338, 50)
         Me.cboFormato1_Soporte3.Name = "cboFormato1_Soporte3"
-        Me.cboFormato1_Soporte3.Size = New System.Drawing.Size(64, 21)
+        Me.cboFormato1_Soporte3.Size = New System.Drawing.Size(89, 21)
         Me.cboFormato1_Soporte3.TabIndex = 83
         '
         'txt_Cantidad3_Soporte3
@@ -450,17 +447,18 @@ Partial Class frm_Orden_Trabajo
         '
         'cboTipoImpresion3_Detalle3
         '
+        Me.cboTipoImpresion3_Detalle3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipoImpresion3_Detalle3.FormattingEnabled = True
         Me.cboTipoImpresion3_Detalle3.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
         Me.cboTipoImpresion3_Detalle3.Location = New System.Drawing.Point(364, 41)
         Me.cboTipoImpresion3_Detalle3.Name = "cboTipoImpresion3_Detalle3"
-        Me.cboTipoImpresion3_Detalle3.Size = New System.Drawing.Size(88, 21)
+        Me.cboTipoImpresion3_Detalle3.Size = New System.Drawing.Size(63, 21)
         Me.cboTipoImpresion3_Detalle3.TabIndex = 37
         '
         'Label41
         '
         Me.Label41.AutoSize = True
-        Me.Label41.Location = New System.Drawing.Point(371, 19)
+        Me.Label41.Location = New System.Drawing.Point(358, 19)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(76, 13)
         Me.Label41.TabIndex = 36
@@ -509,33 +507,34 @@ Partial Class frm_Orden_Trabajo
         '
         'btnGuardar_Orden_Trabajo
         '
-        Me.btnGuardar_Orden_Trabajo.Location = New System.Drawing.Point(371, 554)
+        Me.btnGuardar_Orden_Trabajo.Location = New System.Drawing.Point(637, 554)
         Me.btnGuardar_Orden_Trabajo.Name = "btnGuardar_Orden_Trabajo"
         Me.btnGuardar_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar_Orden_Trabajo.TabIndex = 32
         Me.btnGuardar_Orden_Trabajo.Text = "Guardar"
         Me.btnGuardar_Orden_Trabajo.UseVisualStyleBackColor = True
         '
-        'GroupBox1
+        'GroupProducto2
         '
-        Me.GroupBox1.Controls.Add(Me.cboPiezas2_Detalle2)
-        Me.GroupBox1.Controls.Add(Me.GroupBox2)
-        Me.GroupBox1.Controls.Add(Me.cboTipoImpresion2_Detalle2)
-        Me.GroupBox1.Controls.Add(Me.Label30)
-        Me.GroupBox1.Controls.Add(Me.Label31)
-        Me.GroupBox1.Controls.Add(Me.Label32)
-        Me.GroupBox1.Controls.Add(Me.Label33)
-        Me.GroupBox1.Controls.Add(Me.txtTamaño2_Detalle2)
-        Me.GroupBox1.Controls.Add(Me.txt_cantidad2_detalle2)
-        Me.GroupBox1.Location = New System.Drawing.Point(19, 207)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(889, 163)
-        Me.GroupBox1.TabIndex = 35
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Detalle 2"
+        Me.GroupProducto2.Controls.Add(Me.cboPiezas2_Detalle2)
+        Me.GroupProducto2.Controls.Add(Me.GroupBox2)
+        Me.GroupProducto2.Controls.Add(Me.cboTipoImpresion2_Detalle2)
+        Me.GroupProducto2.Controls.Add(Me.Label30)
+        Me.GroupProducto2.Controls.Add(Me.Label31)
+        Me.GroupProducto2.Controls.Add(Me.Label32)
+        Me.GroupProducto2.Controls.Add(Me.Label33)
+        Me.GroupProducto2.Controls.Add(Me.txtTamaño2_Detalle2)
+        Me.GroupProducto2.Controls.Add(Me.txt_cantidad2_detalle2)
+        Me.GroupProducto2.Location = New System.Drawing.Point(19, 207)
+        Me.GroupProducto2.Name = "GroupProducto2"
+        Me.GroupProducto2.Size = New System.Drawing.Size(889, 163)
+        Me.GroupProducto2.TabIndex = 35
+        Me.GroupProducto2.TabStop = False
+        Me.GroupProducto2.Text = "Registro 2"
         '
         'cboPiezas2_Detalle2
         '
+        Me.cboPiezas2_Detalle2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboPiezas2_Detalle2.FormattingEnabled = True
         Me.cboPiezas2_Detalle2.Location = New System.Drawing.Point(94, 41)
         Me.cboPiezas2_Detalle2.Name = "cboPiezas2_Detalle2"
@@ -563,38 +562,41 @@ Partial Class frm_Orden_Trabajo
         Me.GroupBox2.Controls.Add(Me.Label27)
         Me.GroupBox2.Controls.Add(Me.Label28)
         Me.GroupBox2.Controls.Add(Me.Label29)
-        Me.GroupBox2.Location = New System.Drawing.Point(472, 19)
+        Me.GroupBox2.Location = New System.Drawing.Point(450, 19)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(418, 131)
+        Me.GroupBox2.Size = New System.Drawing.Size(433, 131)
         Me.GroupBox2.TabIndex = 55
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Soportes"
         '
         'cboFormato3_Soporte2
         '
+        Me.cboFormato3_Soporte2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato3_Soporte2.FormattingEnabled = True
         Me.cboFormato3_Soporte2.Items.AddRange(New Object() {"297 x 210", "323 x 235", "340 x 220", "356 x 215", "400 x 295", "420 x 297", "440 x 315", "473 x 323", "480 x 323", "500 x 323", "630 x 220", "650 x 313", "700 x 330"})
         Me.cboFormato3_Soporte2.Location = New System.Drawing.Point(338, 97)
         Me.cboFormato3_Soporte2.Name = "cboFormato3_Soporte2"
-        Me.cboFormato3_Soporte2.Size = New System.Drawing.Size(64, 21)
+        Me.cboFormato3_Soporte2.Size = New System.Drawing.Size(89, 21)
         Me.cboFormato3_Soporte2.TabIndex = 73
         '
         'cboFormato2_Soporte2
         '
+        Me.cboFormato2_Soporte2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato2_Soporte2.FormattingEnabled = True
         Me.cboFormato2_Soporte2.Items.AddRange(New Object() {"297 x 210", "323 x 235", "340 x 220", "356 x 215", "400 x 295", "420 x 297", "440 x 315", "473 x 323", "480 x 323", "500 x 323", "630 x 220", "650 x 313", "700 x 330"})
         Me.cboFormato2_Soporte2.Location = New System.Drawing.Point(338, 72)
         Me.cboFormato2_Soporte2.Name = "cboFormato2_Soporte2"
-        Me.cboFormato2_Soporte2.Size = New System.Drawing.Size(64, 21)
+        Me.cboFormato2_Soporte2.Size = New System.Drawing.Size(89, 21)
         Me.cboFormato2_Soporte2.TabIndex = 72
         '
         'cboFormato1_Soporte2
         '
+        Me.cboFormato1_Soporte2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato1_Soporte2.FormattingEnabled = True
         Me.cboFormato1_Soporte2.Items.AddRange(New Object() {"297 x 210", "323 x 235", "340 x 220", "356 x 215", "400 x 295", "420 x 297", "440 x 315", "473 x 323", "480 x 323", "500 x 323", "630 x 220", "650 x 313", "700 x 330"})
         Me.cboFormato1_Soporte2.Location = New System.Drawing.Point(338, 46)
         Me.cboFormato1_Soporte2.Name = "cboFormato1_Soporte2"
-        Me.cboFormato1_Soporte2.Size = New System.Drawing.Size(64, 21)
+        Me.cboFormato1_Soporte2.Size = New System.Drawing.Size(89, 21)
         Me.cboFormato1_Soporte2.TabIndex = 71
         '
         'txt_Cantidad3_Soporte2
@@ -725,17 +727,18 @@ Partial Class frm_Orden_Trabajo
         '
         'cboTipoImpresion2_Detalle2
         '
+        Me.cboTipoImpresion2_Detalle2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipoImpresion2_Detalle2.FormattingEnabled = True
         Me.cboTipoImpresion2_Detalle2.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
         Me.cboTipoImpresion2_Detalle2.Location = New System.Drawing.Point(364, 41)
         Me.cboTipoImpresion2_Detalle2.Name = "cboTipoImpresion2_Detalle2"
-        Me.cboTipoImpresion2_Detalle2.Size = New System.Drawing.Size(88, 21)
+        Me.cboTipoImpresion2_Detalle2.Size = New System.Drawing.Size(63, 21)
         Me.cboTipoImpresion2_Detalle2.TabIndex = 37
         '
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(371, 19)
+        Me.Label30.Location = New System.Drawing.Point(358, 19)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(76, 13)
         Me.Label30.TabIndex = 36
@@ -782,30 +785,71 @@ Partial Class frm_Orden_Trabajo
         Me.txt_cantidad2_detalle2.Size = New System.Drawing.Size(59, 20)
         Me.txt_cantidad2_detalle2.TabIndex = 33
         '
-        'GroupBox4
+        'GroupProducto1
         '
-        Me.GroupBox4.Controls.Add(Me.Label51)
-        Me.GroupBox4.Controls.Add(Me.Label50)
-        Me.GroupBox4.Controls.Add(Me.Label49)
-        Me.GroupBox4.Controls.Add(Me.Label48)
-        Me.GroupBox4.Controls.Add(Me.cboPiezas1_Detalle1)
-        Me.GroupBox4.Controls.Add(Me.GroupBox5)
-        Me.GroupBox4.Controls.Add(Me.cboTipoImpresion1_Detalle1)
-        Me.GroupBox4.Controls.Add(Me.Label8)
-        Me.GroupBox4.Controls.Add(Me.Label7)
-        Me.GroupBox4.Controls.Add(Me.Label3)
-        Me.GroupBox4.Controls.Add(Me.Label2)
-        Me.GroupBox4.Controls.Add(Me.txtTamaño1_Detalle1)
-        Me.GroupBox4.Controls.Add(Me.txt_cantidad1_detalle1)
-        Me.GroupBox4.Location = New System.Drawing.Point(19, 38)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(889, 163)
-        Me.GroupBox4.TabIndex = 34
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Detalle 1"
+        Me.GroupProducto1.Controls.Add(Me.Label51)
+        Me.GroupProducto1.Controls.Add(Me.Label50)
+        Me.GroupProducto1.Controls.Add(Me.Label49)
+        Me.GroupProducto1.Controls.Add(Me.Label48)
+        Me.GroupProducto1.Controls.Add(Me.cboPiezas1_Detalle1)
+        Me.GroupProducto1.Controls.Add(Me.GroupBox5)
+        Me.GroupProducto1.Controls.Add(Me.cboTipoImpresion1_Detalle1)
+        Me.GroupProducto1.Controls.Add(Me.Label8)
+        Me.GroupProducto1.Controls.Add(Me.Label7)
+        Me.GroupProducto1.Controls.Add(Me.Label3)
+        Me.GroupProducto1.Controls.Add(Me.Label2)
+        Me.GroupProducto1.Controls.Add(Me.txtTamaño1_Detalle1)
+        Me.GroupProducto1.Controls.Add(Me.txt_cantidad1_detalle1)
+        Me.GroupProducto1.Location = New System.Drawing.Point(19, 38)
+        Me.GroupProducto1.Name = "GroupProducto1"
+        Me.GroupProducto1.Size = New System.Drawing.Size(889, 163)
+        Me.GroupProducto1.TabIndex = 34
+        Me.GroupProducto1.TabStop = False
+        Me.GroupProducto1.Text = "Producto 1"
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.ForeColor = System.Drawing.Color.Red
+        Me.Label51.Location = New System.Drawing.Point(432, 20)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(11, 13)
+        Me.Label51.TabIndex = 60
+        Me.Label51.Text = "*"
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.ForeColor = System.Drawing.Color.Red
+        Me.Label50.Location = New System.Drawing.Point(328, 19)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(11, 13)
+        Me.Label50.TabIndex = 59
+        Me.Label50.Text = "*"
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.ForeColor = System.Drawing.Color.Red
+        Me.Label49.Location = New System.Drawing.Point(180, 21)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(11, 13)
+        Me.Label49.TabIndex = 58
+        Me.Label49.Text = "*"
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.ForeColor = System.Drawing.Color.Red
+        Me.Label48.Location = New System.Drawing.Point(79, 19)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(11, 13)
+        Me.Label48.TabIndex = 57
+        Me.Label48.Text = "*"
         '
         'cboPiezas1_Detalle1
         '
+        Me.cboPiezas1_Detalle1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboPiezas1_Detalle1.FormattingEnabled = True
         Me.cboPiezas1_Detalle1.Location = New System.Drawing.Point(94, 41)
         Me.cboPiezas1_Detalle1.Name = "cboPiezas1_Detalle1"
@@ -833,29 +877,31 @@ Partial Class frm_Orden_Trabajo
         Me.GroupBox5.Controls.Add(Me.txt_Cantidad1_Soporte1)
         Me.GroupBox5.Controls.Add(Me.txt_Gramaje1_Soporte1)
         Me.GroupBox5.Controls.Add(Me.txt_Papel1_Soporte1)
-        Me.GroupBox5.Location = New System.Drawing.Point(472, 19)
+        Me.GroupBox5.Location = New System.Drawing.Point(450, 21)
         Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(418, 131)
+        Me.GroupBox5.Size = New System.Drawing.Size(433, 131)
         Me.GroupBox5.TabIndex = 55
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Soportes"
         '
         'cboFormato3_Soporte1
         '
+        Me.cboFormato3_Soporte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato3_Soporte1.FormattingEnabled = True
         Me.cboFormato3_Soporte1.Items.AddRange(New Object() {"297 x 210", "323 x 235", "340 x 220", "356 x 215", "400 x 295", "420 x 297", "440 x 315", "473 x 323", "480 x 323", "500 x 323", "630 x 220", "650 x 313", "700 x 330"})
         Me.cboFormato3_Soporte1.Location = New System.Drawing.Point(338, 101)
         Me.cboFormato3_Soporte1.Name = "cboFormato3_Soporte1"
-        Me.cboFormato3_Soporte1.Size = New System.Drawing.Size(64, 21)
+        Me.cboFormato3_Soporte1.Size = New System.Drawing.Size(89, 21)
         Me.cboFormato3_Soporte1.TabIndex = 59
         '
         'cboFormato2_Soporte1
         '
+        Me.cboFormato2_Soporte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato2_Soporte1.FormattingEnabled = True
         Me.cboFormato2_Soporte1.Items.AddRange(New Object() {"297 x 210", "323 x 235", "340 x 220", "356 x 215", "400 x 295", "420 x 297", "440 x 315", "473 x 323", "480 x 323", "500 x 323", "630 x 220", "650 x 313", "700 x 330"})
         Me.cboFormato2_Soporte1.Location = New System.Drawing.Point(338, 76)
         Me.cboFormato2_Soporte1.Name = "cboFormato2_Soporte1"
-        Me.cboFormato2_Soporte1.Size = New System.Drawing.Size(64, 21)
+        Me.cboFormato2_Soporte1.Size = New System.Drawing.Size(89, 21)
         Me.cboFormato2_Soporte1.TabIndex = 56
         '
         'Label21
@@ -929,11 +975,12 @@ Partial Class frm_Orden_Trabajo
         '
         'cboFormato1_Soporte1
         '
+        Me.cboFormato1_Soporte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato1_Soporte1.FormattingEnabled = True
         Me.cboFormato1_Soporte1.Items.AddRange(New Object() {"297 x 210", "323 x 235", "340 x 220", "356 x 215", "400 x 295", "420 x 297", "440 x 315", "473 x 323", "480 x 323", "500 x 323", "630 x 220", "650 x 313", "700 x 330"})
         Me.cboFormato1_Soporte1.Location = New System.Drawing.Point(338, 50)
         Me.cboFormato1_Soporte1.Name = "cboFormato1_Soporte1"
-        Me.cboFormato1_Soporte1.Size = New System.Drawing.Size(64, 21)
+        Me.cboFormato1_Soporte1.Size = New System.Drawing.Size(89, 21)
         Me.cboFormato1_Soporte1.TabIndex = 30
         '
         'Label26
@@ -995,17 +1042,18 @@ Partial Class frm_Orden_Trabajo
         '
         'cboTipoImpresion1_Detalle1
         '
+        Me.cboTipoImpresion1_Detalle1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipoImpresion1_Detalle1.FormattingEnabled = True
         Me.cboTipoImpresion1_Detalle1.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
         Me.cboTipoImpresion1_Detalle1.Location = New System.Drawing.Point(364, 41)
         Me.cboTipoImpresion1_Detalle1.Name = "cboTipoImpresion1_Detalle1"
-        Me.cboTipoImpresion1_Detalle1.Size = New System.Drawing.Size(88, 21)
+        Me.cboTipoImpresion1_Detalle1.Size = New System.Drawing.Size(63, 21)
         Me.cboTipoImpresion1_Detalle1.TabIndex = 37
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(371, 19)
+        Me.Label8.Location = New System.Drawing.Point(358, 19)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(76, 13)
         Me.Label8.TabIndex = 36
@@ -1054,7 +1102,7 @@ Partial Class frm_Orden_Trabajo
         '
         'btnCancelar_Orden_Trabajo
         '
-        Me.btnCancelar_Orden_Trabajo.Location = New System.Drawing.Point(567, 554)
+        Me.btnCancelar_Orden_Trabajo.Location = New System.Drawing.Point(833, 554)
         Me.btnCancelar_Orden_Trabajo.Name = "btnCancelar_Orden_Trabajo"
         Me.btnCancelar_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar_Orden_Trabajo.TabIndex = 31
@@ -1063,7 +1111,7 @@ Partial Class frm_Orden_Trabajo
         '
         'btnActualizar_Orden_Trabajo
         '
-        Me.btnActualizar_Orden_Trabajo.Location = New System.Drawing.Point(469, 554)
+        Me.btnActualizar_Orden_Trabajo.Location = New System.Drawing.Point(735, 554)
         Me.btnActualizar_Orden_Trabajo.Name = "btnActualizar_Orden_Trabajo"
         Me.btnActualizar_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
         Me.btnActualizar_Orden_Trabajo.TabIndex = 30
@@ -1072,7 +1120,7 @@ Partial Class frm_Orden_Trabajo
         '
         'btnNueva_Orden_Trabajo
         '
-        Me.btnNueva_Orden_Trabajo.Location = New System.Drawing.Point(272, 554)
+        Me.btnNueva_Orden_Trabajo.Location = New System.Drawing.Point(538, 554)
         Me.btnNueva_Orden_Trabajo.Name = "btnNueva_Orden_Trabajo"
         Me.btnNueva_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
         Me.btnNueva_Orden_Trabajo.TabIndex = 29
@@ -1081,9 +1129,10 @@ Partial Class frm_Orden_Trabajo
         '
         'cboTipo_Orden
         '
+        Me.cboTipo_Orden.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipo_Orden.FormattingEnabled = True
         Me.cboTipo_Orden.Items.AddRange(New Object() {"DG", "DO", "DI", "DV", "DS"})
-        Me.cboTipo_Orden.Location = New System.Drawing.Point(417, 24)
+        Me.cboTipo_Orden.Location = New System.Drawing.Point(80, 35)
         Me.cboTipo_Orden.Name = "cboTipo_Orden"
         Me.cboTipo_Orden.Size = New System.Drawing.Size(66, 21)
         Me.cboTipo_Orden.TabIndex = 47
@@ -1091,11 +1140,11 @@ Partial Class frm_Orden_Trabajo
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(383, 28)
+        Me.Label5.Location = New System.Drawing.Point(17, 39)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(28, 13)
+        Me.Label5.Size = New System.Drawing.Size(60, 13)
         Me.Label5.TabIndex = 46
-        Me.Label5.Text = "Tipo"
+        Me.Label5.Text = "Tipo Orden"
         '
         'txt_mejoras
         '
@@ -1151,7 +1200,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.Label15.AutoSize = True
         Me.Label15.ForeColor = System.Drawing.Color.Red
-        Me.Label15.Location = New System.Drawing.Point(330, 87)
+        Me.Label15.Location = New System.Drawing.Point(342, 85)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(11, 13)
         Me.Label15.TabIndex = 41
@@ -1160,7 +1209,7 @@ Partial Class frm_Orden_Trabajo
         'dtpFecha_Orden_Trabajo
         '
         Me.dtpFecha_Orden_Trabajo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha_Orden_Trabajo.Location = New System.Drawing.Point(274, 25)
+        Me.dtpFecha_Orden_Trabajo.Location = New System.Drawing.Point(405, 22)
         Me.dtpFecha_Orden_Trabajo.Name = "dtpFecha_Orden_Trabajo"
         Me.dtpFecha_Orden_Trabajo.Size = New System.Drawing.Size(82, 20)
         Me.dtpFecha_Orden_Trabajo.TabIndex = 32
@@ -1168,49 +1217,31 @@ Partial Class frm_Orden_Trabajo
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(231, 28)
+        Me.Label4.Location = New System.Drawing.Point(362, 25)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(37, 13)
         Me.Label4.TabIndex = 31
         Me.Label4.Text = "Fecha"
         '
-        'txtNumero_Orden_Trabajo
-        '
-        Me.txtNumero_Orden_Trabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(76, 19)
-        Me.txtNumero_Orden_Trabajo.Multiline = True
-        Me.txtNumero_Orden_Trabajo.Name = "txtNumero_Orden_Trabajo"
-        Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(118, 48)
-        Me.txtNumero_Orden_Trabajo.TabIndex = 34
-        '
         'btnBuscar_Vendedor
         '
-        Me.btnBuscar_Vendedor.Location = New System.Drawing.Point(347, 81)
+        Me.btnBuscar_Vendedor.Location = New System.Drawing.Point(359, 79)
         Me.btnBuscar_Vendedor.Name = "btnBuscar_Vendedor"
         Me.btnBuscar_Vendedor.Size = New System.Drawing.Size(52, 23)
         Me.btnBuscar_Vendedor.TabIndex = 38
         Me.btnBuscar_Vendedor.Text = "..."
         Me.btnBuscar_Vendedor.UseVisualStyleBackColor = True
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(21, 22)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(44, 13)
-        Me.Label6.TabIndex = 33
-        Me.Label6.Text = "Número"
-        '
         'txtNombre_vendedor
         '
-        Me.txtNombre_vendedor.Location = New System.Drawing.Point(113, 84)
+        Me.txtNombre_vendedor.Location = New System.Drawing.Point(70, 84)
         Me.txtNombre_vendedor.Name = "txtNombre_vendedor"
-        Me.txtNombre_vendedor.Size = New System.Drawing.Size(213, 20)
+        Me.txtNombre_vendedor.Size = New System.Drawing.Size(266, 20)
         Me.txtNombre_vendedor.TabIndex = 37
         '
         'txtid_vendedor
         '
-        Me.txtid_vendedor.Location = New System.Drawing.Point(70, 84)
+        Me.txtid_vendedor.Location = New System.Drawing.Point(417, 82)
         Me.txtid_vendedor.Name = "txtid_vendedor"
         Me.txtid_vendedor.Size = New System.Drawing.Size(37, 20)
         Me.txtid_vendedor.TabIndex = 36
@@ -1224,75 +1255,64 @@ Partial Class frm_Orden_Trabajo
         Me.Label9.TabIndex = 35
         Me.Label9.Text = "Vendedor"
         '
-        'Label46
-        '
-        Me.Label46.AutoSize = True
-        Me.Label46.ForeColor = System.Drawing.Color.Red
-        Me.Label46.Location = New System.Drawing.Point(199, 54)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(11, 13)
-        Me.Label46.TabIndex = 48
-        Me.Label46.Text = "*"
-        '
         'Label47
         '
         Me.Label47.AutoSize = True
         Me.Label47.ForeColor = System.Drawing.Color.Red
-        Me.Label47.Location = New System.Drawing.Point(489, 28)
+        Me.Label47.Location = New System.Drawing.Point(152, 39)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(11, 13)
         Me.Label47.TabIndex = 49
         Me.Label47.Text = "*"
         '
-        'Label48
+        'txt_nombre_cliente
         '
-        Me.Label48.AutoSize = True
-        Me.Label48.ForeColor = System.Drawing.Color.Red
-        Me.Label48.Location = New System.Drawing.Point(79, 19)
-        Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(11, 13)
-        Me.Label48.TabIndex = 57
-        Me.Label48.Text = "*"
+        Me.txt_nombre_cliente.Location = New System.Drawing.Point(70, 118)
+        Me.txt_nombre_cliente.Name = "txt_nombre_cliente"
+        Me.txt_nombre_cliente.Size = New System.Drawing.Size(266, 20)
+        Me.txt_nombre_cliente.TabIndex = 50
         '
-        'Label49
+        'Label46
         '
-        Me.Label49.AutoSize = True
-        Me.Label49.ForeColor = System.Drawing.Color.Red
-        Me.Label49.Location = New System.Drawing.Point(180, 21)
-        Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(11, 13)
-        Me.Label49.TabIndex = 58
-        Me.Label49.Text = "*"
+        Me.Label46.AutoSize = True
+        Me.Label46.ForeColor = System.Drawing.Color.Red
+        Me.Label46.Location = New System.Drawing.Point(341, 57)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(11, 13)
+        Me.Label46.TabIndex = 53
+        Me.Label46.Text = "*"
         '
-        'Label50
+        'txtNumero_Orden_Trabajo
         '
-        Me.Label50.AutoSize = True
-        Me.Label50.ForeColor = System.Drawing.Color.Red
-        Me.Label50.Location = New System.Drawing.Point(328, 19)
-        Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(11, 13)
-        Me.Label50.TabIndex = 59
-        Me.Label50.Text = "*"
+        Me.txtNumero_Orden_Trabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(218, 22)
+        Me.txtNumero_Orden_Trabajo.Multiline = True
+        Me.txtNumero_Orden_Trabajo.Name = "txtNumero_Orden_Trabajo"
+        Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(118, 48)
+        Me.txtNumero_Orden_Trabajo.TabIndex = 52
+        Me.txtNumero_Orden_Trabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'Label51
+        'Label6
         '
-        Me.Label51.AutoSize = True
-        Me.Label51.ForeColor = System.Drawing.Color.Red
-        Me.Label51.Location = New System.Drawing.Point(444, 20)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(11, 13)
-        Me.Label51.TabIndex = 60
-        Me.Label51.Text = "*"
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(166, 38)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(44, 26)
+        Me.Label6.TabIndex = 51
+        Me.Label6.Text = "Número" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Orden"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'frm_Orden_Trabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(956, 756)
-        Me.Controls.Add(Me.Label47)
         Me.Controls.Add(Me.Label46)
-        Me.Controls.Add(Me.Label16)
+        Me.Controls.Add(Me.txtNumero_Orden_Trabajo)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txt_nombre_cliente)
+        Me.Controls.Add(Me.Label47)
+        Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.cboTipo_Orden)
         Me.Controls.Add(Me.btnBuscar_cliente)
@@ -1307,9 +1327,7 @@ Partial Class frm_Orden_Trabajo
         Me.Controls.Add(Me.Label15)
         Me.Controls.Add(Me.dtpFecha_Orden_Trabajo)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.txtNumero_Orden_Trabajo)
         Me.Controls.Add(Me.btnBuscar_Vendedor)
-        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtNombre_vendedor)
         Me.Controls.Add(Me.txtid_vendedor)
         Me.Controls.Add(Me.Label9)
@@ -1318,23 +1336,22 @@ Partial Class frm_Orden_Trabajo
         Me.Text = "Orden de trabajo"
         Me.GroupListadoPiezas.ResumeLayout(False)
         Me.GroupListadoPiezas.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
+        Me.GroupProducto3.ResumeLayout(False)
+        Me.GroupProducto3.PerformLayout()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.GroupProducto2.ResumeLayout(False)
+        Me.GroupProducto2.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
+        Me.GroupProducto1.ResumeLayout(False)
+        Me.GroupProducto1.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents txt_nombre_cliente As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents btnBuscar_cliente As System.Windows.Forms.Button
     Friend WithEvents txt_id_cliente As System.Windows.Forms.TextBox
@@ -1345,7 +1362,7 @@ Partial Class frm_Orden_Trabajo
     Friend WithEvents btnActualizar_Orden_Trabajo As System.Windows.Forms.Button
     Friend WithEvents btnGuardar_Orden_Trabajo As System.Windows.Forms.Button
     Friend WithEvents btnNueva_Orden_Trabajo As System.Windows.Forms.Button
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupProducto3 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
     Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents Label35 As System.Windows.Forms.Label
@@ -1361,7 +1378,7 @@ Partial Class frm_Orden_Trabajo
     Friend WithEvents Label44 As System.Windows.Forms.Label
     Friend WithEvents txtTamaño3_Detalle3 As System.Windows.Forms.TextBox
     Friend WithEvents txt_cantidad3_detalle3 As System.Windows.Forms.TextBox
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupProducto2 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
@@ -1377,7 +1394,7 @@ Partial Class frm_Orden_Trabajo
     Friend WithEvents Label33 As System.Windows.Forms.Label
     Friend WithEvents txtTamaño2_Detalle2 As System.Windows.Forms.TextBox
     Friend WithEvents txt_cantidad2_detalle2 As System.Windows.Forms.TextBox
-    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupProducto1 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents Label20 As System.Windows.Forms.Label
@@ -1388,7 +1405,6 @@ Partial Class frm_Orden_Trabajo
     Friend WithEvents txt_Cantidad2_Soporte1 As System.Windows.Forms.TextBox
     Friend WithEvents txt_Gramaje2_Soporte1 As System.Windows.Forms.TextBox
     Friend WithEvents txt_Papel2_Soporte1 As System.Windows.Forms.TextBox
-    Friend WithEvents cboFormato1_Soporte1 As System.Windows.Forms.ComboBox
     Friend WithEvents Label26 As System.Windows.Forms.Label
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents Label24 As System.Windows.Forms.Label
@@ -1396,7 +1412,6 @@ Partial Class frm_Orden_Trabajo
     Friend WithEvents txt_Cantidad1_Soporte1 As System.Windows.Forms.TextBox
     Friend WithEvents txt_Gramaje1_Soporte1 As System.Windows.Forms.TextBox
     Friend WithEvents txt_Papel1_Soporte1 As System.Windows.Forms.TextBox
-    Friend WithEvents cboTipoImpresion1_Detalle1 As System.Windows.Forms.ComboBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -1414,9 +1429,7 @@ Partial Class frm_Orden_Trabajo
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents dtpFecha_Orden_Trabajo As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents txtNumero_Orden_Trabajo As System.Windows.Forms.TextBox
     Friend WithEvents btnBuscar_Vendedor As System.Windows.Forms.Button
-    Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents txtNombre_vendedor As System.Windows.Forms.TextBox
     Friend WithEvents txtid_vendedor As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
@@ -1451,10 +1464,15 @@ Partial Class frm_Orden_Trabajo
     Friend WithEvents cboPiezas3_Detalle3 As System.Windows.Forms.ComboBox
     Friend WithEvents cboPiezas2_Detalle2 As System.Windows.Forms.ComboBox
     Friend WithEvents cboPiezas1_Detalle1 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label46 As System.Windows.Forms.Label
     Friend WithEvents Label47 As System.Windows.Forms.Label
     Friend WithEvents Label51 As System.Windows.Forms.Label
     Friend WithEvents Label50 As System.Windows.Forms.Label
     Friend WithEvents Label49 As System.Windows.Forms.Label
     Friend WithEvents Label48 As System.Windows.Forms.Label
+    Friend WithEvents txt_nombre_cliente As System.Windows.Forms.TextBox
+    Friend WithEvents cboFormato1_Soporte1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboTipoImpresion1_Detalle1 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label46 As System.Windows.Forms.Label
+    Friend WithEvents txtNumero_Orden_Trabajo As System.Windows.Forms.TextBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 End Class
