@@ -2033,7 +2033,7 @@ Partial Public Class TAREA
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_TAREA", Storage:="_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo", IsForeignKey:=true)>  _
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_TAREA", Storage:="_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo", IsForeignKey:=true, DeleteRule:="CASCADE")>  _
 	Public Property ORDEN_TRABAJO() As ORDEN_TRABAJO
 		Get
 			Return Me._ORDEN_TRABAJO.Entity

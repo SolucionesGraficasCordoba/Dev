@@ -1,15 +1,56 @@
 ﻿Public Class frm_Tarea
     Dim datacontext As New DataS_Interno
+    Dim quienllamoboton As Button
 
     Private Sub frm_Tarea_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txt_id_tarea.Visible = False
         Label1.Visible = False
         Label33.Visible = False
+        txt_nombre_colaborador.Enabled = False
         txt_detalle_tarea1.Focus()
         txt_id_colaborador.Visible = False
+
         txt_id_orden_trabajo1.Visible = False
-        txt_nombre_colaborador.Enabled = False
+        txt_id_orden_trabajo2.Visible = False
+        txt_id_orden_trabajo3.Visible = False
+        txt_id_orden_trabajo4.Visible = False
+        txt_id_orden_trabajo5.Visible = False
+        txt_id_orden_trabajo6.Visible = False
+        txt_id_orden_trabajo7.Visible = False
+        txt_id_orden_trabajo8.Visible = False
+        txt_id_orden_trabajo9.Visible = False
+        txt_id_orden_trabajo10.Visible = False
+        txt_id_orden_trabajo11.Visible = False
+        txt_id_orden_trabajo12.Visible = False
+        txt_id_orden_trabajo13.Visible = False
+        txt_id_orden_trabajo14.Visible = False
+        txt_id_orden_trabajo15.Visible = False
+        txt_id_orden_trabajo16.Visible = False
+        txt_id_orden_trabajo17.Visible = False
+        txt_id_orden_trabajo18.Visible = False
+        txt_id_orden_trabajo19.Visible = False
+        txt_id_orden_trabajo20.Visible = False
+
         txtNumero_Orden_Trabajo1.Enabled = False
+        txtNumero_Orden_Trabajo2.Enabled = False
+        txtNumero_Orden_Trabajo3.Enabled = False
+        txtNumero_Orden_Trabajo4.Enabled = False
+        txtNumero_Orden_Trabajo5.Enabled = False
+        txtNumero_Orden_Trabajo6.Enabled = False
+        txtNumero_Orden_Trabajo7.Enabled = False
+        txtNumero_Orden_Trabajo8.Enabled = False
+        txtNumero_Orden_Trabajo9.Enabled = False
+        txtNumero_Orden_Trabajo10.Enabled = False
+        txtNumero_Orden_Trabajo11.Enabled = False
+        txtNumero_Orden_Trabajo12.Enabled = False
+        txtNumero_Orden_Trabajo13.Enabled = False
+        txtNumero_Orden_Trabajo14.Enabled = False
+        txtNumero_Orden_Trabajo15.Enabled = False
+        txtNumero_Orden_Trabajo16.Enabled = False
+        txtNumero_Orden_Trabajo17.Enabled = False
+        txtNumero_Orden_Trabajo18.Enabled = False
+        txtNumero_Orden_Trabajo19.Enabled = False
+        txtNumero_Orden_Trabajo20.Enabled = False
 
     End Sub
 
@@ -61,7 +102,7 @@
                 tar3.TAR_tiempo_estimado = txtTiempo_Estimado3.Text
                 tar3.TAR_tiempo_real = txtTiempo_Real3.Text
                 tar3.COL_id_colaborador = txt_id_colaborador.Text
-                tar3.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar3.ORT_id_orden_trabajo = txt_id_orden_trabajo3.Text
                 tar3.TAR_hora_fin = txtHora_Finalizacion3.Text
                 ' tar3.TAR_carga_horaria = txt_Carga_Horaria3.Text
                 tar3.TAR_detalle_tarea = txt_detalle_tarea3.Text
@@ -79,7 +120,7 @@
                 tar4.TAR_tiempo_estimado = txtTiempo_Estimado4.Text
                 tar4.TAR_tiempo_real = txtTiempo_Real4.Text
                 tar4.COL_id_colaborador = txt_id_colaborador.Text
-                tar4.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar4.ORT_id_orden_trabajo = txt_id_orden_trabajo4.Text
                 tar4.TAR_hora_fin = txtHora_Finalizacion4.Text
                 '  tar4.TAR_carga_horaria = txt_Carga_Horaria4.Text
                 tar4.TAR_detalle_tarea = txt_detalle_tarea4.Text
@@ -97,7 +138,7 @@
                 tar5.TAR_tiempo_estimado = txtTiempo_Estimado5.Text
                 tar5.TAR_tiempo_real = txtTiempo_Real5.Text
                 tar5.COL_id_colaborador = txt_id_colaborador.Text
-                tar5.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar5.ORT_id_orden_trabajo = txt_id_orden_trabajo5.Text
                 tar5.TAR_hora_fin = txtHora_Finalizacion5.Text
                 '  tar5.TAR_carga_horaria = txt_Carga_Horaria5.Text
                 tar5.TAR_detalle_tarea = txt_detalle_tarea5.Text
@@ -115,7 +156,7 @@
                 tar6.TAR_tiempo_estimado = txtTiempo_Estimado6.Text
                 tar6.TAR_tiempo_real = txtTiempo_Real6.Text
                 tar6.COL_id_colaborador = txt_id_colaborador.Text
-                tar6.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar6.ORT_id_orden_trabajo = txt_id_orden_trabajo6.Text
                 tar6.TAR_hora_fin = txtHora_Finalizacion6.Text
                 ' tar6.TAR_carga_horaria = txt_Carga_Horaria6.Text
                 tar6.TAR_detalle_tarea = txt_detalle_tarea6.Text
@@ -133,7 +174,7 @@
                 tar7.TAR_tiempo_estimado = txtTiempo_Estimado7.Text
                 tar7.TAR_tiempo_real = txtTiempo_Real7.Text
                 tar7.COL_id_colaborador = txt_id_colaborador.Text
-                tar7.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar7.ORT_id_orden_trabajo = txt_id_orden_trabajo7.Text
                 tar7.TAR_hora_fin = txtHora_Finalizacion7.Text
                 '  tar7.TAR_carga_horaria = txt_Carga_Horaria7.Text
                 tar7.TAR_detalle_tarea = txt_detalle_tarea7.Text
@@ -151,7 +192,7 @@
                 tar8.TAR_tiempo_estimado = txtTiempo_Estimado8.Text
                 tar8.TAR_tiempo_real = txtTiempo_Real8.Text
                 tar8.COL_id_colaborador = txt_id_colaborador.Text
-                tar8.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar8.ORT_id_orden_trabajo = txt_id_orden_trabajo8.Text
                 tar8.TAR_hora_fin = txtHora_Finalizacion8.Text
                 '  tar8.TAR_carga_horaria = txt_Carga_Horaria8.Text
                 tar8.TAR_detalle_tarea = txt_detalle_tarea8.Text
@@ -169,7 +210,7 @@
                 tar9.TAR_tiempo_estimado = txtTiempo_Estimado9.Text
                 tar9.TAR_tiempo_real = txtTiempo_Real9.Text
                 tar9.COL_id_colaborador = txt_id_colaborador.Text
-                tar9.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar9.ORT_id_orden_trabajo = txt_id_orden_trabajo9.Text
                 tar9.TAR_hora_fin = txtHora_Finalizacion9.Text
                 ' tar9.TAR_carga_horaria = txt_Carga_Horaria9.Text
                 tar9.TAR_detalle_tarea = txt_detalle_tarea9.Text
@@ -187,7 +228,7 @@
                 tar10.TAR_tiempo_estimado = txtTiempo_Estimado10.Text
                 tar10.TAR_tiempo_real = txtTiempo_Real10.Text
                 tar10.COL_id_colaborador = txt_id_colaborador.Text
-                tar10.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar10.ORT_id_orden_trabajo = txt_id_orden_trabajo10.Text
                 tar10.TAR_hora_fin = txtHora_Finalizacion10.Text
                 ' tar10.TAR_carga_horaria = txt_Carga_Horaria10.Text
                 tar10.TAR_detalle_tarea = txt_detalle_tarea10.Text
@@ -205,7 +246,7 @@
                 tar11.TAR_tiempo_estimado = txtTiempo_Estimado11.Text
                 tar11.TAR_tiempo_real = txtTiempo_Real11.Text
                 tar11.COL_id_colaborador = txt_id_colaborador.Text
-                tar11.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar11.ORT_id_orden_trabajo = txt_id_orden_trabajo11.Text
                 tar11.TAR_hora_fin = txtHora_Finalizacion11.Text
                 ' tar11.TAR_carga_horaria = txt_Carga_Horaria11.Text
                 tar11.TAR_detalle_tarea = txt_detalle_tarea11.Text
@@ -223,7 +264,7 @@
                 tar12.TAR_tiempo_estimado = txtTiempo_Estimado12.Text
                 tar12.TAR_tiempo_real = txtTiempo_Real2.Text
                 tar12.COL_id_colaborador = txt_id_colaborador.Text
-                tar12.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar12.ORT_id_orden_trabajo = txt_id_orden_trabajo12.Text
                 tar12.TAR_hora_fin = txtHora_Finalizacion12.Text
                 '  tar12.TAR_carga_horaria = txt_Carga_Horaria12.Text
                 tar12.TAR_detalle_tarea = txt_detalle_tarea12.Text
@@ -241,7 +282,7 @@
                 tar13.TAR_tiempo_estimado = txtTiempo_Estimado13.Text
                 tar13.TAR_tiempo_real = txtTiempo_Real13.Text
                 tar13.COL_id_colaborador = txt_id_colaborador.Text
-                tar13.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar13.ORT_id_orden_trabajo = txt_id_orden_trabajo13.Text
                 tar13.TAR_hora_fin = txtHora_Finalizacion13.Text
                 '  tar13.TAR_carga_horaria = txt_Carga_Horaria13.Text
                 tar13.TAR_detalle_tarea = txt_detalle_tarea13.Text
@@ -259,7 +300,7 @@
                 tar14.TAR_tiempo_estimado = txtTiempo_Estimado14.Text
                 tar14.TAR_tiempo_real = txtTiempo_Real14.Text
                 tar14.COL_id_colaborador = txt_id_colaborador.Text
-                tar14.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar14.ORT_id_orden_trabajo = txt_id_orden_trabajo14.Text
                 tar14.TAR_hora_fin = txtHora_Finalizacion14.Text
                 '  tar14.TAR_carga_horaria = txt_Carga_Horaria14.Text
                 tar14.TAR_detalle_tarea = txt_detalle_tarea14.Text
@@ -277,7 +318,7 @@
                 tar15.TAR_tiempo_estimado = txtTiempo_Estimado15.Text
                 tar15.TAR_tiempo_real = txtTiempo_Real15.Text
                 tar15.COL_id_colaborador = txt_id_colaborador.Text
-                tar15.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar15.ORT_id_orden_trabajo = txt_id_orden_trabajo15.Text
                 tar15.TAR_hora_fin = txtHora_Finalizacion15.Text
                 '  tar15.TAR_carga_horaria = txt_Carga_Horaria15.Text
                 tar15.TAR_detalle_tarea = txt_detalle_tarea15.Text
@@ -295,7 +336,7 @@
                 tar16.TAR_tiempo_estimado = txtTiempo_Estimado16.Text
                 tar16.TAR_tiempo_real = txtTiempo_Real16.Text
                 tar16.COL_id_colaborador = txt_id_colaborador.Text
-                tar16.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar16.ORT_id_orden_trabajo = txt_id_orden_trabajo16.Text
                 tar16.TAR_hora_fin = txtHora_Finalizacion16.Text
                 '  tar16.TAR_carga_horaria = txt_Carga_Horaria16.Text
                 tar16.TAR_detalle_tarea = txt_detalle_tarea16.Text
@@ -313,7 +354,7 @@
                 tar17.TAR_tiempo_estimado = txtTiempo_Estimado17.Text
                 tar17.TAR_tiempo_real = txtTiempo_Real17.Text
                 tar17.COL_id_colaborador = txt_id_colaborador.Text
-                tar17.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar17.ORT_id_orden_trabajo = txt_id_orden_trabajo17.Text
                 tar17.TAR_hora_fin = txtHora_Finalizacion17.Text
                 '  tar17.TAR_carga_horaria = txt_Carga_Horaria17.Text
                 tar17.TAR_detalle_tarea = txt_detalle_tarea17.Text
@@ -331,7 +372,7 @@
                 tar18.TAR_tiempo_estimado = txtTiempo_Estimado18.Text
                 tar18.TAR_tiempo_real = txtTiempo_Real18.Text
                 tar18.COL_id_colaborador = txt_id_colaborador.Text
-                tar18.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar18.ORT_id_orden_trabajo = txt_id_orden_trabajo18.Text
                 tar18.TAR_hora_fin = txtHora_Finalizacion18.Text
                 ' tar18.TAR_carga_horaria = txt_Carga_Horaria18.Text
                 tar18.TAR_detalle_tarea = txt_detalle_tarea18.Text
@@ -349,7 +390,7 @@
                 tar19.TAR_tiempo_estimado = txtTiempo_Estimado19.Text
                 tar19.TAR_tiempo_real = txtTiempo_Real19.Text
                 tar19.COL_id_colaborador = txt_id_colaborador.Text
-                tar19.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar19.ORT_id_orden_trabajo = txt_id_orden_trabajo19.Text
                 tar19.TAR_hora_fin = txtHora_Finalizacion19.Text
                 ' tar19.TAR_carga_horaria = txt_Carga_Horaria19.Text
                 tar19.TAR_detalle_tarea = txt_detalle_tarea19.Text
@@ -367,9 +408,9 @@
                 tar20.TAR_tiempo_estimado = txtTiempo_Estimado20.Text
                 tar20.TAR_tiempo_real = txtTiempo_Real20.Text
                 tar20.COL_id_colaborador = txt_id_colaborador.Text
-                tar20.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
+                tar20.ORT_id_orden_trabajo = txt_id_orden_trabajo20.Text
                 tar20.TAR_hora_fin = txtHora_Finalizacion20.Text
-                '  tar20.TAR_carga_horaria = txt_Carga_Horaria20.Text
+                'tar20.TAR_carga_horaria = txt_Carga_Horaria20.Text
                 tar20.TAR_detalle_tarea = txt_detalle_tarea20.Text
                 tar20.TAR_observaciones = txtObservaciones20.Text
                 tar20.TAR_fecha = dtpFecha.Text
@@ -378,7 +419,6 @@
                 datacontext.SubmitChanges()
             Else
             End If
-
             MsgBox("La tarea se ha creado correctamente", vbInformation)
             ' frm_Listado_Tareas.cargargrilla()
             limpiarcontroles()
@@ -1086,9 +1126,200 @@
         End Select
     End Sub
 
-    Private Sub btnBuscar_Numero_Orden_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden1.Click, btnBuscar_Numero_Orden2.Click, btnBuscar_Numero_Orden8.Click, btnBuscar_Numero_Orden7.Click, btnBuscar_Numero_Orden6.Click, btnBuscar_Numero_Orden5.Click, btnBuscar_Numero_Orden4.Click, btnBuscar_Numero_Orden20.Click, btnBuscar_Numero_Orden19.Click, btnBuscar_Numero_Orden18.Click, btnBuscar_Numero_Orden3.Click, btnBuscar_Numero_Orden17.Click, btnBuscar_Numero_Orden16.Click, btnBuscar_Numero_Orden15.Click, btnBuscar_Numero_Orden14.Click, btnBuscar_Numero_Orden13.Click, btnBuscar_Numero_Orden12.Click, btnBuscar_Numero_Orden11.Click, btnBuscar_Numero_Orden10.Click, btnBuscar_Numero_Orden9.Click, Button10.Click
+    Private Sub btnBuscar_Numero_Orden1_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden1.Click
 
         frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden1
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden2_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden2.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden2
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden3_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden3.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden3
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden4_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden4.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden4
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden5_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden5.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden5
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden6_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden6.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden6
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden7_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden7.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden7
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden8_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden8.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden8
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden9_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden9.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden9
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden10_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden10.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden10
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden11_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden11.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden11
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden12_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden12.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden12
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden13_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden13.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden13
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden14_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden14.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden14
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden15_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden15.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden15
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden16_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden16.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden16
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden17_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden17.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden17
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden18_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden18.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden18
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden19_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden19.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden19
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden20_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden20.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.quienllamoboton = Me.btnBuscar_Numero_Orden20
         frm_Listado_Orden_Trabajo.Text = "Seleccionar orden"
         frm_Listado_Orden_Trabajo.Show()
         frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False

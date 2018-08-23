@@ -47,16 +47,72 @@ Partial Class frm_Tarea
         Me.txt_detalle_tarea1 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnBuscar_Numero_Orden20 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden19 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden17 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden15 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden13 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden11 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden9 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden8 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden6 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden4 = New System.Windows.Forms.Button()
         Me.btnBuscar_Numero_Orden2 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden18 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden16 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden14 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden12 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden10 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden7 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden5 = New System.Windows.Forms.Button()
+        Me.btnBuscar_Numero_Orden3 = New System.Windows.Forms.Button()
         Me.btnBuscar_Numero_Orden1 = New System.Windows.Forms.Button()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.Label93 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
+        Me.txtNumero_Orden_Trabajo20 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo19 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo18 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo17 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo16 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo15 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo14 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo13 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo12 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo11 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo10 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo9 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo20 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo8 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo19 = New System.Windows.Forms.TextBox()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo17 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo7 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo15 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo6 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo13 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo5 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo11 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo4 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo9 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo18 = New System.Windows.Forms.TextBox()
+        Me.txtNumero_Orden_Trabajo3 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo16 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo14 = New System.Windows.Forms.TextBox()
         Me.txtNumero_Orden_Trabajo2 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo12 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo6 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo10 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo8 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo4 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo7 = New System.Windows.Forms.TextBox()
         Me.Label36 = New System.Windows.Forms.Label()
+        Me.txt_id_orden_trabajo5 = New System.Windows.Forms.TextBox()
         Me.txt_id_orden_trabajo2 = New System.Windows.Forms.TextBox()
+        Me.txt_id_orden_trabajo3 = New System.Windows.Forms.TextBox()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.txtObservaciones20 = New System.Windows.Forms.TextBox()
@@ -187,72 +243,14 @@ Partial Class frm_Tarea
         Me.Label32 = New System.Windows.Forms.Label()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
-        Me.Label35 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
-        Me.txt_id_orden_trabajo3 = New System.Windows.Forms.TextBox()
-        Me.txt_id_orden_trabajo4 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo3 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo4 = New System.Windows.Forms.TextBox()
-        Me.btnBuscar_Numero_Orden3 = New System.Windows.Forms.Button()
-        Me.btnBuscar_Numero_Orden4 = New System.Windows.Forms.Button()
-        Me.txt_id_orden_trabajo5 = New System.Windows.Forms.TextBox()
-        Me.txt_id_orden_trabajo6 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo5 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo6 = New System.Windows.Forms.TextBox()
-        Me.btnBuscar_Numero_Orden5 = New System.Windows.Forms.Button()
-        Me.btnBuscar_Numero_Orden6 = New System.Windows.Forms.Button()
-        Me.txt_id_orden_trabajo7 = New System.Windows.Forms.TextBox()
-        Me.txt_id_orden_trabajo8 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo7 = New System.Windows.Forms.TextBox()
-        Me.TextBox12 = New System.Windows.Forms.TextBox()
-        Me.btnBuscar_Numero_Orden7 = New System.Windows.Forms.Button()
-        Me.btnBuscar_Numero_Orden8 = New System.Windows.Forms.Button()
-        Me.TextBox13 = New System.Windows.Forms.TextBox()
-        Me.txt_id_orden_trabajo9 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo8 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo9 = New System.Windows.Forms.TextBox()
-        Me.Button10 = New System.Windows.Forms.Button()
-        Me.btnBuscar_Numero_Orden9 = New System.Windows.Forms.Button()
-        Me.txt_id_orden_trabajo10 = New System.Windows.Forms.TextBox()
-        Me.txt_id_orden_trabajo11 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo10 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo11 = New System.Windows.Forms.TextBox()
-        Me.btnBuscar_Numero_Orden10 = New System.Windows.Forms.Button()
-        Me.btnBuscar_Numero_Orden11 = New System.Windows.Forms.Button()
-        Me.txt_id_orden_trabajo12 = New System.Windows.Forms.TextBox()
-        Me.txt_id_orden_trabajo13 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo12 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo13 = New System.Windows.Forms.TextBox()
-        Me.btnBuscar_Numero_Orden12 = New System.Windows.Forms.Button()
-        Me.btnBuscar_Numero_Orden13 = New System.Windows.Forms.Button()
-        Me.txt_id_orden_trabajo14 = New System.Windows.Forms.TextBox()
-        Me.txt_id_orden_trabajo15 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo14 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo15 = New System.Windows.Forms.TextBox()
-        Me.btnBuscar_Numero_Orden14 = New System.Windows.Forms.Button()
-        Me.btnBuscar_Numero_Orden15 = New System.Windows.Forms.Button()
-        Me.txt_id_orden_trabajo16 = New System.Windows.Forms.TextBox()
-        Me.txt_id_orden_trabajo17 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo16 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo17 = New System.Windows.Forms.TextBox()
-        Me.btnBuscar_Numero_Orden16 = New System.Windows.Forms.Button()
-        Me.btnBuscar_Numero_Orden17 = New System.Windows.Forms.Button()
-        Me.txt_id_orden_trabajo18 = New System.Windows.Forms.TextBox()
-        Me.txt_id_orden_trabajo19 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo18 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo19 = New System.Windows.Forms.TextBox()
-        Me.btnBuscar_Numero_Orden18 = New System.Windows.Forms.Button()
-        Me.btnBuscar_Numero_Orden19 = New System.Windows.Forms.Button()
-        Me.txt_id_orden_trabajo20 = New System.Windows.Forms.TextBox()
-        Me.txtNumero_Orden_Trabajo20 = New System.Windows.Forms.TextBox()
-        Me.btnBuscar_Numero_Orden20 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txt_Carga_Horaria1
         '
-        Me.txt_Carga_Horaria1.Location = New System.Drawing.Point(618, 70)
+        Me.txt_Carga_Horaria1.Location = New System.Drawing.Point(797, 25)
         Me.txt_Carga_Horaria1.Name = "txt_Carga_Horaria1"
         Me.txt_Carga_Horaria1.Size = New System.Drawing.Size(76, 20)
         Me.txt_Carga_Horaria1.TabIndex = 33
@@ -261,7 +259,7 @@ Partial Class frm_Tarea
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(542, 71)
+        Me.Label13.Location = New System.Drawing.Point(721, 30)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(70, 13)
         Me.Label13.TabIndex = 32
@@ -346,7 +344,7 @@ Partial Class frm_Tarea
         '
         'btnCancelar_Tarea
         '
-        Me.btnCancelar_Tarea.Location = New System.Drawing.Point(574, 710)
+        Me.btnCancelar_Tarea.Location = New System.Drawing.Point(574, 675)
         Me.btnCancelar_Tarea.Name = "btnCancelar_Tarea"
         Me.btnCancelar_Tarea.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar_Tarea.TabIndex = 2
@@ -355,7 +353,7 @@ Partial Class frm_Tarea
         '
         'btnGuardar_Tarea
         '
-        Me.btnGuardar_Tarea.Location = New System.Drawing.Point(480, 710)
+        Me.btnGuardar_Tarea.Location = New System.Drawing.Point(480, 675)
         Me.btnGuardar_Tarea.Name = "btnGuardar_Tarea"
         Me.btnGuardar_Tarea.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar_Tarea.TabIndex = 4
@@ -364,7 +362,7 @@ Partial Class frm_Tarea
         '
         'btnNueva_Tarea
         '
-        Me.btnNueva_Tarea.Location = New System.Drawing.Point(386, 710)
+        Me.btnNueva_Tarea.Location = New System.Drawing.Point(386, 675)
         Me.btnNueva_Tarea.Name = "btnNueva_Tarea"
         Me.btnNueva_Tarea.Size = New System.Drawing.Size(75, 23)
         Me.btnNueva_Tarea.TabIndex = 2
@@ -373,7 +371,7 @@ Partial Class frm_Tarea
         '
         'txt_id_tarea
         '
-        Me.txt_id_tarea.Location = New System.Drawing.Point(40, 62)
+        Me.txt_id_tarea.Location = New System.Drawing.Point(924, 46)
         Me.txt_id_tarea.Name = "txt_id_tarea"
         Me.txt_id_tarea.Size = New System.Drawing.Size(66, 20)
         Me.txt_id_tarea.TabIndex = 1
@@ -381,7 +379,7 @@ Partial Class frm_Tarea
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(50, 46)
+        Me.Label1.Location = New System.Drawing.Point(934, 30)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 13)
         Me.Label1.TabIndex = 0
@@ -403,7 +401,7 @@ Partial Class frm_Tarea
         '
         'btnBuscar_Colaborador
         '
-        Me.btnBuscar_Colaborador.Location = New System.Drawing.Point(640, 27)
+        Me.btnBuscar_Colaborador.Location = New System.Drawing.Point(480, 24)
         Me.btnBuscar_Colaborador.Name = "btnBuscar_Colaborador"
         Me.btnBuscar_Colaborador.Size = New System.Drawing.Size(54, 23)
         Me.btnBuscar_Colaborador.TabIndex = 37
@@ -412,14 +410,14 @@ Partial Class frm_Tarea
         '
         'txt_nombre_colaborador
         '
-        Me.txt_nombre_colaborador.Location = New System.Drawing.Point(396, 28)
+        Me.txt_nombre_colaborador.Location = New System.Drawing.Point(236, 25)
         Me.txt_nombre_colaborador.Name = "txt_nombre_colaborador"
         Me.txt_nombre_colaborador.Size = New System.Drawing.Size(226, 20)
         Me.txt_nombre_colaborador.TabIndex = 36
         '
         'txt_id_colaborador
         '
-        Me.txt_id_colaborador.Location = New System.Drawing.Point(710, 29)
+        Me.txt_id_colaborador.Location = New System.Drawing.Point(550, 26)
         Me.txt_id_colaborador.Name = "txt_id_colaborador"
         Me.txt_id_colaborador.Size = New System.Drawing.Size(13, 20)
         Me.txt_id_colaborador.TabIndex = 35
@@ -427,7 +425,7 @@ Partial Class frm_Tarea
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(326, 31)
+        Me.Label3.Location = New System.Drawing.Point(149, 28)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(64, 13)
         Me.Label3.TabIndex = 34
@@ -505,14 +503,13 @@ Partial Class frm_Tarea
         Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo18)
         Me.GroupBox1.Controls.Add(Me.txtNumero_Orden_Trabajo3)
         Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo16)
-        Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo8)
         Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo14)
         Me.GroupBox1.Controls.Add(Me.txtNumero_Orden_Trabajo2)
         Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo12)
         Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo6)
         Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo10)
         Me.GroupBox1.Controls.Add(Me.txtNumero_Orden_Trabajo1)
-        Me.GroupBox1.Controls.Add(Me.TextBox13)
+        Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo8)
         Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo4)
         Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo7)
         Me.GroupBox1.Controls.Add(Me.Label36)
@@ -656,12 +653,102 @@ Partial Class frm_Tarea
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.txt_detalle_tarea1)
         Me.GroupBox1.Controls.Add(Me.Label10)
-        Me.GroupBox1.Location = New System.Drawing.Point(40, 107)
+        Me.GroupBox1.Location = New System.Drawing.Point(40, 76)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(975, 581)
         Me.GroupBox1.TabIndex = 44
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Tareas"
+        '
+        'btnBuscar_Numero_Orden20
+        '
+        Me.btnBuscar_Numero_Orden20.Location = New System.Drawing.Point(897, 542)
+        Me.btnBuscar_Numero_Orden20.Name = "btnBuscar_Numero_Orden20"
+        Me.btnBuscar_Numero_Orden20.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden20.TabIndex = 47
+        Me.btnBuscar_Numero_Orden20.Text = "..."
+        Me.btnBuscar_Numero_Orden20.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden19
+        '
+        Me.btnBuscar_Numero_Orden19.Location = New System.Drawing.Point(897, 516)
+        Me.btnBuscar_Numero_Orden19.Name = "btnBuscar_Numero_Orden19"
+        Me.btnBuscar_Numero_Orden19.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden19.TabIndex = 47
+        Me.btnBuscar_Numero_Orden19.Text = "..."
+        Me.btnBuscar_Numero_Orden19.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden17
+        '
+        Me.btnBuscar_Numero_Orden17.Location = New System.Drawing.Point(897, 464)
+        Me.btnBuscar_Numero_Orden17.Name = "btnBuscar_Numero_Orden17"
+        Me.btnBuscar_Numero_Orden17.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden17.TabIndex = 47
+        Me.btnBuscar_Numero_Orden17.Text = "..."
+        Me.btnBuscar_Numero_Orden17.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden15
+        '
+        Me.btnBuscar_Numero_Orden15.Location = New System.Drawing.Point(897, 409)
+        Me.btnBuscar_Numero_Orden15.Name = "btnBuscar_Numero_Orden15"
+        Me.btnBuscar_Numero_Orden15.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden15.TabIndex = 47
+        Me.btnBuscar_Numero_Orden15.Text = "..."
+        Me.btnBuscar_Numero_Orden15.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden13
+        '
+        Me.btnBuscar_Numero_Orden13.Location = New System.Drawing.Point(897, 357)
+        Me.btnBuscar_Numero_Orden13.Name = "btnBuscar_Numero_Orden13"
+        Me.btnBuscar_Numero_Orden13.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden13.TabIndex = 47
+        Me.btnBuscar_Numero_Orden13.Text = "..."
+        Me.btnBuscar_Numero_Orden13.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden11
+        '
+        Me.btnBuscar_Numero_Orden11.Location = New System.Drawing.Point(897, 304)
+        Me.btnBuscar_Numero_Orden11.Name = "btnBuscar_Numero_Orden11"
+        Me.btnBuscar_Numero_Orden11.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden11.TabIndex = 47
+        Me.btnBuscar_Numero_Orden11.Text = "..."
+        Me.btnBuscar_Numero_Orden11.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden9
+        '
+        Me.btnBuscar_Numero_Orden9.Location = New System.Drawing.Point(897, 252)
+        Me.btnBuscar_Numero_Orden9.Name = "btnBuscar_Numero_Orden9"
+        Me.btnBuscar_Numero_Orden9.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden9.TabIndex = 47
+        Me.btnBuscar_Numero_Orden9.Text = "..."
+        Me.btnBuscar_Numero_Orden9.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden8
+        '
+        Me.btnBuscar_Numero_Orden8.Location = New System.Drawing.Point(897, 226)
+        Me.btnBuscar_Numero_Orden8.Name = "btnBuscar_Numero_Orden8"
+        Me.btnBuscar_Numero_Orden8.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden8.TabIndex = 47
+        Me.btnBuscar_Numero_Orden8.Text = "..."
+        Me.btnBuscar_Numero_Orden8.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden6
+        '
+        Me.btnBuscar_Numero_Orden6.Location = New System.Drawing.Point(897, 174)
+        Me.btnBuscar_Numero_Orden6.Name = "btnBuscar_Numero_Orden6"
+        Me.btnBuscar_Numero_Orden6.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden6.TabIndex = 47
+        Me.btnBuscar_Numero_Orden6.Text = "..."
+        Me.btnBuscar_Numero_Orden6.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden4
+        '
+        Me.btnBuscar_Numero_Orden4.Location = New System.Drawing.Point(897, 121)
+        Me.btnBuscar_Numero_Orden4.Name = "btnBuscar_Numero_Orden4"
+        Me.btnBuscar_Numero_Orden4.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden4.TabIndex = 47
+        Me.btnBuscar_Numero_Orden4.Text = "..."
+        Me.btnBuscar_Numero_Orden4.UseVisualStyleBackColor = True
         '
         'btnBuscar_Numero_Orden2
         '
@@ -671,6 +758,87 @@ Partial Class frm_Tarea
         Me.btnBuscar_Numero_Orden2.TabIndex = 47
         Me.btnBuscar_Numero_Orden2.Text = "..."
         Me.btnBuscar_Numero_Orden2.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden18
+        '
+        Me.btnBuscar_Numero_Orden18.Location = New System.Drawing.Point(897, 490)
+        Me.btnBuscar_Numero_Orden18.Name = "btnBuscar_Numero_Orden18"
+        Me.btnBuscar_Numero_Orden18.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden18.TabIndex = 47
+        Me.btnBuscar_Numero_Orden18.Text = "..."
+        Me.btnBuscar_Numero_Orden18.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden16
+        '
+        Me.btnBuscar_Numero_Orden16.Location = New System.Drawing.Point(897, 438)
+        Me.btnBuscar_Numero_Orden16.Name = "btnBuscar_Numero_Orden16"
+        Me.btnBuscar_Numero_Orden16.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden16.TabIndex = 47
+        Me.btnBuscar_Numero_Orden16.Text = "..."
+        Me.btnBuscar_Numero_Orden16.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden14
+        '
+        Me.btnBuscar_Numero_Orden14.Location = New System.Drawing.Point(897, 383)
+        Me.btnBuscar_Numero_Orden14.Name = "btnBuscar_Numero_Orden14"
+        Me.btnBuscar_Numero_Orden14.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden14.TabIndex = 47
+        Me.btnBuscar_Numero_Orden14.Text = "..."
+        Me.btnBuscar_Numero_Orden14.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden12
+        '
+        Me.btnBuscar_Numero_Orden12.Location = New System.Drawing.Point(897, 331)
+        Me.btnBuscar_Numero_Orden12.Name = "btnBuscar_Numero_Orden12"
+        Me.btnBuscar_Numero_Orden12.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden12.TabIndex = 47
+        Me.btnBuscar_Numero_Orden12.Text = "..."
+        Me.btnBuscar_Numero_Orden12.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden10
+        '
+        Me.btnBuscar_Numero_Orden10.Location = New System.Drawing.Point(897, 278)
+        Me.btnBuscar_Numero_Orden10.Name = "btnBuscar_Numero_Orden10"
+        Me.btnBuscar_Numero_Orden10.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden10.TabIndex = 47
+        Me.btnBuscar_Numero_Orden10.Text = "..."
+        Me.btnBuscar_Numero_Orden10.UseVisualStyleBackColor = True
+        '
+        'Button10
+        '
+        Me.Button10.Location = New System.Drawing.Point(897, 226)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(54, 23)
+        Me.Button10.TabIndex = 47
+        Me.Button10.Text = "..."
+        Me.Button10.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden7
+        '
+        Me.btnBuscar_Numero_Orden7.Location = New System.Drawing.Point(897, 200)
+        Me.btnBuscar_Numero_Orden7.Name = "btnBuscar_Numero_Orden7"
+        Me.btnBuscar_Numero_Orden7.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden7.TabIndex = 47
+        Me.btnBuscar_Numero_Orden7.Text = "..."
+        Me.btnBuscar_Numero_Orden7.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden5
+        '
+        Me.btnBuscar_Numero_Orden5.Location = New System.Drawing.Point(897, 148)
+        Me.btnBuscar_Numero_Orden5.Name = "btnBuscar_Numero_Orden5"
+        Me.btnBuscar_Numero_Orden5.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden5.TabIndex = 47
+        Me.btnBuscar_Numero_Orden5.Text = "..."
+        Me.btnBuscar_Numero_Orden5.UseVisualStyleBackColor = True
+        '
+        'btnBuscar_Numero_Orden3
+        '
+        Me.btnBuscar_Numero_Orden3.Location = New System.Drawing.Point(897, 95)
+        Me.btnBuscar_Numero_Orden3.Name = "btnBuscar_Numero_Orden3"
+        Me.btnBuscar_Numero_Orden3.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Numero_Orden3.TabIndex = 47
+        Me.btnBuscar_Numero_Orden3.Text = "..."
+        Me.btnBuscar_Numero_Orden3.UseVisualStyleBackColor = True
         '
         'btnBuscar_Numero_Orden1
         '
@@ -725,12 +893,257 @@ Partial Class frm_Tarea
         Me.Label29.TabIndex = 167
         Me.Label29.Text = "18"
         '
+        'txtNumero_Orden_Trabajo20
+        '
+        Me.txtNumero_Orden_Trabajo20.Location = New System.Drawing.Point(768, 544)
+        Me.txtNumero_Orden_Trabajo20.Name = "txtNumero_Orden_Trabajo20"
+        Me.txtNumero_Orden_Trabajo20.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo20.TabIndex = 40
+        '
+        'txtNumero_Orden_Trabajo19
+        '
+        Me.txtNumero_Orden_Trabajo19.Location = New System.Drawing.Point(768, 518)
+        Me.txtNumero_Orden_Trabajo19.Name = "txtNumero_Orden_Trabajo19"
+        Me.txtNumero_Orden_Trabajo19.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo19.TabIndex = 40
+        '
+        'txtNumero_Orden_Trabajo18
+        '
+        Me.txtNumero_Orden_Trabajo18.Location = New System.Drawing.Point(768, 492)
+        Me.txtNumero_Orden_Trabajo18.Name = "txtNumero_Orden_Trabajo18"
+        Me.txtNumero_Orden_Trabajo18.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo18.TabIndex = 40
+        '
+        'txtNumero_Orden_Trabajo17
+        '
+        Me.txtNumero_Orden_Trabajo17.Location = New System.Drawing.Point(768, 466)
+        Me.txtNumero_Orden_Trabajo17.Name = "txtNumero_Orden_Trabajo17"
+        Me.txtNumero_Orden_Trabajo17.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo17.TabIndex = 40
+        '
+        'txtNumero_Orden_Trabajo16
+        '
+        Me.txtNumero_Orden_Trabajo16.Location = New System.Drawing.Point(768, 440)
+        Me.txtNumero_Orden_Trabajo16.Name = "txtNumero_Orden_Trabajo16"
+        Me.txtNumero_Orden_Trabajo16.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo16.TabIndex = 40
+        '
+        'txtNumero_Orden_Trabajo15
+        '
+        Me.txtNumero_Orden_Trabajo15.Location = New System.Drawing.Point(768, 411)
+        Me.txtNumero_Orden_Trabajo15.Name = "txtNumero_Orden_Trabajo15"
+        Me.txtNumero_Orden_Trabajo15.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo15.TabIndex = 40
+        '
+        'txtNumero_Orden_Trabajo14
+        '
+        Me.txtNumero_Orden_Trabajo14.Location = New System.Drawing.Point(768, 385)
+        Me.txtNumero_Orden_Trabajo14.Name = "txtNumero_Orden_Trabajo14"
+        Me.txtNumero_Orden_Trabajo14.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo14.TabIndex = 40
+        '
+        'txtNumero_Orden_Trabajo13
+        '
+        Me.txtNumero_Orden_Trabajo13.Location = New System.Drawing.Point(768, 359)
+        Me.txtNumero_Orden_Trabajo13.Name = "txtNumero_Orden_Trabajo13"
+        Me.txtNumero_Orden_Trabajo13.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo13.TabIndex = 40
+        '
+        'txtNumero_Orden_Trabajo12
+        '
+        Me.txtNumero_Orden_Trabajo12.Location = New System.Drawing.Point(768, 333)
+        Me.txtNumero_Orden_Trabajo12.Name = "txtNumero_Orden_Trabajo12"
+        Me.txtNumero_Orden_Trabajo12.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo12.TabIndex = 40
+        '
+        'txtNumero_Orden_Trabajo11
+        '
+        Me.txtNumero_Orden_Trabajo11.Location = New System.Drawing.Point(768, 306)
+        Me.txtNumero_Orden_Trabajo11.Name = "txtNumero_Orden_Trabajo11"
+        Me.txtNumero_Orden_Trabajo11.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo11.TabIndex = 40
+        '
+        'txtNumero_Orden_Trabajo10
+        '
+        Me.txtNumero_Orden_Trabajo10.Location = New System.Drawing.Point(768, 280)
+        Me.txtNumero_Orden_Trabajo10.Name = "txtNumero_Orden_Trabajo10"
+        Me.txtNumero_Orden_Trabajo10.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo10.TabIndex = 40
+        '
+        'txtNumero_Orden_Trabajo9
+        '
+        Me.txtNumero_Orden_Trabajo9.Location = New System.Drawing.Point(768, 254)
+        Me.txtNumero_Orden_Trabajo9.Name = "txtNumero_Orden_Trabajo9"
+        Me.txtNumero_Orden_Trabajo9.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo9.TabIndex = 40
+        '
+        'txt_id_orden_trabajo20
+        '
+        Me.txt_id_orden_trabajo20.Location = New System.Drawing.Point(957, 544)
+        Me.txt_id_orden_trabajo20.Name = "txt_id_orden_trabajo20"
+        Me.txt_id_orden_trabajo20.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo20.TabIndex = 39
+        '
+        'txtNumero_Orden_Trabajo8
+        '
+        Me.txtNumero_Orden_Trabajo8.Location = New System.Drawing.Point(768, 228)
+        Me.txtNumero_Orden_Trabajo8.Name = "txtNumero_Orden_Trabajo8"
+        Me.txtNumero_Orden_Trabajo8.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo8.TabIndex = 40
+        '
+        'txt_id_orden_trabajo19
+        '
+        Me.txt_id_orden_trabajo19.Location = New System.Drawing.Point(957, 518)
+        Me.txt_id_orden_trabajo19.Name = "txt_id_orden_trabajo19"
+        Me.txt_id_orden_trabajo19.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo19.TabIndex = 39
+        '
+        'TextBox12
+        '
+        Me.TextBox12.Location = New System.Drawing.Point(768, 228)
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.Size = New System.Drawing.Size(123, 20)
+        Me.TextBox12.TabIndex = 40
+        '
+        'txt_id_orden_trabajo17
+        '
+        Me.txt_id_orden_trabajo17.Location = New System.Drawing.Point(957, 466)
+        Me.txt_id_orden_trabajo17.Name = "txt_id_orden_trabajo17"
+        Me.txt_id_orden_trabajo17.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo17.TabIndex = 39
+        '
+        'txtNumero_Orden_Trabajo7
+        '
+        Me.txtNumero_Orden_Trabajo7.Location = New System.Drawing.Point(768, 202)
+        Me.txtNumero_Orden_Trabajo7.Name = "txtNumero_Orden_Trabajo7"
+        Me.txtNumero_Orden_Trabajo7.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo7.TabIndex = 40
+        '
+        'txt_id_orden_trabajo15
+        '
+        Me.txt_id_orden_trabajo15.Location = New System.Drawing.Point(957, 411)
+        Me.txt_id_orden_trabajo15.Name = "txt_id_orden_trabajo15"
+        Me.txt_id_orden_trabajo15.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo15.TabIndex = 39
+        '
+        'txtNumero_Orden_Trabajo6
+        '
+        Me.txtNumero_Orden_Trabajo6.Location = New System.Drawing.Point(768, 176)
+        Me.txtNumero_Orden_Trabajo6.Name = "txtNumero_Orden_Trabajo6"
+        Me.txtNumero_Orden_Trabajo6.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo6.TabIndex = 40
+        '
+        'txt_id_orden_trabajo13
+        '
+        Me.txt_id_orden_trabajo13.Location = New System.Drawing.Point(957, 359)
+        Me.txt_id_orden_trabajo13.Name = "txt_id_orden_trabajo13"
+        Me.txt_id_orden_trabajo13.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo13.TabIndex = 39
+        '
+        'txtNumero_Orden_Trabajo5
+        '
+        Me.txtNumero_Orden_Trabajo5.Location = New System.Drawing.Point(768, 150)
+        Me.txtNumero_Orden_Trabajo5.Name = "txtNumero_Orden_Trabajo5"
+        Me.txtNumero_Orden_Trabajo5.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo5.TabIndex = 40
+        '
+        'txt_id_orden_trabajo11
+        '
+        Me.txt_id_orden_trabajo11.Location = New System.Drawing.Point(957, 306)
+        Me.txt_id_orden_trabajo11.Name = "txt_id_orden_trabajo11"
+        Me.txt_id_orden_trabajo11.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo11.TabIndex = 39
+        '
+        'txtNumero_Orden_Trabajo4
+        '
+        Me.txtNumero_Orden_Trabajo4.Location = New System.Drawing.Point(768, 123)
+        Me.txtNumero_Orden_Trabajo4.Name = "txtNumero_Orden_Trabajo4"
+        Me.txtNumero_Orden_Trabajo4.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo4.TabIndex = 40
+        '
+        'txt_id_orden_trabajo9
+        '
+        Me.txt_id_orden_trabajo9.Location = New System.Drawing.Point(957, 254)
+        Me.txt_id_orden_trabajo9.Name = "txt_id_orden_trabajo9"
+        Me.txt_id_orden_trabajo9.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo9.TabIndex = 39
+        '
+        'txt_id_orden_trabajo18
+        '
+        Me.txt_id_orden_trabajo18.Location = New System.Drawing.Point(957, 492)
+        Me.txt_id_orden_trabajo18.Name = "txt_id_orden_trabajo18"
+        Me.txt_id_orden_trabajo18.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo18.TabIndex = 39
+        '
+        'txtNumero_Orden_Trabajo3
+        '
+        Me.txtNumero_Orden_Trabajo3.Location = New System.Drawing.Point(768, 97)
+        Me.txtNumero_Orden_Trabajo3.Name = "txtNumero_Orden_Trabajo3"
+        Me.txtNumero_Orden_Trabajo3.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo3.TabIndex = 40
+        '
+        'txt_id_orden_trabajo16
+        '
+        Me.txt_id_orden_trabajo16.Location = New System.Drawing.Point(957, 440)
+        Me.txt_id_orden_trabajo16.Name = "txt_id_orden_trabajo16"
+        Me.txt_id_orden_trabajo16.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo16.TabIndex = 39
+        '
+        'txt_id_orden_trabajo14
+        '
+        Me.txt_id_orden_trabajo14.Location = New System.Drawing.Point(957, 385)
+        Me.txt_id_orden_trabajo14.Name = "txt_id_orden_trabajo14"
+        Me.txt_id_orden_trabajo14.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo14.TabIndex = 39
+        '
         'txtNumero_Orden_Trabajo2
         '
         Me.txtNumero_Orden_Trabajo2.Location = New System.Drawing.Point(768, 71)
         Me.txtNumero_Orden_Trabajo2.Name = "txtNumero_Orden_Trabajo2"
         Me.txtNumero_Orden_Trabajo2.Size = New System.Drawing.Size(123, 20)
         Me.txtNumero_Orden_Trabajo2.TabIndex = 40
+        '
+        'txt_id_orden_trabajo12
+        '
+        Me.txt_id_orden_trabajo12.Location = New System.Drawing.Point(957, 333)
+        Me.txt_id_orden_trabajo12.Name = "txt_id_orden_trabajo12"
+        Me.txt_id_orden_trabajo12.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo12.TabIndex = 39
+        '
+        'txt_id_orden_trabajo6
+        '
+        Me.txt_id_orden_trabajo6.Location = New System.Drawing.Point(957, 176)
+        Me.txt_id_orden_trabajo6.Name = "txt_id_orden_trabajo6"
+        Me.txt_id_orden_trabajo6.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo6.TabIndex = 39
+        '
+        'txt_id_orden_trabajo10
+        '
+        Me.txt_id_orden_trabajo10.Location = New System.Drawing.Point(957, 280)
+        Me.txt_id_orden_trabajo10.Name = "txt_id_orden_trabajo10"
+        Me.txt_id_orden_trabajo10.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo10.TabIndex = 39
+        '
+        'txt_id_orden_trabajo8
+        '
+        Me.txt_id_orden_trabajo8.Location = New System.Drawing.Point(957, 228)
+        Me.txt_id_orden_trabajo8.Name = "txt_id_orden_trabajo8"
+        Me.txt_id_orden_trabajo8.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo8.TabIndex = 39
+        '
+        'txt_id_orden_trabajo4
+        '
+        Me.txt_id_orden_trabajo4.Location = New System.Drawing.Point(957, 123)
+        Me.txt_id_orden_trabajo4.Name = "txt_id_orden_trabajo4"
+        Me.txt_id_orden_trabajo4.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo4.TabIndex = 39
+        '
+        'txt_id_orden_trabajo7
+        '
+        Me.txt_id_orden_trabajo7.Location = New System.Drawing.Point(957, 202)
+        Me.txt_id_orden_trabajo7.Name = "txt_id_orden_trabajo7"
+        Me.txt_id_orden_trabajo7.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo7.TabIndex = 39
         '
         'Label36
         '
@@ -741,12 +1154,26 @@ Partial Class frm_Tarea
         Me.Label36.TabIndex = 38
         Me.Label36.Text = "Orden de trabajo"
         '
+        'txt_id_orden_trabajo5
+        '
+        Me.txt_id_orden_trabajo5.Location = New System.Drawing.Point(957, 150)
+        Me.txt_id_orden_trabajo5.Name = "txt_id_orden_trabajo5"
+        Me.txt_id_orden_trabajo5.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo5.TabIndex = 39
+        '
         'txt_id_orden_trabajo2
         '
         Me.txt_id_orden_trabajo2.Location = New System.Drawing.Point(957, 71)
         Me.txt_id_orden_trabajo2.Name = "txt_id_orden_trabajo2"
         Me.txt_id_orden_trabajo2.Size = New System.Drawing.Size(13, 20)
         Me.txt_id_orden_trabajo2.TabIndex = 39
+        '
+        'txt_id_orden_trabajo3
+        '
+        Me.txt_id_orden_trabajo3.Location = New System.Drawing.Point(957, 97)
+        Me.txt_id_orden_trabajo3.Name = "txt_id_orden_trabajo3"
+        Me.txt_id_orden_trabajo3.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_orden_trabajo3.TabIndex = 39
         '
         'Label30
         '
@@ -1715,7 +2142,7 @@ Partial Class frm_Tarea
         'dtpFecha
         '
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(396, 70)
+        Me.dtpFecha.Location = New System.Drawing.Point(618, 26)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(82, 20)
         Me.dtpFecha.TabIndex = 46
@@ -1723,7 +2150,7 @@ Partial Class frm_Tarea
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(353, 73)
+        Me.Label31.Location = New System.Drawing.Point(575, 29)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(37, 13)
         Me.Label31.TabIndex = 45
@@ -1732,7 +2159,7 @@ Partial Class frm_Tarea
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(542, 71)
+        Me.Label32.Location = New System.Drawing.Point(721, 29)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(70, 13)
         Me.Label32.TabIndex = 32
@@ -1741,7 +2168,7 @@ Partial Class frm_Tarea
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(50, 46)
+        Me.Label33.Location = New System.Drawing.Point(934, 30)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(45, 13)
         Me.Label33.TabIndex = 0
@@ -1752,25 +2179,16 @@ Partial Class frm_Tarea
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label34.ForeColor = System.Drawing.Color.Red
-        Me.Label34.Location = New System.Drawing.Point(37, 694)
+        Me.Label34.Location = New System.Drawing.Point(37, 660)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(105, 13)
         Me.Label34.TabIndex = 24
         Me.Label34.Text = "* (Campo Requerido)"
         '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(326, 31)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(64, 13)
-        Me.Label35.TabIndex = 34
-        Me.Label35.Text = "Colaborador"
-        '
         'Label62
         '
         Me.Label62.AutoSize = True
-        Me.Label62.Location = New System.Drawing.Point(353, 73)
+        Me.Label62.Location = New System.Drawing.Point(575, 29)
         Me.Label62.Name = "Label62"
         Me.Label62.Size = New System.Drawing.Size(37, 13)
         Me.Label62.TabIndex = 45
@@ -1781,461 +2199,23 @@ Partial Class frm_Tarea
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label37.ForeColor = System.Drawing.Color.Red
-        Me.Label37.Location = New System.Drawing.Point(628, 32)
+        Me.Label37.Location = New System.Drawing.Point(219, 29)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(11, 13)
         Me.Label37.TabIndex = 24
         Me.Label37.Text = "*"
         '
-        'txt_id_orden_trabajo3
-        '
-        Me.txt_id_orden_trabajo3.Location = New System.Drawing.Point(957, 97)
-        Me.txt_id_orden_trabajo3.Name = "txt_id_orden_trabajo3"
-        Me.txt_id_orden_trabajo3.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo3.TabIndex = 39
-        '
-        'txt_id_orden_trabajo4
-        '
-        Me.txt_id_orden_trabajo4.Location = New System.Drawing.Point(957, 123)
-        Me.txt_id_orden_trabajo4.Name = "txt_id_orden_trabajo4"
-        Me.txt_id_orden_trabajo4.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo4.TabIndex = 39
-        '
-        'txtNumero_Orden_Trabajo3
-        '
-        Me.txtNumero_Orden_Trabajo3.Location = New System.Drawing.Point(768, 97)
-        Me.txtNumero_Orden_Trabajo3.Name = "txtNumero_Orden_Trabajo3"
-        Me.txtNumero_Orden_Trabajo3.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo3.TabIndex = 40
-        '
-        'txtNumero_Orden_Trabajo4
-        '
-        Me.txtNumero_Orden_Trabajo4.Location = New System.Drawing.Point(768, 123)
-        Me.txtNumero_Orden_Trabajo4.Name = "txtNumero_Orden_Trabajo4"
-        Me.txtNumero_Orden_Trabajo4.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo4.TabIndex = 40
-        '
-        'btnBuscar_Numero_Orden3
-        '
-        Me.btnBuscar_Numero_Orden3.Location = New System.Drawing.Point(897, 95)
-        Me.btnBuscar_Numero_Orden3.Name = "btnBuscar_Numero_Orden3"
-        Me.btnBuscar_Numero_Orden3.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden3.TabIndex = 47
-        Me.btnBuscar_Numero_Orden3.Text = "..."
-        Me.btnBuscar_Numero_Orden3.UseVisualStyleBackColor = True
-        '
-        'btnBuscar_Numero_Orden4
-        '
-        Me.btnBuscar_Numero_Orden4.Location = New System.Drawing.Point(897, 121)
-        Me.btnBuscar_Numero_Orden4.Name = "btnBuscar_Numero_Orden4"
-        Me.btnBuscar_Numero_Orden4.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden4.TabIndex = 47
-        Me.btnBuscar_Numero_Orden4.Text = "..."
-        Me.btnBuscar_Numero_Orden4.UseVisualStyleBackColor = True
-        '
-        'txt_id_orden_trabajo5
-        '
-        Me.txt_id_orden_trabajo5.Location = New System.Drawing.Point(957, 150)
-        Me.txt_id_orden_trabajo5.Name = "txt_id_orden_trabajo5"
-        Me.txt_id_orden_trabajo5.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo5.TabIndex = 39
-        '
-        'txt_id_orden_trabajo6
-        '
-        Me.txt_id_orden_trabajo6.Location = New System.Drawing.Point(957, 176)
-        Me.txt_id_orden_trabajo6.Name = "txt_id_orden_trabajo6"
-        Me.txt_id_orden_trabajo6.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo6.TabIndex = 39
-        '
-        'txtNumero_Orden_Trabajo5
-        '
-        Me.txtNumero_Orden_Trabajo5.Location = New System.Drawing.Point(768, 150)
-        Me.txtNumero_Orden_Trabajo5.Name = "txtNumero_Orden_Trabajo5"
-        Me.txtNumero_Orden_Trabajo5.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo5.TabIndex = 40
-        '
-        'txtNumero_Orden_Trabajo6
-        '
-        Me.txtNumero_Orden_Trabajo6.Location = New System.Drawing.Point(768, 176)
-        Me.txtNumero_Orden_Trabajo6.Name = "txtNumero_Orden_Trabajo6"
-        Me.txtNumero_Orden_Trabajo6.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo6.TabIndex = 40
-        '
-        'btnBuscar_Numero_Orden5
-        '
-        Me.btnBuscar_Numero_Orden5.Location = New System.Drawing.Point(897, 148)
-        Me.btnBuscar_Numero_Orden5.Name = "btnBuscar_Numero_Orden5"
-        Me.btnBuscar_Numero_Orden5.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden5.TabIndex = 47
-        Me.btnBuscar_Numero_Orden5.Text = "..."
-        Me.btnBuscar_Numero_Orden5.UseVisualStyleBackColor = True
-        '
-        'btnBuscar_Numero_Orden6
-        '
-        Me.btnBuscar_Numero_Orden6.Location = New System.Drawing.Point(897, 174)
-        Me.btnBuscar_Numero_Orden6.Name = "btnBuscar_Numero_Orden6"
-        Me.btnBuscar_Numero_Orden6.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden6.TabIndex = 47
-        Me.btnBuscar_Numero_Orden6.Text = "..."
-        Me.btnBuscar_Numero_Orden6.UseVisualStyleBackColor = True
-        '
-        'txt_id_orden_trabajo7
-        '
-        Me.txt_id_orden_trabajo7.Location = New System.Drawing.Point(957, 202)
-        Me.txt_id_orden_trabajo7.Name = "txt_id_orden_trabajo7"
-        Me.txt_id_orden_trabajo7.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo7.TabIndex = 39
-        '
-        'txt_id_orden_trabajo8
-        '
-        Me.txt_id_orden_trabajo8.Location = New System.Drawing.Point(957, 228)
-        Me.txt_id_orden_trabajo8.Name = "txt_id_orden_trabajo8"
-        Me.txt_id_orden_trabajo8.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo8.TabIndex = 39
-        '
-        'txtNumero_Orden_Trabajo7
-        '
-        Me.txtNumero_Orden_Trabajo7.Location = New System.Drawing.Point(768, 202)
-        Me.txtNumero_Orden_Trabajo7.Name = "txtNumero_Orden_Trabajo7"
-        Me.txtNumero_Orden_Trabajo7.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo7.TabIndex = 40
-        '
-        'TextBox12
-        '
-        Me.TextBox12.Location = New System.Drawing.Point(768, 228)
-        Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(123, 20)
-        Me.TextBox12.TabIndex = 40
-        '
-        'btnBuscar_Numero_Orden7
-        '
-        Me.btnBuscar_Numero_Orden7.Location = New System.Drawing.Point(897, 200)
-        Me.btnBuscar_Numero_Orden7.Name = "btnBuscar_Numero_Orden7"
-        Me.btnBuscar_Numero_Orden7.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden7.TabIndex = 47
-        Me.btnBuscar_Numero_Orden7.Text = "..."
-        Me.btnBuscar_Numero_Orden7.UseVisualStyleBackColor = True
-        '
-        'btnBuscar_Numero_Orden8
-        '
-        Me.btnBuscar_Numero_Orden8.Location = New System.Drawing.Point(897, 226)
-        Me.btnBuscar_Numero_Orden8.Name = "btnBuscar_Numero_Orden8"
-        Me.btnBuscar_Numero_Orden8.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden8.TabIndex = 47
-        Me.btnBuscar_Numero_Orden8.Text = "..."
-        Me.btnBuscar_Numero_Orden8.UseVisualStyleBackColor = True
-        '
-        'TextBox13
-        '
-        Me.TextBox13.Location = New System.Drawing.Point(957, 228)
-        Me.TextBox13.Name = "TextBox13"
-        Me.TextBox13.Size = New System.Drawing.Size(13, 20)
-        Me.TextBox13.TabIndex = 39
-        '
-        'txt_id_orden_trabajo9
-        '
-        Me.txt_id_orden_trabajo9.Location = New System.Drawing.Point(957, 254)
-        Me.txt_id_orden_trabajo9.Name = "txt_id_orden_trabajo9"
-        Me.txt_id_orden_trabajo9.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo9.TabIndex = 39
-        '
-        'txtNumero_Orden_Trabajo8
-        '
-        Me.txtNumero_Orden_Trabajo8.Location = New System.Drawing.Point(768, 228)
-        Me.txtNumero_Orden_Trabajo8.Name = "txtNumero_Orden_Trabajo8"
-        Me.txtNumero_Orden_Trabajo8.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo8.TabIndex = 40
-        '
-        'txtNumero_Orden_Trabajo9
-        '
-        Me.txtNumero_Orden_Trabajo9.Location = New System.Drawing.Point(768, 254)
-        Me.txtNumero_Orden_Trabajo9.Name = "txtNumero_Orden_Trabajo9"
-        Me.txtNumero_Orden_Trabajo9.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo9.TabIndex = 40
-        '
-        'Button10
-        '
-        Me.Button10.Location = New System.Drawing.Point(897, 226)
-        Me.Button10.Name = "Button10"
-        Me.Button10.Size = New System.Drawing.Size(54, 23)
-        Me.Button10.TabIndex = 47
-        Me.Button10.Text = "..."
-        Me.Button10.UseVisualStyleBackColor = True
-        '
-        'btnBuscar_Numero_Orden9
-        '
-        Me.btnBuscar_Numero_Orden9.Location = New System.Drawing.Point(897, 252)
-        Me.btnBuscar_Numero_Orden9.Name = "btnBuscar_Numero_Orden9"
-        Me.btnBuscar_Numero_Orden9.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden9.TabIndex = 47
-        Me.btnBuscar_Numero_Orden9.Text = "..."
-        Me.btnBuscar_Numero_Orden9.UseVisualStyleBackColor = True
-        '
-        'txt_id_orden_trabajo10
-        '
-        Me.txt_id_orden_trabajo10.Location = New System.Drawing.Point(957, 280)
-        Me.txt_id_orden_trabajo10.Name = "txt_id_orden_trabajo10"
-        Me.txt_id_orden_trabajo10.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo10.TabIndex = 39
-        '
-        'txt_id_orden_trabajo11
-        '
-        Me.txt_id_orden_trabajo11.Location = New System.Drawing.Point(957, 306)
-        Me.txt_id_orden_trabajo11.Name = "txt_id_orden_trabajo11"
-        Me.txt_id_orden_trabajo11.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo11.TabIndex = 39
-        '
-        'txtNumero_Orden_Trabajo10
-        '
-        Me.txtNumero_Orden_Trabajo10.Location = New System.Drawing.Point(768, 280)
-        Me.txtNumero_Orden_Trabajo10.Name = "txtNumero_Orden_Trabajo10"
-        Me.txtNumero_Orden_Trabajo10.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo10.TabIndex = 40
-        '
-        'txtNumero_Orden_Trabajo11
-        '
-        Me.txtNumero_Orden_Trabajo11.Location = New System.Drawing.Point(768, 306)
-        Me.txtNumero_Orden_Trabajo11.Name = "txtNumero_Orden_Trabajo11"
-        Me.txtNumero_Orden_Trabajo11.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo11.TabIndex = 40
-        '
-        'btnBuscar_Numero_Orden10
-        '
-        Me.btnBuscar_Numero_Orden10.Location = New System.Drawing.Point(897, 278)
-        Me.btnBuscar_Numero_Orden10.Name = "btnBuscar_Numero_Orden10"
-        Me.btnBuscar_Numero_Orden10.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden10.TabIndex = 47
-        Me.btnBuscar_Numero_Orden10.Text = "..."
-        Me.btnBuscar_Numero_Orden10.UseVisualStyleBackColor = True
-        '
-        'btnBuscar_Numero_Orden11
-        '
-        Me.btnBuscar_Numero_Orden11.Location = New System.Drawing.Point(897, 304)
-        Me.btnBuscar_Numero_Orden11.Name = "btnBuscar_Numero_Orden11"
-        Me.btnBuscar_Numero_Orden11.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden11.TabIndex = 47
-        Me.btnBuscar_Numero_Orden11.Text = "..."
-        Me.btnBuscar_Numero_Orden11.UseVisualStyleBackColor = True
-        '
-        'txt_id_orden_trabajo12
-        '
-        Me.txt_id_orden_trabajo12.Location = New System.Drawing.Point(957, 333)
-        Me.txt_id_orden_trabajo12.Name = "txt_id_orden_trabajo12"
-        Me.txt_id_orden_trabajo12.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo12.TabIndex = 39
-        '
-        'txt_id_orden_trabajo13
-        '
-        Me.txt_id_orden_trabajo13.Location = New System.Drawing.Point(957, 359)
-        Me.txt_id_orden_trabajo13.Name = "txt_id_orden_trabajo13"
-        Me.txt_id_orden_trabajo13.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo13.TabIndex = 39
-        '
-        'txtNumero_Orden_Trabajo12
-        '
-        Me.txtNumero_Orden_Trabajo12.Location = New System.Drawing.Point(768, 333)
-        Me.txtNumero_Orden_Trabajo12.Name = "txtNumero_Orden_Trabajo12"
-        Me.txtNumero_Orden_Trabajo12.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo12.TabIndex = 40
-        '
-        'txtNumero_Orden_Trabajo13
-        '
-        Me.txtNumero_Orden_Trabajo13.Location = New System.Drawing.Point(768, 359)
-        Me.txtNumero_Orden_Trabajo13.Name = "txtNumero_Orden_Trabajo13"
-        Me.txtNumero_Orden_Trabajo13.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo13.TabIndex = 40
-        '
-        'btnBuscar_Numero_Orden12
-        '
-        Me.btnBuscar_Numero_Orden12.Location = New System.Drawing.Point(897, 331)
-        Me.btnBuscar_Numero_Orden12.Name = "btnBuscar_Numero_Orden12"
-        Me.btnBuscar_Numero_Orden12.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden12.TabIndex = 47
-        Me.btnBuscar_Numero_Orden12.Text = "..."
-        Me.btnBuscar_Numero_Orden12.UseVisualStyleBackColor = True
-        '
-        'btnBuscar_Numero_Orden13
-        '
-        Me.btnBuscar_Numero_Orden13.Location = New System.Drawing.Point(897, 357)
-        Me.btnBuscar_Numero_Orden13.Name = "btnBuscar_Numero_Orden13"
-        Me.btnBuscar_Numero_Orden13.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden13.TabIndex = 47
-        Me.btnBuscar_Numero_Orden13.Text = "..."
-        Me.btnBuscar_Numero_Orden13.UseVisualStyleBackColor = True
-        '
-        'txt_id_orden_trabajo14
-        '
-        Me.txt_id_orden_trabajo14.Location = New System.Drawing.Point(957, 385)
-        Me.txt_id_orden_trabajo14.Name = "txt_id_orden_trabajo14"
-        Me.txt_id_orden_trabajo14.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo14.TabIndex = 39
-        '
-        'txt_id_orden_trabajo15
-        '
-        Me.txt_id_orden_trabajo15.Location = New System.Drawing.Point(957, 411)
-        Me.txt_id_orden_trabajo15.Name = "txt_id_orden_trabajo15"
-        Me.txt_id_orden_trabajo15.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo15.TabIndex = 39
-        '
-        'txtNumero_Orden_Trabajo14
-        '
-        Me.txtNumero_Orden_Trabajo14.Location = New System.Drawing.Point(768, 385)
-        Me.txtNumero_Orden_Trabajo14.Name = "txtNumero_Orden_Trabajo14"
-        Me.txtNumero_Orden_Trabajo14.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo14.TabIndex = 40
-        '
-        'txtNumero_Orden_Trabajo15
-        '
-        Me.txtNumero_Orden_Trabajo15.Location = New System.Drawing.Point(768, 411)
-        Me.txtNumero_Orden_Trabajo15.Name = "txtNumero_Orden_Trabajo15"
-        Me.txtNumero_Orden_Trabajo15.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo15.TabIndex = 40
-        '
-        'btnBuscar_Numero_Orden14
-        '
-        Me.btnBuscar_Numero_Orden14.Location = New System.Drawing.Point(897, 383)
-        Me.btnBuscar_Numero_Orden14.Name = "btnBuscar_Numero_Orden14"
-        Me.btnBuscar_Numero_Orden14.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden14.TabIndex = 47
-        Me.btnBuscar_Numero_Orden14.Text = "..."
-        Me.btnBuscar_Numero_Orden14.UseVisualStyleBackColor = True
-        '
-        'btnBuscar_Numero_Orden15
-        '
-        Me.btnBuscar_Numero_Orden15.Location = New System.Drawing.Point(897, 409)
-        Me.btnBuscar_Numero_Orden15.Name = "btnBuscar_Numero_Orden15"
-        Me.btnBuscar_Numero_Orden15.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden15.TabIndex = 47
-        Me.btnBuscar_Numero_Orden15.Text = "..."
-        Me.btnBuscar_Numero_Orden15.UseVisualStyleBackColor = True
-        '
-        'txt_id_orden_trabajo16
-        '
-        Me.txt_id_orden_trabajo16.Location = New System.Drawing.Point(957, 440)
-        Me.txt_id_orden_trabajo16.Name = "txt_id_orden_trabajo16"
-        Me.txt_id_orden_trabajo16.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo16.TabIndex = 39
-        '
-        'txt_id_orden_trabajo17
-        '
-        Me.txt_id_orden_trabajo17.Location = New System.Drawing.Point(957, 466)
-        Me.txt_id_orden_trabajo17.Name = "txt_id_orden_trabajo17"
-        Me.txt_id_orden_trabajo17.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo17.TabIndex = 39
-        '
-        'txtNumero_Orden_Trabajo16
-        '
-        Me.txtNumero_Orden_Trabajo16.Location = New System.Drawing.Point(768, 440)
-        Me.txtNumero_Orden_Trabajo16.Name = "txtNumero_Orden_Trabajo16"
-        Me.txtNumero_Orden_Trabajo16.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo16.TabIndex = 40
-        '
-        'txtNumero_Orden_Trabajo17
-        '
-        Me.txtNumero_Orden_Trabajo17.Location = New System.Drawing.Point(768, 466)
-        Me.txtNumero_Orden_Trabajo17.Name = "txtNumero_Orden_Trabajo17"
-        Me.txtNumero_Orden_Trabajo17.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo17.TabIndex = 40
-        '
-        'btnBuscar_Numero_Orden16
-        '
-        Me.btnBuscar_Numero_Orden16.Location = New System.Drawing.Point(897, 438)
-        Me.btnBuscar_Numero_Orden16.Name = "btnBuscar_Numero_Orden16"
-        Me.btnBuscar_Numero_Orden16.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden16.TabIndex = 47
-        Me.btnBuscar_Numero_Orden16.Text = "..."
-        Me.btnBuscar_Numero_Orden16.UseVisualStyleBackColor = True
-        '
-        'btnBuscar_Numero_Orden17
-        '
-        Me.btnBuscar_Numero_Orden17.Location = New System.Drawing.Point(897, 464)
-        Me.btnBuscar_Numero_Orden17.Name = "btnBuscar_Numero_Orden17"
-        Me.btnBuscar_Numero_Orden17.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden17.TabIndex = 47
-        Me.btnBuscar_Numero_Orden17.Text = "..."
-        Me.btnBuscar_Numero_Orden17.UseVisualStyleBackColor = True
-        '
-        'txt_id_orden_trabajo18
-        '
-        Me.txt_id_orden_trabajo18.Location = New System.Drawing.Point(957, 492)
-        Me.txt_id_orden_trabajo18.Name = "txt_id_orden_trabajo18"
-        Me.txt_id_orden_trabajo18.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo18.TabIndex = 39
-        '
-        'txt_id_orden_trabajo19
-        '
-        Me.txt_id_orden_trabajo19.Location = New System.Drawing.Point(957, 518)
-        Me.txt_id_orden_trabajo19.Name = "txt_id_orden_trabajo19"
-        Me.txt_id_orden_trabajo19.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo19.TabIndex = 39
-        '
-        'txtNumero_Orden_Trabajo18
-        '
-        Me.txtNumero_Orden_Trabajo18.Location = New System.Drawing.Point(768, 492)
-        Me.txtNumero_Orden_Trabajo18.Name = "txtNumero_Orden_Trabajo18"
-        Me.txtNumero_Orden_Trabajo18.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo18.TabIndex = 40
-        '
-        'txtNumero_Orden_Trabajo19
-        '
-        Me.txtNumero_Orden_Trabajo19.Location = New System.Drawing.Point(768, 518)
-        Me.txtNumero_Orden_Trabajo19.Name = "txtNumero_Orden_Trabajo19"
-        Me.txtNumero_Orden_Trabajo19.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo19.TabIndex = 40
-        '
-        'btnBuscar_Numero_Orden18
-        '
-        Me.btnBuscar_Numero_Orden18.Location = New System.Drawing.Point(897, 490)
-        Me.btnBuscar_Numero_Orden18.Name = "btnBuscar_Numero_Orden18"
-        Me.btnBuscar_Numero_Orden18.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden18.TabIndex = 47
-        Me.btnBuscar_Numero_Orden18.Text = "..."
-        Me.btnBuscar_Numero_Orden18.UseVisualStyleBackColor = True
-        '
-        'btnBuscar_Numero_Orden19
-        '
-        Me.btnBuscar_Numero_Orden19.Location = New System.Drawing.Point(897, 516)
-        Me.btnBuscar_Numero_Orden19.Name = "btnBuscar_Numero_Orden19"
-        Me.btnBuscar_Numero_Orden19.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden19.TabIndex = 47
-        Me.btnBuscar_Numero_Orden19.Text = "..."
-        Me.btnBuscar_Numero_Orden19.UseVisualStyleBackColor = True
-        '
-        'txt_id_orden_trabajo20
-        '
-        Me.txt_id_orden_trabajo20.Location = New System.Drawing.Point(957, 544)
-        Me.txt_id_orden_trabajo20.Name = "txt_id_orden_trabajo20"
-        Me.txt_id_orden_trabajo20.Size = New System.Drawing.Size(13, 20)
-        Me.txt_id_orden_trabajo20.TabIndex = 39
-        '
-        'txtNumero_Orden_Trabajo20
-        '
-        Me.txtNumero_Orden_Trabajo20.Location = New System.Drawing.Point(768, 544)
-        Me.txtNumero_Orden_Trabajo20.Name = "txtNumero_Orden_Trabajo20"
-        Me.txtNumero_Orden_Trabajo20.Size = New System.Drawing.Size(123, 20)
-        Me.txtNumero_Orden_Trabajo20.TabIndex = 40
-        '
-        'btnBuscar_Numero_Orden20
-        '
-        Me.btnBuscar_Numero_Orden20.Location = New System.Drawing.Point(897, 542)
-        Me.btnBuscar_Numero_Orden20.Name = "btnBuscar_Numero_Orden20"
-        Me.btnBuscar_Numero_Orden20.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden20.TabIndex = 47
-        Me.btnBuscar_Numero_Orden20.Text = "..."
-        Me.btnBuscar_Numero_Orden20.UseVisualStyleBackColor = True
-        '
         'frm_Tarea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1062, 745)
+        Me.ClientSize = New System.Drawing.Size(1048, 717)
         Me.Controls.Add(Me.dtpFecha)
         Me.Controls.Add(Me.Label62)
         Me.Controls.Add(Me.Label31)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnBuscar_Colaborador)
         Me.Controls.Add(Me.txt_nombre_colaborador)
-        Me.Controls.Add(Me.Label35)
         Me.Controls.Add(Me.txt_id_colaborador)
         Me.Controls.Add(Me.Label34)
         Me.Controls.Add(Me.Label3)
@@ -2418,7 +2398,6 @@ Partial Class frm_Tarea
     Friend WithEvents Label32 As System.Windows.Forms.Label
     Friend WithEvents Label33 As System.Windows.Forms.Label
     Friend WithEvents Label34 As System.Windows.Forms.Label
-    Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents Label36 As System.Windows.Forms.Label
     Friend WithEvents Label62 As System.Windows.Forms.Label
     Friend WithEvents btnBuscar_Numero_Orden1 As System.Windows.Forms.Button
@@ -2473,12 +2452,11 @@ Partial Class frm_Tarea
     Friend WithEvents txt_id_orden_trabajo18 As System.Windows.Forms.TextBox
     Friend WithEvents txtNumero_Orden_Trabajo3 As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_orden_trabajo16 As System.Windows.Forms.TextBox
-    Friend WithEvents txt_id_orden_trabajo8 As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_orden_trabajo14 As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_orden_trabajo12 As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_orden_trabajo6 As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_orden_trabajo10 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
+    Friend WithEvents txt_id_orden_trabajo8 As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_orden_trabajo4 As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_orden_trabajo7 As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_orden_trabajo5 As System.Windows.Forms.TextBox

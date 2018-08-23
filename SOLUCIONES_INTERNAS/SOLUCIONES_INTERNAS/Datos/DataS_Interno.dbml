@@ -97,7 +97,7 @@
       <Column Name="TAR_observaciones" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
       <Column Name="TAR_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="COLABORADOR_TAREA" Member="COLABORADOR" ThisKey="COL_id_colaborador" OtherKey="COL_id_colaborador" Type="COLABORADOR" IsForeignKey="true" />
-      <Association Name="ORDEN_TRABAJO_TAREA" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" />
+      <Association Name="ORDEN_TRABAJO_TAREA" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.USUARIO" Member="USUARIO">

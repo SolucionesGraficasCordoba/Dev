@@ -3,8 +3,10 @@
     Dim datavistas As New DataS_Interno_Vistas
 
     Public vble_id_colaborador As Integer 'Guarda el id de un personal
+
     ' Dim vble_colaborador As Integer 'Guarda el id de un horario
     Dim vble_colaborador, vble_fecha As String
+
 
     Private Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -137,6 +139,7 @@
     End Sub
 
     'BOTON MODIFICAR (CARGA LOS DATOS EN CADA UNO DE LOS CONTROLES)
+
     Private Sub btnModificar_Tarea_Click(sender As System.Object, e As System.EventArgs) Handles btnModificar_Tarea.Click
         If Me.dgvTarea_x_Colaborador.SelectedRows.Count > 0 Then
             frm_Actualizar_Tarea.txt_id_tarea.Text = Me.dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
