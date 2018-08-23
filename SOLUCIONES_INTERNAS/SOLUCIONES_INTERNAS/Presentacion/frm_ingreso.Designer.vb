@@ -61,7 +61,7 @@ Partial Class frm_ingreso
         '
         'btnIngresar
         '
-        Me.btnIngresar.Location = New System.Drawing.Point(47, 115)
+        Me.btnIngresar.Location = New System.Drawing.Point(30, 115)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.Size = New System.Drawing.Size(75, 23)
         Me.btnIngresar.TabIndex = 18
@@ -70,7 +70,7 @@ Partial Class frm_ingreso
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(137, 115)
+        Me.btnCancelar.Location = New System.Drawing.Point(120, 115)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 19
@@ -112,7 +112,7 @@ Partial Class frm_ingreso
         '
         'btnCambiarContraseña
         '
-        Me.btnCambiarContraseña.Location = New System.Drawing.Point(228, 115)
+        Me.btnCambiarContraseña.Location = New System.Drawing.Point(211, 115)
         Me.btnCambiarContraseña.Name = "btnCambiarContraseña"
         Me.btnCambiarContraseña.Size = New System.Drawing.Size(122, 23)
         Me.btnCambiarContraseña.TabIndex = 19
@@ -143,6 +143,7 @@ Partial Class frm_ingreso
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Name = "frm_ingreso"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ingreso"
         Me.ResumeLayout(False)
         Me.PerformLayout()

@@ -32,10 +32,10 @@ Partial Class frm_Listado_Tareas
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnEliminar_Tarea = New System.Windows.Forms.Button()
         Me.groupListadoDetalleTarea = New System.Windows.Forms.GroupBox()
-        Me.btnModificar_Tarea = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgvTarea_x_Colaborador = New System.Windows.Forms.DataGridView()
+        Me.btnModificar_Tarea = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.GroupListadoTareas.SuspendLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -88,7 +88,7 @@ Partial Class frm_Listado_Tareas
         '
         Me.Label6.AutoSize = True
         Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label6.Location = New System.Drawing.Point(120, 284)
+        Me.Label6.Location = New System.Drawing.Point(199, 285)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(2, 15)
         Me.Label6.TabIndex = 5
@@ -96,11 +96,11 @@ Partial Class frm_Listado_Tareas
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(27, 286)
+        Me.Label5.Location = New System.Drawing.Point(27, 285)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(82, 13)
+        Me.Label5.Size = New System.Drawing.Size(166, 13)
         Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Total de Tareas"
+        Me.Label5.Text = "Total de Colaboradores del sector"
         '
         'dgvColaboradores
         '
@@ -141,15 +141,6 @@ Partial Class frm_Listado_Tareas
         Me.groupListadoDetalleTarea.TabStop = False
         Me.groupListadoDetalleTarea.Text = "Detalle de Tareas"
         '
-        'btnModificar_Tarea
-        '
-        Me.btnModificar_Tarea.Location = New System.Drawing.Point(352, 651)
-        Me.btnModificar_Tarea.Name = "btnModificar_Tarea"
-        Me.btnModificar_Tarea.Size = New System.Drawing.Size(75, 23)
-        Me.btnModificar_Tarea.TabIndex = 31
-        Me.btnModificar_Tarea.Text = "Modificar"
-        Me.btnModificar_Tarea.UseVisualStyleBackColor = True
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -177,6 +168,15 @@ Partial Class frm_Listado_Tareas
         Me.dgvTarea_x_Colaborador.Size = New System.Drawing.Size(537, 210)
         Me.dgvTarea_x_Colaborador.TabIndex = 0
         '
+        'btnModificar_Tarea
+        '
+        Me.btnModificar_Tarea.Location = New System.Drawing.Point(352, 651)
+        Me.btnModificar_Tarea.Name = "btnModificar_Tarea"
+        Me.btnModificar_Tarea.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar_Tarea.TabIndex = 31
+        Me.btnModificar_Tarea.Text = "Modificar"
+        Me.btnModificar_Tarea.UseVisualStyleBackColor = True
+        '
         'btnCancelar
         '
         Me.btnCancelar.Location = New System.Drawing.Point(514, 651)
@@ -197,7 +197,8 @@ Partial Class frm_Listado_Tareas
         Me.Controls.Add(Me.GroupListadoTareas)
         Me.Controls.Add(Me.btnEliminar_Tarea)
         Me.Name = "frm_Listado_Tareas"
-        Me.Text = "frm_Listado_Tareas"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Listado de Tareas y Detalles"
         Me.GroupListadoTareas.ResumeLayout(False)
         Me.GroupListadoTareas.PerformLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).EndInit()

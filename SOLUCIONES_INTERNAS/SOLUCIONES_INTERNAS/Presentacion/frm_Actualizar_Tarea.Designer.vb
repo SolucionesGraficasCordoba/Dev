@@ -359,6 +359,7 @@ Partial Class frm_Actualizar_Tarea
         Me.Controls.Add(Me.btn_Actualizar_Tarea)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Actualizar_Tarea"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Actualizar Tarea"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

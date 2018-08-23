@@ -257,6 +257,7 @@ Partial Class frm_Colaborador
         Me.Controls.Add(Me.GroupListadoColaboradores)
         Me.Controls.Add(Me.GroupNuevoColaborador)
         Me.Name = "frm_Colaborador"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Colaborador"
         Me.GroupListadoColaboradores.ResumeLayout(False)
         Me.GroupListadoColaboradores.PerformLayout()

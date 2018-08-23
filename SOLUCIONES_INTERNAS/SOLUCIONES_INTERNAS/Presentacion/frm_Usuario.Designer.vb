@@ -352,6 +352,7 @@ Partial Class frm_Usuario
         Me.Controls.Add(Me.GroupListadoUsuarios)
         Me.Controls.Add(Me.GroupNuevoUsuario)
         Me.Name = "frm_Usuario"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Usuario"
         Me.GroupListadoUsuarios.ResumeLayout(False)
         Me.GroupListadoUsuarios.PerformLayout()

@@ -67,14 +67,8 @@ Partial Class frm_Principal
         Me.OrdenTrabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevaOrdenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModificarOrdenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OrdenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DetalleDeOrdenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarOrdenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OrdenToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DetalleDeOrdenToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OrdenToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.DetalleDeOrdenToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.LBL_MENU_PERFIL = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -348,65 +342,26 @@ Partial Class frm_Principal
         'NuevaOrdenToolStripMenuItem
         '
         Me.NuevaOrdenToolStripMenuItem.Name = "NuevaOrdenToolStripMenuItem"
-        Me.NuevaOrdenToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.NuevaOrdenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevaOrdenToolStripMenuItem.Text = "Nueva Orden"
         '
         'ModificarOrdenToolStripMenuItem
         '
-        Me.ModificarOrdenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdenToolStripMenuItem, Me.DetalleDeOrdenToolStripMenuItem})
         Me.ModificarOrdenToolStripMenuItem.Name = "ModificarOrdenToolStripMenuItem"
-        Me.ModificarOrdenToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.ModificarOrdenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ModificarOrdenToolStripMenuItem.Text = "Modificar"
-        '
-        'OrdenToolStripMenuItem
-        '
-        Me.OrdenToolStripMenuItem.Name = "OrdenToolStripMenuItem"
-        Me.OrdenToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
-        Me.OrdenToolStripMenuItem.Text = "Orden"
-        '
-        'DetalleDeOrdenToolStripMenuItem
-        '
-        Me.DetalleDeOrdenToolStripMenuItem.Name = "DetalleDeOrdenToolStripMenuItem"
-        Me.DetalleDeOrdenToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
-        Me.DetalleDeOrdenToolStripMenuItem.Text = "Detalle de Orden"
         '
         'EliminarOrdenToolStripMenuItem
         '
-        Me.EliminarOrdenToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdenToolStripMenuItem1, Me.DetalleDeOrdenToolStripMenuItem1})
         Me.EliminarOrdenToolStripMenuItem.Name = "EliminarOrdenToolStripMenuItem"
-        Me.EliminarOrdenToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.EliminarOrdenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EliminarOrdenToolStripMenuItem.Text = "Eliminar"
-        '
-        'OrdenToolStripMenuItem1
-        '
-        Me.OrdenToolStripMenuItem1.Name = "OrdenToolStripMenuItem1"
-        Me.OrdenToolStripMenuItem1.Size = New System.Drawing.Size(162, 22)
-        Me.OrdenToolStripMenuItem1.Text = "Orden"
-        '
-        'DetalleDeOrdenToolStripMenuItem1
-        '
-        Me.DetalleDeOrdenToolStripMenuItem1.Name = "DetalleDeOrdenToolStripMenuItem1"
-        Me.DetalleDeOrdenToolStripMenuItem1.Size = New System.Drawing.Size(162, 22)
-        Me.DetalleDeOrdenToolStripMenuItem1.Text = "Detalle de Orden"
         '
         'ConsultarToolStripMenuItem
         '
-        Me.ConsultarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdenToolStripMenuItem2, Me.DetalleDeOrdenToolStripMenuItem2})
         Me.ConsultarToolStripMenuItem.Name = "ConsultarToolStripMenuItem"
-        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ConsultarToolStripMenuItem.Text = "Consultar"
-        '
-        'OrdenToolStripMenuItem2
-        '
-        Me.OrdenToolStripMenuItem2.Name = "OrdenToolStripMenuItem2"
-        Me.OrdenToolStripMenuItem2.Size = New System.Drawing.Size(162, 22)
-        Me.OrdenToolStripMenuItem2.Text = "Orden"
-        '
-        'DetalleDeOrdenToolStripMenuItem2
-        '
-        Me.DetalleDeOrdenToolStripMenuItem2.Name = "DetalleDeOrdenToolStripMenuItem2"
-        Me.DetalleDeOrdenToolStripMenuItem2.Size = New System.Drawing.Size(162, 22)
-        Me.DetalleDeOrdenToolStripMenuItem2.Text = "Detalle de Orden"
         '
         'LBL_MENU_PERFIL
         '
@@ -454,7 +409,8 @@ Partial Class frm_Principal
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.LBL_MENU_USU)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(0, 723)
+        Me.GroupBox1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.GroupBox1.Location = New System.Drawing.Point(0, 724)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(1360, 38)
         Me.GroupBox1.TabIndex = 13
@@ -471,6 +427,7 @@ Partial Class frm_Principal
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "frm_Principal"
         Me.Text = "Menú Principal"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -528,13 +485,7 @@ Partial Class frm_Principal
     Friend WithEvents OrdenTrabajoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents NuevaOrdenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ModificarOrdenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents OrdenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DetalleDeOrdenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EliminarOrdenToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents OrdenToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DetalleDeOrdenToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents OrdenToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents DetalleDeOrdenToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
 
 End Class

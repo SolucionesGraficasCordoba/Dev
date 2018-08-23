@@ -276,6 +276,7 @@ Partial Class frm_Vendedor
         Me.Controls.Add(Me.GroupListadoClientes)
         Me.Controls.Add(Me.GroupNuevoVendedor)
         Me.Name = "frm_Vendedor"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Vendedor"
         Me.GroupListadoClientes.ResumeLayout(False)
         Me.GroupListadoClientes.PerformLayout()

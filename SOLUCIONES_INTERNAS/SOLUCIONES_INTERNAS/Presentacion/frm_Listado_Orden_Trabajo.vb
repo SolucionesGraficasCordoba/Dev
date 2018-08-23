@@ -43,7 +43,7 @@
         dgvLista_Orden_Trabajo.Columns.Add("VEN_nombre_ven", "Vendedor")
         dgvLista_Orden_Trabajo.Columns.Add("ORT_observaciones_ot", "Observaciones")
         dgvLista_Orden_Trabajo.Columns.Add("ORT_mejoras_ot", "Mejoras")
-        dgvLista_Orden_Trabajo.Columns.Add("Expr1", "id_orden_trabajo")
+        ' dgvLista_Orden_Trabajo.Columns.Add("Expr1", "id_orden_trabajo")
         
         dgvLista_Orden_Trabajo.Columns(0).DataPropertyName = "ORT_id_orden_trabajo"
         dgvLista_Orden_Trabajo.Columns(0).Visible = False
@@ -58,7 +58,7 @@
         dgvLista_Orden_Trabajo.Columns(7).DataPropertyName = "VEN_nombre_ven"
         dgvLista_Orden_Trabajo.Columns(8).DataPropertyName = "ORT_observaciones_ot"
         dgvLista_Orden_Trabajo.Columns(9).DataPropertyName = "ORT_mejoras_ot"
-        dgvLista_Orden_Trabajo.Columns(10).DataPropertyName = "Expr1"
+        ' dgvLista_Orden_Trabajo.Columns(10).DataPropertyName = "Expr1"
     End Sub
 
     Private Sub dgvLista_Orden_Trabajo_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Orden_Trabajo.CellClick
@@ -81,8 +81,8 @@
                            o.DOT_tamaño_dot, o.DOT_tipo_impresion_dot, o.DOT_papel_soporte_1, o.DOT_papel_soporte_2, o.DOT_papel_soporte_3, _
                            o.DOT_gramaje_soporte_1, o.DOT_gramaje_soporte_2, o.DOT_gramaje_soporte_3, _
                            o.DOT_cantidad_soporte_1, o.DOT_cantidad_soporte_2, o.DOT_cantidad_soporte_3, _
-                           o.DOT_formato_soporte_1, o.DOT_formato_soporte_2, o.DOT_formato_soporte_3, o.Expr1
-                           Where Expr1 = vble_id_orden)
+                           o.DOT_formato_soporte_1, o.DOT_formato_soporte_2, o.DOT_formato_soporte_3
+                           Where ORT_id_orden_trabajo = vble_id_orden)
         mostrargrillaobligaciones(datagriddetalleorden)
         ' dgvLista_Orden_Trabajo.ClearSelection()
      
@@ -107,32 +107,39 @@
         dgv_detalle_orden.Columns.Add("DOT_cantidad_dot", "Cantidad")
         dgv_detalle_orden.Columns.Add("DOT_tamaño_dot", "Tamaño")
         dgv_detalle_orden.Columns.Add("DOT_tipo_impresion_dot", "Tipo de impresión")
-        dgv_detalle_orden.Columns.Add("DOT_papel_soporte_1", "Papel soporte 1")
-        dgv_detalle_orden.Columns.Add("DOT_papel_soporte_2", "Papel soporte 2")
-        dgv_detalle_orden.Columns.Add("DOT_papel_soporte_3", "Papel soporte 3")
-        dgv_detalle_orden.Columns.Add("DOT_gramaje_soporte_1", "Gramaje soporte 1")
-        dgv_detalle_orden.Columns.Add("DOT_gramaje_soporte_2", "Gramaje soporte 2")
-        dgv_detalle_orden.Columns.Add("DOT_gramaje_soporte_3", "Gramaje soporte 3")
-        dgv_detalle_orden.Columns.Add("DOT_cantidad_soporte_1", "Cantidad soporte 1")
-        dgv_detalle_orden.Columns.Add("DOT_cantidad_soporte_2", "Cantidad soporte 2")
-        dgv_detalle_orden.Columns.Add("DOT_cantidad_soporte_3", "Cantidad soporte 3")
-        dgv_detalle_orden.Columns.Add("DOT_formato_soporte_1", "Formato soporte 1")
-        dgv_detalle_orden.Columns.Add("DOT_formato_soporte_2", "Formato soporte 2")
+
+        dgv_detalle_orden.Columns.Add("DOT_papel_soporte_1", "Soporte 1")
+        dgv_detalle_orden.Columns.Add("DOT_gramaje_soporte_1", "Gramaje 1")
+        dgv_detalle_orden.Columns.Add("DOT_cantidad_soporte_1", "Cantidad 1")
+        dgv_detalle_orden.Columns.Add("DOT_formato_soporte_1", "Formato 1")
+
+        dgv_detalle_orden.Columns.Add("DOT_papel_soporte_2", "Soporte 2")
+        dgv_detalle_orden.Columns.Add("DOT_gramaje_soporte_2", "Gramaje 2")
+        dgv_detalle_orden.Columns.Add("DOT_cantidad_soporte_2", "Cantidad 2")
+        dgv_detalle_orden.Columns.Add("DOT_formato_soporte_2", "Formato 2")
+
+        dgv_detalle_orden.Columns.Add("DOT_papel_soporte_3", "Soporte 3")
+        dgv_detalle_orden.Columns.Add("DOT_gramaje_soporte_3", "Gramaje 3")
+        dgv_detalle_orden.Columns.Add("DOT_cantidad_soporte_3", "Cantidad 3")
         dgv_detalle_orden.Columns.Add("DOT_formato_soporte_3", "Formato soporte 3")
-        dgv_detalle_orden.Columns.Add("Expr1", "expr1")
 
         dgv_detalle_orden.Columns(0).DataPropertyName = "ORT_id_orden_trabajo"
         dgv_detalle_orden.Columns(0).Visible = False
         dgv_detalle_orden.Columns(1).DataPropertyName = "ORT_tipo_ot"
+        dgv_detalle_orden.Columns(1).Visible = False
         dgv_detalle_orden.Columns(2).DataPropertyName = "ORT_numero_ot"
+        dgv_detalle_orden.Columns(2).Visible = False
         dgv_detalle_orden.Columns(3).DataPropertyName = "ORT_observaciones_ot"
         dgv_detalle_orden.Columns(3).Width = 200
+        dgv_detalle_orden.Columns(3).Visible = False
         dgv_detalle_orden.Columns(4).DataPropertyName = "VEN_id_vendedor"
         dgv_detalle_orden.Columns(4).Visible = False
         dgv_detalle_orden.Columns(5).DataPropertyName = "VEN_nombre_ven"
+        dgv_detalle_orden.Columns(5).Visible = False
         dgv_detalle_orden.Columns(6).DataPropertyName = "CLI_id_cliente"
         dgv_detalle_orden.Columns(6).Visible = False
         dgv_detalle_orden.Columns(7).DataPropertyName = "CLI_razon_social"
+        dgv_detalle_orden.Columns(7).Visible = False
         dgv_detalle_orden.Columns(8).DataPropertyName = "PIE_id_pieza"
         dgv_detalle_orden.Columns(8).Visible = False
         dgv_detalle_orden.Columns(9).DataPropertyName = "PIE_nombre_pie"
@@ -142,30 +149,56 @@
         dgv_detalle_orden.Columns(12).DataPropertyName = "DOT_tamaño_dot"
         dgv_detalle_orden.Columns(13).DataPropertyName = "DOT_tipo_impresion_dot"
         dgv_detalle_orden.Columns(14).DataPropertyName = "DOT_papel_soporte_1"
-        dgv_detalle_orden.Columns(15).DataPropertyName = "DOT_papel_soporte_2"
-        dgv_detalle_orden.Columns(16).DataPropertyName = "DOT_papel_soporte_3"
-        dgv_detalle_orden.Columns(17).DataPropertyName = "DOT_gramaje_soporte_1"
-        dgv_detalle_orden.Columns(18).DataPropertyName = "DOT_gramaje_soporte_2"
-        dgv_detalle_orden.Columns(19).DataPropertyName = "DOT_gramaje_soporte_3"
-        dgv_detalle_orden.Columns(20).DataPropertyName = "DOT_cantidad_soporte_1"
-        dgv_detalle_orden.Columns(21).DataPropertyName = "DOT_cantidad_soporte_2"
-        dgv_detalle_orden.Columns(22).DataPropertyName = "DOT_cantidad_soporte_3"
-        dgv_detalle_orden.Columns(23).DataPropertyName = "DOT_formato_soporte_1"
-        dgv_detalle_orden.Columns(24).DataPropertyName = "DOT_formato_soporte_2"
+        dgv_detalle_orden.Columns(15).DataPropertyName = "DOT_gramaje_soporte_1"
+        dgv_detalle_orden.Columns(16).DataPropertyName = "DOT_cantidad_soporte_1"
+        dgv_detalle_orden.Columns(17).DataPropertyName = "DOT_formato_soporte_1"
+
+        dgv_detalle_orden.Columns(18).DataPropertyName = "DOT_papel_soporte_2"
+        dgv_detalle_orden.Columns(19).DataPropertyName = "DOT_gramaje_soporte_2"
+        dgv_detalle_orden.Columns(20).DataPropertyName = "DOT_cantidad_soporte_2"
+        dgv_detalle_orden.Columns(21).DataPropertyName = "DOT_formato_soporte_2"
+
+        dgv_detalle_orden.Columns(22).DataPropertyName = "DOT_papel_soporte_3"
+        dgv_detalle_orden.Columns(23).DataPropertyName = "DOT_gramaje_soporte_3"
+        dgv_detalle_orden.Columns(24).DataPropertyName = "DOT_cantidad_soporte_3"
         dgv_detalle_orden.Columns(25).DataPropertyName = "DOT_formato_soporte_3"
-        dgv_detalle_orden.Columns(26).DataPropertyName = "Expr1"
-        dgv_detalle_orden.Columns(26).Visible = False
 
         dgv_detalle_orden.DataSource = datasource
         dgv_detalle_orden.ClearSelection()
     End Sub
 
-    
+    'FUNCIONA BIEN (COMPLETAR CON LOS OTROS DOS REGISTROS)
     Private Sub btnModificar_Orden_Click(sender As System.Object, e As System.EventArgs) Handles btnModificar_Orden.Click
+
+        'CARGA COMBOBOX PIEZA DETALLE 1
+        Dim combopieza1 = (From sec In datacontext.PIEZA
+                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
+                           Order By PIE_nombre_pie Ascending)
+        frm_Orden_Trabajo.cboPiezas1_Detalle1.DataSource = combopieza1
+        frm_Orden_Trabajo.cboPiezas1_Detalle1.DisplayMember = "PIE_nombre_pie"
+        frm_Orden_Trabajo.cboPiezas1_Detalle1.ValueMember = "PIE_id_pieza"
+
+        'CARGA COMBOBOX PIEZA DETALLE 2
+        Dim combopieza2 = (From sec In datacontext.PIEZA
+                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
+                           Order By PIE_nombre_pie Ascending)
+        frm_Orden_Trabajo.cboPiezas2_Detalle2.DataSource = combopieza2
+        frm_Orden_Trabajo.cboPiezas2_Detalle2.DisplayMember = "PIE_nombre_pie"
+        frm_Orden_Trabajo.cboPiezas2_Detalle2.ValueMember = "PIE_id_pieza"
+
+        'CARGA COMBOBOX PIEZA DETALLE 3
+        Dim combopieza3 = (From sec In datacontext.PIEZA
+                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
+                           Order By PIE_nombre_pie Ascending)
+        frm_Orden_Trabajo.cboPiezas3_Detalle3.DataSource = combopieza3
+        frm_Orden_Trabajo.cboPiezas3_Detalle3.DisplayMember = "PIE_nombre_pie"
+        frm_Orden_Trabajo.cboPiezas3_Detalle3.ValueMember = "PIE_id_pieza"
+
+        vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
 
         'LLENA LOS CAMPOS DE LA ORDEN
         If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
-            frm_Orden_Trabajo.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Orden_Trabajo.txt_id_orden_trabajo.Text = vble_id_orden
             frm_Orden_Trabajo.cboTipo_Orden.SelectedItem = dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.dtpFecha_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
@@ -175,70 +208,84 @@
             frm_Orden_Trabajo.txtNombre_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.txt_observaciones.Text = dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.txt_mejoras.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-            frm_Orden_Trabajo.GroupProducto1.Enabled = False
-            frm_Orden_Trabajo.GroupProducto2.Enabled = False
-            frm_Orden_Trabajo.GroupProducto3.Enabled = False
-            frm_Orden_Trabajo.btnGuardar_Orden_Trabajo.Enabled = False
-            frm_Orden_Trabajo.btnNueva_Orden_Trabajo.Enabled = False
-            'Else
-            '  MsgBox("Debe seleccionar una orden")
-            ' End If
 
-            '  If dgv_detalle_orden.SelectedRows.Count > 0 Then
-            'LLENA LOS CAMPOS DEL DETALLE DE LA ORDEN
-            'frm_Orden_Trabajo.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("Expr1", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_cantidad1_detalle1.Text = dgv_detalle_orden.Item("DOT_cantidad_dot", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_cantidad2_detalle2.Text = dgv_detalle_orden.Item("DOT_cantidad_dot", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_cantidad3_detalle3.Text = dgv_detalle_orden.Item("DOT_cantidad_dot", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboPiezas1_Detalle1.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboPiezas2_Detalle2.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboPiezas3_Detalle3.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txtTamaño1_Detalle1.Text = dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txtTamaño2_Detalle2.Text = dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txtTamaño3_Detalle3.Text = dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboTipoImpresion1_Detalle1.SelectedItem = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboTipoImpresion2_Detalle2.SelectedItem = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboTipoImpresion3_Detalle3.SelectedItem = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Papel1_Soporte1.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Papel2_Soporte1.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Papel3_Soporte1.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Papel1_Soporte2.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Papel2_Soporte2.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Papel3_Soporte2.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Papel1_Soporte3.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Papel2_Soporte3.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Papel3_Soporte3.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Gramaje1_Soporte1.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Gramaje2_Soporte1.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Gramaje3_Soporte1.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Gramaje1_Soporte2.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Gramaje2_Soporte2.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Gramaje3_Soporte2.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Gramaje1_Soporte3.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Gramaje2_Soporte3.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Gramaje3_Soporte3.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Cantidad1_Soporte1.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Cantidad2_Soporte1.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Cantidad3_Soporte1.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Cantidad1_Soporte2.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Cantidad2_Soporte2.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Cantidad3_Soporte2.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Cantidad1_Soporte3.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Cantidad2_Soporte3.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.txt_Cantidad3_Soporte3.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboFormato1_Soporte1.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboFormato2_Soporte1.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboFormato3_Soporte1.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboFormato1_Soporte2.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboFormato2_Soporte2.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboFormato3_Soporte2.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboFormato1_Soporte3.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboFormato2_Soporte3.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'frm_Orden_Trabajo.cboFormato3_Soporte3.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            ''Else
-            ' MsgBox("La orden no tiene ítems")
+            Dim datagriddetalleorden = (From o In datavistas.Vista_Detalle_Orden_Trabajo
+                               Select o.ORT_id_orden_trabajo, o.ORT_tipo_ot, o.ORT_numero_ot, o.ORT_observaciones_ot,
+                               o.VEN_id_vendedor, o.VEN_nombre_ven, o.CLI_id_cliente, o.CLI_razon_social, _
+                               o.PIE_id_pieza, o.PIE_nombre_pie, o.id_detalle_orden_trabajo, o.DOT_cantidad_dot, _
+                               o.DOT_tamaño_dot, o.DOT_tipo_impresion_dot, o.DOT_papel_soporte_1, o.DOT_papel_soporte_2, o.DOT_papel_soporte_3, _
+                               o.DOT_gramaje_soporte_1, o.DOT_gramaje_soporte_2, o.DOT_gramaje_soporte_3, _
+                               o.DOT_cantidad_soporte_1, o.DOT_cantidad_soporte_2, o.DOT_cantidad_soporte_3, _
+                               o.DOT_formato_soporte_1, o.DOT_formato_soporte_2, o.DOT_formato_soporte_3
+                               Where ORT_id_orden_trabajo = vble_id_orden).ToList(0)
+
+            'LLENA LOS CAMPOS DEL PRODUCTO 1
+            frm_Orden_Trabajo.txt_cantidad1_detalle1.Text = datagriddetalleorden.DOT_cantidad_dot.Value
+            frm_Orden_Trabajo.cboPiezas1_Detalle1.SelectedValue = CInt(datagriddetalleorden.PIE_id_pieza)
+            frm_Orden_Trabajo.txtTamaño1_Detalle1.Text = datagriddetalleorden.DOT_tamaño_dot.ToString
+            frm_Orden_Trabajo.cboTipoImpresion1_Detalle1.SelectedItem = datagriddetalleorden.DOT_tipo_impresion_dot.ToString
+
+            frm_Orden_Trabajo.txt_Papel1_Soporte1.Text = datagriddetalleorden.DOT_papel_soporte_1.ToString
+            frm_Orden_Trabajo.txt_Gramaje1_Soporte1.Text = datagriddetalleorden.DOT_gramaje_soporte_1.Value
+            frm_Orden_Trabajo.txt_Cantidad1_Soporte1.Text = datagriddetalleorden.DOT_cantidad_soporte_1.Value
+            frm_Orden_Trabajo.cboFormato1_Soporte1.SelectedItem = datagriddetalleorden.DOT_formato_soporte_1.ToString
+
+            frm_Orden_Trabajo.txt_Papel2_Soporte1.Text = datagriddetalleorden.DOT_papel_soporte_2.ToString
+            frm_Orden_Trabajo.txt_Gramaje2_Soporte1.Text = datagriddetalleorden.DOT_gramaje_soporte_2.Value
+            frm_Orden_Trabajo.txt_Cantidad2_Soporte1.Text = datagriddetalleorden.DOT_cantidad_soporte_2.Value
+            frm_Orden_Trabajo.cboFormato2_Soporte1.SelectedItem = datagriddetalleorden.DOT_formato_soporte_2.ToString
+
+            frm_Orden_Trabajo.txt_Papel3_Soporte1.Text = datagriddetalleorden.DOT_papel_soporte_3.ToString
+            frm_Orden_Trabajo.txt_Gramaje3_Soporte1.Text = datagriddetalleorden.DOT_gramaje_soporte_3.Value
+            frm_Orden_Trabajo.txt_Cantidad3_Soporte1.Text = datagriddetalleorden.DOT_cantidad_soporte_3.Value
+            frm_Orden_Trabajo.cboFormato3_Soporte1.SelectedItem = datagriddetalleorden.DOT_formato_soporte_3.ToString
+
+            'LLENA LOS CAMPOS DEL PRODUCTO 2-------------------CONTROLAR
+            frm_Orden_Trabajo.txt_cantidad2_detalle2.Text = datagriddetalleorden.DOT_cantidad_dot.Value
+            frm_Orden_Trabajo.cboPiezas2_Detalle2.SelectedValue = CInt(datagriddetalleorden.PIE_id_pieza)
+            frm_Orden_Trabajo.txtTamaño2_Detalle2.Text = datagriddetalleorden.DOT_tamaño_dot.ToString
+            frm_Orden_Trabajo.cboTipoImpresion2_Detalle2.SelectedItem = datagriddetalleorden.DOT_tipo_impresion_dot.ToString
+
+            frm_Orden_Trabajo.txt_Papel1_Soporte2.Text = datagriddetalleorden.DOT_papel_soporte_1.ToString
+            frm_Orden_Trabajo.txt_Gramaje1_Soporte2.Text = datagriddetalleorden.DOT_gramaje_soporte_1.Value
+            frm_Orden_Trabajo.txt_Cantidad1_Soporte2.Text = datagriddetalleorden.DOT_cantidad_soporte_1.Value
+            frm_Orden_Trabajo.cboFormato1_Soporte2.SelectedItem = datagriddetalleorden.DOT_formato_soporte_1.ToString
+
+            frm_Orden_Trabajo.txt_Papel2_Soporte2.Text = datagriddetalleorden.DOT_papel_soporte_2.ToString
+            frm_Orden_Trabajo.txt_Gramaje2_Soporte2.Text = datagriddetalleorden.DOT_gramaje_soporte_2.Value
+            frm_Orden_Trabajo.txt_Cantidad2_Soporte2.Text = datagriddetalleorden.DOT_cantidad_soporte_2.Value
+            frm_Orden_Trabajo.cboFormato2_Soporte2.SelectedItem = datagriddetalleorden.DOT_formato_soporte_2.ToString
+
+            frm_Orden_Trabajo.txt_Papel3_Soporte3.Text = datagriddetalleorden.DOT_papel_soporte_3.ToString
+            frm_Orden_Trabajo.txt_Gramaje3_Soporte3.Text = datagriddetalleorden.DOT_gramaje_soporte_3.Value
+            frm_Orden_Trabajo.txt_Cantidad3_Soporte3.Text = datagriddetalleorden.DOT_cantidad_soporte_3.Value
+            frm_Orden_Trabajo.cboFormato3_Soporte3.SelectedItem = datagriddetalleorden.DOT_formato_soporte_3.ToString
+
+            'LLENA LOS CAMPOS DEL PRODUCTO 3--------------------CONTROLAR
+            frm_Orden_Trabajo.txt_cantidad3_detalle3.Text = datagriddetalleorden.DOT_cantidad_dot.Value
+            frm_Orden_Trabajo.cboPiezas3_Detalle3.SelectedValue = CInt(datagriddetalleorden.PIE_id_pieza)
+            frm_Orden_Trabajo.txtTamaño3_Detalle3.Text = datagriddetalleorden.DOT_tamaño_dot.ToString
+            frm_Orden_Trabajo.cboTipoImpresion3_Detalle3.SelectedItem = datagriddetalleorden.DOT_tipo_impresion_dot.ToString
+
+            frm_Orden_Trabajo.txt_Papel1_Soporte3.Text = datagriddetalleorden.DOT_papel_soporte_1.ToString
+            frm_Orden_Trabajo.txt_Gramaje1_Soporte3.Text = datagriddetalleorden.DOT_gramaje_soporte_1.Value
+            frm_Orden_Trabajo.txt_Cantidad1_Soporte3.Text = datagriddetalleorden.DOT_cantidad_soporte_1.Value
+            frm_Orden_Trabajo.cboFormato1_Soporte3.SelectedItem = datagriddetalleorden.DOT_formato_soporte_1.ToString
+
+            frm_Orden_Trabajo.txt_Papel2_Soporte3.Text = datagriddetalleorden.DOT_papel_soporte_2.ToString
+            frm_Orden_Trabajo.txt_Gramaje2_Soporte3.Text = datagriddetalleorden.DOT_gramaje_soporte_2.Value
+            frm_Orden_Trabajo.txt_Cantidad2_Soporte3.Text = datagriddetalleorden.DOT_cantidad_soporte_2.Value
+            frm_Orden_Trabajo.cboFormato2_Soporte3.SelectedItem = datagriddetalleorden.DOT_formato_soporte_2.ToString
+
+            frm_Orden_Trabajo.txt_Papel3_Soporte3.Text = datagriddetalleorden.DOT_papel_soporte_3.ToString
+            frm_Orden_Trabajo.txt_Gramaje3_Soporte3.Text = datagriddetalleorden.DOT_gramaje_soporte_3.Value
+            frm_Orden_Trabajo.txt_Cantidad3_Soporte3.Text = datagriddetalleorden.DOT_cantidad_soporte_3.Value
+            frm_Orden_Trabajo.cboFormato3_Soporte3.SelectedItem = datagriddetalleorden.DOT_formato_soporte_3.ToString
         End If
+
         frm_Orden_Trabajo.Show()
+        frm_Orden_Trabajo.btnNueva_Orden_Trabajo.Enabled = False
+        frm_Orden_Trabajo.btnGuardar_Orden_Trabajo.Enabled = False
 
     End Sub
 
@@ -267,11 +314,11 @@
 
             Dim eliminar = (From C In datacontext.ORDEN_TRABAJO Where C.ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value)).ToList()(0)
 
-            Select Case MsgBox("Se eliminará la orden seleccionada, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar orden")
+            Select Case MsgBox("Se eliminará la orden y su detalle correspondiente, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar orden y detalle")
                 Case MsgBoxResult.Yes
                     datacontext.ORDEN_TRABAJO.DeleteOnSubmit(eliminar)
                     datacontext.SubmitChanges()
-                    MsgBox("La orden ha sido eliminada")
+                    MsgBox("La orden y su detalle han sido eliminadas")
                     cargargrilla()
             End Select
         Else
@@ -286,10 +333,32 @@
             frm_Actualizar_Tarea.txt_numero_orden.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
 
         ElseIf quienllamolistado_ot.Name = frm_Tarea.Name Then
-            frm_Tarea.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
-            frm_Tarea.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+            frm_Tarea.txt_id_orden_trabajo1.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+            frm_Tarea.txtNumero_Orden_Trabajo1.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
         End If
         Me.Close()
     End Sub
 
+    Private Sub btn_Cancelar_Click(sender As System.Object, e As System.EventArgs) Handles btn_Cancelar.Click
+        Me.Close()
+        Me.Dispose()
+    End Sub
+
+    'FUNCIONA BIEN
+    Private Sub btnEliminar_Detalle_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar_Detalle.Click
+        If dgv_detalle_orden.SelectedRows.Count > 0 Then
+
+            Dim eliminar = (From C In datacontext.DETALLE_ORDEN_TRABAJO Where C.id_detalle_orden_trabajo = CInt(dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value)).ToList()(0)
+
+            Select Case MsgBox("Se eliminará la orden seleccionada, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar detalle de la orden")
+                Case MsgBoxResult.Yes
+                    datacontext.DETALLE_ORDEN_TRABAJO.DeleteOnSubmit(eliminar)
+                    datacontext.SubmitChanges()
+                    MsgBox("El detalle de la orden ha sido eliminada")
+                    cargargrilla()
+            End Select
+        Else
+            MsgBox("Debe seleccionar un detalle")
+        End If
+    End Sub
 End Class

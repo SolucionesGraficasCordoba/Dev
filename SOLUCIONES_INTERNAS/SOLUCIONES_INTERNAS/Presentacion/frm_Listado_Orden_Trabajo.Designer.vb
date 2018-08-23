@@ -29,15 +29,16 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.txt_Buscar_orden_trabajo = New System.Windows.Forms.TextBox()
         Me.dgvLista_Orden_Trabajo = New System.Windows.Forms.DataGridView()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupDetallesOrden = New System.Windows.Forms.GroupBox()
         Me.btnModificar_Orden = New System.Windows.Forms.Button()
         Me.btnEliminar_Detalle = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgv_detalle_orden = New System.Windows.Forms.DataGridView()
+        Me.btn_Cancelar = New System.Windows.Forms.Button()
         Me.GroupListadoPiezas.SuspendLayout()
         CType(Me.dgvLista_Orden_Trabajo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
+        Me.GroupDetallesOrden.SuspendLayout()
         CType(Me.dgv_detalle_orden, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -108,23 +109,24 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.Label8.TabIndex = 0
         Me.Label8.Text = "Número Orden"
         '
-        'GroupBox1
+        'GroupDetallesOrden
         '
-        Me.GroupBox1.Controls.Add(Me.btnModificar_Orden)
-        Me.GroupBox1.Controls.Add(Me.btnEliminar_Detalle)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.dgv_detalle_orden)
-        Me.GroupBox1.Location = New System.Drawing.Point(25, 365)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(577, 283)
-        Me.GroupBox1.TabIndex = 30
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Detalles de la orden"
+        Me.GroupDetallesOrden.Controls.Add(Me.btn_Cancelar)
+        Me.GroupDetallesOrden.Controls.Add(Me.btnModificar_Orden)
+        Me.GroupDetallesOrden.Controls.Add(Me.btnEliminar_Detalle)
+        Me.GroupDetallesOrden.Controls.Add(Me.Label1)
+        Me.GroupDetallesOrden.Controls.Add(Me.Label2)
+        Me.GroupDetallesOrden.Controls.Add(Me.dgv_detalle_orden)
+        Me.GroupDetallesOrden.Location = New System.Drawing.Point(25, 365)
+        Me.GroupDetallesOrden.Name = "GroupDetallesOrden"
+        Me.GroupDetallesOrden.Size = New System.Drawing.Size(577, 283)
+        Me.GroupDetallesOrden.TabIndex = 30
+        Me.GroupDetallesOrden.TabStop = False
+        Me.GroupDetallesOrden.Text = "Detalles de la orden"
         '
         'btnModificar_Orden
         '
-        Me.btnModificar_Orden.Location = New System.Drawing.Point(323, 250)
+        Me.btnModificar_Orden.Location = New System.Drawing.Point(213, 252)
         Me.btnModificar_Orden.Name = "btnModificar_Orden"
         Me.btnModificar_Orden.Size = New System.Drawing.Size(113, 23)
         Me.btnModificar_Orden.TabIndex = 29
@@ -133,7 +135,7 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         'btnEliminar_Detalle
         '
-        Me.btnEliminar_Detalle.Location = New System.Drawing.Point(442, 250)
+        Me.btnEliminar_Detalle.Location = New System.Drawing.Point(332, 252)
         Me.btnEliminar_Detalle.Name = "btnEliminar_Detalle"
         Me.btnEliminar_Detalle.Size = New System.Drawing.Size(113, 23)
         Me.btnEliminar_Detalle.TabIndex = 35
@@ -167,20 +169,30 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.dgv_detalle_orden.Size = New System.Drawing.Size(528, 208)
         Me.dgv_detalle_orden.TabIndex = 32
         '
+        'btn_Cancelar
+        '
+        Me.btn_Cancelar.Location = New System.Drawing.Point(452, 252)
+        Me.btn_Cancelar.Name = "btn_Cancelar"
+        Me.btn_Cancelar.Size = New System.Drawing.Size(103, 23)
+        Me.btn_Cancelar.TabIndex = 36
+        Me.btn_Cancelar.Text = "Cancelar"
+        Me.btn_Cancelar.UseVisualStyleBackColor = True
+        '
         'frm_Listado_Orden_Trabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(625, 674)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GroupDetallesOrden)
         Me.Controls.Add(Me.GroupListadoPiezas)
         Me.Name = "frm_Listado_Orden_Trabajo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ordenes de Trabajo"
         Me.GroupListadoPiezas.ResumeLayout(False)
         Me.GroupListadoPiezas.PerformLayout()
         CType(Me.dgvLista_Orden_Trabajo, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.GroupDetallesOrden.ResumeLayout(False)
+        Me.GroupDetallesOrden.PerformLayout()
         CType(Me.dgv_detalle_orden, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -192,10 +204,11 @@ Partial Class frm_Listado_Orden_Trabajo
     Friend WithEvents dgvLista_Orden_Trabajo As System.Windows.Forms.DataGridView
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents btnEliminar_Orden As System.Windows.Forms.Button
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupDetallesOrden As System.Windows.Forms.GroupBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents dgv_detalle_orden As System.Windows.Forms.DataGridView
     Friend WithEvents btnModificar_Orden As System.Windows.Forms.Button
     Friend WithEvents btnEliminar_Detalle As System.Windows.Forms.Button
+    Friend WithEvents btn_Cancelar As System.Windows.Forms.Button
 End Class

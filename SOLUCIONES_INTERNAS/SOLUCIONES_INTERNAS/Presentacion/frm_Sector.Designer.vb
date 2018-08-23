@@ -216,6 +216,7 @@ Partial Class frm_Sector
         Me.Controls.Add(Me.GroupListadoSectores)
         Me.Controls.Add(Me.GroupNuevoSector)
         Me.Name = "frm_Sector"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Sector"
         Me.GroupListadoSectores.ResumeLayout(False)
         Me.GroupListadoSectores.PerformLayout()

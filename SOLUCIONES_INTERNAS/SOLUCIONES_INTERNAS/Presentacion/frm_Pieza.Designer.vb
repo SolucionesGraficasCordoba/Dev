@@ -216,6 +216,7 @@ Partial Class frm_Pieza
         Me.Controls.Add(Me.GroupListadoPiezas)
         Me.Controls.Add(Me.GroupNuevaPieza)
         Me.Name = "frm_Pieza"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Piezas"
         Me.GroupListadoPiezas.ResumeLayout(False)
         Me.GroupListadoPiezas.PerformLayout()

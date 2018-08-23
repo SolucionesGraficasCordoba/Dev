@@ -12,8 +12,7 @@
         Label6.Text = dgvColaboradores.Rows.Count
         'CARGA COMBOBOX SECTOR
         Dim combosector = (From sec In datacontext.SECTOR
-                           Select sec.SEC_id_sector, sec.SEC_nombre_sector
-                           Order By SEC_nombre_sector Ascending)
+                           Select sec.SEC_id_sector, sec.SEC_nombre_sector)
 
         cbo_sector.DataSource = combosector
         cbo_sector.DisplayMember = "SEC_nombre_sector"
@@ -39,32 +38,28 @@
 
     'BOTON ELIMINAR
     Private Sub btnEliminar_Tarea_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar_Tarea.Click
-        If dgvColaboradores.SelectedRows.Count > 0 Then
+        ' If dgvColaboradores.SelectedRows.Count > 0 Then
 
-            Dim eliminar = (From C In datacontext.TAREA Where C.TAR_id_tarea = CInt(dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value)).ToList()(0)
-
-            Select Case MsgBox("Se eliminará la tares seleccionada, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar tarea")
-                Case MsgBoxResult.Yes
-                    datacontext.TAREA.DeleteOnSubmit(eliminar)
-                    datacontext.SubmitChanges()
-                    MsgBox("La tarea ha sido eliminada")
-
-            End Select
-        Else
-            MsgBox("Debe seleccionar una tarea")
-        End If
+        Dim eliminar = (From C In datacontext.TAREA Where C.TAR_id_tarea = CInt(dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value)).ToList()(0)
+        Select Case MsgBox("Se eliminará la tares seleccionada, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar tarea")
+            Case MsgBoxResult.Yes
+                datacontext.TAREA.DeleteOnSubmit(eliminar)
+                datacontext.SubmitChanges()
+                MsgBox("La tarea ha sido eliminada")
+        End Select
+        Me.Close()
+        ' Else
+        ' MsgBox("Debe seleccionar una tarea")
+        ' End If
     End Sub
 
     'CARGA COLABORADOR DATAGRIDVIEW SEGUN LO QUE SELECCIONO EN EL COMBOBOX
     Private Sub cbo_sector_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbo_sector.SelectedIndexChanged
         armargrillacolaborador()
 
-        Dim consultaporsector = (From A In datacontext.SECTOR
-                               Join C In datacontext.COLABORADOR
-                               On A.SEC_id_sector Equals C.SEC_id_sector
-                               Select C.COL_id_colaborador, C.COL_nombre_col, A.SEC_id_sector, A.SEC_nombre_sector
-                               Where (SEC_id_sector = cbo_sector.SelectedIndex + 1)
-                               Order By COL_nombre_col Ascending)
+        Dim consultaporsector = (From A In datavistas.Colaborador_por_Sector
+                                Select A.COL_id_colaborador, A.COL_nombre_col, A.SEC_id_sector, A.SEC_nombre_sector
+                                Where (SEC_id_sector = cbo_sector.SelectedIndex + 1))
         dgvColaboradores.DataSource = consultaporsector
         Label6.Text = dgvColaboradores.Rows.Count
     End Sub

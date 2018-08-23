@@ -256,6 +256,7 @@ Partial Class frm_Cliente
         Me.Controls.Add(Me.GroupListadoClientes)
         Me.Controls.Add(Me.GroupNuevoCliente)
         Me.Name = "frm_Cliente"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Clientes"
         Me.GroupNuevoCliente.ResumeLayout(False)
         Me.GroupNuevoCliente.PerformLayout()

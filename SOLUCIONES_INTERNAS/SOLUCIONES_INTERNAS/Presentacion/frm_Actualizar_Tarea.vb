@@ -23,7 +23,7 @@
             datacontext.SubmitChanges()
             MsgBox("Los datos se han modificado correctamente")
             Me.Close()
-
+            frm_Listado_Tareas.Close()
             vble_colaborador = frm_Listado_Tareas.dgvColaboradores.Item("COL_nombre_col", frm_Listado_Tareas.dgvColaboradores.SelectedRows(0).Index).Value
             vble_fecha = frm_Listado_Tareas.dtpFecha.Text
             Dim datagridtarea = (From o In datavistas.Vista_Tarea_x_Colaborador

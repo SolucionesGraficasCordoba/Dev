@@ -1,5 +1,8 @@
 ﻿Public Class frm_Orden_Trabajo
+
     Dim datacontext As New DataS_Interno
+
+    Public quienllamo_listado_orden As Form
 
     Private Sub frm_Orden_Trabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txt_id_orden_trabajo.Visible = False
@@ -14,33 +17,36 @@
         txt_nombre_cliente.Enabled = False
         txtNombre_vendedor.Enabled = False
 
-        'CARGA COMBOBOX PIEZA DETALLE 1
-        Dim combopieza1 = (From sec In datacontext.PIEZA
-                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
-                           Order By PIE_nombre_pie Ascending)
-        cboPiezas1_Detalle1.DataSource = combopieza1
-        cboPiezas1_Detalle1.DisplayMember = "PIE_nombre_pie"
-        cboPiezas1_Detalle1.ValueMember = "PIE_id_pieza"
-        cboPiezas1_Detalle1.SelectedIndex = -1
+        If quienllamo_listado_orden.Name <> frm_Listado_Orden_Trabajo.Name Then
+            'CARGA COMBOBOX PIEZA DETALLE 1
+            Dim combopieza1 = (From sec In datacontext.PIEZA
+                               Select sec.PIE_id_pieza, sec.PIE_nombre_pie
+                               Order By PIE_nombre_pie Ascending)
+            cboPiezas1_Detalle1.DataSource = combopieza1
+            cboPiezas1_Detalle1.DisplayMember = "PIE_nombre_pie"
+            cboPiezas1_Detalle1.ValueMember = "PIE_id_pieza"
+            cboPiezas1_Detalle1.SelectedIndex = -1
 
-        'CARGA COMBOBOX PIEZA DETALLE 2
-        Dim combopieza2 = (From sec In datacontext.PIEZA
-                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
-                           Order By PIE_nombre_pie Ascending)
-        cboPiezas2_Detalle2.DataSource = combopieza2
-        cboPiezas2_Detalle2.DisplayMember = "PIE_nombre_pie"
-        cboPiezas2_Detalle2.ValueMember = "PIE_id_pieza"
-        cboPiezas2_Detalle2.SelectedIndex = -1
+            'CARGA COMBOBOX PIEZA DETALLE 2
+            Dim combopieza2 = (From sec In datacontext.PIEZA
+                               Select sec.PIE_id_pieza, sec.PIE_nombre_pie
+                               Order By PIE_nombre_pie Ascending)
+            cboPiezas2_Detalle2.DataSource = combopieza2
+            cboPiezas2_Detalle2.DisplayMember = "PIE_nombre_pie"
+            cboPiezas2_Detalle2.ValueMember = "PIE_id_pieza"
+            cboPiezas2_Detalle2.SelectedIndex = -1
 
-        'CARGA COMBOBOX PIEZA DETALLE 3
-        Dim combopieza3 = (From sec In datacontext.PIEZA
-                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
-                           Order By PIE_nombre_pie Ascending)
-        cboPiezas3_Detalle3.DataSource = combopieza3
-        cboPiezas3_Detalle3.DisplayMember = "PIE_nombre_pie"
-        cboPiezas3_Detalle3.ValueMember = "PIE_id_pieza"
-        cboPiezas3_Detalle3.SelectedIndex = -1
+            'CARGA COMBOBOX PIEZA DETALLE 3
+            Dim combopieza3 = (From sec In datacontext.PIEZA
+                               Select sec.PIE_id_pieza, sec.PIE_nombre_pie
+                               Order By PIE_nombre_pie Ascending)
+            cboPiezas3_Detalle3.DataSource = combopieza3
+            cboPiezas3_Detalle3.DisplayMember = "PIE_nombre_pie"
+            cboPiezas3_Detalle3.ValueMember = "PIE_id_pieza"
+            cboPiezas3_Detalle3.SelectedIndex = -1
+        Else
 
+        End If
     End Sub
 
     Sub limpiarcontroles()
@@ -119,11 +125,14 @@
     Private Sub btnBuscar_cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_cliente.Click
         frm_Cliente.Text = "Seleccionar Vendedor"
         frm_Cliente.Show()
+        frm_Cliente.GroupNuevoCliente.Enabled = False
     End Sub
 
     Private Sub btnBuscar_Vendedor_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_Vendedor.Click
         frm_Vendedor.Text = "Seleccionar Vendedor"
         frm_Vendedor.Show()
+        frm_Vendedor.GroupNuevoVendedor.Enabled = False
+
     End Sub
 
     Private Sub btnGuardar_Orden_Trabajo_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Orden_Trabajo.Click
@@ -165,30 +174,31 @@
                 'id
                 txt_id_detalle_orden_trabajo.Text = detalle.id_detalle_orden_trabajo
                 detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo.Text
-                'CANTIDAD REGISTRO 1
+                'CANTIDAD PRODUCTO 1
                 detalle.DOT_cantidad_dot = txt_cantidad1_detalle1.Text
-                'TAMAÑO REGISTRO 1
+                'TAMAÑO PRODUCTO 1
                 detalle.DOT_tamaño_dot = txtTamaño1_Detalle1.Text
-                'TIPO IMPRESION REGISTRO 1
+                'TIPO IMPRESION PRODUCTO 1
                 detalle.DOT_tipo_impresion_dot = cboTipoImpresion1_Detalle1.SelectedItem
-                'TIPO PIEZA REGISTRO 1
+                'TIPO PIEZA PRODUCTO 1
                 detalle.PIE_id_pieza = cboPiezas1_Detalle1.SelectedValue
+
                 'ID ORDEN TRABAJO
                 txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
                 detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-                'PAPEL REGISTRO 1
+                'PAPEL PRODUCTO 1
                 detalle.DOT_papel_soporte_1 = txt_Papel1_Soporte1.Text
                 detalle.DOT_papel_soporte_2 = txt_Papel2_Soporte1.Text
                 detalle.DOT_papel_soporte_3 = txt_Papel3_Soporte1.Text
-                'GRAMAJE REGISTRO 1
+                'GRAMAJE PRODUCTO 1
                 detalle.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte1.Text
                 detalle.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte1.Text
                 detalle.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte1.Text
-                'CANTIDAD REGISTRO 1
+                'CANTIDAD PRODUCTO 1
                 detalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte1.Text
                 detalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte1.Text
                 detalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte1.Text
-                'FORMATO REGISTRO 1
+                'FORMATO PRODUCTO 1
                 detalle.DOT_formato_soporte_1 = cboFormato1_Soporte1.SelectedItem
                 detalle.DOT_formato_soporte_2 = cboFormato2_Soporte1.SelectedItem
                 detalle.DOT_formato_soporte_3 = cboFormato3_Soporte1.SelectedItem
@@ -561,24 +571,51 @@
             MsgBox("Debe completar todos los campos requeridos")
             Exit Sub
         End If
-        Try
-            Dim ActualizarOrden = (From P In datacontext.ORDEN_TRABAJO Where P.ORT_id_orden_trabajo = (txt_id_orden_trabajo.Text.ToUpper)).ToList()(0)
-            ActualizarOrden.ORT_fecha_ot = dtpFecha_Orden_Trabajo.Text
-            ActualizarOrden.ORT_tipo_ot = cboTipo_Orden.SelectedItem
-            ActualizarOrden.ORT_numero_ot = txtNumero_Orden_Trabajo.Text
-            ActualizarOrden.ORT_observaciones_ot = txt_observaciones.Text
-            ActualizarOrden.ORT_mejoras_ot = txt_mejoras.Text
-            ActualizarOrden.VEN_id_vendedor = txtid_vendedor.Text
-            ActualizarOrden.CLI_id_cliente = txt_id_cliente.Text
+        ' Try
+        'ACTUALIZA LA ORDEN DE TRABAJO
+        Dim ActualizarOrden = (From P In datacontext.ORDEN_TRABAJO Where P.ORT_id_orden_trabajo = (txt_id_orden_trabajo.Text.ToUpper)).ToList()(0)
+        ActualizarOrden.ORT_fecha_ot = dtpFecha_Orden_Trabajo.Text
+        ActualizarOrden.ORT_tipo_ot = cboTipo_Orden.SelectedItem
+        ActualizarOrden.ORT_numero_ot = txtNumero_Orden_Trabajo.Text
+        ActualizarOrden.ORT_observaciones_ot = txt_observaciones.Text
+        ActualizarOrden.ORT_mejoras_ot = txt_mejoras.Text
+        ActualizarOrden.VEN_id_vendedor = txtid_vendedor.Text
+        ActualizarOrden.CLI_id_cliente = txt_id_cliente.Text
 
-            datacontext.SubmitChanges()
-            MsgBox("Los datos se han modificado correctamente")
-            '  cargargrilla()
-            Me.limpiarcontroles()
-        Catch ex As Exception
-            MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar orden")
-            Me.limpiarcontroles()
-            ' Me.cargargrilla()
-        End Try
+        datacontext.SubmitChanges()
+
+        'ACTUALIZA EL PRIMER REGISTRO
+        Dim ActualizarDetalle = (From D In datacontext.DETALLE_ORDEN_TRABAJO
+                                 Where D.ORT_id_orden_trabajo = (txt_id_orden_trabajo.Text)).ToList()(0)
+        ActualizarDetalle.DOT_cantidad_dot = txt_cantidad1_detalle1.Text
+        ActualizarDetalle.PIE_id_pieza = cboPiezas1_Detalle1.SelectedValue
+        ActualizarDetalle.DOT_tamaño_dot = txtTamaño1_Detalle1.Text
+        ActualizarDetalle.DOT_tipo_impresion_dot = cboTipoImpresion1_Detalle1.SelectedItem
+
+        ActualizarDetalle.DOT_papel_soporte_1 = txt_Papel1_Soporte1.Text
+        ActualizarDetalle.DOT_papel_soporte_2 = txt_Papel2_Soporte1.Text
+        ActualizarDetalle.DOT_papel_soporte_3 = txt_Papel3_Soporte1.Text
+
+        ActualizarDetalle.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte1.Text
+        ActualizarDetalle.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte1.Text
+        ActualizarDetalle.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte1.Text
+
+        ActualizarDetalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte1.Text
+        ActualizarDetalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte1.Text
+        ActualizarDetalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte1.Text
+
+        ActualizarDetalle.DOT_formato_soporte_1 = cboFormato1_Soporte1.SelectedItem
+        ActualizarDetalle.DOT_formato_soporte_2 = cboFormato2_Soporte1.SelectedItem
+        ActualizarDetalle.DOT_formato_soporte_3 = cboFormato3_Soporte1.SelectedItem
+
+        datacontext.SubmitChanges()
+        MsgBox("Los datos se han modificado correctamente")
+        '  cargargrilla()
+        '  Me.limpiarcontroles()
+        '  Catch ex As Exception
+        MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar orden")
+        ' Me.limpiarcontroles()
+        ' Me.cargargrilla()
+        ' End Try
     End Sub
 End Class

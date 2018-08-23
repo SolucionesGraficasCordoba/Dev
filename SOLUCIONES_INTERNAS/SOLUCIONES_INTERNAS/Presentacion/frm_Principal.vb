@@ -340,12 +340,36 @@ Public Class frm_Principal
     End Sub
 
     Private Sub NuevaOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevaOrdenToolStripMenuItem.Click
+        frm_Orden_Trabajo.quienllamo_listado_orden = Me
         frm_Orden_Trabajo.Show()
         frm_Orden_Trabajo.Text = "Nueva Orden"
         frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = False
     End Sub
 
-    Private Sub OrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles OrdenToolStripMenuItem.Click
+    Private Sub OrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
         frm_Listado_Orden_Trabajo.Show()
+    End Sub
+
+    Private Sub DetalleDeOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
+        frm_Listado_Orden_Trabajo.Show()
+    End Sub
+
+    Private Sub ConsultarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem.Click
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.btnEliminar_Detalle.Enabled = False
+    End Sub
+
+    Private Sub ModificarOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarOrdenToolStripMenuItem.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.btnEliminar_Detalle.Enabled = False
+    End Sub
+
+    Private Sub EliminarOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarOrdenToolStripMenuItem.Click
+        frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
     End Sub
 End Class

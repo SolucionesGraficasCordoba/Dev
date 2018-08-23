@@ -849,7 +849,6 @@ Partial Class frm_Orden_Trabajo
         '
         'cboPiezas1_Detalle1
         '
-        Me.cboPiezas1_Detalle1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboPiezas1_Detalle1.FormattingEnabled = True
         Me.cboPiezas1_Detalle1.Location = New System.Drawing.Point(94, 41)
         Me.cboPiezas1_Detalle1.Name = "cboPiezas1_Detalle1"
@@ -1333,6 +1332,7 @@ Partial Class frm_Orden_Trabajo
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.GroupListadoPiezas)
         Me.Name = "frm_Orden_Trabajo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Orden de trabajo"
         Me.GroupListadoPiezas.ResumeLayout(False)
         Me.GroupListadoPiezas.PerformLayout()
