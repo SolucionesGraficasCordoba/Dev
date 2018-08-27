@@ -1,33 +1,23 @@
 ﻿Public Class frm_Listado_Tareas
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
-
-    Public vble_id_colaborador As Integer 'Guarda el id de un personal
-
-    ' Dim vble_colaborador As Integer 'Guarda el id de un horario
+    Public vble_id_colaborador As Integer
     Dim vble_colaborador, vble_fecha As String
 
-
     Private Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-        ' btnAgregar.Enabled = False
-
         dgvColaboradores.ClearSelection()
         Label6.Text = dgvColaboradores.Rows.Count
+
         'CARGA COMBOBOX SECTOR
         Dim combosector = (From sec In datacontext.SECTOR
                            Select sec.SEC_id_sector, sec.SEC_nombre_sector)
-
         cbo_sector.DataSource = combosector
         cbo_sector.DisplayMember = "SEC_nombre_sector"
         cbo_sector.ValueMember = "SEC_id_sector"
         cbo_sector.SelectedIndex = -1
     End Sub
 
-
-
     'ARMA LA GRILLA DEL COLABORADOR
-
     Private Sub armargrillacolaborador()
         dgvColaboradores.Enabled = True
         dgvColaboradores.AutoGenerateColumns = False
@@ -35,6 +25,7 @@
 
         dgvColaboradores.Columns.Add("COL_id_colaborador", "id_colaborador")
         dgvColaboradores.Columns.Add("COL_nombre_col", "Colaborador")
+
         dgvColaboradores.Columns(0).DataPropertyName = "COL_id_colaborador"
         dgvColaboradores.Columns(0).Visible = False
         dgvColaboradores.Columns(1).DataPropertyName = "COL_nombre_col"
@@ -44,16 +35,19 @@
 
     'BOTON ELIMINAR
     Private Sub btnEliminar_Tarea_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar_Tarea.Click
-
+        If dgvColaboradores.RowCount = 0 Then
+            MsgBox("Debe seleccionar un Sector")
+            Exit Sub
+        End If
         If dgvTarea_x_Colaborador.SelectedRows.Count = 0 Then
-            MsgBox("Debe seleccionar una tarea")
+            MsgBox("Debe seleccionar una Tarea")
         Else
             Dim eliminar = (From C In datacontext.TAREA Where C.TAR_id_tarea = CInt(dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value)).ToList()(0)
             Select Case MsgBox("Se eliminará la tares seleccionada, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar tarea")
                 Case MsgBoxResult.Yes
                     datacontext.TAREA.DeleteOnSubmit(eliminar)
                     datacontext.SubmitChanges()
-                    MsgBox("La tarea ha sido eliminada")
+                    MsgBox("La Tarea ha sido eliminada")
             End Select
             Me.Close()
         End If
@@ -73,8 +67,6 @@
 
     Public Sub dgvColaboradores_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvColaboradores.CellClick
 
-        'VALIDA QUE SE HAYA SELECCONADO UN SECTOR Y UNA FECHA
-       
         'CARGA TAREAS DEL COLABORADOR SEGUN SECTOR Y FECHA
         If dgvColaboradores.SelectedRows.Count > 0 Then
             vble_id_colaborador = dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
@@ -142,8 +134,11 @@
     End Sub
 
     'BOTON MODIFICAR (CARGA LOS DATOS EN CADA UNO DE LOS CONTROLES)
-
     Private Sub btnModificar_Tarea_Click(sender As System.Object, e As System.EventArgs) Handles btnModificar_Tarea.Click
+        If dgvColaboradores.RowCount = 0 Then
+            MsgBox("Debe seleccionar un Sector")
+            Exit Sub
+        End If
         If Me.dgvTarea_x_Colaborador.SelectedRows.Count > 0 Then
             frm_Actualizar_Tarea.txt_id_tarea.Text = Me.dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
             frm_Actualizar_Tarea.txt_tarea.Text = Me.dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
@@ -173,7 +168,6 @@
     End Sub
 
     Private Sub btnAgregar_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregar.Click
-
         If Me.dgvColaboradores.SelectedRows.Count > 0 Then
             frm_Actualizar_Tarea.dtpFecha.Text = dtpFecha.Text
             frm_Actualizar_Tarea.txt_id_colaborador.Text = Me.dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
@@ -187,7 +181,6 @@
     End Sub
 
     Private Sub dtpFecha_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpFecha.ValueChanged
-
         Dim fechaactual = System.DateTime.Now.ToString("dd/mm/yyyy")
         If dtpFecha.Text <= fechaactual Then
             btnModificar_Tarea.Enabled = False
@@ -198,458 +191,455 @@
 
     Private Sub btnVer_Click(sender As System.Object, e As System.EventArgs) Handles btnVer.Click
 
+        'CARGA EL ENCABEZADO DEL FORMULARIO TAREAS
+        If dgvColaboradores.Rows.Count = 0 Then
+            MsgBox("Debe selecconar un Sector")
+            Exit Sub
+        Else
+            frm_Tarea.txt_id_colaborador.Text = Me.dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
+            frm_Tarea.txt_nombre_colaborador.Text = Me.dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
+            frm_Tarea.dtpFecha.Text = Me.dgvTarea_x_Colaborador.Item("TAR_fecha", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            frm_Tarea.txt_Carga_Horaria1.Text = Me.dgvTarea_x_Colaborador.Item("TAR_carga_horaria", dgvTarea_x_Colaborador.Rows(0).Index).Value
+
+            Dim flag1, flag2, flag3, flag4, flag5, flag6, flag7, flag8, flag9, flag10, flag11, flag12, flag13, flag14, flag15, flag16, flag17, flag18, flag19, flag20 As Integer
+
+            If dgvTarea_x_Colaborador.RowCount = 1 Then
+                flag1 = 1
+                flag2 = 0
+            ElseIf dgvTarea_x_Colaborador.RowCount = 2 Then
+                flag1 = 1
+                flag2 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 3 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 4 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 5 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 6 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 7 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 8 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 9 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 10 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 11 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 12 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 13 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 14 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+                flag14 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 15 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+                flag14 = 1
+                flag15 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 16 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+                flag14 = 1
+                flag15 = 1
+                flag16 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 17 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+                flag14 = 1
+                flag15 = 1
+                flag16 = 1
+                flag17 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 18 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+                flag14 = 1
+                flag15 = 1
+                flag16 = 1
+                flag17 = 1
+                flag18 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 19 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+                flag14 = 1
+                flag15 = 1
+                flag16 = 1
+                flag17 = 1
+                flag18 = 1
+                flag19 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 20 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+                flag14 = 1
+                flag15 = 1
+                flag16 = 1
+                flag17 = 1
+                flag18 = 1
+                flag19 = 1
+                flag20 = 1
+
+            End If
+
+            If flag1 = 1 Then
+                frm_Tarea.txt_detalle_tarea1.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(0).Index).Value
+                frm_Tarea.txtTiempo_Estimado1.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(0).Index).Value
+                frm_Tarea.txtTiempo_Real1.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(0).Index).Value
+                frm_Tarea.txtHora_Finalizacion1.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(0).Index).Value
+                frm_Tarea.txtObservaciones1.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(0).Index).Value
+                frm_Tarea.txt_id_orden_trabajo1.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(0).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo1.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            End If
+
+            If flag2 = 1 Then
+                frm_Tarea.txt_detalle_tarea2.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(1).Index).Value
+                frm_Tarea.txtTiempo_Estimado2.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(1).Index).Value
+                frm_Tarea.txtTiempo_Real2.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(1).Index).Value
+                frm_Tarea.txtHora_Finalizacion2.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(1).Index).Value
+                frm_Tarea.txtObservaciones2.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(1).Index).Value
+                frm_Tarea.txt_id_orden_trabajo2.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(1).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo2.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(1).Index).Value
+            End If
+
+            If flag3 = 1 Then
+                frm_Tarea.txt_detalle_tarea3.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(2).Index).Value
+                frm_Tarea.txtTiempo_Estimado3.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(2).Index).Value
+                frm_Tarea.txtTiempo_Real3.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(2).Index).Value
+                frm_Tarea.txtHora_Finalizacion3.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(2).Index).Value
+                frm_Tarea.txtObservaciones3.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(2).Index).Value
+                frm_Tarea.txt_id_orden_trabajo3.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(2).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo3.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(2).Index).Value
+            End If
+
+            If flag4 = 1 Then
+                frm_Tarea.txt_detalle_tarea4.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(3).Index).Value
+                frm_Tarea.txtTiempo_Estimado4.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(3).Index).Value
+                frm_Tarea.txtTiempo_Real4.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(3).Index).Value
+                frm_Tarea.txtHora_Finalizacion4.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(3).Index).Value
+                frm_Tarea.txtObservaciones4.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(3).Index).Value
+                frm_Tarea.txt_id_orden_trabajo4.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(3).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo4.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(3).Index).Value
+            End If
+
+            If flag5 = 1 Then
+                frm_Tarea.txt_detalle_tarea5.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(4).Index).Value
+                frm_Tarea.txtTiempo_Estimado5.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(4).Index).Value
+                frm_Tarea.txtTiempo_Real5.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(4).Index).Value
+                frm_Tarea.txtHora_Finalizacion5.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(4).Index).Value
+                frm_Tarea.txtObservaciones5.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(4).Index).Value
+                frm_Tarea.txt_id_orden_trabajo5.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(4).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo5.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(4).Index).Value
+            End If
+
+            If flag6 = 1 Then
+                frm_Tarea.txt_detalle_tarea6.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(5).Index).Value
+                frm_Tarea.txtTiempo_Estimado6.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(5).Index).Value
+                frm_Tarea.txtTiempo_Real6.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(5).Index).Value
+                frm_Tarea.txtHora_Finalizacion6.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(5).Index).Value
+                frm_Tarea.txtObservaciones6.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(5).Index).Value
+                frm_Tarea.txt_id_orden_trabajo6.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(5).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo6.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(5).Index).Value
+            End If
+
+            If flag7 = 1 Then
+                frm_Tarea.txt_detalle_tarea7.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(6).Index).Value
+                frm_Tarea.txtTiempo_Estimado7.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(6).Index).Value
+                frm_Tarea.txtTiempo_Real7.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(6).Index).Value
+                frm_Tarea.txtHora_Finalizacion7.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(6).Index).Value
+                frm_Tarea.txtObservaciones7.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(6).Index).Value
+                frm_Tarea.txt_id_orden_trabajo7.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(6).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo7.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(6).Index).Value
+            End If
+
+            If flag8 = 1 Then
+                frm_Tarea.txt_detalle_tarea8.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(7).Index).Value
+                frm_Tarea.txtTiempo_Estimado8.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(7).Index).Value
+                frm_Tarea.txtTiempo_Real8.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(7).Index).Value
+                frm_Tarea.txtHora_Finalizacion8.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(7).Index).Value
+                frm_Tarea.txtObservaciones8.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(7).Index).Value
+                frm_Tarea.txt_id_orden_trabajo8.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(7).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo8.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(7).Index).Value
+            End If
+
+            If flag9 = 1 Then
+                frm_Tarea.txt_detalle_tarea9.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(8).Index).Value
+                frm_Tarea.txtTiempo_Estimado9.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(8).Index).Value
+                frm_Tarea.txtTiempo_Real9.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(8).Index).Value
+                frm_Tarea.txtHora_Finalizacion9.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(8).Index).Value
+                frm_Tarea.txtObservaciones9.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(8).Index).Value
+                frm_Tarea.txt_id_orden_trabajo9.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(8).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo9.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(8).Index).Value
+            End If
+
+            If flag10 = 1 Then
+                frm_Tarea.txt_detalle_tarea10.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(9).Index).Value
+                frm_Tarea.txtTiempo_Estimado10.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(9).Index).Value
+                frm_Tarea.txtTiempo_Real10.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(9).Index).Value
+                frm_Tarea.txtHora_Finalizacion10.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(9).Index).Value
+                frm_Tarea.txtObservaciones10.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(9).Index).Value
+                frm_Tarea.txt_id_orden_trabajo10.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(9).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo10.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(9).Index).Value
+            End If
+
+            If flag11 = 1 Then
+                frm_Tarea.txt_detalle_tarea11.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(10).Index).Value
+                frm_Tarea.txtTiempo_Estimado11.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(10).Index).Value
+                frm_Tarea.txtTiempo_Real11.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(10).Index).Value
+                frm_Tarea.txtHora_Finalizacion11.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(10).Index).Value
+                frm_Tarea.txtObservaciones11.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(10).Index).Value
+                frm_Tarea.txt_id_orden_trabajo11.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(10).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo11.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(10).Index).Value
+            End If
+
+            If flag12 = 1 Then
+                frm_Tarea.txt_detalle_tarea12.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(11).Index).Value
+                frm_Tarea.txtTiempo_Estimado12.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(11).Index).Value
+                frm_Tarea.txtTiempo_Real12.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(11).Index).Value
+                frm_Tarea.txtHora_Finalizacion12.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(11).Index).Value
+                frm_Tarea.txtObservaciones12.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(11).Index).Value
+                frm_Tarea.txt_id_orden_trabajo12.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(11).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo12.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(11).Index).Value
+            End If
+
+            If flag13 = 1 Then
+                frm_Tarea.txt_detalle_tarea13.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(12).Index).Value
+                frm_Tarea.txtTiempo_Estimado13.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(12).Index).Value
+                frm_Tarea.txtTiempo_Real13.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(12).Index).Value
+                frm_Tarea.txtHora_Finalizacion13.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(12).Index).Value
+                frm_Tarea.txtObservaciones13.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(12).Index).Value
+                frm_Tarea.txt_id_orden_trabajo13.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(12).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo13.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(12).Index).Value
+            End If
+
+            If flag14 = 1 Then
+                frm_Tarea.txt_detalle_tarea14.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(13).Index).Value
+                frm_Tarea.txtTiempo_Estimado14.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(13).Index).Value
+                frm_Tarea.txtTiempo_Real14.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(13).Index).Value
+                frm_Tarea.txtHora_Finalizacion14.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(13).Index).Value
+                frm_Tarea.txtObservaciones14.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(13).Index).Value
+                frm_Tarea.txt_id_orden_trabajo14.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(13).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo14.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(13).Index).Value
+            End If
+
+            If flag15 = 1 Then
+                frm_Tarea.txt_detalle_tarea15.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(14).Index).Value
+                frm_Tarea.txtTiempo_Estimado15.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(14).Index).Value
+                frm_Tarea.txtTiempo_Real15.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(14).Index).Value
+                frm_Tarea.txtHora_Finalizacion15.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(14).Index).Value
+                frm_Tarea.txtObservaciones15.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(14).Index).Value
+                frm_Tarea.txt_id_orden_trabajo15.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(14).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo15.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(14).Index).Value
+            End If
+
+            If flag16 = 1 Then
+                frm_Tarea.txt_detalle_tarea16.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(15).Index).Value
+                frm_Tarea.txtTiempo_Estimado16.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(15).Index).Value
+                frm_Tarea.txtTiempo_Real16.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(15).Index).Value
+                frm_Tarea.txtHora_Finalizacion16.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(15).Index).Value
+                frm_Tarea.txtObservaciones16.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(15).Index).Value
+                frm_Tarea.txt_id_orden_trabajo16.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(15).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo16.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(15).Index).Value
+            End If
+
+            If flag17 = 1 Then
+                frm_Tarea.txt_detalle_tarea17.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(16).Index).Value
+                frm_Tarea.txtTiempo_Estimado17.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(16).Index).Value
+                frm_Tarea.txtTiempo_Real17.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(16).Index).Value
+                frm_Tarea.txtHora_Finalizacion17.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(16).Index).Value
+                frm_Tarea.txtObservaciones17.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(16).Index).Value
+                frm_Tarea.txt_id_orden_trabajo17.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(16).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo17.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(16).Index).Value
+            End If
+
+            If flag18 = 1 Then
+                frm_Tarea.txt_detalle_tarea18.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(17).Index).Value
+                frm_Tarea.txtTiempo_Estimado18.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(17).Index).Value
+                frm_Tarea.txtTiempo_Real18.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(17).Index).Value
+                frm_Tarea.txtHora_Finalizacion18.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(17).Index).Value
+                frm_Tarea.txtObservaciones18.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(17).Index).Value
+                frm_Tarea.txt_id_orden_trabajo18.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(17).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo18.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(17).Index).Value
+            End If
+
+            If flag19 = 1 Then
+                frm_Tarea.txt_detalle_tarea19.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(18).Index).Value
+                frm_Tarea.txtTiempo_Estimado19.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(18).Index).Value
+                frm_Tarea.txtTiempo_Real19.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(18).Index).Value
+                frm_Tarea.txtHora_Finalizacion19.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(18).Index).Value
+                frm_Tarea.txtObservaciones19.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(18).Index).Value
+                frm_Tarea.txt_id_orden_trabajo19.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(18).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo19.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(18).Index).Value
+            End If
+
+            If flag20 = 1 Then
+                frm_Tarea.txt_detalle_tarea20.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(19).Index).Value
+                frm_Tarea.txtTiempo_Estimado20.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(19).Index).Value
+                frm_Tarea.txtTiempo_Real20.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(19).Index).Value
+                frm_Tarea.txtHora_Finalizacion20.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(19).Index).Value
+                frm_Tarea.txtObservaciones20.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(19).Index).Value
+                frm_Tarea.txt_id_orden_trabajo20.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(19).Index).Value
+                frm_Tarea.txtNumero_Orden_Trabajo20.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(19).Index).Value
+            End If
+        End If
+        DeshabilitarText()
         frm_Tarea.Show()
         frm_Tarea.Text = "Consultar Tarea"
-        frm_Tarea.btnBuscar_Colaborador.Enabled = False
-        frm_Tarea.dtpFecha.Enabled = False
-        frm_Tarea.txt_Carga_Horaria1.Enabled = False
-        frm_Tarea.btnImprimir.Enabled = False
-        frm_Tarea.btnNueva_Tarea.Enabled = False
-        frm_Tarea.btnGuardar_Tarea.Enabled = False
-
-        'CARGA EL ENCABEZADO DEL FORMULARIO TAREAS
-        frm_Tarea.txt_id_colaborador.Text = Me.dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
-        frm_Tarea.txt_nombre_colaborador.Text = Me.dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
-        frm_Tarea.dtpFecha.Text = Me.dgvTarea_x_Colaborador.Item("TAR_fecha", dgvTarea_x_Colaborador.Rows(0).Index).Value
-        frm_Tarea.txt_Carga_Horaria1.Text = Me.dgvTarea_x_Colaborador.Item("TAR_carga_horaria", dgvTarea_x_Colaborador.Rows(0).Index).Value
-
-        Dim flag1, flag2, flag3, flag4, flag5, flag6, flag7, flag8, flag9, flag10, flag11, flag12, flag13, flag14, flag15, flag16, flag17, flag18, flag19, flag20 As Integer
-
-        If dgvTarea_x_Colaborador.RowCount = 1 Then
-            flag1 = 1
-            flag2 = 0
-        ElseIf dgvTarea_x_Colaborador.RowCount = 2 Then
-            flag1 = 1
-            flag2 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 3 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 4 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 5 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 6 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 7 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-            flag7 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 8 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-            flag7 = 1
-            flag8 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 9 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-            flag7 = 1
-            flag8 = 1
-            flag9 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 10 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-            flag7 = 1
-            flag8 = 1
-            flag9 = 1
-            flag10 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 11 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-            flag7 = 1
-            flag8 = 1
-            flag9 = 1
-            flag10 = 1
-            flag11 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 12 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-            flag7 = 1
-            flag8 = 1
-            flag9 = 1
-            flag10 = 1
-            flag11 = 1
-            flag12 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 13 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-            flag7 = 1
-            flag8 = 1
-            flag9 = 1
-            flag10 = 1
-            flag11 = 1
-            flag12 = 1
-            flag13 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 14 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-            flag7 = 1
-            flag8 = 1
-            flag9 = 1
-            flag10 = 1
-            flag11 = 1
-            flag12 = 1
-            flag13 = 1
-            flag14 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 15 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-            flag7 = 1
-            flag8 = 1
-            flag9 = 1
-            flag10 = 1
-            flag11 = 1
-            flag12 = 1
-            flag13 = 1
-            flag14 = 1
-            flag15 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 16 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-            flag7 = 1
-            flag8 = 1
-            flag9 = 1
-            flag10 = 1
-            flag11 = 1
-            flag12 = 1
-            flag13 = 1
-            flag14 = 1
-            flag15 = 1
-            flag16 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 17 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-            flag7 = 1
-            flag8 = 1
-            flag9 = 1
-            flag10 = 1
-            flag11 = 1
-            flag12 = 1
-            flag13 = 1
-            flag14 = 1
-            flag15 = 1
-            flag16 = 1
-            flag17 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 18 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-            flag7 = 1
-            flag8 = 1
-            flag9 = 1
-            flag10 = 1
-            flag11 = 1
-            flag12 = 1
-            flag13 = 1
-            flag14 = 1
-            flag15 = 1
-            flag16 = 1
-            flag17 = 1
-            flag18 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 19 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-            flag7 = 1
-            flag8 = 1
-            flag9 = 1
-            flag10 = 1
-            flag11 = 1
-            flag12 = 1
-            flag13 = 1
-            flag14 = 1
-            flag15 = 1
-            flag16 = 1
-            flag17 = 1
-            flag18 = 1
-            flag19 = 1
-        ElseIf dgvTarea_x_Colaborador.RowCount = 20 Then
-            flag1 = 1
-            flag2 = 1
-            flag3 = 1
-            flag4 = 1
-            flag5 = 1
-            flag6 = 1
-            flag7 = 1
-            flag8 = 1
-            flag9 = 1
-            flag10 = 1
-            flag11 = 1
-            flag12 = 1
-            flag13 = 1
-            flag14 = 1
-            flag15 = 1
-            flag16 = 1
-            flag17 = 1
-            flag18 = 1
-            flag19 = 1
-            flag20 = 1
-
-        End If
-
-        If flag1 = 1 Then
-            frm_Tarea.txt_detalle_tarea1.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(0).Index).Value
-            frm_Tarea.txtTiempo_Estimado1.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(0).Index).Value
-            frm_Tarea.txtTiempo_Real1.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(0).Index).Value
-            frm_Tarea.txtHora_Finalizacion1.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(0).Index).Value
-            frm_Tarea.txtObservaciones1.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(0).Index).Value
-            frm_Tarea.txt_id_orden_trabajo1.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(0).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo1.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(0).Index).Value
-        End If
-
-        If flag2 = 1 Then
-            frm_Tarea.txt_detalle_tarea2.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(1).Index).Value
-            frm_Tarea.txtTiempo_Estimado2.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(1).Index).Value
-            frm_Tarea.txtTiempo_Real2.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(1).Index).Value
-            frm_Tarea.txtHora_Finalizacion2.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(1).Index).Value
-            frm_Tarea.txtObservaciones2.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(1).Index).Value
-            frm_Tarea.txt_id_orden_trabajo2.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(1).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo2.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(1).Index).Value
-        End If
-
-        If flag3 = 1 Then
-            frm_Tarea.txt_detalle_tarea3.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(2).Index).Value
-            frm_Tarea.txtTiempo_Estimado3.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(2).Index).Value
-            frm_Tarea.txtTiempo_Real3.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(2).Index).Value
-            frm_Tarea.txtHora_Finalizacion3.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(2).Index).Value
-            frm_Tarea.txtObservaciones3.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(2).Index).Value
-            frm_Tarea.txt_id_orden_trabajo3.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(2).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo3.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(2).Index).Value
-        End If
-
-        If flag4 = 1 Then
-            frm_Tarea.txt_detalle_tarea4.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(3).Index).Value
-            frm_Tarea.txtTiempo_Estimado4.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(3).Index).Value
-            frm_Tarea.txtTiempo_Real4.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(3).Index).Value
-            frm_Tarea.txtHora_Finalizacion4.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(3).Index).Value
-            frm_Tarea.txtObservaciones4.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(3).Index).Value
-            frm_Tarea.txt_id_orden_trabajo4.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(3).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo4.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(3).Index).Value
-        End If
-
-        If flag5 = 1 Then
-            frm_Tarea.txt_detalle_tarea5.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(4).Index).Value
-            frm_Tarea.txtTiempo_Estimado5.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(4).Index).Value
-            frm_Tarea.txtTiempo_Real5.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(4).Index).Value
-            frm_Tarea.txtHora_Finalizacion5.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(4).Index).Value
-            frm_Tarea.txtObservaciones5.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(4).Index).Value
-            frm_Tarea.txt_id_orden_trabajo5.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(4).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo5.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(4).Index).Value
-        End If
-
-        If flag6 = 1 Then
-            frm_Tarea.txt_detalle_tarea6.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(5).Index).Value
-            frm_Tarea.txtTiempo_Estimado6.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(5).Index).Value
-            frm_Tarea.txtTiempo_Real6.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(5).Index).Value
-            frm_Tarea.txtHora_Finalizacion6.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(5).Index).Value
-            frm_Tarea.txtObservaciones6.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(5).Index).Value
-            frm_Tarea.txt_id_orden_trabajo6.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(5).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo6.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(5).Index).Value
-        End If
-
-        If flag7 = 1 Then
-            frm_Tarea.txt_detalle_tarea7.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(6).Index).Value
-            frm_Tarea.txtTiempo_Estimado7.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(6).Index).Value
-            frm_Tarea.txtTiempo_Real7.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(6).Index).Value
-            frm_Tarea.txtHora_Finalizacion7.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(6).Index).Value
-            frm_Tarea.txtObservaciones7.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(6).Index).Value
-            frm_Tarea.txt_id_orden_trabajo7.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(6).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo7.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(6).Index).Value
-        End If
-
-        If flag8 = 1 Then
-            frm_Tarea.txt_detalle_tarea8.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(7).Index).Value
-            frm_Tarea.txtTiempo_Estimado8.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(7).Index).Value
-            frm_Tarea.txtTiempo_Real8.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(7).Index).Value
-            frm_Tarea.txtHora_Finalizacion8.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(7).Index).Value
-            frm_Tarea.txtObservaciones8.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(7).Index).Value
-            frm_Tarea.txt_id_orden_trabajo8.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(7).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo8.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(7).Index).Value
-        End If
-
-        If flag9 = 1 Then
-            frm_Tarea.txt_detalle_tarea9.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(8).Index).Value
-            frm_Tarea.txtTiempo_Estimado9.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(8).Index).Value
-            frm_Tarea.txtTiempo_Real9.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(8).Index).Value
-            frm_Tarea.txtHora_Finalizacion9.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(8).Index).Value
-            frm_Tarea.txtObservaciones9.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(8).Index).Value
-            frm_Tarea.txt_id_orden_trabajo9.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(8).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo9.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(8).Index).Value
-        End If
-
-        If flag10 = 1 Then
-            frm_Tarea.txt_detalle_tarea10.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(9).Index).Value
-            frm_Tarea.txtTiempo_Estimado10.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(9).Index).Value
-            frm_Tarea.txtTiempo_Real10.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(9).Index).Value
-            frm_Tarea.txtHora_Finalizacion10.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(9).Index).Value
-            frm_Tarea.txtObservaciones10.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(9).Index).Value
-            frm_Tarea.txt_id_orden_trabajo10.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(9).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo10.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(9).Index).Value
-        End If
-
-        If flag11 = 1 Then
-            frm_Tarea.txt_detalle_tarea11.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(10).Index).Value
-            frm_Tarea.txtTiempo_Estimado11.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(10).Index).Value
-            frm_Tarea.txtTiempo_Real11.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(10).Index).Value
-            frm_Tarea.txtHora_Finalizacion11.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(10).Index).Value
-            frm_Tarea.txtObservaciones11.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(10).Index).Value
-            frm_Tarea.txt_id_orden_trabajo11.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(10).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo11.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(10).Index).Value
-        End If
-
-        If flag12 = 1 Then
-            frm_Tarea.txt_detalle_tarea12.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(11).Index).Value
-            frm_Tarea.txtTiempo_Estimado12.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(11).Index).Value
-            frm_Tarea.txtTiempo_Real12.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(11).Index).Value
-            frm_Tarea.txtHora_Finalizacion12.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(11).Index).Value
-            frm_Tarea.txtObservaciones12.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(11).Index).Value
-            frm_Tarea.txt_id_orden_trabajo12.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(11).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo12.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(11).Index).Value
-        End If
-
-        If flag13 = 1 Then
-            frm_Tarea.txt_detalle_tarea13.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(12).Index).Value
-            frm_Tarea.txtTiempo_Estimado13.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(12).Index).Value
-            frm_Tarea.txtTiempo_Real13.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(12).Index).Value
-            frm_Tarea.txtHora_Finalizacion13.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(12).Index).Value
-            frm_Tarea.txtObservaciones13.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(12).Index).Value
-            frm_Tarea.txt_id_orden_trabajo13.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(12).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo13.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(12).Index).Value
-        End If
-
-        If flag14 = 1 Then
-            frm_Tarea.txt_detalle_tarea14.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(13).Index).Value
-            frm_Tarea.txtTiempo_Estimado14.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(13).Index).Value
-            frm_Tarea.txtTiempo_Real14.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(13).Index).Value
-            frm_Tarea.txtHora_Finalizacion14.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(13).Index).Value
-            frm_Tarea.txtObservaciones14.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(13).Index).Value
-            frm_Tarea.txt_id_orden_trabajo14.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(13).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo14.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(13).Index).Value
-        End If
-
-        If flag15 = 1 Then
-            frm_Tarea.txt_detalle_tarea15.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(14).Index).Value
-            frm_Tarea.txtTiempo_Estimado15.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(14).Index).Value
-            frm_Tarea.txtTiempo_Real15.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(14).Index).Value
-            frm_Tarea.txtHora_Finalizacion15.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(14).Index).Value
-            frm_Tarea.txtObservaciones15.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(14).Index).Value
-            frm_Tarea.txt_id_orden_trabajo15.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(14).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo15.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(14).Index).Value
-        End If
-
-        If flag16 = 1 Then
-            frm_Tarea.txt_detalle_tarea16.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(15).Index).Value
-            frm_Tarea.txtTiempo_Estimado16.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(15).Index).Value
-            frm_Tarea.txtTiempo_Real16.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(15).Index).Value
-            frm_Tarea.txtHora_Finalizacion16.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(15).Index).Value
-            frm_Tarea.txtObservaciones16.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(15).Index).Value
-            frm_Tarea.txt_id_orden_trabajo16.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(15).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo16.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(15).Index).Value
-        End If
-
-        If flag17 = 1 Then
-            frm_Tarea.txt_detalle_tarea17.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(16).Index).Value
-            frm_Tarea.txtTiempo_Estimado17.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(16).Index).Value
-            frm_Tarea.txtTiempo_Real17.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(16).Index).Value
-            frm_Tarea.txtHora_Finalizacion17.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(16).Index).Value
-            frm_Tarea.txtObservaciones17.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(16).Index).Value
-            frm_Tarea.txt_id_orden_trabajo17.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(16).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo17.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(16).Index).Value
-        End If
-
-        If flag18 = 1 Then
-            frm_Tarea.txt_detalle_tarea18.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(17).Index).Value
-            frm_Tarea.txtTiempo_Estimado18.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(17).Index).Value
-            frm_Tarea.txtTiempo_Real18.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(17).Index).Value
-            frm_Tarea.txtHora_Finalizacion18.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(17).Index).Value
-            frm_Tarea.txtObservaciones18.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(17).Index).Value
-            frm_Tarea.txt_id_orden_trabajo18.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(17).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo18.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(17).Index).Value
-        End If
-
-        If flag19 = 1 Then
-            frm_Tarea.txt_detalle_tarea19.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(18).Index).Value
-            frm_Tarea.txtTiempo_Estimado19.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(18).Index).Value
-            frm_Tarea.txtTiempo_Real19.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(18).Index).Value
-            frm_Tarea.txtHora_Finalizacion19.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(18).Index).Value
-            frm_Tarea.txtObservaciones19.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(18).Index).Value
-            frm_Tarea.txt_id_orden_trabajo19.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(18).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo19.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(18).Index).Value
-        End If
-
-        If flag20 = 1 Then
-            frm_Tarea.txt_detalle_tarea20.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(19).Index).Value
-            frm_Tarea.txtTiempo_Estimado20.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(19).Index).Value
-            frm_Tarea.txtTiempo_Real20.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(19).Index).Value
-            frm_Tarea.txtHora_Finalizacion20.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(19).Index).Value
-            frm_Tarea.txtObservaciones20.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(19).Index).Value
-            frm_Tarea.txt_id_orden_trabajo20.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(19).Index).Value
-            frm_Tarea.txtNumero_Orden_Trabajo20.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(19).Index).Value
-        End If
-
-        DeshabilitarText()
     End Sub
 
     Public Sub DeshabilitarText()
@@ -780,6 +770,13 @@
         frm_Tarea.btnBuscar_Numero_Orden20.Enabled = False
 
         frm_Tarea.btnImprimir.Enabled = True
+        frm_Tarea.btnBuscar_Colaborador.Enabled = False
+        frm_Tarea.dtpFecha.Enabled = False
+        frm_Tarea.txt_Carga_Horaria1.Enabled = False
+        frm_Tarea.btnImprimir.Enabled = True
+        frm_Tarea.btnNueva_Tarea.Enabled = False
+        frm_Tarea.btnGuardar_Tarea.Enabled = False
     End Sub
+
 
 End Class

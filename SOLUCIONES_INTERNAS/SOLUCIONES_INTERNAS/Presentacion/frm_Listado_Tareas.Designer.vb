@@ -39,6 +39,8 @@ Partial Class frm_Listado_Tareas
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnVer = New System.Windows.Forms.Button()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupListadoTareas.SuspendLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupListadoDetalleTarea.SuspendLayout()
@@ -133,6 +135,8 @@ Partial Class frm_Listado_Tareas
         '
         'groupListadoDetalleTarea
         '
+        Me.groupListadoDetalleTarea.Controls.Add(Me.Label35)
+        Me.groupListadoDetalleTarea.Controls.Add(Me.Label7)
         Me.groupListadoDetalleTarea.Controls.Add(Me.Label1)
         Me.groupListadoDetalleTarea.Controls.Add(Me.Label2)
         Me.groupListadoDetalleTarea.Controls.Add(Me.dgvTarea_x_Colaborador)
@@ -206,6 +210,28 @@ Partial Class frm_Listado_Tareas
         Me.btnVer.Text = "Ver"
         Me.btnVer.UseVisualStyleBackColor = True
         '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.ForeColor = System.Drawing.Color.Black
+        Me.Label35.Location = New System.Drawing.Point(425, 252)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(2, 15)
+        Me.Label35.TabIndex = 51
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(343, 252)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(76, 13)
+        Me.Label7.TabIndex = 50
+        Me.Label7.Text = "Total estimado"
+        '
         'frm_Listado_Tareas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -247,4 +273,6 @@ Partial Class frm_Listado_Tareas
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAgregar As System.Windows.Forms.Button
     Friend WithEvents btnVer As System.Windows.Forms.Button
+    Friend WithEvents Label35 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

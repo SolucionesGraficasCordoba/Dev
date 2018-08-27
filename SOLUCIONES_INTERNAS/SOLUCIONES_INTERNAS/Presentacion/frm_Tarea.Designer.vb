@@ -246,6 +246,8 @@ Partial Class frm_Tarea
         Me.Label62 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label35 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -2180,7 +2182,7 @@ Partial Class frm_Tarea
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label34.ForeColor = System.Drawing.Color.Red
-        Me.Label34.Location = New System.Drawing.Point(37, 660)
+        Me.Label34.Location = New System.Drawing.Point(37, 695)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(105, 13)
         Me.Label34.TabIndex = 24
@@ -2215,11 +2217,35 @@ Partial Class frm_Tarea
         Me.btnImprimir.Text = "Imprimir"
         Me.btnImprimir.UseVisualStyleBackColor = True
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(228, 668)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(76, 13)
+        Me.Label7.TabIndex = 48
+        Me.Label7.Text = "Total estimado"
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.ForeColor = System.Drawing.Color.Black
+        Me.Label35.Location = New System.Drawing.Point(310, 668)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(2, 15)
+        Me.Label35.TabIndex = 49
+        '
         'frm_Tarea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1048, 717)
+        Me.Controls.Add(Me.Label35)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.dtpFecha)
         Me.Controls.Add(Me.Label62)
@@ -2473,4 +2499,6 @@ Partial Class frm_Tarea
     Friend WithEvents txt_id_orden_trabajo5 As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_orden_trabajo3 As System.Windows.Forms.TextBox
     Friend WithEvents btnImprimir As System.Windows.Forms.Button
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label35 As System.Windows.Forms.Label
 End Class
