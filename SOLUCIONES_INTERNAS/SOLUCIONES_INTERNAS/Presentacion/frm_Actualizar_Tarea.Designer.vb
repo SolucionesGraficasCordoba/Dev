@@ -47,13 +47,13 @@ Partial Class frm_Actualizar_Tarea
         Me.txt_Carga_Horaria = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txt_hora_fin = New System.Windows.Forms.TextBox()
         Me.txt_observaciones = New System.Windows.Forms.TextBox()
         Me.txt_tiempo_real = New System.Windows.Forms.TextBox()
         Me.btn_Actualizar_Tarea = New System.Windows.Forms.Button()
         Me.btn_Cancelar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.txt_hora_fin = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -291,6 +291,22 @@ Partial Class frm_Actualizar_Tarea
         Me.GroupBox1.TabIndex = 178
         Me.GroupBox1.TabStop = False
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(166, 153)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(47, 13)
+        Me.Label3.TabIndex = 181
+        Me.Label3.Text = "Hora Fin"
+        '
+        'txt_hora_fin
+        '
+        Me.txt_hora_fin.Location = New System.Drawing.Point(219, 150)
+        Me.txt_hora_fin.Name = "txt_hora_fin"
+        Me.txt_hora_fin.Size = New System.Drawing.Size(66, 20)
+        Me.txt_hora_fin.TabIndex = 182
+        '
         'txt_observaciones
         '
         Me.txt_observaciones.Location = New System.Drawing.Point(113, 233)
@@ -332,22 +348,6 @@ Partial Class frm_Actualizar_Tarea
         Me.btnGuardar.TabIndex = 181
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(166, 153)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(47, 13)
-        Me.Label3.TabIndex = 181
-        Me.Label3.Text = "Hora Fin"
-        '
-        'txt_hora_fin
-        '
-        Me.txt_hora_fin.Location = New System.Drawing.Point(219, 150)
-        Me.txt_hora_fin.Name = "txt_hora_fin"
-        Me.txt_hora_fin.Size = New System.Drawing.Size(66, 20)
-        Me.txt_hora_fin.TabIndex = 182
         '
         'frm_Actualizar_Tarea
         '

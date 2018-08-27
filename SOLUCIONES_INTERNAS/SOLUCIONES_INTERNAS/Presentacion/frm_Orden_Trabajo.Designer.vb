@@ -28,6 +28,7 @@ Partial Class frm_Orden_Trabajo
         Me.txt_id_cliente = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.GroupListadoPiezas = New System.Windows.Forms.GroupBox()
+        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.GroupProducto3 = New System.Windows.Forms.GroupBox()
         Me.txt_id_detalle_orden_trabajo3 = New System.Windows.Forms.TextBox()
         Me.Label53 = New System.Windows.Forms.Label()
@@ -149,7 +150,6 @@ Partial Class frm_Orden_Trabajo
         Me.Label46 = New System.Windows.Forms.Label()
         Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.GroupListadoPiezas.SuspendLayout()
         Me.GroupProducto3.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
@@ -221,6 +221,15 @@ Partial Class frm_Orden_Trabajo
         Me.GroupListadoPiezas.TabIndex = 28
         Me.GroupListadoPiezas.TabStop = False
         Me.GroupListadoPiezas.Text = "Detalles de la orden"
+        '
+        'btnImprimir
+        '
+        Me.btnImprimir.Location = New System.Drawing.Point(454, 554)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(75, 23)
+        Me.btnImprimir.TabIndex = 37
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.UseVisualStyleBackColor = True
         '
         'GroupProducto3
         '
@@ -1343,15 +1352,6 @@ Partial Class frm_Orden_Trabajo
         Me.Label6.TabIndex = 51
         Me.Label6.Text = "Número" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Orden"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'btnImprimir
-        '
-        Me.btnImprimir.Location = New System.Drawing.Point(454, 554)
-        Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(75, 23)
-        Me.btnImprimir.TabIndex = 37
-        Me.btnImprimir.Text = "Imprimir"
-        Me.btnImprimir.UseVisualStyleBackColor = True
         '
         'frm_Orden_Trabajo
         '

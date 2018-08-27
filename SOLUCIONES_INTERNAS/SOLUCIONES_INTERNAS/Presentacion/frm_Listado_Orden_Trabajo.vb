@@ -364,10 +364,12 @@
 
     Private Sub dgvLista_Orden_Trabajo_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Orden_Trabajo.CellDoubleClick
 
+        'LLAMA AL FORMULARIO ACTUALIZAR TAREA
         If quienllamolistado_ot.Name = frm_Actualizar_Tarea.Name Then
             frm_Actualizar_Tarea.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
             frm_Actualizar_Tarea.txt_numero_orden.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
 
+            'LLAMA AL FORMULARIO TAREA
         ElseIf quienllamolistado_ot.Name = frm_Tarea.Name Then
 
             Select Case quienllamoboton.Name
@@ -453,7 +455,7 @@
 
             End Select
         End If
-     
+
         Me.Close()
     End Sub
 
