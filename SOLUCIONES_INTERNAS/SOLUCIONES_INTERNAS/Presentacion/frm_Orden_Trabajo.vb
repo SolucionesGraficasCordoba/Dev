@@ -8,7 +8,11 @@
         txt_id_orden_trabajo.Visible = False
         Label1.Visible = False
         Label45.Visible = False
-        txt_id_detalle_orden_trabajo.Visible = False
+        Label52.Visible = False
+        Label53.Visible = False
+        txt_id_detalle_orden_trabajo1.Visible = False
+        txt_id_detalle_orden_trabajo2.Visible = False
+        txt_id_detalle_orden_trabajo3.Visible = False
         txtNumero_Orden_Trabajo.Focus()
         txtid_vendedor.Visible = False
         txt_id_cliente.Visible = False
@@ -112,7 +116,6 @@
         cboFormato3_Soporte3.SelectedIndex = -1
     End Sub
 
-
     Private Sub btnNueva_Orden_Trabajo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         limpiarcontroles()
     End Sub
@@ -170,34 +173,34 @@
                 If cboPiezas1_Detalle1.Text.Length = 0 Then
                     MsgBox("Seleccione una pieza")
                 End If
+
                 Dim detalle = New DETALLE_ORDEN_TRABAJO
                 'id
-                txt_id_detalle_orden_trabajo.Text = detalle.id_detalle_orden_trabajo
-                detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo.Text
-                'CANTIDAD PRODUCTO 1
-                detalle.DOT_cantidad_dot = txt_cantidad1_detalle1.Text
-                'TAMAÑO PRODUCTO 1
-                detalle.DOT_tamaño_dot = txtTamaño1_Detalle1.Text
-                'TIPO IMPRESION PRODUCTO 1
-                detalle.DOT_tipo_impresion_dot = cboTipoImpresion1_Detalle1.SelectedItem
-                'TIPO PIEZA PRODUCTO 1
-                detalle.PIE_id_pieza = cboPiezas1_Detalle1.SelectedValue
+                txt_id_detalle_orden_trabajo1.Text = detalle.id_detalle_orden_trabajo
+                detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
+                detalle.DOT_cantidad_dot = txt_cantidad1_detalle1.Text  'CANTIDAD PRODUCTO 1
+                detalle.DOT_tamaño_dot = txtTamaño1_Detalle1.Text 'TAMAÑO PRODUCTO 1
+                detalle.DOT_tipo_impresion_dot = cboTipoImpresion1_Detalle1.SelectedItem 'TIPO IMPRESION PRODUCTO 1
+                detalle.PIE_id_pieza = cboPiezas1_Detalle1.SelectedValue 'TIPO PIEZA PRODUCTO 1
 
-                'ID ORDEN TRABAJO
                 txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
-                detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text 'ID ORDEN TRABAJO
+
                 'PAPEL PRODUCTO 1
                 detalle.DOT_papel_soporte_1 = txt_Papel1_Soporte1.Text
                 detalle.DOT_papel_soporte_2 = txt_Papel2_Soporte1.Text
                 detalle.DOT_papel_soporte_3 = txt_Papel3_Soporte1.Text
+
                 'GRAMAJE PRODUCTO 1
                 detalle.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte1.Text
                 detalle.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte1.Text
                 detalle.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte1.Text
+
                 'CANTIDAD PRODUCTO 1
                 detalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte1.Text
                 detalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte1.Text
                 detalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte1.Text
+
                 'FORMATO PRODUCTO 1
                 detalle.DOT_formato_soporte_1 = cboFormato1_Soporte1.SelectedItem
                 detalle.DOT_formato_soporte_2 = cboFormato2_Soporte1.SelectedItem
@@ -215,8 +218,8 @@
                 End If
                 Dim detalle = New DETALLE_ORDEN_TRABAJO
                 'id
-                txt_id_detalle_orden_trabajo.Text = detalle.id_detalle_orden_trabajo
-                detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo.Text
+                txt_id_detalle_orden_trabajo2.Text = detalle.id_detalle_orden_trabajo
+                detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo2.Text
                 'CANTIDAD REGISTRO 2
                 detalle.DOT_cantidad_dot = txt_cantidad2_detalle2.Text
                 'TAMAÑO REGISTRO 1
@@ -257,8 +260,8 @@
                 End If
                 Dim detalle = New DETALLE_ORDEN_TRABAJO
                 'id
-                txt_id_detalle_orden_trabajo.Text = detalle.id_detalle_orden_trabajo
-                detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo.Text
+                txt_id_detalle_orden_trabajo3.Text = detalle.id_detalle_orden_trabajo
+                detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo3.Text
                 'CANTIDAD REGISTRO 2
                 detalle.DOT_cantidad_dot = txt_cantidad3_detalle3.Text
                 'TAMAÑO REGISTRO 1
@@ -292,8 +295,8 @@
             End If
 
             MsgBox("la orden se ha creado correctamente", vbInformation)
-            ' cargargrilla()
             limpiarcontroles()
+            Me.Close()
         Catch ex As Exception
             MsgBox("La orden NO fue creada")
             limpiarcontroles()
@@ -563,59 +566,228 @@
         If txtNumero_Orden_Trabajo.Text.Length = 0 _
                 Or cboTipo_Orden.Text.Length = 0 _
                 Or txtid_vendedor.Text.Length = 0 _
-                Or txt_id_cliente.Text.Length = 0 Then _
-                'Or txt_cantidad1_detalle1.Text.Length = 0 Then _
-            'Or cboPiezas1_Detalle1.Text.Length = 0 _
-            'Or txtTamaño1_Detalle1.Text.Length = 0 _
-            'Or cboTipoImpresion1_Detalle1.Text.Length = 0 Then
+                Or txt_id_cliente.Text.Length = 0 Then
             MsgBox("Debe completar todos los campos requeridos")
             Exit Sub
         End If
-        ' Try
-        'ACTUALIZA LA ORDEN DE TRABAJO
-        Dim ActualizarOrden = (From P In datacontext.ORDEN_TRABAJO Where P.ORT_id_orden_trabajo = (txt_id_orden_trabajo.Text.ToUpper)).ToList()(0)
-        ActualizarOrden.ORT_fecha_ot = dtpFecha_Orden_Trabajo.Text
-        ActualizarOrden.ORT_tipo_ot = cboTipo_Orden.SelectedItem
-        ActualizarOrden.ORT_numero_ot = txtNumero_Orden_Trabajo.Text
-        ActualizarOrden.ORT_observaciones_ot = txt_observaciones.Text
-        ActualizarOrden.ORT_mejoras_ot = txt_mejoras.Text
-        ActualizarOrden.VEN_id_vendedor = txtid_vendedor.Text
-        ActualizarOrden.CLI_id_cliente = txt_id_cliente.Text
 
-        datacontext.SubmitChanges()
+        Try
+            'ACTUALIZA LA ORDEN DE TRABAJO
+            Dim ActualizarOrden = (From P In datacontext.ORDEN_TRABAJO Where P.ORT_id_orden_trabajo = (txt_id_orden_trabajo.Text.ToUpper)).ToList()(0)
+            ActualizarOrden.ORT_fecha_ot = dtpFecha_Orden_Trabajo.Text
+            ActualizarOrden.ORT_tipo_ot = cboTipo_Orden.SelectedItem
+            ActualizarOrden.ORT_numero_ot = txtNumero_Orden_Trabajo.Text
+            ActualizarOrden.ORT_observaciones_ot = txt_observaciones.Text
+            ActualizarOrden.ORT_mejoras_ot = txt_mejoras.Text
+            ActualizarOrden.VEN_id_vendedor = txtid_vendedor.Text
+            ActualizarOrden.CLI_id_cliente = txt_id_cliente.Text
 
-        'ACTUALIZA EL PRIMER REGISTRO
-        Dim ActualizarDetalle = (From D In datacontext.DETALLE_ORDEN_TRABAJO
-                                 Where D.ORT_id_orden_trabajo = (txt_id_orden_trabajo.Text)).ToList()(0)
-        ActualizarDetalle.DOT_cantidad_dot = txt_cantidad1_detalle1.Text
-        ActualizarDetalle.PIE_id_pieza = cboPiezas1_Detalle1.SelectedValue
-        ActualizarDetalle.DOT_tamaño_dot = txtTamaño1_Detalle1.Text
-        ActualizarDetalle.DOT_tipo_impresion_dot = cboTipoImpresion1_Detalle1.SelectedItem
+            datacontext.SubmitChanges()
 
-        ActualizarDetalle.DOT_papel_soporte_1 = txt_Papel1_Soporte1.Text
-        ActualizarDetalle.DOT_papel_soporte_2 = txt_Papel2_Soporte1.Text
-        ActualizarDetalle.DOT_papel_soporte_3 = txt_Papel3_Soporte1.Text
+            Dim ActualizarDetalle1 = (From D In datacontext.DETALLE_ORDEN_TRABAJO
+                                     Where D.id_detalle_orden_trabajo = CInt(txt_id_detalle_orden_trabajo1.Text)).ToList()(0)
 
-        ActualizarDetalle.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte1.Text
-        ActualizarDetalle.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte1.Text
-        ActualizarDetalle.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte1.Text
+            'ACTUALIZA EL PRIMER REGISTRO
+            If txt_cantidad1_detalle1.Text.Length >= 1 Then
 
-        ActualizarDetalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte1.Text
-        ActualizarDetalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte1.Text
-        ActualizarDetalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte1.Text
+                If cboPiezas1_Detalle1.Text.Length = 0 Then
+                    MsgBox("Seleccione una pieza")
+                End If
+                txt_id_detalle_orden_trabajo1.Text = ActualizarDetalle1.id_detalle_orden_trabajo
+                ActualizarDetalle1.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
+                ActualizarDetalle1.DOT_cantidad_dot = txt_cantidad1_detalle1.Text
+                ActualizarDetalle1.PIE_id_pieza = cboPiezas1_Detalle1.SelectedValue
+                ActualizarDetalle1.DOT_tamaño_dot = txtTamaño1_Detalle1.Text
+                ActualizarDetalle1.DOT_tipo_impresion_dot = cboTipoImpresion1_Detalle1.SelectedItem
 
-        ActualizarDetalle.DOT_formato_soporte_1 = cboFormato1_Soporte1.SelectedItem
-        ActualizarDetalle.DOT_formato_soporte_2 = cboFormato2_Soporte1.SelectedItem
-        ActualizarDetalle.DOT_formato_soporte_3 = cboFormato3_Soporte1.SelectedItem
+                ActualizarDetalle1.DOT_papel_soporte_1 = txt_Papel1_Soporte1.Text
+                ActualizarDetalle1.DOT_papel_soporte_2 = txt_Papel2_Soporte1.Text
+                ActualizarDetalle1.DOT_papel_soporte_3 = txt_Papel3_Soporte1.Text
 
-        datacontext.SubmitChanges()
-        MsgBox("Los datos se han modificado correctamente")
-        '  cargargrilla()
-        '  Me.limpiarcontroles()
-        '  Catch ex As Exception
-        MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar orden")
-        ' Me.limpiarcontroles()
-        ' Me.cargargrilla()
-        ' End Try
+                ActualizarDetalle1.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte1.Text
+                ActualizarDetalle1.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte1.Text
+                ActualizarDetalle1.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte1.Text
+
+                ActualizarDetalle1.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte1.Text
+                ActualizarDetalle1.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte1.Text
+                ActualizarDetalle1.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte1.Text
+
+                ActualizarDetalle1.DOT_formato_soporte_1 = cboFormato1_Soporte1.SelectedItem
+                ActualizarDetalle1.DOT_formato_soporte_2 = cboFormato2_Soporte1.SelectedItem
+                ActualizarDetalle1.DOT_formato_soporte_3 = cboFormato3_Soporte1.SelectedItem
+
+                datacontext.SubmitChanges()
+            End If
+
+
+
+            If txt_id_detalle_orden_trabajo2.Text.Length <> 0 Then
+
+                'ACTUALIZA EL SEGUNDO REGISTRO
+                Dim ActualizarDetalle2 = (From D In datacontext.DETALLE_ORDEN_TRABAJO
+                                          Where D.id_detalle_orden_trabajo = CInt(txt_id_detalle_orden_trabajo2.Text)).ToList()(0)
+
+                If txt_cantidad2_detalle2.Text.Length >= 1 Then
+
+                    If cboPiezas2_Detalle2.Text.Length = 0 Then
+                        MsgBox("Seleccione una pieza")
+                    End If
+
+                    txt_id_detalle_orden_trabajo2.Text = ActualizarDetalle2.id_detalle_orden_trabajo
+                    ActualizarDetalle2.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo2.Text
+                    ActualizarDetalle2.DOT_cantidad_dot = txt_cantidad2_detalle2.Text
+                    ActualizarDetalle2.PIE_id_pieza = cboPiezas2_Detalle2.SelectedValue
+                    ActualizarDetalle2.DOT_tamaño_dot = txtTamaño2_Detalle2.Text
+                    ActualizarDetalle2.DOT_tipo_impresion_dot = cboTipoImpresion2_Detalle2.SelectedItem
+
+                    ActualizarDetalle2.DOT_papel_soporte_1 = txt_Papel1_Soporte2.Text
+                    ActualizarDetalle2.DOT_papel_soporte_2 = txt_Papel2_Soporte2.Text
+                    ActualizarDetalle2.DOT_papel_soporte_3 = txt_Papel3_Soporte2.Text
+
+                    ActualizarDetalle2.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte2.Text
+                    ActualizarDetalle2.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte2.Text
+                    ActualizarDetalle2.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte2.Text
+
+                    ActualizarDetalle2.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte2.Text
+                    ActualizarDetalle2.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte2.Text
+                    ActualizarDetalle2.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte2.Text
+
+                    ActualizarDetalle2.DOT_formato_soporte_1 = cboFormato1_Soporte2.SelectedItem
+                    ActualizarDetalle2.DOT_formato_soporte_2 = cboFormato2_Soporte2.SelectedItem
+                    ActualizarDetalle2.DOT_formato_soporte_3 = cboFormato3_Soporte2.SelectedItem
+
+                    datacontext.SubmitChanges()
+                End If
+            Else
+                'GUARDA EL REGISTRO 2 DEL DETALLE DE LA ORDEN DE TRABAJO
+                If txt_cantidad2_detalle2.Text.Length >= 1 Then
+
+                    If cboPiezas2_Detalle2.Text.Length = 0 Then
+                        MsgBox("Seleccione una pieza")
+                    End If
+                    Dim detalle = New DETALLE_ORDEN_TRABAJO
+                    'id
+                    txt_id_detalle_orden_trabajo2.Text = detalle.id_detalle_orden_trabajo
+                    detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo2.Text
+                    detalle.DOT_cantidad_dot = txt_cantidad2_detalle2.Text 'CANTIDAD REGISTRO 2
+                    detalle.DOT_tamaño_dot = txtTamaño2_Detalle2.Text 'TAMAÑO REGISTRO 1
+                    detalle.DOT_tipo_impresion_dot = cboTipoImpresion2_Detalle2.SelectedItem  'TIPO IMPRESION REGISTRO 2
+                    detalle.PIE_id_pieza = cboPiezas2_Detalle2.SelectedValue  'TIPO PIEZA REGISTRO 2
+                    detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text 'ID ORDEN TRABAJO
+
+                    'PAPEL REGISTRO 2
+                    detalle.DOT_papel_soporte_1 = txt_Papel1_Soporte2.Text
+                    detalle.DOT_papel_soporte_2 = txt_Papel2_Soporte2.Text
+                    detalle.DOT_papel_soporte_3 = txt_Papel3_Soporte2.Text
+                    'GRAMAJE REGISTRO 2
+                    detalle.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte2.Text
+                    detalle.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte2.Text
+                    detalle.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte2.Text
+                    'CANTIDAD REGISTRO 2
+                    detalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte2.Text
+                    detalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte2.Text
+                    detalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte2.Text
+                    'FORMATO REGISTRO 2
+                    detalle.DOT_formato_soporte_1 = cboFormato1_Soporte2.SelectedItem
+                    detalle.DOT_formato_soporte_2 = cboFormato2_Soporte2.SelectedItem
+                    detalle.DOT_formato_soporte_3 = cboFormato3_Soporte2.SelectedItem
+
+                    datacontext.DETALLE_ORDEN_TRABAJO.InsertOnSubmit(detalle)
+                    datacontext.SubmitChanges()
+                End If
+            End If
+            ''ACTUALIZA EL TERCER REGISTRO
+            If txt_id_detalle_orden_trabajo3.Text.Length <> 0 Then
+
+                If txt_cantidad3_detalle3.Text.Length >= 1 Then
+
+                    Dim ActualizarDetalle3 = (From D In datacontext.DETALLE_ORDEN_TRABAJO Where D.id_detalle_orden_trabajo = CInt(txt_id_detalle_orden_trabajo3.Text)).ToList()(0)
+
+                    If cboPiezas3_Detalle3.Text.Length = 0 Then
+                        MsgBox("Seleccione una pieza")
+                    End If
+
+                    txt_id_detalle_orden_trabajo3.Text = ActualizarDetalle3.id_detalle_orden_trabajo
+                    ActualizarDetalle3.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo3.Text
+                    ActualizarDetalle3.DOT_cantidad_dot = txt_cantidad3_detalle3.Text
+                    ActualizarDetalle3.PIE_id_pieza = cboPiezas3_Detalle3.SelectedValue
+                    ActualizarDetalle3.DOT_tamaño_dot = txtTamaño3_Detalle3.Text
+                    ActualizarDetalle3.DOT_tipo_impresion_dot = cboTipoImpresion3_Detalle3.SelectedItem
+
+                    ActualizarDetalle3.DOT_papel_soporte_1 = txt_Papel1_Soporte3.Text
+                    ActualizarDetalle3.DOT_papel_soporte_2 = txt_Papel2_Soporte3.Text
+                    ActualizarDetalle3.DOT_papel_soporte_3 = txt_Papel3_Soporte3.Text
+
+                    ActualizarDetalle3.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte3.Text
+                    ActualizarDetalle3.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte3.Text
+                    ActualizarDetalle3.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte3.Text
+
+                    ActualizarDetalle3.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte3.Text
+                    ActualizarDetalle3.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte3.Text
+                    ActualizarDetalle3.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte3.Text
+
+                    ActualizarDetalle3.DOT_formato_soporte_1 = cboFormato1_Soporte3.SelectedItem
+                    ActualizarDetalle3.DOT_formato_soporte_2 = cboFormato2_Soporte3.SelectedItem
+                    ActualizarDetalle3.DOT_formato_soporte_3 = cboFormato3_Soporte3.SelectedItem
+
+                    datacontext.SubmitChanges()
+                End If
+
+            Else
+
+                'GUARDA EL REGISTRO 3 DEL DETALLE DE LA ORDEN DE TRABAJO
+                If txt_cantidad3_detalle3.Text.Length >= 1 Then
+
+                    If cboPiezas3_Detalle3.Text.Length = 0 Then
+                        MsgBox("Seleccione una pieza")
+                    End If
+                    Dim detalle = New DETALLE_ORDEN_TRABAJO
+                    'id
+                    txt_id_detalle_orden_trabajo3.Text = detalle.id_detalle_orden_trabajo
+                    detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo3.Text
+                    'CANTIDAD REGISTRO 2
+                    detalle.DOT_cantidad_dot = txt_cantidad3_detalle3.Text
+                    'TAMAÑO REGISTRO 1
+                    detalle.DOT_tamaño_dot = txtTamaño3_Detalle3.Text
+                    'TIPO IMPRESION REGISTRO 2
+                    detalle.DOT_tipo_impresion_dot = cboTipoImpresion3_Detalle3.SelectedItem
+                    'TIPO PIEZA REGISTRO 2
+                    detalle.PIE_id_pieza = cboPiezas3_Detalle3.SelectedValue
+                    'ID ORDEN TRABAJO
+                    detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                    'PAPEL REGISTRO 2
+                    detalle.DOT_papel_soporte_1 = txt_Papel1_Soporte3.Text
+                    detalle.DOT_papel_soporte_2 = txt_Papel2_Soporte3.Text
+                    detalle.DOT_papel_soporte_3 = txt_Papel3_Soporte3.Text
+                    'GRAMAJE REGISTRO 2
+                    detalle.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte3.Text
+                    detalle.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte3.Text
+                    detalle.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte3.Text
+                    'CANTIDAD REGISTRO 2
+                    detalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte3.Text
+                    detalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte3.Text
+                    detalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte3.Text
+                    'FORMATO REGISTRO 2
+                    detalle.DOT_formato_soporte_1 = cboFormato1_Soporte3.SelectedItem
+                    detalle.DOT_formato_soporte_2 = cboFormato2_Soporte3.SelectedItem
+                    detalle.DOT_formato_soporte_3 = cboFormato3_Soporte3.SelectedItem
+
+                    datacontext.DETALLE_ORDEN_TRABAJO.InsertOnSubmit(detalle)
+                    datacontext.SubmitChanges()
+                End If
+            End If
+
+            MsgBox("Los datos se han modificado correctamente")
+            Me.Close()
+            '  frm_Listado_Orden_Trabajo.Close()
+        Catch ex As Exception
+            MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar orden")
+            Me.limpiarcontroles()
+        End Try
+    End Sub
+
+    Private Sub btnCancelar_Orden_Trabajo_Click_1(sender As System.Object, e As System.EventArgs) Handles btnCancelar_Orden_Trabajo.Click
+        Me.Close()
+        Me.Dispose()
     End Sub
 End Class

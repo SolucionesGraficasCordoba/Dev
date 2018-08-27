@@ -37,6 +37,8 @@ Partial Class frm_Listado_Tareas
         Me.dgvTarea_x_Colaborador = New System.Windows.Forms.DataGridView()
         Me.btnModificar_Tarea = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.btnVer = New System.Windows.Forms.Button()
         Me.GroupListadoTareas.SuspendLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupListadoDetalleTarea.SuspendLayout()
@@ -186,11 +188,31 @@ Partial Class frm_Listado_Tareas
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
+        'btnAgregar
+        '
+        Me.btnAgregar.Location = New System.Drawing.Point(252, 651)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(91, 23)
+        Me.btnAgregar.TabIndex = 33
+        Me.btnAgregar.Text = "Agregar Tarea"
+        Me.btnAgregar.UseVisualStyleBackColor = True
+        '
+        'btnVer
+        '
+        Me.btnVer.Location = New System.Drawing.Point(171, 651)
+        Me.btnVer.Name = "btnVer"
+        Me.btnVer.Size = New System.Drawing.Size(75, 23)
+        Me.btnVer.TabIndex = 34
+        Me.btnVer.Text = "Ver"
+        Me.btnVer.UseVisualStyleBackColor = True
+        '
         'frm_Listado_Tareas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(628, 695)
+        Me.Controls.Add(Me.btnVer)
+        Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnModificar_Tarea)
         Me.Controls.Add(Me.groupListadoDetalleTarea)
@@ -223,4 +245,6 @@ Partial Class frm_Listado_Tareas
     Friend WithEvents dtpFecha As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label31 As System.Windows.Forms.Label
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents btnAgregar As System.Windows.Forms.Button
+    Friend WithEvents btnVer As System.Windows.Forms.Button
 End Class

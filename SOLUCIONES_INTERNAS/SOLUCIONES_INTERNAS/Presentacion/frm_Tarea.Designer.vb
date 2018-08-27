@@ -245,6 +245,7 @@ Partial Class frm_Tarea
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
+        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -344,7 +345,7 @@ Partial Class frm_Tarea
         '
         'btnCancelar_Tarea
         '
-        Me.btnCancelar_Tarea.Location = New System.Drawing.Point(574, 675)
+        Me.btnCancelar_Tarea.Location = New System.Drawing.Point(940, 673)
         Me.btnCancelar_Tarea.Name = "btnCancelar_Tarea"
         Me.btnCancelar_Tarea.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar_Tarea.TabIndex = 2
@@ -353,7 +354,7 @@ Partial Class frm_Tarea
         '
         'btnGuardar_Tarea
         '
-        Me.btnGuardar_Tarea.Location = New System.Drawing.Point(480, 675)
+        Me.btnGuardar_Tarea.Location = New System.Drawing.Point(846, 673)
         Me.btnGuardar_Tarea.Name = "btnGuardar_Tarea"
         Me.btnGuardar_Tarea.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar_Tarea.TabIndex = 4
@@ -362,7 +363,7 @@ Partial Class frm_Tarea
         '
         'btnNueva_Tarea
         '
-        Me.btnNueva_Tarea.Location = New System.Drawing.Point(386, 675)
+        Me.btnNueva_Tarea.Location = New System.Drawing.Point(752, 673)
         Me.btnNueva_Tarea.Name = "btnNueva_Tarea"
         Me.btnNueva_Tarea.Size = New System.Drawing.Size(75, 23)
         Me.btnNueva_Tarea.TabIndex = 2
@@ -2205,11 +2206,21 @@ Partial Class frm_Tarea
         Me.Label37.TabIndex = 24
         Me.Label37.Text = "*"
         '
+        'btnImprimir
+        '
+        Me.btnImprimir.Location = New System.Drawing.Point(656, 673)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(75, 23)
+        Me.btnImprimir.TabIndex = 47
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.UseVisualStyleBackColor = True
+        '
         'frm_Tarea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1048, 717)
+        Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.dtpFecha)
         Me.Controls.Add(Me.Label62)
         Me.Controls.Add(Me.Label31)
@@ -2461,4 +2472,5 @@ Partial Class frm_Tarea
     Friend WithEvents txt_id_orden_trabajo7 As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_orden_trabajo5 As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_orden_trabajo3 As System.Windows.Forms.TextBox
+    Friend WithEvents btnImprimir As System.Windows.Forms.Button
 End Class

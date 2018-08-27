@@ -29,8 +29,9 @@ Partial Class frm_Orden_Trabajo
         Me.Label17 = New System.Windows.Forms.Label()
         Me.GroupListadoPiezas = New System.Windows.Forms.GroupBox()
         Me.GroupProducto3 = New System.Windows.Forms.GroupBox()
+        Me.txt_id_detalle_orden_trabajo3 = New System.Windows.Forms.TextBox()
+        Me.Label53 = New System.Windows.Forms.Label()
         Me.cboPiezas3_Detalle3 = New System.Windows.Forms.ComboBox()
-        Me.txt_id_detalle_orden_trabajo = New System.Windows.Forms.TextBox()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.cboFormato3_Soporte3 = New System.Windows.Forms.ComboBox()
         Me.cboFormato2_Soporte3 = New System.Windows.Forms.ComboBox()
@@ -51,7 +52,6 @@ Partial Class frm_Orden_Trabajo
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.Label40 = New System.Windows.Forms.Label()
-        Me.Label45 = New System.Windows.Forms.Label()
         Me.cboTipoImpresion3_Detalle3 = New System.Windows.Forms.ComboBox()
         Me.Label41 = New System.Windows.Forms.Label()
         Me.Label42 = New System.Windows.Forms.Label()
@@ -61,6 +61,8 @@ Partial Class frm_Orden_Trabajo
         Me.txt_cantidad3_detalle3 = New System.Windows.Forms.TextBox()
         Me.btnGuardar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.GroupProducto2 = New System.Windows.Forms.GroupBox()
+        Me.txt_id_detalle_orden_trabajo2 = New System.Windows.Forms.TextBox()
+        Me.Label52 = New System.Windows.Forms.Label()
         Me.cboPiezas2_Detalle2 = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.cboFormato3_Soporte2 = New System.Windows.Forms.ComboBox()
@@ -91,8 +93,10 @@ Partial Class frm_Orden_Trabajo
         Me.txt_cantidad2_detalle2 = New System.Windows.Forms.TextBox()
         Me.GroupProducto1 = New System.Windows.Forms.GroupBox()
         Me.Label51 = New System.Windows.Forms.Label()
+        Me.txt_id_detalle_orden_trabajo1 = New System.Windows.Forms.TextBox()
         Me.Label50 = New System.Windows.Forms.Label()
         Me.Label49 = New System.Windows.Forms.Label()
+        Me.Label45 = New System.Windows.Forms.Label()
         Me.Label48 = New System.Windows.Forms.Label()
         Me.cboPiezas1_Detalle1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
@@ -145,6 +149,7 @@ Partial Class frm_Orden_Trabajo
         Me.Label46 = New System.Windows.Forms.Label()
         Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.GroupListadoPiezas.SuspendLayout()
         Me.GroupProducto3.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
@@ -201,6 +206,7 @@ Partial Class frm_Orden_Trabajo
         '
         'GroupListadoPiezas
         '
+        Me.GroupListadoPiezas.Controls.Add(Me.btnImprimir)
         Me.GroupListadoPiezas.Controls.Add(Me.GroupProducto3)
         Me.GroupListadoPiezas.Controls.Add(Me.Label17)
         Me.GroupListadoPiezas.Controls.Add(Me.btnGuardar_Orden_Trabajo)
@@ -218,10 +224,10 @@ Partial Class frm_Orden_Trabajo
         '
         'GroupProducto3
         '
+        Me.GroupProducto3.Controls.Add(Me.txt_id_detalle_orden_trabajo3)
+        Me.GroupProducto3.Controls.Add(Me.Label53)
         Me.GroupProducto3.Controls.Add(Me.cboPiezas3_Detalle3)
-        Me.GroupProducto3.Controls.Add(Me.txt_id_detalle_orden_trabajo)
         Me.GroupProducto3.Controls.Add(Me.GroupBox6)
-        Me.GroupProducto3.Controls.Add(Me.Label45)
         Me.GroupProducto3.Controls.Add(Me.cboTipoImpresion3_Detalle3)
         Me.GroupProducto3.Controls.Add(Me.Label41)
         Me.GroupProducto3.Controls.Add(Me.Label42)
@@ -236,6 +242,22 @@ Partial Class frm_Orden_Trabajo
         Me.GroupProducto3.TabStop = False
         Me.GroupProducto3.Text = "Registro 3"
         '
+        'txt_id_detalle_orden_trabajo3
+        '
+        Me.txt_id_detalle_orden_trabajo3.Location = New System.Drawing.Point(238, 100)
+        Me.txt_id_detalle_orden_trabajo3.Name = "txt_id_detalle_orden_trabajo3"
+        Me.txt_id_detalle_orden_trabajo3.Size = New System.Drawing.Size(61, 20)
+        Me.txt_id_detalle_orden_trabajo3.TabIndex = 61
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.Location = New System.Drawing.Point(109, 103)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(129, 13)
+        Me.Label53.TabIndex = 60
+        Me.Label53.Text = "id_detalle_orden_trabajo3"
+        '
         'cboPiezas3_Detalle3
         '
         Me.cboPiezas3_Detalle3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -244,13 +266,6 @@ Partial Class frm_Orden_Trabajo
         Me.cboPiezas3_Detalle3.Name = "cboPiezas3_Detalle3"
         Me.cboPiezas3_Detalle3.Size = New System.Drawing.Size(162, 21)
         Me.cboPiezas3_Detalle3.TabIndex = 58
-        '
-        'txt_id_detalle_orden_trabajo
-        '
-        Me.txt_id_detalle_orden_trabajo.Location = New System.Drawing.Point(256, 99)
-        Me.txt_id_detalle_orden_trabajo.Name = "txt_id_detalle_orden_trabajo"
-        Me.txt_id_detalle_orden_trabajo.Size = New System.Drawing.Size(61, 20)
-        Me.txt_id_detalle_orden_trabajo.TabIndex = 57
         '
         'GroupBox6
         '
@@ -436,15 +451,6 @@ Partial Class frm_Orden_Trabajo
         Me.Label40.TabIndex = 41
         Me.Label40.Text = "Papel"
         '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(127, 102)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(123, 13)
-        Me.Label45.TabIndex = 56
-        Me.Label45.Text = "id_detalle_orden_trabajo"
-        '
         'cboTipoImpresion3_Detalle3
         '
         Me.cboTipoImpresion3_Detalle3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -516,6 +522,8 @@ Partial Class frm_Orden_Trabajo
         '
         'GroupProducto2
         '
+        Me.GroupProducto2.Controls.Add(Me.txt_id_detalle_orden_trabajo2)
+        Me.GroupProducto2.Controls.Add(Me.Label52)
         Me.GroupProducto2.Controls.Add(Me.cboPiezas2_Detalle2)
         Me.GroupProducto2.Controls.Add(Me.GroupBox2)
         Me.GroupProducto2.Controls.Add(Me.cboTipoImpresion2_Detalle2)
@@ -531,6 +539,22 @@ Partial Class frm_Orden_Trabajo
         Me.GroupProducto2.TabIndex = 35
         Me.GroupProducto2.TabStop = False
         Me.GroupProducto2.Text = "Registro 2"
+        '
+        'txt_id_detalle_orden_trabajo2
+        '
+        Me.txt_id_detalle_orden_trabajo2.Location = New System.Drawing.Point(238, 96)
+        Me.txt_id_detalle_orden_trabajo2.Name = "txt_id_detalle_orden_trabajo2"
+        Me.txt_id_detalle_orden_trabajo2.Size = New System.Drawing.Size(61, 20)
+        Me.txt_id_detalle_orden_trabajo2.TabIndex = 59
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Location = New System.Drawing.Point(109, 99)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(129, 13)
+        Me.Label52.TabIndex = 58
+        Me.Label52.Text = "id_detalle_orden_trabajo2"
         '
         'cboPiezas2_Detalle2
         '
@@ -788,8 +812,10 @@ Partial Class frm_Orden_Trabajo
         'GroupProducto1
         '
         Me.GroupProducto1.Controls.Add(Me.Label51)
+        Me.GroupProducto1.Controls.Add(Me.txt_id_detalle_orden_trabajo1)
         Me.GroupProducto1.Controls.Add(Me.Label50)
         Me.GroupProducto1.Controls.Add(Me.Label49)
+        Me.GroupProducto1.Controls.Add(Me.Label45)
         Me.GroupProducto1.Controls.Add(Me.Label48)
         Me.GroupProducto1.Controls.Add(Me.cboPiezas1_Detalle1)
         Me.GroupProducto1.Controls.Add(Me.GroupBox5)
@@ -817,6 +843,13 @@ Partial Class frm_Orden_Trabajo
         Me.Label51.TabIndex = 60
         Me.Label51.Text = "*"
         '
+        'txt_id_detalle_orden_trabajo1
+        '
+        Me.txt_id_detalle_orden_trabajo1.Location = New System.Drawing.Point(250, 93)
+        Me.txt_id_detalle_orden_trabajo1.Name = "txt_id_detalle_orden_trabajo1"
+        Me.txt_id_detalle_orden_trabajo1.Size = New System.Drawing.Size(61, 20)
+        Me.txt_id_detalle_orden_trabajo1.TabIndex = 57
+        '
         'Label50
         '
         Me.Label50.AutoSize = True
@@ -837,6 +870,15 @@ Partial Class frm_Orden_Trabajo
         Me.Label49.TabIndex = 58
         Me.Label49.Text = "*"
         '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Location = New System.Drawing.Point(121, 96)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(129, 13)
+        Me.Label45.TabIndex = 56
+        Me.Label45.Text = "id_detalle_orden_trabajo1"
+        '
         'Label48
         '
         Me.Label48.AutoSize = True
@@ -849,6 +891,7 @@ Partial Class frm_Orden_Trabajo
         '
         'cboPiezas1_Detalle1
         '
+        Me.cboPiezas1_Detalle1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboPiezas1_Detalle1.FormattingEnabled = True
         Me.cboPiezas1_Detalle1.Location = New System.Drawing.Point(94, 41)
         Me.cboPiezas1_Detalle1.Name = "cboPiezas1_Detalle1"
@@ -1301,11 +1344,20 @@ Partial Class frm_Orden_Trabajo
         Me.Label6.Text = "Número" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Orden"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'btnImprimir
+        '
+        Me.btnImprimir.Location = New System.Drawing.Point(454, 554)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(75, 23)
+        Me.btnImprimir.TabIndex = 37
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.UseVisualStyleBackColor = True
+        '
         'frm_Orden_Trabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(956, 756)
+        Me.ClientSize = New System.Drawing.Size(956, 769)
         Me.Controls.Add(Me.Label46)
         Me.Controls.Add(Me.txtNumero_Orden_Trabajo)
         Me.Controls.Add(Me.Label6)
@@ -1433,7 +1485,7 @@ Partial Class frm_Orden_Trabajo
     Friend WithEvents txtNombre_vendedor As System.Windows.Forms.TextBox
     Friend WithEvents txtid_vendedor As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents txt_id_detalle_orden_trabajo As System.Windows.Forms.TextBox
+    Friend WithEvents txt_id_detalle_orden_trabajo1 As System.Windows.Forms.TextBox
     Friend WithEvents Label45 As System.Windows.Forms.Label
     Friend WithEvents txt_Cantidad3_Soporte3 As System.Windows.Forms.TextBox
     Friend WithEvents txt_Gramaje3_Soporte3 As System.Windows.Forms.TextBox
@@ -1475,4 +1527,9 @@ Partial Class frm_Orden_Trabajo
     Friend WithEvents Label46 As System.Windows.Forms.Label
     Friend WithEvents txtNumero_Orden_Trabajo As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents txt_id_detalle_orden_trabajo3 As System.Windows.Forms.TextBox
+    Friend WithEvents Label53 As System.Windows.Forms.Label
+    Friend WithEvents txt_id_detalle_orden_trabajo2 As System.Windows.Forms.TextBox
+    Friend WithEvents Label52 As System.Windows.Forms.Label
+    Friend WithEvents btnImprimir As System.Windows.Forms.Button
 End Class

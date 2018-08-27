@@ -45,13 +45,13 @@
         Me.Dispose()
     End Sub
 
-    Private Sub txt_hora_fin_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txt_hora_fin.KeyDown
+    Private Sub txt_hora_fin_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             txt_tiempo_estimado.Focus()
         End If
     End Sub
 
-    Private Sub txt_hora_fin_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_hora_fin.TextChanged
+    Private Sub txt_hora_fin_TextChanged(sender As System.Object, e As System.EventArgs)
         'VALIDA LA HORA INGRESADA
         Select Case Len(txt_hora_fin.Text)
             Case 5
@@ -80,6 +80,8 @@
         txt_numero_orden.Enabled = False
         txt_nombre_colaborador.Enabled = False
         txt_tarea.Focus()
+        txt_Carga_Horaria.Visible = False
+        Label13.Visible = False
     End Sub
 
     Private Sub txt_tarea_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles txt_tarea.KeyDown
@@ -140,5 +142,31 @@
         frm_Colaborador.quienllamo_col = Me
         frm_Colaborador.Text = "Seleccionar Colaborador"
         frm_Colaborador.Show()
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar.Click
+        Try
+            If txt_tarea.Text.Length <> 0 Then
+                'REGISTRO 1 DE TAREA
+                Dim tar1 = New TAREA
+                tar1.TAR_tiempo_estimado = txt_tiempo_estimado.Text
+                tar1.TAR_tiempo_real = txt_tiempo_real.Text
+                tar1.COL_id_colaborador = txt_id_colaborador.Text
+                tar1.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                tar1.TAR_hora_fin = txt_hora_fin.Text
+                tar1.TAR_carga_horaria = txt_Carga_Horaria.Text
+                tar1.TAR_detalle_tarea = txt_tarea.Text
+                tar1.TAR_observaciones = txt_observaciones.Text
+                tar1.TAR_fecha = dtpFecha.Text
+                datacontext.TAREA.InsertOnSubmit(tar1)
+                datacontext.SubmitChanges()
+            End If
+            MsgBox("La tarea se ha creado correctamente", vbInformation)
+            Me.Close()
+            frm_Listado_Tareas.Close()
+        Catch ex As Exception
+            MsgBox("La tarea NO fue creada")
+        End Try
+
     End Sub
 End Class

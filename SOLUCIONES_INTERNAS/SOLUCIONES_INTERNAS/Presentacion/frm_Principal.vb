@@ -125,11 +125,15 @@ Public Class frm_Principal
     Private Sub AltaTareaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AltaTareaToolStripMenuItem.Click
         frm_Tarea.Show()
         frm_Tarea.Text = "Nueva Tarea"
+        frm_Tarea.btnImprimir.Enabled = False
     End Sub
 
     Private Sub ListaTareaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ListaTareaToolStripMenuItem.Click
         frm_Listado_Tareas.Show()
+        frm_Listado_Tareas.Text = "Modificar Tarea"
         frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
+        frm_Tarea.btnImprimir.Enabled = False
+        frm_Listado_Tareas.btnVer.Enabled = False
     End Sub
 
     Private Sub NuevoClienteToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoClienteToolStripMenuItem.Click
@@ -323,6 +327,9 @@ Public Class frm_Principal
         frm_Listado_Tareas.Show()
         frm_Listado_Tareas.Text = "Eliminar Tarea"
         frm_Listado_Tareas.btnModificar_Tarea.Enabled = False
+        frm_Listado_Tareas.btnAgregar.Enabled = False
+        frm_Listado_Tareas.btnVer.Enabled = False
+        frm_Tarea.btnImprimir.Enabled = False
     End Sub
 
     Private Sub TareaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
@@ -337,6 +344,7 @@ Public Class frm_Principal
         frm_Listado_Tareas.Text = "Consultar Tarea"
         frm_Listado_Tareas.btnModificar_Tarea.Enabled = False
         frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
+        frm_Listado_Tareas.btnAgregar.Enabled = False
     End Sub
 
     Private Sub NuevaOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevaOrdenToolStripMenuItem.Click
@@ -344,6 +352,7 @@ Public Class frm_Principal
         frm_Orden_Trabajo.Show()
         frm_Orden_Trabajo.Text = "Nueva Orden"
         frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = False
+        frm_Orden_Trabajo.btnImprimir.Enabled = False
     End Sub
 
     Private Sub OrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
@@ -366,10 +375,15 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.Show()
         frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
         frm_Listado_Orden_Trabajo.btnEliminar_Detalle.Enabled = False
+        frm_Listado_Orden_Trabajo.btnVer.Enabled = False
+        frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
+
     End Sub
 
     Private Sub EliminarOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarOrdenToolStripMenuItem.Click
         frm_Listado_Orden_Trabajo.Show()
         frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.btnVer.Enabled = False
+        frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
     End Sub
 End Class

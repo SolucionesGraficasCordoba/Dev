@@ -30,12 +30,13 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.dgvLista_Orden_Trabajo = New System.Windows.Forms.DataGridView()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupDetallesOrden = New System.Windows.Forms.GroupBox()
+        Me.btn_Cancelar = New System.Windows.Forms.Button()
         Me.btnModificar_Orden = New System.Windows.Forms.Button()
         Me.btnEliminar_Detalle = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgv_detalle_orden = New System.Windows.Forms.DataGridView()
-        Me.btn_Cancelar = New System.Windows.Forms.Button()
+        Me.btnVer = New System.Windows.Forms.Button()
         Me.GroupListadoPiezas.SuspendLayout()
         CType(Me.dgvLista_Orden_Trabajo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupDetallesOrden.SuspendLayout()
@@ -111,6 +112,7 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         'GroupDetallesOrden
         '
+        Me.GroupDetallesOrden.Controls.Add(Me.btnVer)
         Me.GroupDetallesOrden.Controls.Add(Me.btn_Cancelar)
         Me.GroupDetallesOrden.Controls.Add(Me.btnModificar_Orden)
         Me.GroupDetallesOrden.Controls.Add(Me.btnEliminar_Detalle)
@@ -124,20 +126,29 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.GroupDetallesOrden.TabStop = False
         Me.GroupDetallesOrden.Text = "Detalles de la orden"
         '
+        'btn_Cancelar
+        '
+        Me.btn_Cancelar.Location = New System.Drawing.Point(465, 252)
+        Me.btn_Cancelar.Name = "btn_Cancelar"
+        Me.btn_Cancelar.Size = New System.Drawing.Size(90, 23)
+        Me.btn_Cancelar.TabIndex = 36
+        Me.btn_Cancelar.Text = "Cancelar"
+        Me.btn_Cancelar.UseVisualStyleBackColor = True
+        '
         'btnModificar_Orden
         '
-        Me.btnModificar_Orden.Location = New System.Drawing.Point(213, 252)
+        Me.btnModificar_Orden.Location = New System.Drawing.Point(273, 252)
         Me.btnModificar_Orden.Name = "btnModificar_Orden"
-        Me.btnModificar_Orden.Size = New System.Drawing.Size(113, 23)
+        Me.btnModificar_Orden.Size = New System.Drawing.Size(90, 23)
         Me.btnModificar_Orden.TabIndex = 29
         Me.btnModificar_Orden.Text = "Modificar"
         Me.btnModificar_Orden.UseVisualStyleBackColor = True
         '
         'btnEliminar_Detalle
         '
-        Me.btnEliminar_Detalle.Location = New System.Drawing.Point(332, 252)
+        Me.btnEliminar_Detalle.Location = New System.Drawing.Point(369, 252)
         Me.btnEliminar_Detalle.Name = "btnEliminar_Detalle"
-        Me.btnEliminar_Detalle.Size = New System.Drawing.Size(113, 23)
+        Me.btnEliminar_Detalle.Size = New System.Drawing.Size(90, 23)
         Me.btnEliminar_Detalle.TabIndex = 35
         Me.btnEliminar_Detalle.Text = "Eliminar Detalle"
         Me.btnEliminar_Detalle.UseVisualStyleBackColor = True
@@ -169,14 +180,14 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.dgv_detalle_orden.Size = New System.Drawing.Size(528, 208)
         Me.dgv_detalle_orden.TabIndex = 32
         '
-        'btn_Cancelar
+        'btnVer
         '
-        Me.btn_Cancelar.Location = New System.Drawing.Point(452, 252)
-        Me.btn_Cancelar.Name = "btn_Cancelar"
-        Me.btn_Cancelar.Size = New System.Drawing.Size(103, 23)
-        Me.btn_Cancelar.TabIndex = 36
-        Me.btn_Cancelar.Text = "Cancelar"
-        Me.btn_Cancelar.UseVisualStyleBackColor = True
+        Me.btnVer.Location = New System.Drawing.Point(177, 252)
+        Me.btnVer.Name = "btnVer"
+        Me.btnVer.Size = New System.Drawing.Size(90, 23)
+        Me.btnVer.TabIndex = 37
+        Me.btnVer.Text = "Ver"
+        Me.btnVer.UseVisualStyleBackColor = True
         '
         'frm_Listado_Orden_Trabajo
         '
@@ -211,4 +222,5 @@ Partial Class frm_Listado_Orden_Trabajo
     Friend WithEvents btnModificar_Orden As System.Windows.Forms.Button
     Friend WithEvents btnEliminar_Detalle As System.Windows.Forms.Button
     Friend WithEvents btn_Cancelar As System.Windows.Forms.Button
+    Friend WithEvents btnVer As System.Windows.Forms.Button
 End Class

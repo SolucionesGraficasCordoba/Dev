@@ -59,6 +59,7 @@
         End If
         Try
             Dim ActualizarCliente = (From P In datacontext.CLIENTE Where P.CLI_id_cliente = (txt_id_cliente.Text.ToUpper)).ToList()(0)
+
             ActualizarCliente.CLI_razon_social = txt_razonsocial_cliente.Text
             ActualizarCliente.CLI_mail_cli = txt_mail_cliente.Text
             ActualizarCliente.CLI_telefono_cli = txt_telefono_cliente.Text

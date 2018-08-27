@@ -10,6 +10,8 @@
 
     Private Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        ' btnAgregar.Enabled = False
+
         dgvColaboradores.ClearSelection()
         Label6.Text = dgvColaboradores.Rows.Count
         'CARGA COMBOBOX SECTOR
@@ -21,6 +23,8 @@
         cbo_sector.ValueMember = "SEC_id_sector"
         cbo_sector.SelectedIndex = -1
     End Sub
+
+
 
     'ARMA LA GRILLA DEL COLABORADOR
 
@@ -40,19 +44,20 @@
 
     'BOTON ELIMINAR
     Private Sub btnEliminar_Tarea_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar_Tarea.Click
-        ' If dgvColaboradores.SelectedRows.Count > 0 Then
 
-        Dim eliminar = (From C In datacontext.TAREA Where C.TAR_id_tarea = CInt(dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value)).ToList()(0)
-        Select Case MsgBox("Se eliminará la tares seleccionada, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar tarea")
-            Case MsgBoxResult.Yes
-                datacontext.TAREA.DeleteOnSubmit(eliminar)
-                datacontext.SubmitChanges()
-                MsgBox("La tarea ha sido eliminada")
-        End Select
-        Me.Close()
-        ' Else
-        ' MsgBox("Debe seleccionar una tarea")
-        ' End If
+        If dgvTarea_x_Colaborador.SelectedRows.Count = 0 Then
+            MsgBox("Debe seleccionar una tarea")
+        Else
+            Dim eliminar = (From C In datacontext.TAREA Where C.TAR_id_tarea = CInt(dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value)).ToList()(0)
+            Select Case MsgBox("Se eliminará la tares seleccionada, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar tarea")
+                Case MsgBoxResult.Yes
+                    datacontext.TAREA.DeleteOnSubmit(eliminar)
+                    datacontext.SubmitChanges()
+                    MsgBox("La tarea ha sido eliminada")
+            End Select
+            Me.Close()
+        End If
+
     End Sub
 
     'CARGA COLABORADOR DATAGRIDVIEW SEGUN LO QUE SELECCIONO EN EL COMBOBOX
@@ -69,11 +74,7 @@
     Public Sub dgvColaboradores_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvColaboradores.CellClick
 
         'VALIDA QUE SE HAYA SELECCONADO UN SECTOR Y UNA FECHA
-        If dgvColaboradores.Rows.Count = 0 Then
-            MsgBox("Debe seleccionar un sector y una fecha", MsgBoxStyle.Information + MsgBoxStyle.Information, "Seleccionar")
-            cbo_sector.Focus()
-            Exit Sub
-        End If
+       
         'CARGA TAREAS DEL COLABORADOR SEGUN SECTOR Y FECHA
         If dgvColaboradores.SelectedRows.Count > 0 Then
             vble_id_colaborador = dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
@@ -86,10 +87,12 @@
                            o.TAR_observaciones, o.ORT_id_orden_trabajo, o.ORT_numero_ot, o.TAR_fecha, o.TAR_carga_horaria, o.TAR_hora_fin, o.Expr1, o.COL_nombre_col
                            Where COL_nombre_col = vble_colaborador And TAR_fecha = vble_fecha)
         mostrargrillaobligaciones(datagridtarea)
-        dgvColaboradores.ClearSelection()
+        ' dgvColaboradores.ClearSelection()
+
         'VALIDA SI TIENE ASIGNADAS TAREAS AL COLABORADOR
         If dgvTarea_x_Colaborador.Rows.Count = 0 Then
             MsgBox("No se le ha asignado ninguna tarea", MsgBoxStyle.Information, "Listado de tareas")
+            btnAgregar.Enabled = True
             Exit Sub
         End If
         Label1.Text = dgvTarea_x_Colaborador.Rows.Count
@@ -154,11 +157,13 @@
             frm_Actualizar_Tarea.txt_hora_fin.Text = Me.dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
             frm_Actualizar_Tarea.txt_id_colaborador.Text = Me.dgvTarea_x_Colaborador.Item("Expr1", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
             frm_Actualizar_Tarea.txt_nombre_colaborador.Text = Me.dgvTarea_x_Colaborador.Item("COL_nombre_col", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+
         Else
             MsgBox("Debe seleccionar una tarea")
             Exit Sub
         End If
         frm_Actualizar_Tarea.Show()
+        frm_Actualizar_Tarea.btnGuardar.Enabled = False
     End Sub
 
     'BOTON CANCELAR CIERRA EL FORMULARIO ACTUAL
@@ -166,4 +171,308 @@
         Me.Close()
         Me.Dispose()
     End Sub
+
+    Private Sub btnAgregar_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregar.Click
+
+        If Me.dgvColaboradores.SelectedRows.Count > 0 Then
+            frm_Actualizar_Tarea.dtpFecha.Text = dtpFecha.Text
+            frm_Actualizar_Tarea.txt_id_colaborador.Text = Me.dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
+            frm_Actualizar_Tarea.txt_nombre_colaborador.Text = Me.dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
+        Else
+            MsgBox("Debe seleccionar una tarea")
+            Exit Sub
+        End If
+        frm_Actualizar_Tarea.Show()
+        frm_Actualizar_Tarea.btn_Actualizar_Tarea.Enabled = False
+    End Sub
+
+    Private Sub dtpFecha_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpFecha.ValueChanged
+
+        Dim fechaactual = System.DateTime.Now.ToString("dd/mm/yyyy")
+        If dtpFecha.Text <= fechaactual Then
+            btnModificar_Tarea.Enabled = False
+        Else
+            btnModificar_Tarea.Enabled = True
+        End If
+    End Sub
+
+    Private Sub btnVer_Click(sender As System.Object, e As System.EventArgs) Handles btnVer.Click
+
+        frm_Tarea.Show()
+        frm_Tarea.Text = "Consultar Tarea"
+        frm_Tarea.btnBuscar_Colaborador.Enabled = False
+        frm_Tarea.dtpFecha.Enabled = False
+        frm_Tarea.txt_Carga_Horaria1.Enabled = False
+        frm_Tarea.btnImprimir.Enabled = False
+        frm_Tarea.btnNueva_Tarea.Enabled = False
+        frm_Tarea.btnGuardar_Tarea.Enabled = False
+
+        'CARGA EL ENCABEZADO DEL FORMULARIO TAREAS
+        frm_Tarea.txt_id_colaborador.Text = Me.dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
+        frm_Tarea.txt_nombre_colaborador.Text = Me.dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
+        frm_Tarea.dtpFecha.Text = Me.dgvTarea_x_Colaborador.Item("TAR_fecha", dgvTarea_x_Colaborador.Rows(0).Index).Value
+        frm_Tarea.txt_Carga_Horaria1.Text = Me.dgvTarea_x_Colaborador.Item("TAR_carga_horaria", dgvTarea_x_Colaborador.Rows(0).Index).Value
+
+        Dim flag1, flag2, flag3, flag4, flag5, flag6, flag7, flag8, flag9, flag10, flag11, flag12, flag13, flag14, flag15, flag16, flag17, flag18, flag19, flag20 As Integer
+
+        If dgvTarea_x_Colaborador.RowCount = 1 Then
+            flag1 = 1
+            flag2 = 0
+        ElseIf dgvTarea_x_Colaborador.RowCount = 2 Then
+            flag1 = 1
+            flag2 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 3 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 4 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 5 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 6 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 7 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+            flag7 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 8 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+            flag7 = 1
+            flag8 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 9 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+            flag7 = 1
+            flag8 = 1
+            flag9 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 10 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+            flag7 = 1
+            flag8 = 1
+            flag9 = 1
+            flag10 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 11 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+            flag7 = 1
+            flag8 = 1
+            flag9 = 1
+            flag10 = 1
+            flag11 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 12 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+            flag7 = 1
+            flag8 = 1
+            flag9 = 1
+            flag10 = 1
+            flag11 = 1
+            flag12 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 13 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+            flag7 = 1
+            flag8 = 1
+            flag9 = 1
+            flag10 = 1
+            flag11 = 1
+            flag12 = 1
+            flag13 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 14 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+            flag7 = 1
+            flag8 = 1
+            flag9 = 1
+            flag10 = 1
+            flag11 = 1
+            flag12 = 1
+            flag13 = 1
+            flag14 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 15 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+            flag7 = 1
+            flag8 = 1
+            flag9 = 1
+            flag10 = 1
+            flag11 = 1
+            flag12 = 1
+            flag13 = 1
+            flag14 = 1
+            flag15 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 16 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+            flag7 = 1
+            flag8 = 1
+            flag9 = 1
+            flag10 = 1
+            flag11 = 1
+            flag12 = 1
+            flag13 = 1
+            flag14 = 1
+            flag15 = 1
+            flag16 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 17 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+            flag7 = 1
+            flag8 = 1
+            flag9 = 1
+            flag10 = 1
+            flag11 = 1
+            flag12 = 1
+            flag13 = 1
+            flag14 = 1
+            flag15 = 1
+            flag16 = 1
+            flag17 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 18 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+            flag7 = 1
+            flag8 = 1
+            flag9 = 1
+            flag10 = 1
+            flag11 = 1
+            flag12 = 1
+            flag13 = 1
+            flag14 = 1
+            flag15 = 1
+            flag16 = 1
+            flag17 = 1
+            flag18 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 19 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+            flag7 = 1
+            flag8 = 1
+            flag9 = 1
+            flag10 = 1
+            flag11 = 1
+            flag12 = 1
+            flag13 = 1
+            flag14 = 1
+            flag15 = 1
+            flag16 = 1
+            flag17 = 1
+            flag18 = 1
+            flag19 = 1
+        ElseIf dgvTarea_x_Colaborador.RowCount = 20 Then
+            flag1 = 1
+            flag2 = 1
+            flag3 = 1
+            flag4 = 1
+            flag5 = 1
+            flag6 = 1
+            flag7 = 1
+            flag8 = 1
+            flag9 = 1
+            flag10 = 1
+            flag11 = 1
+            flag12 = 1
+            flag13 = 1
+            flag14 = 1
+            flag15 = 1
+            flag16 = 1
+            flag17 = 1
+            flag18 = 1
+            flag19 = 1
+            flag20 = 1
+
+        End If
+
+        If flag1 = 1 Then
+            frm_Tarea.txt_detalle_tarea1.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            frm_Tarea.txtTiempo_Estimado1.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            frm_Tarea.txtTiempo_Real1.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            frm_Tarea.txtHora_Finalizacion1.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            frm_Tarea.txtObservaciones1.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            frm_Tarea.txt_id_orden_trabajo1.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            frm_Tarea.txtNumero_Orden_Trabajo1.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(0).Index).Value
+        End If
+
+        If flag2 = 1 Then
+            frm_Tarea.txt_detalle_tarea2.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(1).Index).Value
+            frm_Tarea.txtTiempo_Estimado2.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(1).Index).Value
+            frm_Tarea.txtTiempo_Real2.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(1).Index).Value
+            frm_Tarea.txtHora_Finalizacion2.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(1).Index).Value
+            frm_Tarea.txtObservaciones2.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(1).Index).Value
+            frm_Tarea.txt_id_orden_trabajo2.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(1).Index).Value
+            frm_Tarea.txtNumero_Orden_Trabajo2.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(1).Index).Value
+        End If
+
+
+
+
+
+    End Sub
+
 End Class
