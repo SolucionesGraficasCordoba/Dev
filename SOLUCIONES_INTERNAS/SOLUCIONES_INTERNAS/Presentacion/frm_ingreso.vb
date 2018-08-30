@@ -64,6 +64,9 @@
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = False 'eliminar
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Visible = False 'consultar
 
+                frm_Principal.GenerarInformesToolStripMenuItem.Visible = True
+
+
             ElseIf Buscausuario.USU_perfil = "COLABORADOR" Then
                 frm_Principal.ArchivoToolStripMenuItem.DropDownItems(0).Enabled = True
                 frm_Principal.ArchivoToolStripMenuItem.DropDownItems(1).Enabled = True
@@ -169,6 +172,8 @@
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = True 'modificar
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = True 'eliminar
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Visible = True 'consultar
+
+                frm_Principal.GenerarInformesToolStripMenuItem.Visible = True
 
             ElseIf Buscausuario.USU_perfil = "GERENCIA" Then
                 frm_Principal.ArchivoToolStripMenuItem.DropDownItems(0).Visible = True

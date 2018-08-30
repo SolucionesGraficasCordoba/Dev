@@ -183,7 +183,7 @@
     Private Sub dtpFecha_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpFecha.ValueChanged
         Dim fechaactual = System.DateTime.Now.ToString("dd/mm/yyyy")
         If dtpFecha.Text <= fechaactual Then
-            btnModificar_Tarea.Enabled = False
+            '  btnModificar_Tarea.Enabled = False
         Else
             btnModificar_Tarea.Enabled = True
         End If

@@ -49,6 +49,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -86,6 +89,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\Exportar.vb" />
     <Compile Include="Presentacion\frm_Actualizar_Tarea.Designer.vb">
       <DependentUpon>frm_Actualizar_Tarea.vb</DependentUpon>
     </Compile>
@@ -118,6 +122,12 @@
       <DependentUpon>frm_Colaborador.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frm_Colaborador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_Generar_Informe.Designer.vb">
+      <DependentUpon>frm_Generar_Informe.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Generar_Informe.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frm_Gestion_Usuarios.Designer.vb">
@@ -196,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Colaborador.resx">
       <DependentUpon>frm_Colaborador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Generar_Informe.resx">
+      <DependentUpon>frm_Generar_Informe.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Gestion_Usuarios.resx">
       <DependentUpon>frm_Gestion_Usuarios.vb</DependentUpon>

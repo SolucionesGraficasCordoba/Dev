@@ -386,4 +386,8 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.btnVer.Enabled = False
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
     End Sub
+
+    Private Sub TareasToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles TareasToolStripMenuItem1.Click
+        frm_Generar_Informe.Show()
+    End Sub
 End Class
