@@ -248,6 +248,26 @@ Partial Class frm_Tarea
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.Label52 = New System.Windows.Forms.Label()
+        Me.Label53 = New System.Windows.Forms.Label()
+        Me.Label54 = New System.Windows.Forms.Label()
+        Me.Label55 = New System.Windows.Forms.Label()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.Label57 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -392,7 +412,7 @@ Partial Class frm_Tarea
         '
         Me.txtNumero_Orden_Trabajo1.Location = New System.Drawing.Point(768, 45)
         Me.txtNumero_Orden_Trabajo1.Name = "txtNumero_Orden_Trabajo1"
-        Me.txtNumero_Orden_Trabajo1.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo1.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo1.TabIndex = 40
         '
         'txt_id_orden_trabajo1
@@ -452,6 +472,26 @@ Partial Class frm_Tarea
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label57)
+        Me.GroupBox1.Controls.Add(Me.Label56)
+        Me.GroupBox1.Controls.Add(Me.Label55)
+        Me.GroupBox1.Controls.Add(Me.Label54)
+        Me.GroupBox1.Controls.Add(Me.Label53)
+        Me.GroupBox1.Controls.Add(Me.Label52)
+        Me.GroupBox1.Controls.Add(Me.Label51)
+        Me.GroupBox1.Controls.Add(Me.Label50)
+        Me.GroupBox1.Controls.Add(Me.Label49)
+        Me.GroupBox1.Controls.Add(Me.Label48)
+        Me.GroupBox1.Controls.Add(Me.Label47)
+        Me.GroupBox1.Controls.Add(Me.Label46)
+        Me.GroupBox1.Controls.Add(Me.Label45)
+        Me.GroupBox1.Controls.Add(Me.Label44)
+        Me.GroupBox1.Controls.Add(Me.Label43)
+        Me.GroupBox1.Controls.Add(Me.Label42)
+        Me.GroupBox1.Controls.Add(Me.Label41)
+        Me.GroupBox1.Controls.Add(Me.Label40)
+        Me.GroupBox1.Controls.Add(Me.Label39)
+        Me.GroupBox1.Controls.Add(Me.Label38)
         Me.GroupBox1.Controls.Add(Me.btnBuscar_Numero_Orden20)
         Me.GroupBox1.Controls.Add(Me.btnBuscar_Numero_Orden19)
         Me.GroupBox1.Controls.Add(Me.btnBuscar_Numero_Orden17)
@@ -900,84 +940,84 @@ Partial Class frm_Tarea
         '
         Me.txtNumero_Orden_Trabajo20.Location = New System.Drawing.Point(768, 544)
         Me.txtNumero_Orden_Trabajo20.Name = "txtNumero_Orden_Trabajo20"
-        Me.txtNumero_Orden_Trabajo20.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo20.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo20.TabIndex = 40
         '
         'txtNumero_Orden_Trabajo19
         '
         Me.txtNumero_Orden_Trabajo19.Location = New System.Drawing.Point(768, 518)
         Me.txtNumero_Orden_Trabajo19.Name = "txtNumero_Orden_Trabajo19"
-        Me.txtNumero_Orden_Trabajo19.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo19.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo19.TabIndex = 40
         '
         'txtNumero_Orden_Trabajo18
         '
         Me.txtNumero_Orden_Trabajo18.Location = New System.Drawing.Point(768, 492)
         Me.txtNumero_Orden_Trabajo18.Name = "txtNumero_Orden_Trabajo18"
-        Me.txtNumero_Orden_Trabajo18.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo18.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo18.TabIndex = 40
         '
         'txtNumero_Orden_Trabajo17
         '
         Me.txtNumero_Orden_Trabajo17.Location = New System.Drawing.Point(768, 466)
         Me.txtNumero_Orden_Trabajo17.Name = "txtNumero_Orden_Trabajo17"
-        Me.txtNumero_Orden_Trabajo17.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo17.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo17.TabIndex = 40
         '
         'txtNumero_Orden_Trabajo16
         '
-        Me.txtNumero_Orden_Trabajo16.Location = New System.Drawing.Point(768, 440)
+        Me.txtNumero_Orden_Trabajo16.Location = New System.Drawing.Point(768, 437)
         Me.txtNumero_Orden_Trabajo16.Name = "txtNumero_Orden_Trabajo16"
-        Me.txtNumero_Orden_Trabajo16.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo16.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo16.TabIndex = 40
         '
         'txtNumero_Orden_Trabajo15
         '
         Me.txtNumero_Orden_Trabajo15.Location = New System.Drawing.Point(768, 411)
         Me.txtNumero_Orden_Trabajo15.Name = "txtNumero_Orden_Trabajo15"
-        Me.txtNumero_Orden_Trabajo15.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo15.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo15.TabIndex = 40
         '
         'txtNumero_Orden_Trabajo14
         '
         Me.txtNumero_Orden_Trabajo14.Location = New System.Drawing.Point(768, 385)
         Me.txtNumero_Orden_Trabajo14.Name = "txtNumero_Orden_Trabajo14"
-        Me.txtNumero_Orden_Trabajo14.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo14.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo14.TabIndex = 40
         '
         'txtNumero_Orden_Trabajo13
         '
         Me.txtNumero_Orden_Trabajo13.Location = New System.Drawing.Point(768, 359)
         Me.txtNumero_Orden_Trabajo13.Name = "txtNumero_Orden_Trabajo13"
-        Me.txtNumero_Orden_Trabajo13.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo13.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo13.TabIndex = 40
         '
         'txtNumero_Orden_Trabajo12
         '
         Me.txtNumero_Orden_Trabajo12.Location = New System.Drawing.Point(768, 333)
         Me.txtNumero_Orden_Trabajo12.Name = "txtNumero_Orden_Trabajo12"
-        Me.txtNumero_Orden_Trabajo12.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo12.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo12.TabIndex = 40
         '
         'txtNumero_Orden_Trabajo11
         '
         Me.txtNumero_Orden_Trabajo11.Location = New System.Drawing.Point(768, 306)
         Me.txtNumero_Orden_Trabajo11.Name = "txtNumero_Orden_Trabajo11"
-        Me.txtNumero_Orden_Trabajo11.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo11.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo11.TabIndex = 40
         '
         'txtNumero_Orden_Trabajo10
         '
         Me.txtNumero_Orden_Trabajo10.Location = New System.Drawing.Point(768, 280)
         Me.txtNumero_Orden_Trabajo10.Name = "txtNumero_Orden_Trabajo10"
-        Me.txtNumero_Orden_Trabajo10.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo10.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo10.TabIndex = 40
         '
         'txtNumero_Orden_Trabajo9
         '
         Me.txtNumero_Orden_Trabajo9.Location = New System.Drawing.Point(768, 254)
         Me.txtNumero_Orden_Trabajo9.Name = "txtNumero_Orden_Trabajo9"
-        Me.txtNumero_Orden_Trabajo9.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo9.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo9.TabIndex = 40
         '
         'txt_id_orden_trabajo20
@@ -991,7 +1031,7 @@ Partial Class frm_Tarea
         '
         Me.txtNumero_Orden_Trabajo8.Location = New System.Drawing.Point(768, 228)
         Me.txtNumero_Orden_Trabajo8.Name = "txtNumero_Orden_Trabajo8"
-        Me.txtNumero_Orden_Trabajo8.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo8.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo8.TabIndex = 40
         '
         'txt_id_orden_trabajo19
@@ -1005,7 +1045,7 @@ Partial Class frm_Tarea
         '
         Me.TextBox12.Location = New System.Drawing.Point(768, 228)
         Me.TextBox12.Name = "TextBox12"
-        Me.TextBox12.Size = New System.Drawing.Size(123, 20)
+        Me.TextBox12.Size = New System.Drawing.Size(113, 20)
         Me.TextBox12.TabIndex = 40
         '
         'txt_id_orden_trabajo17
@@ -1019,7 +1059,7 @@ Partial Class frm_Tarea
         '
         Me.txtNumero_Orden_Trabajo7.Location = New System.Drawing.Point(768, 202)
         Me.txtNumero_Orden_Trabajo7.Name = "txtNumero_Orden_Trabajo7"
-        Me.txtNumero_Orden_Trabajo7.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo7.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo7.TabIndex = 40
         '
         'txt_id_orden_trabajo15
@@ -1033,7 +1073,7 @@ Partial Class frm_Tarea
         '
         Me.txtNumero_Orden_Trabajo6.Location = New System.Drawing.Point(768, 176)
         Me.txtNumero_Orden_Trabajo6.Name = "txtNumero_Orden_Trabajo6"
-        Me.txtNumero_Orden_Trabajo6.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo6.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo6.TabIndex = 40
         '
         'txt_id_orden_trabajo13
@@ -1047,7 +1087,7 @@ Partial Class frm_Tarea
         '
         Me.txtNumero_Orden_Trabajo5.Location = New System.Drawing.Point(768, 150)
         Me.txtNumero_Orden_Trabajo5.Name = "txtNumero_Orden_Trabajo5"
-        Me.txtNumero_Orden_Trabajo5.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo5.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo5.TabIndex = 40
         '
         'txt_id_orden_trabajo11
@@ -1061,7 +1101,7 @@ Partial Class frm_Tarea
         '
         Me.txtNumero_Orden_Trabajo4.Location = New System.Drawing.Point(768, 123)
         Me.txtNumero_Orden_Trabajo4.Name = "txtNumero_Orden_Trabajo4"
-        Me.txtNumero_Orden_Trabajo4.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo4.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo4.TabIndex = 40
         '
         'txt_id_orden_trabajo9
@@ -1082,7 +1122,7 @@ Partial Class frm_Tarea
         '
         Me.txtNumero_Orden_Trabajo3.Location = New System.Drawing.Point(768, 97)
         Me.txtNumero_Orden_Trabajo3.Name = "txtNumero_Orden_Trabajo3"
-        Me.txtNumero_Orden_Trabajo3.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo3.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo3.TabIndex = 40
         '
         'txt_id_orden_trabajo16
@@ -1103,7 +1143,7 @@ Partial Class frm_Tarea
         '
         Me.txtNumero_Orden_Trabajo2.Location = New System.Drawing.Point(768, 71)
         Me.txtNumero_Orden_Trabajo2.Name = "txtNumero_Orden_Trabajo2"
-        Me.txtNumero_Orden_Trabajo2.Size = New System.Drawing.Size(123, 20)
+        Me.txtNumero_Orden_Trabajo2.Size = New System.Drawing.Size(113, 20)
         Me.txtNumero_Orden_Trabajo2.TabIndex = 40
         '
         'txt_id_orden_trabajo12
@@ -2239,6 +2279,226 @@ Partial Class frm_Tarea
         Me.Label35.Size = New System.Drawing.Size(2, 15)
         Me.Label35.TabIndex = 49
         '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label38.ForeColor = System.Drawing.Color.Red
+        Me.Label38.Location = New System.Drawing.Point(883, 48)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(11, 13)
+        Me.Label38.TabIndex = 50
+        Me.Label38.Text = "*"
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label39.ForeColor = System.Drawing.Color.Red
+        Me.Label39.Location = New System.Drawing.Point(883, 78)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(11, 13)
+        Me.Label39.TabIndex = 50
+        Me.Label39.Text = "*"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.ForeColor = System.Drawing.Color.Red
+        Me.Label40.Location = New System.Drawing.Point(883, 104)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(11, 13)
+        Me.Label40.TabIndex = 50
+        Me.Label40.Text = "*"
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.ForeColor = System.Drawing.Color.Red
+        Me.Label41.Location = New System.Drawing.Point(883, 126)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(11, 13)
+        Me.Label41.TabIndex = 50
+        Me.Label41.Text = "*"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.ForeColor = System.Drawing.Color.Red
+        Me.Label42.Location = New System.Drawing.Point(883, 157)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(11, 13)
+        Me.Label42.TabIndex = 50
+        Me.Label42.Text = "*"
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.ForeColor = System.Drawing.Color.Red
+        Me.Label43.Location = New System.Drawing.Point(883, 179)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(11, 13)
+        Me.Label43.TabIndex = 50
+        Me.Label43.Text = "*"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.ForeColor = System.Drawing.Color.Red
+        Me.Label44.Location = New System.Drawing.Point(883, 205)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(11, 13)
+        Me.Label44.TabIndex = 50
+        Me.Label44.Text = "*"
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.ForeColor = System.Drawing.Color.Red
+        Me.Label45.Location = New System.Drawing.Point(883, 231)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(11, 13)
+        Me.Label45.TabIndex = 50
+        Me.Label45.Text = "*"
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label46.ForeColor = System.Drawing.Color.Red
+        Me.Label46.Location = New System.Drawing.Point(883, 257)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(11, 13)
+        Me.Label46.TabIndex = 50
+        Me.Label46.Text = "*"
+        '
+        'Label47
+        '
+        Me.Label47.AutoSize = True
+        Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label47.ForeColor = System.Drawing.Color.Red
+        Me.Label47.Location = New System.Drawing.Point(883, 283)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(11, 13)
+        Me.Label47.TabIndex = 50
+        Me.Label47.Text = "*"
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label48.ForeColor = System.Drawing.Color.Red
+        Me.Label48.Location = New System.Drawing.Point(883, 309)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(11, 13)
+        Me.Label48.TabIndex = 50
+        Me.Label48.Text = "*"
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label49.ForeColor = System.Drawing.Color.Red
+        Me.Label49.Location = New System.Drawing.Point(883, 336)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(11, 13)
+        Me.Label49.TabIndex = 50
+        Me.Label49.Text = "*"
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label50.ForeColor = System.Drawing.Color.Red
+        Me.Label50.Location = New System.Drawing.Point(883, 362)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(11, 13)
+        Me.Label50.TabIndex = 50
+        Me.Label50.Text = "*"
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label51.ForeColor = System.Drawing.Color.Red
+        Me.Label51.Location = New System.Drawing.Point(883, 388)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(11, 13)
+        Me.Label51.TabIndex = 50
+        Me.Label51.Text = "*"
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label52.ForeColor = System.Drawing.Color.Red
+        Me.Label52.Location = New System.Drawing.Point(883, 414)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(11, 13)
+        Me.Label52.TabIndex = 50
+        Me.Label52.Text = "*"
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label53.ForeColor = System.Drawing.Color.Red
+        Me.Label53.Location = New System.Drawing.Point(883, 440)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(11, 13)
+        Me.Label53.TabIndex = 50
+        Me.Label53.Text = "*"
+        '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label54.ForeColor = System.Drawing.Color.Red
+        Me.Label54.Location = New System.Drawing.Point(883, 469)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(11, 13)
+        Me.Label54.TabIndex = 50
+        Me.Label54.Text = "*"
+        '
+        'Label55
+        '
+        Me.Label55.AutoSize = True
+        Me.Label55.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label55.ForeColor = System.Drawing.Color.Red
+        Me.Label55.Location = New System.Drawing.Point(883, 495)
+        Me.Label55.Name = "Label55"
+        Me.Label55.Size = New System.Drawing.Size(11, 13)
+        Me.Label55.TabIndex = 50
+        Me.Label55.Text = "*"
+        '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label56.ForeColor = System.Drawing.Color.Red
+        Me.Label56.Location = New System.Drawing.Point(883, 521)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(11, 13)
+        Me.Label56.TabIndex = 50
+        Me.Label56.Text = "*"
+        '
+        'Label57
+        '
+        Me.Label57.AutoSize = True
+        Me.Label57.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label57.ForeColor = System.Drawing.Color.Red
+        Me.Label57.Location = New System.Drawing.Point(883, 547)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(11, 13)
+        Me.Label57.TabIndex = 50
+        Me.Label57.Text = "*"
+        '
         'frm_Tarea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2501,4 +2761,24 @@ Partial Class frm_Tarea
     Friend WithEvents btnImprimir As System.Windows.Forms.Button
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label35 As System.Windows.Forms.Label
+    Friend WithEvents Label57 As System.Windows.Forms.Label
+    Friend WithEvents Label56 As System.Windows.Forms.Label
+    Friend WithEvents Label55 As System.Windows.Forms.Label
+    Friend WithEvents Label54 As System.Windows.Forms.Label
+    Friend WithEvents Label53 As System.Windows.Forms.Label
+    Friend WithEvents Label52 As System.Windows.Forms.Label
+    Friend WithEvents Label51 As System.Windows.Forms.Label
+    Friend WithEvents Label50 As System.Windows.Forms.Label
+    Friend WithEvents Label49 As System.Windows.Forms.Label
+    Friend WithEvents Label48 As System.Windows.Forms.Label
+    Friend WithEvents Label47 As System.Windows.Forms.Label
+    Friend WithEvents Label46 As System.Windows.Forms.Label
+    Friend WithEvents Label45 As System.Windows.Forms.Label
+    Friend WithEvents Label44 As System.Windows.Forms.Label
+    Friend WithEvents Label43 As System.Windows.Forms.Label
+    Friend WithEvents Label42 As System.Windows.Forms.Label
+    Friend WithEvents Label41 As System.Windows.Forms.Label
+    Friend WithEvents Label40 As System.Windows.Forms.Label
+    Friend WithEvents Label39 As System.Windows.Forms.Label
+    Friend WithEvents Label38 As System.Windows.Forms.Label
 End Class

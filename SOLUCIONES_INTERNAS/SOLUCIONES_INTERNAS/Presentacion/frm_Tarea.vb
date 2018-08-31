@@ -60,7 +60,7 @@
             Exit Sub
         End If
         Try
-            If txt_detalle_tarea1.Text.Length <> 0 Then
+            If txt_detalle_tarea1.Text.Length <> 0 Or txtNumero_Orden_Trabajo1.Text.Length <> 0 Then
                 'REGISTRO 1 DE TAREA
                 Dim tar1 = New TAREA
                 tar1.TAR_tiempo_estimado = txtTiempo_Estimado1.Text
@@ -75,9 +75,11 @@
                 datacontext.TAREA.InsertOnSubmit(tar1)
                 datacontext.SubmitChanges()
             Else
+                MsgBox("Debe completar todos los campos requeridos")
+                Exit Sub
             End If
 
-            If txt_detalle_tarea2.Text.Length <> 0 Then
+            If txt_detalle_tarea2.Text.Length <> 0 Or txtNumero_Orden_Trabajo2.Text.Length = 0 Then
                 'REGISTRO 2 DE TAREA
                 Dim tar2 = New TAREA
                 tar2.TAR_tiempo_estimado = txtTiempo_Estimado2.Text
@@ -85,7 +87,6 @@
                 tar2.COL_id_colaborador = txt_id_colaborador.Text
                 tar2.ORT_id_orden_trabajo = txt_id_orden_trabajo2.Text
                 tar2.TAR_hora_fin = txtHora_Finalizacion2.Text
-                ' tar2.TAR_carga_horaria = txt_Carga_Horaria2.Text
                 tar2.TAR_detalle_tarea = txt_detalle_tarea2.Text
                 tar2.TAR_observaciones = txtObservaciones2.Text
                 tar2.TAR_fecha = dtpFecha.Text
@@ -95,7 +96,7 @@
             Else
             End If
 
-            If txt_detalle_tarea3.Text.Length <> 0 Then
+            If txt_detalle_tarea3.Text.Length <> 0 Or txtNumero_Orden_Trabajo3.Text.Length = 0 Then
                 'REGISTRO 3 DE TAREA
                 Dim tar3 = New TAREA
                 tar3.TAR_tiempo_estimado = txtTiempo_Estimado3.Text
@@ -103,7 +104,6 @@
                 tar3.COL_id_colaborador = txt_id_colaborador.Text
                 tar3.ORT_id_orden_trabajo = txt_id_orden_trabajo3.Text
                 tar3.TAR_hora_fin = txtHora_Finalizacion3.Text
-                ' tar3.TAR_carga_horaria = txt_Carga_Horaria3.Text
                 tar3.TAR_detalle_tarea = txt_detalle_tarea3.Text
                 tar3.TAR_observaciones = txtObservaciones3.Text
                 tar3.TAR_fecha = dtpFecha.Text
@@ -113,7 +113,7 @@
             Else
             End If
 
-            If txt_detalle_tarea4.Text.Length <> 0 Then
+            If txt_detalle_tarea4.Text.Length <> 0 Or txtNumero_Orden_Trabajo4.Text.Length = 0 Then
                 'REGISTRO 4 DE TAREA
                 Dim tar4 = New TAREA
                 tar4.TAR_tiempo_estimado = txtTiempo_Estimado4.Text
@@ -121,7 +121,6 @@
                 tar4.COL_id_colaborador = txt_id_colaborador.Text
                 tar4.ORT_id_orden_trabajo = txt_id_orden_trabajo4.Text
                 tar4.TAR_hora_fin = txtHora_Finalizacion4.Text
-                '  tar4.TAR_carga_horaria = txt_Carga_Horaria4.Text
                 tar4.TAR_detalle_tarea = txt_detalle_tarea4.Text
                 tar4.TAR_observaciones = txtObservaciones4.Text
                 tar4.TAR_fecha = dtpFecha.Text
@@ -131,7 +130,7 @@
             Else
             End If
 
-            If txt_detalle_tarea5.Text.Length <> 0 Then
+            If txt_detalle_tarea5.Text.Length <> 0 Or txtNumero_Orden_Trabajo5.Text.Length = 0 Then
                 'REGISTRO 5 DE TAREA
                 Dim tar5 = New TAREA
                 tar5.TAR_tiempo_estimado = txtTiempo_Estimado5.Text
@@ -139,7 +138,6 @@
                 tar5.COL_id_colaborador = txt_id_colaborador.Text
                 tar5.ORT_id_orden_trabajo = txt_id_orden_trabajo5.Text
                 tar5.TAR_hora_fin = txtHora_Finalizacion5.Text
-                '  tar5.TAR_carga_horaria = txt_Carga_Horaria5.Text
                 tar5.TAR_detalle_tarea = txt_detalle_tarea5.Text
                 tar5.TAR_observaciones = txtObservaciones5.Text
                 tar5.TAR_fecha = dtpFecha.Text
@@ -149,7 +147,7 @@
             Else
             End If
 
-            If txt_detalle_tarea6.Text.Length <> 0 Then
+            If txt_detalle_tarea6.Text.Length <> 0 Or txtNumero_Orden_Trabajo6.Text.Length = 0 Then
                 'REGISTRO 6 DE TAREA
                 Dim tar6 = New TAREA
                 tar6.TAR_tiempo_estimado = txtTiempo_Estimado6.Text
@@ -157,7 +155,6 @@
                 tar6.COL_id_colaborador = txt_id_colaborador.Text
                 tar6.ORT_id_orden_trabajo = txt_id_orden_trabajo6.Text
                 tar6.TAR_hora_fin = txtHora_Finalizacion6.Text
-                ' tar6.TAR_carga_horaria = txt_Carga_Horaria6.Text
                 tar6.TAR_detalle_tarea = txt_detalle_tarea6.Text
                 tar6.TAR_observaciones = txtObservaciones6.Text
                 tar6.TAR_fecha = dtpFecha.Text
@@ -167,7 +164,7 @@
             Else
             End If
 
-            If txt_detalle_tarea7.Text.Length <> 0 Then
+            If txt_detalle_tarea7.Text.Length <> 0 Or txtNumero_Orden_Trabajo7.Text.Length = 0 Then
                 'REGISTRO 7 DE TAREA
                 Dim tar7 = New TAREA
                 tar7.TAR_tiempo_estimado = txtTiempo_Estimado7.Text
@@ -175,7 +172,6 @@
                 tar7.COL_id_colaborador = txt_id_colaborador.Text
                 tar7.ORT_id_orden_trabajo = txt_id_orden_trabajo7.Text
                 tar7.TAR_hora_fin = txtHora_Finalizacion7.Text
-                '  tar7.TAR_carga_horaria = txt_Carga_Horaria7.Text
                 tar7.TAR_detalle_tarea = txt_detalle_tarea7.Text
                 tar7.TAR_observaciones = txtObservaciones5.Text
                 tar7.TAR_fecha = dtpFecha.Text
@@ -185,7 +181,7 @@
             Else
             End If
 
-            If txt_detalle_tarea8.Text.Length <> 0 Then
+            If txt_detalle_tarea8.Text.Length <> 0 Or txtNumero_Orden_Trabajo8.Text.Length = 0 Then
                 'REGISTRO 8 DE TAREA
                 Dim tar8 = New TAREA
                 tar8.TAR_tiempo_estimado = txtTiempo_Estimado8.Text
@@ -193,7 +189,6 @@
                 tar8.COL_id_colaborador = txt_id_colaborador.Text
                 tar8.ORT_id_orden_trabajo = txt_id_orden_trabajo8.Text
                 tar8.TAR_hora_fin = txtHora_Finalizacion8.Text
-                '  tar8.TAR_carga_horaria = txt_Carga_Horaria8.Text
                 tar8.TAR_detalle_tarea = txt_detalle_tarea8.Text
                 tar8.TAR_observaciones = txtObservaciones8.Text
                 tar8.TAR_fecha = dtpFecha.Text
@@ -203,7 +198,7 @@
             Else
             End If
 
-            If txt_detalle_tarea9.Text.Length <> 0 Then
+            If txt_detalle_tarea9.Text.Length <> 0 Or txtNumero_Orden_Trabajo9.Text.Length = 0 Then
                 'REGISTRO 9 DE TAREA
                 Dim tar9 = New TAREA
                 tar9.TAR_tiempo_estimado = txtTiempo_Estimado9.Text
@@ -211,7 +206,6 @@
                 tar9.COL_id_colaborador = txt_id_colaborador.Text
                 tar9.ORT_id_orden_trabajo = txt_id_orden_trabajo9.Text
                 tar9.TAR_hora_fin = txtHora_Finalizacion9.Text
-                ' tar9.TAR_carga_horaria = txt_Carga_Horaria9.Text
                 tar9.TAR_detalle_tarea = txt_detalle_tarea9.Text
                 tar9.TAR_observaciones = txtObservaciones9.Text
                 tar9.TAR_fecha = dtpFecha.Text
@@ -221,7 +215,7 @@
             Else
             End If
 
-            If txt_detalle_tarea10.Text.Length <> 0 Then
+            If txt_detalle_tarea10.Text.Length <> 0 Or txtNumero_Orden_Trabajo10.Text.Length = 0 Then
                 'REGISTRO 10 DE TAREA
                 Dim tar10 = New TAREA
                 tar10.TAR_tiempo_estimado = txtTiempo_Estimado10.Text
@@ -229,7 +223,6 @@
                 tar10.COL_id_colaborador = txt_id_colaborador.Text
                 tar10.ORT_id_orden_trabajo = txt_id_orden_trabajo10.Text
                 tar10.TAR_hora_fin = txtHora_Finalizacion10.Text
-                ' tar10.TAR_carga_horaria = txt_Carga_Horaria10.Text
                 tar10.TAR_detalle_tarea = txt_detalle_tarea10.Text
                 tar10.TAR_observaciones = txtObservaciones10.Text
                 tar10.TAR_fecha = dtpFecha.Text
@@ -239,7 +232,7 @@
             Else
             End If
 
-            If txt_detalle_tarea11.Text.Length <> 0 Then
+            If txt_detalle_tarea11.Text.Length <> 0 Or txtNumero_Orden_Trabajo11.Text.Length = 0 Then
                 'REGISTRO 11 DE TAREA
                 Dim tar11 = New TAREA
                 tar11.TAR_tiempo_estimado = txtTiempo_Estimado11.Text
@@ -247,7 +240,6 @@
                 tar11.COL_id_colaborador = txt_id_colaborador.Text
                 tar11.ORT_id_orden_trabajo = txt_id_orden_trabajo11.Text
                 tar11.TAR_hora_fin = txtHora_Finalizacion11.Text
-                ' tar11.TAR_carga_horaria = txt_Carga_Horaria11.Text
                 tar11.TAR_detalle_tarea = txt_detalle_tarea11.Text
                 tar11.TAR_observaciones = txtObservaciones11.Text
                 tar11.TAR_fecha = dtpFecha.Text
@@ -257,7 +249,7 @@
             Else
             End If
 
-            If txt_detalle_tarea12.Text.Length <> 0 Then
+            If txt_detalle_tarea12.Text.Length <> 0 Or txtNumero_Orden_Trabajo12.Text.Length = 0 Then
                 'REGISTRO 12 DE TAREA
                 Dim tar12 = New TAREA
                 tar12.TAR_tiempo_estimado = txtTiempo_Estimado12.Text
@@ -265,7 +257,6 @@
                 tar12.COL_id_colaborador = txt_id_colaborador.Text
                 tar12.ORT_id_orden_trabajo = txt_id_orden_trabajo12.Text
                 tar12.TAR_hora_fin = txtHora_Finalizacion12.Text
-                '  tar12.TAR_carga_horaria = txt_Carga_Horaria12.Text
                 tar12.TAR_detalle_tarea = txt_detalle_tarea12.Text
                 tar12.TAR_observaciones = txtObservaciones12.Text
                 tar12.TAR_fecha = dtpFecha.Text
@@ -275,7 +266,7 @@
             Else
             End If
 
-            If txt_detalle_tarea13.Text.Length <> 0 Then
+            If txt_detalle_tarea13.Text.Length <> 0 Or txtNumero_Orden_Trabajo13.Text.Length = 0 Then
                 'REGISTRO 13 DE TAREA
                 Dim tar13 = New TAREA
                 tar13.TAR_tiempo_estimado = txtTiempo_Estimado13.Text
@@ -283,7 +274,6 @@
                 tar13.COL_id_colaborador = txt_id_colaborador.Text
                 tar13.ORT_id_orden_trabajo = txt_id_orden_trabajo13.Text
                 tar13.TAR_hora_fin = txtHora_Finalizacion13.Text
-                '  tar13.TAR_carga_horaria = txt_Carga_Horaria13.Text
                 tar13.TAR_detalle_tarea = txt_detalle_tarea13.Text
                 tar13.TAR_observaciones = txtObservaciones13.Text
                 tar13.TAR_fecha = dtpFecha.Text
@@ -293,7 +283,7 @@
             Else
             End If
 
-            If txt_detalle_tarea14.Text.Length <> 0 Then
+            If txt_detalle_tarea14.Text.Length <> 0 Or txtNumero_Orden_Trabajo14.Text.Length = 0 Then
                 'REGISTRO 14 DE TAREA
                 Dim tar14 = New TAREA
                 tar14.TAR_tiempo_estimado = txtTiempo_Estimado14.Text
@@ -301,7 +291,6 @@
                 tar14.COL_id_colaborador = txt_id_colaborador.Text
                 tar14.ORT_id_orden_trabajo = txt_id_orden_trabajo14.Text
                 tar14.TAR_hora_fin = txtHora_Finalizacion14.Text
-                '  tar14.TAR_carga_horaria = txt_Carga_Horaria14.Text
                 tar14.TAR_detalle_tarea = txt_detalle_tarea14.Text
                 tar14.TAR_observaciones = txtObservaciones14.Text
                 tar14.TAR_fecha = dtpFecha.Text
@@ -311,7 +300,7 @@
             Else
             End If
 
-            If txt_detalle_tarea15.Text.Length <> 0 Then
+            If txt_detalle_tarea15.Text.Length <> 0 Or txtNumero_Orden_Trabajo15.Text.Length = 0 Then
                 'REGISTRO 15 DE TAREA
                 Dim tar15 = New TAREA
                 tar15.TAR_tiempo_estimado = txtTiempo_Estimado15.Text
@@ -319,7 +308,6 @@
                 tar15.COL_id_colaborador = txt_id_colaborador.Text
                 tar15.ORT_id_orden_trabajo = txt_id_orden_trabajo15.Text
                 tar15.TAR_hora_fin = txtHora_Finalizacion15.Text
-                '  tar15.TAR_carga_horaria = txt_Carga_Horaria15.Text
                 tar15.TAR_detalle_tarea = txt_detalle_tarea15.Text
                 tar15.TAR_observaciones = txtObservaciones15.Text
                 tar15.TAR_fecha = dtpFecha.Text
@@ -329,7 +317,7 @@
             Else
             End If
 
-            If txt_detalle_tarea16.Text.Length <> 0 Then
+            If txt_detalle_tarea16.Text.Length <> 0 Or txtNumero_Orden_Trabajo16.Text.Length = 0 Then
                 'REGISTRO 16 DE TAREA
                 Dim tar16 = New TAREA
                 tar16.TAR_tiempo_estimado = txtTiempo_Estimado16.Text
@@ -337,7 +325,6 @@
                 tar16.COL_id_colaborador = txt_id_colaborador.Text
                 tar16.ORT_id_orden_trabajo = txt_id_orden_trabajo16.Text
                 tar16.TAR_hora_fin = txtHora_Finalizacion16.Text
-                '  tar16.TAR_carga_horaria = txt_Carga_Horaria16.Text
                 tar16.TAR_detalle_tarea = txt_detalle_tarea16.Text
                 tar16.TAR_observaciones = txtObservaciones16.Text
                 tar16.TAR_fecha = dtpFecha.Text
@@ -347,7 +334,7 @@
             Else
             End If
 
-            If txt_detalle_tarea17.Text.Length <> 0 Then
+            If txt_detalle_tarea17.Text.Length <> 0 Or txtNumero_Orden_Trabajo17.Text.Length = 0 Then
                 'REGISTRO 17 DE TAREA
                 Dim tar17 = New TAREA
                 tar17.TAR_tiempo_estimado = txtTiempo_Estimado17.Text
@@ -355,7 +342,6 @@
                 tar17.COL_id_colaborador = txt_id_colaborador.Text
                 tar17.ORT_id_orden_trabajo = txt_id_orden_trabajo17.Text
                 tar17.TAR_hora_fin = txtHora_Finalizacion17.Text
-                '  tar17.TAR_carga_horaria = txt_Carga_Horaria17.Text
                 tar17.TAR_detalle_tarea = txt_detalle_tarea17.Text
                 tar17.TAR_observaciones = txtObservaciones17.Text
                 tar17.TAR_fecha = dtpFecha.Text
@@ -365,7 +351,7 @@
             Else
             End If
 
-            If txt_detalle_tarea18.Text.Length <> 0 Then
+            If txt_detalle_tarea18.Text.Length <> 0 Or txtNumero_Orden_Trabajo18.Text.Length = 0 Then
                 'REGISTRO 18 DE TAREA
                 Dim tar18 = New TAREA
                 tar18.TAR_tiempo_estimado = txtTiempo_Estimado18.Text
@@ -373,7 +359,6 @@
                 tar18.COL_id_colaborador = txt_id_colaborador.Text
                 tar18.ORT_id_orden_trabajo = txt_id_orden_trabajo18.Text
                 tar18.TAR_hora_fin = txtHora_Finalizacion18.Text
-                ' tar18.TAR_carga_horaria = txt_Carga_Horaria18.Text
                 tar18.TAR_detalle_tarea = txt_detalle_tarea18.Text
                 tar18.TAR_observaciones = txtObservaciones18.Text
                 tar18.TAR_fecha = dtpFecha.Text
@@ -383,7 +368,7 @@
             Else
             End If
 
-            If txt_detalle_tarea19.Text.Length <> 0 Then
+            If txt_detalle_tarea19.Text.Length <> 0 Or txtNumero_Orden_Trabajo19.Text.Length = 0 Then
                 'REGISTRO 19 DE TAREA
                 Dim tar19 = New TAREA
                 tar19.TAR_tiempo_estimado = txtTiempo_Estimado19.Text
@@ -391,7 +376,6 @@
                 tar19.COL_id_colaborador = txt_id_colaborador.Text
                 tar19.ORT_id_orden_trabajo = txt_id_orden_trabajo19.Text
                 tar19.TAR_hora_fin = txtHora_Finalizacion19.Text
-                ' tar19.TAR_carga_horaria = txt_Carga_Horaria19.Text
                 tar19.TAR_detalle_tarea = txt_detalle_tarea19.Text
                 tar19.TAR_observaciones = txtObservaciones19.Text
                 tar19.TAR_fecha = dtpFecha.Text
@@ -401,7 +385,7 @@
             Else
             End If
 
-            If txt_detalle_tarea20.Text.Length <> 0 Then
+            If txt_detalle_tarea20.Text.Length <> 0 Or txtNumero_Orden_Trabajo20.Text.Length = 0 Then
                 'REGISTRO 20 DE TAREA
                 Dim tar20 = New TAREA
                 tar20.TAR_tiempo_estimado = txtTiempo_Estimado20.Text
@@ -409,7 +393,6 @@
                 tar20.COL_id_colaborador = txt_id_colaborador.Text
                 tar20.ORT_id_orden_trabajo = txt_id_orden_trabajo20.Text
                 tar20.TAR_hora_fin = txtHora_Finalizacion20.Text
-                'tar20.TAR_carga_horaria = txt_Carga_Horaria20.Text
                 tar20.TAR_detalle_tarea = txt_detalle_tarea20.Text
                 tar20.TAR_observaciones = txtObservaciones20.Text
                 tar20.TAR_fecha = dtpFecha.Text
