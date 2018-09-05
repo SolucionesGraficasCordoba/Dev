@@ -172,6 +172,12 @@
     <Compile Include="Presentacion\frm_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\frm_Retrabajo.Designer.vb">
+      <DependentUpon>frm_Retrabajo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Retrabajo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_Sector.Designer.vb">
       <DependentUpon>frm_Sector.vb</DependentUpon>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Principal.resx">
       <DependentUpon>frm_Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Retrabajo.resx">
+      <DependentUpon>frm_Retrabajo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Sector.resx">
       <DependentUpon>frm_Sector.vb</DependentUpon>

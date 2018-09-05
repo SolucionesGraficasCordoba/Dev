@@ -70,14 +70,14 @@ Partial Class frm_Principal
         Me.EliminarOrdenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GenerarInformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TareasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.OrdenDeTrabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.LBL_MENU_PERFIL = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.LBL_MENU_USU = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.TareasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.OrdenDeTrabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -103,13 +103,13 @@ Partial Class frm_Principal
         'CerrarSesiónToolStripMenuItem
         '
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ExitToolStripMenuItem.Text = "&Salir"
         '
         'UsuarioToolStripMenuItem
@@ -373,6 +373,18 @@ Partial Class frm_Principal
         Me.GenerarInformesToolStripMenuItem.Size = New System.Drawing.Size(110, 20)
         Me.GenerarInformesToolStripMenuItem.Text = "Generar Informes"
         '
+        'TareasToolStripMenuItem1
+        '
+        Me.TareasToolStripMenuItem1.Name = "TareasToolStripMenuItem1"
+        Me.TareasToolStripMenuItem1.Size = New System.Drawing.Size(166, 22)
+        Me.TareasToolStripMenuItem1.Text = "Tareas"
+        '
+        'OrdenDeTrabajoToolStripMenuItem
+        '
+        Me.OrdenDeTrabajoToolStripMenuItem.Name = "OrdenDeTrabajoToolStripMenuItem"
+        Me.OrdenDeTrabajoToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.OrdenDeTrabajoToolStripMenuItem.Text = "Orden de Trabajo"
+        '
         'LBL_MENU_PERFIL
         '
         Me.LBL_MENU_PERFIL.AutoSize = True
@@ -426,18 +438,6 @@ Partial Class frm_Principal
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         '
-        'TareasToolStripMenuItem1
-        '
-        Me.TareasToolStripMenuItem1.Name = "TareasToolStripMenuItem1"
-        Me.TareasToolStripMenuItem1.Size = New System.Drawing.Size(166, 22)
-        Me.TareasToolStripMenuItem1.Text = "Tareas"
-        '
-        'OrdenDeTrabajoToolStripMenuItem
-        '
-        Me.OrdenDeTrabajoToolStripMenuItem.Name = "OrdenDeTrabajoToolStripMenuItem"
-        Me.OrdenDeTrabajoToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
-        Me.OrdenDeTrabajoToolStripMenuItem.Text = "Orden de Trabajo"
-        '
         'frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -449,7 +449,6 @@ Partial Class frm_Principal
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "frm_Principal"
         Me.Text = "Menú Principal"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)

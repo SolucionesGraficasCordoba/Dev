@@ -1025,6 +1025,8 @@ Partial Public Class Tiempos_Totales
 	
 	Private _SEC_nombre_sector As String
 	
+	Private _Asignacion As System.Nullable(Of Integer)
+	
 	Public Sub New()
 		MyBase.New
 	End Sub
@@ -1114,6 +1116,18 @@ Partial Public Class Tiempos_Totales
 			End If
 		End Set
 	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Asignacion", DbType:="Int")>  _
+	Public Property Asignacion() As System.Nullable(Of Integer)
+		Get
+			Return Me._Asignacion
+		End Get
+		Set
+			If (Me._Asignacion.Equals(value) = false) Then
+				Me._Asignacion = value
+			End If
+		End Set
+	End Property
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Totales_mensuales")>  _
@@ -1132,6 +1146,8 @@ Partial Public Class Totales_mensuales
 	Private _Total_estimado_mensual As System.Nullable(Of Integer)
 	
 	Private _Total_real_mensual As System.Nullable(Of Integer)
+	
+	Private _Asignacion As System.Nullable(Of Integer)
 	
 	Public Sub New()
 		MyBase.New
@@ -1219,6 +1235,18 @@ Partial Public Class Totales_mensuales
 		Set
 			If (Me._Total_real_mensual.Equals(value) = false) Then
 				Me._Total_real_mensual = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Asignacion", DbType:="Int")>  _
+	Public Property Asignacion() As System.Nullable(Of Integer)
+		Get
+			Return Me._Asignacion
+		End Get
+		Set
+			If (Me._Asignacion.Equals(value) = false) Then
+				Me._Asignacion = value
 			End If
 		End Set
 	End Property

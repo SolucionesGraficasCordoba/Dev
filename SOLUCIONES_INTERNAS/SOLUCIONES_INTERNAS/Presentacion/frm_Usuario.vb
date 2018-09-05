@@ -1,10 +1,6 @@
-﻿
-'CONTROLAR EL BOTON ACTUALIZAR----NO CARGA EL COMBOBOX PERFIL
-
-'FALTA COMPLETAR EL BOTON BUSCAR COLABORADOR PARA PODER GUARDAR EL USUARIO
-
-Public Class frm_Usuario
+﻿Public Class frm_Usuario
     Dim datacontext As New DataS_Interno
+    Public quienllamogrid As DataGridView
 
     Private Sub frm_Usuario_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         txt_id_colaborador.Visible = False

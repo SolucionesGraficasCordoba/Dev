@@ -1,4 +1,5 @@
 ﻿Public Class frm_Actualizar_Tarea
+
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
     Dim vble_colaborador, vble_fecha As String

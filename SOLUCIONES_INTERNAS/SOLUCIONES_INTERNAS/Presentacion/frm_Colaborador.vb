@@ -14,7 +14,6 @@
         'CARGA COMBOBOX SECTOR
         Dim combosector = (From sec In datacontext.SECTOR
                            Select sec.SEC_id_sector, sec.SEC_nombre_sector)
-
         cbo_sector.DataSource = combosector
         cbo_sector.DisplayMember = "SEC_nombre_sector"
         cbo_sector.ValueMember = "SEC_id_sector"
@@ -29,7 +28,6 @@
                                     Order By SEC_nombre_sector Ascending)
         dgvLista_Colaboradores.DataSource = carga
     End Sub
-
 
     Private Sub btnGuardar_Colaborador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Colaborador.Click
         Try
@@ -179,7 +177,6 @@
     End Sub
 
     Private Sub dgvLista_Colaboradores_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Colaboradores.CellDoubleClick
-
         If quienllamo_col.Name = frm_Actualizar_Tarea.Name Then
             frm_Actualizar_Tarea.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
             frm_Actualizar_Tarea.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value

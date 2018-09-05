@@ -2,6 +2,7 @@
     Dim datacontext As New DataS_Interno
     Dim quienllamoboton As Button
 
+
     Private Sub frm_Tarea_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txt_id_tarea.Visible = False
         Label1.Visible = False
@@ -75,11 +76,9 @@
                 datacontext.TAREA.InsertOnSubmit(tar1)
                 datacontext.SubmitChanges()
             Else
-                MsgBox("Debe completar todos los campos requeridos")
-                Exit Sub
             End If
 
-            If txt_detalle_tarea2.Text.Length <> 0 Or txtNumero_Orden_Trabajo2.Text.Length = 0 Then
+            If txt_detalle_tarea2.Text.Length <> 0 Then
                 'REGISTRO 2 DE TAREA
                 Dim tar2 = New TAREA
                 tar2.TAR_tiempo_estimado = txtTiempo_Estimado2.Text
@@ -96,7 +95,7 @@
             Else
             End If
 
-            If txt_detalle_tarea3.Text.Length <> 0 Or txtNumero_Orden_Trabajo3.Text.Length = 0 Then
+            If txt_detalle_tarea3.Text.Length <> 0 Then
                 'REGISTRO 3 DE TAREA
                 Dim tar3 = New TAREA
                 tar3.TAR_tiempo_estimado = txtTiempo_Estimado3.Text
@@ -113,7 +112,7 @@
             Else
             End If
 
-            If txt_detalle_tarea4.Text.Length <> 0 Or txtNumero_Orden_Trabajo4.Text.Length = 0 Then
+            If txt_detalle_tarea4.Text.Length <> 0 Then
                 'REGISTRO 4 DE TAREA
                 Dim tar4 = New TAREA
                 tar4.TAR_tiempo_estimado = txtTiempo_Estimado4.Text
@@ -130,7 +129,7 @@
             Else
             End If
 
-            If txt_detalle_tarea5.Text.Length <> 0 Or txtNumero_Orden_Trabajo5.Text.Length = 0 Then
+            If txt_detalle_tarea5.Text.Length <> 0 Then
                 'REGISTRO 5 DE TAREA
                 Dim tar5 = New TAREA
                 tar5.TAR_tiempo_estimado = txtTiempo_Estimado5.Text
@@ -147,7 +146,7 @@
             Else
             End If
 
-            If txt_detalle_tarea6.Text.Length <> 0 Or txtNumero_Orden_Trabajo6.Text.Length = 0 Then
+            If txt_detalle_tarea6.Text.Length <> 0 Then
                 'REGISTRO 6 DE TAREA
                 Dim tar6 = New TAREA
                 tar6.TAR_tiempo_estimado = txtTiempo_Estimado6.Text
@@ -164,7 +163,7 @@
             Else
             End If
 
-            If txt_detalle_tarea7.Text.Length <> 0 Or txtNumero_Orden_Trabajo7.Text.Length = 0 Then
+            If txt_detalle_tarea7.Text.Length <> 0 Then
                 'REGISTRO 7 DE TAREA
                 Dim tar7 = New TAREA
                 tar7.TAR_tiempo_estimado = txtTiempo_Estimado7.Text
@@ -181,7 +180,7 @@
             Else
             End If
 
-            If txt_detalle_tarea8.Text.Length <> 0 Or txtNumero_Orden_Trabajo8.Text.Length = 0 Then
+            If txt_detalle_tarea8.Text.Length <> 0 Then
                 'REGISTRO 8 DE TAREA
                 Dim tar8 = New TAREA
                 tar8.TAR_tiempo_estimado = txtTiempo_Estimado8.Text
@@ -198,7 +197,7 @@
             Else
             End If
 
-            If txt_detalle_tarea9.Text.Length <> 0 Or txtNumero_Orden_Trabajo9.Text.Length = 0 Then
+            If txt_detalle_tarea9.Text.Length <> 0 Then
                 'REGISTRO 9 DE TAREA
                 Dim tar9 = New TAREA
                 tar9.TAR_tiempo_estimado = txtTiempo_Estimado9.Text
@@ -215,7 +214,7 @@
             Else
             End If
 
-            If txt_detalle_tarea10.Text.Length <> 0 Or txtNumero_Orden_Trabajo10.Text.Length = 0 Then
+            If txt_detalle_tarea10.Text.Length <> 0 Then
                 'REGISTRO 10 DE TAREA
                 Dim tar10 = New TAREA
                 tar10.TAR_tiempo_estimado = txtTiempo_Estimado10.Text
@@ -232,7 +231,7 @@
             Else
             End If
 
-            If txt_detalle_tarea11.Text.Length <> 0 Or txtNumero_Orden_Trabajo11.Text.Length = 0 Then
+            If txt_detalle_tarea11.Text.Length <> 0 Then
                 'REGISTRO 11 DE TAREA
                 Dim tar11 = New TAREA
                 tar11.TAR_tiempo_estimado = txtTiempo_Estimado11.Text
@@ -249,7 +248,7 @@
             Else
             End If
 
-            If txt_detalle_tarea12.Text.Length <> 0 Or txtNumero_Orden_Trabajo12.Text.Length = 0 Then
+            If txt_detalle_tarea12.Text.Length <> 0 Then
                 'REGISTRO 12 DE TAREA
                 Dim tar12 = New TAREA
                 tar12.TAR_tiempo_estimado = txtTiempo_Estimado12.Text
@@ -266,7 +265,7 @@
             Else
             End If
 
-            If txt_detalle_tarea13.Text.Length <> 0 Or txtNumero_Orden_Trabajo13.Text.Length = 0 Then
+            If txt_detalle_tarea13.Text.Length <> 0 Then
                 'REGISTRO 13 DE TAREA
                 Dim tar13 = New TAREA
                 tar13.TAR_tiempo_estimado = txtTiempo_Estimado13.Text
@@ -283,7 +282,7 @@
             Else
             End If
 
-            If txt_detalle_tarea14.Text.Length <> 0 Or txtNumero_Orden_Trabajo14.Text.Length = 0 Then
+            If txt_detalle_tarea14.Text.Length <> 0 Then
                 'REGISTRO 14 DE TAREA
                 Dim tar14 = New TAREA
                 tar14.TAR_tiempo_estimado = txtTiempo_Estimado14.Text
@@ -300,7 +299,7 @@
             Else
             End If
 
-            If txt_detalle_tarea15.Text.Length <> 0 Or txtNumero_Orden_Trabajo15.Text.Length = 0 Then
+            If txt_detalle_tarea15.Text.Length <> 0 Then
                 'REGISTRO 15 DE TAREA
                 Dim tar15 = New TAREA
                 tar15.TAR_tiempo_estimado = txtTiempo_Estimado15.Text
@@ -317,7 +316,7 @@
             Else
             End If
 
-            If txt_detalle_tarea16.Text.Length <> 0 Or txtNumero_Orden_Trabajo16.Text.Length = 0 Then
+            If txt_detalle_tarea16.Text.Length <> 0 Then
                 'REGISTRO 16 DE TAREA
                 Dim tar16 = New TAREA
                 tar16.TAR_tiempo_estimado = txtTiempo_Estimado16.Text
@@ -334,7 +333,7 @@
             Else
             End If
 
-            If txt_detalle_tarea17.Text.Length <> 0 Or txtNumero_Orden_Trabajo17.Text.Length = 0 Then
+            If txt_detalle_tarea17.Text.Length <> 0 Then
                 'REGISTRO 17 DE TAREA
                 Dim tar17 = New TAREA
                 tar17.TAR_tiempo_estimado = txtTiempo_Estimado17.Text
@@ -351,7 +350,7 @@
             Else
             End If
 
-            If txt_detalle_tarea18.Text.Length <> 0 Or txtNumero_Orden_Trabajo18.Text.Length = 0 Then
+            If txt_detalle_tarea18.Text.Length <> 0 Then
                 'REGISTRO 18 DE TAREA
                 Dim tar18 = New TAREA
                 tar18.TAR_tiempo_estimado = txtTiempo_Estimado18.Text
@@ -368,7 +367,7 @@
             Else
             End If
 
-            If txt_detalle_tarea19.Text.Length <> 0 Or txtNumero_Orden_Trabajo19.Text.Length = 0 Then
+            If txt_detalle_tarea19.Text.Length <> 0 Then
                 'REGISTRO 19 DE TAREA
                 Dim tar19 = New TAREA
                 tar19.TAR_tiempo_estimado = txtTiempo_Estimado19.Text
@@ -385,7 +384,7 @@
             Else
             End If
 
-            If txt_detalle_tarea20.Text.Length <> 0 Or txtNumero_Orden_Trabajo20.Text.Length = 0 Then
+            If txt_detalle_tarea20.Text.Length <> 0 Then
                 'REGISTRO 20 DE TAREA
                 Dim tar20 = New TAREA
                 tar20.TAR_tiempo_estimado = txtTiempo_Estimado20.Text
