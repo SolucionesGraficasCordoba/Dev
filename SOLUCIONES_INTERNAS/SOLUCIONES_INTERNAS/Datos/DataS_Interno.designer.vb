@@ -2319,6 +2319,8 @@ Partial Public Class RE_TRABAJO
 	
 	Private _RET_procedimiento As String
 	
+	Private _RET_fecha As System.Nullable(Of Date)
+	
 	Private _RET_papel_soporte_1 As String
 	
 	Private _RET_papel_soporte_2 As String
@@ -2379,6 +2381,10 @@ Partial Public Class RE_TRABAJO
     Partial Private Sub OnRET_procedimientoChanging(value As String)
     End Sub
     Partial Private Sub OnRET_procedimientoChanged()
+    End Sub
+    Partial Private Sub OnRET_fechaChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnRET_fechaChanged()
     End Sub
     Partial Private Sub OnRET_papel_soporte_1Changing(value As String)
     End Sub
@@ -2548,6 +2554,22 @@ Partial Public Class RE_TRABAJO
 				Me._RET_procedimiento = value
 				Me.SendPropertyChanged("RET_procedimiento")
 				Me.OnRET_procedimientoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_fecha", DbType:="Date")>  _
+	Public Property RET_fecha() As System.Nullable(Of Date)
+		Get
+			Return Me._RET_fecha
+		End Get
+		Set
+			If (Me._RET_fecha.Equals(value) = false) Then
+				Me.OnRET_fechaChanging(value)
+				Me.SendPropertyChanging
+				Me._RET_fecha = value
+				Me.SendPropertyChanged("RET_fecha")
+				Me.OnRET_fechaChanged
 			End If
 		End Set
 	End Property

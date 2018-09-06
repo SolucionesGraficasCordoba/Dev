@@ -99,6 +99,12 @@ Partial Public Class DataS_Interno_Vistas
 			Return Me.GetTable(Of Totales_mensuales)
 		End Get
 	End Property
+	
+	Public ReadOnly Property Listado_ReTrabajo() As System.Data.Linq.Table(Of Listado_ReTrabajo)
+		Get
+			Return Me.GetTable(Of Listado_ReTrabajo)
+		End Get
+	End Property
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.VistaTareas")>  _
@@ -1247,6 +1253,354 @@ Partial Public Class Totales_mensuales
 		Set
 			If (Me._Asignacion.Equals(value) = false) Then
 				Me._Asignacion = value
+			End If
+		End Set
+	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Listado_ReTrabajo")>  _
+Partial Public Class Listado_ReTrabajo
+	
+	Private _RET_id_retrabajo As Integer
+	
+	Private _PIE_id_pieza As Integer
+	
+	Private _PIE_nombre_pie As String
+	
+	Private _ORT_numero_ot As String
+	
+	Private _RET_cantidad_dort As System.Nullable(Of Integer)
+	
+	Private _RET_tamaño_dort As String
+	
+	Private _RET_tipo_impresion_dort As String
+	
+	Private _RET_origen_area As String
+	
+	Private _RET_procedimiento As String
+	
+	Private _RET_fecha As System.Nullable(Of Date)
+	
+	Private _RET_papel_soporte_1 As String
+	
+	Private _RET_papel_soporte_2 As String
+	
+	Private _RET_papel_soporte_3 As String
+	
+	Private _RET_gramaje_soporte_1 As System.Nullable(Of Integer)
+	
+	Private _RET_gramaje_soporte_2 As String
+	
+	Private _RET_gramaje_soporte_3 As String
+	
+	Private _RET_cantidad_soporte_1 As System.Nullable(Of Integer)
+	
+	Private _RET_cantidad_soporte_2 As System.Nullable(Of Integer)
+	
+	Private _RET_cantidad_soporte_3 As System.Nullable(Of Integer)
+	
+	Private _RET_formato_soporte_1 As String
+	
+	Private _RET_formato_soporte_2 As String
+	
+	Private _RET_formato_soporte_3 As String
+	
+	Private _ORT_id_orden_trabajo As Integer
+	
+	Private _id_detalle_orden_trabajo As Integer
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_id_retrabajo", DbType:="Int NOT NULL")>  _
+	Public Property RET_id_retrabajo() As Integer
+		Get
+			Return Me._RET_id_retrabajo
+		End Get
+		Set
+			If ((Me._RET_id_retrabajo = value)  _
+						= false) Then
+				Me._RET_id_retrabajo = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_id_pieza", DbType:="Int NOT NULL")>  _
+	Public Property PIE_id_pieza() As Integer
+		Get
+			Return Me._PIE_id_pieza
+		End Get
+		Set
+			If ((Me._PIE_id_pieza = value)  _
+						= false) Then
+				Me._PIE_id_pieza = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_nombre_pie", DbType:="VarChar(30) NOT NULL", CanBeNull:=false)>  _
+	Public Property PIE_nombre_pie() As String
+		Get
+			Return Me._PIE_nombre_pie
+		End Get
+		Set
+			If (String.Equals(Me._PIE_nombre_pie, value) = false) Then
+				Me._PIE_nombre_pie = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_numero_ot", DbType:="VarChar(10) NOT NULL", CanBeNull:=false)>  _
+	Public Property ORT_numero_ot() As String
+		Get
+			Return Me._ORT_numero_ot
+		End Get
+		Set
+			If (String.Equals(Me._ORT_numero_ot, value) = false) Then
+				Me._ORT_numero_ot = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_cantidad_dort", DbType:="Int")>  _
+	Public Property RET_cantidad_dort() As System.Nullable(Of Integer)
+		Get
+			Return Me._RET_cantidad_dort
+		End Get
+		Set
+			If (Me._RET_cantidad_dort.Equals(value) = false) Then
+				Me._RET_cantidad_dort = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_tamaño_dort", DbType:="VarChar(50)")>  _
+	Public Property RET_tamaño_dort() As String
+		Get
+			Return Me._RET_tamaño_dort
+		End Get
+		Set
+			If (String.Equals(Me._RET_tamaño_dort, value) = false) Then
+				Me._RET_tamaño_dort = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_tipo_impresion_dort", DbType:="VarChar(4)")>  _
+	Public Property RET_tipo_impresion_dort() As String
+		Get
+			Return Me._RET_tipo_impresion_dort
+		End Get
+		Set
+			If (String.Equals(Me._RET_tipo_impresion_dort, value) = false) Then
+				Me._RET_tipo_impresion_dort = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_origen_area", DbType:="VarChar(100)")>  _
+	Public Property RET_origen_area() As String
+		Get
+			Return Me._RET_origen_area
+		End Get
+		Set
+			If (String.Equals(Me._RET_origen_area, value) = false) Then
+				Me._RET_origen_area = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_procedimiento", DbType:="VarChar(100)")>  _
+	Public Property RET_procedimiento() As String
+		Get
+			Return Me._RET_procedimiento
+		End Get
+		Set
+			If (String.Equals(Me._RET_procedimiento, value) = false) Then
+				Me._RET_procedimiento = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_fecha", DbType:="Date")>  _
+	Public Property RET_fecha() As System.Nullable(Of Date)
+		Get
+			Return Me._RET_fecha
+		End Get
+		Set
+			If (Me._RET_fecha.Equals(value) = false) Then
+				Me._RET_fecha = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_papel_soporte_1", DbType:="VarChar(50)")>  _
+	Public Property RET_papel_soporte_1() As String
+		Get
+			Return Me._RET_papel_soporte_1
+		End Get
+		Set
+			If (String.Equals(Me._RET_papel_soporte_1, value) = false) Then
+				Me._RET_papel_soporte_1 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_papel_soporte_2", DbType:="VarChar(50)")>  _
+	Public Property RET_papel_soporte_2() As String
+		Get
+			Return Me._RET_papel_soporte_2
+		End Get
+		Set
+			If (String.Equals(Me._RET_papel_soporte_2, value) = false) Then
+				Me._RET_papel_soporte_2 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_papel_soporte_3", DbType:="VarChar(50)")>  _
+	Public Property RET_papel_soporte_3() As String
+		Get
+			Return Me._RET_papel_soporte_3
+		End Get
+		Set
+			If (String.Equals(Me._RET_papel_soporte_3, value) = false) Then
+				Me._RET_papel_soporte_3 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_gramaje_soporte_1", DbType:="Int")>  _
+	Public Property RET_gramaje_soporte_1() As System.Nullable(Of Integer)
+		Get
+			Return Me._RET_gramaje_soporte_1
+		End Get
+		Set
+			If (Me._RET_gramaje_soporte_1.Equals(value) = false) Then
+				Me._RET_gramaje_soporte_1 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_gramaje_soporte_2", DbType:="VarChar(50)")>  _
+	Public Property RET_gramaje_soporte_2() As String
+		Get
+			Return Me._RET_gramaje_soporte_2
+		End Get
+		Set
+			If (String.Equals(Me._RET_gramaje_soporte_2, value) = false) Then
+				Me._RET_gramaje_soporte_2 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_gramaje_soporte_3", DbType:="VarChar(50)")>  _
+	Public Property RET_gramaje_soporte_3() As String
+		Get
+			Return Me._RET_gramaje_soporte_3
+		End Get
+		Set
+			If (String.Equals(Me._RET_gramaje_soporte_3, value) = false) Then
+				Me._RET_gramaje_soporte_3 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_cantidad_soporte_1", DbType:="Int")>  _
+	Public Property RET_cantidad_soporte_1() As System.Nullable(Of Integer)
+		Get
+			Return Me._RET_cantidad_soporte_1
+		End Get
+		Set
+			If (Me._RET_cantidad_soporte_1.Equals(value) = false) Then
+				Me._RET_cantidad_soporte_1 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_cantidad_soporte_2", DbType:="Int")>  _
+	Public Property RET_cantidad_soporte_2() As System.Nullable(Of Integer)
+		Get
+			Return Me._RET_cantidad_soporte_2
+		End Get
+		Set
+			If (Me._RET_cantidad_soporte_2.Equals(value) = false) Then
+				Me._RET_cantidad_soporte_2 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_cantidad_soporte_3", DbType:="Int")>  _
+	Public Property RET_cantidad_soporte_3() As System.Nullable(Of Integer)
+		Get
+			Return Me._RET_cantidad_soporte_3
+		End Get
+		Set
+			If (Me._RET_cantidad_soporte_3.Equals(value) = false) Then
+				Me._RET_cantidad_soporte_3 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_formato_soporte_1", DbType:="VarChar(15)")>  _
+	Public Property RET_formato_soporte_1() As String
+		Get
+			Return Me._RET_formato_soporte_1
+		End Get
+		Set
+			If (String.Equals(Me._RET_formato_soporte_1, value) = false) Then
+				Me._RET_formato_soporte_1 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_formato_soporte_2", DbType:="VarChar(15)")>  _
+	Public Property RET_formato_soporte_2() As String
+		Get
+			Return Me._RET_formato_soporte_2
+		End Get
+		Set
+			If (String.Equals(Me._RET_formato_soporte_2, value) = false) Then
+				Me._RET_formato_soporte_2 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_formato_soporte_3", DbType:="VarChar(15)")>  _
+	Public Property RET_formato_soporte_3() As String
+		Get
+			Return Me._RET_formato_soporte_3
+		End Get
+		Set
+			If (String.Equals(Me._RET_formato_soporte_3, value) = false) Then
+				Me._RET_formato_soporte_3 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int NOT NULL")>  _
+	Public Property ORT_id_orden_trabajo() As Integer
+		Get
+			Return Me._ORT_id_orden_trabajo
+		End Get
+		Set
+			If ((Me._ORT_id_orden_trabajo = value)  _
+						= false) Then
+				Me._ORT_id_orden_trabajo = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id_detalle_orden_trabajo", DbType:="Int NOT NULL")>  _
+	Public Property id_detalle_orden_trabajo() As Integer
+		Get
+			Return Me._id_detalle_orden_trabajo
+		End Get
+		Set
+			If ((Me._id_detalle_orden_trabajo = value)  _
+						= false) Then
+				Me._id_detalle_orden_trabajo = value
 			End If
 		End Set
 	End Property

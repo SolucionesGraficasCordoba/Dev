@@ -148,6 +148,12 @@
     <Compile Include="Presentacion\frm_Listado_Orden_Trabajo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\frm_Listado_Retrabajo.Designer.vb">
+      <DependentUpon>frm_Listado_Retrabajo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Listado_Retrabajo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_Listado_Tareas.Designer.vb">
       <DependentUpon>frm_Listado_Tareas.vb</DependentUpon>
     </Compile>
@@ -224,6 +230,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Listado_Orden_Trabajo.resx">
       <DependentUpon>frm_Listado_Orden_Trabajo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Listado_Retrabajo.resx">
+      <DependentUpon>frm_Listado_Retrabajo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Listado_Tareas.resx">
       <DependentUpon>frm_Listado_Tareas.vb</DependentUpon>

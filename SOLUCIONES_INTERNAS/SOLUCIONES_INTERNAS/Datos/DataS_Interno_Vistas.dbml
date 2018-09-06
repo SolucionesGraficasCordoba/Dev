@@ -105,4 +105,32 @@
       <Column Name="Asignacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Listado_ReTrabajo" Member="Listado_ReTrabajo">
+    <Type Name="Listado_ReTrabajo">
+      <Column Name="RET_id_retrabajo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PIE_id_pieza" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PIE_nombre_pie" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_numero_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="RET_cantidad_dort" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RET_tamaño_dort" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RET_tipo_impresion_dort" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="RET_origen_area" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RET_procedimiento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RET_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RET_papel_soporte_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RET_papel_soporte_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RET_papel_soporte_3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RET_gramaje_soporte_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RET_gramaje_soporte_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RET_gramaje_soporte_3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RET_cantidad_soporte_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RET_cantidad_soporte_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RET_cantidad_soporte_3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RET_formato_soporte_1" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="RET_formato_soporte_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="RET_formato_soporte_3" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_detalle_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
 </Database>

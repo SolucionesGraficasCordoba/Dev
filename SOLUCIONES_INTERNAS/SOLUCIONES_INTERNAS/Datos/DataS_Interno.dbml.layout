@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 10.25" name="DataClasses1">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.375, 10.25" name="DataClasses1">
   <DataContextMoniker Name="/DataS_Interno" />
   <nestedChildShapes>
     <classShape Id="3e8be301-6050-46bb-8a19-b03d87213845" absoluteBounds="0.75, 4.25, 2, 1.5785953776041666">
@@ -112,17 +112,17 @@
         <classShapeMoniker Id="78b8867c-5f94-4c1e-9db3-235d587ec059" />
       </nodes>
     </associationConnector>
-    <classShape Id="7de75643-eaf3-41b0-9ad8-431223bff836" absoluteBounds="12, 3.125, 2, 4.4631168619791666">
+    <classShape Id="49795586-92d0-42d6-9fce-a24cd75d3c75" absoluteBounds="12.125, 3.125, 2, 4.6554182942708326">
       <DataClassMoniker Name="/DataS_Interno/RE_TRABAJO" />
       <nestedChildShapes>
-        <elementListCompartment Id="b8d39f76-73c4-4c0b-b4c5-6adf5ebe9342" absoluteBounds="12.015, 3.585, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="8910c11a-098c-4d30-bd16-4bd27aa37f45" absoluteBounds="12.14, 3.585, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(11.25 : 5.19790771484375); (12 : 5.19790771484375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(11.25 : 5.19790771484375); (12.125 : 5.19790771484375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataS_Interno/DETALLE_ORDEN_TRABAJO/DETALLE_ORDEN_TRABAJO_RE_TRABAJO" />
       <nodes>
         <classShapeMoniker Id="8c9ecdd0-46fb-449a-979b-4ba8022983ac" />
-        <classShapeMoniker Id="7de75643-eaf3-41b0-9ad8-431223bff836" />
+        <classShapeMoniker Id="49795586-92d0-42d6-9fce-a24cd75d3c75" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

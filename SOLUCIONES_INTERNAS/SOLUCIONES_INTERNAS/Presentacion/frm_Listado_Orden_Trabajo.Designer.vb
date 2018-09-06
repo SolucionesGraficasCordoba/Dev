@@ -30,13 +30,13 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.dgvLista_Orden_Trabajo = New System.Windows.Forms.DataGridView()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupDetallesOrden = New System.Windows.Forms.GroupBox()
+        Me.btnVer = New System.Windows.Forms.Button()
         Me.btn_Cancelar = New System.Windows.Forms.Button()
         Me.btnModificar_Orden = New System.Windows.Forms.Button()
         Me.btnEliminar_Detalle = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgv_detalle_orden = New System.Windows.Forms.DataGridView()
-        Me.btnVer = New System.Windows.Forms.Button()
         Me.GroupListadoPiezas.SuspendLayout()
         CType(Me.dgvLista_Orden_Trabajo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupDetallesOrden.SuspendLayout()
@@ -126,6 +126,15 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.GroupDetallesOrden.TabStop = False
         Me.GroupDetallesOrden.Text = "Detalles de la orden"
         '
+        'btnVer
+        '
+        Me.btnVer.Location = New System.Drawing.Point(177, 252)
+        Me.btnVer.Name = "btnVer"
+        Me.btnVer.Size = New System.Drawing.Size(90, 23)
+        Me.btnVer.TabIndex = 37
+        Me.btnVer.Text = "Ver"
+        Me.btnVer.UseVisualStyleBackColor = True
+        '
         'btn_Cancelar
         '
         Me.btn_Cancelar.Location = New System.Drawing.Point(465, 252)
@@ -179,15 +188,6 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.dgv_detalle_orden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_detalle_orden.Size = New System.Drawing.Size(528, 208)
         Me.dgv_detalle_orden.TabIndex = 32
-        '
-        'btnVer
-        '
-        Me.btnVer.Location = New System.Drawing.Point(177, 252)
-        Me.btnVer.Name = "btnVer"
-        Me.btnVer.Size = New System.Drawing.Size(90, 23)
-        Me.btnVer.TabIndex = 37
-        Me.btnVer.Text = "Ver"
-        Me.btnVer.UseVisualStyleBackColor = True
         '
         'frm_Listado_Orden_Trabajo
         '

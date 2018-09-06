@@ -28,7 +28,7 @@
         dgvLista_Orden_Trabajo.DataSource = consultaOrden
     End Sub
 
-    'CARGA GRILLA DETALLE
+    'ARMA GRILLA DETALLE
     Private Sub armargrilla()
         dgvLista_Orden_Trabajo.Enabled = True
         dgvLista_Orden_Trabajo.AutoGenerateColumns = False
@@ -452,7 +452,6 @@
                 Case frm_Tarea.btnBuscar_Numero_Orden20.Name
                     frm_Tarea.txt_id_orden_trabajo20.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
                     frm_Tarea.txtNumero_Orden_Trabajo20.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
-
             End Select
         End If
 
@@ -632,5 +631,16 @@
         frm_Orden_Trabajo.btnBuscar_Vendedor.Enabled = False
         frm_Orden_Trabajo.btnImprimir.enabled = True
         frm_Orden_Trabajo.Show()
+    End Sub
+
+    Private Sub dgv_detalle_orden_CellDoubleClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellDoubleClick
+        quienllamolistado_ot.Name = frm_retrabajo.Name
+        frm_retrabajo.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+        frm_retrabajo.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+        frm_retrabajo.cboPiezas1_Detalle1.Text = dgv_detalle_orden.SelectedCells(9).Value
+        frm_retrabajo.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(12).Value
+        frm_retrabajo.cboTipoImpresion1_Detalle1.Text = dgv_detalle_orden.SelectedCells(13).Value
+        frm_retrabajo.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.SelectedCells(10).Value
+        Me.Close()
     End Sub
 End Class
