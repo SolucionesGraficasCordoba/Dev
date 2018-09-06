@@ -637,10 +637,13 @@
         quienllamolistado_ot.Name = frm_retrabajo.Name
         frm_retrabajo.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
         frm_retrabajo.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+        frm_retrabajo.txt_cantidad_original.Text = dgv_detalle_orden.SelectedCells(11).Value
         frm_retrabajo.cboPiezas1_Detalle1.Text = dgv_detalle_orden.SelectedCells(9).Value
         frm_retrabajo.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(12).Value
         frm_retrabajo.cboTipoImpresion1_Detalle1.Text = dgv_detalle_orden.SelectedCells(13).Value
         frm_retrabajo.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.SelectedCells(10).Value
+        frm_retrabajo.dtp_Fecha_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(3).Value
         Me.Close()
     End Sub
+
 End Class

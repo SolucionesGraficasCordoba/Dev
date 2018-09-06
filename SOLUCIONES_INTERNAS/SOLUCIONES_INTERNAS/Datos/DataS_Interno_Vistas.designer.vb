@@ -1309,6 +1309,10 @@ Partial Public Class Listado_ReTrabajo
 	
 	Private _id_detalle_orden_trabajo As Integer
 	
+	Private _DOT_cantidad_dot As System.Nullable(Of Integer)
+	
+	Private _ORT_fecha_ot As Date
+	
 	Public Sub New()
 		MyBase.New
 	End Sub
@@ -1601,6 +1605,31 @@ Partial Public Class Listado_ReTrabajo
 			If ((Me._id_detalle_orden_trabajo = value)  _
 						= false) Then
 				Me._id_detalle_orden_trabajo = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_dot", DbType:="Int")>  _
+	Public Property DOT_cantidad_dot() As System.Nullable(Of Integer)
+		Get
+			Return Me._DOT_cantidad_dot
+		End Get
+		Set
+			If (Me._DOT_cantidad_dot.Equals(value) = false) Then
+				Me._DOT_cantidad_dot = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_fecha_ot", DbType:="Date NOT NULL")>  _
+	Public Property ORT_fecha_ot() As Date
+		Get
+			Return Me._ORT_fecha_ot
+		End Get
+		Set
+			If ((Me._ORT_fecha_ot = value)  _
+						= false) Then
+				Me._ORT_fecha_ot = value
 			End If
 		End Set
 	End Property

@@ -390,4 +390,23 @@ Public Class frm_Principal
     Private Sub TareasToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles TareasToolStripMenuItem1.Click
         frm_Generar_Informe.Show()
     End Sub
+
+    Private Sub NuevoRetrabajoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoRetrabajoToolStripMenuItem.Click
+        frm_retrabajo.Text = "Nuevo Re-Trabajo"
+        frm_retrabajo.Show()
+    End Sub
+
+    Private Sub EliminarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarToolStripMenuItem.Click
+        frm_Listado_Retrabajo.Text = "Eliminar Re-Trabajo"
+        frm_Listado_Retrabajo.btnGenerarInforme.Enabled = False
+        frm_Listado_Retrabajo.btnVer.Enabled = False
+        frm_Listado_Retrabajo.Show()
+    End Sub
+
+    Private Sub ConsultarToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem1.Click
+        frm_Listado_Retrabajo.Text = "Consultar Re-Trabajo"
+        frm_Listado_Retrabajo.btnGenerarInforme.Enabled = False
+        frm_Listado_Retrabajo.btnEliminar_ReTrabajo.Enabled = False
+        frm_Listado_Retrabajo.Show()
+    End Sub
 End Class
