@@ -38,6 +38,7 @@
             MsgBox("El cliente se ha creado correctamente", vbInformation)
             cargargrilla()
             limpiarcontroles()
+            Me.Close()
         Catch ex As Exception
             MsgBox("El cliente NO fue creado")
             limpiarcontroles()
@@ -68,6 +69,7 @@
             MsgBox("Los datos se han modificado correctamente")
             cargargrilla()
             Me.limpiarcontroles()
+            Me.Close()
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar cliente")
             Me.limpiarcontroles()
@@ -127,6 +129,7 @@
                     datacontext.SubmitChanges()
                     MsgBox("El cliente ha sido eliminado")
                     cargargrilla()
+                    Me.Close()
             End Select
         Else
             MsgBox("Debe seleccionar un cliente")
@@ -134,7 +137,10 @@
     End Sub
 
     Private Sub btnNuevo_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo_Cliente.Click
-        limpiarcontroles()
+        Select Case MsgBox("Se limpiarán todos los campos, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Limpiar campos")
+            Case MsgBoxResult.Yes
+                limpiarcontroles()
+        End Select
     End Sub
 
     Private Sub btnCancelar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar_Cliente.Click

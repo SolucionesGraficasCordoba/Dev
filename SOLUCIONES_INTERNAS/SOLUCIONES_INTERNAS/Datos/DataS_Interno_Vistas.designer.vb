@@ -1313,6 +1313,10 @@ Partial Public Class Listado_ReTrabajo
 	
 	Private _ORT_fecha_ot As Date
 	
+	Private _DOT_tamaño_dot As String
+	
+	Private _DOT_tipo_impresion_dot As String
+	
 	Public Sub New()
 		MyBase.New
 	End Sub
@@ -1630,6 +1634,30 @@ Partial Public Class Listado_ReTrabajo
 			If ((Me._ORT_fecha_ot = value)  _
 						= false) Then
 				Me._ORT_fecha_ot = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_tamaño_dot", DbType:="VarChar(50)")>  _
+	Public Property DOT_tamaño_dot() As String
+		Get
+			Return Me._DOT_tamaño_dot
+		End Get
+		Set
+			If (String.Equals(Me._DOT_tamaño_dot, value) = false) Then
+				Me._DOT_tamaño_dot = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_tipo_impresion_dot", DbType:="VarChar(4)")>  _
+	Public Property DOT_tipo_impresion_dot() As String
+		Get
+			Return Me._DOT_tipo_impresion_dot
+		End Get
+		Set
+			If (String.Equals(Me._DOT_tipo_impresion_dot, value) = false) Then
+				Me._DOT_tipo_impresion_dot = value
 			End If
 		End Set
 	End Property

@@ -192,13 +192,24 @@
                 detalle.DOT_papel_soporte_3 = txt_Papel3_Soporte1.Text
 
                 'GRAMAJE PRODUCTO 1
+                txt_Gramaje1_Soporte1.Text = 0
                 detalle.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte1.Text
+
+                txt_Gramaje2_Soporte1.Text = 0
                 detalle.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte1.Text
+
+                txt_Gramaje3_Soporte1.Text = 0
                 detalle.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte1.Text
 
                 'CANTIDAD PRODUCTO 1
+                txt_Cantidad1_Soporte1.Text = 0
                 detalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte1.Text
+
+                txt_Cantidad2_Soporte1.Text = 0
                 detalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte1.Text
+
+
+                txt_Cantidad3_Soporte1.Text = 0
                 detalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte1.Text
 
                 'FORMATO PRODUCTO 1
@@ -305,7 +316,10 @@
     End Sub
 
     Private Sub btnNueva_Orden_Trabajo_Click_1(sender As System.Object, e As System.EventArgs) Handles btnNueva_Orden_Trabajo.Click
-        limpiarcontroles()
+        Select Case MsgBox("Se limpiarán todos los campos, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Limpiar campos")
+            Case MsgBoxResult.Yes
+                limpiarcontroles()
+        End Select
     End Sub
 
     Private Sub txt_cantidad1_detalle1_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_cantidad1_detalle1.KeyPress
@@ -618,9 +632,6 @@
 
                 datacontext.SubmitChanges()
             End If
-
-
-
             If txt_id_detalle_orden_trabajo2.Text.Length <> 0 Then
 
                 'ACTUALIZA EL SEGUNDO REGISTRO
@@ -669,25 +680,24 @@
                     'id
                     txt_id_detalle_orden_trabajo2.Text = detalle.id_detalle_orden_trabajo
                     detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo2.Text
-                    detalle.DOT_cantidad_dot = txt_cantidad2_detalle2.Text 'CANTIDAD REGISTRO 2
-                    detalle.DOT_tamaño_dot = txtTamaño2_Detalle2.Text 'TAMAÑO REGISTRO 1
-                    detalle.DOT_tipo_impresion_dot = cboTipoImpresion2_Detalle2.SelectedItem  'TIPO IMPRESION REGISTRO 2
-                    detalle.PIE_id_pieza = cboPiezas2_Detalle2.SelectedValue  'TIPO PIEZA REGISTRO 2
-                    detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text 'ID ORDEN TRABAJO
+                    detalle.DOT_cantidad_dot = txt_cantidad2_detalle2.Text
+                    detalle.DOT_tamaño_dot = txtTamaño2_Detalle2.Text
+                    detalle.DOT_tipo_impresion_dot = cboTipoImpresion2_Detalle2.SelectedItem
+                    detalle.PIE_id_pieza = cboPiezas2_Detalle2.SelectedValue
+                    detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
 
-                    'PAPEL REGISTRO 2
                     detalle.DOT_papel_soporte_1 = txt_Papel1_Soporte2.Text
                     detalle.DOT_papel_soporte_2 = txt_Papel2_Soporte2.Text
                     detalle.DOT_papel_soporte_3 = txt_Papel3_Soporte2.Text
-                    'GRAMAJE REGISTRO 2
+
                     detalle.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte2.Text
                     detalle.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte2.Text
                     detalle.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte2.Text
-                    'CANTIDAD REGISTRO 2
+
                     detalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte2.Text
                     detalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte2.Text
                     detalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte2.Text
-                    'FORMATO REGISTRO 2
+
                     detalle.DOT_formato_soporte_1 = cboFormato1_Soporte2.SelectedItem
                     detalle.DOT_formato_soporte_2 = cboFormato2_Soporte2.SelectedItem
                     detalle.DOT_formato_soporte_3 = cboFormato3_Soporte2.SelectedItem
@@ -732,9 +742,7 @@
 
                     datacontext.SubmitChanges()
                 End If
-
             Else
-
                 'GUARDA EL REGISTRO 3 DEL DETALLE DE LA ORDEN DE TRABAJO
                 If txt_cantidad3_detalle3.Text.Length >= 1 Then
 
@@ -742,32 +750,22 @@
                         MsgBox("Seleccione una pieza")
                     End If
                     Dim detalle = New DETALLE_ORDEN_TRABAJO
-                    'id
                     txt_id_detalle_orden_trabajo3.Text = detalle.id_detalle_orden_trabajo
                     detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo3.Text
-                    'CANTIDAD REGISTRO 2
                     detalle.DOT_cantidad_dot = txt_cantidad3_detalle3.Text
-                    'TAMAÑO REGISTRO 1
                     detalle.DOT_tamaño_dot = txtTamaño3_Detalle3.Text
-                    'TIPO IMPRESION REGISTRO 2
                     detalle.DOT_tipo_impresion_dot = cboTipoImpresion3_Detalle3.SelectedItem
-                    'TIPO PIEZA REGISTRO 2
                     detalle.PIE_id_pieza = cboPiezas3_Detalle3.SelectedValue
-                    'ID ORDEN TRABAJO
                     detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-                    'PAPEL REGISTRO 2
                     detalle.DOT_papel_soporte_1 = txt_Papel1_Soporte3.Text
                     detalle.DOT_papel_soporte_2 = txt_Papel2_Soporte3.Text
                     detalle.DOT_papel_soporte_3 = txt_Papel3_Soporte3.Text
-                    'GRAMAJE REGISTRO 2
                     detalle.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte3.Text
                     detalle.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte3.Text
                     detalle.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte3.Text
-                    'CANTIDAD REGISTRO 2
                     detalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte3.Text
                     detalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte3.Text
                     detalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte3.Text
-                    'FORMATO REGISTRO 2
                     detalle.DOT_formato_soporte_1 = cboFormato1_Soporte3.SelectedItem
                     detalle.DOT_formato_soporte_2 = cboFormato2_Soporte3.SelectedItem
                     detalle.DOT_formato_soporte_3 = cboFormato3_Soporte3.SelectedItem
@@ -776,10 +774,8 @@
                     datacontext.SubmitChanges()
                 End If
             End If
-
             MsgBox("Los datos se han modificado correctamente")
             Me.Close()
-            '  frm_Listado_Orden_Trabajo.Close()
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar orden")
             Me.limpiarcontroles()

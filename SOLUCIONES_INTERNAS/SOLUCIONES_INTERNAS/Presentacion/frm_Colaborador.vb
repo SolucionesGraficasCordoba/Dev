@@ -55,6 +55,7 @@
             MsgBox("El colaborador se ha creado correctamente", vbInformation)
             cargargrilla()
             limpiarcontroles()
+            Me.Close()
         Catch ex As Exception
             MsgBox("El colaborador NO fue creado")
             limpiarcontroles()
@@ -84,10 +85,12 @@
             MsgBox("Los datos se han modificado correctamente")
             cargargrilla()
             Me.limpiarcontroles()
+            Me.Close()
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar cliente")
             Me.limpiarcontroles()
             Me.cargargrilla()
+            Me.Close()
         End Try
     End Sub
 
@@ -125,24 +128,28 @@
     End Sub
 
     Private Sub btnEliminar_Colaborador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar_Colaborador.Click
+
         If dgvLista_Colaboradores.SelectedRows.Count > 0 Then
-
             Dim eliminar = (From C In datacontext.COLABORADOR Where C.COL_id_colaborador = CInt(dgvLista_Colaboradores.Item("COL_id_colaborador", dgvLista_Colaboradores.SelectedRows(0).Index).Value)).ToList()(0)
-
             Select Case MsgBox("Se eliminará el colaborador seleccionado, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar colaborador")
                 Case MsgBoxResult.Yes
                     datacontext.COLABORADOR.DeleteOnSubmit(eliminar)
                     datacontext.SubmitChanges()
                     MsgBox("El colaborador ha sido eliminado")
                     cargargrilla()
+                    Me.Close()
             End Select
+            Me.Close()
         Else
             MsgBox("Debe seleccionar un colaborador")
         End If
     End Sub
 
     Private Sub btnNuevo_Colaborador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo_Colaborador.Click
-        limpiarcontroles()
+        Select Case MsgBox("Se limpiarán todos los campos, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Limpiar campos")
+            Case MsgBoxResult.Yes
+                limpiarcontroles()
+        End Select
     End Sub
 
     Private Sub btnCancelar_Colaborador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar_Colaborador.Click

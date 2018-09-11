@@ -133,6 +133,8 @@
       <Column Name="id_detalle_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DOT_cantidad_dot" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ORT_fecha_ot" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DOT_tamaño_dot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT_tipo_impresion_dot" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

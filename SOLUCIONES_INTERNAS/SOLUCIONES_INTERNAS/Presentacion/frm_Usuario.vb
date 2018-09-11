@@ -73,6 +73,7 @@
             MsgBox("El usuario se ha creado correctamente", vbInformation)
             cargargrilla()
             limpiarcontroles()
+            Me.Close()
         Catch ex As Exception
             MsgBox("El usuario NO fue creado")
             limpiarcontroles()
@@ -107,6 +108,7 @@
             MsgBox("Los datos se han modificado correctamente")
             cargargrilla()
             Me.limpiarcontroles()
+            Me.Close()
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar usuario")
             Me.limpiarcontroles()
@@ -126,6 +128,7 @@
                     MsgBox("El usuario ha sido eliminado")
                     cargargrilla()
                     lblTotal_Usuarios.Text = dgvLista_Usuarios.Rows.Count
+                    Me.Close()
             End Select
         Else
             MsgBox("Debe seleccionar un usuario")
@@ -133,7 +136,10 @@
     End Sub
 
     Private Sub btnNuevo_Usuario_Click(sender As System.Object, e As System.EventArgs) Handles btnNuevo_Usuario.Click
-        limpiarcontroles()
+        Select Case MsgBox("Se limpiarán todos los campos, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Limpiar campos")
+            Case MsgBoxResult.Yes
+                limpiarcontroles()
+        End Select
     End Sub
 
     Private Sub btnCancelar_Usuario_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar_Usuario.Click
@@ -186,6 +192,7 @@
     Private Sub btnBuscar_Colaborador_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Colaborador.Click
         frm_Colaborador.quienllamo_col = Me
         frm_Colaborador.Text = "Seleccionar Colaborador"
+        frm_Colaborador.GroupNuevoColaborador.Enabled = False
         frm_Colaborador.Show()
     End Sub
 End Class

@@ -35,9 +35,10 @@
 
             datacontext.VENDEDOR.InsertOnSubmit(clie)
             datacontext.SubmitChanges()
-            MsgBox("El cliente se ha creado correctamente", vbInformation)
+            MsgBox("El Vendedor se ha creado correctamente", vbInformation)
             cargargrilla()
             limpiarcontroles()
+            Me.Close()
         Catch ex As Exception
             MsgBox("El Vendedor NO fue creado")
             limpiarcontroles()
@@ -70,6 +71,7 @@
             MsgBox("Los datos se han modificado correctamente")
             cargargrilla()
             Me.limpiarcontroles()
+            Me.Close()
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar vendedor")
             Me.limpiarcontroles()
@@ -112,9 +114,6 @@
             txt_mail_vendedor.Text = dgvLista_vendedores.Item("VEN_mail_ven", dgvLista_vendedores.SelectedRows(0).Index).Value
             txt_telefono_vendedor.Text = dgvLista_Vendedores.Item("VEN_telefono_ven", dgvLista_Vendedores.SelectedRows(0).Index).Value
 
-            'Frm_NuevoCliente.btn_guardar.Visible = False
-            'Frm_NuevoCliente.Show()
-            'Frm_NuevoCliente.txt_Ruc_Cliente.Focus()
         Else
             MsgBox("Debe seleccionar un Vendedor")
         End If
@@ -131,6 +130,7 @@
                     datacontext.SubmitChanges()
                     MsgBox("El vendedor ha sido eliminado")
                     cargargrilla()
+                    Me.Close()
             End Select
         Else
             MsgBox("Debe seleccionar un vendedor")
@@ -138,7 +138,10 @@
     End Sub
 
     Private Sub btnNuevo_Vendedor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo_Vendedor.Click
-        limpiarcontroles()
+        Select Case MsgBox("Se limpiarán todos los campos, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Limpiar campos")
+            Case MsgBoxResult.Yes
+                limpiarcontroles()
+        End Select
     End Sub
 
     Private Sub btnCancelar_Vendedor_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar_Vendedor.Click

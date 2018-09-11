@@ -56,6 +56,7 @@
             MsgBox("La pieza se ha creado correctamente", vbInformation)
             cargargrilla()
             limpiarcontroles()
+            Me.Close()
         Catch ex As Exception
             MsgBox("La pieza NO fue creada")
             limpiarcontroles()
@@ -81,6 +82,7 @@
             MsgBox("Los datos se han modificado correctamente")
             cargargrilla()
             Me.limpiarcontroles()
+            Me.Close()
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar Pieza")
             Me.limpiarcontroles()

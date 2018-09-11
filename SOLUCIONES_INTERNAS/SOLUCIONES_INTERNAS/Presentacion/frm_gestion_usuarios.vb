@@ -32,8 +32,8 @@
                 datacontext.USUARIO.InsertOnSubmit(usu)
                 datacontext.SubmitChanges()
                 MsgBox("El usuario se ha creado correctamente", vbInformation)
-
                 limpiarcontroles()
+                Me.Close()
             End If
         Catch ex As Exception
 

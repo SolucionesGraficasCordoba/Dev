@@ -645,5 +645,4 @@
         frm_retrabajo.dtp_Fecha_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(3).Value
         Me.Close()
     End Sub
-
 End Class

@@ -59,6 +59,7 @@
             MsgBox("El sector se ha creado correctamente", vbInformation)
             cargargrilla()
             limpiarcontroles()
+            Me.Close()
         Catch ex As Exception
             MsgBox("El sector NO fue creado")
             limpiarcontroles()

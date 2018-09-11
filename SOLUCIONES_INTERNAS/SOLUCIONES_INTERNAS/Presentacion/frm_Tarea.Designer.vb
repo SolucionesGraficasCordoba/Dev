@@ -47,6 +47,26 @@ Partial Class frm_Tarea
         Me.txt_detalle_tarea1 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.Label56 = New System.Windows.Forms.Label()
+        Me.Label55 = New System.Windows.Forms.Label()
+        Me.Label54 = New System.Windows.Forms.Label()
+        Me.Label53 = New System.Windows.Forms.Label()
+        Me.Label52 = New System.Windows.Forms.Label()
+        Me.Label51 = New System.Windows.Forms.Label()
+        Me.Label50 = New System.Windows.Forms.Label()
+        Me.Label49 = New System.Windows.Forms.Label()
+        Me.Label48 = New System.Windows.Forms.Label()
+        Me.Label47 = New System.Windows.Forms.Label()
+        Me.Label46 = New System.Windows.Forms.Label()
+        Me.Label45 = New System.Windows.Forms.Label()
+        Me.Label44 = New System.Windows.Forms.Label()
+        Me.Label43 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label38 = New System.Windows.Forms.Label()
         Me.btnBuscar_Numero_Orden20 = New System.Windows.Forms.Button()
         Me.btnBuscar_Numero_Orden19 = New System.Windows.Forms.Button()
         Me.btnBuscar_Numero_Orden17 = New System.Windows.Forms.Button()
@@ -248,26 +268,6 @@ Partial Class frm_Tarea
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label38 = New System.Windows.Forms.Label()
-        Me.Label39 = New System.Windows.Forms.Label()
-        Me.Label40 = New System.Windows.Forms.Label()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.Label43 = New System.Windows.Forms.Label()
-        Me.Label44 = New System.Windows.Forms.Label()
-        Me.Label45 = New System.Windows.Forms.Label()
-        Me.Label46 = New System.Windows.Forms.Label()
-        Me.Label47 = New System.Windows.Forms.Label()
-        Me.Label48 = New System.Windows.Forms.Label()
-        Me.Label49 = New System.Windows.Forms.Label()
-        Me.Label50 = New System.Windows.Forms.Label()
-        Me.Label51 = New System.Windows.Forms.Label()
-        Me.Label52 = New System.Windows.Forms.Label()
-        Me.Label53 = New System.Windows.Forms.Label()
-        Me.Label54 = New System.Windows.Forms.Label()
-        Me.Label55 = New System.Windows.Forms.Label()
-        Me.Label56 = New System.Windows.Forms.Label()
-        Me.Label57 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -702,6 +702,226 @@ Partial Class frm_Tarea
         Me.GroupBox1.TabIndex = 44
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Tareas"
+        '
+        'Label57
+        '
+        Me.Label57.AutoSize = True
+        Me.Label57.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label57.ForeColor = System.Drawing.Color.Red
+        Me.Label57.Location = New System.Drawing.Point(883, 547)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(11, 13)
+        Me.Label57.TabIndex = 50
+        Me.Label57.Text = "*"
+        '
+        'Label56
+        '
+        Me.Label56.AutoSize = True
+        Me.Label56.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label56.ForeColor = System.Drawing.Color.Red
+        Me.Label56.Location = New System.Drawing.Point(883, 521)
+        Me.Label56.Name = "Label56"
+        Me.Label56.Size = New System.Drawing.Size(11, 13)
+        Me.Label56.TabIndex = 50
+        Me.Label56.Text = "*"
+        '
+        'Label55
+        '
+        Me.Label55.AutoSize = True
+        Me.Label55.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label55.ForeColor = System.Drawing.Color.Red
+        Me.Label55.Location = New System.Drawing.Point(883, 495)
+        Me.Label55.Name = "Label55"
+        Me.Label55.Size = New System.Drawing.Size(11, 13)
+        Me.Label55.TabIndex = 50
+        Me.Label55.Text = "*"
+        '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label54.ForeColor = System.Drawing.Color.Red
+        Me.Label54.Location = New System.Drawing.Point(883, 469)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(11, 13)
+        Me.Label54.TabIndex = 50
+        Me.Label54.Text = "*"
+        '
+        'Label53
+        '
+        Me.Label53.AutoSize = True
+        Me.Label53.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label53.ForeColor = System.Drawing.Color.Red
+        Me.Label53.Location = New System.Drawing.Point(883, 440)
+        Me.Label53.Name = "Label53"
+        Me.Label53.Size = New System.Drawing.Size(11, 13)
+        Me.Label53.TabIndex = 50
+        Me.Label53.Text = "*"
+        '
+        'Label52
+        '
+        Me.Label52.AutoSize = True
+        Me.Label52.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label52.ForeColor = System.Drawing.Color.Red
+        Me.Label52.Location = New System.Drawing.Point(883, 414)
+        Me.Label52.Name = "Label52"
+        Me.Label52.Size = New System.Drawing.Size(11, 13)
+        Me.Label52.TabIndex = 50
+        Me.Label52.Text = "*"
+        '
+        'Label51
+        '
+        Me.Label51.AutoSize = True
+        Me.Label51.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label51.ForeColor = System.Drawing.Color.Red
+        Me.Label51.Location = New System.Drawing.Point(883, 388)
+        Me.Label51.Name = "Label51"
+        Me.Label51.Size = New System.Drawing.Size(11, 13)
+        Me.Label51.TabIndex = 50
+        Me.Label51.Text = "*"
+        '
+        'Label50
+        '
+        Me.Label50.AutoSize = True
+        Me.Label50.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label50.ForeColor = System.Drawing.Color.Red
+        Me.Label50.Location = New System.Drawing.Point(883, 362)
+        Me.Label50.Name = "Label50"
+        Me.Label50.Size = New System.Drawing.Size(11, 13)
+        Me.Label50.TabIndex = 50
+        Me.Label50.Text = "*"
+        '
+        'Label49
+        '
+        Me.Label49.AutoSize = True
+        Me.Label49.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label49.ForeColor = System.Drawing.Color.Red
+        Me.Label49.Location = New System.Drawing.Point(883, 336)
+        Me.Label49.Name = "Label49"
+        Me.Label49.Size = New System.Drawing.Size(11, 13)
+        Me.Label49.TabIndex = 50
+        Me.Label49.Text = "*"
+        '
+        'Label48
+        '
+        Me.Label48.AutoSize = True
+        Me.Label48.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label48.ForeColor = System.Drawing.Color.Red
+        Me.Label48.Location = New System.Drawing.Point(883, 309)
+        Me.Label48.Name = "Label48"
+        Me.Label48.Size = New System.Drawing.Size(11, 13)
+        Me.Label48.TabIndex = 50
+        Me.Label48.Text = "*"
+        '
+        'Label47
+        '
+        Me.Label47.AutoSize = True
+        Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label47.ForeColor = System.Drawing.Color.Red
+        Me.Label47.Location = New System.Drawing.Point(883, 283)
+        Me.Label47.Name = "Label47"
+        Me.Label47.Size = New System.Drawing.Size(11, 13)
+        Me.Label47.TabIndex = 50
+        Me.Label47.Text = "*"
+        '
+        'Label46
+        '
+        Me.Label46.AutoSize = True
+        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label46.ForeColor = System.Drawing.Color.Red
+        Me.Label46.Location = New System.Drawing.Point(883, 257)
+        Me.Label46.Name = "Label46"
+        Me.Label46.Size = New System.Drawing.Size(11, 13)
+        Me.Label46.TabIndex = 50
+        Me.Label46.Text = "*"
+        '
+        'Label45
+        '
+        Me.Label45.AutoSize = True
+        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label45.ForeColor = System.Drawing.Color.Red
+        Me.Label45.Location = New System.Drawing.Point(883, 231)
+        Me.Label45.Name = "Label45"
+        Me.Label45.Size = New System.Drawing.Size(11, 13)
+        Me.Label45.TabIndex = 50
+        Me.Label45.Text = "*"
+        '
+        'Label44
+        '
+        Me.Label44.AutoSize = True
+        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label44.ForeColor = System.Drawing.Color.Red
+        Me.Label44.Location = New System.Drawing.Point(883, 205)
+        Me.Label44.Name = "Label44"
+        Me.Label44.Size = New System.Drawing.Size(11, 13)
+        Me.Label44.TabIndex = 50
+        Me.Label44.Text = "*"
+        '
+        'Label43
+        '
+        Me.Label43.AutoSize = True
+        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label43.ForeColor = System.Drawing.Color.Red
+        Me.Label43.Location = New System.Drawing.Point(883, 179)
+        Me.Label43.Name = "Label43"
+        Me.Label43.Size = New System.Drawing.Size(11, 13)
+        Me.Label43.TabIndex = 50
+        Me.Label43.Text = "*"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.ForeColor = System.Drawing.Color.Red
+        Me.Label42.Location = New System.Drawing.Point(883, 157)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(11, 13)
+        Me.Label42.TabIndex = 50
+        Me.Label42.Text = "*"
+        '
+        'Label41
+        '
+        Me.Label41.AutoSize = True
+        Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.ForeColor = System.Drawing.Color.Red
+        Me.Label41.Location = New System.Drawing.Point(883, 126)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(11, 13)
+        Me.Label41.TabIndex = 50
+        Me.Label41.Text = "*"
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.ForeColor = System.Drawing.Color.Red
+        Me.Label40.Location = New System.Drawing.Point(883, 104)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(11, 13)
+        Me.Label40.TabIndex = 50
+        Me.Label40.Text = "*"
+        '
+        'Label39
+        '
+        Me.Label39.AutoSize = True
+        Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label39.ForeColor = System.Drawing.Color.Red
+        Me.Label39.Location = New System.Drawing.Point(883, 78)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(11, 13)
+        Me.Label39.TabIndex = 50
+        Me.Label39.Text = "*"
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label38.ForeColor = System.Drawing.Color.Red
+        Me.Label38.Location = New System.Drawing.Point(883, 48)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(11, 13)
+        Me.Label38.TabIndex = 50
+        Me.Label38.Text = "*"
         '
         'btnBuscar_Numero_Orden20
         '
@@ -2278,226 +2498,6 @@ Partial Class frm_Tarea
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(2, 15)
         Me.Label35.TabIndex = 49
-        '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label38.ForeColor = System.Drawing.Color.Red
-        Me.Label38.Location = New System.Drawing.Point(883, 48)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(11, 13)
-        Me.Label38.TabIndex = 50
-        Me.Label38.Text = "*"
-        '
-        'Label39
-        '
-        Me.Label39.AutoSize = True
-        Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label39.ForeColor = System.Drawing.Color.Red
-        Me.Label39.Location = New System.Drawing.Point(883, 78)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(11, 13)
-        Me.Label39.TabIndex = 50
-        Me.Label39.Text = "*"
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.ForeColor = System.Drawing.Color.Red
-        Me.Label40.Location = New System.Drawing.Point(883, 104)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(11, 13)
-        Me.Label40.TabIndex = 50
-        Me.Label40.Text = "*"
-        '
-        'Label41
-        '
-        Me.Label41.AutoSize = True
-        Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label41.ForeColor = System.Drawing.Color.Red
-        Me.Label41.Location = New System.Drawing.Point(883, 126)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(11, 13)
-        Me.Label41.TabIndex = 50
-        Me.Label41.Text = "*"
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.ForeColor = System.Drawing.Color.Red
-        Me.Label42.Location = New System.Drawing.Point(883, 157)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(11, 13)
-        Me.Label42.TabIndex = 50
-        Me.Label42.Text = "*"
-        '
-        'Label43
-        '
-        Me.Label43.AutoSize = True
-        Me.Label43.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label43.ForeColor = System.Drawing.Color.Red
-        Me.Label43.Location = New System.Drawing.Point(883, 179)
-        Me.Label43.Name = "Label43"
-        Me.Label43.Size = New System.Drawing.Size(11, 13)
-        Me.Label43.TabIndex = 50
-        Me.Label43.Text = "*"
-        '
-        'Label44
-        '
-        Me.Label44.AutoSize = True
-        Me.Label44.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label44.ForeColor = System.Drawing.Color.Red
-        Me.Label44.Location = New System.Drawing.Point(883, 205)
-        Me.Label44.Name = "Label44"
-        Me.Label44.Size = New System.Drawing.Size(11, 13)
-        Me.Label44.TabIndex = 50
-        Me.Label44.Text = "*"
-        '
-        'Label45
-        '
-        Me.Label45.AutoSize = True
-        Me.Label45.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label45.ForeColor = System.Drawing.Color.Red
-        Me.Label45.Location = New System.Drawing.Point(883, 231)
-        Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(11, 13)
-        Me.Label45.TabIndex = 50
-        Me.Label45.Text = "*"
-        '
-        'Label46
-        '
-        Me.Label46.AutoSize = True
-        Me.Label46.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label46.ForeColor = System.Drawing.Color.Red
-        Me.Label46.Location = New System.Drawing.Point(883, 257)
-        Me.Label46.Name = "Label46"
-        Me.Label46.Size = New System.Drawing.Size(11, 13)
-        Me.Label46.TabIndex = 50
-        Me.Label46.Text = "*"
-        '
-        'Label47
-        '
-        Me.Label47.AutoSize = True
-        Me.Label47.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label47.ForeColor = System.Drawing.Color.Red
-        Me.Label47.Location = New System.Drawing.Point(883, 283)
-        Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(11, 13)
-        Me.Label47.TabIndex = 50
-        Me.Label47.Text = "*"
-        '
-        'Label48
-        '
-        Me.Label48.AutoSize = True
-        Me.Label48.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label48.ForeColor = System.Drawing.Color.Red
-        Me.Label48.Location = New System.Drawing.Point(883, 309)
-        Me.Label48.Name = "Label48"
-        Me.Label48.Size = New System.Drawing.Size(11, 13)
-        Me.Label48.TabIndex = 50
-        Me.Label48.Text = "*"
-        '
-        'Label49
-        '
-        Me.Label49.AutoSize = True
-        Me.Label49.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label49.ForeColor = System.Drawing.Color.Red
-        Me.Label49.Location = New System.Drawing.Point(883, 336)
-        Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(11, 13)
-        Me.Label49.TabIndex = 50
-        Me.Label49.Text = "*"
-        '
-        'Label50
-        '
-        Me.Label50.AutoSize = True
-        Me.Label50.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label50.ForeColor = System.Drawing.Color.Red
-        Me.Label50.Location = New System.Drawing.Point(883, 362)
-        Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(11, 13)
-        Me.Label50.TabIndex = 50
-        Me.Label50.Text = "*"
-        '
-        'Label51
-        '
-        Me.Label51.AutoSize = True
-        Me.Label51.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label51.ForeColor = System.Drawing.Color.Red
-        Me.Label51.Location = New System.Drawing.Point(883, 388)
-        Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(11, 13)
-        Me.Label51.TabIndex = 50
-        Me.Label51.Text = "*"
-        '
-        'Label52
-        '
-        Me.Label52.AutoSize = True
-        Me.Label52.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.ForeColor = System.Drawing.Color.Red
-        Me.Label52.Location = New System.Drawing.Point(883, 414)
-        Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(11, 13)
-        Me.Label52.TabIndex = 50
-        Me.Label52.Text = "*"
-        '
-        'Label53
-        '
-        Me.Label53.AutoSize = True
-        Me.Label53.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label53.ForeColor = System.Drawing.Color.Red
-        Me.Label53.Location = New System.Drawing.Point(883, 440)
-        Me.Label53.Name = "Label53"
-        Me.Label53.Size = New System.Drawing.Size(11, 13)
-        Me.Label53.TabIndex = 50
-        Me.Label53.Text = "*"
-        '
-        'Label54
-        '
-        Me.Label54.AutoSize = True
-        Me.Label54.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label54.ForeColor = System.Drawing.Color.Red
-        Me.Label54.Location = New System.Drawing.Point(883, 469)
-        Me.Label54.Name = "Label54"
-        Me.Label54.Size = New System.Drawing.Size(11, 13)
-        Me.Label54.TabIndex = 50
-        Me.Label54.Text = "*"
-        '
-        'Label55
-        '
-        Me.Label55.AutoSize = True
-        Me.Label55.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label55.ForeColor = System.Drawing.Color.Red
-        Me.Label55.Location = New System.Drawing.Point(883, 495)
-        Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(11, 13)
-        Me.Label55.TabIndex = 50
-        Me.Label55.Text = "*"
-        '
-        'Label56
-        '
-        Me.Label56.AutoSize = True
-        Me.Label56.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label56.ForeColor = System.Drawing.Color.Red
-        Me.Label56.Location = New System.Drawing.Point(883, 521)
-        Me.Label56.Name = "Label56"
-        Me.Label56.Size = New System.Drawing.Size(11, 13)
-        Me.Label56.TabIndex = 50
-        Me.Label56.Text = "*"
-        '
-        'Label57
-        '
-        Me.Label57.AutoSize = True
-        Me.Label57.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label57.ForeColor = System.Drawing.Color.Red
-        Me.Label57.Location = New System.Drawing.Point(883, 547)
-        Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(11, 13)
-        Me.Label57.TabIndex = 50
-        Me.Label57.Text = "*"
         '
         'frm_Tarea
         '
