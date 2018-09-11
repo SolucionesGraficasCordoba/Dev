@@ -9,6 +9,7 @@
         dgvLista_Sector.ClearSelection()
         txt_nombre_sector.Focus()
         Label6.Text = dgvLista_Sector.Rows.Count
+        btnNuevo_Sector.Visible = False
     End Sub
 
     Public Sub cargargrilla()

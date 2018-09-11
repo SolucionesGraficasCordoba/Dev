@@ -20,7 +20,7 @@
         txtid_vendedor.Visible = False
         txt_nombre_cliente.Enabled = False
         txtNombre_vendedor.Enabled = False
-
+        btnNueva_Orden_Trabajo.Visible = False
         If quienllamo_listado_orden.Name <> frm_Listado_Orden_Trabajo.Name Then
             'CARGA COMBOBOX PIEZA DETALLE 1
             Dim combopieza1 = (From sec In datacontext.PIEZA

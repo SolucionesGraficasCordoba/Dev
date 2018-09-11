@@ -114,14 +114,6 @@ Public Class frm_Principal
         frm_Usuario.btnNuevo_Usuario.Enabled = False
     End Sub
 
-    Private Sub PiezaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles PiezaToolStripMenuItem.Click
-        frm_Pieza.Show()
-    End Sub
-
-    Private Sub SectorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles SectorToolStripMenuItem.Click
-        frm_Sector.Show()
-    End Sub
-
     Private Sub AltaTareaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AltaTareaToolStripMenuItem.Click
         frm_Tarea.Show()
         frm_Tarea.Text = "Nueva Tarea"
@@ -189,7 +181,7 @@ Public Class frm_Principal
         frm_Usuario.btnBuscar_Colaborador.Enabled = False
     End Sub
 
-    Private Sub CambiarContraseñaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CambiarContraseñaToolStripMenuItem.Click
+    Private Sub CambiarContraseñaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
         frm_gestion_usuarios.Show()
     End Sub
 

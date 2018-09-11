@@ -10,6 +10,7 @@
         txt_nombre_colaborador.Enabled = False
         txt_detalle_tarea1.Focus()
         txt_id_colaborador.Visible = False
+        btnNueva_Tarea.Visible = False
 
         txt_id_orden_trabajo1.Visible = False
         txt_id_orden_trabajo2.Visible = False

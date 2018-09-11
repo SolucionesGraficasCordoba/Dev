@@ -10,6 +10,7 @@
         dgvLista_Piezas.ClearSelection()
         txt_nombre_pieza.Focus()
         Label6.Text = dgvLista_Piezas.Rows.Count
+        btnNuevo_Pieza.Visible = False
     End Sub
 
     Public Sub cargargrilla()

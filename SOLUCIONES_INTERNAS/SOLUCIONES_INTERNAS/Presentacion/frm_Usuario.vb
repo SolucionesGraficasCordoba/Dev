@@ -13,6 +13,7 @@
         lblTotal_Usuarios.Text = dgvLista_Usuarios.Rows.Count
         txt_nombre_colaborador.Enabled = False
         btnActualizar_Usuario.Enabled = False
+        btnNuevo_Usuario.Visible = False
     End Sub
 
     Public Sub cargargrilla()
@@ -150,7 +151,7 @@
     Private Sub txt_Buscar_Usuario_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_Buscar_Usuario.TextChanged
         Dim buscar As String
         armargrilla()
-        buscar = Me.txt_usuario.Text & "*"
+        buscar = Me.txt_Buscar_Usuario.Text & "*"
         Dim consultausuario = From U In datacontext.USUARIO Select U.USU_id_usuario, U.USU_usuario, U.USU_contraseña, U.USU_perfil, U.COL_id_colaborador Where USU_usuario Like buscar.ToString
         dgvLista_Usuarios.DataSource = consultausuario
     End Sub

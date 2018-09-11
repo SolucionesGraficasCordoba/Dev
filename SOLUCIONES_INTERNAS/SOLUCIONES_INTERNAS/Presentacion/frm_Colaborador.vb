@@ -10,7 +10,7 @@
         dgvLista_Colaboradores.ClearSelection()
         txt_nombre_colaborador.Focus()
         lblTotal_Colaboradores.Text = dgvLista_Colaboradores.Rows.Count
-
+        btnNuevo_Colaborador.Visible = False
         'CARGA COMBOBOX SECTOR
         Dim combosector = (From sec In datacontext.SECTOR
                            Select sec.SEC_id_sector, sec.SEC_nombre_sector)

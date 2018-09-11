@@ -58,7 +58,7 @@ Partial Class frm_Vendedor
         Me.GroupListadoClientes.Controls.Add(Me.txt_Buscar_vendedor)
         Me.GroupListadoClientes.Controls.Add(Me.dgvLista_vendedores)
         Me.GroupListadoClientes.Controls.Add(Me.Label4)
-        Me.GroupListadoClientes.Location = New System.Drawing.Point(31, 311)
+        Me.GroupListadoClientes.Location = New System.Drawing.Point(31, 291)
         Me.GroupListadoClientes.Name = "GroupListadoClientes"
         Me.GroupListadoClientes.Size = New System.Drawing.Size(486, 372)
         Me.GroupListadoClientes.TabIndex = 3
@@ -94,7 +94,7 @@ Partial Class frm_Vendedor
         '
         'txt_Buscar_vendedor
         '
-        Me.txt_Buscar_vendedor.Location = New System.Drawing.Point(74, 40)
+        Me.txt_Buscar_vendedor.Location = New System.Drawing.Point(116, 40)
         Me.txt_Buscar_vendedor.Name = "txt_Buscar_vendedor"
         Me.txt_Buscar_vendedor.Size = New System.Drawing.Size(206, 20)
         Me.txt_Buscar_vendedor.TabIndex = 2
@@ -113,9 +113,9 @@ Partial Class frm_Vendedor
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(28, 43)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
+        Me.Label4.Size = New System.Drawing.Size(82, 13)
         Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Buscar"
+        Me.Label4.Text = "Ingrese Nombre"
         '
         'GroupNuevoVendedor
         '
@@ -134,7 +134,7 @@ Partial Class frm_Vendedor
         Me.GroupNuevoVendedor.Controls.Add(Me.txt_id_vendedor)
         Me.GroupNuevoVendedor.Controls.Add(Me.Label2)
         Me.GroupNuevoVendedor.Controls.Add(Me.Label1)
-        Me.GroupNuevoVendedor.Location = New System.Drawing.Point(31, 33)
+        Me.GroupNuevoVendedor.Location = New System.Drawing.Point(31, 12)
         Me.GroupNuevoVendedor.Name = "GroupNuevoVendedor"
         Me.GroupNuevoVendedor.Size = New System.Drawing.Size(486, 262)
         Me.GroupNuevoVendedor.TabIndex = 2
@@ -272,7 +272,7 @@ Partial Class frm_Vendedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(545, 712)
+        Me.ClientSize = New System.Drawing.Size(545, 684)
         Me.Controls.Add(Me.GroupListadoClientes)
         Me.Controls.Add(Me.GroupNuevoVendedor)
         Me.Name = "frm_Vendedor"

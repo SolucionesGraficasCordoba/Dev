@@ -10,7 +10,7 @@
         dgvLista_Clientes.ClearSelection()
         txt_razonsocial_cliente.Focus()
         Label6.Text = dgvLista_Clientes.Rows.Count
-
+        btnNuevo_Cliente.Visible = False
     End Sub
 
     Private Sub btnGuardar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Cliente.Click
@@ -98,7 +98,7 @@
         dgvLista_Clientes.Columns(0).DataPropertyName = "CLI_id_cliente"
         dgvLista_Clientes.Columns(0).Visible = False
         dgvLista_Clientes.Columns(1).DataPropertyName = "CLI_razon_social"
-        dgvLista_Clientes.Columns(1).Width = 150
+        dgvLista_Clientes.Columns(1).Width = 200
         dgvLista_Clientes.Columns(2).DataPropertyName = "CLI_mail_cli"
         dgvLista_Clientes.Columns(2).Width = 150
         dgvLista_Clientes.Columns(3).DataPropertyName = "CLI_telefono_cli"

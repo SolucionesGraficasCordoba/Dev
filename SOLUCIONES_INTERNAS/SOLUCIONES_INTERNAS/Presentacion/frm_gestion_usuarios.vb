@@ -10,21 +10,17 @@
                 limpiarcontroles()
                 Exit Sub
             End If
-
             If txt_usuario.Text.Length = 0 Or txt_nueva_contraseña.Text.Length = 0 Or txt_repetir_contraseña.Text.Length = 0 Or cbo_perfil.Text.Length = 0 Then
                 MsgBox("Debe completar todos los campos requeridos")
                 Exit Sub
             End If
-
             If txt_nueva_contraseña.Text <> txt_repetir_contraseña.Text Then
                 MsgBox("Las contraseñas no coinciden")
                 txt_nueva_contraseña.Clear()
                 txt_repetir_contraseña.Clear()
                 Exit Sub
             Else
-
                 Dim usu = New USUARIO
-
                 usu.USU_usuario = txt_usuario.Text
                 usu.USU_contraseña = txt_nueva_contraseña.Text
                 usu.USU_perfil = cbo_perfil.Text
@@ -36,7 +32,6 @@
                 Me.Close()
             End If
         Catch ex As Exception
-
             MsgBox("El usuario NO fue creado")
             limpiarcontroles()
         End Try
@@ -57,9 +52,8 @@
                 MsgBox("Los datos se han modificado correctamente")
                 frm_ingreso.limpiarcontroles()
                 Me.Close()
-
             Catch ex As Exception
-                MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar alumno")
+                MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar usuario")
                 frm_ingreso.limpiarcontroles()
                 Me.Close()
             End Try

@@ -216,7 +216,7 @@ Partial Class frm_Cliente
         '
         'btnEliminar_Cliente
         '
-        Me.btnEliminar_Cliente.Location = New System.Drawing.Point(385, 38)
+        Me.btnEliminar_Cliente.Location = New System.Drawing.Point(385, 39)
         Me.btnEliminar_Cliente.Name = "btnEliminar_Cliente"
         Me.btnEliminar_Cliente.Size = New System.Drawing.Size(75, 23)
         Me.btnEliminar_Cliente.TabIndex = 3
@@ -225,9 +225,9 @@ Partial Class frm_Cliente
         '
         'txt_Buscar_Cliente
         '
-        Me.txt_Buscar_Cliente.Location = New System.Drawing.Point(120, 40)
+        Me.txt_Buscar_Cliente.Location = New System.Drawing.Point(185, 41)
         Me.txt_Buscar_Cliente.Name = "txt_Buscar_Cliente"
-        Me.txt_Buscar_Cliente.Size = New System.Drawing.Size(206, 20)
+        Me.txt_Buscar_Cliente.Size = New System.Drawing.Size(167, 20)
         Me.txt_Buscar_Cliente.TabIndex = 2
         '
         'dgvLista_Clientes
@@ -244,9 +244,9 @@ Partial Class frm_Cliente
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(29, 43)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(85, 13)
+        Me.Label4.Size = New System.Drawing.Size(150, 13)
         Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Ingrese Nombre "
+        Me.Label4.Text = "Ingrese Nombre/Razón Social"
         '
         'frm_Cliente
         '

@@ -4,6 +4,7 @@
 
     Private Sub Vendedor_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txt_id_vendedor.Visible = False
+        btnNuevo_Vendedor.Visible = False
         Label1.Visible = False
         armargrilla()
         cargargrilla()

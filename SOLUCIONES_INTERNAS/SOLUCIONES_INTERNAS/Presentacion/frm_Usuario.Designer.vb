@@ -83,7 +83,7 @@ Partial Class frm_Usuario
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(319, 285)
+        Me.Label5.Location = New System.Drawing.Point(346, 285)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(90, 13)
         Me.Label5.TabIndex = 4
@@ -100,9 +100,9 @@ Partial Class frm_Usuario
         '
         'txt_Buscar_Usuario
         '
-        Me.txt_Buscar_Usuario.Location = New System.Drawing.Point(74, 40)
+        Me.txt_Buscar_Usuario.Location = New System.Drawing.Point(170, 40)
         Me.txt_Buscar_Usuario.Name = "txt_Buscar_Usuario"
-        Me.txt_Buscar_Usuario.Size = New System.Drawing.Size(206, 20)
+        Me.txt_Buscar_Usuario.Size = New System.Drawing.Size(167, 20)
         Me.txt_Buscar_Usuario.TabIndex = 2
         '
         'dgvLista_Usuarios
@@ -119,9 +119,9 @@ Partial Class frm_Usuario
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(28, 43)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
+        Me.Label4.Size = New System.Drawing.Size(136, 13)
         Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Buscar"
+        Me.Label4.Text = "Ingrese Nombre de Usuario"
         '
         'GroupNuevoUsuario
         '
