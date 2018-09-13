@@ -56,7 +56,7 @@ Partial Class frm_Colaborador
         Me.GroupListadoColaboradores.Controls.Add(Me.txt_Buscar_Colaborador)
         Me.GroupListadoColaboradores.Controls.Add(Me.dgvLista_Colaboradores)
         Me.GroupListadoColaboradores.Controls.Add(Me.Label4)
-        Me.GroupListadoColaboradores.Location = New System.Drawing.Point(30, 268)
+        Me.GroupListadoColaboradores.Location = New System.Drawing.Point(21, 243)
         Me.GroupListadoColaboradores.Name = "GroupListadoColaboradores"
         Me.GroupListadoColaboradores.Size = New System.Drawing.Size(486, 372)
         Me.GroupListadoColaboradores.TabIndex = 5
@@ -92,7 +92,7 @@ Partial Class frm_Colaborador
         '
         'txt_Buscar_Colaborador
         '
-        Me.txt_Buscar_Colaborador.Location = New System.Drawing.Point(74, 40)
+        Me.txt_Buscar_Colaborador.Location = New System.Drawing.Point(116, 40)
         Me.txt_Buscar_Colaborador.Name = "txt_Buscar_Colaborador"
         Me.txt_Buscar_Colaborador.Size = New System.Drawing.Size(206, 20)
         Me.txt_Buscar_Colaborador.TabIndex = 2
@@ -111,9 +111,9 @@ Partial Class frm_Colaborador
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(28, 43)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(40, 13)
+        Me.Label4.Size = New System.Drawing.Size(82, 13)
         Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Buscar"
+        Me.Label4.Text = "Ingrese Nombre"
         '
         'GroupNuevoColaborador
         '
@@ -130,7 +130,7 @@ Partial Class frm_Colaborador
         Me.GroupNuevoColaborador.Controls.Add(Me.Label3)
         Me.GroupNuevoColaborador.Controls.Add(Me.Label2)
         Me.GroupNuevoColaborador.Controls.Add(Me.Label1)
-        Me.GroupNuevoColaborador.Location = New System.Drawing.Point(30, 26)
+        Me.GroupNuevoColaborador.Location = New System.Drawing.Point(21, 12)
         Me.GroupNuevoColaborador.Name = "GroupNuevoColaborador"
         Me.GroupNuevoColaborador.Size = New System.Drawing.Size(486, 225)
         Me.GroupNuevoColaborador.TabIndex = 4
@@ -253,7 +253,7 @@ Partial Class frm_Colaborador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(544, 661)
+        Me.ClientSize = New System.Drawing.Size(529, 638)
         Me.Controls.Add(Me.GroupListadoColaboradores)
         Me.Controls.Add(Me.GroupNuevoColaborador)
         Me.Name = "frm_Colaborador"

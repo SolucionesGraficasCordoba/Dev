@@ -63,7 +63,7 @@ Partial Class frm_Cliente
         Me.GroupNuevoCliente.Controls.Add(Me.Label3)
         Me.GroupNuevoCliente.Controls.Add(Me.Label2)
         Me.GroupNuevoCliente.Controls.Add(Me.Label1)
-        Me.GroupNuevoCliente.Location = New System.Drawing.Point(52, 23)
+        Me.GroupNuevoCliente.Location = New System.Drawing.Point(26, 21)
         Me.GroupNuevoCliente.Name = "GroupNuevoCliente"
         Me.GroupNuevoCliente.Size = New System.Drawing.Size(486, 221)
         Me.GroupNuevoCliente.TabIndex = 0
@@ -189,7 +189,7 @@ Partial Class frm_Cliente
         Me.GroupListadoClientes.Controls.Add(Me.txt_Buscar_Cliente)
         Me.GroupListadoClientes.Controls.Add(Me.dgvLista_Clientes)
         Me.GroupListadoClientes.Controls.Add(Me.Label4)
-        Me.GroupListadoClientes.Location = New System.Drawing.Point(52, 260)
+        Me.GroupListadoClientes.Location = New System.Drawing.Point(26, 248)
         Me.GroupListadoClientes.Name = "GroupListadoClientes"
         Me.GroupListadoClientes.Size = New System.Drawing.Size(486, 372)
         Me.GroupListadoClientes.TabIndex = 1
@@ -252,7 +252,7 @@ Partial Class frm_Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(574, 656)
+        Me.ClientSize = New System.Drawing.Size(544, 637)
         Me.Controls.Add(Me.GroupListadoClientes)
         Me.Controls.Add(Me.GroupNuevoCliente)
         Me.Name = "frm_Cliente"

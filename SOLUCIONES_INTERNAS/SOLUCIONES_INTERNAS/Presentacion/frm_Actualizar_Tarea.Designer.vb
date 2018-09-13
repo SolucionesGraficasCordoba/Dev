@@ -285,7 +285,7 @@ Partial Class frm_Actualizar_Tarea
         Me.GroupBox1.Controls.Add(Me.Label61)
         Me.GroupBox1.Controls.Add(Me.txt_id_tarea)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Location = New System.Drawing.Point(26, 22)
+        Me.GroupBox1.Location = New System.Drawing.Point(26, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(460, 335)
         Me.GroupBox1.TabIndex = 178
@@ -324,7 +324,7 @@ Partial Class frm_Actualizar_Tarea
         '
         'btn_Actualizar_Tarea
         '
-        Me.btn_Actualizar_Tarea.Location = New System.Drawing.Point(326, 372)
+        Me.btn_Actualizar_Tarea.Location = New System.Drawing.Point(326, 353)
         Me.btn_Actualizar_Tarea.Name = "btn_Actualizar_Tarea"
         Me.btn_Actualizar_Tarea.Size = New System.Drawing.Size(75, 23)
         Me.btn_Actualizar_Tarea.TabIndex = 179
@@ -333,7 +333,7 @@ Partial Class frm_Actualizar_Tarea
         '
         'btn_Cancelar
         '
-        Me.btn_Cancelar.Location = New System.Drawing.Point(411, 372)
+        Me.btn_Cancelar.Location = New System.Drawing.Point(411, 353)
         Me.btn_Cancelar.Name = "btn_Cancelar"
         Me.btn_Cancelar.Size = New System.Drawing.Size(75, 23)
         Me.btn_Cancelar.TabIndex = 180
@@ -342,7 +342,7 @@ Partial Class frm_Actualizar_Tarea
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(245, 372)
+        Me.btnGuardar.Location = New System.Drawing.Point(245, 353)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar.TabIndex = 181
@@ -353,7 +353,7 @@ Partial Class frm_Actualizar_Tarea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(517, 403)
+        Me.ClientSize = New System.Drawing.Size(509, 394)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btn_Cancelar)
         Me.Controls.Add(Me.btn_Actualizar_Tarea)

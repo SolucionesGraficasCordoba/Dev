@@ -61,6 +61,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -90,6 +91,12 @@
       <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Exportar.vb" />
+    <Compile Include="Presentacion\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_Actualizar_Tarea.Designer.vb">
       <DependentUpon>frm_Actualizar_Tarea.vb</DependentUpon>
     </Compile>
@@ -213,6 +220,9 @@
     <None Include="Datos\DataS_Interno_Vistas.dbml.layout">
       <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Presentacion\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Actualizar_Tarea.resx">
       <DependentUpon>frm_Actualizar_Tarea.vb</DependentUpon>
     </EmbeddedResource>

@@ -52,7 +52,7 @@ Partial Class frm_Pieza
         Me.GroupListadoPiezas.Controls.Add(Me.txt_Buscar_Pieza)
         Me.GroupListadoPiezas.Controls.Add(Me.dgvLista_Piezas)
         Me.GroupListadoPiezas.Controls.Add(Me.Label4)
-        Me.GroupListadoPiezas.Location = New System.Drawing.Point(39, 205)
+        Me.GroupListadoPiezas.Location = New System.Drawing.Point(23, 163)
         Me.GroupListadoPiezas.Name = "GroupListadoPiezas"
         Me.GroupListadoPiezas.Size = New System.Drawing.Size(486, 372)
         Me.GroupListadoPiezas.TabIndex = 3
@@ -122,9 +122,9 @@ Partial Class frm_Pieza
         Me.GroupNuevaPieza.Controls.Add(Me.txt_id_pieza)
         Me.GroupNuevaPieza.Controls.Add(Me.Label2)
         Me.GroupNuevaPieza.Controls.Add(Me.Label1)
-        Me.GroupNuevaPieza.Location = New System.Drawing.Point(39, 32)
+        Me.GroupNuevaPieza.Location = New System.Drawing.Point(23, 12)
         Me.GroupNuevaPieza.Name = "GroupNuevaPieza"
-        Me.GroupNuevaPieza.Size = New System.Drawing.Size(486, 157)
+        Me.GroupNuevaPieza.Size = New System.Drawing.Size(486, 145)
         Me.GroupNuevaPieza.TabIndex = 2
         Me.GroupNuevaPieza.TabStop = False
         Me.GroupNuevaPieza.Text = "Nueva Pieza"
@@ -212,7 +212,7 @@ Partial Class frm_Pieza
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(554, 604)
+        Me.ClientSize = New System.Drawing.Size(534, 555)
         Me.Controls.Add(Me.GroupListadoPiezas)
         Me.Controls.Add(Me.GroupNuevaPieza)
         Me.Name = "frm_Pieza"

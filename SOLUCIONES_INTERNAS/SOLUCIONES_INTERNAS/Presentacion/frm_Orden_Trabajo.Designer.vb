@@ -224,7 +224,7 @@ Partial Class frm_Orden_Trabajo
         '
         'btnImprimir
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(437, 554)
+        Me.btnImprimir.Location = New System.Drawing.Point(536, 554)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(75, 23)
         Me.btnImprimir.TabIndex = 37
@@ -1171,7 +1171,7 @@ Partial Class frm_Orden_Trabajo
         '
         'btnNueva_Orden_Trabajo
         '
-        Me.btnNueva_Orden_Trabajo.Location = New System.Drawing.Point(538, 554)
+        Me.btnNueva_Orden_Trabajo.Location = New System.Drawing.Point(437, 554)
         Me.btnNueva_Orden_Trabajo.Name = "btnNueva_Orden_Trabajo"
         Me.btnNueva_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
         Me.btnNueva_Orden_Trabajo.TabIndex = 29

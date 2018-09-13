@@ -32,6 +32,8 @@ Partial Class frm_Listado_Tareas
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnEliminar_Tarea = New System.Windows.Forms.Button()
         Me.groupListadoDetalleTarea = New System.Windows.Forms.GroupBox()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgvTarea_x_Colaborador = New System.Windows.Forms.DataGridView()
@@ -39,8 +41,6 @@ Partial Class frm_Listado_Tareas
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnVer = New System.Windows.Forms.Button()
-        Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupListadoTareas.SuspendLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupListadoDetalleTarea.SuspendLayout()
@@ -147,6 +147,28 @@ Partial Class frm_Listado_Tareas
         Me.groupListadoDetalleTarea.TabStop = False
         Me.groupListadoDetalleTarea.Text = "Detalle de Tareas"
         '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.ForeColor = System.Drawing.Color.Black
+        Me.Label35.Location = New System.Drawing.Point(425, 252)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(2, 15)
+        Me.Label35.TabIndex = 51
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Black
+        Me.Label7.Location = New System.Drawing.Point(343, 252)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(76, 13)
+        Me.Label7.TabIndex = 50
+        Me.Label7.Text = "Total estimado"
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -209,28 +231,6 @@ Partial Class frm_Listado_Tareas
         Me.btnVer.TabIndex = 34
         Me.btnVer.Text = "Ver"
         Me.btnVer.UseVisualStyleBackColor = True
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.ForeColor = System.Drawing.Color.Black
-        Me.Label35.Location = New System.Drawing.Point(425, 252)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(2, 15)
-        Me.Label35.TabIndex = 51
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(343, 252)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(76, 13)
-        Me.Label7.TabIndex = 50
-        Me.Label7.Text = "Total estimado"
         '
         'frm_Listado_Tareas
         '

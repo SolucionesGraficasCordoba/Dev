@@ -2,7 +2,6 @@
     Dim datacontext As New DataS_Interno
     Dim quienllamoboton As Button
 
-
     Private Sub frm_Tarea_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txt_id_tarea.Visible = False
         Label1.Visible = False

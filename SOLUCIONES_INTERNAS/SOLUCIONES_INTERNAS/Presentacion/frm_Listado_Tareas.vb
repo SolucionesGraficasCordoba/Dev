@@ -1,4 +1,5 @@
 ﻿Public Class frm_Listado_Tareas
+
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
     Public vble_id_colaborador As Integer
@@ -35,10 +36,7 @@
 
     'BOTON ELIMINAR
     Private Sub btnEliminar_Tarea_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar_Tarea.Click
-        If dgvColaboradores.RowCount = 0 Then
-            MsgBox("Debe seleccionar un Sector")
-            Exit Sub
-        End If
+
         If dgvTarea_x_Colaborador.SelectedRows.Count = 0 Then
             MsgBox("Debe seleccionar una Tarea")
         Else
@@ -51,13 +49,11 @@
             End Select
             Me.Close()
         End If
-
     End Sub
 
     'CARGA COLABORADOR DATAGRIDVIEW SEGUN LO QUE SELECCIONO EN EL COMBOBOX
     Private Sub cbo_sector_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbo_sector.SelectedIndexChanged
         armargrillacolaborador()
-
         Dim consultaporsector = (From A In datavistas.Colaborador_por_Sector
                                 Select A.COL_id_colaborador, A.COL_nombre_col, A.SEC_id_sector, A.SEC_nombre_sector
                                 Where (SEC_id_sector = cbo_sector.SelectedIndex + 1))
@@ -71,7 +67,6 @@
         If dgvColaboradores.SelectedRows.Count > 0 Then
             vble_id_colaborador = dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
         End If
-
         vble_colaborador = dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
         vble_fecha = dtpFecha.Text
         Dim datagridtarea = (From o In datavistas.Vista_Tarea_x_Colaborador
@@ -82,12 +77,30 @@
         ' dgvColaboradores.ClearSelection()
 
         'VALIDA SI TIENE ASIGNADAS TAREAS AL COLABORADOR
+        'If dgvTarea_x_Colaborador.Rows.Count = 0 Then
+        '    MsgBox("No se le ha asignado ninguna tarea", MsgBoxStyle.Information, "Listado de tareas")
+        '    btnAgregar.Enabled = True
+        '    Exit Sub
+        'End If
+        'Label1.Text = dgvTarea_x_Colaborador.Rows.Count
+
         If dgvTarea_x_Colaborador.Rows.Count = 0 Then
-            MsgBox("No se le ha asignado ninguna tarea", MsgBoxStyle.Information, "Listado de tareas")
-            btnAgregar.Enabled = True
-            Exit Sub
+            If Me.Text = "Modificar Tarea" Then
+                Select Case MsgBox("No se le ha asignado ninguna tarea, desea agregar una?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Agregar tarea")
+                    Case MsgBoxResult.Yes
+                        btnAgregar.Enabled = True
+                        btnModificar_Tarea.Enabled = False
+                        btnEliminar_Tarea.Enabled = False
+                        Label1.Text = dgvTarea_x_Colaborador.Rows.Count
+                End Select
+            ElseIf Me.Text = "Eliminar Tarea" Then
+                If dgvTarea_x_Colaborador.Rows.Count = 0 Then
+                    MsgBox("No tiene tareas asignadas para eliminar", MsgBoxStyle.Information, "Listado de tareas")
+                    Label1.Text = dgvTarea_x_Colaborador.Rows.Count
+                    Exit Sub
+                End If
+            End If
         End If
-        Label1.Text = dgvTarea_x_Colaborador.Rows.Count
     End Sub
 
     'ARMA GRILLA DE TAREAS SEGUN COLABORADOR
@@ -152,13 +165,14 @@
             frm_Actualizar_Tarea.txt_hora_fin.Text = Me.dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
             frm_Actualizar_Tarea.txt_id_colaborador.Text = Me.dgvTarea_x_Colaborador.Item("Expr1", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
             frm_Actualizar_Tarea.txt_nombre_colaborador.Text = Me.dgvTarea_x_Colaborador.Item("COL_nombre_col", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
-
         Else
             MsgBox("Debe seleccionar una tarea")
             Exit Sub
         End If
         frm_Actualizar_Tarea.Show()
         frm_Actualizar_Tarea.btnGuardar.Enabled = False
+        frm_Actualizar_Tarea.btn_buscar_colaborador.Enabled = False
+        frm_Actualizar_Tarea.btn_buscar_numero_orden.Enabled = False
     End Sub
 
     'BOTON CANCELAR CIERRA EL FORMULARIO ACTUAL
@@ -196,6 +210,9 @@
             MsgBox("Debe selecconar un Sector")
             Exit Sub
         Else
+        End If
+
+        If dgvTarea_x_Colaborador.Rows.Count <> 0 Then
             frm_Tarea.txt_id_colaborador.Text = Me.dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
             frm_Tarea.txt_nombre_colaborador.Text = Me.dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
             frm_Tarea.dtpFecha.Text = Me.dgvTarea_x_Colaborador.Item("TAR_fecha", dgvTarea_x_Colaborador.Rows(0).Index).Value
@@ -636,6 +653,9 @@
                 frm_Tarea.txt_id_orden_trabajo20.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(19).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo20.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(19).Index).Value
             End If
+        Else
+            MsgBox("El Colaborador no tiene tareas por mostrar")
+            Exit Sub
         End If
         DeshabilitarText()
         frm_Tarea.Show()
@@ -777,6 +797,4 @@
         frm_Tarea.btnNueva_Tarea.Enabled = False
         frm_Tarea.btnGuardar_Tarea.Enabled = False
     End Sub
-
-
 End Class

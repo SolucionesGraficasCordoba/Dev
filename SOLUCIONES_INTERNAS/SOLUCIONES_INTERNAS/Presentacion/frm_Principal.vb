@@ -126,6 +126,7 @@ Public Class frm_Principal
         frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
         frm_Tarea.btnImprimir.Enabled = False
         frm_Listado_Tareas.btnVer.Enabled = False
+        frm_Listado_Tareas.btnAgregar.Enabled = False
     End Sub
 
     Private Sub NuevoClienteToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoClienteToolStripMenuItem.Click
