@@ -54,6 +54,7 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
@@ -129,6 +130,12 @@
       <DependentUpon>frm_Colaborador.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frm_Colaborador.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_Etiqueta_Modelo_1.Designer.vb">
+      <DependentUpon>frm_Etiqueta_Modelo_1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Etiqueta_Modelo_1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frm_Generar_Informe.Designer.vb">
@@ -228,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Colaborador.resx">
       <DependentUpon>frm_Colaborador.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Etiqueta_Modelo_1.resx">
+      <DependentUpon>frm_Etiqueta_Modelo_1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Generar_Informe.resx">
       <DependentUpon>frm_Generar_Informe.vb</DependentUpon>
