@@ -31,12 +31,6 @@ Partial Public Class DataS_Interno
   #Region "Definiciones de métodos de extensibilidad"
   Partial Private Sub OnCreated()
   End Sub
-  Partial Private Sub InsertCLIENTE(instance As CLIENTE)
-    End Sub
-  Partial Private Sub UpdateCLIENTE(instance As CLIENTE)
-    End Sub
-  Partial Private Sub DeleteCLIENTE(instance As CLIENTE)
-    End Sub
   Partial Private Sub InsertVENDEDOR(instance As VENDEDOR)
     End Sub
   Partial Private Sub UpdateVENDEDOR(instance As VENDEDOR)
@@ -91,6 +85,12 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeleteUSUARIO(instance As USUARIO)
     End Sub
+  Partial Private Sub InsertCLIENTE(instance As CLIENTE)
+    End Sub
+  Partial Private Sub UpdateCLIENTE(instance As CLIENTE)
+    End Sub
+  Partial Private Sub DeleteCLIENTE(instance As CLIENTE)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -117,12 +117,6 @@ Partial Public Class DataS_Interno
 		MyBase.New(connection, mappingSource)
 		OnCreated
 	End Sub
-	
-	Public ReadOnly Property CLIENTE() As System.Data.Linq.Table(Of CLIENTE)
-		Get
-			Return Me.GetTable(Of CLIENTE)
-		End Get
-	End Property
 	
 	Public ReadOnly Property VENDEDOR() As System.Data.Linq.Table(Of VENDEDOR)
 		Get
@@ -177,157 +171,12 @@ Partial Public Class DataS_Interno
 			Return Me.GetTable(Of USUARIO)
 		End Get
 	End Property
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.CLIENTE")>  _
-Partial Public Class CLIENTE
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _CLI_id_cliente As Integer
-	
-	Private _CLI_razon_social As String
-	
-	Private _CLI_mail_cli As String
-	
-	Private _CLI_telefono_cli As String
-	
-	Private _ORDEN_TRABAJO As EntitySet(Of ORDEN_TRABAJO)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnCLI_id_clienteChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnCLI_id_clienteChanged()
-    End Sub
-    Partial Private Sub OnCLI_razon_socialChanging(value As String)
-    End Sub
-    Partial Private Sub OnCLI_razon_socialChanged()
-    End Sub
-    Partial Private Sub OnCLI_mail_cliChanging(value As String)
-    End Sub
-    Partial Private Sub OnCLI_mail_cliChanged()
-    End Sub
-    Partial Private Sub OnCLI_telefono_cliChanging(value As String)
-    End Sub
-    Partial Private Sub OnCLI_telefono_cliChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._ORDEN_TRABAJO = New EntitySet(Of ORDEN_TRABAJO)(AddressOf Me.attach_ORDEN_TRABAJO, AddressOf Me.detach_ORDEN_TRABAJO)
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_id_cliente", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property CLI_id_cliente() As Integer
+	Public ReadOnly Property CLIENTE() As System.Data.Linq.Table(Of CLIENTE)
 		Get
-			Return Me._CLI_id_cliente
+			Return Me.GetTable(Of CLIENTE)
 		End Get
-		Set
-			If ((Me._CLI_id_cliente = value)  _
-						= false) Then
-				Me.OnCLI_id_clienteChanging(value)
-				Me.SendPropertyChanging
-				Me._CLI_id_cliente = value
-				Me.SendPropertyChanged("CLI_id_cliente")
-				Me.OnCLI_id_clienteChanged
-			End If
-		End Set
 	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_razon_social", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property CLI_razon_social() As String
-		Get
-			Return Me._CLI_razon_social
-		End Get
-		Set
-			If (String.Equals(Me._CLI_razon_social, value) = false) Then
-				Me.OnCLI_razon_socialChanging(value)
-				Me.SendPropertyChanging
-				Me._CLI_razon_social = value
-				Me.SendPropertyChanged("CLI_razon_social")
-				Me.OnCLI_razon_socialChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_mail_cli", DbType:="VarChar(50)")>  _
-	Public Property CLI_mail_cli() As String
-		Get
-			Return Me._CLI_mail_cli
-		End Get
-		Set
-			If (String.Equals(Me._CLI_mail_cli, value) = false) Then
-				Me.OnCLI_mail_cliChanging(value)
-				Me.SendPropertyChanging
-				Me._CLI_mail_cli = value
-				Me.SendPropertyChanged("CLI_mail_cli")
-				Me.OnCLI_mail_cliChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_telefono_cli", DbType:="VarChar(15)")>  _
-	Public Property CLI_telefono_cli() As String
-		Get
-			Return Me._CLI_telefono_cli
-		End Get
-		Set
-			If (String.Equals(Me._CLI_telefono_cli, value) = false) Then
-				Me.OnCLI_telefono_cliChanging(value)
-				Me.SendPropertyChanging
-				Me._CLI_telefono_cli = value
-				Me.SendPropertyChanged("CLI_telefono_cli")
-				Me.OnCLI_telefono_cliChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="CLIENTE_ORDEN_TRABAJO", Storage:="_ORDEN_TRABAJO", ThisKey:="CLI_id_cliente", OtherKey:="CLI_id_cliente")>  _
-	Public Property ORDEN_TRABAJO() As EntitySet(Of ORDEN_TRABAJO)
-		Get
-			Return Me._ORDEN_TRABAJO
-		End Get
-		Set
-			Me._ORDEN_TRABAJO.Assign(value)
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_ORDEN_TRABAJO(ByVal entity As ORDEN_TRABAJO)
-		Me.SendPropertyChanging
-		entity.CLIENTE = Me
-	End Sub
-	
-	Private Sub detach_ORDEN_TRABAJO(ByVal entity As ORDEN_TRABAJO)
-		Me.SendPropertyChanging
-		entity.CLIENTE = Nothing
-	End Sub
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.VENDEDOR")>  _
@@ -1265,9 +1114,9 @@ Partial Public Class ORDEN_TRABAJO
 	
 	Private _TAREA As EntitySet(Of TAREA)
 	
-	Private _CLIENTE As EntityRef(Of CLIENTE)
-	
 	Private _VENDEDOR As EntityRef(Of VENDEDOR)
+	
+	Private _CLIENTE As EntityRef(Of CLIENTE)
 	
     #Region "Definiciones de métodos de extensibilidad"
     Partial Private Sub OnLoaded()
@@ -1314,8 +1163,8 @@ Partial Public Class ORDEN_TRABAJO
 		MyBase.New
 		Me._DETALLE_ORDEN_TRABAJO = New EntitySet(Of DETALLE_ORDEN_TRABAJO)(AddressOf Me.attach_DETALLE_ORDEN_TRABAJO, AddressOf Me.detach_DETALLE_ORDEN_TRABAJO)
 		Me._TAREA = New EntitySet(Of TAREA)(AddressOf Me.attach_TAREA, AddressOf Me.detach_TAREA)
-		Me._CLIENTE = CType(Nothing, EntityRef(Of CLIENTE))
 		Me._VENDEDOR = CType(Nothing, EntityRef(Of VENDEDOR))
+		Me._CLIENTE = CType(Nothing, EntityRef(Of CLIENTE))
 		OnCreated
 	End Sub
 	
@@ -1477,34 +1326,6 @@ Partial Public Class ORDEN_TRABAJO
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="CLIENTE_ORDEN_TRABAJO", Storage:="_CLIENTE", ThisKey:="CLI_id_cliente", OtherKey:="CLI_id_cliente", IsForeignKey:=true)>  _
-	Public Property CLIENTE() As CLIENTE
-		Get
-			Return Me._CLIENTE.Entity
-		End Get
-		Set
-			Dim previousValue As CLIENTE = Me._CLIENTE.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._CLIENTE.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._CLIENTE.Entity = Nothing
-					previousValue.ORDEN_TRABAJO.Remove(Me)
-				End If
-				Me._CLIENTE.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.ORDEN_TRABAJO.Add(Me)
-					Me._CLI_id_cliente = value.CLI_id_cliente
-				Else
-					Me._CLI_id_cliente = CType(Nothing, Integer)
-				End If
-				Me.SendPropertyChanged("CLIENTE")
-			End If
-		End Set
-	End Property
-	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="VENDEDOR_ORDEN_TRABAJO", Storage:="_VENDEDOR", ThisKey:="VEN_id_vendedor", OtherKey:="VEN_id_vendedor", IsForeignKey:=true)>  _
 	Public Property VENDEDOR() As VENDEDOR
 		Get
@@ -1529,6 +1350,34 @@ Partial Public Class ORDEN_TRABAJO
 					Me._VEN_id_vendedor = CType(Nothing, Integer)
 				End If
 				Me.SendPropertyChanged("VENDEDOR")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="CLIENTE_ORDEN_TRABAJO", Storage:="_CLIENTE", ThisKey:="CLI_id_cliente", OtherKey:="CLI_id_cliente", IsForeignKey:=true)>  _
+	Public Property CLIENTE() As CLIENTE
+		Get
+			Return Me._CLIENTE.Entity
+		End Get
+		Set
+			Dim previousValue As CLIENTE = Me._CLIENTE.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._CLIENTE.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._CLIENTE.Entity = Nothing
+					previousValue.ORDEN_TRABAJO.Remove(Me)
+				End If
+				Me._CLIENTE.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.ORDEN_TRABAJO.Add(Me)
+					Me._CLI_id_cliente = value.CLI_id_cliente
+				Else
+					Me._CLI_id_cliente = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("CLIENTE")
 			End If
 		End Set
 	End Property
@@ -2810,5 +2659,222 @@ Partial Public Class USUARIO
 					= false) Then
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.CLIENTE")>  _
+Partial Public Class CLIENTE
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _CLI_id_cliente As Integer
+	
+	Private _CLI_razon_social As String
+	
+	Private _CLI_mail_cli As String
+	
+	Private _CLI_telefono_cli As String
+	
+	Private _CLI_domicilio As String
+	
+	Private _CLI_localidad As String
+	
+	Private _CLI_codigo_postal As System.Nullable(Of Integer)
+	
+	Private _ORDEN_TRABAJO As EntitySet(Of ORDEN_TRABAJO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnCLI_id_clienteChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnCLI_id_clienteChanged()
+    End Sub
+    Partial Private Sub OnCLI_razon_socialChanging(value As String)
+    End Sub
+    Partial Private Sub OnCLI_razon_socialChanged()
+    End Sub
+    Partial Private Sub OnCLI_mail_cliChanging(value As String)
+    End Sub
+    Partial Private Sub OnCLI_mail_cliChanged()
+    End Sub
+    Partial Private Sub OnCLI_telefono_cliChanging(value As String)
+    End Sub
+    Partial Private Sub OnCLI_telefono_cliChanged()
+    End Sub
+    Partial Private Sub OnCLI_domicilioChanging(value As String)
+    End Sub
+    Partial Private Sub OnCLI_domicilioChanged()
+    End Sub
+    Partial Private Sub OnCLI_localidadChanging(value As String)
+    End Sub
+    Partial Private Sub OnCLI_localidadChanged()
+    End Sub
+    Partial Private Sub OnCLI_codigo_postalChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnCLI_codigo_postalChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._ORDEN_TRABAJO = New EntitySet(Of ORDEN_TRABAJO)(AddressOf Me.attach_ORDEN_TRABAJO, AddressOf Me.detach_ORDEN_TRABAJO)
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_id_cliente", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property CLI_id_cliente() As Integer
+		Get
+			Return Me._CLI_id_cliente
+		End Get
+		Set
+			If ((Me._CLI_id_cliente = value)  _
+						= false) Then
+				Me.OnCLI_id_clienteChanging(value)
+				Me.SendPropertyChanging
+				Me._CLI_id_cliente = value
+				Me.SendPropertyChanged("CLI_id_cliente")
+				Me.OnCLI_id_clienteChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_razon_social", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property CLI_razon_social() As String
+		Get
+			Return Me._CLI_razon_social
+		End Get
+		Set
+			If (String.Equals(Me._CLI_razon_social, value) = false) Then
+				Me.OnCLI_razon_socialChanging(value)
+				Me.SendPropertyChanging
+				Me._CLI_razon_social = value
+				Me.SendPropertyChanged("CLI_razon_social")
+				Me.OnCLI_razon_socialChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_mail_cli", DbType:="VarChar(50)")>  _
+	Public Property CLI_mail_cli() As String
+		Get
+			Return Me._CLI_mail_cli
+		End Get
+		Set
+			If (String.Equals(Me._CLI_mail_cli, value) = false) Then
+				Me.OnCLI_mail_cliChanging(value)
+				Me.SendPropertyChanging
+				Me._CLI_mail_cli = value
+				Me.SendPropertyChanged("CLI_mail_cli")
+				Me.OnCLI_mail_cliChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_telefono_cli", DbType:="VarChar(15)")>  _
+	Public Property CLI_telefono_cli() As String
+		Get
+			Return Me._CLI_telefono_cli
+		End Get
+		Set
+			If (String.Equals(Me._CLI_telefono_cli, value) = false) Then
+				Me.OnCLI_telefono_cliChanging(value)
+				Me.SendPropertyChanging
+				Me._CLI_telefono_cli = value
+				Me.SendPropertyChanged("CLI_telefono_cli")
+				Me.OnCLI_telefono_cliChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_domicilio", DbType:="VarChar(50)")>  _
+	Public Property CLI_domicilio() As String
+		Get
+			Return Me._CLI_domicilio
+		End Get
+		Set
+			If (String.Equals(Me._CLI_domicilio, value) = false) Then
+				Me.OnCLI_domicilioChanging(value)
+				Me.SendPropertyChanging
+				Me._CLI_domicilio = value
+				Me.SendPropertyChanged("CLI_domicilio")
+				Me.OnCLI_domicilioChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_localidad", DbType:="VarChar(50)")>  _
+	Public Property CLI_localidad() As String
+		Get
+			Return Me._CLI_localidad
+		End Get
+		Set
+			If (String.Equals(Me._CLI_localidad, value) = false) Then
+				Me.OnCLI_localidadChanging(value)
+				Me.SendPropertyChanging
+				Me._CLI_localidad = value
+				Me.SendPropertyChanged("CLI_localidad")
+				Me.OnCLI_localidadChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_codigo_postal", DbType:="Int")>  _
+	Public Property CLI_codigo_postal() As System.Nullable(Of Integer)
+		Get
+			Return Me._CLI_codigo_postal
+		End Get
+		Set
+			If (Me._CLI_codigo_postal.Equals(value) = false) Then
+				Me.OnCLI_codigo_postalChanging(value)
+				Me.SendPropertyChanging
+				Me._CLI_codigo_postal = value
+				Me.SendPropertyChanged("CLI_codigo_postal")
+				Me.OnCLI_codigo_postalChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="CLIENTE_ORDEN_TRABAJO", Storage:="_ORDEN_TRABAJO", ThisKey:="CLI_id_cliente", OtherKey:="CLI_id_cliente")>  _
+	Public Property ORDEN_TRABAJO() As EntitySet(Of ORDEN_TRABAJO)
+		Get
+			Return Me._ORDEN_TRABAJO
+		End Get
+		Set
+			Me._ORDEN_TRABAJO.Assign(value)
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_ORDEN_TRABAJO(ByVal entity As ORDEN_TRABAJO)
+		Me.SendPropertyChanging
+		entity.CLIENTE = Me
+	End Sub
+	
+	Private Sub detach_ORDEN_TRABAJO(ByVal entity As ORDEN_TRABAJO)
+		Me.SendPropertyChanging
+		entity.CLIENTE = Nothing
 	End Sub
 End Class

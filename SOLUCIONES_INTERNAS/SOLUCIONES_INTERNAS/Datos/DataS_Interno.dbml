@@ -1,14 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SOLUCIONES_INTERNAS" Class="DataS_Interno" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=NB-BALDO;Initial Catalog=SOLUCIONES_INTERNAS;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.CLIENTE" Member="CLIENTE">
-    <Type Name="CLIENTE">
-      <Column Name="CLI_id_cliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="CLI_razon_social" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CLI_mail_cli" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="CLI_telefono_cli" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Association Name="CLIENTE_ORDEN_TRABAJO" Member="ORDEN_TRABAJO" ThisKey="CLI_id_cliente" OtherKey="CLI_id_cliente" Type="ORDEN_TRABAJO" />
-    </Type>
-  </Table>
   <Table Name="dbo.VENDEDOR" Member="VENDEDOR">
     <Type Name="VENDEDOR">
       <Column Name="VEN_id_vendedor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -67,8 +58,8 @@
       <Column Name="CLI_id_cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="DETALLE_ORDEN_TRABAJO" />
       <Association Name="ORDEN_TRABAJO_TAREA" Member="TAREA" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="TAREA" />
-      <Association Name="CLIENTE_ORDEN_TRABAJO" Member="CLIENTE" ThisKey="CLI_id_cliente" OtherKey="CLI_id_cliente" Type="CLIENTE" IsForeignKey="true" />
       <Association Name="VENDEDOR_ORDEN_TRABAJO" Member="VENDEDOR" ThisKey="VEN_id_vendedor" OtherKey="VEN_id_vendedor" Type="VENDEDOR" IsForeignKey="true" />
+      <Association Name="CLIENTE_ORDEN_TRABAJO" Member="CLIENTE" ThisKey="CLI_id_cliente" OtherKey="CLI_id_cliente" Type="CLIENTE" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.PIEZA" Member="PIEZA">
@@ -134,6 +125,18 @@
       <Column Name="USU_perfil" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="COLABORADOR_USUARIO" Member="COLABORADOR" ThisKey="COL_id_colaborador" OtherKey="COL_id_colaborador" Type="COLABORADOR" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CLIENTE" Member="CLIENTE">
+    <Type Name="CLIENTE">
+      <Column Name="CLI_id_cliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CLI_razon_social" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_mail_cli" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CLI_telefono_cli" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CLI_domicilio" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CLI_localidad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CLI_codigo_postal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="CLIENTE_ORDEN_TRABAJO" Member="ORDEN_TRABAJO" ThisKey="CLI_id_cliente" OtherKey="CLI_id_cliente" Type="ORDEN_TRABAJO" />
     </Type>
   </Table>
 </Database>

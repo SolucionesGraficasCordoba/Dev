@@ -1,5 +1,6 @@
 ﻿Public Class frm_Cliente
     Dim datacontext As New DataS_Interno
+    Public quienllamocliente As Form
 
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -175,8 +176,15 @@
     End Sub
 
     Private Sub dgvLista_Clientes_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Clientes.CellDoubleClick
-        frm_Orden_Trabajo.txt_id_cliente.Text = dgvLista_Clientes.SelectedCells(0).Value
-        frm_Orden_Trabajo.txt_nombre_cliente.Text = dgvLista_Clientes.SelectedCells(1).Value
+
+        If quienllamocliente.Name = frm_Etiqueta_Modelo_1.Name Then
+            frm_Etiqueta_Modelo_1.txtId_Cliente.Text = dgvLista_Clientes.SelectedCells(0).Value
+            frm_Etiqueta_Modelo_1.txtDirigidoA.Text = dgvLista_Clientes.SelectedCells(1).Value
+
+        ElseIf quienllamocliente.Name = frm_Orden_Trabajo.Name Then
+            frm_Orden_Trabajo.txt_id_cliente.Text = dgvLista_Clientes.SelectedCells(0).Value
+            frm_Orden_Trabajo.txt_nombre_cliente.Text = dgvLista_Clientes.SelectedCells(1).Value
+        End If
         Me.Close()
     End Sub
 End Class
