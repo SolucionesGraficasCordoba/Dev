@@ -69,7 +69,7 @@ Namespace My
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=NB-BALDO;Initial Catalog=SOLUCIONES_INTERNAS;Persist Security Info=Tr"& _ 
-            "ue;User ID=vheredia;Password=vheredia")>  _
+            "ue;User ID=vheredia;Password=heredia")>  _
         Public ReadOnly Property SOLUCIONES_INTERNASConnectionString1() As String
             Get
                 Return CType(Me("SOLUCIONES_INTERNASConnectionString1"),String)

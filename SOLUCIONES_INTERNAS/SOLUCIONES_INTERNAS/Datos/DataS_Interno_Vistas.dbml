@@ -1,5 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SOLUCIONES_INTERNAS" Class="DataS_Interno_Vistas" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=NB-BALDO;Initial Catalog=SOLUCIONES_INTERNAS;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Colaborador_por_Sector" Member="Colaborador_por_Sector">
+    <Type Name="Colaborador_por_Sector">
+      <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COL_nombre_col" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
   <Table Name="dbo.VistaTareas" Member="VistaTareas">
     <Type Name="VistaTareas">
       <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -11,98 +19,6 @@
       <Column Name="TAR_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ORT_numero_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Vista_Tarea_x_Colaborador" Member="Vista_Tarea_x_Colaborador">
-    <Type Name="Vista_Tarea_x_Colaborador">
-      <Column Name="Expr1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="COL_nombre_col" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="ORT_numero_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="TAR_id_tarea" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TAR_tiempo_estimado" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TAR_tiempo_real" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TAR_hora_fin" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TAR_carga_horaria" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TAR_detalle_tarea" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="TAR_observaciones" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="TAR_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Vista_Detalle_Orden_Trabajo" Member="Vista_Detalle_Orden_Trabajo">
-    <Type Name="Vista_Detalle_Orden_Trabajo">
-      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ORT_tipo_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ORT_numero_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ORT_observaciones_ot" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="VEN_id_vendedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="VEN_nombre_ven" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="CLI_id_cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CLI_razon_social" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="PIE_id_pieza" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PIE_nombre_pie" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="id_detalle_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DOT_cantidad_dot" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOT_tamaño_dot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DOT_tipo_impresion_dot" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
-      <Column Name="DOT_papel_soporte_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DOT_papel_soporte_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DOT_papel_soporte_3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DOT_gramaje_soporte_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOT_gramaje_soporte_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOT_gramaje_soporte_3" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOT_cantidad_soporte_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOT_cantidad_soporte_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOT_cantidad_soporte_3" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOT_formato_soporte_1" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="DOT_formato_soporte_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="DOT_formato_soporte_3" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Colaborador_por_Sector" Member="Colaborador_por_Sector">
-    <Type Name="Colaborador_por_Sector">
-      <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="COL_nombre_col" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Tiempos_x_Sector" Member="Tiempos_x_Sector">
-    <Type Name="Tiempos_x_Sector">
-      <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="COL_nombre_col" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="TAR_id_tarea" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="TAR_tiempo_estimado" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TAR_tiempo_real" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TAR_carga_horaria" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TAR_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Tiempos_Totales" Member="Tiempos_Totales">
-    <Type Name="Tiempos_Totales">
-      <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="COL_nombre_col" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="TAR_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="[Total estimado]" Member="Total_estimado" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="[Total real]" Member="Total_real" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Asignacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Totales_mensuales" Member="Totales_mensuales">
-    <Type Name="Totales_mensuales">
-      <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="COL_nombre_col" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Mes" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="[Total estimado mensual]" Member="Total_estimado_mensual" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="[Total real mensual]" Member="Total_real_mensual" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Asignacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Listado_ReTrabajo" Member="Listado_ReTrabajo">
@@ -135,6 +51,90 @@
       <Column Name="ORT_fecha_ot" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="DOT_tamaño_dot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="DOT_tipo_impresion_dot" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tiempos_Totales" Member="Tiempos_Totales">
+    <Type Name="Tiempos_Totales">
+      <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COL_nombre_col" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TAR_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="[Total estimado]" Member="Total_estimado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Total real]" Member="Total_real" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Asignacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tiempos_x_Sector" Member="Tiempos_x_Sector">
+    <Type Name="Tiempos_x_Sector">
+      <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COL_nombre_col" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TAR_id_tarea" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TAR_tiempo_estimado" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TAR_tiempo_real" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TAR_carga_horaria" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TAR_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Totales_mensuales" Member="Totales_mensuales">
+    <Type Name="Totales_mensuales">
+      <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COL_nombre_col" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Mes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Total estimado mensual]" Member="Total_estimado_mensual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Total real mensual]" Member="Total_real_mensual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Asignacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vista_Detalle_Orden_Trabajo" Member="Vista_Detalle_Orden_Trabajo">
+    <Type Name="Vista_Detalle_Orden_Trabajo">
+      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORT_tipo_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_numero_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_observaciones_ot" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="VEN_id_vendedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="VEN_nombre_ven" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_id_cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_razon_social" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PIE_id_pieza" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PIE_nombre_pie" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="id_detalle_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DOT_cantidad_dot" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_tamaño_dot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT_tipo_impresion_dot" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DOT_papel_soporte_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT_papel_soporte_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT_papel_soporte_3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT_gramaje_soporte_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_gramaje_soporte_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_gramaje_soporte_3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_cantidad_soporte_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_cantidad_soporte_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_cantidad_soporte_3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_formato_soporte_1" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DOT_formato_soporte_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DOT_formato_soporte_3" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vista_Tarea_x_Colaborador" Member="Vista_Tarea_x_Colaborador">
+    <Type Name="Vista_Tarea_x_Colaborador">
+      <Column Name="Expr1" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COL_nombre_col" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_numero_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TAR_id_tarea" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TAR_tiempo_estimado" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TAR_tiempo_real" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TAR_hora_fin" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TAR_carga_horaria" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TAR_detalle_tarea" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TAR_observaciones" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="TAR_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
