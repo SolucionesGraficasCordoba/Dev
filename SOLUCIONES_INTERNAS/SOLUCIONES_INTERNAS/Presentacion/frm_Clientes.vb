@@ -16,7 +16,8 @@
 
     Private Sub btnGuardar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Cliente.Click
         Try
-            Dim buscacliente = (From cli In datacontext.CLIENTE Select cli.CLI_razon_social, cli.CLI_mail_cli, cli.CLI_telefono_cli Where CLI_razon_social = txt_razonsocial_cliente.Text.ToUpper).Any
+            Dim buscacliente = (From cli In datacontext.CLIENTE Select cli.CLI_razon_social, cli.CLI_mail_cli, cli.CLI_telefono_cli, cli.CLI_domicilio, cli.CLI_localidad, cli.CLI_codigo_postal
+                                Where CLI_razon_social = txt_razonsocial_cliente.Text.ToUpper).Any
             If buscacliente = True Then
                 MsgBox("El cliente ingresado ya existe")
                 limpiarcontroles()
@@ -26,13 +27,14 @@
             If txt_razonsocial_cliente.Text.Length = 0 Then
                 MsgBox("Debe completar todos los campos requeridos")
                 Exit Sub
-
             End If
             Dim clie = New CLIENTE
             clie.CLI_razon_social = txt_razonsocial_cliente.Text
             clie.CLI_mail_cli = txt_mail_cliente.Text
-            clie.CLI_telefono_cli = txt_telefono_cliente.Text
-
+            clie.CLI_telefono_cli = txtTelefono_Cliente.Text
+            clie.CLI_domicilio = txt_Domicilio_Cliente.Text
+            clie.CLI_localidad = txt_Localidad_Cliente.Text
+            clie.CLI_codigo_postal = txt_Codigo_Postal_Cliente.Text
 
             datacontext.CLIENTE.InsertOnSubmit(clie)
             datacontext.SubmitChanges()
@@ -51,7 +53,7 @@
         txt_id_cliente.Clear()
         txt_razonsocial_cliente.Clear()
         txt_mail_cliente.Clear()
-        txt_telefono_cliente.Clear()
+        txt_Codigo_Postal_Cliente.Clear()
     End Sub
 
     Private Sub btnActualizar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar_Cliente.Click
@@ -64,8 +66,11 @@
 
             ActualizarCliente.CLI_razon_social = txt_razonsocial_cliente.Text
             ActualizarCliente.CLI_mail_cli = txt_mail_cliente.Text
-            ActualizarCliente.CLI_telefono_cli = txt_telefono_cliente.Text
-          
+            ActualizarCliente.CLI_telefono_cli = txt_Codigo_Postal_Cliente.Text
+            ActualizarCliente.CLI_domicilio = txt_Domicilio_Cliente.Text
+            ActualizarCliente.CLI_localidad = txt_Localidad_Cliente.Text
+            ActualizarCliente.CLI_codigo_postal = txt_Codigo_Postal_Cliente.Text
+
             datacontext.SubmitChanges()
             MsgBox("Los datos se han modificado correctamente")
             cargargrilla()
@@ -79,9 +84,8 @@
     End Sub
 
     Public Sub cargargrilla()
-
         Dim consultaCliente = From U In datacontext.CLIENTE
-                              Select U.CLI_id_cliente, U.CLI_razon_social, U.CLI_mail_cli, U.CLI_telefono_cli
+                              Select U.CLI_id_cliente, U.CLI_razon_social, U.CLI_mail_cli, U.CLI_telefono_cli, U.CLI_domicilio, U.CLI_localidad, U.CLI_codigo_postal
                               Order By CLI_razon_social Ascending
         dgvLista_Clientes.DataSource = consultaCliente
     End Sub
@@ -95,6 +99,9 @@
         dgvLista_Clientes.Columns.Add("CLI_razon_social", " Razón Social")
         dgvLista_Clientes.Columns.Add("CLI_mail_cli", "Mail")
         dgvLista_Clientes.Columns.Add("CLI_telefono_cli", "Teléfono")
+        dgvLista_Clientes.Columns.Add("CLI_domicilio", "Domicilio")
+        dgvLista_Clientes.Columns.Add("CLI_localidad", "Localidad")
+        dgvLista_Clientes.Columns.Add("CLI_codigo_postal", "CP")
 
         dgvLista_Clientes.Columns(0).DataPropertyName = "CLI_id_cliente"
         dgvLista_Clientes.Columns(0).Visible = False
@@ -103,7 +110,9 @@
         dgvLista_Clientes.Columns(2).DataPropertyName = "CLI_mail_cli"
         dgvLista_Clientes.Columns(2).Width = 150
         dgvLista_Clientes.Columns(3).DataPropertyName = "CLI_telefono_cli"
-      
+        dgvLista_Clientes.Columns(4).DataPropertyName = "CLI_domicilio"
+        dgvLista_Clientes.Columns(5).DataPropertyName = "CLI_localidad"
+        dgvLista_Clientes.Columns(6).DataPropertyName = "CLI_codigo_postal"
 
     End Sub
 
@@ -113,7 +122,10 @@
             txt_id_cliente.Text = dgvLista_Clientes.Item("CLI_id_cliente", dgvLista_Clientes.SelectedRows(0).Index).Value
             txt_razonsocial_cliente.Text = dgvLista_Clientes.Item("CLI_razon_social", dgvLista_Clientes.SelectedRows(0).Index).Value
             txt_mail_cliente.Text = dgvLista_Clientes.Item("CLI_mail_cli", dgvLista_Clientes.SelectedRows(0).Index).Value
-            txt_telefono_cliente.Text = dgvLista_Clientes.Item("CLI_telefono_cli", dgvLista_Clientes.SelectedRows(0).Index).Value
+            txtTelefono_Cliente.Text = dgvLista_Clientes.Item("CLI_telefono_cli", dgvLista_Clientes.SelectedRows(0).Index).Value
+            txt_Domicilio_Cliente.Text = dgvLista_Clientes.Item("CLI_domicilio", dgvLista_Clientes.SelectedRows(0).Index).Value
+            txt_Localidad_Cliente.Text = dgvLista_Clientes.Item("CLI_localidad", dgvLista_Clientes.SelectedRows(0).Index).Value
+            txt_Codigo_Postal_Cliente.Text = dgvLista_Clientes.Item("CLI_codigo_postal", dgvLista_Clientes.SelectedRows(0).Index).Value
         Else
             MsgBox("Debe seleccionar un cliente")
         End If
@@ -165,11 +177,11 @@
 
     Private Sub txt_mail_cliente_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txt_mail_cliente.KeyDown
         If e.KeyCode = Keys.Enter Then
-            txt_telefono_cliente.Focus()
+            txt_Codigo_Postal_Cliente.Focus()
         End If
     End Sub
 
-    Private Sub txt_telefono_cliente_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txt_telefono_cliente.KeyDown
+    Private Sub txt_telefono_cliente_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txt_Codigo_Postal_Cliente.KeyDown
         If e.KeyCode = Keys.Enter Then
             btnGuardar_Cliente.Focus()
         End If
@@ -180,6 +192,9 @@
         If quienllamocliente.Name = frm_Etiqueta_Modelo_1.Name Then
             frm_Etiqueta_Modelo_1.txtId_Cliente.Text = dgvLista_Clientes.SelectedCells(0).Value
             frm_Etiqueta_Modelo_1.txtDirigidoA.Text = dgvLista_Clientes.SelectedCells(1).Value
+            frm_Etiqueta_Modelo_1.txtDomicilio.Text = dgvLista_Clientes.SelectedCells(4).Value
+            frm_Etiqueta_Modelo_1.txtLocalidad.Text = dgvLista_Clientes.SelectedCells(5).Value
+            frm_Etiqueta_Modelo_1.txtCodigoPostal.Text = dgvLista_Clientes.SelectedCells(6).Value
 
         ElseIf quienllamocliente.Name = frm_Orden_Trabajo.Name Then
             frm_Orden_Trabajo.txt_id_cliente.Text = dgvLista_Clientes.SelectedCells(0).Value

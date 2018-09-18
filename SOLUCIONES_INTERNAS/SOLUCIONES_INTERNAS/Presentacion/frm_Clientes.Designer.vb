@@ -23,13 +23,19 @@ Partial Class frm_Cliente
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupNuevoCliente = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.txt_Domicilio_Cliente = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txt_Localidad_Cliente = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.txtTelefono_Cliente = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btnCancelar_Cliente = New System.Windows.Forms.Button()
         Me.btnActualizar_Cliente = New System.Windows.Forms.Button()
         Me.btnGuardar_Cliente = New System.Windows.Forms.Button()
         Me.btnNuevo_Cliente = New System.Windows.Forms.Button()
-        Me.txt_telefono_cliente = New System.Windows.Forms.TextBox()
+        Me.txt_Codigo_Postal_Cliente = New System.Windows.Forms.TextBox()
         Me.txt_mail_cliente = New System.Windows.Forms.TextBox()
         Me.txt_razonsocial_cliente = New System.Windows.Forms.TextBox()
         Me.txt_id_cliente = New System.Windows.Forms.TextBox()
@@ -43,12 +49,6 @@ Partial Class frm_Cliente
         Me.txt_Buscar_Cliente = New System.Windows.Forms.TextBox()
         Me.dgvLista_Clientes = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.txtLocalidad = New System.Windows.Forms.TextBox()
         Me.GroupNuevoCliente.SuspendLayout()
         Me.GroupListadoClientes.SuspendLayout()
         CType(Me.dgvLista_Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -57,18 +57,18 @@ Partial Class frm_Cliente
         'GroupNuevoCliente
         '
         Me.GroupNuevoCliente.Controls.Add(Me.Label11)
-        Me.GroupNuevoCliente.Controls.Add(Me.TextBox3)
+        Me.GroupNuevoCliente.Controls.Add(Me.txt_Domicilio_Cliente)
         Me.GroupNuevoCliente.Controls.Add(Me.Label9)
-        Me.GroupNuevoCliente.Controls.Add(Me.txtLocalidad)
+        Me.GroupNuevoCliente.Controls.Add(Me.txt_Localidad_Cliente)
         Me.GroupNuevoCliente.Controls.Add(Me.Label10)
-        Me.GroupNuevoCliente.Controls.Add(Me.TextBox2)
+        Me.GroupNuevoCliente.Controls.Add(Me.txtTelefono_Cliente)
         Me.GroupNuevoCliente.Controls.Add(Me.Label8)
         Me.GroupNuevoCliente.Controls.Add(Me.Label7)
         Me.GroupNuevoCliente.Controls.Add(Me.btnCancelar_Cliente)
         Me.GroupNuevoCliente.Controls.Add(Me.btnActualizar_Cliente)
         Me.GroupNuevoCliente.Controls.Add(Me.btnGuardar_Cliente)
         Me.GroupNuevoCliente.Controls.Add(Me.btnNuevo_Cliente)
-        Me.GroupNuevoCliente.Controls.Add(Me.txt_telefono_cliente)
+        Me.GroupNuevoCliente.Controls.Add(Me.txt_Codigo_Postal_Cliente)
         Me.GroupNuevoCliente.Controls.Add(Me.txt_mail_cliente)
         Me.GroupNuevoCliente.Controls.Add(Me.txt_razonsocial_cliente)
         Me.GroupNuevoCliente.Controls.Add(Me.txt_id_cliente)
@@ -81,6 +81,54 @@ Partial Class frm_Cliente
         Me.GroupNuevoCliente.TabIndex = 0
         Me.GroupNuevoCliente.TabStop = False
         Me.GroupNuevoCliente.Text = "Nuevo Cliente"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(10, 142)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(52, 13)
+        Me.Label11.TabIndex = 15
+        Me.Label11.Text = "Dirección"
+        '
+        'txt_Domicilio_Cliente
+        '
+        Me.txt_Domicilio_Cliente.Location = New System.Drawing.Point(68, 139)
+        Me.txt_Domicilio_Cliente.Name = "txt_Domicilio_Cliente"
+        Me.txt_Domicilio_Cliente.Size = New System.Drawing.Size(392, 20)
+        Me.txt_Domicilio_Cliente.TabIndex = 16
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(4, 192)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(53, 13)
+        Me.Label9.TabIndex = 14
+        Me.Label9.Text = "Localidad"
+        '
+        'txt_Localidad_Cliente
+        '
+        Me.txt_Localidad_Cliente.Location = New System.Drawing.Point(63, 189)
+        Me.txt_Localidad_Cliente.Name = "txt_Localidad_Cliente"
+        Me.txt_Localidad_Cliente.Size = New System.Drawing.Size(130, 20)
+        Me.txt_Localidad_Cliente.TabIndex = 13
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(295, 192)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(49, 13)
+        Me.Label10.TabIndex = 12
+        Me.Label10.Text = "Teléfono"
+        '
+        'txtTelefono_Cliente
+        '
+        Me.txtTelefono_Cliente.Location = New System.Drawing.Point(353, 189)
+        Me.txtTelefono_Cliente.Name = "txtTelefono_Cliente"
+        Me.txtTelefono_Cliente.Size = New System.Drawing.Size(107, 20)
+        Me.txtTelefono_Cliente.TabIndex = 11
         '
         'Label8
         '
@@ -138,12 +186,12 @@ Partial Class frm_Cliente
         Me.btnNuevo_Cliente.Text = "Nuevo"
         Me.btnNuevo_Cliente.UseVisualStyleBackColor = True
         '
-        'txt_telefono_cliente
+        'txt_Codigo_Postal_Cliente
         '
-        Me.txt_telefono_cliente.Location = New System.Drawing.Point(226, 189)
-        Me.txt_telefono_cliente.Name = "txt_telefono_cliente"
-        Me.txt_telefono_cliente.Size = New System.Drawing.Size(63, 20)
-        Me.txt_telefono_cliente.TabIndex = 3
+        Me.txt_Codigo_Postal_Cliente.Location = New System.Drawing.Point(226, 189)
+        Me.txt_Codigo_Postal_Cliente.Name = "txt_Codigo_Postal_Cliente"
+        Me.txt_Codigo_Postal_Cliente.Size = New System.Drawing.Size(63, 20)
+        Me.txt_Codigo_Postal_Cliente.TabIndex = 3
         '
         'txt_mail_cliente
         '
@@ -260,54 +308,6 @@ Partial Class frm_Cliente
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Ingrese Nombre/Razón Social"
         '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(295, 192)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(49, 13)
-        Me.Label10.TabIndex = 12
-        Me.Label10.Text = "Teléfono"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(353, 189)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(107, 20)
-        Me.TextBox2.TabIndex = 11
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(10, 142)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(52, 13)
-        Me.Label11.TabIndex = 15
-        Me.Label11.Text = "Dirección"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(68, 139)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(392, 20)
-        Me.TextBox3.TabIndex = 16
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(4, 192)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(53, 13)
-        Me.Label9.TabIndex = 14
-        Me.Label9.Text = "Localidad"
-        '
-        'txtLocalidad
-        '
-        Me.txtLocalidad.Location = New System.Drawing.Point(63, 189)
-        Me.txtLocalidad.Name = "txtLocalidad"
-        Me.txtLocalidad.Size = New System.Drawing.Size(130, 20)
-        Me.txtLocalidad.TabIndex = 13
-        '
         'frm_Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -332,7 +332,7 @@ Partial Class frm_Cliente
     Friend WithEvents btnActualizar_Cliente As System.Windows.Forms.Button
     Friend WithEvents btnGuardar_Cliente As System.Windows.Forms.Button
     Friend WithEvents btnNuevo_Cliente As System.Windows.Forms.Button
-    Friend WithEvents txt_telefono_cliente As System.Windows.Forms.TextBox
+    Friend WithEvents txt_Codigo_Postal_Cliente As System.Windows.Forms.TextBox
     Friend WithEvents txt_mail_cliente As System.Windows.Forms.TextBox
     Friend WithEvents txt_razonsocial_cliente As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_cliente As System.Windows.Forms.TextBox
@@ -348,10 +348,10 @@ Partial Class frm_Cliente
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents txt_Domicilio_Cliente As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents txtLocalidad As System.Windows.Forms.TextBox
+    Friend WithEvents txt_Localidad_Cliente As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents txtTelefono_Cliente As System.Windows.Forms.TextBox
 
 End Class

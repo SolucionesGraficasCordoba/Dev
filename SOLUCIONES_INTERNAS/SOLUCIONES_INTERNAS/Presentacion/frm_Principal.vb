@@ -158,7 +158,7 @@ Public Class frm_Principal
         frm_Cliente.btnGuardar_Cliente.Enabled = False
         frm_Cliente.btnNuevo_Cliente.Enabled = False
         frm_Cliente.txt_razonsocial_cliente.Enabled = False
-        frm_Cliente.txt_telefono_cliente.Enabled = False
+        frm_Cliente.txt_Codigo_Postal_Cliente.Enabled = False
         frm_Cliente.txt_mail_cliente.Enabled = False
     End Sub
 
