@@ -16,7 +16,7 @@
     Public Sub cargargrilla()
         Dim consultaCliente = From U In datacontext.PIEZA
                               Select U.PIE_id_pieza, U.PIE_nombre_pie
-                              Order By PIE_id_pieza Ascending
+                              Order By PIE_nombre_pie Ascending
         dgvLista_Piezas.DataSource = consultaCliente
     End Sub
 

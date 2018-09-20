@@ -43,12 +43,6 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeleteCOLABORADOR(instance As COLABORADOR)
     End Sub
-  Partial Private Sub InsertDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
-    End Sub
-  Partial Private Sub UpdateDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
-    End Sub
-  Partial Private Sub DeleteDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
-    End Sub
   Partial Private Sub InsertORDEN_TRABAJO(instance As ORDEN_TRABAJO)
     End Sub
   Partial Private Sub UpdateORDEN_TRABAJO(instance As ORDEN_TRABAJO)
@@ -91,6 +85,12 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeleteCLIENTE(instance As CLIENTE)
     End Sub
+  Partial Private Sub InsertDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
+    End Sub
+  Partial Private Sub UpdateDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
+    End Sub
+  Partial Private Sub DeleteDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -127,12 +127,6 @@ Partial Public Class DataS_Interno
 	Public ReadOnly Property COLABORADOR() As System.Data.Linq.Table(Of COLABORADOR)
 		Get
 			Return Me.GetTable(Of COLABORADOR)
-		End Get
-	End Property
-	
-	Public ReadOnly Property DETALLE_ORDEN_TRABAJO() As System.Data.Linq.Table(Of DETALLE_ORDEN_TRABAJO)
-		Get
-			Return Me.GetTable(Of DETALLE_ORDEN_TRABAJO)
 		End Get
 	End Property
 	
@@ -175,6 +169,12 @@ Partial Public Class DataS_Interno
 	Public ReadOnly Property CLIENTE() As System.Data.Linq.Table(Of CLIENTE)
 		Get
 			Return Me.GetTable(Of CLIENTE)
+		End Get
+	End Property
+	
+	Public ReadOnly Property DETALLE_ORDEN_TRABAJO() As System.Data.Linq.Table(Of DETALLE_ORDEN_TRABAJO)
+		Get
+			Return Me.GetTable(Of DETALLE_ORDEN_TRABAJO)
 		End Get
 	End Property
 End Class
@@ -560,534 +560,6 @@ Partial Public Class COLABORADOR
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DETALLE_ORDEN_TRABAJO")>  _
-Partial Public Class DETALLE_ORDEN_TRABAJO
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _id_detalle_orden_trabajo As Integer
-	
-	Private _DOT_cantidad_dot As System.Nullable(Of Integer)
-	
-	Private _DOT_tamaño_dot As String
-	
-	Private _DOT_tipo_impresion_dot As String
-	
-	Private _DOT_papel_soporte_1 As String
-	
-	Private _DOT_papel_soporte_2 As String
-	
-	Private _DOT_papel_soporte_3 As String
-	
-	Private _DOT_gramaje_soporte_1 As System.Nullable(Of Integer)
-	
-	Private _DOT_gramaje_soporte_2 As System.Nullable(Of Integer)
-	
-	Private _DOT_gramaje_soporte_3 As System.Nullable(Of Integer)
-	
-	Private _DOT_cantidad_soporte_1 As System.Nullable(Of Integer)
-	
-	Private _DOT_cantidad_soporte_2 As System.Nullable(Of Integer)
-	
-	Private _DOT_cantidad_soporte_3 As System.Nullable(Of Integer)
-	
-	Private _DOT_formato_soporte_1 As String
-	
-	Private _DOT_formato_soporte_2 As String
-	
-	Private _DOT_formato_soporte_3 As String
-	
-	Private _PIE_id_pieza As Integer
-	
-	Private _ORT_id_orden_trabajo As System.Nullable(Of Integer)
-	
-	Private _RE_TRABAJO As EntitySet(Of RE_TRABAJO)
-	
-	Private _ORDEN_TRABAJO As EntityRef(Of ORDEN_TRABAJO)
-	
-	Private _PIEZA As EntityRef(Of PIEZA)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub Onid_detalle_orden_trabajoChanging(value As Integer)
-    End Sub
-    Partial Private Sub Onid_detalle_orden_trabajoChanged()
-    End Sub
-    Partial Private Sub OnDOT_cantidad_dotChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDOT_cantidad_dotChanged()
-    End Sub
-    Partial Private Sub OnDOT_tamaño_dotChanging(value As String)
-    End Sub
-    Partial Private Sub OnDOT_tamaño_dotChanged()
-    End Sub
-    Partial Private Sub OnDOT_tipo_impresion_dotChanging(value As String)
-    End Sub
-    Partial Private Sub OnDOT_tipo_impresion_dotChanged()
-    End Sub
-    Partial Private Sub OnDOT_papel_soporte_1Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_papel_soporte_1Changed()
-    End Sub
-    Partial Private Sub OnDOT_papel_soporte_2Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_papel_soporte_2Changed()
-    End Sub
-    Partial Private Sub OnDOT_papel_soporte_3Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_papel_soporte_3Changed()
-    End Sub
-    Partial Private Sub OnDOT_gramaje_soporte_1Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDOT_gramaje_soporte_1Changed()
-    End Sub
-    Partial Private Sub OnDOT_gramaje_soporte_2Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDOT_gramaje_soporte_2Changed()
-    End Sub
-    Partial Private Sub OnDOT_gramaje_soporte_3Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDOT_gramaje_soporte_3Changed()
-    End Sub
-    Partial Private Sub OnDOT_cantidad_soporte_1Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDOT_cantidad_soporte_1Changed()
-    End Sub
-    Partial Private Sub OnDOT_cantidad_soporte_2Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDOT_cantidad_soporte_2Changed()
-    End Sub
-    Partial Private Sub OnDOT_cantidad_soporte_3Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDOT_cantidad_soporte_3Changed()
-    End Sub
-    Partial Private Sub OnDOT_formato_soporte_1Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_formato_soporte_1Changed()
-    End Sub
-    Partial Private Sub OnDOT_formato_soporte_2Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_formato_soporte_2Changed()
-    End Sub
-    Partial Private Sub OnDOT_formato_soporte_3Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_formato_soporte_3Changed()
-    End Sub
-    Partial Private Sub OnPIE_id_piezaChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnPIE_id_piezaChanged()
-    End Sub
-    Partial Private Sub OnORT_id_orden_trabajoChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnORT_id_orden_trabajoChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._RE_TRABAJO = New EntitySet(Of RE_TRABAJO)(AddressOf Me.attach_RE_TRABAJO, AddressOf Me.detach_RE_TRABAJO)
-		Me._ORDEN_TRABAJO = CType(Nothing, EntityRef(Of ORDEN_TRABAJO))
-		Me._PIEZA = CType(Nothing, EntityRef(Of PIEZA))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id_detalle_orden_trabajo", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property id_detalle_orden_trabajo() As Integer
-		Get
-			Return Me._id_detalle_orden_trabajo
-		End Get
-		Set
-			If ((Me._id_detalle_orden_trabajo = value)  _
-						= false) Then
-				Me.Onid_detalle_orden_trabajoChanging(value)
-				Me.SendPropertyChanging
-				Me._id_detalle_orden_trabajo = value
-				Me.SendPropertyChanged("id_detalle_orden_trabajo")
-				Me.Onid_detalle_orden_trabajoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_dot", DbType:="Int")>  _
-	Public Property DOT_cantidad_dot() As System.Nullable(Of Integer)
-		Get
-			Return Me._DOT_cantidad_dot
-		End Get
-		Set
-			If (Me._DOT_cantidad_dot.Equals(value) = false) Then
-				Me.OnDOT_cantidad_dotChanging(value)
-				Me.SendPropertyChanging
-				Me._DOT_cantidad_dot = value
-				Me.SendPropertyChanged("DOT_cantidad_dot")
-				Me.OnDOT_cantidad_dotChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_tamaño_dot", DbType:="VarChar(50)")>  _
-	Public Property DOT_tamaño_dot() As String
-		Get
-			Return Me._DOT_tamaño_dot
-		End Get
-		Set
-			If (String.Equals(Me._DOT_tamaño_dot, value) = false) Then
-				Me.OnDOT_tamaño_dotChanging(value)
-				Me.SendPropertyChanging
-				Me._DOT_tamaño_dot = value
-				Me.SendPropertyChanged("DOT_tamaño_dot")
-				Me.OnDOT_tamaño_dotChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_tipo_impresion_dot", DbType:="VarChar(4)")>  _
-	Public Property DOT_tipo_impresion_dot() As String
-		Get
-			Return Me._DOT_tipo_impresion_dot
-		End Get
-		Set
-			If (String.Equals(Me._DOT_tipo_impresion_dot, value) = false) Then
-				Me.OnDOT_tipo_impresion_dotChanging(value)
-				Me.SendPropertyChanging
-				Me._DOT_tipo_impresion_dot = value
-				Me.SendPropertyChanged("DOT_tipo_impresion_dot")
-				Me.OnDOT_tipo_impresion_dotChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_papel_soporte_1", DbType:="VarChar(50)")>  _
-	Public Property DOT_papel_soporte_1() As String
-		Get
-			Return Me._DOT_papel_soporte_1
-		End Get
-		Set
-			If (String.Equals(Me._DOT_papel_soporte_1, value) = false) Then
-				Me.OnDOT_papel_soporte_1Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_papel_soporte_1 = value
-				Me.SendPropertyChanged("DOT_papel_soporte_1")
-				Me.OnDOT_papel_soporte_1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_papel_soporte_2", DbType:="VarChar(50)")>  _
-	Public Property DOT_papel_soporte_2() As String
-		Get
-			Return Me._DOT_papel_soporte_2
-		End Get
-		Set
-			If (String.Equals(Me._DOT_papel_soporte_2, value) = false) Then
-				Me.OnDOT_papel_soporte_2Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_papel_soporte_2 = value
-				Me.SendPropertyChanged("DOT_papel_soporte_2")
-				Me.OnDOT_papel_soporte_2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_papel_soporte_3", DbType:="VarChar(50)")>  _
-	Public Property DOT_papel_soporte_3() As String
-		Get
-			Return Me._DOT_papel_soporte_3
-		End Get
-		Set
-			If (String.Equals(Me._DOT_papel_soporte_3, value) = false) Then
-				Me.OnDOT_papel_soporte_3Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_papel_soporte_3 = value
-				Me.SendPropertyChanged("DOT_papel_soporte_3")
-				Me.OnDOT_papel_soporte_3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_gramaje_soporte_1", DbType:="Int")>  _
-	Public Property DOT_gramaje_soporte_1() As System.Nullable(Of Integer)
-		Get
-			Return Me._DOT_gramaje_soporte_1
-		End Get
-		Set
-			If (Me._DOT_gramaje_soporte_1.Equals(value) = false) Then
-				Me.OnDOT_gramaje_soporte_1Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_gramaje_soporte_1 = value
-				Me.SendPropertyChanged("DOT_gramaje_soporte_1")
-				Me.OnDOT_gramaje_soporte_1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_gramaje_soporte_2", DbType:="Int")>  _
-	Public Property DOT_gramaje_soporte_2() As System.Nullable(Of Integer)
-		Get
-			Return Me._DOT_gramaje_soporte_2
-		End Get
-		Set
-			If (Me._DOT_gramaje_soporte_2.Equals(value) = false) Then
-				Me.OnDOT_gramaje_soporte_2Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_gramaje_soporte_2 = value
-				Me.SendPropertyChanged("DOT_gramaje_soporte_2")
-				Me.OnDOT_gramaje_soporte_2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_gramaje_soporte_3", DbType:="Int")>  _
-	Public Property DOT_gramaje_soporte_3() As System.Nullable(Of Integer)
-		Get
-			Return Me._DOT_gramaje_soporte_3
-		End Get
-		Set
-			If (Me._DOT_gramaje_soporte_3.Equals(value) = false) Then
-				Me.OnDOT_gramaje_soporte_3Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_gramaje_soporte_3 = value
-				Me.SendPropertyChanged("DOT_gramaje_soporte_3")
-				Me.OnDOT_gramaje_soporte_3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_soporte_1", DbType:="Int")>  _
-	Public Property DOT_cantidad_soporte_1() As System.Nullable(Of Integer)
-		Get
-			Return Me._DOT_cantidad_soporte_1
-		End Get
-		Set
-			If (Me._DOT_cantidad_soporte_1.Equals(value) = false) Then
-				Me.OnDOT_cantidad_soporte_1Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_cantidad_soporte_1 = value
-				Me.SendPropertyChanged("DOT_cantidad_soporte_1")
-				Me.OnDOT_cantidad_soporte_1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_soporte_2", DbType:="Int")>  _
-	Public Property DOT_cantidad_soporte_2() As System.Nullable(Of Integer)
-		Get
-			Return Me._DOT_cantidad_soporte_2
-		End Get
-		Set
-			If (Me._DOT_cantidad_soporte_2.Equals(value) = false) Then
-				Me.OnDOT_cantidad_soporte_2Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_cantidad_soporte_2 = value
-				Me.SendPropertyChanged("DOT_cantidad_soporte_2")
-				Me.OnDOT_cantidad_soporte_2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_soporte_3", DbType:="Int")>  _
-	Public Property DOT_cantidad_soporte_3() As System.Nullable(Of Integer)
-		Get
-			Return Me._DOT_cantidad_soporte_3
-		End Get
-		Set
-			If (Me._DOT_cantidad_soporte_3.Equals(value) = false) Then
-				Me.OnDOT_cantidad_soporte_3Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_cantidad_soporte_3 = value
-				Me.SendPropertyChanged("DOT_cantidad_soporte_3")
-				Me.OnDOT_cantidad_soporte_3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_formato_soporte_1", DbType:="VarChar(15)")>  _
-	Public Property DOT_formato_soporte_1() As String
-		Get
-			Return Me._DOT_formato_soporte_1
-		End Get
-		Set
-			If (String.Equals(Me._DOT_formato_soporte_1, value) = false) Then
-				Me.OnDOT_formato_soporte_1Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_formato_soporte_1 = value
-				Me.SendPropertyChanged("DOT_formato_soporte_1")
-				Me.OnDOT_formato_soporte_1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_formato_soporte_2", DbType:="VarChar(15)")>  _
-	Public Property DOT_formato_soporte_2() As String
-		Get
-			Return Me._DOT_formato_soporte_2
-		End Get
-		Set
-			If (String.Equals(Me._DOT_formato_soporte_2, value) = false) Then
-				Me.OnDOT_formato_soporte_2Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_formato_soporte_2 = value
-				Me.SendPropertyChanged("DOT_formato_soporte_2")
-				Me.OnDOT_formato_soporte_2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_formato_soporte_3", DbType:="VarChar(15)")>  _
-	Public Property DOT_formato_soporte_3() As String
-		Get
-			Return Me._DOT_formato_soporte_3
-		End Get
-		Set
-			If (String.Equals(Me._DOT_formato_soporte_3, value) = false) Then
-				Me.OnDOT_formato_soporte_3Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_formato_soporte_3 = value
-				Me.SendPropertyChanged("DOT_formato_soporte_3")
-				Me.OnDOT_formato_soporte_3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_id_pieza", DbType:="Int NOT NULL")>  _
-	Public Property PIE_id_pieza() As Integer
-		Get
-			Return Me._PIE_id_pieza
-		End Get
-		Set
-			If ((Me._PIE_id_pieza = value)  _
-						= false) Then
-				If Me._PIEZA.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnPIE_id_piezaChanging(value)
-				Me.SendPropertyChanging
-				Me._PIE_id_pieza = value
-				Me.SendPropertyChanged("PIE_id_pieza")
-				Me.OnPIE_id_piezaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int")>  _
-	Public Property ORT_id_orden_trabajo() As System.Nullable(Of Integer)
-		Get
-			Return Me._ORT_id_orden_trabajo
-		End Get
-		Set
-			If (Me._ORT_id_orden_trabajo.Equals(value) = false) Then
-				If Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnORT_id_orden_trabajoChanging(value)
-				Me.SendPropertyChanging
-				Me._ORT_id_orden_trabajo = value
-				Me.SendPropertyChanged("ORT_id_orden_trabajo")
-				Me.OnORT_id_orden_trabajoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="DETALLE_ORDEN_TRABAJO_RE_TRABAJO", Storage:="_RE_TRABAJO", ThisKey:="id_detalle_orden_trabajo", OtherKey:="id_detalle_orden_trabajo")>  _
-	Public Property RE_TRABAJO() As EntitySet(Of RE_TRABAJO)
-		Get
-			Return Me._RE_TRABAJO
-		End Get
-		Set
-			Me._RE_TRABAJO.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO", Storage:="_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo", IsForeignKey:=true, DeleteRule:="CASCADE")>  _
-	Public Property ORDEN_TRABAJO() As ORDEN_TRABAJO
-		Get
-			Return Me._ORDEN_TRABAJO.Entity
-		End Get
-		Set
-			Dim previousValue As ORDEN_TRABAJO = Me._ORDEN_TRABAJO.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._ORDEN_TRABAJO.Entity = Nothing
-					previousValue.DETALLE_ORDEN_TRABAJO.Remove(Me)
-				End If
-				Me._ORDEN_TRABAJO.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.DETALLE_ORDEN_TRABAJO.Add(Me)
-					Me._ORT_id_orden_trabajo = value.ORT_id_orden_trabajo
-				Else
-					Me._ORT_id_orden_trabajo = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("ORDEN_TRABAJO")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PIEZA_DETALLE_ORDEN_TRABAJO", Storage:="_PIEZA", ThisKey:="PIE_id_pieza", OtherKey:="PIE_id_pieza", IsForeignKey:=true)>  _
-	Public Property PIEZA() As PIEZA
-		Get
-			Return Me._PIEZA.Entity
-		End Get
-		Set
-			Dim previousValue As PIEZA = Me._PIEZA.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._PIEZA.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._PIEZA.Entity = Nothing
-					previousValue.DETALLE_ORDEN_TRABAJO.Remove(Me)
-				End If
-				Me._PIEZA.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.DETALLE_ORDEN_TRABAJO.Add(Me)
-					Me._PIE_id_pieza = value.PIE_id_pieza
-				Else
-					Me._PIE_id_pieza = CType(Nothing, Integer)
-				End If
-				Me.SendPropertyChanged("PIEZA")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_RE_TRABAJO(ByVal entity As RE_TRABAJO)
-		Me.SendPropertyChanging
-		entity.DETALLE_ORDEN_TRABAJO = Me
-	End Sub
-	
-	Private Sub detach_RE_TRABAJO(ByVal entity As RE_TRABAJO)
-		Me.SendPropertyChanging
-		entity.DETALLE_ORDEN_TRABAJO = Nothing
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.ORDEN_TRABAJO")>  _
 Partial Public Class ORDEN_TRABAJO
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -1110,9 +582,9 @@ Partial Public Class ORDEN_TRABAJO
 	
 	Private _CLI_id_cliente As Integer
 	
-	Private _DETALLE_ORDEN_TRABAJO As EntitySet(Of DETALLE_ORDEN_TRABAJO)
-	
 	Private _TAREA As EntitySet(Of TAREA)
+	
+	Private _DETALLE_ORDEN_TRABAJO As EntitySet(Of DETALLE_ORDEN_TRABAJO)
 	
 	Private _VENDEDOR As EntityRef(Of VENDEDOR)
 	
@@ -1161,8 +633,8 @@ Partial Public Class ORDEN_TRABAJO
 	
 	Public Sub New()
 		MyBase.New
-		Me._DETALLE_ORDEN_TRABAJO = New EntitySet(Of DETALLE_ORDEN_TRABAJO)(AddressOf Me.attach_DETALLE_ORDEN_TRABAJO, AddressOf Me.detach_DETALLE_ORDEN_TRABAJO)
 		Me._TAREA = New EntitySet(Of TAREA)(AddressOf Me.attach_TAREA, AddressOf Me.detach_TAREA)
+		Me._DETALLE_ORDEN_TRABAJO = New EntitySet(Of DETALLE_ORDEN_TRABAJO)(AddressOf Me.attach_DETALLE_ORDEN_TRABAJO, AddressOf Me.detach_DETALLE_ORDEN_TRABAJO)
 		Me._VENDEDOR = CType(Nothing, EntityRef(Of VENDEDOR))
 		Me._CLIENTE = CType(Nothing, EntityRef(Of CLIENTE))
 		OnCreated
@@ -1306,16 +778,6 @@ Partial Public Class ORDEN_TRABAJO
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo")>  _
-	Public Property DETALLE_ORDEN_TRABAJO() As EntitySet(Of DETALLE_ORDEN_TRABAJO)
-		Get
-			Return Me._DETALLE_ORDEN_TRABAJO
-		End Get
-		Set
-			Me._DETALLE_ORDEN_TRABAJO.Assign(value)
-		End Set
-	End Property
-	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_TAREA", Storage:="_TAREA", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo")>  _
 	Public Property TAREA() As EntitySet(Of TAREA)
 		Get
@@ -1323,6 +785,16 @@ Partial Public Class ORDEN_TRABAJO
 		End Get
 		Set
 			Me._TAREA.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo")>  _
+	Public Property DETALLE_ORDEN_TRABAJO() As EntitySet(Of DETALLE_ORDEN_TRABAJO)
+		Get
+			Return Me._DETALLE_ORDEN_TRABAJO
+		End Get
+		Set
+			Me._DETALLE_ORDEN_TRABAJO.Assign(value)
 		End Set
 	End Property
 	
@@ -1400,22 +872,22 @@ Partial Public Class ORDEN_TRABAJO
 		End If
 	End Sub
 	
-	Private Sub attach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
-		Me.SendPropertyChanging
-		entity.ORDEN_TRABAJO = Me
-	End Sub
-	
-	Private Sub detach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
-		Me.SendPropertyChanging
-		entity.ORDEN_TRABAJO = Nothing
-	End Sub
-	
 	Private Sub attach_TAREA(ByVal entity As TAREA)
 		Me.SendPropertyChanging
 		entity.ORDEN_TRABAJO = Me
 	End Sub
 	
 	Private Sub detach_TAREA(ByVal entity As TAREA)
+		Me.SendPropertyChanging
+		entity.ORDEN_TRABAJO = Nothing
+	End Sub
+	
+	Private Sub attach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
+		Me.SendPropertyChanging
+		entity.ORDEN_TRABAJO = Me
+	End Sub
+	
+	Private Sub detach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
 		Me.SendPropertyChanging
 		entity.ORDEN_TRABAJO = Nothing
 	End Sub
@@ -2680,7 +2152,7 @@ Partial Public Class CLIENTE
 	
 	Private _CLI_localidad As String
 	
-	Private _CLI_codigo_postal As System.Nullable(Of Integer)
+	Private _CLI_codigo_postal As String
 	
 	Private _ORDEN_TRABAJO As EntitySet(Of ORDEN_TRABAJO)
 	
@@ -2715,7 +2187,7 @@ Partial Public Class CLIENTE
     End Sub
     Partial Private Sub OnCLI_localidadChanged()
     End Sub
-    Partial Private Sub OnCLI_codigo_postalChanging(value As System.Nullable(Of Integer))
+    Partial Private Sub OnCLI_codigo_postalChanging(value As String)
     End Sub
     Partial Private Sub OnCLI_codigo_postalChanged()
     End Sub
@@ -2824,13 +2296,13 @@ Partial Public Class CLIENTE
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_codigo_postal", DbType:="Int")>  _
-	Public Property CLI_codigo_postal() As System.Nullable(Of Integer)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_codigo_postal", DbType:="VarChar(10)")>  _
+	Public Property CLI_codigo_postal() As String
 		Get
 			Return Me._CLI_codigo_postal
 		End Get
 		Set
-			If (Me._CLI_codigo_postal.Equals(value) = false) Then
+			If (String.Equals(Me._CLI_codigo_postal, value) = false) Then
 				Me.OnCLI_codigo_postalChanging(value)
 				Me.SendPropertyChanging
 				Me._CLI_codigo_postal = value
@@ -2876,5 +2348,533 @@ Partial Public Class CLIENTE
 	Private Sub detach_ORDEN_TRABAJO(ByVal entity As ORDEN_TRABAJO)
 		Me.SendPropertyChanging
 		entity.CLIENTE = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DETALLE_ORDEN_TRABAJO")>  _
+Partial Public Class DETALLE_ORDEN_TRABAJO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id_detalle_orden_trabajo As Integer
+	
+	Private _DOT_cantidad_dot As System.Nullable(Of Integer)
+	
+	Private _DOT_tamaño_dot As String
+	
+	Private _DOT_tipo_impresion_dot As String
+	
+	Private _DOT_papel_soporte_1 As String
+	
+	Private _DOT_papel_soporte_2 As String
+	
+	Private _DOT_papel_soporte_3 As String
+	
+	Private _DOT_gramaje_soporte_1 As String
+	
+	Private _DOT_gramaje_soporte_2 As String
+	
+	Private _DOT_gramaje_soporte_3 As String
+	
+	Private _DOT_cantidad_soporte_1 As System.Nullable(Of Integer)
+	
+	Private _DOT_cantidad_soporte_2 As System.Nullable(Of Integer)
+	
+	Private _DOT_cantidad_soporte_3 As System.Nullable(Of Integer)
+	
+	Private _DOT_formato_soporte_1 As String
+	
+	Private _DOT_formato_soporte_2 As String
+	
+	Private _DOT_formato_soporte_3 As String
+	
+	Private _PIE_id_pieza As Integer
+	
+	Private _ORT_id_orden_trabajo As System.Nullable(Of Integer)
+	
+	Private _RE_TRABAJO As EntitySet(Of RE_TRABAJO)
+	
+	Private _ORDEN_TRABAJO As EntityRef(Of ORDEN_TRABAJO)
+	
+	Private _PIEZA As EntityRef(Of PIEZA)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub Onid_detalle_orden_trabajoChanging(value As Integer)
+    End Sub
+    Partial Private Sub Onid_detalle_orden_trabajoChanged()
+    End Sub
+    Partial Private Sub OnDOT_cantidad_dotChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDOT_cantidad_dotChanged()
+    End Sub
+    Partial Private Sub OnDOT_tamaño_dotChanging(value As String)
+    End Sub
+    Partial Private Sub OnDOT_tamaño_dotChanged()
+    End Sub
+    Partial Private Sub OnDOT_tipo_impresion_dotChanging(value As String)
+    End Sub
+    Partial Private Sub OnDOT_tipo_impresion_dotChanged()
+    End Sub
+    Partial Private Sub OnDOT_papel_soporte_1Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_papel_soporte_1Changed()
+    End Sub
+    Partial Private Sub OnDOT_papel_soporte_2Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_papel_soporte_2Changed()
+    End Sub
+    Partial Private Sub OnDOT_papel_soporte_3Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_papel_soporte_3Changed()
+    End Sub
+    Partial Private Sub OnDOT_gramaje_soporte_1Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_gramaje_soporte_1Changed()
+    End Sub
+    Partial Private Sub OnDOT_gramaje_soporte_2Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_gramaje_soporte_2Changed()
+    End Sub
+    Partial Private Sub OnDOT_gramaje_soporte_3Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_gramaje_soporte_3Changed()
+    End Sub
+    Partial Private Sub OnDOT_cantidad_soporte_1Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDOT_cantidad_soporte_1Changed()
+    End Sub
+    Partial Private Sub OnDOT_cantidad_soporte_2Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDOT_cantidad_soporte_2Changed()
+    End Sub
+    Partial Private Sub OnDOT_cantidad_soporte_3Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDOT_cantidad_soporte_3Changed()
+    End Sub
+    Partial Private Sub OnDOT_formato_soporte_1Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_formato_soporte_1Changed()
+    End Sub
+    Partial Private Sub OnDOT_formato_soporte_2Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_formato_soporte_2Changed()
+    End Sub
+    Partial Private Sub OnDOT_formato_soporte_3Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_formato_soporte_3Changed()
+    End Sub
+    Partial Private Sub OnPIE_id_piezaChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPIE_id_piezaChanged()
+    End Sub
+    Partial Private Sub OnORT_id_orden_trabajoChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnORT_id_orden_trabajoChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._RE_TRABAJO = New EntitySet(Of RE_TRABAJO)(AddressOf Me.attach_RE_TRABAJO, AddressOf Me.detach_RE_TRABAJO)
+		Me._ORDEN_TRABAJO = CType(Nothing, EntityRef(Of ORDEN_TRABAJO))
+		Me._PIEZA = CType(Nothing, EntityRef(Of PIEZA))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id_detalle_orden_trabajo", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property id_detalle_orden_trabajo() As Integer
+		Get
+			Return Me._id_detalle_orden_trabajo
+		End Get
+		Set
+			If ((Me._id_detalle_orden_trabajo = value)  _
+						= false) Then
+				Me.Onid_detalle_orden_trabajoChanging(value)
+				Me.SendPropertyChanging
+				Me._id_detalle_orden_trabajo = value
+				Me.SendPropertyChanged("id_detalle_orden_trabajo")
+				Me.Onid_detalle_orden_trabajoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_dot", DbType:="Int")>  _
+	Public Property DOT_cantidad_dot() As System.Nullable(Of Integer)
+		Get
+			Return Me._DOT_cantidad_dot
+		End Get
+		Set
+			If (Me._DOT_cantidad_dot.Equals(value) = false) Then
+				Me.OnDOT_cantidad_dotChanging(value)
+				Me.SendPropertyChanging
+				Me._DOT_cantidad_dot = value
+				Me.SendPropertyChanged("DOT_cantidad_dot")
+				Me.OnDOT_cantidad_dotChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_tamaño_dot", DbType:="VarChar(50)")>  _
+	Public Property DOT_tamaño_dot() As String
+		Get
+			Return Me._DOT_tamaño_dot
+		End Get
+		Set
+			If (String.Equals(Me._DOT_tamaño_dot, value) = false) Then
+				Me.OnDOT_tamaño_dotChanging(value)
+				Me.SendPropertyChanging
+				Me._DOT_tamaño_dot = value
+				Me.SendPropertyChanged("DOT_tamaño_dot")
+				Me.OnDOT_tamaño_dotChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_tipo_impresion_dot", DbType:="VarChar(4)")>  _
+	Public Property DOT_tipo_impresion_dot() As String
+		Get
+			Return Me._DOT_tipo_impresion_dot
+		End Get
+		Set
+			If (String.Equals(Me._DOT_tipo_impresion_dot, value) = false) Then
+				Me.OnDOT_tipo_impresion_dotChanging(value)
+				Me.SendPropertyChanging
+				Me._DOT_tipo_impresion_dot = value
+				Me.SendPropertyChanged("DOT_tipo_impresion_dot")
+				Me.OnDOT_tipo_impresion_dotChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_papel_soporte_1", DbType:="VarChar(50)")>  _
+	Public Property DOT_papel_soporte_1() As String
+		Get
+			Return Me._DOT_papel_soporte_1
+		End Get
+		Set
+			If (String.Equals(Me._DOT_papel_soporte_1, value) = false) Then
+				Me.OnDOT_papel_soporte_1Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_papel_soporte_1 = value
+				Me.SendPropertyChanged("DOT_papel_soporte_1")
+				Me.OnDOT_papel_soporte_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_papel_soporte_2", DbType:="VarChar(50)")>  _
+	Public Property DOT_papel_soporte_2() As String
+		Get
+			Return Me._DOT_papel_soporte_2
+		End Get
+		Set
+			If (String.Equals(Me._DOT_papel_soporte_2, value) = false) Then
+				Me.OnDOT_papel_soporte_2Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_papel_soporte_2 = value
+				Me.SendPropertyChanged("DOT_papel_soporte_2")
+				Me.OnDOT_papel_soporte_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_papel_soporte_3", DbType:="VarChar(50)")>  _
+	Public Property DOT_papel_soporte_3() As String
+		Get
+			Return Me._DOT_papel_soporte_3
+		End Get
+		Set
+			If (String.Equals(Me._DOT_papel_soporte_3, value) = false) Then
+				Me.OnDOT_papel_soporte_3Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_papel_soporte_3 = value
+				Me.SendPropertyChanged("DOT_papel_soporte_3")
+				Me.OnDOT_papel_soporte_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_gramaje_soporte_1", DbType:="VarChar(10)")>  _
+	Public Property DOT_gramaje_soporte_1() As String
+		Get
+			Return Me._DOT_gramaje_soporte_1
+		End Get
+		Set
+			If (String.Equals(Me._DOT_gramaje_soporte_1, value) = false) Then
+				Me.OnDOT_gramaje_soporte_1Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_gramaje_soporte_1 = value
+				Me.SendPropertyChanged("DOT_gramaje_soporte_1")
+				Me.OnDOT_gramaje_soporte_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_gramaje_soporte_2", DbType:="VarChar(10)")>  _
+	Public Property DOT_gramaje_soporte_2() As String
+		Get
+			Return Me._DOT_gramaje_soporte_2
+		End Get
+		Set
+			If (String.Equals(Me._DOT_gramaje_soporte_2, value) = false) Then
+				Me.OnDOT_gramaje_soporte_2Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_gramaje_soporte_2 = value
+				Me.SendPropertyChanged("DOT_gramaje_soporte_2")
+				Me.OnDOT_gramaje_soporte_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_gramaje_soporte_3", DbType:="VarChar(10)")>  _
+	Public Property DOT_gramaje_soporte_3() As String
+		Get
+			Return Me._DOT_gramaje_soporte_3
+		End Get
+		Set
+			If (String.Equals(Me._DOT_gramaje_soporte_3, value) = false) Then
+				Me.OnDOT_gramaje_soporte_3Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_gramaje_soporte_3 = value
+				Me.SendPropertyChanged("DOT_gramaje_soporte_3")
+				Me.OnDOT_gramaje_soporte_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_soporte_1", DbType:="Int")>  _
+	Public Property DOT_cantidad_soporte_1() As System.Nullable(Of Integer)
+		Get
+			Return Me._DOT_cantidad_soporte_1
+		End Get
+		Set
+			If (Me._DOT_cantidad_soporte_1.Equals(value) = false) Then
+				Me.OnDOT_cantidad_soporte_1Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_cantidad_soporte_1 = value
+				Me.SendPropertyChanged("DOT_cantidad_soporte_1")
+				Me.OnDOT_cantidad_soporte_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_soporte_2", DbType:="Int")>  _
+	Public Property DOT_cantidad_soporte_2() As System.Nullable(Of Integer)
+		Get
+			Return Me._DOT_cantidad_soporte_2
+		End Get
+		Set
+			If (Me._DOT_cantidad_soporte_2.Equals(value) = false) Then
+				Me.OnDOT_cantidad_soporte_2Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_cantidad_soporte_2 = value
+				Me.SendPropertyChanged("DOT_cantidad_soporte_2")
+				Me.OnDOT_cantidad_soporte_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_soporte_3", DbType:="Int")>  _
+	Public Property DOT_cantidad_soporte_3() As System.Nullable(Of Integer)
+		Get
+			Return Me._DOT_cantidad_soporte_3
+		End Get
+		Set
+			If (Me._DOT_cantidad_soporte_3.Equals(value) = false) Then
+				Me.OnDOT_cantidad_soporte_3Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_cantidad_soporte_3 = value
+				Me.SendPropertyChanged("DOT_cantidad_soporte_3")
+				Me.OnDOT_cantidad_soporte_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_formato_soporte_1", DbType:="VarChar(15)")>  _
+	Public Property DOT_formato_soporte_1() As String
+		Get
+			Return Me._DOT_formato_soporte_1
+		End Get
+		Set
+			If (String.Equals(Me._DOT_formato_soporte_1, value) = false) Then
+				Me.OnDOT_formato_soporte_1Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_formato_soporte_1 = value
+				Me.SendPropertyChanged("DOT_formato_soporte_1")
+				Me.OnDOT_formato_soporte_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_formato_soporte_2", DbType:="VarChar(15)")>  _
+	Public Property DOT_formato_soporte_2() As String
+		Get
+			Return Me._DOT_formato_soporte_2
+		End Get
+		Set
+			If (String.Equals(Me._DOT_formato_soporte_2, value) = false) Then
+				Me.OnDOT_formato_soporte_2Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_formato_soporte_2 = value
+				Me.SendPropertyChanged("DOT_formato_soporte_2")
+				Me.OnDOT_formato_soporte_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_formato_soporte_3", DbType:="VarChar(15)")>  _
+	Public Property DOT_formato_soporte_3() As String
+		Get
+			Return Me._DOT_formato_soporte_3
+		End Get
+		Set
+			If (String.Equals(Me._DOT_formato_soporte_3, value) = false) Then
+				Me.OnDOT_formato_soporte_3Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_formato_soporte_3 = value
+				Me.SendPropertyChanged("DOT_formato_soporte_3")
+				Me.OnDOT_formato_soporte_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_id_pieza", DbType:="Int NOT NULL")>  _
+	Public Property PIE_id_pieza() As Integer
+		Get
+			Return Me._PIE_id_pieza
+		End Get
+		Set
+			If ((Me._PIE_id_pieza = value)  _
+						= false) Then
+				If Me._PIEZA.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnPIE_id_piezaChanging(value)
+				Me.SendPropertyChanging
+				Me._PIE_id_pieza = value
+				Me.SendPropertyChanged("PIE_id_pieza")
+				Me.OnPIE_id_piezaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int")>  _
+	Public Property ORT_id_orden_trabajo() As System.Nullable(Of Integer)
+		Get
+			Return Me._ORT_id_orden_trabajo
+		End Get
+		Set
+			If (Me._ORT_id_orden_trabajo.Equals(value) = false) Then
+				If Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnORT_id_orden_trabajoChanging(value)
+				Me.SendPropertyChanging
+				Me._ORT_id_orden_trabajo = value
+				Me.SendPropertyChanged("ORT_id_orden_trabajo")
+				Me.OnORT_id_orden_trabajoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="DETALLE_ORDEN_TRABAJO_RE_TRABAJO", Storage:="_RE_TRABAJO", ThisKey:="id_detalle_orden_trabajo", OtherKey:="id_detalle_orden_trabajo")>  _
+	Public Property RE_TRABAJO() As EntitySet(Of RE_TRABAJO)
+		Get
+			Return Me._RE_TRABAJO
+		End Get
+		Set
+			Me._RE_TRABAJO.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO", Storage:="_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo", IsForeignKey:=true, DeleteRule:="CASCADE")>  _
+	Public Property ORDEN_TRABAJO() As ORDEN_TRABAJO
+		Get
+			Return Me._ORDEN_TRABAJO.Entity
+		End Get
+		Set
+			Dim previousValue As ORDEN_TRABAJO = Me._ORDEN_TRABAJO.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._ORDEN_TRABAJO.Entity = Nothing
+					previousValue.DETALLE_ORDEN_TRABAJO.Remove(Me)
+				End If
+				Me._ORDEN_TRABAJO.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.DETALLE_ORDEN_TRABAJO.Add(Me)
+					Me._ORT_id_orden_trabajo = value.ORT_id_orden_trabajo
+				Else
+					Me._ORT_id_orden_trabajo = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("ORDEN_TRABAJO")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PIEZA_DETALLE_ORDEN_TRABAJO", Storage:="_PIEZA", ThisKey:="PIE_id_pieza", OtherKey:="PIE_id_pieza", IsForeignKey:=true)>  _
+	Public Property PIEZA() As PIEZA
+		Get
+			Return Me._PIEZA.Entity
+		End Get
+		Set
+			Dim previousValue As PIEZA = Me._PIEZA.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._PIEZA.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._PIEZA.Entity = Nothing
+					previousValue.DETALLE_ORDEN_TRABAJO.Remove(Me)
+				End If
+				Me._PIEZA.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.DETALLE_ORDEN_TRABAJO.Add(Me)
+					Me._PIE_id_pieza = value.PIE_id_pieza
+				Else
+					Me._PIE_id_pieza = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("PIEZA")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_RE_TRABAJO(ByVal entity As RE_TRABAJO)
+		Me.SendPropertyChanging
+		entity.DETALLE_ORDEN_TRABAJO = Me
+	End Sub
+	
+	Private Sub detach_RE_TRABAJO(ByVal entity As RE_TRABAJO)
+		Me.SendPropertyChanging
+		entity.DETALLE_ORDEN_TRABAJO = Nothing
 	End Sub
 End Class

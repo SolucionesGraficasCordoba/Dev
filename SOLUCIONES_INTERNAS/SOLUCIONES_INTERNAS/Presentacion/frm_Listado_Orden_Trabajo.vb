@@ -75,15 +75,20 @@
             vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
         End If
         vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+
+        CargarDetalle()
+    End Sub
+
+    Public Sub CargarDetalle()
         Dim datagriddetalleorden = (From o In datavistas.Vista_Detalle_Orden_Trabajo
-                           Select o.ORT_id_orden_trabajo, o.ORT_tipo_ot, o.ORT_numero_ot, o.ORT_observaciones_ot,
-                           o.VEN_id_vendedor, o.VEN_nombre_ven, o.CLI_id_cliente, o.CLI_razon_social, _
-                           o.PIE_id_pieza, o.PIE_nombre_pie, o.id_detalle_orden_trabajo, o.DOT_cantidad_dot, _
-                           o.DOT_tamaño_dot, o.DOT_tipo_impresion_dot, o.DOT_papel_soporte_1, o.DOT_papel_soporte_2, o.DOT_papel_soporte_3, _
-                           o.DOT_gramaje_soporte_1, o.DOT_gramaje_soporte_2, o.DOT_gramaje_soporte_3, _
-                           o.DOT_cantidad_soporte_1, o.DOT_cantidad_soporte_2, o.DOT_cantidad_soporte_3, _
-                           o.DOT_formato_soporte_1, o.DOT_formato_soporte_2, o.DOT_formato_soporte_3
-                           Where ORT_id_orden_trabajo = vble_id_orden)
+                          Select o.ORT_id_orden_trabajo, o.ORT_tipo_ot, o.ORT_numero_ot, o.ORT_observaciones_ot,
+                          o.VEN_id_vendedor, o.VEN_nombre_ven, o.CLI_id_cliente, o.CLI_razon_social, _
+                          o.PIE_id_pieza, o.PIE_nombre_pie, o.id_detalle_orden_trabajo, o.DOT_cantidad_dot, _
+                          o.DOT_tamaño_dot, o.DOT_tipo_impresion_dot, o.DOT_papel_soporte_1, o.DOT_papel_soporte_2, o.DOT_papel_soporte_3, _
+                          o.DOT_gramaje_soporte_1, o.DOT_gramaje_soporte_2, o.DOT_gramaje_soporte_3, _
+                          o.DOT_cantidad_soporte_1, o.DOT_cantidad_soporte_2, o.DOT_cantidad_soporte_3, _
+                          o.DOT_formato_soporte_1, o.DOT_formato_soporte_2, o.DOT_formato_soporte_3
+                          Where ORT_id_orden_trabajo = vble_id_orden)
         mostrargrillaobligaciones(datagriddetalleorden)
         Label1.Text = dgv_detalle_orden.Rows.Count
     End Sub
@@ -474,7 +479,9 @@
                     datacontext.DETALLE_ORDEN_TRABAJO.DeleteOnSubmit(eliminar)
                     datacontext.SubmitChanges()
                     MsgBox("El detalle de la orden ha sido eliminada")
-                    cargargrilla()
+                    CargarDetalle()
+                    Me.Close()
+
             End Select
         Else
             MsgBox("Debe seleccionar un detalle")

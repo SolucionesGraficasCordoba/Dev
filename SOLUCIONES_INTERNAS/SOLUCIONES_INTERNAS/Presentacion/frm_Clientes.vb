@@ -15,38 +15,43 @@
     End Sub
 
     Private Sub btnGuardar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Cliente.Click
-        Try
-            Dim buscacliente = (From cli In datacontext.CLIENTE Select cli.CLI_razon_social, cli.CLI_mail_cli, cli.CLI_telefono_cli, cli.CLI_domicilio, cli.CLI_localidad, cli.CLI_codigo_postal
-                                Where CLI_razon_social = txt_razonsocial_cliente.Text.ToUpper).Any
-            If buscacliente = True Then
-                MsgBox("El cliente ingresado ya existe")
+        'Try
+        Dim buscacliente = (From cli In datacontext.CLIENTE Select cli.CLI_razon_social, cli.CLI_mail_cli, cli.CLI_telefono_cli, cli.CLI_domicilio, cli.CLI_localidad, cli.CLI_codigo_postal
+                            Where CLI_razon_social = txt_razonsocial_cliente.Text.ToUpper).Any
+        If buscacliente = True Then
+            MsgBox("El cliente ingresado ya existe")
+            limpiarcontroles()
+            Exit Sub
+        End If
+
+        If txt_razonsocial_cliente.Text.Length = 0 Then
+            MsgBox("Debe completar todos los campos requeridos")
+            Exit Sub
+        End If
+        Dim clie = New CLIENTE
+        clie.CLI_razon_social = txt_razonsocial_cliente.Text
+        clie.CLI_mail_cli = txt_mail_cliente.Text
+        clie.CLI_telefono_cli = txtTelefono_Cliente.Text
+        clie.CLI_domicilio = txt_Domicilio_Cliente.Text
+        clie.CLI_localidad = txt_Localidad_Cliente.Text
+        clie.CLI_codigo_postal = txt_Codigo_Postal_Cliente.Text
+
+        datacontext.CLIENTE.InsertOnSubmit(clie)
+        datacontext.SubmitChanges()
+       
+        Select Case MsgBox("El Cliente fue creado, cargar otro?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Nuevo cliente")
+            Case MsgBoxResult.No
+                Me.Close()
+            Case MsgBoxResult.Yes
                 limpiarcontroles()
-                Exit Sub
-            End If
+        End Select
 
-            If txt_razonsocial_cliente.Text.Length = 0 Then
-                MsgBox("Debe completar todos los campos requeridos")
-                Exit Sub
-            End If
-            Dim clie = New CLIENTE
-            clie.CLI_razon_social = txt_razonsocial_cliente.Text
-            clie.CLI_mail_cli = txt_mail_cliente.Text
-            clie.CLI_telefono_cli = txtTelefono_Cliente.Text
-            clie.CLI_domicilio = txt_Domicilio_Cliente.Text
-            clie.CLI_localidad = txt_Localidad_Cliente.Text
-            clie.CLI_codigo_postal = txt_Codigo_Postal_Cliente.Text
+        '   Catch ex As Exception
+        'MsgBox("El cliente NO fue creado")
+        '  limpiarcontroles()
+        '  cargargrilla()
+        '  End Try
 
-            datacontext.CLIENTE.InsertOnSubmit(clie)
-            datacontext.SubmitChanges()
-            MsgBox("El cliente se ha creado correctamente", vbInformation)
-            cargargrilla()
-            limpiarcontroles()
-            Me.Close()
-        Catch ex As Exception
-            MsgBox("El cliente NO fue creado")
-            limpiarcontroles()
-            cargargrilla()
-        End Try
     End Sub
 
     Sub limpiarcontroles()
@@ -63,10 +68,9 @@
         End If
         Try
             Dim ActualizarCliente = (From P In datacontext.CLIENTE Where P.CLI_id_cliente = (txt_id_cliente.Text.ToUpper)).ToList()(0)
-
             ActualizarCliente.CLI_razon_social = txt_razonsocial_cliente.Text
             ActualizarCliente.CLI_mail_cli = txt_mail_cliente.Text
-            ActualizarCliente.CLI_telefono_cli = txt_Codigo_Postal_Cliente.Text
+            ActualizarCliente.CLI_telefono_cli = txtTelefono_Cliente.Text
             ActualizarCliente.CLI_domicilio = txt_Domicilio_Cliente.Text
             ActualizarCliente.CLI_localidad = txt_Localidad_Cliente.Text
             ActualizarCliente.CLI_codigo_postal = txt_Codigo_Postal_Cliente.Text

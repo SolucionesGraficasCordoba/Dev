@@ -21,31 +21,6 @@
       <Association Name="SECTOR_COLABORADOR" Member="SECTOR" ThisKey="SEC_id_sector" OtherKey="SEC_id_sector" Type="SECTOR" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DETALLE_ORDEN_TRABAJO" Member="DETALLE_ORDEN_TRABAJO">
-    <Type Name="DETALLE_ORDEN_TRABAJO">
-      <Column Name="id_detalle_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="DOT_cantidad_dot" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOT_tamaño_dot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DOT_tipo_impresion_dot" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
-      <Column Name="DOT_papel_soporte_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DOT_papel_soporte_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DOT_papel_soporte_3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DOT_gramaje_soporte_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOT_gramaje_soporte_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOT_gramaje_soporte_3" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOT_cantidad_soporte_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOT_cantidad_soporte_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOT_cantidad_soporte_3" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DOT_formato_soporte_1" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="DOT_formato_soporte_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="DOT_formato_soporte_3" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="PIE_id_pieza" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="DETALLE_ORDEN_TRABAJO_RE_TRABAJO" Member="RE_TRABAJO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="RE_TRABAJO" />
-      <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" DeleteRule="CASCADE" />
-      <Association Name="PIEZA_DETALLE_ORDEN_TRABAJO" Member="PIEZA" ThisKey="PIE_id_pieza" OtherKey="PIE_id_pieza" Type="PIEZA" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.ORDEN_TRABAJO" Member="ORDEN_TRABAJO">
     <Type Name="ORDEN_TRABAJO">
       <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -56,8 +31,8 @@
       <Column Name="ORT_mejoras_ot" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="VEN_id_vendedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="CLI_id_cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="DETALLE_ORDEN_TRABAJO" />
       <Association Name="ORDEN_TRABAJO_TAREA" Member="TAREA" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="TAREA" />
+      <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="DETALLE_ORDEN_TRABAJO" />
       <Association Name="VENDEDOR_ORDEN_TRABAJO" Member="VENDEDOR" ThisKey="VEN_id_vendedor" OtherKey="VEN_id_vendedor" Type="VENDEDOR" IsForeignKey="true" />
       <Association Name="CLIENTE_ORDEN_TRABAJO" Member="CLIENTE" ThisKey="CLI_id_cliente" OtherKey="CLI_id_cliente" Type="CLIENTE" IsForeignKey="true" />
     </Type>
@@ -135,8 +110,33 @@
       <Column Name="CLI_telefono_cli" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="CLI_domicilio" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="CLI_localidad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="CLI_codigo_postal" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CLI_codigo_postal" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Association Name="CLIENTE_ORDEN_TRABAJO" Member="ORDEN_TRABAJO" ThisKey="CLI_id_cliente" OtherKey="CLI_id_cliente" Type="ORDEN_TRABAJO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DETALLE_ORDEN_TRABAJO" Member="DETALLE_ORDEN_TRABAJO">
+    <Type Name="DETALLE_ORDEN_TRABAJO">
+      <Column Name="id_detalle_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DOT_cantidad_dot" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_tamaño_dot" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT_tipo_impresion_dot" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DOT_papel_soporte_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT_papel_soporte_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT_papel_soporte_3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT_gramaje_soporte_1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DOT_gramaje_soporte_2" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DOT_gramaje_soporte_3" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DOT_cantidad_soporte_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_cantidad_soporte_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_cantidad_soporte_3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_formato_soporte_1" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DOT_formato_soporte_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DOT_formato_soporte_3" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PIE_id_pieza" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="DETALLE_ORDEN_TRABAJO_RE_TRABAJO" Member="RE_TRABAJO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="RE_TRABAJO" />
+      <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" DeleteRule="CASCADE" />
+      <Association Name="PIEZA_DETALLE_ORDEN_TRABAJO" Member="PIEZA" ThisKey="PIE_id_pieza" OtherKey="PIE_id_pieza" Type="PIEZA" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
