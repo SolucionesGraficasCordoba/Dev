@@ -75,12 +75,12 @@
             vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
         End If
         vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-
         CargarDetalle()
+      
     End Sub
 
     Public Sub CargarDetalle()
-        Dim datagriddetalleorden = (From o In datavistas.Vista_Detalle_Orden_Trabajo
+        Dim datagriddetalleorden = (From o In datavistas.Vista_Detalle_Orden_Trabajo_1
                           Select o.ORT_id_orden_trabajo, o.ORT_tipo_ot, o.ORT_numero_ot, o.ORT_observaciones_ot,
                           o.VEN_id_vendedor, o.VEN_nombre_ven, o.CLI_id_cliente, o.CLI_razon_social, _
                           o.PIE_id_pieza, o.PIE_nombre_pie, o.id_detalle_orden_trabajo, o.DOT_cantidad_dot, _
@@ -474,12 +474,12 @@
 
             Dim eliminar = (From C In datacontext.DETALLE_ORDEN_TRABAJO Where C.id_detalle_orden_trabajo = CInt(dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value)).ToList()(0)
 
-            Select Case MsgBox("Se eliminará la orden seleccionada, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar detalle de la orden")
+            Select Case MsgBox("Se eliminará el detalle seleccionado, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar detalle de la orden")
                 Case MsgBoxResult.Yes
                     datacontext.DETALLE_ORDEN_TRABAJO.DeleteOnSubmit(eliminar)
                     datacontext.SubmitChanges()
                     MsgBox("El detalle de la orden ha sido eliminada")
-                    CargarDetalle()
+                    ' CargarDetalle()
                     Me.Close()
 
             End Select
@@ -652,4 +652,6 @@
         frm_retrabajo.dtp_Fecha_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(3).Value
         Me.Close()
     End Sub
+
+   
 End Class

@@ -193,25 +193,33 @@
                 detalle.DOT_papel_soporte_3 = txt_Papel3_Soporte1.Text
 
                 'GRAMAJE PRODUCTO 1
-                txt_Gramaje1_Soporte1.Text = 0
+                ' txt_Gramaje1_Soporte1.Text = 0
                 detalle.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte1.Text
 
-                txt_Gramaje2_Soporte1.Text = 0
+                ' txt_Gramaje2_Soporte1.Text = 0
                 detalle.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte1.Text
 
-                txt_Gramaje3_Soporte1.Text = 0
+                ' txt_Gramaje3_Soporte1.Text = 0
                 detalle.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte1.Text
 
                 'CANTIDAD PRODUCTO 1
-                txt_Cantidad1_Soporte1.Text = 0
-                detalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte1.Text
+                If txt_Cantidad1_Soporte1.TextLength = 0 Then
+                    txt_Cantidad1_Soporte1.Text = 0
+                Else
+                    detalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte1.Text
+                End If
 
-                txt_Cantidad2_Soporte1.Text = 0
-                detalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte1.Text
+                If txt_Cantidad2_Soporte1.TextLength = 0 Then
+                    txt_Cantidad2_Soporte1.Text = 0
+                Else
+                    detalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte1.Text
+                End If
 
-
-                txt_Cantidad3_Soporte1.Text = 0
-                detalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte1.Text
+                If txt_Cantidad3_Soporte1.TextLength = 0 Then
+                    txt_Cantidad3_Soporte1.Text = 0
+                Else
+                    detalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte1.Text
+                End If
 
                 'FORMATO PRODUCTO 1
                 detalle.DOT_formato_soporte_1 = cboFormato1_Soporte1.SelectedItem
@@ -294,9 +302,28 @@
                 detalle.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte3.Text
                 detalle.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte3.Text
                 'CANTIDAD REGISTRO 2
-                detalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte3.Text
-                detalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte3.Text
-                detalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte3.Text
+
+                If txt_Cantidad1_Soporte3.TextLength = 0 Then
+                    txt_Cantidad1_Soporte3.Text = 0
+                Else
+                    detalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte3.Text
+                End If
+
+               
+                If txt_Cantidad2_Soporte3.TextLength = 0 Then
+                    txt_Cantidad2_Soporte3.Text = 0
+                Else
+                    detalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte3.Text
+                End If
+
+
+                If txt_Cantidad3_Soporte3.TextLength = 0 Then
+                    txt_Cantidad3_Soporte3.Text = 0
+                Else
+                    detalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte3.Text
+                End If
+
+
                 'FORMATO REGISTRO 2
                 detalle.DOT_formato_soporte_1 = cboFormato1_Soporte3.SelectedItem
                 detalle.DOT_formato_soporte_2 = cboFormato2_Soporte3.SelectedItem
@@ -786,13 +813,5 @@
     Private Sub btnCancelar_Orden_Trabajo_Click_1(sender As System.Object, e As System.EventArgs) Handles btnCancelar_Orden_Trabajo.Click
         Me.Close()
         Me.Dispose()
-    End Sub
-
-    Private Sub txt_observaciones_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_observaciones.TextChanged
-
-    End Sub
-
-    Private Sub txt_Gramaje1_Soporte1_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_Gramaje1_Soporte1.TextChanged
-
     End Sub
 End Class
