@@ -308,7 +308,9 @@
     <EmbeddedResource Include="Presentacion\frm_Vendedor.resx">
       <DependentUpon>frm_Vendedor.vb</DependentUpon>
     </EmbeddedResource>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Datos\DataS_Interno.dbml.layout">
       <DependentUpon>DataS_Interno.dbml</DependentUpon>
     </None>

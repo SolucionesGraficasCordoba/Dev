@@ -814,4 +814,11 @@
         Me.Close()
         Me.Dispose()
     End Sub
+
+    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
+        PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
+        PrintForm1.PrinterSettings.DefaultPageSettings.Landscape = True
+        PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
+        PrintForm1.Print() 'imprimir
+    End Sub
 End Class

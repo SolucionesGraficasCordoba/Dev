@@ -537,7 +537,6 @@
         Try
             Dim ActualizarTarea = (From P In datacontext.TAREA
                                    Where P.TAR_id_tarea = (txt_id_tarea.Text.ToUpper)).ToList()(0)
-
             ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado1.Text
             ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado2.Text
             ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado3.Text
@@ -605,7 +604,6 @@
             ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion20.Text
 
             ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria1.Text
-
 
             ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea1.Text
             ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea2.Text
