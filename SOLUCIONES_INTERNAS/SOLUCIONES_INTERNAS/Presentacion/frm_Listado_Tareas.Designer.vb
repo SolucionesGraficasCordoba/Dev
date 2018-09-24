@@ -173,7 +173,7 @@ Partial Class frm_Listado_Tareas
         '
         Me.Label1.AutoSize = True
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Location = New System.Drawing.Point(131, 252)
+        Me.Label1.Location = New System.Drawing.Point(125, 252)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(2, 15)
         Me.Label1.TabIndex = 5

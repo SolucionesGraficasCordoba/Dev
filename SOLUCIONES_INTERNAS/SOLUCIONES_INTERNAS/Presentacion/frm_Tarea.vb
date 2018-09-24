@@ -400,14 +400,17 @@
                 datacontext.SubmitChanges()
             Else
             End If
-            MsgBox("La tarea se ha creado correctamente", vbInformation)
-            ' frm_Listado_Tareas.cargargrilla()
-            limpiarcontroles()
+           Select MsgBox("La tarea se ha creado correctamente, desea imprimir??", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Imprimir Tareas")
+                Case MsgBoxResult.Yes
+                    PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
+                    PrintForm1.PrinterSettings.DefaultPageSettings.Landscape = True
+                    PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
+                    PrintForm1.Print() 'imprimir
+            End Select
             Me.Close()
         Catch ex As Exception
             MsgBox("La tarea NO fue creada")
             limpiarcontroles()
-            'frm_Listado_Tareas.cargargrilla()
         End Try
     End Sub
 
@@ -1936,5 +1939,12 @@
 
     Private Sub txtTiempo_Estimado20_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado20.TextChanged
         Calcular()
+    End Sub
+
+    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
+        PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
+        PrintForm1.PrinterSettings.DefaultPageSettings.Landscape = True
+        PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
+        PrintForm1.Print() 'imprimir
     End Sub
 End Class
