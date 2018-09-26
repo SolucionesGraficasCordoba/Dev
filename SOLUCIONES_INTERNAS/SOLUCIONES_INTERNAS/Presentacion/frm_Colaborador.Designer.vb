@@ -23,6 +23,7 @@ Partial Class frm_Colaborador
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupListadoColaboradores = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.lblTotal_Colaboradores = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnEliminar_Colaborador = New System.Windows.Forms.Button()
@@ -43,6 +44,7 @@ Partial Class frm_Colaborador
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.GroupListadoColaboradores.SuspendLayout()
         CType(Me.dgvLista_Colaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupNuevoColaborador.SuspendLayout()
@@ -50,6 +52,7 @@ Partial Class frm_Colaborador
         '
         'GroupListadoColaboradores
         '
+        Me.GroupListadoColaboradores.Controls.Add(Me.Button1)
         Me.GroupListadoColaboradores.Controls.Add(Me.lblTotal_Colaboradores)
         Me.GroupListadoColaboradores.Controls.Add(Me.Label5)
         Me.GroupListadoColaboradores.Controls.Add(Me.btnEliminar_Colaborador)
@@ -62,6 +65,15 @@ Partial Class frm_Colaborador
         Me.GroupListadoColaboradores.TabIndex = 5
         Me.GroupListadoColaboradores.TabStop = False
         Me.GroupListadoColaboradores.Text = "Listado de Colaborador"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(183, 343)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 6
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'lblTotal_Colaboradores
         '
@@ -249,6 +261,9 @@ Partial Class frm_Colaborador
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "id_colaborador"
         '
+        'PrintDocument1
+        '
+        '
         'frm_Colaborador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -288,4 +303,6 @@ Partial Class frm_Colaborador
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cbo_sector As System.Windows.Forms.ComboBox
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
 End Class
