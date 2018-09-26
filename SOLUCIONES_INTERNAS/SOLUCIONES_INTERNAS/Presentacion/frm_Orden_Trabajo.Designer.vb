@@ -220,14 +220,14 @@ Partial Class frm_Orden_Trabajo
         Me.GroupListadoPiezas.Controls.Add(Me.btnNueva_Orden_Trabajo)
         Me.GroupListadoPiezas.Location = New System.Drawing.Point(12, 149)
         Me.GroupListadoPiezas.Name = "GroupListadoPiezas"
-        Me.GroupListadoPiezas.Size = New System.Drawing.Size(922, 557)
+        Me.GroupListadoPiezas.Size = New System.Drawing.Size(915, 557)
         Me.GroupListadoPiezas.TabIndex = 28
         Me.GroupListadoPiezas.TabStop = False
         Me.GroupListadoPiezas.Text = "Detalles de la orden"
         '
         'btnImprimir
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(536, 522)
+        Me.btnImprimir.Location = New System.Drawing.Point(526, 522)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(75, 23)
         Me.btnImprimir.TabIndex = 37
@@ -252,7 +252,7 @@ Partial Class frm_Orden_Trabajo
         Me.GroupProducto3.Size = New System.Drawing.Size(889, 163)
         Me.GroupProducto3.TabIndex = 36
         Me.GroupProducto3.TabStop = False
-        Me.GroupProducto3.Text = "Registro 3"
+        Me.GroupProducto3.Text = "Producto 3"
         '
         'txt_id_detalle_orden_trabajo3
         '
@@ -300,7 +300,7 @@ Partial Class frm_Orden_Trabajo
         Me.GroupBox6.Controls.Add(Me.Label36)
         Me.GroupBox6.Controls.Add(Me.Label37)
         Me.GroupBox6.Controls.Add(Me.Label38)
-        Me.GroupBox6.Location = New System.Drawing.Point(450, 19)
+        Me.GroupBox6.Location = New System.Drawing.Point(442, 19)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(433, 131)
         Me.GroupBox6.TabIndex = 55
@@ -525,7 +525,7 @@ Partial Class frm_Orden_Trabajo
         '
         'btnGuardar_Orden_Trabajo
         '
-        Me.btnGuardar_Orden_Trabajo.Location = New System.Drawing.Point(637, 522)
+        Me.btnGuardar_Orden_Trabajo.Location = New System.Drawing.Point(627, 522)
         Me.btnGuardar_Orden_Trabajo.Name = "btnGuardar_Orden_Trabajo"
         Me.btnGuardar_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar_Orden_Trabajo.TabIndex = 32
@@ -550,7 +550,7 @@ Partial Class frm_Orden_Trabajo
         Me.GroupProducto2.Size = New System.Drawing.Size(889, 163)
         Me.GroupProducto2.TabIndex = 35
         Me.GroupProducto2.TabStop = False
-        Me.GroupProducto2.Text = "Registro 2"
+        Me.GroupProducto2.Text = "Producto 2"
         '
         'txt_id_detalle_orden_trabajo2
         '
@@ -598,7 +598,7 @@ Partial Class frm_Orden_Trabajo
         Me.GroupBox2.Controls.Add(Me.Label13)
         Me.GroupBox2.Controls.Add(Me.Label22)
         Me.GroupBox2.Controls.Add(Me.Label27)
-        Me.GroupBox2.Location = New System.Drawing.Point(450, 19)
+        Me.GroupBox2.Location = New System.Drawing.Point(443, 19)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(433, 131)
         Me.GroupBox2.TabIndex = 55
@@ -931,7 +931,7 @@ Partial Class frm_Orden_Trabajo
         Me.GroupBox5.Controls.Add(Me.txt_Cantidad1_Soporte1)
         Me.GroupBox5.Controls.Add(Me.txt_Gramaje1_Soporte1)
         Me.GroupBox5.Controls.Add(Me.txt_Papel1_Soporte1)
-        Me.GroupBox5.Location = New System.Drawing.Point(450, 21)
+        Me.GroupBox5.Location = New System.Drawing.Point(443, 21)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(433, 131)
         Me.GroupBox5.TabIndex = 55
@@ -1156,7 +1156,7 @@ Partial Class frm_Orden_Trabajo
         '
         'btnCancelar_Orden_Trabajo
         '
-        Me.btnCancelar_Orden_Trabajo.Location = New System.Drawing.Point(833, 522)
+        Me.btnCancelar_Orden_Trabajo.Location = New System.Drawing.Point(823, 522)
         Me.btnCancelar_Orden_Trabajo.Name = "btnCancelar_Orden_Trabajo"
         Me.btnCancelar_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar_Orden_Trabajo.TabIndex = 31
@@ -1165,7 +1165,7 @@ Partial Class frm_Orden_Trabajo
         '
         'btnActualizar_Orden_Trabajo
         '
-        Me.btnActualizar_Orden_Trabajo.Location = New System.Drawing.Point(735, 522)
+        Me.btnActualizar_Orden_Trabajo.Location = New System.Drawing.Point(725, 522)
         Me.btnActualizar_Orden_Trabajo.Name = "btnActualizar_Orden_Trabajo"
         Me.btnActualizar_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
         Me.btnActualizar_Orden_Trabajo.TabIndex = 30
@@ -1174,7 +1174,7 @@ Partial Class frm_Orden_Trabajo
         '
         'btnNueva_Orden_Trabajo
         '
-        Me.btnNueva_Orden_Trabajo.Location = New System.Drawing.Point(437, 522)
+        Me.btnNueva_Orden_Trabajo.Location = New System.Drawing.Point(427, 522)
         Me.btnNueva_Orden_Trabajo.Name = "btnNueva_Orden_Trabajo"
         Me.btnNueva_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
         Me.btnNueva_Orden_Trabajo.TabIndex = 29
@@ -1202,7 +1202,7 @@ Partial Class frm_Orden_Trabajo
         '
         'txt_mejoras
         '
-        Me.txt_mejoras.Location = New System.Drawing.Point(606, 126)
+        Me.txt_mejoras.Location = New System.Drawing.Point(581, 126)
         Me.txt_mejoras.Multiline = True
         Me.txt_mejoras.Name = "txt_mejoras"
         Me.txt_mejoras.Size = New System.Drawing.Size(328, 20)
@@ -1211,7 +1211,7 @@ Partial Class frm_Orden_Trabajo
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(556, 129)
+        Me.Label19.Location = New System.Drawing.Point(531, 129)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(44, 13)
         Me.Label19.TabIndex = 44
@@ -1219,7 +1219,7 @@ Partial Class frm_Orden_Trabajo
         '
         'txt_observaciones
         '
-        Me.txt_observaciones.Location = New System.Drawing.Point(606, 22)
+        Me.txt_observaciones.Location = New System.Drawing.Point(581, 22)
         Me.txt_observaciones.Multiline = True
         Me.txt_observaciones.Name = "txt_observaciones"
         Me.txt_observaciones.Size = New System.Drawing.Size(328, 98)
@@ -1235,7 +1235,7 @@ Partial Class frm_Orden_Trabajo
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(522, 25)
+        Me.Label18.Location = New System.Drawing.Point(497, 25)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(78, 13)
         Me.Label18.TabIndex = 42
@@ -1368,7 +1368,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(956, 713)
+        Me.ClientSize = New System.Drawing.Size(936, 713)
         Me.Controls.Add(Me.Label46)
         Me.Controls.Add(Me.txtNumero_Orden_Trabajo)
         Me.Controls.Add(Me.Label6)

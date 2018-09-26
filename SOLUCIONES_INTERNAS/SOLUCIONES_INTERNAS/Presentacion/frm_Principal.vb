@@ -398,8 +398,12 @@ Public Class frm_Principal
 
     Private Sub ConsultarToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem1.Click
         frm_Listado_Retrabajo.Text = "Consultar Re-Trabajo"
-        frm_Listado_Retrabajo.btnGenerarInforme.Enabled = False
+        frm_Listado_Retrabajo.btnGenerarInforme.Enabled = True
         frm_Listado_Retrabajo.btnEliminar_ReTrabajo.Enabled = False
         frm_Listado_Retrabajo.Show()
+    End Sub
+
+    Private Sub GenerarInformesToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles GenerarInformesToolStripMenuItem.Click
+
     End Sub
 End Class

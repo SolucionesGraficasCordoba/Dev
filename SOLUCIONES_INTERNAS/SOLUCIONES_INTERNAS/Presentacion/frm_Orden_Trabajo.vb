@@ -819,6 +819,13 @@
         PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
         PrintForm1.PrinterSettings.DefaultPageSettings.Landscape = True
         PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
-        PrintForm1.Print() 'imprimir
+
+        PrintForm1.PrinterSettings.DefaultPageSettings.Margins = New System.Drawing.Printing.Margins(0, 0, 0, 0)
+        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Left = 65
+        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Right = 0
+        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Top = 60
+        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Bottom = 0
+
+        PrintForm1.Print()
     End Sub
 End Class

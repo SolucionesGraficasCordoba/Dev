@@ -126,25 +126,25 @@ Partial Class frm_Principal
         'AltaUsuariosToolStripMenuItem
         '
         Me.AltaUsuariosToolStripMenuItem.Name = "AltaUsuariosToolStripMenuItem"
-        Me.AltaUsuariosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AltaUsuariosToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.AltaUsuariosToolStripMenuItem.Text = "Nuevo"
         '
         'CambiarContraeñaToolStripMenuItem
         '
         Me.CambiarContraeñaToolStripMenuItem.Name = "CambiarContraeñaToolStripMenuItem"
-        Me.CambiarContraeñaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CambiarContraeñaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.CambiarContraeñaToolStripMenuItem.Text = "Modificar"
         '
         'EliminarUsuarioToolStripMenuItem
         '
         Me.EliminarUsuarioToolStripMenuItem.Name = "EliminarUsuarioToolStripMenuItem"
-        Me.EliminarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EliminarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.EliminarUsuarioToolStripMenuItem.Text = "Eliminar"
         '
         'ConsultarUsuarioToolStripMenuItem
         '
         Me.ConsultarUsuarioToolStripMenuItem.Name = "ConsultarUsuarioToolStripMenuItem"
-        Me.ConsultarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ConsultarUsuarioToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.ConsultarUsuarioToolStripMenuItem.Text = "Consultar"
         '
         'ColaboradorToolStripMenuItem
