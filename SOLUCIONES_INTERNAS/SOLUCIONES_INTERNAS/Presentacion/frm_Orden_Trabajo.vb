@@ -1,7 +1,6 @@
 ﻿Public Class frm_Orden_Trabajo
 
     Dim datacontext As New DataS_Interno
-
     Public quienllamo_listado_orden As Form
 
     Private Sub frm_Orden_Trabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
