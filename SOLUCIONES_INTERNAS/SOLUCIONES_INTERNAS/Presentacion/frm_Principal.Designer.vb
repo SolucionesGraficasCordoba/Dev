@@ -82,6 +82,7 @@ Partial Class frm_Principal
         Me.LBL_MENU_USU = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.EtiquetaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -391,7 +392,7 @@ Partial Class frm_Principal
         '
         'GenerarInformesToolStripMenuItem
         '
-        Me.GenerarInformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TareasToolStripMenuItem1, Me.OrdenDeTrabajoToolStripMenuItem, Me.ReTrabajoToolStripMenuItem})
+        Me.GenerarInformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TareasToolStripMenuItem1, Me.OrdenDeTrabajoToolStripMenuItem, Me.ReTrabajoToolStripMenuItem, Me.EtiquetaToolStripMenuItem})
         Me.GenerarInformesToolStripMenuItem.Name = "GenerarInformesToolStripMenuItem"
         Me.GenerarInformesToolStripMenuItem.Size = New System.Drawing.Size(110, 20)
         Me.GenerarInformesToolStripMenuItem.Text = "Generar Informes"
@@ -466,6 +467,12 @@ Partial Class frm_Principal
         Me.GroupBox1.Size = New System.Drawing.Size(1360, 38)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
+        '
+        'EtiquetaToolStripMenuItem
+        '
+        Me.EtiquetaToolStripMenuItem.Name = "EtiquetaToolStripMenuItem"
+        Me.EtiquetaToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.EtiquetaToolStripMenuItem.Text = "Etiqueta"
         '
         'frm_Principal
         '
@@ -544,5 +551,6 @@ Partial Class frm_Principal
     Friend WithEvents NuevoRetrabajoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultarToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EtiquetaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

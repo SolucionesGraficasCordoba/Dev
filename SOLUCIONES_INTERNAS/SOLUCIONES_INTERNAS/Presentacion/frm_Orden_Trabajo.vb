@@ -826,6 +826,12 @@
         PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Top = 60
         PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Bottom = 0
 
+        btnNueva_Orden_Trabajo.Visible = False
+        btnImprimir.Visible = False
+        btnGuardar_Orden_Trabajo.Visible = False
+        btnActualizar_Orden_Trabajo.Visible = False
+        btnCancelar_Orden_Trabajo.Visible = False
+        Label17.Visible = False
         PrintForm1.Print()
     End Sub
 End Class
