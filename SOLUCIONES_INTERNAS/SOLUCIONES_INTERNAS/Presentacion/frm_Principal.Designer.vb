@@ -76,13 +76,13 @@ Partial Class frm_Principal
         Me.TareasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OrdenDeTrabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReTrabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EtiquetaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.LBL_MENU_PERFIL = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.LBL_MENU_USU = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.EtiquetaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -415,6 +415,12 @@ Partial Class frm_Principal
         Me.ReTrabajoToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.ReTrabajoToolStripMenuItem.Text = "Re-Trabajo"
         '
+        'EtiquetaToolStripMenuItem
+        '
+        Me.EtiquetaToolStripMenuItem.Name = "EtiquetaToolStripMenuItem"
+        Me.EtiquetaToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
+        Me.EtiquetaToolStripMenuItem.Text = "Etiqueta"
+        '
         'LBL_MENU_PERFIL
         '
         Me.LBL_MENU_PERFIL.AutoSize = True
@@ -468,12 +474,6 @@ Partial Class frm_Principal
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         '
-        'EtiquetaToolStripMenuItem
-        '
-        Me.EtiquetaToolStripMenuItem.Name = "EtiquetaToolStripMenuItem"
-        Me.EtiquetaToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
-        Me.EtiquetaToolStripMenuItem.Text = "Etiqueta"
-        '
         'frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -485,6 +485,7 @@ Partial Class frm_Principal
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "frm_Principal"
         Me.Text = "Menú Principal"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)

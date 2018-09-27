@@ -153,6 +153,7 @@ Partial Class frm_Orden_Trabajo
         Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupListadoPiezas.SuspendLayout()
         Me.GroupProducto3.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
@@ -209,6 +210,7 @@ Partial Class frm_Orden_Trabajo
         '
         'GroupListadoPiezas
         '
+        Me.GroupListadoPiezas.Controls.Add(Me.Button1)
         Me.GroupListadoPiezas.Controls.Add(Me.btnImprimir)
         Me.GroupListadoPiezas.Controls.Add(Me.GroupProducto3)
         Me.GroupListadoPiezas.Controls.Add(Me.Label17)
@@ -1279,7 +1281,7 @@ Partial Class frm_Orden_Trabajo
         '
         'btnBuscar_Vendedor
         '
-        Me.btnBuscar_Vendedor.Location = New System.Drawing.Point(359, 79)
+        Me.btnBuscar_Vendedor.Location = New System.Drawing.Point(359, 81)
         Me.btnBuscar_Vendedor.Name = "btnBuscar_Vendedor"
         Me.btnBuscar_Vendedor.Size = New System.Drawing.Size(52, 23)
         Me.btnBuscar_Vendedor.TabIndex = 38
@@ -1363,6 +1365,15 @@ Partial Class frm_Orden_Trabajo
         Me.PrintForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPrinter
         Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
         Me.PrintForm1.PrintFileName = Nothing
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(143, 522)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(167, 23)
+        Me.Button1.TabIndex = 38
+        Me.Button1.Text = "Mostrar Proceso de Corte"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'frm_Orden_Trabajo
         '
@@ -1544,4 +1555,5 @@ Partial Class frm_Orden_Trabajo
     Friend WithEvents Label28 As System.Windows.Forms.Label
     Friend WithEvents Label29 As System.Windows.Forms.Label
     Friend WithEvents PrintForm1 As Microsoft.VisualBasic.PowerPacks.Printing.PrintForm
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

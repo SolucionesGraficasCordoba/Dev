@@ -147,6 +147,25 @@
 
     Private Sub btnGuardar_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar.Click
         Try
+
+            If txt_tarea.Text.Length = 0 Then
+                MsgBox("Debe completar la descripción de la tarea")
+                txt_tarea.Focus()
+                Exit Sub
+            End If
+
+            If txtNumero_Orden_Trabajo.Text.Length = 0 Then
+                MsgBox("Debe seleccionar un Número de Orden")
+                btn_buscar_numero_orden.Focus()
+                Exit Sub
+            End If
+
+            If txt_nombre_colaborador.Text.Length = 0 Then
+                MsgBox("Debe seleccionar un Colaborador")
+                btn_buscar_colaborador.Focus()
+                Exit Sub
+            End If
+
             If txt_tarea.Text.Length <> 0 Then
                 'REGISTRO 1 DE TAREA
                 Dim tar1 = New TAREA

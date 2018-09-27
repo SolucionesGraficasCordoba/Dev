@@ -15,42 +15,42 @@
     End Sub
 
     Private Sub btnGuardar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Cliente.Click
-        'Try
-        Dim buscacliente = (From cli In datacontext.CLIENTE Select cli.CLI_razon_social, cli.CLI_mail_cli, cli.CLI_telefono_cli, cli.CLI_domicilio, cli.CLI_localidad, cli.CLI_codigo_postal
-                            Where CLI_razon_social = txt_razonsocial_cliente.Text.ToUpper).Any
-        If buscacliente = True Then
-            MsgBox("El cliente ingresado ya existe")
-            limpiarcontroles()
-            Exit Sub
-        End If
-
-        If txt_razonsocial_cliente.Text.Length = 0 Then
-            MsgBox("Debe completar todos los campos requeridos")
-            Exit Sub
-        End If
-        Dim clie = New CLIENTE
-        clie.CLI_razon_social = txt_razonsocial_cliente.Text
-        clie.CLI_mail_cli = txt_mail_cliente.Text
-        clie.CLI_telefono_cli = txtTelefono_Cliente.Text
-        clie.CLI_domicilio = txt_Domicilio_Cliente.Text
-        clie.CLI_localidad = txt_Localidad_Cliente.Text
-        clie.CLI_codigo_postal = txt_Codigo_Postal_Cliente.Text
-
-        datacontext.CLIENTE.InsertOnSubmit(clie)
-        datacontext.SubmitChanges()
-       
-        Select Case MsgBox("El Cliente fue creado, cargar otro?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Nuevo cliente")
-            Case MsgBoxResult.No
-                Me.Close()
-            Case MsgBoxResult.Yes
+        Try
+            Dim buscacliente = (From cli In datacontext.CLIENTE Select cli.CLI_razon_social, cli.CLI_mail_cli, cli.CLI_telefono_cli, cli.CLI_domicilio, cli.CLI_localidad, cli.CLI_codigo_postal
+                                Where CLI_razon_social = txt_razonsocial_cliente.Text.ToUpper).Any
+            If buscacliente = True Then
+                MsgBox("El cliente ingresado ya existe")
                 limpiarcontroles()
-        End Select
+                Exit Sub
+            End If
 
-        '   Catch ex As Exception
-        'MsgBox("El cliente NO fue creado")
-        '  limpiarcontroles()
-        '  cargargrilla()
-        '  End Try
+            If txt_razonsocial_cliente.Text.Length = 0 Then
+                MsgBox("Debe completar Nombre o Razón Social del Cliente")
+                txt_razonsocial_cliente.Focus()
+                Exit Sub
+            End If
+            Dim clie = New CLIENTE
+            clie.CLI_razon_social = txt_razonsocial_cliente.Text
+            clie.CLI_mail_cli = txt_mail_cliente.Text
+            clie.CLI_telefono_cli = txtTelefono_Cliente.Text
+            clie.CLI_domicilio = txt_Domicilio_Cliente.Text
+            clie.CLI_localidad = txt_Localidad_Cliente.Text
+            clie.CLI_codigo_postal = txt_Codigo_Postal_Cliente.Text
+
+            datacontext.CLIENTE.InsertOnSubmit(clie)
+            datacontext.SubmitChanges()
+
+            Select Case MsgBox("El Cliente fue cargado exitosamente, cargar otro?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Nuevo Cliente")
+                Case MsgBoxResult.No
+                    Me.Close()
+                Case MsgBoxResult.Yes
+                    limpiarcontroles()
+            End Select
+        Catch ex As Exception
+            MsgBox("El Cliente no puedo ser cargado")
+            limpiarcontroles()
+            cargargrilla()
+        End Try
 
     End Sub
 
@@ -63,7 +63,7 @@
 
     Private Sub btnActualizar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar_Cliente.Click
         If txt_razonsocial_cliente.Text.Length = 0 Then
-            MsgBox("Debe completar todos los campos requeridos")
+            MsgBox("Debe completar Nombre o Razón Social del Cliente")
             Exit Sub
         End If
         Try
@@ -122,6 +122,7 @@
 
 
     Private Sub dgvLista_Clientes_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvLista_Clientes.Click
+
         If dgvLista_Clientes.SelectedRows.Count > 0 Then
             txt_id_cliente.Text = dgvLista_Clientes.Item("CLI_id_cliente", dgvLista_Clientes.SelectedRows(0).Index).Value
             txt_razonsocial_cliente.Text = dgvLista_Clientes.Item("CLI_razon_social", dgvLista_Clientes.SelectedRows(0).Index).Value
@@ -131,7 +132,7 @@
             txt_Localidad_Cliente.Text = dgvLista_Clientes.Item("CLI_localidad", dgvLista_Clientes.SelectedRows(0).Index).Value
             txt_Codigo_Postal_Cliente.Text = dgvLista_Clientes.Item("CLI_codigo_postal", dgvLista_Clientes.SelectedRows(0).Index).Value
         Else
-            MsgBox("Debe seleccionar un cliente")
+            MsgBox("Debe seleccionar un Cliente")
         End If
     End Sub
 
@@ -140,16 +141,16 @@
 
             Dim eliminar = (From C In datacontext.CLIENTE Where C.CLI_id_cliente = CInt(dgvLista_Clientes.Item("CLI_id_cliente", dgvLista_Clientes.SelectedRows(0).Index).Value)).ToList()(0)
 
-            Select Case MsgBox("Se eliminará el cliente seleccionado, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar cliente")
+            Select Case MsgBox("Se eliminará el Cliente seleccionado, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar Cliente")
                 Case MsgBoxResult.Yes
                     datacontext.CLIENTE.DeleteOnSubmit(eliminar)
                     datacontext.SubmitChanges()
-                    MsgBox("El cliente ha sido eliminado")
+                    MsgBox("El Cliente ha sido eliminado correctamente")
                     cargargrilla()
                     Me.Close()
             End Select
         Else
-            MsgBox("Debe seleccionar un cliente")
+            MsgBox("Debe seleccionar un Cliente")
         End If
     End Sub
 

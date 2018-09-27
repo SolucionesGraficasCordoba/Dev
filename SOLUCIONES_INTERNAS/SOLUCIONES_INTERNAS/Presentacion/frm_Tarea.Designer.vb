@@ -272,6 +272,7 @@ Partial Class frm_Tarea
         Me.Label35 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -2807,4 +2808,5 @@ Partial Class frm_Tarea
     Friend WithEvents Label38 As System.Windows.Forms.Label
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents PrintForm1 As Microsoft.VisualBasic.PowerPacks.Printing.PrintForm
+    Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
 End Class

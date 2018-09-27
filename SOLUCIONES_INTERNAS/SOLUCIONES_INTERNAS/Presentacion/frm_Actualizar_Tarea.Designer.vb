@@ -54,6 +54,9 @@ Partial Class frm_Actualizar_Tarea
         Me.btn_Actualizar_Tarea = New System.Windows.Forms.Button()
         Me.btn_Cancelar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -107,7 +110,7 @@ Partial Class frm_Actualizar_Tarea
         '
         'btn_buscar_numero_orden
         '
-        Me.btn_buscar_numero_orden.Location = New System.Drawing.Point(381, 69)
+        Me.btn_buscar_numero_orden.Location = New System.Drawing.Point(394, 69)
         Me.btn_buscar_numero_orden.Name = "btn_buscar_numero_orden"
         Me.btn_buscar_numero_orden.Size = New System.Drawing.Size(54, 23)
         Me.btn_buscar_numero_orden.TabIndex = 165
@@ -148,7 +151,7 @@ Partial Class frm_Actualizar_Tarea
         '
         'btn_buscar_colaborador
         '
-        Me.btn_buscar_colaborador.Location = New System.Drawing.Point(381, 108)
+        Me.btn_buscar_colaborador.Location = New System.Drawing.Point(394, 108)
         Me.btn_buscar_colaborador.Name = "btn_buscar_colaborador"
         Me.btn_buscar_colaborador.Size = New System.Drawing.Size(54, 23)
         Me.btn_buscar_colaborador.TabIndex = 156
@@ -257,6 +260,9 @@ Partial Class frm_Actualizar_Tarea
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.Label6)
+        Me.GroupBox1.Controls.Add(Me.Label37)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.txt_hora_fin)
         Me.GroupBox1.Controls.Add(Me.txt_observaciones)
@@ -349,6 +355,39 @@ Partial Class frm_Actualizar_Tarea
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
         '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label37.ForeColor = System.Drawing.Color.Red
+        Me.Label37.Location = New System.Drawing.Point(437, 29)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(11, 13)
+        Me.Label37.TabIndex = 182
+        Me.Label37.Text = "*"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Red
+        Me.Label6.Location = New System.Drawing.Point(379, 74)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(11, 13)
+        Me.Label6.TabIndex = 183
+        Me.Label6.Text = "*"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(379, 113)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(11, 13)
+        Me.Label7.TabIndex = 184
+        Me.Label7.Text = "*"
+        '
         'frm_Actualizar_Tarea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -398,4 +437,7 @@ Partial Class frm_Actualizar_Tarea
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents txt_hora_fin As System.Windows.Forms.TextBox
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label37 As System.Windows.Forms.Label
 End Class

@@ -215,6 +215,12 @@
     <Compile Include="Presentacion\frm_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\frm_Proceso_Corte.Designer.vb">
+      <DependentUpon>frm_Proceso_Corte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Proceso_Corte.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_Retrabajo.Designer.vb">
       <DependentUpon>frm_Retrabajo.vb</DependentUpon>
     </Compile>
@@ -292,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Principal.resx">
       <DependentUpon>frm_Principal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Proceso_Corte.resx">
+      <DependentUpon>frm_Proceso_Corte.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Retrabajo.resx">
       <DependentUpon>frm_Retrabajo.vb</DependentUpon>

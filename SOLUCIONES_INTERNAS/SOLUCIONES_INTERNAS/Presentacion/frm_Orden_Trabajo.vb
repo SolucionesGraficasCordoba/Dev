@@ -834,4 +834,8 @@
         Label17.Visible = False
         PrintForm1.Print()
     End Sub
+
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+        frm_Proceso_Corte.Show()
+    End Sub
 End Class
