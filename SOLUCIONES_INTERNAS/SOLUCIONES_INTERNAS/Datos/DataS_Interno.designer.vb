@@ -91,6 +91,18 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeleteDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
     End Sub
+  Partial Private Sub InsertPRODUCTO(instance As PRODUCTO)
+    End Sub
+  Partial Private Sub UpdatePRODUCTO(instance As PRODUCTO)
+    End Sub
+  Partial Private Sub DeletePRODUCTO(instance As PRODUCTO)
+    End Sub
+  Partial Private Sub InsertPRODUCTO_MOVIMIENTO(instance As PRODUCTO_MOVIMIENTO)
+    End Sub
+  Partial Private Sub UpdatePRODUCTO_MOVIMIENTO(instance As PRODUCTO_MOVIMIENTO)
+    End Sub
+  Partial Private Sub DeletePRODUCTO_MOVIMIENTO(instance As PRODUCTO_MOVIMIENTO)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -175,6 +187,18 @@ Partial Public Class DataS_Interno
 	Public ReadOnly Property DETALLE_ORDEN_TRABAJO() As System.Data.Linq.Table(Of DETALLE_ORDEN_TRABAJO)
 		Get
 			Return Me.GetTable(Of DETALLE_ORDEN_TRABAJO)
+		End Get
+	End Property
+	
+	Public ReadOnly Property PRODUCTO() As System.Data.Linq.Table(Of PRODUCTO)
+		Get
+			Return Me.GetTable(Of PRODUCTO)
+		End Get
+	End Property
+	
+	Public ReadOnly Property PRODUCTO_MOVIMIENTO() As System.Data.Linq.Table(Of PRODUCTO_MOVIMIENTO)
+		Get
+			Return Me.GetTable(Of PRODUCTO_MOVIMIENTO)
 		End Get
 	End Property
 End Class
@@ -586,6 +610,8 @@ Partial Public Class ORDEN_TRABAJO
 	
 	Private _DETALLE_ORDEN_TRABAJO As EntitySet(Of DETALLE_ORDEN_TRABAJO)
 	
+	Private _PRODUCTO_MOVIMIENTO As EntitySet(Of PRODUCTO_MOVIMIENTO)
+	
 	Private _VENDEDOR As EntityRef(Of VENDEDOR)
 	
 	Private _CLIENTE As EntityRef(Of CLIENTE)
@@ -635,6 +661,7 @@ Partial Public Class ORDEN_TRABAJO
 		MyBase.New
 		Me._TAREA = New EntitySet(Of TAREA)(AddressOf Me.attach_TAREA, AddressOf Me.detach_TAREA)
 		Me._DETALLE_ORDEN_TRABAJO = New EntitySet(Of DETALLE_ORDEN_TRABAJO)(AddressOf Me.attach_DETALLE_ORDEN_TRABAJO, AddressOf Me.detach_DETALLE_ORDEN_TRABAJO)
+		Me._PRODUCTO_MOVIMIENTO = New EntitySet(Of PRODUCTO_MOVIMIENTO)(AddressOf Me.attach_PRODUCTO_MOVIMIENTO, AddressOf Me.detach_PRODUCTO_MOVIMIENTO)
 		Me._VENDEDOR = CType(Nothing, EntityRef(Of VENDEDOR))
 		Me._CLIENTE = CType(Nothing, EntityRef(Of CLIENTE))
 		OnCreated
@@ -798,6 +825,16 @@ Partial Public Class ORDEN_TRABAJO
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_PRODUCTO_MOVIMIENTO", Storage:="_PRODUCTO_MOVIMIENTO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo")>  _
+	Public Property PRODUCTO_MOVIMIENTO() As EntitySet(Of PRODUCTO_MOVIMIENTO)
+		Get
+			Return Me._PRODUCTO_MOVIMIENTO
+		End Get
+		Set
+			Me._PRODUCTO_MOVIMIENTO.Assign(value)
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="VENDEDOR_ORDEN_TRABAJO", Storage:="_VENDEDOR", ThisKey:="VEN_id_vendedor", OtherKey:="VEN_id_vendedor", IsForeignKey:=true)>  _
 	Public Property VENDEDOR() As VENDEDOR
 		Get
@@ -888,6 +925,16 @@ Partial Public Class ORDEN_TRABAJO
 	End Sub
 	
 	Private Sub detach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
+		Me.SendPropertyChanging
+		entity.ORDEN_TRABAJO = Nothing
+	End Sub
+	
+	Private Sub attach_PRODUCTO_MOVIMIENTO(ByVal entity As PRODUCTO_MOVIMIENTO)
+		Me.SendPropertyChanging
+		entity.ORDEN_TRABAJO = Me
+	End Sub
+	
+	Private Sub detach_PRODUCTO_MOVIMIENTO(ByVal entity As PRODUCTO_MOVIMIENTO)
 		Me.SendPropertyChanging
 		entity.ORDEN_TRABAJO = Nothing
 	End Sub
@@ -2876,5 +2923,398 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 	Private Sub detach_RE_TRABAJO(ByVal entity As RE_TRABAJO)
 		Me.SendPropertyChanging
 		entity.DETALLE_ORDEN_TRABAJO = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PRODUCTO")>  _
+Partial Public Class PRODUCTO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _PROD_id As Integer
+	
+	Private _PROD_codigo As String
+	
+	Private _PROD_descripcion As String
+	
+	Private _PROD_stock As Integer
+	
+	Private _PRODUCTO_MOVIMIENTO As EntitySet(Of PRODUCTO_MOVIMIENTO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnPROD_idChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPROD_idChanged()
+    End Sub
+    Partial Private Sub OnPROD_codigoChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROD_codigoChanged()
+    End Sub
+    Partial Private Sub OnPROD_descripcionChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROD_descripcionChanged()
+    End Sub
+    Partial Private Sub OnPROD_stockChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPROD_stockChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._PRODUCTO_MOVIMIENTO = New EntitySet(Of PRODUCTO_MOVIMIENTO)(AddressOf Me.attach_PRODUCTO_MOVIMIENTO, AddressOf Me.detach_PRODUCTO_MOVIMIENTO)
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property PROD_id() As Integer
+		Get
+			Return Me._PROD_id
+		End Get
+		Set
+			If ((Me._PROD_id = value)  _
+						= false) Then
+				Me.OnPROD_idChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_id = value
+				Me.SendPropertyChanged("PROD_id")
+				Me.OnPROD_idChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_codigo", DbType:="VarChar(15)")>  _
+	Public Property PROD_codigo() As String
+		Get
+			Return Me._PROD_codigo
+		End Get
+		Set
+			If (String.Equals(Me._PROD_codigo, value) = false) Then
+				Me.OnPROD_codigoChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_codigo = value
+				Me.SendPropertyChanged("PROD_codigo")
+				Me.OnPROD_codigoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_descripcion", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property PROD_descripcion() As String
+		Get
+			Return Me._PROD_descripcion
+		End Get
+		Set
+			If (String.Equals(Me._PROD_descripcion, value) = false) Then
+				Me.OnPROD_descripcionChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_descripcion = value
+				Me.SendPropertyChanged("PROD_descripcion")
+				Me.OnPROD_descripcionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_stock", DbType:="Int NOT NULL")>  _
+	Public Property PROD_stock() As Integer
+		Get
+			Return Me._PROD_stock
+		End Get
+		Set
+			If ((Me._PROD_stock = value)  _
+						= false) Then
+				Me.OnPROD_stockChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_stock = value
+				Me.SendPropertyChanged("PROD_stock")
+				Me.OnPROD_stockChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PRODUCTO_PRODUCTO_MOVIMIENTO", Storage:="_PRODUCTO_MOVIMIENTO", ThisKey:="PROD_id", OtherKey:="PROD_id")>  _
+	Public Property PRODUCTO_MOVIMIENTO() As EntitySet(Of PRODUCTO_MOVIMIENTO)
+		Get
+			Return Me._PRODUCTO_MOVIMIENTO
+		End Get
+		Set
+			Me._PRODUCTO_MOVIMIENTO.Assign(value)
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_PRODUCTO_MOVIMIENTO(ByVal entity As PRODUCTO_MOVIMIENTO)
+		Me.SendPropertyChanging
+		entity.PRODUCTO = Me
+	End Sub
+	
+	Private Sub detach_PRODUCTO_MOVIMIENTO(ByVal entity As PRODUCTO_MOVIMIENTO)
+		Me.SendPropertyChanging
+		entity.PRODUCTO = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PRODUCTO_MOVIMIENTO")>  _
+Partial Public Class PRODUCTO_MOVIMIENTO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _PROD_MOV_id As Integer
+	
+	Private _PROD_MOV_fecha As System.Nullable(Of Date)
+	
+	Private _ORT_id_orden_trabajo As System.Nullable(Of Integer)
+	
+	Private _PROD_MOV_tipo As String
+	
+	Private _PROD_MOV_cantidad As System.Nullable(Of Integer)
+	
+	Private _PROD_id As Integer
+	
+	Private _ORDEN_TRABAJO As EntityRef(Of ORDEN_TRABAJO)
+	
+	Private _PRODUCTO As EntityRef(Of PRODUCTO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnPROD_MOV_idChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPROD_MOV_idChanged()
+    End Sub
+    Partial Private Sub OnPROD_MOV_fechaChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnPROD_MOV_fechaChanged()
+    End Sub
+    Partial Private Sub OnORT_id_orden_trabajoChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnORT_id_orden_trabajoChanged()
+    End Sub
+    Partial Private Sub OnPROD_MOV_tipoChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROD_MOV_tipoChanged()
+    End Sub
+    Partial Private Sub OnPROD_MOV_cantidadChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnPROD_MOV_cantidadChanged()
+    End Sub
+    Partial Private Sub OnPROD_idChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPROD_idChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._ORDEN_TRABAJO = CType(Nothing, EntityRef(Of ORDEN_TRABAJO))
+		Me._PRODUCTO = CType(Nothing, EntityRef(Of PRODUCTO))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property PROD_MOV_id() As Integer
+		Get
+			Return Me._PROD_MOV_id
+		End Get
+		Set
+			If ((Me._PROD_MOV_id = value)  _
+						= false) Then
+				Me.OnPROD_MOV_idChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_MOV_id = value
+				Me.SendPropertyChanged("PROD_MOV_id")
+				Me.OnPROD_MOV_idChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_fecha", DbType:="Date")>  _
+	Public Property PROD_MOV_fecha() As System.Nullable(Of Date)
+		Get
+			Return Me._PROD_MOV_fecha
+		End Get
+		Set
+			If (Me._PROD_MOV_fecha.Equals(value) = false) Then
+				Me.OnPROD_MOV_fechaChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_MOV_fecha = value
+				Me.SendPropertyChanged("PROD_MOV_fecha")
+				Me.OnPROD_MOV_fechaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int")>  _
+	Public Property ORT_id_orden_trabajo() As System.Nullable(Of Integer)
+		Get
+			Return Me._ORT_id_orden_trabajo
+		End Get
+		Set
+			If (Me._ORT_id_orden_trabajo.Equals(value) = false) Then
+				If Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnORT_id_orden_trabajoChanging(value)
+				Me.SendPropertyChanging
+				Me._ORT_id_orden_trabajo = value
+				Me.SendPropertyChanged("ORT_id_orden_trabajo")
+				Me.OnORT_id_orden_trabajoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_tipo", DbType:="VarChar(15)")>  _
+	Public Property PROD_MOV_tipo() As String
+		Get
+			Return Me._PROD_MOV_tipo
+		End Get
+		Set
+			If (String.Equals(Me._PROD_MOV_tipo, value) = false) Then
+				Me.OnPROD_MOV_tipoChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_MOV_tipo = value
+				Me.SendPropertyChanged("PROD_MOV_tipo")
+				Me.OnPROD_MOV_tipoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_cantidad", DbType:="Int")>  _
+	Public Property PROD_MOV_cantidad() As System.Nullable(Of Integer)
+		Get
+			Return Me._PROD_MOV_cantidad
+		End Get
+		Set
+			If (Me._PROD_MOV_cantidad.Equals(value) = false) Then
+				Me.OnPROD_MOV_cantidadChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_MOV_cantidad = value
+				Me.SendPropertyChanged("PROD_MOV_cantidad")
+				Me.OnPROD_MOV_cantidadChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_id", DbType:="Int NOT NULL")>  _
+	Public Property PROD_id() As Integer
+		Get
+			Return Me._PROD_id
+		End Get
+		Set
+			If ((Me._PROD_id = value)  _
+						= false) Then
+				If Me._PRODUCTO.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnPROD_idChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_id = value
+				Me.SendPropertyChanged("PROD_id")
+				Me.OnPROD_idChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_PRODUCTO_MOVIMIENTO", Storage:="_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo", IsForeignKey:=true)>  _
+	Public Property ORDEN_TRABAJO() As ORDEN_TRABAJO
+		Get
+			Return Me._ORDEN_TRABAJO.Entity
+		End Get
+		Set
+			Dim previousValue As ORDEN_TRABAJO = Me._ORDEN_TRABAJO.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._ORDEN_TRABAJO.Entity = Nothing
+					previousValue.PRODUCTO_MOVIMIENTO.Remove(Me)
+				End If
+				Me._ORDEN_TRABAJO.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.PRODUCTO_MOVIMIENTO.Add(Me)
+					Me._ORT_id_orden_trabajo = value.ORT_id_orden_trabajo
+				Else
+					Me._ORT_id_orden_trabajo = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("ORDEN_TRABAJO")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PRODUCTO_PRODUCTO_MOVIMIENTO", Storage:="_PRODUCTO", ThisKey:="PROD_id", OtherKey:="PROD_id", IsForeignKey:=true)>  _
+	Public Property PRODUCTO() As PRODUCTO
+		Get
+			Return Me._PRODUCTO.Entity
+		End Get
+		Set
+			Dim previousValue As PRODUCTO = Me._PRODUCTO.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._PRODUCTO.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._PRODUCTO.Entity = Nothing
+					previousValue.PRODUCTO_MOVIMIENTO.Remove(Me)
+				End If
+				Me._PRODUCTO.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.PRODUCTO_MOVIMIENTO.Add(Me)
+					Me._PROD_id = value.PROD_id
+				Else
+					Me._PROD_id = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("PRODUCTO")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
 	End Sub
 End Class
