@@ -4,8 +4,8 @@
     Public quienllamo_listado_orden As Form
 
     Private Sub frm_Orden_Trabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        txt_id_orden_trabajo.Visible = False
-        Label1.Visible = False
+        txt_id_orden_trabajo.Enabled = False
+        Label1.Visible = True
         Label45.Visible = False
         Label52.Visible = False
         Label53.Visible = False
@@ -14,7 +14,6 @@
         txt_id_detalle_orden_trabajo3.Visible = False
         txtNumero_Orden_Trabajo.Focus()
         txtid_vendedor.Visible = False
-        txt_id_cliente.Visible = False
         txt_id_cliente.Visible = False
         txtid_vendedor.Visible = False
         txt_nombre_cliente.Enabled = False
@@ -817,7 +816,7 @@
     Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
         PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
         PrintForm1.PrinterSettings.DefaultPageSettings.Landscape = True
-        PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
+        ' PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
 
         PrintForm1.PrinterSettings.DefaultPageSettings.Margins = New System.Drawing.Printing.Margins(0, 0, 0, 0)
         PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Left = 65

@@ -10,6 +10,7 @@
         txt_detalle_tarea1.Focus()
         txt_id_colaborador.Visible = False
         btnNueva_Tarea.Visible = False
+        btnImprimir.Visible = False
 
         txt_id_orden_trabajo1.Visible = False
         txt_id_orden_trabajo2.Visible = False
@@ -56,7 +57,7 @@
 
     Private Sub btnGuardar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Tarea.Click
 
-        If txt_id_colaborador.Text.Length = 0 Then
+        If txt_nombre_colaborador.Text.Length = 0 Then
             MsgBox("Debe completar todos los campos requeridos")
             Exit Sub
         End If
@@ -400,11 +401,20 @@
                 datacontext.SubmitChanges()
             Else
             End If
-           Select MsgBox("La tarea se ha creado correctamente, desea imprimir??", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Imprimir Tareas")
+
+            Select Case MsgBox("La tarea se ha creado correctamente, desea imprimir??", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Imprimir Tareas")
                 Case MsgBoxResult.Yes
                     PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
                     PrintForm1.PrinterSettings.DefaultPageSettings.Landscape = True
-                    PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
+                    '  PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
+
+
+                    PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Left = 30
+                    PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Right = 30
+                    PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Top = 30
+                    PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Bottom = 30
+
+
                     PrintForm1.Print() 'imprimir
             End Select
             Me.Close()
@@ -1942,7 +1952,19 @@
     Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
         PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
         PrintForm1.PrinterSettings.DefaultPageSettings.Landscape = True
-        PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
+        '  PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
+
+        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Left = 30
+        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Right = 30
+        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Top = 30
+        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Bottom = 30
+
+        btnImprimir.Visible = False
+        btnNueva_Tarea.Visible = False
+        btnCancelar_Tarea.Visible = False
+        btnGuardar_Tarea.Visible = False
+        Label34.Visible = False
+
         PrintForm1.Print() 'imprimir
     End Sub
 End Class

@@ -172,7 +172,16 @@
     Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
         PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
         PrintForm1.PrinterSettings.DefaultPageSettings.Landscape = True
-        PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
+
+        'PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
+
+
+        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Left = 30
+        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Right = 30
+        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Top = 30
+        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Bottom = 30
+
+
         btnImprimir.Visible = False
         btnGuardar_ReTrabajo.Visible = False
         btnCancelar_ReTrabajo.Visible = False

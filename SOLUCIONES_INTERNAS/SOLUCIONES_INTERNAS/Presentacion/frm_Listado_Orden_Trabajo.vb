@@ -34,7 +34,7 @@
         dgvLista_Orden_Trabajo.AutoGenerateColumns = False
         dgvLista_Orden_Trabajo.Columns.Clear()
 
-        dgvLista_Orden_Trabajo.Columns.Add("ORT_id_orden_trabajo", "id_orden_trabajo")
+        dgvLista_Orden_Trabajo.Columns.Add("ORT_id_orden_trabajo", "TN")
         dgvLista_Orden_Trabajo.Columns.Add("ORT_tipo_ot", "Tipo")
         dgvLista_Orden_Trabajo.Columns.Add("ORT_numero_ot", "Número")
         dgvLista_Orden_Trabajo.Columns.Add("ORT_fecha_ot", "Fecha")
@@ -46,7 +46,7 @@
         dgvLista_Orden_Trabajo.Columns.Add("ORT_mejoras_ot", "Mejoras")
         
         dgvLista_Orden_Trabajo.Columns(0).DataPropertyName = "ORT_id_orden_trabajo"
-        dgvLista_Orden_Trabajo.Columns(0).Visible = False
+        '  dgvLista_Orden_Trabajo.Columns(0).Visible = False
         dgvLista_Orden_Trabajo.Columns(1).DataPropertyName = "ORT_tipo_ot"
         dgvLista_Orden_Trabajo.Columns(1).Width = 50
         dgvLista_Orden_Trabajo.Columns(2).DataPropertyName = "ORT_numero_ot"
@@ -489,6 +489,7 @@
     End Sub
 
     Private Sub btnVer_Click(sender As System.Object, e As System.EventArgs) Handles btnVer.Click
+
         'CARGA COMBOBOX PIEZA DETALLE 1
         Dim combopieza1 = (From sec In datacontext.PIEZA
                            Select sec.PIE_id_pieza, sec.PIE_nombre_pie
@@ -636,7 +637,7 @@
         frm_Orden_Trabajo.txtNumero_Orden_Trabajo.Enabled = False
         frm_Orden_Trabajo.btnBuscar_cliente.Enabled = False
         frm_Orden_Trabajo.btnBuscar_Vendedor.Enabled = False
-        frm_Orden_Trabajo.btnImprimir.enabled = True
+        frm_Orden_Trabajo.btnImprimir.Enabled = True
         frm_Orden_Trabajo.Show()
     End Sub
 

@@ -2448,7 +2448,7 @@ Partial Class frm_Tarea
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label34.ForeColor = System.Drawing.Color.Red
-        Me.Label34.Location = New System.Drawing.Point(18, 701)
+        Me.Label34.Location = New System.Drawing.Point(18, 679)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(105, 13)
         Me.Label34.TabIndex = 24

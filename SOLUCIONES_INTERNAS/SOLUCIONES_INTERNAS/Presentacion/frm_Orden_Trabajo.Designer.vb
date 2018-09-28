@@ -30,6 +30,7 @@ Partial Class frm_Orden_Trabajo
         Me.txt_id_cliente = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.GroupListadoPiezas = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.GroupProducto3 = New System.Windows.Forms.GroupBox()
         Me.txt_id_detalle_orden_trabajo3 = New System.Windows.Forms.TextBox()
@@ -153,7 +154,6 @@ Partial Class frm_Orden_Trabajo
         Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupListadoPiezas.SuspendLayout()
         Me.GroupProducto3.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
@@ -226,6 +226,15 @@ Partial Class frm_Orden_Trabajo
         Me.GroupListadoPiezas.TabIndex = 28
         Me.GroupListadoPiezas.TabStop = False
         Me.GroupListadoPiezas.Text = "Detalles de la orden"
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(143, 522)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(167, 23)
+        Me.Button1.TabIndex = 38
+        Me.Button1.Text = "Mostrar Proceso de Corte"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'btnImprimir
         '
@@ -1188,7 +1197,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboTipo_Orden.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipo_Orden.FormattingEnabled = True
         Me.cboTipo_Orden.Items.AddRange(New Object() {"DG", "DO", "DI", "DV", "DS"})
-        Me.cboTipo_Orden.Location = New System.Drawing.Point(80, 35)
+        Me.cboTipo_Orden.Location = New System.Drawing.Point(80, 46)
         Me.cboTipo_Orden.Name = "cboTipo_Orden"
         Me.cboTipo_Orden.Size = New System.Drawing.Size(66, 21)
         Me.cboTipo_Orden.TabIndex = 47
@@ -1196,7 +1205,7 @@ Partial Class frm_Orden_Trabajo
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(17, 39)
+        Me.Label5.Location = New System.Drawing.Point(17, 50)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(60, 13)
         Me.Label5.TabIndex = 46
@@ -1229,7 +1238,7 @@ Partial Class frm_Orden_Trabajo
         '
         'txt_id_orden_trabajo
         '
-        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(481, 70)
+        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(82, 22)
         Me.txt_id_orden_trabajo.Name = "txt_id_orden_trabajo"
         Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(64, 20)
         Me.txt_id_orden_trabajo.TabIndex = 30
@@ -1246,11 +1255,11 @@ Partial Class frm_Orden_Trabajo
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(470, 54)
+        Me.Label1.Location = New System.Drawing.Point(54, 25)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(86, 13)
+        Me.Label1.Size = New System.Drawing.Size(22, 13)
         Me.Label1.TabIndex = 29
-        Me.Label1.Text = "id_orden_trabajo"
+        Me.Label1.Text = "TN"
         '
         'Label15
         '
@@ -1365,15 +1374,6 @@ Partial Class frm_Orden_Trabajo
         Me.PrintForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPrinter
         Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
         Me.PrintForm1.PrintFileName = Nothing
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(143, 522)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(167, 23)
-        Me.Button1.TabIndex = 38
-        Me.Button1.Text = "Mostrar Proceso de Corte"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'frm_Orden_Trabajo
         '

@@ -64,7 +64,6 @@ Public Class frm_Generar_Informe
         dgvColaboradores.DataSource = consultaporsector
     End Sub
 
-
     'ARMA LA GRILLA MENSUAL
     Private Sub armargrillamensual()
         dgvTotalesMensuales.Enabled = True
@@ -262,7 +261,6 @@ Public Class frm_Generar_Informe
         End If
         ''***************************fin grafico 3*********************************
 
-
         ''************************inicio grafico 4*********************************
         If 4 <= totalgrafico Then
             Chart4.Series(0).Points.Clear()
@@ -278,7 +276,6 @@ Public Class frm_Generar_Informe
             Chart4.DataSource = llenargrafico(3)
         End If
         ''***************************fin grafico 4*********************************
-
 
         ''************************inicio grafico 5*********************************
         If 5 <= totalgrafico Then
@@ -402,40 +399,4 @@ Public Class frm_Generar_Informe
          Where (SEC_id_sector = cbo_sector.SelectedIndex + 1 And TAR_fecha.Value.Month = cboMes.SelectedIndex + 1 And COL_id_colaborador = CStr(dgvTotalesMensuales.Rows(indexfila).Cells(0).Value))) 'PABLO
         Return consultaporsector
     End Function
-
-
-    'Sub LimpiarGraficos()
-
-    '    Dim totalgrafico As Integer
-    '    totalgrafico = dgvTotalesMensuales.Rows.Count
-
-    '    Dim flag1, flag2, flag3 As Integer
-
-    '    If 1 >= totalgrafico Then
-    '        flag1 = 1
-    '        flag2 = 0
-    '        flag3 = 0
-    '    ElseIf 2 >= totalgrafico Then
-    '        flag1 = 1
-    '        flag2 = 1
-    '        flag3 = 0
-    '    ElseIf 3 >= totalgrafico Then
-    '        flag1 = 1
-    '        flag2 = 1
-    '        flag3 = 1
-    '    End If
-    '    If flag1 = 1 Then
-    '        llenargrafico(0)
-    '    End If
-    '    If flag2 = 1 Then
-    '        llenargrafico(0)
-    '        llenargrafico(1)
-    '    End If
-    '    If flag3 = 1 Then
-    '        llenargrafico(0)
-    '        llenargrafico(1)
-    '        llenargrafico(2)
-    '    End If
-    'End Sub
-
 End Class

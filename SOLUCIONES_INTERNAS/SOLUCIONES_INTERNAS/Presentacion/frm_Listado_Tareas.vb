@@ -660,6 +660,7 @@
         DeshabilitarText()
         frm_Tarea.Show()
         frm_Tarea.Text = "Consultar Tarea"
+        frm_Tarea.btnImprimir.Visible = True
     End Sub
 
     Public Sub DeshabilitarText()

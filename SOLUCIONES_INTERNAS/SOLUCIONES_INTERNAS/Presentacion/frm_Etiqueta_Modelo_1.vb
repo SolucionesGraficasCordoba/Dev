@@ -17,7 +17,9 @@ Public Class frm_Etiqueta_Modelo_1
         ArmarEtiqueta()
 
         txtId_Cliente.Visible = False
-        txtDirigidoA.Enabled = False
+        '  txtDirigidoA.Enabled = False
+
+        dgv_Etiquetas.ClearSelection()
     End Sub
 
     Private Sub btnBuscarCliente_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscarCliente.Click
@@ -128,8 +130,8 @@ Public Class frm_Etiqueta_Modelo_1
 
     Private Sub btnGenerarEtiquetas_Click(sender As System.Object, e As System.EventArgs) Handles btnGenerarEtiquetas.Click
         Dim consulta As String = "modelo_etiquetas_" + Date.Now.Millisecond.ToString + ".csv"
-        ' Dim filePath As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta
-        Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
+        Dim filePath As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta
+        ' Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
         Dim delimeter As String = ","
         Dim sb As New StringBuilder
         Try
@@ -151,7 +153,7 @@ Public Class frm_Etiqueta_Modelo_1
             Next
             File.WriteAllText(filePath, sb.ToString)
             MsgBox("La consulta se ha generado correctamente")
-            Process.Start(filePath)
+            '  Process.Start(filePath)
             Me.Close()
         Catch ex As Exception
             MsgBox("Hubo un error al generar la consulta")
