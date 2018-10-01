@@ -136,6 +136,7 @@
       <Column Name="PIE_id_pieza" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="DETALLE_ORDEN_TRABAJO_RE_TRABAJO" Member="RE_TRABAJO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="RE_TRABAJO" />
+      <Association Name="DETALLE_ORDEN_TRABAJO_PROCESO" Member="PROCESO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="PROCESO" />
       <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="PIEZA_DETALLE_ORDEN_TRABAJO" Member="PIEZA" ThisKey="PIE_id_pieza" OtherKey="PIE_id_pieza" Type="PIEZA" IsForeignKey="true" />
     </Type>
@@ -159,6 +160,23 @@
       <Column Name="PROD_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="ORDEN_TRABAJO_PRODUCTO_MOVIMIENTO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" />
       <Association Name="PRODUCTO_PRODUCTO_MOVIMIENTO" Member="PRODUCTO" ThisKey="PROD_id" OtherKey="PROD_id" Type="PRODUCTO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PROCESO" Member="PROCESO">
+    <Type Name="PROCESO">
+      <Column Name="PROC_id_proceso" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_detalle_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROC_offset" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PROC_descrip_offset" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PROC_digital" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="PROC_descrip_digital" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PROC_gran_formato" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PROC_descrip_gran_formato" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PROC_terminacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PROC_descrip_terminacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PROC_logistica" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="PROC_descrip_logistica" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Association Name="DETALLE_ORDEN_TRABAJO_PROCESO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="DETALLE_ORDEN_TRABAJO" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
 </Database>
