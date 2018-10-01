@@ -686,12 +686,10 @@
         End If
     End Sub
 
-
     Private Sub btnBuscar_Colaborador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         frm_Colaborador.Text = "Seleccionar Colaborador"
         frm_Colaborador.Show()
     End Sub
-
 
     Private Sub btnBuscar_Colaborador_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_Colaborador.Click, Button3.Click
         frm_Colaborador.quienllamo_col = Me
