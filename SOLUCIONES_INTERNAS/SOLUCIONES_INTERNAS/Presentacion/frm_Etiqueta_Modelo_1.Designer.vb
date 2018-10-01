@@ -35,6 +35,8 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label18 = New System.Windows.Forms.Label()
         Me.txtDescripcionEntrega = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
         Me.txtSector = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.txtCodigoPostal = New System.Windows.Forms.TextBox()
@@ -46,6 +48,10 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.btnBuscarCliente = New System.Windows.Forms.Button()
         Me.txtDirigidoA = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label30 = New System.Windows.Forms.Label()
+        Me.Label29 = New System.Windows.Forms.Label()
+        Me.Label28 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cboLogo = New System.Windows.Forms.ComboBox()
         Me.txtSeccion = New System.Windows.Forms.TextBox()
@@ -63,6 +69,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label32 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.txt_Codigo_Etiqueta = New System.Windows.Forms.TextBox()
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -74,13 +81,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.btnGenerarEtiquetas = New System.Windows.Forms.Button()
         Me.btnLimpiarEtiqueta = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label28 = New System.Windows.Forms.Label()
-        Me.Label29 = New System.Windows.Forms.Label()
-        Me.Label30 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label32 = New System.Windows.Forms.Label()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -225,6 +226,28 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos del Cliente"
         '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.ForeColor = System.Drawing.Color.Red
+        Me.Label27.Location = New System.Drawing.Point(433, 113)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(14, 13)
+        Me.Label27.TabIndex = 28
+        Me.Label27.Text = "* "
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.Color.Red
+        Me.Label26.Location = New System.Drawing.Point(420, 31)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(14, 13)
+        Me.Label26.TabIndex = 27
+        Me.Label26.Text = "* "
+        '
         'txtSector
         '
         Me.txtSector.Location = New System.Drawing.Point(404, 68)
@@ -329,6 +352,50 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.GroupBox2.TabIndex = 11
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Datos de Entrega"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.ForeColor = System.Drawing.Color.Red
+        Me.Label31.Location = New System.Drawing.Point(166, 124)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(14, 13)
+        Me.Label31.TabIndex = 31
+        Me.Label31.Text = "* "
+        '
+        'Label30
+        '
+        Me.Label30.AutoSize = True
+        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label30.ForeColor = System.Drawing.Color.Red
+        Me.Label30.Location = New System.Drawing.Point(509, 81)
+        Me.Label30.Name = "Label30"
+        Me.Label30.Size = New System.Drawing.Size(14, 13)
+        Me.Label30.TabIndex = 30
+        Me.Label30.Text = "* "
+        '
+        'Label29
+        '
+        Me.Label29.AutoSize = True
+        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label29.ForeColor = System.Drawing.Color.Red
+        Me.Label29.Location = New System.Drawing.Point(328, 81)
+        Me.Label29.Name = "Label29"
+        Me.Label29.Size = New System.Drawing.Size(14, 13)
+        Me.Label29.TabIndex = 29
+        Me.Label29.Text = "* "
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.ForeColor = System.Drawing.Color.Red
+        Me.Label28.Location = New System.Drawing.Point(142, 80)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(14, 13)
+        Me.Label28.TabIndex = 28
+        Me.Label28.Text = "* "
         '
         'Label1
         '
@@ -479,6 +546,17 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.GroupBox3.TabIndex = 15
         Me.GroupBox3.TabStop = False
         '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.ForeColor = System.Drawing.Color.Red
+        Me.Label32.Location = New System.Drawing.Point(376, 18)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(14, 13)
+        Me.Label32.TabIndex = 28
+        Me.Label32.Text = "* "
+        '
         'Label19
         '
         Me.Label19.AutoSize = True
@@ -557,7 +635,7 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         'btnGenerarEtiquetas
         '
-        Me.btnGenerarEtiquetas.Location = New System.Drawing.Point(1009, 641)
+        Me.btnGenerarEtiquetas.Location = New System.Drawing.Point(908, 641)
         Me.btnGenerarEtiquetas.Name = "btnGenerarEtiquetas"
         Me.btnGenerarEtiquetas.Size = New System.Drawing.Size(108, 23)
         Me.btnGenerarEtiquetas.TabIndex = 24
@@ -584,88 +662,21 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label4.TabIndex = 26
         Me.Label4.Text = "* (Campo Requerido)"
         '
-        'Label26
+        'btnEliminar
         '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.ForeColor = System.Drawing.Color.Red
-        Me.Label26.Location = New System.Drawing.Point(420, 31)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(14, 13)
-        Me.Label26.TabIndex = 27
-        Me.Label26.Text = "* "
-        '
-        'Label27
-        '
-        Me.Label27.AutoSize = True
-        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.ForeColor = System.Drawing.Color.Red
-        Me.Label27.Location = New System.Drawing.Point(433, 113)
-        Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(14, 13)
-        Me.Label27.TabIndex = 28
-        Me.Label27.Text = "* "
-        '
-        'Label28
-        '
-        Me.Label28.AutoSize = True
-        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label28.ForeColor = System.Drawing.Color.Red
-        Me.Label28.Location = New System.Drawing.Point(142, 80)
-        Me.Label28.Name = "Label28"
-        Me.Label28.Size = New System.Drawing.Size(14, 13)
-        Me.Label28.TabIndex = 28
-        Me.Label28.Text = "* "
-        '
-        'Label29
-        '
-        Me.Label29.AutoSize = True
-        Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.ForeColor = System.Drawing.Color.Red
-        Me.Label29.Location = New System.Drawing.Point(328, 81)
-        Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(14, 13)
-        Me.Label29.TabIndex = 29
-        Me.Label29.Text = "* "
-        '
-        'Label30
-        '
-        Me.Label30.AutoSize = True
-        Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label30.ForeColor = System.Drawing.Color.Red
-        Me.Label30.Location = New System.Drawing.Point(509, 81)
-        Me.Label30.Name = "Label30"
-        Me.Label30.Size = New System.Drawing.Size(14, 13)
-        Me.Label30.TabIndex = 30
-        Me.Label30.Text = "* "
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label31.ForeColor = System.Drawing.Color.Red
-        Me.Label31.Location = New System.Drawing.Point(166, 124)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(14, 13)
-        Me.Label31.TabIndex = 31
-        Me.Label31.Text = "* "
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.ForeColor = System.Drawing.Color.Red
-        Me.Label32.Location = New System.Drawing.Point(376, 18)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(14, 13)
-        Me.Label32.TabIndex = 28
-        Me.Label32.Text = "* "
+        Me.btnEliminar.Location = New System.Drawing.Point(1040, 641)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar.TabIndex = 27
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'frm_Etiqueta_Modelo_1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1241, 683)
+        Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnLimpiarEtiqueta)
         Me.Controls.Add(Me.btnGenerarEtiquetas)
@@ -752,4 +763,5 @@ Partial Class frm_Etiqueta_Modelo_1
     Friend WithEvents Label29 As System.Windows.Forms.Label
     Friend WithEvents Label28 As System.Windows.Forms.Label
     Friend WithEvents Label32 As System.Windows.Forms.Label
+    Friend WithEvents btnEliminar As System.Windows.Forms.Button
 End Class

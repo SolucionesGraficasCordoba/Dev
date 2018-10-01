@@ -17,8 +17,6 @@ Public Class frm_Etiqueta_Modelo_1
         ArmarEtiqueta()
 
         txtId_Cliente.Visible = False
-        '  txtDirigidoA.Enabled = False
-
         dgv_Etiquetas.ClearSelection()
     End Sub
 
@@ -86,6 +84,7 @@ Public Class frm_Etiqueta_Modelo_1
                                             txtUnidadxBulto.Text, txtTotalBultos.Text, txtPeso.Text, cboLogo.Text}
         dgv_Etiquetas.Rows.Add(row)
         Limpiar()
+        dgv_Etiquetas.ClearSelection()
     End Sub
 
     Private Sub btnAgregar_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregar.Click
@@ -126,6 +125,7 @@ Public Class frm_Etiqueta_Modelo_1
             Exit Sub
         End If
         CargaEtiqueta()
+        dgv_Etiquetas.ClearSelection()
     End Sub
 
     Private Sub btnGenerarEtiquetas_Click(sender As System.Object, e As System.EventArgs) Handles btnGenerarEtiquetas.Click
@@ -163,6 +163,16 @@ Public Class frm_Etiqueta_Modelo_1
     Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
         Me.Close()
         Me.Dispose()
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar.Click
+        Select Case MsgBox("Se eliminará la fila seleccionada, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar Fila")
+            Case MsgBoxResult.Yes
+                For Each r As DataGridViewRow In dgv_Etiquetas.SelectedRows
+                    dgv_Etiquetas.Rows.Remove(r)
+                Next
+        End Select
+        dgv_Etiquetas.ClearSelection()
     End Sub
 End Class
 
