@@ -79,9 +79,23 @@ Public Class frm_Etiqueta_Modelo_1
     End Sub
 
     Public Sub CargaEtiqueta()
-        Dim row As String() = New String() {txt_Codigo_Etiqueta.Text, txtDescripcionEntrega.Text, txtId_Cliente.Text, txtDirigidoA.Text, txtSolicitante.Text, _
-                                            txtSector.Text, txtDomicilio.Text, txtLocalidad.Text, txtCodigoPostal.Text, txtDespachado.Text, txtSeccion.Text, txtCantidadBultos.Text, txtNumeroBultos.Text, _
-                                            txtUnidadxBulto.Text, txtTotalBultos.Text, txtPeso.Text, cboLogo.Text}
+        Dim row As String() = New String() {txt_Codigo_Etiqueta.Text.ToUpper,
+                                            txtDescripcionEntrega.Text.ToUpper,
+                                            txtId_Cliente.Text.ToUpper,
+                                            txtDirigidoA.Text.ToUpper,
+                                            txtSolicitante.Text.ToUpper, _
+                                            txtSector.Text.ToUpper,
+                                            txtDomicilio.Text.ToUpper,
+                                            txtLocalidad.Text.ToUpper,
+                                            txtCodigoPostal.Text.ToUpper,
+                                            txtDespachado.Text.ToUpper,
+                                            txtSeccion.Text.ToUpper,
+                                            txtCantidadBultos.Text.ToUpper,
+                                            txtNumeroBultos.Text.ToUpper, _
+                                            txtUnidadxBulto.Text.ToUpper,
+                                            txtTotalBultos.Text.ToUpper,
+                                            txtPeso.Text.ToUpper,
+                                            cboLogo.Text.ToUpper}
         dgv_Etiquetas.Rows.Add(row)
         Limpiar()
         dgv_Etiquetas.ClearSelection()
@@ -130,8 +144,8 @@ Public Class frm_Etiqueta_Modelo_1
 
     Private Sub btnGenerarEtiquetas_Click(sender As System.Object, e As System.EventArgs) Handles btnGenerarEtiquetas.Click
         Dim consulta As String = "modelo_etiquetas_" + Date.Now.Millisecond.ToString + ".csv"
-        Dim filePath As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta
-        ' Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
+        ' Dim filePath As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta
+        Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
         Dim delimeter As String = ","
         Dim sb As New StringBuilder
         Try

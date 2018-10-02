@@ -115,10 +115,10 @@
       <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\Exportar.vb" />
-    <Compile Include="Presentacion\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Presentacion\frm_Grafico.Designer.vb">
+      <DependentUpon>frm_Grafico.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Form1.vb">
+    <Compile Include="Presentacion\frm_Grafico.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frm_Actualizar_Tarea.Designer.vb">
@@ -171,6 +171,18 @@
       <DependentUpon>frm_Gestion_Usuarios.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frm_Gestion_Usuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_Grafico_1.Designer.vb">
+      <DependentUpon>frm_Grafico_1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Grafico_1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_Grafico_2.Designer.vb">
+      <DependentUpon>frm_Grafico_2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Grafico_2.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frm_Ingreso.Designer.vb">
@@ -278,8 +290,8 @@
     <EmbeddedResource Include="Installer1.resx">
       <DependentUpon>Installer1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\frm_Grafico.resx">
+      <DependentUpon>frm_Grafico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Actualizar_Tarea.resx">
       <DependentUpon>frm_Actualizar_Tarea.vb</DependentUpon>
@@ -295,6 +307,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Gestion_Usuarios.resx">
       <DependentUpon>frm_Gestion_Usuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Grafico_1.resx">
+      <DependentUpon>frm_Grafico_1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Grafico_2.resx">
+      <DependentUpon>frm_Grafico_2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Ingreso.resx">
       <DependentUpon>frm_Ingreso.vb</DependentUpon>

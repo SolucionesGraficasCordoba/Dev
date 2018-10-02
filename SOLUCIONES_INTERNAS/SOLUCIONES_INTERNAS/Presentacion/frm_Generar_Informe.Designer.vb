@@ -22,13 +22,7 @@ Partial Class frm_Generar_Informe
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.GroupListadoTareas = New System.Windows.Forms.GroupBox()
         Me.cboMes = New System.Windows.Forms.ComboBox()
         Me.Label31 = New System.Windows.Forms.Label()
@@ -38,22 +32,21 @@ Partial Class frm_Generar_Informe
         Me.btnGenerar_Informe = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgvTotalesMensuales = New System.Windows.Forms.DataGridView()
-        Me.Chart11 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.btnVerGraficos = New System.Windows.Forms.Button()
         Me.GroupListadoTareas.SuspendLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgvTotalesMensuales, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Chart11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'btnSalir
+        'btnCancelar
         '
-        Me.btnSalir.Location = New System.Drawing.Point(474, 659)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(108, 60)
-        Me.btnSalir.TabIndex = 39
-        Me.btnSalir.Text = "Salir"
-        Me.btnSalir.UseVisualStyleBackColor = True
+        Me.btnCancelar.Location = New System.Drawing.Point(588, 577)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(79, 23)
+        Me.btnCancelar.TabIndex = 39
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'GroupListadoTareas
         '
@@ -141,71 +134,38 @@ Partial Class frm_Generar_Informe
         Me.dgvTotalesMensuales.Size = New System.Drawing.Size(597, 198)
         Me.dgvTotalesMensuales.TabIndex = 0
         '
-        'Chart11
+        'btnVerGraficos
         '
-        ChartArea1.Name = "ChartArea1"
-        ChartArea1.Visible = False
-        Me.Chart11.ChartAreas.Add(ChartArea1)
-        Legend1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Legend1.IsTextAutoFit = False
-        Legend1.Name = "Legend1"
-        Legend1.Position.Auto = False
-        Legend1.Position.Height = 43.39622!
-        Legend1.Position.Width = 43.39622!
-        Legend1.Position.X = 30.0!
-        Legend1.Position.Y = 30.0!
-        Me.Chart11.Legends.Add(Legend1)
-        Me.Chart11.Location = New System.Drawing.Point(137, 597)
-        Me.Chart11.Name = "Chart11"
-        Series1.BorderColor = System.Drawing.Color.LightCoral
-        Series1.ChartArea = "ChartArea1"
-        Series1.IsValueShownAsLabel = True
-        Series1.Legend = "Legend1"
-        Series1.LegendText = "Tiempo Estimado"
-        Series1.Name = "Series1"
-        Series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int64
-        Series2.ChartArea = "ChartArea1"
-        Series2.Legend = "Legend1"
-        Series2.LegendText = "Tiempo Real"
-        Series2.Name = "Series2"
-        Series3.ChartArea = "ChartArea1"
-        Series3.Legend = "Legend1"
-        Series3.LegendText = "Tiempo Asignado"
-        Series3.Name = "Series3"
-        Me.Chart11.Series.Add(Series1)
-        Me.Chart11.Series.Add(Series2)
-        Me.Chart11.Series.Add(Series3)
-        Me.Chart11.Size = New System.Drawing.Size(315, 122)
-        Me.Chart11.TabIndex = 91
-        Me.Chart11.Text = "Chart11"
-        Title1.Name = "Title1"
-        Me.Chart11.Titles.Add(Title1)
+        Me.btnVerGraficos.Location = New System.Drawing.Point(470, 577)
+        Me.btnVerGraficos.Name = "btnVerGraficos"
+        Me.btnVerGraficos.Size = New System.Drawing.Size(86, 23)
+        Me.btnVerGraficos.TabIndex = 92
+        Me.btnVerGraficos.Text = "Ver Gráficos"
+        Me.btnVerGraficos.UseVisualStyleBackColor = True
         '
         'frm_Generar_Informe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(694, 743)
-        Me.Controls.Add(Me.Chart11)
+        Me.ClientSize = New System.Drawing.Size(694, 618)
+        Me.Controls.Add(Me.btnVerGraficos)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.btnSalir)
+        Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.GroupListadoTareas)
         Me.Controls.Add(Me.btnGenerar_Informe)
         Me.Name = "frm_Generar_Informe"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Generar Informe"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.GroupListadoTareas.ResumeLayout(False)
         Me.GroupListadoTareas.PerformLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.dgvTotalesMensuales, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Chart11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents btnSalir As System.Windows.Forms.Button
+    Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents GroupListadoTareas As System.Windows.Forms.GroupBox
     Friend WithEvents cboMes As System.Windows.Forms.ComboBox
     Friend WithEvents Label31 As System.Windows.Forms.Label
@@ -215,5 +175,5 @@ Partial Class frm_Generar_Informe
     Friend WithEvents btnGenerar_Informe As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents dgvTotalesMensuales As System.Windows.Forms.DataGridView
-    Friend WithEvents Chart11 As System.Windows.Forms.DataVisualization.Charting.Chart
+    Friend WithEvents btnVerGraficos As System.Windows.Forms.Button
 End Class

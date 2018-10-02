@@ -175,7 +175,7 @@ Public Class frm_Generar_Informe
         End Try
     End Sub
 
-    Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnSalir.Click
+    Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
         Me.Close()
         Me.Dispose()
     End Sub
@@ -385,18 +385,7 @@ Public Class frm_Generar_Informe
        
     End Sub
 
-    Function llenargrafico(ByVal indexfila As Integer)
-        Dim consultaporsector = (From A In datavistas.Tiempos_Totales
-                                 Select A.COL_id_colaborador,
-                                 A.COL_nombre_col,
-                                 A.TAR_fecha,
-                                A.Total_estimado,
-                                 A.Total_real,
-                                 A.SEC_id_sector,
-                                 A.SEC_nombre_sector,
-                                 A.Asignacion,
-                                 A.CADENA
-         Where (SEC_id_sector = cbo_sector.SelectedIndex + 1 And TAR_fecha.Value.Month = cboMes.SelectedIndex + 1 And COL_id_colaborador = CStr(dgvTotalesMensuales.Rows(indexfila).Cells(0).Value))) 'PABLO
-        Return consultaporsector
-    End Function
+    Private Sub btnVerGraficos_Click(sender As System.Object, e As System.EventArgs) Handles btnVerGraficos.Click
+        Frm_Graficos.Show()
+    End Sub
 End Class
