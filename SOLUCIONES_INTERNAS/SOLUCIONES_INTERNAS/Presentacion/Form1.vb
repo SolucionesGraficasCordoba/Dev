@@ -100,4 +100,8 @@
     Private Sub btnbuscarmat_Click(sender As System.Object, e As System.EventArgs)
         '  cargarmaterias(cboCurso.Text)
     End Sub
+
+    Private Sub Form1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

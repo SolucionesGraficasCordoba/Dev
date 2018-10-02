@@ -215,10 +215,28 @@
     <Compile Include="Presentacion\frm_Principal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frm_Proceso_Corte.Designer.vb">
-      <DependentUpon>frm_Proceso_Corte.vb</DependentUpon>
+    <Compile Include="Presentacion\frm_Proceso2.Designer.vb">
+      <DependentUpon>frm_Proceso2.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frm_Proceso_Corte.vb">
+    <Compile Include="Presentacion\frm_Proceso2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_proceso3.Designer.vb">
+      <DependentUpon>frm_proceso3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_proceso3.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_Procesos.Designer.vb">
+      <DependentUpon>frm_Procesos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Procesos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_Producto.Designer.vb">
+      <DependentUpon>frm_Producto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Producto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frm_Retrabajo.Designer.vb">
@@ -299,8 +317,17 @@
     <EmbeddedResource Include="Presentacion\frm_Principal.resx">
       <DependentUpon>frm_Principal.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frm_Proceso_Corte.resx">
-      <DependentUpon>frm_Proceso_Corte.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\frm_Proceso2.resx">
+      <DependentUpon>frm_Proceso2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_proceso3.resx">
+      <DependentUpon>frm_proceso3.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Procesos.resx">
+      <DependentUpon>frm_Procesos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Producto.resx">
+      <DependentUpon>frm_Producto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Retrabajo.resx">
       <DependentUpon>frm_Retrabajo.vb</DependentUpon>

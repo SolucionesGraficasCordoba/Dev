@@ -55,8 +55,11 @@
     Private Sub cbo_sector_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbo_sector.SelectedIndexChanged
         armargrillacolaborador()
         Dim consultaporsector = (From A In datavistas.Colaborador_por_Sector
-                                Select A.COL_id_colaborador, A.COL_nombre_col, A.SEC_id_sector, A.SEC_nombre_sector
-                                Where (SEC_id_sector = cbo_sector.SelectedIndex + 1))
+                                Select A.COL_id_colaborador,
+                                A.COL_nombre_col,
+                                A.SEC_id_sector,
+                                A.SEC_nombre_sector
+          Where (SEC_id_sector = CInt(cbo_sector.SelectedIndex + 1)))
         dgvColaboradores.DataSource = consultaporsector
         Label6.Text = dgvColaboradores.Rows.Count
     End Sub
@@ -74,6 +77,7 @@
                            o.TAR_observaciones, o.ORT_id_orden_trabajo, o.ORT_numero_ot, o.TAR_fecha, o.TAR_carga_horaria, o.TAR_hora_fin, o.Expr1, o.COL_nombre_col
                            Where COL_nombre_col = vble_colaborador And TAR_fecha = vble_fecha)
         mostrargrillaobligaciones(datagridtarea)
+
         ' dgvColaboradores.ClearSelection()
 
         'VALIDA SI TIENE ASIGNADAS TAREAS AL COLABORADOR

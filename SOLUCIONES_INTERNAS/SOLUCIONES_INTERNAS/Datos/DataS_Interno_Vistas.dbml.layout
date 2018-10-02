@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13.5" name="DataS_Interno_Vistas">
   <DataContextMoniker Name="/DataS_Interno_Vistas" />
   <nestedChildShapes>
-    <classShape Id="a0ad6a51-fc86-41ee-8334-6758724bc372" absoluteBounds="0.75, 0.75, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/DataS_Interno_Vistas/Colaborador_por_Sector" />
-      <nestedChildShapes>
-        <elementListCompartment Id="672465aa-de93-4b19-89c5-a8cc65fd0b71" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="e146fe0b-01d4-42ab-bfd2-352bb0791de6" absoluteBounds="3.75, 0.75, 2, 2.5401025390625005">
       <DataClassMoniker Name="/DataS_Interno_Vistas/VistaTareas" />
       <nestedChildShapes>
@@ -48,6 +42,12 @@
       <DataClassMoniker Name="/DataS_Interno_Vistas/Tiempos_Totales" />
       <nestedChildShapes>
         <elementListCompartment Id="836db8ac-1745-4aeb-a223-1508db74d47a" absoluteBounds="4.39, 4.835, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="36d40e4d-81dd-41cd-9bb4-6f66e1ae7e66" absoluteBounds="0.5, 1.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataS_Interno_Vistas/Colaborador_por_Sector" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e7e3f991-b498-47ca-8d9d-164e423f7317" absoluteBounds="0.51500000000000057, 2.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

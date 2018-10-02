@@ -596,7 +596,7 @@ Partial Class frm_Orden_Trabajo
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(5, 104)
+        Me.Label34.Location = New System.Drawing.Point(5, 95)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(13, 13)
         Me.Label34.TabIndex = 58
@@ -605,7 +605,7 @@ Partial Class frm_Orden_Trabajo
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(5, 79)
+        Me.Label35.Location = New System.Drawing.Point(5, 70)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(13, 13)
         Me.Label35.TabIndex = 57
@@ -614,7 +614,7 @@ Partial Class frm_Orden_Trabajo
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(5, 53)
+        Me.Label36.Location = New System.Drawing.Point(5, 44)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(13, 13)
         Me.Label36.TabIndex = 56
@@ -914,7 +914,7 @@ Partial Class frm_Orden_Trabajo
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(5, 104)
+        Me.Label11.Location = New System.Drawing.Point(5, 92)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(13, 13)
         Me.Label11.TabIndex = 58
@@ -923,7 +923,7 @@ Partial Class frm_Orden_Trabajo
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(5, 79)
+        Me.Label12.Location = New System.Drawing.Point(5, 67)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(13, 13)
         Me.Label12.TabIndex = 57
@@ -932,7 +932,7 @@ Partial Class frm_Orden_Trabajo
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(5, 53)
+        Me.Label13.Location = New System.Drawing.Point(5, 41)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(13, 13)
         Me.Label13.TabIndex = 56
@@ -1157,7 +1157,7 @@ Partial Class frm_Orden_Trabajo
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(5, 104)
+        Me.Label21.Location = New System.Drawing.Point(5, 94)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(13, 13)
         Me.Label21.TabIndex = 58
@@ -1166,7 +1166,7 @@ Partial Class frm_Orden_Trabajo
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(5, 79)
+        Me.Label20.Location = New System.Drawing.Point(5, 69)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(13, 13)
         Me.Label20.TabIndex = 57
@@ -1175,7 +1175,7 @@ Partial Class frm_Orden_Trabajo
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(5, 53)
+        Me.Label14.Location = New System.Drawing.Point(5, 43)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(13, 13)
         Me.Label14.TabIndex = 56

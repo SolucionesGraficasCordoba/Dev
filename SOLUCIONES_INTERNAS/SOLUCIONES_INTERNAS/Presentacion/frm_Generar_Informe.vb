@@ -207,90 +207,90 @@ Public Class frm_Generar_Informe
         totalgrafico = dgvTotalesMensuales.Rows.Count
 
         '************************inicio grafico 1
-        If 1 <= totalgrafico Then
+        'If 1 <= totalgrafico Then
 
-            Chart1.Series(0).Points.Clear()
-            Chart1.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column ' tipo de grafico
-            Chart1.Series(0).YValueMembers = "Total_estimado"
-            Chart1.Series(0).IsValueShownAsLabel = True ' muestra los valores de cada serie
-            Chart1.Series(1).YValueMembers = "Total_real"
-            Chart1.Series(2).YValueMembers = "Asignacion"
-            Chart1.Titles(0).Text = CStr(dgvTotalesMensuales.Rows(0).Cells(1).Value)
-            Chart1.Series(0).XValueMember = "CADENA"
-            Chart1.Series(1).XValueMember = "CADENA"
-            Chart1.Series(2).XValueMember = "CADENA"
-            Chart1.DataSource = llenargrafico(0)
-        Else
-            Chart1.DataSource = Nothing
-        End If
+        '    Chart1.Series(0).Points.Clear()
+        '    Chart1.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column ' tipo de grafico
+        '    Chart1.Series(0).YValueMembers = "Total_estimado"
+        '    Chart1.Series(0).IsValueShownAsLabel = True ' muestra los valores de cada serie
+        '    Chart1.Series(1).YValueMembers = "Total_real"
+        '    Chart1.Series(2).YValueMembers = "Asignacion"
+        '    Chart1.Titles(0).Text = CStr(dgvTotalesMensuales.Rows(0).Cells(1).Value)
+        '    Chart1.Series(0).XValueMember = "CADENA"
+        '    Chart1.Series(1).XValueMember = "CADENA"
+        '    Chart1.Series(2).XValueMember = "CADENA"
+        '    Chart1.DataSource = llenargrafico(0)
+        'Else
+        '    Chart1.DataSource = Nothing
+        'End If
         '***************************fin grafico 1*********************************
 
         ''************************inicio grafico 2*********************************
-        If 2 <= totalgrafico Then
-            Chart2.Series(0).Points.Clear()
-            Chart2.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column
-            Chart2.Series(0).YValueMembers = "Total_estimado"
-            Chart2.Series(0).IsValueShownAsLabel = True ' muestra los valores de cada serie
-            Chart2.Series(1).YValueMembers = "Total_real"
-            Chart2.Series(2).YValueMembers = "Asignacion"
-            Chart2.Titles(0).Text = CStr(dgvTotalesMensuales.Rows(1).Cells(1).Value)
-            Chart2.Series(0).XValueMember = "CADENA"
-            Chart2.Series(1).XValueMember = "CADENA"
-            Chart2.Series(2).XValueMember = "CADENA"
-            Chart2.DataSource = llenargrafico(1)
-        Else
-            Chart2.DataSource = Nothing
-        End If
+        'If 2 <= totalgrafico Then
+        '    Chart2.Series(0).Points.Clear()
+        '    Chart2.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column
+        '    Chart2.Series(0).YValueMembers = "Total_estimado"
+        '    Chart2.Series(0).IsValueShownAsLabel = True ' muestra los valores de cada serie
+        '    Chart2.Series(1).YValueMembers = "Total_real"
+        '    Chart2.Series(2).YValueMembers = "Asignacion"
+        '    Chart2.Titles(0).Text = CStr(dgvTotalesMensuales.Rows(1).Cells(1).Value)
+        '    Chart2.Series(0).XValueMember = "CADENA"
+        '    Chart2.Series(1).XValueMember = "CADENA"
+        '    Chart2.Series(2).XValueMember = "CADENA"
+        '    Chart2.DataSource = llenargrafico(1)
+        'Else
+        '    Chart2.DataSource = Nothing
+        'End If
         ''***************************fin grafico 2*********************************
 
         ''************************inicio grafico 3*********************************
-        If 3 <= totalgrafico Then
-            Chart3.Series(0).Points.Clear()
-            Chart3.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column ' tipo de grafico
-            Chart3.Series(0).YValueMembers = "Total_estimado"
-            Chart3.Series(0).IsValueShownAsLabel = True ' muestra los valores de cada serie
-            Chart3.Series(1).YValueMembers = "Total_real"
-            Chart3.Series(2).YValueMembers = "Asignacion"
-            Chart3.Titles(0).Text = CStr(dgvTotalesMensuales.Rows(2).Cells(1).Value)
-            Chart3.Series(0).XValueMember = "CADENA"
-            Chart3.Series(1).XValueMember = "CADENA"
-            Chart3.Series(2).XValueMember = "CADENA"
-            Chart3.DataSource = llenargrafico(2)
-        Else
-            Chart3.DataSource = Nothing
-        End If
+        'If 3 <= totalgrafico Then
+        '    Chart3.Series(0).Points.Clear()
+        '    Chart3.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column ' tipo de grafico
+        '    Chart3.Series(0).YValueMembers = "Total_estimado"
+        '    Chart3.Series(0).IsValueShownAsLabel = True ' muestra los valores de cada serie
+        '    Chart3.Series(1).YValueMembers = "Total_real"
+        '    Chart3.Series(2).YValueMembers = "Asignacion"
+        '    Chart3.Titles(0).Text = CStr(dgvTotalesMensuales.Rows(2).Cells(1).Value)
+        '    Chart3.Series(0).XValueMember = "CADENA"
+        '    Chart3.Series(1).XValueMember = "CADENA"
+        '    Chart3.Series(2).XValueMember = "CADENA"
+        '    Chart3.DataSource = llenargrafico(2)
+        'Else
+        '    Chart3.DataSource = Nothing
+        'End If
         ''***************************fin grafico 3*********************************
 
         ''************************inicio grafico 4*********************************
-        If 4 <= totalgrafico Then
-            Chart4.Series(0).Points.Clear()
-            Chart4.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column ' tipo de grafico
-            Chart4.Series(0).YValueMembers = "Total_estimado"
-            Chart4.Series(0).IsValueShownAsLabel = True ' muestra los valores de cada serie
-            Chart4.Series(1).YValueMembers = "Total_real"
-            Chart4.Series(2).YValueMembers = "Asignacion"
-            Chart4.Titles(0).Text = CStr(dgvTotalesMensuales.Rows(3).Cells(1).Value)
-            Chart4.Series(0).XValueMember = "CADENA"
-            Chart4.Series(1).XValueMember = "CADENA"
-            Chart4.Series(2).XValueMember = "CADENA"
-            Chart4.DataSource = llenargrafico(3)
-        End If
+        'If 4 <= totalgrafico Then
+        '    Chart4.Series(0).Points.Clear()
+        '    Chart4.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column ' tipo de grafico
+        '    Chart4.Series(0).YValueMembers = "Total_estimado"
+        '    Chart4.Series(0).IsValueShownAsLabel = True ' muestra los valores de cada serie
+        '    Chart4.Series(1).YValueMembers = "Total_real"
+        '    Chart4.Series(2).YValueMembers = "Asignacion"
+        '    Chart4.Titles(0).Text = CStr(dgvTotalesMensuales.Rows(3).Cells(1).Value)
+        '    Chart4.Series(0).XValueMember = "CADENA"
+        '    Chart4.Series(1).XValueMember = "CADENA"
+        '    Chart4.Series(2).XValueMember = "CADENA"
+        '    Chart4.DataSource = llenargrafico(3)
+        'End If
         ''***************************fin grafico 4*********************************
 
         ''************************inicio grafico 5*********************************
-        If 5 <= totalgrafico Then
-            Chart5.Series(0).Points.Clear()
-            Chart5.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column ' tipo de grafico
-            Chart5.Series(0).YValueMembers = "Total_estimado"
-            Chart5.Series(0).IsValueShownAsLabel = True ' muestra los valores de cada serie
-            Chart5.Series(1).YValueMembers = "Total_real"
-            Chart5.Series(2).YValueMembers = "Asignacion"
-            Chart5.Titles(0).Text = CStr(dgvTotalesMensuales.Rows(4).Cells(1).Value)
-            Chart5.Series(0).XValueMember = "CADENA"
-            Chart5.Series(1).XValueMember = "CADENA"
-            Chart5.Series(2).XValueMember = "CADENA"
-            Chart5.DataSource = llenargrafico(4)
-        End If
+        'If 5 <= totalgrafico Then
+        '    Chart5.Series(0).Points.Clear()
+        '    Chart5.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column ' tipo de grafico
+        '    Chart5.Series(0).YValueMembers = "Total_estimado"
+        '    Chart5.Series(0).IsValueShownAsLabel = True ' muestra los valores de cada serie
+        '    Chart5.Series(1).YValueMembers = "Total_real"
+        '    Chart5.Series(2).YValueMembers = "Asignacion"
+        '    Chart5.Titles(0).Text = CStr(dgvTotalesMensuales.Rows(4).Cells(1).Value)
+        '    Chart5.Series(0).XValueMember = "CADENA"
+        '    Chart5.Series(1).XValueMember = "CADENA"
+        '    Chart5.Series(2).XValueMember = "CADENA"
+        '    Chart5.DataSource = llenargrafico(4)
+        'End If
         ''***************************fin grafico 5*********************************
 
         ''************************inicio grafico 6*********************************
