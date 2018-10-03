@@ -13,10 +13,9 @@ Public Class frm_Etiqueta_Modelo_1
         Label18.Enabled = False
         Label22.Visible = False 'HACER VISIBLE CUANDO SEA NECESARIO
         Label25.Visible = False 'HACER VISIBLE CUANDO SEA NECESARIO
-
         ArmarEtiqueta()
-
         txtId_Cliente.Visible = False
+        txt_id_orden.Visible = False
         dgv_Etiquetas.ClearSelection()
     End Sub
 
@@ -35,9 +34,10 @@ Public Class frm_Etiqueta_Modelo_1
 
     Sub Limpiar()
         txtDescripcionEntrega.Clear()
-        txt_Codigo_Etiqueta.Clear()
         txtDirigidoA.Clear()
         txtId_Cliente.Clear()
+        txt_id_orden.Clear()
+        txt_orden.Clear()
         txtSolicitante.Clear()
         txtSector.Clear()
         txtDomicilio.Clear()
@@ -58,7 +58,7 @@ Public Class frm_Etiqueta_Modelo_1
         dgv_Etiquetas.AutoGenerateColumns = False
         dgv_Etiquetas.Columns.Clear()
 
-        dgv_Etiquetas.Columns.Add(txt_Codigo_Etiqueta.Text, "Código")
+        dgv_Etiquetas.Columns.Add(txt_orden.Text, "Orden")
         dgv_Etiquetas.Columns.Add(txtDescripcionEntrega.Text, "Descrición")
         dgv_Etiquetas.Columns.Add("CLI_id_cliente", "id_cliente")
         dgv_Etiquetas.Columns(2).Visible = False
@@ -79,7 +79,7 @@ Public Class frm_Etiqueta_Modelo_1
     End Sub
 
     Public Sub CargaEtiqueta()
-        Dim row As String() = New String() {txt_Codigo_Etiqueta.Text.ToUpper,
+        Dim row As String() = New String() {txt_orden.Text.ToUpper,
                                             txtDescripcionEntrega.Text.ToUpper,
                                             txtId_Cliente.Text.ToUpper,
                                             txtDirigidoA.Text.ToUpper,
@@ -97,7 +97,7 @@ Public Class frm_Etiqueta_Modelo_1
                                             txtPeso.Text.ToUpper,
                                             cboLogo.Text.ToUpper}
         dgv_Etiquetas.Rows.Add(row)
-        Limpiar()
+        ' Limpiar()
         dgv_Etiquetas.ClearSelection()
     End Sub
 
@@ -139,13 +139,33 @@ Public Class frm_Etiqueta_Modelo_1
             Exit Sub
         End If
         CargaEtiqueta()
+
+        ' txtDescripcionEntrega.Clear()
+        '  txtDirigidoA.Clear()
+        '  txtId_Cliente.Clear()
+        ' txt_id_orden.Clear()
+        ' txt_orden.Clear()
+        '  txtSolicitante.Clear()
+        '  txtSector.Clear()
+        '  txtDomicilio.Clear()
+        '  txtLocalidad.Clear()
+        '  txtCodigoPostal.Clear()
+        '  txtDespachado.Clear()
+        ' txtSeccion.Clear()
+        txtCantidadBultos.Clear()
+        txtNumeroBultos.Clear()
+        txtUnidadxBulto.Clear()
+        txtTotalBultos.Clear()
+        txtPeso.Clear()
+        cboLogo.SelectedIndex = -1
+
         dgv_Etiquetas.ClearSelection()
     End Sub
 
     Private Sub btnGenerarEtiquetas_Click(sender As System.Object, e As System.EventArgs) Handles btnGenerarEtiquetas.Click
         Dim consulta As String = "modelo_etiquetas_" + Date.Now.Millisecond.ToString + ".csv"
-        ' Dim filePath As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta
-        Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
+        Dim filePath As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta
+        '  Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
         Dim delimeter As String = ","
         Dim sb As New StringBuilder
         Try
@@ -160,7 +180,6 @@ Public Class frm_Etiqueta_Modelo_1
                 For j As Integer = 0 To dgv_Etiquetas.Columns.Count - 1
                     array(j) = dgv_Etiquetas(j, i).Value.ToString
                 Next
-
                 If Not dgv_Etiquetas.Rows(i).IsNewRow Then
                     sb.AppendLine(String.Join(delimeter, array))
                 End If
@@ -168,7 +187,27 @@ Public Class frm_Etiqueta_Modelo_1
             File.WriteAllText(filePath, sb.ToString)
             MsgBox("La consulta se ha generado correctamente")
             '  Process.Start(filePath)
-            Me.Close()
+            '  Me.Close()
+
+            ' txtDescripcionEntrega.Clear()
+            '  txtDirigidoA.Clear()
+            '  txtId_Cliente.Clear()
+            ' txt_id_orden.Clear()
+            ' txt_orden.Clear()
+            '  txtSolicitante.Clear()
+            '  txtSector.Clear()
+            '  txtDomicilio.Clear()
+            '  txtLocalidad.Clear()
+            '  txtCodigoPostal.Clear()
+            '  txtDespachado.Clear()
+            ' txtSeccion.Clear()
+            txtCantidadBultos.Clear()
+            txtNumeroBultos.Clear()
+            txtUnidadxBulto.Clear()
+            txtTotalBultos.Clear()
+            txtPeso.Clear()
+            cboLogo.SelectedIndex = -1
+
         Catch ex As Exception
             MsgBox("Hubo un error al generar la consulta")
         End Try
@@ -187,6 +226,12 @@ Public Class frm_Etiqueta_Modelo_1
                 Next
         End Select
         dgv_Etiquetas.ClearSelection()
+    End Sub
+
+    Private Sub btnBuscar_Orden_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Orden.Click
+        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
+        frm_Listado_Orden_Trabajo.Text = "Seleccionar Orden"
+        frm_Listado_Orden_Trabajo.Show()
     End Sub
 End Class
 
