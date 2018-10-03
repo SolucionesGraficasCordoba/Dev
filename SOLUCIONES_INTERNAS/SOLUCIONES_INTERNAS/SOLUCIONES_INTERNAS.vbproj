@@ -121,6 +121,12 @@
     <Compile Include="Presentacion\frm_Grafico.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\frm_Productos.Designer.vb">
+      <DependentUpon>frm_Productos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Productos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_Actualizar_Tarea.Designer.vb">
       <DependentUpon>frm_Actualizar_Tarea.vb</DependentUpon>
     </Compile>
@@ -292,6 +298,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Grafico.resx">
       <DependentUpon>frm_Grafico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Productos.resx">
+      <DependentUpon>frm_Productos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Actualizar_Tarea.resx">
       <DependentUpon>frm_Actualizar_Tarea.vb</DependentUpon>
