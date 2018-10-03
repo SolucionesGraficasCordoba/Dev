@@ -39,6 +39,12 @@ Partial Class frm_Producto
         Me.txt_Cantidad = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txt_tipo = New System.Windows.Forms.TextBox()
+        Me.txt_descripcion = New System.Windows.Forms.TextBox()
+        Me.btnGuardar_producto = New System.Windows.Forms.Button()
+        Me.btnCancelar_cancelar = New System.Windows.Forms.Button()
+        Me.btnActualizar_producto = New System.Windows.Forms.Button()
+        Me.btnNuevo_producto = New System.Windows.Forms.Button()
         Me.GroupListadoColaboradores = New System.Windows.Forms.GroupBox()
         Me.lblTotal_Colaboradores = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -46,12 +52,6 @@ Partial Class frm_Producto
         Me.txt_Buscar_Producto = New System.Windows.Forms.TextBox()
         Me.dgvLista_Productos = New System.Windows.Forms.DataGridView()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.btnGuardar_producto = New System.Windows.Forms.Button()
-        Me.btnCancelar_cancelar = New System.Windows.Forms.Button()
-        Me.btnActualizar_producto = New System.Windows.Forms.Button()
-        Me.btnNuevo_producto = New System.Windows.Forms.Button()
-        Me.txt_descripcion = New System.Windows.Forms.TextBox()
-        Me.txt_tipo = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupListadoColaboradores.SuspendLayout()
         CType(Me.dgvLista_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -215,6 +215,57 @@ Partial Class frm_Producto
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nuevo Producto"
         '
+        'txt_tipo
+        '
+        Me.txt_tipo.Location = New System.Drawing.Point(405, 23)
+        Me.txt_tipo.Name = "txt_tipo"
+        Me.txt_tipo.Size = New System.Drawing.Size(164, 20)
+        Me.txt_tipo.TabIndex = 73
+        '
+        'txt_descripcion
+        '
+        Me.txt_descripcion.Location = New System.Drawing.Point(76, 62)
+        Me.txt_descripcion.Multiline = True
+        Me.txt_descripcion.Name = "txt_descripcion"
+        Me.txt_descripcion.Size = New System.Drawing.Size(492, 71)
+        Me.txt_descripcion.TabIndex = 72
+        '
+        'btnGuardar_producto
+        '
+        Me.btnGuardar_producto.Location = New System.Drawing.Point(215, 193)
+        Me.btnGuardar_producto.Name = "btnGuardar_producto"
+        Me.btnGuardar_producto.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar_producto.TabIndex = 71
+        Me.btnGuardar_producto.Text = "Guardar"
+        Me.btnGuardar_producto.UseVisualStyleBackColor = True
+        '
+        'btnCancelar_cancelar
+        '
+        Me.btnCancelar_cancelar.Location = New System.Drawing.Point(414, 193)
+        Me.btnCancelar_cancelar.Name = "btnCancelar_cancelar"
+        Me.btnCancelar_cancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar_cancelar.TabIndex = 70
+        Me.btnCancelar_cancelar.Text = "Cancelar"
+        Me.btnCancelar_cancelar.UseVisualStyleBackColor = True
+        '
+        'btnActualizar_producto
+        '
+        Me.btnActualizar_producto.Location = New System.Drawing.Point(313, 193)
+        Me.btnActualizar_producto.Name = "btnActualizar_producto"
+        Me.btnActualizar_producto.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar_producto.TabIndex = 69
+        Me.btnActualizar_producto.Text = "Actualizar"
+        Me.btnActualizar_producto.UseVisualStyleBackColor = True
+        '
+        'btnNuevo_producto
+        '
+        Me.btnNuevo_producto.Location = New System.Drawing.Point(117, 193)
+        Me.btnNuevo_producto.Name = "btnNuevo_producto"
+        Me.btnNuevo_producto.Size = New System.Drawing.Size(75, 23)
+        Me.btnNuevo_producto.TabIndex = 68
+        Me.btnNuevo_producto.Text = "Nuevo"
+        Me.btnNuevo_producto.UseVisualStyleBackColor = True
+        '
         'GroupListadoColaboradores
         '
         Me.GroupListadoColaboradores.Controls.Add(Me.lblTotal_Colaboradores)
@@ -285,57 +336,6 @@ Partial Class frm_Producto
         Me.Label11.Size = New System.Drawing.Size(82, 13)
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "Ingrese Nombre"
-        '
-        'btnGuardar_producto
-        '
-        Me.btnGuardar_producto.Location = New System.Drawing.Point(215, 193)
-        Me.btnGuardar_producto.Name = "btnGuardar_producto"
-        Me.btnGuardar_producto.Size = New System.Drawing.Size(75, 23)
-        Me.btnGuardar_producto.TabIndex = 71
-        Me.btnGuardar_producto.Text = "Guardar"
-        Me.btnGuardar_producto.UseVisualStyleBackColor = True
-        '
-        'btnCancelar_cancelar
-        '
-        Me.btnCancelar_cancelar.Location = New System.Drawing.Point(414, 193)
-        Me.btnCancelar_cancelar.Name = "btnCancelar_cancelar"
-        Me.btnCancelar_cancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar_cancelar.TabIndex = 70
-        Me.btnCancelar_cancelar.Text = "Cancelar"
-        Me.btnCancelar_cancelar.UseVisualStyleBackColor = True
-        '
-        'btnActualizar_producto
-        '
-        Me.btnActualizar_producto.Location = New System.Drawing.Point(313, 193)
-        Me.btnActualizar_producto.Name = "btnActualizar_producto"
-        Me.btnActualizar_producto.Size = New System.Drawing.Size(75, 23)
-        Me.btnActualizar_producto.TabIndex = 69
-        Me.btnActualizar_producto.Text = "Actualizar"
-        Me.btnActualizar_producto.UseVisualStyleBackColor = True
-        '
-        'btnNuevo_producto
-        '
-        Me.btnNuevo_producto.Location = New System.Drawing.Point(117, 193)
-        Me.btnNuevo_producto.Name = "btnNuevo_producto"
-        Me.btnNuevo_producto.Size = New System.Drawing.Size(75, 23)
-        Me.btnNuevo_producto.TabIndex = 68
-        Me.btnNuevo_producto.Text = "Nuevo"
-        Me.btnNuevo_producto.UseVisualStyleBackColor = True
-        '
-        'txt_descripcion
-        '
-        Me.txt_descripcion.Location = New System.Drawing.Point(76, 62)
-        Me.txt_descripcion.Multiline = True
-        Me.txt_descripcion.Name = "txt_descripcion"
-        Me.txt_descripcion.Size = New System.Drawing.Size(492, 71)
-        Me.txt_descripcion.TabIndex = 72
-        '
-        'txt_tipo
-        '
-        Me.txt_tipo.Location = New System.Drawing.Point(405, 23)
-        Me.txt_tipo.Name = "txt_tipo"
-        Me.txt_tipo.Size = New System.Drawing.Size(164, 20)
-        Me.txt_tipo.TabIndex = 73
         '
         'frm_Producto
         '
