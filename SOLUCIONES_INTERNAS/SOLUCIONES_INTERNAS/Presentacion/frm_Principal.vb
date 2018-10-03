@@ -403,11 +403,7 @@ Public Class frm_Principal
         frm_Listado_Retrabajo.Show()
     End Sub
 
-    Private Sub GenerarInformesToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles GenerarInformesToolStripMenuItem.Click
-
-    End Sub
-
-    Private Sub EtiquetaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EtiquetaToolStripMenuItem.Click
+    Private Sub EtiquetasToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EtiquetasToolStripMenuItem.Click
         frm_Etiqueta_Modelo_1.Show()
     End Sub
 End Class

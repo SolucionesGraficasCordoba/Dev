@@ -1,10 +1,12 @@
 ﻿Imports System.Text
 Imports System.IO
 Imports System.Windows.Forms.DataVisualization.Charting
+Imports Microsoft.VisualBasic.PowerPacks.Printing.Compatibility.VB6
 
 Public Class Frm_Graficos
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
+
     Private Sub Frm_Graficos_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         TipoGrafico()
         btnAnterior.Enabled = False
@@ -26,13 +28,11 @@ Public Class Frm_Graficos
     End Function
 
     Sub TipoGrafico()
-
         Dim totalgrafico As Integer
         totalgrafico = frm_Generar_Informe.dgvTotalesMensuales.Rows.Count
 
         '************************inicio grafico 1
         If 1 <= totalgrafico Then
-
             Chart1.Series(0).Points.Clear()
             Chart1.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column ' tipo de grafico
             Chart1.Series(0).YValueMembers = "Total_estimado"
@@ -86,54 +86,7 @@ Public Class Frm_Graficos
         ''***************************fin grafico 3*********************************
 
         ''************************inicio grafico 4*********************************
-        'If 4 <= totalgrafico Then
-        '    Chart4.Series(0).Points.Clear()
-        '    Chart4.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column ' tipo de grafico
-        '    Chart4.Series(0).YValueMembers = "Total_estimado"
-        '    Chart4.Series(0).IsValueShownAsLabel = True ' muestra los valores de cada serie
-        '    Chart4.Series(1).YValueMembers = "Total_real"
-        '    Chart4.Series(2).YValueMembers = "Asignacion"
-        '    Chart4.Titles(0).Text = CStr(frm_Generar_Informe.dgvTotalesMensuales.Rows(3).Cells(1).Value)
-        '    Chart4.Series(0).XValueMember = "CADENA"
-        '    Chart4.Series(1).XValueMember = "CADENA"
-        '    Chart4.Series(2).XValueMember = "CADENA"
-        '    Chart4.DataSource = llenargrafico(3)
-        'End If
-        ' ''***************************fin grafico 4*********************************
 
-        ' ''************************inicio grafico 5*********************************
-        'If 5 <= totalgrafico Then
-        '    Chart5.Series(0).Points.Clear()
-        '    Chart5.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column ' tipo de grafico
-        '    Chart5.Series(0).YValueMembers = "Total_estimado"
-        '    Chart5.Series(0).IsValueShownAsLabel = True ' muestra los valores de cada serie
-        '    Chart5.Series(1).YValueMembers = "Total_real"
-        '    Chart5.Series(2).YValueMembers = "Asignacion"
-        '    Chart5.Titles(0).Text = CStr(frm_Generar_Informe.dgvTotalesMensuales.Rows(4).Cells(1).Value)
-        '    Chart5.Series(0).XValueMember = "CADENA"
-        '    Chart5.Series(1).XValueMember = "CADENA"
-        '    Chart5.Series(2).XValueMember = "CADENA"
-        '    Chart5.DataSource = llenargrafico(4)
-        'End If
-        ' ''***************************fin grafico 5*********************************
-
-        ' ''************************inicio grafico 6*********************************
-        'If 6 <= totalgrafico Then
-        '    Chart6.Series(0).Points.Clear()
-        '    Chart6.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column 'tipo de grafico
-        '    Chart6.Series(0).Color = Color.Blue
-        '    Chart6.Series(0).YValueMembers = "Total_estimado"
-        '    Chart6.Series(0).IsValueShownAsLabel = True 'muestra los valores de cada serie
-        '    Chart6.Series(1).Color = Color.Red
-        '    Chart6.Series(1).YValueMembers = "Total_real"
-        '    Chart6.Series(1).IsValueShownAsLabel = True
-        '    Chart6.Series(2).Color = Color.Yellow
-        '    Chart6.Series(2).YValueMembers = "Asignacion"
-        '    Chart6.Series(2).IsValueShownAsLabel = True
-        '    Chart6.Titles(0).Text = CStr(frm_Generar_Informe.dgvTotalesMensuales.Rows(5).Cells(1).Value)
-        '    Chart6.DataSource = llenargrafico(5)
-        'End If
-        ' ''***************************fin grafico 6*********************************
 
         ' ''***************************fin grafico 7*********************************
         'If 7 <= totalgrafico Then
@@ -211,5 +164,23 @@ Public Class Frm_Graficos
 
     Private Sub btnSiguiente_Click(sender As System.Object, e As System.EventArgs) Handles btnSiguiente.Click
         frm_Grafico_1.Show()
+    End Sub
+
+    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
+        PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
+        PrintForm1.PrinterSettings.DefaultPageSettings.Landscape = True
+        PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName ="A4"
+
+        'PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Left = 30
+        'PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Right = 30
+        'PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Top = 30
+        'PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Bottom = 30
+
+        btnImprimir.Visible = False
+        btnAnterior.Visible = False
+        btnSiguiente.Visible = False
+        btnCancelar.Visible = False
+
+        PrintForm1.Print() 'imprimir
     End Sub
 End Class

@@ -374,6 +374,9 @@
             frm_Actualizar_Tarea.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
             frm_Actualizar_Tarea.txt_numero_orden.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
 
+        ElseIf quienllamolistado_ot.Name = frm_Etiqueta_Modelo_1.Name Then
+            frm_Etiqueta_Modelo_1.txt_id_orden.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+            frm_Etiqueta_Modelo_1.txt_orden.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
             'LLAMA AL FORMULARIO TAREA
         ElseIf quienllamolistado_ot.Name = frm_Tarea.Name Then
 

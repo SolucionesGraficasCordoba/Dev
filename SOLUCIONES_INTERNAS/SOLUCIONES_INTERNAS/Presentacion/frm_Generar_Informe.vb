@@ -202,7 +202,6 @@ Public Class frm_Generar_Informe
 
     'BOTON CARGAR
     Sub TipoGrafico()
-
         Dim totalgrafico As Integer
         totalgrafico = dgvTotalesMensuales.Rows.Count
 
@@ -382,7 +381,6 @@ Public Class frm_Generar_Informe
         '    Chart10.DataSource = llenargrafico(9)
         'End If
         ''***************************fin grafico 10*********************************
-       
     End Sub
 
     Private Sub btnVerGraficos_Click(sender As System.Object, e As System.EventArgs) Handles btnVerGraficos.Click

@@ -76,20 +76,20 @@ Partial Class frm_Principal
         Me.TareasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.OrdenDeTrabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReTrabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EtiquetaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.LBL_MENU_PERFIL = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.LBL_MENU_USU = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.EtiquetasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MenuStrip
         '
-        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.UsuarioToolStripMenuItem, Me.ColaboradorToolStripMenuItem, Me.VendedorToolStripMenuItem, Me.ClienteToolStripMenuItem, Me.PiezaToolStripMenuItem, Me.SectorToolStripMenuItem, Me.TareasToolStripMenuItem, Me.OrdenTrabajoToolStripMenuItem, Me.ReTrabajoToolStripMenuItem1, Me.GenerarInformesToolStripMenuItem})
+        Me.MenuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ArchivoToolStripMenuItem, Me.UsuarioToolStripMenuItem, Me.ColaboradorToolStripMenuItem, Me.VendedorToolStripMenuItem, Me.ClienteToolStripMenuItem, Me.PiezaToolStripMenuItem, Me.SectorToolStripMenuItem, Me.TareasToolStripMenuItem, Me.OrdenTrabajoToolStripMenuItem, Me.ReTrabajoToolStripMenuItem1, Me.GenerarInformesToolStripMenuItem, Me.EtiquetasToolStripMenuItem})
         Me.MenuStrip.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip.MdiWindowListItem = Me.ClienteToolStripMenuItem
         Me.MenuStrip.Name = "MenuStrip"
@@ -392,7 +392,7 @@ Partial Class frm_Principal
         '
         'GenerarInformesToolStripMenuItem
         '
-        Me.GenerarInformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TareasToolStripMenuItem1, Me.OrdenDeTrabajoToolStripMenuItem, Me.ReTrabajoToolStripMenuItem, Me.EtiquetaToolStripMenuItem})
+        Me.GenerarInformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TareasToolStripMenuItem1, Me.OrdenDeTrabajoToolStripMenuItem, Me.ReTrabajoToolStripMenuItem})
         Me.GenerarInformesToolStripMenuItem.Name = "GenerarInformesToolStripMenuItem"
         Me.GenerarInformesToolStripMenuItem.Size = New System.Drawing.Size(110, 20)
         Me.GenerarInformesToolStripMenuItem.Text = "Generar Informes"
@@ -414,12 +414,6 @@ Partial Class frm_Principal
         Me.ReTrabajoToolStripMenuItem.Name = "ReTrabajoToolStripMenuItem"
         Me.ReTrabajoToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.ReTrabajoToolStripMenuItem.Text = "Re-Trabajo"
-        '
-        'EtiquetaToolStripMenuItem
-        '
-        Me.EtiquetaToolStripMenuItem.Name = "EtiquetaToolStripMenuItem"
-        Me.EtiquetaToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
-        Me.EtiquetaToolStripMenuItem.Text = "Etiqueta"
         '
         'LBL_MENU_PERFIL
         '
@@ -473,6 +467,12 @@ Partial Class frm_Principal
         Me.GroupBox1.Size = New System.Drawing.Size(1360, 38)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
+        '
+        'EtiquetasToolStripMenuItem
+        '
+        Me.EtiquetasToolStripMenuItem.Name = "EtiquetasToolStripMenuItem"
+        Me.EtiquetasToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.EtiquetasToolStripMenuItem.Text = "Etiquetas"
         '
         'frm_Principal
         '
@@ -552,6 +552,6 @@ Partial Class frm_Principal
     Friend WithEvents NuevoRetrabajoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultarToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EtiquetaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EtiquetasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
