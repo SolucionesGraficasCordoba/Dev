@@ -25,26 +25,22 @@ Partial Class frm_Producto
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txt_Codigo = New System.Windows.Forms.TextBox()
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
-        Me.txt_Stock = New System.Windows.Forms.TextBox()
         Me.txt_id_producto_movimiento = New System.Windows.Forms.TextBox()
         Me.txt_id_orden_trabajo = New System.Windows.Forms.TextBox()
         Me.txt_id_producto = New System.Windows.Forms.TextBox()
         Me.txt_Cantidad = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.txt_tipo = New System.Windows.Forms.TextBox()
         Me.txt_descripcion = New System.Windows.Forms.TextBox()
         Me.btnGuardar_producto = New System.Windows.Forms.Button()
         Me.btnCancelar_cancelar = New System.Windows.Forms.Button()
         Me.btnActualizar_producto = New System.Windows.Forms.Button()
-        Me.btnNuevo_producto = New System.Windows.Forms.Button()
         Me.GroupListadoColaboradores = New System.Windows.Forms.GroupBox()
         Me.lblTotal_Colaboradores = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -52,6 +48,7 @@ Partial Class frm_Producto
         Me.txt_Buscar_Producto = New System.Windows.Forms.TextBox()
         Me.dgvLista_Productos = New System.Windows.Forms.DataGridView()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupListadoColaboradores.SuspendLayout()
         CType(Me.dgvLista_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,15 +81,6 @@ Partial Class frm_Producto
         Me.Label3.TabIndex = 0
         Me.Label3.Text = "Descripción"
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(202, 156)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(35, 13)
-        Me.Label4.TabIndex = 0
-        Me.Label4.Text = "Stock"
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -105,7 +93,7 @@ Partial Class frm_Producto
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(352, 154)
+        Me.Label6.Location = New System.Drawing.Point(360, 119)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(86, 13)
         Me.Label6.TabIndex = 4
@@ -144,13 +132,6 @@ Partial Class frm_Producto
         Me.dtpFecha.Size = New System.Drawing.Size(89, 20)
         Me.dtpFecha.TabIndex = 6
         '
-        'txt_Stock
-        '
-        Me.txt_Stock.Location = New System.Drawing.Point(243, 153)
-        Me.txt_Stock.Name = "txt_Stock"
-        Me.txt_Stock.Size = New System.Drawing.Size(100, 20)
-        Me.txt_Stock.TabIndex = 7
-        '
         'txt_id_producto_movimiento
         '
         Me.txt_id_producto_movimiento.Location = New System.Drawing.Point(462, 19)
@@ -160,7 +141,7 @@ Partial Class frm_Producto
         '
         'txt_id_orden_trabajo
         '
-        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(444, 151)
+        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(452, 116)
         Me.txt_id_orden_trabajo.Name = "txt_id_orden_trabajo"
         Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(24, 20)
         Me.txt_id_orden_trabajo.TabIndex = 9
@@ -174,7 +155,7 @@ Partial Class frm_Producto
         '
         'txt_Cantidad
         '
-        Me.txt_Cantidad.Location = New System.Drawing.Point(76, 153)
+        Me.txt_Cantidad.Location = New System.Drawing.Point(76, 133)
         Me.txt_Cantidad.Name = "txt_Cantidad"
         Me.txt_Cantidad.Size = New System.Drawing.Size(100, 20)
         Me.txt_Cantidad.TabIndex = 12
@@ -182,7 +163,7 @@ Partial Class frm_Producto
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(21, 156)
+        Me.Label9.Location = New System.Drawing.Point(21, 136)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(49, 13)
         Me.Label9.TabIndex = 11
@@ -190,49 +171,39 @@ Partial Class frm_Producto
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.txt_tipo)
+        Me.GroupBox1.Controls.Add(Me.ComboBox1)
         Me.GroupBox1.Controls.Add(Me.txt_descripcion)
         Me.GroupBox1.Controls.Add(Me.btnGuardar_producto)
         Me.GroupBox1.Controls.Add(Me.btnCancelar_cancelar)
         Me.GroupBox1.Controls.Add(Me.btnActualizar_producto)
-        Me.GroupBox1.Controls.Add(Me.btnNuevo_producto)
         Me.GroupBox1.Controls.Add(Me.txt_Cantidad)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo)
-        Me.GroupBox1.Controls.Add(Me.txt_Stock)
         Me.GroupBox1.Controls.Add(Me.dtpFecha)
         Me.GroupBox1.Controls.Add(Me.txt_Codigo)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 23)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 17)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(585, 231)
+        Me.GroupBox1.Size = New System.Drawing.Size(585, 209)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nuevo Producto"
-        '
-        'txt_tipo
-        '
-        Me.txt_tipo.Location = New System.Drawing.Point(405, 23)
-        Me.txt_tipo.Name = "txt_tipo"
-        Me.txt_tipo.Size = New System.Drawing.Size(164, 20)
-        Me.txt_tipo.TabIndex = 73
         '
         'txt_descripcion
         '
         Me.txt_descripcion.Location = New System.Drawing.Point(76, 62)
         Me.txt_descripcion.Multiline = True
         Me.txt_descripcion.Name = "txt_descripcion"
-        Me.txt_descripcion.Size = New System.Drawing.Size(492, 71)
+        Me.txt_descripcion.Size = New System.Drawing.Size(492, 50)
         Me.txt_descripcion.TabIndex = 72
         '
         'btnGuardar_producto
         '
-        Me.btnGuardar_producto.Location = New System.Drawing.Point(215, 193)
+        Me.btnGuardar_producto.Location = New System.Drawing.Point(181, 169)
         Me.btnGuardar_producto.Name = "btnGuardar_producto"
         Me.btnGuardar_producto.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar_producto.TabIndex = 71
@@ -241,7 +212,7 @@ Partial Class frm_Producto
         '
         'btnCancelar_cancelar
         '
-        Me.btnCancelar_cancelar.Location = New System.Drawing.Point(414, 193)
+        Me.btnCancelar_cancelar.Location = New System.Drawing.Point(380, 169)
         Me.btnCancelar_cancelar.Name = "btnCancelar_cancelar"
         Me.btnCancelar_cancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar_cancelar.TabIndex = 70
@@ -250,21 +221,12 @@ Partial Class frm_Producto
         '
         'btnActualizar_producto
         '
-        Me.btnActualizar_producto.Location = New System.Drawing.Point(313, 193)
+        Me.btnActualizar_producto.Location = New System.Drawing.Point(279, 169)
         Me.btnActualizar_producto.Name = "btnActualizar_producto"
         Me.btnActualizar_producto.Size = New System.Drawing.Size(75, 23)
         Me.btnActualizar_producto.TabIndex = 69
         Me.btnActualizar_producto.Text = "Actualizar"
         Me.btnActualizar_producto.UseVisualStyleBackColor = True
-        '
-        'btnNuevo_producto
-        '
-        Me.btnNuevo_producto.Location = New System.Drawing.Point(117, 193)
-        Me.btnNuevo_producto.Name = "btnNuevo_producto"
-        Me.btnNuevo_producto.Size = New System.Drawing.Size(75, 23)
-        Me.btnNuevo_producto.TabIndex = 68
-        Me.btnNuevo_producto.Text = "Nuevo"
-        Me.btnNuevo_producto.UseVisualStyleBackColor = True
         '
         'GroupListadoColaboradores
         '
@@ -278,7 +240,7 @@ Partial Class frm_Producto
         Me.GroupListadoColaboradores.Controls.Add(Me.Label7)
         Me.GroupListadoColaboradores.Controls.Add(Me.txt_id_producto)
         Me.GroupListadoColaboradores.Controls.Add(Me.Label1)
-        Me.GroupListadoColaboradores.Location = New System.Drawing.Point(12, 260)
+        Me.GroupListadoColaboradores.Location = New System.Drawing.Point(12, 232)
         Me.GroupListadoColaboradores.Name = "GroupListadoColaboradores"
         Me.GroupListadoColaboradores.Size = New System.Drawing.Size(585, 372)
         Me.GroupListadoColaboradores.TabIndex = 68
@@ -337,11 +299,20 @@ Partial Class frm_Producto
         Me.Label11.TabIndex = 0
         Me.Label11.Text = "Ingrese Nombre"
         '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Items.AddRange(New Object() {"Alta", "Baja"})
+        Me.ComboBox1.Location = New System.Drawing.Point(410, 19)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox1.TabIndex = 73
+        '
         'frm_Producto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(613, 647)
+        Me.ClientSize = New System.Drawing.Size(613, 615)
         Me.Controls.Add(Me.GroupListadoColaboradores)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Producto"
@@ -357,14 +328,12 @@ Partial Class frm_Producto
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents txt_Codigo As System.Windows.Forms.TextBox
     Friend WithEvents dtpFecha As System.Windows.Forms.DateTimePicker
-    Friend WithEvents txt_Stock As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_producto_movimiento As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_orden_trabajo As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_producto As System.Windows.Forms.TextBox
@@ -381,7 +350,6 @@ Partial Class frm_Producto
     Friend WithEvents btnGuardar_producto As System.Windows.Forms.Button
     Friend WithEvents btnCancelar_cancelar As System.Windows.Forms.Button
     Friend WithEvents btnActualizar_producto As System.Windows.Forms.Button
-    Friend WithEvents btnNuevo_producto As System.Windows.Forms.Button
     Friend WithEvents txt_descripcion As System.Windows.Forms.TextBox
-    Friend WithEvents txt_tipo As System.Windows.Forms.TextBox
+    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
 End Class

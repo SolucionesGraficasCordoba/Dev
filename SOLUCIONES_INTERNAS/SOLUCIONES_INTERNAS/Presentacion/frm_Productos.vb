@@ -1,5 +1,6 @@
 ﻿Public Class frm_Productos
     Dim datacontext As New DataS_Interno
+
     Private Sub btn_prod_guardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_prod_guardar.Click
         Try
             'consulta si el codigo de prod ya existe
@@ -13,7 +14,6 @@
                 MsgBox("Debe completar todos los campos requeridos")
                 Exit Sub
             End If
-
             'instancia y guarda en nuevoo producto
             Dim prod = New PRODUCTO
             prod.PROD_codigo = tb_prod_codigo.Text
@@ -37,6 +37,7 @@
 
         End Try
     End Sub
+
     Sub limpiarcampos()
         'limpia los textbox
         tb_prod_id.Clear()
@@ -44,8 +45,13 @@
         tb_prod_descripcion.Clear()
         tb_prod_stock.Clear()
     End Sub
+
+    'arma el datagrid
     Sub armargrilla()
-        'arma el datagrid
+        dgvLista_Productos.Enabled = True
+        dgvLista_Productos.AutoGenerateColumns = False
+        dgvLista_Productos.Columns.Clear()
+
         dgvLista_Productos.Columns.Add("PROD_id", "ID_producto")
         dgvLista_Productos.Columns.Add("PROD_codigo", "Código")
         dgvLista_Productos.Columns.Add("PROD_descripcion", "Descripción")
@@ -56,9 +62,12 @@
         dgvLista_Productos.Columns(2).DataPropertyName = "PROD_descripcion"
         dgvLista_Productos.Columns(3).DataPropertyName = "PROD_stock"
     End Sub
+
     Sub cargargrilla()
         'carga el datagrid
-        Dim consultaprod = From p In datacontext.PRODUCTO Select p.PROD_codigo, p.PROD_descripcion, p.PROD_id, p.PROD_stock
+        Dim consultaprod = From p In datacontext.PRODUCTO
+                           Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock
+                           Order By PROD_descripcion Ascending
         dgvLista_Productos.DataSource = consultaprod
     End Sub
 
@@ -68,7 +77,6 @@
         cargargrilla()
         dgvLista_Productos.ClearSelection()
     End Sub
-
 
     Private Sub dgvLista_Productos_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvLista_Productos.Click
         If dgvLista_Productos.SelectedRows.Count > 0 Then
@@ -83,13 +91,11 @@
 
     Private Sub btn_prod_actualizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_prod_actualizar.Click
 
-        
         'controla que la descripcion y el stock no esten vacios
         If tb_prod_descripcion.TextLength = 0 Or tb_prod_stock.TextLength = 0 Then
             MsgBox("Debe completar todos los campos requeridos")
             Exit Sub
         End If
-
         Try
             Dim ActualizarProducto = (From p In datacontext.PRODUCTO Where p.PROD_id = tb_prod_id.Text).ToList()(0)
             ActualizarProducto.PROD_codigo = tb_prod_codigo.Text
@@ -128,8 +134,11 @@
     End Sub
 
     Private Sub tb_prod_busqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tb_prod_busqueda.TextChanged
-        Dim buscarprod
-        buscarprod = "*" & tb_prod_busqueda.Text & "*"
-        Dim consultaprod = From p In datacontext.PRODUCTO Select p.PROD_codigo, p.PROD_descripcion, p.PROD_id, p.PROD_stock Where PROD_descripcion Like buscarprod.ToString
+        Dim buscarprod As String
+        armargrilla()
+        ' buscarprod = "*" & tb_prod_busqueda.Text & "*"
+        buscarprod = Me.tb_prod_busqueda.Text & "*"
+        Dim consultaprod = From p In datacontext.PRODUCTO
+                           Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock Where PROD_descripcion Like buscarprod.ToString
     End Sub
 End Class

@@ -111,7 +111,7 @@ Partial Class frm_Productos
         '
         'btn_prod_salir
         '
-        Me.btn_prod_salir.Location = New System.Drawing.Point(324, 461)
+        Me.btn_prod_salir.Location = New System.Drawing.Point(339, 461)
         Me.btn_prod_salir.Name = "btn_prod_salir"
         Me.btn_prod_salir.Size = New System.Drawing.Size(90, 22)
         Me.btn_prod_salir.TabIndex = 8
@@ -167,7 +167,7 @@ Partial Class frm_Productos
         Me.GroupBox1.Controls.Add(Me.tb_prod_stock)
         Me.GroupBox1.Controls.Add(Me.tb_prod_descripcion)
         Me.GroupBox1.Controls.Add(Me.tb_prod_codigo)
-        Me.GroupBox1.Location = New System.Drawing.Point(11, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(26, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(398, 177)
         Me.GroupBox1.TabIndex = 13
@@ -178,7 +178,7 @@ Partial Class frm_Productos
         '
         Me.GroupBox2.Controls.Add(Me.tb_prod_busqueda)
         Me.GroupBox2.Controls.Add(Me.dgvLista_Productos)
-        Me.GroupBox2.Location = New System.Drawing.Point(11, 210)
+        Me.GroupBox2.Location = New System.Drawing.Point(26, 210)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(397, 242)
         Me.GroupBox2.TabIndex = 14
@@ -196,7 +196,7 @@ Partial Class frm_Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(414, 495)
+        Me.ClientSize = New System.Drawing.Size(449, 495)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btn_prod_salir)

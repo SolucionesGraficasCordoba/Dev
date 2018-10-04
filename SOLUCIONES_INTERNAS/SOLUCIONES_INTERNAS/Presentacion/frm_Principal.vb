@@ -406,4 +406,8 @@ Public Class frm_Principal
     Private Sub EtiquetasToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EtiquetasToolStripMenuItem.Click
         frm_Etiqueta_Modelo_1.Show()
     End Sub
+
+    Private Sub NuevoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoToolStripMenuItem.Click
+        frm_Productos.Show()
+    End Sub
 End Class

@@ -21,7 +21,7 @@
                 Exit Sub
             End If
 
-            If txt_descripcion.TextLength = 0 Or txt_Stock.TextLength = 0 Then
+            If txt_descripcion.TextLength = 0 Then
                 MsgBox("Debe completar todos los campos requeridos")
                 Exit Sub
             End If
@@ -29,7 +29,6 @@
             Dim pro = New PRODUCTO
             pro.PROD_codigo = txt_Codigo.Text
             pro.PROD_descripcion = txt_descripcion.Text
-            pro.PROD_stock = txt_Stock.Text
             datacontext.PRODUCTO.InsertOnSubmit(pro)
             datacontext.SubmitChanges()
             MsgBox("El producto se ha creado correctamente", vbInformation)
@@ -43,7 +42,7 @@
     Sub limpiarcontroles()
         txt_Codigo.Clear()
         txt_descripcion.Clear()
-        txt_Stock.Clear()
+
     End Sub
 
     Public Sub cargargrillaproducto()
@@ -54,7 +53,7 @@
     End Sub
 
     Private Sub btnActualizar_producto_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar_producto.Click
-        If txt_descripcion.TextLength = 0 Or txt_Stock.TextLength = 0 Then
+        If txt_descripcion.TextLength = 0 Then
             MsgBox("Debe completar todos los campos requeridos")
             Exit Sub
         End If
@@ -62,8 +61,6 @@
             Dim ActualizarProducto = (From P In datacontext.PRODUCTO Where P.PROD_id = (txt_id_producto.Text.ToUpper)).ToList()(0)
             ActualizarProducto.PROD_codigo = txt_Codigo.Text
             ActualizarProducto.PROD_descripcion = txt_descripcion.Text
-            ActualizarProducto.PROD_stock = txt_Stock.Text
-
             datacontext.SubmitChanges()
             MsgBox("Los datos se han modificado correctamente")
             cargargrillaproducto()
@@ -78,7 +75,7 @@
         End Try
     End Sub
 
-    Private Sub btnNuevo_producto_Click(sender As System.Object, e As System.EventArgs) Handles btnNuevo_producto.Click
+    Private Sub btnNuevo_producto_Click(sender As System.Object, e As System.EventArgs)
         Select Case MsgBox("Se limpiarán todos los campos, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Limpiar campos")
             Case MsgBoxResult.Yes
                 limpiarcontroles()
