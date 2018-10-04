@@ -164,8 +164,8 @@ Public Class frm_Etiqueta_Modelo_1
 
     Private Sub btnGenerarEtiquetas_Click(sender As System.Object, e As System.EventArgs) Handles btnGenerarEtiquetas.Click
         Dim consulta As String = "modelo_etiquetas_" + Date.Now.Millisecond.ToString + ".csv"
-        Dim filePath As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta
-        '  Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
+        ' Dim filePath As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta
+        Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
         Dim delimeter As String = ","
         Dim sb As New StringBuilder
         Try
@@ -186,27 +186,16 @@ Public Class frm_Etiqueta_Modelo_1
             Next
             File.WriteAllText(filePath, sb.ToString)
             MsgBox("La consulta se ha generado correctamente")
-            '  Process.Start(filePath)
-            '  Me.Close()
 
-            ' txtDescripcionEntrega.Clear()
-            '  txtDirigidoA.Clear()
-            '  txtId_Cliente.Clear()
-            ' txt_id_orden.Clear()
-            ' txt_orden.Clear()
-            '  txtSolicitante.Clear()
-            '  txtSector.Clear()
-            '  txtDomicilio.Clear()
-            '  txtLocalidad.Clear()
-            '  txtCodigoPostal.Clear()
-            '  txtDespachado.Clear()
-            ' txtSeccion.Clear()
+            '  Process.Start(filePath)
             txtCantidadBultos.Clear()
             txtNumeroBultos.Clear()
             txtUnidadxBulto.Clear()
             txtTotalBultos.Clear()
             txtPeso.Clear()
             cboLogo.SelectedIndex = -1
+
+            dgv_Etiquetas.Rows.Clear()
 
         Catch ex As Exception
             MsgBox("Hubo un error al generar la consulta")

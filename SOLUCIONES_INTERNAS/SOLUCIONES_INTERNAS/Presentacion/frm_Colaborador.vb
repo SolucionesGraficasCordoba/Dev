@@ -20,7 +20,7 @@ Public Class frm_Colaborador
         cbo_sector.DataSource = combosector
         cbo_sector.DisplayMember = "SEC_nombre_sector"
         cbo_sector.ValueMember = "SEC_id_sector"
-        cbo_sector.SelectedIndex = 0
+        cbo_sector.SelectedIndex = -1
     End Sub
 
     Public Sub cargargrilla()

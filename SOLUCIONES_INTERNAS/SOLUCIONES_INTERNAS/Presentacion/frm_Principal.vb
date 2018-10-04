@@ -408,6 +408,39 @@ Public Class frm_Principal
     End Sub
 
     Private Sub NuevoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoToolStripMenuItem.Click
+
+        frm_Productos.Text = "Nuevo Producto"
+        frm_Productos.GroupBox2.Enabled = False
+        frm_Productos.btn_prod_actualizar.Enabled = False
         frm_Productos.Show()
+    End Sub
+
+    Private Sub ModificarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarToolStripMenuItem.Click
+
+        frm_Productos.Text = "Modificar Producto"
+        frm_Productos.btn_prod_guardar.Enabled = False
+        frm_Productos.btn_prod_eliminar.Enabled = False
+        frm_Productos.Show()
+    End Sub
+
+    Private Sub EliminarToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles EliminarToolStripMenuItem1.Click
+        frm_Productos.Text = "Eliminar Producto"
+        frm_Productos.GroupBox1.Enabled = False
+        frm_Productos.Show()
+    End Sub
+
+    Private Sub ConsultarToolStripMenuItem2_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem2.Click
+        frm_Productos.Show()
+        frm_Productos.Text = "Consultar Producto"
+        frm_Productos.btn_prod_actualizar.Enabled = False
+        frm_Productos.btn_prod_eliminar.Enabled = False
+        frm_Productos.btn_prod_guardar.Enabled = False
+        ' frm_Productos.txt_nombre_sector.Enabled = False
+    End Sub
+
+    Private Sub AltaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AltaToolStripMenuItem.Click
+        frm_Movimiento_Producto.Show()
+        frm_Movimiento_Producto.Text = "Alta de Productos"
+
     End Sub
 End Class
