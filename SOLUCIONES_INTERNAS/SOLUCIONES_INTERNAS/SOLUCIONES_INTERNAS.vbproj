@@ -251,10 +251,10 @@
     <Compile Include="Presentacion\frm_Procesos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\frm_Producto.Designer.vb">
-      <DependentUpon>frm_Producto.vb</DependentUpon>
+    <Compile Include="Presentacion\frm_Movimiento_Producto.Designer.vb">
+      <DependentUpon>frm_Movimiento_Producto.vb</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\frm_Producto.vb">
+    <Compile Include="Presentacion\frm_Movimiento_Producto.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frm_Retrabajo.Designer.vb">
@@ -353,8 +353,8 @@
     <EmbeddedResource Include="Presentacion\frm_Procesos.resx">
       <DependentUpon>frm_Procesos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frm_Producto.resx">
-      <DependentUpon>frm_Producto.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\frm_Movimiento_Producto.resx">
+      <DependentUpon>frm_Movimiento_Producto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Retrabajo.resx">
       <DependentUpon>frm_Retrabajo.vb</DependentUpon>
