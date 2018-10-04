@@ -44,6 +44,8 @@
         tb_prod_codigo.Clear()
         tb_prod_descripcion.Clear()
         tb_prod_stock.Clear()
+        tb_prod_id.Visible = False
+        Label1.Visible = False
     End Sub
 
     'arma el datagrid
@@ -69,6 +71,7 @@
                            Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock
                            Order By PROD_descripcion Ascending
         dgvLista_Productos.DataSource = consultaprod
+        Label9.Text = dgvLista_Productos.Rows.Count
     End Sub
 
     Private Sub frm_Productos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -76,6 +79,7 @@
         armargrilla()
         cargargrilla()
         dgvLista_Productos.ClearSelection()
+        Label9.Text = dgvLista_Productos.Rows.Count
     End Sub
 
     Private Sub dgvLista_Productos_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvLista_Productos.Click
@@ -96,6 +100,7 @@
             MsgBox("Debe completar todos los campos requeridos")
             Exit Sub
         End If
+
         Try
             Dim ActualizarProducto = (From p In datacontext.PRODUCTO Where p.PROD_id = tb_prod_id.Text).ToList()(0)
             ActualizarProducto.PROD_codigo = tb_prod_codigo.Text
@@ -122,6 +127,7 @@
                     datacontext.SubmitChanges()
                     MsgBox("El producto fue eliminado")
                     cargargrilla()
+                    Label9.Text = dgvLista_Productos.Rows.Count
                 Case MsgBoxResult.No
                     Exit Sub
             End Select
@@ -136,9 +142,10 @@
     Private Sub tb_prod_busqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tb_prod_busqueda.TextChanged
         Dim buscarprod As String
         armargrilla()
-        ' buscarprod = "*" & tb_prod_busqueda.Text & "*"
         buscarprod = Me.tb_prod_busqueda.Text & "*"
         Dim consultaprod = From p In datacontext.PRODUCTO
                            Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock Where PROD_descripcion Like buscarprod.ToString
+        dgvLista_Productos.DataSource = consultaprod
     End Sub
+
 End Class
