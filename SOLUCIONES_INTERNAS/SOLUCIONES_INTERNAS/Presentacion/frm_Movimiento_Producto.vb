@@ -10,7 +10,7 @@
         txt_id_producto_movimiento.Visible = False
         armargrilla()
         cargargrillaproducto()
-        cbo_Tipo_Producto.SelectedIndex = 0
+
         cbo_Tipo_Producto.Enabled = False
         txt_Codigo.Enabled = False
         txt_descripcion.Enabled = False
