@@ -439,8 +439,8 @@ Public Class frm_Principal
     End Sub
 
     Private Sub AltaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AltaToolStripMenuItem.Click
-        frm_Movimiento_Producto.Show()
-        frm_Movimiento_Producto.Text = "Alta de Productos"
+        'frm_Movimiento_Producto.Show()
+        'frm_Movimiento_Producto.Text = "Alta de Productos"
 
     End Sub
 End Class

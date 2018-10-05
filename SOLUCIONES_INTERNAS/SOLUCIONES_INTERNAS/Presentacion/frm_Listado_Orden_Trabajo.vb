@@ -378,9 +378,9 @@
             frm_Etiqueta_Modelo_1.txt_id_orden.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
             frm_Etiqueta_Modelo_1.txt_orden.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
 
-        ElseIf quienllamolistado_ot.Name = frm_Movimiento_Producto.Name Then
-            frm_Movimiento_Producto.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
-            frm_Movimiento_Producto.txt_numero_orden.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+            'ElseIf quienllamolistado_ot.Name = frm_Movimiento_Producto.Name Then
+            '    frm_Movimiento_Producto.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+            '    frm_Movimiento_Producto.txt_numero_orden.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
 
             'LLAMA AL FORMULARIO TAREA
         ElseIf quienllamolistado_ot.Name = frm_Tarea.Name Then
