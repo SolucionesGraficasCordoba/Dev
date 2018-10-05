@@ -11,11 +11,14 @@ Public Class frm_Etiqueta_Modelo_1
         Label16.Enabled = False
         Label17.Enabled = False
         Label18.Enabled = False
-        Label22.Visible = False 'HACER VISIBLE CUANDO SEA NECESARIO
-        Label25.Visible = False 'HACER VISIBLE CUANDO SEA NECESARIO
+        'Label22.Visible = False 'HACER VISIBLE CUANDO SEA NECESARIO
+        'Label25.Visible = False 'HACER VISIBLE CUANDO SEA NECESARIO
         ArmarEtiqueta()
         txtId_Cliente.Visible = False
         txt_id_orden.Visible = False
+        btnBuscarCliente.Visible = False
+        btnBuscar_Orden.Focus()
+
         dgv_Etiquetas.ClearSelection()
     End Sub
 
@@ -164,8 +167,8 @@ Public Class frm_Etiqueta_Modelo_1
 
     Private Sub btnGenerarEtiquetas_Click(sender As System.Object, e As System.EventArgs) Handles btnGenerarEtiquetas.Click
         Dim consulta As String = "modelo_etiquetas_" + Date.Now.Millisecond.ToString + ".csv"
-        ' Dim filePath As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta
-        Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
+        Dim filePath As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta
+        ' Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
         Dim delimeter As String = ","
         Dim sb As New StringBuilder
         Try
@@ -217,7 +220,7 @@ Public Class frm_Etiqueta_Modelo_1
         dgv_Etiquetas.ClearSelection()
     End Sub
 
-    Private Sub btnBuscar_Orden_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Orden.Click
+    Private Sub btnBuscar_Orden_Click_1(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Orden.Click
         frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
         frm_Listado_Orden_Trabajo.Text = "Seleccionar Orden"
         frm_Listado_Orden_Trabajo.Show()

@@ -435,12 +435,21 @@ Public Class frm_Principal
         frm_Productos.btn_prod_actualizar.Enabled = False
         frm_Productos.btn_prod_eliminar.Enabled = False
         frm_Productos.btn_prod_guardar.Enabled = False
-        ' frm_Productos.txt_nombre_sector.Enabled = False
     End Sub
 
     Private Sub AltaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AltaToolStripMenuItem.Click
-        'frm_Movimiento_Producto.Show()
-        'frm_Movimiento_Producto.Text = "Alta de Productos"
+        frm_Movimiento_Producto.Show()
+        frm_Movimiento_Producto.Text = "Alta de Productos"
+        frm_Movimiento_Producto.cbo_Tipo_Producto.SelectedIndex = 0
+    End Sub
 
+    Private Sub BajaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles BajaToolStripMenuItem.Click
+        frm_Movimiento_Producto.Show()
+        frm_Movimiento_Producto.Text = "Baja de Productos"
+        frm_Movimiento_Producto.cbo_Tipo_Producto.SelectedIndex = 1
+    End Sub
+
+    Private Sub ConsultarToolStripMenuItem3_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem3.Click
+        frm_Listado_Movimientos.Show()
     End Sub
 End Class
