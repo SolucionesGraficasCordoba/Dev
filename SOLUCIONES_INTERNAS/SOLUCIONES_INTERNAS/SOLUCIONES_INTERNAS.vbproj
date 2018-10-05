@@ -98,6 +98,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presentacion\frm_Movimiento_Producto.designer.vb">
+      <DependentUpon>frm_Movimiento_Producto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Movimiento_Producto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Installer1.Designer.vb">
       <DependentUpon>Installer1.vb</DependentUpon>
     </Compile>
@@ -287,6 +293,9 @@
     <None Include="Datos\DataS_Interno_Vistas.dbml.layout">
       <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Presentacion\frm_Movimiento_Producto.resx">
+      <DependentUpon>frm_Movimiento_Producto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Installer1.resx">
       <DependentUpon>Installer1.vb</DependentUpon>
     </EmbeddedResource>
