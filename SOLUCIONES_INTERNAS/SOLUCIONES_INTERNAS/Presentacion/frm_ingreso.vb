@@ -134,6 +134,17 @@
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = False
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
 
+                frm_Principal.ProductoToolStripMenuItem.Visible = True
+                frm_Principal.ProductoToolStripMenuItem.DropDownItems(0).Visible = False
+                frm_Principal.ProductoToolStripMenuItem.DropDownItems(1).Visible = False
+                frm_Principal.ProductoToolStripMenuItem.DropDownItems(2).Visible = False
+                frm_Principal.ProductoToolStripMenuItem.DropDownItems(3).Visible = True
+
+                frm_Principal.StockToolStripMenuItem.Visible = True
+                frm_Principal.StockToolStripMenuItem.DropDownItems(0).Visible = False
+                frm_Principal.StockToolStripMenuItem.DropDownItems(1).Visible = False
+                frm_Principal.StockToolStripMenuItem.DropDownItems(2).Visible = True
+
                 frm_Principal.OrdenTrabajoToolStripMenuItem.Visible = True
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = False 'nueva
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = False 'modificar

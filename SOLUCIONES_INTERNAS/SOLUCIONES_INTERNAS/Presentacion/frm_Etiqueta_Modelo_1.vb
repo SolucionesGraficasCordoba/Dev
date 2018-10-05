@@ -166,7 +166,7 @@ Public Class frm_Etiqueta_Modelo_1
     End Sub
 
     Private Sub btnGenerarEtiquetas_Click(sender As System.Object, e As System.EventArgs) Handles btnGenerarEtiquetas.Click
-        Dim consulta As String = "modelo_etiquetas_" + Date.Now.Millisecond.ToString + ".csv"
+        Dim consulta As String = "ETIQUETA_GENERICA_DIARIA_" + Date.Now.Millisecond.ToString + ".csv"
         Dim filePath As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta
         ' Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
         Dim delimeter As String = ","
