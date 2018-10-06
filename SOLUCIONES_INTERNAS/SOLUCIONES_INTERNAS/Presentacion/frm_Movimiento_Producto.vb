@@ -3,7 +3,6 @@
 
     Private Sub frm_Producto_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         Label1.Visible = False
-        Label6.Visible = False
         Label7.Visible = False
         txt_id_orden_trabajo.Visible = False
         txt_id_producto.Visible = False

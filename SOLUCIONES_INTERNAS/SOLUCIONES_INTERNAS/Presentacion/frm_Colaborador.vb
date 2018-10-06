@@ -59,6 +59,7 @@ Public Class frm_Colaborador
             cargargrilla()
             limpiarcontroles()
             Me.Close()
+            ' Me.Dispose()
         Catch ex As Exception
             MsgBox("El colaborador NO fue creado")
             limpiarcontroles()
@@ -94,6 +95,7 @@ Public Class frm_Colaborador
             Me.limpiarcontroles()
             Me.cargargrilla()
             Me.Close()
+            ' Me.Dispose()
         End Try
     End Sub
 
@@ -106,14 +108,12 @@ Public Class frm_Colaborador
         dgvLista_Colaboradores.Columns.Add("COL_nombre_col", "Nombre")
         dgvLista_Colaboradores.Columns.Add("COL_apellido_col", "Apellido")
         dgvLista_Colaboradores.Columns.Add("SEC_id_sector", "id_sector")
-        dgvLista_Colaboradores.Columns.Add("SEC_nombre_sector", "Nombre del Sector")
+        dgvLista_Colaboradores.Columns.Add("SEC_nombre_sector", "Sector")
 
         dgvLista_Colaboradores.Columns(0).DataPropertyName = "COL_id_colaborador"
         dgvLista_Colaboradores.Columns(0).Visible = False
         dgvLista_Colaboradores.Columns(1).DataPropertyName = "COL_nombre_col"
-        dgvLista_Colaboradores.Columns(1).Width = 150
         dgvLista_Colaboradores.Columns(2).DataPropertyName = "COL_apellido_col"
-        dgvLista_Colaboradores.Columns(2).Width = 150
         dgvLista_Colaboradores.Columns(3).DataPropertyName = "SEC_id_sector"
         dgvLista_Colaboradores.Columns(3).Visible = False
         dgvLista_Colaboradores.Columns(4).DataPropertyName = "SEC_nombre_sector"

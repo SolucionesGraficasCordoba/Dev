@@ -89,15 +89,15 @@ Partial Class frm_retrabajo
         '
         'txt_id_re_trabajo
         '
-        Me.txt_id_re_trabajo.Location = New System.Drawing.Point(759, 24)
+        Me.txt_id_re_trabajo.Location = New System.Drawing.Point(759, 12)
         Me.txt_id_re_trabajo.Name = "txt_id_re_trabajo"
-        Me.txt_id_re_trabajo.Size = New System.Drawing.Size(64, 20)
+        Me.txt_id_re_trabajo.Size = New System.Drawing.Size(53, 20)
         Me.txt_id_re_trabajo.TabIndex = 60
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(685, 27)
+        Me.Label1.Location = New System.Drawing.Point(685, 15)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 59
@@ -105,15 +105,15 @@ Partial Class frm_retrabajo
         '
         'txt_procedimiento
         '
-        Me.txt_procedimiento.Location = New System.Drawing.Point(96, 128)
+        Me.txt_procedimiento.Location = New System.Drawing.Point(85, 92)
         Me.txt_procedimiento.Name = "txt_procedimiento"
         Me.txt_procedimiento.Size = New System.Drawing.Size(727, 20)
-        Me.txt_procedimiento.TabIndex = 71
+        Me.txt_procedimiento.TabIndex = 4
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(16, 131)
+        Me.Label19.Location = New System.Drawing.Point(5, 95)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(74, 13)
         Me.Label19.TabIndex = 70
@@ -121,15 +121,15 @@ Partial Class frm_retrabajo
         '
         'txt_origen
         '
-        Me.txt_origen.Location = New System.Drawing.Point(96, 91)
+        Me.txt_origen.Location = New System.Drawing.Point(85, 55)
         Me.txt_origen.Name = "txt_origen"
         Me.txt_origen.Size = New System.Drawing.Size(727, 20)
-        Me.txt_origen.TabIndex = 69
+        Me.txt_origen.TabIndex = 3
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(52, 94)
+        Me.Label18.Location = New System.Drawing.Point(41, 58)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(38, 13)
         Me.Label18.TabIndex = 68
@@ -140,7 +140,7 @@ Partial Class frm_retrabajo
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Red
-        Me.Label4.Location = New System.Drawing.Point(240, 29)
+        Me.Label4.Location = New System.Drawing.Point(268, 21)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(11, 13)
         Me.Label4.TabIndex = 80
@@ -148,34 +148,34 @@ Partial Class frm_retrabajo
         '
         'btnBuscar_Numero_Orden1
         '
-        Me.btnBuscar_Numero_Orden1.Location = New System.Drawing.Point(254, 24)
+        Me.btnBuscar_Numero_Orden1.Location = New System.Drawing.Point(282, 16)
         Me.btnBuscar_Numero_Orden1.Name = "btnBuscar_Numero_Orden1"
         Me.btnBuscar_Numero_Orden1.Size = New System.Drawing.Size(54, 23)
-        Me.btnBuscar_Numero_Orden1.TabIndex = 79
+        Me.btnBuscar_Numero_Orden1.TabIndex = 1
         Me.btnBuscar_Numero_Orden1.Text = "..."
         Me.btnBuscar_Numero_Orden1.UseVisualStyleBackColor = True
         '
         'txtNumero_Orden_Trabajo
         '
-        Me.txtNumero_Orden_Trabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(130, 26)
+        Me.txtNumero_Orden_Trabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(85, 18)
         Me.txtNumero_Orden_Trabajo.Multiline = True
         Me.txtNumero_Orden_Trabajo.Name = "txtNumero_Orden_Trabajo"
-        Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(104, 46)
+        Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(182, 20)
         Me.txtNumero_Orden_Trabajo.TabIndex = 78
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(38, 29)
+        Me.Label5.Location = New System.Drawing.Point(57, 21)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(86, 13)
+        Me.Label5.Size = New System.Drawing.Size(22, 13)
         Me.Label5.TabIndex = 76
-        Me.Label5.Text = "Orden de trabajo"
+        Me.Label5.Text = "OT"
         '
         'txt_id_orden_trabajo
         '
-        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(314, 26)
+        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(342, 18)
         Me.txt_id_orden_trabajo.Name = "txt_id_orden_trabajo"
         Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(23, 20)
         Me.txt_id_orden_trabajo.TabIndex = 77
@@ -184,7 +184,7 @@ Partial Class frm_retrabajo
         '
         Me.Label17.AutoSize = True
         Me.Label17.ForeColor = System.Drawing.Color.Red
-        Me.Label17.Location = New System.Drawing.Point(29, 420)
+        Me.Label17.Location = New System.Drawing.Point(18, 371)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(109, 13)
         Me.Label17.TabIndex = 81
@@ -192,10 +192,10 @@ Partial Class frm_retrabajo
         '
         'btnGuardar_ReTrabajo
         '
-        Me.btnGuardar_ReTrabajo.Location = New System.Drawing.Point(652, 410)
+        Me.btnGuardar_ReTrabajo.Location = New System.Drawing.Point(667, 366)
         Me.btnGuardar_ReTrabajo.Name = "btnGuardar_ReTrabajo"
         Me.btnGuardar_ReTrabajo.Size = New System.Drawing.Size(75, 23)
-        Me.btnGuardar_ReTrabajo.TabIndex = 83
+        Me.btnGuardar_ReTrabajo.TabIndex = 19
         Me.btnGuardar_ReTrabajo.Text = "Guardar"
         Me.btnGuardar_ReTrabajo.UseVisualStyleBackColor = True
         '
@@ -209,7 +209,7 @@ Partial Class frm_retrabajo
         Me.GroupProducto1.Controls.Add(Me.txt_id_detalle_orden_trabajo1)
         Me.GroupProducto1.Controls.Add(Me.Label45)
         Me.GroupProducto1.Controls.Add(Me.GroupBox5)
-        Me.GroupProducto1.Location = New System.Drawing.Point(21, 241)
+        Me.GroupProducto1.Location = New System.Drawing.Point(15, 197)
         Me.GroupProducto1.Name = "GroupProducto1"
         Me.GroupProducto1.Size = New System.Drawing.Size(802, 163)
         Me.GroupProducto1.TabIndex = 84
@@ -242,7 +242,7 @@ Partial Class frm_retrabajo
         Me.txt_cantidad_retrabajo.Multiline = True
         Me.txt_cantidad_retrabajo.Name = "txt_cantidad_retrabajo"
         Me.txt_cantidad_retrabajo.Size = New System.Drawing.Size(111, 45)
-        Me.txt_cantidad_retrabajo.TabIndex = 88
+        Me.txt_cantidad_retrabajo.TabIndex = 6
         Me.txt_cantidad_retrabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'dtpFecha_Re_Trabajo
@@ -251,7 +251,7 @@ Partial Class frm_retrabajo
         Me.dtpFecha_Re_Trabajo.Location = New System.Drawing.Point(62, 31)
         Me.dtpFecha_Re_Trabajo.Name = "dtpFecha_Re_Trabajo"
         Me.dtpFecha_Re_Trabajo.Size = New System.Drawing.Size(82, 20)
-        Me.dtpFecha_Re_Trabajo.TabIndex = 87
+        Me.dtpFecha_Re_Trabajo.TabIndex = 5
         '
         'Label6
         '
@@ -314,7 +314,7 @@ Partial Class frm_retrabajo
         Me.cboFormato3_Soporte1.Location = New System.Drawing.Point(338, 101)
         Me.cboFormato3_Soporte1.Name = "cboFormato3_Soporte1"
         Me.cboFormato3_Soporte1.Size = New System.Drawing.Size(89, 21)
-        Me.cboFormato3_Soporte1.TabIndex = 59
+        Me.cboFormato3_Soporte1.TabIndex = 18
         '
         'cboFormato2_Soporte1
         '
@@ -324,7 +324,7 @@ Partial Class frm_retrabajo
         Me.cboFormato2_Soporte1.Location = New System.Drawing.Point(338, 76)
         Me.cboFormato2_Soporte1.Name = "cboFormato2_Soporte1"
         Me.cboFormato2_Soporte1.Size = New System.Drawing.Size(89, 21)
-        Me.cboFormato2_Soporte1.TabIndex = 56
+        Me.cboFormato2_Soporte1.TabIndex = 14
         '
         'Label21
         '
@@ -358,42 +358,42 @@ Partial Class frm_retrabajo
         Me.txt_Cantidad3_Soporte1.Location = New System.Drawing.Point(263, 101)
         Me.txt_Cantidad3_Soporte1.Name = "txt_Cantidad3_Soporte1"
         Me.txt_Cantidad3_Soporte1.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad3_Soporte1.TabIndex = 54
+        Me.txt_Cantidad3_Soporte1.TabIndex = 17
         '
         'txt_Gramaje3_Soporte1
         '
         Me.txt_Gramaje3_Soporte1.Location = New System.Drawing.Point(193, 101)
         Me.txt_Gramaje3_Soporte1.Name = "txt_Gramaje3_Soporte1"
         Me.txt_Gramaje3_Soporte1.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje3_Soporte1.TabIndex = 53
+        Me.txt_Gramaje3_Soporte1.TabIndex = 16
         '
         'txt_Papel3_Soporte1
         '
         Me.txt_Papel3_Soporte1.Location = New System.Drawing.Point(24, 102)
         Me.txt_Papel3_Soporte1.Name = "txt_Papel3_Soporte1"
         Me.txt_Papel3_Soporte1.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel3_Soporte1.TabIndex = 52
+        Me.txt_Papel3_Soporte1.TabIndex = 15
         '
         'txt_Cantidad2_Soporte1
         '
         Me.txt_Cantidad2_Soporte1.Location = New System.Drawing.Point(263, 75)
         Me.txt_Cantidad2_Soporte1.Name = "txt_Cantidad2_Soporte1"
         Me.txt_Cantidad2_Soporte1.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad2_Soporte1.TabIndex = 46
+        Me.txt_Cantidad2_Soporte1.TabIndex = 13
         '
         'txt_Gramaje2_Soporte1
         '
         Me.txt_Gramaje2_Soporte1.Location = New System.Drawing.Point(193, 75)
         Me.txt_Gramaje2_Soporte1.Name = "txt_Gramaje2_Soporte1"
         Me.txt_Gramaje2_Soporte1.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje2_Soporte1.TabIndex = 45
+        Me.txt_Gramaje2_Soporte1.TabIndex = 12
         '
         'txt_Papel2_Soporte1
         '
         Me.txt_Papel2_Soporte1.Location = New System.Drawing.Point(24, 76)
         Me.txt_Papel2_Soporte1.Name = "txt_Papel2_Soporte1"
         Me.txt_Papel2_Soporte1.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel2_Soporte1.TabIndex = 44
+        Me.txt_Papel2_Soporte1.TabIndex = 11
         '
         'cboFormato1_Soporte1
         '
@@ -403,7 +403,7 @@ Partial Class frm_retrabajo
         Me.cboFormato1_Soporte1.Location = New System.Drawing.Point(338, 50)
         Me.cboFormato1_Soporte1.Name = "cboFormato1_Soporte1"
         Me.cboFormato1_Soporte1.Size = New System.Drawing.Size(89, 21)
-        Me.cboFormato1_Soporte1.TabIndex = 30
+        Me.cboFormato1_Soporte1.TabIndex = 10
         '
         'Label26
         '
@@ -446,21 +446,21 @@ Partial Class frm_retrabajo
         Me.txt_Cantidad1_Soporte1.Location = New System.Drawing.Point(263, 50)
         Me.txt_Cantidad1_Soporte1.Name = "txt_Cantidad1_Soporte1"
         Me.txt_Cantidad1_Soporte1.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad1_Soporte1.TabIndex = 38
+        Me.txt_Cantidad1_Soporte1.TabIndex = 9
         '
         'txt_Gramaje1_Soporte1
         '
         Me.txt_Gramaje1_Soporte1.Location = New System.Drawing.Point(193, 50)
         Me.txt_Gramaje1_Soporte1.Name = "txt_Gramaje1_Soporte1"
         Me.txt_Gramaje1_Soporte1.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje1_Soporte1.TabIndex = 37
+        Me.txt_Gramaje1_Soporte1.TabIndex = 8
         '
         'txt_Papel1_Soporte1
         '
         Me.txt_Papel1_Soporte1.Location = New System.Drawing.Point(24, 51)
         Me.txt_Papel1_Soporte1.Name = "txt_Papel1_Soporte1"
         Me.txt_Papel1_Soporte1.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel1_Soporte1.TabIndex = 36
+        Me.txt_Papel1_Soporte1.TabIndex = 7
         '
         'Label50
         '
@@ -563,10 +563,10 @@ Partial Class frm_retrabajo
         '
         'btnCancelar_ReTrabajo
         '
-        Me.btnCancelar_ReTrabajo.Location = New System.Drawing.Point(748, 410)
+        Me.btnCancelar_ReTrabajo.Location = New System.Drawing.Point(748, 366)
         Me.btnCancelar_ReTrabajo.Name = "btnCancelar_ReTrabajo"
         Me.btnCancelar_ReTrabajo.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar_ReTrabajo.TabIndex = 82
+        Me.btnCancelar_ReTrabajo.TabIndex = 20
         Me.btnCancelar_ReTrabajo.Text = "Cancelar"
         Me.btnCancelar_ReTrabajo.UseVisualStyleBackColor = True
         '
@@ -583,7 +583,7 @@ Partial Class frm_retrabajo
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtTamaño1_Detalle1)
         Me.GroupBox1.Controls.Add(Me.txt_cantidad_original)
-        Me.GroupBox1.Location = New System.Drawing.Point(213, 166)
+        Me.GroupBox1.Location = New System.Drawing.Point(203, 122)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(475, 69)
         Me.GroupBox1.TabIndex = 88
@@ -593,15 +593,15 @@ Partial Class frm_retrabajo
         'dtp_Fecha_Original
         '
         Me.dtp_Fecha_Original.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_Fecha_Original.Location = New System.Drawing.Point(403, 23)
+        Me.dtp_Fecha_Original.Location = New System.Drawing.Point(422, 15)
         Me.dtp_Fecha_Original.Name = "dtp_Fecha_Original"
         Me.dtp_Fecha_Original.Size = New System.Drawing.Size(109, 20)
-        Me.dtp_Fecha_Original.TabIndex = 90
+        Me.dtp_Fecha_Original.TabIndex = 2
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(360, 26)
+        Me.Label11.Location = New System.Drawing.Point(379, 18)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(37, 13)
         Me.Label11.TabIndex = 89
@@ -609,10 +609,10 @@ Partial Class frm_retrabajo
         '
         'btnImprimir
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(551, 410)
+        Me.btnImprimir.Location = New System.Drawing.Point(586, 366)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(75, 23)
-        Me.btnImprimir.TabIndex = 91
+        Me.btnImprimir.TabIndex = 21
         Me.btnImprimir.Text = "Imprimir"
         Me.btnImprimir.UseVisualStyleBackColor = True
         '
@@ -628,7 +628,7 @@ Partial Class frm_retrabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(840, 452)
+        Me.ClientSize = New System.Drawing.Size(831, 400)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.dtp_Fecha_Original)
         Me.Controls.Add(Me.Label11)

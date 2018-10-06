@@ -167,7 +167,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.Label16.AutoSize = True
         Me.Label16.ForeColor = System.Drawing.Color.Red
-        Me.Label16.Location = New System.Drawing.Point(342, 119)
+        Me.Label16.Location = New System.Drawing.Point(342, 110)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(11, 13)
         Me.Label16.TabIndex = 19
@@ -176,7 +176,7 @@ Partial Class frm_Orden_Trabajo
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(21, 121)
+        Me.Label10.Location = New System.Drawing.Point(21, 112)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(39, 13)
         Me.Label10.TabIndex = 15
@@ -184,16 +184,16 @@ Partial Class frm_Orden_Trabajo
         '
         'btnBuscar_cliente
         '
-        Me.btnBuscar_cliente.Location = New System.Drawing.Point(359, 116)
+        Me.btnBuscar_cliente.Location = New System.Drawing.Point(359, 107)
         Me.btnBuscar_cliente.Name = "btnBuscar_cliente"
         Me.btnBuscar_cliente.Size = New System.Drawing.Size(52, 23)
-        Me.btnBuscar_cliente.TabIndex = 18
+        Me.btnBuscar_cliente.TabIndex = 4
         Me.btnBuscar_cliente.Text = "..."
         Me.btnBuscar_cliente.UseVisualStyleBackColor = True
         '
         'txt_id_cliente
         '
-        Me.txt_id_cliente.Location = New System.Drawing.Point(417, 116)
+        Me.txt_id_cliente.Location = New System.Drawing.Point(417, 107)
         Me.txt_id_cliente.Name = "txt_id_cliente"
         Me.txt_id_cliente.Size = New System.Drawing.Size(37, 20)
         Me.txt_id_cliente.TabIndex = 16
@@ -203,15 +203,15 @@ Partial Class frm_Orden_Trabajo
         Me.cboTipo_Orden.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipo_Orden.FormattingEnabled = True
         Me.cboTipo_Orden.Items.AddRange(New Object() {"DG", "DO", "DI", "DV", "DS"})
-        Me.cboTipo_Orden.Location = New System.Drawing.Point(80, 46)
+        Me.cboTipo_Orden.Location = New System.Drawing.Point(80, 37)
         Me.cboTipo_Orden.Name = "cboTipo_Orden"
         Me.cboTipo_Orden.Size = New System.Drawing.Size(66, 21)
-        Me.cboTipo_Orden.TabIndex = 47
+        Me.cboTipo_Orden.TabIndex = 1
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(17, 50)
+        Me.Label5.Location = New System.Drawing.Point(17, 41)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(60, 13)
         Me.Label5.TabIndex = 46
@@ -219,16 +219,16 @@ Partial Class frm_Orden_Trabajo
         '
         'txt_mejoras
         '
-        Me.txt_mejoras.Location = New System.Drawing.Point(581, 126)
+        Me.txt_mejoras.Location = New System.Drawing.Point(581, 117)
         Me.txt_mejoras.Multiline = True
         Me.txt_mejoras.Name = "txt_mejoras"
         Me.txt_mejoras.Size = New System.Drawing.Size(328, 20)
-        Me.txt_mejoras.TabIndex = 45
+        Me.txt_mejoras.TabIndex = 6
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(531, 129)
+        Me.Label19.Location = New System.Drawing.Point(531, 120)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(44, 13)
         Me.Label19.TabIndex = 44
@@ -236,15 +236,15 @@ Partial Class frm_Orden_Trabajo
         '
         'txt_observaciones
         '
-        Me.txt_observaciones.Location = New System.Drawing.Point(581, 22)
+        Me.txt_observaciones.Location = New System.Drawing.Point(581, 13)
         Me.txt_observaciones.Multiline = True
         Me.txt_observaciones.Name = "txt_observaciones"
         Me.txt_observaciones.Size = New System.Drawing.Size(328, 98)
-        Me.txt_observaciones.TabIndex = 43
+        Me.txt_observaciones.TabIndex = 5
         '
         'txt_id_orden_trabajo
         '
-        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(80, 22)
+        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(80, 13)
         Me.txt_id_orden_trabajo.Name = "txt_id_orden_trabajo"
         Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(66, 20)
         Me.txt_id_orden_trabajo.TabIndex = 30
@@ -252,7 +252,7 @@ Partial Class frm_Orden_Trabajo
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(497, 25)
+        Me.Label18.Location = New System.Drawing.Point(497, 16)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(78, 13)
         Me.Label18.TabIndex = 42
@@ -261,7 +261,7 @@ Partial Class frm_Orden_Trabajo
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(54, 25)
+        Me.Label1.Location = New System.Drawing.Point(54, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(22, 13)
         Me.Label1.TabIndex = 29
@@ -271,7 +271,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.Label15.AutoSize = True
         Me.Label15.ForeColor = System.Drawing.Color.Red
-        Me.Label15.Location = New System.Drawing.Point(342, 85)
+        Me.Label15.Location = New System.Drawing.Point(342, 76)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(11, 13)
         Me.Label15.TabIndex = 41
@@ -280,7 +280,7 @@ Partial Class frm_Orden_Trabajo
         'dtpFecha_Orden_Trabajo
         '
         Me.dtpFecha_Orden_Trabajo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha_Orden_Trabajo.Location = New System.Drawing.Point(405, 22)
+        Me.dtpFecha_Orden_Trabajo.Location = New System.Drawing.Point(405, 13)
         Me.dtpFecha_Orden_Trabajo.Name = "dtpFecha_Orden_Trabajo"
         Me.dtpFecha_Orden_Trabajo.Size = New System.Drawing.Size(82, 20)
         Me.dtpFecha_Orden_Trabajo.TabIndex = 32
@@ -288,7 +288,7 @@ Partial Class frm_Orden_Trabajo
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(362, 25)
+        Me.Label4.Location = New System.Drawing.Point(362, 16)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(37, 13)
         Me.Label4.TabIndex = 31
@@ -296,23 +296,23 @@ Partial Class frm_Orden_Trabajo
         '
         'btnBuscar_Vendedor
         '
-        Me.btnBuscar_Vendedor.Location = New System.Drawing.Point(359, 81)
+        Me.btnBuscar_Vendedor.Location = New System.Drawing.Point(359, 72)
         Me.btnBuscar_Vendedor.Name = "btnBuscar_Vendedor"
         Me.btnBuscar_Vendedor.Size = New System.Drawing.Size(52, 23)
-        Me.btnBuscar_Vendedor.TabIndex = 38
+        Me.btnBuscar_Vendedor.TabIndex = 3
         Me.btnBuscar_Vendedor.Text = "..."
         Me.btnBuscar_Vendedor.UseVisualStyleBackColor = True
         '
         'txtNombre_vendedor
         '
-        Me.txtNombre_vendedor.Location = New System.Drawing.Point(70, 84)
+        Me.txtNombre_vendedor.Location = New System.Drawing.Point(70, 75)
         Me.txtNombre_vendedor.Name = "txtNombre_vendedor"
         Me.txtNombre_vendedor.Size = New System.Drawing.Size(266, 20)
         Me.txtNombre_vendedor.TabIndex = 37
         '
         'txtid_vendedor
         '
-        Me.txtid_vendedor.Location = New System.Drawing.Point(417, 82)
+        Me.txtid_vendedor.Location = New System.Drawing.Point(417, 73)
         Me.txtid_vendedor.Name = "txtid_vendedor"
         Me.txtid_vendedor.Size = New System.Drawing.Size(37, 20)
         Me.txtid_vendedor.TabIndex = 36
@@ -320,7 +320,7 @@ Partial Class frm_Orden_Trabajo
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(11, 87)
+        Me.Label9.Location = New System.Drawing.Point(11, 78)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(53, 13)
         Me.Label9.TabIndex = 35
@@ -330,7 +330,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.Label47.AutoSize = True
         Me.Label47.ForeColor = System.Drawing.Color.Red
-        Me.Label47.Location = New System.Drawing.Point(152, 39)
+        Me.Label47.Location = New System.Drawing.Point(152, 30)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(11, 13)
         Me.Label47.TabIndex = 49
@@ -338,7 +338,7 @@ Partial Class frm_Orden_Trabajo
         '
         'txt_nombre_cliente
         '
-        Me.txt_nombre_cliente.Location = New System.Drawing.Point(70, 118)
+        Me.txt_nombre_cliente.Location = New System.Drawing.Point(70, 109)
         Me.txt_nombre_cliente.Name = "txt_nombre_cliente"
         Me.txt_nombre_cliente.Size = New System.Drawing.Size(266, 20)
         Me.txt_nombre_cliente.TabIndex = 50
@@ -347,7 +347,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.Label46.AutoSize = True
         Me.Label46.ForeColor = System.Drawing.Color.Red
-        Me.Label46.Location = New System.Drawing.Point(341, 57)
+        Me.Label46.Location = New System.Drawing.Point(341, 48)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(11, 13)
         Me.Label46.TabIndex = 53
@@ -356,17 +356,17 @@ Partial Class frm_Orden_Trabajo
         'txtNumero_Orden_Trabajo
         '
         Me.txtNumero_Orden_Trabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(218, 22)
+        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(218, 13)
         Me.txtNumero_Orden_Trabajo.Multiline = True
         Me.txtNumero_Orden_Trabajo.Name = "txtNumero_Orden_Trabajo"
         Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(118, 48)
-        Me.txtNumero_Orden_Trabajo.TabIndex = 52
+        Me.txtNumero_Orden_Trabajo.TabIndex = 2
         Me.txtNumero_Orden_Trabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(166, 38)
+        Me.Label6.Location = New System.Drawing.Point(166, 29)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(44, 26)
         Me.Label6.TabIndex = 51
@@ -386,16 +386,16 @@ Partial Class frm_Orden_Trabajo
         Me.btnProceso1.Location = New System.Drawing.Point(167, 115)
         Me.btnProceso1.Name = "btnProceso1"
         Me.btnProceso1.Size = New System.Drawing.Size(112, 23)
-        Me.btnProceso1.TabIndex = 63
+        Me.btnProceso1.TabIndex = 23
         Me.btnProceso1.Text = "Cargar Proceso"
         Me.btnProceso1.UseVisualStyleBackColor = True
         '
         'btnImprimir
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(539, 694)
+        Me.btnImprimir.Location = New System.Drawing.Point(591, 654)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(75, 23)
-        Me.btnImprimir.TabIndex = 62
+        Me.btnImprimir.TabIndex = 61
         Me.btnImprimir.Text = "Imprimir"
         Me.btnImprimir.UseVisualStyleBackColor = True
         '
@@ -412,9 +412,9 @@ Partial Class frm_Orden_Trabajo
         Me.GroupProducto3.Controls.Add(Me.Label44)
         Me.GroupProducto3.Controls.Add(Me.txtTamaño3_Detalle3)
         Me.GroupProducto3.Controls.Add(Me.txt_cantidad3_detalle3)
-        Me.GroupProducto3.Location = New System.Drawing.Point(20, 507)
+        Me.GroupProducto3.Location = New System.Drawing.Point(20, 481)
         Me.GroupProducto3.Name = "GroupProducto3"
-        Me.GroupProducto3.Size = New System.Drawing.Size(889, 169)
+        Me.GroupProducto3.Size = New System.Drawing.Size(889, 167)
         Me.GroupProducto3.TabIndex = 61
         Me.GroupProducto3.TabStop = False
         Me.GroupProducto3.Text = "Producto 3"
@@ -442,7 +442,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboPiezas3_Detalle3.Location = New System.Drawing.Point(94, 42)
         Me.cboPiezas3_Detalle3.Name = "cboPiezas3_Detalle3"
         Me.cboPiezas3_Detalle3.Size = New System.Drawing.Size(162, 21)
-        Me.cboPiezas3_Detalle3.TabIndex = 58
+        Me.cboPiezas3_Detalle3.TabIndex = 42
         '
         'GroupBox6
         '
@@ -478,7 +478,7 @@ Partial Class frm_Orden_Trabajo
         Me.btnProceso3.Location = New System.Drawing.Point(168, 118)
         Me.btnProceso3.Name = "btnProceso3"
         Me.btnProceso3.Size = New System.Drawing.Size(112, 23)
-        Me.btnProceso3.TabIndex = 88
+        Me.btnProceso3.TabIndex = 57
         Me.btnProceso3.Text = "Cargar Proceso"
         Me.btnProceso3.UseVisualStyleBackColor = True
         '
@@ -508,7 +508,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboFormato3_Soporte3.Location = New System.Drawing.Point(338, 93)
         Me.cboFormato3_Soporte3.Name = "cboFormato3_Soporte3"
         Me.cboFormato3_Soporte3.Size = New System.Drawing.Size(89, 21)
-        Me.cboFormato3_Soporte3.TabIndex = 85
+        Me.cboFormato3_Soporte3.TabIndex = 56
         '
         'cboFormato2_Soporte3
         '
@@ -518,7 +518,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboFormato2_Soporte3.Location = New System.Drawing.Point(338, 68)
         Me.cboFormato2_Soporte3.Name = "cboFormato2_Soporte3"
         Me.cboFormato2_Soporte3.Size = New System.Drawing.Size(89, 21)
-        Me.cboFormato2_Soporte3.TabIndex = 84
+        Me.cboFormato2_Soporte3.TabIndex = 52
         '
         'cboFormato1_Soporte3
         '
@@ -528,70 +528,70 @@ Partial Class frm_Orden_Trabajo
         Me.cboFormato1_Soporte3.Location = New System.Drawing.Point(338, 42)
         Me.cboFormato1_Soporte3.Name = "cboFormato1_Soporte3"
         Me.cboFormato1_Soporte3.Size = New System.Drawing.Size(89, 21)
-        Me.cboFormato1_Soporte3.TabIndex = 83
+        Me.cboFormato1_Soporte3.TabIndex = 48
         '
         'txt_Cantidad3_Soporte3
         '
         Me.txt_Cantidad3_Soporte3.Location = New System.Drawing.Point(263, 92)
         Me.txt_Cantidad3_Soporte3.Name = "txt_Cantidad3_Soporte3"
         Me.txt_Cantidad3_Soporte3.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad3_Soporte3.TabIndex = 82
+        Me.txt_Cantidad3_Soporte3.TabIndex = 55
         '
         'txt_Gramaje3_Soporte3
         '
         Me.txt_Gramaje3_Soporte3.Location = New System.Drawing.Point(193, 92)
         Me.txt_Gramaje3_Soporte3.Name = "txt_Gramaje3_Soporte3"
         Me.txt_Gramaje3_Soporte3.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje3_Soporte3.TabIndex = 81
+        Me.txt_Gramaje3_Soporte3.TabIndex = 54
         '
         'txt_Papel3_Soporte3
         '
         Me.txt_Papel3_Soporte3.Location = New System.Drawing.Point(24, 93)
         Me.txt_Papel3_Soporte3.Name = "txt_Papel3_Soporte3"
         Me.txt_Papel3_Soporte3.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel3_Soporte3.TabIndex = 80
+        Me.txt_Papel3_Soporte3.TabIndex = 53
         '
         'txt_Cantidad2_Soporte3
         '
         Me.txt_Cantidad2_Soporte3.Location = New System.Drawing.Point(263, 66)
         Me.txt_Cantidad2_Soporte3.Name = "txt_Cantidad2_Soporte3"
         Me.txt_Cantidad2_Soporte3.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad2_Soporte3.TabIndex = 78
+        Me.txt_Cantidad2_Soporte3.TabIndex = 51
         '
         'txt_Gramaje2_Soporte3
         '
         Me.txt_Gramaje2_Soporte3.Location = New System.Drawing.Point(193, 66)
         Me.txt_Gramaje2_Soporte3.Name = "txt_Gramaje2_Soporte3"
         Me.txt_Gramaje2_Soporte3.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje2_Soporte3.TabIndex = 77
+        Me.txt_Gramaje2_Soporte3.TabIndex = 50
         '
         'txt_Papel2_Soporte3
         '
         Me.txt_Papel2_Soporte3.Location = New System.Drawing.Point(24, 67)
         Me.txt_Papel2_Soporte3.Name = "txt_Papel2_Soporte3"
         Me.txt_Papel2_Soporte3.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel2_Soporte3.TabIndex = 76
+        Me.txt_Papel2_Soporte3.TabIndex = 49
         '
         'txt_Cantidad1_Soporte3
         '
         Me.txt_Cantidad1_Soporte3.Location = New System.Drawing.Point(263, 41)
         Me.txt_Cantidad1_Soporte3.Name = "txt_Cantidad1_Soporte3"
         Me.txt_Cantidad1_Soporte3.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad1_Soporte3.TabIndex = 74
+        Me.txt_Cantidad1_Soporte3.TabIndex = 47
         '
         'txt_Gramaje1_Soporte3
         '
         Me.txt_Gramaje1_Soporte3.Location = New System.Drawing.Point(193, 41)
         Me.txt_Gramaje1_Soporte3.Name = "txt_Gramaje1_Soporte3"
         Me.txt_Gramaje1_Soporte3.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje1_Soporte3.TabIndex = 73
+        Me.txt_Gramaje1_Soporte3.TabIndex = 46
         '
         'txt_Papel1_Soporte3
         '
         Me.txt_Papel1_Soporte3.Location = New System.Drawing.Point(24, 42)
         Me.txt_Papel1_Soporte3.Name = "txt_Papel1_Soporte3"
         Me.txt_Papel1_Soporte3.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel1_Soporte3.TabIndex = 72
+        Me.txt_Papel1_Soporte3.TabIndex = 45
         '
         'Label34
         '
@@ -646,7 +646,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboTipoImpresion3_Detalle3.Location = New System.Drawing.Point(364, 41)
         Me.cboTipoImpresion3_Detalle3.Name = "cboTipoImpresion3_Detalle3"
         Me.cboTipoImpresion3_Detalle3.Size = New System.Drawing.Size(63, 21)
-        Me.cboTipoImpresion3_Detalle3.TabIndex = 37
+        Me.cboTipoImpresion3_Detalle3.TabIndex = 44
         '
         'Label41
         '
@@ -689,20 +689,20 @@ Partial Class frm_Orden_Trabajo
         Me.txtTamaño3_Detalle3.Location = New System.Drawing.Point(262, 42)
         Me.txtTamaño3_Detalle3.Name = "txtTamaño3_Detalle3"
         Me.txtTamaño3_Detalle3.Size = New System.Drawing.Size(92, 20)
-        Me.txtTamaño3_Detalle3.TabIndex = 34
+        Me.txtTamaño3_Detalle3.TabIndex = 43
         '
         'txt_cantidad3_detalle3
         '
         Me.txt_cantidad3_detalle3.Location = New System.Drawing.Point(29, 42)
         Me.txt_cantidad3_detalle3.Name = "txt_cantidad3_detalle3"
         Me.txt_cantidad3_detalle3.Size = New System.Drawing.Size(59, 20)
-        Me.txt_cantidad3_detalle3.TabIndex = 33
+        Me.txt_cantidad3_detalle3.TabIndex = 41
         '
         'Label17
         '
         Me.Label17.AutoSize = True
         Me.Label17.ForeColor = System.Drawing.Color.Red
-        Me.Label17.Location = New System.Drawing.Point(29, 699)
+        Me.Label17.Location = New System.Drawing.Point(27, 659)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(109, 13)
         Me.Label17.TabIndex = 54
@@ -710,7 +710,7 @@ Partial Class frm_Orden_Trabajo
         '
         'btnGuardar_Orden_Trabajo
         '
-        Me.btnGuardar_Orden_Trabajo.Location = New System.Drawing.Point(640, 694)
+        Me.btnGuardar_Orden_Trabajo.Location = New System.Drawing.Point(672, 654)
         Me.btnGuardar_Orden_Trabajo.Name = "btnGuardar_Orden_Trabajo"
         Me.btnGuardar_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar_Orden_Trabajo.TabIndex = 58
@@ -730,9 +730,9 @@ Partial Class frm_Orden_Trabajo
         Me.GroupProducto2.Controls.Add(Me.Label33)
         Me.GroupProducto2.Controls.Add(Me.txtTamaño2_Detalle2)
         Me.GroupProducto2.Controls.Add(Me.txt_cantidad2_detalle2)
-        Me.GroupProducto2.Location = New System.Drawing.Point(20, 330)
+        Me.GroupProducto2.Location = New System.Drawing.Point(20, 313)
         Me.GroupProducto2.Name = "GroupProducto2"
-        Me.GroupProducto2.Size = New System.Drawing.Size(889, 167)
+        Me.GroupProducto2.Size = New System.Drawing.Size(889, 162)
         Me.GroupProducto2.TabIndex = 60
         Me.GroupProducto2.TabStop = False
         Me.GroupProducto2.Text = "Producto 2"
@@ -760,7 +760,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboPiezas2_Detalle2.Location = New System.Drawing.Point(94, 41)
         Me.cboPiezas2_Detalle2.Name = "cboPiezas2_Detalle2"
         Me.cboPiezas2_Detalle2.Size = New System.Drawing.Size(162, 21)
-        Me.cboPiezas2_Detalle2.TabIndex = 57
+        Me.cboPiezas2_Detalle2.TabIndex = 25
         '
         'GroupBox2
         '
@@ -796,7 +796,7 @@ Partial Class frm_Orden_Trabajo
         Me.btnProceso2.Location = New System.Drawing.Point(167, 113)
         Me.btnProceso2.Name = "btnProceso2"
         Me.btnProceso2.Size = New System.Drawing.Size(112, 23)
-        Me.btnProceso2.TabIndex = 63
+        Me.btnProceso2.TabIndex = 40
         Me.btnProceso2.Text = "Cargar Proceso"
         Me.btnProceso2.UseVisualStyleBackColor = True
         '
@@ -826,7 +826,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboFormato3_Soporte2.Location = New System.Drawing.Point(338, 88)
         Me.cboFormato3_Soporte2.Name = "cboFormato3_Soporte2"
         Me.cboFormato3_Soporte2.Size = New System.Drawing.Size(89, 21)
-        Me.cboFormato3_Soporte2.TabIndex = 73
+        Me.cboFormato3_Soporte2.TabIndex = 39
         '
         'cboFormato2_Soporte2
         '
@@ -836,7 +836,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboFormato2_Soporte2.Location = New System.Drawing.Point(338, 63)
         Me.cboFormato2_Soporte2.Name = "cboFormato2_Soporte2"
         Me.cboFormato2_Soporte2.Size = New System.Drawing.Size(89, 21)
-        Me.cboFormato2_Soporte2.TabIndex = 72
+        Me.cboFormato2_Soporte2.TabIndex = 35
         '
         'cboFormato1_Soporte2
         '
@@ -846,70 +846,70 @@ Partial Class frm_Orden_Trabajo
         Me.cboFormato1_Soporte2.Location = New System.Drawing.Point(338, 37)
         Me.cboFormato1_Soporte2.Name = "cboFormato1_Soporte2"
         Me.cboFormato1_Soporte2.Size = New System.Drawing.Size(89, 21)
-        Me.cboFormato1_Soporte2.TabIndex = 71
+        Me.cboFormato1_Soporte2.TabIndex = 31
         '
         'txt_Cantidad3_Soporte2
         '
         Me.txt_Cantidad3_Soporte2.Location = New System.Drawing.Point(263, 87)
         Me.txt_Cantidad3_Soporte2.Name = "txt_Cantidad3_Soporte2"
         Me.txt_Cantidad3_Soporte2.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad3_Soporte2.TabIndex = 70
+        Me.txt_Cantidad3_Soporte2.TabIndex = 38
         '
         'txt_Gramaje3_Soporte2
         '
         Me.txt_Gramaje3_Soporte2.Location = New System.Drawing.Point(193, 87)
         Me.txt_Gramaje3_Soporte2.Name = "txt_Gramaje3_Soporte2"
         Me.txt_Gramaje3_Soporte2.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje3_Soporte2.TabIndex = 69
+        Me.txt_Gramaje3_Soporte2.TabIndex = 37
         '
         'txt_Papel3_Soporte2
         '
         Me.txt_Papel3_Soporte2.Location = New System.Drawing.Point(24, 88)
         Me.txt_Papel3_Soporte2.Name = "txt_Papel3_Soporte2"
         Me.txt_Papel3_Soporte2.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel3_Soporte2.TabIndex = 68
+        Me.txt_Papel3_Soporte2.TabIndex = 36
         '
         'txt_Cantidad2_Soporte2
         '
         Me.txt_Cantidad2_Soporte2.Location = New System.Drawing.Point(263, 61)
         Me.txt_Cantidad2_Soporte2.Name = "txt_Cantidad2_Soporte2"
         Me.txt_Cantidad2_Soporte2.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad2_Soporte2.TabIndex = 66
+        Me.txt_Cantidad2_Soporte2.TabIndex = 34
         '
         'txt_Gramaje2_Soporte2
         '
         Me.txt_Gramaje2_Soporte2.Location = New System.Drawing.Point(193, 61)
         Me.txt_Gramaje2_Soporte2.Name = "txt_Gramaje2_Soporte2"
         Me.txt_Gramaje2_Soporte2.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje2_Soporte2.TabIndex = 65
+        Me.txt_Gramaje2_Soporte2.TabIndex = 33
         '
         'txt_Papel2_Soporte2
         '
         Me.txt_Papel2_Soporte2.Location = New System.Drawing.Point(24, 62)
         Me.txt_Papel2_Soporte2.Name = "txt_Papel2_Soporte2"
         Me.txt_Papel2_Soporte2.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel2_Soporte2.TabIndex = 64
+        Me.txt_Papel2_Soporte2.TabIndex = 32
         '
         'txt_Cantidad1_Soporte2
         '
         Me.txt_Cantidad1_Soporte2.Location = New System.Drawing.Point(263, 36)
         Me.txt_Cantidad1_Soporte2.Name = "txt_Cantidad1_Soporte2"
         Me.txt_Cantidad1_Soporte2.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad1_Soporte2.TabIndex = 62
+        Me.txt_Cantidad1_Soporte2.TabIndex = 30
         '
         'txt_Gramaje1_Soporte2
         '
         Me.txt_Gramaje1_Soporte2.Location = New System.Drawing.Point(193, 36)
         Me.txt_Gramaje1_Soporte2.Name = "txt_Gramaje1_Soporte2"
         Me.txt_Gramaje1_Soporte2.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje1_Soporte2.TabIndex = 61
+        Me.txt_Gramaje1_Soporte2.TabIndex = 29
         '
         'txt_Papel1_Soporte2
         '
         Me.txt_Papel1_Soporte2.Location = New System.Drawing.Point(24, 37)
         Me.txt_Papel1_Soporte2.Name = "txt_Papel1_Soporte2"
         Me.txt_Papel1_Soporte2.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel1_Soporte2.TabIndex = 60
+        Me.txt_Papel1_Soporte2.TabIndex = 28
         '
         'Label11
         '
@@ -964,7 +964,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboTipoImpresion2_Detalle2.Location = New System.Drawing.Point(364, 41)
         Me.cboTipoImpresion2_Detalle2.Name = "cboTipoImpresion2_Detalle2"
         Me.cboTipoImpresion2_Detalle2.Size = New System.Drawing.Size(63, 21)
-        Me.cboTipoImpresion2_Detalle2.TabIndex = 37
+        Me.cboTipoImpresion2_Detalle2.TabIndex = 27
         '
         'Label30
         '
@@ -1007,14 +1007,14 @@ Partial Class frm_Orden_Trabajo
         Me.txtTamaño2_Detalle2.Location = New System.Drawing.Point(262, 42)
         Me.txtTamaño2_Detalle2.Name = "txtTamaño2_Detalle2"
         Me.txtTamaño2_Detalle2.Size = New System.Drawing.Size(92, 20)
-        Me.txtTamaño2_Detalle2.TabIndex = 34
+        Me.txtTamaño2_Detalle2.TabIndex = 26
         '
         'txt_cantidad2_detalle2
         '
         Me.txt_cantidad2_detalle2.Location = New System.Drawing.Point(29, 41)
         Me.txt_cantidad2_detalle2.Name = "txt_cantidad2_detalle2"
         Me.txt_cantidad2_detalle2.Size = New System.Drawing.Size(59, 20)
-        Me.txt_cantidad2_detalle2.TabIndex = 33
+        Me.txt_cantidad2_detalle2.TabIndex = 24
         '
         'GroupProducto1
         '
@@ -1033,9 +1033,9 @@ Partial Class frm_Orden_Trabajo
         Me.GroupProducto1.Controls.Add(Me.Label2)
         Me.GroupProducto1.Controls.Add(Me.txtTamaño1_Detalle1)
         Me.GroupProducto1.Controls.Add(Me.txt_cantidad1_detalle1)
-        Me.GroupProducto1.Location = New System.Drawing.Point(20, 155)
+        Me.GroupProducto1.Location = New System.Drawing.Point(20, 143)
         Me.GroupProducto1.Name = "GroupProducto1"
-        Me.GroupProducto1.Size = New System.Drawing.Size(889, 178)
+        Me.GroupProducto1.Size = New System.Drawing.Size(889, 164)
         Me.GroupProducto1.TabIndex = 59
         Me.GroupProducto1.TabStop = False
         Me.GroupProducto1.Text = "Producto 1"
@@ -1103,7 +1103,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboPiezas1_Detalle1.Location = New System.Drawing.Point(94, 41)
         Me.cboPiezas1_Detalle1.Name = "cboPiezas1_Detalle1"
         Me.cboPiezas1_Detalle1.Size = New System.Drawing.Size(162, 21)
-        Me.cboPiezas1_Detalle1.TabIndex = 56
+        Me.cboPiezas1_Detalle1.TabIndex = 8
         '
         'GroupBox5
         '
@@ -1142,7 +1142,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboFormato3_Soporte1.Location = New System.Drawing.Point(338, 89)
         Me.cboFormato3_Soporte1.Name = "cboFormato3_Soporte1"
         Me.cboFormato3_Soporte1.Size = New System.Drawing.Size(89, 21)
-        Me.cboFormato3_Soporte1.TabIndex = 59
+        Me.cboFormato3_Soporte1.TabIndex = 22
         '
         'cboFormato2_Soporte1
         '
@@ -1152,7 +1152,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboFormato2_Soporte1.Location = New System.Drawing.Point(338, 64)
         Me.cboFormato2_Soporte1.Name = "cboFormato2_Soporte1"
         Me.cboFormato2_Soporte1.Size = New System.Drawing.Size(89, 21)
-        Me.cboFormato2_Soporte1.TabIndex = 56
+        Me.cboFormato2_Soporte1.TabIndex = 18
         '
         'Label21
         '
@@ -1186,42 +1186,42 @@ Partial Class frm_Orden_Trabajo
         Me.txt_Cantidad3_Soporte1.Location = New System.Drawing.Point(263, 89)
         Me.txt_Cantidad3_Soporte1.Name = "txt_Cantidad3_Soporte1"
         Me.txt_Cantidad3_Soporte1.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad3_Soporte1.TabIndex = 54
+        Me.txt_Cantidad3_Soporte1.TabIndex = 21
         '
         'txt_Gramaje3_Soporte1
         '
         Me.txt_Gramaje3_Soporte1.Location = New System.Drawing.Point(193, 89)
         Me.txt_Gramaje3_Soporte1.Name = "txt_Gramaje3_Soporte1"
         Me.txt_Gramaje3_Soporte1.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje3_Soporte1.TabIndex = 53
+        Me.txt_Gramaje3_Soporte1.TabIndex = 20
         '
         'txt_Papel3_Soporte1
         '
         Me.txt_Papel3_Soporte1.Location = New System.Drawing.Point(24, 90)
         Me.txt_Papel3_Soporte1.Name = "txt_Papel3_Soporte1"
         Me.txt_Papel3_Soporte1.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel3_Soporte1.TabIndex = 52
+        Me.txt_Papel3_Soporte1.TabIndex = 19
         '
         'txt_Cantidad2_Soporte1
         '
         Me.txt_Cantidad2_Soporte1.Location = New System.Drawing.Point(263, 63)
         Me.txt_Cantidad2_Soporte1.Name = "txt_Cantidad2_Soporte1"
         Me.txt_Cantidad2_Soporte1.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad2_Soporte1.TabIndex = 46
+        Me.txt_Cantidad2_Soporte1.TabIndex = 17
         '
         'txt_Gramaje2_Soporte1
         '
         Me.txt_Gramaje2_Soporte1.Location = New System.Drawing.Point(193, 63)
         Me.txt_Gramaje2_Soporte1.Name = "txt_Gramaje2_Soporte1"
         Me.txt_Gramaje2_Soporte1.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje2_Soporte1.TabIndex = 45
+        Me.txt_Gramaje2_Soporte1.TabIndex = 16
         '
         'txt_Papel2_Soporte1
         '
         Me.txt_Papel2_Soporte1.Location = New System.Drawing.Point(24, 64)
         Me.txt_Papel2_Soporte1.Name = "txt_Papel2_Soporte1"
         Me.txt_Papel2_Soporte1.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel2_Soporte1.TabIndex = 44
+        Me.txt_Papel2_Soporte1.TabIndex = 15
         '
         'cboFormato1_Soporte1
         '
@@ -1231,7 +1231,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboFormato1_Soporte1.Location = New System.Drawing.Point(338, 38)
         Me.cboFormato1_Soporte1.Name = "cboFormato1_Soporte1"
         Me.cboFormato1_Soporte1.Size = New System.Drawing.Size(89, 21)
-        Me.cboFormato1_Soporte1.TabIndex = 30
+        Me.cboFormato1_Soporte1.TabIndex = 14
         '
         'Label26
         '
@@ -1274,21 +1274,21 @@ Partial Class frm_Orden_Trabajo
         Me.txt_Cantidad1_Soporte1.Location = New System.Drawing.Point(263, 38)
         Me.txt_Cantidad1_Soporte1.Name = "txt_Cantidad1_Soporte1"
         Me.txt_Cantidad1_Soporte1.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad1_Soporte1.TabIndex = 38
+        Me.txt_Cantidad1_Soporte1.TabIndex = 13
         '
         'txt_Gramaje1_Soporte1
         '
         Me.txt_Gramaje1_Soporte1.Location = New System.Drawing.Point(193, 38)
         Me.txt_Gramaje1_Soporte1.Name = "txt_Gramaje1_Soporte1"
         Me.txt_Gramaje1_Soporte1.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje1_Soporte1.TabIndex = 37
+        Me.txt_Gramaje1_Soporte1.TabIndex = 12
         '
         'txt_Papel1_Soporte1
         '
         Me.txt_Papel1_Soporte1.Location = New System.Drawing.Point(24, 39)
         Me.txt_Papel1_Soporte1.Name = "txt_Papel1_Soporte1"
         Me.txt_Papel1_Soporte1.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel1_Soporte1.TabIndex = 36
+        Me.txt_Papel1_Soporte1.TabIndex = 11
         '
         'cboTipoImpresion1_Detalle1
         '
@@ -1298,7 +1298,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboTipoImpresion1_Detalle1.Location = New System.Drawing.Point(364, 41)
         Me.cboTipoImpresion1_Detalle1.Name = "cboTipoImpresion1_Detalle1"
         Me.cboTipoImpresion1_Detalle1.Size = New System.Drawing.Size(63, 21)
-        Me.cboTipoImpresion1_Detalle1.TabIndex = 37
+        Me.cboTipoImpresion1_Detalle1.TabIndex = 10
         '
         'Label8
         '
@@ -1341,39 +1341,39 @@ Partial Class frm_Orden_Trabajo
         Me.txtTamaño1_Detalle1.Location = New System.Drawing.Point(262, 41)
         Me.txtTamaño1_Detalle1.Name = "txtTamaño1_Detalle1"
         Me.txtTamaño1_Detalle1.Size = New System.Drawing.Size(92, 20)
-        Me.txtTamaño1_Detalle1.TabIndex = 34
+        Me.txtTamaño1_Detalle1.TabIndex = 9
         '
         'txt_cantidad1_detalle1
         '
         Me.txt_cantidad1_detalle1.Location = New System.Drawing.Point(29, 42)
         Me.txt_cantidad1_detalle1.Name = "txt_cantidad1_detalle1"
         Me.txt_cantidad1_detalle1.Size = New System.Drawing.Size(59, 20)
-        Me.txt_cantidad1_detalle1.TabIndex = 33
+        Me.txt_cantidad1_detalle1.TabIndex = 7
         '
         'btnCancelar_Orden_Trabajo
         '
-        Me.btnCancelar_Orden_Trabajo.Location = New System.Drawing.Point(836, 694)
+        Me.btnCancelar_Orden_Trabajo.Location = New System.Drawing.Point(834, 654)
         Me.btnCancelar_Orden_Trabajo.Name = "btnCancelar_Orden_Trabajo"
         Me.btnCancelar_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar_Orden_Trabajo.TabIndex = 57
+        Me.btnCancelar_Orden_Trabajo.TabIndex = 59
         Me.btnCancelar_Orden_Trabajo.Text = "Cancelar"
         Me.btnCancelar_Orden_Trabajo.UseVisualStyleBackColor = True
         '
         'btnActualizar_Orden_Trabajo
         '
-        Me.btnActualizar_Orden_Trabajo.Location = New System.Drawing.Point(738, 694)
+        Me.btnActualizar_Orden_Trabajo.Location = New System.Drawing.Point(753, 654)
         Me.btnActualizar_Orden_Trabajo.Name = "btnActualizar_Orden_Trabajo"
         Me.btnActualizar_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
-        Me.btnActualizar_Orden_Trabajo.TabIndex = 56
+        Me.btnActualizar_Orden_Trabajo.TabIndex = 62
         Me.btnActualizar_Orden_Trabajo.Text = "Actualizar"
         Me.btnActualizar_Orden_Trabajo.UseVisualStyleBackColor = True
         '
         'btnNueva_Orden_Trabajo
         '
-        Me.btnNueva_Orden_Trabajo.Location = New System.Drawing.Point(440, 694)
+        Me.btnNueva_Orden_Trabajo.Location = New System.Drawing.Point(510, 654)
         Me.btnNueva_Orden_Trabajo.Name = "btnNueva_Orden_Trabajo"
         Me.btnNueva_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
-        Me.btnNueva_Orden_Trabajo.TabIndex = 55
+        Me.btnNueva_Orden_Trabajo.TabIndex = 60
         Me.btnNueva_Orden_Trabajo.Text = "Nuevo"
         Me.btnNueva_Orden_Trabajo.UseVisualStyleBackColor = True
         '
@@ -1381,7 +1381,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(926, 735)
+        Me.ClientSize = New System.Drawing.Size(926, 686)
         Me.Controls.Add(Me.btnImprimir)
         Me.Controls.Add(Me.GroupProducto3)
         Me.Controls.Add(Me.Label17)

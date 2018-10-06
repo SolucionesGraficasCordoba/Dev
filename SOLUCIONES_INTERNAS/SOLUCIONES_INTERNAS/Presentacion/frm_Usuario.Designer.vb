@@ -27,17 +27,19 @@ Partial Class frm_Usuario
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnEliminar_Usuario = New System.Windows.Forms.Button()
         Me.txt_Buscar_Usuario = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.dgvLista_Usuarios = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupNuevoUsuario = New System.Windows.Forms.GroupBox()
         Me.txt_id_colaborador = New System.Windows.Forms.TextBox()
         Me.btnBuscar_Colaborador = New System.Windows.Forms.Button()
+        Me.txt_id_usuario = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.txt_nombre_colaborador = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.cbo_perfil = New System.Windows.Forms.ComboBox()
         Me.txt_contraseña = New System.Windows.Forms.TextBox()
@@ -47,10 +49,8 @@ Partial Class frm_Usuario
         Me.btnGuardar_Usuario = New System.Windows.Forms.Button()
         Me.btnNuevo_Usuario = New System.Windows.Forms.Button()
         Me.txt_usuario = New System.Windows.Forms.TextBox()
-        Me.txt_id_usuario = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupListadoUsuarios.SuspendLayout()
         CType(Me.dgvLista_Usuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupNuevoUsuario.SuspendLayout()
@@ -62,11 +62,12 @@ Partial Class frm_Usuario
         Me.GroupListadoUsuarios.Controls.Add(Me.Label5)
         Me.GroupListadoUsuarios.Controls.Add(Me.btnEliminar_Usuario)
         Me.GroupListadoUsuarios.Controls.Add(Me.txt_Buscar_Usuario)
+        Me.GroupListadoUsuarios.Controls.Add(Me.Label8)
         Me.GroupListadoUsuarios.Controls.Add(Me.dgvLista_Usuarios)
         Me.GroupListadoUsuarios.Controls.Add(Me.Label4)
-        Me.GroupListadoUsuarios.Location = New System.Drawing.Point(25, 294)
+        Me.GroupListadoUsuarios.Location = New System.Drawing.Point(12, 220)
         Me.GroupListadoUsuarios.Name = "GroupListadoUsuarios"
-        Me.GroupListadoUsuarios.Size = New System.Drawing.Size(486, 318)
+        Me.GroupListadoUsuarios.Size = New System.Drawing.Size(394, 287)
         Me.GroupListadoUsuarios.TabIndex = 7
         Me.GroupListadoUsuarios.TabStop = False
         Me.GroupListadoUsuarios.Text = "Listado de Usuarios"
@@ -75,7 +76,7 @@ Partial Class frm_Usuario
         '
         Me.lblTotal_Usuarios.AutoSize = True
         Me.lblTotal_Usuarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblTotal_Usuarios.Location = New System.Drawing.Point(442, 285)
+        Me.lblTotal_Usuarios.Location = New System.Drawing.Point(347, 265)
         Me.lblTotal_Usuarios.Name = "lblTotal_Usuarios"
         Me.lblTotal_Usuarios.Size = New System.Drawing.Size(2, 15)
         Me.lblTotal_Usuarios.TabIndex = 5
@@ -83,7 +84,7 @@ Partial Class frm_Usuario
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(346, 285)
+        Me.Label5.Location = New System.Drawing.Point(251, 265)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(90, 13)
         Me.Label5.TabIndex = 4
@@ -91,33 +92,44 @@ Partial Class frm_Usuario
         '
         'btnEliminar_Usuario
         '
-        Me.btnEliminar_Usuario.Location = New System.Drawing.Point(385, 38)
+        Me.btnEliminar_Usuario.Location = New System.Drawing.Point(299, 21)
         Me.btnEliminar_Usuario.Name = "btnEliminar_Usuario"
         Me.btnEliminar_Usuario.Size = New System.Drawing.Size(75, 23)
-        Me.btnEliminar_Usuario.TabIndex = 3
+        Me.btnEliminar_Usuario.TabIndex = 8
         Me.btnEliminar_Usuario.Text = "Eliminar"
         Me.btnEliminar_Usuario.UseVisualStyleBackColor = True
         '
         'txt_Buscar_Usuario
         '
-        Me.txt_Buscar_Usuario.Location = New System.Drawing.Point(170, 40)
+        Me.txt_Buscar_Usuario.Location = New System.Drawing.Point(161, 23)
         Me.txt_Buscar_Usuario.Name = "txt_Buscar_Usuario"
-        Me.txt_Buscar_Usuario.Size = New System.Drawing.Size(167, 20)
-        Me.txt_Buscar_Usuario.TabIndex = 2
+        Me.txt_Buscar_Usuario.Size = New System.Drawing.Size(118, 20)
+        Me.txt_Buscar_Usuario.TabIndex = 7
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(16, 265)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(105, 13)
+        Me.Label8.TabIndex = 4
+        Me.Label8.Text = "* (Campo Requerido)"
         '
         'dgvLista_Usuarios
         '
         Me.dgvLista_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLista_Usuarios.Location = New System.Drawing.Point(24, 67)
+        Me.dgvLista_Usuarios.Location = New System.Drawing.Point(16, 50)
         Me.dgvLista_Usuarios.Name = "dgvLista_Usuarios"
         Me.dgvLista_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_Usuarios.Size = New System.Drawing.Size(436, 206)
-        Me.dgvLista_Usuarios.TabIndex = 0
+        Me.dgvLista_Usuarios.Size = New System.Drawing.Size(359, 206)
+        Me.dgvLista_Usuarios.TabIndex = 9
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(28, 43)
+        Me.Label4.Location = New System.Drawing.Point(19, 26)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(136, 13)
         Me.Label4.TabIndex = 0
@@ -127,12 +139,13 @@ Partial Class frm_Usuario
         '
         Me.GroupNuevoUsuario.Controls.Add(Me.txt_id_colaborador)
         Me.GroupNuevoUsuario.Controls.Add(Me.btnBuscar_Colaborador)
+        Me.GroupNuevoUsuario.Controls.Add(Me.txt_id_usuario)
+        Me.GroupNuevoUsuario.Controls.Add(Me.Label1)
         Me.GroupNuevoUsuario.Controls.Add(Me.txt_nombre_colaborador)
         Me.GroupNuevoUsuario.Controls.Add(Me.Label10)
         Me.GroupNuevoUsuario.Controls.Add(Me.Label12)
         Me.GroupNuevoUsuario.Controls.Add(Me.Label11)
         Me.GroupNuevoUsuario.Controls.Add(Me.Label7)
-        Me.GroupNuevoUsuario.Controls.Add(Me.Label8)
         Me.GroupNuevoUsuario.Controls.Add(Me.Label6)
         Me.GroupNuevoUsuario.Controls.Add(Me.cbo_perfil)
         Me.GroupNuevoUsuario.Controls.Add(Me.txt_contraseña)
@@ -142,38 +155,52 @@ Partial Class frm_Usuario
         Me.GroupNuevoUsuario.Controls.Add(Me.btnGuardar_Usuario)
         Me.GroupNuevoUsuario.Controls.Add(Me.btnNuevo_Usuario)
         Me.GroupNuevoUsuario.Controls.Add(Me.txt_usuario)
-        Me.GroupNuevoUsuario.Controls.Add(Me.txt_id_usuario)
         Me.GroupNuevoUsuario.Controls.Add(Me.Label3)
         Me.GroupNuevoUsuario.Controls.Add(Me.Label2)
-        Me.GroupNuevoUsuario.Controls.Add(Me.Label1)
-        Me.GroupNuevoUsuario.Location = New System.Drawing.Point(25, 24)
+        Me.GroupNuevoUsuario.Location = New System.Drawing.Point(12, 12)
         Me.GroupNuevoUsuario.Name = "GroupNuevoUsuario"
-        Me.GroupNuevoUsuario.Size = New System.Drawing.Size(486, 250)
+        Me.GroupNuevoUsuario.Size = New System.Drawing.Size(394, 202)
         Me.GroupNuevoUsuario.TabIndex = 6
         Me.GroupNuevoUsuario.TabStop = False
         Me.GroupNuevoUsuario.Text = "Nuevo Usuario"
         '
         'txt_id_colaborador
         '
-        Me.txt_id_colaborador.Location = New System.Drawing.Point(412, 141)
+        Me.txt_id_colaborador.Location = New System.Drawing.Point(372, 130)
         Me.txt_id_colaborador.Name = "txt_id_colaborador"
-        Me.txt_id_colaborador.Size = New System.Drawing.Size(27, 20)
+        Me.txt_id_colaborador.Size = New System.Drawing.Size(11, 20)
         Me.txt_id_colaborador.TabIndex = 11
         '
         'btnBuscar_Colaborador
         '
-        Me.btnBuscar_Colaborador.Location = New System.Drawing.Point(355, 138)
+        Me.btnBuscar_Colaborador.Location = New System.Drawing.Point(304, 128)
         Me.btnBuscar_Colaborador.Name = "btnBuscar_Colaborador"
-        Me.btnBuscar_Colaborador.Size = New System.Drawing.Size(51, 23)
-        Me.btnBuscar_Colaborador.TabIndex = 10
+        Me.btnBuscar_Colaborador.Size = New System.Drawing.Size(62, 23)
+        Me.btnBuscar_Colaborador.TabIndex = 4
         Me.btnBuscar_Colaborador.Text = "..."
         Me.btnBuscar_Colaborador.UseVisualStyleBackColor = True
         '
+        'txt_id_usuario
+        '
+        Me.txt_id_usuario.Location = New System.Drawing.Point(6, 98)
+        Me.txt_id_usuario.Name = "txt_id_usuario"
+        Me.txt_id_usuario.Size = New System.Drawing.Size(18, 20)
+        Me.txt_id_usuario.TabIndex = 1
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 78)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(55, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "id_usuario"
+        '
         'txt_nombre_colaborador
         '
-        Me.txt_nombre_colaborador.Location = New System.Drawing.Point(129, 140)
+        Me.txt_nombre_colaborador.Location = New System.Drawing.Point(94, 130)
         Me.txt_nombre_colaborador.Name = "txt_nombre_colaborador"
-        Me.txt_nombre_colaborador.Size = New System.Drawing.Size(208, 20)
+        Me.txt_nombre_colaborador.Size = New System.Drawing.Size(189, 20)
         Me.txt_nombre_colaborador.TabIndex = 9
         '
         'Label10
@@ -181,7 +208,7 @@ Partial Class frm_Usuario
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Red
-        Me.Label10.Location = New System.Drawing.Point(342, 35)
+        Me.Label10.Location = New System.Drawing.Point(372, 25)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(11, 13)
         Me.Label10.TabIndex = 4
@@ -192,7 +219,7 @@ Partial Class frm_Usuario
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Red
-        Me.Label12.Location = New System.Drawing.Point(340, 144)
+        Me.Label12.Location = New System.Drawing.Point(287, 132)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(11, 13)
         Me.Label12.TabIndex = 4
@@ -203,7 +230,7 @@ Partial Class frm_Usuario
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Red
-        Me.Label11.Location = New System.Drawing.Point(342, 111)
+        Me.Label11.Location = New System.Drawing.Point(372, 101)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(11, 13)
         Me.Label11.TabIndex = 4
@@ -214,27 +241,16 @@ Partial Class frm_Usuario
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(342, 70)
+        Me.Label7.Location = New System.Drawing.Point(372, 60)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(11, 13)
         Me.Label7.TabIndex = 4
         Me.Label7.Text = "*"
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(21, 224)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(105, 13)
-        Me.Label8.TabIndex = 4
-        Me.Label8.Text = "* (Campo Requerido)"
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(48, 143)
+        Me.Label6.Location = New System.Drawing.Point(13, 133)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(64, 13)
         Me.Label6.TabIndex = 8
@@ -245,23 +261,23 @@ Partial Class frm_Usuario
         Me.cbo_perfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_perfil.FormattingEnabled = True
         Me.cbo_perfil.Items.AddRange(New Object() {"ADMINISTRADOR", "COLABORADOR", "GERENCIA", "SUPERVISOR"})
-        Me.cbo_perfil.Location = New System.Drawing.Point(129, 103)
+        Me.cbo_perfil.Location = New System.Drawing.Point(94, 93)
         Me.cbo_perfil.Name = "cbo_perfil"
-        Me.cbo_perfil.Size = New System.Drawing.Size(208, 21)
-        Me.cbo_perfil.TabIndex = 7
+        Me.cbo_perfil.Size = New System.Drawing.Size(272, 21)
+        Me.cbo_perfil.TabIndex = 3
         '
         'txt_contraseña
         '
-        Me.txt_contraseña.Location = New System.Drawing.Point(129, 67)
+        Me.txt_contraseña.Location = New System.Drawing.Point(94, 57)
         Me.txt_contraseña.Name = "txt_contraseña"
         Me.txt_contraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txt_contraseña.Size = New System.Drawing.Size(208, 20)
-        Me.txt_contraseña.TabIndex = 6
+        Me.txt_contraseña.Size = New System.Drawing.Size(272, 20)
+        Me.txt_contraseña.TabIndex = 2
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(51, 70)
+        Me.Label9.Location = New System.Drawing.Point(16, 60)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(61, 13)
         Me.Label9.TabIndex = 5
@@ -269,16 +285,16 @@ Partial Class frm_Usuario
         '
         'btnCancelar_Usuario
         '
-        Me.btnCancelar_Usuario.Location = New System.Drawing.Point(355, 186)
+        Me.btnCancelar_Usuario.Location = New System.Drawing.Point(292, 164)
         Me.btnCancelar_Usuario.Name = "btnCancelar_Usuario"
         Me.btnCancelar_Usuario.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar_Usuario.TabIndex = 2
+        Me.btnCancelar_Usuario.TabIndex = 6
         Me.btnCancelar_Usuario.Text = "Cancelar"
         Me.btnCancelar_Usuario.UseVisualStyleBackColor = True
         '
         'btnActualizar_Usuario
         '
-        Me.btnActualizar_Usuario.Location = New System.Drawing.Point(260, 186)
+        Me.btnActualizar_Usuario.Location = New System.Drawing.Point(211, 164)
         Me.btnActualizar_Usuario.Name = "btnActualizar_Usuario"
         Me.btnActualizar_Usuario.Size = New System.Drawing.Size(75, 23)
         Me.btnActualizar_Usuario.TabIndex = 2
@@ -287,16 +303,16 @@ Partial Class frm_Usuario
         '
         'btnGuardar_Usuario
         '
-        Me.btnGuardar_Usuario.Location = New System.Drawing.Point(162, 186)
+        Me.btnGuardar_Usuario.Location = New System.Drawing.Point(130, 164)
         Me.btnGuardar_Usuario.Name = "btnGuardar_Usuario"
         Me.btnGuardar_Usuario.Size = New System.Drawing.Size(75, 23)
-        Me.btnGuardar_Usuario.TabIndex = 4
+        Me.btnGuardar_Usuario.TabIndex = 5
         Me.btnGuardar_Usuario.Text = "Guardar"
         Me.btnGuardar_Usuario.UseVisualStyleBackColor = True
         '
         'btnNuevo_Usuario
         '
-        Me.btnNuevo_Usuario.Location = New System.Drawing.Point(63, 186)
+        Me.btnNuevo_Usuario.Location = New System.Drawing.Point(49, 164)
         Me.btnNuevo_Usuario.Name = "btnNuevo_Usuario"
         Me.btnNuevo_Usuario.Size = New System.Drawing.Size(75, 23)
         Me.btnNuevo_Usuario.TabIndex = 2
@@ -305,22 +321,15 @@ Partial Class frm_Usuario
         '
         'txt_usuario
         '
-        Me.txt_usuario.Location = New System.Drawing.Point(129, 32)
+        Me.txt_usuario.Location = New System.Drawing.Point(94, 22)
         Me.txt_usuario.Name = "txt_usuario"
-        Me.txt_usuario.Size = New System.Drawing.Size(208, 20)
+        Me.txt_usuario.Size = New System.Drawing.Size(272, 20)
         Me.txt_usuario.TabIndex = 1
-        '
-        'txt_id_usuario
-        '
-        Me.txt_id_usuario.Location = New System.Drawing.Point(419, 31)
-        Me.txt_id_usuario.Name = "txt_id_usuario"
-        Me.txt_id_usuario.Size = New System.Drawing.Size(61, 20)
-        Me.txt_id_usuario.TabIndex = 1
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(82, 106)
+        Me.Label3.Location = New System.Drawing.Point(47, 96)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(30, 13)
         Me.Label3.TabIndex = 0
@@ -329,26 +338,17 @@ Partial Class frm_Usuario
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(69, 35)
+        Me.Label2.Location = New System.Drawing.Point(34, 25)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(43, 13)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Usuario"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(425, 15)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(55, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "id_usuario"
-        '
         'frm_Usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(534, 637)
+        Me.ClientSize = New System.Drawing.Size(427, 516)
         Me.Controls.Add(Me.GroupListadoUsuarios)
         Me.Controls.Add(Me.GroupNuevoUsuario)
         Me.Name = "frm_Usuario"

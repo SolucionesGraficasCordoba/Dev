@@ -11,8 +11,6 @@ Public Class frm_Etiqueta_Modelo_1
         Label16.Enabled = False
         Label17.Enabled = False
         Label18.Enabled = False
-        'Label22.Visible = False 'HACER VISIBLE CUANDO SEA NECESARIO
-        'Label25.Visible = False 'HACER VISIBLE CUANDO SEA NECESARIO
         ArmarEtiqueta()
         txtId_Cliente.Visible = False
         txt_id_orden.Visible = False
@@ -62,6 +60,7 @@ Public Class frm_Etiqueta_Modelo_1
         dgv_Etiquetas.Columns.Clear()
 
         dgv_Etiquetas.Columns.Add(txt_orden.Text, "Orden")
+        dgv_Etiquetas.Columns(0).Width = 50
         dgv_Etiquetas.Columns.Add(txtDescripcionEntrega.Text, "Descrición")
         dgv_Etiquetas.Columns.Add("CLI_id_cliente", "id_cliente")
         dgv_Etiquetas.Columns(2).Visible = False
@@ -71,13 +70,19 @@ Public Class frm_Etiqueta_Modelo_1
         dgv_Etiquetas.Columns.Add("CLI_domicilio", "Domicilio")
         dgv_Etiquetas.Columns.Add("CLI_localidad", "Localidad")
         dgv_Etiquetas.Columns.Add("CLI_codigo_postal", "CP")
+        dgv_Etiquetas.Columns(8).Width = 50
         dgv_Etiquetas.Columns.Add(txtDespachado.Text, "Despachado")
         dgv_Etiquetas.Columns.Add(txtSeccion.Text, "Sección")
         dgv_Etiquetas.Columns.Add(txtCantidadBultos.Text, "Cantidad")
+        dgv_Etiquetas.Columns(11).Width = 50
         dgv_Etiquetas.Columns.Add(txtNumeroBultos.Text, "Nro Bultos")
-        dgv_Etiquetas.Columns.Add(txtUnidadxBulto.Text, "Unid_x_Bulto")
+        dgv_Etiquetas.Columns(12).Width = 50
+        dgv_Etiquetas.Columns.Add(txtUnidadxBulto.Text, "Unid x Bulto")
+        dgv_Etiquetas.Columns(13).Width = 50
         dgv_Etiquetas.Columns.Add(txtTotalBultos.Text, "Total Bultos")
+        dgv_Etiquetas.Columns(14).Width = 50
         dgv_Etiquetas.Columns.Add(txtPeso.Text, "Peso")
+        dgv_Etiquetas.Columns(15).Width = 50
         dgv_Etiquetas.Columns.Add(cboLogo.Text, "Logo")
     End Sub
 
@@ -100,7 +105,6 @@ Public Class frm_Etiqueta_Modelo_1
                                             txtPeso.Text.ToUpper,
                                             cboLogo.Text.ToUpper}
         dgv_Etiquetas.Rows.Add(row)
-        ' Limpiar()
         dgv_Etiquetas.ClearSelection()
     End Sub
 
@@ -142,19 +146,6 @@ Public Class frm_Etiqueta_Modelo_1
             Exit Sub
         End If
         CargaEtiqueta()
-
-        ' txtDescripcionEntrega.Clear()
-        '  txtDirigidoA.Clear()
-        '  txtId_Cliente.Clear()
-        ' txt_id_orden.Clear()
-        ' txt_orden.Clear()
-        '  txtSolicitante.Clear()
-        '  txtSector.Clear()
-        '  txtDomicilio.Clear()
-        '  txtLocalidad.Clear()
-        '  txtCodigoPostal.Clear()
-        '  txtDespachado.Clear()
-        ' txtSeccion.Clear()
         txtCantidadBultos.Clear()
         txtNumeroBultos.Clear()
         txtUnidadxBulto.Clear()
