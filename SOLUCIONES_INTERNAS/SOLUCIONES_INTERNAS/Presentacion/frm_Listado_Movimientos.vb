@@ -28,8 +28,6 @@
         ArmaGrillaRetrabajo()
         CargarGrillaMovimiento()
         dgv_movimientos.ClearSelection()
-
-       
     End Sub
 
 
