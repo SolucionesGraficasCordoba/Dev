@@ -77,7 +77,6 @@ Public Class frm_Principal
     End Sub
 
     Private m_ChildFormNumber As Integer
-
     Public formularios As New List(Of Form)
 
     Private Sub CerrarSesiónToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
@@ -95,23 +94,25 @@ Public Class frm_Principal
         Next
     End Sub
 
-    Private Sub frm_Principal_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub AltaUsuariosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AltaUsuariosToolStripMenuItem.Click
-        frm_Usuario.ShowDialog()
+
         frm_Usuario.Text = "Nuevo Usuario"
         frm_Usuario.GroupListadoUsuarios.Enabled = False
         frm_Usuario.btnActualizar_Usuario.Enabled = False
+        frm_Usuario.btnGuardar_Usuario.Enabled = True
+        frm_Usuario.dgvLista_Usuarios.ClearSelection()
+        frm_Usuario.ShowDialog()
     End Sub
 
     Private Sub CambiarContraeñaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CambiarContraeñaToolStripMenuItem.Click
-        frm_Usuario.ShowDialog()
+
         frm_Usuario.Text = "Modificar Usuario"
         frm_Usuario.btnGuardar_Usuario.Enabled = False
+        frm_Usuario.btnActualizar_Usuario.Enabled = True
         frm_Usuario.btnEliminar_Usuario.Enabled = False
         frm_Usuario.btnNuevo_Usuario.Enabled = False
+        frm_Usuario.dgvLista_Usuarios.ClearSelection()
+        frm_Usuario.ShowDialog()
     End Sub
 
     Private Sub AltaTareaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AltaTareaToolStripMenuItem.Click
@@ -420,6 +421,8 @@ Public Class frm_Principal
         frm_Productos.Text = "Modificar Producto"
         frm_Productos.btn_prod_guardar.Enabled = False
         frm_Productos.btn_prod_eliminar.Enabled = False
+        frm_Productos.GroupBox2.Enabled = True
+
         frm_Productos.ShowDialog()
     End Sub
 
@@ -453,5 +456,9 @@ Public Class frm_Principal
 
     Private Sub ConsultarToolStripMenuItem3_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem3.Click
         frm_Listado_Movimientos.ShowDialog()
+    End Sub
+
+    Private Sub frm_Principal_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+        Me.Dispose()
     End Sub
 End Class

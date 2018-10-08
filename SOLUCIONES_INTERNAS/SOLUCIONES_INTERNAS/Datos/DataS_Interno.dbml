@@ -33,7 +33,6 @@
       <Column Name="CLI_id_cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="ORDEN_TRABAJO_TAREA" Member="TAREA" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="TAREA" />
       <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="DETALLE_ORDEN_TRABAJO" />
-      <Association Name="ORDEN_TRABAJO_PRODUCTO_MOVIMIENTO" Member="PRODUCTO_MOVIMIENTO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="PRODUCTO_MOVIMIENTO" />
       <Association Name="VENDEDOR_ORDEN_TRABAJO" Member="VENDEDOR" ThisKey="VEN_id_vendedor" OtherKey="VEN_id_vendedor" Type="VENDEDOR" IsForeignKey="true" />
       <Association Name="CLIENTE_ORDEN_TRABAJO" Member="CLIENTE" ThisKey="CLI_id_cliente" OtherKey="CLI_id_cliente" Type="CLIENTE" IsForeignKey="true" />
     </Type>
@@ -141,27 +140,6 @@
       <Association Name="PIEZA_DETALLE_ORDEN_TRABAJO" Member="PIEZA" ThisKey="PIE_id_pieza" OtherKey="PIE_id_pieza" Type="PIEZA" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.PRODUCTO" Member="PRODUCTO">
-    <Type Name="PRODUCTO">
-      <Column Name="PROD_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PROD_codigo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="PROD_descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="PROD_stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="PRODUCTO_PRODUCTO_MOVIMIENTO" Member="PRODUCTO_MOVIMIENTO" ThisKey="PROD_id" OtherKey="PROD_id" Type="PRODUCTO_MOVIMIENTO" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PRODUCTO_MOVIMIENTO" Member="PRODUCTO_MOVIMIENTO">
-    <Type Name="PRODUCTO_MOVIMIENTO">
-      <Column Name="PROD_MOV_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PROD_MOV_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PROD_MOV_tipo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="PROD_MOV_cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="PROD_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ORDEN_TRABAJO_PRODUCTO_MOVIMIENTO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" />
-      <Association Name="PRODUCTO_PRODUCTO_MOVIMIENTO" Member="PRODUCTO" ThisKey="PROD_id" OtherKey="PROD_id" Type="PRODUCTO" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.PROCESO" Member="PROCESO">
     <Type Name="PROCESO">
       <Column Name="PROC_id_proceso" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -177,6 +155,27 @@
       <Column Name="PROC_logistica" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="PROC_descrip_logistica" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Association Name="DETALLE_ORDEN_TRABAJO_PROCESO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="DETALLE_ORDEN_TRABAJO" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUCTO" Member="PRODUCTO">
+    <Type Name="PRODUCTO">
+      <Column Name="PROD_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PROD_codigo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PROD_descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_stock_minimo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PRODUCTO_PRODUCTO_MOVIMIENTO" Member="PRODUCTO_MOVIMIENTO" ThisKey="PROD_id" OtherKey="PROD_id" Type="PRODUCTO_MOVIMIENTO" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PRODUCTO_MOVIMIENTO" Member="PRODUCTO_MOVIMIENTO">
+    <Type Name="PRODUCTO_MOVIMIENTO">
+      <Column Name="PROD_MOV_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PROD_MOV_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="ORT_id_orden_trabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PROD_MOV_tipo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PROD_MOV_cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROD_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="PRODUCTO_PRODUCTO_MOVIMIENTO" Member="PRODUCTO" ThisKey="PROD_id" OtherKey="PROD_id" Type="PRODUCTO" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

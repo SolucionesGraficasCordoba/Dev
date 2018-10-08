@@ -105,6 +105,12 @@ Partial Public Class DataS_Interno_Vistas
 			Return Me.GetTable(Of Colaborador_por_Sector)
 		End Get
 	End Property
+	
+	Public ReadOnly Property Producto_Movimento() As System.Data.Linq.Table(Of Producto_Movimento)
+		Get
+			Return Me.GetTable(Of Producto_Movimento)
+		End Get
+	End Property
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.VistaTareas")>  _
@@ -1672,6 +1678,143 @@ Partial Public Class Colaborador_por_Sector
 		Set
 			If (String.Equals(Me._SEC_nombre_sector, value) = false) Then
 				Me._SEC_nombre_sector = value
+			End If
+		End Set
+	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Producto_Movimento")>  _
+Partial Public Class Producto_Movimento
+	
+	Private _PROD_id As Integer
+	
+	Private _PROD_codigo As String
+	
+	Private _PROD_descripcion As String
+	
+	Private _PROD_stock As Integer
+	
+	Private _PROD_stock_minimo As System.Nullable(Of Integer)
+	
+	Private _PROD_MOV_id As Integer
+	
+	Private _PROD_MOV_fecha As System.Nullable(Of Date)
+	
+	Private _PROD_MOV_tipo As String
+	
+	Private _PROD_MOV_cantidad As System.Nullable(Of Integer)
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_id", DbType:="Int NOT NULL")>  _
+	Public Property PROD_id() As Integer
+		Get
+			Return Me._PROD_id
+		End Get
+		Set
+			If ((Me._PROD_id = value)  _
+						= false) Then
+				Me._PROD_id = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_codigo", DbType:="VarChar(15)")>  _
+	Public Property PROD_codigo() As String
+		Get
+			Return Me._PROD_codigo
+		End Get
+		Set
+			If (String.Equals(Me._PROD_codigo, value) = false) Then
+				Me._PROD_codigo = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_descripcion", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property PROD_descripcion() As String
+		Get
+			Return Me._PROD_descripcion
+		End Get
+		Set
+			If (String.Equals(Me._PROD_descripcion, value) = false) Then
+				Me._PROD_descripcion = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_stock", DbType:="Int NOT NULL")>  _
+	Public Property PROD_stock() As Integer
+		Get
+			Return Me._PROD_stock
+		End Get
+		Set
+			If ((Me._PROD_stock = value)  _
+						= false) Then
+				Me._PROD_stock = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_stock_minimo", DbType:="Int")>  _
+	Public Property PROD_stock_minimo() As System.Nullable(Of Integer)
+		Get
+			Return Me._PROD_stock_minimo
+		End Get
+		Set
+			If (Me._PROD_stock_minimo.Equals(value) = false) Then
+				Me._PROD_stock_minimo = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_id", DbType:="Int NOT NULL")>  _
+	Public Property PROD_MOV_id() As Integer
+		Get
+			Return Me._PROD_MOV_id
+		End Get
+		Set
+			If ((Me._PROD_MOV_id = value)  _
+						= false) Then
+				Me._PROD_MOV_id = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_fecha", DbType:="Date")>  _
+	Public Property PROD_MOV_fecha() As System.Nullable(Of Date)
+		Get
+			Return Me._PROD_MOV_fecha
+		End Get
+		Set
+			If (Me._PROD_MOV_fecha.Equals(value) = false) Then
+				Me._PROD_MOV_fecha = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_tipo", DbType:="VarChar(15)")>  _
+	Public Property PROD_MOV_tipo() As String
+		Get
+			Return Me._PROD_MOV_tipo
+		End Get
+		Set
+			If (String.Equals(Me._PROD_MOV_tipo, value) = false) Then
+				Me._PROD_MOV_tipo = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_cantidad", DbType:="Int")>  _
+	Public Property PROD_MOV_cantidad() As System.Nullable(Of Integer)
+		Get
+			Return Me._PROD_MOV_cantidad
+		End Get
+		Set
+			If (Me._PROD_MOV_cantidad.Equals(value) = false) Then
+				Me._PROD_MOV_cantidad = value
 			End If
 		End Set
 	End Property

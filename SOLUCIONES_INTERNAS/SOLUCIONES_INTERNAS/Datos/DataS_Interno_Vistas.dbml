@@ -138,4 +138,17 @@
       <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.Producto_Movimento" Member="Producto_Movimento">
+    <Type Name="Producto_Movimento">
+      <Column Name="PROD_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_codigo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PROD_descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_stock_minimo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROD_MOV_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_MOV_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PROD_MOV_tipo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PROD_MOV_cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

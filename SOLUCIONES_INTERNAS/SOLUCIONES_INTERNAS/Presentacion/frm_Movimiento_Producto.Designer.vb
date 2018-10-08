@@ -40,13 +40,13 @@ Partial Class frm_Movimiento_Producto
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.btnBuscar_cliente = New System.Windows.Forms.Button()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cbo_Tipo_Producto = New System.Windows.Forms.ComboBox()
         Me.txt_descripcion = New System.Windows.Forms.TextBox()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnIngresar_Stock = New System.Windows.Forms.Button()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupListadoColaboradores = New System.Windows.Forms.GroupBox()
         Me.lblTotal_Productos = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -229,17 +229,6 @@ Partial Class frm_Movimiento_Producto
         Me.btnBuscar_cliente.Text = "..."
         Me.btnBuscar_cliente.UseVisualStyleBackColor = True
         '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.Red
-        Me.Label13.Location = New System.Drawing.Point(28, 236)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(105, 13)
-        Me.Label13.TabIndex = 76
-        Me.Label13.Text = "* (Campo Requerido)"
-        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -297,6 +286,17 @@ Partial Class frm_Movimiento_Producto
         Me.btnIngresar_Stock.Text = "Ingresar Stock"
         Me.btnIngresar_Stock.UseVisualStyleBackColor = True
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.Red
+        Me.Label13.Location = New System.Drawing.Point(28, 236)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(105, 13)
+        Me.Label13.TabIndex = 76
+        Me.Label13.Text = "* (Campo Requerido)"
+        '
         'GroupListadoColaboradores
         '
         Me.GroupListadoColaboradores.Controls.Add(Me.lblTotal_Productos)
@@ -337,7 +337,7 @@ Partial Class frm_Movimiento_Producto
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(342, 23)
+        Me.btnEliminar.Location = New System.Drawing.Point(363, 22)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btnEliminar.TabIndex = 7
@@ -373,7 +373,7 @@ Partial Class frm_Movimiento_Producto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(471, 471)
+        Me.ClientSize = New System.Drawing.Size(471, 474)
         Me.Controls.Add(Me.GroupListadoColaboradores)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Movimiento_Producto"

@@ -50,9 +50,9 @@ Partial Class frm_Listado_Retrabajo
         Me.GroupListadoReTrabajos.Controls.Add(Me.Label5)
         Me.GroupListadoReTrabajos.Controls.Add(Me.btnEliminar_ReTrabajo)
         Me.GroupListadoReTrabajos.Controls.Add(Me.dgvLista_ReTrabajos)
-        Me.GroupListadoReTrabajos.Location = New System.Drawing.Point(26, 27)
+        Me.GroupListadoReTrabajos.Location = New System.Drawing.Point(12, 12)
         Me.GroupListadoReTrabajos.Name = "GroupListadoReTrabajos"
-        Me.GroupListadoReTrabajos.Size = New System.Drawing.Size(782, 523)
+        Me.GroupListadoReTrabajos.Size = New System.Drawing.Size(544, 362)
         Me.GroupListadoReTrabajos.TabIndex = 6
         Me.GroupListadoReTrabajos.TabStop = False
         Me.GroupListadoReTrabajos.Text = "Listado de ReTrabajos"
@@ -63,9 +63,9 @@ Partial Class frm_Listado_Retrabajo
         Me.GroupBox1.Controls.Add(Me.rbtNumeroOrden)
         Me.GroupBox1.Controls.Add(Me.cboBuscar_Mes)
         Me.GroupBox1.Controls.Add(Me.txt_Buscar_ReTrabajo)
-        Me.GroupBox1.Location = New System.Drawing.Point(31, 29)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 19)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(278, 94)
+        Me.GroupBox1.Size = New System.Drawing.Size(257, 86)
         Me.GroupBox1.TabIndex = 9
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Buscar"
@@ -73,7 +73,7 @@ Partial Class frm_Listado_Retrabajo
         'rbtMes
         '
         Me.rbtMes.AutoSize = True
-        Me.rbtMes.Location = New System.Drawing.Point(21, 56)
+        Me.rbtMes.Location = New System.Drawing.Point(12, 54)
         Me.rbtMes.Name = "rbtMes"
         Me.rbtMes.Size = New System.Drawing.Size(45, 17)
         Me.rbtMes.TabIndex = 11
@@ -84,7 +84,7 @@ Partial Class frm_Listado_Retrabajo
         'rbtNumeroOrden
         '
         Me.rbtNumeroOrden.AutoSize = True
-        Me.rbtNumeroOrden.Location = New System.Drawing.Point(21, 26)
+        Me.rbtNumeroOrden.Location = New System.Drawing.Point(12, 26)
         Me.rbtNumeroOrden.Name = "rbtNumeroOrden"
         Me.rbtNumeroOrden.Size = New System.Drawing.Size(94, 17)
         Me.rbtNumeroOrden.TabIndex = 10
@@ -96,21 +96,21 @@ Partial Class frm_Listado_Retrabajo
         '
         Me.cboBuscar_Mes.FormattingEnabled = True
         Me.cboBuscar_Mes.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
-        Me.cboBuscar_Mes.Location = New System.Drawing.Point(121, 55)
+        Me.cboBuscar_Mes.Location = New System.Drawing.Point(112, 53)
         Me.cboBuscar_Mes.Name = "cboBuscar_Mes"
         Me.cboBuscar_Mes.Size = New System.Drawing.Size(139, 21)
         Me.cboBuscar_Mes.TabIndex = 7
         '
         'txt_Buscar_ReTrabajo
         '
-        Me.txt_Buscar_ReTrabajo.Location = New System.Drawing.Point(121, 25)
+        Me.txt_Buscar_ReTrabajo.Location = New System.Drawing.Point(112, 25)
         Me.txt_Buscar_ReTrabajo.Name = "txt_Buscar_ReTrabajo"
         Me.txt_Buscar_ReTrabajo.Size = New System.Drawing.Size(139, 20)
         Me.txt_Buscar_ReTrabajo.TabIndex = 2
         '
         'btnVer
         '
-        Me.btnVer.Location = New System.Drawing.Point(488, 482)
+        Me.btnVer.Location = New System.Drawing.Point(302, 330)
         Me.btnVer.Name = "btnVer"
         Me.btnVer.Size = New System.Drawing.Size(75, 23)
         Me.btnVer.TabIndex = 8
@@ -119,7 +119,7 @@ Partial Class frm_Listado_Retrabajo
         '
         'btnGenerarInforme
         '
-        Me.btnGenerarInforme.Location = New System.Drawing.Point(360, 482)
+        Me.btnGenerarInforme.Location = New System.Drawing.Point(195, 330)
         Me.btnGenerarInforme.Name = "btnGenerarInforme"
         Me.btnGenerarInforme.Size = New System.Drawing.Size(101, 23)
         Me.btnGenerarInforme.TabIndex = 7
@@ -128,7 +128,7 @@ Partial Class frm_Listado_Retrabajo
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(687, 482)
+        Me.btnCancelar.Location = New System.Drawing.Point(464, 330)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 6
@@ -139,7 +139,7 @@ Partial Class frm_Listado_Retrabajo
         '
         Me.lblTotal_Retrabajo.AutoSize = True
         Me.lblTotal_Retrabajo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblTotal_Retrabajo.Location = New System.Drawing.Point(138, 487)
+        Me.lblTotal_Retrabajo.Location = New System.Drawing.Point(119, 335)
         Me.lblTotal_Retrabajo.Name = "lblTotal_Retrabajo"
         Me.lblTotal_Retrabajo.Size = New System.Drawing.Size(2, 15)
         Me.lblTotal_Retrabajo.TabIndex = 5
@@ -147,7 +147,7 @@ Partial Class frm_Listado_Retrabajo
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(28, 487)
+        Me.Label5.Location = New System.Drawing.Point(9, 335)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(104, 13)
         Me.Label5.TabIndex = 4
@@ -155,7 +155,7 @@ Partial Class frm_Listado_Retrabajo
         '
         'btnEliminar_ReTrabajo
         '
-        Me.btnEliminar_ReTrabajo.Location = New System.Drawing.Point(589, 482)
+        Me.btnEliminar_ReTrabajo.Location = New System.Drawing.Point(383, 330)
         Me.btnEliminar_ReTrabajo.Name = "btnEliminar_ReTrabajo"
         Me.btnEliminar_ReTrabajo.Size = New System.Drawing.Size(75, 23)
         Me.btnEliminar_ReTrabajo.TabIndex = 3
@@ -166,17 +166,17 @@ Partial Class frm_Listado_Retrabajo
         '
         Me.dgvLista_ReTrabajos.AllowUserToAddRows = False
         Me.dgvLista_ReTrabajos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLista_ReTrabajos.Location = New System.Drawing.Point(31, 148)
+        Me.dgvLista_ReTrabajos.Location = New System.Drawing.Point(6, 111)
         Me.dgvLista_ReTrabajos.Name = "dgvLista_ReTrabajos"
         Me.dgvLista_ReTrabajos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_ReTrabajos.Size = New System.Drawing.Size(731, 321)
+        Me.dgvLista_ReTrabajos.Size = New System.Drawing.Size(532, 213)
         Me.dgvLista_ReTrabajos.TabIndex = 0
         '
         'frm_Listado_Retrabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(833, 581)
+        Me.ClientSize = New System.Drawing.Size(567, 381)
         Me.Controls.Add(Me.GroupListadoReTrabajos)
         Me.Name = "frm_Listado_Retrabajo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

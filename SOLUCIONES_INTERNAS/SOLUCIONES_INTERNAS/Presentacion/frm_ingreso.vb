@@ -1,6 +1,12 @@
 ﻿Public Class frm_ingreso
     Dim datacontext As New DataS_Interno
 
+    Private Sub frm_ingreso_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+        Me.Dispose()
+        Me.Close()
+    End Sub
+
+
     Private Sub frm_ingreso_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         txt_usuario.Focus()
     End Sub
@@ -283,6 +289,7 @@
             frm_Principal.Show()
             Me.Finalize()
             Me.Close()
+            Me.Dispose()
         Catch ex As Exception
             MsgBox("Verifique Usuario y contraseña!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Inicio de sesión")
             txt_usuario.Select()

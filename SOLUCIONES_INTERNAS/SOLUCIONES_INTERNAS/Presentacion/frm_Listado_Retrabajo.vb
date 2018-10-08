@@ -345,4 +345,8 @@ Public Class frm_Listado_Retrabajo
             MsgBox("Hubo un error al generar la consulta")
         End Try
     End Sub
+
+    Private Sub GroupBox1_Enter(sender As System.Object, e As System.EventArgs) Handles GroupBox1.Enter
+
+    End Sub
 End Class
