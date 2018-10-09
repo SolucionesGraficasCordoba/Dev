@@ -4,20 +4,20 @@
     Public quienllamo_listado_orden As Form
 
     Private Sub frm_Orden_Trabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        txt_id_orden_trabajo.Enabled = False
-        Label1.Visible = True
-        Label45.Visible = False
-        Label52.Visible = False
-        Label53.Visible = False
-        txt_id_detalle_orden_trabajo1.Visible = False
-        txt_id_detalle_orden_trabajo2.Visible = False
-        txt_id_detalle_orden_trabajo3.Visible = False
-        txtNumero_Orden_Trabajo.Focus()
-        txtid_vendedor.Visible = False
-        txt_id_cliente.Visible = False
-        txt_nombre_cliente.Enabled = False
-        txtNombre_vendedor.Enabled = False
-        btnNueva_Orden_Trabajo.Visible = False
+        'txt_id_orden_trabajo.Enabled = False
+        'Label1.Visible = True
+        'Label45.Visible = False
+        'Label52.Visible = False
+        'Label53.Visible = False
+        'txt_id_detalle_orden_trabajo1.Visible = False
+        'txt_id_detalle_orden_trabajo2.Visible = False
+        'txt_id_detalle_orden_trabajo3.Visible = False
+        'txtNumero_Orden_Trabajo.Focus()
+        'txtid_vendedor.Visible = False
+        'txt_id_cliente.Visible = False
+        'txt_nombre_cliente.Enabled = False
+        'txtNombre_vendedor.Enabled = False
+        'btnNueva_Orden_Trabajo.Visible = False
         If quienllamo_listado_orden.Name <> frm_Listado_Orden_Trabajo.Name Then
 
             'CARGA COMBOBOX PIEZA DETALLE 1

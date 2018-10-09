@@ -200,7 +200,6 @@ Partial Class frm_Orden_Trabajo
         '
         'cboTipo_Orden
         '
-        Me.cboTipo_Orden.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipo_Orden.FormattingEnabled = True
         Me.cboTipo_Orden.Items.AddRange(New Object() {"DG", "DO", "DI", "DV", "DS"})
         Me.cboTipo_Orden.Location = New System.Drawing.Point(80, 37)
@@ -640,7 +639,6 @@ Partial Class frm_Orden_Trabajo
         '
         'cboTipoImpresion3_Detalle3
         '
-        Me.cboTipoImpresion3_Detalle3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipoImpresion3_Detalle3.FormattingEnabled = True
         Me.cboTipoImpresion3_Detalle3.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
         Me.cboTipoImpresion3_Detalle3.Location = New System.Drawing.Point(364, 41)
@@ -958,7 +956,6 @@ Partial Class frm_Orden_Trabajo
         '
         'cboTipoImpresion2_Detalle2
         '
-        Me.cboTipoImpresion2_Detalle2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipoImpresion2_Detalle2.FormattingEnabled = True
         Me.cboTipoImpresion2_Detalle2.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
         Me.cboTipoImpresion2_Detalle2.Location = New System.Drawing.Point(364, 41)
@@ -1292,7 +1289,6 @@ Partial Class frm_Orden_Trabajo
         '
         'cboTipoImpresion1_Detalle1
         '
-        Me.cboTipoImpresion1_Detalle1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboTipoImpresion1_Detalle1.FormattingEnabled = True
         Me.cboTipoImpresion1_Detalle1.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
         Me.cboTipoImpresion1_Detalle1.Location = New System.Drawing.Point(364, 41)

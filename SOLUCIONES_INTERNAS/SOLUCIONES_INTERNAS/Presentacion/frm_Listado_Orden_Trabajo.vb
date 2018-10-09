@@ -11,7 +11,7 @@
         cargargrilla()
         armargrilla()
         Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
-        dgvLista_Orden_Trabajo.ClearSelection()
+        ' dgvLista_Orden_Trabajo.ClearSelection()
         'dgv_detalle_orden.Enabled = False
     End Sub
 
@@ -322,10 +322,94 @@
                     frm_Orden_Trabajo.cboFormato3_Soporte3.SelectedItem = dgv_detalle_orden("DOT_formato_soporte_3", dgv_detalle_orden.Rows(2).Index).Value
                 End If
             End If
-            frm_Orden_Trabajo.Show()
             Me.Close()
-            frm_Orden_Trabajo.btnNueva_Orden_Trabajo.Enabled = False
+            frm_Orden_Trabajo.Text = "Modificar Orden"
+
+            frm_Orden_Trabajo.Label45.Visible = False
+            frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = False
+            frm_Orden_Trabajo.Label52.Visible = False
+            frm_Orden_Trabajo.txt_id_detalle_orden_trabajo2.Visible = False
+            frm_Orden_Trabajo.Label53.Visible = False
+            frm_Orden_Trabajo.txt_id_detalle_orden_trabajo3.Visible = False
+
+            frm_Orden_Trabajo.btnNueva_Orden_Trabajo.Visible = False
+            frm_Orden_Trabajo.txt_observaciones.Enabled = True
+            frm_Orden_Trabajo.txt_mejoras.Enabled = True
+            frm_Orden_Trabajo.txtNumero_Orden_Trabajo.Enabled = True
+            frm_Orden_Trabajo.cboTipo_Orden.Enabled = True
             frm_Orden_Trabajo.btnGuardar_Orden_Trabajo.Enabled = False
+            frm_Orden_Trabajo.btnBuscar_cliente.Enabled = True
+            frm_Orden_Trabajo.btnBuscar_Vendedor.Enabled = True
+            frm_Orden_Trabajo.txt_id_cliente.Visible = False
+            frm_Orden_Trabajo.txtid_vendedor.Visible = False
+
+            frm_Orden_Trabajo.txt_cantidad1_detalle1.Enabled = True
+            frm_Orden_Trabajo.cboPiezas1_Detalle1.Enabled = True
+            frm_Orden_Trabajo.txtTamaño1_Detalle1.Enabled = True
+            frm_Orden_Trabajo.cboTipoImpresion1_Detalle1.Enabled = True
+
+            frm_Orden_Trabajo.txt_Papel1_Soporte1.Enabled = True
+            frm_Orden_Trabajo.txt_Papel2_Soporte1.Enabled = True
+            frm_Orden_Trabajo.txt_Papel3_Soporte1.Enabled = True
+            frm_Orden_Trabajo.txt_Gramaje1_Soporte1.Enabled = True
+            frm_Orden_Trabajo.txt_Gramaje2_Soporte1.Enabled = True
+            frm_Orden_Trabajo.txt_Gramaje3_Soporte1.Enabled = True
+            frm_Orden_Trabajo.txt_Cantidad1_Soporte1.Enabled = True
+            frm_Orden_Trabajo.txt_Cantidad2_Soporte1.Enabled = True
+            frm_Orden_Trabajo.txt_Cantidad3_Soporte1.Enabled = True
+            frm_Orden_Trabajo.cboFormato1_Soporte1.Enabled = True
+            frm_Orden_Trabajo.cboFormato2_Soporte1.Enabled = True
+            frm_Orden_Trabajo.cboFormato3_Soporte1.Enabled = True
+
+            frm_Orden_Trabajo.txt_cantidad2_detalle2.Enabled = True
+            frm_Orden_Trabajo.cboPiezas2_Detalle2.Enabled = True
+            frm_Orden_Trabajo.txtTamaño2_Detalle2.Enabled = True
+            frm_Orden_Trabajo.cboTipoImpresion2_Detalle2.Enabled = True
+
+            frm_Orden_Trabajo.txt_Papel1_Soporte2.Enabled = True
+            frm_Orden_Trabajo.txt_Papel2_Soporte2.Enabled = True
+            frm_Orden_Trabajo.txt_Papel3_Soporte2.Enabled = True
+            frm_Orden_Trabajo.txt_Gramaje1_Soporte2.Enabled = True
+            frm_Orden_Trabajo.txt_Gramaje2_Soporte2.Enabled = True
+            frm_Orden_Trabajo.txt_Gramaje3_Soporte2.Enabled = True
+            frm_Orden_Trabajo.txt_Cantidad1_Soporte2.Enabled = True
+            frm_Orden_Trabajo.txt_Cantidad2_Soporte2.Enabled = True
+            frm_Orden_Trabajo.txt_Cantidad3_Soporte2.Enabled = True
+            frm_Orden_Trabajo.cboFormato1_Soporte2.Enabled = True
+            frm_Orden_Trabajo.cboFormato2_Soporte2.Enabled = True
+            frm_Orden_Trabajo.cboFormato3_Soporte2.Enabled = True
+
+            frm_Orden_Trabajo.txt_cantidad3_detalle3.Enabled = True
+            frm_Orden_Trabajo.cboPiezas3_Detalle3.Enabled = True
+            frm_Orden_Trabajo.txtTamaño3_Detalle3.Enabled = True
+            frm_Orden_Trabajo.cboTipoImpresion3_Detalle3.Enabled = True
+
+            frm_Orden_Trabajo.txt_Papel1_Soporte3.Enabled = True
+            frm_Orden_Trabajo.txt_Papel2_Soporte3.Enabled = True
+            frm_Orden_Trabajo.txt_Papel3_Soporte3.Enabled = True
+            frm_Orden_Trabajo.txt_Gramaje1_Soporte3.Enabled = True
+            frm_Orden_Trabajo.txt_Gramaje2_Soporte3.Enabled = True
+            frm_Orden_Trabajo.txt_Gramaje3_Soporte3.Enabled = True
+            frm_Orden_Trabajo.txt_Cantidad1_Soporte3.Enabled = True
+            frm_Orden_Trabajo.txt_Cantidad2_Soporte3.Enabled = True
+            frm_Orden_Trabajo.txt_Cantidad3_Soporte3.Enabled = True
+            frm_Orden_Trabajo.cboFormato1_Soporte3.Enabled = True
+            frm_Orden_Trabajo.cboFormato2_Soporte3.Enabled = True
+            frm_Orden_Trabajo.cboFormato3_Soporte3.Enabled = True
+
+            frm_Orden_Trabajo.txt_id_orden_trabajo.Enabled = False
+            frm_Orden_Trabajo.txtNombre_vendedor.Enabled = False
+            frm_Orden_Trabajo.txt_nombre_cliente.Enabled = False
+
+            frm_Orden_Trabajo.btnProceso1.Enabled = True
+            frm_Orden_Trabajo.btnProceso2.Enabled = True
+            frm_Orden_Trabajo.btnProceso3.Enabled = True
+            frm_Orden_Trabajo.btnImprimir.Enabled = True
+            frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = True
+            frm_Orden_Trabajo.btnCancelar_Orden_Trabajo.Enabled = True
+
+
+            frm_Orden_Trabajo.ShowDialog()
         End If
 
     End Sub
@@ -659,20 +743,93 @@
             End If
         End If
         Me.Close()
+
+        frm_Orden_Trabajo.Text = "Ver Orden"
+
+        frm_Orden_Trabajo.Label45.Visible = False
+        frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = False
+        frm_Orden_Trabajo.Label52.Visible = False
+        frm_Orden_Trabajo.txt_id_detalle_orden_trabajo2.Visible = False
+        frm_Orden_Trabajo.Label53.Visible = False
+        frm_Orden_Trabajo.txt_id_detalle_orden_trabajo3.Visible = False
+
         frm_Orden_Trabajo.btnNueva_Orden_Trabajo.Enabled = False
-        frm_Orden_Trabajo.btnGuardar_Orden_Trabajo.Enabled = False
-        frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = False
-        frm_Orden_Trabajo.GroupProducto1.Enabled = False
-        frm_Orden_Trabajo.GroupProducto2.Enabled = False
-        frm_Orden_Trabajo.GroupProducto3.Enabled = False
         frm_Orden_Trabajo.txt_observaciones.Enabled = False
         frm_Orden_Trabajo.txt_mejoras.Enabled = False
-        frm_Orden_Trabajo.cboTipo_Orden.Enabled = False
-        frm_Orden_Trabajo.dtpFecha_Orden_Trabajo.Enabled = False
         frm_Orden_Trabajo.txtNumero_Orden_Trabajo.Enabled = False
+        frm_Orden_Trabajo.cboTipo_Orden.Enabled = False
+        frm_Orden_Trabajo.btnGuardar_Orden_Trabajo.Enabled = False
         frm_Orden_Trabajo.btnBuscar_cliente.Enabled = False
         frm_Orden_Trabajo.btnBuscar_Vendedor.Enabled = False
-        frm_Orden_Trabajo.btnImprimir.Enabled = True
+        frm_Orden_Trabajo.txt_id_cliente.Visible = False
+        frm_Orden_Trabajo.txtid_vendedor.Visible = False
+
+        frm_Orden_Trabajo.txt_cantidad1_detalle1.Enabled = False
+        frm_Orden_Trabajo.cboPiezas1_Detalle1.Enabled = False
+        frm_Orden_Trabajo.txtTamaño1_Detalle1.Enabled = False
+        frm_Orden_Trabajo.cboTipoImpresion1_Detalle1.Enabled = False
+
+        frm_Orden_Trabajo.txt_Papel1_Soporte1.Enabled = False
+        frm_Orden_Trabajo.txt_Papel2_Soporte1.Enabled = False
+        frm_Orden_Trabajo.txt_Papel3_Soporte1.Enabled = False
+        frm_Orden_Trabajo.txt_Gramaje1_Soporte1.Enabled = False
+        frm_Orden_Trabajo.txt_Gramaje2_Soporte1.Enabled = False
+        frm_Orden_Trabajo.txt_Gramaje3_Soporte1.Enabled = False
+        frm_Orden_Trabajo.txt_Cantidad1_Soporte1.Enabled = False
+        frm_Orden_Trabajo.txt_Cantidad2_Soporte1.Enabled = False
+        frm_Orden_Trabajo.txt_Cantidad3_Soporte1.Enabled = False
+        frm_Orden_Trabajo.cboFormato1_Soporte1.Enabled = False
+        frm_Orden_Trabajo.cboFormato2_Soporte1.Enabled = False
+        frm_Orden_Trabajo.cboFormato3_Soporte1.Enabled = False
+
+        frm_Orden_Trabajo.txt_cantidad2_detalle2.Enabled = False
+        frm_Orden_Trabajo.cboPiezas2_Detalle2.Enabled = False
+        frm_Orden_Trabajo.txtTamaño2_Detalle2.Enabled = False
+        frm_Orden_Trabajo.cboTipoImpresion2_Detalle2.Enabled = False
+
+        frm_Orden_Trabajo.txt_Papel1_Soporte2.Enabled = False
+        frm_Orden_Trabajo.txt_Papel2_Soporte2.Enabled = False
+        frm_Orden_Trabajo.txt_Papel3_Soporte2.Enabled = False
+        frm_Orden_Trabajo.txt_Gramaje1_Soporte2.Enabled = False
+        frm_Orden_Trabajo.txt_Gramaje2_Soporte2.Enabled = False
+        frm_Orden_Trabajo.txt_Gramaje3_Soporte2.Enabled = False
+        frm_Orden_Trabajo.txt_Cantidad1_Soporte2.Enabled = False
+        frm_Orden_Trabajo.txt_Cantidad2_Soporte2.Enabled = False
+        frm_Orden_Trabajo.txt_Cantidad3_Soporte2.Enabled = False
+        frm_Orden_Trabajo.cboFormato1_Soporte2.Enabled = False
+        frm_Orden_Trabajo.cboFormato2_Soporte2.Enabled = False
+        frm_Orden_Trabajo.cboFormato3_Soporte2.Enabled = False
+
+        frm_Orden_Trabajo.txt_cantidad3_detalle3.Enabled = False
+        frm_Orden_Trabajo.cboPiezas3_Detalle3.Enabled = False
+        frm_Orden_Trabajo.txtTamaño3_Detalle3.Enabled = False
+        frm_Orden_Trabajo.cboTipoImpresion3_Detalle3.Enabled = False
+
+        frm_Orden_Trabajo.txt_Papel1_Soporte3.Enabled = False
+        frm_Orden_Trabajo.txt_Papel2_Soporte3.Enabled = False
+        frm_Orden_Trabajo.txt_Papel3_Soporte3.Enabled = False
+        frm_Orden_Trabajo.txt_Gramaje1_Soporte3.Enabled = False
+        frm_Orden_Trabajo.txt_Gramaje2_Soporte3.Enabled = False
+        frm_Orden_Trabajo.txt_Gramaje3_Soporte3.Enabled = False
+        frm_Orden_Trabajo.txt_Cantidad1_Soporte3.Enabled = False
+        frm_Orden_Trabajo.txt_Cantidad2_Soporte3.Enabled = False
+        frm_Orden_Trabajo.txt_Cantidad3_Soporte3.Enabled = False
+        frm_Orden_Trabajo.cboFormato1_Soporte3.Enabled = False
+        frm_Orden_Trabajo.cboFormato2_Soporte3.Enabled = False
+        frm_Orden_Trabajo.cboFormato3_Soporte3.Enabled = False
+
+        frm_Orden_Trabajo.txt_id_orden_trabajo.Enabled = False
+        frm_Orden_Trabajo.txtNombre_vendedor.Enabled = False
+        frm_Orden_Trabajo.txt_nombre_cliente.Enabled = False
+
+        frm_Orden_Trabajo.btnProceso1.Enabled = True
+        frm_Orden_Trabajo.btnProceso2.Enabled = True
+        frm_Orden_Trabajo.btnProceso3.Enabled = True
+        frm_Orden_Trabajo.btnNueva_Orden_Trabajo.Visible = False
+        frm_Orden_Trabajo.btnImprimir.Enabled = False
+        frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = False
+        frm_Orden_Trabajo.btnCancelar_Orden_Trabajo.Enabled = True
+
         frm_Orden_Trabajo.ShowDialog()
     End Sub
 
@@ -691,3 +848,4 @@
 
    
 End Class
+

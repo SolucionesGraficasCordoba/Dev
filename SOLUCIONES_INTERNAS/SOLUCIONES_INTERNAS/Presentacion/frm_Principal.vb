@@ -35,7 +35,6 @@ Public Class frm_Principal
         End If
     End Sub
 
-
     Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
         Application.Exit()
@@ -646,10 +645,95 @@ Public Class frm_Principal
 
     Private Sub NuevaOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevaOrdenToolStripMenuItem.Click
         frm_Orden_Trabajo.quienllamo_listado_orden = Me
-        frm_Orden_Trabajo.ShowDialog()
         frm_Orden_Trabajo.Text = "Nueva Orden"
-        frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = False
+
+        frm_Orden_Trabajo.Label45.Visible = False
+        frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = False
+        frm_Orden_Trabajo.Label52.Visible = False
+        frm_Orden_Trabajo.txt_id_detalle_orden_trabajo2.Visible = False
+        frm_Orden_Trabajo.Label53.Visible = False
+        frm_Orden_Trabajo.txt_id_detalle_orden_trabajo3.Visible = False
+
+        frm_Orden_Trabajo.cboTipo_Orden.SelectedIndex = -1
+
+        frm_Orden_Trabajo.txtNumero_Orden_Trabajo.Clear()
+        frm_Orden_Trabajo.txt_observaciones.Clear()
+        frm_Orden_Trabajo.txt_mejoras.Clear()
+        frm_Orden_Trabajo.txtNombre_vendedor.Clear()
+        frm_Orden_Trabajo.txtid_vendedor.Clear()
+        frm_Orden_Trabajo.txt_nombre_cliente.Clear()
+        frm_Orden_Trabajo.txt_id_cliente.Clear()
+
+        frm_Orden_Trabajo.txt_cantidad1_detalle1.Clear()
+        frm_Orden_Trabajo.cboPiezas1_Detalle1.SelectedIndex = -1
+        frm_Orden_Trabajo.txtTamaño1_Detalle1.Clear()
+        frm_Orden_Trabajo.cboTipoImpresion1_Detalle1.SelectedIndex = -1
+
+        frm_Orden_Trabajo.txt_Papel1_Soporte1.Clear()
+        frm_Orden_Trabajo.txt_Papel2_Soporte1.Clear()
+        frm_Orden_Trabajo.txt_Papel3_Soporte1.Clear()
+        frm_Orden_Trabajo.txt_Gramaje1_Soporte1.Clear()
+        frm_Orden_Trabajo.txt_Gramaje2_Soporte1.Clear()
+        frm_Orden_Trabajo.txt_Gramaje3_Soporte1.Clear()
+        frm_Orden_Trabajo.txt_Cantidad1_Soporte1.Clear()
+        frm_Orden_Trabajo.txt_Cantidad2_Soporte1.Clear()
+        frm_Orden_Trabajo.txt_Cantidad3_Soporte1.Clear()
+        frm_Orden_Trabajo.cboFormato1_Soporte1.SelectedIndex = -1
+        frm_Orden_Trabajo.cboFormato2_Soporte1.SelectedIndex = -1
+        frm_Orden_Trabajo.cboFormato3_Soporte1.SelectedIndex = -1
+
+        frm_Orden_Trabajo.txt_cantidad2_detalle2.Clear()
+        frm_Orden_Trabajo.cboPiezas2_Detalle2.SelectedIndex = -1
+        frm_Orden_Trabajo.txtTamaño2_Detalle2.Clear()
+        frm_Orden_Trabajo.cboTipoImpresion2_Detalle2.SelectedIndex = -1
+
+        frm_Orden_Trabajo.txt_Papel1_Soporte2.Clear()
+        frm_Orden_Trabajo.txt_Papel2_Soporte2.Clear()
+        frm_Orden_Trabajo.txt_Papel3_Soporte2.Clear()
+        frm_Orden_Trabajo.txt_Gramaje1_Soporte2.Clear()
+        frm_Orden_Trabajo.txt_Gramaje2_Soporte2.Clear()
+        frm_Orden_Trabajo.txt_Gramaje3_Soporte2.Clear()
+        frm_Orden_Trabajo.txt_Cantidad1_Soporte2.Clear()
+        frm_Orden_Trabajo.txt_Cantidad2_Soporte2.Clear()
+        frm_Orden_Trabajo.txt_Cantidad3_Soporte2.Clear()
+        frm_Orden_Trabajo.cboFormato1_Soporte2.SelectedIndex = -1
+        frm_Orden_Trabajo.cboFormato2_Soporte2.SelectedIndex = -1
+        frm_Orden_Trabajo.cboFormato3_Soporte2.SelectedIndex = -1
+
+        frm_Orden_Trabajo.txt_cantidad3_detalle3.Clear()
+        frm_Orden_Trabajo.cboPiezas3_Detalle3.SelectedIndex = -1
+        frm_Orden_Trabajo.txtTamaño3_Detalle3.Clear()
+        frm_Orden_Trabajo.cboTipoImpresion3_Detalle3.SelectedIndex = -1
+
+        frm_Orden_Trabajo.txt_Papel1_Soporte3.Clear()
+        frm_Orden_Trabajo.txt_Papel2_Soporte3.Clear()
+        frm_Orden_Trabajo.txt_Papel3_Soporte3.Clear()
+        frm_Orden_Trabajo.txt_Gramaje1_Soporte3.Clear()
+        frm_Orden_Trabajo.txt_Gramaje2_Soporte3.Clear()
+        frm_Orden_Trabajo.txt_Gramaje3_Soporte3.Clear()
+        frm_Orden_Trabajo.txt_Cantidad1_Soporte3.Clear()
+        frm_Orden_Trabajo.txt_Cantidad2_Soporte3.Clear()
+        frm_Orden_Trabajo.txt_Cantidad3_Soporte3.Clear()
+        frm_Orden_Trabajo.cboFormato1_Soporte3.SelectedIndex = -1
+        frm_Orden_Trabajo.cboFormato2_Soporte3.SelectedIndex = -1
+        frm_Orden_Trabajo.cboFormato3_Soporte3.SelectedIndex = -1
+
+        frm_Orden_Trabajo.txt_id_orden_trabajo.Enabled = False
+        frm_Orden_Trabajo.txtNombre_vendedor.Enabled = False
+        frm_Orden_Trabajo.txt_nombre_cliente.Enabled = False
+
+        frm_Orden_Trabajo.btnBuscar_Vendedor.Enabled = True
+        frm_Orden_Trabajo.btnBuscar_cliente.Enabled = True
+        frm_Orden_Trabajo.btnProceso1.Enabled = True
+        frm_Orden_Trabajo.btnProceso2.Enabled = True
+        frm_Orden_Trabajo.btnProceso3.Enabled = True
+        frm_Orden_Trabajo.btnNueva_Orden_Trabajo.Visible = False
         frm_Orden_Trabajo.btnImprimir.Enabled = False
+        frm_Orden_Trabajo.btnGuardar_Orden_Trabajo.Enabled = True
+        frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = False
+        frm_Orden_Trabajo.btnCancelar_Orden_Trabajo.Enabled = True
+
+        frm_Orden_Trabajo.ShowDialog()
     End Sub
 
     Private Sub OrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
@@ -661,27 +745,53 @@ Public Class frm_Principal
     End Sub
 
     Private Sub ConsultarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem.Click
-        frm_Listado_Orden_Trabajo.ShowDialog()
+        frm_Listado_Orden_Trabajo.Text = "Consultar Orden"
+
         frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
         frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
         frm_Listado_Orden_Trabajo.btnEliminar_Detalle.Enabled = False
+        frm_Listado_Orden_Trabajo.btnVer.Enabled = True
+        frm_Listado_Orden_Trabajo.btn_Cancelar.Enabled = True
+
+        frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Enabled = True
+
+        frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.ClearSelection()
+
+        frm_Listado_Orden_Trabajo.ShowDialog()
     End Sub
 
     Private Sub ModificarOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarOrdenToolStripMenuItem.Click
         frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
-        frm_Listado_Orden_Trabajo.ShowDialog()
+
+        frm_Orden_Trabajo.Text = "Modificar Orden"
         frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
         frm_Listado_Orden_Trabajo.btnEliminar_Detalle.Enabled = False
         frm_Listado_Orden_Trabajo.btnVer.Enabled = False
+        frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = True
+
+        frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Enabled = True
+
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
 
+        frm_Listado_Orden_Trabajo.ShowDialog()
     End Sub
 
     Private Sub EliminarOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarOrdenToolStripMenuItem.Click
-        frm_Listado_Orden_Trabajo.ShowDialog()
+
+        frm_Orden_Trabajo.Text = "Eliminar Orden"
+        frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Enabled = True
+
         frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
         frm_Listado_Orden_Trabajo.btnVer.Enabled = False
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = True
+        frm_Listado_Orden_Trabajo.btnEliminar_Detalle.Enabled = True
+        frm_Listado_Orden_Trabajo.btn_Cancelar.Enabled = True
+
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.ClearSelection()
+
+        frm_Listado_Orden_Trabajo.ShowDialog()
     End Sub
 
     Private Sub TareasToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles TareasToolStripMenuItem1.Click
@@ -721,6 +831,9 @@ Public Class frm_Principal
 
         frm_Productos.dgvLista_Productos.ClearSelection()
 
+        frm_Productos.tb_prod_id.Visible = False
+        frm_Productos.Label1.Visible = False
+
         frm_Productos.tb_prod_codigo.Clear()
         frm_Productos.tb_prod_descripcion.Clear()
         frm_Productos.tb_prod_stock_minimo.Clear()
@@ -746,6 +859,9 @@ Public Class frm_Principal
     Private Sub ModificarToolStripMenuItem_Click_1(sender As System.Object, e As System.EventArgs) Handles ModificarToolStripMenuItem.Click
 
         frm_Productos.Text = "Modificar Producto"
+
+        frm_Productos.tb_prod_id.Visible = False
+        frm_Productos.Label1.Visible = False
 
         frm_Productos.tb_prod_codigo.Clear()
         frm_Productos.tb_prod_descripcion.Clear()
@@ -773,6 +889,10 @@ Public Class frm_Principal
     Private Sub EliminarToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles EliminarToolStripMenuItem1.Click
 
         frm_Productos.Text = "Eliminar Producto"
+
+        frm_Productos.tb_prod_id.Visible = False
+        frm_Productos.Label1.Visible = False
+
         frm_Productos.tb_prod_codigo.Clear()
         frm_Productos.tb_prod_descripcion.Clear()
         frm_Productos.tb_prod_stock_minimo.Clear()
@@ -802,10 +922,10 @@ Public Class frm_Principal
     End Sub
 
     Private Sub ConsultarToolStripMenuItem2_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem2.Click
-
-        
-
         frm_Productos.Text = "Consultar Producto"
+
+        frm_Productos.tb_prod_id.Visible = False
+        frm_Productos.Label1.Visible = False
 
         frm_Productos.tb_prod_codigo.Clear()
         frm_Productos.tb_prod_descripcion.Clear()
