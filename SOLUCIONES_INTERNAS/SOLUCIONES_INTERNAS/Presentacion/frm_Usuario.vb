@@ -12,7 +12,6 @@
         txt_usuario.Focus()
         lblTotal_Usuarios.Text = dgvLista_Usuarios.Rows.Count
         txt_nombre_colaborador.Enabled = False
-        btnActualizar_Usuario.Enabled = False
         btnNuevo_Usuario.Visible = False
 
     End Sub
@@ -155,6 +154,7 @@
         buscar = Me.txt_Buscar_Usuario.Text & "*"
         Dim consultausuario = From U In datacontext.USUARIO Select U.USU_id_usuario, U.USU_usuario, U.USU_contraseña, U.USU_perfil, U.COL_id_colaborador Where USU_usuario Like buscar.ToString
         dgvLista_Usuarios.DataSource = consultausuario
+        dgvLista_Usuarios.ClearSelection()
     End Sub
 
     Private Sub txt_usuario_KeyDown(sender As Object, e As System.Windows.Forms.KeyEventArgs) Handles txt_usuario.KeyDown
@@ -184,8 +184,7 @@
             cbo_perfil.Text = dgvLista_Usuarios.Item("USU_perfil", dgvLista_Usuarios.SelectedRows(0).Index).Value
             txt_id_colaborador.Text = dgvLista_Usuarios.Item("COL_id_colaborador", dgvLista_Usuarios.SelectedRows(0).Index).Value
             txt_nombre_colaborador.Text = dgvLista_Usuarios.Item("COL_nombre_col", dgvLista_Usuarios.SelectedRows(0).Index).Value
-            btnActualizar_Usuario.Enabled = True
-            btnGuardar_Usuario.Enabled = False
+            ' btnActualizar_Usuario.Enabled = True
         Else
             MsgBox("Debe seleccionar un usuario")
         End If
@@ -197,4 +196,5 @@
         frm_Colaborador.GroupNuevoColaborador.Enabled = False
         frm_Colaborador.Show()
     End Sub
+
 End Class

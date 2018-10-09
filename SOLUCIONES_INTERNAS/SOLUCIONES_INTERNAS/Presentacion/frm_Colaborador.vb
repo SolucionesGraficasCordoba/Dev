@@ -9,11 +9,9 @@ Public Class frm_Colaborador
         Label1.Visible = False
         armargrilla()
         cargargrilla()
-        dgvLista_Colaboradores.ClearSelection()
-        txt_nombre_colaborador.Focus()
+        'dgvLista_Colaboradores.ClearSelection()
         lblTotal_Colaboradores.Text = dgvLista_Colaboradores.Rows.Count
-        btnNuevo_Colaborador.Visible = False
-        Button1.Visible = False
+
         'CARGA COMBOBOX SECTOR
         Dim combosector = (From sec In datacontext.SECTOR
                            Select sec.SEC_id_sector, sec.SEC_nombre_sector)
@@ -166,6 +164,7 @@ Public Class frm_Colaborador
         buscar = Me.txt_Buscar_Colaborador.Text & "*"
         Dim consultaalu = From U In datacontext.COLABORADOR Select U.COL_id_colaborador, U.COL_nombre_col, U.COL_apellido_col, U.SEC_id_sector Where COL_nombre_col Like buscar.ToString
         dgvLista_Colaboradores.DataSource = consultaalu
+        dgvLista_Colaboradores.ClearSelection()
     End Sub
 
     Private Sub txt_nombre_colaborador_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txt_nombre_colaborador.KeyDown

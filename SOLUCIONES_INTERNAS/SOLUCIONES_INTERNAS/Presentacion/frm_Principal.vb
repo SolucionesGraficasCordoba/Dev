@@ -97,9 +97,18 @@ Public Class frm_Principal
     Private Sub AltaUsuariosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles AltaUsuariosToolStripMenuItem.Click
 
         frm_Usuario.Text = "Nuevo Usuario"
-        frm_Usuario.GroupListadoUsuarios.Enabled = False
+        frm_Usuario.txt_usuario.Clear()
+        frm_Usuario.txt_contraseña.Clear()
+        frm_Usuario.cbo_perfil.SelectedIndex = -1
         frm_Usuario.btnActualizar_Usuario.Enabled = False
         frm_Usuario.btnGuardar_Usuario.Enabled = True
+        frm_Usuario.btnEliminar_Usuario.Enabled = False
+        frm_Usuario.txt_usuario.Enabled = True
+        frm_Usuario.txt_contraseña.Enabled = True
+        frm_Usuario.cbo_perfil.Enabled = True
+        frm_Usuario.btnBuscar_Colaborador.Enabled = True
+        frm_Usuario.GroupListadoUsuarios.Enabled = False
+
         frm_Usuario.dgvLista_Usuarios.ClearSelection()
         frm_Usuario.ShowDialog()
     End Sub
@@ -111,6 +120,10 @@ Public Class frm_Principal
         frm_Usuario.btnActualizar_Usuario.Enabled = True
         frm_Usuario.btnEliminar_Usuario.Enabled = False
         frm_Usuario.btnNuevo_Usuario.Enabled = False
+        frm_Usuario.txt_usuario.Enabled = True
+        frm_Usuario.txt_contraseña.Enabled = True
+        frm_Usuario.cbo_perfil.Enabled = True
+        frm_Usuario.btnBuscar_Colaborador.Enabled = True
         frm_Usuario.dgvLista_Usuarios.ClearSelection()
         frm_Usuario.ShowDialog()
     End Sub
@@ -131,46 +144,145 @@ Public Class frm_Principal
     End Sub
 
     Private Sub NuevoClienteToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoClienteToolStripMenuItem.Click
-        frm_Cliente.ShowDialog()
+        
         frm_Cliente.Text = "Nuevo Cliente"
-        frm_Cliente.GroupListadoClientes.Enabled = False
+        frm_Cliente.txt_razonsocial_cliente.Clear()
+        frm_Cliente.txt_mail_cliente.Clear()
+        frm_Cliente.txt_Domicilio_Cliente.Clear()
+        frm_Cliente.txt_Localidad_Cliente.Clear()
+        frm_Cliente.txt_Codigo_Postal_Cliente.Clear()
+        frm_Cliente.txtTelefono_Cliente.Clear()
+
+        frm_Cliente.txt_razonsocial_cliente.Enabled = True
+        frm_Cliente.txt_mail_cliente.Enabled = True
+        frm_Cliente.txt_Domicilio_Cliente.Enabled = True
+        frm_Cliente.txt_Localidad_Cliente.Enabled = True
+        frm_Cliente.txt_Codigo_Postal_Cliente.Enabled = True
+        frm_Cliente.txtTelefono_Cliente.Enabled = True
+
+        frm_Cliente.txt_Buscar_Cliente.Enabled = False
+
+        frm_Cliente.btnNuevo_Cliente.Visible = False
+        frm_Cliente.btnGuardar_Cliente.Enabled = True
         frm_Cliente.btnActualizar_Cliente.Enabled = False
+        frm_Cliente.btnCancelar_Cliente.Enabled = True
+        frm_Cliente.btnEliminar_Cliente.Enabled = False
+
+        frm_Cliente.dgvLista_Clientes.ClearSelection()
+        frm_Cliente.dgvLista_Clientes.Enabled = False
+
+        frm_Cliente.ShowDialog()
     End Sub
 
     Private Sub ModificarClienteToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarClienteToolStripMenuItem.Click
-        frm_Cliente.ShowDialog()
+
         frm_Cliente.Text = "Modificar Cliente"
+        frm_Cliente.txt_razonsocial_cliente.Clear()
+        frm_Cliente.txt_mail_cliente.Clear()
+        frm_Cliente.txt_Domicilio_Cliente.Clear()
+        frm_Cliente.txt_Localidad_Cliente.Clear()
+        frm_Cliente.txt_Codigo_Postal_Cliente.Clear()
+        frm_Cliente.txtTelefono_Cliente.Clear()
+
+        frm_Cliente.txt_razonsocial_cliente.Enabled = True
+        frm_Cliente.txt_mail_cliente.Enabled = True
+        frm_Cliente.txt_Domicilio_Cliente.Enabled = True
+        frm_Cliente.txt_Localidad_Cliente.Enabled = True
+        frm_Cliente.txt_Codigo_Postal_Cliente.Enabled = True
+        frm_Cliente.txtTelefono_Cliente.Enabled = True
+
+        frm_Cliente.txt_Buscar_Cliente.Enabled = True
+
+        frm_Cliente.btnNuevo_Cliente.Visible = False
         frm_Cliente.btnGuardar_Cliente.Enabled = False
+        frm_Cliente.btnActualizar_Cliente.Enabled = True
+        frm_Cliente.btnCancelar_Cliente.Enabled = True
         frm_Cliente.btnEliminar_Cliente.Enabled = False
-        frm_Cliente.btnNuevo_Cliente.Enabled = False
+
+        frm_Cliente.dgvLista_Clientes.ClearSelection()
+        frm_Cliente.dgvLista_Clientes.Enabled = False
+
+        frm_Cliente.ShowDialog()
     End Sub
 
     Private Sub EliminarClienteToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarClienteToolStripMenuItem.Click
-        frm_Cliente.ShowDialog()
+
         frm_Cliente.Text = "Eliminar Cliente"
-        frm_Cliente.GroupNuevoCliente.Enabled = False
+        frm_Cliente.txt_razonsocial_cliente.Clear()
+        frm_Cliente.txt_mail_cliente.Clear()
+        frm_Cliente.txt_Domicilio_Cliente.Clear()
+        frm_Cliente.txt_Localidad_Cliente.Clear()
+        frm_Cliente.txt_Codigo_Postal_Cliente.Clear()
+        frm_Cliente.txtTelefono_Cliente.Clear()
+
+        frm_Cliente.txt_razonsocial_cliente.Enabled = False
+        frm_Cliente.txt_mail_cliente.Enabled = False
+        frm_Cliente.txt_Domicilio_Cliente.Enabled = False
+        frm_Cliente.txt_Localidad_Cliente.Enabled = False
+        frm_Cliente.txt_Codigo_Postal_Cliente.Enabled = False
+        frm_Cliente.txtTelefono_Cliente.Enabled = False
+
+        frm_Cliente.txt_Buscar_Cliente.Enabled = True
+
+        frm_Cliente.btnNuevo_Cliente.Visible = False
+        frm_Cliente.btnGuardar_Cliente.Enabled = False
+        frm_Cliente.btnActualizar_Cliente.Enabled = False
+        frm_Cliente.btnCancelar_Cliente.Enabled = True
+        frm_Cliente.btnEliminar_Cliente.Enabled = True
+
+        frm_Cliente.dgvLista_Clientes.ClearSelection()
+        frm_Cliente.dgvLista_Clientes.Enabled = False
+
+        frm_Cliente.ShowDialog()
     End Sub
 
     Private Sub ConsultarClienteToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarClienteToolStripMenuItem.Click
-        frm_Cliente.ShowDialog()
+
         frm_Cliente.Text = "Consultar Cliente"
-        frm_Cliente.btnActualizar_Cliente.Enabled = False
-        frm_Cliente.btnEliminar_Cliente.Enabled = False
-        frm_Cliente.btnGuardar_Cliente.Enabled = False
-        frm_Cliente.btnNuevo_Cliente.Enabled = False
+        frm_Cliente.txt_razonsocial_cliente.Clear()
+        frm_Cliente.txt_mail_cliente.Clear()
+        frm_Cliente.txt_Domicilio_Cliente.Clear()
+        frm_Cliente.txt_Localidad_Cliente.Clear()
+        frm_Cliente.txt_Codigo_Postal_Cliente.Clear()
+        frm_Cliente.txtTelefono_Cliente.Clear()
+
         frm_Cliente.txt_razonsocial_cliente.Enabled = False
-        frm_Cliente.txt_Codigo_Postal_Cliente.Enabled = False
         frm_Cliente.txt_mail_cliente.Enabled = False
+        frm_Cliente.txt_Domicilio_Cliente.Enabled = False
+        frm_Cliente.txt_Localidad_Cliente.Enabled = False
+        frm_Cliente.txt_Codigo_Postal_Cliente.Enabled = False
+        frm_Cliente.txtTelefono_Cliente.Enabled = False
+
+        frm_Cliente.txt_Buscar_Cliente.Enabled = True
+
+        frm_Cliente.btnNuevo_Cliente.Visible = False
+        frm_Cliente.btnGuardar_Cliente.Enabled = False
+        frm_Cliente.btnActualizar_Cliente.Enabled = False
+        frm_Cliente.btnCancelar_Cliente.Enabled = True
+        frm_Cliente.btnEliminar_Cliente.Enabled = False
+
+        frm_Cliente.dgvLista_Clientes.ClearSelection()
+        frm_Cliente.dgvLista_Clientes.Enabled = False
+
+        frm_Cliente.ShowDialog()
+
     End Sub
 
     Private Sub EliminarUsuarioToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarUsuarioToolStripMenuItem.Click
-        frm_Usuario.ShowDialog()
         frm_Usuario.Text = "Eliminar Usuario"
-        frm_Usuario.GroupNuevoUsuario.Enabled = False
+        frm_Usuario.GroupListadoUsuarios.Enabled = True
+        frm_Usuario.btnActualizar_Usuario.Enabled = False
+        frm_Usuario.btnGuardar_Usuario.Enabled = False
+        frm_Usuario.btnCancelar_Usuario.Enabled = True
+        frm_Usuario.txt_usuario.Enabled = False
+        frm_Usuario.txt_contraseña.Enabled = False
+        frm_Usuario.cbo_perfil.Enabled = False
+        frm_Usuario.btnBuscar_Colaborador.Enabled = False
+        frm_Usuario.ShowDialog()
     End Sub
 
     Private Sub ConsultarUsuarioToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarUsuarioToolStripMenuItem.Click
-        frm_Usuario.ShowDialog()
+
         frm_Usuario.Text = "Consultar Usuario"
         frm_Usuario.btnActualizar_Usuario.Enabled = False
         frm_Usuario.btnEliminar_Usuario.Enabled = False
@@ -181,6 +293,8 @@ Public Class frm_Principal
         frm_Usuario.cbo_perfil.Enabled = False
         frm_Usuario.txt_nombre_colaborador.Enabled = False
         frm_Usuario.btnBuscar_Colaborador.Enabled = False
+        frm_Usuario.dgvLista_Usuarios.ClearSelection()
+        frm_Usuario.ShowDialog()
     End Sub
 
     Private Sub CambiarContraseñaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
@@ -188,133 +302,320 @@ Public Class frm_Principal
     End Sub
 
     Private Sub NuevoColaboradorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoColaboradorToolStripMenuItem.Click
-        frm_Colaborador.ShowDialog()
         frm_Colaborador.Text = "Nuevo Colaborador"
-        frm_Colaborador.GroupListadoColaboradores.Enabled = False
+        frm_Colaborador.txt_nombre_colaborador.Focus()
+        frm_Colaborador.txt_nombre_colaborador.Clear()
+        frm_Colaborador.txt_apellido_colaborador.Clear()
+        frm_Colaborador.cbo_sector.SelectedIndex = -1
+        frm_Colaborador.btnNuevo_Colaborador.Visible = False
+        frm_Colaborador.btnGuardar_Colaborador.Enabled = True
         frm_Colaborador.btnActualizar_Colaborador.Enabled = False
+        frm_Colaborador.btnCancelar_Colaborador.Enabled = True
+        frm_Colaborador.Button1.Visible = False
+        frm_Colaborador.txt_Buscar_Colaborador.Enabled = False
+        frm_Colaborador.btnEliminar_Colaborador.Enabled = False
+
+        frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
+        frm_Colaborador.dgvLista_Colaboradores.Enabled = False
+        frm_Colaborador.GroupListadoColaboradores.Enabled = False
+        frm_Colaborador.ShowDialog()
     End Sub
 
     Private Sub ModificarColaboradorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarColaboradorToolStripMenuItem.Click
-        frm_Colaborador.ShowDialog()
         frm_Colaborador.Text = "Modificar Colaborador"
+        frm_Colaborador.txt_nombre_colaborador.Focus()
+        frm_Colaborador.txt_nombre_colaborador.Clear()
+        frm_Colaborador.txt_apellido_colaborador.Clear()
+        frm_Colaborador.cbo_sector.SelectedIndex = -1
+        frm_Colaborador.btnNuevo_Colaborador.Visible = False
         frm_Colaborador.btnGuardar_Colaborador.Enabled = False
+        frm_Colaborador.btnActualizar_Colaborador.Enabled = True
+        frm_Colaborador.btnCancelar_Colaborador.Enabled = True
+        frm_Colaborador.txt_Buscar_Colaborador.Enabled = True
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
-        frm_Colaborador.btnNuevo_Colaborador.Enabled = False
+        frm_Colaborador.Button1.Visible = False
+        frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
+        frm_Colaborador.dgvLista_Colaboradores.Enabled = False
+
+        frm_Colaborador.ShowDialog()
     End Sub
 
     Private Sub EliminarColaboradorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarColaboradorToolStripMenuItem.Click
-        frm_Colaborador.ShowDialog()
         frm_Colaborador.Text = "Eliminar Colaborador"
-        frm_Colaborador.GroupNuevoColaborador.Enabled = False
+        frm_Colaborador.txt_nombre_colaborador.Enabled = False
+        frm_Colaborador.txt_nombre_colaborador.Enabled = False
+        frm_Colaborador.txt_apellido_colaborador.Enabled = False
+        frm_Colaborador.cbo_sector.Enabled = False
+        frm_Colaborador.btnNuevo_Colaborador.Visible = False
+        frm_Colaborador.btnGuardar_Colaborador.Enabled = False
+        frm_Colaborador.btnActualizar_Colaborador.Enabled = False
+        frm_Colaborador.btnCancelar_Colaborador.Enabled = True
+        frm_Colaborador.txt_Buscar_Colaborador.Enabled = True
+        frm_Colaborador.btnEliminar_Colaborador.Enabled = True
+        frm_Colaborador.dgvLista_Colaboradores.Enabled = True
+        frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
+        frm_Colaborador.ShowDialog()
     End Sub
 
     Private Sub ConsultarColaboradorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarColaboradorToolStripMenuItem.Click
-        frm_Colaborador.ShowDialog()
         frm_Colaborador.Text = "Consultar Colaborador"
+        frm_Colaborador.txt_nombre_colaborador.Clear()
+        frm_Colaborador.txt_apellido_colaborador.Clear()
+        frm_Colaborador.cbo_sector.SelectedIndex = -1
         frm_Colaborador.btnActualizar_Colaborador.Enabled = False
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
         frm_Colaborador.btnGuardar_Colaborador.Enabled = False
-        frm_Colaborador.btnNuevo_Colaborador.Enabled = False
+        frm_Colaborador.btnNuevo_Colaborador.Visible = False
+        frm_Colaborador.Button1.Visible = False
         frm_Colaborador.txt_nombre_colaborador.Enabled = False
         frm_Colaborador.txt_apellido_colaborador.Enabled = False
         frm_Colaborador.cbo_sector.Enabled = False
         frm_Colaborador.txt_nombre_colaborador.Enabled = False
+        frm_Colaborador.ShowDialog()
     End Sub
 
     Private Sub NuevoVendedorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoVendedorToolStripMenuItem.Click
-        frm_Vendedor.ShowDialog()
         frm_Vendedor.Text = "Nuevo Vendedor"
-        frm_Vendedor.GroupListadoClientes.Enabled = False
+        frm_Vendedor.txt_nombre_vendedor.Focus()
+        frm_Vendedor.txt_nombre_vendedor.Clear()
+        frm_Vendedor.txt_apellido_vendedor.Clear()
+        frm_Vendedor.txt_mail_vendedor.Clear()
+        frm_Vendedor.txt_telefono_vendedor.Clear()
+        frm_Vendedor.btnNuevo_Vendedor.Visible = False
+        frm_Vendedor.btnGuardar_Vendedor.Enabled = True
         frm_Vendedor.btnActualizar_Vendedor.Enabled = False
+        frm_Vendedor.btnCancelar_Vendedor.Enabled = True
+
+        frm_Vendedor.txt_Buscar_vendedor.Enabled = False
+        frm_Vendedor.btnEliminar_vendedor.Enabled = False
+        frm_Vendedor.dgvLista_vendedores.ClearSelection()
+        frm_Vendedor.dgvLista_vendedores.Enabled = True
+
+
+        frm_Vendedor.ShowDialog()
     End Sub
 
     Private Sub ModificarVendedorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarVendedorToolStripMenuItem.Click
-        frm_Vendedor.ShowDialog()
         frm_Vendedor.Text = "Modificar Vendedor"
+        frm_Vendedor.txt_nombre_vendedor.Clear()
+        frm_Vendedor.txt_apellido_vendedor.Clear()
+        frm_Vendedor.txt_mail_vendedor.Clear()
+        frm_Vendedor.txt_telefono_vendedor.Clear()
+        frm_Vendedor.btnNuevo_Vendedor.Visible = False
         frm_Vendedor.btnGuardar_Vendedor.Enabled = False
+        frm_Vendedor.btnActualizar_Vendedor.Enabled = True
+        frm_Vendedor.btnCancelar_Vendedor.Enabled = True
+
+        frm_Vendedor.txt_Buscar_vendedor.Enabled = True
         frm_Vendedor.btnEliminar_vendedor.Enabled = False
-        frm_Vendedor.btnNuevo_Vendedor.Enabled = False
+        frm_Vendedor.dgvLista_vendedores.Enabled = True
+        frm_Vendedor.dgvLista_vendedores.ClearSelection()
+        frm_Vendedor.ShowDialog()
     End Sub
 
     Private Sub EliminarVendedorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarVendedorToolStripMenuItem.Click
-        frm_Vendedor.ShowDialog()
         frm_Vendedor.Text = "Eliminar Vendedor"
-        frm_Vendedor.GroupNuevoVendedor.Enabled = False
+        frm_Vendedor.txt_nombre_vendedor.Clear()
+        frm_Vendedor.txt_nombre_vendedor.Enabled = False
+        frm_Vendedor.txt_apellido_vendedor.Clear()
+        frm_Vendedor.txt_apellido_vendedor.Enabled = False
+        frm_Vendedor.txt_mail_vendedor.Clear()
+        frm_Vendedor.txt_mail_vendedor.Enabled = False
+        frm_Vendedor.txt_telefono_vendedor.Clear()
+        frm_Vendedor.txt_telefono_vendedor.Enabled = False
+        frm_Vendedor.btnNuevo_Vendedor.Visible = False
+        frm_Vendedor.btnGuardar_Vendedor.Enabled = False
+        frm_Vendedor.btnActualizar_Vendedor.Enabled = False
+        frm_Vendedor.btnCancelar_Vendedor.Enabled = True
+
+        frm_Vendedor.txt_Buscar_vendedor.Enabled = True
+        frm_Vendedor.btnEliminar_vendedor.Enabled = True
+        frm_Vendedor.dgvLista_vendedores.Enabled = True
+        frm_Vendedor.dgvLista_vendedores.ClearSelection()
+        frm_Vendedor.ShowDialog()
     End Sub
 
     Private Sub ConsultarVendedorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarVendedorToolStripMenuItem.Click
-        frm_Vendedor.ShowDialog()
         frm_Vendedor.Text = "Consultar Vendedor"
-        frm_Vendedor.btnActualizar_Vendedor.Enabled = False
-        frm_Vendedor.btnEliminar_vendedor.Enabled = False
-        frm_Vendedor.btnGuardar_Vendedor.Enabled = False
-        frm_Vendedor.btnNuevo_Vendedor.Enabled = False
+        frm_Vendedor.txt_nombre_vendedor.Clear()
         frm_Vendedor.txt_nombre_vendedor.Enabled = False
+        frm_Vendedor.txt_apellido_vendedor.Clear()
         frm_Vendedor.txt_apellido_vendedor.Enabled = False
+        frm_Vendedor.txt_mail_vendedor.Clear()
         frm_Vendedor.txt_mail_vendedor.Enabled = False
+        frm_Vendedor.txt_telefono_vendedor.Clear()
         frm_Vendedor.txt_telefono_vendedor.Enabled = False
+        frm_Vendedor.btnNuevo_Vendedor.Visible = False
+        frm_Vendedor.btnGuardar_Vendedor.Enabled = False
+        frm_Vendedor.btnActualizar_Vendedor.Enabled = False
+        frm_Vendedor.btnCancelar_Vendedor.Enabled = True
+
+        frm_Vendedor.txt_Buscar_vendedor.Enabled = True
+        frm_Vendedor.btnEliminar_vendedor.Enabled = False
+        frm_Vendedor.dgvLista_vendedores.Enabled = True
+        frm_Vendedor.dgvLista_vendedores.ClearSelection()
+        frm_Vendedor.ShowDialog()
     End Sub
 
     Private Sub NuevaPiezaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevaPiezaToolStripMenuItem.Click
-        frm_Pieza.ShowDialog()
         frm_Pieza.Text = "Nueva Pieza"
-        frm_Pieza.GroupListadoPiezas.Enabled = False
+        frm_Pieza.txt_nombre_pieza.Focus()
+        frm_Pieza.txt_nombre_pieza.Clear()
+
+        frm_Pieza.txt_nombre_pieza.Enabled = True
+        frm_Pieza.txt_Buscar_Pieza.Enabled = False
+
+        frm_Pieza.btnNuevo_Pieza.Visible = False
+        frm_Pieza.btnGuardar_Pieza.Enabled = True
         frm_Pieza.btnActualizar_Pieza.Enabled = False
+        frm_Pieza.btnCancelar_Pieza.Enabled = True
+        frm_Pieza.btnEliminar_Pieza.Enabled = False
+
+        frm_Pieza.dgvLista_Piezas.ClearSelection()
+        frm_Pieza.dgvLista_Piezas.Enabled = False
+        frm_Pieza.ShowDialog()
     End Sub
 
     Private Sub ModificarPiezaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarPiezaToolStripMenuItem.Click
-        frm_Pieza.ShowDialog()
         frm_Pieza.Text = "Modificar Pieza"
+        frm_Pieza.txt_nombre_pieza.Clear()
+
+        frm_Pieza.txt_nombre_pieza.Enabled = True
+        frm_Pieza.txt_Buscar_Pieza.Enabled = False
+
+        frm_Pieza.btnNuevo_Pieza.Visible = False
         frm_Pieza.btnGuardar_Pieza.Enabled = False
+        frm_Pieza.btnActualizar_Pieza.Enabled = True
+        frm_Pieza.btnCancelar_Pieza.Enabled = True
         frm_Pieza.btnEliminar_Pieza.Enabled = False
-        frm_Pieza.btnNuevo_Pieza.Enabled = False
+
+        frm_Pieza.dgvLista_Piezas.ClearSelection()
+        frm_Pieza.dgvLista_Piezas.Enabled = False
+
+        frm_Pieza.ShowDialog()
     End Sub
 
     Private Sub EliminarPiezaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarPiezaToolStripMenuItem.Click
-        frm_Pieza.ShowDialog()
+
         frm_Pieza.Text = "Eliminar Pieza"
-        frm_Pieza.GroupNuevaPieza.Enabled = False
+        frm_Pieza.txt_nombre_pieza.Clear()
+
+        frm_Pieza.txt_nombre_pieza.Enabled = False
+        frm_Pieza.txt_Buscar_Pieza.Enabled = True
+
+        frm_Pieza.btnNuevo_Pieza.Visible = False
+        frm_Pieza.btnGuardar_Pieza.Enabled = False
+        frm_Pieza.btnActualizar_Pieza.Enabled = False
+        frm_Pieza.btnCancelar_Pieza.Enabled = True
+        frm_Pieza.btnEliminar_Pieza.Enabled = True
+
+        frm_Pieza.dgvLista_Piezas.ClearSelection()
+        frm_Pieza.dgvLista_Piezas.Enabled = False
+
+        frm_Pieza.ShowDialog()
     End Sub
 
     Private Sub ConsultarPiezaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarPiezaToolStripMenuItem.Click
-        frm_Pieza.ShowDialog()
+
         frm_Pieza.Text = "Consultar Pieza"
-        frm_Pieza.btnActualizar_Pieza.Enabled = False
-        frm_Pieza.btnEliminar_Pieza.Enabled = False
-        frm_Pieza.btnGuardar_Pieza.Enabled = False
-        frm_Pieza.btnNuevo_Pieza.Enabled = False
+        frm_Pieza.txt_nombre_pieza.Clear()
+
         frm_Pieza.txt_nombre_pieza.Enabled = False
+        frm_Pieza.txt_Buscar_Pieza.Enabled = True
+
+        frm_Pieza.btnNuevo_Pieza.Visible = False
+        frm_Pieza.btnGuardar_Pieza.Enabled = False
+        frm_Pieza.btnActualizar_Pieza.Enabled = False
+        frm_Pieza.btnCancelar_Pieza.Enabled = True
+        frm_Pieza.btnEliminar_Pieza.Enabled = False
+
+        frm_Pieza.dgvLista_Piezas.ClearSelection()
+        frm_Pieza.dgvLista_Piezas.Enabled = False
+
+        frm_Pieza.ShowDialog()
     End Sub
 
     Private Sub NuevoSectorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoSectorToolStripMenuItem.Click
-        frm_Sector.ShowDialog()
         frm_Sector.Text = "Nuevo Sector"
-        frm_Sector.GroupListadoSectores.Enabled = False
+        frm_Sector.txt_nombre_sector.Clear()
+        frm_Sector.txt_nombre_sector.Focus()
+
+        frm_Sector.txt_nombre_sector.Enabled = True
+        frm_Sector.txt_Buscar_Sector.Enabled = False
+
+        frm_Sector.btnNuevo_Sector.Visible = False
+        frm_Sector.btnGuardar_Sector.Enabled = True
         frm_Sector.btnActualizar_Sector.Enabled = False
+        frm_Sector.btnCancelar_Sector.Enabled = True
+        frm_Sector.btnEliminar_Sector.Enabled = False
+
+        frm_Sector.dgvLista_Sector.ClearSelection()
+        frm_Sector.dgvLista_Sector.Enabled = False
+
+        frm_Sector.ShowDialog()
     End Sub
 
     Private Sub ModificarSectorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarSectorToolStripMenuItem.Click
-        frm_Sector.ShowDialog()
+
         frm_Sector.Text = "Modificar Sector"
+        frm_Sector.txt_nombre_sector.Clear()
+        frm_Sector.txt_nombre_sector.Focus()
+
+        frm_Sector.txt_nombre_sector.Enabled = True
+        frm_Sector.txt_Buscar_Sector.Enabled = True
+
+        frm_Sector.btnNuevo_Sector.Visible = False
         frm_Sector.btnGuardar_Sector.Enabled = False
+        frm_Sector.btnActualizar_Sector.Enabled = True
+        frm_Sector.btnCancelar_Sector.Enabled = True
         frm_Sector.btnEliminar_Sector.Enabled = False
-        frm_Sector.btnNuevo_Sector.Enabled = False
+
+        frm_Sector.dgvLista_Sector.ClearSelection()
+        frm_Sector.dgvLista_Sector.Enabled = False
+
+        frm_Sector.ShowDialog()
     End Sub
 
     Private Sub EliminarSectorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarSectorToolStripMenuItem.Click
-        frm_Sector.ShowDialog()
+
         frm_Sector.Text = "Eliminar Sector"
-        frm_Sector.GroupNuevoSector.Enabled = False
+        frm_Sector.txt_nombre_sector.Clear()
+        frm_Sector.txt_nombre_sector.Focus()
+
+        frm_Sector.txt_nombre_sector.Enabled = False
+        frm_Sector.txt_Buscar_Sector.Enabled = True
+
+        frm_Sector.btnNuevo_Sector.Visible = False
+        frm_Sector.btnGuardar_Sector.Enabled = False
+        frm_Sector.btnActualizar_Sector.Enabled = False
+        frm_Sector.btnCancelar_Sector.Enabled = True
+        frm_Sector.btnEliminar_Sector.Enabled = True
+
+        frm_Sector.dgvLista_Sector.ClearSelection()
+        frm_Sector.dgvLista_Sector.Enabled = True
+
+        frm_Sector.ShowDialog()
     End Sub
 
     Private Sub ConsultarSectorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarSectorToolStripMenuItem.Click
-        frm_Sector.ShowDialog()
+
         frm_Sector.Text = "Consultar Sector"
-        frm_Sector.btnActualizar_Sector.Enabled = False
-        frm_Sector.btnEliminar_Sector.Enabled = False
-        frm_Sector.btnGuardar_Sector.Enabled = False
-        frm_Sector.btnNuevo_Sector.Enabled = False
+        frm_Sector.txt_nombre_sector.Clear()
+        frm_Sector.txt_nombre_sector.Focus()
+
         frm_Sector.txt_nombre_sector.Enabled = False
+        frm_Sector.txt_Buscar_Sector.Enabled = True
+
+        frm_Sector.btnNuevo_Sector.Visible = False
+        frm_Sector.btnGuardar_Sector.Enabled = False
+        frm_Sector.btnActualizar_Sector.Enabled = False
+        frm_Sector.btnCancelar_Sector.Enabled = True
+        frm_Sector.btnEliminar_Sector.Enabled = False
+
+        frm_Sector.dgvLista_Sector.ClearSelection()
+        frm_Sector.Enabled = True
+
+        frm_Sector.ShowDialog()
     End Sub
 
     Private Sub EliminarTareaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarTareaToolStripMenuItem.Click

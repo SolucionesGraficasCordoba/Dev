@@ -348,7 +348,7 @@ Partial Class frm_Usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(427, 516)
+        Me.ClientSize = New System.Drawing.Size(420, 516)
         Me.Controls.Add(Me.GroupListadoUsuarios)
         Me.Controls.Add(Me.GroupNuevoUsuario)
         Me.Name = "frm_Usuario"

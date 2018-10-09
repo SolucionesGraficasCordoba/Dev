@@ -6,10 +6,7 @@
         Label1.Visible = False
         armargrilla()
         cargargrilla()
-        dgvLista_Sector.ClearSelection()
-        txt_nombre_sector.Focus()
-        Label6.Text = dgvLista_Sector.Rows.Count
-        btnNuevo_Sector.Visible = False
+         Label6.Text = dgvLista_Sector.Rows.Count
     End Sub
 
     Public Sub cargargrilla()

@@ -8,8 +8,6 @@
         Label1.Visible = False
         armargrilla()
         cargargrilla()
-        dgvLista_vendedores.ClearSelection()
-        txt_nombre_vendedor.Focus()
         lblTotal_Vendedores.Text = dgvLista_vendedores.Rows.Count
     End Sub
 
@@ -114,7 +112,6 @@
             txt_apellido_vendedor.Text = dgvLista_vendedores.Item("VEN_apellido_ven", dgvLista_vendedores.SelectedRows(0).Index).Value
             txt_mail_vendedor.Text = dgvLista_vendedores.Item("VEN_mail_ven", dgvLista_vendedores.SelectedRows(0).Index).Value
             txt_telefono_vendedor.Text = dgvLista_Vendedores.Item("VEN_telefono_ven", dgvLista_Vendedores.SelectedRows(0).Index).Value
-
         Else
             MsgBox("Debe seleccionar un Vendedor")
         End If

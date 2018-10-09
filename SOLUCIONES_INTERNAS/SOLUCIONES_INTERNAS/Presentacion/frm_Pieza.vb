@@ -8,9 +8,7 @@
         armargrilla()
         cargargrilla()
         dgvLista_Piezas.ClearSelection()
-        txt_nombre_pieza.Focus()
         Label6.Text = dgvLista_Piezas.Rows.Count
-        btnNuevo_Pieza.Visible = False
     End Sub
 
     Public Sub cargargrilla()
@@ -32,7 +30,7 @@
         dgvLista_Piezas.Columns(0).DataPropertyName = "PIE_id_pieza"
         dgvLista_Piezas.Columns(0).Visible = False
         dgvLista_Piezas.Columns(1).DataPropertyName = "PIE_nombre_pie"
-        dgvLista_Piezas.Columns(1).Width = 350
+        dgvLista_Piezas.Columns(1).Width = 300
     End Sub
 
     Private Sub btnGuardar_Pieza_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Pieza.Click

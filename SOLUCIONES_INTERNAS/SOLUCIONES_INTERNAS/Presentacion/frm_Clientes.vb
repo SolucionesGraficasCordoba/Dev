@@ -8,8 +8,8 @@
         Label1.Visible = False
         armargrilla()
         cargargrilla()
-        dgvLista_Clientes.ClearSelection()
-        txt_razonsocial_cliente.Focus()
+        'dgvLista_Clientes.ClearSelection()
+        'txt_razonsocial_cliente.Focus()
         Label6.Text = dgvLista_Clientes.Rows.Count
         btnNuevo_Cliente.Visible = False
     End Sub
@@ -58,7 +58,10 @@
         txt_id_cliente.Clear()
         txt_razonsocial_cliente.Clear()
         txt_mail_cliente.Clear()
+        txt_Domicilio_Cliente.Clear()
+        txt_Localidad_Cliente.Clear()
         txt_Codigo_Postal_Cliente.Clear()
+        txtTelefono_Cliente.Clear()
     End Sub
 
     Private Sub btnActualizar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar_Cliente.Click
