@@ -91,12 +91,6 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeleteDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
     End Sub
-  Partial Private Sub InsertPROCESO(instance As PROCESO)
-    End Sub
-  Partial Private Sub UpdatePROCESO(instance As PROCESO)
-    End Sub
-  Partial Private Sub DeletePROCESO(instance As PROCESO)
-    End Sub
   Partial Private Sub InsertPRODUCTO(instance As PRODUCTO)
     End Sub
   Partial Private Sub UpdatePRODUCTO(instance As PRODUCTO)
@@ -108,6 +102,12 @@ Partial Public Class DataS_Interno
   Partial Private Sub UpdatePRODUCTO_MOVIMIENTO(instance As PRODUCTO_MOVIMIENTO)
     End Sub
   Partial Private Sub DeletePRODUCTO_MOVIMIENTO(instance As PRODUCTO_MOVIMIENTO)
+    End Sub
+  Partial Private Sub InsertPROCESO(instance As PROCESO)
+    End Sub
+  Partial Private Sub UpdatePROCESO(instance As PROCESO)
+    End Sub
+  Partial Private Sub DeletePROCESO(instance As PROCESO)
     End Sub
   #End Region
 	
@@ -196,12 +196,6 @@ Partial Public Class DataS_Interno
 		End Get
 	End Property
 	
-	Public ReadOnly Property PROCESO() As System.Data.Linq.Table(Of PROCESO)
-		Get
-			Return Me.GetTable(Of PROCESO)
-		End Get
-	End Property
-	
 	Public ReadOnly Property PRODUCTO() As System.Data.Linq.Table(Of PRODUCTO)
 		Get
 			Return Me.GetTable(Of PRODUCTO)
@@ -211,6 +205,12 @@ Partial Public Class DataS_Interno
 	Public ReadOnly Property PRODUCTO_MOVIMIENTO() As System.Data.Linq.Table(Of PRODUCTO_MOVIMIENTO)
 		Get
 			Return Me.GetTable(Of PRODUCTO_MOVIMIENTO)
+		End Get
+	End Property
+	
+	Public ReadOnly Property PROCESO() As System.Data.Linq.Table(Of PROCESO)
+		Get
+			Return Me.GetTable(Of PROCESO)
 		End Get
 	End Property
 End Class
@@ -2938,344 +2938,6 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PROCESO")>  _
-Partial Public Class PROCESO
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _PROC_id_proceso As Integer
-	
-	Private _id_detalle_orden_trabajo As System.Nullable(Of Integer)
-	
-	Private _PROC_offset As String
-	
-	Private _PROC_descrip_offset As String
-	
-	Private _PROC_digital As String
-	
-	Private _PROC_descrip_digital As String
-	
-	Private _PROC_gran_formato As String
-	
-	Private _PROC_descrip_gran_formato As String
-	
-	Private _PROC_terminacion As String
-	
-	Private _PROC_descrip_terminacion As String
-	
-	Private _PROC_logistica As String
-	
-	Private _PROC_descrip_logistica As String
-	
-	Private _DETALLE_ORDEN_TRABAJO As EntityRef(Of DETALLE_ORDEN_TRABAJO)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnPROC_id_procesoChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnPROC_id_procesoChanged()
-    End Sub
-    Partial Private Sub Onid_detalle_orden_trabajoChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub Onid_detalle_orden_trabajoChanged()
-    End Sub
-    Partial Private Sub OnPROC_offsetChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_offsetChanged()
-    End Sub
-    Partial Private Sub OnPROC_descrip_offsetChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_descrip_offsetChanged()
-    End Sub
-    Partial Private Sub OnPROC_digitalChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_digitalChanged()
-    End Sub
-    Partial Private Sub OnPROC_descrip_digitalChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_descrip_digitalChanged()
-    End Sub
-    Partial Private Sub OnPROC_gran_formatoChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_gran_formatoChanged()
-    End Sub
-    Partial Private Sub OnPROC_descrip_gran_formatoChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_descrip_gran_formatoChanged()
-    End Sub
-    Partial Private Sub OnPROC_terminacionChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_terminacionChanged()
-    End Sub
-    Partial Private Sub OnPROC_descrip_terminacionChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_descrip_terminacionChanged()
-    End Sub
-    Partial Private Sub OnPROC_logisticaChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_logisticaChanged()
-    End Sub
-    Partial Private Sub OnPROC_descrip_logisticaChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_descrip_logisticaChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._DETALLE_ORDEN_TRABAJO = CType(Nothing, EntityRef(Of DETALLE_ORDEN_TRABAJO))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_id_proceso", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property PROC_id_proceso() As Integer
-		Get
-			Return Me._PROC_id_proceso
-		End Get
-		Set
-			If ((Me._PROC_id_proceso = value)  _
-						= false) Then
-				Me.OnPROC_id_procesoChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_id_proceso = value
-				Me.SendPropertyChanged("PROC_id_proceso")
-				Me.OnPROC_id_procesoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id_detalle_orden_trabajo", DbType:="Int")>  _
-	Public Property id_detalle_orden_trabajo() As System.Nullable(Of Integer)
-		Get
-			Return Me._id_detalle_orden_trabajo
-		End Get
-		Set
-			If (Me._id_detalle_orden_trabajo.Equals(value) = false) Then
-				If Me._DETALLE_ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.Onid_detalle_orden_trabajoChanging(value)
-				Me.SendPropertyChanging
-				Me._id_detalle_orden_trabajo = value
-				Me.SendPropertyChanged("id_detalle_orden_trabajo")
-				Me.Onid_detalle_orden_trabajoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_offset", DbType:="VarChar(20)")>  _
-	Public Property PROC_offset() As String
-		Get
-			Return Me._PROC_offset
-		End Get
-		Set
-			If (String.Equals(Me._PROC_offset, value) = false) Then
-				Me.OnPROC_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_offset = value
-				Me.SendPropertyChanged("PROC_offset")
-				Me.OnPROC_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_offset", DbType:="VarChar(250)")>  _
-	Public Property PROC_descrip_offset() As String
-		Get
-			Return Me._PROC_descrip_offset
-		End Get
-		Set
-			If (String.Equals(Me._PROC_descrip_offset, value) = false) Then
-				Me.OnPROC_descrip_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_descrip_offset = value
-				Me.SendPropertyChanged("PROC_descrip_offset")
-				Me.OnPROC_descrip_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_digital", DbType:="VarChar(20)")>  _
-	Public Property PROC_digital() As String
-		Get
-			Return Me._PROC_digital
-		End Get
-		Set
-			If (String.Equals(Me._PROC_digital, value) = false) Then
-				Me.OnPROC_digitalChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_digital = value
-				Me.SendPropertyChanged("PROC_digital")
-				Me.OnPROC_digitalChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_digital", DbType:="VarChar(250)")>  _
-	Public Property PROC_descrip_digital() As String
-		Get
-			Return Me._PROC_descrip_digital
-		End Get
-		Set
-			If (String.Equals(Me._PROC_descrip_digital, value) = false) Then
-				Me.OnPROC_descrip_digitalChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_descrip_digital = value
-				Me.SendPropertyChanged("PROC_descrip_digital")
-				Me.OnPROC_descrip_digitalChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_gran_formato", DbType:="VarChar(50)")>  _
-	Public Property PROC_gran_formato() As String
-		Get
-			Return Me._PROC_gran_formato
-		End Get
-		Set
-			If (String.Equals(Me._PROC_gran_formato, value) = false) Then
-				Me.OnPROC_gran_formatoChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_gran_formato = value
-				Me.SendPropertyChanged("PROC_gran_formato")
-				Me.OnPROC_gran_formatoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_gran_formato", DbType:="VarChar(250)")>  _
-	Public Property PROC_descrip_gran_formato() As String
-		Get
-			Return Me._PROC_descrip_gran_formato
-		End Get
-		Set
-			If (String.Equals(Me._PROC_descrip_gran_formato, value) = false) Then
-				Me.OnPROC_descrip_gran_formatoChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_descrip_gran_formato = value
-				Me.SendPropertyChanged("PROC_descrip_gran_formato")
-				Me.OnPROC_descrip_gran_formatoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_terminacion", DbType:="VarChar(50)")>  _
-	Public Property PROC_terminacion() As String
-		Get
-			Return Me._PROC_terminacion
-		End Get
-		Set
-			If (String.Equals(Me._PROC_terminacion, value) = false) Then
-				Me.OnPROC_terminacionChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_terminacion = value
-				Me.SendPropertyChanged("PROC_terminacion")
-				Me.OnPROC_terminacionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_terminacion", DbType:="VarChar(250)")>  _
-	Public Property PROC_descrip_terminacion() As String
-		Get
-			Return Me._PROC_descrip_terminacion
-		End Get
-		Set
-			If (String.Equals(Me._PROC_descrip_terminacion, value) = false) Then
-				Me.OnPROC_descrip_terminacionChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_descrip_terminacion = value
-				Me.SendPropertyChanged("PROC_descrip_terminacion")
-				Me.OnPROC_descrip_terminacionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_logistica", DbType:="VarChar(50)")>  _
-	Public Property PROC_logistica() As String
-		Get
-			Return Me._PROC_logistica
-		End Get
-		Set
-			If (String.Equals(Me._PROC_logistica, value) = false) Then
-				Me.OnPROC_logisticaChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_logistica = value
-				Me.SendPropertyChanged("PROC_logistica")
-				Me.OnPROC_logisticaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_logistica", DbType:="VarChar(250)")>  _
-	Public Property PROC_descrip_logistica() As String
-		Get
-			Return Me._PROC_descrip_logistica
-		End Get
-		Set
-			If (String.Equals(Me._PROC_descrip_logistica, value) = false) Then
-				Me.OnPROC_descrip_logisticaChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_descrip_logistica = value
-				Me.SendPropertyChanged("PROC_descrip_logistica")
-				Me.OnPROC_descrip_logisticaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="DETALLE_ORDEN_TRABAJO_PROCESO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="id_detalle_orden_trabajo", OtherKey:="id_detalle_orden_trabajo", IsForeignKey:=true, DeleteRule:="CASCADE")>  _
-	Public Property DETALLE_ORDEN_TRABAJO() As DETALLE_ORDEN_TRABAJO
-		Get
-			Return Me._DETALLE_ORDEN_TRABAJO.Entity
-		End Get
-		Set
-			Dim previousValue As DETALLE_ORDEN_TRABAJO = Me._DETALLE_ORDEN_TRABAJO.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._DETALLE_ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._DETALLE_ORDEN_TRABAJO.Entity = Nothing
-					previousValue.PROCESO.Remove(Me)
-				End If
-				Me._DETALLE_ORDEN_TRABAJO.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.PROCESO.Add(Me)
-					Me._id_detalle_orden_trabajo = value.id_detalle_orden_trabajo
-				Else
-					Me._id_detalle_orden_trabajo = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("DETALLE_ORDEN_TRABAJO")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PRODUCTO")>  _
 Partial Public Class PRODUCTO
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -3634,6 +3296,344 @@ Partial Public Class PRODUCTO_MOVIMIENTO
 					Me._PROD_id = CType(Nothing, Integer)
 				End If
 				Me.SendPropertyChanged("PRODUCTO")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PROCESO")>  _
+Partial Public Class PROCESO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _PROC_id_proceso As Integer
+	
+	Private _id_detalle_orden_trabajo As System.Nullable(Of Integer)
+	
+	Private _PROC_offset As String
+	
+	Private _PROC_descrip_offset As String
+	
+	Private _PROC_digital As String
+	
+	Private _PROC_descrip_digital As String
+	
+	Private _PROC_gran_formato As String
+	
+	Private _PROC_descrip_gran_formato As String
+	
+	Private _PROC_terminacion As String
+	
+	Private _PROC_descrip_terminacion As String
+	
+	Private _PROC_logistica As String
+	
+	Private _PROC_descrip_logistica As String
+	
+	Private _DETALLE_ORDEN_TRABAJO As EntityRef(Of DETALLE_ORDEN_TRABAJO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnPROC_id_procesoChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPROC_id_procesoChanged()
+    End Sub
+    Partial Private Sub Onid_detalle_orden_trabajoChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Onid_detalle_orden_trabajoChanged()
+    End Sub
+    Partial Private Sub OnPROC_offsetChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_offsetChanged()
+    End Sub
+    Partial Private Sub OnPROC_descrip_offsetChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_descrip_offsetChanged()
+    End Sub
+    Partial Private Sub OnPROC_digitalChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_digitalChanged()
+    End Sub
+    Partial Private Sub OnPROC_descrip_digitalChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_descrip_digitalChanged()
+    End Sub
+    Partial Private Sub OnPROC_gran_formatoChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_gran_formatoChanged()
+    End Sub
+    Partial Private Sub OnPROC_descrip_gran_formatoChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_descrip_gran_formatoChanged()
+    End Sub
+    Partial Private Sub OnPROC_terminacionChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_terminacionChanged()
+    End Sub
+    Partial Private Sub OnPROC_descrip_terminacionChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_descrip_terminacionChanged()
+    End Sub
+    Partial Private Sub OnPROC_logisticaChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_logisticaChanged()
+    End Sub
+    Partial Private Sub OnPROC_descrip_logisticaChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_descrip_logisticaChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._DETALLE_ORDEN_TRABAJO = CType(Nothing, EntityRef(Of DETALLE_ORDEN_TRABAJO))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_id_proceso", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property PROC_id_proceso() As Integer
+		Get
+			Return Me._PROC_id_proceso
+		End Get
+		Set
+			If ((Me._PROC_id_proceso = value)  _
+						= false) Then
+				Me.OnPROC_id_procesoChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_id_proceso = value
+				Me.SendPropertyChanged("PROC_id_proceso")
+				Me.OnPROC_id_procesoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id_detalle_orden_trabajo", DbType:="Int")>  _
+	Public Property id_detalle_orden_trabajo() As System.Nullable(Of Integer)
+		Get
+			Return Me._id_detalle_orden_trabajo
+		End Get
+		Set
+			If (Me._id_detalle_orden_trabajo.Equals(value) = false) Then
+				If Me._DETALLE_ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.Onid_detalle_orden_trabajoChanging(value)
+				Me.SendPropertyChanging
+				Me._id_detalle_orden_trabajo = value
+				Me.SendPropertyChanged("id_detalle_orden_trabajo")
+				Me.Onid_detalle_orden_trabajoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_offset", DbType:="VarChar(20)")>  _
+	Public Property PROC_offset() As String
+		Get
+			Return Me._PROC_offset
+		End Get
+		Set
+			If (String.Equals(Me._PROC_offset, value) = false) Then
+				Me.OnPROC_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_offset = value
+				Me.SendPropertyChanged("PROC_offset")
+				Me.OnPROC_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_offset", DbType:="VarChar(250)")>  _
+	Public Property PROC_descrip_offset() As String
+		Get
+			Return Me._PROC_descrip_offset
+		End Get
+		Set
+			If (String.Equals(Me._PROC_descrip_offset, value) = false) Then
+				Me.OnPROC_descrip_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_descrip_offset = value
+				Me.SendPropertyChanged("PROC_descrip_offset")
+				Me.OnPROC_descrip_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_digital", DbType:="VarChar(20)")>  _
+	Public Property PROC_digital() As String
+		Get
+			Return Me._PROC_digital
+		End Get
+		Set
+			If (String.Equals(Me._PROC_digital, value) = false) Then
+				Me.OnPROC_digitalChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_digital = value
+				Me.SendPropertyChanged("PROC_digital")
+				Me.OnPROC_digitalChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_digital", DbType:="VarChar(250)")>  _
+	Public Property PROC_descrip_digital() As String
+		Get
+			Return Me._PROC_descrip_digital
+		End Get
+		Set
+			If (String.Equals(Me._PROC_descrip_digital, value) = false) Then
+				Me.OnPROC_descrip_digitalChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_descrip_digital = value
+				Me.SendPropertyChanged("PROC_descrip_digital")
+				Me.OnPROC_descrip_digitalChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_gran_formato", DbType:="VarChar(50)")>  _
+	Public Property PROC_gran_formato() As String
+		Get
+			Return Me._PROC_gran_formato
+		End Get
+		Set
+			If (String.Equals(Me._PROC_gran_formato, value) = false) Then
+				Me.OnPROC_gran_formatoChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_gran_formato = value
+				Me.SendPropertyChanged("PROC_gran_formato")
+				Me.OnPROC_gran_formatoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_gran_formato", DbType:="VarChar(250)")>  _
+	Public Property PROC_descrip_gran_formato() As String
+		Get
+			Return Me._PROC_descrip_gran_formato
+		End Get
+		Set
+			If (String.Equals(Me._PROC_descrip_gran_formato, value) = false) Then
+				Me.OnPROC_descrip_gran_formatoChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_descrip_gran_formato = value
+				Me.SendPropertyChanged("PROC_descrip_gran_formato")
+				Me.OnPROC_descrip_gran_formatoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_terminacion", DbType:="VarChar(50)")>  _
+	Public Property PROC_terminacion() As String
+		Get
+			Return Me._PROC_terminacion
+		End Get
+		Set
+			If (String.Equals(Me._PROC_terminacion, value) = false) Then
+				Me.OnPROC_terminacionChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_terminacion = value
+				Me.SendPropertyChanged("PROC_terminacion")
+				Me.OnPROC_terminacionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_terminacion", DbType:="VarChar(250)")>  _
+	Public Property PROC_descrip_terminacion() As String
+		Get
+			Return Me._PROC_descrip_terminacion
+		End Get
+		Set
+			If (String.Equals(Me._PROC_descrip_terminacion, value) = false) Then
+				Me.OnPROC_descrip_terminacionChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_descrip_terminacion = value
+				Me.SendPropertyChanged("PROC_descrip_terminacion")
+				Me.OnPROC_descrip_terminacionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_logistica", DbType:="VarChar(50)")>  _
+	Public Property PROC_logistica() As String
+		Get
+			Return Me._PROC_logistica
+		End Get
+		Set
+			If (String.Equals(Me._PROC_logistica, value) = false) Then
+				Me.OnPROC_logisticaChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_logistica = value
+				Me.SendPropertyChanged("PROC_logistica")
+				Me.OnPROC_logisticaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_logistica", DbType:="VarChar(250)")>  _
+	Public Property PROC_descrip_logistica() As String
+		Get
+			Return Me._PROC_descrip_logistica
+		End Get
+		Set
+			If (String.Equals(Me._PROC_descrip_logistica, value) = false) Then
+				Me.OnPROC_descrip_logisticaChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_descrip_logistica = value
+				Me.SendPropertyChanged("PROC_descrip_logistica")
+				Me.OnPROC_descrip_logisticaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="DETALLE_ORDEN_TRABAJO_PROCESO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="id_detalle_orden_trabajo", OtherKey:="id_detalle_orden_trabajo", IsForeignKey:=true, DeleteRule:="CASCADE")>  _
+	Public Property DETALLE_ORDEN_TRABAJO() As DETALLE_ORDEN_TRABAJO
+		Get
+			Return Me._DETALLE_ORDEN_TRABAJO.Entity
+		End Get
+		Set
+			Dim previousValue As DETALLE_ORDEN_TRABAJO = Me._DETALLE_ORDEN_TRABAJO.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._DETALLE_ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._DETALLE_ORDEN_TRABAJO.Entity = Nothing
+					previousValue.PROCESO.Remove(Me)
+				End If
+				Me._DETALLE_ORDEN_TRABAJO.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.PROCESO.Add(Me)
+					Me._id_detalle_orden_trabajo = value.id_detalle_orden_trabajo
+				Else
+					Me._id_detalle_orden_trabajo = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("DETALLE_ORDEN_TRABAJO")
 			End If
 		End Set
 	End Property
