@@ -48,7 +48,7 @@ Partial Class frm_Proceso2
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(557, 621)
+        Me.btnAceptar.Location = New System.Drawing.Point(362, 537)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 13
@@ -57,7 +57,7 @@ Partial Class frm_Proceso2
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(657, 621)
+        Me.btnCancelar.Location = New System.Drawing.Point(443, 537)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 12
@@ -69,26 +69,26 @@ Partial Class frm_Proceso2
         Me.groupLogistica.Controls.Add(Me.txt_descripc_logistica)
         Me.groupLogistica.Controls.Add(Me.Label5)
         Me.groupLogistica.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.groupLogistica.Location = New System.Drawing.Point(12, 492)
+        Me.groupLogistica.Location = New System.Drawing.Point(12, 432)
         Me.groupLogistica.Name = "groupLogistica"
-        Me.groupLogistica.Size = New System.Drawing.Size(720, 114)
+        Me.groupLogistica.Size = New System.Drawing.Size(506, 99)
         Me.groupLogistica.TabIndex = 11
         Me.groupLogistica.TabStop = False
         Me.groupLogistica.Text = "Logística"
         '
         'txt_descripc_logistica
         '
-        Me.txt_descripc_logistica.Location = New System.Drawing.Point(106, 19)
+        Me.txt_descripc_logistica.Location = New System.Drawing.Point(79, 19)
         Me.txt_descripc_logistica.Multiline = True
         Me.txt_descripc_logistica.Name = "txt_descripc_logistica"
-        Me.txt_descripc_logistica.Size = New System.Drawing.Size(591, 78)
+        Me.txt_descripc_logistica.Size = New System.Drawing.Size(412, 65)
         Me.txt_descripc_logistica.TabIndex = 1
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(37, 50)
+        Me.Label5.Location = New System.Drawing.Point(10, 44)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(63, 13)
         Me.Label5.TabIndex = 0
@@ -99,26 +99,26 @@ Partial Class frm_Proceso2
         Me.groupTerminacion.Controls.Add(Me.txt_descripc_terminacion)
         Me.groupTerminacion.Controls.Add(Me.Label4)
         Me.groupTerminacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.groupTerminacion.Location = New System.Drawing.Point(12, 372)
+        Me.groupTerminacion.Location = New System.Drawing.Point(12, 327)
         Me.groupTerminacion.Name = "groupTerminacion"
-        Me.groupTerminacion.Size = New System.Drawing.Size(720, 114)
+        Me.groupTerminacion.Size = New System.Drawing.Size(506, 99)
         Me.groupTerminacion.TabIndex = 10
         Me.groupTerminacion.TabStop = False
         Me.groupTerminacion.Text = "Terminación"
         '
         'txt_descripc_terminacion
         '
-        Me.txt_descripc_terminacion.Location = New System.Drawing.Point(106, 19)
+        Me.txt_descripc_terminacion.Location = New System.Drawing.Point(79, 19)
         Me.txt_descripc_terminacion.Multiline = True
         Me.txt_descripc_terminacion.Name = "txt_descripc_terminacion"
-        Me.txt_descripc_terminacion.Size = New System.Drawing.Size(591, 78)
+        Me.txt_descripc_terminacion.Size = New System.Drawing.Size(412, 65)
         Me.txt_descripc_terminacion.TabIndex = 1
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(37, 52)
+        Me.Label4.Location = New System.Drawing.Point(10, 46)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(63, 13)
         Me.Label4.TabIndex = 0
@@ -129,26 +129,26 @@ Partial Class frm_Proceso2
         Me.groupGranFormato.Controls.Add(Me.txt_descripc_gran_formato)
         Me.groupGranFormato.Controls.Add(Me.Label3)
         Me.groupGranFormato.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.groupGranFormato.Location = New System.Drawing.Point(12, 252)
+        Me.groupGranFormato.Location = New System.Drawing.Point(12, 222)
         Me.groupGranFormato.Name = "groupGranFormato"
-        Me.groupGranFormato.Size = New System.Drawing.Size(720, 114)
+        Me.groupGranFormato.Size = New System.Drawing.Size(506, 99)
         Me.groupGranFormato.TabIndex = 9
         Me.groupGranFormato.TabStop = False
         Me.groupGranFormato.Text = "Gran Formato"
         '
         'txt_descripc_gran_formato
         '
-        Me.txt_descripc_gran_formato.Location = New System.Drawing.Point(106, 19)
+        Me.txt_descripc_gran_formato.Location = New System.Drawing.Point(79, 19)
         Me.txt_descripc_gran_formato.Multiline = True
         Me.txt_descripc_gran_formato.Name = "txt_descripc_gran_formato"
-        Me.txt_descripc_gran_formato.Size = New System.Drawing.Size(591, 78)
+        Me.txt_descripc_gran_formato.Size = New System.Drawing.Size(412, 65)
         Me.txt_descripc_gran_formato.TabIndex = 1
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(37, 55)
+        Me.Label3.Location = New System.Drawing.Point(10, 48)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 13)
         Me.Label3.TabIndex = 0
@@ -159,26 +159,26 @@ Partial Class frm_Proceso2
         Me.groupDigital.Controls.Add(Me.txt_descripc_digital)
         Me.groupDigital.Controls.Add(Me.Label2)
         Me.groupDigital.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.groupDigital.Location = New System.Drawing.Point(12, 132)
+        Me.groupDigital.Location = New System.Drawing.Point(12, 117)
         Me.groupDigital.Name = "groupDigital"
-        Me.groupDigital.Size = New System.Drawing.Size(720, 114)
+        Me.groupDigital.Size = New System.Drawing.Size(506, 99)
         Me.groupDigital.TabIndex = 8
         Me.groupDigital.TabStop = False
         Me.groupDigital.Text = "Digital"
         '
         'txt_descripc_digital
         '
-        Me.txt_descripc_digital.Location = New System.Drawing.Point(106, 19)
+        Me.txt_descripc_digital.Location = New System.Drawing.Point(79, 19)
         Me.txt_descripc_digital.Multiline = True
         Me.txt_descripc_digital.Name = "txt_descripc_digital"
-        Me.txt_descripc_digital.Size = New System.Drawing.Size(591, 78)
+        Me.txt_descripc_digital.Size = New System.Drawing.Size(412, 65)
         Me.txt_descripc_digital.TabIndex = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(37, 52)
+        Me.Label2.Location = New System.Drawing.Point(10, 47)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 13)
         Me.Label2.TabIndex = 0
@@ -191,24 +191,24 @@ Partial Class frm_Proceso2
         Me.groupOffSet.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.groupOffSet.Location = New System.Drawing.Point(12, 12)
         Me.groupOffSet.Name = "groupOffSet"
-        Me.groupOffSet.Size = New System.Drawing.Size(720, 114)
+        Me.groupOffSet.Size = New System.Drawing.Size(506, 99)
         Me.groupOffSet.TabIndex = 7
         Me.groupOffSet.TabStop = False
         Me.groupOffSet.Text = "OffSet"
         '
         'txt_descripc_offset
         '
-        Me.txt_descripc_offset.Location = New System.Drawing.Point(106, 19)
+        Me.txt_descripc_offset.Location = New System.Drawing.Point(79, 19)
         Me.txt_descripc_offset.Multiline = True
         Me.txt_descripc_offset.Name = "txt_descripc_offset"
-        Me.txt_descripc_offset.Size = New System.Drawing.Size(591, 78)
+        Me.txt_descripc_offset.Size = New System.Drawing.Size(412, 65)
         Me.txt_descripc_offset.TabIndex = 1
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(37, 53)
+        Me.Label1.Location = New System.Drawing.Point(10, 47)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(63, 13)
         Me.Label1.TabIndex = 0
@@ -218,7 +218,7 @@ Partial Class frm_Proceso2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(744, 658)
+        Me.ClientSize = New System.Drawing.Size(528, 569)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.groupLogistica)
@@ -227,6 +227,7 @@ Partial Class frm_Proceso2
         Me.Controls.Add(Me.groupDigital)
         Me.Controls.Add(Me.groupOffSet)
         Me.Name = "frm_Proceso2"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_Proceso2"
         Me.groupLogistica.ResumeLayout(False)
         Me.groupLogistica.PerformLayout()

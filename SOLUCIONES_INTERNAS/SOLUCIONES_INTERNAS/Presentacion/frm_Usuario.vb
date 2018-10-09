@@ -14,6 +14,7 @@
         txt_nombre_colaborador.Enabled = False
         btnActualizar_Usuario.Enabled = False
         btnNuevo_Usuario.Visible = False
+
     End Sub
 
     Public Sub cargargrilla()
