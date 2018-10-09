@@ -10,12 +10,6 @@
         armargrilla()
         cargargrillaproducto()
 
-        cbo_Tipo_Producto.Enabled = False
-        txt_Codigo.Enabled = False
-        txt_descripcion.Enabled = False
-        txt_Cantidad.Focus()
-        lblTotal_Productos.Text = dgvLista_Productos.RowCount
-        btnEliminar.Enabled = False
         dgvLista_Productos.ClearSelection()
     End Sub
 
@@ -133,47 +127,47 @@
     Private Sub btnIngresar_Stock_Click(sender As System.Object, e As System.EventArgs) Handles btnIngresar_Stock.Click
 
         'ACA DEBERIA GUARDAR EN LA TABLA MOVIMIENTO_PRODUCTO Y ADEMAS ACTUALIZAR STOCK EN LA TABLA PRODUCTOS
-        '   Try
-        If txt_Cantidad.TextLength = 0 Then
-            MsgBox("Debe completar todos los campos requeridos")
-            Exit Sub
-        End If
+        Try
+            If txt_Cantidad.TextLength = 0 Then
+                MsgBox("Debe completar todos los campos requeridos")
+                Exit Sub
+            End If
 
-        Dim prod_mov = New PRODUCTO_MOVIMIENTO
-        txt_id_producto_movimiento.Text = prod_mov.PROD_MOV_id
-        prod_mov.PROD_MOV_id = txt_id_producto_movimiento.Text
-        prod_mov.PROD_MOV_fecha = dtpFecha.Text
-        prod_mov.ORT_id_orden_trabajo = txt_numero_orden.Text
-        prod_mov.PROD_MOV_tipo = cbo_Tipo_Producto.Text
-        prod_mov.PROD_MOV_cantidad = txt_Cantidad.Text
-        prod_mov.PROD_id = txt_id_producto.Text
+            Dim prod_mov = New PRODUCTO_MOVIMIENTO
+            txt_id_producto_movimiento.Text = prod_mov.PROD_MOV_id
+            prod_mov.PROD_MOV_id = txt_id_producto_movimiento.Text
+            prod_mov.PROD_MOV_fecha = dtpFecha.Text
+            prod_mov.ORT_id_orden_trabajo = txt_numero_orden.Text
+            prod_mov.PROD_MOV_tipo = cbo_Tipo_Producto.Text
+            prod_mov.PROD_MOV_cantidad = txt_Cantidad.Text
+            prod_mov.PROD_id = txt_id_producto.Text
 
-        datacontext.PRODUCTO_MOVIMIENTO.InsertOnSubmit(prod_mov)
+            datacontext.PRODUCTO_MOVIMIENTO.InsertOnSubmit(prod_mov)
 
-        Dim cantidadtemporal As Integer
-        Dim ActualizarStock = (From c In datacontext.PRODUCTO Where c.PROD_id = CInt(txt_id_producto.Text)).ToList()(0)
+            Dim cantidadtemporal As Integer
+            Dim ActualizarStock = (From c In datacontext.PRODUCTO Where c.PROD_id = CInt(txt_id_producto.Text)).ToList()(0)
 
-        cantidadtemporal = CInt(ActualizarStock.PROD_stock)
+            cantidadtemporal = CInt(ActualizarStock.PROD_stock)
 
-        If cbo_Tipo_Producto.Text = "Alta" Then
-            cantidadtemporal = cantidadtemporal + CInt(txt_Cantidad.Text)
-            'frm_Productos.tb_prod_stock.Text = CInt(txt_Cantidad.Text)
-        Else
-            cantidadtemporal = cantidadtemporal - CInt(txt_Cantidad.Text)
-        End If
-        ActualizarStock.PROD_stock = CInt(cantidadtemporal)
+            If cbo_Tipo_Producto.Text = "Alta" Then
+                cantidadtemporal = cantidadtemporal + CInt(txt_Cantidad.Text)
+                'frm_Productos.tb_prod_stock.Text = CInt(txt_Cantidad.Text)
+            Else
+                cantidadtemporal = cantidadtemporal - CInt(txt_Cantidad.Text)
+            End If
+            ActualizarStock.PROD_stock = CInt(cantidadtemporal)
 
-        datacontext.SubmitChanges()
-        Select Case MsgBox("El Stock se ha actualizado, cargar otro?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Cargar Stock")
-            Case MsgBoxResult.No
-                Me.Close()
-            Case MsgBoxResult.Yes
-                limpiarcampos()
-        End Select
-        '   Catch ex As Exception
-        'MsgBox("El Stock no se ha sido actualizado")
-
-        ' End Try
+            datacontext.SubmitChanges()
+            Select Case MsgBox("El Stock se ha actualizado, cargar otro?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Cargar Stock")
+                Case MsgBoxResult.No
+                    Me.Close()
+                Case MsgBoxResult.Yes
+                    cargargrillaproducto()
+                    limpiarcampos()
+            End Select
+        Catch ex As Exception
+            MsgBox("El Stock no se ha sido actualizado")
+        End Try
     End Sub
 
     Sub limpiarcampos()

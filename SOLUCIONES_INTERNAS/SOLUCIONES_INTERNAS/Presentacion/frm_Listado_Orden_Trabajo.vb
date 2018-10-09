@@ -673,7 +673,7 @@
         frm_Orden_Trabajo.btnBuscar_cliente.Enabled = False
         frm_Orden_Trabajo.btnBuscar_Vendedor.Enabled = False
         frm_Orden_Trabajo.btnImprimir.Enabled = True
-        frm_Orden_Trabajo.Show()
+        frm_Orden_Trabajo.ShowDialog()
     End Sub
 
     Private Sub dgv_detalle_orden_CellDoubleClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellDoubleClick

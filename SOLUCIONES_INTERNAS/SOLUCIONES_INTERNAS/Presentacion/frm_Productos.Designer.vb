@@ -29,11 +29,15 @@ Partial Class frm_Productos
         Me.btn_prod_eliminar = New System.Windows.Forms.Button()
         Me.btn_prod_actualizar = New System.Windows.Forms.Button()
         Me.tb_prod_id = New System.Windows.Forms.TextBox()
-        Me.btn_prod_salir = New System.Windows.Forms.Button()
+        Me.btn_prod_cancelar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.tb_prod_stock_minimo = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.tb_prod_codigo = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -42,10 +46,6 @@ Partial Class frm_Productos
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.tb_prod_busqueda = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.tb_prod_codigo = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.tb_prod_stock_minimo = New System.Windows.Forms.TextBox()
         CType(Me.dgvLista_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -110,14 +110,14 @@ Partial Class frm_Productos
         Me.tb_prod_id.Size = New System.Drawing.Size(12, 20)
         Me.tb_prod_id.TabIndex = 7
         '
-        'btn_prod_salir
+        'btn_prod_cancelar
         '
-        Me.btn_prod_salir.Location = New System.Drawing.Point(288, 147)
-        Me.btn_prod_salir.Name = "btn_prod_salir"
-        Me.btn_prod_salir.Size = New System.Drawing.Size(90, 22)
-        Me.btn_prod_salir.TabIndex = 6
-        Me.btn_prod_salir.Text = "Salir"
-        Me.btn_prod_salir.UseVisualStyleBackColor = True
+        Me.btn_prod_cancelar.Location = New System.Drawing.Point(288, 147)
+        Me.btn_prod_cancelar.Name = "btn_prod_cancelar"
+        Me.btn_prod_cancelar.Size = New System.Drawing.Size(90, 22)
+        Me.btn_prod_cancelar.TabIndex = 6
+        Me.btn_prod_cancelar.Text = "Cancelar"
+        Me.btn_prod_cancelar.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -156,7 +156,7 @@ Partial Class frm_Productos
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.btn_prod_salir)
+        Me.GroupBox1.Controls.Add(Me.btn_prod_cancelar)
         Me.GroupBox1.Controls.Add(Me.btn_prod_actualizar)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.tb_prod_id)
@@ -169,6 +169,40 @@ Partial Class frm_Productos
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Gestión de productos"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(18, 105)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(72, 13)
+        Me.Label11.TabIndex = 18
+        Me.Label11.Text = "Stock mínimo"
+        '
+        'tb_prod_stock_minimo
+        '
+        Me.tb_prod_stock_minimo.Location = New System.Drawing.Point(96, 85)
+        Me.tb_prod_stock_minimo.Multiline = True
+        Me.tb_prod_stock_minimo.Name = "tb_prod_stock_minimo"
+        Me.tb_prod_stock_minimo.Size = New System.Drawing.Size(50, 50)
+        Me.tb_prod_stock_minimo.TabIndex = 3
+        Me.tb_prod_stock_minimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(31, 25)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(40, 13)
+        Me.Label2.TabIndex = 16
+        Me.Label2.Text = "Código"
+        '
+        'tb_prod_codigo
+        '
+        Me.tb_prod_codigo.Location = New System.Drawing.Point(77, 22)
+        Me.tb_prod_codigo.Name = "tb_prod_codigo"
+        Me.tb_prod_codigo.Size = New System.Drawing.Size(112, 20)
+        Me.tb_prod_codigo.TabIndex = 1
         '
         'Label7
         '
@@ -253,40 +287,6 @@ Partial Class frm_Productos
         Me.tb_prod_busqueda.Size = New System.Drawing.Size(159, 20)
         Me.tb_prod_busqueda.TabIndex = 8
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(31, 25)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(40, 13)
-        Me.Label2.TabIndex = 16
-        Me.Label2.Text = "Código"
-        '
-        'tb_prod_codigo
-        '
-        Me.tb_prod_codigo.Location = New System.Drawing.Point(77, 22)
-        Me.tb_prod_codigo.Name = "tb_prod_codigo"
-        Me.tb_prod_codigo.Size = New System.Drawing.Size(112, 20)
-        Me.tb_prod_codigo.TabIndex = 1
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(18, 105)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(72, 13)
-        Me.Label11.TabIndex = 18
-        Me.Label11.Text = "Stock mínimo"
-        '
-        'tb_prod_stock_minimo
-        '
-        Me.tb_prod_stock_minimo.Location = New System.Drawing.Point(96, 85)
-        Me.tb_prod_stock_minimo.Multiline = True
-        Me.tb_prod_stock_minimo.Name = "tb_prod_stock_minimo"
-        Me.tb_prod_stock_minimo.Size = New System.Drawing.Size(50, 50)
-        Me.tb_prod_stock_minimo.TabIndex = 3
-        Me.tb_prod_stock_minimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'frm_Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -312,7 +312,7 @@ Partial Class frm_Productos
     Friend WithEvents btn_prod_eliminar As System.Windows.Forms.Button
     Friend WithEvents btn_prod_actualizar As System.Windows.Forms.Button
     Friend WithEvents tb_prod_id As System.Windows.Forms.TextBox
-    Friend WithEvents btn_prod_salir As System.Windows.Forms.Button
+    Friend WithEvents btn_prod_cancelar As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label

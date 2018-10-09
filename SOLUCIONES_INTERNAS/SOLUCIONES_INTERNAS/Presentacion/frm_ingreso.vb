@@ -70,6 +70,16 @@
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
 
+                frm_Principal.ProductoToolStripMenuItem.Visible = True
+
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(3).Visible = True
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
+
                 frm_Principal.OrdenTrabajoToolStripMenuItem.Visible = True
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = True 'nueva
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = True 'modificar
@@ -141,15 +151,13 @@
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
 
                 frm_Principal.ProductoToolStripMenuItem.Visible = True
-                frm_Principal.ProductoToolStripMenuItem.DropDownItems(0).Visible = False
-                frm_Principal.ProductoToolStripMenuItem.DropDownItems(1).Visible = False
-                frm_Principal.ProductoToolStripMenuItem.DropDownItems(2).Visible = False
-                frm_Principal.ProductoToolStripMenuItem.DropDownItems(3).Visible = True
-
-                frm_Principal.StockToolStripMenuItem.Visible = True
-                frm_Principal.StockToolStripMenuItem.DropDownItems(0).Visible = False
-                frm_Principal.StockToolStripMenuItem.DropDownItems(1).Visible = False
-                frm_Principal.StockToolStripMenuItem.DropDownItems(2).Visible = True
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = False
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Visible = False
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Visible = False
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(3).Visible = True
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Visible = False
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = False
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
 
                 frm_Principal.OrdenTrabajoToolStripMenuItem.Visible = True
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = False 'nueva
@@ -209,6 +217,15 @@
                 frm_Principal.SectorToolStripMenuItem.DropDownItems(1).Visible = True
                 frm_Principal.SectorToolStripMenuItem.DropDownItems(2).Visible = True
                 frm_Principal.SectorToolStripMenuItem.DropDownItems(3).Visible = True
+
+                frm_Principal.ProductoToolStripMenuItem.Visible = True
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(3).Visible = True
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
 
                 frm_Principal.TareasToolStripMenuItem.Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(0).Visible = True
@@ -271,6 +288,15 @@
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
+
+                frm_Principal.ProductoToolStripMenuItem.Visible = True
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
+                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(3).Visible = True
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
 
                 frm_Principal.OrdenTrabajoToolStripMenuItem.Visible = True
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = True 'nueva

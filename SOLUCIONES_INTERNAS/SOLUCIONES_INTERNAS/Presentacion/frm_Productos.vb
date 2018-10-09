@@ -27,7 +27,6 @@
             'consulta si quiere cargar otro cliente
             Select Case MsgBox("El producto fue ingresado, cargar otro?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Nuevo producto")
                 Case MsgBoxResult.No
-                    '   Me.Dispose()
                     Me.Close()
                 Case MsgBoxResult.Yes
                     limpiarcampos()
@@ -79,24 +78,20 @@
                            Order By PROD_descripcion Ascending
         dgvLista_Productos.DataSource = consultaprod
         Label9.Text = dgvLista_Productos.Rows.Count
-
-        For Each row As DataGridViewRow In dgvLista_Productos.Rows
-            If row.Cells(3).Value <= row.Cells(4).Value Then
-                row.DefaultCellStyle.BackColor = Color.Red
-                'ElseIf row.Cells("PERMISO").Value.ToString() = "ESCRITURA" Then
-                '    row.DefaultCellStyle.BackColor = Color.Violet
-                'ElseIf row.Cells("PERMISO").Value.ToString() = "TODOS LOS PERMISOS" Then
-                '    row.DefaultCellStyle.BackColor = Color.LightGray
-            End If
-        Next
     End Sub
 
     Private Sub frm_Productos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        limpiarcampos()
+        ' limpiarcampos()
         armargrilla()
         cargargrilla()
         dgvLista_Productos.ClearSelection()
         Label9.Text = dgvLista_Productos.Rows.Count
+
+        For Each row As DataGridViewRow In dgvLista_Productos.Rows
+            If row.Cells(3).Value <= row.Cells(4).Value Then
+                row.DefaultCellStyle.BackColor = Color.Red
+            End If
+        Next
     End Sub
 
     Private Sub dgvLista_Productos_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvLista_Productos.Click
@@ -118,7 +113,6 @@
             MsgBox("Debe completar todos los campos requeridos")
             Exit Sub
         End If
-
         Try
             Dim ActualizarProducto = (From p In datacontext.PRODUCTO Where p.PROD_id = tb_prod_id.Text).ToList()(0)
             ActualizarProducto.PROD_codigo = tb_prod_codigo.Text
@@ -155,7 +149,7 @@
         End If
     End Sub
 
-    Private Sub btn_prod_salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_prod_salir.Click
+    Private Sub btn_prod_salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_prod_cancelar.Click
         Me.Close()
         Me.Dispose()
     End Sub
