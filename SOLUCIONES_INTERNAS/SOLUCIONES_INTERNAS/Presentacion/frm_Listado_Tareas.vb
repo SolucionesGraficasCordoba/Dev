@@ -154,6 +154,7 @@
 
     'BOTON MODIFICAR (CARGA LOS DATOS EN CADA UNO DE LOS CONTROLES)
     Private Sub btnModificar_Tarea_Click(sender As System.Object, e As System.EventArgs) Handles btnModificar_Tarea.Click
+
         If dgvColaboradores.RowCount = 0 Then
             MsgBox("Debe seleccionar un Sector")
             Exit Sub

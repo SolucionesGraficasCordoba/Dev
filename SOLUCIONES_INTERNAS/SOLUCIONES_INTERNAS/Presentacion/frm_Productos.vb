@@ -80,6 +80,11 @@
         Label9.Text = dgvLista_Productos.Rows.Count
     End Sub
 
+    Private Sub frm_Productos_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        '  Me.Close()
+        Me.Dispose()
+    End Sub
+
     Private Sub frm_Productos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ' limpiarcampos()
         armargrilla()
@@ -149,7 +154,7 @@
         End If
     End Sub
 
-    Private Sub btn_prod_salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_prod_cancelar.Click
+    Private Sub btn_prod_salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_prod_salir.Click
         Me.Close()
         Me.Dispose()
     End Sub

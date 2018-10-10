@@ -11,8 +11,6 @@
         cargargrilla()
         armargrilla()
         Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
-        ' dgvLista_Orden_Trabajo.ClearSelection()
-        'dgv_detalle_orden.Enabled = False
     End Sub
 
     'CARGA GRILLA ORDEN

@@ -37,7 +37,7 @@ Public Class frm_Principal
 
     Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
-        Application.ExitThread()
+        Application.Exit()
         Me.Dispose()
     End Sub
 
@@ -1142,8 +1142,8 @@ Public Class frm_Principal
     Private Sub NuevoToolStripMenuItem_Click_1(sender As System.Object, e As System.EventArgs) Handles NuevoToolStripMenuItem.Click
 
         frm_Productos.Text = "Nuevo Producto"
-
         frm_Productos.dgvLista_Productos.ClearSelection()
+        frm_Productos.GroupBox2.Enabled = False
 
         frm_Productos.tb_prod_id.Visible = False
         frm_Productos.Label1.Visible = False
@@ -1156,24 +1156,21 @@ Public Class frm_Principal
 
         frm_Productos.btn_prod_guardar.Enabled = True
         frm_Productos.btn_prod_actualizar.Enabled = False
-        frm_Productos.btn_prod_cancelar.Enabled = True
+        frm_Productos.btn_prod_salir.Enabled = True
         frm_Productos.btn_prod_eliminar.Enabled = False
-
-        frm_Productos.dgvLista_Productos.Enabled = False
 
         For Each row As DataGridViewRow In frm_Productos.dgvLista_Productos.Rows
             If row.Cells(3).Value <= row.Cells(4).Value Then
                 row.DefaultCellStyle.BackColor = Color.Red
             End If
         Next
-
         frm_Productos.ShowDialog()
     End Sub
 
     Private Sub ModificarToolStripMenuItem_Click_1(sender As System.Object, e As System.EventArgs) Handles ModificarToolStripMenuItem.Click
 
         frm_Productos.Text = "Modificar Producto"
-
+        frm_Productos.GroupBox2.Enabled = True
         frm_Productos.tb_prod_id.Visible = False
         frm_Productos.Label1.Visible = False
 
@@ -1185,25 +1182,19 @@ Public Class frm_Principal
 
         frm_Productos.btn_prod_guardar.Enabled = False
         frm_Productos.btn_prod_actualizar.Enabled = True
-        frm_Productos.btn_prod_cancelar.Enabled = True
+        frm_Productos.btn_prod_salir.Enabled = True
         frm_Productos.btn_prod_eliminar.Enabled = False
 
         frm_Productos.dgvLista_Productos.ClearSelection()
         frm_Productos.dgvLista_Productos.Enabled = True
-
-        For Each row As DataGridViewRow In frm_Productos.dgvLista_Productos.Rows
-            If row.Cells(3).Value <= row.Cells(4).Value Then
-                row.DefaultCellStyle.BackColor = Color.Red
-            End If
-        Next
-
         frm_Productos.ShowDialog()
     End Sub
 
     Private Sub EliminarToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles EliminarToolStripMenuItem1.Click
 
         frm_Productos.Text = "Eliminar Producto"
-
+        frm_Productos.dgvLista_Productos.ClearSelection()
+        frm_Productos.GroupBox2.Enabled = True
         frm_Productos.tb_prod_id.Visible = False
         frm_Productos.Label1.Visible = False
 
@@ -1221,23 +1212,17 @@ Public Class frm_Principal
 
         frm_Productos.btn_prod_guardar.Enabled = False
         frm_Productos.btn_prod_actualizar.Enabled = False
-        frm_Productos.btn_prod_cancelar.Enabled = True
+        frm_Productos.btn_prod_salir.Enabled = True
         frm_Productos.btn_prod_eliminar.Enabled = True
 
-        frm_Productos.dgvLista_Productos.ClearSelection()
         frm_Productos.dgvLista_Productos.Enabled = True
-
-        For Each row As DataGridViewRow In frm_Productos.dgvLista_Productos.Rows
-            If row.Cells(3).Value <= row.Cells(4).Value Then
-                row.DefaultCellStyle.BackColor = Color.Red
-            End If
-        Next
         frm_Productos.ShowDialog()
     End Sub
 
     Private Sub ConsultarToolStripMenuItem2_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem2.Click
-        frm_Productos.Text = "Consultar Producto"
 
+        frm_Productos.Text = "Consultar Producto"
+        frm_Productos.GroupBox2.Enabled = True
         frm_Productos.tb_prod_id.Visible = False
         frm_Productos.Label1.Visible = False
 
@@ -1255,7 +1240,7 @@ Public Class frm_Principal
 
         frm_Productos.btn_prod_guardar.Enabled = False
         frm_Productos.btn_prod_actualizar.Enabled = False
-        frm_Productos.btn_prod_cancelar.Enabled = True
+        frm_Productos.btn_prod_salir.Enabled = True
         frm_Productos.btn_prod_eliminar.Enabled = False
 
         frm_Productos.dgvLista_Productos.ClearSelection()
@@ -1263,13 +1248,13 @@ Public Class frm_Principal
 
         frm_Productos.ShowDialog()
 
-      
+
     End Sub
 
     Private Sub AltaToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles AltaToolStripMenuItem1.Click
 
         frm_Movimiento_Producto.Text = "Alta de Productos"
-
+        frm_Movimiento_Producto.GroupListadoProductos.Enabled = True
         frm_Movimiento_Producto.txt_Codigo.Focus()
         frm_Movimiento_Producto.txt_Codigo.Clear()
         frm_Movimiento_Producto.txt_descripcion.Clear()
@@ -1296,7 +1281,7 @@ Public Class frm_Principal
 
     Private Sub BajaToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles BajaToolStripMenuItem1.Click
         frm_Movimiento_Producto.Text = "Baja de Productos"
-
+        frm_Movimiento_Producto.GroupListadoProductos.Enabled = True
         frm_Movimiento_Producto.txt_Codigo.Clear()
         frm_Movimiento_Producto.txt_descripcion.Clear()
         frm_Movimiento_Producto.txt_numero_orden.Clear()

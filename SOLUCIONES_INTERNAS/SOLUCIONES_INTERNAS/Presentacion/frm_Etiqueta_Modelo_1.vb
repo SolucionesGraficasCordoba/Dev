@@ -35,7 +35,6 @@ Public Class frm_Etiqueta_Modelo_1
         txtDomicilio.Clear()
         txtLocalidad.Clear()
         txtCodigoPostal.Clear()
-        txtDespachado.Clear()
         txtSeccion.Clear()
         txtCantidadBultos.Clear()
         txtNumeroBultos.Clear()
@@ -149,7 +148,8 @@ Public Class frm_Etiqueta_Modelo_1
 
     Private Sub btnGenerarEtiquetas_Click(sender As System.Object, e As System.EventArgs) Handles btnGenerarEtiquetas.Click
         Dim consulta As String = "ETIQUETA_GENERICA_DIARIA_" + Date.Now.Millisecond.ToString + ".csv"
-        '  Dim filePath As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta
+        ' Dim filePath As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta
+        '  Dim filePath As String = "\\WSMALDIG3\PlanetPress\Etiquetas\IN_Etiquetas\" + consulta
         Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
         Dim delimeter As String = ","
         Dim sb As New StringBuilder

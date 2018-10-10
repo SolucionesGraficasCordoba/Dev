@@ -47,7 +47,7 @@ Partial Class frm_Movimiento_Producto
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnIngresar_Stock = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.GroupListadoColaboradores = New System.Windows.Forms.GroupBox()
+        Me.GroupListadoProductos = New System.Windows.Forms.GroupBox()
         Me.lblTotal_Productos = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
@@ -55,7 +55,7 @@ Partial Class frm_Movimiento_Producto
         Me.dgvLista_Productos = New System.Windows.Forms.DataGridView()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupListadoColaboradores.SuspendLayout()
+        Me.GroupListadoProductos.SuspendLayout()
         CType(Me.dgvLista_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -297,25 +297,25 @@ Partial Class frm_Movimiento_Producto
         Me.Label13.TabIndex = 76
         Me.Label13.Text = "* (Campo Requerido)"
         '
-        'GroupListadoColaboradores
+        'GroupListadoProductos
         '
-        Me.GroupListadoColaboradores.Controls.Add(Me.lblTotal_Productos)
-        Me.GroupListadoColaboradores.Controls.Add(Me.Label10)
-        Me.GroupListadoColaboradores.Controls.Add(Me.btnEliminar)
-        Me.GroupListadoColaboradores.Controls.Add(Me.txt_Buscar_Producto)
-        Me.GroupListadoColaboradores.Controls.Add(Me.Label13)
-        Me.GroupListadoColaboradores.Controls.Add(Me.dgvLista_Productos)
-        Me.GroupListadoColaboradores.Controls.Add(Me.Label11)
-        Me.GroupListadoColaboradores.Controls.Add(Me.txt_id_producto_movimiento)
-        Me.GroupListadoColaboradores.Controls.Add(Me.Label7)
-        Me.GroupListadoColaboradores.Controls.Add(Me.txt_id_producto)
-        Me.GroupListadoColaboradores.Controls.Add(Me.Label1)
-        Me.GroupListadoColaboradores.Location = New System.Drawing.Point(12, 198)
-        Me.GroupListadoColaboradores.Name = "GroupListadoColaboradores"
-        Me.GroupListadoColaboradores.Size = New System.Drawing.Size(448, 265)
-        Me.GroupListadoColaboradores.TabIndex = 68
-        Me.GroupListadoColaboradores.TabStop = False
-        Me.GroupListadoColaboradores.Text = "Listado de Productos"
+        Me.GroupListadoProductos.Controls.Add(Me.lblTotal_Productos)
+        Me.GroupListadoProductos.Controls.Add(Me.Label10)
+        Me.GroupListadoProductos.Controls.Add(Me.btnEliminar)
+        Me.GroupListadoProductos.Controls.Add(Me.txt_Buscar_Producto)
+        Me.GroupListadoProductos.Controls.Add(Me.Label13)
+        Me.GroupListadoProductos.Controls.Add(Me.dgvLista_Productos)
+        Me.GroupListadoProductos.Controls.Add(Me.Label11)
+        Me.GroupListadoProductos.Controls.Add(Me.txt_id_producto_movimiento)
+        Me.GroupListadoProductos.Controls.Add(Me.Label7)
+        Me.GroupListadoProductos.Controls.Add(Me.txt_id_producto)
+        Me.GroupListadoProductos.Controls.Add(Me.Label1)
+        Me.GroupListadoProductos.Location = New System.Drawing.Point(12, 198)
+        Me.GroupListadoProductos.Name = "GroupListadoProductos"
+        Me.GroupListadoProductos.Size = New System.Drawing.Size(448, 265)
+        Me.GroupListadoProductos.TabIndex = 68
+        Me.GroupListadoProductos.TabStop = False
+        Me.GroupListadoProductos.Text = "Listado de Productos"
         '
         'lblTotal_Productos
         '
@@ -374,15 +374,15 @@ Partial Class frm_Movimiento_Producto
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(471, 474)
-        Me.Controls.Add(Me.GroupListadoColaboradores)
+        Me.Controls.Add(Me.GroupListadoProductos)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Movimiento_Producto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Movimiento de Producto"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.GroupListadoColaboradores.ResumeLayout(False)
-        Me.GroupListadoColaboradores.PerformLayout()
+        Me.GroupListadoProductos.ResumeLayout(False)
+        Me.GroupListadoProductos.PerformLayout()
         CType(Me.dgvLista_Productos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -401,7 +401,7 @@ Partial Class frm_Movimiento_Producto
     Friend WithEvents txt_Cantidad As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupListadoColaboradores As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupListadoProductos As System.Windows.Forms.GroupBox
     Friend WithEvents lblTotal_Productos As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents btnEliminar As System.Windows.Forms.Button

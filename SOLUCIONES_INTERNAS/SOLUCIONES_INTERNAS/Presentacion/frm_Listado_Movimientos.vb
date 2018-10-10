@@ -30,7 +30,6 @@
         dgv_movimientos.ClearSelection()
     End Sub
 
-
     Private Sub ArmaGrillaRetrabajo()
         dgv_movimientos.Enabled = True
         dgv_movimientos.AutoGenerateColumns = False
@@ -85,16 +84,6 @@
                                    pm.PROD_MOV_cantidad Order By PROD_MOV_id Descending)
 
         dgv_movimientos.DataSource = carga
-
-        For Each row As DataGridViewRow In dgv_movimientos.Rows
-            If row.Cells(3).Value <= 300 Then
-                row.DefaultCellStyle.BackColor = Color.Red
-                'ElseIf row.Cells("PERMISO").Value.ToString() = "ESCRITURA" Then
-                '    row.DefaultCellStyle.BackColor = Color.Violet
-                'ElseIf row.Cells("PERMISO").Value.ToString() = "TODOS LOS PERMISOS" Then
-                '    row.DefaultCellStyle.BackColor = Color.LightGray
-            End If
-        Next
     End Sub
 
     Private Sub btn_Cancelar_Click(sender As System.Object, e As System.EventArgs) Handles btn_Cancelar.Click
