@@ -39,16 +39,16 @@ Partial Class frm_Listado_Movimientos
         Me.GroupDetallesOrden.Controls.Add(Me.Label8)
         Me.GroupDetallesOrden.Controls.Add(Me.btn_Cancelar)
         Me.GroupDetallesOrden.Controls.Add(Me.dgv_movimientos)
-        Me.GroupDetallesOrden.Location = New System.Drawing.Point(12, 12)
+        Me.GroupDetallesOrden.Location = New System.Drawing.Point(12, 8)
         Me.GroupDetallesOrden.Name = "GroupDetallesOrden"
-        Me.GroupDetallesOrden.Size = New System.Drawing.Size(536, 299)
+        Me.GroupDetallesOrden.Size = New System.Drawing.Size(454, 274)
         Me.GroupDetallesOrden.TabIndex = 31
         Me.GroupDetallesOrden.TabStop = False
         Me.GroupDetallesOrden.Text = "Listado de Movimientos"
         '
         'btnImprimir
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(333, 266)
+        Me.btnImprimir.Location = New System.Drawing.Point(258, 241)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(90, 23)
         Me.btnImprimir.TabIndex = 40
@@ -57,7 +57,7 @@ Partial Class frm_Listado_Movimientos
         '
         'txt_Buscar_Producto
         '
-        Me.txt_Buscar_Producto.Location = New System.Drawing.Point(141, 26)
+        Me.txt_Buscar_Producto.Location = New System.Drawing.Point(113, 19)
         Me.txt_Buscar_Producto.Name = "txt_Buscar_Producto"
         Me.txt_Buscar_Producto.Size = New System.Drawing.Size(123, 20)
         Me.txt_Buscar_Producto.TabIndex = 39
@@ -65,7 +65,7 @@ Partial Class frm_Listado_Movimientos
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(47, 29)
+        Me.Label8.Location = New System.Drawing.Point(19, 22)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(88, 13)
         Me.Label8.TabIndex = 38
@@ -73,7 +73,7 @@ Partial Class frm_Listado_Movimientos
         '
         'btn_Cancelar
         '
-        Me.btn_Cancelar.Location = New System.Drawing.Point(429, 266)
+        Me.btn_Cancelar.Location = New System.Drawing.Point(354, 241)
         Me.btn_Cancelar.Name = "btn_Cancelar"
         Me.btn_Cancelar.Size = New System.Drawing.Size(90, 23)
         Me.btn_Cancelar.TabIndex = 36
@@ -83,17 +83,17 @@ Partial Class frm_Listado_Movimientos
         'dgv_movimientos
         '
         Me.dgv_movimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_movimientos.Location = New System.Drawing.Point(16, 52)
+        Me.dgv_movimientos.Location = New System.Drawing.Point(10, 45)
         Me.dgv_movimientos.Name = "dgv_movimientos"
         Me.dgv_movimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_movimientos.Size = New System.Drawing.Size(503, 208)
+        Me.dgv_movimientos.Size = New System.Drawing.Size(434, 190)
         Me.dgv_movimientos.TabIndex = 32
         '
         'frm_Listado_Movimientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(560, 319)
+        Me.ClientSize = New System.Drawing.Size(475, 290)
         Me.Controls.Add(Me.GroupDetallesOrden)
         Me.Name = "frm_Listado_Movimientos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

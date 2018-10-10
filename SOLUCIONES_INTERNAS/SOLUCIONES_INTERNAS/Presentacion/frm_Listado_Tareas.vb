@@ -30,8 +30,7 @@
         dgvColaboradores.Columns(0).DataPropertyName = "COL_id_colaborador"
         dgvColaboradores.Columns(0).Visible = False
         dgvColaboradores.Columns(1).DataPropertyName = "COL_nombre_col"
-        dgvColaboradores.Columns(1).Width = 300
-
+        dgvColaboradores.Columns(1).Width = 350
     End Sub
 
     'BOTON ELIMINAR
@@ -130,7 +129,9 @@
         dgvTarea_x_Colaborador.Columns(1).DataPropertyName = "TAR_detalle_tarea"
         dgvTarea_x_Colaborador.Columns(1).Width = 200
         dgvTarea_x_Colaborador.Columns(2).DataPropertyName = "TAR_tiempo_estimado"
+        dgvTarea_x_Colaborador.Columns(2).Width = 60
         dgvTarea_x_Colaborador.Columns(3).DataPropertyName = "TAR_tiempo_real"
+        dgvTarea_x_Colaborador.Columns(3).Width = 60
         dgvTarea_x_Colaborador.Columns(4).DataPropertyName = "TAR_observaciones"
         dgvTarea_x_Colaborador.Columns(5).DataPropertyName = "ORT_id_orden_trabajo"
         dgvTarea_x_Colaborador.Columns(5).Visible = False
@@ -141,6 +142,7 @@
         dgvTarea_x_Colaborador.Columns(8).DataPropertyName = "TAR_carga_horaria"
         dgvTarea_x_Colaborador.Columns(8).Visible = False
         dgvTarea_x_Colaborador.Columns(9).DataPropertyName = "TAR_hora_fin"
+        dgvTarea_x_Colaborador.Columns(9).Width = 60
         dgvTarea_x_Colaborador.Columns(10).DataPropertyName = "Expr1"
         dgvTarea_x_Colaborador.Columns(10).Visible = False
         dgvTarea_x_Colaborador.Columns(11).DataPropertyName = "COL_nombre_col"
@@ -661,10 +663,13 @@
             MsgBox("El Colaborador no tiene tareas por mostrar")
             Exit Sub
         End If
-        DeshabilitarText()
-        frm_Tarea.Show()
         frm_Tarea.Text = "Consultar Tarea"
         frm_Tarea.btnImprimir.Visible = True
+        frm_Tarea.txt_nombre_colaborador.Enabled = False
+        DeshabilitarText()
+        frm_Tarea.ShowDialog()
+
+
     End Sub
 
     Public Sub DeshabilitarText()
@@ -794,6 +799,48 @@
         frm_Tarea.btnBuscar_Numero_Orden19.Enabled = False
         frm_Tarea.btnBuscar_Numero_Orden20.Enabled = False
 
+        frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo14.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo15.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo16.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo17.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo18.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo19.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo20.Enabled = False
+
+        frm_Tarea.txt_id_orden_trabajo1.Visible = False
+        frm_Tarea.txt_id_orden_trabajo2.Visible = False
+        frm_Tarea.txt_id_orden_trabajo3.Visible = False
+        frm_Tarea.txt_id_orden_trabajo4.Visible = False
+        frm_Tarea.txt_id_orden_trabajo5.Visible = False
+        frm_Tarea.txt_id_orden_trabajo6.Visible = False
+        frm_Tarea.txt_id_orden_trabajo7.Visible = False
+        frm_Tarea.txt_id_orden_trabajo8.Visible = False
+        frm_Tarea.txt_id_orden_trabajo9.Visible = False
+        frm_Tarea.txt_id_orden_trabajo10.Visible = False
+        frm_Tarea.txt_id_orden_trabajo11.Visible = False
+        frm_Tarea.txt_id_orden_trabajo12.Visible = False
+        frm_Tarea.txt_id_orden_trabajo13.Visible = False
+        frm_Tarea.txt_id_orden_trabajo14.Visible = False
+        frm_Tarea.txt_id_orden_trabajo15.Visible = False
+        frm_Tarea.txt_id_orden_trabajo16.Visible = False
+        frm_Tarea.txt_id_orden_trabajo17.Visible = False
+        frm_Tarea.txt_id_orden_trabajo18.Visible = False
+        frm_Tarea.txt_id_orden_trabajo19.Visible = False
+        frm_Tarea.txt_id_orden_trabajo20.Visible = False
+
         frm_Tarea.btnImprimir.Enabled = True
         frm_Tarea.btnBuscar_Colaborador.Enabled = False
         frm_Tarea.dtpFecha.Enabled = False
@@ -801,5 +848,8 @@
         frm_Tarea.btnImprimir.Enabled = True
         frm_Tarea.btnNueva_Tarea.Enabled = False
         frm_Tarea.btnGuardar_Tarea.Enabled = False
+        frm_Tarea.Label1.Visible = False
+        frm_Tarea.txt_id_colaborador.Visible = False
+        frm_Tarea.txt_id_tarea.Visible = False
     End Sub
 End Class

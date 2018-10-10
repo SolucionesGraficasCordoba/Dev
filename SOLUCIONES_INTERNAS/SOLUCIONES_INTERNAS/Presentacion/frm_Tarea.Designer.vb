@@ -263,7 +263,6 @@ Partial Class frm_Tarea
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label33 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
@@ -281,7 +280,7 @@ Partial Class frm_Tarea
         '
         Me.txt_Carga_Horaria1.Location = New System.Drawing.Point(611, 18)
         Me.txt_Carga_Horaria1.Name = "txt_Carga_Horaria1"
-        Me.txt_Carga_Horaria1.Size = New System.Drawing.Size(76, 20)
+        Me.txt_Carga_Horaria1.Size = New System.Drawing.Size(44, 20)
         Me.txt_Carga_Horaria1.TabIndex = 3
         Me.txt_Carga_Horaria1.Text = "540"
         '
@@ -2433,15 +2432,6 @@ Partial Class frm_Tarea
         Me.Label32.TabIndex = 32
         Me.Label32.Text = "Carga horaria"
         '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(695, 12)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(45, 13)
-        Me.Label33.TabIndex = 0
-        Me.Label33.Text = "id_tarea"
-        '
         'Label34
         '
         Me.Label34.AutoSize = True
@@ -2514,7 +2504,6 @@ Partial Class frm_Tarea
         Me.GroupBox2.Controls.Add(Me.txt_id_colaborador)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.Label37)
-        Me.GroupBox2.Controls.Add(Me.Label33)
         Me.GroupBox2.Controls.Add(Me.txt_id_tarea)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.Label32)
@@ -2717,7 +2706,6 @@ Partial Class frm_Tarea
     Friend WithEvents TextBox107 As System.Windows.Forms.TextBox
     Friend WithEvents Label63 As System.Windows.Forms.Label
     Friend WithEvents Label32 As System.Windows.Forms.Label
-    Friend WithEvents Label33 As System.Windows.Forms.Label
     Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents Label36 As System.Windows.Forms.Label
     Friend WithEvents Label62 As System.Windows.Forms.Label

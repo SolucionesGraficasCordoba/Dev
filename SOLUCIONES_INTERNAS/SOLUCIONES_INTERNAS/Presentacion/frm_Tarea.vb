@@ -3,56 +3,7 @@
     Dim quienllamoboton As Button
 
     Private Sub frm_Tarea_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        txt_id_tarea.Visible = False
-        Label1.Visible = False
-        Label33.Visible = False
-        txt_nombre_colaborador.Enabled = False
-        txt_detalle_tarea1.Focus()
-        txt_id_colaborador.Visible = False
-        btnNueva_Tarea.Visible = False
-        btnImprimir.Visible = False
 
-        txt_id_orden_trabajo1.Visible = False
-        txt_id_orden_trabajo2.Visible = False
-        txt_id_orden_trabajo3.Visible = False
-        txt_id_orden_trabajo4.Visible = False
-        txt_id_orden_trabajo5.Visible = False
-        txt_id_orden_trabajo6.Visible = False
-        txt_id_orden_trabajo7.Visible = False
-        txt_id_orden_trabajo8.Visible = False
-        txt_id_orden_trabajo9.Visible = False
-        txt_id_orden_trabajo10.Visible = False
-        txt_id_orden_trabajo11.Visible = False
-        txt_id_orden_trabajo12.Visible = False
-        txt_id_orden_trabajo13.Visible = False
-        txt_id_orden_trabajo14.Visible = False
-        txt_id_orden_trabajo15.Visible = False
-        txt_id_orden_trabajo16.Visible = False
-        txt_id_orden_trabajo17.Visible = False
-        txt_id_orden_trabajo18.Visible = False
-        txt_id_orden_trabajo19.Visible = False
-        txt_id_orden_trabajo20.Visible = False
-
-        txtNumero_Orden_Trabajo1.Enabled = False
-        txtNumero_Orden_Trabajo2.Enabled = False
-        txtNumero_Orden_Trabajo3.Enabled = False
-        txtNumero_Orden_Trabajo4.Enabled = False
-        txtNumero_Orden_Trabajo5.Enabled = False
-        txtNumero_Orden_Trabajo6.Enabled = False
-        txtNumero_Orden_Trabajo7.Enabled = False
-        txtNumero_Orden_Trabajo8.Enabled = False
-        txtNumero_Orden_Trabajo9.Enabled = False
-        txtNumero_Orden_Trabajo10.Enabled = False
-        txtNumero_Orden_Trabajo11.Enabled = False
-        txtNumero_Orden_Trabajo12.Enabled = False
-        txtNumero_Orden_Trabajo13.Enabled = False
-        txtNumero_Orden_Trabajo14.Enabled = False
-        txtNumero_Orden_Trabajo15.Enabled = False
-        txtNumero_Orden_Trabajo16.Enabled = False
-        txtNumero_Orden_Trabajo17.Enabled = False
-        txtNumero_Orden_Trabajo18.Enabled = False
-        txtNumero_Orden_Trabajo19.Enabled = False
-        txtNumero_Orden_Trabajo20.Enabled = False
     End Sub
 
     Private Sub btnGuardar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Tarea.Click

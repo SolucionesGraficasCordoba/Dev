@@ -2,21 +2,12 @@
 Imports System.Text
 
 Public Class frm_Etiqueta_Modelo_1
-
-
-    Private Sub frm_Etiqueta_Modelo_1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
-        Label2.Enabled = False
-        Label15.Enabled = False
-        Label16.Enabled = False
-        Label17.Enabled = False
-        Label18.Enabled = False
+    Private Sub frm_Etiqueta_Modelo_1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ArmarEtiqueta()
         txtId_Cliente.Visible = False
         txt_id_orden.Visible = False
         btnBuscarCliente.Visible = False
         btnBuscar_Orden.Focus()
-
         dgv_Etiquetas.ClearSelection()
     End Sub
 
