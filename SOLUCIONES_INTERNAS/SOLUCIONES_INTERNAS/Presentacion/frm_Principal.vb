@@ -138,6 +138,7 @@ Public Class frm_Principal
         frm_Tarea.txt_nombre_colaborador.Enabled = False
         frm_Tarea.txt_id_tarea.Visible = False
         Label1.Visible = False
+        frm_Tarea.dtpFecha.Text = Now
         frm_Tarea.txt_detalle_tarea1.Focus()
 
         frm_Tarea.txt_detalle_tarea1.Clear()
@@ -450,6 +451,7 @@ Public Class frm_Principal
         frm_Tarea.btnImprimir.Enabled = False
         frm_Listado_Tareas.btnVer.Enabled = False
         frm_Listado_Tareas.btnAgregar.Enabled = False
+        frm_Listado_Tareas.dtpFecha.Text = Now
         frm_Listado_Tareas.ShowDialog()
     End Sub
 
@@ -934,6 +936,7 @@ Public Class frm_Principal
         frm_Listado_Tareas.btnModificar_Tarea.Enabled = False
         frm_Listado_Tareas.btnAgregar.Enabled = False
         frm_Listado_Tareas.btnVer.Enabled = False
+        frm_Listado_Tareas.dtpFecha.Text = Now
         frm_Listado_Tareas.ShowDialog()
     End Sub
 
@@ -950,6 +953,7 @@ Public Class frm_Principal
         frm_Listado_Tareas.btnModificar_Tarea.Enabled = False
         frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
         frm_Listado_Tareas.btnAgregar.Enabled = False
+        frm_Listado_Tareas.dtpFecha.Text = Now
         frm_Listado_Tareas.ShowDialog()
     End Sub
 
