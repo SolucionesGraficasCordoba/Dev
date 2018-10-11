@@ -73,7 +73,7 @@
         buscar = Me.txt_Buscar_Producto.Text & "*"
         Dim consultaprod = From U In datacontext.PRODUCTO
                           Select U.PROD_id, U.PROD_codigo, U.PROD_descripcion, U.PROD_stock
-                          Where PROD_codigo Like buscar.ToString
+                          Where PROD_descripcion Like buscar.ToString
         dgvLista_Productos.DataSource = consultaprod
     End Sub
 

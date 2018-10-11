@@ -1268,7 +1268,7 @@ Public Class frm_Principal
         frm_Movimiento_Producto.txt_descripcion.Enabled = False
         frm_Movimiento_Producto.txt_numero_orden.Enabled = True
         frm_Movimiento_Producto.txt_Cantidad.Enabled = True
-        frm_Movimiento_Producto.txt_Buscar_Producto.Enabled = False
+        frm_Movimiento_Producto.txt_Buscar_Producto.Enabled = True
 
         frm_Movimiento_Producto.btnBuscar_cliente.Enabled = True
         frm_Movimiento_Producto.btnCancelar.Enabled = True
@@ -1294,7 +1294,7 @@ Public Class frm_Principal
         frm_Movimiento_Producto.txt_descripcion.Enabled = False
         frm_Movimiento_Producto.txt_numero_orden.Enabled = True
         frm_Movimiento_Producto.txt_Cantidad.Enabled = True
-        frm_Movimiento_Producto.txt_Buscar_Producto.Enabled = False
+        frm_Movimiento_Producto.txt_Buscar_Producto.Enabled = True
 
         frm_Movimiento_Producto.btnBuscar_cliente.Enabled = True
         frm_Movimiento_Producto.btnCancelar.Enabled = True
