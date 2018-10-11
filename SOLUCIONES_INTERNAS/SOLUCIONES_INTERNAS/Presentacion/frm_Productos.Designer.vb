@@ -79,11 +79,12 @@ Partial Class frm_Productos
         '
         'dgvLista_Productos
         '
+        Me.dgvLista_Productos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvLista_Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLista_Productos.Location = New System.Drawing.Point(7, 54)
         Me.dgvLista_Productos.Name = "dgvLista_Productos"
         Me.dgvLista_Productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_Productos.Size = New System.Drawing.Size(381, 169)
+        Me.dgvLista_Productos.Size = New System.Drawing.Size(381, 229)
         Me.dgvLista_Productos.TabIndex = 10
         '
         'btn_prod_eliminar
@@ -233,7 +234,7 @@ Partial Class frm_Productos
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(8, 227)
+        Me.Label8.Location = New System.Drawing.Point(8, 288)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(105, 13)
         Me.Label8.TabIndex = 16
@@ -250,7 +251,7 @@ Partial Class frm_Productos
         Me.GroupBox2.Controls.Add(Me.btn_prod_eliminar)
         Me.GroupBox2.Location = New System.Drawing.Point(13, 181)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(397, 250)
+        Me.GroupBox2.Size = New System.Drawing.Size(397, 304)
         Me.GroupBox2.TabIndex = 14
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Lista de productos"
@@ -259,7 +260,7 @@ Partial Class frm_Productos
         '
         Me.Label9.AutoSize = True
         Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label9.Location = New System.Drawing.Point(361, 225)
+        Me.Label9.Location = New System.Drawing.Point(361, 286)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(2, 15)
         Me.Label9.TabIndex = 17
@@ -276,7 +277,7 @@ Partial Class frm_Productos
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(253, 227)
+        Me.Label10.Location = New System.Drawing.Point(253, 288)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(97, 13)
         Me.Label10.TabIndex = 16
@@ -293,7 +294,7 @@ Partial Class frm_Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(425, 438)
+        Me.ClientSize = New System.Drawing.Size(425, 505)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Productos"
