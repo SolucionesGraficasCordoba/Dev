@@ -154,7 +154,7 @@ Partial Class frm_Movimiento_Producto
         Me.txt_Cantidad.Location = New System.Drawing.Point(76, 117)
         Me.txt_Cantidad.Multiline = True
         Me.txt_Cantidad.Name = "txt_Cantidad"
-        Me.txt_Cantidad.Size = New System.Drawing.Size(50, 50)
+        Me.txt_Cantidad.Size = New System.Drawing.Size(90, 33)
         Me.txt_Cantidad.TabIndex = 3
         '
         'Label9
@@ -189,7 +189,7 @@ Partial Class frm_Movimiento_Producto
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(448, 180)
+        Me.GroupBox1.Size = New System.Drawing.Size(448, 162)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nuevo Producto"
@@ -234,7 +234,7 @@ Partial Class frm_Movimiento_Producto
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Red
-        Me.Label12.Location = New System.Drawing.Point(132, 117)
+        Me.Label12.Location = New System.Drawing.Point(170, 122)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(11, 13)
         Me.Label12.TabIndex = 75
@@ -270,7 +270,7 @@ Partial Class frm_Movimiento_Producto
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(363, 144)
+        Me.btnCancelar.Location = New System.Drawing.Point(363, 127)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 5
@@ -279,7 +279,7 @@ Partial Class frm_Movimiento_Producto
         '
         'btnIngresar_Stock
         '
-        Me.btnIngresar_Stock.Location = New System.Drawing.Point(257, 144)
+        Me.btnIngresar_Stock.Location = New System.Drawing.Point(257, 127)
         Me.btnIngresar_Stock.Name = "btnIngresar_Stock"
         Me.btnIngresar_Stock.Size = New System.Drawing.Size(100, 23)
         Me.btnIngresar_Stock.TabIndex = 4
@@ -310,7 +310,7 @@ Partial Class frm_Movimiento_Producto
         Me.GroupListadoProductos.Controls.Add(Me.Label7)
         Me.GroupListadoProductos.Controls.Add(Me.txt_id_producto)
         Me.GroupListadoProductos.Controls.Add(Me.Label1)
-        Me.GroupListadoProductos.Location = New System.Drawing.Point(12, 198)
+        Me.GroupListadoProductos.Location = New System.Drawing.Point(12, 180)
         Me.GroupListadoProductos.Name = "GroupListadoProductos"
         Me.GroupListadoProductos.Size = New System.Drawing.Size(448, 265)
         Me.GroupListadoProductos.TabIndex = 68
@@ -373,7 +373,7 @@ Partial Class frm_Movimiento_Producto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(471, 474)
+        Me.ClientSize = New System.Drawing.Size(471, 454)
         Me.Controls.Add(Me.GroupListadoProductos)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Movimiento_Producto"

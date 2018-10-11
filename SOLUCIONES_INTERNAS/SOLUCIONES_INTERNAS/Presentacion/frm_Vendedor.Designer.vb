@@ -25,18 +25,19 @@ Partial Class frm_Vendedor
         Me.GroupListadoClientes = New System.Windows.Forms.GroupBox()
         Me.lblTotal_Vendedores = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.btnEliminar_vendedor = New System.Windows.Forms.Button()
         Me.txt_Buscar_vendedor = New System.Windows.Forms.TextBox()
         Me.dgvLista_vendedores = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupNuevoVendedor = New System.Windows.Forms.GroupBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txt_telefono_vendedor = New System.Windows.Forms.TextBox()
         Me.txt_mail_vendedor = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_apellido_vendedor = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.btnCancelar_Vendedor = New System.Windows.Forms.Button()
         Me.btnActualizar_Vendedor = New System.Windows.Forms.Button()
         Me.btnGuardar_Vendedor = New System.Windows.Forms.Button()
@@ -45,7 +46,6 @@ Partial Class frm_Vendedor
         Me.txt_id_vendedor = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupListadoClientes.SuspendLayout()
         CType(Me.dgvLista_vendedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupNuevoVendedor.SuspendLayout()
@@ -84,6 +84,17 @@ Partial Class frm_Vendedor
         Me.Label5.Size = New System.Drawing.Size(106, 13)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Total de Vendedores"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(11, 235)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(98, 13)
+        Me.Label8.TabIndex = 4
+        Me.Label8.Text = "(Campo Requerido)"
         '
         'btnEliminar_vendedor
         '
@@ -143,6 +154,17 @@ Partial Class frm_Vendedor
         Me.GroupNuevoVendedor.TabStop = False
         Me.GroupNuevoVendedor.Text = "Nuevo Vendedor"
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Red
+        Me.Label6.Location = New System.Drawing.Point(393, 22)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(11, 13)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "*"
+        '
         'Label7
         '
         Me.Label7.AutoSize = True
@@ -190,17 +212,6 @@ Partial Class frm_Vendedor
         Me.Label9.Size = New System.Drawing.Size(44, 13)
         Me.Label9.TabIndex = 5
         Me.Label9.Text = "Apellido"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(11, 235)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(98, 13)
-        Me.Label8.TabIndex = 4
-        Me.Label8.Text = "(Campo Requerido)"
         '
         'btnCancelar_Vendedor
         '
@@ -269,17 +280,6 @@ Partial Class frm_Vendedor
         Me.Label1.Size = New System.Drawing.Size(66, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "id_vendedor"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Red
-        Me.Label6.Location = New System.Drawing.Point(393, 22)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(11, 13)
-        Me.Label6.TabIndex = 6
-        Me.Label6.Text = "*"
         '
         'frm_Vendedor
         '

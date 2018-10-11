@@ -24,13 +24,14 @@ Partial Class frm_Sector
     Private Sub InitializeComponent()
         Me.GroupListadoSectores = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnEliminar_Sector = New System.Windows.Forms.Button()
         Me.txt_Buscar_Sector = New System.Windows.Forms.TextBox()
         Me.dgvLista_Sector = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupNuevoSector = New System.Windows.Forms.GroupBox()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.btnCancelar_Sector = New System.Windows.Forms.Button()
         Me.btnActualizar_Sector = New System.Windows.Forms.Button()
         Me.btnGuardar_Sector = New System.Windows.Forms.Button()
@@ -39,7 +40,6 @@ Partial Class frm_Sector
         Me.txt_id_sector = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupListadoSectores.SuspendLayout()
         CType(Me.dgvLista_Sector, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupNuevoSector.SuspendLayout()
@@ -69,6 +69,17 @@ Partial Class frm_Sector
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(2, 15)
         Me.Label6.TabIndex = 5
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(18, 227)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(98, 13)
+        Me.Label8.TabIndex = 4
+        Me.Label8.Text = "(Campo Requerido)"
         '
         'Label5
         '
@@ -131,16 +142,16 @@ Partial Class frm_Sector
         Me.GroupNuevoSector.TabStop = False
         Me.GroupNuevoSector.Text = "Nueva Sector"
         '
-        'Label8
+        'Label3
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(18, 227)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(98, 13)
-        Me.Label8.TabIndex = 4
-        Me.Label8.Text = "(Campo Requerido)"
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(340, 22)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(11, 13)
+        Me.Label3.TabIndex = 6
+        Me.Label3.Text = "*"
         '
         'btnCancelar_Sector
         '
@@ -209,17 +220,6 @@ Partial Class frm_Sector
         Me.Label1.Size = New System.Drawing.Size(50, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "id_sector"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(340, 22)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(11, 13)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "*"
         '
         'frm_Sector
         '

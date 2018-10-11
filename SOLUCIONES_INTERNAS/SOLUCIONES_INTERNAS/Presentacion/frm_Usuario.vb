@@ -13,7 +13,6 @@
         lblTotal_Usuarios.Text = dgvLista_Usuarios.Rows.Count
         txt_nombre_colaborador.Enabled = False
         btnNuevo_Usuario.Visible = False
-
     End Sub
 
     Public Sub cargargrilla()
@@ -127,8 +126,10 @@
                     datacontext.USUARIO.DeleteOnSubmit(eliminar)
                     datacontext.SubmitChanges()
                     MsgBox("El usuario ha sido eliminado")
+                    Me.Close()
                     cargargrilla()
                     lblTotal_Usuarios.Text = dgvLista_Usuarios.Rows.Count
+                Case MsgBoxResult.No
                     Me.Close()
             End Select
         Else
@@ -194,7 +195,11 @@
         frm_Colaborador.quienllamo_col = Me
         frm_Colaborador.Text = "Seleccionar Colaborador"
         frm_Colaborador.GroupNuevoColaborador.Enabled = False
-        frm_Colaborador.Show()
+        frm_Colaborador.btnImprimir.Visible = False
+        frm_Colaborador.ShowDialog()
     End Sub
 
+    Private Sub frm_Usuario_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
 End Class

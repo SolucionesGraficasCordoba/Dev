@@ -1,13 +1,7 @@
 ﻿Public Class frm_ingreso
     Dim datacontext As New DataS_Interno
 
-    Private Sub frm_ingreso_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
-        Me.Dispose()
-        Me.Close()
-    End Sub
-
-
-    Private Sub frm_ingreso_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub frm_ingreso_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txt_usuario.Focus()
     End Sub
 
@@ -96,7 +90,6 @@
                 frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(1).Visible = False 'eliminar
                 frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(2).Visible = False 'consultar
 
-
                 'TIENE HABILITADO LAS SIGUIENES PESTAÑAS: 
                 ' - ARCHIVO----CERRAR SESION Y SALIR
                 ' - CLIENTE----CONSULTA
@@ -174,7 +167,6 @@
                 frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(0).Visible = False 'nueva
                 frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(1).Visible = False 'eliminar
                 frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(2).Visible = False 'consultar
-
 
                 'TIENE HABILITADA TODAS LAS PESTAÑAS
 
@@ -366,5 +358,9 @@
         If e.KeyCode = Keys.Enter Then
             btnIngresar.Focus()
         End If
+    End Sub
+
+    Private Sub frm_ingreso_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
     End Sub
 End Class

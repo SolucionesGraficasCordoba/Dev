@@ -53,7 +53,7 @@ Partial Class frm_Productos
         '
         'btn_prod_guardar
         '
-        Me.btn_prod_guardar.Location = New System.Drawing.Point(96, 147)
+        Me.btn_prod_guardar.Location = New System.Drawing.Point(99, 133)
         Me.btn_prod_guardar.Name = "btn_prod_guardar"
         Me.btn_prod_guardar.Size = New System.Drawing.Size(90, 22)
         Me.btn_prod_guardar.TabIndex = 5
@@ -69,10 +69,11 @@ Partial Class frm_Productos
         '
         'tb_prod_stock
         '
-        Me.tb_prod_stock.Location = New System.Drawing.Point(329, 85)
+        Me.tb_prod_stock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_prod_stock.Location = New System.Drawing.Point(291, 85)
         Me.tb_prod_stock.Multiline = True
         Me.tb_prod_stock.Name = "tb_prod_stock"
-        Me.tb_prod_stock.Size = New System.Drawing.Size(50, 50)
+        Me.tb_prod_stock.Size = New System.Drawing.Size(90, 33)
         Me.tb_prod_stock.TabIndex = 4
         Me.tb_prod_stock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -96,7 +97,7 @@ Partial Class frm_Productos
         '
         'btn_prod_actualizar
         '
-        Me.btn_prod_actualizar.Location = New System.Drawing.Point(192, 147)
+        Me.btn_prod_actualizar.Location = New System.Drawing.Point(195, 133)
         Me.btn_prod_actualizar.Name = "btn_prod_actualizar"
         Me.btn_prod_actualizar.Size = New System.Drawing.Size(90, 22)
         Me.btn_prod_actualizar.TabIndex = 7
@@ -105,14 +106,14 @@ Partial Class frm_Productos
         '
         'tb_prod_id
         '
-        Me.tb_prod_id.Location = New System.Drawing.Point(11, 149)
+        Me.tb_prod_id.Location = New System.Drawing.Point(14, 135)
         Me.tb_prod_id.Name = "tb_prod_id"
         Me.tb_prod_id.Size = New System.Drawing.Size(12, 20)
         Me.tb_prod_id.TabIndex = 7
         '
         'btn_prod_salir
         '
-        Me.btn_prod_salir.Location = New System.Drawing.Point(288, 147)
+        Me.btn_prod_salir.Location = New System.Drawing.Point(291, 133)
         Me.btn_prod_salir.Name = "btn_prod_salir"
         Me.btn_prod_salir.Size = New System.Drawing.Size(90, 22)
         Me.btn_prod_salir.TabIndex = 6
@@ -122,7 +123,7 @@ Partial Class frm_Productos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(26, 152)
+        Me.Label1.Location = New System.Drawing.Point(29, 138)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(64, 13)
         Me.Label1.TabIndex = 9
@@ -140,7 +141,7 @@ Partial Class frm_Productos
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(230, 105)
+        Me.Label4.Location = New System.Drawing.Point(192, 96)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(93, 13)
         Me.Label4.TabIndex = 12
@@ -165,7 +166,7 @@ Partial Class frm_Productos
         Me.GroupBox1.Controls.Add(Me.tb_prod_descripcion)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(398, 179)
+        Me.GroupBox1.Size = New System.Drawing.Size(398, 163)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Gestión de productos"
@@ -173,7 +174,7 @@ Partial Class frm_Productos
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(18, 105)
+        Me.Label11.Location = New System.Drawing.Point(9, 96)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(72, 13)
         Me.Label11.TabIndex = 18
@@ -181,10 +182,11 @@ Partial Class frm_Productos
         '
         'tb_prod_stock_minimo
         '
-        Me.tb_prod_stock_minimo.Location = New System.Drawing.Point(96, 85)
+        Me.tb_prod_stock_minimo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_prod_stock_minimo.Location = New System.Drawing.Point(87, 85)
         Me.tb_prod_stock_minimo.Multiline = True
         Me.tb_prod_stock_minimo.Name = "tb_prod_stock_minimo"
-        Me.tb_prod_stock_minimo.Size = New System.Drawing.Size(50, 50)
+        Me.tb_prod_stock_minimo.Size = New System.Drawing.Size(90, 33)
         Me.tb_prod_stock_minimo.TabIndex = 3
         Me.tb_prod_stock_minimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -246,7 +248,7 @@ Partial Class frm_Productos
         Me.GroupBox2.Controls.Add(Me.tb_prod_busqueda)
         Me.GroupBox2.Controls.Add(Me.dgvLista_Productos)
         Me.GroupBox2.Controls.Add(Me.btn_prod_eliminar)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 197)
+        Me.GroupBox2.Location = New System.Drawing.Point(13, 181)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(397, 250)
         Me.GroupBox2.TabIndex = 14
@@ -291,7 +293,7 @@ Partial Class frm_Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(425, 456)
+        Me.ClientSize = New System.Drawing.Size(425, 438)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Productos"

@@ -835,4 +835,8 @@
             Me.limpiarcontroles()
         End Try
     End Sub
+
+    Private Sub frm_Orden_Trabajo_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
 End Class

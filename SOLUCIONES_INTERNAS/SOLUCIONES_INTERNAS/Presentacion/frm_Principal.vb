@@ -37,7 +37,7 @@ Public Class frm_Principal
 
     Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
-        Application.Exit()
+        Application.ExitThread()
         Me.Dispose()
     End Sub
 
@@ -109,7 +109,6 @@ Public Class frm_Principal
         frm_Usuario.cbo_perfil.Enabled = True
         frm_Usuario.btnBuscar_Colaborador.Enabled = True
         frm_Usuario.GroupListadoUsuarios.Enabled = False
-
         frm_Usuario.dgvLista_Usuarios.ClearSelection()
         frm_Usuario.ShowDialog()
     End Sub
@@ -121,10 +120,10 @@ Public Class frm_Principal
         frm_Usuario.btnActualizar_Usuario.Enabled = True
         frm_Usuario.btnEliminar_Usuario.Enabled = False
         frm_Usuario.btnNuevo_Usuario.Enabled = False
+        frm_Usuario.btnBuscar_Colaborador.Enabled = False
         frm_Usuario.txt_usuario.Enabled = True
         frm_Usuario.txt_contraseña.Enabled = True
         frm_Usuario.cbo_perfil.Enabled = True
-        frm_Usuario.btnBuscar_Colaborador.Enabled = True
         frm_Usuario.dgvLista_Usuarios.ClearSelection()
         frm_Usuario.ShowDialog()
     End Sub
@@ -623,18 +622,19 @@ Public Class frm_Principal
         frm_Colaborador.btnGuardar_Colaborador.Enabled = True
         frm_Colaborador.btnActualizar_Colaborador.Enabled = False
         frm_Colaborador.btnCancelar_Colaborador.Enabled = True
-        frm_Colaborador.Button1.Visible = False
+        frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.txt_Buscar_Colaborador.Enabled = False
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
-
+        frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
         frm_Colaborador.dgvLista_Colaboradores.Enabled = False
         frm_Colaborador.GroupListadoColaboradores.Enabled = False
         frm_Colaborador.ShowDialog()
     End Sub
 
-    Private Sub ModificarColaboradorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarColaboradorToolStripMenuItem.Click
+    Private Sub ModificarColaboradorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarColaboradorToolStripMenuItem.Click
         frm_Colaborador.Text = "Modificar Colaborador"
+
         frm_Colaborador.txt_nombre_colaborador.Focus()
         frm_Colaborador.txt_nombre_colaborador.Clear()
         frm_Colaborador.txt_apellido_colaborador.Clear()
@@ -645,14 +645,14 @@ Public Class frm_Principal
         frm_Colaborador.btnCancelar_Colaborador.Enabled = True
         frm_Colaborador.txt_Buscar_Colaborador.Enabled = True
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
-        frm_Colaborador.Button1.Visible = False
-        frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
+        frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.dgvLista_Colaboradores.Enabled = False
-
+        frm_Colaborador.btnImprimir.Visible = False
+        frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
         frm_Colaborador.ShowDialog()
     End Sub
 
-    Private Sub EliminarColaboradorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarColaboradorToolStripMenuItem.Click
+    Private Sub EliminarColaboradorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarColaboradorToolStripMenuItem.Click
         frm_Colaborador.Text = "Eliminar Colaborador"
         frm_Colaborador.txt_nombre_colaborador.Enabled = False
         frm_Colaborador.txt_nombre_colaborador.Enabled = False
@@ -665,11 +665,12 @@ Public Class frm_Principal
         frm_Colaborador.txt_Buscar_Colaborador.Enabled = True
         frm_Colaborador.btnEliminar_Colaborador.Enabled = True
         frm_Colaborador.dgvLista_Colaboradores.Enabled = True
+        frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
         frm_Colaborador.ShowDialog()
     End Sub
 
-    Private Sub ConsultarColaboradorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarColaboradorToolStripMenuItem.Click
+    Private Sub ConsultarColaboradorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarColaboradorToolStripMenuItem.Click
         frm_Colaborador.Text = "Consultar Colaborador"
         frm_Colaborador.txt_nombre_colaborador.Clear()
         frm_Colaborador.txt_apellido_colaborador.Clear()
@@ -678,11 +679,12 @@ Public Class frm_Principal
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
         frm_Colaborador.btnGuardar_Colaborador.Enabled = False
         frm_Colaborador.btnNuevo_Colaborador.Visible = False
-        frm_Colaborador.Button1.Visible = False
+        frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.txt_nombre_colaborador.Enabled = False
         frm_Colaborador.txt_apellido_colaborador.Enabled = False
         frm_Colaborador.cbo_sector.Enabled = False
         frm_Colaborador.txt_nombre_colaborador.Enabled = False
+        frm_Colaborador.btnImprimir.Visible = True
         frm_Colaborador.ShowDialog()
     End Sub
 
@@ -849,6 +851,7 @@ Public Class frm_Principal
 
     Private Sub NuevoSectorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoSectorToolStripMenuItem.Click
         frm_Sector.Text = "Nuevo Sector"
+        frm_Sector.GroupListadoSectores.Enabled = False
         frm_Sector.txt_nombre_sector.Clear()
         frm_Sector.txt_nombre_sector.Focus()
 
@@ -1135,10 +1138,6 @@ Public Class frm_Principal
         frm_Etiqueta_Modelo_1.ShowDialog()
     End Sub
 
-    Private Sub frm_Principal_FormClosed(sender As Object, e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
-        Me.Dispose()
-    End Sub
-
     Private Sub NuevoToolStripMenuItem_Click_1(sender As System.Object, e As System.EventArgs) Handles NuevoToolStripMenuItem.Click
 
         frm_Productos.Text = "Nuevo Producto"
@@ -1310,4 +1309,15 @@ Public Class frm_Principal
         frm_Listado_Movimientos.ShowDialog()
     End Sub
 
+    Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+  
+    End Sub
+
+    Private Sub frm_Principal_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+        Application.Exit()
+    End Sub
+
+    Private Sub frm_Principal_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
 End Class

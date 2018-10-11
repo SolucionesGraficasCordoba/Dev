@@ -386,4 +386,8 @@ Public Class frm_Generar_Informe
     Private Sub btnVerGraficos_Click(sender As System.Object, e As System.EventArgs) Handles btnVerGraficos.Click
         Frm_Graficos.Show()
     End Sub
+
+    Private Sub frm_Generar_Informe_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
 End Class

@@ -23,6 +23,7 @@ Partial Class frm_Pieza
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupListadoPiezas = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnEliminar_Pieza = New System.Windows.Forms.Button()
@@ -30,7 +31,6 @@ Partial Class frm_Pieza
         Me.dgvLista_Piezas = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupNuevaPieza = New System.Windows.Forms.GroupBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.btnCancelar_Pieza = New System.Windows.Forms.Button()
         Me.btnActualizar_Pieza = New System.Windows.Forms.Button()
         Me.btnGuardar_Pieza = New System.Windows.Forms.Button()
@@ -60,6 +60,17 @@ Partial Class frm_Pieza
         Me.GroupListadoPiezas.TabIndex = 3
         Me.GroupListadoPiezas.TabStop = False
         Me.GroupListadoPiezas.Text = "Listado de Piezas"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(7, 232)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(98, 13)
+        Me.Label8.TabIndex = 4
+        Me.Label8.Text = "(Campo Requerido)"
         '
         'Label6
         '
@@ -129,17 +140,6 @@ Partial Class frm_Pieza
         Me.GroupNuevaPieza.TabIndex = 2
         Me.GroupNuevaPieza.TabStop = False
         Me.GroupNuevaPieza.Text = "Nueva Pieza"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(7, 232)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(98, 13)
-        Me.Label8.TabIndex = 4
-        Me.Label8.Text = "(Campo Requerido)"
         '
         'btnCancelar_Pieza
         '

@@ -82,4 +82,8 @@ Public Class frm_Grafico_1
         End If
         ' ''***************************fin grafico 6*********************************
     End Sub
+
+    Private Sub frm_Grafico_1_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
 End Class

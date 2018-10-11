@@ -4,4 +4,11 @@
         Me.Hide()
     End Sub
 
+    Private Sub frm_Proceso2_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
+
+    Private Sub frm_Proceso2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

@@ -35,8 +35,8 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.btnModificar_Orden = New System.Windows.Forms.Button()
         Me.btnEliminar_Detalle = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.dgv_detalle_orden = New System.Windows.Forms.DataGridView()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupListadoPiezas.SuspendLayout()
         CType(Me.dgvLista_Orden_Trabajo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupDetallesOrden.SuspendLayout()
@@ -171,15 +171,6 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.Label1.Size = New System.Drawing.Size(2, 15)
         Me.Label1.TabIndex = 34
         '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(24, 239)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(88, 13)
-        Me.Label2.TabIndex = 33
-        Me.Label2.Text = "Items de la orden"
-        '
         'dgv_detalle_orden
         '
         Me.dgv_detalle_orden.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -188,6 +179,15 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.dgv_detalle_orden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_detalle_orden.Size = New System.Drawing.Size(437, 208)
         Me.dgv_detalle_orden.TabIndex = 32
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(24, 239)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(88, 13)
+        Me.Label2.TabIndex = 33
+        Me.Label2.Text = "Items de la orden"
         '
         'frm_Listado_Orden_Trabajo
         '

@@ -43,13 +43,13 @@ Partial Class frm_Cliente
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupListadoClientes = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnEliminar_Cliente = New System.Windows.Forms.Button()
         Me.txt_Buscar_Cliente = New System.Windows.Forms.TextBox()
         Me.dgvLista_Clientes = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupNuevoCliente.SuspendLayout()
         Me.GroupListadoClientes.SuspendLayout()
         CType(Me.dgvLista_Clientes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -258,6 +258,17 @@ Partial Class frm_Cliente
         Me.GroupListadoClientes.TabStop = False
         Me.GroupListadoClientes.Text = "Listado de Clientes"
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.Red
+        Me.Label12.Location = New System.Drawing.Point(21, 268)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(98, 13)
+        Me.Label12.TabIndex = 17
+        Me.Label12.Text = "(Campo Requerido)"
+        '
         'Label6
         '
         Me.Label6.AutoSize = True
@@ -309,17 +320,6 @@ Partial Class frm_Cliente
         Me.Label4.Size = New System.Drawing.Size(150, 13)
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Ingrese Nombre/Razón Social"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.Red
-        Me.Label12.Location = New System.Drawing.Point(21, 268)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(98, 13)
-        Me.Label12.TabIndex = 17
-        Me.Label12.Text = "(Campo Requerido)"
         '
         'frm_Cliente
         '

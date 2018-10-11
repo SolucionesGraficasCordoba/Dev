@@ -207,5 +207,9 @@ Public Class frm_Etiqueta_Modelo_1
         frm_Listado_Orden_Trabajo.Text = "Seleccionar Orden"
         frm_Listado_Orden_Trabajo.Show()
     End Sub
+
+    Private Sub frm_Etiqueta_Modelo_1_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
 End Class
 

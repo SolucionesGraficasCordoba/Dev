@@ -141,4 +141,8 @@
             btnGuardar_Pieza.Focus()
         End If
     End Sub
+
+    Private Sub frm_Pieza_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
 End Class

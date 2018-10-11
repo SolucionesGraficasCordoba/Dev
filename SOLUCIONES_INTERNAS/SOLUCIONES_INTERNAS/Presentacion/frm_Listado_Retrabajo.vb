@@ -349,4 +349,8 @@ Public Class frm_Listado_Retrabajo
     Private Sub GroupBox1_Enter(sender As System.Object, e As System.EventArgs) Handles GroupBox1.Enter
 
     End Sub
+
+    Private Sub frm_Listado_Retrabajo_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
 End Class

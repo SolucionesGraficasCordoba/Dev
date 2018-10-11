@@ -2,14 +2,15 @@
     Dim datacontext As New DataS_Interno
     Public quienllamocliente As Form
 
+    Private Sub frm_Cliente_FormClosed(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles Me.FormClosed
+        Me.Dispose()
+    End Sub
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txt_id_cliente.Visible = False
         Label1.Visible = False
         armargrilla()
         cargargrilla()
-        'dgvLista_Clientes.ClearSelection()
-        'txt_razonsocial_cliente.Focus()
         Label6.Text = dgvLista_Clientes.Rows.Count
         btnNuevo_Cliente.Visible = False
     End Sub
@@ -44,6 +45,7 @@
                 Case MsgBoxResult.No
                     Me.Close()
                 Case MsgBoxResult.Yes
+                    cargargrilla()
                     limpiarcontroles()
             End Select
         Catch ex As Exception
@@ -151,6 +153,8 @@
                     MsgBox("El Cliente ha sido eliminado correctamente")
                     cargargrilla()
                     Me.Close()
+                Case MsgBoxResult.No
+                    Me.Close()
             End Select
         Else
             MsgBox("Debe seleccionar un Cliente")
@@ -209,5 +213,9 @@
             frm_Orden_Trabajo.txt_nombre_cliente.Text = dgvLista_Clientes.SelectedCells(1).Value
         End If
         Me.Close()
+    End Sub
+
+    Private Sub frm_Cliente_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
+        'Me.Close()
     End Sub
 End Class

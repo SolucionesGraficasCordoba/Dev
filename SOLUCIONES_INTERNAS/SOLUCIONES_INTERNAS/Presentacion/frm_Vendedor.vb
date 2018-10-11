@@ -184,4 +184,8 @@
         frm_Orden_Trabajo.txtNombre_vendedor.Text = dgvLista_vendedores.SelectedCells(1).Value
         Me.Close()
     End Sub
+
+    Private Sub frm_Vendedor_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
 End Class

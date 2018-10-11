@@ -853,4 +853,8 @@
         frm_Tarea.txt_id_colaborador.Visible = False
         frm_Tarea.txt_id_tarea.Visible = False
     End Sub
+
+    Private Sub frm_Listado_Tareas_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
 End Class

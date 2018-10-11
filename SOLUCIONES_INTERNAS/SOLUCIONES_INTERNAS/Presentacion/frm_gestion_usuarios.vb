@@ -81,4 +81,8 @@
     Private Sub frm_gestion_usuarios_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         txt_usuario.Focus()
     End Sub
+
+    Private Sub frm_gestion_usuarios_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
 End Class

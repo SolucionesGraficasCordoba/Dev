@@ -22,10 +22,14 @@ Partial Class frm_Colaborador
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupListadoColaboradores = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnImprimir = New System.Windows.Forms.Button()
         Me.lblTotal_Colaboradores = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.btnEliminar_Colaborador = New System.Windows.Forms.Button()
         Me.txt_Buscar_Colaborador = New System.Windows.Forms.TextBox()
         Me.dgvLista_Colaboradores = New System.Windows.Forms.DataGridView()
@@ -34,7 +38,6 @@ Partial Class frm_Colaborador
         Me.cbo_sector = New System.Windows.Forms.ComboBox()
         Me.txt_apellido_colaborador = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.btnCancelar_Colaborador = New System.Windows.Forms.Button()
         Me.btnActualizar_Colaborador = New System.Windows.Forms.Button()
         Me.btnGuardar_Colaborador = New System.Windows.Forms.Button()
@@ -46,6 +49,7 @@ Partial Class frm_Colaborador
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         Me.GroupListadoColaboradores.SuspendLayout()
         CType(Me.dgvLista_Colaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupNuevoColaborador.SuspendLayout()
@@ -53,7 +57,7 @@ Partial Class frm_Colaborador
         '
         'GroupListadoColaboradores
         '
-        Me.GroupListadoColaboradores.Controls.Add(Me.Button1)
+        Me.GroupListadoColaboradores.Controls.Add(Me.btnImprimir)
         Me.GroupListadoColaboradores.Controls.Add(Me.lblTotal_Colaboradores)
         Me.GroupListadoColaboradores.Controls.Add(Me.Label5)
         Me.GroupListadoColaboradores.Controls.Add(Me.Label8)
@@ -61,21 +65,21 @@ Partial Class frm_Colaborador
         Me.GroupListadoColaboradores.Controls.Add(Me.txt_Buscar_Colaborador)
         Me.GroupListadoColaboradores.Controls.Add(Me.dgvLista_Colaboradores)
         Me.GroupListadoColaboradores.Controls.Add(Me.Label4)
-        Me.GroupListadoColaboradores.Location = New System.Drawing.Point(12, 186)
+        Me.GroupListadoColaboradores.Location = New System.Drawing.Point(12, 170)
         Me.GroupListadoColaboradores.Name = "GroupListadoColaboradores"
         Me.GroupListadoColaboradores.Size = New System.Drawing.Size(382, 270)
         Me.GroupListadoColaboradores.TabIndex = 5
         Me.GroupListadoColaboradores.TabStop = False
         Me.GroupListadoColaboradores.Text = "Listado de Colaborador"
         '
-        'Button1
+        'btnImprimir
         '
-        Me.Button1.Location = New System.Drawing.Point(141, 236)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 6
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnImprimir.Location = New System.Drawing.Point(291, 23)
+        Me.btnImprimir.Name = "btnImprimir"
+        Me.btnImprimir.Size = New System.Drawing.Size(75, 23)
+        Me.btnImprimir.TabIndex = 6
+        Me.btnImprimir.Text = "Imprimir"
+        Me.btnImprimir.UseVisualStyleBackColor = True
         '
         'lblTotal_Colaboradores
         '
@@ -95,9 +99,20 @@ Partial Class frm_Colaborador
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Total de Colaboradores"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(18, 243)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(98, 13)
+        Me.Label8.TabIndex = 4
+        Me.Label8.Text = "(Campo Requerido)"
+        '
         'btnEliminar_Colaborador
         '
-        Me.btnEliminar_Colaborador.Location = New System.Drawing.Point(281, 22)
+        Me.btnEliminar_Colaborador.Location = New System.Drawing.Point(210, 23)
         Me.btnEliminar_Colaborador.Name = "btnEliminar_Colaborador"
         Me.btnEliminar_Colaborador.Size = New System.Drawing.Size(75, 23)
         Me.btnEliminar_Colaborador.TabIndex = 7
@@ -108,14 +123,30 @@ Partial Class frm_Colaborador
         '
         Me.txt_Buscar_Colaborador.Location = New System.Drawing.Point(96, 25)
         Me.txt_Buscar_Colaborador.Name = "txt_Buscar_Colaborador"
-        Me.txt_Buscar_Colaborador.Size = New System.Drawing.Size(142, 20)
+        Me.txt_Buscar_Colaborador.Size = New System.Drawing.Size(90, 20)
         Me.txt_Buscar_Colaborador.TabIndex = 6
         '
         'dgvLista_Colaboradores
         '
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvLista_Colaboradores.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvLista_Colaboradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLista_Colaboradores.Location = New System.Drawing.Point(17, 59)
         Me.dgvLista_Colaboradores.Name = "dgvLista_Colaboradores"
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvLista_Colaboradores.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        Me.dgvLista_Colaboradores.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvLista_Colaboradores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvLista_Colaboradores.Size = New System.Drawing.Size(349, 172)
         Me.dgvLista_Colaboradores.TabIndex = 8
@@ -145,7 +176,7 @@ Partial Class frm_Colaborador
         Me.GroupNuevoColaborador.Controls.Add(Me.Label1)
         Me.GroupNuevoColaborador.Location = New System.Drawing.Point(12, 12)
         Me.GroupNuevoColaborador.Name = "GroupNuevoColaborador"
-        Me.GroupNuevoColaborador.Size = New System.Drawing.Size(382, 168)
+        Me.GroupNuevoColaborador.Size = New System.Drawing.Size(382, 152)
         Me.GroupNuevoColaborador.TabIndex = 4
         Me.GroupNuevoColaborador.TabStop = False
         Me.GroupNuevoColaborador.Text = "Nuevo Colaborador"
@@ -153,14 +184,14 @@ Partial Class frm_Colaborador
         'cbo_sector
         '
         Me.cbo_sector.FormattingEnabled = True
-        Me.cbo_sector.Location = New System.Drawing.Point(64, 93)
+        Me.cbo_sector.Location = New System.Drawing.Point(64, 83)
         Me.cbo_sector.Name = "cbo_sector"
         Me.cbo_sector.Size = New System.Drawing.Size(174, 21)
         Me.cbo_sector.TabIndex = 3
         '
         'txt_apellido_colaborador
         '
-        Me.txt_apellido_colaborador.Location = New System.Drawing.Point(64, 61)
+        Me.txt_apellido_colaborador.Location = New System.Drawing.Point(64, 51)
         Me.txt_apellido_colaborador.Name = "txt_apellido_colaborador"
         Me.txt_apellido_colaborador.Size = New System.Drawing.Size(292, 20)
         Me.txt_apellido_colaborador.TabIndex = 2
@@ -168,26 +199,15 @@ Partial Class frm_Colaborador
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(14, 64)
+        Me.Label9.Location = New System.Drawing.Point(14, 54)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(44, 13)
         Me.Label9.TabIndex = 5
         Me.Label9.Text = "Apellido"
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(18, 243)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(98, 13)
-        Me.Label8.TabIndex = 4
-        Me.Label8.Text = "(Campo Requerido)"
-        '
         'btnCancelar_Colaborador
         '
-        Me.btnCancelar_Colaborador.Location = New System.Drawing.Point(282, 129)
+        Me.btnCancelar_Colaborador.Location = New System.Drawing.Point(282, 119)
         Me.btnCancelar_Colaborador.Name = "btnCancelar_Colaborador"
         Me.btnCancelar_Colaborador.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar_Colaborador.TabIndex = 5
@@ -196,7 +216,7 @@ Partial Class frm_Colaborador
         '
         'btnActualizar_Colaborador
         '
-        Me.btnActualizar_Colaborador.Location = New System.Drawing.Point(201, 129)
+        Me.btnActualizar_Colaborador.Location = New System.Drawing.Point(201, 119)
         Me.btnActualizar_Colaborador.Name = "btnActualizar_Colaborador"
         Me.btnActualizar_Colaborador.Size = New System.Drawing.Size(75, 23)
         Me.btnActualizar_Colaborador.TabIndex = 10
@@ -205,7 +225,7 @@ Partial Class frm_Colaborador
         '
         'btnGuardar_Colaborador
         '
-        Me.btnGuardar_Colaborador.Location = New System.Drawing.Point(120, 129)
+        Me.btnGuardar_Colaborador.Location = New System.Drawing.Point(120, 119)
         Me.btnGuardar_Colaborador.Name = "btnGuardar_Colaborador"
         Me.btnGuardar_Colaborador.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar_Colaborador.TabIndex = 4
@@ -214,7 +234,7 @@ Partial Class frm_Colaborador
         '
         'btnNuevo_Colaborador
         '
-        Me.btnNuevo_Colaborador.Location = New System.Drawing.Point(39, 129)
+        Me.btnNuevo_Colaborador.Location = New System.Drawing.Point(39, 119)
         Me.btnNuevo_Colaborador.Name = "btnNuevo_Colaborador"
         Me.btnNuevo_Colaborador.Size = New System.Drawing.Size(75, 23)
         Me.btnNuevo_Colaborador.TabIndex = 2
@@ -223,14 +243,14 @@ Partial Class frm_Colaborador
         '
         'txt_nombre_colaborador
         '
-        Me.txt_nombre_colaborador.Location = New System.Drawing.Point(64, 29)
+        Me.txt_nombre_colaborador.Location = New System.Drawing.Point(64, 19)
         Me.txt_nombre_colaborador.Name = "txt_nombre_colaborador"
         Me.txt_nombre_colaborador.Size = New System.Drawing.Size(292, 20)
         Me.txt_nombre_colaborador.TabIndex = 1
         '
         'txt_id_colaborador
         '
-        Me.txt_id_colaborador.Location = New System.Drawing.Point(333, 93)
+        Me.txt_id_colaborador.Location = New System.Drawing.Point(333, 83)
         Me.txt_id_colaborador.Name = "txt_id_colaborador"
         Me.txt_id_colaborador.Size = New System.Drawing.Size(23, 20)
         Me.txt_id_colaborador.TabIndex = 1
@@ -238,7 +258,7 @@ Partial Class frm_Colaborador
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(20, 96)
+        Me.Label3.Location = New System.Drawing.Point(20, 86)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(38, 13)
         Me.Label3.TabIndex = 0
@@ -247,7 +267,7 @@ Partial Class frm_Colaborador
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(14, 32)
+        Me.Label2.Location = New System.Drawing.Point(14, 22)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(44, 13)
         Me.Label2.TabIndex = 0
@@ -256,7 +276,7 @@ Partial Class frm_Colaborador
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(250, 96)
+        Me.Label1.Location = New System.Drawing.Point(250, 86)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(77, 13)
         Me.Label1.TabIndex = 0
@@ -275,6 +295,10 @@ Partial Class frm_Colaborador
         Me.Label6.Size = New System.Drawing.Size(11, 13)
         Me.Label6.TabIndex = 6
         Me.Label6.Text = "*"
+        '
+        'PrintDialog1
+        '
+        Me.PrintDialog1.UseEXDialog = True
         '
         'frm_Colaborador
         '
@@ -317,7 +341,8 @@ Partial Class frm_Colaborador
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents cbo_sector As System.Windows.Forms.ComboBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnImprimir As System.Windows.Forms.Button
     Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
 End Class

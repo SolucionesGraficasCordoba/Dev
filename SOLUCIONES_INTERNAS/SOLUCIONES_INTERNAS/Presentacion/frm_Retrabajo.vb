@@ -188,4 +188,8 @@
         Label17.Visible = False
         PrintForm1.Print() 'imprimir
     End Sub
+
+    Private Sub frm_retrabajo_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
 End Class
