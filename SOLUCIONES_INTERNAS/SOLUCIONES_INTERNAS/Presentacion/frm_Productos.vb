@@ -78,6 +78,12 @@
                            Order By PROD_descripcion Ascending
         dgvLista_Productos.DataSource = consultaprod
         Label9.Text = dgvLista_Productos.Rows.Count
+
+        For Each row As DataGridViewRow In dgvLista_Productos.Rows
+            If row.Cells(3).Value <= row.Cells(4).Value Then
+                row.DefaultCellStyle.BackColor = Color.Red
+            End If
+        Next
     End Sub
 
     Private Sub frm_Productos_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -92,11 +98,7 @@
         dgvLista_Productos.ClearSelection()
         Label9.Text = dgvLista_Productos.Rows.Count
 
-        For Each row As DataGridViewRow In dgvLista_Productos.Rows
-            If row.Cells(3).Value <= row.Cells(4).Value Then
-                row.DefaultCellStyle.BackColor = Color.Red
-            End If
-        Next
+        
     End Sub
 
     Private Sub dgvLista_Productos_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvLista_Productos.Click
@@ -166,6 +168,12 @@
         Dim consultaprod = From p In datacontext.PRODUCTO
                            Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo Where PROD_descripcion Like buscarprod.ToString
         dgvLista_Productos.DataSource = consultaprod
+        dgvLista_Productos.ClearSelection()
+        For Each row As DataGridViewRow In dgvLista_Productos.Rows
+            If row.Cells(3).Value <= row.Cells(4).Value Then
+                row.DefaultCellStyle.BackColor = Color.Red
+            End If
+        Next
     End Sub
 
     Private Sub frm_Productos_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
