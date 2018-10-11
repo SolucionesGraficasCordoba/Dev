@@ -289,6 +289,30 @@
             frm_Proceso1.txt_descripc_terminacion.Enabled = False
             frm_Proceso1.btnAceptar.Enabled = False
             frm_Proceso1.ShowDialog()
+
+        ElseIf Me.Text = "Modificar Orden" Then
+            Dim TraerProcesos = (From c In datacontext.PROCESO
+                                            Select c.PROC_descrip_digital,
+                                            c.PROC_descrip_gran_formato,
+                                            c.PROC_descrip_logistica,
+                                            c.PROC_descrip_offset,
+                                            c.PROC_descrip_terminacion,
+                                            c.id_detalle_orden_trabajo
+                       Where CInt(id_detalle_orden_trabajo) = CInt(txt_id_detalle_orden_trabajo1.Text)).ToList()(0)
+
+            frm_Proceso1.txt_descripc_digital.Text = TraerProcesos.PROC_descrip_digital
+            frm_Proceso1.txt_descripc_gran_formato.Text = TraerProcesos.PROC_descrip_gran_formato
+            frm_Proceso1.txt_descripc_logistica.Text = TraerProcesos.PROC_descrip_logistica
+            frm_Proceso1.txt_descripc_offset.Text = TraerProcesos.PROC_descrip_offset
+            frm_Proceso1.txt_descripc_terminacion.Text = TraerProcesos.PROC_descrip_terminacion
+
+            frm_Proceso1.txt_descripc_digital.Enabled = True
+            frm_Proceso1.txt_descripc_gran_formato.Enabled = True
+            frm_Proceso1.txt_descripc_logistica.Enabled = True
+            frm_Proceso1.txt_descripc_offset.Enabled = True
+            frm_Proceso1.txt_descripc_terminacion.Enabled = True
+            frm_Proceso1.btnAceptar.Enabled = True
+            frm_Proceso1.ShowDialog()
         Else
             frm_Proceso1.Text = "Proceso Primer Producto"
             frm_Proceso1.ShowDialog()
@@ -321,6 +345,30 @@
             frm_Proceso2.txt_descripc_terminacion.Enabled = False
             frm_Proceso2.btnAceptar.Enabled = False
             frm_Proceso2.ShowDialog()
+
+        ElseIf Me.Text = "Modificar Orden" Then
+            Dim TraerProcesos = (From c In datacontext.PROCESO
+                                            Select c.PROC_descrip_digital,
+                                            c.PROC_descrip_gran_formato,
+                                            c.PROC_descrip_logistica,
+                                            c.PROC_descrip_offset,
+                                            c.PROC_descrip_terminacion,
+                                            c.id_detalle_orden_trabajo
+                       Where CInt(id_detalle_orden_trabajo) = CInt(txt_id_detalle_orden_trabajo1.Text)).ToList()(0)
+
+            frm_Proceso2.txt_descripc_digital.Text = TraerProcesos.PROC_descrip_digital
+            frm_Proceso2.txt_descripc_gran_formato.Text = TraerProcesos.PROC_descrip_gran_formato
+            frm_Proceso2.txt_descripc_logistica.Text = TraerProcesos.PROC_descrip_logistica
+            frm_Proceso2.txt_descripc_offset.Text = TraerProcesos.PROC_descrip_offset
+            frm_Proceso2.txt_descripc_terminacion.Text = TraerProcesos.PROC_descrip_terminacion
+
+            frm_Proceso2.txt_descripc_digital.Enabled = True
+            frm_Proceso2.txt_descripc_gran_formato.Enabled = True
+            frm_Proceso2.txt_descripc_logistica.Enabled = True
+            frm_Proceso2.txt_descripc_offset.Enabled = True
+            frm_Proceso2.txt_descripc_terminacion.Enabled = True
+            frm_Proceso2.btnAceptar.Enabled = True
+            frm_Proceso2.ShowDialog()
         Else
             frm_Proceso2.Text = "Proceso Segundo Producto"
             frm_Proceso2.ShowDialog()
@@ -328,6 +376,7 @@
     End Sub
 
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles btnProceso3.Click
+
         If Me.Text = "Ver Orden" Then
             Dim TraerProcesos = (From c In datacontext.PROCESO
                                  Select c.PROC_descrip_digital,
@@ -350,6 +399,30 @@
             frm_proceso3.txt_descripc_offset.Enabled = False
             frm_proceso3.txt_descripc_terminacion.Enabled = False
             frm_proceso3.btnAceptar.Enabled = False
+            frm_proceso3.ShowDialog()
+
+        ElseIf Me.Text = "Modificar Orden" Then
+            Dim TraerProcesos = (From c In datacontext.PROCESO
+                                            Select c.PROC_descrip_digital,
+                                            c.PROC_descrip_gran_formato,
+                                            c.PROC_descrip_logistica,
+                                            c.PROC_descrip_offset,
+                                            c.PROC_descrip_terminacion,
+                                            c.id_detalle_orden_trabajo
+                       Where CInt(id_detalle_orden_trabajo) = CInt(txt_id_detalle_orden_trabajo1.Text)).ToList()(0)
+
+            frm_proceso3.txt_descripc_digital.Text = TraerProcesos.PROC_descrip_digital
+            frm_proceso3.txt_descripc_gran_formato.Text = TraerProcesos.PROC_descrip_gran_formato
+            frm_proceso3.txt_descripc_logistica.Text = TraerProcesos.PROC_descrip_logistica
+            frm_proceso3.txt_descripc_offset.Text = TraerProcesos.PROC_descrip_offset
+            frm_proceso3.txt_descripc_terminacion.Text = TraerProcesos.PROC_descrip_terminacion
+
+            frm_proceso3.txt_descripc_digital.Enabled = True
+            frm_proceso3.txt_descripc_gran_formato.Enabled = True
+            frm_proceso3.txt_descripc_logistica.Enabled = True
+            frm_proceso3.txt_descripc_offset.Enabled = True
+            frm_proceso3.txt_descripc_terminacion.Enabled = True
+            frm_proceso3.btnAceptar.Enabled = True
             frm_proceso3.ShowDialog()
         Else
             frm_proceso3.Text = "Proceso Tercer Producto"

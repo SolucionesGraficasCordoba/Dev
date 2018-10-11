@@ -587,14 +587,13 @@
 
             Dim eliminar = (From C In datacontext.DETALLE_ORDEN_TRABAJO Where C.id_detalle_orden_trabajo = CInt(dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value)).ToList()(0)
 
-            Select Case MsgBox("Se eliminará el detalle seleccionado, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar detalle de la orden")
+            Select Case MsgBox("Se eliminará el detalle y proceso relacionado a él, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar detalle de la orden")
                 Case MsgBoxResult.Yes
                     datacontext.DETALLE_ORDEN_TRABAJO.DeleteOnSubmit(eliminar)
                     datacontext.SubmitChanges()
                     MsgBox("El detalle de la orden ha sido eliminada")
                     ' CargarDetalle()
                     Me.Close()
-
             End Select
         Else
             MsgBox("Debe seleccionar un detalle")
