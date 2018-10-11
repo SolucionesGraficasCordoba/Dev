@@ -463,9 +463,6 @@
             frm_Etiqueta_Modelo_1.txtDirigidoA.Text = dgvLista_Orden_Trabajo.SelectedCells(5).Value
 
 
-
-
-
             Dim traercliente = (From c In datacontext.CLIENTE Select c.CLI_id_cliente, c.CLI_codigo_postal, c.CLI_domicilio, c.CLI_localidad
                                Where CLI_id_cliente = CInt(dgvLista_Orden_Trabajo.SelectedCells(4).Value)).ToList()(0)
 
@@ -576,7 +573,6 @@
                         frm_Tarea.txtNumero_Orden_Trabajo20.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
                 End Select
         End If
-
         Me.Close()
     End Sub
 
@@ -740,12 +736,16 @@
                 frm_Orden_Trabajo.cboFormato3_Soporte3.SelectedItem = dgv_detalle_orden("DOT_formato_soporte_3", dgv_detalle_orden.Rows(2).Index).Value
             End If
         End If
-        Me.Close()
+        Me.Hide()
 
         frm_Orden_Trabajo.Text = "Ver Orden"
 
+
+        frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = True
+
+
         frm_Orden_Trabajo.Label45.Visible = False
-        frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = False
+        ' frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = False
         frm_Orden_Trabajo.Label52.Visible = False
         frm_Orden_Trabajo.txt_id_detalle_orden_trabajo2.Visible = False
         frm_Orden_Trabajo.Label53.Visible = False

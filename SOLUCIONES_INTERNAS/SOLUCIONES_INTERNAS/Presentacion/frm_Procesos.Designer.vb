@@ -39,6 +39,7 @@ Partial Class frm_Proceso1
         Me.Label5 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.txt_id_detalle_orden = New System.Windows.Forms.TextBox()
         Me.groupOffSet.SuspendLayout()
         Me.groupDigital.SuspendLayout()
         Me.groupGranFormato.SuspendLayout()
@@ -219,11 +220,19 @@ Partial Class frm_Proceso1
         Me.btnAceptar.Text = "Aceptar"
         Me.btnAceptar.UseVisualStyleBackColor = True
         '
+        'txt_id_detalle_orden
+        '
+        Me.txt_id_detalle_orden.Location = New System.Drawing.Point(91, 474)
+        Me.txt_id_detalle_orden.Name = "txt_id_detalle_orden"
+        Me.txt_id_detalle_orden.Size = New System.Drawing.Size(100, 20)
+        Me.txt_id_detalle_orden.TabIndex = 7
+        '
         'frm_Proceso1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(396, 502)
+        Me.Controls.Add(Me.txt_id_detalle_orden)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.groupLogistica)
@@ -245,6 +254,7 @@ Partial Class frm_Proceso1
         Me.groupLogistica.ResumeLayout(False)
         Me.groupLogistica.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents groupOffSet As System.Windows.Forms.GroupBox
@@ -264,4 +274,5 @@ Partial Class frm_Proceso1
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
+    Friend WithEvents txt_id_detalle_orden As System.Windows.Forms.TextBox
 End Class

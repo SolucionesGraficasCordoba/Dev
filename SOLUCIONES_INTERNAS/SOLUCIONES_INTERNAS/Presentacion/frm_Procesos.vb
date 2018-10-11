@@ -12,4 +12,8 @@
         Me.Close()
         Me.Dispose()
     End Sub
+
+    Private Sub frm_Proceso1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+        txt_id_detalle_orden.Visible = False
+    End Sub
 End Class
