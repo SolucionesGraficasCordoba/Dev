@@ -49,7 +49,6 @@ Partial Class frm_Orden_Trabajo
         Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
-        Me.btnProceso1 = New System.Windows.Forms.Button()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.GroupProducto3 = New System.Windows.Forms.GroupBox()
         Me.txt_id_detalle_orden_trabajo3 = New System.Windows.Forms.TextBox()
@@ -155,6 +154,7 @@ Partial Class frm_Orden_Trabajo
         Me.btnCancelar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.btnActualizar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.btnNueva_Orden_Trabajo = New System.Windows.Forms.Button()
+        Me.btnProceso1 = New System.Windows.Forms.Button()
         Me.GroupProducto3.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupProducto2.SuspendLayout()
@@ -379,15 +379,6 @@ Partial Class frm_Orden_Trabajo
         Me.PrintForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPrinter
         Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
         Me.PrintForm1.PrintFileName = Nothing
-        '
-        'btnProceso1
-        '
-        Me.btnProceso1.Location = New System.Drawing.Point(167, 115)
-        Me.btnProceso1.Name = "btnProceso1"
-        Me.btnProceso1.Size = New System.Drawing.Size(112, 23)
-        Me.btnProceso1.TabIndex = 23
-        Me.btnProceso1.Text = "Cargar Proceso"
-        Me.btnProceso1.UseVisualStyleBackColor = True
         '
         'btnImprimir
         '
@@ -1373,6 +1364,15 @@ Partial Class frm_Orden_Trabajo
         Me.btnNueva_Orden_Trabajo.Text = "Nuevo"
         Me.btnNueva_Orden_Trabajo.UseVisualStyleBackColor = True
         '
+        'btnProceso1
+        '
+        Me.btnProceso1.Location = New System.Drawing.Point(167, 115)
+        Me.btnProceso1.Name = "btnProceso1"
+        Me.btnProceso1.Size = New System.Drawing.Size(112, 23)
+        Me.btnProceso1.TabIndex = 59
+        Me.btnProceso1.Text = "Cargar Proceso"
+        Me.btnProceso1.UseVisualStyleBackColor = True
+        '
         'frm_Orden_Trabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1531,7 +1531,6 @@ Partial Class frm_Orden_Trabajo
     Friend WithEvents Label48 As System.Windows.Forms.Label
     Friend WithEvents cboPiezas1_Detalle1 As System.Windows.Forms.ComboBox
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
-    Friend WithEvents btnProceso1 As System.Windows.Forms.Button
     Friend WithEvents cboFormato3_Soporte1 As System.Windows.Forms.ComboBox
     Friend WithEvents cboFormato2_Soporte1 As System.Windows.Forms.ComboBox
     Friend WithEvents Label21 As System.Windows.Forms.Label
@@ -1561,4 +1560,5 @@ Partial Class frm_Orden_Trabajo
     Friend WithEvents btnCancelar_Orden_Trabajo As System.Windows.Forms.Button
     Friend WithEvents btnActualizar_Orden_Trabajo As System.Windows.Forms.Button
     Friend WithEvents btnNueva_Orden_Trabajo As System.Windows.Forms.Button
+    Friend WithEvents btnProceso1 As System.Windows.Forms.Button
 End Class

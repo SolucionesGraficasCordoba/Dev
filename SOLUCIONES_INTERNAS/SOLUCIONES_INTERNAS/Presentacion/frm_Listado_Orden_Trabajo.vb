@@ -320,7 +320,7 @@
                     frm_Orden_Trabajo.cboFormato3_Soporte3.SelectedItem = dgv_detalle_orden("DOT_formato_soporte_3", dgv_detalle_orden.Rows(2).Index).Value
                 End If
             End If
-            Me.Close()
+            ' Me.Close()
             frm_Orden_Trabajo.Text = "Modificar Orden"
 
             frm_Orden_Trabajo.Label45.Visible = False
@@ -441,8 +441,9 @@
                 Case MsgBoxResult.Yes
                     datacontext.ORDEN_TRABAJO.DeleteOnSubmit(eliminar)
                     datacontext.SubmitChanges()
-                    MsgBox("La orden y su detalle han sido eliminadas")
+                    MsgBox("La orden y su detalle han sido eliminados")
                     cargargrilla()
+
             End Select
         Else
             MsgBox("Debe seleccionar un orden")
@@ -472,8 +473,6 @@
 
             Dim traerdetalle = (From c In datacontext.DETALLE_ORDEN_TRABAJO Select c.ORT_id_orden_trabajo, c.PIEZA
                               Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).ToList
-
-
 
             Select Case traerdetalle.Count
                 Case 1
@@ -735,7 +734,7 @@
                 frm_Orden_Trabajo.cboFormato3_Soporte3.SelectedItem = dgv_detalle_orden("DOT_formato_soporte_3", dgv_detalle_orden.Rows(2).Index).Value
             End If
         End If
-        Me.Hide()
+        '  Me.Close()
 
         frm_Orden_Trabajo.Text = "Ver Orden"
 

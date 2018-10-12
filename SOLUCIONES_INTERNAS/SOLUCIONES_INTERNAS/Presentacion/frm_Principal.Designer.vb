@@ -261,25 +261,25 @@ Partial Class frm_Principal
         'NuevaPiezaToolStripMenuItem
         '
         Me.NuevaPiezaToolStripMenuItem.Name = "NuevaPiezaToolStripMenuItem"
-        Me.NuevaPiezaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.NuevaPiezaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevaPiezaToolStripMenuItem.Text = "Nueva"
         '
         'ModificarPiezaToolStripMenuItem
         '
         Me.ModificarPiezaToolStripMenuItem.Name = "ModificarPiezaToolStripMenuItem"
-        Me.ModificarPiezaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.ModificarPiezaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ModificarPiezaToolStripMenuItem.Text = "Modificar"
         '
         'EliminarPiezaToolStripMenuItem
         '
         Me.EliminarPiezaToolStripMenuItem.Name = "EliminarPiezaToolStripMenuItem"
-        Me.EliminarPiezaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.EliminarPiezaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EliminarPiezaToolStripMenuItem.Text = "Eliminar"
         '
         'ConsultarPiezaToolStripMenuItem
         '
         Me.ConsultarPiezaToolStripMenuItem.Name = "ConsultarPiezaToolStripMenuItem"
-        Me.ConsultarPiezaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.ConsultarPiezaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ConsultarPiezaToolStripMenuItem.Text = "Consultar"
         '
         'SectorToolStripMenuItem
@@ -558,7 +558,6 @@ Partial Class frm_Principal
         Me.MainMenuStrip = Me.MenuStrip
         Me.Name = "frm_Principal"
         Me.Text = "Menú Principal"
-        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip.ResumeLayout(False)
         Me.MenuStrip.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)

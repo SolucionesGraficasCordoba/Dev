@@ -5,37 +5,37 @@
 
 
     Private Sub frm_Orden_Trabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        If quienllamo_listado_orden.Name <> frm_Listado_Orden_Trabajo.Name Then
+        '  If quienllamo_listado_orden.Name <> frm_Listado_Orden_Trabajo.Name Then
 
-            'CARGA COMBOBOX PIEZA DETALLE 1
-            Dim combopieza1 = (From sec In datacontext.PIEZA
-                               Select sec.PIE_id_pieza, sec.PIE_nombre_pie
-                               Order By PIE_nombre_pie Ascending)
-            cboPiezas1_Detalle1.DataSource = combopieza1
-            cboPiezas1_Detalle1.DisplayMember = "PIE_nombre_pie"
-            cboPiezas1_Detalle1.ValueMember = "PIE_id_pieza"
-            cboPiezas1_Detalle1.SelectedIndex = -1
+        'CARGA COMBOBOX PIEZA DETALLE 1
+        Dim combopieza1 = (From sec In datacontext.PIEZA
+                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
+                           Order By PIE_nombre_pie Ascending)
+        cboPiezas1_Detalle1.DataSource = combopieza1
+        cboPiezas1_Detalle1.DisplayMember = "PIE_nombre_pie"
+        cboPiezas1_Detalle1.ValueMember = "PIE_id_pieza"
+        cboPiezas1_Detalle1.SelectedIndex = -1
 
-            'CARGA COMBOBOX PIEZA DETALLE 2
-            Dim combopieza2 = (From sec In datacontext.PIEZA
-                               Select sec.PIE_id_pieza, sec.PIE_nombre_pie
-                               Order By PIE_nombre_pie Ascending)
-            cboPiezas2_Detalle2.DataSource = combopieza2
-            cboPiezas2_Detalle2.DisplayMember = "PIE_nombre_pie"
-            cboPiezas2_Detalle2.ValueMember = "PIE_id_pieza"
-            cboPiezas2_Detalle2.SelectedIndex = -1
+        'CARGA COMBOBOX PIEZA DETALLE 2
+        Dim combopieza2 = (From sec In datacontext.PIEZA
+                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
+                           Order By PIE_nombre_pie Ascending)
+        cboPiezas2_Detalle2.DataSource = combopieza2
+        cboPiezas2_Detalle2.DisplayMember = "PIE_nombre_pie"
+        cboPiezas2_Detalle2.ValueMember = "PIE_id_pieza"
+        cboPiezas2_Detalle2.SelectedIndex = -1
 
-            'CARGA COMBOBOX PIEZA DETALLE 3
-            Dim combopieza3 = (From sec In datacontext.PIEZA
-                               Select sec.PIE_id_pieza, sec.PIE_nombre_pie
-                               Order By PIE_nombre_pie Ascending)
-            cboPiezas3_Detalle3.DataSource = combopieza3
-            cboPiezas3_Detalle3.DisplayMember = "PIE_nombre_pie"
-            cboPiezas3_Detalle3.ValueMember = "PIE_id_pieza"
-            cboPiezas3_Detalle3.SelectedIndex = -1
-        Else
+        'CARGA COMBOBOX PIEZA DETALLE 3
+        Dim combopieza3 = (From sec In datacontext.PIEZA
+                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
+                           Order By PIE_nombre_pie Ascending)
+        cboPiezas3_Detalle3.DataSource = combopieza3
+        cboPiezas3_Detalle3.DisplayMember = "PIE_nombre_pie"
+        cboPiezas3_Detalle3.ValueMember = "PIE_id_pieza"
+        cboPiezas3_Detalle3.SelectedIndex = -1
+        ' Else
 
-        End If
+        '  End If
     End Sub
 
     Sub limpiarcontroles()
@@ -264,61 +264,6 @@
         Me.Dispose()
     End Sub
 
-    Private Sub btnProceso_Click(sender As System.Object, e As System.EventArgs) Handles btnProceso1.Click
- 
-        If Me.Text = "Ver Orden" Then
-            Dim TraerProcesos = (From c In datacontext.PROCESO
-                                 Select c.PROC_descrip_digital,
-                                 c.PROC_descrip_gran_formato,
-                                 c.PROC_descrip_logistica,
-                                 c.PROC_descrip_offset,
-                                 c.PROC_descrip_terminacion,
-                                 c.id_detalle_orden_trabajo
-            Where CInt(id_detalle_orden_trabajo) = CInt(txt_id_detalle_orden_trabajo1.Text)).ToList()(0)
-
-            frm_Proceso1.txt_descripc_digital.Text = TraerProcesos.PROC_descrip_digital
-            frm_Proceso1.txt_descripc_gran_formato.Text = TraerProcesos.PROC_descrip_gran_formato
-            frm_Proceso1.txt_descripc_logistica.Text = TraerProcesos.PROC_descrip_logistica
-            frm_Proceso1.txt_descripc_offset.Text = TraerProcesos.PROC_descrip_offset
-            frm_Proceso1.txt_descripc_terminacion.Text = TraerProcesos.PROC_descrip_terminacion
-
-            frm_Proceso1.txt_descripc_digital.Enabled = False
-            frm_Proceso1.txt_descripc_gran_formato.Enabled = False
-            frm_Proceso1.txt_descripc_logistica.Enabled = False
-            frm_Proceso1.txt_descripc_offset.Enabled = False
-            frm_Proceso1.txt_descripc_terminacion.Enabled = False
-            frm_Proceso1.btnAceptar.Enabled = False
-            frm_Proceso1.ShowDialog()
-
-        ElseIf Me.Text = "Modificar Orden" Then
-            Dim TraerProcesos = (From c In datacontext.PROCESO
-                                            Select c.PROC_descrip_digital,
-                                            c.PROC_descrip_gran_formato,
-                                            c.PROC_descrip_logistica,
-                                            c.PROC_descrip_offset,
-                                            c.PROC_descrip_terminacion,
-                                            c.id_detalle_orden_trabajo
-                       Where CInt(id_detalle_orden_trabajo) = CInt(txt_id_detalle_orden_trabajo1.Text)).ToList()(0)
-
-            frm_Proceso1.txt_descripc_digital.Text = TraerProcesos.PROC_descrip_digital
-            frm_Proceso1.txt_descripc_gran_formato.Text = TraerProcesos.PROC_descrip_gran_formato
-            frm_Proceso1.txt_descripc_logistica.Text = TraerProcesos.PROC_descrip_logistica
-            frm_Proceso1.txt_descripc_offset.Text = TraerProcesos.PROC_descrip_offset
-            frm_Proceso1.txt_descripc_terminacion.Text = TraerProcesos.PROC_descrip_terminacion
-
-            frm_Proceso1.txt_descripc_digital.Enabled = True
-            frm_Proceso1.txt_descripc_gran_formato.Enabled = True
-            frm_Proceso1.txt_descripc_logistica.Enabled = True
-            frm_Proceso1.txt_descripc_offset.Enabled = True
-            frm_Proceso1.txt_descripc_terminacion.Enabled = True
-            frm_Proceso1.btnAceptar.Enabled = True
-            frm_Proceso1.ShowDialog()
-        Else
-            frm_Proceso1.Text = "Proceso Primer Producto"
-            frm_Proceso1.ShowDialog()
-        End If
-
-    End Sub
 
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles btnProceso2.Click
 
@@ -354,7 +299,7 @@
                                             c.PROC_descrip_offset,
                                             c.PROC_descrip_terminacion,
                                             c.id_detalle_orden_trabajo
-                       Where CInt(id_detalle_orden_trabajo) = CInt(txt_id_detalle_orden_trabajo1.Text)).ToList()(0)
+                       Where CInt(id_detalle_orden_trabajo) = CInt(txt_id_detalle_orden_trabajo2.Text)).ToList()(0)
 
             frm_Proceso2.txt_descripc_digital.Text = TraerProcesos.PROC_descrip_digital
             frm_Proceso2.txt_descripc_gran_formato.Text = TraerProcesos.PROC_descrip_gran_formato
@@ -990,5 +935,59 @@
 
     Private Sub frm_Orden_Trabajo_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
+    End Sub
+
+    Private Sub btnProceso1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnProceso1.Click
+        If Me.Text = "Ver Orden" Then
+            Dim TraerProcesos = (From c In datacontext.PROCESO
+                                 Select c.PROC_descrip_digital,
+                                 c.PROC_descrip_gran_formato,
+                                 c.PROC_descrip_logistica,
+                                 c.PROC_descrip_offset,
+                                 c.PROC_descrip_terminacion,
+                                 c.id_detalle_orden_trabajo
+            Where CInt(id_detalle_orden_trabajo) = CInt(txt_id_detalle_orden_trabajo1.Text)).ToList()(0)
+
+            frm_Proceso1.txt_descripc_digital.Text = TraerProcesos.PROC_descrip_digital
+            frm_Proceso1.txt_descripc_gran_formato.Text = TraerProcesos.PROC_descrip_gran_formato
+            frm_Proceso1.txt_descripc_logistica.Text = TraerProcesos.PROC_descrip_logistica
+            frm_Proceso1.txt_descripc_offset.Text = TraerProcesos.PROC_descrip_offset
+            frm_Proceso1.txt_descripc_terminacion.Text = TraerProcesos.PROC_descrip_terminacion
+
+            frm_Proceso1.txt_descripc_digital.Enabled = False
+            frm_Proceso1.txt_descripc_gran_formato.Enabled = False
+            frm_Proceso1.txt_descripc_logistica.Enabled = False
+            frm_Proceso1.txt_descripc_offset.Enabled = False
+            frm_Proceso1.txt_descripc_terminacion.Enabled = False
+            frm_Proceso1.btnAceptar.Enabled = False
+            frm_Proceso1.ShowDialog()
+
+        ElseIf Me.Text = "Modificar Orden" Then
+            Dim TraerProcesos = (From c In datacontext.PROCESO
+                                            Select c.PROC_descrip_digital,
+                                            c.PROC_descrip_gran_formato,
+                                            c.PROC_descrip_logistica,
+                                            c.PROC_descrip_offset,
+                                            c.PROC_descrip_terminacion,
+                                            c.id_detalle_orden_trabajo
+                       Where CInt(id_detalle_orden_trabajo) = CInt(txt_id_detalle_orden_trabajo1.Text)).ToList()(0)
+
+            frm_Proceso1.txt_descripc_digital.Text = TraerProcesos.PROC_descrip_digital
+            frm_Proceso1.txt_descripc_gran_formato.Text = TraerProcesos.PROC_descrip_gran_formato
+            frm_Proceso1.txt_descripc_logistica.Text = TraerProcesos.PROC_descrip_logistica
+            frm_Proceso1.txt_descripc_offset.Text = TraerProcesos.PROC_descrip_offset
+            frm_Proceso1.txt_descripc_terminacion.Text = TraerProcesos.PROC_descrip_terminacion
+
+            frm_Proceso1.txt_descripc_digital.Enabled = True
+            frm_Proceso1.txt_descripc_gran_formato.Enabled = True
+            frm_Proceso1.txt_descripc_logistica.Enabled = True
+            frm_Proceso1.txt_descripc_offset.Enabled = True
+            frm_Proceso1.txt_descripc_terminacion.Enabled = True
+            frm_Proceso1.btnAceptar.Enabled = True
+            frm_Proceso1.ShowDialog()
+        Else
+            frm_Proceso1.Text = "Proceso Primer Producto"
+            frm_Proceso1.ShowDialog()
+        End If
     End Sub
 End Class
