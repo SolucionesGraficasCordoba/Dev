@@ -10,13 +10,10 @@ Public Class frm_Colaborador
 
     Private Sub frm_Colaborador_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        'dgvLista_Colaboradores.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter
-
         txt_id_colaborador.Visible = False
         Label1.Visible = False
         armargrilla()
         cargargrilla()
-        'dgvLista_Colaboradores.ClearSelection()
         lblTotal_Colaboradores.Text = dgvLista_Colaboradores.Rows.Count
 
         'CARGA COMBOBOX SECTOR
@@ -54,8 +51,8 @@ Public Class frm_Colaborador
             End If
 
             Dim clie = New COLABORADOR
-            clie.COL_nombre_col = txt_nombre_colaborador.Text
-            clie.COL_apellido_col = txt_apellido_colaborador.Text
+            clie.COL_nombre_col = StrConv(txt_nombre_colaborador.Text, VbStrConv.ProperCase)
+            clie.COL_apellido_col = StrConv(txt_apellido_colaborador.Text, VbStrConv.ProperCase)
             clie.SEC_id_sector = cbo_sector.SelectedValue
 
             datacontext.COLABORADOR.InsertOnSubmit(clie)
@@ -86,8 +83,8 @@ Public Class frm_Colaborador
         End If
         Try
             Dim ActualizarCliente = (From P In datacontext.COLABORADOR Where P.COL_id_colaborador = (txt_id_colaborador.Text.ToUpper)).ToList()(0)
-            ActualizarCliente.COL_nombre_col = txt_nombre_colaborador.Text
-            ActualizarCliente.COL_apellido_col = txt_apellido_colaborador.Text
+            ActualizarCliente.COL_nombre_col = StrConv(txt_nombre_colaborador.Text, VbStrConv.ProperCase)
+            ActualizarCliente.COL_apellido_col = StrConv(txt_apellido_colaborador.Text, VbStrConv.ProperCase)
             ActualizarCliente.SEC_id_sector = cbo_sector.SelectedValue
 
             datacontext.SubmitChanges()

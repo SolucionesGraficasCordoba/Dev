@@ -44,8 +44,8 @@
             'GUARDA RETRABAJO
             Dim ret = New RE_TRABAJO
 
-            ret.RET_origen_area = txt_origen.Text
-            ret.RET_procedimiento = txt_procedimiento.Text
+            ret.RET_origen_area = StrConv(txt_origen.Text, VbStrConv.ProperCase)
+            ret.RET_procedimiento = StrConv(txt_procedimiento.Text, VbStrConv.ProperCase)
             ret.RET_fecha = dtpFecha_Re_Trabajo.Text
 
             ret.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
@@ -54,13 +54,13 @@
             ret.RET_tamaño_dort = txtTamaño1_Detalle1.Text
             ret.RET_tipo_impresion_dort = cboTipoImpresion1_Detalle1.Text
 
-            ret.RET_papel_soporte_1 = txt_Papel1_Soporte1.Text
-            ret.RET_papel_soporte_2 = txt_Papel2_Soporte1.Text
-            ret.RET_papel_soporte_3 = txt_Papel3_Soporte1.Text
+            ret.RET_papel_soporte_1 = StrConv(txt_Papel1_Soporte1.Text, VbStrConv.ProperCase)
+            ret.RET_papel_soporte_2 = StrConv(txt_Papel2_Soporte1.Text, VbStrConv.ProperCase)
+            ret.RET_papel_soporte_3 = StrConv(txt_Papel3_Soporte1.Text, VbStrConv.ProperCase)
 
-            ret.RET_gramaje_soporte_1 = txt_Gramaje1_Soporte1.Text
-            ret.RET_gramaje_soporte_2 = txt_Gramaje2_Soporte1.Text
-            ret.RET_gramaje_soporte_3 = txt_Gramaje3_Soporte1.Text
+            ret.RET_gramaje_soporte_1 = StrConv(txt_Gramaje1_Soporte1.Text, VbStrConv.ProperCase)
+            ret.RET_gramaje_soporte_2 = StrConv(txt_Gramaje2_Soporte1.Text, VbStrConv.ProperCase)
+            ret.RET_gramaje_soporte_3 = StrConv(txt_Gramaje3_Soporte1.Text, VbStrConv.ProperCase)
 
             ret.RET_cantidad_soporte_1 = txt_Cantidad1_Soporte1.Text
             ret.RET_cantidad_soporte_2 = txt_Cantidad2_Soporte1.Text

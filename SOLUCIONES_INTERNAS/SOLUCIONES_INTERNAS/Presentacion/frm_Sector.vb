@@ -50,7 +50,7 @@
 
             End If
             Dim clie = New SECTOR
-            clie.SEC_nombre_sector = txt_nombre_sector.Text
+            clie.SEC_nombre_sector = StrConv(txt_nombre_sector.Text, VbStrConv.ProperCase)
 
             datacontext.SECTOR.InsertOnSubmit(clie)
             datacontext.SubmitChanges()
@@ -72,7 +72,7 @@
         End If
         Try
             Dim ActualizarCliente = (From P In datacontext.SECTOR Where P.SEC_id_sector = (txt_id_sector.Text.ToUpper)).ToList()(0)
-            ActualizarCliente.SEC_nombre_sector = txt_nombre_sector.Text
+            ActualizarCliente.SEC_nombre_sector = StrConv(txt_nombre_sector.Text, VbStrConv.ProperCase)
 
             datacontext.SubmitChanges()
             MsgBox("Los datos se han modificado correctamente")

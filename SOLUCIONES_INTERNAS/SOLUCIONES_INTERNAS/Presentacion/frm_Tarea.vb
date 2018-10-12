@@ -16,14 +16,14 @@
             If txt_detalle_tarea1.Text.Length <> 0 Or txtNumero_Orden_Trabajo1.Text.Length <> 0 Then
                 'REGISTRO 1 DE TAREA
                 Dim tar1 = New TAREA
-                tar1.TAR_tiempo_estimado = txtTiempo_Estimado1.Text
-                tar1.TAR_tiempo_real = txtTiempo_Real1.Text
+                tar1.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado1.Text, VbStrConv.ProperCase)
+                tar1.TAR_tiempo_real = StrConv(txtTiempo_Real1.Text, VbStrConv.ProperCase)
                 tar1.COL_id_colaborador = txt_id_colaborador.Text
                 tar1.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
-                tar1.TAR_hora_fin = txtHora_Finalizacion1.Text
-                tar1.TAR_carga_horaria = txt_Carga_Horaria1.Text
-                tar1.TAR_detalle_tarea = txt_detalle_tarea1.Text
-                tar1.TAR_observaciones = txtObservaciones1.Text
+                tar1.TAR_hora_fin = StrConv(txtHora_Finalizacion1.Text, VbStrConv.ProperCase)
+                tar1.TAR_carga_horaria = StrConv(txt_Carga_Horaria1.Text, VbStrConv.ProperCase)
+                tar1.TAR_detalle_tarea = StrConv(txt_detalle_tarea1.Text, VbStrConv.ProperCase)
+                tar1.TAR_observaciones = StrConv(txtObservaciones1.Text, VbStrConv.ProperCase)
                 tar1.TAR_fecha = dtpFecha.Text
                 datacontext.TAREA.InsertOnSubmit(tar1)
                 datacontext.SubmitChanges()
@@ -33,13 +33,13 @@
             If txt_detalle_tarea2.Text.Length <> 0 Then
                 'REGISTRO 2 DE TAREA
                 Dim tar2 = New TAREA
-                tar2.TAR_tiempo_estimado = txtTiempo_Estimado2.Text
-                tar2.TAR_tiempo_real = txtTiempo_Real2.Text
+                tar2.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado2.Text, VbStrConv.ProperCase)
+                tar2.TAR_tiempo_real = StrConv(txtTiempo_Real2.Text, VbStrConv.ProperCase)
                 tar2.COL_id_colaborador = txt_id_colaborador.Text
                 tar2.ORT_id_orden_trabajo = txt_id_orden_trabajo2.Text
-                tar2.TAR_hora_fin = txtHora_Finalizacion2.Text
-                tar2.TAR_detalle_tarea = txt_detalle_tarea2.Text
-                tar2.TAR_observaciones = txtObservaciones2.Text
+                tar2.TAR_hora_fin = StrConv(txtHora_Finalizacion2.Text, VbStrConv.ProperCase)
+                tar2.TAR_detalle_tarea = StrConv(txt_detalle_tarea2.Text, VbStrConv.ProperCase)
+                tar2.TAR_observaciones = StrConv(txtObservaciones2.Text, VbStrConv.ProperCase)
                 tar2.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar2)
@@ -50,13 +50,13 @@
             If txt_detalle_tarea3.Text.Length <> 0 Then
                 'REGISTRO 3 DE TAREA
                 Dim tar3 = New TAREA
-                tar3.TAR_tiempo_estimado = txtTiempo_Estimado3.Text
-                tar3.TAR_tiempo_real = txtTiempo_Real3.Text
+                tar3.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado3.Text, VbStrConv.ProperCase)
+                tar3.TAR_tiempo_real = StrConv(txtTiempo_Real3.Text, VbStrConv.ProperCase)
                 tar3.COL_id_colaborador = txt_id_colaborador.Text
                 tar3.ORT_id_orden_trabajo = txt_id_orden_trabajo3.Text
-                tar3.TAR_hora_fin = txtHora_Finalizacion3.Text
-                tar3.TAR_detalle_tarea = txt_detalle_tarea3.Text
-                tar3.TAR_observaciones = txtObservaciones3.Text
+                tar3.TAR_hora_fin = StrConv(txtHora_Finalizacion3.Text, VbStrConv.ProperCase)
+                tar3.TAR_detalle_tarea = StrConv(txt_detalle_tarea3.Text, VbStrConv.ProperCase)
+                tar3.TAR_observaciones = StrConv(txtObservaciones3.Text, VbStrConv.ProperCase)
                 tar3.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar3)
@@ -67,13 +67,13 @@
             If txt_detalle_tarea4.Text.Length <> 0 Then
                 'REGISTRO 4 DE TAREA
                 Dim tar4 = New TAREA
-                tar4.TAR_tiempo_estimado = txtTiempo_Estimado4.Text
-                tar4.TAR_tiempo_real = txtTiempo_Real4.Text
+                tar4.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado4.Text, VbStrConv.ProperCase)
+                tar4.TAR_tiempo_real = StrConv(txtTiempo_Real4.Text, VbStrConv.ProperCase)
                 tar4.COL_id_colaborador = txt_id_colaborador.Text
                 tar4.ORT_id_orden_trabajo = txt_id_orden_trabajo4.Text
-                tar4.TAR_hora_fin = txtHora_Finalizacion4.Text
-                tar4.TAR_detalle_tarea = txt_detalle_tarea4.Text
-                tar4.TAR_observaciones = txtObservaciones4.Text
+                tar4.TAR_hora_fin = StrConv(txtHora_Finalizacion4.Text, VbStrConv.ProperCase)
+                tar4.TAR_detalle_tarea = StrConv(txt_detalle_tarea4.Text, VbStrConv.ProperCase)
+                tar4.TAR_observaciones = StrConv(txtObservaciones4.Text, VbStrConv.ProperCase)
                 tar4.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar4)
@@ -84,13 +84,13 @@
             If txt_detalle_tarea5.Text.Length <> 0 Then
                 'REGISTRO 5 DE TAREA
                 Dim tar5 = New TAREA
-                tar5.TAR_tiempo_estimado = txtTiempo_Estimado5.Text
-                tar5.TAR_tiempo_real = txtTiempo_Real5.Text
+                tar5.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado5.Text, VbStrConv.ProperCase)
+                tar5.TAR_tiempo_real = StrConv(txtTiempo_Real5.Text, VbStrConv.ProperCase)
                 tar5.COL_id_colaborador = txt_id_colaborador.Text
                 tar5.ORT_id_orden_trabajo = txt_id_orden_trabajo5.Text
-                tar5.TAR_hora_fin = txtHora_Finalizacion5.Text
-                tar5.TAR_detalle_tarea = txt_detalle_tarea5.Text
-                tar5.TAR_observaciones = txtObservaciones5.Text
+                tar5.TAR_hora_fin = StrConv(txtHora_Finalizacion5.Text, VbStrConv.ProperCase)
+                tar5.TAR_detalle_tarea = StrConv(txt_detalle_tarea5.Text, VbStrConv.ProperCase)
+                tar5.TAR_observaciones = StrConv(txtObservaciones5.Text, VbStrConv.ProperCase)
                 tar5.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar5)
@@ -101,13 +101,13 @@
             If txt_detalle_tarea6.Text.Length <> 0 Then
                 'REGISTRO 6 DE TAREA
                 Dim tar6 = New TAREA
-                tar6.TAR_tiempo_estimado = txtTiempo_Estimado6.Text
-                tar6.TAR_tiempo_real = txtTiempo_Real6.Text
+                tar6.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado6.Text, VbStrConv.ProperCase)
+                tar6.TAR_tiempo_real = StrConv(txtTiempo_Real6.Text, VbStrConv.ProperCase)
                 tar6.COL_id_colaborador = txt_id_colaborador.Text
                 tar6.ORT_id_orden_trabajo = txt_id_orden_trabajo6.Text
-                tar6.TAR_hora_fin = txtHora_Finalizacion6.Text
-                tar6.TAR_detalle_tarea = txt_detalle_tarea6.Text
-                tar6.TAR_observaciones = txtObservaciones6.Text
+                tar6.TAR_hora_fin = StrConv(txtHora_Finalizacion6.Text, VbStrConv.ProperCase)
+                tar6.TAR_detalle_tarea = StrConv(txt_detalle_tarea6.Text, VbStrConv.ProperCase)
+                tar6.TAR_observaciones = StrConv(txtObservaciones6.Text, VbStrConv.ProperCase)
                 tar6.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar6)
@@ -118,13 +118,13 @@
             If txt_detalle_tarea7.Text.Length <> 0 Then
                 'REGISTRO 7 DE TAREA
                 Dim tar7 = New TAREA
-                tar7.TAR_tiempo_estimado = txtTiempo_Estimado7.Text
-                tar7.TAR_tiempo_real = txtTiempo_Real7.Text
+                tar7.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado7.Text, VbStrConv.ProperCase)
+                tar7.TAR_tiempo_real = StrConv(txtTiempo_Real7.Text, VbStrConv.ProperCase)
                 tar7.COL_id_colaborador = txt_id_colaborador.Text
                 tar7.ORT_id_orden_trabajo = txt_id_orden_trabajo7.Text
-                tar7.TAR_hora_fin = txtHora_Finalizacion7.Text
-                tar7.TAR_detalle_tarea = txt_detalle_tarea7.Text
-                tar7.TAR_observaciones = txtObservaciones5.Text
+                tar7.TAR_hora_fin = StrConv(txtHora_Finalizacion7.Text, VbStrConv.ProperCase)
+                tar7.TAR_detalle_tarea = StrConv(txt_detalle_tarea7.Text, VbStrConv.ProperCase)
+                tar7.TAR_observaciones = StrConv(txtObservaciones5.Text, VbStrConv.ProperCase)
                 tar7.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar7)
@@ -135,13 +135,13 @@
             If txt_detalle_tarea8.Text.Length <> 0 Then
                 'REGISTRO 8 DE TAREA
                 Dim tar8 = New TAREA
-                tar8.TAR_tiempo_estimado = txtTiempo_Estimado8.Text
-                tar8.TAR_tiempo_real = txtTiempo_Real8.Text
+                tar8.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado8.Text, VbStrConv.ProperCase)
+                tar8.TAR_tiempo_real = StrConv(txtTiempo_Real8.Text, VbStrConv.ProperCase)
                 tar8.COL_id_colaborador = txt_id_colaborador.Text
                 tar8.ORT_id_orden_trabajo = txt_id_orden_trabajo8.Text
-                tar8.TAR_hora_fin = txtHora_Finalizacion8.Text
-                tar8.TAR_detalle_tarea = txt_detalle_tarea8.Text
-                tar8.TAR_observaciones = txtObservaciones8.Text
+                tar8.TAR_hora_fin = StrConv(txtHora_Finalizacion8.Text, VbStrConv.ProperCase)
+                tar8.TAR_detalle_tarea = StrConv(txt_detalle_tarea8.Text, VbStrConv.ProperCase)
+                tar8.TAR_observaciones = StrConv(txtObservaciones8.Text, VbStrConv.ProperCase)
                 tar8.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar8)
@@ -152,13 +152,13 @@
             If txt_detalle_tarea9.Text.Length <> 0 Then
                 'REGISTRO 9 DE TAREA
                 Dim tar9 = New TAREA
-                tar9.TAR_tiempo_estimado = txtTiempo_Estimado9.Text
-                tar9.TAR_tiempo_real = txtTiempo_Real9.Text
+                tar9.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado9.Text, VbStrConv.ProperCase)
+                tar9.TAR_tiempo_real = StrConv(txtTiempo_Real9.Text, VbStrConv.ProperCase)
                 tar9.COL_id_colaborador = txt_id_colaborador.Text
                 tar9.ORT_id_orden_trabajo = txt_id_orden_trabajo9.Text
-                tar9.TAR_hora_fin = txtHora_Finalizacion9.Text
-                tar9.TAR_detalle_tarea = txt_detalle_tarea9.Text
-                tar9.TAR_observaciones = txtObservaciones9.Text
+                tar9.TAR_hora_fin = StrConv(txtHora_Finalizacion9.Text, VbStrConv.ProperCase)
+                tar9.TAR_detalle_tarea = StrConv(txt_detalle_tarea9.Text, VbStrConv.ProperCase)
+                tar9.TAR_observaciones = StrConv(txtObservaciones9.Text, VbStrConv.ProperCase)
                 tar9.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar9)
@@ -169,13 +169,13 @@
             If txt_detalle_tarea10.Text.Length <> 0 Then
                 'REGISTRO 10 DE TAREA
                 Dim tar10 = New TAREA
-                tar10.TAR_tiempo_estimado = txtTiempo_Estimado10.Text
-                tar10.TAR_tiempo_real = txtTiempo_Real10.Text
+                tar10.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado10.Text, VbStrConv.ProperCase)
+                tar10.TAR_tiempo_real = StrConv(txtTiempo_Real10.Text, VbStrConv.ProperCase)
                 tar10.COL_id_colaborador = txt_id_colaborador.Text
                 tar10.ORT_id_orden_trabajo = txt_id_orden_trabajo10.Text
-                tar10.TAR_hora_fin = txtHora_Finalizacion10.Text
-                tar10.TAR_detalle_tarea = txt_detalle_tarea10.Text
-                tar10.TAR_observaciones = txtObservaciones10.Text
+                tar10.TAR_hora_fin = StrConv(txtHora_Finalizacion10.Text, VbStrConv.ProperCase)
+                tar10.TAR_detalle_tarea = StrConv(txt_detalle_tarea10.Text, VbStrConv.ProperCase)
+                tar10.TAR_observaciones = StrConv(txtObservaciones10.Text, VbStrConv.ProperCase)
                 tar10.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar10)
@@ -186,13 +186,13 @@
             If txt_detalle_tarea11.Text.Length <> 0 Then
                 'REGISTRO 11 DE TAREA
                 Dim tar11 = New TAREA
-                tar11.TAR_tiempo_estimado = txtTiempo_Estimado11.Text
-                tar11.TAR_tiempo_real = txtTiempo_Real11.Text
+                tar11.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado11.Text, VbStrConv.ProperCase)
+                tar11.TAR_tiempo_real = StrConv(txtTiempo_Real11.Text, VbStrConv.ProperCase)
                 tar11.COL_id_colaborador = txt_id_colaborador.Text
                 tar11.ORT_id_orden_trabajo = txt_id_orden_trabajo11.Text
-                tar11.TAR_hora_fin = txtHora_Finalizacion11.Text
-                tar11.TAR_detalle_tarea = txt_detalle_tarea11.Text
-                tar11.TAR_observaciones = txtObservaciones11.Text
+                tar11.TAR_hora_fin = StrConv(txtHora_Finalizacion11.Text, VbStrConv.ProperCase)
+                tar11.TAR_detalle_tarea = StrConv(txt_detalle_tarea11.Text, VbStrConv.ProperCase)
+                tar11.TAR_observaciones = StrConv(txtObservaciones11.Text, VbStrConv.ProperCase)
                 tar11.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar11)
@@ -203,13 +203,13 @@
             If txt_detalle_tarea12.Text.Length <> 0 Then
                 'REGISTRO 12 DE TAREA
                 Dim tar12 = New TAREA
-                tar12.TAR_tiempo_estimado = txtTiempo_Estimado12.Text
-                tar12.TAR_tiempo_real = txtTiempo_Real2.Text
+                tar12.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado12.Text, VbStrConv.ProperCase)
+                tar12.TAR_tiempo_real = StrConv(txtTiempo_Real2.Text, VbStrConv.ProperCase)
                 tar12.COL_id_colaborador = txt_id_colaborador.Text
                 tar12.ORT_id_orden_trabajo = txt_id_orden_trabajo12.Text
-                tar12.TAR_hora_fin = txtHora_Finalizacion12.Text
-                tar12.TAR_detalle_tarea = txt_detalle_tarea12.Text
-                tar12.TAR_observaciones = txtObservaciones12.Text
+                tar12.TAR_hora_fin = StrConv(txtHora_Finalizacion12.Text, VbStrConv.ProperCase)
+                tar12.TAR_detalle_tarea = StrConv(txt_detalle_tarea12.Text, VbStrConv.ProperCase)
+                tar12.TAR_observaciones = StrConv(txtObservaciones12.Text, VbStrConv.ProperCase)
                 tar12.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar12)
@@ -220,13 +220,13 @@
             If txt_detalle_tarea13.Text.Length <> 0 Then
                 'REGISTRO 13 DE TAREA
                 Dim tar13 = New TAREA
-                tar13.TAR_tiempo_estimado = txtTiempo_Estimado13.Text
-                tar13.TAR_tiempo_real = txtTiempo_Real13.Text
+                tar13.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado13.Text, VbStrConv.ProperCase)
+                tar13.TAR_tiempo_real = StrConv(txtTiempo_Real13.Text, VbStrConv.ProperCase)
                 tar13.COL_id_colaborador = txt_id_colaborador.Text
                 tar13.ORT_id_orden_trabajo = txt_id_orden_trabajo13.Text
-                tar13.TAR_hora_fin = txtHora_Finalizacion13.Text
-                tar13.TAR_detalle_tarea = txt_detalle_tarea13.Text
-                tar13.TAR_observaciones = txtObservaciones13.Text
+                tar13.TAR_hora_fin = StrConv(txtHora_Finalizacion13.Text, VbStrConv.ProperCase)
+                tar13.TAR_detalle_tarea = StrConv(txt_detalle_tarea13.Text, VbStrConv.ProperCase)
+                tar13.TAR_observaciones = StrConv(txtObservaciones13.Text, VbStrConv.ProperCase)
                 tar13.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar13)
@@ -237,13 +237,13 @@
             If txt_detalle_tarea14.Text.Length <> 0 Then
                 'REGISTRO 14 DE TAREA
                 Dim tar14 = New TAREA
-                tar14.TAR_tiempo_estimado = txtTiempo_Estimado14.Text
-                tar14.TAR_tiempo_real = txtTiempo_Real14.Text
+                tar14.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado14.Text, VbStrConv.ProperCase)
+                tar14.TAR_tiempo_real = StrConv(txtTiempo_Real14.Text, VbStrConv.ProperCase)
                 tar14.COL_id_colaborador = txt_id_colaborador.Text
                 tar14.ORT_id_orden_trabajo = txt_id_orden_trabajo14.Text
-                tar14.TAR_hora_fin = txtHora_Finalizacion14.Text
-                tar14.TAR_detalle_tarea = txt_detalle_tarea14.Text
-                tar14.TAR_observaciones = txtObservaciones14.Text
+                tar14.TAR_hora_fin = StrConv(txtHora_Finalizacion14.Text, VbStrConv.ProperCase)
+                tar14.TAR_detalle_tarea = StrConv(txt_detalle_tarea14.Text, VbStrConv.ProperCase)
+                tar14.TAR_observaciones = StrConv(txtObservaciones14.Text, VbStrConv.ProperCase)
                 tar14.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar14)
@@ -254,13 +254,13 @@
             If txt_detalle_tarea15.Text.Length <> 0 Then
                 'REGISTRO 15 DE TAREA
                 Dim tar15 = New TAREA
-                tar15.TAR_tiempo_estimado = txtTiempo_Estimado15.Text
-                tar15.TAR_tiempo_real = txtTiempo_Real15.Text
+                tar15.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado15.Text, VbStrConv.ProperCase)
+                tar15.TAR_tiempo_real = StrConv(txtTiempo_Real15.Text, VbStrConv.ProperCase)
                 tar15.COL_id_colaborador = txt_id_colaborador.Text
                 tar15.ORT_id_orden_trabajo = txt_id_orden_trabajo15.Text
-                tar15.TAR_hora_fin = txtHora_Finalizacion15.Text
-                tar15.TAR_detalle_tarea = txt_detalle_tarea15.Text
-                tar15.TAR_observaciones = txtObservaciones15.Text
+                tar15.TAR_hora_fin = StrConv(txtHora_Finalizacion15.Text, VbStrConv.ProperCase)
+                tar15.TAR_detalle_tarea = StrConv(txt_detalle_tarea15.Text, VbStrConv.ProperCase)
+                tar15.TAR_observaciones = StrConv(txtObservaciones15.Text, VbStrConv.ProperCase)
                 tar15.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar15)
@@ -271,13 +271,13 @@
             If txt_detalle_tarea16.Text.Length <> 0 Then
                 'REGISTRO 16 DE TAREA
                 Dim tar16 = New TAREA
-                tar16.TAR_tiempo_estimado = txtTiempo_Estimado16.Text
-                tar16.TAR_tiempo_real = txtTiempo_Real16.Text
+                tar16.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado16.Text, VbStrConv.ProperCase)
+                tar16.TAR_tiempo_real = StrConv(txtTiempo_Real16.Text, VbStrConv.ProperCase)
                 tar16.COL_id_colaborador = txt_id_colaborador.Text
                 tar16.ORT_id_orden_trabajo = txt_id_orden_trabajo16.Text
-                tar16.TAR_hora_fin = txtHora_Finalizacion16.Text
-                tar16.TAR_detalle_tarea = txt_detalle_tarea16.Text
-                tar16.TAR_observaciones = txtObservaciones16.Text
+                tar16.TAR_hora_fin = StrConv(txtHora_Finalizacion16.Text, VbStrConv.ProperCase)
+                tar16.TAR_detalle_tarea = StrConv(txt_detalle_tarea16.Text, VbStrConv.ProperCase)
+                tar16.TAR_observaciones = StrConv(txtObservaciones16.Text, VbStrConv.ProperCase)
                 tar16.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar16)
@@ -288,13 +288,13 @@
             If txt_detalle_tarea17.Text.Length <> 0 Then
                 'REGISTRO 17 DE TAREA
                 Dim tar17 = New TAREA
-                tar17.TAR_tiempo_estimado = txtTiempo_Estimado17.Text
-                tar17.TAR_tiempo_real = txtTiempo_Real17.Text
+                tar17.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado17.Text, VbStrConv.ProperCase)
+                tar17.TAR_tiempo_real = StrConv(txtTiempo_Real17.Text, VbStrConv.ProperCase)
                 tar17.COL_id_colaborador = txt_id_colaborador.Text
                 tar17.ORT_id_orden_trabajo = txt_id_orden_trabajo17.Text
-                tar17.TAR_hora_fin = txtHora_Finalizacion17.Text
-                tar17.TAR_detalle_tarea = txt_detalle_tarea17.Text
-                tar17.TAR_observaciones = txtObservaciones17.Text
+                tar17.TAR_hora_fin = StrConv(txtHora_Finalizacion17.Text, VbStrConv.ProperCase)
+                tar17.TAR_detalle_tarea = StrConv(txt_detalle_tarea17.Text, VbStrConv.ProperCase)
+                tar17.TAR_observaciones = StrConv(txtObservaciones17.Text, VbStrConv.ProperCase)
                 tar17.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar17)
@@ -305,13 +305,13 @@
             If txt_detalle_tarea18.Text.Length <> 0 Then
                 'REGISTRO 18 DE TAREA
                 Dim tar18 = New TAREA
-                tar18.TAR_tiempo_estimado = txtTiempo_Estimado18.Text
-                tar18.TAR_tiempo_real = txtTiempo_Real18.Text
+                tar18.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado18.Text, VbStrConv.ProperCase)
+                tar18.TAR_tiempo_real = StrConv(txtTiempo_Real18.Text, VbStrConv.ProperCase)
                 tar18.COL_id_colaborador = txt_id_colaborador.Text
                 tar18.ORT_id_orden_trabajo = txt_id_orden_trabajo18.Text
-                tar18.TAR_hora_fin = txtHora_Finalizacion18.Text
-                tar18.TAR_detalle_tarea = txt_detalle_tarea18.Text
-                tar18.TAR_observaciones = txtObservaciones18.Text
+                tar18.TAR_hora_fin = StrConv(txtHora_Finalizacion18.Text, VbStrConv.ProperCase)
+                tar18.TAR_detalle_tarea = StrConv(txt_detalle_tarea18.Text, VbStrConv.ProperCase)
+                tar18.TAR_observaciones = StrConv(txtObservaciones18.Text, VbStrConv.ProperCase)
                 tar18.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar18)
@@ -322,13 +322,13 @@
             If txt_detalle_tarea19.Text.Length <> 0 Then
                 'REGISTRO 19 DE TAREA
                 Dim tar19 = New TAREA
-                tar19.TAR_tiempo_estimado = txtTiempo_Estimado19.Text
-                tar19.TAR_tiempo_real = txtTiempo_Real19.Text
+                tar19.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado19.Text, VbStrConv.ProperCase)
+                tar19.TAR_tiempo_real = StrConv(txtTiempo_Real19.Text, VbStrConv.ProperCase)
                 tar19.COL_id_colaborador = txt_id_colaborador.Text
                 tar19.ORT_id_orden_trabajo = txt_id_orden_trabajo19.Text
-                tar19.TAR_hora_fin = txtHora_Finalizacion19.Text
-                tar19.TAR_detalle_tarea = txt_detalle_tarea19.Text
-                tar19.TAR_observaciones = txtObservaciones19.Text
+                tar19.TAR_hora_fin = StrConv(txtHora_Finalizacion19.Text, VbStrConv.ProperCase)
+                tar19.TAR_detalle_tarea = StrConv(txt_detalle_tarea19.Text, VbStrConv.ProperCase)
+                tar19.TAR_observaciones = StrConv(txtObservaciones19.Text, VbStrConv.ProperCase)
                 tar19.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar19)
@@ -339,13 +339,13 @@
             If txt_detalle_tarea20.Text.Length <> 0 Then
                 'REGISTRO 20 DE TAREA
                 Dim tar20 = New TAREA
-                tar20.TAR_tiempo_estimado = txtTiempo_Estimado20.Text
-                tar20.TAR_tiempo_real = txtTiempo_Real20.Text
+                tar20.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado20.Text, VbStrConv.ProperCase)
+                tar20.TAR_tiempo_real = StrConv(txtTiempo_Real20.Text, VbStrConv.ProperCase)
                 tar20.COL_id_colaborador = txt_id_colaborador.Text
                 tar20.ORT_id_orden_trabajo = txt_id_orden_trabajo20.Text
-                tar20.TAR_hora_fin = txtHora_Finalizacion20.Text
-                tar20.TAR_detalle_tarea = txt_detalle_tarea20.Text
-                tar20.TAR_observaciones = txtObservaciones20.Text
+                tar20.TAR_hora_fin = StrConv(txtHora_Finalizacion20.Text, VbStrConv.ProperCase)
+                tar20.TAR_detalle_tarea = StrConv(txt_detalle_tarea20.Text, VbStrConv.ProperCase)
+                tar20.TAR_observaciones = StrConv(txtObservaciones20.Text, VbStrConv.ProperCase)
                 tar20.TAR_fecha = dtpFecha.Text
 
                 datacontext.TAREA.InsertOnSubmit(tar20)
@@ -498,115 +498,115 @@
         Try
             Dim ActualizarTarea = (From P In datacontext.TAREA
                                    Where P.TAR_id_tarea = (txt_id_tarea.Text.ToUpper)).ToList()(0)
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado1.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado2.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado3.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado4.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado5.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado6.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado7.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado8.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado9.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado10.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado11.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado12.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado13.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado14.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado15.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado16.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado17.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado18.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado19.Text
-            ActualizarTarea.TAR_tiempo_estimado = txtTiempo_Estimado20.Text
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado1.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado2.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado3.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado4.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado5.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado6.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado7.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado8.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado9.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado10.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado11.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado12.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado13.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado14.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado15.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado16.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado17.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado18.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado19.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado20.Text, VbStrConv.ProperCase)
 
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real1.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real2.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real3.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real4.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real5.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real6.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real7.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real8.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real9.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real10.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real11.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real12.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real13.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real14.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real15.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real16.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real17.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real18.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real19.Text
-            ActualizarTarea.TAR_tiempo_real = txtTiempo_Real20.Text
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real1.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real2.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real3.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real4.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real5.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real6.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real7.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real8.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real9.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real10.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real11.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real12.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real13.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real14.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real15.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real16.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real17.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real18.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real19.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txtTiempo_Real20.Text, VbStrConv.ProperCase)
 
             ActualizarTarea.COL_id_colaborador = txt_id_colaborador.Text
             ActualizarTarea.ORT_id_orden_trabajo = txt_id_colaborador.Text
 
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion1.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion2.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion3.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion4.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion5.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion6.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion7.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion8.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion9.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion10.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion11.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion12.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion13.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion14.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion15.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion16.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion17.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion18.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion19.Text
-            ActualizarTarea.TAR_hora_fin = txtHora_Finalizacion20.Text
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion1.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion2.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion3.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion4.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion5.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion6.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion7.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion8.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion9.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion10.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion11.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion12.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion13.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion14.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion15.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion16.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion17.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion18.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion19.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_hora_fin = StrConv(txtHora_Finalizacion20.Text, VbStrConv.ProperCase)
 
-            ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria1.Text
+            ActualizarTarea.TAR_carga_horaria = StrConv(txt_Carga_Horaria1.Text, VbStrConv.ProperCase)
 
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea1.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea2.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea3.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea4.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea5.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea6.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea7.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea8.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea9.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea10.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea11.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea12.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea13.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea14.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea15.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea16.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea17.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea18.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea19.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_detalle_tarea20.Text
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea1.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea2.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea3.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea4.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea5.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea6.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea7.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea8.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea9.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea10.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea11.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea12.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea13.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea14.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea15.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea16.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea17.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea18.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea19.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_detalle_tarea20.Text, VbStrConv.ProperCase)
 
-            ActualizarTarea.TAR_observaciones = txtObservaciones1.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones2.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones3.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones4.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones5.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones6.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones7.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones8.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones9.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones10.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones11.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones12.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones13.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones14.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones15.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones16.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones17.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones18.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones19.Text
-            ActualizarTarea.TAR_observaciones = txtObservaciones20.Text
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones1.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones2.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones3.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones4.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones5.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones6.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones7.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones8.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones9.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones10.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones11.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones12.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones13.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones14.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones15.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones16.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones17.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones18.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones19.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txtObservaciones20.Text, VbStrConv.ProperCase)
 
             datacontext.SubmitChanges()
             MsgBox("Los datos se han modificado correctamente")

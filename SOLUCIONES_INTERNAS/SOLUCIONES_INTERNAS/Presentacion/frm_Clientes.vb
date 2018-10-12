@@ -24,19 +24,18 @@
                 limpiarcontroles()
                 Exit Sub
             End If
-
             If txt_razonsocial_cliente.Text.Length = 0 Then
                 MsgBox("Debe completar Nombre o Razón Social del Cliente")
                 txt_razonsocial_cliente.Focus()
                 Exit Sub
             End If
             Dim clie = New CLIENTE
-            clie.CLI_razon_social = txt_razonsocial_cliente.Text
-            clie.CLI_mail_cli = txt_mail_cliente.Text
-            clie.CLI_telefono_cli = txtTelefono_Cliente.Text
-            clie.CLI_domicilio = txt_Domicilio_Cliente.Text
-            clie.CLI_localidad = txt_Localidad_Cliente.Text
-            clie.CLI_codigo_postal = txt_Codigo_Postal_Cliente.Text
+            clie.CLI_razon_social = StrConv(txt_razonsocial_cliente.Text, VbStrConv.ProperCase)
+            clie.CLI_mail_cli = StrConv(txt_mail_cliente.Text, VbStrConv.ProperCase)
+            clie.CLI_telefono_cli = StrConv(txtTelefono_Cliente.Text, VbStrConv.ProperCase)
+            clie.CLI_domicilio = StrConv(txt_Domicilio_Cliente.Text, VbStrConv.ProperCase)
+            clie.CLI_localidad = StrConv(txt_Localidad_Cliente.Text, VbStrConv.ProperCase)
+            clie.CLI_codigo_postal = StrConv(txt_Codigo_Postal_Cliente.Text, VbStrConv.ProperCase)
 
             datacontext.CLIENTE.InsertOnSubmit(clie)
             datacontext.SubmitChanges()
@@ -73,12 +72,12 @@
         End If
         Try
             Dim ActualizarCliente = (From P In datacontext.CLIENTE Where P.CLI_id_cliente = (txt_id_cliente.Text.ToUpper)).ToList()(0)
-            ActualizarCliente.CLI_razon_social = txt_razonsocial_cliente.Text
-            ActualizarCliente.CLI_mail_cli = txt_mail_cliente.Text
-            ActualizarCliente.CLI_telefono_cli = txtTelefono_Cliente.Text
-            ActualizarCliente.CLI_domicilio = txt_Domicilio_Cliente.Text
-            ActualizarCliente.CLI_localidad = txt_Localidad_Cliente.Text
-            ActualizarCliente.CLI_codigo_postal = txt_Codigo_Postal_Cliente.Text
+            ActualizarCliente.CLI_razon_social = StrConv(txt_razonsocial_cliente.Text, VbStrConv.ProperCase)
+            ActualizarCliente.CLI_mail_cli = StrConv(txt_mail_cliente.Text, VbStrConv.ProperCase)
+            ActualizarCliente.CLI_telefono_cli = StrConv(txtTelefono_Cliente.Text, VbStrConv.ProperCase)
+            ActualizarCliente.CLI_domicilio = StrConv(txt_Domicilio_Cliente.Text, VbStrConv.ProperCase)
+            ActualizarCliente.CLI_localidad = StrConv(txt_Localidad_Cliente.Text, VbStrConv.ProperCase)
+            ActualizarCliente.CLI_codigo_postal = StrConv(txt_Codigo_Postal_Cliente.Text, VbStrConv.ProperCase)
 
             datacontext.SubmitChanges()
             MsgBox("Los datos se han modificado correctamente")
@@ -177,7 +176,9 @@
         Dim buscar As String
         armargrilla()
         buscar = Me.txt_Buscar_Cliente.Text & "*"
-        Dim consultaalu = From U In datacontext.CLIENTE Select U.CLI_id_cliente, U.CLI_razon_social, U.CLI_mail_cli, U.CLI_telefono_cli Where CLI_razon_social Like buscar.ToString
+        Dim consultaalu = From U In datacontext.CLIENTE
+                          Select U.CLI_id_cliente, U.CLI_razon_social, U.CLI_mail_cli, U.CLI_telefono_cli
+                          Where CLI_razon_social Like buscar.ToString
         dgvLista_Clientes.DataSource = consultaalu
     End Sub
 
@@ -213,9 +214,5 @@
             frm_Orden_Trabajo.txt_nombre_cliente.Text = dgvLista_Clientes.SelectedCells(1).Value
         End If
         Me.Close()
-    End Sub
-
-    Private Sub frm_Cliente_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
-        'Me.Close()
     End Sub
 End Class

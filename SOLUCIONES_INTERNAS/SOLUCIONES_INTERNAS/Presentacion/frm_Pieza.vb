@@ -48,7 +48,7 @@
 
             End If
             Dim clie = New PIEZA
-            clie.PIE_nombre_pie = txt_nombre_pieza.Text
+            clie.PIE_nombre_pie = StrConv(txt_nombre_pieza.Text, VbStrConv.ProperCase)
 
             datacontext.PIEZA.InsertOnSubmit(clie)
             datacontext.SubmitChanges()
@@ -75,7 +75,7 @@
         End If
         Try
             Dim ActualizarCliente = (From P In datacontext.PIEZA Where P.PIE_id_pieza = (txt_id_pieza.Text.ToUpper)).ToList()(0)
-            ActualizarCliente.PIE_nombre_pie = txt_nombre_pieza.Text
+            ActualizarCliente.PIE_nombre_pie = StrConv(txt_nombre_pieza.Text, VbStrConv.ProperCase)
 
             datacontext.SubmitChanges()
             MsgBox("Los datos se han modificado correctamente")
@@ -93,10 +93,6 @@
         If dgvLista_Piezas.SelectedRows.Count > 0 Then
             txt_id_pieza.Text = dgvLista_Piezas.Item("PIE_id_pieza", dgvLista_Piezas.SelectedRows(0).Index).Value
             txt_nombre_pieza.Text = dgvLista_Piezas.Item("PIE_nombre_pie", dgvLista_Piezas.SelectedRows(0).Index).Value
-         
-            'Frm_NuevoCliente.btn_guardar.Visible = False
-            'Frm_NuevoCliente.Show()
-            'Frm_NuevoCliente.txt_Ruc_Cliente.Focus()
         Else
             MsgBox("Debe seleccionar una pieza")
         End If

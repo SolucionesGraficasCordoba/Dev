@@ -12,14 +12,14 @@
         End If
         Try
             Dim ActualizarTarea = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_id_tarea.Text.ToUpper)).ToList()(0)
-            ActualizarTarea.TAR_tiempo_estimado = txt_tiempo_estimado.Text
-            ActualizarTarea.TAR_tiempo_real = txt_tiempo_real.Text
+            ActualizarTarea.TAR_tiempo_estimado = StrConv(txt_tiempo_estimado.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_tiempo_real = StrConv(txt_tiempo_real.Text, VbStrConv.ProperCase)
             ActualizarTarea.COL_id_colaborador = txt_id_colaborador.Text
             ActualizarTarea.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            ActualizarTarea.TAR_hora_fin = txt_hora_fin.Text
-            ActualizarTarea.TAR_carga_horaria = txt_Carga_Horaria.Text
-            ActualizarTarea.TAR_detalle_tarea = txt_tarea.Text
-            ActualizarTarea.TAR_observaciones = txt_observaciones.Text
+            ActualizarTarea.TAR_hora_fin = StrConv(txt_hora_fin.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_carga_horaria = StrConv(txt_Carga_Horaria.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_detalle_tarea = StrConv(txt_tarea.Text, VbStrConv.ProperCase)
+            ActualizarTarea.TAR_observaciones = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
             ActualizarTarea.TAR_fecha = dtpFecha.Text
             datacontext.SubmitChanges()
             MsgBox("Los datos se han modificado correctamente")
@@ -169,14 +169,14 @@
             If txt_tarea.Text.Length <> 0 Then
                 'REGISTRO 1 DE TAREA
                 Dim tar1 = New TAREA
-                tar1.TAR_tiempo_estimado = txt_tiempo_estimado.Text
-                tar1.TAR_tiempo_real = txt_tiempo_real.Text
+                tar1.TAR_tiempo_estimado = StrConv(txt_tiempo_estimado.Text, VbStrConv.ProperCase)
+                tar1.TAR_tiempo_real = StrConv(txt_tiempo_real.Text, VbStrConv.ProperCase)
                 tar1.COL_id_colaborador = txt_id_colaborador.Text
                 tar1.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-                tar1.TAR_hora_fin = txt_hora_fin.Text
-                tar1.TAR_carga_horaria = txt_Carga_Horaria.Text
-                tar1.TAR_detalle_tarea = txt_tarea.Text
-                tar1.TAR_observaciones = txt_observaciones.Text
+                tar1.TAR_hora_fin = StrConv(txt_hora_fin.Text, VbStrConv.ProperCase)
+                tar1.TAR_carga_horaria = StrConv(txt_Carga_Horaria.Text, VbStrConv.ProperCase)
+                tar1.TAR_detalle_tarea = StrConv(txt_tarea.Text, VbStrConv.ProperCase)
+                tar1.TAR_observaciones = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
                 tar1.TAR_fecha = dtpFecha.Text
                 datacontext.TAREA.InsertOnSubmit(tar1)
                 datacontext.SubmitChanges()

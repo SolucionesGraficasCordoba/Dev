@@ -26,10 +26,10 @@
 
             End If
             Dim clie = New VENDEDOR
-            clie.VEN_nombre_ven = txt_nombre_vendedor.Text
-            clie.VEN_apellido_ven = txt_apellido_vendedor.Text
-            clie.VEN_mail_ven = txt_mail_vendedor.Text
-            clie.VEN_telefono_ven = txt_telefono_vendedor.Text
+            clie.VEN_nombre_ven = StrConv(txt_nombre_vendedor.Text, VbStrConv.ProperCase)
+            clie.VEN_apellido_ven = StrConv(txt_apellido_vendedor.Text, VbStrConv.ProperCase)
+            clie.VEN_mail_ven = StrConv(txt_mail_vendedor.Text, VbStrConv.ProperCase)
+            clie.VEN_telefono_ven = StrConv(txt_telefono_vendedor.Text, VbStrConv.ProperCase)
 
 
             datacontext.VENDEDOR.InsertOnSubmit(clie)
@@ -61,10 +61,10 @@
         End If
         Try
             Dim ActualizarCliente = (From P In datacontext.VENDEDOR Where P.VEN_id_vendedor = (txt_id_vendedor.Text.ToUpper)).ToList()(0)
-            ActualizarCliente.VEN_nombre_ven = txt_nombre_vendedor.Text
-            ActualizarCliente.VEN_apellido_ven = txt_apellido_vendedor.Text
-            ActualizarCliente.VEN_mail_ven = txt_mail_vendedor.Text
-            ActualizarCliente.VEN_telefono_ven = txt_telefono_vendedor.Text
+            ActualizarCliente.VEN_nombre_ven = StrConv(txt_nombre_vendedor.Text, VbStrConv.ProperCase)
+            ActualizarCliente.VEN_apellido_ven = StrConv(txt_apellido_vendedor.Text, VbStrConv.ProperCase)
+            ActualizarCliente.VEN_mail_ven = StrConv(txt_mail_vendedor.Text, VbStrConv.ProperCase)
+            ActualizarCliente.VEN_telefono_ven = StrConv(txt_telefono_vendedor.Text, VbStrConv.ProperCase)
 
             datacontext.SubmitChanges()
             MsgBox("Los datos se han modificado correctamente")

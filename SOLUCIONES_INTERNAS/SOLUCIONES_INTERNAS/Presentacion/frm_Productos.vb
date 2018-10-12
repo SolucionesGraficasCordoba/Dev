@@ -16,8 +16,8 @@
             End If
             'instancia y guarda en nuevoo producto
             Dim prod = New PRODUCTO
-            prod.PROD_codigo = tb_prod_codigo.Text
-            prod.PROD_descripcion = tb_prod_descripcion.Text
+            prod.PROD_codigo = StrConv(tb_prod_codigo.Text, VbStrConv.ProperCase)
+            prod.PROD_descripcion = StrConv(tb_prod_descripcion.Text, VbStrConv.ProperCase)
             prod.PROD_stock = tb_prod_stock.Text
             prod.PROD_stock_minimo = tb_prod_stock_minimo.Text
 
@@ -122,8 +122,8 @@
         End If
         Try
             Dim ActualizarProducto = (From p In datacontext.PRODUCTO Where p.PROD_id = tb_prod_id.Text).ToList()(0)
-            ActualizarProducto.PROD_codigo = tb_prod_codigo.Text
-            ActualizarProducto.PROD_descripcion = tb_prod_descripcion.Text
+            ActualizarProducto.PROD_codigo = StrConv(tb_prod_codigo.Text, VbStrConv.ProperCase)
+            ActualizarProducto.PROD_descripcion = StrConv(tb_prod_descripcion.Text, VbStrConv.ProperCase)
             ActualizarProducto.PROD_stock = tb_prod_stock.Text
             ActualizarProducto.PROD_stock_minimo = tb_prod_stock_minimo.Text
 
