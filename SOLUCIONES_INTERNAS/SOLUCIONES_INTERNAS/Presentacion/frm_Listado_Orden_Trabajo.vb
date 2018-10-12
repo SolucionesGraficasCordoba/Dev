@@ -580,7 +580,7 @@
         Me.Dispose()
     End Sub
 
-    'FUNCIONA BIEN
+
     Private Sub btnEliminar_Detalle_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar_Detalle.Click
         If dgv_detalle_orden.SelectedRows.Count > 0 Then
 
@@ -738,16 +738,16 @@
 
         frm_Orden_Trabajo.Text = "Ver Orden"
 
-
         frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = True
-
 
         frm_Orden_Trabajo.Label45.Visible = False
         ' frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = False
         frm_Orden_Trabajo.Label52.Visible = False
-        frm_Orden_Trabajo.txt_id_detalle_orden_trabajo2.Visible = False
+        ' frm_Orden_Trabajo.txt_id_detalle_orden_trabajo2.Visible = False
+        frm_Orden_Trabajo.txt_id_detalle_orden_trabajo2.Visible = True
         frm_Orden_Trabajo.Label53.Visible = False
-        frm_Orden_Trabajo.txt_id_detalle_orden_trabajo3.Visible = False
+        '  frm_Orden_Trabajo.txt_id_detalle_orden_trabajo3.Visible = False
+        frm_Orden_Trabajo.txt_id_detalle_orden_trabajo3.Visible = True
 
         frm_Orden_Trabajo.btnNueva_Orden_Trabajo.Enabled = False
         frm_Orden_Trabajo.txt_observaciones.Enabled = False

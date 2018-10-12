@@ -14,6 +14,6 @@
     End Sub
 
     Private Sub frm_Proceso1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        txt_id_detalle_orden.Visible = False
+        txt_id_detalle_orden.Visible = True
     End Sub
 End Class

@@ -39,6 +39,7 @@ Partial Class frm_proceso3
         Me.groupOffSet = New System.Windows.Forms.GroupBox()
         Me.txt_descripc_offset = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_id_detalle_orden = New System.Windows.Forms.TextBox()
         Me.groupLogistica.SuspendLayout()
         Me.groupTerminacion.SuspendLayout()
         Me.groupGranFormato.SuspendLayout()
@@ -219,11 +220,19 @@ Partial Class frm_proceso3
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Descripción"
         '
+        'txt_id_detalle_orden
+        '
+        Me.txt_id_detalle_orden.Location = New System.Drawing.Point(114, 478)
+        Me.txt_id_detalle_orden.Name = "txt_id_detalle_orden"
+        Me.txt_id_detalle_orden.Size = New System.Drawing.Size(100, 20)
+        Me.txt_id_detalle_orden.TabIndex = 14
+        '
         'frm_proceso3
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(399, 508)
+        Me.Controls.Add(Me.txt_id_detalle_orden)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.groupLogistica)
@@ -245,6 +254,7 @@ Partial Class frm_proceso3
         Me.groupOffSet.ResumeLayout(False)
         Me.groupOffSet.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
@@ -264,4 +274,5 @@ Partial Class frm_proceso3
     Friend WithEvents groupOffSet As System.Windows.Forms.GroupBox
     Friend WithEvents txt_descripc_offset As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents txt_id_detalle_orden As System.Windows.Forms.TextBox
 End Class

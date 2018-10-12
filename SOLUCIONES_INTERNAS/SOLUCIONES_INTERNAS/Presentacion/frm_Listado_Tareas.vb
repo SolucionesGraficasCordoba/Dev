@@ -857,4 +857,16 @@
     Private Sub frm_Listado_Tareas_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
     End Sub
+
+    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
+        SetFormatting()
+    End Sub
+
+    Private Sub SetFormatting()
+        Me.dgvTarea_x_Colaborador.Columns("UnitPrice").DefaultCellStyle.Format = "c"
+        Me.dgvTarea_x_Colaborador.Columns("ShipDate").DefaultCellStyle.Format = "d"
+        Me.dgvTarea_x_Colaborador.Columns("CustomerName").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        Me.dgvTarea_x_Colaborador.DefaultCellStyle.NullValue = "no entry"
+        Me.dgvTarea_x_Colaborador.DefaultCellStyle.WrapMode = DataGridViewTriState.[True]
+    End Sub
 End Class

@@ -2,6 +2,7 @@
 
 Imports System.Text
 Imports System.IO
+Imports System.Drawing.Printing
 
 Public Class frm_Colaborador
     Dim datacontext As New DataS_Interno
@@ -209,7 +210,7 @@ Public Class frm_Colaborador
         Me.Dispose()
     End Sub
 
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.PrintDocument1.Print()
 
     End Sub
@@ -218,67 +219,92 @@ Public Class frm_Colaborador
 
     Private Sub printDocument1_PrintPage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
 
-        ' Definimos la fuente que vamos a usar para imprimir
-        ' en este caso Arial de 10
-        Dim printFont As System.Drawing.Font = New Font("Arial", 10)
-        Dim topMargin As Double = e.MarginBounds.Top
-        Dim yPos As Double = 0
-        Dim linesPerPage As Double = 0
-        Dim count As Integer = 0
-        Dim texto As String = ""
-        Dim row As System.Windows.Forms.DataGridViewRow
+        '' Definimos la fuente que vamos a usar para imprimir
+        '' en este caso Arial de 10
+        'Dim printFont As System.Drawing.Font = New Font("Arial", 10)
+        'Dim topMargin As Double = e.MarginBounds.Top
+        'Dim yPos As Double = 0
+        'Dim linesPerPage As Double = 0
+        'Dim count As Integer = 0
+        'Dim texto As String = ""
+        'Dim row As System.Windows.Forms.DataGridViewRow
 
-        ' Calculamos el número de líneas que caben en cada página
-        linesPerPage = e.MarginBounds.Height / printFont.GetHeight(e.Graphics)
+        '' Calculamos el número de líneas que caben en cada página
+        'linesPerPage = e.MarginBounds.Height / printFont.GetHeight(e.Graphics)
 
-        ' Imprimimos las cabeceras
-        Dim header As DataGridViewHeaderCell
-        For Each column As DataGridViewColumn In dgvLista_Colaboradores.Columns
-            header = column.HeaderCell
-            texto += vbTab + header.FormattedValue.ToString()
-        Next
+        ''Imprimimos las cabeceras
+        'Dim header As DataGridViewHeaderCell
+        'For Each column As DataGridViewColumn In dgvLista_Colaboradores.Columns
+        '    header = column.HeaderCell
+        '    texto += vbTab + header.FormattedValue.ToString()
+        'Next
 
-        yPos = topMargin + (count * printFont.GetHeight(e.Graphics))
-        e.Graphics.DrawString(texto, printFont, System.Drawing.Brushes.Black, 10, yPos)
-        ' Dejamos una línea de separación
-        count += 2
+        'yPos = topMargin + (count * printFont.GetHeight(e.Graphics))
+        'e.Graphics.DrawString(texto, printFont, System.Drawing.Brushes.Black, 10, yPos)
+        '' Dejamos una línea de separación
+        'count += 2
 
-        ' Recorremos las filas del DataGridView hasta que llegemos
-        ' a las líneas que nos caben en cada página o al final del grid.
-        While count < linesPerPage AndAlso i < dgvLista_Colaboradores.Rows.Count
-            row = dgvLista_Colaboradores.Rows(i)
-            texto = ""
-            For Each celda As System.Windows.Forms.DataGridViewCell In row.Cells
-                'Comprobamos que la celda tenga algún valor, en caso de 
-                'permitir añadir filas esto es muy importante
-                If celda.Value IsNot Nothing Then
-                    texto += vbTab + celda.Value.ToString()
-                End If
-            Next
+        '' Recorremos las filas del DataGridView hasta que llegemos
+        '' a las líneas que nos caben en cada página o al final del grid.
 
-            ' Calculamos la posición en la que se escribe la línea
-            yPos = topMargin + (count * printFont.GetHeight(e.Graphics))
 
-            ' Escribimos la línea con el objeto Graphics
-            e.Graphics.DrawString(texto, printFont, System.Drawing.Brushes.Black, 10, yPos)
-            ' Incrementamos los contadores
-            count += 1
-            i += 1
-        End While
+        'Me.dgvLista_Colaboradores.Columns("COL_id_colaborador").DefaultCellStyle.Format = "c"
+        'Me.dgvLista_Colaboradores.Columns("COL_nombre_col").DefaultCellStyle.Format = "c"
+        'Me.dgvLista_Colaboradores.Columns("COL_apellido_col").DefaultCellStyle.Format = "c"
+        'Me.dgvLista_Colaboradores.Columns("SEC_id_sector").DefaultCellStyle.Format = "c"
 
-        ' Una vez fuera del bucle comprobamos si nos quedan más filas
-        ' por imprimir, si quedan saldrán en la siguente página
-        If i < dgvLista_Colaboradores.Rows.Count Then
-            e.HasMorePages = True
-        Else
-            ' si llegamos al final, se establece HasMorePages a
-            ' false para que se acabe la impresión
-            e.HasMorePages = False
-            ' Es necesario poner el contador a 0 porque, por ejemplo si se hace
-            ' una impresión desde PrintPreviewDialog, se vuelve disparar este
-            ' evento como si fuese la primera vez, y si i está con el valor de la
-            ' última fila del grid no se imprime nada
-            i = 0
-        End If
+
+
+
+
+
+
+        ''Me.dgvLista_Colaboradores.Columns("COL_apellido_col").DefaultCellStyle.Format = "d"
+        ''Me.dgvLista_Colaboradores.Columns("SEC_id_sector").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
+        ''Me.dgvLista_Colaboradores.DefaultCellStyle.NullValue = "no entry"
+        ''Me.dgvLista_Colaboradores.DefaultCellStyle.WrapMode = DataGridViewTriState.[True]
+
+        'While count < linesPerPage AndAlso i < dgvLista_Colaboradores.Rows.Count
+        '    row = dgvLista_Colaboradores.Rows(i)
+        '    texto = ""
+        '    For Each celda As System.Windows.Forms.DataGridViewCell In row.Cells
+        '        'Comprobamos que la celda tenga algún valor, en caso de 
+        '        'permitir añadir filas esto es muy importante
+        '        If celda.Value IsNot Nothing Then
+        '            texto += vbTab + celda.Value.ToString()
+        '        End If
+        '    Next
+
+        '    ' Calculamos la posición en la que se escribe la línea
+        '    yPos = topMargin + (count * printFont.GetHeight(e.Graphics))
+
+        '    ' Escribimos la línea con el objeto Graphics
+        '    e.Graphics.DrawString(texto, printFont, System.Drawing.Brushes.Black, 10, yPos)
+        '    ' Incrementamos los contadores
+        '    count += 1
+        '    i += 1
+        'End While
+
+        '' Una vez fuera del bucle comprobamos si nos quedan más filas
+        '' por imprimir, si quedan saldrán en la siguente página
+        'If i < dgvLista_Colaboradores.Rows.Count Then
+        '    e.HasMorePages = True
+        'Else
+        '    ' si llegamos al final, se establece HasMorePages a
+        '    ' false para que se acabe la impresión
+        '    e.HasMorePages = False
+        '    ' Es necesario poner el contador a 0 porque, por ejemplo si se hace
+        '    ' una impresión desde PrintPreviewDialog, se vuelve disparar este
+        '    ' evento como si fuese la primera vez, y si i está con el valor de la
+        '    ' última fila del grid no se imprime nada
+        '    i = 0
+        'End If
+
     End Sub
+
+    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
+        'Form1.Show()
+        'Hide()
+    End Sub
+
 End Class
