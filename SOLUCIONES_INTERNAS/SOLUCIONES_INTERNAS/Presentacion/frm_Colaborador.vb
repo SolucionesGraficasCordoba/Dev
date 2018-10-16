@@ -218,7 +218,6 @@ Public Class frm_Colaborador
     Dim i As Integer = 0
 
     Private Sub printDocument1_PrintPage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
-
         '' Definimos la fuente que vamos a usar para imprimir
         '' en este caso Arial de 10
         'Dim printFont As System.Drawing.Font = New Font("Arial", 10)
@@ -232,7 +231,7 @@ Public Class frm_Colaborador
         '' Calculamos el número de líneas que caben en cada página
         'linesPerPage = e.MarginBounds.Height / printFont.GetHeight(e.Graphics)
 
-        ''Imprimimos las cabeceras
+        '' Imprimimos las cabeceras
         'Dim header As DataGridViewHeaderCell
         'For Each column As DataGridViewColumn In dgvLista_Colaboradores.Columns
         '    header = column.HeaderCell
@@ -246,18 +245,6 @@ Public Class frm_Colaborador
 
         '' Recorremos las filas del DataGridView hasta que llegemos
         '' a las líneas que nos caben en cada página o al final del grid.
-
-
-        'Me.dgvLista_Colaboradores.Columns("COL_id_colaborador").DefaultCellStyle.Format = "c"
-        'Me.dgvLista_Colaboradores.Columns("COL_nombre_col").DefaultCellStyle.Format = "c"
-        'Me.dgvLista_Colaboradores.Columns("COL_apellido_col").DefaultCellStyle.Format = "c"
-        'Me.dgvLista_Colaboradores.Columns("SEC_id_sector").DefaultCellStyle.Format = "c"
-
-        ''Me.dgvLista_Colaboradores.Columns("COL_apellido_col").DefaultCellStyle.Format = "d"
-        ''Me.dgvLista_Colaboradores.Columns("SEC_id_sector").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-        ''Me.dgvLista_Colaboradores.DefaultCellStyle.NullValue = "no entry"
-        ''Me.dgvLista_Colaboradores.DefaultCellStyle.WrapMode = DataGridViewTriState.[True]
-
         'While count < linesPerPage AndAlso i < dgvLista_Colaboradores.Rows.Count
         '    row = dgvLista_Colaboradores.Rows(i)
         '    texto = ""
@@ -294,11 +281,41 @@ Public Class frm_Colaborador
         '    i = 0
         'End If
 
+
+        Dim i As Integer = 0
+
+
+        Dim printFont As New Font("Arial", 8)
+        Dim topMargin As Single = 500 'e.MarginBounds.Top
+        Dim yPos As Single = 0
+        Dim linesPerPage As Single = 0
+        Dim count As Integer = 0
+        Dim texto As String = ""
+        Dim row As DataGridViewRow
+        linesPerPage = e.MarginBounds.Height / printFont.GetHeight(e.Graphics)
+        While count < linesPerPage AndAlso i < Me.dgvLista_Colaboradores.Rows.Count
+            row = dgvLista_Colaboradores.Rows(i)
+            texto = ""
+            For Each celda As DataGridViewCell In row.Cells
+                texto += vbTab & celda.Value '.ToString()
+            Next
+            yPos = topMargin + (count * printFont.GetHeight(e.Graphics))
+            e.Graphics.DrawString(texto, printFont, Brushes.Black, 30, yPos)
+            count += 1
+            i += 1
+        End While
+        If i < Me.dgvLista_Colaboradores.Rows.Count Then
+            e.HasMorePages = True
+        Else
+            e.HasMorePages = False
+            i = 0
+        End If
+
+
     End Sub
 
     Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
-        'Form1.Show()
-        'Hide()
+         Me.PrintDocument1.Print()
     End Sub
 
 End Class

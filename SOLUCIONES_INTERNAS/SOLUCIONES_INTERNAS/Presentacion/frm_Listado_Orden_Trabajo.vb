@@ -743,6 +743,10 @@
 
         frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = True
 
+
+        frm_Orden_Trabajo.btnProceso1.Text = "Ver Proceso"
+        frm_Orden_Trabajo.btnProceso2.Text = "Ver Proceso"
+        frm_Orden_Trabajo.btnProceso3.Text = "Ver Proceso"
         frm_Orden_Trabajo.Label45.Visible = False
         ' frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = False
         frm_Orden_Trabajo.Label52.Visible = False
