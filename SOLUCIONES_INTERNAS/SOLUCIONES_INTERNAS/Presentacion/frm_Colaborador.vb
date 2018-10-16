@@ -253,12 +253,6 @@ Public Class frm_Colaborador
         'Me.dgvLista_Colaboradores.Columns("COL_apellido_col").DefaultCellStyle.Format = "c"
         'Me.dgvLista_Colaboradores.Columns("SEC_id_sector").DefaultCellStyle.Format = "c"
 
-
-
-
-
-
-
         ''Me.dgvLista_Colaboradores.Columns("COL_apellido_col").DefaultCellStyle.Format = "d"
         ''Me.dgvLista_Colaboradores.Columns("SEC_id_sector").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
         ''Me.dgvLista_Colaboradores.DefaultCellStyle.NullValue = "no entry"

@@ -125,6 +125,7 @@ Partial Class frm_Orden_Trabajo
         Me.Label48 = New System.Windows.Forms.Label()
         Me.cboPiezas1_Detalle1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.btnProceso1 = New System.Windows.Forms.Button()
         Me.cboFormato3_Soporte1 = New System.Windows.Forms.ComboBox()
         Me.cboFormato2_Soporte1 = New System.Windows.Forms.ComboBox()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -154,7 +155,6 @@ Partial Class frm_Orden_Trabajo
         Me.btnCancelar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.btnActualizar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.btnNueva_Orden_Trabajo = New System.Windows.Forms.Button()
-        Me.btnProceso1 = New System.Windows.Forms.Button()
         Me.GroupProducto3.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupProducto2.SuspendLayout()
@@ -1122,6 +1122,15 @@ Partial Class frm_Orden_Trabajo
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Soportes"
         '
+        'btnProceso1
+        '
+        Me.btnProceso1.Location = New System.Drawing.Point(167, 115)
+        Me.btnProceso1.Name = "btnProceso1"
+        Me.btnProceso1.Size = New System.Drawing.Size(112, 23)
+        Me.btnProceso1.TabIndex = 59
+        Me.btnProceso1.Text = "Cargar Proceso"
+        Me.btnProceso1.UseVisualStyleBackColor = True
+        '
         'cboFormato3_Soporte1
         '
         Me.cboFormato3_Soporte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -1363,15 +1372,6 @@ Partial Class frm_Orden_Trabajo
         Me.btnNueva_Orden_Trabajo.TabIndex = 60
         Me.btnNueva_Orden_Trabajo.Text = "Nuevo"
         Me.btnNueva_Orden_Trabajo.UseVisualStyleBackColor = True
-        '
-        'btnProceso1
-        '
-        Me.btnProceso1.Location = New System.Drawing.Point(167, 115)
-        Me.btnProceso1.Name = "btnProceso1"
-        Me.btnProceso1.Size = New System.Drawing.Size(112, 23)
-        Me.btnProceso1.TabIndex = 59
-        Me.btnProceso1.Text = "Cargar Proceso"
-        Me.btnProceso1.UseVisualStyleBackColor = True
         '
         'frm_Orden_Trabajo
         '
