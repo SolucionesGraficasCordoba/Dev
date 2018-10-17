@@ -266,7 +266,7 @@ Partial Class frm_Tarea
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
-        Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.btnImprimirFormulario = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -390,7 +390,7 @@ Partial Class frm_Tarea
         '
         'btnNueva_Tarea
         '
-        Me.btnNueva_Tarea.Location = New System.Drawing.Point(592, 636)
+        Me.btnNueva_Tarea.Location = New System.Drawing.Point(563, 636)
         Me.btnNueva_Tarea.Name = "btnNueva_Tarea"
         Me.btnNueva_Tarea.Size = New System.Drawing.Size(75, 23)
         Me.btnNueva_Tarea.TabIndex = 126
@@ -2463,14 +2463,14 @@ Partial Class frm_Tarea
         Me.Label37.TabIndex = 24
         Me.Label37.Text = "*"
         '
-        'btnImprimir
+        'btnImprimirFormulario
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(673, 636)
-        Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(75, 23)
-        Me.btnImprimir.TabIndex = 127
-        Me.btnImprimir.Text = "Imprimir"
-        Me.btnImprimir.UseVisualStyleBackColor = True
+        Me.btnImprimirFormulario.Location = New System.Drawing.Point(644, 636)
+        Me.btnImprimirFormulario.Name = "btnImprimirFormulario"
+        Me.btnImprimirFormulario.Size = New System.Drawing.Size(104, 23)
+        Me.btnImprimirFormulario.TabIndex = 127
+        Me.btnImprimirFormulario.Text = "Imprimir Formulario"
+        Me.btnImprimirFormulario.UseVisualStyleBackColor = True
         '
         'Label7
         '
@@ -2531,7 +2531,7 @@ Partial Class frm_Tarea
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label35)
         Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.btnImprimir)
+        Me.Controls.Add(Me.btnImprimirFormulario)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label34)
         Me.Controls.Add(Me.btnGuardar_Tarea)
@@ -2770,7 +2770,7 @@ Partial Class frm_Tarea
     Friend WithEvents txt_id_orden_trabajo7 As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_orden_trabajo5 As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_orden_trabajo3 As System.Windows.Forms.TextBox
-    Friend WithEvents btnImprimir As System.Windows.Forms.Button
+    Friend WithEvents btnImprimirFormulario As System.Windows.Forms.Button
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents Label57 As System.Windows.Forms.Label

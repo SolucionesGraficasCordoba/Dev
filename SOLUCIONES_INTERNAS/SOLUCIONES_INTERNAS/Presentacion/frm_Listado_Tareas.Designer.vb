@@ -41,7 +41,7 @@ Partial Class frm_Listado_Tareas
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnVer = New System.Windows.Forms.Button()
-        Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.btnImprimirListado = New System.Windows.Forms.Button()
         Me.GroupListadoTareas.SuspendLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupListadoDetalleTarea.SuspendLayout()
@@ -127,9 +127,9 @@ Partial Class frm_Listado_Tareas
         '
         'btnEliminar_Tarea
         '
-        Me.btnEliminar_Tarea.Location = New System.Drawing.Point(371, 538)
+        Me.btnEliminar_Tarea.Location = New System.Drawing.Point(395, 538)
         Me.btnEliminar_Tarea.Name = "btnEliminar_Tarea"
-        Me.btnEliminar_Tarea.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar_Tarea.Size = New System.Drawing.Size(63, 23)
         Me.btnEliminar_Tarea.TabIndex = 3
         Me.btnEliminar_Tarea.Text = "Eliminar"
         Me.btnEliminar_Tarea.UseVisualStyleBackColor = True
@@ -199,55 +199,55 @@ Partial Class frm_Listado_Tareas
         '
         'btnModificar_Tarea
         '
-        Me.btnModificar_Tarea.Location = New System.Drawing.Point(290, 538)
+        Me.btnModificar_Tarea.Location = New System.Drawing.Point(326, 538)
         Me.btnModificar_Tarea.Name = "btnModificar_Tarea"
-        Me.btnModificar_Tarea.Size = New System.Drawing.Size(75, 23)
+        Me.btnModificar_Tarea.Size = New System.Drawing.Size(63, 23)
         Me.btnModificar_Tarea.TabIndex = 31
         Me.btnModificar_Tarea.Text = "Modificar"
         Me.btnModificar_Tarea.UseVisualStyleBackColor = True
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(452, 538)
+        Me.btnCancelar.Location = New System.Drawing.Point(464, 538)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.Size = New System.Drawing.Size(63, 23)
         Me.btnCancelar.TabIndex = 32
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(190, 538)
+        Me.btnAgregar.Location = New System.Drawing.Point(232, 538)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(91, 23)
+        Me.btnAgregar.Size = New System.Drawing.Size(88, 23)
         Me.btnAgregar.TabIndex = 33
         Me.btnAgregar.Text = "Agregar Tarea"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'btnVer
         '
-        Me.btnVer.Location = New System.Drawing.Point(109, 538)
+        Me.btnVer.Location = New System.Drawing.Point(163, 538)
         Me.btnVer.Name = "btnVer"
-        Me.btnVer.Size = New System.Drawing.Size(75, 23)
+        Me.btnVer.Size = New System.Drawing.Size(63, 23)
         Me.btnVer.TabIndex = 34
         Me.btnVer.Text = "Ver"
         Me.btnVer.UseVisualStyleBackColor = True
         '
-        'btnImprimir
+        'btnImprimirListado
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(28, 538)
-        Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(75, 23)
-        Me.btnImprimir.TabIndex = 35
-        Me.btnImprimir.Text = "Imprimir"
-        Me.btnImprimir.UseVisualStyleBackColor = True
+        Me.btnImprimirListado.Location = New System.Drawing.Point(61, 538)
+        Me.btnImprimirListado.Name = "btnImprimirListado"
+        Me.btnImprimirListado.Size = New System.Drawing.Size(96, 23)
+        Me.btnImprimirListado.TabIndex = 35
+        Me.btnImprimirListado.Text = "Imprimir Listado"
+        Me.btnImprimirListado.UseVisualStyleBackColor = True
         '
         'frm_Listado_Tareas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(536, 570)
-        Me.Controls.Add(Me.btnImprimir)
+        Me.Controls.Add(Me.btnImprimirListado)
         Me.Controls.Add(Me.btnVer)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnCancelar)
@@ -286,5 +286,5 @@ Partial Class frm_Listado_Tareas
     Friend WithEvents btnVer As System.Windows.Forms.Button
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents btnImprimir As System.Windows.Forms.Button
+    Friend WithEvents btnImprimirListado As System.Windows.Forms.Button
 End Class

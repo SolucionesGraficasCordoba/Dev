@@ -6,7 +6,7 @@
     Dim vble_colaborador, vble_fecha As String
 
     Private Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        dgvColaboradores.ClearSelection()
+
         Label6.Text = dgvColaboradores.Rows.Count
 
         'CARGA COMBOBOX SECTOR
@@ -16,6 +16,7 @@
         cbo_sector.DisplayMember = "SEC_nombre_sector"
         cbo_sector.ValueMember = "SEC_id_sector"
         cbo_sector.SelectedIndex = -1
+        dgvColaboradores.ClearSelection()
     End Sub
 
     'ARMA LA GRILLA DEL COLABORADOR
@@ -61,6 +62,7 @@
           Where (SEC_id_sector = CInt(cbo_sector.SelectedIndex + 1)))
         dgvColaboradores.DataSource = consultaporsector
         Label6.Text = dgvColaboradores.Rows.Count
+        dgvColaboradores.ClearSelection()
     End Sub
 
     Public Sub dgvColaboradores_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvColaboradores.CellClick
@@ -204,10 +206,10 @@
     Private Sub dtpFecha_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpFecha.ValueChanged
         Dim fechaactual = System.DateTime.Now.ToString("dd/mm/yyyy")
         If dtpFecha.Text <= fechaactual Then
-            '  btnModificar_Tarea.Enabled = False
         Else
             btnModificar_Tarea.Enabled = True
         End If
+        dgvColaboradores.ClearSelection()
     End Sub
 
     Private Sub btnVer_Click(sender As System.Object, e As System.EventArgs) Handles btnVer.Click
@@ -665,7 +667,7 @@
             Exit Sub
         End If
         frm_Tarea.Text = "Consultar Tarea"
-        frm_Tarea.btnImprimir.Visible = True
+        frm_Tarea.btnImprimirFormulario.Visible = True
         frm_Tarea.txt_nombre_colaborador.Enabled = False
         DeshabilitarText()
         frm_Tarea.ShowDialog()
@@ -842,11 +844,11 @@
         frm_Tarea.txt_id_orden_trabajo19.Visible = False
         frm_Tarea.txt_id_orden_trabajo20.Visible = False
 
-        frm_Tarea.btnImprimir.Enabled = True
+        frm_Tarea.btnImprimirFormulario.Enabled = True
         frm_Tarea.btnBuscar_Colaborador.Enabled = False
         frm_Tarea.dtpFecha.Enabled = False
         frm_Tarea.txt_Carga_Horaria1.Enabled = False
-        frm_Tarea.btnImprimir.Enabled = True
+        frm_Tarea.btnImprimirFormulario.Enabled = True
         frm_Tarea.btnNueva_Tarea.Enabled = False
         frm_Tarea.btnGuardar_Tarea.Enabled = False
         frm_Tarea.Label1.Visible = False
@@ -858,15 +860,6 @@
         Me.Dispose()
     End Sub
 
-    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
-        SetFormatting()
-    End Sub
-
-    Private Sub SetFormatting()
-        Me.dgvTarea_x_Colaborador.Columns("UnitPrice").DefaultCellStyle.Format = "c"
-        Me.dgvTarea_x_Colaborador.Columns("ShipDate").DefaultCellStyle.Format = "d"
-        Me.dgvTarea_x_Colaborador.Columns("CustomerName").DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight
-        Me.dgvTarea_x_Colaborador.DefaultCellStyle.NullValue = "no entry"
-        Me.dgvTarea_x_Colaborador.DefaultCellStyle.WrapMode = DataGridViewTriState.[True]
+    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimirListado.Click
     End Sub
 End Class

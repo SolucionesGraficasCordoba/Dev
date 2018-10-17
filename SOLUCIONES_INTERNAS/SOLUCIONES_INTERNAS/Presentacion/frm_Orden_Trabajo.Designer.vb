@@ -49,7 +49,7 @@ Partial Class frm_Orden_Trabajo
         Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
-        Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.btnImprimirFormulario = New System.Windows.Forms.Button()
         Me.GroupProducto3 = New System.Windows.Forms.GroupBox()
         Me.txt_id_detalle_orden_trabajo3 = New System.Windows.Forms.TextBox()
         Me.Label53 = New System.Windows.Forms.Label()
@@ -380,14 +380,14 @@ Partial Class frm_Orden_Trabajo
         Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
         Me.PrintForm1.PrintFileName = Nothing
         '
-        'btnImprimir
+        'btnImprimirFormulario
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(591, 654)
-        Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(75, 23)
-        Me.btnImprimir.TabIndex = 61
-        Me.btnImprimir.Text = "Imprimir"
-        Me.btnImprimir.UseVisualStyleBackColor = True
+        Me.btnImprimirFormulario.Location = New System.Drawing.Point(558, 654)
+        Me.btnImprimirFormulario.Name = "btnImprimirFormulario"
+        Me.btnImprimirFormulario.Size = New System.Drawing.Size(108, 23)
+        Me.btnImprimirFormulario.TabIndex = 61
+        Me.btnImprimirFormulario.Text = "Imprimir Formulario"
+        Me.btnImprimirFormulario.UseVisualStyleBackColor = True
         '
         'GroupProducto3
         '
@@ -1366,7 +1366,7 @@ Partial Class frm_Orden_Trabajo
         '
         'btnNueva_Orden_Trabajo
         '
-        Me.btnNueva_Orden_Trabajo.Location = New System.Drawing.Point(510, 654)
+        Me.btnNueva_Orden_Trabajo.Location = New System.Drawing.Point(477, 654)
         Me.btnNueva_Orden_Trabajo.Name = "btnNueva_Orden_Trabajo"
         Me.btnNueva_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
         Me.btnNueva_Orden_Trabajo.TabIndex = 60
@@ -1378,7 +1378,7 @@ Partial Class frm_Orden_Trabajo
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(926, 686)
-        Me.Controls.Add(Me.btnImprimir)
+        Me.Controls.Add(Me.btnImprimirFormulario)
         Me.Controls.Add(Me.GroupProducto3)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.btnGuardar_Orden_Trabajo)
@@ -1455,7 +1455,7 @@ Partial Class frm_Orden_Trabajo
     Friend WithEvents txtNumero_Orden_Trabajo As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents PrintForm1 As Microsoft.VisualBasic.PowerPacks.Printing.PrintForm
-    Friend WithEvents btnImprimir As System.Windows.Forms.Button
+    Friend WithEvents btnImprimirFormulario As System.Windows.Forms.Button
     Friend WithEvents GroupProducto3 As System.Windows.Forms.GroupBox
     Friend WithEvents txt_id_detalle_orden_trabajo3 As System.Windows.Forms.TextBox
     Friend WithEvents Label53 As System.Windows.Forms.Label

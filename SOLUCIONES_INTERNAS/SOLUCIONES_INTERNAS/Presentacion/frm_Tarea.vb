@@ -1898,7 +1898,7 @@
         Calcular()
     End Sub
 
-    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimirFormulario.Click
         PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
         PrintForm1.PrinterSettings.DefaultPageSettings.Landscape = True
         '  PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
@@ -1908,7 +1908,7 @@
         PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Top = 30
         PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Bottom = 30
 
-        btnImprimir.Visible = False
+        btnImprimirFormulario.Visible = False
         btnNueva_Tarea.Visible = False
         btnCancelar_Tarea.Visible = False
         btnGuardar_Tarea.Visible = False

@@ -414,7 +414,7 @@ Public Class frm_Principal
         frm_Tarea.txt_id_orden_trabajo20.Visible = False
 
         frm_Tarea.btnNueva_Tarea.Visible = False
-        frm_Tarea.btnImprimir.Visible = False
+        frm_Tarea.btnImprimirFormulario.Visible = False
         frm_Tarea.btnGuardar_Tarea.Visible = True
         frm_Tarea.btnCancelar_Tarea.Visible = True
         frm_Tarea.btnBuscar_Colaborador.Enabled = True
@@ -447,9 +447,10 @@ Public Class frm_Principal
 
         frm_Listado_Tareas.Text = "Modificar Tarea"
         frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
-        frm_Tarea.btnImprimir.Enabled = False
+        ' frm_Tarea.btnImprimirFormulario.Enabled = False
         frm_Listado_Tareas.btnVer.Enabled = False
         frm_Listado_Tareas.btnAgregar.Enabled = False
+        frm_Listado_Tareas.btnImprimirListado.Enabled = False
         frm_Listado_Tareas.dtpFecha.Text = Now
         frm_Listado_Tareas.ShowDialog()
     End Sub
@@ -939,6 +940,7 @@ Public Class frm_Principal
         frm_Listado_Tareas.btnModificar_Tarea.Enabled = False
         frm_Listado_Tareas.btnAgregar.Enabled = False
         frm_Listado_Tareas.btnVer.Enabled = False
+        frm_Listado_Tareas.btnImprimirListado.Enabled = False
         frm_Listado_Tareas.dtpFecha.Text = Now
         frm_Listado_Tareas.ShowDialog()
     End Sub
@@ -963,6 +965,9 @@ Public Class frm_Principal
     Private Sub NuevaOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevaOrdenToolStripMenuItem.Click
         frm_Orden_Trabajo.quienllamo_listado_orden = Me
         frm_Orden_Trabajo.Text = "Nueva Orden"
+
+        frm_Orden_Trabajo.txtid_vendedor.Visible = False
+        frm_Orden_Trabajo.txt_id_cliente.Visible = False
 
         frm_Orden_Trabajo.Label45.Visible = False
         frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = False
@@ -1045,7 +1050,7 @@ Public Class frm_Principal
         frm_Orden_Trabajo.btnProceso2.Enabled = True
         frm_Orden_Trabajo.btnProceso3.Enabled = True
         frm_Orden_Trabajo.btnNueva_Orden_Trabajo.Visible = False
-        frm_Orden_Trabajo.btnImprimir.Enabled = False
+        frm_Orden_Trabajo.btnImprimirFormulario.Enabled = False
         frm_Orden_Trabajo.btnGuardar_Orden_Trabajo.Enabled = True
         frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = False
         frm_Orden_Trabajo.btnCancelar_Orden_Trabajo.Enabled = True
@@ -1086,11 +1091,9 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.btnEliminar_Detalle.Enabled = False
         frm_Listado_Orden_Trabajo.btnVer.Enabled = False
         frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = True
-
         frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Enabled = True
-
+        frm_Listado_Orden_Trabajo.dgv_detalle_orden.ClearSelection()
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
-
         frm_Listado_Orden_Trabajo.ShowDialog()
     End Sub
 
@@ -1309,9 +1312,7 @@ Public Class frm_Principal
         frm_Listado_Movimientos.ShowDialog()
     End Sub
 
-    Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-  
-    End Sub
+
 
     Private Sub frm_Principal_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         Application.Exit()
