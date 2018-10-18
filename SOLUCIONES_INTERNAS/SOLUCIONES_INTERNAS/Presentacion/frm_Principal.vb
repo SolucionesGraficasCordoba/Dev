@@ -1309,9 +1309,6 @@ Public Class frm_Principal
         frm_Productos.dgvLista_Productos.Enabled = True
 
         frm_Productos.ShowDialog()
-
-
-       
     End Sub
 
 
