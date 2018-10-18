@@ -151,4 +151,18 @@
       <Column Name="PROD_MOV_cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.Vista_Lista_Movimientos" Member="Vista_Lista_Movimientos">
+    <Type Name="Vista_Lista_Movimientos">
+      <Column Name="PROD_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_codigo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PROD_descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_stock_minimo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROD_stock" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_MOV_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PROD_MOV_tipo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PROD_MOV_cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORT_id_orden_trabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PROD_MOV_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>
