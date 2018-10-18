@@ -137,7 +137,7 @@
             txt_id_producto_movimiento.Text = prod_mov.PROD_MOV_id
             prod_mov.PROD_MOV_id = txt_id_producto_movimiento.Text
             prod_mov.PROD_MOV_fecha = dtpFecha.Text
-            prod_mov.ORT_id_orden_trabajo = txt_numero_orden.Text
+            prod_mov.ORT_id_orden_trabajo = txt_numero_orden.Text 'EN EL ID_ORDEN_TRABAJO SE GUARDA EL NRO DE ORDEN PORQUE UN PRODUCTO PUEDE NO ESTAR LIGADO A UNA ORDEN
             prod_mov.PROD_MOV_tipo = cbo_Tipo_Producto.Text
             prod_mov.PROD_MOV_cantidad = txt_Cantidad.Text
             prod_mov.PROD_id = txt_id_producto.Text

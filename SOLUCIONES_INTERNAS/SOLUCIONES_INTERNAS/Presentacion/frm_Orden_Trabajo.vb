@@ -447,6 +447,7 @@
                 Exit Sub
             End If
             'GUARDA ORDEN DE TRABAJO
+            '****if quien llamo <>  agregar pprod a la ordet
             Dim clie = New ORDEN_TRABAJO
             clie.ORT_fecha_ot = dtpFecha_Orden_Trabajo.Text
             clie.ORT_tipo_ot = cboTipo_Orden.Text
@@ -458,6 +459,7 @@
 
             datacontext.ORDEN_TRABAJO.InsertOnSubmit(clie)
             datacontext.SubmitChanges()
+            '***** end if
 
             'GUARDA EL REGISTRO 1 DEL DETALLE DE LA ORDEN DE TRABAJO
             If txt_cantidad1_detalle1.Text.Length >= 1 Then

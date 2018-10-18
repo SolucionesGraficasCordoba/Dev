@@ -68,7 +68,6 @@ Partial Class frm_Principal
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModificarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsultarToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.StockDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -93,6 +92,7 @@ Partial Class frm_Principal
         Me.LBL_MENU_USU = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.ConsultarMovimientosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -353,7 +353,7 @@ Partial Class frm_Principal
         '
         'GestiónDeProductosToolStripMenuItem
         '
-        Me.GestiónDeProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.ModificarToolStripMenuItem, Me.EliminarToolStripMenuItem1, Me.ConsultarToolStripMenuItem2})
+        Me.GestiónDeProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.ModificarToolStripMenuItem, Me.EliminarToolStripMenuItem1})
         Me.GestiónDeProductosToolStripMenuItem.Name = "GestiónDeProductosToolStripMenuItem"
         Me.GestiónDeProductosToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
         Me.GestiónDeProductosToolStripMenuItem.Text = "Gestión de Productos"
@@ -361,30 +361,24 @@ Partial Class frm_Principal
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'ModificarToolStripMenuItem
         '
         Me.ModificarToolStripMenuItem.Name = "ModificarToolStripMenuItem"
-        Me.ModificarToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.ModificarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ModificarToolStripMenuItem.Text = "Modificar"
         '
         'EliminarToolStripMenuItem1
         '
         Me.EliminarToolStripMenuItem1.Name = "EliminarToolStripMenuItem1"
-        Me.EliminarToolStripMenuItem1.Size = New System.Drawing.Size(125, 22)
+        Me.EliminarToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.EliminarToolStripMenuItem1.Text = "Eliminar"
-        '
-        'ConsultarToolStripMenuItem2
-        '
-        Me.ConsultarToolStripMenuItem2.Name = "ConsultarToolStripMenuItem2"
-        Me.ConsultarToolStripMenuItem2.Size = New System.Drawing.Size(125, 22)
-        Me.ConsultarToolStripMenuItem2.Text = "Consultar"
         '
         'StockDeProductosToolStripMenuItem
         '
-        Me.StockDeProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem1, Me.BajaToolStripMenuItem1, Me.ConsultarToolStripMenuItem4})
+        Me.StockDeProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem1, Me.BajaToolStripMenuItem1, Me.ConsultarToolStripMenuItem4, Me.ConsultarMovimientosToolStripMenuItem})
         Me.StockDeProductosToolStripMenuItem.Name = "StockDeProductosToolStripMenuItem"
         Me.StockDeProductosToolStripMenuItem.Size = New System.Drawing.Size(187, 22)
         Me.StockDeProductosToolStripMenuItem.Text = "Stock de Productos"
@@ -392,20 +386,20 @@ Partial Class frm_Principal
         'AltaToolStripMenuItem1
         '
         Me.AltaToolStripMenuItem1.Name = "AltaToolStripMenuItem1"
-        Me.AltaToolStripMenuItem1.Size = New System.Drawing.Size(125, 22)
+        Me.AltaToolStripMenuItem1.Size = New System.Drawing.Size(198, 22)
         Me.AltaToolStripMenuItem1.Text = "Alta"
         '
         'BajaToolStripMenuItem1
         '
         Me.BajaToolStripMenuItem1.Name = "BajaToolStripMenuItem1"
-        Me.BajaToolStripMenuItem1.Size = New System.Drawing.Size(125, 22)
+        Me.BajaToolStripMenuItem1.Size = New System.Drawing.Size(198, 22)
         Me.BajaToolStripMenuItem1.Text = "Baja"
         '
         'ConsultarToolStripMenuItem4
         '
         Me.ConsultarToolStripMenuItem4.Name = "ConsultarToolStripMenuItem4"
-        Me.ConsultarToolStripMenuItem4.Size = New System.Drawing.Size(125, 22)
-        Me.ConsultarToolStripMenuItem4.Text = "Consultar"
+        Me.ConsultarToolStripMenuItem4.Size = New System.Drawing.Size(198, 22)
+        Me.ConsultarToolStripMenuItem4.Text = "Consultar Productos"
         '
         'OrdenTrabajoToolStripMenuItem
         '
@@ -547,6 +541,12 @@ Partial Class frm_Principal
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         '
+        'ConsultarMovimientosToolStripMenuItem
+        '
+        Me.ConsultarMovimientosToolStripMenuItem.Name = "ConsultarMovimientosToolStripMenuItem"
+        Me.ConsultarMovimientosToolStripMenuItem.Size = New System.Drawing.Size(198, 22)
+        Me.ConsultarMovimientosToolStripMenuItem.Text = "Consultar Movimientos"
+        '
         'frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -631,10 +631,10 @@ Partial Class frm_Principal
     Friend WithEvents NuevoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ModificarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EliminarToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ConsultarToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StockDeProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AltaToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BajaToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultarToolStripMenuItem4 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ConsultarMovimientosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

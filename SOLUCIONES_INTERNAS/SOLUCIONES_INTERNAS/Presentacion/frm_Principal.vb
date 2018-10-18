@@ -1221,34 +1221,8 @@ Public Class frm_Principal
         frm_Productos.ShowDialog()
     End Sub
 
-    Private Sub ConsultarToolStripMenuItem2_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem2.Click
+    Private Sub ConsultarToolStripMenuItem2_Click(sender As System.Object, e As System.EventArgs)
 
-        frm_Productos.Text = "Consultar Producto"
-        frm_Productos.GroupBox2.Enabled = True
-        frm_Productos.tb_prod_id.Visible = False
-        frm_Productos.Label1.Visible = False
-
-        frm_Productos.tb_prod_codigo.Clear()
-        frm_Productos.tb_prod_descripcion.Clear()
-        frm_Productos.tb_prod_stock_minimo.Clear()
-        frm_Productos.tb_prod_stock.Clear()
-        frm_Productos.tb_prod_busqueda.Clear()
-
-        frm_Productos.tb_prod_codigo.Enabled = False
-        frm_Productos.tb_prod_descripcion.Enabled = False
-        frm_Productos.tb_prod_stock_minimo.Enabled = False
-        frm_Productos.tb_prod_stock.Enabled = False
-        frm_Productos.tb_prod_busqueda.Enabled = True
-
-        frm_Productos.btn_prod_guardar.Enabled = False
-        frm_Productos.btn_prod_actualizar.Enabled = False
-        frm_Productos.btn_prod_salir.Enabled = True
-        frm_Productos.btn_prod_eliminar.Enabled = False
-
-        frm_Productos.dgvLista_Productos.ClearSelection()
-        frm_Productos.dgvLista_Productos.Enabled = True
-
-        frm_Productos.ShowDialog()
 
 
     End Sub
@@ -1308,8 +1282,36 @@ Public Class frm_Principal
     End Sub
 
     Private Sub ConsultarToolStripMenuItem4_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem4.Click
-        frm_Listado_Movimientos.Text = "Consultar Movimiento"
-        frm_Listado_Movimientos.ShowDialog()
+
+        frm_Productos.Text = "Consultar Producto"
+        frm_Productos.GroupBox2.Enabled = True
+        frm_Productos.tb_prod_id.Visible = False
+        frm_Productos.Label1.Visible = False
+
+        frm_Productos.tb_prod_codigo.Clear()
+        frm_Productos.tb_prod_descripcion.Clear()
+        frm_Productos.tb_prod_stock_minimo.Clear()
+        frm_Productos.tb_prod_stock.Clear()
+        frm_Productos.tb_prod_busqueda.Clear()
+
+        frm_Productos.tb_prod_codigo.Enabled = False
+        frm_Productos.tb_prod_descripcion.Enabled = False
+        frm_Productos.tb_prod_stock_minimo.Enabled = False
+        frm_Productos.tb_prod_stock.Enabled = False
+        frm_Productos.tb_prod_busqueda.Enabled = True
+
+        frm_Productos.btn_prod_guardar.Enabled = False
+        frm_Productos.btn_prod_actualizar.Enabled = False
+        frm_Productos.btn_prod_salir.Enabled = True
+        frm_Productos.btn_prod_eliminar.Enabled = False
+
+        frm_Productos.dgvLista_Productos.ClearSelection()
+        frm_Productos.dgvLista_Productos.Enabled = True
+
+        frm_Productos.ShowDialog()
+
+
+       
     End Sub
 
 
@@ -1320,5 +1322,10 @@ Public Class frm_Principal
 
     Private Sub frm_Principal_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
+    End Sub
+
+    Private Sub ConsultarMovimientosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarMovimientosToolStripMenuItem.Click
+        frm_Listado_Movimientos.Text = "Consultar Movimiento"
+        frm_Listado_Movimientos.ShowDialog()
     End Sub
 End Class

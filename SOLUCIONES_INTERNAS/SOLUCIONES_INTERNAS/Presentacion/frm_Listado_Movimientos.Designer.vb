@@ -23,6 +23,8 @@ Partial Class frm_Listado_Movimientos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupDetallesOrden = New System.Windows.Forms.GroupBox()
+        Me.cboMes = New System.Windows.Forms.ComboBox()
+        Me.Label31 = New System.Windows.Forms.Label()
         Me.btnImprimir = New System.Windows.Forms.Button()
         Me.txt_Buscar_Producto = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -34,6 +36,8 @@ Partial Class frm_Listado_Movimientos
         '
         'GroupDetallesOrden
         '
+        Me.GroupDetallesOrden.Controls.Add(Me.cboMes)
+        Me.GroupDetallesOrden.Controls.Add(Me.Label31)
         Me.GroupDetallesOrden.Controls.Add(Me.btnImprimir)
         Me.GroupDetallesOrden.Controls.Add(Me.txt_Buscar_Producto)
         Me.GroupDetallesOrden.Controls.Add(Me.Label8)
@@ -41,14 +45,32 @@ Partial Class frm_Listado_Movimientos
         Me.GroupDetallesOrden.Controls.Add(Me.dgv_movimientos)
         Me.GroupDetallesOrden.Location = New System.Drawing.Point(12, 8)
         Me.GroupDetallesOrden.Name = "GroupDetallesOrden"
-        Me.GroupDetallesOrden.Size = New System.Drawing.Size(454, 274)
+        Me.GroupDetallesOrden.Size = New System.Drawing.Size(603, 412)
         Me.GroupDetallesOrden.TabIndex = 31
         Me.GroupDetallesOrden.TabStop = False
         Me.GroupDetallesOrden.Text = "Listado de Movimientos"
         '
+        'cboMes
+        '
+        Me.cboMes.FormattingEnabled = True
+        Me.cboMes.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
+        Me.cboMes.Location = New System.Drawing.Point(180, 17)
+        Me.cboMes.Name = "cboMes"
+        Me.cboMes.Size = New System.Drawing.Size(114, 21)
+        Me.cboMes.TabIndex = 50
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(147, 21)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(27, 13)
+        Me.Label31.TabIndex = 49
+        Me.Label31.Text = "Mes"
+        '
         'btnImprimir
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(258, 241)
+        Me.btnImprimir.Location = New System.Drawing.Point(409, 383)
         Me.btnImprimir.Name = "btnImprimir"
         Me.btnImprimir.Size = New System.Drawing.Size(90, 23)
         Me.btnImprimir.TabIndex = 40
@@ -57,15 +79,15 @@ Partial Class frm_Listado_Movimientos
         '
         'txt_Buscar_Producto
         '
-        Me.txt_Buscar_Producto.Location = New System.Drawing.Point(113, 19)
+        Me.txt_Buscar_Producto.Location = New System.Drawing.Point(442, 18)
         Me.txt_Buscar_Producto.Name = "txt_Buscar_Producto"
-        Me.txt_Buscar_Producto.Size = New System.Drawing.Size(123, 20)
+        Me.txt_Buscar_Producto.Size = New System.Drawing.Size(104, 20)
         Me.txt_Buscar_Producto.TabIndex = 39
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(19, 22)
+        Me.Label8.Location = New System.Drawing.Point(348, 21)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(88, 13)
         Me.Label8.TabIndex = 38
@@ -73,7 +95,7 @@ Partial Class frm_Listado_Movimientos
         '
         'btn_Cancelar
         '
-        Me.btn_Cancelar.Location = New System.Drawing.Point(354, 241)
+        Me.btn_Cancelar.Location = New System.Drawing.Point(505, 383)
         Me.btn_Cancelar.Name = "btn_Cancelar"
         Me.btn_Cancelar.Size = New System.Drawing.Size(90, 23)
         Me.btn_Cancelar.TabIndex = 36
@@ -82,18 +104,19 @@ Partial Class frm_Listado_Movimientos
         '
         'dgv_movimientos
         '
+        Me.dgv_movimientos.AllowUserToAddRows = False
         Me.dgv_movimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_movimientos.Location = New System.Drawing.Point(10, 45)
+        Me.dgv_movimientos.Location = New System.Drawing.Point(8, 45)
         Me.dgv_movimientos.Name = "dgv_movimientos"
         Me.dgv_movimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_movimientos.Size = New System.Drawing.Size(434, 190)
+        Me.dgv_movimientos.Size = New System.Drawing.Size(587, 332)
         Me.dgv_movimientos.TabIndex = 32
         '
         'frm_Listado_Movimientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(475, 290)
+        Me.ClientSize = New System.Drawing.Size(627, 432)
         Me.Controls.Add(Me.GroupDetallesOrden)
         Me.Name = "frm_Listado_Movimientos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -110,4 +133,6 @@ Partial Class frm_Listado_Movimientos
     Friend WithEvents txt_Buscar_Producto As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents btnImprimir As System.Windows.Forms.Button
+    Friend WithEvents cboMes As System.Windows.Forms.ComboBox
+    Friend WithEvents Label31 As System.Windows.Forms.Label
 End Class
