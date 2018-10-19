@@ -1,9 +1,16 @@
-﻿Public Class frm_Listado_Tareas
+﻿Imports System.Drawing.Printing
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+Imports System.IO
+
+Public Class frm_Listado_Tareas
 
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
     Public vble_id_colaborador As Integer
     Dim vble_colaborador, vble_fecha As String
+
+    Dim contadorcolumnasvisibles As Integer
 
     Private Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -860,6 +867,90 @@
         Me.Dispose()
     End Sub
 
-    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimirListado.Click
+    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnExportarListado.Click
+        Try
+            'intentar generar el documento
+            Dim doc As New Document(PageSize.A4.Rotate(), 10, 10, 10, 10)
+            'path que guarda el reporte en el escritorio de windows (desktop)
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Tareas diarias.pdf"
+            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+            PdfWriter.GetInstance(doc, file)
+            doc.Open()
+            ExportarDatosPDF(doc)
+            doc.Close()
+            Process.Start(filename)
+            Me.Close()
+        Catch ex As Exception
+            'si el mensaje es fallido mostrar msgbox
+            MessageBox.Show("No se puede generar el pdf.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
+
+    Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
+        'funcion para obtener el tamaño de las columnas del datagridview
+
+        Dim values As Single() = New Single(dg.ColumnCount - 1) {}
+        For i As Integer = 0 To dg.ColumnCount - 1
+            If dgvTarea_x_Colaborador.Columns(i).Visible = True Then
+                values(i) = CSng(dg.Columns(i).Width)
+            End If
+        Next
+        Return values
+    End Function
+
+    Public Sub ExportarDatosPDF(ByVal document As Document)
+
+        For c = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+            If dgvTarea_x_Colaborador.Columns(c).Visible = True Then
+                contadorcolumnasvisibles = contadorcolumnasvisibles + 1
+            End If
+        Next
+        'se crea un objeto PDFTable con el numero de columnas  del datagridview
+        Dim datatable As New PdfPTable(contadorcolumnasvisibles)
+
+        'se asignan algunas propiedades para el diseño del PDF
+        datatable.DefaultCell.Padding = 3
+
+        'Dim headerwidths As Single() = GetColumnsSize(dgv_movimientos)
+        'datatable.SetWidths(headerwidths)
+
+        datatable.WidthPercentage = 100
+        datatable.DefaultCell.BorderWidth = 2
+        datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+
+        'se crea el encabezado en el PDF
+        Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value, New Font(Font.Name = "Tahoma", 20, Font.Bold))
+
+        'se crea el texto abajo del encabezado
+        ' Dim texto As New Phrase("Los movimientos de productos realizados hasta la fecha " + Now.Date() + " son los siguientes:", New Font(Font.Name = "Tahoma", 14, Font.Bold))
+        Dim texto As New Phrase("Fecha: " + dtpFecha.Text, New Font(Font.Name = "Tahoma", 14, Font.Bold))
+        'se capturan los nombres de las columnas del datagridview
+        For i As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+            If dgvTarea_x_Colaborador.Columns(i).Visible = True Then
+                datatable.AddCell(dgvTarea_x_Colaborador.Columns(i).HeaderText)
+            End If
+        Next
+        datatable.HeaderRows = 1
+        datatable.DefaultCell.BorderWidth = 1
+
+        'se generan las columnas del datagridview
+
+        For i As Integer = 0 To dgvTarea_x_Colaborador.RowCount - 1
+
+            For j As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+                If dgvTarea_x_Colaborador.Columns(j).Visible = True Then
+                    Try
+                        datatable.AddCell(dgvTarea_x_Colaborador(j, i).Value.ToString())
+                    Catch ex As Exception
+                        datatable.AddCell(" ")
+                    End Try
+                End If
+            Next
+            datatable.CompleteRow()
+        Next
+        document.Add(encabezado)
+        document.Add(texto)
+        document.Add(datatable)
+    End Sub
+
 End Class

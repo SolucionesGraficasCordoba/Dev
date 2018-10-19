@@ -41,7 +41,7 @@ Partial Class frm_Listado_Tareas
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnVer = New System.Windows.Forms.Button()
-        Me.btnImprimirListado = New System.Windows.Forms.Button()
+        Me.btnExportarListado = New System.Windows.Forms.Button()
         Me.GroupListadoTareas.SuspendLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupListadoDetalleTarea.SuspendLayout()
@@ -233,21 +233,21 @@ Partial Class frm_Listado_Tareas
         Me.btnVer.Text = "Ver"
         Me.btnVer.UseVisualStyleBackColor = True
         '
-        'btnImprimirListado
+        'btnExportarListado
         '
-        Me.btnImprimirListado.Location = New System.Drawing.Point(61, 538)
-        Me.btnImprimirListado.Name = "btnImprimirListado"
-        Me.btnImprimirListado.Size = New System.Drawing.Size(96, 23)
-        Me.btnImprimirListado.TabIndex = 35
-        Me.btnImprimirListado.Text = "Imprimir Listado"
-        Me.btnImprimirListado.UseVisualStyleBackColor = True
+        Me.btnExportarListado.Location = New System.Drawing.Point(27, 538)
+        Me.btnExportarListado.Name = "btnExportarListado"
+        Me.btnExportarListado.Size = New System.Drawing.Size(130, 23)
+        Me.btnExportarListado.TabIndex = 35
+        Me.btnExportarListado.Text = "Exportar Listado a PDF"
+        Me.btnExportarListado.UseVisualStyleBackColor = True
         '
         'frm_Listado_Tareas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(536, 570)
-        Me.Controls.Add(Me.btnImprimirListado)
+        Me.Controls.Add(Me.btnExportarListado)
         Me.Controls.Add(Me.btnVer)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnCancelar)
@@ -286,5 +286,5 @@ Partial Class frm_Listado_Tareas
     Friend WithEvents btnVer As System.Windows.Forms.Button
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents btnImprimirListado As System.Windows.Forms.Button
+    Friend WithEvents btnExportarListado As System.Windows.Forms.Button
 End Class

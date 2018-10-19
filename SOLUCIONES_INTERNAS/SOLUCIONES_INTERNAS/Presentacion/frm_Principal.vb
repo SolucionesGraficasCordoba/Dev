@@ -450,13 +450,13 @@ Public Class frm_Principal
         ' frm_Tarea.btnImprimirFormulario.Enabled = False
         frm_Listado_Tareas.btnVer.Enabled = False
         frm_Listado_Tareas.btnAgregar.Enabled = False
-        frm_Listado_Tareas.btnImprimirListado.Enabled = False
+        frm_Listado_Tareas.btnExportarListado.Enabled = False
         frm_Listado_Tareas.dtpFecha.Text = Now
         frm_Listado_Tareas.ShowDialog()
     End Sub
 
     Private Sub NuevoClienteToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoClienteToolStripMenuItem.Click
-        
+
         frm_Cliente.Text = "Nuevo Cliente"
         frm_Cliente.txt_razonsocial_cliente.Clear()
         frm_Cliente.txt_mail_cliente.Clear()
@@ -940,7 +940,7 @@ Public Class frm_Principal
         frm_Listado_Tareas.btnModificar_Tarea.Enabled = False
         frm_Listado_Tareas.btnAgregar.Enabled = False
         frm_Listado_Tareas.btnVer.Enabled = False
-        frm_Listado_Tareas.btnImprimirListado.Enabled = False
+        frm_Listado_Tareas.btnExportarListado.Enabled = False
         frm_Listado_Tareas.dtpFecha.Text = Now
         frm_Listado_Tareas.ShowDialog()
     End Sub

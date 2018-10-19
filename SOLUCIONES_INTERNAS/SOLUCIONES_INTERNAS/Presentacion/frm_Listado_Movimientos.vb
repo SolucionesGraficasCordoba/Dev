@@ -8,6 +8,8 @@ Public Class frm_Listado_Movimientos
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
 
+    Dim contadorcolumnasvisibles As Integer
+
     Public Sub CargarGrillaMovimiento()
         Dim buscar As String
 
@@ -79,10 +81,8 @@ Public Class frm_Listado_Movimientos
         dgv_movimientos.Columns(5).DataPropertyName = "PROD_MOV_id"
         dgv_movimientos.Columns(5).Visible = False
         dgv_movimientos.Columns(6).DataPropertyName = "PROD_MOV_tipo"
-        dgv_movimientos.Columns(6).Visible = True
         dgv_movimientos.Columns(6).Width = 50
         dgv_movimientos.Columns(7).DataPropertyName = "PROD_MOV_cantidad"
-        dgv_movimientos.Columns(7).Visible = True
         dgv_movimientos.Columns(8).DataPropertyName = "ORT_id_orden_trabajo"
         dgv_movimientos.Columns(9).DataPropertyName = "PROD_MOV_fecha"
     End Sub
@@ -106,22 +106,32 @@ Public Class frm_Listado_Movimientos
 
     Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
         'funcion para obtener el tamaño de las columnas del datagridview
+
         Dim values As Single() = New Single(dg.ColumnCount - 1) {}
         For i As Integer = 0 To dg.ColumnCount - 1
-            values(i) = CSng(dg.Columns(i).Width)
+            If dgv_movimientos.Columns(i).Visible = True Then
+                values(i) = CSng(dg.Columns(i).Width)
+            End If
         Next
         Return values
     End Function
 
     Public Sub ExportarDatosPDF(ByVal document As Document)
 
+        For c = 0 To dgv_movimientos.ColumnCount - 1
+            If dgv_movimientos.Columns(c).Visible = True Then
+                contadorcolumnasvisibles = contadorcolumnasvisibles + 1
+            End If
+        Next
         'se crea un objeto PDFTable con el numero de columnas  del datagridview
-        Dim datatable As New PdfPTable(dgv_movimientos.ColumnCount)
+        Dim datatable As New PdfPTable(contadorcolumnasvisibles)
 
         'se asignan algunas propiedades para el diseño del PDF
         datatable.DefaultCell.Padding = 3
-        Dim headerwidths As Single() = GetColumnsSize(dgv_movimientos)
-        datatable.SetWidths(headerwidths)
+
+        'Dim headerwidths As Single() = GetColumnsSize(dgv_movimientos)
+        'datatable.SetWidths(headerwidths)
+
         datatable.WidthPercentage = 100
         datatable.DefaultCell.BorderWidth = 2
         datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
@@ -134,22 +144,32 @@ Public Class frm_Listado_Movimientos
 
         'se capturan los nombres de las columnas del datagridview
         For i As Integer = 0 To dgv_movimientos.ColumnCount - 1
-            datatable.AddCell(dgv_movimientos.Columns(i).HeaderText)
+            If dgv_movimientos.Columns(i).Visible = True Then
+                datatable.AddCell(dgv_movimientos.Columns(i).HeaderText)
+            End If
         Next
+
         datatable.HeaderRows = 1
         datatable.DefaultCell.BorderWidth = 1
 
         'se generan las columnas del datagridview
+
         For i As Integer = 0 To dgv_movimientos.RowCount - 1
+
             For j As Integer = 0 To dgv_movimientos.ColumnCount - 1
-                datatable.AddCell(dgv_movimientos(j, i).Value.ToString())
+                If dgv_movimientos.Columns(j).Visible = True Then
+                    Try
+                        datatable.AddCell(dgv_movimientos(j, i).Value.ToString())
+                    Catch ex As Exception
+                        datatable.AddCell(" ")
+                    End Try
+                End If
             Next
             datatable.CompleteRow()
         Next
         document.Add(encabezado)
         document.Add(texto)
         document.Add(datatable)
-
     End Sub
 
     Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExportaraPDF.Click
