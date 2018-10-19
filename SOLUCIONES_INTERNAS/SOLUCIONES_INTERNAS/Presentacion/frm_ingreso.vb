@@ -69,10 +69,11 @@
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
-                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(3).Visible = True
+
                 frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
                 frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
                 frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(3).Visible = True
 
                 frm_Principal.OrdenTrabajoToolStripMenuItem.Visible = True
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = True 'nueva
@@ -147,10 +148,11 @@
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = False
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Visible = False
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Visible = False
-                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(3).Visible = True
+
                 frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Visible = False
                 frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = False
                 frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(3).Visible = True
 
                 frm_Principal.OrdenTrabajoToolStripMenuItem.Visible = True
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = False 'nueva
@@ -214,11 +216,11 @@
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
-                frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(3).Visible = True
+
                 frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
                 frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
                 frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
-
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(3).Visible = True
                 frm_Principal.TareasToolStripMenuItem.Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(0).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = True

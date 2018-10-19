@@ -25,7 +25,7 @@ Partial Class frm_Listado_Movimientos
         Me.GroupDetallesOrden = New System.Windows.Forms.GroupBox()
         Me.cboMes = New System.Windows.Forms.ComboBox()
         Me.Label31 = New System.Windows.Forms.Label()
-        Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.btnExportaraPDF = New System.Windows.Forms.Button()
         Me.txt_Buscar_Producto = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btn_Cancelar = New System.Windows.Forms.Button()
@@ -38,7 +38,7 @@ Partial Class frm_Listado_Movimientos
         '
         Me.GroupDetallesOrden.Controls.Add(Me.cboMes)
         Me.GroupDetallesOrden.Controls.Add(Me.Label31)
-        Me.GroupDetallesOrden.Controls.Add(Me.btnImprimir)
+        Me.GroupDetallesOrden.Controls.Add(Me.btnExportaraPDF)
         Me.GroupDetallesOrden.Controls.Add(Me.txt_Buscar_Producto)
         Me.GroupDetallesOrden.Controls.Add(Me.Label8)
         Me.GroupDetallesOrden.Controls.Add(Me.btn_Cancelar)
@@ -68,14 +68,14 @@ Partial Class frm_Listado_Movimientos
         Me.Label31.TabIndex = 49
         Me.Label31.Text = "Mes"
         '
-        'btnImprimir
+        'btnExportaraPDF
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(409, 383)
-        Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(90, 23)
-        Me.btnImprimir.TabIndex = 40
-        Me.btnImprimir.Text = "Imprimir"
-        Me.btnImprimir.UseVisualStyleBackColor = True
+        Me.btnExportaraPDF.Location = New System.Drawing.Point(409, 383)
+        Me.btnExportaraPDF.Name = "btnExportaraPDF"
+        Me.btnExportaraPDF.Size = New System.Drawing.Size(90, 23)
+        Me.btnExportaraPDF.TabIndex = 40
+        Me.btnExportaraPDF.Text = "Exportar a PDF"
+        Me.btnExportaraPDF.UseVisualStyleBackColor = True
         '
         'txt_Buscar_Producto
         '
@@ -132,7 +132,7 @@ Partial Class frm_Listado_Movimientos
     Friend WithEvents dgv_movimientos As System.Windows.Forms.DataGridView
     Friend WithEvents txt_Buscar_Producto As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents btnImprimir As System.Windows.Forms.Button
+    Friend WithEvents btnExportaraPDF As System.Windows.Forms.Button
     Friend WithEvents cboMes As System.Windows.Forms.ComboBox
     Friend WithEvents Label31 As System.Windows.Forms.Label
 End Class

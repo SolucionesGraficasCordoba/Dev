@@ -1,25 +1,15 @@
-﻿Public Class frm_Listado_Movimientos
+﻿Imports System.Drawing.Printing
+'Imports System.Drawing
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+Imports System.IO
+
+
+
+Public Class frm_Listado_Movimientos
 
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
-
-    'Private Sub txt_Buscar_orden_trabajo_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_Buscar_Producto.TextChanged
-  
-
-    '    Dim carga = (From p In datavistas.Vista_Lista_Movimientos
-    '                               Select p.PROD_id,
-    '                               p.PROD_codigo,
-    '                               p.PROD_descripcion,
-    '                               p.PROD_stock,
-    '                               p.PROD_stock_minimo,
-    '                               p.PROD_MOV_id,
-    '                               p.PROD_MOV_fecha,
-    '                               p.PROD_MOV_tipo,
-    '                               p.PROD_MOV_cantidad,
-    '                               p.ORT_id_orden_trabajo
-    '                               Where PROD_descripcion Like buscar.ToString And PROD_MOV_fecha.Value.Month = cboMes.SelectedIndex + 1)
-    '    dgv_movimientos.DataSource = carga
-    'End Sub
 
     Public Sub CargarGrillaMovimiento()
         Dim buscar As String
@@ -40,9 +30,7 @@
         dgv_movimientos.DataSource = carga
     End Sub
 
-    ' Where (PROD_descripcion = txt_Buscar_Producto.Text And PROD_MOV_fecha.Value.Month = cboMes.SelectedIndex + 1))
-
-    Private Sub frm_Listado_Movimientos_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub frm_Listado_Movimientos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ArmaGrillaProductoMovimiento()
         'CargarGrillaMovimiento()
 
@@ -58,9 +46,6 @@
                                   p.PROD_MOV_cantidad,
                                   p.ORT_id_orden_trabajo)
         dgv_movimientos.DataSource = carga
-
-
-
         dgv_movimientos.ClearSelection()
     End Sub
 
@@ -106,7 +91,7 @@
         dgv_movimientos.Columns(9).DataPropertyName = "PROD_MOV_fecha"
     End Sub
 
-    Private Sub btn_Cancelar_Click(sender As System.Object, e As System.EventArgs) Handles btn_Cancelar.Click
+    Private Sub btn_Cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Cancelar.Click
         Me.Close()
         Me.Dispose()
     End Sub
@@ -115,12 +100,79 @@
         Me.Dispose()
     End Sub
 
-    Private Sub cboMes_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cboMes.SelectedIndexChanged
+    Private Sub cboMes_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboMes.SelectedIndexChanged
         CargarGrillaMovimiento()
+    End Sub
+
+    Private Sub txt_Buscar_Producto_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_Producto.TextChanged
+        CargarGrillaMovimiento()
+    End Sub
+
+    Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
+
+        'funcion para obtener el tamaño de las columnas del datagridview
+        Dim values As Single() = New Single(dg.ColumnCount - 1) {}
+        For i As Integer = 0 To dg.ColumnCount - 1
+            values(i) = CSng(dg.Columns(i).Width)
+        Next
+        Return values
+    End Function
+
+    Public Sub ExportarDatosPDF(ByVal document As Document)
+
+        'se crea un objeto PDFTable con el numero de columnas  del datagridview
+        Dim datatable As New PdfPTable(dgv_movimientos.ColumnCount)
+
+        'se asignan algunas propiedades para el diseño del PDF
+        datatable.DefaultCell.Padding = 3
+        Dim headerwidths As Single() = GetColumnsSize(dgv_movimientos)
+        datatable.SetWidths(headerwidths)
+        datatable.WidthPercentage = 100
+        datatable.DefaultCell.BorderWidth = 2
+        datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+
+        'se crea el encabezado en el PDF
+        Dim encabezado As New Paragraph("Reporte de Movimientos", New Font(Font.Name = "Tahoma", 20, Font.Bold))
+
+        'se crea el texto abajo del encabezado
+        Dim texto As New Phrase("Reportes de los movimientos de un producto realizados a la fecha:" + Now.Date(), New Font(Font.Name = "Tahoma", 14, Font.Bold))
+
+        'se capturan los nombres de las columnas del datagridview
+        For i As Integer = 0 To dgv_movimientos.ColumnCount - 1
+            datatable.AddCell(dgv_movimientos.Columns(i).HeaderText)
+        Next
+        datatable.HeaderRows = 1
+        datatable.DefaultCell.BorderWidth = 1
+
+        'se generan las columnas del datagridview
+        For i As Integer = 0 To dgv_movimientos.RowCount - 1
+            For j As Integer = 0 To dgv_movimientos.ColumnCount - 1
+                datatable.AddCell(dgv_movimientos(j, i).Value.ToString())
+            Next
+            datatable.CompleteRow()
+        Next
+        document.Add(encabezado)
+        document.Add(texto)
+        document.Add(datatable)
 
     End Sub
 
-    Private Sub txt_Buscar_Producto_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_Buscar_Producto.TextChanged
-        CargarGrillaMovimiento()
+    Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExportaraPDF.Click
+        Try
+            'intentar generar el documento
+            Dim doc As New Document(PageSize.A4.Rotate(), 10, 10, 10, 10)
+            'path que guarda el reporte en el escritorio de windows (desktop)
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Lista de Productos.pdf"
+            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+            PdfWriter.GetInstance(doc, file)
+            doc.Open()
+            ExportarDatosPDF(doc)
+            doc.Close()
+            Process.Start(filename)
+
+        Catch ex As Exception
+            'si el mensaje es fallido mostrar msgbox
+            MessageBox.Show("No se puede generar el pdf.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class
