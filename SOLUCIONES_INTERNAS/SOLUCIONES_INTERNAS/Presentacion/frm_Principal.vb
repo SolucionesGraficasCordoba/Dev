@@ -623,10 +623,10 @@ Public Class frm_Principal
         frm_Colaborador.btnGuardar_Colaborador.Enabled = True
         frm_Colaborador.btnActualizar_Colaborador.Enabled = False
         frm_Colaborador.btnCancelar_Colaborador.Enabled = True
-        frm_Colaborador.btnImprimir.Visible = False
+        ' frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.txt_Buscar_Colaborador.Enabled = False
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
-        frm_Colaborador.btnImprimir.Visible = False
+        '  frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
         frm_Colaborador.dgvLista_Colaboradores.Enabled = False
         frm_Colaborador.GroupListadoColaboradores.Enabled = False
@@ -646,9 +646,9 @@ Public Class frm_Principal
         frm_Colaborador.btnCancelar_Colaborador.Enabled = True
         frm_Colaborador.txt_Buscar_Colaborador.Enabled = True
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
-        frm_Colaborador.btnImprimir.Visible = False
+        '   frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.dgvLista_Colaboradores.Enabled = False
-        frm_Colaborador.btnImprimir.Visible = False
+        '   frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
         frm_Colaborador.ShowDialog()
     End Sub
@@ -666,7 +666,7 @@ Public Class frm_Principal
         frm_Colaborador.txt_Buscar_Colaborador.Enabled = True
         frm_Colaborador.btnEliminar_Colaborador.Enabled = True
         frm_Colaborador.dgvLista_Colaboradores.Enabled = True
-        frm_Colaborador.btnImprimir.Visible = False
+        '   frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
         frm_Colaborador.ShowDialog()
     End Sub
@@ -680,12 +680,12 @@ Public Class frm_Principal
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
         frm_Colaborador.btnGuardar_Colaborador.Enabled = False
         frm_Colaborador.btnNuevo_Colaborador.Visible = False
-        frm_Colaborador.btnImprimir.Visible = False
+        '  frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.txt_nombre_colaborador.Enabled = False
         frm_Colaborador.txt_apellido_colaborador.Enabled = False
         frm_Colaborador.cbo_sector.Enabled = False
         frm_Colaborador.txt_nombre_colaborador.Enabled = False
-        frm_Colaborador.btnImprimir.Visible = True
+        ' frm_Colaborador.btnImprimir.Visible = True
         frm_Colaborador.ShowDialog()
     End Sub
 

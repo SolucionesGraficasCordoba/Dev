@@ -314,8 +314,8 @@ Public Class frm_Colaborador
 
     End Sub
 
-    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
-         Me.PrintDocument1.Print()
+    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs)
+        Me.PrintDocument1.Print()
     End Sub
 
 End Class

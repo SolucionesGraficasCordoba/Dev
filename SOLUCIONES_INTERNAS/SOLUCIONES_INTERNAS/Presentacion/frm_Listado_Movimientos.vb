@@ -25,7 +25,9 @@ Public Class frm_Listado_Movimientos
                                    p.PROD_MOV_tipo,
                                    p.PROD_MOV_cantidad,
                                    p.ORT_id_orden_trabajo
-                 Where PROD_descripcion Like buscar.ToString And PROD_MOV_fecha.Value.Month = cboMes.SelectedIndex + 1)
+                 Where PROD_descripcion Like buscar.ToString And PROD_MOV_fecha.Value.Month = cboMes.SelectedIndex + 1
+                 Order By PROD_MOV_fecha Ascending)
+
         dgv_movimientos.DataSource = carga
     End Sub
 
@@ -184,7 +186,7 @@ Public Class frm_Listado_Movimientos
             ExportarDatosPDF(doc)
             doc.Close()
             Process.Start(filename)
-
+            Me.Close()
         Catch ex As Exception
             'si el mensaje es fallido mostrar msgbox
             MessageBox.Show("No se puede generar el pdf.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

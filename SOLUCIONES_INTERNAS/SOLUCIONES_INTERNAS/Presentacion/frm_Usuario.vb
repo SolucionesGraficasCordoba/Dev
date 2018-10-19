@@ -195,7 +195,7 @@
         frm_Colaborador.quienllamo_col = Me
         frm_Colaborador.Text = "Seleccionar Colaborador"
         frm_Colaborador.GroupNuevoColaborador.Enabled = False
-        frm_Colaborador.btnImprimir.Visible = False
+        '  frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.ShowDialog()
     End Sub
 
