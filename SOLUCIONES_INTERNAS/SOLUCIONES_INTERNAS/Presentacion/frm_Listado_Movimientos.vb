@@ -1,10 +1,7 @@
 ﻿Imports System.Drawing.Printing
-'Imports System.Drawing
 Imports iTextSharp.text
 Imports iTextSharp.text.pdf
 Imports System.IO
-
-
 
 Public Class frm_Listado_Movimientos
 
@@ -32,7 +29,6 @@ Public Class frm_Listado_Movimientos
 
     Private Sub frm_Listado_Movimientos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ArmaGrillaProductoMovimiento()
-        'CargarGrillaMovimiento()
 
         Dim carga = (From p In datavistas.Vista_Lista_Movimientos
                       Select p.PROD_id,
@@ -109,7 +105,6 @@ Public Class frm_Listado_Movimientos
     End Sub
 
     Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
-
         'funcion para obtener el tamaño de las columnas del datagridview
         Dim values As Single() = New Single(dg.ColumnCount - 1) {}
         For i As Integer = 0 To dg.ColumnCount - 1
@@ -162,7 +157,7 @@ Public Class frm_Listado_Movimientos
             'intentar generar el documento
             Dim doc As New Document(PageSize.A4.Rotate(), 10, 10, 10, 10)
             'path que guarda el reporte en el escritorio de windows (desktop)
-            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Lista de Productos.pdf"
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Movimiento de Productos.pdf"
             Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
             PdfWriter.GetInstance(doc, file)
             doc.Open()
