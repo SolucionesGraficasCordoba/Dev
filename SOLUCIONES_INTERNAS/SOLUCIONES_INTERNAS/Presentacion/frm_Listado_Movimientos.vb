@@ -135,7 +135,7 @@ Public Class frm_Listado_Movimientos
         Dim encabezado As New Paragraph("Reporte de Movimientos", New Font(Font.Name = "Tahoma", 20, Font.Bold))
 
         'se crea el texto abajo del encabezado
-        Dim texto As New Phrase("Reportes de los movimientos de un producto realizados a la fecha:" + Now.Date(), New Font(Font.Name = "Tahoma", 14, Font.Bold))
+        Dim texto As New Phrase("Los movimientos de productos realizados hasta la fecha " + Now.Date() + " son los siguientes:", New Font(Font.Name = "Tahoma", 14, Font.Bold))
 
         'se capturan los nombres de las columnas del datagridview
         For i As Integer = 0 To dgv_movimientos.ColumnCount - 1
