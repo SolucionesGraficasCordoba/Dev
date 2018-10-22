@@ -2,7 +2,7 @@
 
     Dim datacontext As New DataS_Interno
     Public quienllamo_listado_orden As Form
-
+    Dim cargamasprod As String = "NO"
 
     Private Sub frm_Orden_Trabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         If quienllamo_listado_orden.Name <> frm_Listado_Orden_Trabajo.Name Then
@@ -43,6 +43,7 @@
     Sub limpiarcontroles()
         'LIMPIA ORDEN TRABAJO
         dtpFecha_Orden_Trabajo.Text = Now
+        dtpFecha_Entrega.Text = Now
         cboTipo_Orden.SelectedIndex = -1
         txtNumero_Orden_Trabajo.Clear()
         txt_observaciones.Clear()
@@ -51,7 +52,10 @@
         txtNombre_vendedor.Clear()
         txt_id_cliente.Clear()
         txt_nombre_cliente.Clear()
+        limpiardetalles()
+    End Sub
 
+    Sub limpiardetalles()
         'LIMPIA DETALLE DE LA ORDEN
         txt_cantidad1_detalle1.Clear()
         txt_cantidad2_detalle2.Clear()
@@ -102,6 +106,7 @@
         cboFormato2_Soporte3.SelectedIndex = -1
         cboFormato3_Soporte3.SelectedIndex = -1
     End Sub
+
 
     Private Sub btnBuscar_cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_cliente.Click
         frm_Cliente.quienllamocliente = Me
@@ -327,10 +332,10 @@
             Else
                 MsgBox("No se ha cargado ningún producto")
             End If
-            Else
-                frm_Proceso2.Text = "Proceso Segundo Producto"
-                frm_Proceso2.ShowDialog()
-            End If
+        Else
+            frm_Proceso2.Text = "Proceso Segundo Producto"
+            frm_Proceso2.ShowDialog()
+        End If
     End Sub
 
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles btnProceso3.Click
@@ -393,10 +398,10 @@
             Else
                 MsgBox("No se ha cargado ningún producto")
             End If
-            Else
-                frm_proceso3.Text = "Proceso Tercer Producto"
-                frm_proceso3.ShowDialog()
-            End If
+        Else
+            frm_proceso3.Text = "Proceso Tercer Producto"
+            frm_proceso3.ShowDialog()
+        End If
     End Sub
 
     Private Sub btnNueva_Orden_Trabajo_Click_2(sender As System.Object, e As System.EventArgs) Handles btnNueva_Orden_Trabajo.Click
@@ -447,19 +452,24 @@
                 Exit Sub
             End If
             'GUARDA ORDEN DE TRABAJO
-            '****if quien llamo <>  agregar pprod a la ordet
-            Dim clie = New ORDEN_TRABAJO
-            clie.ORT_fecha_ot = dtpFecha_Orden_Trabajo.Text
-            clie.ORT_tipo_ot = cboTipo_Orden.Text
-            clie.ORT_numero_ot = StrConv(txtNumero_Orden_Trabajo.Text, VbStrConv.ProperCase)
-            clie.ORT_observaciones_ot = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
-            clie.ORT_mejoras_ot = StrConv(txt_mejoras.Text, VbStrConv.ProperCase)
-            clie.VEN_id_vendedor = txtid_vendedor.Text
-            clie.CLI_id_cliente = txt_id_cliente.Text
 
-            datacontext.ORDEN_TRABAJO.InsertOnSubmit(clie)
-            datacontext.SubmitChanges()
-            '***** end if
+            Dim clie = New ORDEN_TRABAJO
+
+            If cargamasprod = "NO" Then
+
+                clie.ORT_fecha_ot = dtpFecha_Orden_Trabajo.Text
+                clie.ORT_tipo_ot = cboTipo_Orden.Text
+                clie.ORT_numero_ot = StrConv(txtNumero_Orden_Trabajo.Text, VbStrConv.ProperCase)
+                clie.ORT_observaciones_ot = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
+                clie.ORT_mejoras_ot = StrConv(txt_mejoras.Text, VbStrConv.ProperCase)
+                clie.VEN_id_vendedor = txtid_vendedor.Text
+                clie.CLI_id_cliente = txt_id_cliente.Text
+                clie.ORT_fecha_entrega = dtpFecha_Entrega.Text
+
+                datacontext.ORDEN_TRABAJO.InsertOnSubmit(clie)
+                datacontext.SubmitChanges()
+
+            End If
 
             'GUARDA EL REGISTRO 1 DEL DETALLE DE LA ORDEN DE TRABAJO
             If txt_cantidad1_detalle1.Text.Length >= 1 Then
@@ -476,7 +486,9 @@
                 detalle.DOT_tipo_impresion_dot = cboTipoImpresion1_Detalle1.SelectedItem 'TIPO IMPRESION PRODUCTO 1
                 detalle.PIE_id_pieza = cboPiezas1_Detalle1.SelectedValue 'TIPO PIEZA PRODUCTO 1
 
-                txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
+                If cargamasprod = "NO" Then
+                    txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
+                End If
                 detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text 'ID ORDEN TRABAJO
 
                 'PAPEL PRODUCTO 1
@@ -553,14 +565,11 @@
 
             End If
 
-
-
             'GUARDA EL REGISTRO 2 DEL DETALLE DE LA ORDEN DE TRABAJO
             If txt_cantidad2_detalle2.Text.Length >= 1 Then
                 If cboPiezas2_Detalle2.Text.Length = 0 Then
                     MsgBox("Seleccione una Pieza")
                 End If
-
                 Dim detalle2 = New DETALLE_ORDEN_TRABAJO
                 'id
                 txt_id_detalle_orden_trabajo2.Text = detalle2.id_detalle_orden_trabajo
@@ -574,7 +583,9 @@
                 'TIPO PIEZA REGISTRO 2
                 detalle2.PIE_id_pieza = cboPiezas2_Detalle2.SelectedValue
                 'ID ORDEN TRABAJO
-                txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
+                If cargamasprod = "NO" Then
+                    txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
+                End If
                 detalle2.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
 
                 'PAPEL REGISTRO 2
@@ -665,7 +676,9 @@
                 'TIPO PIEZA REGISTRO 3
                 detalle3.PIE_id_pieza = cboPiezas3_Detalle3.SelectedValue
                 'ID ORDEN TRABAJO
-                txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
+                If cargamasprod = "NO" Then
+                    txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
+                End If
                 detalle3.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
                 'PAPEL REGISTRO 3
                 detalle3.DOT_papel_soporte_1 = StrConv(txt_Papel1_Soporte3.Text, VbStrConv.ProperCase)
@@ -734,13 +747,19 @@
                 datacontext.SubmitChanges()
             End If
 
-            MsgBox("la Orden se ha creado correctamente", vbInformation)
-            limpiarcontroles()
-            Me.Close()
+            '  MsgBox("la Orden se ha creado correctamente", vbInformation)
+            Select Case MsgBox("La orden se ha creado, agregar mas productos?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Guardar orden")
+                Case MsgBoxResult.Yes
+                    cargamasprod = "SI"
+                    limpiardetalles()
+                    Exit Sub
+                Case Else
+                    limpiarcontroles()
+                    Me.Close()
+            End Select
         Catch ex As Exception
             MsgBox("Error al cargar la Orden")
-            limpiarcontroles()
-            ' cargargrilla()
+            ' limpiarcontroles()
         End Try
     End Sub
 
@@ -764,7 +783,7 @@
             ActualizarOrden.ORT_mejoras_ot = txt_mejoras.Text
             ActualizarOrden.VEN_id_vendedor = txtid_vendedor.Text
             ActualizarOrden.CLI_id_cliente = txt_id_cliente.Text
-
+            ActualizarOrden.ORT_fecha_entrega = dtpFecha_Entrega.Text
             datacontext.SubmitChanges()
 
             Dim ActualizarDetalle1 = (From D In datacontext.DETALLE_ORDEN_TRABAJO
@@ -826,11 +845,11 @@
 
                 datacontext.SubmitChanges()
             End If
+
+            'ACTUALIZA EL SEGUNDO REGISTRO
             If txt_id_detalle_orden_trabajo2.Text.Length <> 0 Then
-                'ACTUALIZA EL SEGUNDO REGISTRO
                 Dim ActualizarDetalle2 = (From D In datacontext.DETALLE_ORDEN_TRABAJO
                                           Where D.id_detalle_orden_trabajo = CInt(txt_id_detalle_orden_trabajo2.Text)).ToList()(0)
-
                 If txt_cantidad2_detalle2.Text.Length >= 1 Then
 
                     If cboPiezas2_Detalle2.Text.Length = 0 Then

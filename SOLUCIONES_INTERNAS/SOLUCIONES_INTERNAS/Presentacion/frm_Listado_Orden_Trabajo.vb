@@ -1,10 +1,12 @@
 ﻿Public Class frm_Listado_Orden_Trabajo
+
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
     Public quienllamolistado_ot As Form
     Public quienllamoboton As Button
 
     Public vble_id_orden As Integer
+    Public vble_id_detalle As Integer
     Dim vble_colaborador, vble_fecha As String
 
     Private Sub frm_Detalle_Orden_Trabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -20,7 +22,7 @@
                                On U.VEN_id_vendedor Equals ort.VEN_id_vendedor
                                Join col In datacontext.CLIENTE
                                On col.CLI_id_cliente Equals U.CLI_id_cliente
-                              Select U.ORT_id_orden_trabajo, U.ORT_fecha_ot, U.ORT_tipo_ot, U.ORT_numero_ot,
+                              Select U.ORT_id_orden_trabajo, U.ORT_fecha_ot, U.ORT_fecha_entrega, U.ORT_tipo_ot, U.ORT_numero_ot,
                               U.ORT_observaciones_ot, U.ORT_mejoras_ot, U.VEN_id_vendedor, ort.VEN_nombre_ven, U.CLI_id_cliente, col.CLI_razon_social
                               Order By ORT_id_orden_trabajo Descending)
         dgvLista_Orden_Trabajo.DataSource = consultaOrden
@@ -36,28 +38,30 @@
         dgvLista_Orden_Trabajo.Columns.Add("ORT_tipo_ot", "Tipo")
         dgvLista_Orden_Trabajo.Columns.Add("ORT_numero_ot", "Número")
         dgvLista_Orden_Trabajo.Columns.Add("ORT_fecha_ot", "Fecha")
+        dgvLista_Orden_Trabajo.Columns.Add("ORT_fecha_entrega", "Fecha de Entrega")
         dgvLista_Orden_Trabajo.Columns.Add("CLI_id_cliente", "id_cliente")
         dgvLista_Orden_Trabajo.Columns.Add("CLI_razon_social", "Razón Social")
         dgvLista_Orden_Trabajo.Columns.Add("VEN_id_vendedor", "id_vendedor")
         dgvLista_Orden_Trabajo.Columns.Add("VEN_nombre_ven", "Vendedor")
         dgvLista_Orden_Trabajo.Columns.Add("ORT_observaciones_ot", "Observaciones")
         dgvLista_Orden_Trabajo.Columns.Add("ORT_mejoras_ot", "Mejoras")
-        
+
         dgvLista_Orden_Trabajo.Columns(0).DataPropertyName = "ORT_id_orden_trabajo"
         dgvLista_Orden_Trabajo.Columns(0).Visible = False
         dgvLista_Orden_Trabajo.Columns(1).DataPropertyName = "ORT_tipo_ot"
         dgvLista_Orden_Trabajo.Columns(1).Width = 50
         dgvLista_Orden_Trabajo.Columns(2).DataPropertyName = "ORT_numero_ot"
         dgvLista_Orden_Trabajo.Columns(3).DataPropertyName = "ORT_fecha_ot"
-        dgvLista_Orden_Trabajo.Columns(4).DataPropertyName = "CLI_id_cliente"
-        dgvLista_Orden_Trabajo.Columns(4).Visible = False
-        dgvLista_Orden_Trabajo.Columns(5).DataPropertyName = "CLI_razon_social"
-        dgvLista_Orden_Trabajo.Columns(6).DataPropertyName = "VEN_id_vendedor"
-        dgvLista_Orden_Trabajo.Columns(6).Visible = False
-        dgvLista_Orden_Trabajo.Columns(7).DataPropertyName = "VEN_nombre_ven"
-        dgvLista_Orden_Trabajo.Columns(8).DataPropertyName = "ORT_observaciones_ot"
-        dgvLista_Orden_Trabajo.Columns(9).DataPropertyName = "ORT_mejoras_ot"
-        dgvLista_Orden_Trabajo.Columns(9).Visible = False
+        dgvLista_Orden_Trabajo.Columns(4).DataPropertyName = "ORT_fecha_entrega"
+        dgvLista_Orden_Trabajo.Columns(5).DataPropertyName = "CLI_id_cliente"
+        dgvLista_Orden_Trabajo.Columns(5).Visible = False
+        dgvLista_Orden_Trabajo.Columns(6).DataPropertyName = "CLI_razon_social"
+        dgvLista_Orden_Trabajo.Columns(7).DataPropertyName = "VEN_id_vendedor"
+        dgvLista_Orden_Trabajo.Columns(7).Visible = False
+        dgvLista_Orden_Trabajo.Columns(8).DataPropertyName = "VEN_nombre_ven"
+        dgvLista_Orden_Trabajo.Columns(9).DataPropertyName = "ORT_observaciones_ot"
+        dgvLista_Orden_Trabajo.Columns(10).DataPropertyName = "ORT_mejoras_ot"
+        dgvLista_Orden_Trabajo.Columns(10).Visible = False
     End Sub
 
     Private Sub dgvLista_Orden_Trabajo_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Orden_Trabajo.CellClick
@@ -68,25 +72,56 @@
             Exit Sub
         End If
         'CARGA DETALLES DE LA ORDEN
-        If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
-            vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-        End If
+        'If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
+        '    vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+        'End If
         vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
         CargarDetalle()
     End Sub
 
     Public Sub CargarDetalle()
         Dim datagriddetalleorden = (From o In datavistas.Vista_Detalle_Orden_Trabajo_1
-                          Select o.ORT_id_orden_trabajo, o.ORT_tipo_ot, o.ORT_numero_ot, o.ORT_observaciones_ot,
-                          o.VEN_id_vendedor, o.VEN_nombre_ven, o.CLI_id_cliente, o.CLI_razon_social, _
-                          o.PIE_id_pieza, o.PIE_nombre_pie, o.id_detalle_orden_trabajo, o.DOT_cantidad_dot, _
-                          o.DOT_tamaño_dot, o.DOT_tipo_impresion_dot, o.DOT_papel_soporte_1, o.DOT_papel_soporte_2, o.DOT_papel_soporte_3, _
-                          o.DOT_gramaje_soporte_1, o.DOT_gramaje_soporte_2, o.DOT_gramaje_soporte_3, _
-                          o.DOT_cantidad_soporte_1, o.DOT_cantidad_soporte_2, o.DOT_cantidad_soporte_3, _
-                          o.DOT_formato_soporte_1, o.DOT_formato_soporte_2, o.DOT_formato_soporte_3
+                          Select o.ORT_id_orden_trabajo,
+                          o.ORT_tipo_ot,
+                          o.ORT_numero_ot,
+                          o.ORT_observaciones_ot,
+                          o.VEN_id_vendedor,
+                          o.VEN_nombre_ven,
+                          o.CLI_id_cliente,
+                          o.CLI_razon_social, _
+                          o.PIE_id_pieza,
+                          o.PIE_nombre_pie,
+                          o.id_detalle_orden_trabajo,
+                          o.DOT_cantidad_dot,
+                          o.DOT_tamaño_dot,
+                          o.DOT_tipo_impresion_dot,
+                          o.DOT_papel_soporte_1,
+                          o.DOT_papel_soporte_2,
+                          o.DOT_papel_soporte_3,
+                          o.DOT_gramaje_soporte_1,
+                          o.DOT_gramaje_soporte_2,
+                          o.DOT_gramaje_soporte_3,
+                          o.DOT_cantidad_soporte_1,
+                          o.DOT_cantidad_soporte_2,
+                          o.DOT_cantidad_soporte_3, _
+                          o.DOT_formato_soporte_1,
+                          o.DOT_formato_soporte_2,
+                          o.DOT_formato_soporte_3
                           Where ORT_id_orden_trabajo = vble_id_orden)
         mostrargrillaobligaciones(datagriddetalleorden)
         Label1.Text = dgv_detalle_orden.Rows.Count
+    End Sub
+
+
+    Private Sub dgv_detalle_orden_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellClick
+        vble_id_detalle = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+        cargarprocesos()
+    End Sub
+
+    Sub cargarprocesos()
+        Dim datagridproceso = (From p In datacontext.PROCESO
+                               Select p.PROC_descrip_digital, p.PROC_descrip_gran_formato, p.PROC_descrip_logistica, p.PROC_descrip_offset, p.PROC_descrip_terminacion, p.id_detalle_orden_trabajo
+                               Where id_detalle_orden_trabajo = vble_id_detalle)
     End Sub
 
     Public Sub mostrargrillaobligaciones(ByVal datasource As System.Linq.IQueryable)
@@ -176,7 +211,6 @@
         dgv_detalle_orden.ClearSelection()
     End Sub
 
-    'FUNCIONA BIEN
     Private Sub btnModificar_Orden_Click(sender As System.Object, e As System.EventArgs) Handles btnModificar_Orden.Click
 
         'CARGA COMBOBOX PIEZA DETALLE 1
@@ -215,6 +249,9 @@
                 frm_Orden_Trabajo.cboTipo_Orden.SelectedItem = dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
                 frm_Orden_Trabajo.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
                 frm_Orden_Trabajo.dtpFecha_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+
+                frm_Orden_Trabajo.dtpFecha_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+
                 frm_Orden_Trabajo.txt_id_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_id_cliente", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
                 frm_Orden_Trabajo.txt_nombre_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
                 frm_Orden_Trabajo.txtid_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_id_vendedor", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
@@ -245,7 +282,7 @@
                     frm_Orden_Trabajo.txt_cantidad1_detalle1.Text = dgv_detalle_orden.Item("DOT_cantidad_dot", dgvLista_Orden_Trabajo.Rows(0).Index).Value
 
                     frm_Orden_Trabajo.cboPiezas1_Detalle1.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.Rows(0).Index).Value
-              
+
                     frm_Orden_Trabajo.txtTamaño1_Detalle1.Text = dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.Rows(0).Index).Value
                     frm_Orden_Trabajo.cboTipoImpresion1_Detalle1.SelectedItem = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.Rows(0).Index).Value
 
@@ -274,7 +311,7 @@
                     frm_Orden_Trabajo.txt_cantidad2_detalle2.Text = dgv_detalle_orden.Item("DOT_cantidad_dot", dgvLista_Orden_Trabajo.Rows(1).Index).Value
 
                     frm_Orden_Trabajo.cboPiezas2_Detalle2.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.Rows(1).Index).Value
-                  
+
                     frm_Orden_Trabajo.txtTamaño2_Detalle2.Text = dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.Rows(1).Index).Value
                     frm_Orden_Trabajo.cboTipoImpresion2_Detalle2.SelectedItem = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.Rows(1).Index).Value
 
@@ -412,7 +449,6 @@
 
             frm_Orden_Trabajo.ShowDialog()
         End If
-
     End Sub
 
     Private Sub txt_Buscar_orden_trabajo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_orden_trabajo.TextChanged
@@ -424,7 +460,7 @@
                               On U.VEN_id_vendedor Equals ort.VEN_id_vendedor
                               Join col In datacontext.CLIENTE
                               On col.CLI_id_cliente Equals U.CLI_id_cliente
-                             Select U.ORT_id_orden_trabajo, U.ORT_fecha_ot, U.ORT_tipo_ot, U.ORT_numero_ot,
+                             Select U.ORT_id_orden_trabajo, U.ORT_fecha_ot, U.ORT_fecha_entrega, U.ORT_tipo_ot, U.ORT_numero_ot,
                              U.ORT_observaciones_ot, U.ORT_mejoras_ot, U.VEN_id_vendedor, ort.VEN_nombre_ven, U.CLI_id_cliente, col.CLI_razon_social
                               Where ORT_numero_ot Like buscar.ToString
                              Order By ORT_numero_ot Ascending)
@@ -636,6 +672,9 @@
             frm_Orden_Trabajo.cboTipo_Orden.SelectedItem = dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.dtpFecha_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+
+            frm_Orden_Trabajo.dtpFecha_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+
             frm_Orden_Trabajo.txt_id_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_id_cliente", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.txt_nombre_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.txtid_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_id_vendedor", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
@@ -755,6 +794,8 @@
         frm_Orden_Trabajo.Label53.Visible = False
         frm_Orden_Trabajo.txt_id_detalle_orden_trabajo3.Visible = False
         ' frm_Orden_Trabajo.txt_id_detalle_orden_trabajo3.Visible = True
+        frm_Orden_Trabajo.dtpFecha_Entrega.Enabled = False
+        frm_Orden_Trabajo.dtpFecha_Orden_Trabajo.Enabled = False
 
         frm_Orden_Trabajo.btnNueva_Orden_Trabajo.Enabled = False
         frm_Orden_Trabajo.txt_observaciones.Enabled = False
@@ -836,6 +877,7 @@
         frm_Orden_Trabajo.ShowDialog()
     End Sub
 
+
     Private Sub dgv_detalle_orden_CellDoubleClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellDoubleClick
         quienllamolistado_ot.Name = frm_retrabajo.Name
         frm_retrabajo.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
@@ -852,6 +894,6 @@
         Me.Dispose()
     End Sub
 
-    
+  
 End Class
 

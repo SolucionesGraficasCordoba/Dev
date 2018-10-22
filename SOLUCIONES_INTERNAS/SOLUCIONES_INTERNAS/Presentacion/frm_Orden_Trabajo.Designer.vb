@@ -155,6 +155,8 @@ Partial Class frm_Orden_Trabajo
         Me.btnCancelar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.btnActualizar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.btnNueva_Orden_Trabajo = New System.Windows.Forms.Button()
+        Me.dtpFecha_Entrega = New System.Windows.Forms.DateTimePicker()
+        Me.Label54 = New System.Windows.Forms.Label()
         Me.GroupProducto3.SuspendLayout()
         Me.GroupBox6.SuspendLayout()
         Me.GroupProducto2.SuspendLayout()
@@ -218,16 +220,16 @@ Partial Class frm_Orden_Trabajo
         '
         'txt_mejoras
         '
-        Me.txt_mejoras.Location = New System.Drawing.Point(581, 117)
+        Me.txt_mejoras.Location = New System.Drawing.Point(615, 117)
         Me.txt_mejoras.Multiline = True
         Me.txt_mejoras.Name = "txt_mejoras"
-        Me.txt_mejoras.Size = New System.Drawing.Size(328, 20)
+        Me.txt_mejoras.Size = New System.Drawing.Size(294, 20)
         Me.txt_mejoras.TabIndex = 6
         '
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(531, 120)
+        Me.Label19.Location = New System.Drawing.Point(565, 120)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(44, 13)
         Me.Label19.TabIndex = 44
@@ -235,10 +237,10 @@ Partial Class frm_Orden_Trabajo
         '
         'txt_observaciones
         '
-        Me.txt_observaciones.Location = New System.Drawing.Point(581, 13)
+        Me.txt_observaciones.Location = New System.Drawing.Point(615, 13)
         Me.txt_observaciones.Multiline = True
         Me.txt_observaciones.Name = "txt_observaciones"
-        Me.txt_observaciones.Size = New System.Drawing.Size(328, 98)
+        Me.txt_observaciones.Size = New System.Drawing.Size(294, 98)
         Me.txt_observaciones.TabIndex = 5
         '
         'txt_id_orden_trabajo
@@ -251,7 +253,7 @@ Partial Class frm_Orden_Trabajo
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(497, 16)
+        Me.Label18.Location = New System.Drawing.Point(531, 16)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(78, 13)
         Me.Label18.TabIndex = 42
@@ -279,7 +281,7 @@ Partial Class frm_Orden_Trabajo
         'dtpFecha_Orden_Trabajo
         '
         Me.dtpFecha_Orden_Trabajo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha_Orden_Trabajo.Location = New System.Drawing.Point(405, 13)
+        Me.dtpFecha_Orden_Trabajo.Location = New System.Drawing.Point(436, 13)
         Me.dtpFecha_Orden_Trabajo.Name = "dtpFecha_Orden_Trabajo"
         Me.dtpFecha_Orden_Trabajo.Size = New System.Drawing.Size(82, 20)
         Me.dtpFecha_Orden_Trabajo.TabIndex = 32
@@ -287,7 +289,7 @@ Partial Class frm_Orden_Trabajo
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(362, 16)
+        Me.Label4.Location = New System.Drawing.Point(393, 16)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(37, 13)
         Me.Label4.TabIndex = 31
@@ -1373,11 +1375,30 @@ Partial Class frm_Orden_Trabajo
         Me.btnNueva_Orden_Trabajo.Text = "Nuevo"
         Me.btnNueva_Orden_Trabajo.UseVisualStyleBackColor = True
         '
+        'dtpFecha_Entrega
+        '
+        Me.dtpFecha_Entrega.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFecha_Entrega.Location = New System.Drawing.Point(436, 42)
+        Me.dtpFecha_Entrega.Name = "dtpFecha_Entrega"
+        Me.dtpFecha_Entrega.Size = New System.Drawing.Size(82, 20)
+        Me.dtpFecha_Entrega.TabIndex = 64
+        '
+        'Label54
+        '
+        Me.Label54.AutoSize = True
+        Me.Label54.Location = New System.Drawing.Point(353, 45)
+        Me.Label54.Name = "Label54"
+        Me.Label54.Size = New System.Drawing.Size(77, 13)
+        Me.Label54.TabIndex = 63
+        Me.Label54.Text = "Fecha Entrega"
+        '
         'frm_Orden_Trabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(926, 686)
+        Me.Controls.Add(Me.dtpFecha_Entrega)
+        Me.Controls.Add(Me.Label54)
         Me.Controls.Add(Me.btnImprimirFormulario)
         Me.Controls.Add(Me.GroupProducto3)
         Me.Controls.Add(Me.Label17)
@@ -1561,4 +1582,6 @@ Partial Class frm_Orden_Trabajo
     Friend WithEvents btnActualizar_Orden_Trabajo As System.Windows.Forms.Button
     Friend WithEvents btnNueva_Orden_Trabajo As System.Windows.Forms.Button
     Friend WithEvents btnProceso1 As System.Windows.Forms.Button
+    Friend WithEvents dtpFecha_Entrega As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Label54 As System.Windows.Forms.Label
 End Class

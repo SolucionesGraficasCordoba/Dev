@@ -21,22 +21,6 @@
       <Association Name="SECTOR_COLABORADOR" Member="SECTOR" ThisKey="SEC_id_sector" OtherKey="SEC_id_sector" Type="SECTOR" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.ORDEN_TRABAJO" Member="ORDEN_TRABAJO">
-    <Type Name="ORDEN_TRABAJO">
-      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ORT_fecha_ot" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="ORT_tipo_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ORT_numero_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="ORT_observaciones_ot" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="ORT_mejoras_ot" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
-      <Column Name="VEN_id_vendedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CLI_id_cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="ORDEN_TRABAJO_TAREA" Member="TAREA" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="TAREA" />
-      <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="DETALLE_ORDEN_TRABAJO" />
-      <Association Name="VENDEDOR_ORDEN_TRABAJO" Member="VENDEDOR" ThisKey="VEN_id_vendedor" OtherKey="VEN_id_vendedor" Type="VENDEDOR" IsForeignKey="true" />
-      <Association Name="CLIENTE_ORDEN_TRABAJO" Member="CLIENTE" ThisKey="CLI_id_cliente" OtherKey="CLI_id_cliente" Type="CLIENTE" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.PIEZA" Member="PIEZA">
     <Type Name="PIEZA">
       <Column Name="PIE_id_pieza" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -136,8 +120,8 @@
       <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="DETALLE_ORDEN_TRABAJO_RE_TRABAJO" Member="RE_TRABAJO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="RE_TRABAJO" />
       <Association Name="DETALLE_ORDEN_TRABAJO_PROCESO" Member="PROCESO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="PROCESO" />
-      <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="PIEZA_DETALLE_ORDEN_TRABAJO" Member="PIEZA" ThisKey="PIE_id_pieza" OtherKey="PIE_id_pieza" Type="PIEZA" IsForeignKey="true" />
+      <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.PRODUCTO" Member="PRODUCTO">
@@ -176,6 +160,23 @@
       <Column Name="PROC_logistica" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="PROC_descrip_logistica" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Association Name="DETALLE_ORDEN_TRABAJO_PROCESO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="DETALLE_ORDEN_TRABAJO" IsForeignKey="true" DeleteRule="CASCADE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ORDEN_TRABAJO" Member="ORDEN_TRABAJO">
+    <Type Name="ORDEN_TRABAJO">
+      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ORT_fecha_ot" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_tipo_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_numero_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_observaciones_ot" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="ORT_mejoras_ot" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="VEN_id_vendedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_id_cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_fecha_entrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Association Name="ORDEN_TRABAJO_TAREA" Member="TAREA" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="TAREA" />
+      <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="DETALLE_ORDEN_TRABAJO" />
+      <Association Name="CLIENTE_ORDEN_TRABAJO" Member="CLIENTE" ThisKey="CLI_id_cliente" OtherKey="CLI_id_cliente" Type="CLIENTE" IsForeignKey="true" />
+      <Association Name="VENDEDOR_ORDEN_TRABAJO" Member="VENDEDOR" ThisKey="VEN_id_vendedor" OtherKey="VEN_id_vendedor" Type="VENDEDOR" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -37,10 +37,12 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgv_detalle_orden = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.dgvProcesos = New System.Windows.Forms.DataGridView()
         Me.GroupListadoPiezas.SuspendLayout()
         CType(Me.dgvLista_Orden_Trabajo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupDetallesOrden.SuspendLayout()
         CType(Me.dgv_detalle_orden, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvProcesos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupListadoPiezas
@@ -112,6 +114,7 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         'GroupDetallesOrden
         '
+        Me.GroupDetallesOrden.Controls.Add(Me.dgvProcesos)
         Me.GroupDetallesOrden.Controls.Add(Me.btnVer)
         Me.GroupDetallesOrden.Controls.Add(Me.btn_Cancelar)
         Me.GroupDetallesOrden.Controls.Add(Me.btnModificar_Orden)
@@ -121,23 +124,24 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.GroupDetallesOrden.Controls.Add(Me.Label2)
         Me.GroupDetallesOrden.Location = New System.Drawing.Point(10, 283)
         Me.GroupDetallesOrden.Name = "GroupDetallesOrden"
-        Me.GroupDetallesOrden.Size = New System.Drawing.Size(474, 268)
+        Me.GroupDetallesOrden.Size = New System.Drawing.Size(474, 407)
         Me.GroupDetallesOrden.TabIndex = 30
         Me.GroupDetallesOrden.TabStop = False
         Me.GroupDetallesOrden.Text = "Detalles de la orden"
         '
         'btnVer
         '
-        Me.btnVer.Location = New System.Drawing.Point(159, 234)
+        Me.btnVer.Location = New System.Drawing.Point(157, 143)
         Me.btnVer.Name = "btnVer"
         Me.btnVer.Size = New System.Drawing.Size(67, 23)
         Me.btnVer.TabIndex = 37
         Me.btnVer.Text = "Ver"
         Me.btnVer.UseVisualStyleBackColor = True
+        Me.btnVer.Visible = False
         '
         'btn_Cancelar
         '
-        Me.btn_Cancelar.Location = New System.Drawing.Point(397, 234)
+        Me.btn_Cancelar.Location = New System.Drawing.Point(395, 143)
         Me.btn_Cancelar.Name = "btn_Cancelar"
         Me.btn_Cancelar.Size = New System.Drawing.Size(67, 23)
         Me.btn_Cancelar.TabIndex = 36
@@ -146,7 +150,7 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         'btnModificar_Orden
         '
-        Me.btnModificar_Orden.Location = New System.Drawing.Point(232, 234)
+        Me.btnModificar_Orden.Location = New System.Drawing.Point(230, 143)
         Me.btnModificar_Orden.Name = "btnModificar_Orden"
         Me.btnModificar_Orden.Size = New System.Drawing.Size(67, 23)
         Me.btnModificar_Orden.TabIndex = 29
@@ -155,7 +159,7 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         'btnEliminar_Detalle
         '
-        Me.btnEliminar_Detalle.Location = New System.Drawing.Point(301, 234)
+        Me.btnEliminar_Detalle.Location = New System.Drawing.Point(299, 143)
         Me.btnEliminar_Detalle.Name = "btnEliminar_Detalle"
         Me.btnEliminar_Detalle.Size = New System.Drawing.Size(90, 23)
         Me.btnEliminar_Detalle.TabIndex = 35
@@ -166,7 +170,7 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         Me.Label1.AutoSize = True
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Location = New System.Drawing.Point(117, 237)
+        Me.Label1.Location = New System.Drawing.Point(115, 146)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(2, 15)
         Me.Label1.TabIndex = 34
@@ -177,23 +181,32 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.dgv_detalle_orden.Location = New System.Drawing.Point(27, 20)
         Me.dgv_detalle_orden.Name = "dgv_detalle_orden"
         Me.dgv_detalle_orden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_detalle_orden.Size = New System.Drawing.Size(437, 208)
+        Me.dgv_detalle_orden.Size = New System.Drawing.Size(437, 117)
         Me.dgv_detalle_orden.TabIndex = 32
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(24, 239)
+        Me.Label2.Location = New System.Drawing.Point(22, 148)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(88, 13)
         Me.Label2.TabIndex = 33
         Me.Label2.Text = "Items de la orden"
         '
+        'dgvProcesos
+        '
+        Me.dgvProcesos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProcesos.Location = New System.Drawing.Point(20, 207)
+        Me.dgvProcesos.Name = "dgvProcesos"
+        Me.dgvProcesos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvProcesos.Size = New System.Drawing.Size(437, 194)
+        Me.dgvProcesos.TabIndex = 38
+        '
         'frm_Listado_Orden_Trabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(495, 561)
+        Me.ClientSize = New System.Drawing.Size(495, 721)
         Me.Controls.Add(Me.GroupDetallesOrden)
         Me.Controls.Add(Me.GroupListadoPiezas)
         Me.Name = "frm_Listado_Orden_Trabajo"
@@ -205,6 +218,7 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.GroupDetallesOrden.ResumeLayout(False)
         Me.GroupDetallesOrden.PerformLayout()
         CType(Me.dgv_detalle_orden, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvProcesos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -223,4 +237,5 @@ Partial Class frm_Listado_Orden_Trabajo
     Friend WithEvents btnEliminar_Detalle As System.Windows.Forms.Button
     Friend WithEvents btn_Cancelar As System.Windows.Forms.Button
     Friend WithEvents btnVer As System.Windows.Forms.Button
+    Friend WithEvents dgvProcesos As System.Windows.Forms.DataGridView
 End Class

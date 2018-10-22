@@ -46,6 +46,7 @@ Partial Class frm_Productos
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.tb_prod_busqueda = New System.Windows.Forms.TextBox()
+        Me.btnExportarPDF = New System.Windows.Forms.Button()
         CType(Me.dgvLista_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -241,6 +242,7 @@ Partial Class frm_Productos
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.btnExportarPDF)
         Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.Label5)
@@ -250,7 +252,7 @@ Partial Class frm_Productos
         Me.GroupBox2.Controls.Add(Me.btn_prod_eliminar)
         Me.GroupBox2.Location = New System.Drawing.Point(13, 181)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(397, 304)
+        Me.GroupBox2.Size = New System.Drawing.Size(397, 323)
         Me.GroupBox2.TabIndex = 14
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Lista de productos"
@@ -259,7 +261,7 @@ Partial Class frm_Productos
         '
         Me.Label9.AutoSize = True
         Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label9.Location = New System.Drawing.Point(361, 286)
+        Me.Label9.Location = New System.Drawing.Point(227, 286)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(2, 15)
         Me.Label9.TabIndex = 17
@@ -276,7 +278,7 @@ Partial Class frm_Productos
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(253, 288)
+        Me.Label10.Location = New System.Drawing.Point(119, 288)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(97, 13)
         Me.Label10.TabIndex = 16
@@ -289,11 +291,20 @@ Partial Class frm_Productos
         Me.tb_prod_busqueda.Size = New System.Drawing.Size(159, 20)
         Me.tb_prod_busqueda.TabIndex = 8
         '
+        'btnExportarPDF
+        '
+        Me.btnExportarPDF.Location = New System.Drawing.Point(276, 289)
+        Me.btnExportarPDF.Name = "btnExportarPDF"
+        Me.btnExportarPDF.Size = New System.Drawing.Size(112, 23)
+        Me.btnExportarPDF.TabIndex = 18
+        Me.btnExportarPDF.Text = "Exportar a PDF"
+        Me.btnExportarPDF.UseVisualStyleBackColor = True
+        '
         'frm_Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(425, 505)
+        Me.ClientSize = New System.Drawing.Size(425, 511)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Productos"
@@ -331,4 +342,5 @@ Partial Class frm_Productos
     Friend WithEvents tb_prod_stock_minimo As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents tb_prod_codigo As System.Windows.Forms.TextBox
+    Friend WithEvents btnExportarPDF As System.Windows.Forms.Button
 End Class

@@ -449,7 +449,13 @@ Public Class frm_Principal
         frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
         ' frm_Tarea.btnImprimirFormulario.Enabled = False
         frm_Listado_Tareas.btnVer.Enabled = False
-        frm_Listado_Tareas.btnAgregar.Enabled = False
+        '  If frm_Listado_Tareas.cbo_sector.SelectedIndex = 0 Then
+        'MsgBox("Debe seleccionar un sector")
+        '  Exit Sub
+        ' Else
+        frm_Listado_Tareas.btnAgregar.Enabled = True
+        ' End If
+
         frm_Listado_Tareas.btnExportarListado.Enabled = False
         frm_Listado_Tareas.dtpFecha.Text = Now
         frm_Listado_Tareas.ShowDialog()

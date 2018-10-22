@@ -203,7 +203,7 @@ Public Class frm_Listado_Tareas
             frm_Actualizar_Tarea.txt_id_colaborador.Text = Me.dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
             frm_Actualizar_Tarea.txt_nombre_colaborador.Text = Me.dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
         Else
-            MsgBox("Debe seleccionar una tarea")
+            MsgBox("Debe seleccionar un sector")
             Exit Sub
         End If
         frm_Actualizar_Tarea.Show()

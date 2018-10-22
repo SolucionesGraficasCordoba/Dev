@@ -1,5 +1,12 @@
-﻿Public Class frm_Productos
+﻿Imports System.Drawing.Printing
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+Imports System.IO
+
+Public Class frm_Productos
+
     Dim datacontext As New DataS_Interno
+    Dim contadorcolumnasvisibles As Integer
 
     Private Sub btn_prod_guardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_prod_guardar.Click
         Try
@@ -98,7 +105,7 @@
         dgvLista_Productos.ClearSelection()
         Label9.Text = dgvLista_Productos.Rows.Count
 
-        
+
     End Sub
 
     Private Sub dgvLista_Productos_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvLista_Productos.Click
@@ -178,5 +185,92 @@
 
     Private Sub frm_Productos_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
+    End Sub
+
+    Private Sub btnExportarPDF_Click(sender As System.Object, e As System.EventArgs) Handles btnExportarPDF.Click
+        Try
+            'intentar generar el documento
+            Dim doc As New Document(PageSize.A4.Rotate(), 10, 10, 10, 10)
+            'path que guarda el reporte en el escritorio de windows (desktop)
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Consulta de Productos.pdf"
+            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+            PdfWriter.GetInstance(doc, file)
+            doc.Open()
+            ExportarDatosPDF(doc)
+            doc.Close()
+            Process.Start(filename)
+            Me.Close()
+        Catch ex As Exception
+            'si el mensaje es fallido mostrar msgbox
+            MessageBox.Show("No se puede generar el pdf.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
+        'funcion para obtener el tamaño de las columnas del datagridview
+
+        Dim values As Single() = New Single(dg.ColumnCount - 1) {}
+        For i As Integer = 0 To dg.ColumnCount - 1
+            If dgvLista_Productos.Columns(i).Visible = True Then
+                values(i) = CSng(dg.Columns(i).Width)
+            End If
+        Next
+        Return values
+    End Function
+
+    Public Sub ExportarDatosPDF(ByVal document As Document)
+
+        For c = 0 To dgvLista_Productos.ColumnCount - 1
+            If dgvLista_Productos.Columns(c).Visible = True Then
+                contadorcolumnasvisibles = contadorcolumnasvisibles + 1
+            End If
+        Next
+        'se crea un objeto PDFTable con el numero de columnas  del datagridview
+        Dim datatable As New PdfPTable(contadorcolumnasvisibles)
+
+        'se asignan algunas propiedades para el diseño del PDF
+        datatable.DefaultCell.Padding = 3
+
+        'Dim headerwidths As Single() = GetColumnsSize(dgv_movimientos)
+        'datatable.SetWidths(headerwidths)
+
+        datatable.WidthPercentage = 80
+        datatable.DefaultCell.BorderWidth = 2
+        datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+
+        'se crea el encabezado en el PDF
+        Dim encabezado As New Paragraph("Consulta de Productos", New Font(Font.Name = "Tahoma", 20, Font.Bold))
+
+        'se crea el texto abajo del encabezado
+        Dim texto As New Phrase("Los productos cargados hasta la fecha " + Now.Date() + " son los siguientes:", New Font(Font.Name = "Tahoma", 14, Font.Bold))
+
+        'se capturan los nombres de las columnas del datagridview
+        For i As Integer = 0 To dgvLista_Productos.ColumnCount - 1
+            If dgvLista_Productos.Columns(i).Visible = True Then
+                datatable.AddCell(dgvLista_Productos.Columns(i).HeaderText)
+            End If
+        Next
+
+        datatable.HeaderRows = 1
+        datatable.DefaultCell.BorderWidth = 1
+
+        'se generan las columnas del datagridview
+
+        For i As Integer = 0 To dgvLista_Productos.RowCount - 1
+
+            For j As Integer = 0 To dgvLista_Productos.ColumnCount - 1
+                If dgvLista_Productos.Columns(j).Visible = True Then
+                    Try
+                        datatable.AddCell(dgvLista_Productos(j, i).Value.ToString())
+                    Catch ex As Exception
+                        datatable.AddCell(" ")
+                    End Try
+                End If
+            Next
+            datatable.CompleteRow()
+        Next
+        document.Add(encabezado)
+        document.Add(texto)
+        document.Add(datatable)
     End Sub
 End Class
