@@ -813,7 +813,8 @@
         '            MsgBox("la Orden se ha creado correctamente", vbInformation)
         '            limpiarcontroles()
         '            Me.Close()
-        '*********=======
+        '*********
+        '=======
         '  MsgBox("la Orden se ha creado correctamente", vbInformation)
 
         '*************** PARTE NUEVA
@@ -832,7 +833,7 @@
             limpiarcontroles()
             Me.Close()
         End If
-        '*********>>>>>>> .r117
+        '>>>>>>> .r117
         ' Catch ex As Exception
         MsgBox("Error al cargar la Orden")
         '<<<<<<< .mine
