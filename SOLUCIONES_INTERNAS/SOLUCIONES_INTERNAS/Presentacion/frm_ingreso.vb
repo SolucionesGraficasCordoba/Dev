@@ -307,9 +307,10 @@
             frm_Principal.LBL_MENU_USU.Text = Buscausuario.USU_usuario.ToString
 
             frm_Principal.Show()
-            Me.Finalize()
-            Me.Close()
-            Me.Dispose()
+            Me.Hide()
+            'Me.Finalize()
+            'Me.Close()
+            'Me.Dispose()
         Catch ex As Exception
             MsgBox("Verifique Usuario y contraseña!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Inicio de sesión")
             txt_usuario.Select()

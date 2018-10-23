@@ -72,6 +72,7 @@ Partial Class frm_ingreso
         '
         'btnCancelar
         '
+        Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancelar.Location = New System.Drawing.Point(83, 90)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(65, 23)
@@ -148,8 +149,10 @@ Partial Class frm_ingreso
         '
         'frm_ingreso
         '
+        Me.AcceptButton = Me.btnIngresar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(305, 156)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label8)
