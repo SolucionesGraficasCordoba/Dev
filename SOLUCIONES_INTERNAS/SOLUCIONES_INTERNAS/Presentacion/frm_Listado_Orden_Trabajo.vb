@@ -7,6 +7,7 @@
 
     Public vble_id_orden As Integer
     Public vble_id_detalle As Integer
+    Dim vble_id_proceso As Integer
     Dim vble_colaborador, vble_fecha As String
 
     Private Sub frm_Detalle_Orden_Trabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -15,7 +16,7 @@
         Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
     End Sub
 
-    'CARGA GRILLA ORDEN
+    'CARGA GRILLA ORDEN TRABAJO
     Public Sub cargargrilla()
         Dim consultaOrden = (From U In datacontext.ORDEN_TRABAJO
                                Join ort In datacontext.VENDEDOR
@@ -38,13 +39,13 @@
         dgvLista_Orden_Trabajo.Columns.Add("ORT_tipo_ot", "Tipo")
         dgvLista_Orden_Trabajo.Columns.Add("ORT_numero_ot", "Número")
         dgvLista_Orden_Trabajo.Columns.Add("ORT_fecha_ot", "Fecha")
-        dgvLista_Orden_Trabajo.Columns.Add("ORT_fecha_entrega", "Fecha de Entrega")
         dgvLista_Orden_Trabajo.Columns.Add("CLI_id_cliente", "id_cliente")
         dgvLista_Orden_Trabajo.Columns.Add("CLI_razon_social", "Razón Social")
         dgvLista_Orden_Trabajo.Columns.Add("VEN_id_vendedor", "id_vendedor")
         dgvLista_Orden_Trabajo.Columns.Add("VEN_nombre_ven", "Vendedor")
         dgvLista_Orden_Trabajo.Columns.Add("ORT_observaciones_ot", "Observaciones")
         dgvLista_Orden_Trabajo.Columns.Add("ORT_mejoras_ot", "Mejoras")
+        dgvLista_Orden_Trabajo.Columns.Add("ORT_fecha_entrega", "Fecha de Entrega")
 
         dgvLista_Orden_Trabajo.Columns(0).DataPropertyName = "ORT_id_orden_trabajo"
         dgvLista_Orden_Trabajo.Columns(0).Visible = False
@@ -52,33 +53,29 @@
         dgvLista_Orden_Trabajo.Columns(1).Width = 50
         dgvLista_Orden_Trabajo.Columns(2).DataPropertyName = "ORT_numero_ot"
         dgvLista_Orden_Trabajo.Columns(3).DataPropertyName = "ORT_fecha_ot"
-        dgvLista_Orden_Trabajo.Columns(4).DataPropertyName = "ORT_fecha_entrega"
-        dgvLista_Orden_Trabajo.Columns(5).DataPropertyName = "CLI_id_cliente"
-        dgvLista_Orden_Trabajo.Columns(5).Visible = False
-        dgvLista_Orden_Trabajo.Columns(6).DataPropertyName = "CLI_razon_social"
-        dgvLista_Orden_Trabajo.Columns(7).DataPropertyName = "VEN_id_vendedor"
-        dgvLista_Orden_Trabajo.Columns(7).Visible = False
-        dgvLista_Orden_Trabajo.Columns(8).DataPropertyName = "VEN_nombre_ven"
-        dgvLista_Orden_Trabajo.Columns(9).DataPropertyName = "ORT_observaciones_ot"
-        dgvLista_Orden_Trabajo.Columns(10).DataPropertyName = "ORT_mejoras_ot"
-        dgvLista_Orden_Trabajo.Columns(10).Visible = False
+        dgvLista_Orden_Trabajo.Columns(4).DataPropertyName = "CLI_id_cliente"
+        dgvLista_Orden_Trabajo.Columns(4).Visible = False
+        dgvLista_Orden_Trabajo.Columns(5).DataPropertyName = "CLI_razon_social"
+        dgvLista_Orden_Trabajo.Columns(6).DataPropertyName = "VEN_id_vendedor"
+        dgvLista_Orden_Trabajo.Columns(6).Visible = False
+        dgvLista_Orden_Trabajo.Columns(7).DataPropertyName = "VEN_nombre_ven"
+        dgvLista_Orden_Trabajo.Columns(8).DataPropertyName = "ORT_observaciones_ot"
+        dgvLista_Orden_Trabajo.Columns(9).DataPropertyName = "ORT_mejoras_ot"
+        dgvLista_Orden_Trabajo.Columns(9).Visible = False
+        dgvLista_Orden_Trabajo.Columns(10).DataPropertyName = "ORT_fecha_entrega"
     End Sub
 
     Private Sub dgvLista_Orden_Trabajo_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Orden_Trabajo.CellClick
-
         'VALIDA QUE SE HAYA SELECCONADO UN SECTOR Y UNA FECHA
         If dgvLista_Orden_Trabajo.Rows.Count = 0 Then
             MsgBox("No hay órdenes", MsgBoxStyle.Information + MsgBoxStyle.Information, "Seleccionar")
             Exit Sub
         End If
-        'CARGA DETALLES DE LA ORDEN
-        'If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
-        '    vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-        'End If
         vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
         CargarDetalle()
     End Sub
 
+    'CARGA DETALLES DE LA ORDEN
     Public Sub CargarDetalle()
         Dim datagriddetalleorden = (From o In datavistas.Vista_Detalle_Orden_Trabajo_1
                           Select o.ORT_id_orden_trabajo,
@@ -112,16 +109,53 @@
         Label1.Text = dgv_detalle_orden.Rows.Count
     End Sub
 
-
     Private Sub dgv_detalle_orden_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellClick
-        vble_id_detalle = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-        cargarprocesos()
+        If dgvLista_Orden_Trabajo.Rows.Count = 0 Then
+            MsgBox("No hay procesos por mostrar", MsgBoxStyle.Information + MsgBoxStyle.Information, "Seleccionar")
+            Exit Sub
+        End If
+        'CARGA PROCESOS DEL PRODUCTO
+        vble_id_proceso = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
+        CargarProceso()
     End Sub
 
-    Sub cargarprocesos()
+    Sub CargarProceso()
         Dim datagridproceso = (From p In datacontext.PROCESO
-                               Select p.PROC_descrip_digital, p.PROC_descrip_gran_formato, p.PROC_descrip_logistica, p.PROC_descrip_offset, p.PROC_descrip_terminacion, p.id_detalle_orden_trabajo
-                               Where id_detalle_orden_trabajo = vble_id_detalle)
+                               Select p.PROC_id_proceso,
+                               p.PROC_descrip_digital,
+                               p.PROC_descrip_gran_formato,
+                               p.PROC_descrip_logistica,
+                               p.PROC_descrip_offset,
+                               p.PROC_descrip_terminacion,
+                               p.id_detalle_orden_trabajo
+                               Where id_detalle_orden_trabajo = vble_id_proceso)
+        CargaProcesoProducto(datagridproceso)
+    End Sub
+
+    'COMPLETAR
+    Public Sub CargaProcesoProducto(ByVal dataproceso As System.Linq.IQueryable)
+        dgvProcesos.AutoGenerateColumns = False
+        dgvProcesos.Columns.Clear()
+
+        dgvProcesos.Columns.Add("PROC_id_proceso", "PROC_id_proceso")
+        dgvProcesos.Columns.Add("id_detalle_orden_trabajo", "id_detalle_orden_trabajo")
+        dgvProcesos.Columns.Add("PROC_descrip_offset", "OffSet")
+        dgvProcesos.Columns.Add("PROC_descrip_digital", "Digital")
+        dgvProcesos.Columns.Add("PROC_descrip_gran_formato", "Gran Formato")
+        dgvProcesos.Columns.Add("PROC_descrip_terminacion", "Terminación")
+        dgvProcesos.Columns.Add("PROC_descrip_logistica", "Logística")
+
+        dgvProcesos.Columns(0).DataPropertyName = "PROC_id_proceso"
+        dgvProcesos.Columns(0).Visible = False
+        dgvProcesos.Columns(1).DataPropertyName = "id_detalle_orden_trabajo"
+        dgvProcesos.Columns(1).Visible = False
+        dgvProcesos.Columns(2).DataPropertyName = "PROC_descrip_offset"
+        dgvProcesos.Columns(3).DataPropertyName = "PROC_descrip_digital"
+        dgvProcesos.Columns(4).DataPropertyName = "PROC_descrip_gran_formato"
+        dgvProcesos.Columns(5).DataPropertyName = "PROC_descrip_terminacion"
+        dgvProcesos.Columns(6).DataPropertyName = "PROC_descrip_logistica"
+
+        dgvProcesos.DataSource = dataproceso
     End Sub
 
     Public Sub mostrargrillaobligaciones(ByVal datasource As System.Linq.IQueryable)
@@ -179,7 +213,7 @@
         dgv_detalle_orden.Columns(8).Visible = False
         dgv_detalle_orden.Columns(9).DataPropertyName = "PIE_nombre_pie"
         dgv_detalle_orden.Columns(10).DataPropertyName = "id_detalle_orden_trabajo"
-        dgv_detalle_orden.Columns(10).Visible = True
+        dgv_detalle_orden.Columns(10).Visible = False
         dgv_detalle_orden.Columns(11).DataPropertyName = "DOT_cantidad_dot"
         dgv_detalle_orden.Columns(12).DataPropertyName = "DOT_tamaño_dot"
         dgv_detalle_orden.Columns(13).DataPropertyName = "DOT_tipo_impresion_dot"
@@ -620,7 +654,7 @@
     End Sub
 
 
-    Private Sub btnEliminar_Detalle_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar_Detalle.Click
+    Private Sub btnEliminar_Detalle_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar_Producto.Click
         If dgv_detalle_orden.SelectedRows.Count > 0 Then
 
             Dim eliminar = (From C In datacontext.DETALLE_ORDEN_TRABAJO Where C.id_detalle_orden_trabajo = CInt(dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value)).ToList()(0)
@@ -780,9 +814,6 @@
 
         frm_Orden_Trabajo.Text = "Ver Orden"
 
-        ' frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = True
-
-
         frm_Orden_Trabajo.btnProceso1.Text = "Ver Proceso"
         frm_Orden_Trabajo.btnProceso2.Text = "Ver Proceso"
         frm_Orden_Trabajo.btnProceso3.Text = "Ver Proceso"
@@ -890,10 +921,9 @@
         frm_retrabajo.dtp_Fecha_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(3).Value
         Me.Close()
     End Sub
+
     Private Sub frm_Listado_Orden_Trabajo_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
     End Sub
-
-  
 End Class
 

@@ -24,30 +24,36 @@ Partial Class frm_Listado_Orden_Trabajo
     Private Sub InitializeComponent()
         Me.GroupListadoPiezas = New System.Windows.Forms.GroupBox()
         Me.btnEliminar_Orden = New System.Windows.Forms.Button()
+        Me.btnModificar_Orden = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txt_Buscar_orden_trabajo = New System.Windows.Forms.TextBox()
         Me.dgvLista_Orden_Trabajo = New System.Windows.Forms.DataGridView()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupDetallesOrden = New System.Windows.Forms.GroupBox()
+        Me.btnModificarProducto = New System.Windows.Forms.Button()
         Me.btnVer = New System.Windows.Forms.Button()
-        Me.btn_Cancelar = New System.Windows.Forms.Button()
-        Me.btnModificar_Orden = New System.Windows.Forms.Button()
-        Me.btnEliminar_Detalle = New System.Windows.Forms.Button()
+        Me.btnEliminar_Producto = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgv_detalle_orden = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.btn_Cancelar = New System.Windows.Forms.Button()
         Me.dgvProcesos = New System.Windows.Forms.DataGridView()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btnEliminarProceso = New System.Windows.Forms.Button()
+        Me.btnModificarProceso = New System.Windows.Forms.Button()
         Me.GroupListadoPiezas.SuspendLayout()
         CType(Me.dgvLista_Orden_Trabajo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupDetallesOrden.SuspendLayout()
         CType(Me.dgv_detalle_orden, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvProcesos, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupListadoPiezas
         '
         Me.GroupListadoPiezas.Controls.Add(Me.btnEliminar_Orden)
+        Me.GroupListadoPiezas.Controls.Add(Me.btnModificar_Orden)
         Me.GroupListadoPiezas.Controls.Add(Me.Label3)
         Me.GroupListadoPiezas.Controls.Add(Me.Label7)
         Me.GroupListadoPiezas.Controls.Add(Me.txt_Buscar_orden_trabajo)
@@ -55,25 +61,34 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.GroupListadoPiezas.Controls.Add(Me.Label8)
         Me.GroupListadoPiezas.Location = New System.Drawing.Point(10, 9)
         Me.GroupListadoPiezas.Name = "GroupListadoPiezas"
-        Me.GroupListadoPiezas.Size = New System.Drawing.Size(474, 268)
+        Me.GroupListadoPiezas.Size = New System.Drawing.Size(603, 243)
         Me.GroupListadoPiezas.TabIndex = 29
         Me.GroupListadoPiezas.TabStop = False
         Me.GroupListadoPiezas.Text = "Listado de Ordenes"
         '
         'btnEliminar_Orden
         '
-        Me.btnEliminar_Orden.Location = New System.Drawing.Point(351, 236)
+        Me.btnEliminar_Orden.Location = New System.Drawing.Point(478, 209)
         Me.btnEliminar_Orden.Name = "btnEliminar_Orden"
         Me.btnEliminar_Orden.Size = New System.Drawing.Size(113, 23)
         Me.btnEliminar_Orden.TabIndex = 28
         Me.btnEliminar_Orden.Text = "Eliminar Orden"
         Me.btnEliminar_Orden.UseVisualStyleBackColor = True
         '
+        'btnModificar_Orden
+        '
+        Me.btnModificar_Orden.Location = New System.Drawing.Point(353, 209)
+        Me.btnModificar_Orden.Name = "btnModificar_Orden"
+        Me.btnModificar_Orden.Size = New System.Drawing.Size(119, 23)
+        Me.btnModificar_Orden.TabIndex = 29
+        Me.btnModificar_Orden.Text = "Modificar Orden"
+        Me.btnModificar_Orden.UseVisualStyleBackColor = True
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label3.Location = New System.Drawing.Point(99, 241)
+        Me.Label3.Location = New System.Drawing.Point(104, 214)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(2, 15)
         Me.Label3.TabIndex = 5
@@ -81,7 +96,7 @@ Partial Class frm_Listado_Orden_Trabajo
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(6, 241)
+        Me.Label7.Location = New System.Drawing.Point(11, 214)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(87, 13)
         Me.Label7.TabIndex = 4
@@ -97,10 +112,10 @@ Partial Class frm_Listado_Orden_Trabajo
         'dgvLista_Orden_Trabajo
         '
         Me.dgvLista_Orden_Trabajo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLista_Orden_Trabajo.Location = New System.Drawing.Point(10, 45)
+        Me.dgvLista_Orden_Trabajo.Location = New System.Drawing.Point(13, 45)
         Me.dgvLista_Orden_Trabajo.Name = "dgvLista_Orden_Trabajo"
         Me.dgvLista_Orden_Trabajo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_Orden_Trabajo.Size = New System.Drawing.Size(454, 185)
+        Me.dgvLista_Orden_Trabajo.Size = New System.Drawing.Size(578, 158)
         Me.dgvLista_Orden_Trabajo.TabIndex = 0
         '
         'Label8
@@ -114,24 +129,31 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         'GroupDetallesOrden
         '
-        Me.GroupDetallesOrden.Controls.Add(Me.dgvProcesos)
+        Me.GroupDetallesOrden.Controls.Add(Me.btnModificarProducto)
         Me.GroupDetallesOrden.Controls.Add(Me.btnVer)
-        Me.GroupDetallesOrden.Controls.Add(Me.btn_Cancelar)
-        Me.GroupDetallesOrden.Controls.Add(Me.btnModificar_Orden)
-        Me.GroupDetallesOrden.Controls.Add(Me.btnEliminar_Detalle)
+        Me.GroupDetallesOrden.Controls.Add(Me.btnEliminar_Producto)
         Me.GroupDetallesOrden.Controls.Add(Me.Label1)
         Me.GroupDetallesOrden.Controls.Add(Me.dgv_detalle_orden)
         Me.GroupDetallesOrden.Controls.Add(Me.Label2)
-        Me.GroupDetallesOrden.Location = New System.Drawing.Point(10, 283)
+        Me.GroupDetallesOrden.Location = New System.Drawing.Point(10, 258)
         Me.GroupDetallesOrden.Name = "GroupDetallesOrden"
-        Me.GroupDetallesOrden.Size = New System.Drawing.Size(474, 407)
+        Me.GroupDetallesOrden.Size = New System.Drawing.Size(603, 218)
         Me.GroupDetallesOrden.TabIndex = 30
         Me.GroupDetallesOrden.TabStop = False
         Me.GroupDetallesOrden.Text = "Detalles de la orden"
         '
+        'btnModificarProducto
+        '
+        Me.btnModificarProducto.Location = New System.Drawing.Point(353, 186)
+        Me.btnModificarProducto.Name = "btnModificarProducto"
+        Me.btnModificarProducto.Size = New System.Drawing.Size(119, 23)
+        Me.btnModificarProducto.TabIndex = 38
+        Me.btnModificarProducto.Text = "Modificar Producto"
+        Me.btnModificarProducto.UseVisualStyleBackColor = True
+        '
         'btnVer
         '
-        Me.btnVer.Location = New System.Drawing.Point(157, 143)
+        Me.btnVer.Location = New System.Drawing.Point(176, 184)
         Me.btnVer.Name = "btnVer"
         Me.btnVer.Size = New System.Drawing.Size(67, 23)
         Me.btnVer.TabIndex = 37
@@ -139,38 +161,20 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.btnVer.UseVisualStyleBackColor = True
         Me.btnVer.Visible = False
         '
-        'btn_Cancelar
+        'btnEliminar_Producto
         '
-        Me.btn_Cancelar.Location = New System.Drawing.Point(395, 143)
-        Me.btn_Cancelar.Name = "btn_Cancelar"
-        Me.btn_Cancelar.Size = New System.Drawing.Size(67, 23)
-        Me.btn_Cancelar.TabIndex = 36
-        Me.btn_Cancelar.Text = "Cancelar"
-        Me.btn_Cancelar.UseVisualStyleBackColor = True
-        '
-        'btnModificar_Orden
-        '
-        Me.btnModificar_Orden.Location = New System.Drawing.Point(230, 143)
-        Me.btnModificar_Orden.Name = "btnModificar_Orden"
-        Me.btnModificar_Orden.Size = New System.Drawing.Size(67, 23)
-        Me.btnModificar_Orden.TabIndex = 29
-        Me.btnModificar_Orden.Text = "Modificar"
-        Me.btnModificar_Orden.UseVisualStyleBackColor = True
-        '
-        'btnEliminar_Detalle
-        '
-        Me.btnEliminar_Detalle.Location = New System.Drawing.Point(299, 143)
-        Me.btnEliminar_Detalle.Name = "btnEliminar_Detalle"
-        Me.btnEliminar_Detalle.Size = New System.Drawing.Size(90, 23)
-        Me.btnEliminar_Detalle.TabIndex = 35
-        Me.btnEliminar_Detalle.Text = "Eliminar Detalle"
-        Me.btnEliminar_Detalle.UseVisualStyleBackColor = True
+        Me.btnEliminar_Producto.Location = New System.Drawing.Point(478, 186)
+        Me.btnEliminar_Producto.Name = "btnEliminar_Producto"
+        Me.btnEliminar_Producto.Size = New System.Drawing.Size(113, 23)
+        Me.btnEliminar_Producto.TabIndex = 35
+        Me.btnEliminar_Producto.Text = "Eliminar Producto"
+        Me.btnEliminar_Producto.UseVisualStyleBackColor = True
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Location = New System.Drawing.Point(115, 146)
+        Me.Label1.Location = New System.Drawing.Point(127, 191)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(2, 15)
         Me.Label1.TabIndex = 34
@@ -178,35 +182,76 @@ Partial Class frm_Listado_Orden_Trabajo
         'dgv_detalle_orden
         '
         Me.dgv_detalle_orden.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_detalle_orden.Location = New System.Drawing.Point(27, 20)
+        Me.dgv_detalle_orden.Location = New System.Drawing.Point(13, 19)
         Me.dgv_detalle_orden.Name = "dgv_detalle_orden"
         Me.dgv_detalle_orden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_detalle_orden.Size = New System.Drawing.Size(437, 117)
+        Me.dgv_detalle_orden.Size = New System.Drawing.Size(578, 158)
         Me.dgv_detalle_orden.TabIndex = 32
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(22, 148)
+        Me.Label2.Location = New System.Drawing.Point(10, 191)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(88, 13)
+        Me.Label2.Size = New System.Drawing.Size(111, 13)
         Me.Label2.TabIndex = 33
-        Me.Label2.Text = "Items de la orden"
+        Me.Label2.Text = "Productos de la orden"
+        '
+        'btn_Cancelar
+        '
+        Me.btn_Cancelar.Location = New System.Drawing.Point(534, 677)
+        Me.btn_Cancelar.Name = "btn_Cancelar"
+        Me.btn_Cancelar.Size = New System.Drawing.Size(67, 23)
+        Me.btn_Cancelar.TabIndex = 36
+        Me.btn_Cancelar.Text = "Cancelar"
+        Me.btn_Cancelar.UseVisualStyleBackColor = True
         '
         'dgvProcesos
         '
         Me.dgvProcesos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvProcesos.Location = New System.Drawing.Point(20, 207)
+        Me.dgvProcesos.Location = New System.Drawing.Point(11, 19)
         Me.dgvProcesos.Name = "dgvProcesos"
         Me.dgvProcesos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvProcesos.Size = New System.Drawing.Size(437, 194)
-        Me.dgvProcesos.TabIndex = 38
+        Me.dgvProcesos.Size = New System.Drawing.Size(578, 158)
+        Me.dgvProcesos.TabIndex = 39
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.dgvProcesos)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 482)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(603, 189)
+        Me.GroupBox1.TabIndex = 40
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Procesos"
+        '
+        'btnEliminarProceso
+        '
+        Me.btnEliminarProceso.Location = New System.Drawing.Point(415, 677)
+        Me.btnEliminarProceso.Name = "btnEliminarProceso"
+        Me.btnEliminarProceso.Size = New System.Drawing.Size(113, 23)
+        Me.btnEliminarProceso.TabIndex = 41
+        Me.btnEliminarProceso.Text = "Eliminar Proceso"
+        Me.btnEliminarProceso.UseVisualStyleBackColor = True
+        '
+        'btnModificarProceso
+        '
+        Me.btnModificarProceso.Location = New System.Drawing.Point(290, 677)
+        Me.btnModificarProceso.Name = "btnModificarProceso"
+        Me.btnModificarProceso.Size = New System.Drawing.Size(119, 23)
+        Me.btnModificarProceso.TabIndex = 42
+        Me.btnModificarProceso.Text = "Modificar Proceso"
+        Me.btnModificarProceso.UseVisualStyleBackColor = True
         '
         'frm_Listado_Orden_Trabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(495, 721)
+        Me.ClientSize = New System.Drawing.Size(625, 710)
+        Me.Controls.Add(Me.btnModificarProceso)
+        Me.Controls.Add(Me.btnEliminarProceso)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.btn_Cancelar)
         Me.Controls.Add(Me.GroupDetallesOrden)
         Me.Controls.Add(Me.GroupListadoPiezas)
         Me.Name = "frm_Listado_Orden_Trabajo"
@@ -219,6 +264,7 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.GroupDetallesOrden.PerformLayout()
         CType(Me.dgv_detalle_orden, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvProcesos, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -234,8 +280,12 @@ Partial Class frm_Listado_Orden_Trabajo
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents dgv_detalle_orden As System.Windows.Forms.DataGridView
     Friend WithEvents btnModificar_Orden As System.Windows.Forms.Button
-    Friend WithEvents btnEliminar_Detalle As System.Windows.Forms.Button
+    Friend WithEvents btnEliminar_Producto As System.Windows.Forms.Button
     Friend WithEvents btn_Cancelar As System.Windows.Forms.Button
     Friend WithEvents btnVer As System.Windows.Forms.Button
     Friend WithEvents dgvProcesos As System.Windows.Forms.DataGridView
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents btnModificarProducto As System.Windows.Forms.Button
+    Friend WithEvents btnEliminarProceso As System.Windows.Forms.Button
+    Friend WithEvents btnModificarProceso As System.Windows.Forms.Button
 End Class

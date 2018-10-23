@@ -440,412 +440,332 @@
     Private Sub btnGuardar_Orden_Trabajo_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar_Orden_Trabajo.Click
 
         'VALIDA LOS CAMPOS OBLIGATORIOS
-        'Try
-        If txtNumero_Orden_Trabajo.Text.Length = 0 _
-          Or cboTipo_Orden.Text.Length = 0 _
-          Or txtid_vendedor.Text.Length = 0 _
-          Or txt_id_cliente.Text.Length = 0 _
-          Or txt_cantidad1_detalle1.Text.Length = 0 _
-          Or cboPiezas1_Detalle1.Text.Length = 0 _
-          Or txtTamaño1_Detalle1.Text.Length = 0 _
-          Or cboTipoImpresion1_Detalle1.Text.Length = 0 Then
-            MsgBox("Debe completar todos los campos requeridos")
-            Exit Sub
-        End If
-        'GUARDA ORDEN DE TRABAJO
-        '<<<<<<< .mine
-
-        '||||||| .r115
-        '            '****if quien llamo <>  agregar pprod a la ordet
-        '=======
-
-        '>>>>>>> .r117
-        Dim clie = New ORDEN_TRABAJO
-        '<<<<<<< .mine
-        '            If cargamasprod = "NO" Then
-        '                clie.ORT_fecha_ot = dtpFecha_Orden_Trabajo.Text
-        '                clie.ORT_tipo_ot = cboTipo_Orden.Text
-        '                clie.ORT_numero_ot = StrConv(txtNumero_Orden_Trabajo.Text, VbStrConv.ProperCase)
-        '                clie.ORT_observaciones_ot = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
-        '                clie.ORT_mejoras_ot = StrConv(txt_mejoras.Text, VbStrConv.ProperCase)
-        '                clie.VEN_id_vendedor = txtid_vendedor.Text
-        '                clie.CLI_id_cliente = txt_id_cliente.Text
-        '||||||| .r115
-        '            clie.ORT_fecha_ot = dtpFecha_Orden_Trabajo.Text
-        '            clie.ORT_tipo_ot = cboTipo_Orden.Text
-        '            clie.ORT_numero_ot = StrConv(txtNumero_Orden_Trabajo.Text, VbStrConv.ProperCase)
-        '            clie.ORT_observaciones_ot = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
-        '            clie.ORT_mejoras_ot = StrConv(txt_mejoras.Text, VbStrConv.ProperCase)
-        '            clie.VEN_id_vendedor = txtid_vendedor.Text
-        '            clie.CLI_id_cliente = txt_id_cliente.Text
-        '=======
-        '>>>>>>> .r117
-
-        '<<<<<<< .mine
-        '                datacontext.ORDEN_TRABAJO.InsertOnSubmit(clie)
-        '                datacontext.SubmitChanges()
-        '            End If
-        '||||||| .r115
-        '            datacontext.ORDEN_TRABAJO.InsertOnSubmit(clie)
-        '            datacontext.SubmitChanges()
-        '            '***** end if
-        '=======
-        If cargamasprod = "NO" Then
-            '>>>>>>> .r117
-
-            clie.ORT_fecha_ot = dtpFecha_Orden_Trabajo.Text
-            clie.ORT_tipo_ot = cboTipo_Orden.Text
-            clie.ORT_numero_ot = StrConv(txtNumero_Orden_Trabajo.Text, VbStrConv.ProperCase)
-            clie.ORT_observaciones_ot = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
-            clie.ORT_mejoras_ot = StrConv(txt_mejoras.Text, VbStrConv.ProperCase)
-            clie.VEN_id_vendedor = txtid_vendedor.Text
-            clie.CLI_id_cliente = txt_id_cliente.Text
-            clie.ORT_fecha_entrega = dtpFecha_Entrega.Text
-
-            datacontext.ORDEN_TRABAJO.InsertOnSubmit(clie)
-            datacontext.SubmitChanges()
-
-        End If
-
-        'GUARDA EL REGISTRO 1 DEL DETALLE DE LA ORDEN DE TRABAJO
-        If txt_cantidad1_detalle1.Text.Length >= 1 Then
-            If cboPiezas1_Detalle1.Text.Length = 0 Then
-                MsgBox("Seleccione una pieza")
+        Try
+            If txtNumero_Orden_Trabajo.Text.Length = 0 _
+              Or cboTipo_Orden.Text.Length = 0 _
+              Or txtid_vendedor.Text.Length = 0 _
+              Or txt_id_cliente.Text.Length = 0 _
+              Or txt_cantidad1_detalle1.Text.Length = 0 _
+              Or cboPiezas1_Detalle1.Text.Length = 0 _
+              Or txtTamaño1_Detalle1.Text.Length = 0 _
+              Or cboTipoImpresion1_Detalle1.Text.Length = 0 Then
+                MsgBox("Debe completar todos los campos requeridos")
+                Exit Sub
             End If
-
-            Dim detalle = New DETALLE_ORDEN_TRABAJO
-            'id
-            txt_id_detalle_orden_trabajo1.Text = detalle.id_detalle_orden_trabajo
-            detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
-            detalle.DOT_cantidad_dot = txt_cantidad1_detalle1.Text  'CANTIDAD PRODUCTO 1
-            detalle.DOT_tamaño_dot = StrConv(txtTamaño1_Detalle1.Text, VbStrConv.ProperCase) 'TAMAÑO PRODUCTO 1
-            detalle.DOT_tipo_impresion_dot = cboTipoImpresion1_Detalle1.SelectedItem 'TIPO IMPRESION PRODUCTO 1
-            detalle.PIE_id_pieza = cboPiezas1_Detalle1.SelectedValue 'TIPO PIEZA PRODUCTO 1
-            '<<<<<<< .mine
-            '                If cargamasprod = "NO" Then
-            '                    txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
-            '                End If
-            '||||||| .r115
-
-            'txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
-            '=======
-
+            'GUARDA ORDEN DE TRABAJO
+            Dim clie = New ORDEN_TRABAJO
             If cargamasprod = "NO" Then
-                txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
+
+                clie.ORT_fecha_ot = dtpFecha_Orden_Trabajo.Text
+                clie.ORT_tipo_ot = cboTipo_Orden.Text
+                clie.ORT_numero_ot = StrConv(txtNumero_Orden_Trabajo.Text, VbStrConv.ProperCase)
+                clie.ORT_observaciones_ot = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
+                clie.ORT_mejoras_ot = StrConv(txt_mejoras.Text, VbStrConv.ProperCase)
+                clie.VEN_id_vendedor = txtid_vendedor.Text
+                clie.CLI_id_cliente = txt_id_cliente.Text
+                clie.ORT_fecha_entrega = dtpFecha_Entrega.Text
+
+                datacontext.ORDEN_TRABAJO.InsertOnSubmit(clie)
+                datacontext.SubmitChanges()
+
             End If
-            '>>>>>>> .r117
-            detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text 'ID ORDEN TRABAJO
 
-            'PAPEL PRODUCTO 1
-            detalle.DOT_papel_soporte_1 = StrConv(txt_Papel1_Soporte1.Text, VbStrConv.ProperCase)
-            detalle.DOT_papel_soporte_2 = StrConv(txt_Papel2_Soporte1.Text, VbStrConv.ProperCase)
-            detalle.DOT_papel_soporte_3 = StrConv(txt_Papel3_Soporte1.Text, VbStrConv.ProperCase)
+            'GUARDA EL REGISTRO 1 DEL DETALLE DE LA ORDEN DE TRABAJO
+            If txt_cantidad1_detalle1.Text.Length >= 1 Then
+                If cboPiezas1_Detalle1.Text.Length = 0 Then
+                    MsgBox("Seleccione una pieza")
+                End If
 
-            'GRAMAJE PRODUCTO 1
-            detalle.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte1.Text
-            detalle.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte1.Text
-            detalle.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte1.Text
+                Dim detalle = New DETALLE_ORDEN_TRABAJO
+                'id
+                txt_id_detalle_orden_trabajo1.Text = detalle.id_detalle_orden_trabajo
+                detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
+                detalle.DOT_cantidad_dot = txt_cantidad1_detalle1.Text  'CANTIDAD PRODUCTO 1
+                detalle.DOT_tamaño_dot = StrConv(txtTamaño1_Detalle1.Text, VbStrConv.ProperCase) 'TAMAÑO PRODUCTO 1
+                detalle.DOT_tipo_impresion_dot = cboTipoImpresion1_Detalle1.SelectedItem 'TIPO IMPRESION PRODUCTO 1
+                detalle.PIE_id_pieza = cboPiezas1_Detalle1.SelectedValue 'TIPO PIEZA PRODUCTO 1
 
-            'CANTIDAD PRODUCTO 1
-            If txt_Cantidad1_Soporte1.TextLength <> 0 Then
-                detalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte1.Text
+                If cargamasprod = "NO" Then
+                    txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
+                End If
+                detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text 'ID ORDEN TRABAJO
+
+                'PAPEL PRODUCTO 1
+                detalle.DOT_papel_soporte_1 = StrConv(txt_Papel1_Soporte1.Text, VbStrConv.ProperCase)
+                detalle.DOT_papel_soporte_2 = StrConv(txt_Papel2_Soporte1.Text, VbStrConv.ProperCase)
+                detalle.DOT_papel_soporte_3 = StrConv(txt_Papel3_Soporte1.Text, VbStrConv.ProperCase)
+
+                'GRAMAJE PRODUCTO 1
+                detalle.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte1.Text
+                detalle.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte1.Text
+                detalle.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte1.Text
+
+                'CANTIDAD PRODUCTO 1
+                If txt_Cantidad1_Soporte1.TextLength <> 0 Then
+                    detalle.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte1.Text
+                End If
+                If txt_Cantidad2_Soporte1.TextLength <> 0 Then
+                    detalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte1.Text
+                End If
+                If txt_Cantidad3_Soporte1.TextLength <> 0 Then
+                    detalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte1.Text
+                End If
+                'FORMATO PRODUCTO 1
+                detalle.DOT_formato_soporte_1 = cboFormato1_Soporte1.SelectedItem
+                detalle.DOT_formato_soporte_2 = cboFormato2_Soporte1.SelectedItem
+                detalle.DOT_formato_soporte_3 = cboFormato3_Soporte1.SelectedItem
+
+                datacontext.DETALLE_ORDEN_TRABAJO.InsertOnSubmit(detalle)
+                datacontext.SubmitChanges()
+
+                '-----------------------------------------------------------------------
+                'GUARDA TABLA PROCESO PRODUCTO 1
+                Dim proceso = New PROCESO
+
+                txt_id_detalle_orden_trabajo1.Text = detalle.id_detalle_orden_trabajo
+                proceso.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
+
+                If frm_Proceso1.txt_descripc_offset.TextLength = 0 Then
+                    frm_Proceso1.groupOffSet.Text = ""
+                Else
+                    proceso.PROC_offset = frm_Proceso1.groupOffSet.Text
+                    proceso.PROC_descrip_offset = StrConv(frm_Proceso1.txt_descripc_offset.Text, VbStrConv.ProperCase)
+                End If
+
+                If frm_Proceso1.txt_descripc_digital.TextLength = 0 Then
+                    frm_Proceso1.groupDigital.Text = ""
+                Else
+                    proceso.PROC_digital = frm_Proceso1.groupDigital.Text
+                    proceso.PROC_descrip_digital = StrConv(frm_Proceso1.txt_descripc_digital.Text, VbStrConv.ProperCase)
+                End If
+
+                If frm_Proceso1.txt_descripc_gran_formato.TextLength = 0 Then
+                    frm_Proceso1.groupGranFormato.Text = ""
+                Else
+                    proceso.PROC_gran_formato = frm_Proceso1.groupGranFormato.Text
+                    proceso.PROC_descrip_gran_formato = StrConv(frm_Proceso1.txt_descripc_gran_formato.Text, VbStrConv.ProperCase)
+                End If
+
+                If frm_Proceso1.txt_descripc_terminacion.TextLength = 0 Then
+                    frm_Proceso1.groupTerminacion.Text = ""
+                Else
+                    proceso.PROC_terminacion = frm_Proceso1.groupTerminacion.Text
+                    proceso.PROC_descrip_terminacion = StrConv(frm_Proceso1.txt_descripc_terminacion.Text, VbStrConv.ProperCase)
+                End If
+
+                If frm_Proceso1.txt_descripc_logistica.TextLength = 0 Then
+                    frm_Proceso1.groupLogistica.Text = ""
+                Else
+                    proceso.PROC_logistica = frm_Proceso1.groupLogistica.Text
+                    proceso.PROC_descrip_logistica = StrConv(frm_Proceso1.txt_descripc_logistica.Text, VbStrConv.ProperCase)
+                End If
+                datacontext.PROCESO.InsertOnSubmit(proceso)
+                datacontext.SubmitChanges()
+
             End If
-            If txt_Cantidad2_Soporte1.TextLength <> 0 Then
-                detalle.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte1.Text
+
+            'GUARDA EL REGISTRO 2 DEL DETALLE DE LA ORDEN DE TRABAJO
+            If txt_cantidad2_detalle2.Text.Length >= 1 Then
+                If cboPiezas2_Detalle2.Text.Length = 0 Then
+                    MsgBox("Seleccione una Pieza")
+                End If
+                Dim detalle2 = New DETALLE_ORDEN_TRABAJO
+                'id
+                txt_id_detalle_orden_trabajo2.Text = detalle2.id_detalle_orden_trabajo
+                detalle2.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo2.Text
+                'CANTIDAD REGISTRO 2
+                detalle2.DOT_cantidad_dot = txt_cantidad2_detalle2.Text
+                'TAMAÑO REGISTRO 1
+                detalle2.DOT_tamaño_dot = txtTamaño2_Detalle2.Text
+                'TIPO IMPRESION REGISTRO 2
+                detalle2.DOT_tipo_impresion_dot = cboTipoImpresion2_Detalle2.SelectedItem
+                'TIPO PIEZA REGISTRO 2
+                detalle2.PIE_id_pieza = cboPiezas2_Detalle2.SelectedValue
+
+                'ID ORDEN TRABAJO
+                If cargamasprod = "NO" Then
+                    txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
+                End If
+                detalle2.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+
+                'PAPEL REGISTRO 2
+                detalle2.DOT_papel_soporte_1 = StrConv(txt_Papel1_Soporte2.Text, VbStrConv.ProperCase)
+                detalle2.DOT_papel_soporte_2 = StrConv(txt_Papel2_Soporte2.Text, VbStrConv.ProperCase)
+                detalle2.DOT_papel_soporte_3 = StrConv(txt_Papel3_Soporte2.Text, VbStrConv.ProperCase)
+
+                'GRAMAJE REGISTRO 2
+                detalle2.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte2.Text
+                detalle2.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte2.Text
+                detalle2.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte2.Text
+
+                'CANTIDAD REGISTRO 2
+                If txt_Cantidad1_Soporte2.TextLength <> 0 Then
+                    detalle2.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte2.Text
+                End If
+
+                If txt_Cantidad2_Soporte2.TextLength <> 0 Then
+                    detalle2.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte2.Text
+                End If
+
+                If txt_Cantidad3_Soporte2.TextLength <> 0 Then
+                    detalle2.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte2.Text
+                End If
+
+                'FORMATO REGISTRO 2
+                detalle2.DOT_formato_soporte_1 = cboFormato1_Soporte2.SelectedItem
+                detalle2.DOT_formato_soporte_2 = cboFormato2_Soporte2.SelectedItem
+                detalle2.DOT_formato_soporte_3 = cboFormato3_Soporte2.SelectedItem
+
+                datacontext.DETALLE_ORDEN_TRABAJO.InsertOnSubmit(detalle2)
+                datacontext.SubmitChanges()
+
+                'GUARDA TABLA PROCESO PRODUCTO 2
+                Dim proceso = New PROCESO
+                txt_id_detalle_orden_trabajo2.Text = detalle2.id_detalle_orden_trabajo
+                proceso.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo2.Text
+
+                If frm_Proceso2.txt_descripc_offset.TextLength = 0 Then
+                    frm_Proceso2.groupOffSet.Text = ""
+                Else
+                    proceso.PROC_offset = frm_Proceso2.groupOffSet.Text
+                    proceso.PROC_descrip_offset = StrConv(frm_Proceso2.txt_descripc_offset.Text, VbStrConv.ProperCase)
+                End If
+                If frm_Proceso2.txt_descripc_digital.TextLength = 0 Then
+                    frm_Proceso2.groupDigital.Text = ""
+                Else
+                    proceso.PROC_digital = frm_Proceso2.groupDigital.Text
+                    proceso.PROC_descrip_digital = StrConv(frm_Proceso2.txt_descripc_digital.Text, VbStrConv.ProperCase)
+                End If
+                If frm_Proceso2.txt_descripc_gran_formato.TextLength = 0 Then
+                    frm_Proceso2.groupGranFormato.Text = ""
+                Else
+                    proceso.PROC_gran_formato = frm_Proceso2.groupGranFormato.Text
+                    proceso.PROC_descrip_gran_formato = StrConv(frm_Proceso2.txt_descripc_gran_formato.Text, VbStrConv.ProperCase)
+                End If
+                If frm_Proceso2.txt_descripc_terminacion.TextLength = 0 Then
+                    frm_Proceso2.groupTerminacion.Text = ""
+                Else
+                    proceso.PROC_terminacion = frm_Proceso2.groupTerminacion.Text
+                    proceso.PROC_descrip_terminacion = StrConv(frm_Proceso2.txt_descripc_terminacion.Text, VbStrConv.ProperCase)
+                End If
+                If frm_Proceso2.txt_descripc_logistica.TextLength = 0 Then
+                    frm_Proceso2.groupLogistica.Text = ""
+                Else
+                    proceso.PROC_logistica = frm_Proceso2.groupLogistica.Text
+                    proceso.PROC_descrip_logistica = StrConv(frm_Proceso2.txt_descripc_logistica.Text, VbStrConv.ProperCase)
+                End If
+                datacontext.PROCESO.InsertOnSubmit(proceso)
+                datacontext.SubmitChanges()
             End If
-            If txt_Cantidad3_Soporte1.TextLength <> 0 Then
-                detalle.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte1.Text
+
+            'GUARDA EL REGISTRO 3 DEL DETALLE DE LA ORDEN DE TRABAJO
+            If txt_cantidad3_detalle3.Text.Length >= 1 Then
+                If cboPiezas3_Detalle3.Text.Length = 0 Then
+                    MsgBox("Seleccione una Pieza")
+                End If
+                Dim detalle3 = New DETALLE_ORDEN_TRABAJO
+                'id
+                txt_id_detalle_orden_trabajo3.Text = detalle3.id_detalle_orden_trabajo
+                detalle3.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo3.Text
+                'CANTIDAD REGISTRO 3
+                detalle3.DOT_cantidad_dot = txt_cantidad3_detalle3.Text
+                'TAMAÑO REGISTRO 3
+                detalle3.DOT_tamaño_dot = txtTamaño3_Detalle3.Text
+                'TIPO IMPRESION REGISTRO 3
+                detalle3.DOT_tipo_impresion_dot = cboTipoImpresion3_Detalle3.SelectedItem
+                'TIPO PIEZA REGISTRO 3
+                detalle3.PIE_id_pieza = cboPiezas3_Detalle3.SelectedValue
+
+                'ID ORDEN TRABAJO
+                If cargamasprod = "NO" Then
+                    txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
+                End If
+                detalle3.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
+                'PAPEL REGISTRO 3
+                detalle3.DOT_papel_soporte_1 = StrConv(txt_Papel1_Soporte3.Text, VbStrConv.ProperCase)
+                detalle3.DOT_papel_soporte_2 = StrConv(txt_Papel2_Soporte3.Text, VbStrConv.ProperCase)
+                detalle3.DOT_papel_soporte_3 = StrConv(txt_Papel3_Soporte3.Text, VbStrConv.ProperCase)
+
+                'GRAMAJE REGISTRO 3
+                detalle3.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte3.Text
+                detalle3.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte3.Text
+                detalle3.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte3.Text
+
+                'CANTIDAD REGISTRO 3
+                If txt_Cantidad1_Soporte3.TextLength <> 0 Then
+                    detalle3.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte3.Text
+                End If
+                If txt_Cantidad2_Soporte3.TextLength <> 0 Then
+                    detalle3.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte3.Text
+                End If
+                If txt_Cantidad3_Soporte3.TextLength <> 0 Then
+                    detalle3.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte3.Text
+                End If
+                'FORMATO REGISTRO 3
+                detalle3.DOT_formato_soporte_1 = cboFormato1_Soporte3.SelectedItem
+                detalle3.DOT_formato_soporte_2 = cboFormato2_Soporte3.SelectedItem
+                detalle3.DOT_formato_soporte_3 = cboFormato3_Soporte3.SelectedItem
+
+                datacontext.DETALLE_ORDEN_TRABAJO.InsertOnSubmit(detalle3)
+                datacontext.SubmitChanges()
+
+                'GUARDA TABLA PROCESO PRODUCTO 3
+                Dim proceso = New PROCESO
+                txt_id_detalle_orden_trabajo3.Text = detalle3.id_detalle_orden_trabajo
+                proceso.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo3.Text
+
+                If frm_proceso3.txt_descripc_offset.TextLength = 0 Then
+                    frm_proceso3.groupOffSet.Text = ""
+                Else
+                    proceso.PROC_offset = frm_proceso3.groupOffSet.Text
+                    proceso.PROC_descrip_offset = StrConv(frm_proceso3.txt_descripc_offset.Text, VbStrConv.ProperCase)
+                End If
+                If frm_proceso3.txt_descripc_digital.TextLength = 0 Then
+                    frm_proceso3.groupDigital.Text = ""
+                Else
+                    proceso.PROC_digital = frm_proceso3.groupDigital.Text
+                    proceso.PROC_descrip_digital = StrConv(frm_proceso3.txt_descripc_digital.Text, VbStrConv.ProperCase)
+                End If
+                If frm_proceso3.txt_descripc_gran_formato.TextLength = 0 Then
+                    frm_proceso3.groupGranFormato.Text = ""
+                Else
+                    proceso.PROC_gran_formato = frm_proceso3.groupGranFormato.Text
+                    proceso.PROC_descrip_gran_formato = StrConv(frm_proceso3.txt_descripc_gran_formato.Text, VbStrConv.ProperCase)
+                End If
+                If frm_proceso3.txt_descripc_terminacion.TextLength = 0 Then
+                    frm_proceso3.groupTerminacion.Text = ""
+                Else
+                    proceso.PROC_terminacion = frm_proceso3.groupTerminacion.Text
+                    proceso.PROC_descrip_terminacion = StrConv(frm_proceso3.txt_descripc_terminacion.Text, VbStrConv.ProperCase)
+                End If
+                If frm_proceso3.txt_descripc_logistica.TextLength = 0 Then
+                    frm_proceso3.groupLogistica.Text = ""
+                Else
+                    proceso.PROC_logistica = frm_proceso3.groupLogistica.Text
+                    proceso.PROC_descrip_logistica = StrConv(frm_proceso3.txt_descripc_logistica.Text, VbStrConv.ProperCase)
+                End If
+                datacontext.PROCESO.InsertOnSubmit(proceso)
+                datacontext.SubmitChanges()
             End If
-            'FORMATO PRODUCTO 1
-            detalle.DOT_formato_soporte_1 = cboFormato1_Soporte1.SelectedItem
-            detalle.DOT_formato_soporte_2 = cboFormato2_Soporte1.SelectedItem
-            detalle.DOT_formato_soporte_3 = cboFormato3_Soporte1.SelectedItem
 
-            datacontext.DETALLE_ORDEN_TRABAJO.InsertOnSubmit(detalle)
-            datacontext.SubmitChanges()
-
-            '-----------------------------------------------------------------------
-            'GUARDA TABLA PROCESO PRODUCTO 1
-            Dim proceso = New PROCESO
-
-            txt_id_detalle_orden_trabajo1.Text = detalle.id_detalle_orden_trabajo
-            proceso.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
-
-            If frm_Proceso1.txt_descripc_offset.TextLength = 0 Then
-                frm_Proceso1.groupOffSet.Text = ""
+            If txt_cantidad1_detalle1.Text.Length >= 1 And txt_cantidad2_detalle2.Text.Length >= 1 And txt_cantidad3_detalle3.Text.Length >= 1 Then
+                Select Case MsgBox("La orden se ha creado, agregar mas productos?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Guardar orden")
+                    Case MsgBoxResult.Yes
+                        cargamasprod = "SI"
+                        limpiardetalles()
+                        Exit Sub
+                    Case Else
+                        limpiarcontroles()
+                        Me.Close()
+                End Select
             Else
-                proceso.PROC_offset = frm_Proceso1.groupOffSet.Text
-                proceso.PROC_descrip_offset = StrConv(frm_Proceso1.txt_descripc_offset.Text, VbStrConv.ProperCase)
+                MsgBox("la Orden se ha creado correctamente", vbInformation)
+                limpiarcontroles()
+                Me.Close()
             End If
-
-            If frm_Proceso1.txt_descripc_digital.TextLength = 0 Then
-                frm_Proceso1.groupDigital.Text = ""
-            Else
-                proceso.PROC_digital = frm_Proceso1.groupDigital.Text
-                proceso.PROC_descrip_digital = StrConv(frm_Proceso1.txt_descripc_digital.Text, VbStrConv.ProperCase)
-            End If
-
-            If frm_Proceso1.txt_descripc_gran_formato.TextLength = 0 Then
-                frm_Proceso1.groupGranFormato.Text = ""
-            Else
-                proceso.PROC_gran_formato = frm_Proceso1.groupGranFormato.Text
-                proceso.PROC_descrip_gran_formato = StrConv(frm_Proceso1.txt_descripc_gran_formato.Text, VbStrConv.ProperCase)
-            End If
-
-            If frm_Proceso1.txt_descripc_terminacion.TextLength = 0 Then
-                frm_Proceso1.groupTerminacion.Text = ""
-            Else
-                proceso.PROC_terminacion = frm_Proceso1.groupTerminacion.Text
-                proceso.PROC_descrip_terminacion = StrConv(frm_Proceso1.txt_descripc_terminacion.Text, VbStrConv.ProperCase)
-            End If
-
-            If frm_Proceso1.txt_descripc_logistica.TextLength = 0 Then
-                frm_Proceso1.groupLogistica.Text = ""
-            Else
-                proceso.PROC_logistica = frm_Proceso1.groupLogistica.Text
-                proceso.PROC_descrip_logistica = StrConv(frm_Proceso1.txt_descripc_logistica.Text, VbStrConv.ProperCase)
-            End If
-            datacontext.PROCESO.InsertOnSubmit(proceso)
-            datacontext.SubmitChanges()
-
-        End If
-
-        'GUARDA EL REGISTRO 2 DEL DETALLE DE LA ORDEN DE TRABAJO
-        If txt_cantidad2_detalle2.Text.Length >= 1 Then
-            If cboPiezas2_Detalle2.Text.Length = 0 Then
-                MsgBox("Seleccione una Pieza")
-            End If
-            Dim detalle2 = New DETALLE_ORDEN_TRABAJO
-            'id
-            txt_id_detalle_orden_trabajo2.Text = detalle2.id_detalle_orden_trabajo
-            detalle2.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo2.Text
-            'CANTIDAD REGISTRO 2
-            detalle2.DOT_cantidad_dot = txt_cantidad2_detalle2.Text
-            'TAMAÑO REGISTRO 1
-            detalle2.DOT_tamaño_dot = txtTamaño2_Detalle2.Text
-            'TIPO IMPRESION REGISTRO 2
-            detalle2.DOT_tipo_impresion_dot = cboTipoImpresion2_Detalle2.SelectedItem
-            'TIPO PIEZA REGISTRO 2
-            detalle2.PIE_id_pieza = cboPiezas2_Detalle2.SelectedValue
-
-            'ID ORDEN TRABAJO
-            If cargamasprod = "NO" Then
-                txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
-            End If
-            detalle2.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-
-            'PAPEL REGISTRO 2
-            detalle2.DOT_papel_soporte_1 = StrConv(txt_Papel1_Soporte2.Text, VbStrConv.ProperCase)
-            detalle2.DOT_papel_soporte_2 = StrConv(txt_Papel2_Soporte2.Text, VbStrConv.ProperCase)
-            detalle2.DOT_papel_soporte_3 = StrConv(txt_Papel3_Soporte2.Text, VbStrConv.ProperCase)
-
-            'GRAMAJE REGISTRO 2
-            detalle2.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte2.Text
-            detalle2.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte2.Text
-            detalle2.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte2.Text
-
-            'CANTIDAD REGISTRO 2
-            If txt_Cantidad1_Soporte2.TextLength <> 0 Then
-                detalle2.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte2.Text
-            End If
-
-            If txt_Cantidad2_Soporte2.TextLength <> 0 Then
-                detalle2.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte2.Text
-            End If
-
-            If txt_Cantidad3_Soporte2.TextLength <> 0 Then
-                detalle2.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte2.Text
-            End If
-
-            'FORMATO REGISTRO 2
-            detalle2.DOT_formato_soporte_1 = cboFormato1_Soporte2.SelectedItem
-            detalle2.DOT_formato_soporte_2 = cboFormato2_Soporte2.SelectedItem
-            detalle2.DOT_formato_soporte_3 = cboFormato3_Soporte2.SelectedItem
-
-            datacontext.DETALLE_ORDEN_TRABAJO.InsertOnSubmit(detalle2)
-            datacontext.SubmitChanges()
-
-            'GUARDA TABLA PROCESO PRODUCTO 2
-            Dim proceso = New PROCESO
-            txt_id_detalle_orden_trabajo2.Text = detalle2.id_detalle_orden_trabajo
-            proceso.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo2.Text
-
-            If frm_Proceso2.txt_descripc_offset.TextLength = 0 Then
-                frm_Proceso2.groupOffSet.Text = ""
-            Else
-                proceso.PROC_offset = frm_Proceso2.groupOffSet.Text
-                proceso.PROC_descrip_offset = StrConv(frm_Proceso2.txt_descripc_offset.Text, VbStrConv.ProperCase)
-            End If
-            If frm_Proceso2.txt_descripc_digital.TextLength = 0 Then
-                frm_Proceso2.groupDigital.Text = ""
-            Else
-                proceso.PROC_digital = frm_Proceso2.groupDigital.Text
-                proceso.PROC_descrip_digital = StrConv(frm_Proceso2.txt_descripc_digital.Text, VbStrConv.ProperCase)
-            End If
-            If frm_Proceso2.txt_descripc_gran_formato.TextLength = 0 Then
-                frm_Proceso2.groupGranFormato.Text = ""
-            Else
-                proceso.PROC_gran_formato = frm_Proceso2.groupGranFormato.Text
-                proceso.PROC_descrip_gran_formato = StrConv(frm_Proceso2.txt_descripc_gran_formato.Text, VbStrConv.ProperCase)
-            End If
-            If frm_Proceso2.txt_descripc_terminacion.TextLength = 0 Then
-                frm_Proceso2.groupTerminacion.Text = ""
-            Else
-                proceso.PROC_terminacion = frm_Proceso2.groupTerminacion.Text
-                proceso.PROC_descrip_terminacion = StrConv(frm_Proceso2.txt_descripc_terminacion.Text, VbStrConv.ProperCase)
-            End If
-            If frm_Proceso2.txt_descripc_logistica.TextLength = 0 Then
-                frm_Proceso2.groupLogistica.Text = ""
-            Else
-                proceso.PROC_logistica = frm_Proceso2.groupLogistica.Text
-                proceso.PROC_descrip_logistica = StrConv(frm_Proceso2.txt_descripc_logistica.Text, VbStrConv.ProperCase)
-            End If
-            datacontext.PROCESO.InsertOnSubmit(proceso)
-            datacontext.SubmitChanges()
-        End If
-
-        'GUARDA EL REGISTRO 3 DEL DETALLE DE LA ORDEN DE TRABAJO
-        If txt_cantidad3_detalle3.Text.Length >= 1 Then
-            If cboPiezas3_Detalle3.Text.Length = 0 Then
-                MsgBox("Seleccione una Pieza")
-            End If
-            Dim detalle3 = New DETALLE_ORDEN_TRABAJO
-            'id
-            txt_id_detalle_orden_trabajo3.Text = detalle3.id_detalle_orden_trabajo
-            detalle3.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo3.Text
-            'CANTIDAD REGISTRO 3
-            detalle3.DOT_cantidad_dot = txt_cantidad3_detalle3.Text
-            'TAMAÑO REGISTRO 3
-            detalle3.DOT_tamaño_dot = txtTamaño3_Detalle3.Text
-            'TIPO IMPRESION REGISTRO 3
-            detalle3.DOT_tipo_impresion_dot = cboTipoImpresion3_Detalle3.SelectedItem
-            'TIPO PIEZA REGISTRO 3
-            detalle3.PIE_id_pieza = cboPiezas3_Detalle3.SelectedValue
-
-            'ID ORDEN TRABAJO
-            If cargamasprod = "NO" Then
-                txt_id_orden_trabajo.Text = clie.ORT_id_orden_trabajo
-            End If
-            detalle3.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-            'PAPEL REGISTRO 3
-            detalle3.DOT_papel_soporte_1 = StrConv(txt_Papel1_Soporte3.Text, VbStrConv.ProperCase)
-            detalle3.DOT_papel_soporte_2 = StrConv(txt_Papel2_Soporte3.Text, VbStrConv.ProperCase)
-            detalle3.DOT_papel_soporte_3 = StrConv(txt_Papel3_Soporte3.Text, VbStrConv.ProperCase)
-
-            'GRAMAJE REGISTRO 3
-            detalle3.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte3.Text
-            detalle3.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte3.Text
-            detalle3.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte3.Text
-
-            'CANTIDAD REGISTRO 3
-            If txt_Cantidad1_Soporte3.TextLength <> 0 Then
-                detalle3.DOT_cantidad_soporte_1 = txt_Cantidad1_Soporte3.Text
-            End If
-            If txt_Cantidad2_Soporte3.TextLength <> 0 Then
-                detalle3.DOT_cantidad_soporte_2 = txt_Cantidad2_Soporte3.Text
-            End If
-            If txt_Cantidad3_Soporte3.TextLength <> 0 Then
-                detalle3.DOT_cantidad_soporte_3 = txt_Cantidad3_Soporte3.Text
-            End If
-            'FORMATO REGISTRO 3
-            detalle3.DOT_formato_soporte_1 = cboFormato1_Soporte3.SelectedItem
-            detalle3.DOT_formato_soporte_2 = cboFormato2_Soporte3.SelectedItem
-            detalle3.DOT_formato_soporte_3 = cboFormato3_Soporte3.SelectedItem
-
-            datacontext.DETALLE_ORDEN_TRABAJO.InsertOnSubmit(detalle3)
-            datacontext.SubmitChanges()
-
-            'GUARDA TABLA PROCESO PRODUCTO 3
-            Dim proceso = New PROCESO
-            txt_id_detalle_orden_trabajo3.Text = detalle3.id_detalle_orden_trabajo
-            proceso.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo3.Text
-
-            If frm_proceso3.txt_descripc_offset.TextLength = 0 Then
-                frm_proceso3.groupOffSet.Text = ""
-            Else
-                proceso.PROC_offset = frm_proceso3.groupOffSet.Text
-                proceso.PROC_descrip_offset = StrConv(frm_proceso3.txt_descripc_offset.Text, VbStrConv.ProperCase)
-            End If
-            If frm_proceso3.txt_descripc_digital.TextLength = 0 Then
-                frm_proceso3.groupDigital.Text = ""
-            Else
-                proceso.PROC_digital = frm_proceso3.groupDigital.Text
-                proceso.PROC_descrip_digital = StrConv(frm_proceso3.txt_descripc_digital.Text, VbStrConv.ProperCase)
-            End If
-            If frm_proceso3.txt_descripc_gran_formato.TextLength = 0 Then
-                frm_proceso3.groupGranFormato.Text = ""
-            Else
-                proceso.PROC_gran_formato = frm_proceso3.groupGranFormato.Text
-                proceso.PROC_descrip_gran_formato = StrConv(frm_proceso3.txt_descripc_gran_formato.Text, VbStrConv.ProperCase)
-            End If
-            If frm_proceso3.txt_descripc_terminacion.TextLength = 0 Then
-                frm_proceso3.groupTerminacion.Text = ""
-            Else
-                proceso.PROC_terminacion = frm_proceso3.groupTerminacion.Text
-                proceso.PROC_descrip_terminacion = StrConv(frm_proceso3.txt_descripc_terminacion.Text, VbStrConv.ProperCase)
-            End If
-            If frm_proceso3.txt_descripc_logistica.TextLength = 0 Then
-                frm_proceso3.groupLogistica.Text = ""
-            Else
-                proceso.PROC_logistica = frm_proceso3.groupLogistica.Text
-                proceso.PROC_descrip_logistica = StrConv(frm_proceso3.txt_descripc_logistica.Text, VbStrConv.ProperCase)
-            End If
-            datacontext.PROCESO.InsertOnSubmit(proceso)
-            datacontext.SubmitChanges()
-        End If
-
-        '<<<<<<< .mine
-        '            MsgBox("la Orden se ha creado correctamente", vbInformation)
-
-        '            'PARTE NUEVA PARA GUARDAR MAS PRODUCTOS
-        '            Select Case MsgBox("La orden se ha creado correctamente, desea agregarle mas productos?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Guardar orden")
-        '                Case MsgBoxResult.Yes
-        '                    cargamasprod = "SI"
-        '                    Exit Sub
-        '                Case Else
-        '                    limpiarcontroles()
-        '                    Me.Close()
-        '            End Select
-
-        '            'limpiarcontroles()
-        '            'Me.Close()
-        '||||||| .r115
-        '            MsgBox("la Orden se ha creado correctamente", vbInformation)
-        '            limpiarcontroles()
-        '            Me.Close()
-        '*********
-        '=======
-        '  MsgBox("la Orden se ha creado correctamente", vbInformation)
-
-        '*************** PARTE NUEVA
-        If txt_cantidad1_detalle1.Text.Length >= 1 And txt_cantidad2_detalle2.Text.Length >= 1 And txt_cantidad3_detalle3.Text.Length >= 1 Then
-            Select Case MsgBox("La orden se ha creado, agregar mas productos?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Guardar orden")
-                Case MsgBoxResult.Yes
-                    cargamasprod = "SI"
-                    limpiardetalles()
-                    Exit Sub
-                Case Else
-                    limpiarcontroles()
-                    Me.Close()
-            End Select
-        Else
-            MsgBox("la Orden se ha creado correctamente", vbInformation)
-            limpiarcontroles()
-            Me.Close()
-        End If
-        '>>>>>>> .r117
-        ' Catch ex As Exception
-        MsgBox("Error al cargar la Orden")
-        '<<<<<<< .mine
-        '            limpiarcontroles()
-        '            'cargargrilla()
-        '||||||| .r115
-        '            limpiarcontroles()
-        '            ' cargargrilla()
-        '=======
-        '            ' limpiarcontroles()
-        '>>>>>>> .r117
-        'End Try
+         Catch ex As Exception
+            MsgBox("Error al cargar la Orden")
+        End Try
     End Sub
 
     Private Sub btnActualizar_Orden_Trabajo_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar_Orden_Trabajo.Click
