@@ -72,10 +72,12 @@ Public Class frm_Productos
         dgvLista_Productos.Columns(0).DataPropertyName = "PROD_id"
         dgvLista_Productos.Columns(0).Visible = False
         dgvLista_Productos.Columns(1).DataPropertyName = "PROD_codigo"
-        dgvLista_Productos.Columns(1).Width = 50
         dgvLista_Productos.Columns(2).DataPropertyName = "PROD_descripcion"
+        dgvLista_Productos.Columns(2).Width = 180
         dgvLista_Productos.Columns(3).DataPropertyName = "PROD_stock"
+        dgvLista_Productos.Columns(3).Width = 80
         dgvLista_Productos.Columns(4).DataPropertyName = "PROD_stock_minimo"
+        dgvLista_Productos.Columns(4).Width = 80
     End Sub
 
     Sub cargargrilla()
