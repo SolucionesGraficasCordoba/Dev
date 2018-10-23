@@ -299,6 +299,9 @@
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Visible = True 'consultar
 
                 frm_Principal.GenerarInformesToolStripMenuItem.Visible = True
+                If Buscausuario.USU_usuario = "calidad" Then
+                    frm_Principal.BajaToolStripMenuItem1.Enabled = False
+                End If
             End If
 
             'PASAR USUARIO Y PERFIL A LOS LABEL DEL MENUUU!!!! PARA LUEGO TOMAR EL USUARIO PARA
