@@ -1237,8 +1237,6 @@ Public Class frm_Principal
         frm_Productos.ShowDialog()
     End Sub
 
-
-
     Private Sub frm_Principal_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
         Application.Exit()
     End Sub
@@ -1250,5 +1248,9 @@ Public Class frm_Principal
     Private Sub ConsultarMovimientosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarMovimientosToolStripMenuItem.Click
         frm_Listado_Movimientos.Text = "Consultar Movimiento"
         frm_Listado_Movimientos.ShowDialog()
+    End Sub
+
+    Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+       
     End Sub
 End Class
