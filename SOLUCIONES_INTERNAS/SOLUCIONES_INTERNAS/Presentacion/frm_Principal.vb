@@ -1259,7 +1259,14 @@ Public Class frm_Principal
     End Sub
 
     Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        Dim c As Control
+        For Each c In Me.Controls
+            If TypeOf c Is MdiClient Then
+                c.BackColor = Color.White
+                c.BackgroundImage = My.Resources.solucionesgraficas1
+                c.BackgroundImageLayout = ImageLayout.Zoom
+            End If
+        Next
     End Sub
 
 End Class
