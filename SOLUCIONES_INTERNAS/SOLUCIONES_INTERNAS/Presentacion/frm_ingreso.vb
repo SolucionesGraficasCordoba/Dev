@@ -148,11 +148,14 @@
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = False
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Visible = False
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Visible = False
-
-                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Visible = False
-                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = False
-                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
-                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(3).Visible = True
+                If Buscausuario.USU_usuario = "calidad" Then
+                    frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Visible = True 'Alta
+                Else
+                    frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Visible = False 'Baja
+                End If
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = False 'Baja
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Visible = True 'Consulta prod
+                frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(3).Visible = True 'Consulta mov
 
                 frm_Principal.OrdenTrabajoToolStripMenuItem.Visible = True
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = False 'nueva
@@ -299,10 +302,12 @@
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Visible = True 'consultar
 
                 frm_Principal.GenerarInformesToolStripMenuItem.Visible = True
-                If Buscausuario.USU_usuario = "calidad" Then
-                    frm_Principal.BajaToolStripMenuItem1.Enabled = False
-                End If
+
+
             End If
+
+
+
 
             'PASAR USUARIO Y PERFIL A LOS LABEL DEL MENUUU!!!! PARA LUEGO TOMAR EL USUARIO PARA
             'ACTUALIZAR PASS DESDE ADENTRO
