@@ -211,12 +211,15 @@ Public Class frm_Listado_Tareas
     End Sub
 
     Private Sub dtpFecha_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpFecha.ValueChanged
-        Dim fechaactual = System.DateTime.Now.ToString("dd/mm/yyyy")
-        If dtpFecha.Text <= fechaactual Then
-        Else
-            btnModificar_Tarea.Enabled = True
-        End If
+        '***LO COMENTE XQ HABILITA BOTON MODIFICAR EN CUANDO SE CONSULTA..
+        '*** POR EL MOMENTO SE PUEDE CARGAR UNA TAREA VENCIDA
+        'Dim fechaactual = System.DateTime.Now.ToString("dd/mm/yyyy")
+        'If dtpFecha.Text <= fechaactual Then
+        'Else
+        '    btnModificar_Tarea.Enabled = True
+        'End If
         dgvColaboradores.ClearSelection()
+        dgvTarea_x_Colaborador.DataSource = ""
     End Sub
 
     Private Sub btnVer_Click(sender As System.Object, e As System.EventArgs) Handles btnVer.Click

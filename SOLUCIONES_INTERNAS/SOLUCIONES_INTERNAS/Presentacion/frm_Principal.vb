@@ -891,6 +891,7 @@ Public Class frm_Principal
         frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
         frm_Listado_Tareas.btnAgregar.Enabled = False
         frm_Listado_Tareas.dtpFecha.Text = Now
+        frm_Listado_Tareas.btnModificar_Tarea.Enabled = False
         frm_Listado_Tareas.ShowDialog()
     End Sub
 

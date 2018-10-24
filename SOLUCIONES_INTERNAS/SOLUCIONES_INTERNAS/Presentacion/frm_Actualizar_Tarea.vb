@@ -178,8 +178,15 @@
                 datacontext.TAREA.InsertOnSubmit(tar1)
                 datacontext.SubmitChanges()
             End If
-            MsgBox("La tarea se ha creado correctamente", vbInformation)
-            Me.Close()
+            Select Case MsgBox("La tarea se ha creado correctamente, agregar otra tarea?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Guardar tarea")
+                Case MsgBoxResult.Yes
+                    limpiarcampos()
+                    Exit Sub
+                Case Else
+                    Me.Close()
+            End Select
+            'MsgBox("La tarea se ha creado correctamente", vbInformation)
+            'Me.Close()
             frm_Listado_Tareas.Close()
         Catch ex As Exception
             MsgBox("La tarea NO fue creada")
@@ -234,5 +241,14 @@
 
     Private Sub frm_Actualizar_Tarea_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
+    End Sub
+    Sub limpiarcampos()
+        txt_hora_fin.Clear()
+        txt_id_orden_trabajo.Clear()
+        txt_numero_orden.Clear()
+        txt_observaciones.Clear()
+        txt_tarea.Clear()
+        txt_tiempo_estimado.Clear()
+        txt_tiempo_real.Clear()
     End Sub
 End Class
