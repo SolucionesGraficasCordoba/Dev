@@ -13,7 +13,7 @@ Public Class frm_Listado_Movimientos
     Public Sub CargarGrillaMovimiento()
         Dim buscar As String
 
-        buscar = Me.txt_Buscar_Producto.Text & "*"
+        buscar = "*" & Me.txt_Buscar_Producto.Text & "*"
         Dim carga = (From p In datavistas.Vista_Lista_Movimientos
                        Select p.PROD_id,
                                    p.PROD_codigo,
