@@ -230,6 +230,8 @@ Public Class frm_Productos
         datatable.WidthPercentage = 100
         datatable.DefaultCell.BorderWidth = 2
         'datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+        datatable.HeaderRows = 1
+        datatable.DefaultCell.BorderWidth = 1
 
         'se crea el encabezado en el PDF
         Dim encabezado As New Paragraph("Consulta de Productos", New Font(Font.Name = "Arial", 20, Font.Bold))
@@ -244,13 +246,9 @@ Public Class frm_Productos
             End If
         Next
 
-        datatable.HeaderRows = 1
-        datatable.DefaultCell.BorderWidth = 1
-
         'se generan las columnas del datagridview
 
         For i As Integer = 0 To dgvLista_Productos.RowCount - 1
-
             For j As Integer = 0 To dgvLista_Productos.ColumnCount - 1
                 If dgvLista_Productos.Columns(j).Visible = True Then
                     Try
