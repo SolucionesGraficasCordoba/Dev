@@ -244,6 +244,7 @@
         dgv_detalle_orden.ClearSelection()
     End Sub
 
+    'MODIFICA ORDEN
     Private Sub btnModificar_Orden_Click(sender As System.Object, e As System.EventArgs) Handles btnModificar_Orden.Click
 
         If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
@@ -931,7 +932,6 @@
         frm_Orden_Trabajo.ShowDialog()
     End Sub
 
-
     Private Sub dgv_detalle_orden_CellDoubleClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellDoubleClick
         quienllamolistado_ot.Name = frm_retrabajo.Name
         frm_retrabajo.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
@@ -951,6 +951,36 @@
 
     Private Sub btnModificarProducto_Click(sender As System.Object, e As System.EventArgs) Handles btnModificarProducto.Click
 
+        If dgv_detalle_orden.Rows.Count > 0 Then
+            frm_Actualizar_Producto_Orden.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Producto_Orden.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.txt_cantidad.Text = dgv_detalle_orden.Item("DOT_cantidad_dot", dgv_detalle_orden.CurrentRow.Index).Value
+
+            frm_Actualizar_Producto_Orden.cboPiezas.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.CurrentRow.Index).Value
+            ' cboPiezas1_Detalle1.SelectedValue = frm_Listado_Orden_Trabajo.dgv_detalle_orden.Item("PIE_id_pieza", frm_Listado_Orden_Trabajo.dgv_detalle_orden.Rows(0).Index).Value
+
+            frm_Actualizar_Producto_Orden.txtTamaño.Text = dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.cboTipoImpresion.SelectedItem = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.CurrentRow.Index).Value
+
+            frm_Actualizar_Producto_Orden.txt_Papel1_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.txt_Papel2_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.txt_Papel3_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.CurrentRow.Index).Value
+
+            frm_Actualizar_Producto_Orden.txt_Gramaje1_Soporte.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.txt_Gramaje2_Soporte.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.txt_Gramaje3_Soporte.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.CurrentRow.Index).Value
+
+            frm_Actualizar_Producto_Orden.txt_Cantidad1_Soporte.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_1", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.txt_Cantidad2_Soporte.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_2", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.txt_Cantidad3_Soporte.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_3", dgv_detalle_orden.CurrentRow.Index).Value
+
+            frm_Actualizar_Producto_Orden.cboFormato1_Soporte.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_1", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.cboFormato2_Soporte.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_2", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.cboFormato3_Soporte.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.CurrentRow.Index).Value
+        Else
+            MsgBox("No hay productos por modificar")
+        End If
+        frm_Actualizar_Producto_Orden.Show()
     End Sub
 End Class
 

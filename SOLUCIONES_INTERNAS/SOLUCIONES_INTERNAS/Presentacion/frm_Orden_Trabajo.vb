@@ -7,7 +7,6 @@
 
     Private Sub frm_Orden_Trabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         If quienllamo_listado_orden.Name <> frm_Listado_Orden_Trabajo.Name Then
-
             'CARGA COMBOBOX PIEZA DETALLE 1
             Dim combopieza1 = (From sec In datacontext.PIEZA
                                Select sec.PIE_id_pieza, sec.PIE_nombre_pie
@@ -1113,4 +1112,5 @@
             frm_Proceso1.ShowDialog()
         End If
     End Sub
+
 End Class
