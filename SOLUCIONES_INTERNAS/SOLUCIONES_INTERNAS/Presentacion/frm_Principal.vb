@@ -997,7 +997,7 @@ Public Class frm_Principal
 
         frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
         frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
-        frm_Listado_Orden_Trabajo.btnEliminar_Detalle.Enabled = False
+        frm_Listado_Orden_Trabajo.btnEliminar_Producto.Enabled = False
         frm_Listado_Orden_Trabajo.btnVer.Enabled = True
         frm_Listado_Orden_Trabajo.btn_Cancelar.Enabled = True
 
@@ -1014,7 +1014,7 @@ Public Class frm_Principal
 
         frm_Orden_Trabajo.Text = "Modificar Orden"
         frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
-        frm_Listado_Orden_Trabajo.btnEliminar_Detalle.Enabled = False
+        frm_Listado_Orden_Trabajo.btnEliminar_Producto.Enabled = False
         frm_Listado_Orden_Trabajo.btnVer.Enabled = False
         frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = True
         frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Enabled = True
@@ -1031,7 +1031,7 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
         frm_Listado_Orden_Trabajo.btnVer.Enabled = False
         frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = True
-        frm_Listado_Orden_Trabajo.btnEliminar_Detalle.Enabled = True
+        frm_Listado_Orden_Trabajo.btnEliminar_Producto.Enabled = True
         frm_Listado_Orden_Trabajo.btn_Cancelar.Enabled = True
 
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
@@ -1253,4 +1253,5 @@ Public Class frm_Principal
     Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
        
     End Sub
+
 End Class
