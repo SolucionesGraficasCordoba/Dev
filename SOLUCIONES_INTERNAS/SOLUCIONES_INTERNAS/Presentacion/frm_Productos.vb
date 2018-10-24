@@ -73,11 +73,11 @@ Public Class frm_Productos
         dgvLista_Productos.Columns(0).Visible = False
         dgvLista_Productos.Columns(1).DataPropertyName = "PROD_codigo"
         dgvLista_Productos.Columns(2).DataPropertyName = "PROD_descripcion"
-        dgvLista_Productos.Columns(2).Width = 180
+        'dgvLista_Productos.Columns(2).Width = 180
         dgvLista_Productos.Columns(3).DataPropertyName = "PROD_stock"
-        dgvLista_Productos.Columns(3).Width = 80
+        'dgvLista_Productos.Columns(3).Width = 80
         dgvLista_Productos.Columns(4).DataPropertyName = "PROD_stock_minimo"
-        dgvLista_Productos.Columns(4).Width = 80
+        'dgvLista_Productos.Columns(4).Width = 80
     End Sub
 
     Sub cargargrilla()
@@ -89,7 +89,7 @@ Public Class frm_Productos
         Label9.Text = dgvLista_Productos.Rows.Count
 
         For Each row As DataGridViewRow In dgvLista_Productos.Rows
-            If row.Cells(3).Value <= row.Cells(4).Value Then
+            If row.Cells("PROD_stock").Value <= row.Cells("PROD_stock_minimo").Value Then
                 row.DefaultCellStyle.BackColor = Color.Red
             End If
         Next
@@ -173,7 +173,7 @@ Public Class frm_Productos
     Private Sub tb_prod_busqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tb_prod_busqueda.TextChanged
         Dim buscarprod As String
         armargrilla()
-        buscarprod = Me.tb_prod_busqueda.Text & "*"
+        buscarprod = "*" & Me.tb_prod_busqueda.Text & "*"
         Dim consultaprod = From p In datacontext.PRODUCTO
                            Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo Where PROD_descripcion Like buscarprod.ToString
         dgvLista_Productos.DataSource = consultaprod
@@ -192,10 +192,11 @@ Public Class frm_Productos
     Private Sub btnExportarPDF_Click(sender As System.Object, e As System.EventArgs) Handles btnExportarPDF.Click
         Try
             'intentar generar el documento
-            Dim doc As New Document(PageSize.A4.Rotate(), 10, 10, 10, 10)
+            Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
             'path que guarda el reporte en el escritorio de windows (desktop)
             Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Consulta de Productos.pdf"
             Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+
             PdfWriter.GetInstance(doc, file)
             doc.Open()
             ExportarDatosPDF(doc)
@@ -204,47 +205,37 @@ Public Class frm_Productos
             Me.Close()
         Catch ex As Exception
             'si el mensaje es fallido mostrar msgbox
-            MessageBox.Show("No se puede generar el pdf.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("No se puede generar. Cierre el pdf anterior y vuelva a intentar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
-    Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
-        'funcion para obtener el tamaño de las columnas del datagridview
-
-        Dim values As Single() = New Single(dg.ColumnCount - 1) {}
-        For i As Integer = 0 To dg.ColumnCount - 1
-            If dgvLista_Productos.Columns(i).Visible = True Then
-                values(i) = CSng(dg.Columns(i).Width)
-            End If
-        Next
-        Return values
-    End Function
-
     Public Sub ExportarDatosPDF(ByVal document As Document)
 
+        'Cuenta la cantidad de columnas visibles del dgv para armar la tabla
         For c = 0 To dgvLista_Productos.ColumnCount - 1
             If dgvLista_Productos.Columns(c).Visible = True Then
                 contadorcolumnasvisibles = contadorcolumnasvisibles + 1
             End If
         Next
+
         'se crea un objeto PDFTable con el numero de columnas  del datagridview
         Dim datatable As New PdfPTable(contadorcolumnasvisibles)
 
         'se asignan algunas propiedades para el diseño del PDF
         datatable.DefaultCell.Padding = 3
 
-        'Dim headerwidths As Single() = GetColumnsSize(dgv_movimientos)
-        'datatable.SetWidths(headerwidths)
+        Dim headerwidths As Single() = GetColumnsSize(dgvLista_Productos)
+        datatable.SetWidths(headerwidths)
 
-        datatable.WidthPercentage = 80
+        datatable.WidthPercentage = 100
         datatable.DefaultCell.BorderWidth = 2
-        datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+        'datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
 
         'se crea el encabezado en el PDF
-        Dim encabezado As New Paragraph("Consulta de Productos", New Font(Font.Name = "Tahoma", 20, Font.Bold))
+        Dim encabezado As New Paragraph("Consulta de Productos", New Font(Font.Name = "Arial", 20, Font.Bold))
 
         'se crea el texto abajo del encabezado
-        Dim texto As New Phrase("Los productos cargados hasta la fecha " + Now.Date() + " son los siguientes:", New Font(Font.Name = "Tahoma", 14, Font.Bold))
+        Dim texto As New Phrase("Los productos cargados hasta la fecha " + Now.Date() + " son los siguientes:", New Font(Font.Name = "Arial", 14, Font.Bold))
 
         'se capturan los nombres de las columnas del datagridview
         For i As Integer = 0 To dgvLista_Productos.ColumnCount - 1
@@ -275,4 +266,18 @@ Public Class frm_Productos
         document.Add(texto)
         document.Add(datatable)
     End Sub
+    Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
+        'funcion para obtener el tamaño de las columnas del datagridview
+
+        Dim indice_array As Integer = 0
+        Dim values As Single() = New Single(contadorcolumnasvisibles - 1) {}
+
+        For i As Integer = 0 To dg.ColumnCount - 1
+            If dgvLista_Productos.Columns(i).Visible = True Then
+                values(indice_array) = CSng(dg.Columns(i).Width)
+                indice_array = indice_array + 1
+            End If
+        Next
+        Return values
+    End Function
 End Class

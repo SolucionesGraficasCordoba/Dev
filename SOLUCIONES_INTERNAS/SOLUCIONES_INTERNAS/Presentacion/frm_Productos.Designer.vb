@@ -80,6 +80,9 @@ Partial Class frm_Productos
         '
         'dgvLista_Productos
         '
+        Me.dgvLista_Productos.AllowUserToAddRows = False
+        Me.dgvLista_Productos.AllowUserToDeleteRows = False
+        Me.dgvLista_Productos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvLista_Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLista_Productos.Location = New System.Drawing.Point(7, 54)
         Me.dgvLista_Productos.Name = "dgvLista_Productos"
