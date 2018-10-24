@@ -1153,11 +1153,6 @@ Public Class frm_Principal
         frm_Productos.ShowDialog()
     End Sub
 
-    Private Sub ConsultarToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-
-
-    End Sub
 
     Private Sub AltaToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaToolStripMenuItem1.Click
 

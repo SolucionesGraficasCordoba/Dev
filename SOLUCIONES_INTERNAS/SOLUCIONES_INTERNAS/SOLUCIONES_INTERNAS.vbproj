@@ -64,6 +64,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\USUARIOS\Desarrollo\Desktop\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -98,6 +101,18 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presentacion\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_Actualizar_Orden.Designer.vb">
+      <DependentUpon>frm_Actualizar_Orden.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Actualizar_Orden.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_Listado_Movimientos.Designer.vb">
       <DependentUpon>frm_Listado_Movimientos.vb</DependentUpon>
     </Compile>
@@ -293,12 +308,19 @@
     <Compile Include="Presentacion\frm_Vendedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\Recordset.vb" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
     <None Include="Datos\DataS_Interno_Vistas.dbml.layout">
       <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Presentacion\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Actualizar_Orden.resx">
+      <DependentUpon>frm_Actualizar_Orden.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Listado_Movimientos.resx">
       <DependentUpon>frm_Listado_Movimientos.vb</DependentUpon>
     </EmbeddedResource>
