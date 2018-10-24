@@ -132,7 +132,6 @@
         CargaProcesoProducto(datagridproceso)
     End Sub
 
-    'COMPLETAR
     Public Sub CargaProcesoProducto(ByVal dataproceso As System.Linq.IQueryable)
         dgvProcesos.AutoGenerateColumns = False
         dgvProcesos.Columns.Clear()
@@ -247,242 +246,267 @@
 
     Private Sub btnModificar_Orden_Click(sender As System.Object, e As System.EventArgs) Handles btnModificar_Orden.Click
 
-        'CARGA COMBOBOX PIEZA DETALLE 1
-        Dim combopieza1 = (From sec In datacontext.PIEZA
-                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
-        Order By PIE_nombre_pie Ascending)
-        frm_Orden_Trabajo.cboPiezas1_Detalle1.DataSource = combopieza1
-        frm_Orden_Trabajo.cboPiezas1_Detalle1.DisplayMember = "PIE_nombre_pie"
-        frm_Orden_Trabajo.cboPiezas1_Detalle1.ValueMember = "PIE_id_pieza"
-
-        'CARGA COMBOBOX PIEZA DETALLE 2
-        Dim combopieza2 = (From sec In datacontext.PIEZA
-                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
-                           Order By PIE_nombre_pie Ascending)
-        frm_Orden_Trabajo.cboPiezas2_Detalle2.DataSource = combopieza2
-        frm_Orden_Trabajo.cboPiezas2_Detalle2.DisplayMember = "PIE_nombre_pie"
-        frm_Orden_Trabajo.cboPiezas2_Detalle2.ValueMember = "PIE_id_pieza"
-
-        'CARGA COMBOBOX PIEZA DETALLE 3
-        Dim combopieza3 = (From sec In datacontext.PIEZA
-                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
-                           Order By PIE_nombre_pie Ascending)
-        frm_Orden_Trabajo.cboPiezas3_Detalle3.DataSource = combopieza3
-        frm_Orden_Trabajo.cboPiezas3_Detalle3.DisplayMember = "PIE_nombre_pie"
-        frm_Orden_Trabajo.cboPiezas3_Detalle3.ValueMember = "PIE_id_pieza"
-
-        If dgvLista_Orden_Trabajo.SelectedRows.Count = 0 Then
-            MsgBox("debe seleccionar una orden")
-        Else
-
-            vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-
-            'LLENA LOS CAMPOS DE LA ORDEN
-            If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
-                frm_Orden_Trabajo.txt_id_orden_trabajo.Text = vble_id_orden
-                frm_Orden_Trabajo.cboTipo_Orden.SelectedItem = dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-                frm_Orden_Trabajo.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-                frm_Orden_Trabajo.dtpFecha_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-
-                frm_Orden_Trabajo.dtpFecha_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-
-                frm_Orden_Trabajo.txt_id_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_id_cliente", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-                frm_Orden_Trabajo.txt_nombre_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-                frm_Orden_Trabajo.txtid_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_id_vendedor", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-                frm_Orden_Trabajo.txtNombre_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-                frm_Orden_Trabajo.txt_observaciones.Text = dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-                frm_Orden_Trabajo.txt_mejoras.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-
-                Dim flag1 As Integer
-                Dim flag2 As Integer
-                Dim flag3 As Integer
-
-                If dgv_detalle_orden.RowCount = 1 Then
-                    flag1 = 1
-                    flag2 = 0
-                    flag3 = 0
-                ElseIf dgv_detalle_orden.RowCount = 2 Then
-                    flag1 = 1
-                    flag2 = 1
-                    flag3 = 0
-                ElseIf dgv_detalle_orden.RowCount = 3 Then
-                    flag1 = 1
-                    flag2 = 1
-                    flag3 = 1
-                End If
-
-                If flag1 = 1 Then
-                    frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgvLista_Orden_Trabajo.Rows(0).Index).Value
-                    frm_Orden_Trabajo.txt_cantidad1_detalle1.Text = dgv_detalle_orden.Item("DOT_cantidad_dot", dgvLista_Orden_Trabajo.Rows(0).Index).Value
-
-                    frm_Orden_Trabajo.cboPiezas1_Detalle1.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.Rows(0).Index).Value
-
-                    frm_Orden_Trabajo.txtTamaño1_Detalle1.Text = dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.Rows(0).Index).Value
-                    frm_Orden_Trabajo.cboTipoImpresion1_Detalle1.SelectedItem = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.Rows(0).Index).Value
-
-                    frm_Orden_Trabajo.txt_Papel1_Soporte1.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.Rows(0).Index).Value
-                    frm_Orden_Trabajo.txt_Papel2_Soporte1.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.Rows(0).Index).Value
-                    frm_Orden_Trabajo.txt_Papel3_Soporte1.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.Rows(0).Index).Value
-
-                    frm_Orden_Trabajo.txt_Gramaje1_Soporte1.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.Rows(0).Index).Value
-                    frm_Orden_Trabajo.txt_Gramaje2_Soporte1.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.Rows(0).Index).Value
-                    frm_Orden_Trabajo.txt_Gramaje3_Soporte1.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.Rows(0).Index).Value
-
-                    frm_Orden_Trabajo.txt_Cantidad1_Soporte1.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_1", dgv_detalle_orden.Rows(0).Index).Value
-                    frm_Orden_Trabajo.txt_Cantidad2_Soporte1.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_2", dgv_detalle_orden.Rows(0).Index).Value
-                    frm_Orden_Trabajo.txt_Cantidad3_Soporte1.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_3", dgv_detalle_orden.Rows(0).Index).Value
-
-                    frm_Orden_Trabajo.cboFormato1_Soporte1.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_1", dgv_detalle_orden.Rows(0).Index).Value
-                    frm_Orden_Trabajo.cboFormato2_Soporte1.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_2", dgv_detalle_orden.Rows(0).Index).Value
-                    frm_Orden_Trabajo.cboFormato3_Soporte1.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.Rows(0).Index).Value
-
-                    frm_Orden_Trabajo.cboPiezas2_Detalle2.SelectedIndex = -1
-                    frm_Orden_Trabajo.cboPiezas3_Detalle3.SelectedIndex = -1
-                End If
-
-                If flag2 = 1 Then
-                    frm_Orden_Trabajo.txt_id_detalle_orden_trabajo2.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgvLista_Orden_Trabajo.Rows(1).Index).Value
-                    frm_Orden_Trabajo.txt_cantidad2_detalle2.Text = dgv_detalle_orden.Item("DOT_cantidad_dot", dgvLista_Orden_Trabajo.Rows(1).Index).Value
-
-                    frm_Orden_Trabajo.cboPiezas2_Detalle2.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.Rows(1).Index).Value
-
-                    frm_Orden_Trabajo.txtTamaño2_Detalle2.Text = dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.Rows(1).Index).Value
-                    frm_Orden_Trabajo.cboTipoImpresion2_Detalle2.SelectedItem = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.Rows(1).Index).Value
-
-                    frm_Orden_Trabajo.txt_Papel1_Soporte2.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.Rows(1).Index).Value
-                    frm_Orden_Trabajo.txt_Papel2_Soporte2.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.Rows(1).Index).Value
-                    frm_Orden_Trabajo.txt_Papel3_Soporte2.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.Rows(1).Index).Value
-
-                    frm_Orden_Trabajo.txt_Gramaje1_Soporte2.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.Rows(1).Index).Value
-                    frm_Orden_Trabajo.txt_Gramaje2_Soporte2.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.Rows(1).Index).Value
-                    frm_Orden_Trabajo.txt_Gramaje3_Soporte2.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.Rows(1).Index).Value
-
-                    frm_Orden_Trabajo.txt_Cantidad1_Soporte2.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_1", dgv_detalle_orden.Rows(1).Index).Value
-                    frm_Orden_Trabajo.txt_Cantidad2_Soporte2.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_2", dgv_detalle_orden.Rows(1).Index).Value
-                    frm_Orden_Trabajo.txt_Cantidad3_Soporte2.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_3", dgv_detalle_orden.Rows(1).Index).Value
-
-                    frm_Orden_Trabajo.cboFormato1_Soporte2.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_1", dgv_detalle_orden.Rows(1).Index).Value
-                    frm_Orden_Trabajo.cboFormato2_Soporte2.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_2", dgv_detalle_orden.Rows(1).Index).Value
-                    frm_Orden_Trabajo.cboFormato3_Soporte2.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.Rows(1).Index).Value
-
-                    frm_Orden_Trabajo.cboPiezas3_Detalle3.SelectedIndex = -1
-
-                End If
-
-                If flag3 = 1 Then
-                    frm_Orden_Trabajo.txt_id_detalle_orden_trabajo3.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgvLista_Orden_Trabajo.Rows(2).Index).Value
-                    frm_Orden_Trabajo.txt_cantidad3_detalle3.Text = dgv_detalle_orden.Item("DOT_cantidad_dot", dgvLista_Orden_Trabajo.Rows(2).Index).Value
+        If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
+            frm_Actualizar_Orden.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.dtpFecha_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.cboTipo_Orden.Text = dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
 
 
-                    frm_Orden_Trabajo.cboPiezas3_Detalle3.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.Rows(2).Index).Value
-                    frm_Orden_Trabajo.txtTamaño3_Detalle3.Text = dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.Rows(2).Index).Value
-                    frm_Orden_Trabajo.cboTipoImpresion3_Detalle3.SelectedItem = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.Rows(2).Index).Value
+            frm_Actualizar_Orden.dtpFecha_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
 
-                    frm_Orden_Trabajo.txt_Papel1_Soporte3.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.Rows(2).Index).Value
-                    frm_Orden_Trabajo.txt_Papel2_Soporte3.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.Rows(2).Index).Value
-                    frm_Orden_Trabajo.txt_Papel3_Soporte3.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.Rows(2).Index).Value
-
-                    frm_Orden_Trabajo.txt_Gramaje1_Soporte3.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.Rows(2).Index).Value
-                    frm_Orden_Trabajo.txt_Gramaje2_Soporte3.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.Rows(2).Index).Value
-                    frm_Orden_Trabajo.txt_Gramaje3_Soporte3.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.Rows(2).Index).Value
-
-                    frm_Orden_Trabajo.txt_Cantidad1_Soporte3.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_1", dgv_detalle_orden.Rows(2).Index).Value
-                    frm_Orden_Trabajo.txt_Cantidad2_Soporte3.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_2", dgv_detalle_orden.Rows(2).Index).Value
-                    frm_Orden_Trabajo.txt_Cantidad3_Soporte3.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_3", dgv_detalle_orden.Rows(2).Index).Value
-
-                    frm_Orden_Trabajo.cboFormato1_Soporte3.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_1", dgv_detalle_orden.Rows(2).Index).Value
-                    frm_Orden_Trabajo.cboFormato2_Soporte3.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_2", dgv_detalle_orden.Rows(2).Index).Value
-                    frm_Orden_Trabajo.cboFormato3_Soporte3.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.Rows(2).Index).Value
-                End If
-            End If
-            ' Me.Close()
-            frm_Orden_Trabajo.Text = "Modificar Orden"
-
-            frm_Orden_Trabajo.Label45.Visible = False
-            frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = False
-            frm_Orden_Trabajo.Label52.Visible = False
-            frm_Orden_Trabajo.txt_id_detalle_orden_trabajo2.Visible = False
-            frm_Orden_Trabajo.Label53.Visible = False
-            frm_Orden_Trabajo.txt_id_detalle_orden_trabajo3.Visible = False
-
-            frm_Orden_Trabajo.btnNueva_Orden_Trabajo.Visible = False
-            frm_Orden_Trabajo.txt_observaciones.Enabled = True
-            frm_Orden_Trabajo.txt_mejoras.Enabled = True
-            frm_Orden_Trabajo.txtNumero_Orden_Trabajo.Enabled = True
-            frm_Orden_Trabajo.cboTipo_Orden.Enabled = True
-            frm_Orden_Trabajo.btnGuardar_Orden_Trabajo.Enabled = False
-            frm_Orden_Trabajo.btnBuscar_cliente.Enabled = True
-            frm_Orden_Trabajo.btnBuscar_Vendedor.Enabled = True
-            frm_Orden_Trabajo.txt_id_cliente.Visible = False
-            frm_Orden_Trabajo.txtid_vendedor.Visible = False
-
-            frm_Orden_Trabajo.txt_cantidad1_detalle1.Enabled = True
-            frm_Orden_Trabajo.cboPiezas1_Detalle1.Enabled = True
-            frm_Orden_Trabajo.txtTamaño1_Detalle1.Enabled = True
-            frm_Orden_Trabajo.cboTipoImpresion1_Detalle1.Enabled = True
-
-            frm_Orden_Trabajo.txt_Papel1_Soporte1.Enabled = True
-            frm_Orden_Trabajo.txt_Papel2_Soporte1.Enabled = True
-            frm_Orden_Trabajo.txt_Papel3_Soporte1.Enabled = True
-            frm_Orden_Trabajo.txt_Gramaje1_Soporte1.Enabled = True
-            frm_Orden_Trabajo.txt_Gramaje2_Soporte1.Enabled = True
-            frm_Orden_Trabajo.txt_Gramaje3_Soporte1.Enabled = True
-            frm_Orden_Trabajo.txt_Cantidad1_Soporte1.Enabled = True
-            frm_Orden_Trabajo.txt_Cantidad2_Soporte1.Enabled = True
-            frm_Orden_Trabajo.txt_Cantidad3_Soporte1.Enabled = True
-            frm_Orden_Trabajo.cboFormato1_Soporte1.Enabled = True
-            frm_Orden_Trabajo.cboFormato2_Soporte1.Enabled = True
-            frm_Orden_Trabajo.cboFormato3_Soporte1.Enabled = True
-
-            frm_Orden_Trabajo.txt_cantidad2_detalle2.Enabled = True
-            frm_Orden_Trabajo.cboPiezas2_Detalle2.Enabled = True
-            frm_Orden_Trabajo.txtTamaño2_Detalle2.Enabled = True
-            frm_Orden_Trabajo.cboTipoImpresion2_Detalle2.Enabled = True
-
-            frm_Orden_Trabajo.txt_Papel1_Soporte2.Enabled = True
-            frm_Orden_Trabajo.txt_Papel2_Soporte2.Enabled = True
-            frm_Orden_Trabajo.txt_Papel3_Soporte2.Enabled = True
-            frm_Orden_Trabajo.txt_Gramaje1_Soporte2.Enabled = True
-            frm_Orden_Trabajo.txt_Gramaje2_Soporte2.Enabled = True
-            frm_Orden_Trabajo.txt_Gramaje3_Soporte2.Enabled = True
-            frm_Orden_Trabajo.txt_Cantidad1_Soporte2.Enabled = True
-            frm_Orden_Trabajo.txt_Cantidad2_Soporte2.Enabled = True
-            frm_Orden_Trabajo.txt_Cantidad3_Soporte2.Enabled = True
-            frm_Orden_Trabajo.cboFormato1_Soporte2.Enabled = True
-            frm_Orden_Trabajo.cboFormato2_Soporte2.Enabled = True
-            frm_Orden_Trabajo.cboFormato3_Soporte2.Enabled = True
-
-            frm_Orden_Trabajo.txt_cantidad3_detalle3.Enabled = True
-            frm_Orden_Trabajo.cboPiezas3_Detalle3.Enabled = True
-            frm_Orden_Trabajo.txtTamaño3_Detalle3.Enabled = True
-            frm_Orden_Trabajo.cboTipoImpresion3_Detalle3.Enabled = True
-
-            frm_Orden_Trabajo.txt_Papel1_Soporte3.Enabled = True
-            frm_Orden_Trabajo.txt_Papel2_Soporte3.Enabled = True
-            frm_Orden_Trabajo.txt_Papel3_Soporte3.Enabled = True
-            frm_Orden_Trabajo.txt_Gramaje1_Soporte3.Enabled = True
-            frm_Orden_Trabajo.txt_Gramaje2_Soporte3.Enabled = True
-            frm_Orden_Trabajo.txt_Gramaje3_Soporte3.Enabled = True
-            frm_Orden_Trabajo.txt_Cantidad1_Soporte3.Enabled = True
-            frm_Orden_Trabajo.txt_Cantidad2_Soporte3.Enabled = True
-            frm_Orden_Trabajo.txt_Cantidad3_Soporte3.Enabled = True
-            frm_Orden_Trabajo.cboFormato1_Soporte3.Enabled = True
-            frm_Orden_Trabajo.cboFormato2_Soporte3.Enabled = True
-            frm_Orden_Trabajo.cboFormato3_Soporte3.Enabled = True
-
-            frm_Orden_Trabajo.txt_id_orden_trabajo.Enabled = False
-            frm_Orden_Trabajo.txtNombre_vendedor.Enabled = False
-            frm_Orden_Trabajo.txt_nombre_cliente.Enabled = False
-
-            frm_Orden_Trabajo.btnProceso1.Enabled = True
-            frm_Orden_Trabajo.btnProceso2.Enabled = True
-            frm_Orden_Trabajo.btnProceso3.Enabled = True
-            frm_Orden_Trabajo.btnImprimirFormulario.Enabled = False
-            frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = True
-            frm_Orden_Trabajo.btnCancelar_Orden_Trabajo.Enabled = True
-
-            frm_Orden_Trabajo.ShowDialog()
+            frm_Actualizar_Orden.txt_id_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_id_cliente", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.txt_nombre_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.txtid_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_id_vendedor", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.txtNombre_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.txt_observaciones.Text = dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.txt_mejoras.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
         End If
+        frm_Actualizar_Orden.txtNumero_Orden_Trabajo.Enabled = False
+        frm_Actualizar_Orden.Label1.Visible = False
+        frm_Actualizar_Orden.txt_id_orden_trabajo.Visible = False
+        frm_Actualizar_Orden.txt_id_cliente.Visible = False
+        frm_Actualizar_Orden.txtid_vendedor.Visible = False
+        frm_Actualizar_Orden.txtNombre_vendedor.Enabled = False
+        frm_Actualizar_Orden.txt_nombre_cliente.Enabled = False
+        frm_Actualizar_Orden.ShowDialog()
+
+        ''CARGA COMBOBOX PIEZA DETALLE 1
+        'Dim combopieza1 = (From sec In datacontext.PIEZA
+        '                   Select sec.PIE_id_pieza, sec.PIE_nombre_pie
+        'Order By PIE_nombre_pie Ascending)
+        'frm_Orden_Trabajo.cboPiezas1_Detalle1.DataSource = combopieza1
+        'frm_Orden_Trabajo.cboPiezas1_Detalle1.DisplayMember = "PIE_nombre_pie"
+        'frm_Orden_Trabajo.cboPiezas1_Detalle1.ValueMember = "PIE_id_pieza"
+
+        ''CARGA COMBOBOX PIEZA DETALLE 2
+        'Dim combopieza2 = (From sec In datacontext.PIEZA
+        '                   Select sec.PIE_id_pieza, sec.PIE_nombre_pie
+        '                   Order By PIE_nombre_pie Ascending)
+        'frm_Orden_Trabajo.cboPiezas2_Detalle2.DataSource = combopieza2
+        'frm_Orden_Trabajo.cboPiezas2_Detalle2.DisplayMember = "PIE_nombre_pie"
+        'frm_Orden_Trabajo.cboPiezas2_Detalle2.ValueMember = "PIE_id_pieza"
+
+        ''CARGA COMBOBOX PIEZA DETALLE 3
+        'Dim combopieza3 = (From sec In datacontext.PIEZA
+        '                   Select sec.PIE_id_pieza, sec.PIE_nombre_pie
+        '                   Order By PIE_nombre_pie Ascending)
+        'frm_Orden_Trabajo.cboPiezas3_Detalle3.DataSource = combopieza3
+        'frm_Orden_Trabajo.cboPiezas3_Detalle3.DisplayMember = "PIE_nombre_pie"
+        'frm_Orden_Trabajo.cboPiezas3_Detalle3.ValueMember = "PIE_id_pieza"
+
+        'If dgvLista_Orden_Trabajo.SelectedRows.Count = 0 Then
+        '    MsgBox("debe seleccionar una orden")
+        'Else
+
+        '    vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+
+        '    'LLENA LOS CAMPOS DE LA ORDEN
+        '    If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
+        '        frm_Orden_Trabajo.txt_id_orden_trabajo.Text = vble_id_orden
+        '        frm_Orden_Trabajo.cboTipo_Orden.SelectedItem = dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+        '        frm_Orden_Trabajo.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+        '        frm_Orden_Trabajo.dtpFecha_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+
+        '        frm_Orden_Trabajo.dtpFecha_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+
+        '        frm_Orden_Trabajo.txt_id_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_id_cliente", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+        '        frm_Orden_Trabajo.txt_nombre_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+        '        frm_Orden_Trabajo.txtid_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_id_vendedor", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+        '        frm_Orden_Trabajo.txtNombre_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+        '        frm_Orden_Trabajo.txt_observaciones.Text = dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+        '        frm_Orden_Trabajo.txt_mejoras.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+
+        '        Dim flag1 As Integer
+        '        Dim flag2 As Integer
+        '        Dim flag3 As Integer
+
+        '        If dgv_detalle_orden.RowCount = 1 Then
+        '            flag1 = 1
+        '            flag2 = 0
+        '            flag3 = 0
+        '        ElseIf dgv_detalle_orden.RowCount = 2 Then
+        '            flag1 = 1
+        '            flag2 = 1
+        '            flag3 = 0
+        '        ElseIf dgv_detalle_orden.RowCount = 3 Then
+        '            flag1 = 1
+        '            flag2 = 1
+        '            flag3 = 1
+        '        End If
+
+        '        If flag1 = 1 Then
+        '            frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgvLista_Orden_Trabajo.Rows(0).Index).Value
+        '            frm_Orden_Trabajo.txt_cantidad1_detalle1.Text = dgv_detalle_orden.Item("DOT_cantidad_dot", dgvLista_Orden_Trabajo.Rows(0).Index).Value
+
+        '            frm_Orden_Trabajo.cboPiezas1_Detalle1.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.Rows(0).Index).Value
+
+        '            frm_Orden_Trabajo.txtTamaño1_Detalle1.Text = dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.Rows(0).Index).Value
+        '            frm_Orden_Trabajo.cboTipoImpresion1_Detalle1.SelectedItem = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.Rows(0).Index).Value
+
+        '            frm_Orden_Trabajo.txt_Papel1_Soporte1.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.Rows(0).Index).Value
+        '            frm_Orden_Trabajo.txt_Papel2_Soporte1.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.Rows(0).Index).Value
+        '            frm_Orden_Trabajo.txt_Papel3_Soporte1.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.Rows(0).Index).Value
+
+        '            frm_Orden_Trabajo.txt_Gramaje1_Soporte1.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.Rows(0).Index).Value
+        '            frm_Orden_Trabajo.txt_Gramaje2_Soporte1.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.Rows(0).Index).Value
+        '            frm_Orden_Trabajo.txt_Gramaje3_Soporte1.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.Rows(0).Index).Value
+
+        '            frm_Orden_Trabajo.txt_Cantidad1_Soporte1.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_1", dgv_detalle_orden.Rows(0).Index).Value
+        '            frm_Orden_Trabajo.txt_Cantidad2_Soporte1.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_2", dgv_detalle_orden.Rows(0).Index).Value
+        '            frm_Orden_Trabajo.txt_Cantidad3_Soporte1.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_3", dgv_detalle_orden.Rows(0).Index).Value
+
+        '            frm_Orden_Trabajo.cboFormato1_Soporte1.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_1", dgv_detalle_orden.Rows(0).Index).Value
+        '            frm_Orden_Trabajo.cboFormato2_Soporte1.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_2", dgv_detalle_orden.Rows(0).Index).Value
+        '            frm_Orden_Trabajo.cboFormato3_Soporte1.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.Rows(0).Index).Value
+
+        '            frm_Orden_Trabajo.cboPiezas2_Detalle2.SelectedIndex = -1
+        '            frm_Orden_Trabajo.cboPiezas3_Detalle3.SelectedIndex = -1
+        '        End If
+
+        '        If flag2 = 1 Then
+        '            frm_Orden_Trabajo.txt_id_detalle_orden_trabajo2.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgvLista_Orden_Trabajo.Rows(1).Index).Value
+        '            frm_Orden_Trabajo.txt_cantidad2_detalle2.Text = dgv_detalle_orden.Item("DOT_cantidad_dot", dgvLista_Orden_Trabajo.Rows(1).Index).Value
+
+        '            frm_Orden_Trabajo.cboPiezas2_Detalle2.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.Rows(1).Index).Value
+
+        '            frm_Orden_Trabajo.txtTamaño2_Detalle2.Text = dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.Rows(1).Index).Value
+        '            frm_Orden_Trabajo.cboTipoImpresion2_Detalle2.SelectedItem = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.Rows(1).Index).Value
+
+        '            frm_Orden_Trabajo.txt_Papel1_Soporte2.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.Rows(1).Index).Value
+        '            frm_Orden_Trabajo.txt_Papel2_Soporte2.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.Rows(1).Index).Value
+        '            frm_Orden_Trabajo.txt_Papel3_Soporte2.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.Rows(1).Index).Value
+
+        '            frm_Orden_Trabajo.txt_Gramaje1_Soporte2.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.Rows(1).Index).Value
+        '            frm_Orden_Trabajo.txt_Gramaje2_Soporte2.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.Rows(1).Index).Value
+        '            frm_Orden_Trabajo.txt_Gramaje3_Soporte2.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.Rows(1).Index).Value
+
+        '            frm_Orden_Trabajo.txt_Cantidad1_Soporte2.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_1", dgv_detalle_orden.Rows(1).Index).Value
+        '            frm_Orden_Trabajo.txt_Cantidad2_Soporte2.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_2", dgv_detalle_orden.Rows(1).Index).Value
+        '            frm_Orden_Trabajo.txt_Cantidad3_Soporte2.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_3", dgv_detalle_orden.Rows(1).Index).Value
+
+        '            frm_Orden_Trabajo.cboFormato1_Soporte2.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_1", dgv_detalle_orden.Rows(1).Index).Value
+        '            frm_Orden_Trabajo.cboFormato2_Soporte2.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_2", dgv_detalle_orden.Rows(1).Index).Value
+        '            frm_Orden_Trabajo.cboFormato3_Soporte2.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.Rows(1).Index).Value
+
+        '            frm_Orden_Trabajo.cboPiezas3_Detalle3.SelectedIndex = -1
+
+        '        End If
+
+        '        If flag3 = 1 Then
+        '            frm_Orden_Trabajo.txt_id_detalle_orden_trabajo3.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgvLista_Orden_Trabajo.Rows(2).Index).Value
+        '            frm_Orden_Trabajo.txt_cantidad3_detalle3.Text = dgv_detalle_orden.Item("DOT_cantidad_dot", dgvLista_Orden_Trabajo.Rows(2).Index).Value
+
+
+        '            frm_Orden_Trabajo.cboPiezas3_Detalle3.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.Rows(2).Index).Value
+        '            frm_Orden_Trabajo.txtTamaño3_Detalle3.Text = dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.Rows(2).Index).Value
+        '            frm_Orden_Trabajo.cboTipoImpresion3_Detalle3.SelectedItem = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.Rows(2).Index).Value
+
+        '            frm_Orden_Trabajo.txt_Papel1_Soporte3.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.Rows(2).Index).Value
+        '            frm_Orden_Trabajo.txt_Papel2_Soporte3.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.Rows(2).Index).Value
+        '            frm_Orden_Trabajo.txt_Papel3_Soporte3.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.Rows(2).Index).Value
+
+        '            frm_Orden_Trabajo.txt_Gramaje1_Soporte3.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.Rows(2).Index).Value
+        '            frm_Orden_Trabajo.txt_Gramaje2_Soporte3.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.Rows(2).Index).Value
+        '            frm_Orden_Trabajo.txt_Gramaje3_Soporte3.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.Rows(2).Index).Value
+
+        '            frm_Orden_Trabajo.txt_Cantidad1_Soporte3.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_1", dgv_detalle_orden.Rows(2).Index).Value
+        '            frm_Orden_Trabajo.txt_Cantidad2_Soporte3.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_2", dgv_detalle_orden.Rows(2).Index).Value
+        '            frm_Orden_Trabajo.txt_Cantidad3_Soporte3.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_3", dgv_detalle_orden.Rows(2).Index).Value
+
+        '            frm_Orden_Trabajo.cboFormato1_Soporte3.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_1", dgv_detalle_orden.Rows(2).Index).Value
+        '            frm_Orden_Trabajo.cboFormato2_Soporte3.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_2", dgv_detalle_orden.Rows(2).Index).Value
+        '            frm_Orden_Trabajo.cboFormato3_Soporte3.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.Rows(2).Index).Value
+        '        End If
+        '    End If
+        '    ' Me.Close()
+        '    frm_Orden_Trabajo.Text = "Modificar Orden"
+
+        '    frm_Orden_Trabajo.Label45.Visible = False
+        '    frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = False
+        '    frm_Orden_Trabajo.Label52.Visible = False
+        '    frm_Orden_Trabajo.txt_id_detalle_orden_trabajo2.Visible = False
+        '    frm_Orden_Trabajo.Label53.Visible = False
+        '    frm_Orden_Trabajo.txt_id_detalle_orden_trabajo3.Visible = False
+
+        '    frm_Orden_Trabajo.btnNueva_Orden_Trabajo.Visible = False
+        '    frm_Orden_Trabajo.txt_observaciones.Enabled = True
+        '    frm_Orden_Trabajo.txt_mejoras.Enabled = True
+        '    frm_Orden_Trabajo.txtNumero_Orden_Trabajo.Enabled = True
+        '    frm_Orden_Trabajo.cboTipo_Orden.Enabled = True
+        '    frm_Orden_Trabajo.btnGuardar_Orden_Trabajo.Enabled = False
+        '    frm_Orden_Trabajo.btnBuscar_cliente.Enabled = True
+        '    frm_Orden_Trabajo.btnBuscar_Vendedor.Enabled = True
+        '    frm_Orden_Trabajo.txt_id_cliente.Visible = False
+        '    frm_Orden_Trabajo.txtid_vendedor.Visible = False
+
+        '    frm_Orden_Trabajo.txt_cantidad1_detalle1.Enabled = True
+        '    frm_Orden_Trabajo.cboPiezas1_Detalle1.Enabled = True
+        '    frm_Orden_Trabajo.txtTamaño1_Detalle1.Enabled = True
+        '    frm_Orden_Trabajo.cboTipoImpresion1_Detalle1.Enabled = True
+
+        '    frm_Orden_Trabajo.txt_Papel1_Soporte1.Enabled = True
+        '    frm_Orden_Trabajo.txt_Papel2_Soporte1.Enabled = True
+        '    frm_Orden_Trabajo.txt_Papel3_Soporte1.Enabled = True
+        '    frm_Orden_Trabajo.txt_Gramaje1_Soporte1.Enabled = True
+        '    frm_Orden_Trabajo.txt_Gramaje2_Soporte1.Enabled = True
+        '    frm_Orden_Trabajo.txt_Gramaje3_Soporte1.Enabled = True
+        '    frm_Orden_Trabajo.txt_Cantidad1_Soporte1.Enabled = True
+        '    frm_Orden_Trabajo.txt_Cantidad2_Soporte1.Enabled = True
+        '    frm_Orden_Trabajo.txt_Cantidad3_Soporte1.Enabled = True
+        '    frm_Orden_Trabajo.cboFormato1_Soporte1.Enabled = True
+        '    frm_Orden_Trabajo.cboFormato2_Soporte1.Enabled = True
+        '    frm_Orden_Trabajo.cboFormato3_Soporte1.Enabled = True
+
+        '    frm_Orden_Trabajo.txt_cantidad2_detalle2.Enabled = True
+        '    frm_Orden_Trabajo.cboPiezas2_Detalle2.Enabled = True
+        '    frm_Orden_Trabajo.txtTamaño2_Detalle2.Enabled = True
+        '    frm_Orden_Trabajo.cboTipoImpresion2_Detalle2.Enabled = True
+
+        '    frm_Orden_Trabajo.txt_Papel1_Soporte2.Enabled = True
+        '    frm_Orden_Trabajo.txt_Papel2_Soporte2.Enabled = True
+        '    frm_Orden_Trabajo.txt_Papel3_Soporte2.Enabled = True
+        '    frm_Orden_Trabajo.txt_Gramaje1_Soporte2.Enabled = True
+        '    frm_Orden_Trabajo.txt_Gramaje2_Soporte2.Enabled = True
+        '    frm_Orden_Trabajo.txt_Gramaje3_Soporte2.Enabled = True
+        '    frm_Orden_Trabajo.txt_Cantidad1_Soporte2.Enabled = True
+        '    frm_Orden_Trabajo.txt_Cantidad2_Soporte2.Enabled = True
+        '    frm_Orden_Trabajo.txt_Cantidad3_Soporte2.Enabled = True
+        '    frm_Orden_Trabajo.cboFormato1_Soporte2.Enabled = True
+        '    frm_Orden_Trabajo.cboFormato2_Soporte2.Enabled = True
+        '    frm_Orden_Trabajo.cboFormato3_Soporte2.Enabled = True
+
+        '    frm_Orden_Trabajo.txt_cantidad3_detalle3.Enabled = True
+        '    frm_Orden_Trabajo.cboPiezas3_Detalle3.Enabled = True
+        '    frm_Orden_Trabajo.txtTamaño3_Detalle3.Enabled = True
+        '    frm_Orden_Trabajo.cboTipoImpresion3_Detalle3.Enabled = True
+
+        '    frm_Orden_Trabajo.txt_Papel1_Soporte3.Enabled = True
+        '    frm_Orden_Trabajo.txt_Papel2_Soporte3.Enabled = True
+        '    frm_Orden_Trabajo.txt_Papel3_Soporte3.Enabled = True
+        '    frm_Orden_Trabajo.txt_Gramaje1_Soporte3.Enabled = True
+        '    frm_Orden_Trabajo.txt_Gramaje2_Soporte3.Enabled = True
+        '    frm_Orden_Trabajo.txt_Gramaje3_Soporte3.Enabled = True
+        '    frm_Orden_Trabajo.txt_Cantidad1_Soporte3.Enabled = True
+        '    frm_Orden_Trabajo.txt_Cantidad2_Soporte3.Enabled = True
+        '    frm_Orden_Trabajo.txt_Cantidad3_Soporte3.Enabled = True
+        '    frm_Orden_Trabajo.cboFormato1_Soporte3.Enabled = True
+        '    frm_Orden_Trabajo.cboFormato2_Soporte3.Enabled = True
+        '    frm_Orden_Trabajo.cboFormato3_Soporte3.Enabled = True
+
+        '    frm_Orden_Trabajo.txt_id_orden_trabajo.Enabled = False
+        '    frm_Orden_Trabajo.txtNombre_vendedor.Enabled = False
+        '    frm_Orden_Trabajo.txt_nombre_cliente.Enabled = False
+
+        '    frm_Orden_Trabajo.btnProceso1.Enabled = True
+        '    frm_Orden_Trabajo.btnProceso2.Enabled = True
+        '    frm_Orden_Trabajo.btnProceso3.Enabled = True
+        '    frm_Orden_Trabajo.btnImprimirFormulario.Enabled = False
+        '    frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = True
+        '    frm_Orden_Trabajo.btnCancelar_Orden_Trabajo.Enabled = True
+
+        '    frm_Orden_Trabajo.ShowDialog()
+        'End If
     End Sub
 
     Private Sub txt_Buscar_orden_trabajo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_orden_trabajo.TextChanged
@@ -652,7 +676,6 @@
         Me.Close()
         Me.Dispose()
     End Sub
-
 
     Private Sub btnEliminar_Detalle_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar_Producto.Click
         If dgv_detalle_orden.SelectedRows.Count > 0 Then
@@ -926,5 +949,8 @@
         Me.Dispose()
     End Sub
 
+    Private Sub btnModificarProducto_Click(sender As System.Object, e As System.EventArgs) Handles btnModificarProducto.Click
+
+    End Sub
 End Class
 

@@ -108,7 +108,6 @@
         cboFormato3_Soporte3.SelectedIndex = -1
     End Sub
 
-
     Private Sub btnBuscar_cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_cliente.Click
         frm_Cliente.quienllamocliente = Me
         frm_Cliente.Text = "Seleccionar Vendedor"
@@ -118,6 +117,7 @@
     End Sub
 
     Private Sub btnBuscar_Vendedor_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_Vendedor.Click
+        frm_Vendedor.quienllamovendedor = Me
         frm_Vendedor.Text = "Seleccionar Vendedor"
         frm_Vendedor.btnEliminar_vendedor.Enabled = False
         frm_Vendedor.GroupNuevoVendedor.Enabled = False
@@ -304,7 +304,6 @@
             Else
                 MsgBox("No se ha cargado ningún registro")
             End If
-
 
         ElseIf Me.Text = "Modificar Orden" Then
             If txt_id_detalle_orden_trabajo2.Text <> "" Then

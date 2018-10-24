@@ -173,7 +173,7 @@ Partial Class frm_Actualizar_Orden
         '
         'txt_id_cliente
         '
-        Me.txt_id_cliente.Location = New System.Drawing.Point(440, 186)
+        Me.txt_id_cliente.Location = New System.Drawing.Point(429, 176)
         Me.txt_id_cliente.Name = "txt_id_cliente"
         Me.txt_id_cliente.Size = New System.Drawing.Size(12, 20)
         Me.txt_id_cliente.TabIndex = 72
@@ -266,7 +266,7 @@ Partial Class frm_Actualizar_Orden
         '
         'txtid_vendedor
         '
-        Me.txtid_vendedor.Location = New System.Drawing.Point(440, 152)
+        Me.txtid_vendedor.Location = New System.Drawing.Point(441, 152)
         Me.txtid_vendedor.Name = "txtid_vendedor"
         Me.txtid_vendedor.Size = New System.Drawing.Size(12, 20)
         Me.txtid_vendedor.TabIndex = 79
@@ -286,6 +286,7 @@ Partial Class frm_Actualizar_Orden
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.dtpFecha_Entrega)
         Me.GroupBox1.Controls.Add(Me.Label54)
+        Me.GroupBox1.Controls.Add(Me.txt_id_cliente)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(452, 351)
@@ -328,7 +329,6 @@ Partial Class frm_Actualizar_Orden
         Me.Controls.Add(Me.btnBuscar_cliente)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.txt_id_orden_trabajo)
-        Me.Controls.Add(Me.txt_id_cliente)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txt_mejoras)
         Me.Controls.Add(Me.Label19)

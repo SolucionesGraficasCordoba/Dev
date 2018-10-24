@@ -1,6 +1,7 @@
 ﻿Public Class frm_Vendedor
 
     Dim datacontext As New DataS_Interno
+    Public quienllamovendedor As Form
 
     Private Sub Vendedor_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txt_id_vendedor.Visible = False
@@ -19,11 +20,9 @@
                 limpiarcontroles()
                 Exit Sub
             End If
-
             If txt_nombre_vendedor.Text.Length = 0 Then
                 MsgBox("Debe completar todos los campos requeridos")
                 Exit Sub
-
             End If
             Dim clie = New VENDEDOR
             clie.VEN_nombre_ven = StrConv(txt_nombre_vendedor.Text, VbStrConv.ProperCase)
@@ -180,9 +179,17 @@
     End Sub
 
     Private Sub dgvLista_vendedores_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_vendedores.CellDoubleClick
-        frm_Orden_Trabajo.txtid_vendedor.Text = dgvLista_vendedores.SelectedCells(0).Value
-        frm_Orden_Trabajo.txtNombre_vendedor.Text = dgvLista_vendedores.SelectedCells(1).Value
+
+        If quienllamovendedor.Name = frm_Orden_Trabajo.Name Then
+            frm_Orden_Trabajo.txtid_vendedor.Text = dgvLista_vendedores.SelectedCells(0).Value
+            frm_Orden_Trabajo.txtNombre_vendedor.Text = dgvLista_vendedores.SelectedCells(1).Value
+
+        ElseIf quienllamovendedor.Name = frm_Actualizar_Orden.Name Then
+            frm_Actualizar_Orden.txtid_vendedor.Text = dgvLista_vendedores.SelectedCells(0).Value
+            frm_Actualizar_Orden.txtNombre_vendedor.Text = dgvLista_vendedores.SelectedCells(1).Value
+        End If
         Me.Close()
+
     End Sub
 
     Private Sub frm_Vendedor_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
