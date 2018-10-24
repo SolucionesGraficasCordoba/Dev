@@ -1006,9 +1006,7 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.btnEliminar_Producto.Enabled = False
         frm_Listado_Orden_Trabajo.btnVer.Enabled = True
         frm_Listado_Orden_Trabajo.btn_Cancelar.Enabled = True
-
         frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Enabled = True
-
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
         frm_Listado_Orden_Trabajo.dgv_detalle_orden.ClearSelection()
 
