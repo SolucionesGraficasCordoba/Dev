@@ -8,6 +8,9 @@ Public Class frm_Principal
     End Sub
 
     Private Sub CerrarSesiónToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
+        For Each aform As Form In Me.MdiChildren
+            aform.Close()
+        Next
         frm_ingreso.txt_contraseña.Clear()
         frm_ingreso.txt_usuario.Clear()
         frm_ingreso.txt_usuario.Select()
@@ -30,7 +33,10 @@ Public Class frm_Principal
         frm_Usuario.btnBuscar_Colaborador.Enabled = True
         frm_Usuario.GroupListadoUsuarios.Enabled = False
         frm_Usuario.dgvLista_Usuarios.ClearSelection()
-        frm_Usuario.ShowDialog()
+
+        'frm_Usuario.ShowDialog()
+        frm_Usuario.MdiParent = Me
+        frm_Usuario.Show()
     End Sub
 
     Private Sub CambiarContraeñaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles CambiarContraeñaToolStripMenuItem.Click
@@ -1009,7 +1015,7 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.ShowDialog()
     End Sub
 
-    Private Sub ModificarOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ModificarOrdenToolStripMenuItem.Click
+    Private Sub ModificarOrdenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarOrdenToolStripMenuItem.Click
         frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
 
         frm_Orden_Trabajo.Text = "Modificar Orden"
@@ -1023,7 +1029,7 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.ShowDialog()
     End Sub
 
-    Private Sub EliminarOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarOrdenToolStripMenuItem.Click
+    Private Sub EliminarOrdenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarOrdenToolStripMenuItem.Click
 
         frm_Orden_Trabajo.Text = "Eliminar Orden"
         frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Enabled = True
@@ -1040,34 +1046,34 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.ShowDialog()
     End Sub
 
-    Private Sub TareasToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles TareasToolStripMenuItem1.Click
+    Private Sub TareasToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TareasToolStripMenuItem1.Click
         frm_Generar_Informe.ShowDialog()
     End Sub
 
-    Private Sub NuevoRetrabajoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevoRetrabajoToolStripMenuItem.Click
+    Private Sub NuevoRetrabajoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NuevoRetrabajoToolStripMenuItem.Click
         frm_retrabajo.Text = "Nuevo Re-Trabajo"
         frm_retrabajo.ShowDialog()
     End Sub
 
-    Private Sub EliminarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarToolStripMenuItem.Click
+    Private Sub EliminarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarToolStripMenuItem.Click
         frm_Listado_Retrabajo.Text = "Eliminar Re-Trabajo"
         frm_Listado_Retrabajo.btnGenerarInforme.Enabled = False
         frm_Listado_Retrabajo.btnVer.Enabled = False
         frm_Listado_Retrabajo.ShowDialog()
     End Sub
 
-    Private Sub ConsultarToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem1.Click
+    Private Sub ConsultarToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarToolStripMenuItem1.Click
         frm_Listado_Retrabajo.Text = "Consultar Re-Trabajo"
         frm_Listado_Retrabajo.btnGenerarInforme.Enabled = True
         frm_Listado_Retrabajo.btnEliminar_ReTrabajo.Enabled = False
         frm_Listado_Retrabajo.ShowDialog()
     End Sub
 
-    Private Sub EtiquetasToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EtiquetasToolStripMenuItem.Click
+    Private Sub EtiquetasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EtiquetasToolStripMenuItem.Click
         frm_Etiqueta_Modelo_1.ShowDialog()
     End Sub
 
-    Private Sub NuevoToolStripMenuItem_Click_1(sender As System.Object, e As System.EventArgs) Handles NuevoToolStripMenuItem.Click
+    Private Sub NuevoToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NuevoToolStripMenuItem.Click
 
         frm_Productos.Text = "Nuevo Producto"
         frm_Productos.dgvLista_Productos.ClearSelection()
@@ -1095,7 +1101,7 @@ Public Class frm_Principal
         frm_Productos.ShowDialog()
     End Sub
 
-    Private Sub ModificarToolStripMenuItem_Click_1(sender As System.Object, e As System.EventArgs) Handles ModificarToolStripMenuItem.Click
+    Private Sub ModificarToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarToolStripMenuItem.Click
 
         frm_Productos.Text = "Modificar Producto"
         frm_Productos.GroupBox2.Enabled = True
@@ -1118,7 +1124,7 @@ Public Class frm_Principal
         frm_Productos.ShowDialog()
     End Sub
 
-    Private Sub EliminarToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles EliminarToolStripMenuItem1.Click
+    Private Sub EliminarToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarToolStripMenuItem1.Click
 
         frm_Productos.Text = "Eliminar Producto"
         frm_Productos.dgvLista_Productos.ClearSelection()
@@ -1147,13 +1153,13 @@ Public Class frm_Principal
         frm_Productos.ShowDialog()
     End Sub
 
-    Private Sub ConsultarToolStripMenuItem2_Click(sender As System.Object, e As System.EventArgs)
+    Private Sub ConsultarToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
 
 
     End Sub
 
-    Private Sub AltaToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles AltaToolStripMenuItem1.Click
+    Private Sub AltaToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaToolStripMenuItem1.Click
 
         frm_Movimiento_Producto.Text = "Alta de Productos"
         frm_Movimiento_Producto.GroupListadoProductos.Enabled = True
@@ -1181,7 +1187,7 @@ Public Class frm_Principal
         frm_Movimiento_Producto.ShowDialog()
     End Sub
 
-    Private Sub BajaToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles BajaToolStripMenuItem1.Click
+    Private Sub BajaToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BajaToolStripMenuItem1.Click
         frm_Movimiento_Producto.Text = "Baja de Productos"
         frm_Movimiento_Producto.GroupListadoProductos.Enabled = True
         frm_Movimiento_Producto.txt_Codigo.Clear()
@@ -1207,7 +1213,7 @@ Public Class frm_Principal
         frm_Movimiento_Producto.ShowDialog()
     End Sub
 
-    Private Sub ConsultarToolStripMenuItem4_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem4.Click
+    Private Sub ConsultarToolStripMenuItem4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarToolStripMenuItem4.Click
 
         frm_Productos.Text = "Consultar Producto"
         frm_Productos.GroupBox2.Enabled = True
@@ -1234,7 +1240,9 @@ Public Class frm_Principal
         frm_Productos.dgvLista_Productos.ClearSelection()
         frm_Productos.dgvLista_Productos.Enabled = True
 
-        frm_Productos.ShowDialog()
+        'frm_Productos.ShowDialog()
+        frm_Productos.MdiParent = Me
+        frm_Productos.Show()
     End Sub
 
     Private Sub frm_Principal_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
@@ -1245,13 +1253,13 @@ Public Class frm_Principal
         Me.Dispose()
     End Sub
 
-    Private Sub ConsultarMovimientosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarMovimientosToolStripMenuItem.Click
+    Private Sub ConsultarMovimientosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarMovimientosToolStripMenuItem.Click
         frm_Listado_Movimientos.Text = "Consultar Movimiento"
         frm_Listado_Movimientos.ShowDialog()
     End Sub
 
     Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-       
+
     End Sub
 
 End Class
