@@ -113,6 +113,12 @@
     <Compile Include="Presentacion\frm_Actualizar_Orden.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\frm_Actualizar_Producto_Orden.Designer.vb">
+      <DependentUpon>frm_Actualizar_Producto_Orden.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Actualizar_Producto_Orden.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_Listado_Movimientos.Designer.vb">
       <DependentUpon>frm_Listado_Movimientos.vb</DependentUpon>
     </Compile>
@@ -320,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Actualizar_Orden.resx">
       <DependentUpon>frm_Actualizar_Orden.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Actualizar_Producto_Orden.resx">
+      <DependentUpon>frm_Actualizar_Producto_Orden.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Listado_Movimientos.resx">
       <DependentUpon>frm_Listado_Movimientos.vb</DependentUpon>
