@@ -109,8 +109,12 @@ Partial Class frm_Listado_Tareas
         '
         'dgvColaboradores
         '
+        Me.dgvColaboradores.AllowUserToAddRows = False
+        Me.dgvColaboradores.AllowUserToDeleteRows = False
+        Me.dgvColaboradores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvColaboradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvColaboradores.Location = New System.Drawing.Point(9, 46)
+        Me.dgvColaboradores.MultiSelect = False
         Me.dgvColaboradores.Name = "dgvColaboradores"
         Me.dgvColaboradores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvColaboradores.Size = New System.Drawing.Size(486, 189)
@@ -190,6 +194,7 @@ Partial Class frm_Listado_Tareas
         '
         'dgvTarea_x_Colaborador
         '
+        Me.dgvTarea_x_Colaborador.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvTarea_x_Colaborador.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvTarea_x_Colaborador.Location = New System.Drawing.Point(15, 19)
         Me.dgvTarea_x_Colaborador.Name = "dgvTarea_x_Colaborador"

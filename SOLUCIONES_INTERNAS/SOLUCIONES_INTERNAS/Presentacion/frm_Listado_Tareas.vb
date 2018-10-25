@@ -38,7 +38,7 @@ Public Class frm_Listado_Tareas
         dgvColaboradores.Columns(0).DataPropertyName = "COL_id_colaborador"
         dgvColaboradores.Columns(0).Visible = False
         dgvColaboradores.Columns(1).DataPropertyName = "COL_nombre_col"
-        dgvColaboradores.Columns(1).Width = 350
+        'dgvColaboradores.Columns(1).Width = 350
     End Sub
 
     'BOTON ELIMINAR
@@ -136,11 +136,11 @@ Public Class frm_Listado_Tareas
         dgvTarea_x_Colaborador.Columns(0).DataPropertyName = "TAR_id_tarea"
         dgvTarea_x_Colaborador.Columns(0).Visible = False
         dgvTarea_x_Colaborador.Columns(1).DataPropertyName = "TAR_detalle_tarea"
-        dgvTarea_x_Colaborador.Columns(1).Width = 200
+        'dgvTarea_x_Colaborador.Columns(1).Width = 200
         dgvTarea_x_Colaborador.Columns(2).DataPropertyName = "TAR_tiempo_estimado"
-        dgvTarea_x_Colaborador.Columns(2).Width = 60
+        'dgvTarea_x_Colaborador.Columns(2).Width = 60
         dgvTarea_x_Colaborador.Columns(3).DataPropertyName = "TAR_tiempo_real"
-        dgvTarea_x_Colaborador.Columns(3).Width = 60
+        'dgvTarea_x_Colaborador.Columns(3).Width = 60
         dgvTarea_x_Colaborador.Columns(4).DataPropertyName = "TAR_observaciones"
         dgvTarea_x_Colaborador.Columns(5).DataPropertyName = "ORT_id_orden_trabajo"
         dgvTarea_x_Colaborador.Columns(5).Visible = False
@@ -151,7 +151,7 @@ Public Class frm_Listado_Tareas
         dgvTarea_x_Colaborador.Columns(8).DataPropertyName = "TAR_carga_horaria"
         dgvTarea_x_Colaborador.Columns(8).Visible = False
         dgvTarea_x_Colaborador.Columns(9).DataPropertyName = "TAR_hora_fin"
-        dgvTarea_x_Colaborador.Columns(9).Width = 60
+        'dgvTarea_x_Colaborador.Columns(9).Width = 60
         dgvTarea_x_Colaborador.Columns(10).DataPropertyName = "Expr1"
         dgvTarea_x_Colaborador.Columns(10).Visible = False
         dgvTarea_x_Colaborador.Columns(11).DataPropertyName = "COL_nombre_col"
@@ -873,7 +873,7 @@ Public Class frm_Listado_Tareas
     Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnExportarListado.Click
         Try
             'intentar generar el documento
-            Dim doc As New Document(PageSize.A4.Rotate(), 10, 10, 10, 10)
+            Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
             'path que guarda el reporte en el escritorio de windows (desktop)
             Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Tareas diarias.pdf"
             Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
@@ -885,21 +885,9 @@ Public Class frm_Listado_Tareas
             Me.Close()
         Catch ex As Exception
             'si el mensaje es fallido mostrar msgbox
-            MessageBox.Show("No se puede generar el pdf.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
-
-    Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
-        'funcion para obtener el tamaño de las columnas del datagridview
-
-        Dim values As Single() = New Single(dg.ColumnCount - 1) {}
-        For i As Integer = 0 To dg.ColumnCount - 1
-            If dgvTarea_x_Colaborador.Columns(i).Visible = True Then
-                values(i) = CSng(dg.Columns(i).Width)
-            End If
-        Next
-        Return values
-    End Function
 
     Public Sub ExportarDatosPDF(ByVal document As Document)
 
@@ -914,12 +902,12 @@ Public Class frm_Listado_Tareas
         'se asignan algunas propiedades para el diseño del PDF
         datatable.DefaultCell.Padding = 3
 
-        'Dim headerwidths As Single() = GetColumnsSize(dgv_movimientos)
-        'datatable.SetWidths(headerwidths)
+        Dim headerwidths As Single() = GetColumnsSize(dgvTarea_x_Colaborador)
+        datatable.SetWidths(headerwidths)
 
         datatable.WidthPercentage = 100
         datatable.DefaultCell.BorderWidth = 2
-        datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+        'datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
 
         'se crea el encabezado en el PDF
         Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value, New Font(Font.Name = "Tahoma", 20, Font.Bold))
@@ -955,5 +943,16 @@ Public Class frm_Listado_Tareas
         document.Add(texto)
         document.Add(datatable)
     End Sub
-
+    Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
+        'funcion para obtener el tamaño de las columnas del datagridview
+        Dim indice_array As Integer = 0
+        Dim values As Single() = New Single(contadorcolumnasvisibles - 1) {}
+        For i As Integer = 0 To dg.ColumnCount - 1
+            If dgvTarea_x_Colaborador.Columns(i).Visible = True Then
+                values(indice_array) = CSng(dg.Columns(i).Width)
+                indice_array = indice_array + 1
+            End If
+        Next
+        Return values
+    End Function
 End Class
