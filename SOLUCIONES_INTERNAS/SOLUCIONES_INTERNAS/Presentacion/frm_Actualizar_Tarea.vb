@@ -242,6 +242,7 @@
     Private Sub frm_Actualizar_Tarea_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
     End Sub
+
     Sub limpiarcampos()
         txt_hora_fin.Clear()
         txt_id_orden_trabajo.Clear()

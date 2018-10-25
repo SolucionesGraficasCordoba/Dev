@@ -206,6 +206,12 @@ Public Class frm_Etiqueta_Modelo_1
     Private Sub btnBuscar_Orden_Click_1(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Orden.Click
         frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
         frm_Listado_Orden_Trabajo.Text = "Seleccionar Orden"
+        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+        frm_Listado_Orden_Trabajo.GroupProcesoOrden.Enabled = False
+        frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.btnModificarProceso.Enabled = False
+        frm_Listado_Orden_Trabajo.btnEliminarProceso.Enabled = False
         frm_Listado_Orden_Trabajo.Show()
     End Sub
 

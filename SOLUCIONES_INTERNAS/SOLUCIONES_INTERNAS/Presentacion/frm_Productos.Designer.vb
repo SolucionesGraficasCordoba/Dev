@@ -35,21 +35,25 @@ Partial Class frm_Productos
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.tb_prod_stock_minimo = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tb_prod_codigo = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnExportarPDF = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.tb_cod_busqueda = New System.Windows.Forms.TextBox()
         Me.tb_prod_busqueda = New System.Windows.Forms.TextBox()
+        Me.rbtProducto = New System.Windows.Forms.RadioButton()
+        Me.rbtCodigo = New System.Windows.Forms.RadioButton()
         CType(Me.dgvLista_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_prod_guardar
@@ -84,15 +88,15 @@ Partial Class frm_Productos
         Me.dgvLista_Productos.AllowUserToDeleteRows = False
         Me.dgvLista_Productos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvLista_Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLista_Productos.Location = New System.Drawing.Point(7, 54)
+        Me.dgvLista_Productos.Location = New System.Drawing.Point(7, 89)
         Me.dgvLista_Productos.Name = "dgvLista_Productos"
         Me.dgvLista_Productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_Productos.Size = New System.Drawing.Size(565, 229)
+        Me.dgvLista_Productos.Size = New System.Drawing.Size(565, 218)
         Me.dgvLista_Productos.TabIndex = 10
         '
         'btn_prod_eliminar
         '
-        Me.btn_prod_eliminar.Location = New System.Drawing.Point(386, 288)
+        Me.btn_prod_eliminar.Location = New System.Drawing.Point(386, 312)
         Me.btn_prod_eliminar.Name = "btn_prod_eliminar"
         Me.btn_prod_eliminar.Size = New System.Drawing.Size(90, 23)
         Me.btn_prod_eliminar.TabIndex = 9
@@ -117,7 +121,7 @@ Partial Class frm_Productos
         '
         'btn_prod_salir
         '
-        Me.btn_prod_salir.Location = New System.Drawing.Point(482, 288)
+        Me.btn_prod_salir.Location = New System.Drawing.Point(482, 312)
         Me.btn_prod_salir.Name = "btn_prod_salir"
         Me.btn_prod_salir.Size = New System.Drawing.Size(90, 23)
         Me.btn_prod_salir.TabIndex = 6
@@ -184,6 +188,17 @@ Partial Class frm_Productos
         Me.Label11.TabIndex = 18
         Me.Label11.Text = "Stock mínimo"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(29, 122)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(105, 13)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "* (Campo Requerido)"
+        '
         'tb_prod_stock_minimo
         '
         Me.tb_prod_stock_minimo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -232,37 +247,25 @@ Partial Class frm_Productos
         Me.Label6.TabIndex = 13
         Me.Label6.Text = "*"
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(29, 122)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(105, 13)
-        Me.Label8.TabIndex = 16
-        Me.Label8.Text = "* (Campo Requerido)"
-        '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.GroupBox3)
         Me.GroupBox2.Controls.Add(Me.btnExportarPDF)
         Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.Label5)
         Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.tb_prod_busqueda)
         Me.GroupBox2.Controls.Add(Me.dgvLista_Productos)
         Me.GroupBox2.Controls.Add(Me.btn_prod_eliminar)
         Me.GroupBox2.Controls.Add(Me.btn_prod_salir)
         Me.GroupBox2.Location = New System.Drawing.Point(13, 156)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(586, 326)
+        Me.GroupBox2.Size = New System.Drawing.Size(586, 343)
         Me.GroupBox2.TabIndex = 14
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Lista de productos"
         '
         'btnExportarPDF
         '
-        Me.btnExportarPDF.Location = New System.Drawing.Point(268, 289)
+        Me.btnExportarPDF.Location = New System.Drawing.Point(268, 313)
         Me.btnExportarPDF.Name = "btnExportarPDF"
         Me.btnExportarPDF.Size = New System.Drawing.Size(112, 22)
         Me.btnExportarPDF.TabIndex = 18
@@ -273,35 +276,68 @@ Partial Class frm_Productos
         '
         Me.Label9.AutoSize = True
         Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label9.Location = New System.Drawing.Point(112, 291)
+        Me.Label9.Location = New System.Drawing.Point(112, 315)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(2, 15)
         Me.Label9.TabIndex = 17
         '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(28, 24)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(104, 13)
-        Me.Label5.TabIndex = 14
-        Me.Label5.Text = "Filtro por descripción"
-        '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(4, 293)
+        Me.Label10.Location = New System.Drawing.Point(4, 317)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(97, 13)
         Me.Label10.TabIndex = 16
         Me.Label10.Text = "Total de Productos"
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.rbtCodigo)
+        Me.GroupBox3.Controls.Add(Me.rbtProducto)
+        Me.GroupBox3.Controls.Add(Me.tb_cod_busqueda)
+        Me.GroupBox3.Controls.Add(Me.tb_prod_busqueda)
+        Me.GroupBox3.Location = New System.Drawing.Point(180, 10)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(226, 73)
+        Me.GroupBox3.TabIndex = 19
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Búsqueda"
+        '
+        'tb_cod_busqueda
+        '
+        Me.tb_cod_busqueda.Location = New System.Drawing.Point(83, 47)
+        Me.tb_cod_busqueda.Name = "tb_cod_busqueda"
+        Me.tb_cod_busqueda.Size = New System.Drawing.Size(135, 20)
+        Me.tb_cod_busqueda.TabIndex = 23
+        '
         'tb_prod_busqueda
         '
-        Me.tb_prod_busqueda.Location = New System.Drawing.Point(164, 21)
+        Me.tb_prod_busqueda.Location = New System.Drawing.Point(83, 21)
         Me.tb_prod_busqueda.Name = "tb_prod_busqueda"
-        Me.tb_prod_busqueda.Size = New System.Drawing.Size(194, 20)
-        Me.tb_prod_busqueda.TabIndex = 8
+        Me.tb_prod_busqueda.Size = New System.Drawing.Size(135, 20)
+        Me.tb_prod_busqueda.TabIndex = 21
+        '
+        'rbtProducto
+        '
+        Me.rbtProducto.AutoSize = True
+        Me.rbtProducto.Location = New System.Drawing.Point(9, 22)
+        Me.rbtProducto.Name = "rbtProducto"
+        Me.rbtProducto.Size = New System.Drawing.Size(68, 17)
+        Me.rbtProducto.TabIndex = 24
+        Me.rbtProducto.TabStop = True
+        Me.rbtProducto.Text = "Producto"
+        Me.rbtProducto.UseVisualStyleBackColor = True
+        '
+        'rbtCodigo
+        '
+        Me.rbtCodigo.AutoSize = True
+        Me.rbtCodigo.Location = New System.Drawing.Point(9, 45)
+        Me.rbtCodigo.Name = "rbtCodigo"
+        Me.rbtCodigo.Size = New System.Drawing.Size(58, 17)
+        Me.rbtCodigo.TabIndex = 24
+        Me.rbtCodigo.TabStop = True
+        Me.rbtCodigo.Text = "Código"
+        Me.rbtCodigo.UseVisualStyleBackColor = True
         '
         'frm_Productos
         '
@@ -318,6 +354,8 @@ Partial Class frm_Productos
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -334,8 +372,6 @@ Partial Class frm_Productos
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents tb_prod_busqueda As System.Windows.Forms.TextBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
@@ -346,4 +382,9 @@ Partial Class frm_Productos
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents tb_prod_codigo As System.Windows.Forms.TextBox
     Friend WithEvents btnExportarPDF As System.Windows.Forms.Button
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents rbtCodigo As System.Windows.Forms.RadioButton
+    Friend WithEvents rbtProducto As System.Windows.Forms.RadioButton
+    Friend WithEvents tb_cod_busqueda As System.Windows.Forms.TextBox
+    Friend WithEvents tb_prod_busqueda As System.Windows.Forms.TextBox
 End Class

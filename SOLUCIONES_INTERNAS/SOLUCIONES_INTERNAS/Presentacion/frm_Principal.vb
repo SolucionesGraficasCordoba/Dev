@@ -1000,7 +1000,7 @@ Public Class frm_Principal
     End Sub
 
     Private Sub ConsultarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem.Click
-        frm_Listado_Orden_Trabajo.Text = "Consultar Orden"
+        frm_Listado_Orden_Trabajo.Text = "Consultar Orden / Producto / Proceso"
 
         frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
         frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
@@ -1008,6 +1008,9 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.btnVer.Enabled = True
         frm_Listado_Orden_Trabajo.btn_Cancelar.Enabled = True
         frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Enabled = True
+        frm_Listado_Orden_Trabajo.btnModificarProducto.Enabled = False
+        frm_Listado_Orden_Trabajo.btnModificarProceso.Enabled = False
+        frm_Listado_Orden_Trabajo.btnEliminarProceso.Enabled = False
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
         frm_Listado_Orden_Trabajo.dgv_detalle_orden.ClearSelection()
 
@@ -1017,12 +1020,18 @@ Public Class frm_Principal
     Private Sub ModificarOrdenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarOrdenToolStripMenuItem.Click
         frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
 
-        frm_Orden_Trabajo.Text = "Modificar Orden"
+        frm_Listado_Orden_Trabajo.Text = "Modificar Orden / Producto / Proceso"
         frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
         frm_Listado_Orden_Trabajo.btnEliminar_Producto.Enabled = False
         frm_Listado_Orden_Trabajo.btnVer.Enabled = False
         frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = True
         frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Enabled = True
+        frm_Listado_Orden_Trabajo.btnEliminarProceso.Enabled = False
+
+        frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.btnModificarProducto.Enabled = False
+        frm_Listado_Orden_Trabajo.btnModificarProceso.Enabled = False
+
         frm_Listado_Orden_Trabajo.dgv_detalle_orden.ClearSelection()
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
         frm_Listado_Orden_Trabajo.ShowDialog()
@@ -1030,13 +1039,16 @@ Public Class frm_Principal
 
     Private Sub EliminarOrdenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarOrdenToolStripMenuItem.Click
 
-        frm_Orden_Trabajo.Text = "Eliminar Orden"
+        frm_Listado_Orden_Trabajo.Text = "Eliminar Orden / Producto / Proceso"
         frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Enabled = True
 
         frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.btnModificarProducto.Enabled = False
+        frm_Listado_Orden_Trabajo.btnModificarProceso.Enabled = False
         frm_Listado_Orden_Trabajo.btnVer.Enabled = False
-        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = True
-        frm_Listado_Orden_Trabajo.btnEliminar_Producto.Enabled = True
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.btnEliminar_Producto.Enabled = False
+        frm_Listado_Orden_Trabajo.btnEliminarProceso.Enabled = False
         frm_Listado_Orden_Trabajo.btn_Cancelar.Enabled = True
 
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()

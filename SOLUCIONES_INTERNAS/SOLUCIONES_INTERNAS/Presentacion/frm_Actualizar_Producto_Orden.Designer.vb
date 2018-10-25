@@ -466,6 +466,7 @@ Partial Class frm_Actualizar_Producto_Orden
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.GroupProducto1)
         Me.Name = "frm_Actualizar_Producto_Orden"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Actualizar Producto de la Orden"
         Me.GroupProducto1.ResumeLayout(False)
         Me.GroupProducto1.PerformLayout()

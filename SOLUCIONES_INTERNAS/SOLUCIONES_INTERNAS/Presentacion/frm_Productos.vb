@@ -170,21 +170,6 @@ Public Class frm_Productos
         Me.Dispose()
     End Sub
 
-    Private Sub tb_prod_busqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tb_prod_busqueda.TextChanged
-        Dim buscarprod As String
-        armargrilla()
-        buscarprod = "*" & Me.tb_prod_busqueda.Text & "*"
-        Dim consultaprod = From p In datacontext.PRODUCTO
-                           Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo Where PROD_descripcion Like buscarprod.ToString
-        dgvLista_Productos.DataSource = consultaprod
-        dgvLista_Productos.ClearSelection()
-        For Each row As DataGridViewRow In dgvLista_Productos.Rows
-            If row.Cells(3).Value <= row.Cells(4).Value Then
-                row.DefaultCellStyle.BackColor = Color.Red
-            End If
-        Next
-    End Sub
-
     Private Sub frm_Productos_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
     End Sub
@@ -264,6 +249,7 @@ Public Class frm_Productos
         document.Add(texto)
         document.Add(datatable)
     End Sub
+
     Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
         'funcion para obtener el tamaño de las columnas del datagridview
 
@@ -278,4 +264,48 @@ Public Class frm_Productos
         Next
         Return values
     End Function
+
+    Private Sub rbtProducto_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtProducto.CheckedChanged
+        tb_cod_busqueda.Enabled = False
+        tb_cod_busqueda.Clear()
+        tb_prod_busqueda.Enabled = True
+        tb_prod_busqueda.Focus()
+    End Sub
+
+    Private Sub rbtCodigo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtCodigo.CheckedChanged
+        tb_prod_busqueda.Enabled = False
+        tb_prod_busqueda.Clear()
+        tb_cod_busqueda.Enabled = True
+        tb_cod_busqueda.Focus()
+    End Sub
+
+    Private Sub tb_prod_busqueda_TextChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tb_prod_busqueda.TextChanged
+        Dim buscarprod As String
+        armargrilla()
+        buscarprod = "*" & Me.tb_prod_busqueda.Text & "*"
+        Dim consultaprod = From p In datacontext.PRODUCTO
+                           Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo Where PROD_descripcion Like buscarprod.ToString
+        dgvLista_Productos.DataSource = consultaprod
+        dgvLista_Productos.ClearSelection()
+        For Each row As DataGridViewRow In dgvLista_Productos.Rows
+            If row.Cells(3).Value <= row.Cells(4).Value Then
+                row.DefaultCellStyle.BackColor = Color.Red
+            End If
+        Next
+    End Sub
+
+    Private Sub tb_cod_busqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tb_cod_busqueda.TextChanged
+        Dim buscarcod As String
+        armargrilla()
+        buscarcod = "*" & Me.tb_cod_busqueda.Text & "*"
+        Dim consultacod = From p In datacontext.PRODUCTO
+                           Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo Where PROD_codigo Like buscarcod.ToString
+        dgvLista_Productos.DataSource = consultacod
+        dgvLista_Productos.ClearSelection()
+        For Each row As DataGridViewRow In dgvLista_Productos.Rows
+            If row.Cells(3).Value <= row.Cells(4).Value Then
+                row.DefaultCellStyle.BackColor = Color.Red
+            End If
+        Next
+    End Sub
 End Class

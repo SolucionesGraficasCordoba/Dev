@@ -341,6 +341,7 @@ Partial Class frm_Actualizar_Orden
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Actualizar_Orden"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Actualizar Orden"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()

@@ -40,6 +40,7 @@ Partial Class frm_Proceso1
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.txt_id_detalle_orden = New System.Windows.Forms.TextBox()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.groupOffSet.SuspendLayout()
         Me.groupDigital.SuspendLayout()
         Me.groupGranFormato.SuspendLayout()
@@ -213,7 +214,7 @@ Partial Class frm_Proceso1
         '
         'btnAceptar
         '
-        Me.btnAceptar.Location = New System.Drawing.Point(229, 472)
+        Me.btnAceptar.Location = New System.Drawing.Point(148, 472)
         Me.btnAceptar.Name = "btnAceptar"
         Me.btnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btnAceptar.TabIndex = 6
@@ -222,16 +223,26 @@ Partial Class frm_Proceso1
         '
         'txt_id_detalle_orden
         '
-        Me.txt_id_detalle_orden.Location = New System.Drawing.Point(91, 474)
+        Me.txt_id_detalle_orden.Location = New System.Drawing.Point(12, 474)
         Me.txt_id_detalle_orden.Name = "txt_id_detalle_orden"
-        Me.txt_id_detalle_orden.Size = New System.Drawing.Size(100, 20)
+        Me.txt_id_detalle_orden.Size = New System.Drawing.Size(36, 20)
         Me.txt_id_detalle_orden.TabIndex = 7
+        '
+        'btnActualizar
+        '
+        Me.btnActualizar.Location = New System.Drawing.Point(229, 472)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar.TabIndex = 8
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'frm_Proceso1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(396, 502)
+        Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.txt_id_detalle_orden)
         Me.Controls.Add(Me.btnAceptar)
         Me.Controls.Add(Me.btnCancelar)
@@ -275,4 +286,5 @@ Partial Class frm_Proceso1
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
     Friend WithEvents txt_id_detalle_orden As System.Windows.Forms.TextBox
+    Friend WithEvents btnActualizar As System.Windows.Forms.Button
 End Class

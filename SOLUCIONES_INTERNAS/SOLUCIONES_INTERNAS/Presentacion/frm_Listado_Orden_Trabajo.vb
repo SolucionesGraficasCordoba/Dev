@@ -73,6 +73,15 @@
         End If
         vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
         CargarDetalle()
+        If Me.Text = "Modificar Orden / Producto / Proceso" Then
+            btnModificar_Orden.Enabled = True
+            btnEliminar_Orden.Enabled = False
+        ElseIf Me.Text = "Eliminar Orden / Producto / Proceso" Then
+            btnModificar_Orden.Enabled = False
+            btnEliminar_Orden.Enabled = True
+        End If
+       
+
     End Sub
 
     'CARGA DETALLES DE LA ORDEN
@@ -117,6 +126,15 @@
         'CARGA PROCESOS DEL PRODUCTO
         vble_id_proceso = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
         CargarProceso()
+       
+        If Me.Text = "Modificar Orden / Producto / Proceso" Then
+            btnModificarProducto.Enabled = True
+            btnEliminar_Producto.Enabled = False
+        ElseIf Me.Text = "Eliminar Orden / Producto / Proceso" Then
+            btnModificarProducto.Enabled = False
+            btnEliminar_Producto.Enabled = True
+        End If
+
     End Sub
 
     Sub CargarProceso()
@@ -155,6 +173,17 @@
         dgvProcesos.Columns(6).DataPropertyName = "PROC_descrip_logistica"
 
         dgvProcesos.DataSource = dataproceso
+    End Sub
+
+    Private Sub btnModificarProceso_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarProceso.Click
+
+        frm_Proceso1.txt_descripc_digital.Text = dgvProcesos.Item("PROC_descrip_digital", dgvProcesos.CurrentRow.Index).Value
+        frm_Proceso1.txt_descripc_offset.Text = dgvProcesos.Item("PROC_descrip_offset", dgvProcesos.CurrentRow.Index).Value
+        frm_Proceso1.txt_descripc_gran_formato.Text = dgvProcesos.Item("PROC_descrip_gran_formato", dgvProcesos.CurrentRow.Index).Value
+        frm_Proceso1.txt_descripc_logistica.Text = dgvProcesos.Item("PROC_descrip_logistica", dgvProcesos.CurrentRow.Index).Value
+        frm_Proceso1.txt_descripc_terminacion.Text = dgvProcesos.Item("PROC_descrip_terminacion", dgvProcesos.CurrentRow.Index).Value
+
+        frm_Proceso1.ShowDialog()
     End Sub
 
     Public Sub mostrargrillaobligaciones(ByVal datasource As System.Linq.IQueryable)
@@ -541,7 +570,7 @@
                     datacontext.SubmitChanges()
                     MsgBox("La orden y su detalle han sido eliminados")
                     cargargrilla()
-
+                    Me.Close()
             End Select
         Else
             MsgBox("Debe seleccionar un orden")
@@ -834,7 +863,6 @@
                 frm_Orden_Trabajo.cboFormato3_Soporte3.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.Rows(2).Index).Value
             End If
         End If
-        '  Me.Close()
 
         frm_Orden_Trabajo.Text = "Ver Orden"
 
@@ -845,10 +873,8 @@
         frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = False
         frm_Orden_Trabajo.Label52.Visible = False
         frm_Orden_Trabajo.txt_id_detalle_orden_trabajo2.Visible = False
-        ' frm_Orden_Trabajo.txt_id_detalle_orden_trabajo2.Visible = True
         frm_Orden_Trabajo.Label53.Visible = False
         frm_Orden_Trabajo.txt_id_detalle_orden_trabajo3.Visible = False
-        ' frm_Orden_Trabajo.txt_id_detalle_orden_trabajo3.Visible = True
         frm_Orden_Trabajo.dtpFecha_Entrega.Enabled = False
         frm_Orden_Trabajo.dtpFecha_Orden_Trabajo.Enabled = False
 
@@ -953,14 +979,14 @@
 
         If dgv_detalle_orden.Rows.Count > 0 Then
             frm_Actualizar_Producto_Orden.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Producto_Orden.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.CurrentRow.Index).Value
             frm_Actualizar_Producto_Orden.txt_cantidad.Text = dgv_detalle_orden.Item("DOT_cantidad_dot", dgv_detalle_orden.CurrentRow.Index).Value
 
             frm_Actualizar_Producto_Orden.cboPiezas.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.CurrentRow.Index).Value
-            ' cboPiezas1_Detalle1.SelectedValue = frm_Listado_Orden_Trabajo.dgv_detalle_orden.Item("PIE_id_pieza", frm_Listado_Orden_Trabajo.dgv_detalle_orden.Rows(0).Index).Value
-
+          
             frm_Actualizar_Producto_Orden.txtTamaño.Text = dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.CurrentRow.Index).Value
-            frm_Actualizar_Producto_Orden.cboTipoImpresion.SelectedItem = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.cboTipoImpresion.Text = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.CurrentRow.Index).Value
 
             frm_Actualizar_Producto_Orden.txt_Papel1_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.CurrentRow.Index).Value
             frm_Actualizar_Producto_Orden.txt_Papel2_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.CurrentRow.Index).Value
@@ -980,7 +1006,24 @@
         Else
             MsgBox("No hay productos por modificar")
         End If
+        frm_Actualizar_Producto_Orden.Label1.Visible = False
+        frm_Actualizar_Producto_Orden.Label45.Visible = False
+        frm_Actualizar_Producto_Orden.txt_id_detalle_orden_trabajo1.Visible = False
+        frm_Actualizar_Producto_Orden.txt_id_orden_trabajo.Visible = False
+        frm_Actualizar_Producto_Orden.txtNumero_Orden_Trabajo.Enabled = False
         frm_Actualizar_Producto_Orden.Show()
     End Sub
+
+    Private Sub dgvProcesos_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvProcesos.CellClick
+        If Me.Text = "Modificar Orden / Producto / Proceso" Then
+            btnModificarProceso.Enabled = True
+            btnEliminarProceso.Enabled = False
+        ElseIf Me.Text = "Eliminar Orden / Producto / Proceso" Then
+            btnModificarProceso.Enabled = False
+            btnEliminarProceso.Enabled = True
+        End If
+    End Sub
+
+  
 End Class
 
