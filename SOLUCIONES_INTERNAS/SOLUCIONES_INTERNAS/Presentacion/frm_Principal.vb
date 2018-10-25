@@ -1000,6 +1000,7 @@ Public Class frm_Principal
     End Sub
 
     Private Sub ConsultarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem.Click
+
         frm_Listado_Orden_Trabajo.Text = "Consultar Orden / Producto / Proceso"
 
         frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
@@ -1014,10 +1015,12 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
         frm_Listado_Orden_Trabajo.dgv_detalle_orden.ClearSelection()
 
-        frm_Listado_Orden_Trabajo.ShowDialog()
+        frm_Listado_Orden_Trabajo.MdiParent = Me
+        frm_Listado_Orden_Trabajo.Show()
     End Sub
 
     Private Sub ModificarOrdenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarOrdenToolStripMenuItem.Click
+
         frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
 
         frm_Listado_Orden_Trabajo.Text = "Modificar Orden / Producto / Proceso"
@@ -1034,7 +1037,9 @@ Public Class frm_Principal
 
         frm_Listado_Orden_Trabajo.dgv_detalle_orden.ClearSelection()
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
-        frm_Listado_Orden_Trabajo.ShowDialog()
+
+        frm_Listado_Orden_Trabajo.MdiParent = Me
+        frm_Listado_Orden_Trabajo.Show()
     End Sub
 
     Private Sub EliminarOrdenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarOrdenToolStripMenuItem.Click
@@ -1246,7 +1251,6 @@ Public Class frm_Principal
         frm_Productos.dgvLista_Productos.ClearSelection()
         frm_Productos.dgvLista_Productos.Enabled = True
 
-        'frm_Productos.ShowDialog()
         frm_Productos.MdiParent = Me
         frm_Productos.Show()
     End Sub
@@ -1261,7 +1265,8 @@ Public Class frm_Principal
 
     Private Sub ConsultarMovimientosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarMovimientosToolStripMenuItem.Click
         frm_Listado_Movimientos.Text = "Consultar Movimiento"
-        frm_Listado_Movimientos.ShowDialog()
+        frm_Listado_Movimientos.MdiParent = Me
+        frm_Listado_Movimientos.Show()
     End Sub
 
     Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
