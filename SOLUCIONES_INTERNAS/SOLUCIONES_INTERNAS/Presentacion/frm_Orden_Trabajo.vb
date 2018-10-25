@@ -523,40 +523,62 @@
                 txt_id_detalle_orden_trabajo1.Text = detalle.id_detalle_orden_trabajo
                 proceso.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
 
-                If frm_Proceso1.txt_descripc_offset.TextLength = 0 Then
-                    frm_Proceso1.groupOffSet.Text = ""
-                Else
-                    proceso.PROC_offset = frm_Proceso1.groupOffSet.Text
+                If frm_Proceso1.txt_descripc_offset.TextLength <> 0 Then
                     proceso.PROC_descrip_offset = StrConv(frm_Proceso1.txt_descripc_offset.Text, VbStrConv.ProperCase)
                 End If
 
-                If frm_Proceso1.txt_descripc_digital.TextLength = 0 Then
-                    frm_Proceso1.groupDigital.Text = ""
-                Else
-                    proceso.PROC_digital = frm_Proceso1.groupDigital.Text
+                If frm_Proceso1.txt_descripc_digital.TextLength <> 0 Then
                     proceso.PROC_descrip_digital = StrConv(frm_Proceso1.txt_descripc_digital.Text, VbStrConv.ProperCase)
                 End If
 
-                If frm_Proceso1.txt_descripc_gran_formato.TextLength = 0 Then
-                    frm_Proceso1.groupGranFormato.Text = ""
-                Else
-                    proceso.PROC_gran_formato = frm_Proceso1.groupGranFormato.Text
+                If frm_Proceso1.txt_descripc_gran_formato.TextLength <> 0 Then
                     proceso.PROC_descrip_gran_formato = StrConv(frm_Proceso1.txt_descripc_gran_formato.Text, VbStrConv.ProperCase)
                 End If
 
-                If frm_Proceso1.txt_descripc_terminacion.TextLength = 0 Then
-                    frm_Proceso1.groupTerminacion.Text = ""
-                Else
-                    proceso.PROC_terminacion = frm_Proceso1.groupTerminacion.Text
+                If frm_Proceso1.txt_descripc_terminacion.TextLength <> 0 Then
                     proceso.PROC_descrip_terminacion = StrConv(frm_Proceso1.txt_descripc_terminacion.Text, VbStrConv.ProperCase)
                 End If
 
-                If frm_Proceso1.txt_descripc_logistica.TextLength = 0 Then
-                    frm_Proceso1.groupLogistica.Text = ""
-                Else
-                    proceso.PROC_logistica = frm_Proceso1.groupLogistica.Text
+                If frm_Proceso1.txt_descripc_logistica.TextLength <> 0 Then
                     proceso.PROC_descrip_logistica = StrConv(frm_Proceso1.txt_descripc_logistica.Text, VbStrConv.ProperCase)
                 End If
+
+                '++++++++++++++++++++++++CODIGO A REEMPLAZAR++++++++++++++++++
+                'If frm_Proceso1.txt_descripc_offset.TextLength = 0 Then
+                '    frm_Proceso1.groupOffSet.Text = ""
+                'Else
+                '    proceso.PROC_offset = frm_Proceso1.groupOffSet.Text
+                '    proceso.PROC_descrip_offset = StrConv(frm_Proceso1.txt_descripc_offset.Text, VbStrConv.ProperCase)
+                'End If
+
+                'If frm_Proceso1.txt_descripc_digital.TextLength = 0 Then
+                '    frm_Proceso1.groupDigital.Text = ""
+                'Else
+                '    proceso.PROC_digital = frm_Proceso1.groupDigital.Text
+                '    proceso.PROC_descrip_digital = StrConv(frm_Proceso1.txt_descripc_digital.Text, VbStrConv.ProperCase)
+                'End If
+
+                'If frm_Proceso1.txt_descripc_gran_formato.TextLength = 0 Then
+                '    frm_Proceso1.groupGranFormato.Text = ""
+                'Else
+                '    proceso.PROC_gran_formato = frm_Proceso1.groupGranFormato.Text
+                '    proceso.PROC_descrip_gran_formato = StrConv(frm_Proceso1.txt_descripc_gran_formato.Text, VbStrConv.ProperCase)
+                'End If
+
+                'If frm_Proceso1.txt_descripc_terminacion.TextLength = 0 Then
+                '    frm_Proceso1.groupTerminacion.Text = ""
+                'Else
+                '    proceso.PROC_terminacion = frm_Proceso1.groupTerminacion.Text
+                '    proceso.PROC_descrip_terminacion = StrConv(frm_Proceso1.txt_descripc_terminacion.Text, VbStrConv.ProperCase)
+                'End If
+
+                'If frm_Proceso1.txt_descripc_logistica.TextLength = 0 Then
+                '    frm_Proceso1.groupLogistica.Text = ""
+                'Else
+                '    proceso.PROC_logistica = frm_Proceso1.groupLogistica.Text
+                '    proceso.PROC_descrip_logistica = StrConv(frm_Proceso1.txt_descripc_logistica.Text, VbStrConv.ProperCase)
+                'End If
+                '++++++++++++++++++++++++++HASTA ACA+++++++++++++++++
                 datacontext.PROCESO.InsertOnSubmit(proceso)
                 datacontext.SubmitChanges()
 
@@ -622,36 +644,56 @@
                 txt_id_detalle_orden_trabajo2.Text = detalle2.id_detalle_orden_trabajo
                 proceso.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo2.Text
 
-                If frm_Proceso2.txt_descripc_offset.TextLength = 0 Then
-                    frm_Proceso2.groupOffSet.Text = ""
-                Else
-                    proceso.PROC_offset = frm_Proceso2.groupOffSet.Text
+                If frm_Proceso2.txt_descripc_offset.TextLength <> 0 Then
                     proceso.PROC_descrip_offset = StrConv(frm_Proceso2.txt_descripc_offset.Text, VbStrConv.ProperCase)
                 End If
-                If frm_Proceso2.txt_descripc_digital.TextLength = 0 Then
-                    frm_Proceso2.groupDigital.Text = ""
-                Else
-                    proceso.PROC_digital = frm_Proceso2.groupDigital.Text
+
+                If frm_Proceso2.txt_descripc_digital.TextLength <> 0 Then
                     proceso.PROC_descrip_digital = StrConv(frm_Proceso2.txt_descripc_digital.Text, VbStrConv.ProperCase)
                 End If
-                If frm_Proceso2.txt_descripc_gran_formato.TextLength = 0 Then
-                    frm_Proceso2.groupGranFormato.Text = ""
-                Else
-                    proceso.PROC_gran_formato = frm_Proceso2.groupGranFormato.Text
+
+                If frm_Proceso2.txt_descripc_gran_formato.TextLength <> 0 Then
                     proceso.PROC_descrip_gran_formato = StrConv(frm_Proceso2.txt_descripc_gran_formato.Text, VbStrConv.ProperCase)
                 End If
-                If frm_Proceso2.txt_descripc_terminacion.TextLength = 0 Then
-                    frm_Proceso2.groupTerminacion.Text = ""
-                Else
-                    proceso.PROC_terminacion = frm_Proceso2.groupTerminacion.Text
+
+                If frm_Proceso2.txt_descripc_terminacion.TextLength <> 0 Then
                     proceso.PROC_descrip_terminacion = StrConv(frm_Proceso2.txt_descripc_terminacion.Text, VbStrConv.ProperCase)
                 End If
-                If frm_Proceso2.txt_descripc_logistica.TextLength = 0 Then
-                    frm_Proceso2.groupLogistica.Text = ""
-                Else
-                    proceso.PROC_logistica = frm_Proceso2.groupLogistica.Text
+
+                If frm_Proceso2.txt_descripc_logistica.TextLength <> 0 Then
                     proceso.PROC_descrip_logistica = StrConv(frm_Proceso2.txt_descripc_logistica.Text, VbStrConv.ProperCase)
                 End If
+
+                'If frm_Proceso2.txt_descripc_offset.TextLength = 0 Then
+                '    frm_Proceso2.groupOffSet.Text = ""
+                'Else
+                '    proceso.PROC_offset = frm_Proceso2.groupOffSet.Text
+                '    proceso.PROC_descrip_offset = StrConv(frm_Proceso2.txt_descripc_offset.Text, VbStrConv.ProperCase)
+                'End If
+                'If frm_Proceso2.txt_descripc_digital.TextLength = 0 Then
+                '    frm_Proceso2.groupDigital.Text = ""
+                'Else
+                '    proceso.PROC_digital = frm_Proceso2.groupDigital.Text
+                '    proceso.PROC_descrip_digital = StrConv(frm_Proceso2.txt_descripc_digital.Text, VbStrConv.ProperCase)
+                'End If
+                'If frm_Proceso2.txt_descripc_gran_formato.TextLength = 0 Then
+                '    frm_Proceso2.groupGranFormato.Text = ""
+                'Else
+                '    proceso.PROC_gran_formato = frm_Proceso2.groupGranFormato.Text
+                '    proceso.PROC_descrip_gran_formato = StrConv(frm_Proceso2.txt_descripc_gran_formato.Text, VbStrConv.ProperCase)
+                'End If
+                'If frm_Proceso2.txt_descripc_terminacion.TextLength = 0 Then
+                '    frm_Proceso2.groupTerminacion.Text = ""
+                'Else
+                '    proceso.PROC_terminacion = frm_Proceso2.groupTerminacion.Text
+                '    proceso.PROC_descrip_terminacion = StrConv(frm_Proceso2.txt_descripc_terminacion.Text, VbStrConv.ProperCase)
+                'End If
+                'If frm_Proceso2.txt_descripc_logistica.TextLength = 0 Then
+                '    frm_Proceso2.groupLogistica.Text = ""
+                'Else
+                '    proceso.PROC_logistica = frm_Proceso2.groupLogistica.Text
+                '    proceso.PROC_descrip_logistica = StrConv(frm_Proceso2.txt_descripc_logistica.Text, VbStrConv.ProperCase)
+                'End If
                 datacontext.PROCESO.InsertOnSubmit(proceso)
                 datacontext.SubmitChanges()
             End If
@@ -712,36 +754,56 @@
                 txt_id_detalle_orden_trabajo3.Text = detalle3.id_detalle_orden_trabajo
                 proceso.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo3.Text
 
-                If frm_proceso3.txt_descripc_offset.TextLength = 0 Then
-                    frm_proceso3.groupOffSet.Text = ""
-                Else
-                    proceso.PROC_offset = frm_proceso3.groupOffSet.Text
+                If frm_proceso3.txt_descripc_offset.TextLength <> 0 Then
                     proceso.PROC_descrip_offset = StrConv(frm_proceso3.txt_descripc_offset.Text, VbStrConv.ProperCase)
                 End If
-                If frm_proceso3.txt_descripc_digital.TextLength = 0 Then
-                    frm_proceso3.groupDigital.Text = ""
-                Else
-                    proceso.PROC_digital = frm_proceso3.groupDigital.Text
+
+                If frm_proceso3.txt_descripc_digital.TextLength <> 0 Then
                     proceso.PROC_descrip_digital = StrConv(frm_proceso3.txt_descripc_digital.Text, VbStrConv.ProperCase)
                 End If
-                If frm_proceso3.txt_descripc_gran_formato.TextLength = 0 Then
-                    frm_proceso3.groupGranFormato.Text = ""
-                Else
-                    proceso.PROC_gran_formato = frm_proceso3.groupGranFormato.Text
+
+                If frm_proceso3.txt_descripc_gran_formato.TextLength <> 0 Then
                     proceso.PROC_descrip_gran_formato = StrConv(frm_proceso3.txt_descripc_gran_formato.Text, VbStrConv.ProperCase)
                 End If
-                If frm_proceso3.txt_descripc_terminacion.TextLength = 0 Then
-                    frm_proceso3.groupTerminacion.Text = ""
-                Else
-                    proceso.PROC_terminacion = frm_proceso3.groupTerminacion.Text
+
+                If frm_proceso3.txt_descripc_terminacion.TextLength <> 0 Then
                     proceso.PROC_descrip_terminacion = StrConv(frm_proceso3.txt_descripc_terminacion.Text, VbStrConv.ProperCase)
                 End If
-                If frm_proceso3.txt_descripc_logistica.TextLength = 0 Then
-                    frm_proceso3.groupLogistica.Text = ""
-                Else
-                    proceso.PROC_logistica = frm_proceso3.groupLogistica.Text
+
+                If frm_proceso3.txt_descripc_logistica.TextLength <> 0 Then
                     proceso.PROC_descrip_logistica = StrConv(frm_proceso3.txt_descripc_logistica.Text, VbStrConv.ProperCase)
                 End If
+
+                'If frm_proceso3.txt_descripc_offset.TextLength = 0 Then
+                '    frm_proceso3.groupOffSet.Text = ""
+                'Else
+                '    proceso.PROC_offset = frm_proceso3.groupOffSet.Text
+                '    proceso.PROC_descrip_offset = StrConv(frm_proceso3.txt_descripc_offset.Text, VbStrConv.ProperCase)
+                'End If
+                'If frm_proceso3.txt_descripc_digital.TextLength = 0 Then
+                '    frm_proceso3.groupDigital.Text = ""
+                'Else
+                '    proceso.PROC_digital = frm_proceso3.groupDigital.Text
+                '    proceso.PROC_descrip_digital = StrConv(frm_proceso3.txt_descripc_digital.Text, VbStrConv.ProperCase)
+                'End If
+                'If frm_proceso3.txt_descripc_gran_formato.TextLength = 0 Then
+                '    frm_proceso3.groupGranFormato.Text = ""
+                'Else
+                '    proceso.PROC_gran_formato = frm_proceso3.groupGranFormato.Text
+                '    proceso.PROC_descrip_gran_formato = StrConv(frm_proceso3.txt_descripc_gran_formato.Text, VbStrConv.ProperCase)
+                'End If
+                'If frm_proceso3.txt_descripc_terminacion.TextLength = 0 Then
+                '    frm_proceso3.groupTerminacion.Text = ""
+                'Else
+                '    proceso.PROC_terminacion = frm_proceso3.groupTerminacion.Text
+                '    proceso.PROC_descrip_terminacion = StrConv(frm_proceso3.txt_descripc_terminacion.Text, VbStrConv.ProperCase)
+                'End If
+                'If frm_proceso3.txt_descripc_logistica.TextLength = 0 Then
+                '    frm_proceso3.groupLogistica.Text = ""
+                'Else
+                '    proceso.PROC_logistica = frm_proceso3.groupLogistica.Text
+                '    proceso.PROC_descrip_logistica = StrConv(frm_proceso3.txt_descripc_logistica.Text, VbStrConv.ProperCase)
+                'End If
                 datacontext.PROCESO.InsertOnSubmit(proceso)
                 datacontext.SubmitChanges()
             End If
@@ -1060,6 +1122,7 @@
     End Sub
 
     Private Sub btnProceso1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnProceso1.Click
+        frm_Proceso1.btnActualizar.Enabled = False
         If Me.Text = "Ver Orden" Then
             Dim TraerProcesos = (From c In datacontext.PROCESO
                                  Select c.PROC_descrip_digital,
@@ -1106,7 +1169,7 @@
             frm_Proceso1.txt_descripc_offset.Enabled = True
             frm_Proceso1.txt_descripc_terminacion.Enabled = True
             frm_Proceso1.btnAceptar.Enabled = True
-          
+
 
             frm_Proceso1.ShowDialog()
         Else
