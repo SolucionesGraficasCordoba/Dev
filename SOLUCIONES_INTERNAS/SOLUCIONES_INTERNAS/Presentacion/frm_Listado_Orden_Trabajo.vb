@@ -156,6 +156,7 @@
                                p.id_detalle_orden_trabajo
                                Where id_detalle_orden_trabajo = vble_id_proceso)
         CargaProcesoProducto(datagridproceso)
+        dgvProcesos.ClearSelection()
     End Sub
 
     Public Sub CargaProcesoProducto(ByVal dataproceso As System.Linq.IQueryable)
@@ -360,6 +361,10 @@
         If quienllamolistado_ot.Name = frm_Actualizar_Tarea.Name Then
             frm_Actualizar_Tarea.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
             frm_Actualizar_Tarea.txt_numero_orden.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+        ElseIf quienllamolistado_ot.Name = frm_retrabajo.Name Then
+            frm_retrabajo.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+            frm_retrabajo.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
 
         ElseIf quienllamolistado_ot.Name = frm_Etiqueta_Modelo_1.Name Then
             frm_Etiqueta_Modelo_1.txt_id_orden.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
@@ -819,5 +824,6 @@
             MsgBox("Debe seleccionar un Proceso")
         End If
     End Sub
+
 End Class
 
