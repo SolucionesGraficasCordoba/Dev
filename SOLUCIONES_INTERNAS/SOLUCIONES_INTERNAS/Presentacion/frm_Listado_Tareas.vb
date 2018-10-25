@@ -872,6 +872,10 @@ Public Class frm_Listado_Tareas
 
     Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnExportarListado.Click
         Try
+            If dgvColaboradores.SelectedRows.Count < 1 Then
+                MsgBox("Debe seleccionar un colaborador", MsgBoxStyle.Information, "Imprimir tareas")
+                Exit Sub
+            End If
             'intentar generar el documento
             Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
             'path que guarda el reporte en el escritorio de windows (desktop)
