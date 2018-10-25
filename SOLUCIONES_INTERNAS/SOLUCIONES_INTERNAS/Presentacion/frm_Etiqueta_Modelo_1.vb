@@ -102,6 +102,7 @@ Public Class frm_Etiqueta_Modelo_1
             dgv_Etiquetas.Rows.Add(row)
         Next
         dgv_Etiquetas.ClearSelection()
+
     End Sub
 
     Private Sub btnAgregar_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregar.Click
@@ -241,5 +242,6 @@ Public Class frm_Etiqueta_Modelo_1
             txtTotalBultos.Text = Math.Ceiling(CInt(txtCantidadBultos.Text) / CInt(txtUnidadxBulto.Text))
         End If
     End Sub
+
 End Class
 

@@ -793,9 +793,21 @@
         End If
     End Sub
 
+    Private Sub btnEliminarProceso_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminarProceso.Click
 
-    Private Sub dgvLista_Orden_Trabajo_CellContentClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Orden_Trabajo.CellContentClick
+        If dgvProcesos.SelectedRows.Count > 0 Then
+            Dim eliminar = (From C In datacontext.PROCESO Where C.PROC_id_proceso = CInt(dgvProcesos.Item("PROC_id_proceso", dgvProcesos.SelectedRows(0).Index).Value)).ToList()(0)
 
+            Select Case MsgBox("Se eliminará el Proceso seleccionado, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar Proceso")
+                Case MsgBoxResult.Yes
+                    datacontext.PROCESO.DeleteOnSubmit(eliminar)
+                    datacontext.SubmitChanges()
+                    MsgBox("El Proceso ha sido eliminado")
+                    Me.Close()
+            End Select
+        Else
+            MsgBox("Debe seleccionar un Proceso")
+        End If
     End Sub
 End Class
 

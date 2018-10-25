@@ -30,7 +30,6 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.txtDescripcionEntrega = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label27 = New System.Windows.Forms.Label()
-        Me.Label32 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.txtSector = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
@@ -42,6 +41,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.txtId_Cliente = New System.Windows.Forms.TextBox()
         Me.btnBuscarCliente = New System.Windows.Forms.Button()
         Me.txtDirigidoA = New System.Windows.Forms.TextBox()
+        Me.Label32 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.Label30 = New System.Windows.Forms.Label()
@@ -74,6 +74,8 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.btnLimpiarEtiqueta = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -173,17 +175,6 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label27.TabIndex = 28
         Me.Label27.Text = "* "
         '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.ForeColor = System.Drawing.Color.Red
-        Me.Label32.Location = New System.Drawing.Point(2, 40)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(14, 13)
-        Me.Label32.TabIndex = 28
-        Me.Label32.Text = "* "
-        '
         'Label26
         '
         Me.Label26.AutoSize = True
@@ -270,6 +261,17 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.txtDirigidoA.Name = "txtDirigidoA"
         Me.txtDirigidoA.Size = New System.Drawing.Size(275, 20)
         Me.txtDirigidoA.TabIndex = 3
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.ForeColor = System.Drawing.Color.Red
+        Me.Label32.Location = New System.Drawing.Point(2, 40)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(14, 13)
+        Me.Label32.TabIndex = 28
+        Me.Label32.Text = "* "
         '
         'GroupBox2
         '
@@ -584,11 +586,33 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(586, 410)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(114, 13)
+        Me.Label2.TabIndex = 28
+        Me.Label2.Text = "Cantidad de Etiquetas:"
+        Me.Label2.Visible = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label3.Location = New System.Drawing.Point(706, 410)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(2, 15)
+        Me.Label3.TabIndex = 29
+        Me.Label3.Visible = False
+        '
         'frm_Etiqueta_Modelo_1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1125, 435)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnLimpiarEtiqueta)
@@ -663,4 +687,6 @@ Partial Class frm_Etiqueta_Modelo_1
     Friend WithEvents btnBuscar_Orden As System.Windows.Forms.Button
     Friend WithEvents txt_orden As System.Windows.Forms.TextBox
     Friend WithEvents Label34 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class
