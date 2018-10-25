@@ -107,6 +107,7 @@ Public Class frm_Productos
         dgvLista_Productos.ClearSelection()
         Label9.Text = dgvLista_Productos.Rows.Count
         rbtProducto.Checked = True
+        dgvLista_Productos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
     End Sub
 
     Private Sub dgvLista_Productos_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvLista_Productos.Click

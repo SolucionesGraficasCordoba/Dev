@@ -15,7 +15,7 @@
             ActualizarDetalle.DOT_cantidad_dot = txt_cantidad.Text
             ActualizarDetalle.PIE_id_pieza = cboPiezas.SelectedValue
             ActualizarDetalle.DOT_tamaño_dot = txtTamaño.Text
-            ActualizarDetalle.DOT_tipo_impresion_dot = cboTipoImpresion.SelectedItem
+            ActualizarDetalle.DOT_tipo_impresion_dot = cboTipoImpresion.Text
 
             ActualizarDetalle.DOT_papel_soporte_1 = StrConv(txt_Papel1_Soporte.Text, VbStrConv.ProperCase)
             ActualizarDetalle.DOT_papel_soporte_2 = StrConv(txt_Papel2_Soporte.Text, VbStrConv.ProperCase)

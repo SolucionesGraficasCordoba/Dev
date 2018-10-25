@@ -41,6 +41,7 @@ Partial Class frm_Proceso1
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.txt_id_detalle_orden = New System.Windows.Forms.TextBox()
         Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.txt_id_proceso = New System.Windows.Forms.TextBox()
         Me.groupOffSet.SuspendLayout()
         Me.groupDigital.SuspendLayout()
         Me.groupGranFormato.SuspendLayout()
@@ -237,11 +238,19 @@ Partial Class frm_Proceso1
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
+        'txt_id_proceso
+        '
+        Me.txt_id_proceso.Location = New System.Drawing.Point(91, 474)
+        Me.txt_id_proceso.Name = "txt_id_proceso"
+        Me.txt_id_proceso.Size = New System.Drawing.Size(36, 20)
+        Me.txt_id_proceso.TabIndex = 9
+        '
         'frm_Proceso1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(396, 502)
+        Me.Controls.Add(Me.txt_id_proceso)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.txt_id_detalle_orden)
         Me.Controls.Add(Me.btnAceptar)
@@ -287,4 +296,5 @@ Partial Class frm_Proceso1
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
     Friend WithEvents txt_id_detalle_orden As System.Windows.Forms.TextBox
     Friend WithEvents btnActualizar As System.Windows.Forms.Button
+    Friend WithEvents txt_id_proceso As System.Windows.Forms.TextBox
 End Class

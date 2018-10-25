@@ -273,7 +273,7 @@
     End Sub
 
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles btnProceso2.Click
-
+        frm_Proceso2.txt_id_detalle_orden.Visible = False
         If Me.Text = "Ver Orden" Then
 
             If txt_id_detalle_orden_trabajo2.Text <> "" Then
@@ -338,7 +338,7 @@
     End Sub
 
     Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles btnProceso3.Click
-
+        frm_proceso3.txt_id_detalle_orden.Visible = False
         If Me.Text = "Ver Orden" Then
 
             If txt_id_detalle_orden_trabajo3.Text <> "" Then
@@ -866,7 +866,7 @@
                 ActualizarDetalle1.DOT_cantidad_dot = txt_cantidad1_detalle1.Text
                 ActualizarDetalle1.PIE_id_pieza = cboPiezas1_Detalle1.SelectedValue
                 ActualizarDetalle1.DOT_tamaño_dot = txtTamaño1_Detalle1.Text
-                ActualizarDetalle1.DOT_tipo_impresion_dot = cboTipoImpresion1_Detalle1.SelectedItem
+                ActualizarDetalle1.DOT_tipo_impresion_dot = cboTipoImpresion1_Detalle1.Text
 
                 ActualizarDetalle1.DOT_papel_soporte_1 = StrConv(txt_Papel1_Soporte1.Text, VbStrConv.ProperCase)
                 ActualizarDetalle1.DOT_papel_soporte_2 = StrConv(txt_Papel2_Soporte1.Text, VbStrConv.ProperCase)
@@ -926,7 +926,7 @@
                     ActualizarDetalle2.DOT_cantidad_dot = txt_cantidad2_detalle2.Text
                     ActualizarDetalle2.PIE_id_pieza = cboPiezas2_Detalle2.SelectedValue
                     ActualizarDetalle2.DOT_tamaño_dot = txtTamaño2_Detalle2.Text
-                    ActualizarDetalle2.DOT_tipo_impresion_dot = cboTipoImpresion2_Detalle2.SelectedItem
+                    ActualizarDetalle2.DOT_tipo_impresion_dot = cboTipoImpresion2_Detalle2.Text
 
                     ActualizarDetalle2.DOT_papel_soporte_1 = StrConv(txt_Papel1_Soporte2.Text, VbStrConv.ProperCase)
                     ActualizarDetalle2.DOT_papel_soporte_2 = StrConv(txt_Papel2_Soporte2.Text, VbStrConv.ProperCase)
@@ -985,7 +985,7 @@
                     detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo2.Text
                     detalle.DOT_cantidad_dot = txt_cantidad2_detalle2.Text
                     detalle.DOT_tamaño_dot = txtTamaño2_Detalle2.Text
-                    detalle.DOT_tipo_impresion_dot = cboTipoImpresion2_Detalle2.SelectedItem
+                    detalle.DOT_tipo_impresion_dot = cboTipoImpresion2_Detalle2.Text
                     detalle.PIE_id_pieza = cboPiezas2_Detalle2.SelectedValue
                     detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
 
@@ -1123,6 +1123,7 @@
 
     Private Sub btnProceso1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnProceso1.Click
         frm_Proceso1.btnActualizar.Enabled = False
+        frm_Proceso1.txt_id_proceso.Visible = False
         If Me.Text = "Ver Orden" Then
             Dim TraerProcesos = (From c In datacontext.PROCESO
                                  Select c.PROC_descrip_digital,
