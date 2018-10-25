@@ -144,11 +144,10 @@ Public Class frm_Etiqueta_Modelo_1
         End If
         CargaEtiqueta()
         txtCantidadBultos.Clear()
-        'txtNumeroBultos.Clear()
         txtUnidadxBulto.Clear()
         txtTotalBultos.Clear()
         txtPeso.Clear()
-        cboLogo.SelectedIndex = -1
+        cboLogo.SelectedIndex = 1
 
         dgv_Etiquetas.ClearSelection()
     End Sub
@@ -237,11 +236,11 @@ Public Class frm_Etiqueta_Modelo_1
     Private Sub txtUnidadxBulto_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtUnidadxBulto.TextChanged
         calcula_cantidad_bultos()
     End Sub
+
     Sub calcula_cantidad_bultos()
         If txtCantidadBultos.TextLength <> 0 And txtUnidadxBulto.TextLength <> 0 Then
             txtTotalBultos.Text = Math.Ceiling(CInt(txtCantidadBultos.Text) / CInt(txtUnidadxBulto.Text))
         End If
     End Sub
-
 End Class
 
