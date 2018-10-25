@@ -50,8 +50,8 @@ Public Class frm_Etiqueta_Modelo_1
         dgv_Etiquetas.Columns.Clear()
 
         dgv_Etiquetas.Columns.Add(txt_orden.Text, "Orden")
-        dgv_Etiquetas.Columns(0).Width = 50
-        dgv_Etiquetas.Columns.Add(txtDescripcionEntrega.Text, "Descrición")
+        'dgv_Etiquetas.Columns(0).Width = 50
+        dgv_Etiquetas.Columns.Add(txtDescripcionEntrega.Text, "Descripción")
         dgv_Etiquetas.Columns.Add("CLI_id_cliente", "id_cliente")
         dgv_Etiquetas.Columns(2).Visible = False
         dgv_Etiquetas.Columns.Add("CLI_razon_social", "Dirigido a")
@@ -60,19 +60,19 @@ Public Class frm_Etiqueta_Modelo_1
         dgv_Etiquetas.Columns.Add("CLI_domicilio", "Domicilio")
         dgv_Etiquetas.Columns.Add("CLI_localidad", "Localidad")
         dgv_Etiquetas.Columns.Add("CLI_codigo_postal", "CP")
-        dgv_Etiquetas.Columns(8).Width = 50
+        'dgv_Etiquetas.Columns(8).Width = 50
         dgv_Etiquetas.Columns.Add(txtDespachado.Text, "Despachado")
         dgv_Etiquetas.Columns.Add(txtSeccion.Text, "Sección")
         dgv_Etiquetas.Columns.Add(txtCantidadBultos.Text, "Cantidad")
-        dgv_Etiquetas.Columns(11).Width = 50
+        'dgv_Etiquetas.Columns(11).Width = 50
         dgv_Etiquetas.Columns.Add(txtNumeroBultos.Text, "Nro Bultos")
-        dgv_Etiquetas.Columns(12).Width = 50
+        'dgv_Etiquetas.Columns(12).Width = 50
         dgv_Etiquetas.Columns.Add(txtUnidadxBulto.Text, "Unid x Bulto")
-        dgv_Etiquetas.Columns(13).Width = 50
+        'dgv_Etiquetas.Columns(13).Width = 50
         dgv_Etiquetas.Columns.Add(txtTotalBultos.Text, "Total Bultos")
-        dgv_Etiquetas.Columns(14).Width = 50
+        'dgv_Etiquetas.Columns(14).Width = 50
         dgv_Etiquetas.Columns.Add(txtPeso.Text, "Peso")
-        dgv_Etiquetas.Columns(15).Width = 50
+        'dgv_Etiquetas.Columns(15).Width = 50
         dgv_Etiquetas.Columns.Add(cboLogo.Text, "Logo")
     End Sub
 

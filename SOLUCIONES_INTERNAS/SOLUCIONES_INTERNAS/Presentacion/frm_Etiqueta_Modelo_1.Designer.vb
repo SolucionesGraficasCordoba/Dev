@@ -546,7 +546,7 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(884, 405)
+        Me.btnCancelar.Location = New System.Drawing.Point(1038, 405)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 17
@@ -556,16 +556,17 @@ Partial Class frm_Etiqueta_Modelo_1
         'dgv_Etiquetas
         '
         Me.dgv_Etiquetas.AllowUserToAddRows = False
+        Me.dgv_Etiquetas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgv_Etiquetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_Etiquetas.Location = New System.Drawing.Point(510, 16)
         Me.dgv_Etiquetas.Name = "dgv_Etiquetas"
         Me.dgv_Etiquetas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_Etiquetas.Size = New System.Drawing.Size(449, 383)
+        Me.dgv_Etiquetas.Size = New System.Drawing.Size(603, 383)
         Me.dgv_Etiquetas.TabIndex = 23
         '
         'btnGenerarEtiquetas
         '
-        Me.btnGenerarEtiquetas.Location = New System.Drawing.Point(689, 405)
+        Me.btnGenerarEtiquetas.Location = New System.Drawing.Point(843, 405)
         Me.btnGenerarEtiquetas.Name = "btnGenerarEtiquetas"
         Me.btnGenerarEtiquetas.Size = New System.Drawing.Size(108, 23)
         Me.btnGenerarEtiquetas.TabIndex = 18
@@ -594,7 +595,7 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(803, 405)
+        Me.btnEliminar.Location = New System.Drawing.Point(957, 405)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
         Me.btnEliminar.TabIndex = 27
@@ -605,7 +606,7 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(972, 435)
+        Me.ClientSize = New System.Drawing.Size(1125, 435)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnLimpiarEtiqueta)
