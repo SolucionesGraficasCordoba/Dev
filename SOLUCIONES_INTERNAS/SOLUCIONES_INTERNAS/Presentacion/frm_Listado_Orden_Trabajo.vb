@@ -11,13 +11,15 @@
     Dim vble_colaborador, vble_fecha As String
 
     Private Sub frm_Detalle_Orden_Trabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        cargargrilla()
         armargrilla()
+        cargargrilla()
+        'armargrilla()
         Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
 
         dgvLista_Orden_Trabajo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         dgv_detalle_orden.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         dgvProcesos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+
     End Sub
 
     'CARGA GRILLA ORDEN TRABAJO
@@ -31,6 +33,7 @@
                               U.ORT_observaciones_ot, U.ORT_mejoras_ot, U.VEN_id_vendedor, ort.VEN_nombre_ven, U.CLI_id_cliente, col.CLI_razon_social
                               Order By ORT_id_orden_trabajo Descending)
         dgvLista_Orden_Trabajo.DataSource = consultaOrden
+        dgvLista_Orden_Trabajo.ClearSelection()
     End Sub
 
     'ARMA GRILLA ORDEN
@@ -77,6 +80,10 @@
         End If
         vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
         CargarDetalle()
+        'LIMPIA EL GRID DE PROCESOS
+        dgvProcesos.DataSource = ""
+
+        'SE FIJA QUIEN LLAMO PARA HABILITAR BOTONES
         If Me.Text = "Modificar Orden / Producto / Proceso" Then
             btnModificar_Orden.Enabled = True
             btnEliminar_Orden.Enabled = False
@@ -320,6 +327,7 @@
                               Where ORT_numero_ot Like buscar.ToString
                              Order By ORT_numero_ot Ascending)
         dgvLista_Orden_Trabajo.DataSource = consultaCliente
+        dgvLista_Orden_Trabajo.ClearSelection()
         dgv_detalle_orden.DataSource = ""
         dgvProcesos.DataSource = ""
     End Sub
@@ -467,6 +475,8 @@
                     frm_Tarea.txt_id_orden_trabajo20.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
                     frm_Tarea.txtNumero_Orden_Trabajo20.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
             End Select
+        Else
+            Exit Sub
         End If
         Me.Close()
     End Sub
