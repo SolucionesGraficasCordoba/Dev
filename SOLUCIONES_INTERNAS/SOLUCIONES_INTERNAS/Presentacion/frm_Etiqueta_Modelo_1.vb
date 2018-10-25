@@ -9,6 +9,7 @@ Public Class frm_Etiqueta_Modelo_1
         btnBuscarCliente.Visible = False
         btnBuscar_Orden.Focus()
         dgv_Etiquetas.ClearSelection()
+        cboLogo.SelectedIndex = 1
     End Sub
 
     Private Sub btnBuscarCliente_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscarCliente.Click
@@ -37,7 +38,6 @@ Public Class frm_Etiqueta_Modelo_1
         txtCodigoPostal.Clear()
         txtSeccion.Clear()
         txtCantidadBultos.Clear()
-        txtNumeroBultos.Clear()
         txtUnidadxBulto.Clear()
         txtTotalBultos.Clear()
         txtPeso.Clear()
@@ -65,7 +65,7 @@ Public Class frm_Etiqueta_Modelo_1
         dgv_Etiquetas.Columns.Add(txtSeccion.Text, "Sección")
         dgv_Etiquetas.Columns.Add(txtCantidadBultos.Text, "Cantidad")
         'dgv_Etiquetas.Columns(11).Width = 50
-        dgv_Etiquetas.Columns.Add(txtNumeroBultos.Text, "Nro Bultos")
+        dgv_Etiquetas.Columns.Add("", "Nro Bultos")
         'dgv_Etiquetas.Columns(12).Width = 50
         dgv_Etiquetas.Columns.Add(txtUnidadxBulto.Text, "Unid x Bulto")
         'dgv_Etiquetas.Columns(13).Width = 50
@@ -77,24 +77,30 @@ Public Class frm_Etiqueta_Modelo_1
     End Sub
 
     Public Sub CargaEtiqueta()
-        Dim row As String() = New String() {txt_orden.Text.ToUpper,
-                                            txtDescripcionEntrega.Text.ToUpper,
-                                            txtId_Cliente.Text.ToUpper,
-                                            txtDirigidoA.Text.ToUpper,
-                                            txtSolicitante.Text.ToUpper, _
-                                            txtSector.Text.ToUpper,
-                                            txtDomicilio.Text.ToUpper,
-                                            txtLocalidad.Text.ToUpper,
-                                            txtCodigoPostal.Text.ToUpper,
-                                            txtDespachado.Text.ToUpper,
-                                            txtSeccion.Text.ToUpper,
-                                            txtCantidadBultos.Text.ToUpper,
-                                            txtNumeroBultos.Text.ToUpper, _
-                                            txtUnidadxBulto.Text.ToUpper,
-                                            txtTotalBultos.Text.ToUpper,
-                                            txtPeso.Text.ToUpper,
-                                            cboLogo.Text.ToUpper}
-        dgv_Etiquetas.Rows.Add(row)
+        'Dim temp_total_bultos As Integer = 0
+        Dim temp_bulto_parcial As Integer = 0
+        'temp_total_bultos = CInt(txtCantidadBultos.Text) / CInt(txtUnidadxBulto.Text)
+        For i = 1 To CInt(txtTotalBultos.Text)
+            temp_bulto_parcial = temp_bulto_parcial + 1
+            Dim row As String() = New String() {txt_orden.Text.ToUpper,
+                                                txtDescripcionEntrega.Text.ToUpper,
+                                                txtId_Cliente.Text.ToUpper,
+                                                txtDirigidoA.Text.ToUpper,
+                                                txtSolicitante.Text.ToUpper, _
+                                                txtSector.Text.ToUpper,
+                                                txtDomicilio.Text.ToUpper,
+                                                txtLocalidad.Text.ToUpper,
+                                                txtCodigoPostal.Text.ToUpper,
+                                                txtDespachado.Text.ToUpper,
+                                                txtSeccion.Text.ToUpper,
+                                                txtCantidadBultos.Text.ToUpper,
+                                                CStr(temp_bulto_parcial).ToUpper, _
+                                                txtUnidadxBulto.Text.ToUpper,
+                                                txtTotalBultos.Text.ToUpper,
+                                                txtPeso.Text.ToUpper,
+                                                cboLogo.Text.ToUpper}
+            dgv_Etiquetas.Rows.Add(row)
+        Next
         dgv_Etiquetas.ClearSelection()
     End Sub
 
@@ -120,11 +126,11 @@ Public Class frm_Etiqueta_Modelo_1
             txtCantidadBultos.Focus()
             Exit Sub
         End If
-        If txtNumeroBultos.Text.Length = 0 Then
-            MsgBox("El número de bultos no puede quedar vacío")
-            txtNumeroBultos.Focus()
-            Exit Sub
-        End If
+        'If txtNumeroBultos.Text.Length = 0 Then
+        '    MsgBox("El número de bultos no puede quedar vacío")
+        '    txtNumeroBultos.Focus()
+        '    Exit Sub
+        'End If
         If txtUnidadxBulto.Text.Length = 0 Then
             MsgBox("La unidad por bulto no puede quedar vacío")
             txtUnidadxBulto.Focus()
@@ -137,7 +143,7 @@ Public Class frm_Etiqueta_Modelo_1
         End If
         CargaEtiqueta()
         txtCantidadBultos.Clear()
-        txtNumeroBultos.Clear()
+        'txtNumeroBultos.Clear()
         txtUnidadxBulto.Clear()
         txtTotalBultos.Clear()
         txtPeso.Clear()
@@ -147,45 +153,49 @@ Public Class frm_Etiqueta_Modelo_1
     End Sub
 
     Private Sub btnGenerarEtiquetas_Click(sender As System.Object, e As System.EventArgs) Handles btnGenerarEtiquetas.Click
-        Dim consulta As String = "ETIQUETA_GENERICA_DIARIA_" + Date.Now.Millisecond.ToString + ".csv"
+        If dgv_Etiquetas.RowCount > 0 Then
+            Dim consulta As String = "ETIQUETA_GENERICA_DIARIA_" + Date.Now.Millisecond.ToString + ".csv"
 
-        Dim filePath As String = "\\wsmaldig3\PlanetPress\Etiquetas\IN_Etiquetas\" + consulta
-
-        ' Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
-        Dim delimeter As String = ","
-        Dim sb As New StringBuilder
-        Try
-            For i As Integer = 0 To dgv_Etiquetas.Rows.Count - 1
-                Dim array As String() = New String(dgv_Etiquetas.Columns.Count - 1) {}
-                If i.Equals(0) Then
+            Dim filePath As String = "\\wsmaldig3\PlanetPress\Etiquetas\IN_Etiquetas\" + consulta
+            'Dim filePath As String = "C:\Users\pbaldo\Downloads\Baldo-Compartida\" + consulta
+            ' Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
+            Dim delimeter As String = ","
+            Dim sb As New StringBuilder
+            Try
+                For i As Integer = 0 To dgv_Etiquetas.Rows.Count - 1
+                    Dim array As String() = New String(dgv_Etiquetas.Columns.Count - 1) {}
+                    If i.Equals(0) Then
+                        For j As Integer = 0 To dgv_Etiquetas.Columns.Count - 1
+                            array(j) = dgv_Etiquetas.Columns(j).HeaderText
+                        Next
+                        sb.AppendLine(String.Join(delimeter, array))
+                    End If
                     For j As Integer = 0 To dgv_Etiquetas.Columns.Count - 1
-                        array(j) = dgv_Etiquetas.Columns(j).HeaderText
+                        array(j) = dgv_Etiquetas(j, i).Value.ToString
                     Next
-                    sb.AppendLine(String.Join(delimeter, array))
-                End If
-                For j As Integer = 0 To dgv_Etiquetas.Columns.Count - 1
-                    array(j) = dgv_Etiquetas(j, i).Value.ToString
+                    If Not dgv_Etiquetas.Rows(i).IsNewRow Then
+                        sb.AppendLine(String.Join(delimeter, array))
+                    End If
                 Next
-                If Not dgv_Etiquetas.Rows(i).IsNewRow Then
-                    sb.AppendLine(String.Join(delimeter, array))
-                End If
-            Next
-            File.WriteAllText(filePath, sb.ToString)
-            MsgBox("La consulta se ha generado correctamente")
+                File.WriteAllText(filePath, sb.ToString)
+                MsgBox("La consulta se ha generado correctamente")
 
-            '  Process.Start(filePath)
-            txtCantidadBultos.Clear()
-            txtNumeroBultos.Clear()
-            txtUnidadxBulto.Clear()
-            txtTotalBultos.Clear()
-            txtPeso.Clear()
-            cboLogo.SelectedIndex = -1
+                '  Process.Start(filePath)
+                txtCantidadBultos.Clear()
+                'txtNumeroBultos.Clear()
+                txtUnidadxBulto.Clear()
+                txtTotalBultos.Clear()
+                txtPeso.Clear()
+                cboLogo.SelectedIndex = 1
 
-            dgv_Etiquetas.Rows.Clear()
+                dgv_Etiquetas.Rows.Clear()
 
-        Catch ex As Exception
-            MsgBox("Hubo un error al generar la consulta")
-        End Try
+            Catch ex As Exception
+                MsgBox("Hubo un error al generar la consulta")
+            End Try
+        Else
+            MsgBox("Debe cargar al menos una etiqueta", MsgBoxStyle.Information, "Etiquetas")
+        End If
     End Sub
 
     Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
@@ -217,6 +227,19 @@ Public Class frm_Etiqueta_Modelo_1
 
     Private Sub frm_Etiqueta_Modelo_1_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
+    End Sub
+
+    Private Sub txtCantidadBultos_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtCantidadBultos.TextChanged
+        calcula_cantidad_bultos()
+    End Sub
+
+    Private Sub txtUnidadxBulto_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtUnidadxBulto.TextChanged
+        calcula_cantidad_bultos()
+    End Sub
+    Sub calcula_cantidad_bultos()
+        If txtCantidadBultos.TextLength <> 0 And txtUnidadxBulto.TextLength <> 0 Then
+            txtTotalBultos.Text = Math.Ceiling(CInt(txtCantidadBultos.Text) / CInt(txtUnidadxBulto.Text))
+        End If
     End Sub
 End Class
 
