@@ -553,6 +553,8 @@
                               Where ORT_numero_ot Like buscar.ToString
                              Order By ORT_numero_ot Ascending)
         dgvLista_Orden_Trabajo.DataSource = consultaCliente
+        dgv_detalle_orden.DataSource = ""
+        dgvProcesos.DataSource = ""
     End Sub
 
     Private Sub btn_cargar_detalle_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
