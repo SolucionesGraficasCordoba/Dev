@@ -176,7 +176,7 @@
     End Sub
 
     Private Sub btnModificarProceso_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarProceso.Click
-        frm_Proceso1.btnAceptar.Visible = False
+        frm_Proceso1.btnAceptar.Enabled = False
         frm_Proceso1.txt_descripc_digital.Text = dgvProcesos.Item("PROC_descrip_digital", dgvProcesos.CurrentRow.Index).Value
         frm_Proceso1.txt_descripc_offset.Text = dgvProcesos.Item("PROC_descrip_offset", dgvProcesos.CurrentRow.Index).Value
         frm_Proceso1.txt_descripc_gran_formato.Text = dgvProcesos.Item("PROC_descrip_gran_formato", dgvProcesos.CurrentRow.Index).Value
