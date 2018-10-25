@@ -106,8 +106,7 @@ Public Class frm_Productos
         cargargrilla()
         dgvLista_Productos.ClearSelection()
         Label9.Text = dgvLista_Productos.Rows.Count
-
-
+        rbtProducto.Checked = True
     End Sub
 
     Private Sub dgvLista_Productos_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvLista_Productos.Click

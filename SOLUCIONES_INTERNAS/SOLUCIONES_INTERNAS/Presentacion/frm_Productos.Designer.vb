@@ -42,14 +42,14 @@ Partial Class frm_Productos
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.rbtCodigo = New System.Windows.Forms.RadioButton()
+        Me.rbtProducto = New System.Windows.Forms.RadioButton()
+        Me.tb_cod_busqueda = New System.Windows.Forms.TextBox()
+        Me.tb_prod_busqueda = New System.Windows.Forms.TextBox()
         Me.btnExportarPDF = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.tb_cod_busqueda = New System.Windows.Forms.TextBox()
-        Me.tb_prod_busqueda = New System.Windows.Forms.TextBox()
-        Me.rbtProducto = New System.Windows.Forms.RadioButton()
-        Me.rbtCodigo = New System.Windows.Forms.RadioButton()
         CType(Me.dgvLista_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -88,10 +88,10 @@ Partial Class frm_Productos
         Me.dgvLista_Productos.AllowUserToDeleteRows = False
         Me.dgvLista_Productos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvLista_Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLista_Productos.Location = New System.Drawing.Point(7, 89)
+        Me.dgvLista_Productos.Location = New System.Drawing.Point(7, 66)
         Me.dgvLista_Productos.Name = "dgvLista_Productos"
         Me.dgvLista_Productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_Productos.Size = New System.Drawing.Size(565, 218)
+        Me.dgvLista_Productos.Size = New System.Drawing.Size(565, 241)
         Me.dgvLista_Productos.TabIndex = 10
         '
         'btn_prod_eliminar
@@ -263,6 +263,55 @@ Partial Class frm_Productos
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Lista de productos"
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.rbtCodigo)
+        Me.GroupBox3.Controls.Add(Me.rbtProducto)
+        Me.GroupBox3.Controls.Add(Me.tb_cod_busqueda)
+        Me.GroupBox3.Controls.Add(Me.tb_prod_busqueda)
+        Me.GroupBox3.Location = New System.Drawing.Point(98, 10)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(474, 50)
+        Me.GroupBox3.TabIndex = 19
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Búsqueda"
+        '
+        'rbtCodigo
+        '
+        Me.rbtCodigo.AutoSize = True
+        Me.rbtCodigo.Location = New System.Drawing.Point(249, 19)
+        Me.rbtCodigo.Name = "rbtCodigo"
+        Me.rbtCodigo.Size = New System.Drawing.Size(58, 17)
+        Me.rbtCodigo.TabIndex = 24
+        Me.rbtCodigo.TabStop = True
+        Me.rbtCodigo.Text = "Código"
+        Me.rbtCodigo.UseVisualStyleBackColor = True
+        '
+        'rbtProducto
+        '
+        Me.rbtProducto.AutoSize = True
+        Me.rbtProducto.Location = New System.Drawing.Point(9, 19)
+        Me.rbtProducto.Name = "rbtProducto"
+        Me.rbtProducto.Size = New System.Drawing.Size(68, 17)
+        Me.rbtProducto.TabIndex = 24
+        Me.rbtProducto.TabStop = True
+        Me.rbtProducto.Text = "Producto"
+        Me.rbtProducto.UseVisualStyleBackColor = True
+        '
+        'tb_cod_busqueda
+        '
+        Me.tb_cod_busqueda.Location = New System.Drawing.Point(314, 18)
+        Me.tb_cod_busqueda.Name = "tb_cod_busqueda"
+        Me.tb_cod_busqueda.Size = New System.Drawing.Size(135, 20)
+        Me.tb_cod_busqueda.TabIndex = 23
+        '
+        'tb_prod_busqueda
+        '
+        Me.tb_prod_busqueda.Location = New System.Drawing.Point(83, 18)
+        Me.tb_prod_busqueda.Name = "tb_prod_busqueda"
+        Me.tb_prod_busqueda.Size = New System.Drawing.Size(135, 20)
+        Me.tb_prod_busqueda.TabIndex = 21
+        '
         'btnExportarPDF
         '
         Me.btnExportarPDF.Location = New System.Drawing.Point(268, 313)
@@ -289,55 +338,6 @@ Partial Class frm_Productos
         Me.Label10.Size = New System.Drawing.Size(97, 13)
         Me.Label10.TabIndex = 16
         Me.Label10.Text = "Total de Productos"
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.rbtCodigo)
-        Me.GroupBox3.Controls.Add(Me.rbtProducto)
-        Me.GroupBox3.Controls.Add(Me.tb_cod_busqueda)
-        Me.GroupBox3.Controls.Add(Me.tb_prod_busqueda)
-        Me.GroupBox3.Location = New System.Drawing.Point(180, 10)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(226, 73)
-        Me.GroupBox3.TabIndex = 19
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Búsqueda"
-        '
-        'tb_cod_busqueda
-        '
-        Me.tb_cod_busqueda.Location = New System.Drawing.Point(83, 47)
-        Me.tb_cod_busqueda.Name = "tb_cod_busqueda"
-        Me.tb_cod_busqueda.Size = New System.Drawing.Size(135, 20)
-        Me.tb_cod_busqueda.TabIndex = 23
-        '
-        'tb_prod_busqueda
-        '
-        Me.tb_prod_busqueda.Location = New System.Drawing.Point(83, 21)
-        Me.tb_prod_busqueda.Name = "tb_prod_busqueda"
-        Me.tb_prod_busqueda.Size = New System.Drawing.Size(135, 20)
-        Me.tb_prod_busqueda.TabIndex = 21
-        '
-        'rbtProducto
-        '
-        Me.rbtProducto.AutoSize = True
-        Me.rbtProducto.Location = New System.Drawing.Point(9, 22)
-        Me.rbtProducto.Name = "rbtProducto"
-        Me.rbtProducto.Size = New System.Drawing.Size(68, 17)
-        Me.rbtProducto.TabIndex = 24
-        Me.rbtProducto.TabStop = True
-        Me.rbtProducto.Text = "Producto"
-        Me.rbtProducto.UseVisualStyleBackColor = True
-        '
-        'rbtCodigo
-        '
-        Me.rbtCodigo.AutoSize = True
-        Me.rbtCodigo.Location = New System.Drawing.Point(9, 45)
-        Me.rbtCodigo.Name = "rbtCodigo"
-        Me.rbtCodigo.Size = New System.Drawing.Size(58, 17)
-        Me.rbtCodigo.TabIndex = 24
-        Me.rbtCodigo.TabStop = True
-        Me.rbtCodigo.Text = "Código"
-        Me.rbtCodigo.UseVisualStyleBackColor = True
         '
         'frm_Productos
         '
