@@ -1129,6 +1129,8 @@ Public Class frm_Principal
         frm_Productos.tb_prod_stock_minimo.Clear()
         frm_Productos.tb_prod_stock.Clear()
         frm_Productos.tb_prod_busqueda.Clear()
+        frm_Productos.tb_cod_busqueda.Enabled = False
+        frm_Productos.tb_prod_busqueda.Enabled = False
 
         frm_Productos.btn_prod_guardar.Enabled = False
         frm_Productos.btn_prod_actualizar.Enabled = True
