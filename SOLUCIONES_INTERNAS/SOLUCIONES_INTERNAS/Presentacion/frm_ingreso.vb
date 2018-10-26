@@ -353,23 +353,23 @@
         Me.Dispose()
     End Sub
 
-    Private Sub txt_usuario_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles txt_usuario.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            txt_contraseña.Focus()
-        End If
-    End Sub
+    'Private Sub txt_usuario_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles txt_usuario.KeyDown
+    '    If e.KeyCode = Keys.Enter Then
+    '        txt_contraseña.Focus()
+    '    End If
+    'End Sub
 
-    Private Sub txt_contraseña_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs)
-        If e.KeyCode = Keys.Enter Then
-            btnIngresar.Focus()
-        End If
-    End Sub
+    'Private Sub txt_contraseña_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs)
+    '    If e.KeyCode = Keys.Enter Then
+    '        btnIngresar.Focus()
+    '    End If
+    'End Sub
 
-    Private Sub txt_contraseña_KeyDown_1(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles txt_contraseña.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            btnIngresar.Focus()
-        End If
-    End Sub
+    'Private Sub txt_contraseña_KeyDown_1(sender As System.Object, e As System.Windows.Forms.KeyEventArgs) Handles txt_contraseña.KeyDown
+    '    If e.KeyCode = Keys.Enter Then
+    '        btnIngresar.Focus()
+    '    End If
+    'End Sub
 
     Private Sub frm_ingreso_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()

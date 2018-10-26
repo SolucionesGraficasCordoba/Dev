@@ -15,14 +15,31 @@ Public Class frm_Listado_Tareas
     Private Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         Label6.Text = dgvColaboradores.Rows.Count
+        If frm_Principal.LBL_MENU_PERFIL.Text = "ADMINISTRADOR" Or frm_Principal.LBL_MENU_PERFIL.Text = "GERENCIA" Then
+            'CARGA COMBOBOX SECTOR
+            Dim combosector = (From sec In datacontext.SECTOR
+               Select sec.SEC_id_sector, sec.SEC_nombre_sector)
+            cbo_sector.DataSource = combosector
+            cbo_sector.SelectedIndex = 0
+            cbo_sector.DisplayMember = "SEC_nombre_sector"
+            cbo_sector.ValueMember = "SEC_id_sector"
+        Else
 
-        'CARGA COMBOBOX SECTOR
-        Dim combosector = (From sec In datacontext.SECTOR
-                           Select sec.SEC_id_sector, sec.SEC_nombre_sector)
-        cbo_sector.DataSource = combosector
-        cbo_sector.DisplayMember = "SEC_nombre_sector"
-        cbo_sector.ValueMember = "SEC_id_sector"
-        cbo_sector.SelectedIndex = -1
+            Dim combosector = (From sec In datacontext.SECTOR
+                              Join col In datacontext.COLABORADOR
+                              On col.SEC_id_sector Equals sec.SEC_id_sector
+                              Join usu In datacontext.USUARIO
+                              On usu.COL_id_colaborador Equals col.COL_id_colaborador
+                              Select usu.USU_usuario, sec.SEC_id_sector, sec.SEC_nombre_sector, col.COL_id_colaborador, col.COL_nombre_col
+                              Where USU_usuario = frm_Principal.LBL_MENU_USU.Text)
+
+            cbo_sector.DataSource = combosector
+            ' cbo_sector.SelectedIndex = 0
+            cbo_sector.DisplayMember = "SEC_nombre_sector"
+            cbo_sector.ValueMember = "SEC_id_sector"
+        End If
+      
+
         dgvColaboradores.ClearSelection()
     End Sub
 
@@ -66,7 +83,8 @@ Public Class frm_Listado_Tareas
                                 A.COL_nombre_col,
                                 A.SEC_id_sector,
                                 A.SEC_nombre_sector
-          Where (SEC_id_sector = CInt(cbo_sector.SelectedIndex + 1)))
+                                Where SEC_nombre_sector = cbo_sector.Text)
+        '  Where (SEC_id_sector = CInt(cbo_sector.SelectedIndex + 1)))
         dgvColaboradores.DataSource = consultaporsector
         Label6.Text = dgvColaboradores.Rows.Count
         dgvColaboradores.ClearSelection()
@@ -85,16 +103,6 @@ Public Class frm_Listado_Tareas
                            o.TAR_observaciones, o.ORT_id_orden_trabajo, o.ORT_numero_ot, o.TAR_fecha, o.TAR_carga_horaria, o.TAR_hora_fin, o.Expr1, o.COL_nombre_col
                            Where COL_nombre_col = vble_colaborador And TAR_fecha = vble_fecha)
         mostrargrillaobligaciones(datagridtarea)
-
-        ' dgvColaboradores.ClearSelection()
-
-        'VALIDA SI TIENE ASIGNADAS TAREAS AL COLABORADOR
-        'If dgvTarea_x_Colaborador.Rows.Count = 0 Then
-        '    MsgBox("No se le ha asignado ninguna tarea", MsgBoxStyle.Information, "Listado de tareas")
-        '    btnAgregar.Enabled = True
-        '    Exit Sub
-        'End If
-        'Label1.Text = dgvTarea_x_Colaborador.Rows.Count
 
         If dgvTarea_x_Colaborador.Rows.Count = 0 Then
             If Me.Text = "Modificar Tarea" Then
@@ -947,6 +955,7 @@ Public Class frm_Listado_Tareas
         document.Add(texto)
         document.Add(datatable)
     End Sub
+
     Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
         'funcion para obtener el tamaño de las columnas del datagridview
         Dim indice_array As Integer = 0

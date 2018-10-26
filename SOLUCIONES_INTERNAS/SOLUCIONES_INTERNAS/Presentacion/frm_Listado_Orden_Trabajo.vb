@@ -20,6 +20,9 @@
         dgv_detalle_orden.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
         dgvProcesos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
 
+        txt_Buscar_Cliente.Enabled = False
+        txt_Buscar_orden_trabajo.Enabled = False
+        dtp_Buscar_Fecha_Entrega.Enabled = False
     End Sub
 
     'CARGA GRILLA ORDEN TRABAJO
@@ -317,7 +320,7 @@
     Private Sub txt_Buscar_orden_trabajo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_orden_trabajo.TextChanged
         Dim buscar As String
         armargrilla()
-        buscar = Me.txt_Buscar_orden_trabajo.Text & "*"
+        buscar = "*" & Me.txt_Buscar_orden_trabajo.Text & "*"
         Dim consultaCliente = (From U In datacontext.ORDEN_TRABAJO
                               Join ort In datacontext.VENDEDOR
                               On U.VEN_id_vendedor Equals ort.VEN_id_vendedor

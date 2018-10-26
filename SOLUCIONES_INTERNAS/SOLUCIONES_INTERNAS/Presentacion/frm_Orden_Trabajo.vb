@@ -109,7 +109,7 @@
 
     Private Sub btnBuscar_cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_cliente.Click
         frm_Cliente.quienllamocliente = Me
-        frm_Cliente.Text = "Seleccionar Vendedor"
+        frm_Cliente.Text = "Seleccionar Cliente"
         frm_Cliente.btnEliminar_Cliente.Enabled = False
         frm_Cliente.GroupNuevoCliente.Enabled = False
         frm_Cliente.Show()
