@@ -134,7 +134,7 @@ Partial Class frm_Grafico_1
         Me.Chart3.ChartAreas.Add(ChartArea2)
         Legend2.Name = "Legend1"
         Me.Chart3.Legends.Add(Legend2)
-        Me.Chart3.Location = New System.Drawing.Point(21, 524)
+        Me.Chart3.Location = New System.Drawing.Point(12, 516)
         Me.Chart3.Name = "Chart3"
         Series4.ChartArea = "ChartArea1"
         Series4.IsValueShownAsLabel = True
@@ -157,7 +157,7 @@ Partial Class frm_Grafico_1
         Me.Chart3.Series.Add(Series4)
         Me.Chart3.Series.Add(Series5)
         Me.Chart3.Series.Add(Series6)
-        Me.Chart3.Size = New System.Drawing.Size(1296, 250)
+        Me.Chart3.Size = New System.Drawing.Size(1346, 233)
         Me.Chart3.TabIndex = 105
         Me.Chart3.Text = "Chart3"
         Title2.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -186,7 +186,7 @@ Partial Class frm_Grafico_1
         Me.Chart2.ChartAreas.Add(ChartArea3)
         Legend3.Name = "Legend1"
         Me.Chart2.Legends.Add(Legend3)
-        Me.Chart2.Location = New System.Drawing.Point(21, 268)
+        Me.Chart2.Location = New System.Drawing.Point(12, 268)
         Me.Chart2.Name = "Chart2"
         Series7.ChartArea = "ChartArea1"
         Series7.IsValueShownAsLabel = True
@@ -209,7 +209,7 @@ Partial Class frm_Grafico_1
         Me.Chart2.Series.Add(Series7)
         Me.Chart2.Series.Add(Series8)
         Me.Chart2.Series.Add(Series9)
-        Me.Chart2.Size = New System.Drawing.Size(1296, 250)
+        Me.Chart2.Size = New System.Drawing.Size(1346, 233)
         Me.Chart2.TabIndex = 104
         Me.Chart2.Text = "Chart2"
         Title3.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -238,7 +238,7 @@ Partial Class frm_Grafico_1
         Me.Chart1.ChartAreas.Add(ChartArea4)
         Legend4.Name = "Legend1"
         Me.Chart1.Legends.Add(Legend4)
-        Me.Chart1.Location = New System.Drawing.Point(21, 12)
+        Me.Chart1.Location = New System.Drawing.Point(12, 12)
         Me.Chart1.Name = "Chart1"
         Series10.ChartArea = "ChartArea1"
         Series10.IsValueShownAsLabel = True
@@ -261,7 +261,7 @@ Partial Class frm_Grafico_1
         Me.Chart1.Series.Add(Series10)
         Me.Chart1.Series.Add(Series11)
         Me.Chart1.Series.Add(Series12)
-        Me.Chart1.Size = New System.Drawing.Size(1296, 250)
+        Me.Chart1.Size = New System.Drawing.Size(1346, 233)
         Me.Chart1.TabIndex = 103
         Me.Chart1.Text = "Chart1"
         Title4.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -275,7 +275,7 @@ Partial Class frm_Grafico_1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1370, 749)
+        Me.ClientSize = New System.Drawing.Size(1359, 737)
         Me.Controls.Add(Me.btnSiguiente)
         Me.Controls.Add(Me.btnAnterior)
         Me.Controls.Add(Me.Chart11)
@@ -283,7 +283,9 @@ Partial Class frm_Grafico_1
         Me.Controls.Add(Me.Chart2)
         Me.Controls.Add(Me.Chart1)
         Me.Name = "frm_Grafico_1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_Grafico_1"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.Chart11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart2, System.ComponentModel.ISupportInitialize).EndInit()

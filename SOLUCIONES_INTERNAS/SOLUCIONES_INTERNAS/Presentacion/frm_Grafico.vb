@@ -2,14 +2,46 @@
 Imports System.IO
 Imports System.Windows.Forms.DataVisualization.Charting
 Imports Microsoft.VisualBasic.PowerPacks.Printing.Compatibility.VB6
+Imports System.Drawing.Printing
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+Imports iTextSharp.text.html.simpleparser
+Imports Microsoft.Office.Interop
 
 Public Class Frm_Graficos
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
 
-    Private Sub Frm_Graficos_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub Frm_Graficos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         TipoGrafico()
         btnAnterior.Enabled = False
+
+        '------------------------------------------------------------------
+        If Chart3.DataSource = Nothing Then
+            Chart3.Visible = False
+        End If
+        btnSiguiente.Enabled = False
+
+        btnAnterior.Location = New Point(895, 474)
+        btnSiguiente.Location = New Point(988, 474)
+        btnExportarPDF.Location = New Point(1080, 474)
+        btnCancelar.Location = New Point(1193, 474)
+
+        Me.Size = New System.Drawing.Size(1375, 551)
+
+        Label1.Text = frm_Generar_Informe.cboMes.Text 'cbomes
+        Label1.Location = New Point(73, 474)
+
+        Label2.Text = frm_Generar_Informe.cbo_sector.Text
+        Label2.Location = New Point(390, 474)
+
+        Label3.Location = New Point(12, 474) 'mes
+        Label4.Location = New Point(303, 474) 'sector
+        '------------------------------------------------------------------
+
+
+
+
     End Sub
 
     Function llenargrafico(ByVal indexfila As Integer)
@@ -162,29 +194,17 @@ Public Class Frm_Graficos
 
     End Sub
 
-    Private Sub btnSiguiente_Click(sender As System.Object, e As System.EventArgs) Handles btnSiguiente.Click
+    Private Sub btnSiguiente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSiguiente.Click
         frm_Grafico_1.Show()
     End Sub
 
-    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
-        PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
-        PrintForm1.PrinterSettings.DefaultPageSettings.Landscape = True
-        PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName ="A4"
-
-        'PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Left = 30
-        'PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Right = 30
-        'PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Top = 30
-        'PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Bottom = 30
-
-        btnImprimir.Visible = False
-        btnAnterior.Visible = False
-        btnSiguiente.Visible = False
-        btnCancelar.Visible = False
-
-        PrintForm1.Print() 'imprimir
+    Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExportarPDF.Click
+       
     End Sub
 
     Private Sub Frm_Graficos_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
     End Sub
+
+
 End Class

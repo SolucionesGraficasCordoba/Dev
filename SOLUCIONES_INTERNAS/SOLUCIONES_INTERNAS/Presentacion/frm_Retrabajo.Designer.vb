@@ -106,6 +106,7 @@ Partial Class frm_retrabajo
         'txt_procedimiento
         '
         Me.txt_procedimiento.Location = New System.Drawing.Point(85, 92)
+        Me.txt_procedimiento.MaxLength = 100
         Me.txt_procedimiento.Name = "txt_procedimiento"
         Me.txt_procedimiento.Size = New System.Drawing.Size(727, 20)
         Me.txt_procedimiento.TabIndex = 4
@@ -122,6 +123,7 @@ Partial Class frm_retrabajo
         'txt_origen
         '
         Me.txt_origen.Location = New System.Drawing.Point(85, 55)
+        Me.txt_origen.MaxLength = 100
         Me.txt_origen.Name = "txt_origen"
         Me.txt_origen.Size = New System.Drawing.Size(727, 20)
         Me.txt_origen.TabIndex = 3
@@ -370,6 +372,7 @@ Partial Class frm_retrabajo
         'txt_Papel3_Soporte1
         '
         Me.txt_Papel3_Soporte1.Location = New System.Drawing.Point(24, 102)
+        Me.txt_Papel3_Soporte1.MaxLength = 50
         Me.txt_Papel3_Soporte1.Name = "txt_Papel3_Soporte1"
         Me.txt_Papel3_Soporte1.Size = New System.Drawing.Size(163, 20)
         Me.txt_Papel3_Soporte1.TabIndex = 15
@@ -391,6 +394,7 @@ Partial Class frm_retrabajo
         'txt_Papel2_Soporte1
         '
         Me.txt_Papel2_Soporte1.Location = New System.Drawing.Point(24, 76)
+        Me.txt_Papel2_Soporte1.MaxLength = 50
         Me.txt_Papel2_Soporte1.Name = "txt_Papel2_Soporte1"
         Me.txt_Papel2_Soporte1.Size = New System.Drawing.Size(163, 20)
         Me.txt_Papel2_Soporte1.TabIndex = 11
@@ -458,6 +462,7 @@ Partial Class frm_retrabajo
         'txt_Papel1_Soporte1
         '
         Me.txt_Papel1_Soporte1.Location = New System.Drawing.Point(24, 51)
+        Me.txt_Papel1_Soporte1.MaxLength = 50
         Me.txt_Papel1_Soporte1.Name = "txt_Papel1_Soporte1"
         Me.txt_Papel1_Soporte1.Size = New System.Drawing.Size(163, 20)
         Me.txt_Papel1_Soporte1.TabIndex = 7
@@ -550,6 +555,7 @@ Partial Class frm_retrabajo
         'txtTamaño1_Detalle1
         '
         Me.txtTamaño1_Detalle1.Location = New System.Drawing.Point(278, 35)
+        Me.txtTamaño1_Detalle1.MaxLength = 50
         Me.txtTamaño1_Detalle1.Name = "txtTamaño1_Detalle1"
         Me.txtTamaño1_Detalle1.Size = New System.Drawing.Size(92, 20)
         Me.txtTamaño1_Detalle1.TabIndex = 34

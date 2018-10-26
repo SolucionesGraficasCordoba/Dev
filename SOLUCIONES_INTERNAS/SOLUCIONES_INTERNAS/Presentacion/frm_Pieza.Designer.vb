@@ -180,6 +180,7 @@ Partial Class frm_Pieza
         'txt_nombre_pieza
         '
         Me.txt_nombre_pieza.Location = New System.Drawing.Point(68, 19)
+        Me.txt_nombre_pieza.MaxLength = 30
         Me.txt_nombre_pieza.Name = "txt_nombre_pieza"
         Me.txt_nombre_pieza.Size = New System.Drawing.Size(257, 20)
         Me.txt_nombre_pieza.TabIndex = 1

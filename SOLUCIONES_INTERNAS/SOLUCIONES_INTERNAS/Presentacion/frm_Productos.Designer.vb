@@ -68,6 +68,7 @@ Partial Class frm_Productos
         'tb_prod_descripcion
         '
         Me.tb_prod_descripcion.Location = New System.Drawing.Point(163, 40)
+        Me.tb_prod_descripcion.MaxLength = 50
         Me.tb_prod_descripcion.Name = "tb_prod_descripcion"
         Me.tb_prod_descripcion.Size = New System.Drawing.Size(410, 20)
         Me.tb_prod_descripcion.TabIndex = 2
@@ -221,6 +222,7 @@ Partial Class frm_Productos
         'tb_prod_codigo
         '
         Me.tb_prod_codigo.Location = New System.Drawing.Point(32, 40)
+        Me.tb_prod_codigo.MaxLength = 15
         Me.tb_prod_codigo.Name = "tb_prod_codigo"
         Me.tb_prod_codigo.Size = New System.Drawing.Size(112, 20)
         Me.tb_prod_codigo.TabIndex = 1

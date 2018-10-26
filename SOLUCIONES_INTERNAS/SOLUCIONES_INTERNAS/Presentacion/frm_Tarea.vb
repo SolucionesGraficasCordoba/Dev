@@ -2,10 +2,6 @@
     Dim datacontext As New DataS_Interno
     Dim quienllamoboton As Button
 
-    Private Sub frm_Tarea_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
-
     Private Sub btnGuardar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Tarea.Click
 
         If txt_nombre_colaborador.Text.Length = 0 Then

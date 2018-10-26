@@ -22,7 +22,6 @@ Partial Class Frm_Graficos
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
@@ -47,16 +46,18 @@ Partial Class Frm_Graficos
         Dim Series11 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim Series12 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim Title4 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_Graficos))
         Me.Chart3 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.Chart11 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.btnAnterior = New System.Windows.Forms.Button()
         Me.btnSiguiente = New System.Windows.Forms.Button()
-        Me.btnImprimir = New System.Windows.Forms.Button()
+        Me.btnExportarPDF = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.Chart3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Chart2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -104,7 +105,7 @@ Partial Class Frm_Graficos
         Me.Chart3.Series.Add(Series1)
         Me.Chart3.Series.Add(Series2)
         Me.Chart3.Series.Add(Series3)
-        Me.Chart3.Size = New System.Drawing.Size(1023, 222)
+        Me.Chart3.Size = New System.Drawing.Size(1335, 222)
         Me.Chart3.TabIndex = 98
         Me.Chart3.Text = "Chart3"
         Title1.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -156,7 +157,7 @@ Partial Class Frm_Graficos
         Me.Chart2.Series.Add(Series4)
         Me.Chart2.Series.Add(Series5)
         Me.Chart2.Series.Add(Series6)
-        Me.Chart2.Size = New System.Drawing.Size(1023, 222)
+        Me.Chart2.Size = New System.Drawing.Size(1335, 222)
         Me.Chart2.TabIndex = 97
         Me.Chart2.Text = "Chart2"
         Title2.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -208,7 +209,7 @@ Partial Class Frm_Graficos
         Me.Chart1.Series.Add(Series7)
         Me.Chart1.Series.Add(Series8)
         Me.Chart1.Series.Add(Series9)
-        Me.Chart1.Size = New System.Drawing.Size(1023, 222)
+        Me.Chart1.Size = New System.Drawing.Size(1335, 222)
         Me.Chart1.TabIndex = 96
         Me.Chart1.Text = "Chart1"
         Title3.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -232,7 +233,7 @@ Partial Class Frm_Graficos
         Legend4.Position.X = 30.0!
         Legend4.Position.Y = 30.0!
         Me.Chart11.Legends.Add(Legend4)
-        Me.Chart11.Location = New System.Drawing.Point(689, 693)
+        Me.Chart11.Location = New System.Drawing.Point(515, 696)
         Me.Chart11.Name = "Chart11"
         Series10.BorderColor = System.Drawing.Color.LightCoral
         Series10.ChartArea = "ChartArea1"
@@ -257,10 +258,11 @@ Partial Class Frm_Graficos
         Me.Chart11.Text = "Chart11"
         Title4.Name = "Title1"
         Me.Chart11.Titles.Add(Title4)
+        Me.Chart11.Visible = False
         '
         'btnAnterior
         '
-        Me.btnAnterior.Location = New System.Drawing.Point(776, 696)
+        Me.btnAnterior.Location = New System.Drawing.Point(895, 699)
         Me.btnAnterior.Name = "btnAnterior"
         Me.btnAnterior.Size = New System.Drawing.Size(75, 27)
         Me.btnAnterior.TabIndex = 102
@@ -269,47 +271,83 @@ Partial Class Frm_Graficos
         '
         'btnSiguiente
         '
-        Me.btnSiguiente.Location = New System.Drawing.Point(869, 696)
+        Me.btnSiguiente.Location = New System.Drawing.Point(988, 699)
         Me.btnSiguiente.Name = "btnSiguiente"
         Me.btnSiguiente.Size = New System.Drawing.Size(75, 27)
         Me.btnSiguiente.TabIndex = 102
         Me.btnSiguiente.Text = "Siguiente"
         Me.btnSiguiente.UseVisualStyleBackColor = True
         '
-        'btnImprimir
+        'btnExportarPDF
         '
-        Me.btnImprimir.Location = New System.Drawing.Point(960, 696)
-        Me.btnImprimir.Name = "btnImprimir"
-        Me.btnImprimir.Size = New System.Drawing.Size(75, 27)
-        Me.btnImprimir.TabIndex = 103
-        Me.btnImprimir.Text = "Imprimir"
-        Me.btnImprimir.UseVisualStyleBackColor = True
+        Me.btnExportarPDF.Location = New System.Drawing.Point(1080, 699)
+        Me.btnExportarPDF.Name = "btnExportarPDF"
+        Me.btnExportarPDF.Size = New System.Drawing.Size(97, 27)
+        Me.btnExportarPDF.TabIndex = 103
+        Me.btnExportarPDF.Text = "Exportar a PDF"
+        Me.btnExportarPDF.UseVisualStyleBackColor = True
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(1051, 696)
+        Me.btnCancelar.Location = New System.Drawing.Point(1193, 699)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 27)
         Me.btnCancelar.TabIndex = 104
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
-        'PrintForm1
+        'Label1
         '
-        Me.PrintForm1.DocumentName = "document"
-        Me.PrintForm1.Form = Me
-        Me.PrintForm1.PrintAction = System.Drawing.Printing.PrintAction.PrintToPrinter
-        Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
-        Me.PrintForm1.PrintFileName = Nothing
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(118, 706)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(72, 24)
+        Me.Label1.TabIndex = 105
+        Me.Label1.Text = "Label1"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(303, 706)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 24)
+        Me.Label2.TabIndex = 105
+        Me.Label2.Text = "Label1"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(73, 706)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(55, 24)
+        Me.Label3.TabIndex = 106
+        Me.Label3.Text = "Mes:"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(221, 706)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(76, 24)
+        Me.Label4.TabIndex = 107
+        Me.Label4.Text = "Sector:"
         '
         'Frm_Graficos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(1140, 737)
+        Me.ClientSize = New System.Drawing.Size(1359, 738)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnCancelar)
-        Me.Controls.Add(Me.btnImprimir)
+        Me.Controls.Add(Me.btnExportarPDF)
         Me.Controls.Add(Me.btnSiguiente)
         Me.Controls.Add(Me.btnAnterior)
         Me.Controls.Add(Me.Chart11)
@@ -324,6 +362,7 @@ Partial Class Frm_Graficos
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart11, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Chart3 As System.Windows.Forms.DataVisualization.Charting.Chart
@@ -332,7 +371,10 @@ Partial Class Frm_Graficos
     Friend WithEvents Chart11 As System.Windows.Forms.DataVisualization.Charting.Chart
     Friend WithEvents btnAnterior As System.Windows.Forms.Button
     Friend WithEvents btnSiguiente As System.Windows.Forms.Button
-    Friend WithEvents btnImprimir As System.Windows.Forms.Button
+    Friend WithEvents btnExportarPDF As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
-    Friend WithEvents PrintForm1 As Microsoft.VisualBasic.PowerPacks.Printing.PrintForm
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

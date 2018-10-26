@@ -95,6 +95,7 @@ Partial Class frm_Cliente
         'txt_Domicilio_Cliente
         '
         Me.txt_Domicilio_Cliente.Location = New System.Drawing.Point(90, 79)
+        Me.txt_Domicilio_Cliente.MaxLength = 50
         Me.txt_Domicilio_Cliente.Name = "txt_Domicilio_Cliente"
         Me.txt_Domicilio_Cliente.Size = New System.Drawing.Size(335, 20)
         Me.txt_Domicilio_Cliente.TabIndex = 3
@@ -111,6 +112,7 @@ Partial Class frm_Cliente
         'txt_Localidad_Cliente
         '
         Me.txt_Localidad_Cliente.Location = New System.Drawing.Point(90, 109)
+        Me.txt_Localidad_Cliente.MaxLength = 50
         Me.txt_Localidad_Cliente.Name = "txt_Localidad_Cliente"
         Me.txt_Localidad_Cliente.Size = New System.Drawing.Size(186, 20)
         Me.txt_Localidad_Cliente.TabIndex = 4
@@ -190,6 +192,7 @@ Partial Class frm_Cliente
         'txt_Codigo_Postal_Cliente
         '
         Me.txt_Codigo_Postal_Cliente.Location = New System.Drawing.Point(362, 109)
+        Me.txt_Codigo_Postal_Cliente.MaxLength = 10
         Me.txt_Codigo_Postal_Cliente.Name = "txt_Codigo_Postal_Cliente"
         Me.txt_Codigo_Postal_Cliente.Size = New System.Drawing.Size(63, 20)
         Me.txt_Codigo_Postal_Cliente.TabIndex = 5
@@ -197,6 +200,7 @@ Partial Class frm_Cliente
         'txt_mail_cliente
         '
         Me.txt_mail_cliente.Location = New System.Drawing.Point(90, 48)
+        Me.txt_mail_cliente.MaxLength = 50
         Me.txt_mail_cliente.Name = "txt_mail_cliente"
         Me.txt_mail_cliente.Size = New System.Drawing.Size(335, 20)
         Me.txt_mail_cliente.TabIndex = 2
@@ -204,6 +208,7 @@ Partial Class frm_Cliente
         'txt_razonsocial_cliente
         '
         Me.txt_razonsocial_cliente.Location = New System.Drawing.Point(90, 19)
+        Me.txt_razonsocial_cliente.MaxLength = 50
         Me.txt_razonsocial_cliente.Name = "txt_razonsocial_cliente"
         Me.txt_razonsocial_cliente.Size = New System.Drawing.Size(335, 20)
         Me.txt_razonsocial_cliente.TabIndex = 1
@@ -299,6 +304,7 @@ Partial Class frm_Cliente
         'txt_Buscar_Cliente
         '
         Me.txt_Buscar_Cliente.Location = New System.Drawing.Point(177, 22)
+        Me.txt_Buscar_Cliente.MaxLength = 50
         Me.txt_Buscar_Cliente.Name = "txt_Buscar_Cliente"
         Me.txt_Buscar_Cliente.Size = New System.Drawing.Size(130, 20)
         Me.txt_Buscar_Cliente.TabIndex = 9

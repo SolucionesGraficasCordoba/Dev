@@ -181,6 +181,7 @@ Partial Class frm_Colaborador
         'txt_apellido_colaborador
         '
         Me.txt_apellido_colaborador.Location = New System.Drawing.Point(64, 51)
+        Me.txt_apellido_colaborador.MaxLength = 50
         Me.txt_apellido_colaborador.Name = "txt_apellido_colaborador"
         Me.txt_apellido_colaborador.Size = New System.Drawing.Size(292, 20)
         Me.txt_apellido_colaborador.TabIndex = 2
@@ -233,6 +234,7 @@ Partial Class frm_Colaborador
         'txt_nombre_colaborador
         '
         Me.txt_nombre_colaborador.Location = New System.Drawing.Point(64, 19)
+        Me.txt_nombre_colaborador.MaxLength = 50
         Me.txt_nombre_colaborador.Name = "txt_nombre_colaborador"
         Me.txt_nombre_colaborador.Size = New System.Drawing.Size(292, 20)
         Me.txt_nombre_colaborador.TabIndex = 1

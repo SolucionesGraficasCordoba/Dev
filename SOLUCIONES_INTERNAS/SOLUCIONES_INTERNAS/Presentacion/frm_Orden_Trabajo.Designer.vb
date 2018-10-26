@@ -205,6 +205,7 @@ Partial Class frm_Orden_Trabajo
         Me.cboTipo_Orden.FormattingEnabled = True
         Me.cboTipo_Orden.Items.AddRange(New Object() {"DG", "DO", "DI", "DV", "DS"})
         Me.cboTipo_Orden.Location = New System.Drawing.Point(80, 37)
+        Me.cboTipo_Orden.MaxLength = 10
         Me.cboTipo_Orden.Name = "cboTipo_Orden"
         Me.cboTipo_Orden.Size = New System.Drawing.Size(66, 21)
         Me.cboTipo_Orden.TabIndex = 1
@@ -221,6 +222,7 @@ Partial Class frm_Orden_Trabajo
         'txt_mejoras
         '
         Me.txt_mejoras.Location = New System.Drawing.Point(615, 117)
+        Me.txt_mejoras.MaxLength = 250
         Me.txt_mejoras.Multiline = True
         Me.txt_mejoras.Name = "txt_mejoras"
         Me.txt_mejoras.Size = New System.Drawing.Size(294, 20)
@@ -238,6 +240,7 @@ Partial Class frm_Orden_Trabajo
         'txt_observaciones
         '
         Me.txt_observaciones.Location = New System.Drawing.Point(615, 13)
+        Me.txt_observaciones.MaxLength = 250
         Me.txt_observaciones.Multiline = True
         Me.txt_observaciones.Name = "txt_observaciones"
         Me.txt_observaciones.Size = New System.Drawing.Size(294, 98)
@@ -358,6 +361,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.txtNumero_Orden_Trabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(218, 13)
+        Me.txtNumero_Orden_Trabajo.MaxLength = 10
         Me.txtNumero_Orden_Trabajo.Multiline = True
         Me.txtNumero_Orden_Trabajo.Name = "txtNumero_Orden_Trabajo"
         Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(118, 48)
@@ -532,6 +536,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Gramaje3_Soporte3
         '
         Me.txt_Gramaje3_Soporte3.Location = New System.Drawing.Point(193, 92)
+        Me.txt_Gramaje3_Soporte3.MaxLength = 10
         Me.txt_Gramaje3_Soporte3.Name = "txt_Gramaje3_Soporte3"
         Me.txt_Gramaje3_Soporte3.Size = New System.Drawing.Size(64, 20)
         Me.txt_Gramaje3_Soporte3.TabIndex = 54
@@ -539,6 +544,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Papel3_Soporte3
         '
         Me.txt_Papel3_Soporte3.Location = New System.Drawing.Point(24, 93)
+        Me.txt_Papel3_Soporte3.MaxLength = 50
         Me.txt_Papel3_Soporte3.Name = "txt_Papel3_Soporte3"
         Me.txt_Papel3_Soporte3.Size = New System.Drawing.Size(163, 20)
         Me.txt_Papel3_Soporte3.TabIndex = 53
@@ -553,6 +559,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Gramaje2_Soporte3
         '
         Me.txt_Gramaje2_Soporte3.Location = New System.Drawing.Point(193, 66)
+        Me.txt_Gramaje2_Soporte3.MaxLength = 10
         Me.txt_Gramaje2_Soporte3.Name = "txt_Gramaje2_Soporte3"
         Me.txt_Gramaje2_Soporte3.Size = New System.Drawing.Size(64, 20)
         Me.txt_Gramaje2_Soporte3.TabIndex = 50
@@ -560,6 +567,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Papel2_Soporte3
         '
         Me.txt_Papel2_Soporte3.Location = New System.Drawing.Point(24, 67)
+        Me.txt_Papel2_Soporte3.MaxLength = 50
         Me.txt_Papel2_Soporte3.Name = "txt_Papel2_Soporte3"
         Me.txt_Papel2_Soporte3.Size = New System.Drawing.Size(163, 20)
         Me.txt_Papel2_Soporte3.TabIndex = 49
@@ -574,6 +582,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Gramaje1_Soporte3
         '
         Me.txt_Gramaje1_Soporte3.Location = New System.Drawing.Point(193, 41)
+        Me.txt_Gramaje1_Soporte3.MaxLength = 10
         Me.txt_Gramaje1_Soporte3.Name = "txt_Gramaje1_Soporte3"
         Me.txt_Gramaje1_Soporte3.Size = New System.Drawing.Size(64, 20)
         Me.txt_Gramaje1_Soporte3.TabIndex = 46
@@ -581,6 +590,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Papel1_Soporte3
         '
         Me.txt_Papel1_Soporte3.Location = New System.Drawing.Point(24, 42)
+        Me.txt_Papel1_Soporte3.MaxLength = 50
         Me.txt_Papel1_Soporte3.Name = "txt_Papel1_Soporte3"
         Me.txt_Papel1_Soporte3.Size = New System.Drawing.Size(163, 20)
         Me.txt_Papel1_Soporte3.TabIndex = 45
@@ -678,6 +688,7 @@ Partial Class frm_Orden_Trabajo
         'txtTamaño3_Detalle3
         '
         Me.txtTamaño3_Detalle3.Location = New System.Drawing.Point(262, 42)
+        Me.txtTamaño3_Detalle3.MaxLength = 50
         Me.txtTamaño3_Detalle3.Name = "txtTamaño3_Detalle3"
         Me.txtTamaño3_Detalle3.Size = New System.Drawing.Size(92, 20)
         Me.txtTamaño3_Detalle3.TabIndex = 43
@@ -849,6 +860,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Gramaje3_Soporte2
         '
         Me.txt_Gramaje3_Soporte2.Location = New System.Drawing.Point(193, 87)
+        Me.txt_Gramaje3_Soporte2.MaxLength = 10
         Me.txt_Gramaje3_Soporte2.Name = "txt_Gramaje3_Soporte2"
         Me.txt_Gramaje3_Soporte2.Size = New System.Drawing.Size(64, 20)
         Me.txt_Gramaje3_Soporte2.TabIndex = 37
@@ -856,6 +868,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Papel3_Soporte2
         '
         Me.txt_Papel3_Soporte2.Location = New System.Drawing.Point(24, 88)
+        Me.txt_Papel3_Soporte2.MaxLength = 50
         Me.txt_Papel3_Soporte2.Name = "txt_Papel3_Soporte2"
         Me.txt_Papel3_Soporte2.Size = New System.Drawing.Size(163, 20)
         Me.txt_Papel3_Soporte2.TabIndex = 36
@@ -870,6 +883,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Gramaje2_Soporte2
         '
         Me.txt_Gramaje2_Soporte2.Location = New System.Drawing.Point(193, 61)
+        Me.txt_Gramaje2_Soporte2.MaxLength = 10
         Me.txt_Gramaje2_Soporte2.Name = "txt_Gramaje2_Soporte2"
         Me.txt_Gramaje2_Soporte2.Size = New System.Drawing.Size(64, 20)
         Me.txt_Gramaje2_Soporte2.TabIndex = 33
@@ -877,6 +891,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Papel2_Soporte2
         '
         Me.txt_Papel2_Soporte2.Location = New System.Drawing.Point(24, 62)
+        Me.txt_Papel2_Soporte2.MaxLength = 50
         Me.txt_Papel2_Soporte2.Name = "txt_Papel2_Soporte2"
         Me.txt_Papel2_Soporte2.Size = New System.Drawing.Size(163, 20)
         Me.txt_Papel2_Soporte2.TabIndex = 32
@@ -891,6 +906,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Gramaje1_Soporte2
         '
         Me.txt_Gramaje1_Soporte2.Location = New System.Drawing.Point(193, 36)
+        Me.txt_Gramaje1_Soporte2.MaxLength = 10
         Me.txt_Gramaje1_Soporte2.Name = "txt_Gramaje1_Soporte2"
         Me.txt_Gramaje1_Soporte2.Size = New System.Drawing.Size(64, 20)
         Me.txt_Gramaje1_Soporte2.TabIndex = 29
@@ -898,6 +914,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Papel1_Soporte2
         '
         Me.txt_Papel1_Soporte2.Location = New System.Drawing.Point(24, 37)
+        Me.txt_Papel1_Soporte2.MaxLength = 50
         Me.txt_Papel1_Soporte2.Name = "txt_Papel1_Soporte2"
         Me.txt_Papel1_Soporte2.Size = New System.Drawing.Size(163, 20)
         Me.txt_Papel1_Soporte2.TabIndex = 28
@@ -995,6 +1012,7 @@ Partial Class frm_Orden_Trabajo
         'txtTamaño2_Detalle2
         '
         Me.txtTamaño2_Detalle2.Location = New System.Drawing.Point(262, 42)
+        Me.txtTamaño2_Detalle2.MaxLength = 50
         Me.txtTamaño2_Detalle2.Name = "txtTamaño2_Detalle2"
         Me.txtTamaño2_Detalle2.Size = New System.Drawing.Size(92, 20)
         Me.txtTamaño2_Detalle2.TabIndex = 26
@@ -1190,6 +1208,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Gramaje3_Soporte1
         '
         Me.txt_Gramaje3_Soporte1.Location = New System.Drawing.Point(193, 89)
+        Me.txt_Gramaje3_Soporte1.MaxLength = 10
         Me.txt_Gramaje3_Soporte1.Name = "txt_Gramaje3_Soporte1"
         Me.txt_Gramaje3_Soporte1.Size = New System.Drawing.Size(64, 20)
         Me.txt_Gramaje3_Soporte1.TabIndex = 20
@@ -1197,6 +1216,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Papel3_Soporte1
         '
         Me.txt_Papel3_Soporte1.Location = New System.Drawing.Point(24, 90)
+        Me.txt_Papel3_Soporte1.MaxLength = 50
         Me.txt_Papel3_Soporte1.Name = "txt_Papel3_Soporte1"
         Me.txt_Papel3_Soporte1.Size = New System.Drawing.Size(163, 20)
         Me.txt_Papel3_Soporte1.TabIndex = 19
@@ -1211,6 +1231,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Gramaje2_Soporte1
         '
         Me.txt_Gramaje2_Soporte1.Location = New System.Drawing.Point(193, 63)
+        Me.txt_Gramaje2_Soporte1.MaxLength = 10
         Me.txt_Gramaje2_Soporte1.Name = "txt_Gramaje2_Soporte1"
         Me.txt_Gramaje2_Soporte1.Size = New System.Drawing.Size(64, 20)
         Me.txt_Gramaje2_Soporte1.TabIndex = 16
@@ -1218,6 +1239,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Papel2_Soporte1
         '
         Me.txt_Papel2_Soporte1.Location = New System.Drawing.Point(24, 64)
+        Me.txt_Papel2_Soporte1.MaxLength = 50
         Me.txt_Papel2_Soporte1.Name = "txt_Papel2_Soporte1"
         Me.txt_Papel2_Soporte1.Size = New System.Drawing.Size(163, 20)
         Me.txt_Papel2_Soporte1.TabIndex = 15
@@ -1278,6 +1300,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Gramaje1_Soporte1
         '
         Me.txt_Gramaje1_Soporte1.Location = New System.Drawing.Point(193, 38)
+        Me.txt_Gramaje1_Soporte1.MaxLength = 10
         Me.txt_Gramaje1_Soporte1.Name = "txt_Gramaje1_Soporte1"
         Me.txt_Gramaje1_Soporte1.Size = New System.Drawing.Size(64, 20)
         Me.txt_Gramaje1_Soporte1.TabIndex = 12
@@ -1285,6 +1308,7 @@ Partial Class frm_Orden_Trabajo
         'txt_Papel1_Soporte1
         '
         Me.txt_Papel1_Soporte1.Location = New System.Drawing.Point(24, 39)
+        Me.txt_Papel1_Soporte1.MaxLength = 50
         Me.txt_Papel1_Soporte1.Name = "txt_Papel1_Soporte1"
         Me.txt_Papel1_Soporte1.Size = New System.Drawing.Size(163, 20)
         Me.txt_Papel1_Soporte1.TabIndex = 11
@@ -1337,6 +1361,7 @@ Partial Class frm_Orden_Trabajo
         'txtTamaño1_Detalle1
         '
         Me.txtTamaño1_Detalle1.Location = New System.Drawing.Point(262, 41)
+        Me.txtTamaño1_Detalle1.MaxLength = 50
         Me.txtTamaño1_Detalle1.Name = "txtTamaño1_Detalle1"
         Me.txtTamaño1_Detalle1.Size = New System.Drawing.Size(92, 20)
         Me.txtTamaño1_Detalle1.TabIndex = 9

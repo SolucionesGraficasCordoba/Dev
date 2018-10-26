@@ -81,6 +81,7 @@ Partial Class frm_proceso3
         '
         Me.txt_descripc_logistica.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_descripc_logistica.Location = New System.Drawing.Point(79, 19)
+        Me.txt_descripc_logistica.MaxLength = 250
         Me.txt_descripc_logistica.Multiline = True
         Me.txt_descripc_logistica.Name = "txt_descripc_logistica"
         Me.txt_descripc_logistica.Size = New System.Drawing.Size(281, 54)
@@ -112,6 +113,7 @@ Partial Class frm_proceso3
         '
         Me.txt_descripc_terminacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_descripc_terminacion.Location = New System.Drawing.Point(79, 19)
+        Me.txt_descripc_terminacion.MaxLength = 250
         Me.txt_descripc_terminacion.Multiline = True
         Me.txt_descripc_terminacion.Name = "txt_descripc_terminacion"
         Me.txt_descripc_terminacion.Size = New System.Drawing.Size(281, 54)
@@ -143,6 +145,7 @@ Partial Class frm_proceso3
         '
         Me.txt_descripc_gran_formato.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_descripc_gran_formato.Location = New System.Drawing.Point(79, 19)
+        Me.txt_descripc_gran_formato.MaxLength = 250
         Me.txt_descripc_gran_formato.Multiline = True
         Me.txt_descripc_gran_formato.Name = "txt_descripc_gran_formato"
         Me.txt_descripc_gran_formato.Size = New System.Drawing.Size(281, 54)
@@ -174,6 +177,7 @@ Partial Class frm_proceso3
         '
         Me.txt_descripc_digital.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_descripc_digital.Location = New System.Drawing.Point(79, 19)
+        Me.txt_descripc_digital.MaxLength = 250
         Me.txt_descripc_digital.Multiline = True
         Me.txt_descripc_digital.Name = "txt_descripc_digital"
         Me.txt_descripc_digital.Size = New System.Drawing.Size(281, 54)
@@ -205,6 +209,7 @@ Partial Class frm_proceso3
         '
         Me.txt_descripc_offset.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_descripc_offset.Location = New System.Drawing.Point(79, 19)
+        Me.txt_descripc_offset.MaxLength = 250
         Me.txt_descripc_offset.Multiline = True
         Me.txt_descripc_offset.Name = "txt_descripc_offset"
         Me.txt_descripc_offset.Size = New System.Drawing.Size(281, 54)
