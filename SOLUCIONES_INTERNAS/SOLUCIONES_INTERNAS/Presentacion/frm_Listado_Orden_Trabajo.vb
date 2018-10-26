@@ -825,5 +825,82 @@
         End If
     End Sub
 
+    Private Sub TextBox1_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_Buscar_Cliente.TextChanged
+        Dim buscar As String
+        armargrilla()
+        buscar = Me.txt_Buscar_Cliente.Text & "*"
+        Dim BuscaCliente = (From U In datacontext.ORDEN_TRABAJO
+                              Join ort In datacontext.VENDEDOR
+                              On U.VEN_id_vendedor Equals ort.VEN_id_vendedor
+                              Join col In datacontext.CLIENTE
+                              On col.CLI_id_cliente Equals U.CLI_id_cliente
+                             Select U.ORT_id_orden_trabajo,
+                             U.ORT_fecha_ot,
+                             U.ORT_fecha_entrega,
+                             U.ORT_tipo_ot,
+                             U.ORT_numero_ot,
+                             U.ORT_observaciones_ot,
+                             U.ORT_mejoras_ot,
+                             U.VEN_id_vendedor,
+                             ort.VEN_nombre_ven,
+                             U.CLI_id_cliente,
+                             col.CLI_razon_social
+                              Where CLI_razon_social Like buscar.ToString)
+        ' Order By ORT_numero_ot Ascending)
+        dgvLista_Orden_Trabajo.DataSource = BuscaCliente
+        dgvLista_Orden_Trabajo.ClearSelection()
+        dgv_detalle_orden.DataSource = ""
+        dgvProcesos.DataSource = ""
+    End Sub
+
+    Private Sub dtp_Buscar_Fecha_Entrega_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtp_Buscar_Fecha_Entrega.ValueChanged
+        Dim buscar As String
+        armargrilla()
+        buscar = Me.dtp_Buscar_Fecha_Entrega.Text & "*"
+
+        Dim BuscaFecha = (From U In datacontext.ORDEN_TRABAJO
+                              Join ort In datacontext.VENDEDOR
+                              On U.VEN_id_vendedor Equals ort.VEN_id_vendedor
+                              Join col In datacontext.CLIENTE
+                              On col.CLI_id_cliente Equals U.CLI_id_cliente
+                             Select U.ORT_id_orden_trabajo,
+                             U.ORT_fecha_ot,
+                             U.ORT_fecha_entrega,
+                             U.ORT_tipo_ot,
+                             U.ORT_numero_ot,
+                             U.ORT_observaciones_ot,
+                             U.ORT_mejoras_ot,
+                             U.VEN_id_vendedor,
+                             ort.VEN_nombre_ven,
+                             U.CLI_id_cliente,
+                             col.CLI_razon_social
+                              Where ORT_fecha_entrega.Value.Date = dtp_Buscar_Fecha_Entrega.Text)
+        ' Order By ORT_numero_ot Ascending)
+        dgvLista_Orden_Trabajo.DataSource = BuscaFecha
+        dgvLista_Orden_Trabajo.ClearSelection()
+        dgv_detalle_orden.DataSource = ""
+        dgvProcesos.DataSource = ""
+    End Sub
+
+    Private Sub rbtNroOrden_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbtNroOrden.CheckedChanged
+        txt_Buscar_Cliente.Enabled = False
+        dtp_Buscar_Fecha_Entrega.Enabled = False
+        txt_Buscar_orden_trabajo.Enabled = True
+        txt_Buscar_orden_trabajo.Focus()
+    End Sub
+
+    Private Sub rbtCliente_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbtCliente.CheckedChanged
+        txt_Buscar_orden_trabajo.Enabled = False
+        dtp_Buscar_Fecha_Entrega.Enabled = False
+        txt_Buscar_Cliente.Enabled = True
+        txt_Buscar_Cliente.Focus()
+    End Sub
+
+    Private Sub rbtFechaEntrega_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbtFechaEntrega.CheckedChanged
+        txt_Buscar_orden_trabajo.Enabled = False
+        txt_Buscar_Cliente.Enabled = False
+        dtp_Buscar_Fecha_Entrega.Enabled = True
+        dtp_Buscar_Fecha_Entrega.Focus()
+    End Sub
 End Class
 
