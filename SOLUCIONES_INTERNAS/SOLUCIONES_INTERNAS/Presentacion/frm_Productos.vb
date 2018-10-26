@@ -73,11 +73,11 @@ Public Class frm_Productos
         dgvLista_Productos.Columns(0).Visible = False
         dgvLista_Productos.Columns(1).DataPropertyName = "PROD_codigo"
         dgvLista_Productos.Columns(2).DataPropertyName = "PROD_descripcion"
-        'dgvLista_Productos.Columns(2).Width = 180
+        dgvLista_Productos.Columns(2).Width = 180
         dgvLista_Productos.Columns(3).DataPropertyName = "PROD_stock"
-        'dgvLista_Productos.Columns(3).Width = 80
+        dgvLista_Productos.Columns(3).Width = 80
         dgvLista_Productos.Columns(4).DataPropertyName = "PROD_stock_minimo"
-        'dgvLista_Productos.Columns(4).Width = 80
+        dgvLista_Productos.Columns(4).Width = 80
     End Sub
 
     Sub cargargrilla()
@@ -178,6 +178,7 @@ Public Class frm_Productos
         Try
             'intentar generar el documento
             Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
+
             'path que guarda el reporte en el escritorio de windows (desktop)
             Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Consulta de Productos.pdf"
             Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)

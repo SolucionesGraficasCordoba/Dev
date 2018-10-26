@@ -28,12 +28,14 @@ Partial Class frm_ingreso
         Me.btnIngresar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.btnCambiarContraseña = New System.Windows.Forms.Button()
         Me.txt_contraseña = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label4
@@ -48,7 +50,7 @@ Partial Class frm_ingreso
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(5, 58)
+        Me.Label5.Location = New System.Drawing.Point(5, 53)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(61, 13)
         Me.Label5.TabIndex = 16
@@ -56,14 +58,14 @@ Partial Class frm_ingreso
         '
         'txt_usuario
         '
-        Me.txt_usuario.Location = New System.Drawing.Point(72, 20)
+        Me.txt_usuario.Location = New System.Drawing.Point(89, 19)
         Me.txt_usuario.Name = "txt_usuario"
         Me.txt_usuario.Size = New System.Drawing.Size(187, 20)
         Me.txt_usuario.TabIndex = 1
         '
         'btnIngresar
         '
-        Me.btnIngresar.Location = New System.Drawing.Point(12, 90)
+        Me.btnIngresar.Location = New System.Drawing.Point(12, 86)
         Me.btnIngresar.Name = "btnIngresar"
         Me.btnIngresar.Size = New System.Drawing.Size(65, 23)
         Me.btnIngresar.TabIndex = 3
@@ -73,7 +75,7 @@ Partial Class frm_ingreso
         'btnCancelar
         '
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(83, 90)
+        Me.btnCancelar.Location = New System.Drawing.Point(83, 86)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(65, 23)
         Me.btnCancelar.TabIndex = 4
@@ -85,37 +87,15 @@ Partial Class frm_ingreso
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(12, 135)
+        Me.Label8.Location = New System.Drawing.Point(115, 135)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(108, 13)
         Me.Label8.TabIndex = 21
         Me.Label8.Text = "*  (Campo Requerido)"
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Red
-        Me.Label1.Location = New System.Drawing.Point(265, 23)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(11, 13)
-        Me.Label1.TabIndex = 22
-        Me.Label1.Text = "*"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(265, 58)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(11, 13)
-        Me.Label2.TabIndex = 22
-        Me.Label2.Text = "*"
-        '
         'btnCambiarContraseña
         '
-        Me.btnCambiarContraseña.Location = New System.Drawing.Point(154, 90)
+        Me.btnCambiarContraseña.Location = New System.Drawing.Point(154, 86)
         Me.btnCambiarContraseña.Name = "btnCambiarContraseña"
         Me.btnCambiarContraseña.Size = New System.Drawing.Size(122, 23)
         Me.btnCambiarContraseña.TabIndex = 5
@@ -124,7 +104,7 @@ Partial Class frm_ingreso
         '
         'txt_contraseña
         '
-        Me.txt_contraseña.Location = New System.Drawing.Point(72, 55)
+        Me.txt_contraseña.Location = New System.Drawing.Point(89, 53)
         Me.txt_contraseña.Name = "txt_contraseña"
         Me.txt_contraseña.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txt_contraseña.Size = New System.Drawing.Size(187, 20)
@@ -132,20 +112,52 @@ Partial Class frm_ingreso
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.txt_contraseña)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.txt_contraseña)
         Me.GroupBox1.Controls.Add(Me.btnCambiarContraseña)
         Me.GroupBox1.Controls.Add(Me.btnCancelar)
         Me.GroupBox1.Controls.Add(Me.btnIngresar)
         Me.GroupBox1.Controls.Add(Me.txt_usuario)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
+        Me.GroupBox1.Location = New System.Drawing.Point(118, 5)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(282, 120)
+        Me.GroupBox1.Size = New System.Drawing.Size(282, 127)
         Me.GroupBox1.TabIndex = 23
         Me.GroupBox1.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.Acceso_Usuarios
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 120)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 24
+        Me.PictureBox1.TabStop = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Red
+        Me.Label2.Location = New System.Drawing.Point(66, 56)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(11, 13)
+        Me.Label2.TabIndex = 24
+        Me.Label2.Text = "*"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(66, 26)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(11, 13)
+        Me.Label1.TabIndex = 23
+        Me.Label1.Text = "*"
         '
         'frm_ingreso
         '
@@ -153,7 +165,8 @@ Partial Class frm_ingreso
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
-        Me.ClientSize = New System.Drawing.Size(305, 156)
+        Me.ClientSize = New System.Drawing.Size(410, 156)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label8)
         Me.Name = "frm_ingreso"
@@ -161,6 +174,7 @@ Partial Class frm_ingreso
         Me.Text = "Ingreso"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -171,9 +185,10 @@ Partial Class frm_ingreso
     Friend WithEvents btnIngresar As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents btnCambiarContraseña As System.Windows.Forms.Button
     Friend WithEvents txt_contraseña As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
 End Class
