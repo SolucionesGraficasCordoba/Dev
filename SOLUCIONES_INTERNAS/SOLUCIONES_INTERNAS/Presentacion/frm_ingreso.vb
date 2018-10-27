@@ -63,6 +63,7 @@
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
+                frm_Principal.TareasToolStripMenuItem.DropDownItems(4).Visible = True
 
                 frm_Principal.ProductoToolStripMenuItem.Visible = True
 
@@ -87,9 +88,9 @@
                 frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(2).Visible = True 'consultar
 
                 frm_Principal.GenerarInformesToolStripMenuItem.Visible = True
-                frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(0).Visible = True 'nueva
-                frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(1).Visible = False 'eliminar
-                frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(2).Visible = False 'consultar
+                '  frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(0).Visible = True 'nueva
+                '  frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(1).Visible = False 'eliminar
+                '  frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(2).Visible = False 'consultar
 
                 'TIENE HABILITADO LAS SIGUIENES PESTAÑAS: 
                 ' - ARCHIVO----CERRAR SESION Y SALIR
@@ -143,6 +144,7 @@
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = False
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = False
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
+                frm_Principal.TareasToolStripMenuItem.DropDownItems(4).Visible = True
 
                 frm_Principal.ProductoToolStripMenuItem.Visible = True
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = False
@@ -169,9 +171,9 @@
                 frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(2).Visible = True 'consultar
 
                 frm_Principal.GenerarInformesToolStripMenuItem.Visible = False
-                frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(0).Visible = False 'nueva
-                frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(1).Visible = False 'eliminar
-                frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(2).Visible = False 'consultar
+                '  frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(0).Visible = False 'nueva
+                ' frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(1).Visible = False 'eliminar
+                ' frm_Principal.GenerarInformesToolStripMenuItem.DropDownItems(2).Visible = False 'consultar
 
                 'TIENE HABILITADA TODAS LAS PESTAÑAS
 
@@ -224,11 +226,13 @@
                 frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
                 frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
                 frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(3).Visible = True
+
                 frm_Principal.TareasToolStripMenuItem.Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(0).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
+                frm_Principal.TareasToolStripMenuItem.DropDownItems(4).Visible = True
 
                 frm_Principal.OrdenTrabajoToolStripMenuItem.Visible = True
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = True 'nueva
@@ -285,6 +289,7 @@
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
+                frm_Principal.TareasToolStripMenuItem.DropDownItems(4).Visible = True
 
                 frm_Principal.ProductoToolStripMenuItem.Visible = True
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
@@ -302,12 +307,7 @@
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Visible = True 'consultar
 
                 frm_Principal.GenerarInformesToolStripMenuItem.Visible = True
-
-
             End If
-
-
-
 
             'PASAR USUARIO Y PERFIL A LOS LABEL DEL MENUUU!!!! PARA LUEGO TOMAR EL USUARIO PARA
             'ACTUALIZAR PASS DESDE ADENTRO

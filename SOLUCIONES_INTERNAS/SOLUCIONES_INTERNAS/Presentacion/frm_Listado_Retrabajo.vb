@@ -1,14 +1,21 @@
 ﻿Imports System.IO
 Imports System.Text
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
 
 Public Class frm_Listado_Retrabajo
 
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
 
-    Private Sub frm_Listado_Retrabajo_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Dim contadorcolumnasvisibles As Integer
+
+    Private Sub frm_Listado_Retrabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ArmaGrillaRetrabajo()
         CargarGrillaRetrabajo()
+
+        txt_Buscar_ReTrabajo.Enabled = False
+        cboBuscar_Mes.Enabled = False
         lblTotal_Retrabajo.Text = dgvLista_ReTrabajos.Rows.Count
         dgvLista_ReTrabajos.ClearSelection()
     End Sub
@@ -130,7 +137,7 @@ Public Class frm_Listado_Retrabajo
 
     End Sub
 
-    Private Sub btnEliminar_Colaborador_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar_ReTrabajo.Click
+    Private Sub btnEliminar_Colaborador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar_ReTrabajo.Click
 
         If dgvLista_ReTrabajos.SelectedRows.Count > 0 Then
             Dim eliminar = (From C In datacontext.RE_TRABAJO Where C.RET_id_retrabajo = CInt(dgvLista_ReTrabajos.Item("RET_id_retrabajo", dgvLista_ReTrabajos.SelectedRows(0).Index).Value)).ToList()(0)
@@ -142,19 +149,20 @@ Public Class frm_Listado_Retrabajo
                     MsgBox("El ReTrabajo ha sido eliminado")
                     CargarGrillaRetrabajo()
                     lblTotal_Retrabajo.Text = dgvLista_ReTrabajos.Rows.Count
+                    Me.Close()
             End Select
         Else
             MsgBox("Debe seleccionar un ReTrabajo")
         End If
     End Sub
 
-    Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.Close()
         Me.Dispose()
     End Sub
 
 
-    Private Sub btnVer_Click(sender As System.Object, e As System.EventArgs) Handles btnVer.Click
+    Private Sub btnVer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVer.Click
         'LLENA LOS CAMPOS DE LA ORDEN
         If dgvLista_ReTrabajos.SelectedRows.Count > 0 Then
             frm_retrabajo.txt_id_re_trabajo.Text = dgvLista_ReTrabajos.Item("RET_id_retrabajo", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
@@ -190,7 +198,7 @@ Public Class frm_Listado_Retrabajo
             Exit Sub
         End If
         frm_retrabajo.btnGuardar_ReTrabajo.Enabled = False
-        frm_retrabajo.btnImprimir.Enabled = True
+        frm_retrabajo.btnImprimirFormulario.Enabled = True
         frm_retrabajo.btnBuscar_Numero_Orden1.Enabled = False
         frm_retrabajo.txt_cantidad_original.Enabled = False
         frm_retrabajo.txtNumero_Orden_Trabajo.Enabled = False
@@ -204,19 +212,19 @@ Public Class frm_Listado_Retrabajo
         frm_retrabajo.Show()
     End Sub
 
-    Private Sub rbtNumeroOrden_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbtNumeroOrden.CheckedChanged
+    Private Sub rbtNumeroOrden_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtNumeroOrden.CheckedChanged
         cboBuscar_Mes.Enabled = False
         cboBuscar_Mes.SelectedIndex = -1
         txt_Buscar_ReTrabajo.Enabled = True
     End Sub
 
-    Private Sub rbtMes_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbtMes.CheckedChanged
+    Private Sub rbtMes_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtMes.CheckedChanged
         cboBuscar_Mes.Enabled = True
         txt_Buscar_ReTrabajo.Enabled = False
         txt_Buscar_ReTrabajo.Clear()
     End Sub
 
-    Private Sub txt_Buscar_ReTrabajo_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_Buscar_ReTrabajo.TextChanged
+    Private Sub txt_Buscar_ReTrabajo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_ReTrabajo.TextChanged
         Dim buscar As String
         If rbtNumeroOrden.Checked = True Then
             ArmaGrillaRetrabajo()
@@ -260,7 +268,7 @@ Public Class frm_Listado_Retrabajo
         End If
     End Sub
 
-    Private Sub cboBuscar_Mes_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cboBuscar_Mes.SelectedIndexChanged
+    Private Sub cboBuscar_Mes_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboBuscar_Mes.SelectedIndexChanged
         If rbtMes.Checked = True Then
             Dim buscar As String
             ArmaGrillaRetrabajo()
@@ -303,52 +311,94 @@ Public Class frm_Listado_Retrabajo
         End If
     End Sub
 
-    Private Sub btnGenerarInforme_Click(sender As System.Object, e As System.EventArgs) Handles btnGenerarInforme.Click
+    Private Sub btnGenerarInforme_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExportarPDF.Click
 
-        Dim consulta As String = "consulta_retrabajo_" + Date.Now.Millisecond.ToString + ".csv"
-        ' Dim consulta1 As String = "consulta_total_mensual_" + Date.Now.Millisecond.ToString + ".csv"
-        Dim filePath As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta
-        ' Dim filePath1 As String = "\\wsmaldig3\PlanetPress\INTERNO\IN\" + consulta1
-        Dim delimeter As String = ","
-        Dim sb As New StringBuilder
+
         Try
-            For i As Integer = 0 To dgvLista_ReTrabajos.Rows.Count - 1
-                Dim array As String() = New String(dgvLista_ReTrabajos.Columns.Count - 1) {}
-                If i.Equals(0) Then
-                    For j As Integer = 0 To dgvLista_ReTrabajos.Columns.Count - 1
-                        array(j) = dgvLista_ReTrabajos.Columns(j).HeaderText
-                    Next
-                    sb.AppendLine(String.Join(delimeter, array))
-                End If
-                For j As Integer = 0 To dgvLista_ReTrabajos.Columns.Count - 1
-
-                    If Not dgvLista_ReTrabajos.Rows(i).IsNewRow Then
-
-                        If dgvLista_ReTrabajos.Columns(j).HeaderText = "Fecha" Or dgvLista_ReTrabajos.Columns(j).HeaderText = "Colaborador" Then
-                            array(j) = dgvLista_ReTrabajos(j, i).Value.ToString
-                        Else
-                            array(j) = Microsoft.VisualBasic.Right("   " + dgvLista_ReTrabajos(j, i).Value.ToString, 3)
-                        End If
-                    End If
-                Next
-                If Not dgvLista_ReTrabajos.Rows(i).IsNewRow Then
-                    sb.AppendLine(String.Join(delimeter, array))
-                End If
-            Next
-            File.WriteAllText(filePath, sb.ToString)
-            ' File.WriteAllText(filePath1, sb1.ToString)
-            ' File.AppendAllText(filePath, sb1.ToString)
-            MsgBox("La consulta se ha generado correctamente")
-            ' Process.Start(filePath)
+            'intentar generar el documento
+            Dim doc As New Document(PageSize.A4.Rotate(), 10, 10, 10, 10)
+            'path que guarda el reporte en el escritorio de windows (desktop)
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Listado de Re-Trabajos.pdf"
+            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+            PdfWriter.GetInstance(doc, file)
+            doc.Open()
+            ExportarDatosPDF(doc)
+            doc.Close()
+            Process.Start(filename)
             Me.Close()
         Catch ex As Exception
-            MsgBox("Hubo un error al generar la consulta")
+            'si el mensaje es fallido mostrar msgbox
+            MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentarlo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As System.Object, e As System.EventArgs) Handles GroupBox1.Enter
+    Public Sub ExportarDatosPDF(ByVal document As Document)
 
+        For c = 0 To dgvLista_ReTrabajos.ColumnCount - 1
+            If dgvLista_ReTrabajos.Columns(c).Visible = True Then
+                contadorcolumnasvisibles = contadorcolumnasvisibles + 1
+            End If
+        Next
+        'se crea un objeto PDFTable con el numero de columnas  del datagridview
+        Dim datatable As New PdfPTable(contadorcolumnasvisibles)
+
+        'se asignan algunas propiedades para el diseño del PDF
+        datatable.DefaultCell.Padding = 3
+
+        'Dim headerwidths As Single() = GetColumnsSize(dgvLista_ReTrabajos)
+        'datatable.SetWidths(headerwidths)
+
+        datatable.WidthPercentage = 100
+        datatable.DefaultCell.BorderWidth = 2
+        datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+
+        'se crea el encabezado en el PDF
+        '  Dim encabezado As New Paragraph("Tareas de: " + dgvLista_ReTrabajos.Item("COL_nombre_col", dgvLista_ReTrabajos.SelectedRows(0).Index).Value, New Font(Font.Name = "Tahoma", 16, Font.Bold))
+
+        'se crea el texto abajo del encabezado
+        Dim texto As New Phrase("Los re-trabajos realizados hasta la fecha " + Now.Date() + " son los siguientes:", New Font(Font.Name = "Tahoma", 14, Font.Bold))
+        '  Dim texto As New Phrase("Fecha: " + dtpFecha.Text, New Font(Font.Name = "Tahoma", 12, Font.Bold))
+        'se capturan los nombres de las columnas del datagridview
+        For i As Integer = 0 To dgvLista_ReTrabajos.ColumnCount - 1
+            If dgvLista_ReTrabajos.Columns(i).Visible = True Then
+                datatable.AddCell(dgvLista_ReTrabajos.Columns(i).HeaderText)
+            End If
+        Next
+        datatable.HeaderRows = 1
+        datatable.DefaultCell.BorderWidth = 1
+
+        'se generan las columnas del datagridview
+
+        For i As Integer = 0 To dgvLista_ReTrabajos.RowCount - 1
+
+            For j As Integer = 0 To dgvLista_ReTrabajos.ColumnCount - 1
+                If dgvLista_ReTrabajos.Columns(j).Visible = True Then
+                    Try
+                        datatable.AddCell(dgvLista_ReTrabajos(j, i).Value.ToString())
+                    Catch ex As Exception
+                        datatable.AddCell(" ")
+                    End Try
+                End If
+            Next
+            datatable.CompleteRow()
+        Next
+        '  document.Add(encabezado)
+        document.Add(texto)
+        document.Add(datatable)
     End Sub
+
+    Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
+        'funcion para obtener el tamaño de las columnas del datagridview
+        Dim indice_array As Integer = 0
+        Dim values As Single() = New Single(contadorcolumnasvisibles - 1) {}
+        For i As Integer = 0 To dg.ColumnCount - 1
+            If dgvLista_ReTrabajos.Columns(i).Visible = True Then
+                values(indice_array) = CSng(dg.Columns(i).Width)
+                indice_array = indice_array + 1
+            End If
+        Next
+        Return values
+    End Function
 
     Private Sub frm_Listado_Retrabajo_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()

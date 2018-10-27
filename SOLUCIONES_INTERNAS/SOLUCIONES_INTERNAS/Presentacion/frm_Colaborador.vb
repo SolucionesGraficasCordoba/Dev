@@ -30,7 +30,12 @@ Public Class frm_Colaborador
         Dim carga = (From col In datacontext.COLABORADOR
                                     Join sec In datacontext.SECTOR
                                     On col.SEC_id_sector Equals sec.SEC_id_sector
-                                    Select col.COL_id_colaborador, col.COL_nombre_col, col.COL_apellido_col, col.SEC_id_sector, sec.SEC_nombre_sector
+                                    Select
+                                    col.COL_id_colaborador,
+                                    col.COL_nombre_col,
+                                    col.COL_apellido_col,
+                                    col.SEC_id_sector,
+                                    sec.SEC_nombre_sector
                                     Order By SEC_nombre_sector Ascending)
         dgvLista_Colaboradores.DataSource = carga
     End Sub
@@ -51,12 +56,12 @@ Public Class frm_Colaborador
                 Exit Sub
             End If
 
-            Dim clie = New COLABORADOR
-            clie.COL_nombre_col = StrConv(txt_nombre_colaborador.Text, VbStrConv.ProperCase)
-            clie.COL_apellido_col = StrConv(txt_apellido_colaborador.Text, VbStrConv.ProperCase)
-            clie.SEC_id_sector = cbo_sector.SelectedValue
+            Dim col = New COLABORADOR
+            col.COL_nombre_col = StrConv(txt_nombre_colaborador.Text, VbStrConv.ProperCase)
+            col.COL_apellido_col = StrConv(txt_apellido_colaborador.Text, VbStrConv.ProperCase)
+            col.SEC_id_sector = cbo_sector.SelectedValue
 
-            datacontext.COLABORADOR.InsertOnSubmit(clie)
+            datacontext.COLABORADOR.InsertOnSubmit(col)
             datacontext.SubmitChanges()
             MsgBox("El colaborador se ha creado correctamente", vbInformation)
             cargargrilla()

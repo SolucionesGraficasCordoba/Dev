@@ -114,9 +114,9 @@
         dgvLista_Clientes.Columns(0).DataPropertyName = "CLI_id_cliente"
         dgvLista_Clientes.Columns(0).Visible = False
         dgvLista_Clientes.Columns(1).DataPropertyName = "CLI_razon_social"
-        dgvLista_Clientes.Columns(1).Width = 200
+        ' dgvLista_Clientes.Columns(1).Width = 200
         dgvLista_Clientes.Columns(2).DataPropertyName = "CLI_mail_cli"
-        dgvLista_Clientes.Columns(2).Width = 150
+        ' dgvLista_Clientes.Columns(2).Width = 150
         dgvLista_Clientes.Columns(3).DataPropertyName = "CLI_telefono_cli"
         dgvLista_Clientes.Columns(4).DataPropertyName = "CLI_domicilio"
         dgvLista_Clientes.Columns(5).DataPropertyName = "CLI_localidad"

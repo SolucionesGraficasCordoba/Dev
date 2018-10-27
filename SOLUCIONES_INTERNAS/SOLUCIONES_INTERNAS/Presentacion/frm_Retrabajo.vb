@@ -4,6 +4,12 @@
     Private Sub btnBuscar_Numero_Orden1_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden1.Click
         frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
         frm_Listado_Orden_Trabajo.Text = "Seleccionar Orden y Detalle"
+        frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
+        frm_Listado_Orden_Trabajo.btnModificarProducto.Enabled = False
+        frm_Listado_Orden_Trabajo.btnEliminar_Producto.Enabled = False
+        frm_Listado_Orden_Trabajo.btnModificarProceso.Enabled = False
+        frm_Listado_Orden_Trabajo.btnEliminarProceso.Enabled = False
         frm_Listado_Orden_Trabajo.Show()
 
     End Sub
@@ -49,11 +55,9 @@
             ret.RET_fecha = dtpFecha_Re_Trabajo.Text
 
             ret.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
-
-            ret.RET_cantidad_dort = txt_cantidad_original.Text
             ret.RET_tamaño_dort = txtTamaño1_Detalle1.Text
+            ret.RET_cantidad_dort = txt_cantidad_retrabajo.Text
             ret.RET_tipo_impresion_dort = cboTipoImpresion1_Detalle1.Text
-
             ret.RET_papel_soporte_1 = StrConv(txt_Papel1_Soporte1.Text, VbStrConv.ProperCase)
             ret.RET_papel_soporte_2 = StrConv(txt_Papel2_Soporte1.Text, VbStrConv.ProperCase)
             ret.RET_papel_soporte_3 = StrConv(txt_Papel3_Soporte1.Text, VbStrConv.ProperCase)
@@ -62,9 +66,16 @@
             ret.RET_gramaje_soporte_2 = StrConv(txt_Gramaje2_Soporte1.Text, VbStrConv.ProperCase)
             ret.RET_gramaje_soporte_3 = StrConv(txt_Gramaje3_Soporte1.Text, VbStrConv.ProperCase)
 
-            ret.RET_cantidad_soporte_1 = txt_Cantidad1_Soporte1.Text
-            ret.RET_cantidad_soporte_2 = txt_Cantidad2_Soporte1.Text
-            ret.RET_cantidad_soporte_3 = txt_Cantidad3_Soporte1.Text
+            If txt_Cantidad1_Soporte1.TextLength <> 0 Then
+                ret.RET_cantidad_soporte_1 = txt_Cantidad1_Soporte1.Text
+            End If
+
+            If txt_Cantidad2_Soporte1.TextLength <> 0 Then
+                ret.RET_cantidad_soporte_2 = txt_Cantidad2_Soporte1.Text
+            End If
+            If txt_Cantidad3_Soporte1.TextLength <> 0 Then
+                ret.RET_cantidad_soporte_3 = txt_Cantidad3_Soporte1.Text
+            End If
 
             ret.RET_formato_soporte_1 = cboFormato1_Soporte1.Text
             ret.RET_formato_soporte_2 = cboFormato2_Soporte1.Text
@@ -169,7 +180,7 @@
         End If
     End Sub
 
-    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimir.Click
+    Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnImprimirFormulario.Click
         PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
         PrintForm1.PrinterSettings.DefaultPageSettings.Landscape = True
 
@@ -182,7 +193,7 @@
         PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Bottom = 30
 
 
-        btnImprimir.Visible = False
+        btnImprimirFormulario.Visible = False
         btnGuardar_ReTrabajo.Visible = False
         btnCancelar_ReTrabajo.Visible = False
         Label17.Visible = False

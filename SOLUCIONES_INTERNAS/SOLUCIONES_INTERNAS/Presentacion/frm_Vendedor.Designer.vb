@@ -22,13 +22,13 @@ Partial Class frm_Vendedor
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.GroupListadoClientes = New System.Windows.Forms.GroupBox()
+        Me.GroupListadoVendedor = New System.Windows.Forms.GroupBox()
+        Me.dgvLista_vendedores = New System.Windows.Forms.DataGridView()
         Me.lblTotal_Vendedores = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnEliminar_vendedor = New System.Windows.Forms.Button()
         Me.txt_Buscar_vendedor = New System.Windows.Forms.TextBox()
-        Me.dgvLista_vendedores = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupNuevoVendedor = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -46,26 +46,37 @@ Partial Class frm_Vendedor
         Me.txt_id_vendedor = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.GroupListadoClientes.SuspendLayout()
+        Me.GroupListadoVendedor.SuspendLayout()
         CType(Me.dgvLista_vendedores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupNuevoVendedor.SuspendLayout()
         Me.SuspendLayout()
         '
-        'GroupListadoClientes
+        'GroupListadoVendedor
         '
-        Me.GroupListadoClientes.Controls.Add(Me.lblTotal_Vendedores)
-        Me.GroupListadoClientes.Controls.Add(Me.Label5)
-        Me.GroupListadoClientes.Controls.Add(Me.Label8)
-        Me.GroupListadoClientes.Controls.Add(Me.btnEliminar_vendedor)
-        Me.GroupListadoClientes.Controls.Add(Me.txt_Buscar_vendedor)
-        Me.GroupListadoClientes.Controls.Add(Me.dgvLista_vendedores)
-        Me.GroupListadoClientes.Controls.Add(Me.Label4)
-        Me.GroupListadoClientes.Location = New System.Drawing.Point(12, 195)
-        Me.GroupListadoClientes.Name = "GroupListadoClientes"
-        Me.GroupListadoClientes.Size = New System.Drawing.Size(413, 258)
-        Me.GroupListadoClientes.TabIndex = 3
-        Me.GroupListadoClientes.TabStop = False
-        Me.GroupListadoClientes.Text = "Listado de Vendedores"
+        Me.GroupListadoVendedor.Controls.Add(Me.dgvLista_vendedores)
+        Me.GroupListadoVendedor.Controls.Add(Me.lblTotal_Vendedores)
+        Me.GroupListadoVendedor.Controls.Add(Me.Label5)
+        Me.GroupListadoVendedor.Controls.Add(Me.Label8)
+        Me.GroupListadoVendedor.Controls.Add(Me.btnEliminar_vendedor)
+        Me.GroupListadoVendedor.Controls.Add(Me.txt_Buscar_vendedor)
+        Me.GroupListadoVendedor.Controls.Add(Me.Label4)
+        Me.GroupListadoVendedor.Location = New System.Drawing.Point(12, 195)
+        Me.GroupListadoVendedor.Name = "GroupListadoVendedor"
+        Me.GroupListadoVendedor.Size = New System.Drawing.Size(413, 258)
+        Me.GroupListadoVendedor.TabIndex = 3
+        Me.GroupListadoVendedor.TabStop = False
+        Me.GroupListadoVendedor.Text = "Listado de Vendedores"
+        '
+        'dgvLista_vendedores
+        '
+        Me.dgvLista_vendedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvLista_vendedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
+        Me.dgvLista_vendedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvLista_vendedores.Location = New System.Drawing.Point(19, 53)
+        Me.dgvLista_vendedores.Name = "dgvLista_vendedores"
+        Me.dgvLista_vendedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvLista_vendedores.Size = New System.Drawing.Size(379, 172)
+        Me.dgvLista_vendedores.TabIndex = 0
         '
         'lblTotal_Vendedores
         '
@@ -112,15 +123,6 @@ Partial Class frm_Vendedor
         Me.txt_Buscar_vendedor.Size = New System.Drawing.Size(144, 20)
         Me.txt_Buscar_vendedor.TabIndex = 2
         '
-        'dgvLista_vendedores
-        '
-        Me.dgvLista_vendedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLista_vendedores.Location = New System.Drawing.Point(19, 53)
-        Me.dgvLista_vendedores.Name = "dgvLista_vendedores"
-        Me.dgvLista_vendedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_vendedores.Size = New System.Drawing.Size(379, 172)
-        Me.dgvLista_vendedores.TabIndex = 0
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -159,7 +161,7 @@ Partial Class frm_Vendedor
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Red
-        Me.Label6.Location = New System.Drawing.Point(393, 22)
+        Me.Label6.Location = New System.Drawing.Point(60, 22)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(11, 13)
         Me.Label6.TabIndex = 6
@@ -176,14 +178,14 @@ Partial Class frm_Vendedor
         '
         'txt_telefono_vendedor
         '
-        Me.txt_telefono_vendedor.Location = New System.Drawing.Point(66, 109)
+        Me.txt_telefono_vendedor.Location = New System.Drawing.Point(77, 109)
         Me.txt_telefono_vendedor.Name = "txt_telefono_vendedor"
         Me.txt_telefono_vendedor.Size = New System.Drawing.Size(164, 20)
         Me.txt_telefono_vendedor.TabIndex = 10
         '
         'txt_mail_vendedor
         '
-        Me.txt_mail_vendedor.Location = New System.Drawing.Point(66, 79)
+        Me.txt_mail_vendedor.Location = New System.Drawing.Point(77, 79)
         Me.txt_mail_vendedor.Name = "txt_mail_vendedor"
         Me.txt_mail_vendedor.Size = New System.Drawing.Size(321, 20)
         Me.txt_mail_vendedor.TabIndex = 8
@@ -199,7 +201,7 @@ Partial Class frm_Vendedor
         '
         'txt_apellido_vendedor
         '
-        Me.txt_apellido_vendedor.Location = New System.Drawing.Point(66, 49)
+        Me.txt_apellido_vendedor.Location = New System.Drawing.Point(77, 49)
         Me.txt_apellido_vendedor.Name = "txt_apellido_vendedor"
         Me.txt_apellido_vendedor.Size = New System.Drawing.Size(321, 20)
         Me.txt_apellido_vendedor.TabIndex = 6
@@ -251,7 +253,7 @@ Partial Class frm_Vendedor
         '
         'txt_nombre_vendedor
         '
-        Me.txt_nombre_vendedor.Location = New System.Drawing.Point(66, 19)
+        Me.txt_nombre_vendedor.Location = New System.Drawing.Point(77, 19)
         Me.txt_nombre_vendedor.Name = "txt_nombre_vendedor"
         Me.txt_nombre_vendedor.Size = New System.Drawing.Size(321, 20)
         Me.txt_nombre_vendedor.TabIndex = 1
@@ -286,20 +288,20 @@ Partial Class frm_Vendedor
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(437, 466)
-        Me.Controls.Add(Me.GroupListadoClientes)
+        Me.Controls.Add(Me.GroupListadoVendedor)
         Me.Controls.Add(Me.GroupNuevoVendedor)
         Me.Name = "frm_Vendedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Vendedor"
-        Me.GroupListadoClientes.ResumeLayout(False)
-        Me.GroupListadoClientes.PerformLayout()
+        Me.GroupListadoVendedor.ResumeLayout(False)
+        Me.GroupListadoVendedor.PerformLayout()
         CType(Me.dgvLista_vendedores, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupNuevoVendedor.ResumeLayout(False)
         Me.GroupNuevoVendedor.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupListadoClientes As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupListadoVendedor As System.Windows.Forms.GroupBox
     Friend WithEvents lblTotal_Vendedores As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents btnEliminar_vendedor As System.Windows.Forms.Button

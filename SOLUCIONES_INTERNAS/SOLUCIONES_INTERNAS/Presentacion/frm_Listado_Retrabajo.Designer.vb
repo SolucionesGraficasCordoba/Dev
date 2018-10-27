@@ -29,7 +29,7 @@ Partial Class frm_Listado_Retrabajo
         Me.cboBuscar_Mes = New System.Windows.Forms.ComboBox()
         Me.txt_Buscar_ReTrabajo = New System.Windows.Forms.TextBox()
         Me.btnVer = New System.Windows.Forms.Button()
-        Me.btnGenerarInforme = New System.Windows.Forms.Button()
+        Me.btnExportarPDF = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.lblTotal_Retrabajo = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -44,7 +44,7 @@ Partial Class frm_Listado_Retrabajo
         '
         Me.GroupListadoReTrabajos.Controls.Add(Me.GroupBox1)
         Me.GroupListadoReTrabajos.Controls.Add(Me.btnVer)
-        Me.GroupListadoReTrabajos.Controls.Add(Me.btnGenerarInforme)
+        Me.GroupListadoReTrabajos.Controls.Add(Me.btnExportarPDF)
         Me.GroupListadoReTrabajos.Controls.Add(Me.btnCancelar)
         Me.GroupListadoReTrabajos.Controls.Add(Me.lblTotal_Retrabajo)
         Me.GroupListadoReTrabajos.Controls.Add(Me.Label5)
@@ -117,14 +117,14 @@ Partial Class frm_Listado_Retrabajo
         Me.btnVer.Text = "Ver"
         Me.btnVer.UseVisualStyleBackColor = True
         '
-        'btnGenerarInforme
+        'btnExportarPDF
         '
-        Me.btnGenerarInforme.Location = New System.Drawing.Point(155, 318)
-        Me.btnGenerarInforme.Name = "btnGenerarInforme"
-        Me.btnGenerarInforme.Size = New System.Drawing.Size(101, 23)
-        Me.btnGenerarInforme.TabIndex = 7
-        Me.btnGenerarInforme.Text = "Generar Informe"
-        Me.btnGenerarInforme.UseVisualStyleBackColor = True
+        Me.btnExportarPDF.Location = New System.Drawing.Point(155, 318)
+        Me.btnExportarPDF.Name = "btnExportarPDF"
+        Me.btnExportarPDF.Size = New System.Drawing.Size(101, 23)
+        Me.btnExportarPDF.TabIndex = 7
+        Me.btnExportarPDF.Text = "Exportar a PDF"
+        Me.btnExportarPDF.UseVisualStyleBackColor = True
         '
         'btnCancelar
         '
@@ -165,6 +165,8 @@ Partial Class frm_Listado_Retrabajo
         'dgvLista_ReTrabajos
         '
         Me.dgvLista_ReTrabajos.AllowUserToAddRows = False
+        Me.dgvLista_ReTrabajos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvLista_ReTrabajos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         Me.dgvLista_ReTrabajos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLista_ReTrabajos.Location = New System.Drawing.Point(11, 111)
         Me.dgvLista_ReTrabajos.Name = "dgvLista_ReTrabajos"
@@ -191,7 +193,7 @@ Partial Class frm_Listado_Retrabajo
     End Sub
     Friend WithEvents GroupListadoReTrabajos As System.Windows.Forms.GroupBox
     Friend WithEvents btnVer As System.Windows.Forms.Button
-    Friend WithEvents btnGenerarInforme As System.Windows.Forms.Button
+    Friend WithEvents btnExportarPDF As System.Windows.Forms.Button
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents lblTotal_Retrabajo As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label

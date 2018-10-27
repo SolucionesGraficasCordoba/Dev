@@ -94,7 +94,7 @@ Partial Class frm_Cliente
         '
         'txt_Domicilio_Cliente
         '
-        Me.txt_Domicilio_Cliente.Location = New System.Drawing.Point(90, 79)
+        Me.txt_Domicilio_Cliente.Location = New System.Drawing.Point(104, 79)
         Me.txt_Domicilio_Cliente.MaxLength = 50
         Me.txt_Domicilio_Cliente.Name = "txt_Domicilio_Cliente"
         Me.txt_Domicilio_Cliente.Size = New System.Drawing.Size(335, 20)
@@ -111,7 +111,7 @@ Partial Class frm_Cliente
         '
         'txt_Localidad_Cliente
         '
-        Me.txt_Localidad_Cliente.Location = New System.Drawing.Point(90, 109)
+        Me.txt_Localidad_Cliente.Location = New System.Drawing.Point(104, 109)
         Me.txt_Localidad_Cliente.MaxLength = 50
         Me.txt_Localidad_Cliente.Name = "txt_Localidad_Cliente"
         Me.txt_Localidad_Cliente.Size = New System.Drawing.Size(186, 20)
@@ -128,7 +128,8 @@ Partial Class frm_Cliente
         '
         'txtTelefono_Cliente
         '
-        Me.txtTelefono_Cliente.Location = New System.Drawing.Point(90, 139)
+        Me.txtTelefono_Cliente.Location = New System.Drawing.Point(104, 139)
+        Me.txtTelefono_Cliente.MaxLength = 15
         Me.txtTelefono_Cliente.Name = "txtTelefono_Cliente"
         Me.txtTelefono_Cliente.Size = New System.Drawing.Size(107, 20)
         Me.txtTelefono_Cliente.TabIndex = 6
@@ -138,7 +139,7 @@ Partial Class frm_Cliente
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(431, 22)
+        Me.Label8.Location = New System.Drawing.Point(87, 22)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(11, 13)
         Me.Label8.TabIndex = 4
@@ -147,7 +148,7 @@ Partial Class frm_Cliente
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(337, 112)
+        Me.Label7.Location = New System.Drawing.Point(351, 112)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(21, 13)
         Me.Label7.TabIndex = 3
@@ -191,7 +192,7 @@ Partial Class frm_Cliente
         '
         'txt_Codigo_Postal_Cliente
         '
-        Me.txt_Codigo_Postal_Cliente.Location = New System.Drawing.Point(362, 109)
+        Me.txt_Codigo_Postal_Cliente.Location = New System.Drawing.Point(376, 109)
         Me.txt_Codigo_Postal_Cliente.MaxLength = 10
         Me.txt_Codigo_Postal_Cliente.Name = "txt_Codigo_Postal_Cliente"
         Me.txt_Codigo_Postal_Cliente.Size = New System.Drawing.Size(63, 20)
@@ -199,7 +200,7 @@ Partial Class frm_Cliente
         '
         'txt_mail_cliente
         '
-        Me.txt_mail_cliente.Location = New System.Drawing.Point(90, 48)
+        Me.txt_mail_cliente.Location = New System.Drawing.Point(104, 48)
         Me.txt_mail_cliente.MaxLength = 50
         Me.txt_mail_cliente.Name = "txt_mail_cliente"
         Me.txt_mail_cliente.Size = New System.Drawing.Size(335, 20)
@@ -207,7 +208,7 @@ Partial Class frm_Cliente
         '
         'txt_razonsocial_cliente
         '
-        Me.txt_razonsocial_cliente.Location = New System.Drawing.Point(90, 19)
+        Me.txt_razonsocial_cliente.Location = New System.Drawing.Point(104, 19)
         Me.txt_razonsocial_cliente.MaxLength = 50
         Me.txt_razonsocial_cliente.Name = "txt_razonsocial_cliente"
         Me.txt_razonsocial_cliente.Size = New System.Drawing.Size(335, 20)
@@ -215,7 +216,7 @@ Partial Class frm_Cliente
         '
         'txt_id_cliente
         '
-        Me.txt_id_cliente.Location = New System.Drawing.Point(261, 139)
+        Me.txt_id_cliente.Location = New System.Drawing.Point(283, 139)
         Me.txt_id_cliente.Name = "txt_id_cliente"
         Me.txt_id_cliente.Size = New System.Drawing.Size(24, 20)
         Me.txt_id_cliente.TabIndex = 1
@@ -241,7 +242,7 @@ Partial Class frm_Cliente
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(203, 142)
+        Me.Label1.Location = New System.Drawing.Point(225, 142)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(52, 13)
         Me.Label1.TabIndex = 0
@@ -311,6 +312,8 @@ Partial Class frm_Cliente
         '
         'dgvLista_Clientes
         '
+        Me.dgvLista_Clientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgvLista_Clientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         Me.dgvLista_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLista_Clientes.Location = New System.Drawing.Point(19, 58)
         Me.dgvLista_Clientes.Name = "dgvLista_Clientes"

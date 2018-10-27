@@ -127,11 +127,6 @@ Public Class frm_Etiqueta_Modelo_1
             txtCantidadBultos.Focus()
             Exit Sub
         End If
-        'If txtNumeroBultos.Text.Length = 0 Then
-        '    MsgBox("El número de bultos no puede quedar vacío")
-        '    txtNumeroBultos.Focus()
-        '    Exit Sub
-        'End If
         If txtUnidadxBulto.Text.Length = 0 Then
             MsgBox("La unidad por bulto no puede quedar vacío")
             txtUnidadxBulto.Focus()
@@ -139,6 +134,12 @@ Public Class frm_Etiqueta_Modelo_1
         End If
         If txtTotalBultos.Text.Length = 0 Then
             MsgBox("El total de bultos no puede quedar vacío")
+            txtTotalBultos.Focus()
+            Exit Sub
+        End If
+
+        If cboLogo.SelectedIndex = -1 Then
+            MsgBox("Seleccione un logo")
             txtTotalBultos.Focus()
             Exit Sub
         End If

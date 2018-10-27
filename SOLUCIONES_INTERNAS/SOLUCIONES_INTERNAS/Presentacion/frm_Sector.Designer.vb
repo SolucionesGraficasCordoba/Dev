@@ -147,7 +147,7 @@ Partial Class frm_Sector
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(340, 22)
+        Me.Label3.Location = New System.Drawing.Point(66, 22)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(11, 13)
         Me.Label3.TabIndex = 6
@@ -191,7 +191,7 @@ Partial Class frm_Sector
         '
         'txt_nombre_sector
         '
-        Me.txt_nombre_sector.Location = New System.Drawing.Point(66, 19)
+        Me.txt_nombre_sector.Location = New System.Drawing.Point(83, 19)
         Me.txt_nombre_sector.Name = "txt_nombre_sector"
         Me.txt_nombre_sector.Size = New System.Drawing.Size(268, 20)
         Me.txt_nombre_sector.TabIndex = 1

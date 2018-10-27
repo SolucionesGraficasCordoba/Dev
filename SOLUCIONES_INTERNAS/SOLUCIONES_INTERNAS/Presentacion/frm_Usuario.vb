@@ -49,7 +49,11 @@
     Private Sub btnGuardar_Usuario_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar_Usuario.Click
         Try
             Dim buscacliente = (From cli In datacontext.USUARIO
-                                Select cli.USU_usuario, cli.USU_contraseña, cli.USU_perfil, cli.COL_id_colaborador
+                                Select
+                                cli.USU_usuario,
+                                cli.USU_contraseña,
+                                cli.USU_perfil,
+                                cli.COL_id_colaborador
                                 Where USU_usuario = txt_usuario.Text.ToUpper).Any
             If buscacliente = True Then
                 MsgBox("El usuario ingresado ya existe")
@@ -153,7 +157,16 @@
         Dim buscar As String
         armargrilla()
         buscar = Me.txt_Buscar_Usuario.Text & "*"
-        Dim consultausuario = From U In datacontext.USUARIO Select U.USU_id_usuario, U.USU_usuario, U.USU_contraseña, U.USU_perfil, U.COL_id_colaborador Where USU_usuario Like buscar.ToString
+        Dim consultausuario = From U In datacontext.USUARIO
+                              Join C In datacontext.COLABORADOR
+                              On C.COL_id_colaborador Equals U.COL_id_colaborador
+                              Select
+                              U.USU_id_usuario,
+                              U.USU_usuario,
+                              U.USU_contraseña,
+                              U.USU_perfil,
+                              C.COL_nombre_col,
+                              U.COL_id_colaborador Where USU_usuario Like buscar.ToString
         dgvLista_Usuarios.DataSource = consultausuario
         dgvLista_Usuarios.ClearSelection()
     End Sub
@@ -176,7 +189,6 @@
         End If
     End Sub
 
-
     Private Sub dgvLista_Usuarios_Click(sender As Object, e As System.EventArgs) Handles dgvLista_Usuarios.Click
         If dgvLista_Usuarios.SelectedRows.Count > 0 Then
             txt_id_usuario.Text = dgvLista_Usuarios.Item("USU_id_usuario", dgvLista_Usuarios.SelectedRows(0).Index).Value
@@ -195,7 +207,9 @@
         frm_Colaborador.quienllamo_col = Me
         frm_Colaborador.Text = "Seleccionar Colaborador"
         frm_Colaborador.GroupNuevoColaborador.Enabled = False
+        frm_Colaborador.btnEliminar_Colaborador.Enabled = False
         '  frm_Colaborador.btnImprimir.Visible = False
+        frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
         frm_Colaborador.ShowDialog()
     End Sub
 

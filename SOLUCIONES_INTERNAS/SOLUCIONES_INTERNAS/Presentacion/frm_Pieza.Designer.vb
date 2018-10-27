@@ -108,6 +108,7 @@ Partial Class frm_Pieza
         '
         'dgvLista_Piezas
         '
+        Me.dgvLista_Piezas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         Me.dgvLista_Piezas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLista_Piezas.Location = New System.Drawing.Point(10, 50)
         Me.dgvLista_Piezas.Name = "dgvLista_Piezas"
@@ -126,6 +127,7 @@ Partial Class frm_Pieza
         '
         'GroupNuevaPieza
         '
+        Me.GroupNuevaPieza.Controls.Add(Me.Label3)
         Me.GroupNuevaPieza.Controls.Add(Me.btnCancelar_Pieza)
         Me.GroupNuevaPieza.Controls.Add(Me.btnActualizar_Pieza)
         Me.GroupNuevaPieza.Controls.Add(Me.btnGuardar_Pieza)
@@ -179,7 +181,7 @@ Partial Class frm_Pieza
         '
         'txt_nombre_pieza
         '
-        Me.txt_nombre_pieza.Location = New System.Drawing.Point(68, 19)
+        Me.txt_nombre_pieza.Location = New System.Drawing.Point(80, 19)
         Me.txt_nombre_pieza.MaxLength = 30
         Me.txt_nombre_pieza.Name = "txt_nombre_pieza"
         Me.txt_nombre_pieza.Size = New System.Drawing.Size(257, 20)
@@ -215,7 +217,7 @@ Partial Class frm_Pieza
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(343, 34)
+        Me.Label3.Location = New System.Drawing.Point(63, 22)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(11, 13)
         Me.Label3.TabIndex = 5
@@ -226,7 +228,6 @@ Partial Class frm_Pieza
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(373, 375)
-        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.GroupListadoPiezas)
         Me.Controls.Add(Me.GroupNuevaPieza)
         Me.Name = "frm_Pieza"
@@ -238,7 +239,6 @@ Partial Class frm_Pieza
         Me.GroupNuevaPieza.ResumeLayout(False)
         Me.GroupNuevaPieza.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupListadoPiezas As System.Windows.Forms.GroupBox

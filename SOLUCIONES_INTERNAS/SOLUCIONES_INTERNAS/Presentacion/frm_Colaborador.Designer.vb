@@ -34,6 +34,8 @@ Partial Class frm_Colaborador
         Me.dgvLista_Colaboradores = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupNuevoColaborador = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.cbo_sector = New System.Windows.Forms.ComboBox()
         Me.txt_apellido_colaborador = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -47,7 +49,6 @@ Partial Class frm_Colaborador
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PrintDocument1 = New System.Drawing.Printing.PrintDocument()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.PrintDialog1 = New System.Windows.Forms.PrintDialog()
         Me.GroupListadoColaboradores.SuspendLayout()
         CType(Me.dgvLista_Colaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -101,7 +102,7 @@ Partial Class frm_Colaborador
         '
         'btnEliminar_Colaborador
         '
-        Me.btnEliminar_Colaborador.Location = New System.Drawing.Point(210, 23)
+        Me.btnEliminar_Colaborador.Location = New System.Drawing.Point(282, 23)
         Me.btnEliminar_Colaborador.Name = "btnEliminar_Colaborador"
         Me.btnEliminar_Colaborador.Size = New System.Drawing.Size(75, 23)
         Me.btnEliminar_Colaborador.TabIndex = 7
@@ -112,11 +113,12 @@ Partial Class frm_Colaborador
         '
         Me.txt_Buscar_Colaborador.Location = New System.Drawing.Point(96, 25)
         Me.txt_Buscar_Colaborador.Name = "txt_Buscar_Colaborador"
-        Me.txt_Buscar_Colaborador.Size = New System.Drawing.Size(90, 20)
+        Me.txt_Buscar_Colaborador.Size = New System.Drawing.Size(180, 20)
         Me.txt_Buscar_Colaborador.TabIndex = 6
         '
         'dgvLista_Colaboradores
         '
+        Me.dgvLista_Colaboradores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
@@ -151,6 +153,8 @@ Partial Class frm_Colaborador
         '
         'GroupNuevoColaborador
         '
+        Me.GroupNuevoColaborador.Controls.Add(Me.Label7)
+        Me.GroupNuevoColaborador.Controls.Add(Me.Label6)
         Me.GroupNuevoColaborador.Controls.Add(Me.cbo_sector)
         Me.GroupNuevoColaborador.Controls.Add(Me.txt_apellido_colaborador)
         Me.GroupNuevoColaborador.Controls.Add(Me.Label9)
@@ -170,17 +174,39 @@ Partial Class frm_Colaborador
         Me.GroupNuevoColaborador.TabStop = False
         Me.GroupNuevoColaborador.Text = "Nuevo Colaborador"
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(57, 86)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(11, 13)
+        Me.Label7.TabIndex = 11
+        Me.Label7.Text = "*"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Red
+        Me.Label6.Location = New System.Drawing.Point(57, 22)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(11, 13)
+        Me.Label6.TabIndex = 6
+        Me.Label6.Text = "*"
+        '
         'cbo_sector
         '
         Me.cbo_sector.FormattingEnabled = True
-        Me.cbo_sector.Location = New System.Drawing.Point(64, 83)
+        Me.cbo_sector.Location = New System.Drawing.Point(74, 83)
         Me.cbo_sector.Name = "cbo_sector"
         Me.cbo_sector.Size = New System.Drawing.Size(174, 21)
         Me.cbo_sector.TabIndex = 3
         '
         'txt_apellido_colaborador
         '
-        Me.txt_apellido_colaborador.Location = New System.Drawing.Point(64, 51)
+        Me.txt_apellido_colaborador.Location = New System.Drawing.Point(74, 51)
         Me.txt_apellido_colaborador.MaxLength = 50
         Me.txt_apellido_colaborador.Name = "txt_apellido_colaborador"
         Me.txt_apellido_colaborador.Size = New System.Drawing.Size(292, 20)
@@ -233,7 +259,7 @@ Partial Class frm_Colaborador
         '
         'txt_nombre_colaborador
         '
-        Me.txt_nombre_colaborador.Location = New System.Drawing.Point(64, 19)
+        Me.txt_nombre_colaborador.Location = New System.Drawing.Point(74, 19)
         Me.txt_nombre_colaborador.MaxLength = 50
         Me.txt_nombre_colaborador.Name = "txt_nombre_colaborador"
         Me.txt_nombre_colaborador.Size = New System.Drawing.Size(292, 20)
@@ -276,17 +302,6 @@ Partial Class frm_Colaborador
         'PrintDocument1
         '
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.Red
-        Me.Label6.Location = New System.Drawing.Point(374, 44)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(11, 13)
-        Me.Label6.TabIndex = 6
-        Me.Label6.Text = "*"
-        '
         'PrintDialog1
         '
         Me.PrintDialog1.UseEXDialog = True
@@ -295,8 +310,7 @@ Partial Class frm_Colaborador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(406, 464)
-        Me.Controls.Add(Me.Label6)
+        Me.ClientSize = New System.Drawing.Size(406, 448)
         Me.Controls.Add(Me.GroupNuevoColaborador)
         Me.Controls.Add(Me.GroupListadoColaboradores)
         Me.Name = "frm_Colaborador"
@@ -308,7 +322,6 @@ Partial Class frm_Colaborador
         Me.GroupNuevoColaborador.ResumeLayout(False)
         Me.GroupNuevoColaborador.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GroupListadoColaboradores As System.Windows.Forms.GroupBox
@@ -335,4 +348,5 @@ Partial Class frm_Colaborador
     Friend WithEvents PrintDocument1 As System.Drawing.Printing.PrintDocument
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents PrintDialog1 As System.Windows.Forms.PrintDialog
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

@@ -86,7 +86,7 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.Label5.Location = New System.Drawing.Point(14, 40)
+        Me.Label5.Location = New System.Drawing.Point(1, 40)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(69, 13)
         Me.Label5.TabIndex = 4
@@ -95,7 +95,7 @@ Partial Class frm_Etiqueta_Modelo_1
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(23, 81)
+        Me.Label6.Location = New System.Drawing.Point(12, 81)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(57, 13)
         Me.Label6.TabIndex = 5
@@ -113,7 +113,7 @@ Partial Class frm_Etiqueta_Modelo_1
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(21, 143)
+        Me.Label8.Location = New System.Drawing.Point(15, 143)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(55, 13)
         Me.Label8.TabIndex = 5
@@ -169,7 +169,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label27.ForeColor = System.Drawing.Color.Red
-        Me.Label27.Location = New System.Drawing.Point(2, 140)
+        Me.Label27.Location = New System.Drawing.Point(67, 143)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(14, 13)
         Me.Label27.TabIndex = 28
@@ -180,7 +180,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.Red
-        Me.Label26.Location = New System.Drawing.Point(2, 81)
+        Me.Label26.Location = New System.Drawing.Point(69, 81)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(14, 13)
         Me.Label26.TabIndex = 27
@@ -267,7 +267,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label32.AutoSize = True
         Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label32.ForeColor = System.Drawing.Color.Red
-        Me.Label32.Location = New System.Drawing.Point(2, 40)
+        Me.Label32.Location = New System.Drawing.Point(67, 40)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(14, 13)
         Me.Label32.TabIndex = 28
@@ -316,7 +316,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label30.ForeColor = System.Drawing.Color.Red
-        Me.Label30.Location = New System.Drawing.Point(437, 46)
+        Me.Label30.Location = New System.Drawing.Point(363, 46)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(14, 13)
         Me.Label30.TabIndex = 30
@@ -338,7 +338,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label28.ForeColor = System.Drawing.Color.Red
-        Me.Label28.Location = New System.Drawing.Point(437, 23)
+        Me.Label28.Location = New System.Drawing.Point(363, 23)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(14, 13)
         Me.Label28.TabIndex = 28
@@ -381,7 +381,7 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         'txtPeso
         '
-        Me.txtPeso.Location = New System.Drawing.Point(376, 87)
+        Me.txtPeso.Location = New System.Drawing.Point(382, 87)
         Me.txtPeso.Name = "txtPeso"
         Me.txtPeso.Size = New System.Drawing.Size(55, 20)
         Me.txtPeso.TabIndex = 15
@@ -389,7 +389,7 @@ Partial Class frm_Etiqueta_Modelo_1
         'txtTotalBultos
         '
         Me.txtTotalBultos.Enabled = False
-        Me.txtTotalBultos.Location = New System.Drawing.Point(376, 64)
+        Me.txtTotalBultos.Location = New System.Drawing.Point(382, 64)
         Me.txtTotalBultos.Name = "txtTotalBultos"
         Me.txtTotalBultos.Size = New System.Drawing.Size(55, 20)
         Me.txtTotalBultos.TabIndex = 14
@@ -405,14 +405,14 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         'txtUnidadxBulto
         '
-        Me.txtUnidadxBulto.Location = New System.Drawing.Point(376, 41)
+        Me.txtUnidadxBulto.Location = New System.Drawing.Point(382, 41)
         Me.txtUnidadxBulto.Name = "txtUnidadxBulto"
         Me.txtUnidadxBulto.Size = New System.Drawing.Size(55, 20)
         Me.txtUnidadxBulto.TabIndex = 13
         '
         'txtCantidadBultos
         '
-        Me.txtCantidadBultos.Location = New System.Drawing.Point(376, 19)
+        Me.txtCantidadBultos.Location = New System.Drawing.Point(382, 19)
         Me.txtCantidadBultos.Name = "txtCantidadBultos"
         Me.txtCantidadBultos.Size = New System.Drawing.Size(55, 20)
         Me.txtCantidadBultos.TabIndex = 11
@@ -481,7 +481,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label33.AutoSize = True
         Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label33.ForeColor = System.Drawing.Color.Red
-        Me.Label33.Location = New System.Drawing.Point(8, 26)
+        Me.Label33.Location = New System.Drawing.Point(73, 22)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(14, 13)
         Me.Label33.TabIndex = 38
@@ -513,7 +513,7 @@ Partial Class frm_Etiqueta_Modelo_1
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(40, 22)
+        Me.Label34.Location = New System.Drawing.Point(33, 22)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(42, 13)
         Me.Label34.TabIndex = 34

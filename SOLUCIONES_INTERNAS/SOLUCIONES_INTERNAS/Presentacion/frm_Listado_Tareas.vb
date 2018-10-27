@@ -15,6 +15,7 @@ Public Class frm_Listado_Tareas
     Private Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         Label6.Text = dgvColaboradores.Rows.Count
+
         If frm_Principal.LBL_MENU_PERFIL.Text = "ADMINISTRADOR" Or frm_Principal.LBL_MENU_PERFIL.Text = "GERENCIA" Then
             'CARGA COMBOBOX SECTOR
             Dim combosector = (From sec In datacontext.SECTOR
@@ -922,11 +923,12 @@ Public Class frm_Listado_Tareas
         'datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
 
         'se crea el encabezado en el PDF
-        Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value, New Font(Font.Name = "Tahoma", 20, Font.Bold))
+        Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", _
+                                                                              dgvColaboradores.SelectedRows(0).Index).Value, New Font(Font.Name = "Tahoma", 16, Font.Bold))
 
         'se crea el texto abajo del encabezado
         ' Dim texto As New Phrase("Los movimientos de productos realizados hasta la fecha " + Now.Date() + " son los siguientes:", New Font(Font.Name = "Tahoma", 14, Font.Bold))
-        Dim texto As New Phrase("Fecha: " + dtpFecha.Text, New Font(Font.Name = "Tahoma", 14, Font.Bold))
+        Dim texto As New Phrase("Fecha: " + dtpFecha.Text, New Font(Font.Name = "Tahoma", 12, Font.Bold))
         'se capturan los nombres de las columnas del datagridview
         For i As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
             If dgvTarea_x_Colaborador.Columns(i).Visible = True Then

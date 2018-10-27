@@ -67,7 +67,7 @@ Partial Class frm_Usuario
         Me.GroupListadoUsuarios.Controls.Add(Me.Label4)
         Me.GroupListadoUsuarios.Location = New System.Drawing.Point(12, 220)
         Me.GroupListadoUsuarios.Name = "GroupListadoUsuarios"
-        Me.GroupListadoUsuarios.Size = New System.Drawing.Size(394, 287)
+        Me.GroupListadoUsuarios.Size = New System.Drawing.Size(381, 287)
         Me.GroupListadoUsuarios.TabIndex = 7
         Me.GroupListadoUsuarios.TabStop = False
         Me.GroupListadoUsuarios.Text = "Listado de Usuarios"
@@ -119,8 +119,10 @@ Partial Class frm_Usuario
         '
         'dgvLista_Usuarios
         '
+        Me.dgvLista_Usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        Me.dgvLista_Usuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         Me.dgvLista_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLista_Usuarios.Location = New System.Drawing.Point(16, 50)
+        Me.dgvLista_Usuarios.Location = New System.Drawing.Point(9, 50)
         Me.dgvLista_Usuarios.Name = "dgvLista_Usuarios"
         Me.dgvLista_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvLista_Usuarios.Size = New System.Drawing.Size(359, 206)
@@ -159,14 +161,14 @@ Partial Class frm_Usuario
         Me.GroupNuevoUsuario.Controls.Add(Me.Label2)
         Me.GroupNuevoUsuario.Location = New System.Drawing.Point(12, 12)
         Me.GroupNuevoUsuario.Name = "GroupNuevoUsuario"
-        Me.GroupNuevoUsuario.Size = New System.Drawing.Size(394, 202)
+        Me.GroupNuevoUsuario.Size = New System.Drawing.Size(381, 202)
         Me.GroupNuevoUsuario.TabIndex = 6
         Me.GroupNuevoUsuario.TabStop = False
         Me.GroupNuevoUsuario.Text = "Nuevo Usuario"
         '
         'txt_id_colaborador
         '
-        Me.txt_id_colaborador.Location = New System.Drawing.Point(372, 130)
+        Me.txt_id_colaborador.Location = New System.Drawing.Point(366, 130)
         Me.txt_id_colaborador.Name = "txt_id_colaborador"
         Me.txt_id_colaborador.Size = New System.Drawing.Size(11, 20)
         Me.txt_id_colaborador.TabIndex = 11
@@ -200,7 +202,7 @@ Partial Class frm_Usuario
         '
         Me.txt_nombre_colaborador.Location = New System.Drawing.Point(94, 130)
         Me.txt_nombre_colaborador.Name = "txt_nombre_colaborador"
-        Me.txt_nombre_colaborador.Size = New System.Drawing.Size(189, 20)
+        Me.txt_nombre_colaborador.Size = New System.Drawing.Size(204, 20)
         Me.txt_nombre_colaborador.TabIndex = 9
         '
         'Label10
@@ -208,7 +210,7 @@ Partial Class frm_Usuario
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.ForeColor = System.Drawing.Color.Red
-        Me.Label10.Location = New System.Drawing.Point(372, 25)
+        Me.Label10.Location = New System.Drawing.Point(77, 25)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(11, 13)
         Me.Label10.TabIndex = 4
@@ -219,7 +221,7 @@ Partial Class frm_Usuario
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Red
-        Me.Label12.Location = New System.Drawing.Point(287, 132)
+        Me.Label12.Location = New System.Drawing.Point(77, 133)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(11, 13)
         Me.Label12.TabIndex = 4
@@ -230,7 +232,7 @@ Partial Class frm_Usuario
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.Red
-        Me.Label11.Location = New System.Drawing.Point(372, 101)
+        Me.Label11.Location = New System.Drawing.Point(77, 96)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(11, 13)
         Me.Label11.TabIndex = 4
@@ -241,7 +243,7 @@ Partial Class frm_Usuario
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(372, 60)
+        Me.Label7.Location = New System.Drawing.Point(77, 60)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(11, 13)
         Me.Label7.TabIndex = 4
@@ -348,7 +350,7 @@ Partial Class frm_Usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(420, 516)
+        Me.ClientSize = New System.Drawing.Size(407, 516)
         Me.Controls.Add(Me.GroupListadoUsuarios)
         Me.Controls.Add(Me.GroupNuevoUsuario)
         Me.Name = "frm_Usuario"
