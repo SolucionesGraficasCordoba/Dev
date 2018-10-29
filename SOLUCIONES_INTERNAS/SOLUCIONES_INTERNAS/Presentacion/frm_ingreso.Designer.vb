@@ -151,9 +151,11 @@ Partial Class frm_ingreso
         '
         'PictureBox1
         '
+        Me.PictureBox1.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.Acceso_Usuarios
         Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(100, 120)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
@@ -162,6 +164,7 @@ Partial Class frm_ingreso
         Me.AcceptButton = Me.btnIngresar
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(410, 156)
         Me.Controls.Add(Me.PictureBox1)

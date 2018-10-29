@@ -334,6 +334,7 @@
         dgvLista_Orden_Trabajo.ClearSelection()
         dgv_detalle_orden.DataSource = ""
         dgvProcesos.DataSource = ""
+        Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
     End Sub
 
     Private Sub btn_cargar_detalle_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -854,6 +855,7 @@
         dgvLista_Orden_Trabajo.ClearSelection()
         dgv_detalle_orden.DataSource = ""
         dgvProcesos.DataSource = ""
+        Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
     End Sub
 
     Private Sub dtp_Buscar_Fecha_Entrega_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtp_Buscar_Fecha_Entrega.ValueChanged
@@ -883,27 +885,56 @@
         dgvLista_Orden_Trabajo.ClearSelection()
         dgv_detalle_orden.DataSource = ""
         dgvProcesos.DataSource = ""
+        Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
     End Sub
 
     Private Sub rbtNroOrden_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbtNroOrden.CheckedChanged
-        txt_Buscar_Cliente.Enabled = False
-        dtp_Buscar_Fecha_Entrega.Enabled = False
-        txt_Buscar_orden_trabajo.Enabled = True
-        txt_Buscar_orden_trabajo.Focus()
+      
+
+        If rbtNroOrden.Checked = True Then
+            txt_Buscar_Cliente.Enabled = False
+            dtp_Buscar_Fecha_Entrega.Enabled = False
+            txt_Buscar_orden_trabajo.Enabled = True
+            txt_Buscar_orden_trabajo.Focus()
+            txt_Buscar_Cliente.Clear()
+            dtp_Buscar_Fecha_Entrega.Text = Now
+        End If
+        cargargrilla()
+        Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
     End Sub
 
     Private Sub rbtCliente_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbtCliente.CheckedChanged
-        txt_Buscar_orden_trabajo.Enabled = False
-        dtp_Buscar_Fecha_Entrega.Enabled = False
-        txt_Buscar_Cliente.Enabled = True
-        txt_Buscar_Cliente.Focus()
+     
+
+        If rbtCliente.Checked = True Then
+            txt_Buscar_orden_trabajo.Enabled = False
+            dtp_Buscar_Fecha_Entrega.Enabled = False
+            txt_Buscar_Cliente.Enabled = True
+            txt_Buscar_Cliente.Focus()
+            txt_Buscar_orden_trabajo.Clear()
+            dtp_Buscar_Fecha_Entrega.Text = Now
+        End If
+        cargargrilla()
+        Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
     End Sub
 
     Private Sub rbtFechaEntrega_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbtFechaEntrega.CheckedChanged
-        txt_Buscar_orden_trabajo.Enabled = False
-        txt_Buscar_Cliente.Enabled = False
-        dtp_Buscar_Fecha_Entrega.Enabled = True
-        dtp_Buscar_Fecha_Entrega.Focus()
+      
+        If rbtFechaEntrega.Checked = True Then
+            Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
+            txt_Buscar_orden_trabajo.Enabled = False
+            txt_Buscar_Cliente.Enabled = False
+            dtp_Buscar_Fecha_Entrega.Enabled = True
+            dtp_Buscar_Fecha_Entrega.Focus()
+            txt_Buscar_orden_trabajo.Clear()
+            txt_Buscar_Cliente.Clear()
+            dtp_Buscar_Fecha_Entrega.Text = Now
+            If dtp_Buscar_Fecha_Entrega.Text = Now Then
+                cargargrilla()
+            End If
+        End If
+        cargargrilla()
+        Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
     End Sub
 End Class
 
