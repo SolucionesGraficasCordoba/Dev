@@ -1,4 +1,11 @@
-﻿
+﻿Imports iTextSharp.text
+Imports System.IO
+Imports iTextSharp.text.html.simpleparser
+Imports iTextSharp.text.pdf
+Imports System.Windows.Forms.DataVisualization.Charting
+
+
+
 Public Class frm_graficos_tareas_mensuales
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
@@ -172,5 +179,9 @@ Public Class frm_graficos_tareas_mensuales
 
     Private Sub btnSubir_Click(sender As System.Object, e As System.EventArgs) Handles btnSubir.Click
         btnExportarPDF.Focus()
+    End Sub
+
+    Private Sub btnExportarPDF_Click(sender As System.Object, e As System.EventArgs) Handles btnExportarPDF.Click
+  
     End Sub
 End Class
