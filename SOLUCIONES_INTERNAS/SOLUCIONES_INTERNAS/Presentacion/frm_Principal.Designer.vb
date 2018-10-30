@@ -64,6 +64,7 @@ Partial Class frm_Principal
         Me.EliminarTareaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarTareaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GráficosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TareasMensulesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -322,32 +323,39 @@ Partial Class frm_Principal
         'AltaTareaToolStripMenuItem
         '
         Me.AltaTareaToolStripMenuItem.Name = "AltaTareaToolStripMenuItem"
-        Me.AltaTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.AltaTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AltaTareaToolStripMenuItem.Text = "Nueva"
         '
         'ListaTareaToolStripMenuItem
         '
         Me.ListaTareaToolStripMenuItem.Name = "ListaTareaToolStripMenuItem"
-        Me.ListaTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.ListaTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ListaTareaToolStripMenuItem.Text = "Modificar"
         '
         'EliminarTareaToolStripMenuItem
         '
         Me.EliminarTareaToolStripMenuItem.Name = "EliminarTareaToolStripMenuItem"
-        Me.EliminarTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.EliminarTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EliminarTareaToolStripMenuItem.Text = "Eliminar"
         '
         'ConsultarTareaToolStripMenuItem
         '
         Me.ConsultarTareaToolStripMenuItem.Name = "ConsultarTareaToolStripMenuItem"
-        Me.ConsultarTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.ConsultarTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ConsultarTareaToolStripMenuItem.Text = "Consultar"
         '
         'GráficosToolStripMenuItem
         '
+        Me.GráficosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TareasMensulesToolStripMenuItem})
         Me.GráficosToolStripMenuItem.Name = "GráficosToolStripMenuItem"
-        Me.GráficosToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.GráficosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.GráficosToolStripMenuItem.Text = "Gráficos"
+        '
+        'TareasMensulesToolStripMenuItem
+        '
+        Me.TareasMensulesToolStripMenuItem.Name = "TareasMensulesToolStripMenuItem"
+        Me.TareasMensulesToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.TareasMensulesToolStripMenuItem.Text = "Tareas mensules"
         '
         'ProductoToolStripMenuItem
         '
@@ -628,6 +636,11 @@ Partial Class frm_Principal
     Friend WithEvents ConsultarToolStripMenuItem4 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultarMovimientosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GráficosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+<<<<<<< .mine
+    Friend WithEvents TareasMensulesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+||||||| .r170
+=======
     Friend WithEvents AyudaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+>>>>>>> .r179
 
 End Class
