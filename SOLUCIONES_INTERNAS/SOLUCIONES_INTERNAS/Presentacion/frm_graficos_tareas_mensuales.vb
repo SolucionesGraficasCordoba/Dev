@@ -1,9 +1,14 @@
-﻿Public Class frm_graficos_tareas_mensuales
+﻿
+Public Class frm_graficos_tareas_mensuales
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
 
     Private Sub Frm_Graficos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         TipoGrafico()
+
+        Label1.Text = frm_Generar_Informe.cboMes.Text 'cbomes
+        Label2.Text = frm_Generar_Informe.cbo_sector.Text
+
     End Sub
 
     Function llenargrafico(ByVal indexfila As Integer)
@@ -28,17 +33,6 @@
         '************************inicio grafico 1*********************************
         If 1 <= totalgrafico Then
             cargar_chart(Chart1, 0)
-            'Chart1.Series(0).Points.Clear()
-            'Chart1.Series(0).ChartType = DataVisualization.Charting.SeriesChartType.Column ' tipo de grafico
-            'Chart1.Series(0).YValueMembers = "Total_estimado"
-            'Chart1.Series(0).IsValueShownAsLabel = True ' muestra los valores de cada serie
-            'Chart1.Series(1).YValueMembers = "Total_real"
-            'Chart1.Series(2).YValueMembers = "Asignacion"
-            'Chart1.Titles(0).Text = CStr(frm_Generar_Informe.dgvTotalesMensuales.Rows(0).Cells(1).Value)
-            'Chart1.Series(0).XValueMember = "CADENA"
-            'Chart1.Series(1).XValueMember = "CADENA"
-            'Chart1.Series(2).XValueMember = "CADENA"
-            'Chart1.DataSource = llenargrafico(0)
         Else
             Chart1.DataSource = Nothing
         End If
@@ -169,5 +163,14 @@
         grafico.Series(1).XValueMember = "CADENA"
         grafico.Series(2).XValueMember = "CADENA"
         grafico.DataSource = llenargrafico(fila)
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
+        Me.Close()
+        Me.Dispose()
+    End Sub
+
+    Private Sub btnSubir_Click(sender As System.Object, e As System.EventArgs) Handles btnSubir.Click
+        btnExportarPDF.Focus()
     End Sub
 End Class

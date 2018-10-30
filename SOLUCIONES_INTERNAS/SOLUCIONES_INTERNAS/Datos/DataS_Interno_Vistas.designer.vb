@@ -70,12 +70,6 @@ Partial Public Class DataS_Interno_Vistas
 		End Get
 	End Property
 	
-	Public ReadOnly Property Totales_mensuales() As System.Data.Linq.Table(Of Totales_mensuales)
-		Get
-			Return Me.GetTable(Of Totales_mensuales)
-		End Get
-	End Property
-	
 	Public ReadOnly Property Vista_Tarea_x_Colaborador() As System.Data.Linq.Table(Of Vista_Tarea_x_Colaborador)
 		Get
 			Return Me.GetTable(Of Vista_Tarea_x_Colaborador)
@@ -115,6 +109,12 @@ Partial Public Class DataS_Interno_Vistas
 	Public ReadOnly Property Vista_Detalle_Orden_Trabajo_1() As System.Data.Linq.Table(Of Vista_Detalle_Orden_Trabajo_1)
 		Get
 			Return Me.GetTable(Of Vista_Detalle_Orden_Trabajo_1)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Totales_mensuales() As System.Data.Linq.Table(Of Totales_mensuales)
+		Get
+			Return Me.GetTable(Of Totales_mensuales)
 		End Get
 	End Property
 End Class
@@ -372,128 +372,6 @@ Partial Public Class Tiempos_x_Sector
 		Set
 			If (Me._TAR_fecha.Equals(value) = false) Then
 				Me._TAR_fecha = value
-			End If
-		End Set
-	End Property
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Totales_mensuales")>  _
-Partial Public Class Totales_mensuales
-	
-	Private _COL_id_colaborador As Integer
-	
-	Private _COL_nombre_col As String
-	
-	Private _Mes As System.Nullable(Of Integer)
-	
-	Private _SEC_id_sector As Integer
-	
-	Private _SEC_nombre_sector As String
-	
-	Private _Total_estimado_mensual As System.Nullable(Of Integer)
-	
-	Private _Total_real_mensual As System.Nullable(Of Integer)
-	
-	Private _Asignacion As System.Nullable(Of Integer)
-	
-	Public Sub New()
-		MyBase.New
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_id_colaborador", DbType:="Int NOT NULL")>  _
-	Public Property COL_id_colaborador() As Integer
-		Get
-			Return Me._COL_id_colaborador
-		End Get
-		Set
-			If ((Me._COL_id_colaborador = value)  _
-						= false) Then
-				Me._COL_id_colaborador = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_nombre_col", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property COL_nombre_col() As String
-		Get
-			Return Me._COL_nombre_col
-		End Get
-		Set
-			If (String.Equals(Me._COL_nombre_col, value) = false) Then
-				Me._COL_nombre_col = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Mes", DbType:="Int")>  _
-	Public Property Mes() As System.Nullable(Of Integer)
-		Get
-			Return Me._Mes
-		End Get
-		Set
-			If (Me._Mes.Equals(value) = false) Then
-				Me._Mes = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_id_sector", DbType:="Int NOT NULL")>  _
-	Public Property SEC_id_sector() As Integer
-		Get
-			Return Me._SEC_id_sector
-		End Get
-		Set
-			If ((Me._SEC_id_sector = value)  _
-						= false) Then
-				Me._SEC_id_sector = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_nombre_sector", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property SEC_nombre_sector() As String
-		Get
-			Return Me._SEC_nombre_sector
-		End Get
-		Set
-			If (String.Equals(Me._SEC_nombre_sector, value) = false) Then
-				Me._SEC_nombre_sector = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Total estimado mensual]", Storage:="_Total_estimado_mensual", DbType:="Int")>  _
-	Public Property Total_estimado_mensual() As System.Nullable(Of Integer)
-		Get
-			Return Me._Total_estimado_mensual
-		End Get
-		Set
-			If (Me._Total_estimado_mensual.Equals(value) = false) Then
-				Me._Total_estimado_mensual = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Total real mensual]", Storage:="_Total_real_mensual", DbType:="Int")>  _
-	Public Property Total_real_mensual() As System.Nullable(Of Integer)
-		Get
-			Return Me._Total_real_mensual
-		End Get
-		Set
-			If (Me._Total_real_mensual.Equals(value) = false) Then
-				Me._Total_real_mensual = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Asignacion", DbType:="Int")>  _
-	Public Property Asignacion() As System.Nullable(Of Integer)
-		Get
-			Return Me._Asignacion
-		End Get
-		Set
-			If (Me._Asignacion.Equals(value) = false) Then
-				Me._Asignacion = value
 			End If
 		End Set
 	End Property
@@ -2000,6 +1878,128 @@ Partial Public Class Vista_Detalle_Orden_Trabajo_1
 		Set
 			If (Me._ORT_fecha_entrega.Equals(value) = false) Then
 				Me._ORT_fecha_entrega = value
+			End If
+		End Set
+	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Totales_mensuales")>  _
+Partial Public Class Totales_mensuales
+	
+	Private _COL_id_colaborador As Integer
+	
+	Private _COL_nombre_col As String
+	
+	Private _Mes As System.Nullable(Of Integer)
+	
+	Private _SEC_id_sector As Integer
+	
+	Private _SEC_nombre_sector As String
+	
+	Private _Total_estimado_mensual As System.Nullable(Of Integer)
+	
+	Private _Total_real_mensual As System.Nullable(Of Integer)
+	
+	Private _Asignacion As System.Nullable(Of Integer)
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_id_colaborador", DbType:="Int NOT NULL")>  _
+	Public Property COL_id_colaborador() As Integer
+		Get
+			Return Me._COL_id_colaborador
+		End Get
+		Set
+			If ((Me._COL_id_colaborador = value)  _
+						= false) Then
+				Me._COL_id_colaborador = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_nombre_col", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property COL_nombre_col() As String
+		Get
+			Return Me._COL_nombre_col
+		End Get
+		Set
+			If (String.Equals(Me._COL_nombre_col, value) = false) Then
+				Me._COL_nombre_col = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Mes", DbType:="Int")>  _
+	Public Property Mes() As System.Nullable(Of Integer)
+		Get
+			Return Me._Mes
+		End Get
+		Set
+			If (Me._Mes.Equals(value) = false) Then
+				Me._Mes = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_id_sector", DbType:="Int NOT NULL")>  _
+	Public Property SEC_id_sector() As Integer
+		Get
+			Return Me._SEC_id_sector
+		End Get
+		Set
+			If ((Me._SEC_id_sector = value)  _
+						= false) Then
+				Me._SEC_id_sector = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_nombre_sector", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property SEC_nombre_sector() As String
+		Get
+			Return Me._SEC_nombre_sector
+		End Get
+		Set
+			If (String.Equals(Me._SEC_nombre_sector, value) = false) Then
+				Me._SEC_nombre_sector = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Total estimado mensual]", Storage:="_Total_estimado_mensual", DbType:="Int")>  _
+	Public Property Total_estimado_mensual() As System.Nullable(Of Integer)
+		Get
+			Return Me._Total_estimado_mensual
+		End Get
+		Set
+			If (Me._Total_estimado_mensual.Equals(value) = false) Then
+				Me._Total_estimado_mensual = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Name:="[Total real mensual]", Storage:="_Total_real_mensual", DbType:="Int")>  _
+	Public Property Total_real_mensual() As System.Nullable(Of Integer)
+		Get
+			Return Me._Total_real_mensual
+		End Get
+		Set
+			If (Me._Total_real_mensual.Equals(value) = false) Then
+				Me._Total_real_mensual = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Asignacion", DbType:="Int")>  _
+	Public Property Asignacion() As System.Nullable(Of Integer)
+		Get
+			Return Me._Asignacion
+		End Get
+		Set
+			If (Me._Asignacion.Equals(value) = false) Then
+				Me._Asignacion = value
 			End If
 		End Set
 	End Property

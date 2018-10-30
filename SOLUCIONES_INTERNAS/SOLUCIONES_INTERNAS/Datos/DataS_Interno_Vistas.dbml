@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SOLUCIONES_INTERNAS" Class="DataS_Interno_Vistas" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SV-PLANET-01;Initial Catalog=SOLUCIONES_INTERNAS;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=NB-BALDO;Initial Catalog=SOLUCIONES_INTERNAS;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.VistaTareas" Member="VistaTareas">
     <Type Name="VistaTareas">
       <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -23,18 +23,6 @@
       <Column Name="TAR_carga_horaria" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="TAR_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Totales_mensuales" Member="Totales_mensuales">
-    <Type Name="Totales_mensuales">
-      <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="COL_nombre_col" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Mes" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="[Total estimado mensual]" Member="Total_estimado_mensual" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="[Total real mensual]" Member="Total_real_mensual" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Asignacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.Vista_Tarea_x_Colaborador" Member="Vista_Tarea_x_Colaborador">
@@ -165,6 +153,18 @@
       <Column Name="DOT_formato_soporte_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="DOT_formato_soporte_3" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="ORT_fecha_entrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Totales_mensuales" Member="Totales_mensuales">
+    <Type Name="Totales_mensuales">
+      <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COL_nombre_col" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Mes" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Total estimado mensual]" Member="Total_estimado_mensual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="[Total real mensual]" Member="Total_real_mensual" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Asignacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
