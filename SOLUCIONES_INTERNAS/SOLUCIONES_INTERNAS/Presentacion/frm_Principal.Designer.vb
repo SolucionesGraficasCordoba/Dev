@@ -636,11 +636,8 @@ Partial Class frm_Principal
     Friend WithEvents ConsultarToolStripMenuItem4 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultarMovimientosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GráficosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-<<<<<<< .mine
     Friend WithEvents TareasMensulesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-||||||| .r170
-=======
     Friend WithEvents AyudaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
->>>>>>> .r179
+
 
 End Class
