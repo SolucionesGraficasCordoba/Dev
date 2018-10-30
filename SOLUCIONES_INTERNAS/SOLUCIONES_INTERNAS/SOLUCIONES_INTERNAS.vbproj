@@ -101,10 +101,10 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form2.Designer.vb">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <Compile Include="Presentacion\frm_Graficos_tareas_mensuales.Designer.vb">
+      <DependentUpon>frm_Graficos_tareas_mensuales.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form2.vb">
+    <Compile Include="Presentacion\frm_Graficos_tareas_mensuales.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frm_Actualizar_Orden.Designer.vb">
@@ -320,8 +320,8 @@
     <None Include="Datos\DataS_Interno_Vistas.dbml.layout">
       <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
     </None>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.vb</DependentUpon>
+    <EmbeddedResource Include="Presentacion\frm_Graficos_tareas_mensuales.resx">
+      <DependentUpon>frm_Graficos_tareas_mensuales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Actualizar_Orden.resx">
       <DependentUpon>frm_Actualizar_Orden.vb</DependentUpon>
