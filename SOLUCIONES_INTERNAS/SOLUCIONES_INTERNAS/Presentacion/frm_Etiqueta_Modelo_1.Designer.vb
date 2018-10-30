@@ -357,7 +357,7 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         Me.cboLogo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboLogo.FormattingEnabled = True
-        Me.cboLogo.Items.AddRange(New Object() {"Aguas Cordobesas", "Soluciones Graficas", "Tarjeta Naranja", "Ninguno"})
+        Me.cboLogo.Items.AddRange(New Object() {"Aguas Cordobesas", "Fsc", "Soluciones Graficas", "Tarjeta Naranja", "Ninguno"})
         Me.cboLogo.Location = New System.Drawing.Point(98, 72)
         Me.cboLogo.Name = "cboLogo"
         Me.cboLogo.Size = New System.Drawing.Size(151, 21)

@@ -156,10 +156,10 @@ Public Class frm_Etiqueta_Modelo_1
     Private Sub btnGenerarEtiquetas_Click(sender As System.Object, e As System.EventArgs) Handles btnGenerarEtiquetas.Click
         If dgv_Etiquetas.RowCount > 0 Then
             Dim consulta As String = "ETIQUETA_GENERICA_DIARIA_" + Date.Now.Millisecond.ToString + ".csv"
-
             Dim filePath As String = "\\wsmaldig3\PlanetPress\Etiquetas\IN_Etiquetas\" + consulta
+
             'Dim filePath As String = "C:\Users\pbaldo\Downloads\Baldo-Compartida\" + consulta
-            ' Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
+            '  Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
             Dim delimeter As String = ","
             Dim sb As New StringBuilder
             Try
