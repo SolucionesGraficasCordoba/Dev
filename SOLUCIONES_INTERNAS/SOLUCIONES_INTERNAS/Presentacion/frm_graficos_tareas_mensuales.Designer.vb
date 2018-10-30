@@ -1218,14 +1218,13 @@ Partial Class frm_graficos_tareas_mensuales
         Title20.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Horizontal
         Me.Chart21.Titles.Add(Title20)
         '
-        'Form2
+        'frm_graficos_tareas_mensuales
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.AutoScroll = True
         Me.AutoScrollMargin = New System.Drawing.Size(10, 10)
         Me.AutoScrollMinSize = New System.Drawing.Size(500, 500)
-        Me.ClientSize = New System.Drawing.Size(1040, 506)
+        Me.ClientSize = New System.Drawing.Size(1273, 506)
         Me.Controls.Add(Me.Chart19)
         Me.Controls.Add(Me.Chart21)
         Me.Controls.Add(Me.Chart18)
@@ -1246,8 +1245,10 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Controls.Add(Me.Chart3)
         Me.Controls.Add(Me.Chart2)
         Me.Controls.Add(Me.Chart1)
-        Me.Name = "Form2"
-        Me.Text = "Form2"
+        Me.Name = "frm_graficos_tareas_mensuales"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.Text = "Tareas mensuales por sector"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.Chart2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart3, System.ComponentModel.ISupportInitialize).EndInit()

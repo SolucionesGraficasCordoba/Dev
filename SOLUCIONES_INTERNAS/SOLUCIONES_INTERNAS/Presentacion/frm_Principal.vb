@@ -370,7 +370,9 @@ Public Class frm_Principal
         frm_Tarea.btnBuscar_Numero_Orden19.Enabled = True
         frm_Tarea.btnBuscar_Numero_Orden20.Enabled = True
 
-        frm_Tarea.ShowDialog()
+        frm_Tarea.MdiParent = Me
+        frm_Tarea.Show()
+
     End Sub
 
     Private Sub ListaTareaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaTareaToolStripMenuItem.Click
@@ -994,7 +996,8 @@ Public Class frm_Principal
         frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = False
         frm_Orden_Trabajo.btnCancelar_Orden_Trabajo.Enabled = True
 
-        frm_Orden_Trabajo.ShowDialog()
+        frm_Orden_Trabajo.MdiParent = Me
+        frm_Orden_Trabajo.Show()
     End Sub
 
     Private Sub OrdenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -1289,11 +1292,13 @@ Public Class frm_Principal
         Next
     End Sub
 
-    Private Sub GráficosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GráficosToolStripMenuItem.Click
+    Private Sub TareasMensulesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TareasMensulesToolStripMenuItem.Click
+        frm_Generar_Informe.MdiParent = Me
+        frm_Generar_Informe.Show()
+    End Sub
 
+    Private Sub GenerarInformesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarInformesToolStripMenuItem.Click
         MsgBox("AREA EN CONSTRUCCION...!!!, DISCULPE LAS MOLESTIAS", MsgBoxStyle.OkOnly)
-       
-        'frm_Generar_Informe.ShowDialog()
     End Sub
 
     Private Sub AyudaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AyudaToolStripMenuItem.Click

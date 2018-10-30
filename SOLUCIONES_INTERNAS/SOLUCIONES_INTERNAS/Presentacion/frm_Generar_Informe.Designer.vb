@@ -41,10 +41,10 @@ Partial Class frm_Generar_Informe
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(398, 459)
+        Me.btnCancelar.Location = New System.Drawing.Point(681, 459)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(79, 23)
-        Me.btnCancelar.TabIndex = 39
+        Me.btnCancelar.TabIndex = 4
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
@@ -57,7 +57,7 @@ Partial Class frm_Generar_Informe
         Me.GroupListadoTareas.Controls.Add(Me.Label4)
         Me.GroupListadoTareas.Location = New System.Drawing.Point(12, 12)
         Me.GroupListadoTareas.Name = "GroupListadoTareas"
-        Me.GroupListadoTareas.Size = New System.Drawing.Size(465, 231)
+        Me.GroupListadoTareas.Size = New System.Drawing.Size(748, 231)
         Me.GroupListadoTareas.TabIndex = 36
         Me.GroupListadoTareas.TabStop = False
         Me.GroupListadoTareas.Text = "Tiempos totales por día"
@@ -69,7 +69,7 @@ Partial Class frm_Generar_Informe
         Me.cboMes.Location = New System.Drawing.Point(45, 19)
         Me.cboMes.Name = "cboMes"
         Me.cboMes.Size = New System.Drawing.Size(114, 21)
-        Me.cboMes.TabIndex = 48
+        Me.cboMes.TabIndex = 1
         '
         'Label31
         '
@@ -86,7 +86,7 @@ Partial Class frm_Generar_Informe
         Me.cbo_sector.Location = New System.Drawing.Point(216, 19)
         Me.cbo_sector.Name = "cbo_sector"
         Me.cbo_sector.Size = New System.Drawing.Size(130, 21)
-        Me.cbo_sector.TabIndex = 30
+        Me.cbo_sector.TabIndex = 2
         '
         'dgvColaboradores
         '
@@ -94,8 +94,8 @@ Partial Class frm_Generar_Informe
         Me.dgvColaboradores.Location = New System.Drawing.Point(8, 46)
         Me.dgvColaboradores.Name = "dgvColaboradores"
         Me.dgvColaboradores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvColaboradores.Size = New System.Drawing.Size(447, 174)
-        Me.dgvColaboradores.TabIndex = 0
+        Me.dgvColaboradores.Size = New System.Drawing.Size(734, 174)
+        Me.dgvColaboradores.TabIndex = 5
         '
         'Label4
         '
@@ -108,7 +108,7 @@ Partial Class frm_Generar_Informe
         '
         'btnGenerar_Informe
         '
-        Me.btnGenerar_Informe.Location = New System.Drawing.Point(192, 459)
+        Me.btnGenerar_Informe.Location = New System.Drawing.Point(475, 459)
         Me.btnGenerar_Informe.Name = "btnGenerar_Informe"
         Me.btnGenerar_Informe.Size = New System.Drawing.Size(108, 23)
         Me.btnGenerar_Informe.TabIndex = 35
@@ -120,7 +120,7 @@ Partial Class frm_Generar_Informe
         Me.GroupBox1.Controls.Add(Me.dgvTotalesMensuales)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 249)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(465, 204)
+        Me.GroupBox1.Size = New System.Drawing.Size(748, 204)
         Me.GroupBox1.TabIndex = 40
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Tiempos totales por mes"
@@ -131,15 +131,15 @@ Partial Class frm_Generar_Informe
         Me.dgvTotalesMensuales.Location = New System.Drawing.Point(8, 19)
         Me.dgvTotalesMensuales.Name = "dgvTotalesMensuales"
         Me.dgvTotalesMensuales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvTotalesMensuales.Size = New System.Drawing.Size(447, 174)
-        Me.dgvTotalesMensuales.TabIndex = 0
+        Me.dgvTotalesMensuales.Size = New System.Drawing.Size(734, 174)
+        Me.dgvTotalesMensuales.TabIndex = 6
         '
         'btnVerGraficos
         '
-        Me.btnVerGraficos.Location = New System.Drawing.Point(306, 459)
+        Me.btnVerGraficos.Location = New System.Drawing.Point(589, 459)
         Me.btnVerGraficos.Name = "btnVerGraficos"
         Me.btnVerGraficos.Size = New System.Drawing.Size(86, 23)
-        Me.btnVerGraficos.TabIndex = 92
+        Me.btnVerGraficos.TabIndex = 3
         Me.btnVerGraficos.Text = "Ver Gráficos"
         Me.btnVerGraficos.UseVisualStyleBackColor = True
         '
@@ -148,7 +148,7 @@ Partial Class frm_Generar_Informe
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(491, 490)
+        Me.ClientSize = New System.Drawing.Size(772, 490)
         Me.Controls.Add(Me.btnVerGraficos)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnCancelar)

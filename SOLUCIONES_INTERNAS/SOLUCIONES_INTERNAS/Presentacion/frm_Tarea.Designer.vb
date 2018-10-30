@@ -2525,8 +2525,10 @@ Partial Class frm_Tarea
         '
         'frm_Tarea
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
+        Me.AutoScroll = True
+        Me.AutoSize = True
+        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(940, 667)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label35)
