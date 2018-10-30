@@ -65,7 +65,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\..\..\..\Downloads\itextsharp.dll</HintPath>
+      <HintPath>\\WSMALDIS4\trabajos\Trabajo Vale\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -101,6 +101,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form2.Designer.vb">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_Actualizar_Orden.Designer.vb">
       <DependentUpon>frm_Actualizar_Orden.vb</DependentUpon>
     </Compile>
@@ -314,6 +320,9 @@
     <None Include="Datos\DataS_Interno_Vistas.dbml.layout">
       <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Actualizar_Orden.resx">
       <DependentUpon>frm_Actualizar_Orden.vb</DependentUpon>
     </EmbeddedResource>
@@ -432,6 +441,8 @@
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
     </None>
+    <None Include="My Project\DataSources\DataS_Interno.datasource" />
+    <None Include="My Project\DataSources\SOLUCIONES_INTERNAS.My.MySettings.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -465,6 +476,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
