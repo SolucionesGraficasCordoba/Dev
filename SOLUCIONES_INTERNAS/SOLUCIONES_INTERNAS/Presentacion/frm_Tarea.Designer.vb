@@ -272,6 +272,7 @@ Partial Class frm_Tarea
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
+        Me.btnActualizar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -372,7 +373,7 @@ Partial Class frm_Tarea
         '
         'btnCancelar_Tarea
         '
-        Me.btnCancelar_Tarea.Location = New System.Drawing.Point(835, 636)
+        Me.btnCancelar_Tarea.Location = New System.Drawing.Point(835, 637)
         Me.btnCancelar_Tarea.Name = "btnCancelar_Tarea"
         Me.btnCancelar_Tarea.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar_Tarea.TabIndex = 125
@@ -381,7 +382,7 @@ Partial Class frm_Tarea
         '
         'btnGuardar_Tarea
         '
-        Me.btnGuardar_Tarea.Location = New System.Drawing.Point(754, 636)
+        Me.btnGuardar_Tarea.Location = New System.Drawing.Point(673, 637)
         Me.btnGuardar_Tarea.Name = "btnGuardar_Tarea"
         Me.btnGuardar_Tarea.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar_Tarea.TabIndex = 124
@@ -390,7 +391,7 @@ Partial Class frm_Tarea
         '
         'btnNueva_Tarea
         '
-        Me.btnNueva_Tarea.Location = New System.Drawing.Point(563, 636)
+        Me.btnNueva_Tarea.Location = New System.Drawing.Point(482, 637)
         Me.btnNueva_Tarea.Name = "btnNueva_Tarea"
         Me.btnNueva_Tarea.Size = New System.Drawing.Size(75, 23)
         Me.btnNueva_Tarea.TabIndex = 126
@@ -2465,7 +2466,7 @@ Partial Class frm_Tarea
         '
         'btnImprimirFormulario
         '
-        Me.btnImprimirFormulario.Location = New System.Drawing.Point(644, 636)
+        Me.btnImprimirFormulario.Location = New System.Drawing.Point(563, 637)
         Me.btnImprimirFormulario.Name = "btnImprimirFormulario"
         Me.btnImprimirFormulario.Size = New System.Drawing.Size(104, 23)
         Me.btnImprimirFormulario.TabIndex = 127
@@ -2523,6 +2524,15 @@ Partial Class frm_Tarea
         Me.PrintForm1.PrinterSettings = CType(resources.GetObject("PrintForm1.PrinterSettings"), System.Drawing.Printing.PrinterSettings)
         Me.PrintForm1.PrintFileName = Nothing
         '
+        'btnActualizar
+        '
+        Me.btnActualizar.Location = New System.Drawing.Point(754, 637)
+        Me.btnActualizar.Name = "btnActualizar"
+        Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar.TabIndex = 128
+        Me.btnActualizar.Text = "Actualizar"
+        Me.btnActualizar.UseVisualStyleBackColor = True
+        '
         'frm_Tarea
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -2530,6 +2540,7 @@ Partial Class frm_Tarea
         Me.AutoSize = True
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(940, 667)
+        Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Label35)
         Me.Controls.Add(Me.Label7)
@@ -2798,4 +2809,5 @@ Partial Class frm_Tarea
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents PrintForm1 As Microsoft.VisualBasic.PowerPacks.Printing.PrintForm
     Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
+    Friend WithEvents btnActualizar As System.Windows.Forms.Button
 End Class

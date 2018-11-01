@@ -37,11 +37,12 @@ Partial Class frm_Listado_Tareas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.dgvTarea_x_Colaborador = New System.Windows.Forms.DataGridView()
-        Me.btnModificar_Tarea = New System.Windows.Forms.Button()
+        Me.btnModificar_Una = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnVer = New System.Windows.Forms.Button()
         Me.btnExportarListado = New System.Windows.Forms.Button()
+        Me.btnModificarTodas = New System.Windows.Forms.Button()
         Me.GroupListadoTareas.SuspendLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupListadoDetalleTarea.SuspendLayout()
@@ -50,6 +51,7 @@ Partial Class frm_Listado_Tareas
         '
         'GroupListadoTareas
         '
+        Me.GroupListadoTareas.Controls.Add(Me.btnModificarTodas)
         Me.GroupListadoTareas.Controls.Add(Me.dtpFecha)
         Me.GroupListadoTareas.Controls.Add(Me.Label31)
         Me.GroupListadoTareas.Controls.Add(Me.cbo_sector)
@@ -59,7 +61,7 @@ Partial Class frm_Listado_Tareas
         Me.GroupListadoTareas.Controls.Add(Me.Label4)
         Me.GroupListadoTareas.Location = New System.Drawing.Point(12, 12)
         Me.GroupListadoTareas.Name = "GroupListadoTareas"
-        Me.GroupListadoTareas.Size = New System.Drawing.Size(512, 260)
+        Me.GroupListadoTareas.Size = New System.Drawing.Size(512, 272)
         Me.GroupListadoTareas.TabIndex = 4
         Me.GroupListadoTareas.TabStop = False
         Me.GroupListadoTareas.Text = "Listado de Tareas"
@@ -131,7 +133,7 @@ Partial Class frm_Listado_Tareas
         '
         'btnEliminar_Tarea
         '
-        Me.btnEliminar_Tarea.Location = New System.Drawing.Point(395, 538)
+        Me.btnEliminar_Tarea.Location = New System.Drawing.Point(390, 550)
         Me.btnEliminar_Tarea.Name = "btnEliminar_Tarea"
         Me.btnEliminar_Tarea.Size = New System.Drawing.Size(63, 23)
         Me.btnEliminar_Tarea.TabIndex = 3
@@ -145,7 +147,7 @@ Partial Class frm_Listado_Tareas
         Me.groupListadoDetalleTarea.Controls.Add(Me.Label1)
         Me.groupListadoDetalleTarea.Controls.Add(Me.Label2)
         Me.groupListadoDetalleTarea.Controls.Add(Me.dgvTarea_x_Colaborador)
-        Me.groupListadoDetalleTarea.Location = New System.Drawing.Point(12, 278)
+        Me.groupListadoDetalleTarea.Location = New System.Drawing.Point(12, 290)
         Me.groupListadoDetalleTarea.Name = "groupListadoDetalleTarea"
         Me.groupListadoDetalleTarea.Size = New System.Drawing.Size(512, 254)
         Me.groupListadoDetalleTarea.TabIndex = 5
@@ -202,18 +204,18 @@ Partial Class frm_Listado_Tareas
         Me.dgvTarea_x_Colaborador.Size = New System.Drawing.Size(480, 210)
         Me.dgvTarea_x_Colaborador.TabIndex = 0
         '
-        'btnModificar_Tarea
+        'btnModificar_Una
         '
-        Me.btnModificar_Tarea.Location = New System.Drawing.Point(326, 538)
-        Me.btnModificar_Tarea.Name = "btnModificar_Tarea"
-        Me.btnModificar_Tarea.Size = New System.Drawing.Size(63, 23)
-        Me.btnModificar_Tarea.TabIndex = 31
-        Me.btnModificar_Tarea.Text = "Modificar"
-        Me.btnModificar_Tarea.UseVisualStyleBackColor = True
+        Me.btnModificar_Una.Location = New System.Drawing.Point(299, 550)
+        Me.btnModificar_Una.Name = "btnModificar_Una"
+        Me.btnModificar_Una.Size = New System.Drawing.Size(85, 23)
+        Me.btnModificar_Una.TabIndex = 31
+        Me.btnModificar_Una.Text = "Modificar Una"
+        Me.btnModificar_Una.UseVisualStyleBackColor = True
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(464, 538)
+        Me.btnCancelar.Location = New System.Drawing.Point(459, 550)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(63, 23)
         Me.btnCancelar.TabIndex = 32
@@ -222,7 +224,7 @@ Partial Class frm_Listado_Tareas
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(232, 538)
+        Me.btnAgregar.Location = New System.Drawing.Point(205, 550)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(88, 23)
         Me.btnAgregar.TabIndex = 33
@@ -231,32 +233,41 @@ Partial Class frm_Listado_Tareas
         '
         'btnVer
         '
-        Me.btnVer.Location = New System.Drawing.Point(163, 538)
+        Me.btnVer.Location = New System.Drawing.Point(144, 550)
         Me.btnVer.Name = "btnVer"
-        Me.btnVer.Size = New System.Drawing.Size(63, 23)
+        Me.btnVer.Size = New System.Drawing.Size(55, 23)
         Me.btnVer.TabIndex = 34
         Me.btnVer.Text = "Ver"
         Me.btnVer.UseVisualStyleBackColor = True
         '
         'btnExportarListado
         '
-        Me.btnExportarListado.Location = New System.Drawing.Point(27, 538)
+        Me.btnExportarListado.Location = New System.Drawing.Point(8, 550)
         Me.btnExportarListado.Name = "btnExportarListado"
         Me.btnExportarListado.Size = New System.Drawing.Size(130, 23)
         Me.btnExportarListado.TabIndex = 35
         Me.btnExportarListado.Text = "Exportar Listado a PDF"
         Me.btnExportarListado.UseVisualStyleBackColor = True
         '
+        'btnModificarTodas
+        '
+        Me.btnModificarTodas.Location = New System.Drawing.Point(391, 241)
+        Me.btnModificarTodas.Name = "btnModificarTodas"
+        Me.btnModificarTodas.Size = New System.Drawing.Size(104, 23)
+        Me.btnModificarTodas.TabIndex = 49
+        Me.btnModificarTodas.Text = "Modificar Todas"
+        Me.btnModificarTodas.UseVisualStyleBackColor = True
+        '
         'frm_Listado_Tareas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(536, 570)
+        Me.ClientSize = New System.Drawing.Size(536, 584)
         Me.Controls.Add(Me.btnExportarListado)
         Me.Controls.Add(Me.btnVer)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.btnCancelar)
-        Me.Controls.Add(Me.btnModificar_Tarea)
+        Me.Controls.Add(Me.btnModificar_Una)
         Me.Controls.Add(Me.groupListadoDetalleTarea)
         Me.Controls.Add(Me.GroupListadoTareas)
         Me.Controls.Add(Me.btnEliminar_Tarea)
@@ -283,7 +294,7 @@ Partial Class frm_Listado_Tareas
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents dgvTarea_x_Colaborador As System.Windows.Forms.DataGridView
     Friend WithEvents cbo_sector As System.Windows.Forms.ComboBox
-    Friend WithEvents btnModificar_Tarea As System.Windows.Forms.Button
+    Friend WithEvents btnModificar_Una As System.Windows.Forms.Button
     Friend WithEvents dtpFecha As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label31 As System.Windows.Forms.Label
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
@@ -292,4 +303,5 @@ Partial Class frm_Listado_Tareas
     Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents btnExportarListado As System.Windows.Forms.Button
+    Friend WithEvents btnModificarTodas As System.Windows.Forms.Button
 End Class

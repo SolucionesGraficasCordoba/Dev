@@ -877,7 +877,7 @@ Public Class frm_Principal
     Private Sub EliminarTareaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarTareaToolStripMenuItem.Click
 
         frm_Listado_Tareas.Text = "Eliminar Tarea"
-        frm_Listado_Tareas.btnModificar_Tarea.Enabled = False
+        frm_Listado_Tareas.btnModificar_Una.Enabled = False
         frm_Listado_Tareas.btnAgregar.Enabled = False
         frm_Listado_Tareas.btnVer.Enabled = False
         frm_Listado_Tareas.btnExportarListado.Enabled = False
@@ -895,11 +895,11 @@ Public Class frm_Principal
     Private Sub ConsultarTareaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarTareaToolStripMenuItem.Click
 
         frm_Listado_Tareas.Text = "Consultar Tarea"
-        frm_Listado_Tareas.btnModificar_Tarea.Enabled = False
+        frm_Listado_Tareas.btnModificar_Una.Enabled = False
         frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
         frm_Listado_Tareas.btnAgregar.Enabled = False
         frm_Listado_Tareas.dtpFecha.Text = Now
-        frm_Listado_Tareas.btnModificar_Tarea.Enabled = False
+        frm_Listado_Tareas.btnModificar_Una.Enabled = False
         frm_Listado_Tareas.ShowDialog()
     End Sub
 
