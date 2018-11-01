@@ -101,6 +101,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Presentacion\frm_Acerca_de.Designer.vb">
+      <DependentUpon>frm_Acerca_de.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Acerca_de.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_Graficos_tareas_mensuales.Designer.vb">
       <DependentUpon>frm_Graficos_tareas_mensuales.vb</DependentUpon>
     </Compile>
@@ -316,10 +322,71 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\SOLUCIONES_INTERNAS.exe.config" />
+    <None Include="bin\Debug\SOLUCIONES_INTERNAS.vshost.exe.config" />
+    <None Include="bin\Debug\SOLUCIONES_INTERNAS.vshost.exe.manifest" />
+    <None Include="bin\Release\SOLUCIONES_INTERNAS.vshost.exe.config" />
+    <None Include="bin\Release\SOLUCIONES_INTERNAS.vshost.exe.manifest" />
     <None Include="ClassDiagram1.cd" />
     <None Include="Datos\DataS_Interno_Vistas.dbml.layout">
       <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
     </None>
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.Form1.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Actualizar_Tarea.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Cliente.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Colaborador.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Etiqueta_Modelo_1.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Generar_Informe.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_gestion_usuarios.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_ingreso.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Listado_Orden_Trabajo.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Listado_Retrabajo.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Listado_Tareas.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Orden_Trabajo.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Pieza.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Principal.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_retrabajo.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Sector.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Tarea.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Usuario.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.frm_Vendedor.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.Installer1.resources" />
+    <EmbeddedResource Include="obj\x86\Debug\SOLUCIONES_INTERNAS.Resources.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Actualizar_Orden.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Actualizar_Producto_Orden.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Actualizar_Tarea.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Cliente.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Colaborador.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Etiqueta_Modelo_1.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Generar_Informe.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_gestion_usuarios.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.Frm_Graficos.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_graficos_tareas_mensuales.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Grafico_1.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Grafico_2.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_ingreso.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Listado_Movimientos.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Listado_Orden_Trabajo.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Listado_Retrabajo.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Listado_Tareas.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Movimiento_Producto.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Orden_Trabajo.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Pieza.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Principal.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Proceso1.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Proceso2.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_proceso3.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Productos.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_retrabajo.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Sector.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Tarea.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Usuario.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.frm_Vendedor.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.Installer1.resources" />
+    <EmbeddedResource Include="obj\x86\Release\SOLUCIONES_INTERNAS.Resources.resources" />
+    <EmbeddedResource Include="Presentacion\frm_Acerca_de.resx">
+      <DependentUpon>frm_Acerca_de.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Graficos_tareas_mensuales.resx">
       <DependentUpon>frm_Graficos_tareas_mensuales.vb</DependentUpon>
     </EmbeddedResource>
@@ -453,6 +520,13 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="obj\x86\Debug\build.force" />
+    <None Include="obj\x86\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\x86\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\x86\Debug\SOLUCIONES_INTERNAS.vbproj.GenerateResource.Cache" />
+    <None Include="obj\x86\Release\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\x86\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\x86\Release\SOLUCIONES_INTERNAS.vbproj.GenerateResource.Cache" />
     <None Include="Resources\solucionesgraficas1.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -479,6 +553,26 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\SOLUCIONES_INTERNAS.exe" />
+    <Content Include="bin\Debug\SOLUCIONES_INTERNAS.pdb" />
+    <Content Include="bin\Debug\SOLUCIONES_INTERNAS.vshost.exe" />
+    <Content Include="bin\Debug\SOLUCIONES_INTERNAS.xml" />
+    <Content Include="bin\Release\SOLUCIONES_INTERNAS.vshost.exe" />
+    <Content Include="bin\Release\SOLUCIONES_INTERNAS.xml" />
+    <Content Include="obj\x86\Debug\SOLUCIONES_INTERNAS.exe" />
+    <Content Include="obj\x86\Debug\SOLUCIONES_INTERNAS.pdb" />
+    <Content Include="obj\x86\Debug\SOLUCIONES_INTERNAS.vbproj.FileListAbsolute.txt" />
+    <Content Include="obj\x86\Debug\SOLUCIONES_INTERNAS.xml" />
+    <Content Include="obj\x86\Debug\TempPE\Datos.DataClasses1.designer.vb.dll" />
+    <Content Include="obj\x86\Debug\TempPE\Datos.DataS_Interno.designer.vb.dll" />
+    <Content Include="obj\x86\Debug\TempPE\Datos.DataS_Interno_Vistas.designer.vb.dll" />
+    <Content Include="obj\x86\Debug\TempPE\My Project.Resources.Designer.vb.dll" />
+    <Content Include="obj\x86\Release\SOLUCIONES_INTERNAS.vbproj.FileListAbsolute.txt" />
+    <Content Include="obj\x86\Release\TempPE\Datos.DataS_Interno.designer.vb.dll" />
+    <Content Include="obj\x86\Release\TempPE\Datos.DataS_Interno_Vistas.designer.vb.dll" />
+    <Content Include="obj\x86\Release\TempPE\My Project.Resources.Designer.vb.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

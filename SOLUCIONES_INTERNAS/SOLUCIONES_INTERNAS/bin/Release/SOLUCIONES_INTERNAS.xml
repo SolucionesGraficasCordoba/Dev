@@ -15,6 +15,10 @@ SOLUCIONES_INTERNAS
   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
 </summary>
+</member><member name="P:SOLUCIONES_INTERNAS.My.Resources.Resources.Acceso_Usuarios">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
 </member><member name="P:SOLUCIONES_INTERNAS.My.Resources.Resources.solucionesgraficas1">
 	<summary>
   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
