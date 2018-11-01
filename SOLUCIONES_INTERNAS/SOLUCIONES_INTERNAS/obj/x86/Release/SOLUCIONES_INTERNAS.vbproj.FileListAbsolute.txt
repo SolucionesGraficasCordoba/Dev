@@ -40,3 +40,4 @@ E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Release\SOLU
 E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Release\SOLUCIONES_INTERNAS.vbprojResolveAssemblyReference.cache
 E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\bin\Release\itextsharp.dll
 E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Release\SOLUCIONES_INTERNAS.frm_graficos_tareas_mensuales.resources
+E:\Desarrollo\trunk\SOLUCIONES_INTERNAS\SOLUCIONES_INTERNAS\obj\x86\Release\SOLUCIONES_INTERNAS.frm_Acerca_de.resources
