@@ -151,13 +151,13 @@ Partial Class frm_ingreso
         '
         'PictureBox1
         '
-        'Me.PictureBox1.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.Acceso_Usuarios
-        'Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
-        'Me.PictureBox1.Name = "PictureBox1"
-        'Me.PictureBox1.Size = New System.Drawing.Size(100, 120)
-        'Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        'Me.PictureBox1.TabIndex = 0
-        'Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.Acceso_Usuarios
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(102, 102)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
         'frm_ingreso
         '
