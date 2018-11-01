@@ -209,9 +209,9 @@ Public Class frm_Generar_Informe
     End Sub
 
     Private Sub btnVerGraficos_Click(sender As System.Object, e As System.EventArgs) Handles btnVerGraficos.Click
-        'Frm_Graficos.Show()
-        frm_graficos_tareas_mensuales.MdiParent = frm_Principal
         frm_graficos_tareas_mensuales.Show()
+        'frm_graficos_tareas_mensuales.MdiParent = frm_Principal
+        'frm_graficos_tareas_mensuales.Show()
     End Sub
 
     Private Sub frm_Generar_Informe_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
