@@ -84,15 +84,15 @@ Partial Class frm_Principal
         Me.NuevoRetrabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GenerarInformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EtiquetasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GenerarInformesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.LBL_MENU_PERFIL = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.LBL_MENU_USU = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -323,32 +323,32 @@ Partial Class frm_Principal
         'AltaTareaToolStripMenuItem
         '
         Me.AltaTareaToolStripMenuItem.Name = "AltaTareaToolStripMenuItem"
-        Me.AltaTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AltaTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.AltaTareaToolStripMenuItem.Text = "Nueva"
         '
         'ListaTareaToolStripMenuItem
         '
         Me.ListaTareaToolStripMenuItem.Name = "ListaTareaToolStripMenuItem"
-        Me.ListaTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListaTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.ListaTareaToolStripMenuItem.Text = "Modificar"
         '
         'EliminarTareaToolStripMenuItem
         '
         Me.EliminarTareaToolStripMenuItem.Name = "EliminarTareaToolStripMenuItem"
-        Me.EliminarTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EliminarTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.EliminarTareaToolStripMenuItem.Text = "Eliminar"
         '
         'ConsultarTareaToolStripMenuItem
         '
         Me.ConsultarTareaToolStripMenuItem.Name = "ConsultarTareaToolStripMenuItem"
-        Me.ConsultarTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ConsultarTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.ConsultarTareaToolStripMenuItem.Text = "Consultar"
         '
         'GráficosToolStripMenuItem
         '
         Me.GráficosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TareasMensulesToolStripMenuItem})
         Me.GráficosToolStripMenuItem.Name = "GráficosToolStripMenuItem"
-        Me.GráficosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.GráficosToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.GráficosToolStripMenuItem.Text = "Gráficos"
         '
         'TareasMensulesToolStripMenuItem
@@ -476,17 +476,23 @@ Partial Class frm_Principal
         Me.ConsultarToolStripMenuItem1.Size = New System.Drawing.Size(125, 22)
         Me.ConsultarToolStripMenuItem1.Text = "Consultar"
         '
+        'EtiquetasToolStripMenuItem
+        '
+        Me.EtiquetasToolStripMenuItem.Name = "EtiquetasToolStripMenuItem"
+        Me.EtiquetasToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
+        Me.EtiquetasToolStripMenuItem.Text = "Etiquetas"
+        '
         'GenerarInformesToolStripMenuItem
         '
         Me.GenerarInformesToolStripMenuItem.Name = "GenerarInformesToolStripMenuItem"
         Me.GenerarInformesToolStripMenuItem.Size = New System.Drawing.Size(110, 20)
         Me.GenerarInformesToolStripMenuItem.Text = "Generar Informes"
         '
-        'EtiquetasToolStripMenuItem
+        'AyudaToolStripMenuItem
         '
-        Me.EtiquetasToolStripMenuItem.Name = "EtiquetasToolStripMenuItem"
-        Me.EtiquetasToolStripMenuItem.Size = New System.Drawing.Size(67, 20)
-        Me.EtiquetasToolStripMenuItem.Text = "Etiquetas"
+        Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
+        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
+        Me.AyudaToolStripMenuItem.Text = "Acerca de"
         '
         'LBL_MENU_PERFIL
         '
@@ -540,12 +546,6 @@ Partial Class frm_Principal
         Me.GroupBox1.Size = New System.Drawing.Size(1360, 38)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
-        '
-        'AyudaToolStripMenuItem
-        '
-        Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
-        Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(71, 20)
-        Me.AyudaToolStripMenuItem.Text = "Acerca de"
         '
         'frm_Principal
         '
