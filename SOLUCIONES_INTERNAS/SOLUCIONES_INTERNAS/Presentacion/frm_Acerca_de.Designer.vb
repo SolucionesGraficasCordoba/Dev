@@ -129,12 +129,11 @@ Partial Class frm_Acerca_de
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.LOGO_SISTEMA_INTERNO__1_
         Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(140, 140)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
         '
         'frm_Acerca_de
