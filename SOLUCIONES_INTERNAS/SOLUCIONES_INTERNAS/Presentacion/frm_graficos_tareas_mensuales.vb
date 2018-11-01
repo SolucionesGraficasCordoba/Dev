@@ -201,211 +201,211 @@ Public Class frm_graficos_tareas_mensuales
         If 1 <= totalgrafico Then
             Dim grafico1 As New Bitmap(Chart1.Width, Chart1.Height)
             Chart1.DrawToBitmap(grafico1, Chart1.DisplayRectangle)
-            Dim file1 As String = "C:\Users\valeh\Documents\grafico1.jpg"
+            Dim file1 As String = "C:\Users\Administrador\Desktop\grafico1.jpg"
             grafico1.Save(file1)
-            Dim imagen1 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico1.jpg")
+            Dim imagen1 As Image = Image.GetInstance("C:\Users\Administrador\Desktop\grafico1.jpg")
             imagen1.ScaleAbsolute(ancho, alto)
             doc.Add(imagen1)
             doc.Add(interlineado)
         End If
         '************************inicio grafico 2*********************************
-        If 2 <= totalgrafico Then
-            Dim grafico2 As New Bitmap(Chart2.Width, Chart2.Height)
-            Chart2.DrawToBitmap(grafico2, Chart2.DisplayRectangle)
-            Dim file2 As String = "C:\Users\valeh\Documents\grafico2.jpg"
-            grafico2.Save(file2)
-            Dim imagen2 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico2.jpg")
-            imagen2.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen2)
-            doc.Add(interlineado)
-        End If
-        '************************inicio grafico 3*********************************
-        If 3 <= totalgrafico Then
-            Dim grafico3 As New Bitmap(Chart3.Width, Chart3.Height)
-            Chart3.DrawToBitmap(grafico3, Chart3.DisplayRectangle)
-            Dim file3 As String = "C:\Users\valeh\Documents\grafico3.jpg"
-            grafico3.Save(file3)
-            Dim imagen3 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico3.jpg")
-            imagen3.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen3)
-            doc.Add(interlineado)
-        End If
-        ''************************inicio grafico 4*********************************
-        If 4 <= totalgrafico Then
-            Dim grafico4 As New Bitmap(Chart4.Width, Chart4.Height)
-            Chart4.DrawToBitmap(grafico4, Chart4.DisplayRectangle)
-            Dim file4 As String = "C:\Users\valeh\Documents\grafico4.jpg"
-            grafico4.Save(file4)
-            Dim imagen4 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico4.jpg")
-            imagen4.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen4)
-            doc.Add(interlineado)
-        End If
-        ''************************inicio grafico 5*********************************
-        If 5 <= totalgrafico Then
-            Dim grafico5 As New Bitmap(Chart5.Width, Chart5.Height)
-            Chart5.DrawToBitmap(grafico5, Chart5.DisplayRectangle)
-            Dim file5 As String = "C:\Users\valeh\Documents\grafico5.jpg"
-            grafico5.Save(file5)
-            Dim imagen5 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico5.jpg")
-            imagen5.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen5)
-            doc.Add(interlineado)
-        End If
-        ''************************inicio grafico 6*********************************
-        If 6 <= totalgrafico Then
-            Dim grafico6 As New Bitmap(Chart6.Width, Chart6.Height)
-            Chart6.DrawToBitmap(grafico6, Chart6.DisplayRectangle)
-            Dim file6 As String = "C:\Users\valeh\Documents\grafico6.jpg"
-            grafico6.Save(file6)
-            Dim imagen6 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico6.jpg")
-            imagen6.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen6)
-            doc.Add(interlineado)
-        End If
-        ''***************************inicio grafico 7*********************************
-        If 7 <= totalgrafico Then
-            Dim grafico7 As New Bitmap(Chart7.Width, Chart7.Height)
-            Chart7.DrawToBitmap(grafico7, Chart7.DisplayRectangle)
-            Dim file7 As String = "C:\Users\valeh\Documents\grafico7.jpg"
-            grafico7.Save(file7)
-            Dim imagen7 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico7.jpg")
-            imagen7.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen7)
-            doc.Add(interlineado)
-        End If
-        ''***************************inicio grafico 8*********************************
-        If 8 <= totalgrafico Then
-            Dim grafico8 As New Bitmap(Chart8.Width, Chart8.Height)
-            Chart8.DrawToBitmap(grafico8, Chart8.DisplayRectangle)
-            Dim file8 As String = "C:\Users\valeh\Documents\grafico8.jpg"
-            grafico8.Save(file8)
-            Dim imagen8 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico8.jpg")
-            imagen8.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen8)
-            doc.Add(interlineado)
-        End If
-        ''***************************inicio grafico 9*********************************
-        If 9 <= totalgrafico Then
-            Dim grafico9 As New Bitmap(Chart9.Width, Chart9.Height)
-            Chart9.DrawToBitmap(grafico9, Chart9.DisplayRectangle)
-            Dim file9 As String = "C:\Users\valeh\Documents\grafico9.jpg"
-            grafico9.Save(file9)
-            Dim imagen9 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico9.jpg")
-            imagen9.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen9)
-            doc.Add(interlineado)
-        End If
-        ''***************************inicio grafico 10*********************************
-        If 10 <= totalgrafico Then
-            Dim grafico10 As New Bitmap(Chart10.Width, Chart10.Height)
-            Chart10.DrawToBitmap(grafico10, Chart10.DisplayRectangle)
-            Dim file10 As String = "C:\Users\valeh\Documents\grafico10.jpg"
-            grafico10.Save(file10)
-            Dim imagen10 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico10.jpg")
-            imagen10.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen10)
-            doc.Add(interlineado)
-        End If
-        ''***************************inicio grafico 11*********************************
-        If 11 <= totalgrafico Then
-            Dim grafico11 As New Bitmap(Chart11.Width, Chart11.Height)
-            Chart11.DrawToBitmap(grafico11, Chart11.DisplayRectangle)
-            Dim file11 As String = "C:\Users\valeh\Documents\grafico11.jpg"
-            grafico11.Save(file11)
-            Dim imagen11 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico11.jpg")
-            imagen11.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen11)
-            doc.Add(interlineado)
-        End If
-        ''***************************inicio grafico 12*********************************
-        If 12 <= totalgrafico Then
-            Dim grafico12 As New Bitmap(Chart12.Width, Chart12.Height)
-            Chart12.DrawToBitmap(grafico12, Chart12.DisplayRectangle)
-            Dim file12 As String = "C:\Users\valeh\Documents\grafico12.jpg"
-            grafico12.Save(file12)
-            Dim imagen12 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico12.jpg")
-            imagen12.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen12)
-            doc.Add(interlineado)
-        End If
-        ''***************************inicio grafico 13*********************************
-        If 13 <= totalgrafico Then
-            Dim grafico13 As New Bitmap(Chart13.Width, Chart13.Height)
-            Chart13.DrawToBitmap(grafico13, Chart13.DisplayRectangle)
-            Dim file13 As String = "C:\Users\valeh\Documents\grafico13.jpg"
-            grafico13.Save(file13)
-            Dim imagen13 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico13.jpg")
-            imagen13.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen13)
-            doc.Add(interlineado)
-        End If
-        ''***************************inicio grafico 14*********************************
-        If 14 <= totalgrafico Then
-            Dim grafico14 As New Bitmap(Chart14.Width, Chart14.Height)
-            Chart14.DrawToBitmap(grafico14, Chart14.DisplayRectangle)
-            Dim file14 As String = "C:\Users\valeh\Documents\grafico14.jpg"
-            grafico14.Save(file14)
-            Dim imagen14 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico14.jpg")
-            imagen14.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen14)
-            doc.Add(interlineado)
-        End If
-        ''***************************inicio grafico 15*********************************
-        If 15 <= totalgrafico Then
-            Dim grafico15 As New Bitmap(Chart15.Width, Chart15.Height)
-            Chart15.DrawToBitmap(grafico15, Chart15.DisplayRectangle)
-            Dim file15 As String = "C:\Users\valeh\Documents\grafico15.jpg"
-            grafico15.Save(file15)
-            Dim imagen15 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico15.jpg")
-            imagen15.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen15)
-            doc.Add(interlineado)
-        End If
-        ''***************************inicio grafico 16*********************************
-        If 16 <= totalgrafico Then
-            Dim grafico16 As New Bitmap(Chart16.Width, Chart16.Height)
-            Chart16.DrawToBitmap(grafico16, Chart16.DisplayRectangle)
-            Dim file16 As String = "C:\Users\valeh\Documents\grafico16.jpg"
-            grafico16.Save(file16)
-            Dim imagen16 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico16.jpg")
-            imagen16.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen16)
-            doc.Add(interlineado)
-        End If
-        ''***************************inicio grafico 17*********************************
-        If 17 <= totalgrafico Then
-            Dim grafico17 As New Bitmap(Chart17.Width, Chart17.Height)
-            Chart17.DrawToBitmap(grafico17, Chart17.DisplayRectangle)
-            Dim file17 As String = "C:\Users\valeh\Documents\grafico17.jpg"
-            grafico17.Save(file17)
-            Dim imagen17 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico17.jpg")
-            imagen17.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen17)
-            doc.Add(interlineado)
-        End If
-        ''***************************inicio grafico 18*********************************
-        If 18 <= totalgrafico Then
-            Dim grafico18 As New Bitmap(Chart18.Width, Chart18.Height)
-            Chart18.DrawToBitmap(grafico18, Chart18.DisplayRectangle)
-            Dim file18 As String = "C:\Users\valeh\Documents\grafico18.jpg"
-            grafico18.Save(file18)
-            Dim imagen18 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico18.jpg")
-            imagen18.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen18)
-            doc.Add(interlineado)
-        End If
-        ''***************************inicio grafico 19*********************************
-        If 19 <= totalgrafico Then
-            Dim grafico19 As New Bitmap(Chart19.Width, Chart19.Height)
-            Chart19.DrawToBitmap(grafico19, Chart19.DisplayRectangle)
-            Dim file19 As String = "C:\Users\valeh\Documents\grafico19.jpg"
-            grafico19.Save(file19)
-            Dim imagen19 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico19.jpg")
-            imagen19.ScaleAbsolute(ancho, alto)
-            doc.Add(imagen19)
-            doc.Add(interlineado)
-        End If
+        'If 2 <= totalgrafico Then
+        '    Dim grafico2 As New Bitmap(Chart2.Width, Chart2.Height)
+        '    Chart2.DrawToBitmap(grafico2, Chart2.DisplayRectangle)
+        '    Dim file2 As String = "C:\Users\valeh\Documents\grafico2.jpg"
+        '    grafico2.Save(file2)
+        '    Dim imagen2 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico2.jpg")
+        '    imagen2.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen2)
+        '    doc.Add(interlineado)
+        'End If
+        ''************************inicio grafico 3*********************************
+        'If 3 <= totalgrafico Then
+        '    Dim grafico3 As New Bitmap(Chart3.Width, Chart3.Height)
+        '    Chart3.DrawToBitmap(grafico3, Chart3.DisplayRectangle)
+        '    Dim file3 As String = "C:\Users\valeh\Documents\grafico3.jpg"
+        '    grafico3.Save(file3)
+        '    Dim imagen3 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico3.jpg")
+        '    imagen3.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen3)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''************************inicio grafico 4*********************************
+        'If 4 <= totalgrafico Then
+        '    Dim grafico4 As New Bitmap(Chart4.Width, Chart4.Height)
+        '    Chart4.DrawToBitmap(grafico4, Chart4.DisplayRectangle)
+        '    Dim file4 As String = "C:\Users\valeh\Documents\grafico4.jpg"
+        '    grafico4.Save(file4)
+        '    Dim imagen4 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico4.jpg")
+        '    imagen4.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen4)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''************************inicio grafico 5*********************************
+        'If 5 <= totalgrafico Then
+        '    Dim grafico5 As New Bitmap(Chart5.Width, Chart5.Height)
+        '    Chart5.DrawToBitmap(grafico5, Chart5.DisplayRectangle)
+        '    Dim file5 As String = "C:\Users\valeh\Documents\grafico5.jpg"
+        '    grafico5.Save(file5)
+        '    Dim imagen5 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico5.jpg")
+        '    imagen5.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen5)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''************************inicio grafico 6*********************************
+        'If 6 <= totalgrafico Then
+        '    Dim grafico6 As New Bitmap(Chart6.Width, Chart6.Height)
+        '    Chart6.DrawToBitmap(grafico6, Chart6.DisplayRectangle)
+        '    Dim file6 As String = "C:\Users\valeh\Documents\grafico6.jpg"
+        '    grafico6.Save(file6)
+        '    Dim imagen6 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico6.jpg")
+        '    imagen6.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen6)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''***************************inicio grafico 7*********************************
+        'If 7 <= totalgrafico Then
+        '    Dim grafico7 As New Bitmap(Chart7.Width, Chart7.Height)
+        '    Chart7.DrawToBitmap(grafico7, Chart7.DisplayRectangle)
+        '    Dim file7 As String = "C:\Users\valeh\Documents\grafico7.jpg"
+        '    grafico7.Save(file7)
+        '    Dim imagen7 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico7.jpg")
+        '    imagen7.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen7)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''***************************inicio grafico 8*********************************
+        'If 8 <= totalgrafico Then
+        '    Dim grafico8 As New Bitmap(Chart8.Width, Chart8.Height)
+        '    Chart8.DrawToBitmap(grafico8, Chart8.DisplayRectangle)
+        '    Dim file8 As String = "C:\Users\valeh\Documents\grafico8.jpg"
+        '    grafico8.Save(file8)
+        '    Dim imagen8 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico8.jpg")
+        '    imagen8.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen8)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''***************************inicio grafico 9*********************************
+        'If 9 <= totalgrafico Then
+        '    Dim grafico9 As New Bitmap(Chart9.Width, Chart9.Height)
+        '    Chart9.DrawToBitmap(grafico9, Chart9.DisplayRectangle)
+        '    Dim file9 As String = "C:\Users\valeh\Documents\grafico9.jpg"
+        '    grafico9.Save(file9)
+        '    Dim imagen9 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico9.jpg")
+        '    imagen9.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen9)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''***************************inicio grafico 10*********************************
+        'If 10 <= totalgrafico Then
+        '    Dim grafico10 As New Bitmap(Chart10.Width, Chart10.Height)
+        '    Chart10.DrawToBitmap(grafico10, Chart10.DisplayRectangle)
+        '    Dim file10 As String = "C:\Users\valeh\Documents\grafico10.jpg"
+        '    grafico10.Save(file10)
+        '    Dim imagen10 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico10.jpg")
+        '    imagen10.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen10)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''***************************inicio grafico 11*********************************
+        'If 11 <= totalgrafico Then
+        '    Dim grafico11 As New Bitmap(Chart11.Width, Chart11.Height)
+        '    Chart11.DrawToBitmap(grafico11, Chart11.DisplayRectangle)
+        '    Dim file11 As String = "C:\Users\valeh\Documents\grafico11.jpg"
+        '    grafico11.Save(file11)
+        '    Dim imagen11 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico11.jpg")
+        '    imagen11.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen11)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''***************************inicio grafico 12*********************************
+        'If 12 <= totalgrafico Then
+        '    Dim grafico12 As New Bitmap(Chart12.Width, Chart12.Height)
+        '    Chart12.DrawToBitmap(grafico12, Chart12.DisplayRectangle)
+        '    Dim file12 As String = "C:\Users\valeh\Documents\grafico12.jpg"
+        '    grafico12.Save(file12)
+        '    Dim imagen12 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico12.jpg")
+        '    imagen12.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen12)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''***************************inicio grafico 13*********************************
+        'If 13 <= totalgrafico Then
+        '    Dim grafico13 As New Bitmap(Chart13.Width, Chart13.Height)
+        '    Chart13.DrawToBitmap(grafico13, Chart13.DisplayRectangle)
+        '    Dim file13 As String = "C:\Users\valeh\Documents\grafico13.jpg"
+        '    grafico13.Save(file13)
+        '    Dim imagen13 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico13.jpg")
+        '    imagen13.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen13)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''***************************inicio grafico 14*********************************
+        'If 14 <= totalgrafico Then
+        '    Dim grafico14 As New Bitmap(Chart14.Width, Chart14.Height)
+        '    Chart14.DrawToBitmap(grafico14, Chart14.DisplayRectangle)
+        '    Dim file14 As String = "C:\Users\valeh\Documents\grafico14.jpg"
+        '    grafico14.Save(file14)
+        '    Dim imagen14 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico14.jpg")
+        '    imagen14.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen14)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''***************************inicio grafico 15*********************************
+        'If 15 <= totalgrafico Then
+        '    Dim grafico15 As New Bitmap(Chart15.Width, Chart15.Height)
+        '    Chart15.DrawToBitmap(grafico15, Chart15.DisplayRectangle)
+        '    Dim file15 As String = "C:\Users\valeh\Documents\grafico15.jpg"
+        '    grafico15.Save(file15)
+        '    Dim imagen15 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico15.jpg")
+        '    imagen15.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen15)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''***************************inicio grafico 16*********************************
+        'If 16 <= totalgrafico Then
+        '    Dim grafico16 As New Bitmap(Chart16.Width, Chart16.Height)
+        '    Chart16.DrawToBitmap(grafico16, Chart16.DisplayRectangle)
+        '    Dim file16 As String = "C:\Users\valeh\Documents\grafico16.jpg"
+        '    grafico16.Save(file16)
+        '    Dim imagen16 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico16.jpg")
+        '    imagen16.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen16)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''***************************inicio grafico 17*********************************
+        'If 17 <= totalgrafico Then
+        '    Dim grafico17 As New Bitmap(Chart17.Width, Chart17.Height)
+        '    Chart17.DrawToBitmap(grafico17, Chart17.DisplayRectangle)
+        '    Dim file17 As String = "C:\Users\valeh\Documents\grafico17.jpg"
+        '    grafico17.Save(file17)
+        '    Dim imagen17 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico17.jpg")
+        '    imagen17.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen17)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''***************************inicio grafico 18*********************************
+        'If 18 <= totalgrafico Then
+        '    Dim grafico18 As New Bitmap(Chart18.Width, Chart18.Height)
+        '    Chart18.DrawToBitmap(grafico18, Chart18.DisplayRectangle)
+        '    Dim file18 As String = "C:\Users\valeh\Documents\grafico18.jpg"
+        '    grafico18.Save(file18)
+        '    Dim imagen18 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico18.jpg")
+        '    imagen18.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen18)
+        '    doc.Add(interlineado)
+        'End If
+        ' ''***************************inicio grafico 19*********************************
+        'If 19 <= totalgrafico Then
+        '    Dim grafico19 As New Bitmap(Chart19.Width, Chart19.Height)
+        '    Chart19.DrawToBitmap(grafico19, Chart19.DisplayRectangle)
+        '    Dim file19 As String = "C:\Users\valeh\Documents\grafico19.jpg"
+        '    grafico19.Save(file19)
+        '    Dim imagen19 As Image = Image.GetInstance("C:\Users\valeh\Documents\grafico19.jpg")
+        '    imagen19.ScaleAbsolute(ancho, alto)
+        '    doc.Add(imagen19)
+        '    doc.Add(interlineado)
+        'End If
 
         'cierra la edicion y abre el archivo
         doc.Close()
