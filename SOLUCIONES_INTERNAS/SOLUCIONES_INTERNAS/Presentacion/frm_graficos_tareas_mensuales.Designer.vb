@@ -196,7 +196,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart2
         '
-        Me.Chart2.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Chart2.BorderlineColor = System.Drawing.SystemColors.Control
         ChartArea1.AxisX.Interval = 1.0R
         ChartArea1.AxisX.IsLabelAutoFit = False
@@ -248,7 +247,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart1
         '
-        Me.Chart1.BackColor = System.Drawing.SystemColors.ControlLight
         Me.Chart1.BorderlineColor = System.Drawing.SystemColors.Control
         ChartArea2.AxisX.Interval = 1.0R
         ChartArea2.AxisX.IsLabelAutoFit = False
@@ -300,7 +298,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart3
         '
-        Me.Chart3.BackColor = System.Drawing.SystemColors.ControlLight
         ChartArea3.AxisX.Interval = 1.0R
         ChartArea3.AxisX.IsLabelAutoFit = False
         ChartArea3.AxisX.LabelStyle.Angle = 90
@@ -1334,7 +1331,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.AutoScroll = True
         Me.AutoScrollMargin = New System.Drawing.Size(10, 10)
         Me.AutoScrollMinSize = New System.Drawing.Size(500, 500)
-        Me.ClientSize = New System.Drawing.Size(1389, 722)
+        Me.ClientSize = New System.Drawing.Size(1370, 722)
         Me.Controls.Add(Me.btnSubir)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnExportarPDF)
