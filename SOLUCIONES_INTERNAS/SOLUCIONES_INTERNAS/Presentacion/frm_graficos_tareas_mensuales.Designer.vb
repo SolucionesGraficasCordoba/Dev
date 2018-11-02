@@ -348,7 +348,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart6
         '
-        Me.Chart6.BackColor = System.Drawing.SystemColors.ControlLight
         ChartArea4.AxisX.Interval = 1.0R
         ChartArea4.AxisX.IsLabelAutoFit = False
         ChartArea4.AxisX.LabelStyle.Angle = 90
@@ -364,7 +363,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart6.ChartAreas.Add(ChartArea4)
         Legend4.Name = "Legend1"
         Me.Chart6.Legends.Add(Legend4)
-        Me.Chart6.Location = New System.Drawing.Point(17, 1293)
+        Me.Chart6.Location = New System.Drawing.Point(17, 1263)
         Me.Chart6.Name = "Chart6"
         Series10.ChartArea = "ChartArea1"
         Series10.IsValueShownAsLabel = True
@@ -399,8 +398,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart5
         '
-        Me.Chart5.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Chart5.BorderlineColor = System.Drawing.SystemColors.Control
         ChartArea5.AxisX.Interval = 1.0R
         ChartArea5.AxisX.IsLabelAutoFit = False
         ChartArea5.AxisX.LabelStyle.Angle = 90
@@ -451,8 +448,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart4
         '
-        Me.Chart4.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Chart4.BorderlineColor = System.Drawing.SystemColors.Control
         ChartArea6.AxisX.Interval = 1.0R
         ChartArea6.AxisX.IsLabelAutoFit = False
         ChartArea6.AxisX.LabelStyle.Angle = 90
@@ -503,7 +498,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart9
         '
-        Me.Chart9.BackColor = System.Drawing.SystemColors.ControlLight
         ChartArea7.AxisX.Interval = 1.0R
         ChartArea7.AxisX.IsLabelAutoFit = False
         ChartArea7.AxisX.LabelStyle.Angle = 90
@@ -554,8 +548,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart8
         '
-        Me.Chart8.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Chart8.BorderlineColor = System.Drawing.SystemColors.Control
         ChartArea8.AxisX.Interval = 1.0R
         ChartArea8.AxisX.IsLabelAutoFit = False
         ChartArea8.AxisX.LabelStyle.Angle = 90
@@ -606,8 +598,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart7
         '
-        Me.Chart7.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Chart7.BorderlineColor = System.Drawing.SystemColors.Control
         ChartArea9.AxisX.Interval = 1.0R
         ChartArea9.AxisX.IsLabelAutoFit = False
         ChartArea9.AxisX.LabelStyle.Angle = 90
@@ -623,7 +613,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart7.ChartAreas.Add(ChartArea9)
         Legend9.Name = "Legend1"
         Me.Chart7.Legends.Add(Legend9)
-        Me.Chart7.Location = New System.Drawing.Point(17, 1516)
+        Me.Chart7.Location = New System.Drawing.Point(17, 1510)
         Me.Chart7.Name = "Chart7"
         Series25.ChartArea = "ChartArea1"
         Series25.IsValueShownAsLabel = True
@@ -658,7 +648,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart12
         '
-        Me.Chart12.BackColor = System.Drawing.SystemColors.ControlLight
         ChartArea10.AxisX.Interval = 1.0R
         ChartArea10.AxisX.IsLabelAutoFit = False
         ChartArea10.AxisX.LabelStyle.Angle = 90
@@ -709,8 +698,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart11
         '
-        Me.Chart11.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Chart11.BorderlineColor = System.Drawing.SystemColors.Control
         ChartArea11.AxisX.Interval = 1.0R
         ChartArea11.AxisX.IsLabelAutoFit = False
         ChartArea11.AxisX.LabelStyle.Angle = 90
@@ -761,8 +748,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart10
         '
-        Me.Chart10.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Chart10.BorderlineColor = System.Drawing.SystemColors.Control
         ChartArea12.AxisX.Interval = 1.0R
         ChartArea12.AxisX.IsLabelAutoFit = False
         ChartArea12.AxisX.LabelStyle.Angle = 90
@@ -813,7 +798,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart15
         '
-        Me.Chart15.BackColor = System.Drawing.SystemColors.ControlLight
         ChartArea13.AxisX.Interval = 1.0R
         ChartArea13.AxisX.IsLabelAutoFit = False
         ChartArea13.AxisX.LabelStyle.Angle = 90
@@ -864,8 +848,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart14
         '
-        Me.Chart14.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Chart14.BorderlineColor = System.Drawing.SystemColors.Control
         ChartArea14.AxisX.Interval = 1.0R
         ChartArea14.AxisX.IsLabelAutoFit = False
         ChartArea14.AxisX.LabelStyle.Angle = 90
@@ -916,8 +898,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart13
         '
-        Me.Chart13.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Chart13.BorderlineColor = System.Drawing.SystemColors.Control
         ChartArea15.AxisX.Interval = 1.0R
         ChartArea15.AxisX.IsLabelAutoFit = False
         ChartArea15.AxisX.LabelStyle.Angle = 90
@@ -968,7 +948,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart18
         '
-        Me.Chart18.BackColor = System.Drawing.SystemColors.ControlLight
         ChartArea16.AxisX.Interval = 1.0R
         ChartArea16.AxisX.IsLabelAutoFit = False
         ChartArea16.AxisX.LabelStyle.Angle = 90
@@ -1019,8 +998,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart17
         '
-        Me.Chart17.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Chart17.BorderlineColor = System.Drawing.SystemColors.Control
         ChartArea17.AxisX.Interval = 1.0R
         ChartArea17.AxisX.IsLabelAutoFit = False
         ChartArea17.AxisX.LabelStyle.Angle = 90
@@ -1071,8 +1048,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart16
         '
-        Me.Chart16.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Chart16.BorderlineColor = System.Drawing.SystemColors.Control
         ChartArea18.AxisX.Interval = 1.0R
         ChartArea18.AxisX.IsLabelAutoFit = False
         ChartArea18.AxisX.LabelStyle.Angle = 90
@@ -1123,8 +1098,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart19
         '
-        Me.Chart19.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Chart19.BorderlineColor = System.Drawing.SystemColors.Control
         ChartArea19.AxisX.Interval = 1.0R
         ChartArea19.AxisX.IsLabelAutoFit = False
         ChartArea19.AxisX.LabelStyle.Angle = 90
@@ -1175,8 +1148,6 @@ Partial Class frm_graficos_tareas_mensuales
         '
         'Chart21
         '
-        Me.Chart21.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.Chart21.BorderlineColor = System.Drawing.SystemColors.Control
         ChartArea20.AxisX.Interval = 1.0R
         ChartArea20.AxisX.IsLabelAutoFit = False
         ChartArea20.AxisX.LabelStyle.Angle = 90
