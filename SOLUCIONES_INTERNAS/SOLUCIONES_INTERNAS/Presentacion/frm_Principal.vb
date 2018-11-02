@@ -348,6 +348,7 @@ Public Class frm_Principal
         frm_Tarea.btnGuardar_Tarea.Visible = True
         frm_Tarea.btnCancelar_Tarea.Visible = True
         frm_Tarea.btnBuscar_Colaborador.Enabled = True
+        frm_Tarea.btnActualizar.Enabled = False
 
         frm_Tarea.btnBuscar_Numero_Orden1.Enabled = True
         frm_Tarea.btnBuscar_Numero_Orden2.Enabled = True
@@ -882,6 +883,7 @@ Public Class frm_Principal
         frm_Listado_Tareas.btnVer.Enabled = False
         frm_Listado_Tareas.btnExportarListado.Enabled = False
         frm_Listado_Tareas.dtpFecha.Text = Now
+
         frm_Listado_Tareas.ShowDialog()
     End Sub
 

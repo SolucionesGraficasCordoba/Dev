@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataS_Interno_Vistas">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.5, 8.5" name="DataS_Interno_Vistas">
   <DataContextMoniker Name="/DataS_Interno_Vistas" />
   <nestedChildShapes>
     <classShape Id="e146fe0b-01d4-42ab-bfd2-352bb0791de6" isExpanded="false" absoluteBounds="3.75, 0.75, 2, 0.45">
@@ -12,18 +12,6 @@
       <DataClassMoniker Name="/DataS_Interno_Vistas/Tiempos_x_Sector" />
       <nestedChildShapes>
         <elementListCompartment Id="cd7e846d-ee87-404b-84ba-569fb4f8b009" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="65da375d-5a98-46c0-87cd-7ca5b888ace4" isExpanded="false" absoluteBounds="5.75, 2.75, 2, 0.45">
-      <DataClassMoniker Name="/DataS_Interno_Vistas/Vista_Tarea_x_Colaborador" />
-      <nestedChildShapes>
-        <elementListCompartment Id="6008755c-6457-45de-89a4-ad286b55470b" absoluteBounds="5.765, 3.2100000000000009, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="12ef5ca2-9c58-40ac-b65e-911497973c43" isExpanded="false" absoluteBounds="4.375, 1.75, 2, 0.45">
-      <DataClassMoniker Name="/DataS_Interno_Vistas/Tiempos_Totales" />
-      <nestedChildShapes>
-        <elementListCompartment Id="836db8ac-1745-4aeb-a223-1508db74d47a" absoluteBounds="4.39, 2.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <classShape Id="36d40e4d-81dd-41cd-9bb4-6f66e1ae7e66" isExpanded="false" absoluteBounds="0.5, 1.625, 2, 0.45">
@@ -56,10 +44,22 @@
         <elementListCompartment Id="63275114-8145-4258-ad46-04a17bbc1a8d" absoluteBounds="0.51500000000000057, 3.96, 1.9700000000000002, 5.4415283203125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="df5aeec8-c2ef-488b-bf72-b71475af5125" isExpanded="false" absoluteBounds="4.375, 4.625, 2, 0.45">
+    <classShape Id="df5aeec8-c2ef-488b-bf72-b71475af5125" isExpanded="false" absoluteBounds="3.125, 3.5, 2, 0.45">
       <DataClassMoniker Name="/DataS_Interno_Vistas/Totales_mensuales" />
       <nestedChildShapes>
-        <elementListCompartment Id="86afe13f-b9c4-4d74-bccb-c4163d400eae" absoluteBounds="4.39, 5.085, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="86afe13f-b9c4-4d74-bccb-c4163d400eae" absoluteBounds="3.1399999999999997, 3.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4446bb8-18cf-400f-9e03-079ea9b3b779" absoluteBounds="5.375, 3.625, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/DataS_Interno_Vistas/Tiempos_Totales" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc82a733-a66b-4e13-8e1c-0bbae1c061fe" absoluteBounds="5.3900000000000006, 4.085, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a4b06021-93b3-4783-b478-6b093b034d2c" absoluteBounds="10.25, 2.75, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/DataS_Interno_Vistas/Vista_Tarea_x_Colaborador" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4158875d-ed35-429f-9e1b-3a827ef77a94" absoluteBounds="10.265, 3.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>
