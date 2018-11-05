@@ -309,4 +309,10 @@ Public Class frm_Productos
             End If
         Next
     End Sub
+
+    Private Sub dgvLista_Productos_CellClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Productos.CellClick
+        Try
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

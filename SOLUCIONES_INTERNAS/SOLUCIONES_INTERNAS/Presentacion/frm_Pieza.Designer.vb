@@ -31,6 +31,7 @@ Partial Class frm_Pieza
         Me.dgvLista_Piezas = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupNuevaPieza = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.btnCancelar_Pieza = New System.Windows.Forms.Button()
         Me.btnActualizar_Pieza = New System.Windows.Forms.Button()
         Me.btnGuardar_Pieza = New System.Windows.Forms.Button()
@@ -39,7 +40,6 @@ Partial Class frm_Pieza
         Me.txt_id_pieza = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupListadoPiezas.SuspendLayout()
         CType(Me.dgvLista_Piezas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupNuevaPieza.SuspendLayout()
@@ -143,6 +143,17 @@ Partial Class frm_Pieza
         Me.GroupNuevaPieza.TabStop = False
         Me.GroupNuevaPieza.Text = "Nueva Pieza"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(63, 22)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(11, 13)
+        Me.Label3.TabIndex = 5
+        Me.Label3.Text = "*"
+        '
         'btnCancelar_Pieza
         '
         Me.btnCancelar_Pieza.Location = New System.Drawing.Point(262, 55)
@@ -211,17 +222,6 @@ Partial Class frm_Pieza
         Me.Label1.Size = New System.Drawing.Size(46, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "id_pieza"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(63, 22)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(11, 13)
-        Me.Label3.TabIndex = 5
-        Me.Label3.Text = "*"
         '
         'frm_Pieza
         '

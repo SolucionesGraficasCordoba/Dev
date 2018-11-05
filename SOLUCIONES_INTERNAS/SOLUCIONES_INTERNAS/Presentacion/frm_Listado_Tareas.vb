@@ -99,6 +99,9 @@ Public Class frm_Listado_Tareas
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
                     Label1.Text = dgvTarea_x_Colaborador.Rows.Count
+                ElseIf Me.Text = "Eliminar Tarea" Then
+                    btnModificar_Una.Enabled = False
+                    btnModificarTodas.Enabled = False
                 End If
             End If
             vble_colaborador = dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
@@ -118,6 +121,8 @@ Public Class frm_Listado_Tareas
                 ElseIf Me.Text = "Eliminar Tarea" Then
                     MsgBox("No tiene tareas asignadas para eliminar", MsgBoxStyle.Information, "Listado de tareas")
                     Label1.Text = dgvTarea_x_Colaborador.Rows.Count
+                    btnModificar_Una.Enabled = False
+                    btnModificarTodas.Enabled = False
                     Exit Sub
                 ElseIf frm_Tarea.Text = "Ver Tarea" Then
                     btnModificar_Una.Enabled = False
@@ -247,7 +252,7 @@ Public Class frm_Listado_Tareas
 
         'CARGA EL ENCABEZADO DEL FORMULARIO TAREAS
         If dgvColaboradores.Rows.Count = 0 Then
-            MsgBox("Debe selecconar un Sector")
+            MsgBox("Debe seleccionar un Sector y luego un Colaborador")
             Exit Sub
         Else
         End If
@@ -1028,6 +1033,8 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txt_id_colaborador.Visible = False
         frm_Tarea.txt_id_tarea.Visible = False
         frm_Tarea.btnActualizar.Enabled = False
+        frm_Tarea.txtEntrada.Enabled = False
+        frm_Tarea.txtSalida.Enabled = False
     End Sub
 
     Sub OcultarId()
@@ -1129,12 +1136,19 @@ Public Class frm_Listado_Tareas
         'datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
 
         'se crea el encabezado en el PDF
-        Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", _
-                                                                              dgvColaboradores.SelectedRows(0).Index).Value, New Font(Font.Name = "Tahoma", 16, Font.Bold))
+        Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col",dgvColaboradores.SelectedRows(0).Index).Value, New Font(Font.Name = "Tahoma", 16, Font.Bold))
 
-        'se crea el texto abajo del encabezado
-        ' Dim texto As New Phrase("Los movimientos de productos realizados hasta la fecha " + Now.Date() + " son los siguientes:", New Font(Font.Name = "Tahoma", 14, Font.Bold))
+        'se crea el texto abajo de los horarios
+        'Dim entradasalida As New Paragraph("Entrada" + dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value + "Salida" + _
+        '                                   dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value, New Font(Font.Name = "Tahoma", 14, Font.Bold))
+
+
+
+
         Dim texto As New Phrase("Fecha: " + dtpFecha.Text, New Font(Font.Name = "Tahoma", 12, Font.Bold))
+
+
+
         'se capturan los nombres de las columnas del datagridview
         For i As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
             If dgvTarea_x_Colaborador.Columns(i).Visible = True Then
@@ -1160,6 +1174,7 @@ Public Class frm_Listado_Tareas
             datatable.CompleteRow()
         Next
         document.Add(encabezado)
+        '  document.Add(entradasalida)
         document.Add(texto)
         document.Add(datatable)
     End Sub

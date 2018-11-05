@@ -217,4 +217,16 @@ Public Class frm_Generar_Informe
     Private Sub frm_Generar_Informe_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
     End Sub
+
+    Private Sub dgvColaboradores_CellClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvColaboradores.CellClick
+        Try
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub dgvTotalesMensuales_CellClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvTotalesMensuales.CellClick
+        Try
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

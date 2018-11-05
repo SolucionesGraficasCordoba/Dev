@@ -141,4 +141,10 @@
     Private Sub frm_Pieza_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
     End Sub
+
+    Private Sub dgvLista_Piezas_CellClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Piezas.CellClick
+        Try
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

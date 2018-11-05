@@ -113,15 +113,18 @@
     End Sub
 
     Private Sub dgvLista_Productos_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Productos.CellClick
+        Try
+            If dgvLista_Productos.SelectedRows.Count > 0 Then
+                txt_id_producto.Text = dgvLista_Productos.Item("PROD_id", dgvLista_Productos.SelectedRows(0).Index).Value
+                txt_Codigo.Text = dgvLista_Productos.Item("PROD_codigo", dgvLista_Productos.SelectedRows(0).Index).Value
+                txt_descripcion.Text = dgvLista_Productos.Item("PROD_descripcion", dgvLista_Productos.SelectedRows(0).Index).Value
+                txt_Cantidad.Focus()
+            Else
+                MsgBox("Debe seleccionar un Producto")
+            End If
+        Catch ex As Exception
 
-        If dgvLista_Productos.SelectedRows.Count > 0 Then
-            txt_id_producto.Text = dgvLista_Productos.Item("PROD_id", dgvLista_Productos.SelectedRows(0).Index).Value
-            txt_Codigo.Text = dgvLista_Productos.Item("PROD_codigo", dgvLista_Productos.SelectedRows(0).Index).Value
-            txt_descripcion.Text = dgvLista_Productos.Item("PROD_descripcion", dgvLista_Productos.SelectedRows(0).Index).Value
-            txt_Cantidad.Focus()
-        Else
-            MsgBox("Debe seleccionar un Producto")
-        End If
+        End Try
     End Sub
 
     Private Sub btnIngresar_Stock_Click(sender As System.Object, e As System.EventArgs) Handles btnIngresar_Stock.Click

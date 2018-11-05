@@ -126,18 +126,21 @@
 
 
     Private Sub dgvLista_Clientes_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvLista_Clientes.Click
+        Try
+            If dgvLista_Clientes.SelectedRows.Count > 0 Then
+                txt_id_cliente.Text = dgvLista_Clientes.Item("CLI_id_cliente", dgvLista_Clientes.SelectedRows(0).Index).Value
+                txt_razonsocial_cliente.Text = dgvLista_Clientes.Item("CLI_razon_social", dgvLista_Clientes.SelectedRows(0).Index).Value
+                txt_mail_cliente.Text = dgvLista_Clientes.Item("CLI_mail_cli", dgvLista_Clientes.SelectedRows(0).Index).Value
+                txtTelefono_Cliente.Text = dgvLista_Clientes.Item("CLI_telefono_cli", dgvLista_Clientes.SelectedRows(0).Index).Value
+                txt_Domicilio_Cliente.Text = dgvLista_Clientes.Item("CLI_domicilio", dgvLista_Clientes.SelectedRows(0).Index).Value
+                txt_Localidad_Cliente.Text = dgvLista_Clientes.Item("CLI_localidad", dgvLista_Clientes.SelectedRows(0).Index).Value
+                txt_Codigo_Postal_Cliente.Text = dgvLista_Clientes.Item("CLI_codigo_postal", dgvLista_Clientes.SelectedRows(0).Index).Value
+            Else
+                MsgBox("Debe seleccionar un Cliente")
+            End If
+        Catch ex As Exception
 
-        If dgvLista_Clientes.SelectedRows.Count > 0 Then
-            txt_id_cliente.Text = dgvLista_Clientes.Item("CLI_id_cliente", dgvLista_Clientes.SelectedRows(0).Index).Value
-            txt_razonsocial_cliente.Text = dgvLista_Clientes.Item("CLI_razon_social", dgvLista_Clientes.SelectedRows(0).Index).Value
-            txt_mail_cliente.Text = dgvLista_Clientes.Item("CLI_mail_cli", dgvLista_Clientes.SelectedRows(0).Index).Value
-            txtTelefono_Cliente.Text = dgvLista_Clientes.Item("CLI_telefono_cli", dgvLista_Clientes.SelectedRows(0).Index).Value
-            txt_Domicilio_Cliente.Text = dgvLista_Clientes.Item("CLI_domicilio", dgvLista_Clientes.SelectedRows(0).Index).Value
-            txt_Localidad_Cliente.Text = dgvLista_Clientes.Item("CLI_localidad", dgvLista_Clientes.SelectedRows(0).Index).Value
-            txt_Codigo_Postal_Cliente.Text = dgvLista_Clientes.Item("CLI_codigo_postal", dgvLista_Clientes.SelectedRows(0).Index).Value
-        Else
-            MsgBox("Debe seleccionar un Cliente")
-        End If
+        End Try
     End Sub
 
     Private Sub btnEliminar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar_Cliente.Click

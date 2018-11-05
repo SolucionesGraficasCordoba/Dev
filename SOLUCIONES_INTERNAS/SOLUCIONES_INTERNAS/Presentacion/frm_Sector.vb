@@ -137,4 +137,10 @@
     Private Sub frm_Sector_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
     End Sub
+
+    Private Sub dgvLista_Sector_CellClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Sector.CellClick
+        Try
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class

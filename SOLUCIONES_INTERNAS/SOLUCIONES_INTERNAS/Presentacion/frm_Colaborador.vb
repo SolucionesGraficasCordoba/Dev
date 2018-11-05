@@ -128,14 +128,18 @@ Public Class frm_Colaborador
     End Sub
 
     Private Sub dgvLista_Colaboradores_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvLista_Colaboradores.Click
-        If dgvLista_Colaboradores.SelectedRows.Count > 0 Then
-            txt_id_colaborador.Text = dgvLista_Colaboradores.Item("COL_id_colaborador", dgvLista_Colaboradores.SelectedRows(0).Index).Value
-            txt_nombre_colaborador.Text = dgvLista_Colaboradores.Item("COL_nombre_col", dgvLista_Colaboradores.SelectedRows(0).Index).Value
-            txt_apellido_colaborador.Text = dgvLista_Colaboradores.Item("COL_apellido_col", dgvLista_Colaboradores.SelectedRows(0).Index).Value
-            cbo_sector.Text = dgvLista_Colaboradores.Item("SEC_nombre_sector", dgvLista_Colaboradores.SelectedRows(0).Index).Value
-        Else
-            MsgBox("Debe seleccionar un colaborador")
-        End If
+        Try
+            If dgvLista_Colaboradores.SelectedRows.Count > 0 Then
+                txt_id_colaborador.Text = dgvLista_Colaboradores.Item("COL_id_colaborador", dgvLista_Colaboradores.SelectedRows(0).Index).Value
+                txt_nombre_colaborador.Text = dgvLista_Colaboradores.Item("COL_nombre_col", dgvLista_Colaboradores.SelectedRows(0).Index).Value
+                txt_apellido_colaborador.Text = dgvLista_Colaboradores.Item("COL_apellido_col", dgvLista_Colaboradores.SelectedRows(0).Index).Value
+                cbo_sector.Text = dgvLista_Colaboradores.Item("SEC_nombre_sector", dgvLista_Colaboradores.SelectedRows(0).Index).Value
+            Else
+                MsgBox("Debe seleccionar un colaborador")
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnEliminar_Colaborador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar_Colaborador.Click
