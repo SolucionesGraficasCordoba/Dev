@@ -90,34 +90,44 @@ Public Class frm_Listado_Tareas
 
     Public Sub dgvColaboradores_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvColaboradores.CellClick
         'CARGA TAREAS DEL COLABORADOR SEGUN SECTOR Y FECHA
-        If dgvColaboradores.SelectedRows.Count > 0 Then
-            vble_id_colaborador = dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
-        End If
-        vble_colaborador = dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
-        vble_fecha = dtpFecha.Text
-        Dim datagridtarea = (From o In datavistas.Vista_Tarea_x_Colaborador
-                           Select o.TAR_id_tarea, o.TAR_detalle_tarea, o.TAR_tiempo_estimado, o.TAR_tiempo_real,
-                           o.TAR_observaciones, o.ORT_id_orden_trabajo, o.ORT_numero_ot, o.TAR_fecha, o.TAR_carga_horaria, o.TAR_hora_fin, o.Expr1, o.COL_nombre_col, o.TAR_entrada, o.TAR_salida
-                           Where COL_nombre_col = vble_colaborador And TAR_fecha = vble_fecha)
-        mostrargrillaobligaciones(datagridtarea)
+        Try
+            If dgvColaboradores.SelectedRows.Count > 0 Then
+                vble_id_colaborador = dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
+                btnModificar_Una.Enabled = True
+                btnModificarTodas.Enabled = True
+                If Me.Text = "Consultar Tarea" Then
+                    btnModificar_Una.Enabled = False
+                    btnModificarTodas.Enabled = False
+                    Label1.Text = dgvTarea_x_Colaborador.Rows.Count
+                End If
+            End If
+            vble_colaborador = dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
+            vble_fecha = dtpFecha.Text
+            Dim datagridtarea = (From o In datavistas.Vista_Tarea_x_Colaborador
+                               Select o.TAR_id_tarea, o.TAR_detalle_tarea, o.TAR_tiempo_estimado, o.TAR_tiempo_real,
+                               o.TAR_observaciones, o.ORT_id_orden_trabajo, o.ORT_numero_ot, o.TAR_fecha, o.TAR_carga_horaria, o.TAR_hora_fin, o.Expr1, o.COL_nombre_col, o.TAR_entrada, o.TAR_salida
+                               Where COL_nombre_col = vble_colaborador And TAR_fecha = vble_fecha)
+            mostrargrillaobligaciones(datagridtarea)
 
-        If dgvTarea_x_Colaborador.Rows.Count = 0 Then
-            If Me.Text = "Modificar Tarea" Then
-                Select Case MsgBox("No se le ha asignado ninguna tarea, desea agregar una?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Agregar tarea")
-                    Case MsgBoxResult.Yes
-                        btnAgregar.Enabled = True
-                        btnModificar_Una.Enabled = False
-                        btnEliminar_Tarea.Enabled = False
-                        Label1.Text = dgvTarea_x_Colaborador.Rows.Count
-                End Select
-            ElseIf Me.Text = "Eliminar Tarea" Then
-                If dgvTarea_x_Colaborador.Rows.Count = 0 Then
+            If dgvTarea_x_Colaborador.Rows.Count = 0 Then
+                If Me.Text = "Modificar Tarea" Then 
+                    MsgBox("No se le ha asignado ninguna tarea", MsgBoxStyle.Information, "Sin tarea")
+                    btnModificar_Una.Enabled = False
+                    btnModificarTodas.Enabled = False
+                    Exit Sub
+                ElseIf Me.Text = "Eliminar Tarea" Then
                     MsgBox("No tiene tareas asignadas para eliminar", MsgBoxStyle.Information, "Listado de tareas")
                     Label1.Text = dgvTarea_x_Colaborador.Rows.Count
                     Exit Sub
+                ElseIf frm_Tarea.Text = "Ver Tarea" Then
+                    btnModificar_Una.Enabled = False
+                    btnModificarTodas.Enabled = False
+                    Label1.Text = dgvTarea_x_Colaborador.Rows.Count
+
                 End If
             End If
-        End If
+        Catch
+        End Try
     End Sub
 
     'ARMA GRILLA DE TAREAS SEGUN COLABORADOR
@@ -141,13 +151,13 @@ Public Class frm_Listado_Tareas
         dgvTarea_x_Colaborador.Columns.Add("TAR_salida", "Salida")
 
         dgvTarea_x_Colaborador.Columns(0).DataPropertyName = "TAR_id_tarea"
-        ' dgvTarea_x_Colaborador.Columns(0).Visible = False
+        dgvTarea_x_Colaborador.Columns(0).Visible = False
         dgvTarea_x_Colaborador.Columns(1).DataPropertyName = "TAR_detalle_tarea"
-        'dgvTarea_x_Colaborador.Columns(1).Width = 200
+        dgvTarea_x_Colaborador.Columns(1).Width = 200
         dgvTarea_x_Colaborador.Columns(2).DataPropertyName = "TAR_tiempo_estimado"
-        'dgvTarea_x_Colaborador.Columns(2).Width = 60
+        dgvTarea_x_Colaborador.Columns(2).Width = 60
         dgvTarea_x_Colaborador.Columns(3).DataPropertyName = "TAR_tiempo_real"
-        'dgvTarea_x_Colaborador.Columns(3).Width = 60
+        dgvTarea_x_Colaborador.Columns(3).Width = 60
         dgvTarea_x_Colaborador.Columns(4).DataPropertyName = "TAR_observaciones"
         dgvTarea_x_Colaborador.Columns(5).DataPropertyName = "ORT_id_orden_trabajo"
         dgvTarea_x_Colaborador.Columns(5).Visible = False
@@ -692,7 +702,8 @@ Public Class frm_Listado_Tareas
         '  frm_Tarea.Text = "Consultar Tarea"
         frm_Tarea.btnImprimirFormulario.Visible = True
         frm_Tarea.txt_nombre_colaborador.Enabled = False
-        '  DeshabilitarText()
+        DeshabilitarText()
+        OcultarId()
         frm_Tarea.ShowDialog()
     End Sub
 
@@ -708,8 +719,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txt_id_orden_trabajo1.Visible = False
 
         frm_Tarea.btnBuscar_Numero_Orden1.Enabled = False
-       
-     
        
     End Sub
 
@@ -1018,6 +1027,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.Label1.Visible = False
         frm_Tarea.txt_id_colaborador.Visible = False
         frm_Tarea.txt_id_tarea.Visible = False
+        frm_Tarea.btnActualizar.Enabled = False
     End Sub
 
     Sub OcultarId()

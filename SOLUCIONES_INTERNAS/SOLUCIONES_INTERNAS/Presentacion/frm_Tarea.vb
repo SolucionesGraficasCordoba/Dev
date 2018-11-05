@@ -1926,6 +1926,7 @@
             MsgBox("Debe completar todos los campos requeridos")
             Exit Sub
         End If
+
         Try
             Dim ActualizarTarea1 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea1.Text.ToUpper)).ToList()(0)
 
@@ -1935,6 +1936,7 @@
             ActualizarTarea1.TAR_salida = StrConv(txtSalida.Text, VbStrConv.ProperCase)
 
             If txt_detalle_tarea1.Text.Length <> 0 Or txtNumero_Orden_Trabajo1.Text.Length <> 0 Then
+
                 ActualizarTarea1.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado1.Text, VbStrConv.ProperCase)
                 ActualizarTarea1.TAR_tiempo_real = StrConv(txtTiempo_Real1.Text, VbStrConv.ProperCase)
                 ActualizarTarea1.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
@@ -1942,10 +1944,13 @@
                 ActualizarTarea1.TAR_detalle_tarea = StrConv(txt_detalle_tarea1.Text, VbStrConv.ProperCase)
                 ActualizarTarea1.TAR_observaciones = StrConv(txtObservaciones1.Text, VbStrConv.ProperCase)
                 datacontext.SubmitChanges()
+
             End If
 
-            Dim ActualizarTarea2 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea2.Text.ToUpper)).ToList()(0)
+
             If txt_detalle_tarea2.Text.Length <> 0 Or txtNumero_Orden_Trabajo2.Text.Length <> 0 Then
+
+                Dim ActualizarTarea2 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea2.Text.ToUpper)).ToList()(0)
                 ActualizarTarea2.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado2.Text, VbStrConv.ProperCase)
                 ActualizarTarea2.TAR_tiempo_real = StrConv(txtTiempo_Real2.Text, VbStrConv.ProperCase)
                 ActualizarTarea2.ORT_id_orden_trabajo = txt_id_orden_trabajo2.Text
@@ -1954,6 +1959,8 @@
                 ActualizarTarea2.TAR_observaciones = StrConv(txtObservaciones2.Text, VbStrConv.ProperCase)
                 datacontext.SubmitChanges()
             End If
+
+
 
             If txt_detalle_tarea3.Text.Length <> 0 Or txtNumero_Orden_Trabajo3.Text.Length <> 0 Then
                 Dim ActualizarTarea3 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea3.Text.ToUpper)).ToList()(0)
@@ -1978,8 +1985,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea5.Text.Length <> 0 Or txtNumero_Orden_Trabajo5.Text.Length <> 0 Then
-                Dim ActualizarTarea5 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea5 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea5.Text.ToUpper)).ToList()(0)
                 ActualizarTarea5.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado5.Text, VbStrConv.ProperCase)
                 ActualizarTarea5.TAR_tiempo_real = StrConv(txtTiempo_Real5.Text, VbStrConv.ProperCase)
                 ActualizarTarea5.ORT_id_orden_trabajo = txt_id_orden_trabajo5.Text
@@ -1989,8 +1997,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea6.Text.Length <> 0 Or txtNumero_Orden_Trabajo6.Text.Length <> 0 Then
-                Dim ActualizarTarea6 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea6 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea6.Text.ToUpper)).ToList()(0)
                 ActualizarTarea6.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado6.Text, VbStrConv.ProperCase)
                 ActualizarTarea6.TAR_tiempo_real = StrConv(txtTiempo_Real6.Text, VbStrConv.ProperCase)
                 ActualizarTarea6.ORT_id_orden_trabajo = txt_id_orden_trabajo6.Text
@@ -2000,8 +2009,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea7.Text.Length <> 0 Or txtNumero_Orden_Trabajo7.Text.Length <> 0 Then
-                Dim ActualizarTarea7 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea7 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea7.Text.ToUpper)).ToList()(0)
                 ActualizarTarea7.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado7.Text, VbStrConv.ProperCase)
                 ActualizarTarea7.TAR_tiempo_real = StrConv(txtTiempo_Real7.Text, VbStrConv.ProperCase)
                 ActualizarTarea7.ORT_id_orden_trabajo = txt_id_orden_trabajo7.Text
@@ -2011,8 +2021,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea8.Text.Length <> 0 Or txtNumero_Orden_Trabajo8.Text.Length <> 0 Then
-                Dim ActualizarTarea8 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea8 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea8.Text.ToUpper)).ToList()(0)
                 ActualizarTarea8.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado8.Text, VbStrConv.ProperCase)
                 ActualizarTarea8.TAR_tiempo_real = StrConv(txtTiempo_Real8.Text, VbStrConv.ProperCase)
                 ActualizarTarea8.ORT_id_orden_trabajo = txt_id_orden_trabajo8.Text
@@ -2022,8 +2033,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea9.Text.Length <> 0 Or txtNumero_Orden_Trabajo9.Text.Length <> 0 Then
-                Dim ActualizarTarea9 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea9 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea9.Text.ToUpper)).ToList()(0)
                 ActualizarTarea9.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado9.Text, VbStrConv.ProperCase)
                 ActualizarTarea9.TAR_tiempo_real = StrConv(txtTiempo_Real9.Text, VbStrConv.ProperCase)
                 ActualizarTarea9.ORT_id_orden_trabajo = txt_id_orden_trabajo9.Text
@@ -2033,8 +2045,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea10.Text.Length <> 0 Or txtNumero_Orden_Trabajo10.Text.Length <> 0 Then
-                Dim ActualizarTarea10 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea10 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea10.Text.ToUpper)).ToList()(0)
                 ActualizarTarea10.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado10.Text, VbStrConv.ProperCase)
                 ActualizarTarea10.TAR_tiempo_real = StrConv(txtTiempo_Real10.Text, VbStrConv.ProperCase)
                 ActualizarTarea10.ORT_id_orden_trabajo = txt_id_orden_trabajo10.Text
@@ -2044,8 +2057,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea11.Text.Length <> 0 Or txtNumero_Orden_Trabajo11.Text.Length <> 0 Then
-                Dim ActualizarTarea11 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea11 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea11.Text.ToUpper)).ToList()(0)
                 ActualizarTarea11.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado11.Text, VbStrConv.ProperCase)
                 ActualizarTarea11.TAR_tiempo_real = StrConv(txtTiempo_Real11.Text, VbStrConv.ProperCase)
                 ActualizarTarea11.ORT_id_orden_trabajo = txt_id_orden_trabajo11.Text
@@ -2055,8 +2069,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea12.Text.Length <> 0 Or txtNumero_Orden_Trabajo12.Text.Length <> 0 Then
-                Dim ActualizarTarea12 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea12 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea12.Text.ToUpper)).ToList()(0)
                 ActualizarTarea12.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado12.Text, VbStrConv.ProperCase)
                 ActualizarTarea12.TAR_tiempo_real = StrConv(txtTiempo_Real12.Text, VbStrConv.ProperCase)
                 ActualizarTarea12.ORT_id_orden_trabajo = txt_id_orden_trabajo12.Text
@@ -2066,8 +2081,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea13.Text.Length <> 0 Or txtNumero_Orden_Trabajo13.Text.Length <> 0 Then
-                Dim ActualizarTarea13 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea13 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea13.Text.ToUpper)).ToList()(0)
                 ActualizarTarea13.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado13.Text, VbStrConv.ProperCase)
                 ActualizarTarea13.TAR_tiempo_real = StrConv(txtTiempo_Real13.Text, VbStrConv.ProperCase)
                 ActualizarTarea13.ORT_id_orden_trabajo = txt_id_orden_trabajo13.Text
@@ -2077,8 +2093,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea14.Text.Length <> 0 Or txtNumero_Orden_Trabajo14.Text.Length <> 0 Then
-                Dim ActualizarTarea14 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea14 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea14.Text.ToUpper)).ToList()(0)
                 ActualizarTarea14.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado14.Text, VbStrConv.ProperCase)
                 ActualizarTarea14.TAR_tiempo_real = StrConv(txtTiempo_Real14.Text, VbStrConv.ProperCase)
                 ActualizarTarea14.ORT_id_orden_trabajo = txt_id_orden_trabajo14.Text
@@ -2088,8 +2105,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea15.Text.Length <> 0 Or txtNumero_Orden_Trabajo15.Text.Length <> 0 Then
-                Dim ActualizarTarea15 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea15 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea15.Text.ToUpper)).ToList()(0)
                 ActualizarTarea15.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado15.Text, VbStrConv.ProperCase)
                 ActualizarTarea15.TAR_tiempo_real = StrConv(txtTiempo_Real15.Text, VbStrConv.ProperCase)
                 ActualizarTarea15.ORT_id_orden_trabajo = txt_id_orden_trabajo15.Text
@@ -2099,8 +2117,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea16.Text.Length <> 0 Or txtNumero_Orden_Trabajo16.Text.Length <> 0 Then
-                Dim ActualizarTarea16 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea16 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea16.Text.ToUpper)).ToList()(0)
                 ActualizarTarea16.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado16.Text, VbStrConv.ProperCase)
                 ActualizarTarea16.TAR_tiempo_real = StrConv(txtTiempo_Real16.Text, VbStrConv.ProperCase)
                 ActualizarTarea16.ORT_id_orden_trabajo = txt_id_orden_trabajo16.Text
@@ -2110,8 +2129,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea17.Text.Length <> 0 Or txtNumero_Orden_Trabajo17.Text.Length <> 0 Then
-                Dim ActualizarTarea17 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea17 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea17.Text.ToUpper)).ToList()(0)
                 ActualizarTarea17.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado17.Text, VbStrConv.ProperCase)
                 ActualizarTarea17.TAR_tiempo_real = StrConv(txtTiempo_Real17.Text, VbStrConv.ProperCase)
                 ActualizarTarea17.ORT_id_orden_trabajo = txt_id_orden_trabajo17.Text
@@ -2121,8 +2141,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea18.Text.Length <> 0 Or txtNumero_Orden_Trabajo18.Text.Length <> 0 Then
-                Dim ActualizarTarea18 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea18 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea18.Text.ToUpper)).ToList()(0)
                 ActualizarTarea18.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado18.Text, VbStrConv.ProperCase)
                 ActualizarTarea18.TAR_tiempo_real = StrConv(txtTiempo_Real18.Text, VbStrConv.ProperCase)
                 ActualizarTarea18.ORT_id_orden_trabajo = txt_id_orden_trabajo18.Text
@@ -2132,8 +2153,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea19.Text.Length <> 0 Or txtNumero_Orden_Trabajo19.Text.Length <> 0 Then
-                Dim ActualizarTarea19 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea19 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea19.Text.ToUpper)).ToList()(0)
                 ActualizarTarea19.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado19.Text, VbStrConv.ProperCase)
                 ActualizarTarea19.TAR_tiempo_real = StrConv(txtTiempo_Real19.Text, VbStrConv.ProperCase)
                 ActualizarTarea19.ORT_id_orden_trabajo = txt_id_orden_trabajo19.Text
@@ -2143,8 +2165,9 @@
                 datacontext.SubmitChanges()
             End If
 
+
             If txt_detalle_tarea20.Text.Length <> 0 Or txtNumero_Orden_Trabajo20.Text.Length <> 0 Then
-                Dim ActualizarTarea20 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
+                Dim ActualizarTarea20 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea20.Text.ToUpper)).ToList()(0)
                 ActualizarTarea20.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado20.Text, VbStrConv.ProperCase)
                 ActualizarTarea20.TAR_tiempo_real = StrConv(txtTiempo_Real20.Text, VbStrConv.ProperCase)
                 ActualizarTarea20.ORT_id_orden_trabajo = txt_id_orden_trabajo20.Text

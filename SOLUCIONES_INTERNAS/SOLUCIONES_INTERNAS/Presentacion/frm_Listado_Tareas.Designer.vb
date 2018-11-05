@@ -23,6 +23,7 @@ Partial Class frm_Listado_Tareas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupListadoTareas = New System.Windows.Forms.GroupBox()
+        Me.btnModificarTodas = New System.Windows.Forms.Button()
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.cbo_sector = New System.Windows.Forms.ComboBox()
@@ -42,7 +43,6 @@ Partial Class frm_Listado_Tareas
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnVer = New System.Windows.Forms.Button()
         Me.btnExportarListado = New System.Windows.Forms.Button()
-        Me.btnModificarTodas = New System.Windows.Forms.Button()
         Me.GroupListadoTareas.SuspendLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupListadoDetalleTarea.SuspendLayout()
@@ -65,6 +65,15 @@ Partial Class frm_Listado_Tareas
         Me.GroupListadoTareas.TabIndex = 4
         Me.GroupListadoTareas.TabStop = False
         Me.GroupListadoTareas.Text = "Listado de Tareas"
+        '
+        'btnModificarTodas
+        '
+        Me.btnModificarTodas.Location = New System.Drawing.Point(391, 241)
+        Me.btnModificarTodas.Name = "btnModificarTodas"
+        Me.btnModificarTodas.Size = New System.Drawing.Size(104, 23)
+        Me.btnModificarTodas.TabIndex = 49
+        Me.btnModificarTodas.Text = "Modificar Todas"
+        Me.btnModificarTodas.UseVisualStyleBackColor = True
         '
         'dtpFecha
         '
@@ -248,15 +257,6 @@ Partial Class frm_Listado_Tareas
         Me.btnExportarListado.TabIndex = 35
         Me.btnExportarListado.Text = "Exportar Listado a PDF"
         Me.btnExportarListado.UseVisualStyleBackColor = True
-        '
-        'btnModificarTodas
-        '
-        Me.btnModificarTodas.Location = New System.Drawing.Point(391, 241)
-        Me.btnModificarTodas.Name = "btnModificarTodas"
-        Me.btnModificarTodas.Size = New System.Drawing.Size(104, 23)
-        Me.btnModificarTodas.TabIndex = 49
-        Me.btnModificarTodas.Text = "Modificar Todas"
-        Me.btnModificarTodas.UseVisualStyleBackColor = True
         '
         'frm_Listado_Tareas
         '

@@ -343,6 +343,28 @@ Public Class frm_Principal
         frm_Tarea.txt_id_orden_trabajo19.Visible = False
         frm_Tarea.txt_id_orden_trabajo20.Visible = False
 
+        frm_Tarea.txt_Id_Tarea1.Visible = False
+        frm_Tarea.txt_Id_Tarea2.Visible = False
+        frm_Tarea.txt_Id_Tarea3.Visible = False
+        frm_Tarea.txt_Id_Tarea4.Visible = False
+        frm_Tarea.txt_Id_Tarea5.Visible = False
+        frm_Tarea.txt_Id_Tarea6.Visible = False
+        frm_Tarea.txt_Id_Tarea7.Visible = False
+        frm_Tarea.txt_Id_Tarea8.Visible = False
+        frm_Tarea.txt_Id_Tarea9.Visible = False
+        frm_Tarea.txt_Id_Tarea10.Visible = False
+        frm_Tarea.txt_Id_Tarea11.Visible = False
+        frm_Tarea.txt_Id_Tarea12.Visible = False
+        frm_Tarea.txt_Id_Tarea13.Visible = False
+        frm_Tarea.txt_Id_Tarea14.Visible = False
+        frm_Tarea.txt_Id_Tarea15.Visible = False
+        frm_Tarea.txt_Id_Tarea16.Visible = False
+        frm_Tarea.txt_Id_Tarea17.Visible = False
+        frm_Tarea.txt_Id_Tarea18.Visible = False
+        frm_Tarea.txt_Id_Tarea19.Visible = False
+        frm_Tarea.txt_Id_Tarea20.Visible = False
+
+
         frm_Tarea.btnNueva_Tarea.Visible = False
         frm_Tarea.btnImprimirFormulario.Visible = False
         frm_Tarea.btnGuardar_Tarea.Visible = True
@@ -386,7 +408,7 @@ Public Class frm_Principal
         'MsgBox("Debe seleccionar un sector")
         '  Exit Sub
         ' Else
-        frm_Listado_Tareas.btnAgregar.Enabled = True
+        frm_Listado_Tareas.btnAgregar.Enabled = False
         ' End If
         frm_Listado_Tareas.btnExportarListado.Enabled = False
         frm_Listado_Tareas.dtpFecha.Text = Now
@@ -882,6 +904,7 @@ Public Class frm_Principal
         frm_Listado_Tareas.btnAgregar.Enabled = False
         frm_Listado_Tareas.btnVer.Enabled = False
         frm_Listado_Tareas.btnExportarListado.Enabled = False
+        frm_Listado_Tareas.btnModificarTodas.Enabled = False
         frm_Listado_Tareas.dtpFecha.Text = Now
 
         frm_Listado_Tareas.ShowDialog()
@@ -901,7 +924,7 @@ Public Class frm_Principal
         frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
         frm_Listado_Tareas.btnAgregar.Enabled = False
         frm_Listado_Tareas.dtpFecha.Text = Now
-        frm_Listado_Tareas.btnModificar_Una.Enabled = False
+        frm_Listado_Tareas.btnModificarTodas.Enabled = False
         frm_Listado_Tareas.ShowDialog()
     End Sub
 
