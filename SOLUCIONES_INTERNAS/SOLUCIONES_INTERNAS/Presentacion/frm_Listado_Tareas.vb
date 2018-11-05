@@ -179,7 +179,9 @@ Public Class frm_Listado_Tareas
         dgvTarea_x_Colaborador.Columns(11).DataPropertyName = "COL_nombre_col"
         dgvTarea_x_Colaborador.Columns(11).Visible = False
         dgvTarea_x_Colaborador.Columns(12).DataPropertyName = "TAR_entrada"
+        dgvTarea_x_Colaborador.Columns(12).Visible = False
         dgvTarea_x_Colaborador.Columns(13).DataPropertyName = "TAR_salida"
+        dgvTarea_x_Colaborador.Columns(13).Visible = False
 
         dgvTarea_x_Colaborador.DataSource = datasource
         dgvTarea_x_Colaborador.ClearSelection()
@@ -1139,15 +1141,10 @@ Public Class frm_Listado_Tareas
         Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col",dgvColaboradores.SelectedRows(0).Index).Value, New Font(Font.Name = "Tahoma", 16, Font.Bold))
 
         'se crea el texto abajo de los horarios
-        'Dim entradasalida As New Paragraph("Entrada" + dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value + "Salida" + _
-        '                                   dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value, New Font(Font.Name = "Tahoma", 14, Font.Bold))
-
-
-
+        Dim entradasalida As New Paragraph("Entrada: " + dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(0).Index).Value + " Salida: " + _
+                                           dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(0).Index).Value, New Font(Font.Name = "Tahoma", 14, Font.Bold))
 
         Dim texto As New Phrase("Fecha: " + dtpFecha.Text, New Font(Font.Name = "Tahoma", 12, Font.Bold))
-
-
 
         'se capturan los nombres de las columnas del datagridview
         For i As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
@@ -1161,7 +1158,6 @@ Public Class frm_Listado_Tareas
         'se generan las columnas del datagridview
 
         For i As Integer = 0 To dgvTarea_x_Colaborador.RowCount - 1
-
             For j As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
                 If dgvTarea_x_Colaborador.Columns(j).Visible = True Then
                     Try
@@ -1174,7 +1170,7 @@ Public Class frm_Listado_Tareas
             datatable.CompleteRow()
         Next
         document.Add(encabezado)
-        '  document.Add(entradasalida)
+        document.Add(entradasalida)
         document.Add(texto)
         document.Add(datatable)
     End Sub
