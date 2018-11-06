@@ -984,7 +984,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.btnBuscar_Colaborador.Enabled = False
         frm_Tarea.dtpFecha.Enabled = False
         frm_Tarea.txt_Carga_Horaria1.Enabled = False
-        frm_Tarea.btnImprimirFormulario.Enabled = True
         frm_Tarea.btnNueva_Tarea.Enabled = False
         frm_Tarea.btnGuardar_Tarea.Enabled = False
         frm_Tarea.Label1.Visible = False
@@ -1186,6 +1185,7 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 2 Then
                 flag1 = 1
                 flag2 = 1
@@ -1208,6 +1208,8 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 3 Then
                 flag1 = 1
                 flag2 = 1
@@ -1230,6 +1232,9 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 4 Then
                 flag1 = 1
                 flag2 = 1
@@ -1252,6 +1257,10 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 5 Then
                 flag1 = 1
                 flag2 = 1
@@ -1274,6 +1283,11 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 6 Then
                 flag1 = 1
                 flag2 = 1
@@ -1296,6 +1310,12 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 7 Then
                 flag1 = 1
                 flag2 = 1
@@ -1318,6 +1338,13 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 8 Then
                 flag1 = 1
                 flag2 = 1
@@ -1340,6 +1367,14 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 9 Then
                 flag1 = 1
                 flag2 = 1
@@ -1362,6 +1397,15 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 10 Then
                 flag1 = 1
                 flag2 = 1
@@ -1384,6 +1428,16 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 11 Then
                 flag1 = 1
                 flag2 = 1
@@ -1406,6 +1460,17 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 12 Then
                 flag1 = 1
                 flag2 = 1
@@ -1428,6 +1493,18 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 13 Then
                 flag1 = 1
                 flag2 = 1
@@ -1450,6 +1527,19 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 14 Then
                 flag1 = 1
                 flag2 = 1
@@ -1472,6 +1562,20 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo14.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 15 Then
                 flag1 = 1
                 flag2 = 1
@@ -1494,6 +1598,21 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo14.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo15.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 16 Then
                 flag1 = 1
                 flag2 = 1
@@ -1516,6 +1635,22 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo14.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo15.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo16.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 17 Then
                 flag1 = 1
                 flag2 = 1
@@ -1538,6 +1673,23 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo14.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo15.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo16.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo17.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 18 Then
                 flag1 = 1
                 flag2 = 1
@@ -1560,6 +1712,24 @@ Public Class frm_Listado_Tareas
                 desab_tarea_19()
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo14.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo15.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo16.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo17.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo18.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 19 Then
                 flag1 = 1
                 flag2 = 1
@@ -1582,6 +1752,25 @@ Public Class frm_Listado_Tareas
                 flag19 = 1
                 desab_tarea_20()
                 OcultarId()
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo14.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo15.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo16.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo17.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo18.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo19.Enabled = False
             ElseIf dgvTarea_x_Colaborador.RowCount = 20 Then
                 flag1 = 1
                 flag2 = 1
@@ -1603,7 +1792,26 @@ Public Class frm_Listado_Tareas
                 flag18 = 1
                 flag19 = 1
                 flag20 = 1
-
+                frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo14.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo15.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo16.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo17.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo18.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo19.Enabled = False
+                frm_Tarea.txtNumero_Orden_Trabajo20.Enabled = False
             End If
             If flag1 = 1 Then
                 frm_Tarea.txt_Id_Tarea1.Text = Me.dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.Rows(0).Index).Value
