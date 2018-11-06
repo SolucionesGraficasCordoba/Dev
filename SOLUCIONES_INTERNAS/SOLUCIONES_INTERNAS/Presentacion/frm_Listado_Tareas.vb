@@ -723,11 +723,8 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtObservaciones1.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
         frm_Tarea.txt_id_orden_trabajo1.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden1.Enabled = True
-        frm_Tarea.txt_id_orden_trabajo1.Visible = False
-
         frm_Tarea.btnBuscar_Numero_Orden1.Enabled = False
-       
+
     End Sub
 
     Sub desab_tarea_2()
@@ -737,8 +734,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtHora_Finalizacion2.Enabled = False
         frm_Tarea.txtObservaciones2.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo2.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden2.Enabled = True
         frm_Tarea.txt_id_orden_trabajo2.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden2.Enabled = False
        
@@ -753,8 +748,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtObservaciones3.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
         frm_Tarea.txt_id_orden_trabajo3.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden3.Enabled = True
-        frm_Tarea.txt_id_orden_trabajo3.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden3.Enabled = False
        
        
@@ -767,8 +760,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtHora_Finalizacion4.Enabled = False
         frm_Tarea.txtObservaciones4.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo4.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden4.Enabled = True
         frm_Tarea.txt_id_orden_trabajo4.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden4.Enabled = False
        
@@ -783,11 +774,8 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtObservaciones5.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
         frm_Tarea.txt_id_orden_trabajo5.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden5.Enabled = True
-        frm_Tarea.txt_id_orden_trabajo5.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden5.Enabled = False
-       
-       
+
     End Sub
 
     Sub desab_tarea_6()
@@ -797,8 +785,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtHora_Finalizacion6.Enabled = False
         frm_Tarea.txtObservaciones6.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo6.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden6.Enabled = True
         frm_Tarea.txt_id_orden_trabajo6.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden6.Enabled = False
        
@@ -812,13 +798,9 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtObservaciones7.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
         frm_Tarea.txt_id_orden_trabajo7.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden7.Enabled = True
-        frm_Tarea.txt_id_orden_trabajo7.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden7.Enabled = False
-       
-
-       
     End Sub
+
     Sub desab_tarea_8()
         frm_Tarea.txt_detalle_tarea8.Enabled = False
         frm_Tarea.txtTiempo_Estimado8.Enabled = False
@@ -826,8 +808,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtHora_Finalizacion8.Enabled = False
         frm_Tarea.txtObservaciones8.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo8.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden8.Enabled = True
         frm_Tarea.txt_id_orden_trabajo8.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden8.Enabled = False
       
@@ -842,10 +822,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtObservaciones9.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
         frm_Tarea.txt_id_orden_trabajo9.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden9.Enabled = True
-        frm_Tarea.txt_id_orden_trabajo9.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden9.Enabled = False
-      
       
     End Sub
 
@@ -856,8 +833,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtHora_Finalizacion10.Enabled = False
         frm_Tarea.txtObservaciones10.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo10.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden10.Enabled = True
         frm_Tarea.txt_id_orden_trabajo10.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden10.Enabled = False
      
@@ -871,8 +846,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtObservaciones11.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
         frm_Tarea.txt_id_orden_trabajo11.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden11.Enabled = True
-        frm_Tarea.txt_id_orden_trabajo11.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden11.Enabled = False
        
     End Sub
@@ -884,8 +857,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtHora_Finalizacion12.Enabled = False
         frm_Tarea.txtObservaciones12.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo12.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden12.Enabled = True
         frm_Tarea.txt_id_orden_trabajo12.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden12.Enabled = False
        
@@ -899,8 +870,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtObservaciones13.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
         frm_Tarea.txt_id_orden_trabajo13.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden13.Enabled = True
-        frm_Tarea.txt_id_orden_trabajo13.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden13.Enabled = False
       
     End Sub
@@ -912,8 +881,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtHora_Finalizacion14.Enabled = False
         frm_Tarea.txtObservaciones14.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo14.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo14.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden14.Enabled = True
         frm_Tarea.txt_id_orden_trabajo14.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden14.Enabled = False
        
@@ -927,8 +894,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtObservaciones15.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo15.Enabled = False
         frm_Tarea.txt_id_orden_trabajo15.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden15.Enabled = True
-        frm_Tarea.txt_id_orden_trabajo15.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden15.Enabled = False
        
     End Sub
@@ -940,8 +905,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtHora_Finalizacion16.Enabled = False
         frm_Tarea.txtObservaciones16.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo16.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo16.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden16.Enabled = True
         frm_Tarea.txt_id_orden_trabajo16.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden16.Enabled = False
        
@@ -955,8 +918,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtObservaciones17.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo17.Enabled = False
         frm_Tarea.txt_id_orden_trabajo17.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden17.Enabled = True
-        frm_Tarea.txt_id_orden_trabajo17.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden17.Enabled = False
        
     End Sub
@@ -968,8 +929,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtHora_Finalizacion18.Enabled = False
         frm_Tarea.txtObservaciones18.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo18.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo18.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden18.Enabled = True
         frm_Tarea.txt_id_orden_trabajo18.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden18.Enabled = False
       
@@ -983,8 +942,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtObservaciones19.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo19.Enabled = False
         frm_Tarea.txt_id_orden_trabajo19.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden19.Enabled = True
-        frm_Tarea.txt_id_orden_trabajo19.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden19.Enabled = False
 
     End Sub
@@ -996,8 +953,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtHora_Finalizacion20.Enabled = False
         frm_Tarea.txtObservaciones20.Enabled = False
         frm_Tarea.txtNumero_Orden_Trabajo20.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo20.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden20.Enabled = True
         frm_Tarea.txt_id_orden_trabajo20.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden20.Enabled = False
     End Sub
@@ -1211,7 +1166,6 @@ Public Class frm_Listado_Tareas
 
             If dgvTarea_x_Colaborador.RowCount = 1 Then
                 flag1 = 1
-                ' flag2 = 0
                 desab_tarea_2()
                 desab_tarea_3()
                 desab_tarea_4()
