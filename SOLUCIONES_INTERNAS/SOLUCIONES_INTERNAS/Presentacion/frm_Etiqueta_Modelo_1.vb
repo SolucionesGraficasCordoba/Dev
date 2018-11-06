@@ -79,9 +79,17 @@ Public Class frm_Etiqueta_Modelo_1
     Public Sub CargaEtiqueta()
         'Dim temp_total_bultos As Integer = 0
         Dim temp_bulto_parcial As Integer = 0
+
+        Dim temp_unidad_x_bulto As Integer = 0
+
         'temp_total_bultos = CInt(txtCantidadBultos.Text) / CInt(txtUnidadxBulto.Text)
         For i = 1 To CInt(txtTotalBultos.Text)
             temp_bulto_parcial = temp_bulto_parcial + 1
+            If i = CInt(txtTotalBultos.Text) Then
+                temp_unidad_x_bulto = CInt(txtCantidadBultos.Text) - (CInt(txtUnidadxBulto.Text) * (CInt(txtTotalBultos.Text) - 1))
+            Else
+                temp_unidad_x_bulto = CInt(txtUnidadxBulto.Text)
+            End If
             Dim row As String() = New String() {txt_orden.Text.ToUpper,
                                                 txtDescripcionEntrega.Text.ToUpper,
                                                 txtId_Cliente.Text.ToUpper,
@@ -95,7 +103,7 @@ Public Class frm_Etiqueta_Modelo_1
                                                 txtSeccion.Text.ToUpper,
                                                 txtCantidadBultos.Text.ToUpper,
                                                 CStr(temp_bulto_parcial).ToUpper, _
-                                                txtUnidadxBulto.Text.ToUpper,
+                                                temp_unidad_x_bulto,
                                                 txtTotalBultos.Text.ToUpper,
                                                 txtPeso.Text.ToUpper,
                                                 cboLogo.Text.ToUpper}
