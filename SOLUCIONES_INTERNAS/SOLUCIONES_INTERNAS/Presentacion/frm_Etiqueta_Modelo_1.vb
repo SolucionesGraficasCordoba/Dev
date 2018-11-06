@@ -102,7 +102,6 @@ Public Class frm_Etiqueta_Modelo_1
             dgv_Etiquetas.Rows.Add(row)
         Next
         dgv_Etiquetas.ClearSelection()
-
     End Sub
 
     Private Sub btnAgregar_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregar.Click
@@ -180,7 +179,6 @@ Public Class frm_Etiqueta_Modelo_1
                 Next
                 File.WriteAllText(filePath, sb.ToString)
                 MsgBox("La consulta se ha generado correctamente")
-
                 '  Process.Start(filePath)
                 txtCantidadBultos.Clear()
                 'txtNumeroBultos.Clear()
@@ -188,9 +186,7 @@ Public Class frm_Etiqueta_Modelo_1
                 txtTotalBultos.Clear()
                 txtPeso.Clear()
                 cboLogo.SelectedIndex = 1
-
                 dgv_Etiquetas.Rows.Clear()
-
             Catch ex As Exception
                 MsgBox("Hubo un error al generar la consulta")
             End Try
