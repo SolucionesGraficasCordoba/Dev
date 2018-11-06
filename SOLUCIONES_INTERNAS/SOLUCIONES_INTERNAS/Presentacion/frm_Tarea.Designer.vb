@@ -302,7 +302,7 @@ Partial Class frm_Tarea
         '
         'txt_Carga_Horaria1
         '
-        Me.txt_Carga_Horaria1.Location = New System.Drawing.Point(806, 21)
+        Me.txt_Carga_Horaria1.Location = New System.Drawing.Point(827, 21)
         Me.txt_Carga_Horaria1.Name = "txt_Carga_Horaria1"
         Me.txt_Carga_Horaria1.Size = New System.Drawing.Size(53, 20)
         Me.txt_Carga_Horaria1.TabIndex = 3
@@ -311,7 +311,7 @@ Partial Class frm_Tarea
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(730, 24)
+        Me.Label13.Location = New System.Drawing.Point(751, 24)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(70, 13)
         Me.Label13.TabIndex = 32
@@ -323,7 +323,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real1.Name = "txtTiempo_Real1"
         Me.txtTiempo_Real1.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real1.TabIndex = 6
-        Me.txtTiempo_Real1.Text = "1"
         '
         'txtTiempo_Estimado1
         '
@@ -454,7 +453,7 @@ Partial Class frm_Tarea
         '
         'btnBuscar_Colaborador
         '
-        Me.btnBuscar_Colaborador.Location = New System.Drawing.Point(243, 18)
+        Me.btnBuscar_Colaborador.Location = New System.Drawing.Point(264, 18)
         Me.btnBuscar_Colaborador.Name = "btnBuscar_Colaborador"
         Me.btnBuscar_Colaborador.Size = New System.Drawing.Size(54, 23)
         Me.btnBuscar_Colaborador.TabIndex = 1
@@ -463,14 +462,14 @@ Partial Class frm_Tarea
         '
         'txt_nombre_colaborador
         '
-        Me.txt_nombre_colaborador.Location = New System.Drawing.Point(90, 19)
+        Me.txt_nombre_colaborador.Location = New System.Drawing.Point(111, 19)
         Me.txt_nombre_colaborador.Name = "txt_nombre_colaborador"
         Me.txt_nombre_colaborador.Size = New System.Drawing.Size(147, 20)
         Me.txt_nombre_colaborador.TabIndex = 36
         '
         'txt_id_colaborador
         '
-        Me.txt_id_colaborador.Location = New System.Drawing.Point(303, 20)
+        Me.txt_id_colaborador.Location = New System.Drawing.Point(324, 20)
         Me.txt_id_colaborador.Name = "txt_id_colaborador"
         Me.txt_id_colaborador.Size = New System.Drawing.Size(13, 20)
         Me.txt_id_colaborador.TabIndex = 35
@@ -478,7 +477,7 @@ Partial Class frm_Tarea
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(13, 22)
+        Me.Label3.Location = New System.Drawing.Point(34, 22)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(64, 13)
         Me.Label3.TabIndex = 34
@@ -1696,7 +1695,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real20.Name = "txtTiempo_Real20"
         Me.txtTiempo_Real20.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real20.TabIndex = 120
-        Me.txtTiempo_Real20.Text = "1"
         '
         'txtHora_Finalizacion20
         '
@@ -1744,7 +1742,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real19.Name = "txtTiempo_Real19"
         Me.txtTiempo_Real19.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real19.TabIndex = 114
-        Me.txtTiempo_Real19.Text = "1"
         '
         'txtHora_Finalizacion19
         '
@@ -1796,7 +1793,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real18.Name = "txtTiempo_Real18"
         Me.txtTiempo_Real18.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real18.TabIndex = 108
-        Me.txtTiempo_Real18.Text = "1"
         '
         'Label66
         '
@@ -1846,7 +1842,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real17.Name = "txtTiempo_Real17"
         Me.txtTiempo_Real17.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real17.TabIndex = 102
-        Me.txtTiempo_Real17.Text = "1"
         '
         'txtHora_Finalizacion17
         '
@@ -2077,7 +2072,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real16.Name = "txtTiempo_Real16"
         Me.txtTiempo_Real16.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real16.TabIndex = 96
-        Me.txtTiempo_Real16.Text = "1"
         '
         'txtHora_Finalizacion16
         '
@@ -2107,7 +2101,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real15.Name = "txtTiempo_Real15"
         Me.txtTiempo_Real15.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real15.TabIndex = 90
-        Me.txtTiempo_Real15.Text = "1"
         '
         'txtHora_Finalizacion15
         '
@@ -2145,7 +2138,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real14.Name = "txtTiempo_Real14"
         Me.txtTiempo_Real14.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real14.TabIndex = 84
-        Me.txtTiempo_Real14.Text = "1"
         '
         'txtHora_Finalizacion14
         '
@@ -2175,7 +2167,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real13.Name = "txtTiempo_Real13"
         Me.txtTiempo_Real13.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real13.TabIndex = 78
-        Me.txtTiempo_Real13.Text = "1"
         '
         'txtHora_Finalizacion13
         '
@@ -2229,7 +2220,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real12.Name = "txtTiempo_Real12"
         Me.txtTiempo_Real12.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real12.TabIndex = 72
-        Me.txtTiempo_Real12.Text = "1"
         '
         'txtHora_Finalizacion12
         '
@@ -2259,7 +2249,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real11.Name = "txtTiempo_Real11"
         Me.txtTiempo_Real11.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real11.TabIndex = 66
-        Me.txtTiempo_Real11.Text = "1"
         '
         'txtHora_Finalizacion11
         '
@@ -2297,7 +2286,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real10.Name = "txtTiempo_Real10"
         Me.txtTiempo_Real10.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real10.TabIndex = 60
-        Me.txtTiempo_Real10.Text = "1"
         '
         'txtHora_Finalizacion10
         '
@@ -2327,7 +2315,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real9.Name = "txtTiempo_Real9"
         Me.txtTiempo_Real9.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real9.TabIndex = 54
-        Me.txtTiempo_Real9.Text = "1"
         '
         'txtHora_Finalizacion9
         '
@@ -2381,7 +2368,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real8.Name = "txtTiempo_Real8"
         Me.txtTiempo_Real8.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real8.TabIndex = 48
-        Me.txtTiempo_Real8.Text = "1"
         '
         'txtHora_Finalizacion8
         '
@@ -2411,7 +2397,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real7.Name = "txtTiempo_Real7"
         Me.txtTiempo_Real7.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real7.TabIndex = 42
-        Me.txtTiempo_Real7.Text = "1"
         '
         'txtHora_Finalizacion7
         '
@@ -2449,7 +2434,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real6.Name = "txtTiempo_Real6"
         Me.txtTiempo_Real6.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real6.TabIndex = 36
-        Me.txtTiempo_Real6.Text = "1"
         '
         'txtHora_Finalizacion6
         '
@@ -2479,7 +2463,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real5.Name = "txtTiempo_Real5"
         Me.txtTiempo_Real5.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real5.TabIndex = 30
-        Me.txtTiempo_Real5.Text = "1"
         '
         'txtHora_Finalizacion5
         '
@@ -2533,7 +2516,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real4.Name = "txtTiempo_Real4"
         Me.txtTiempo_Real4.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real4.TabIndex = 24
-        Me.txtTiempo_Real4.Text = "1"
         '
         'txtHora_Finalizacion4
         '
@@ -2563,7 +2545,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real3.Name = "txtTiempo_Real3"
         Me.txtTiempo_Real3.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real3.TabIndex = 18
-        Me.txtTiempo_Real3.Text = "1"
         '
         'txtHora_Finalizacion3
         '
@@ -2593,7 +2574,6 @@ Partial Class frm_Tarea
         Me.txtTiempo_Real2.Name = "txtTiempo_Real2"
         Me.txtTiempo_Real2.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real2.TabIndex = 12
-        Me.txtTiempo_Real2.Text = "1"
         '
         'txtHora_Finalizacion2
         '
@@ -2613,7 +2593,7 @@ Partial Class frm_Tarea
         'dtpFecha
         '
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(367, 18)
+        Me.dtpFecha.Location = New System.Drawing.Point(388, 18)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(82, 20)
         Me.dtpFecha.TabIndex = 2
@@ -2621,7 +2601,7 @@ Partial Class frm_Tarea
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(324, 21)
+        Me.Label31.Location = New System.Drawing.Point(345, 21)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(37, 13)
         Me.Label31.TabIndex = 45
@@ -2641,7 +2621,7 @@ Partial Class frm_Tarea
         'Label62
         '
         Me.Label62.AutoSize = True
-        Me.Label62.Location = New System.Drawing.Point(324, 21)
+        Me.Label62.Location = New System.Drawing.Point(345, 21)
         Me.Label62.Name = "Label62"
         Me.Label62.Size = New System.Drawing.Size(37, 13)
         Me.Label62.TabIndex = 45
@@ -2652,7 +2632,7 @@ Partial Class frm_Tarea
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label37.ForeColor = System.Drawing.Color.Red
-        Me.Label37.Location = New System.Drawing.Point(77, 23)
+        Me.Label37.Location = New System.Drawing.Point(98, 23)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(11, 13)
         Me.Label37.TabIndex = 24
@@ -2713,7 +2693,7 @@ Partial Class frm_Tarea
         '
         'txtSalida
         '
-        Me.txtSalida.Location = New System.Drawing.Point(637, 20)
+        Me.txtSalida.Location = New System.Drawing.Point(658, 20)
         Me.txtSalida.MaxLength = 5
         Me.txtSalida.Name = "txtSalida"
         Me.txtSalida.Size = New System.Drawing.Size(51, 20)
@@ -2721,7 +2701,7 @@ Partial Class frm_Tarea
         '
         'txtEntrada
         '
-        Me.txtEntrada.Location = New System.Drawing.Point(527, 20)
+        Me.txtEntrada.Location = New System.Drawing.Point(548, 20)
         Me.txtEntrada.MaxLength = 5
         Me.txtEntrada.Name = "txtEntrada"
         Me.txtEntrada.Size = New System.Drawing.Size(51, 20)
@@ -2730,7 +2710,7 @@ Partial Class frm_Tarea
         'Label58
         '
         Me.Label58.AutoSize = True
-        Me.Label58.Location = New System.Drawing.Point(592, 23)
+        Me.Label58.Location = New System.Drawing.Point(613, 23)
         Me.Label58.Name = "Label58"
         Me.Label58.Size = New System.Drawing.Size(39, 13)
         Me.Label58.TabIndex = 46
@@ -2739,7 +2719,7 @@ Partial Class frm_Tarea
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(474, 23)
+        Me.Label33.Location = New System.Drawing.Point(495, 23)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(47, 13)
         Me.Label33.TabIndex = 46
