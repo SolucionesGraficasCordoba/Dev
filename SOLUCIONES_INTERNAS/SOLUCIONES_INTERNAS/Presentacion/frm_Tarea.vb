@@ -14,7 +14,11 @@
                 ' Dim temphorario = Trim(txtEntrada.Text) + Trim(txtSalida.Text)
                 Dim tar1 = New TAREA
                 tar1.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado1.Text, VbStrConv.ProperCase)
-                tar1.TAR_tiempo_real = StrConv(txtTiempo_Real1.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real1.Text.Length <> 0 Then
+                    tar1.TAR_tiempo_real = StrConv(txtTiempo_Real1.Text, VbStrConv.ProperCase)
+                Else
+                    tar1.TAR_tiempo_real = 1
+                End If
                 tar1.COL_id_colaborador = txt_id_colaborador.Text
                 tar1.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
                 tar1.TAR_hora_fin = StrConv(txtHora_Finalizacion1.Text, VbStrConv.ProperCase)
@@ -34,7 +38,11 @@
                 'REGISTRO 2 DE TAREA
                 Dim tar2 = New TAREA
                 tar2.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado2.Text, VbStrConv.ProperCase)
-                tar2.TAR_tiempo_real = StrConv(txtTiempo_Real2.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real2.Text.Length <> 0 Then
+                    tar2.TAR_tiempo_real = StrConv(txtTiempo_Real2.Text, VbStrConv.ProperCase)
+                Else
+                    tar2.TAR_tiempo_real = 1
+                End If
                 tar2.COL_id_colaborador = txt_id_colaborador.Text
                 tar2.ORT_id_orden_trabajo = txt_id_orden_trabajo2.Text
                 tar2.TAR_hora_fin = StrConv(txtHora_Finalizacion2.Text, VbStrConv.ProperCase)
@@ -51,7 +59,11 @@
                 'REGISTRO 3 DE TAREA
                 Dim tar3 = New TAREA
                 tar3.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado3.Text, VbStrConv.ProperCase)
-                tar3.TAR_tiempo_real = StrConv(txtTiempo_Real3.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real3.Text.Length <> 0 Then
+                    tar3.TAR_tiempo_real = StrConv(txtTiempo_Real3.Text, VbStrConv.ProperCase)
+                Else
+                    tar3.TAR_tiempo_real = 1
+                End If
                 tar3.COL_id_colaborador = txt_id_colaborador.Text
                 tar3.ORT_id_orden_trabajo = txt_id_orden_trabajo3.Text
                 tar3.TAR_hora_fin = StrConv(txtHora_Finalizacion3.Text, VbStrConv.ProperCase)
@@ -68,7 +80,11 @@
                 'REGISTRO 4 DE TAREA
                 Dim tar4 = New TAREA
                 tar4.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado4.Text, VbStrConv.ProperCase)
-                tar4.TAR_tiempo_real = StrConv(txtTiempo_Real4.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real4.Text.Length <> 0 Then
+                    tar4.TAR_tiempo_real = StrConv(txtTiempo_Real4.Text, VbStrConv.ProperCase)
+                Else
+                    tar4.TAR_tiempo_real = 1
+                End If
                 tar4.COL_id_colaborador = txt_id_colaborador.Text
                 tar4.ORT_id_orden_trabajo = txt_id_orden_trabajo4.Text
                 tar4.TAR_hora_fin = StrConv(txtHora_Finalizacion4.Text, VbStrConv.ProperCase)
@@ -85,7 +101,11 @@
                 'REGISTRO 5 DE TAREA
                 Dim tar5 = New TAREA
                 tar5.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado5.Text, VbStrConv.ProperCase)
-                tar5.TAR_tiempo_real = StrConv(txtTiempo_Real5.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real5.Text.Length <> 0 Then
+                    tar5.TAR_tiempo_real = StrConv(txtTiempo_Real5.Text, VbStrConv.ProperCase)
+                Else
+                    tar5.TAR_tiempo_real = 1
+                End If
                 tar5.COL_id_colaborador = txt_id_colaborador.Text
                 tar5.ORT_id_orden_trabajo = txt_id_orden_trabajo5.Text
                 tar5.TAR_hora_fin = StrConv(txtHora_Finalizacion5.Text, VbStrConv.ProperCase)
@@ -102,7 +122,11 @@
                 'REGISTRO 6 DE TAREA
                 Dim tar6 = New TAREA
                 tar6.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado6.Text, VbStrConv.ProperCase)
-                tar6.TAR_tiempo_real = StrConv(txtTiempo_Real6.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real6.Text.Length <> 0 Then
+                    tar6.TAR_tiempo_real = StrConv(txtTiempo_Real6.Text, VbStrConv.ProperCase)
+                Else
+                    tar6.TAR_tiempo_real = 1
+                End If
                 tar6.COL_id_colaborador = txt_id_colaborador.Text
                 tar6.ORT_id_orden_trabajo = txt_id_orden_trabajo6.Text
                 tar6.TAR_hora_fin = StrConv(txtHora_Finalizacion6.Text, VbStrConv.ProperCase)
@@ -119,7 +143,11 @@
                 'REGISTRO 7 DE TAREA
                 Dim tar7 = New TAREA
                 tar7.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado7.Text, VbStrConv.ProperCase)
-                tar7.TAR_tiempo_real = StrConv(txtTiempo_Real7.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real7.Text.Length <> 0 Then
+                    tar7.TAR_tiempo_real = StrConv(txtTiempo_Real7.Text, VbStrConv.ProperCase)
+                Else
+                    tar7.TAR_tiempo_real = 1
+                End If
                 tar7.COL_id_colaborador = txt_id_colaborador.Text
                 tar7.ORT_id_orden_trabajo = txt_id_orden_trabajo7.Text
                 tar7.TAR_hora_fin = StrConv(txtHora_Finalizacion7.Text, VbStrConv.ProperCase)
@@ -136,7 +164,11 @@
                 'REGISTRO 8 DE TAREA
                 Dim tar8 = New TAREA
                 tar8.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado8.Text, VbStrConv.ProperCase)
-                tar8.TAR_tiempo_real = StrConv(txtTiempo_Real8.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real8.Text.Length <> 0 Then
+                    tar8.TAR_tiempo_real = StrConv(txtTiempo_Real8.Text, VbStrConv.ProperCase)
+                Else
+                    tar8.TAR_tiempo_real = 1
+                End If
                 tar8.COL_id_colaborador = txt_id_colaborador.Text
                 tar8.ORT_id_orden_trabajo = txt_id_orden_trabajo8.Text
                 tar8.TAR_hora_fin = StrConv(txtHora_Finalizacion8.Text, VbStrConv.ProperCase)
@@ -153,7 +185,11 @@
                 'REGISTRO 9 DE TAREA
                 Dim tar9 = New TAREA
                 tar9.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado9.Text, VbStrConv.ProperCase)
-                tar9.TAR_tiempo_real = StrConv(txtTiempo_Real9.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real9.Text.Length <> 0 Then
+                    tar9.TAR_tiempo_real = StrConv(txtTiempo_Real9.Text, VbStrConv.ProperCase)
+                Else
+                    tar9.TAR_tiempo_real = 1
+                End If
                 tar9.COL_id_colaborador = txt_id_colaborador.Text
                 tar9.ORT_id_orden_trabajo = txt_id_orden_trabajo9.Text
                 tar9.TAR_hora_fin = StrConv(txtHora_Finalizacion9.Text, VbStrConv.ProperCase)
@@ -170,7 +206,11 @@
                 'REGISTRO 10 DE TAREA
                 Dim tar10 = New TAREA
                 tar10.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado10.Text, VbStrConv.ProperCase)
-                tar10.TAR_tiempo_real = StrConv(txtTiempo_Real10.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real10.Text.Length <> 0 Then
+                    tar10.TAR_tiempo_real = StrConv(txtTiempo_Real10.Text, VbStrConv.ProperCase)
+                Else
+                    tar10.TAR_tiempo_real = 1
+                End If
                 tar10.COL_id_colaborador = txt_id_colaborador.Text
                 tar10.ORT_id_orden_trabajo = txt_id_orden_trabajo10.Text
                 tar10.TAR_hora_fin = StrConv(txtHora_Finalizacion10.Text, VbStrConv.ProperCase)
@@ -187,7 +227,11 @@
                 'REGISTRO 11 DE TAREA
                 Dim tar11 = New TAREA
                 tar11.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado11.Text, VbStrConv.ProperCase)
-                tar11.TAR_tiempo_real = StrConv(txtTiempo_Real11.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real11.Text.Length <> 0 Then
+                    tar11.TAR_tiempo_real = StrConv(txtTiempo_Real11.Text, VbStrConv.ProperCase)
+                Else
+                    tar11.TAR_tiempo_real = 1
+                End If
                 tar11.COL_id_colaborador = txt_id_colaborador.Text
                 tar11.ORT_id_orden_trabajo = txt_id_orden_trabajo11.Text
                 tar11.TAR_hora_fin = StrConv(txtHora_Finalizacion11.Text, VbStrConv.ProperCase)
@@ -204,7 +248,11 @@
                 'REGISTRO 12 DE TAREA
                 Dim tar12 = New TAREA
                 tar12.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado12.Text, VbStrConv.ProperCase)
-                tar12.TAR_tiempo_real = StrConv(txtTiempo_Real2.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real12.Text.Length <> 0 Then
+                    tar12.TAR_tiempo_real = StrConv(txtTiempo_Real12.Text, VbStrConv.ProperCase)
+                Else
+                    tar12.TAR_tiempo_real = 1
+                End If
                 tar12.COL_id_colaborador = txt_id_colaborador.Text
                 tar12.ORT_id_orden_trabajo = txt_id_orden_trabajo12.Text
                 tar12.TAR_hora_fin = StrConv(txtHora_Finalizacion12.Text, VbStrConv.ProperCase)
@@ -221,7 +269,11 @@
                 'REGISTRO 13 DE TAREA
                 Dim tar13 = New TAREA
                 tar13.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado13.Text, VbStrConv.ProperCase)
-                tar13.TAR_tiempo_real = StrConv(txtTiempo_Real13.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real13.Text.Length <> 0 Then
+                    tar13.TAR_tiempo_real = StrConv(txtTiempo_Real13.Text, VbStrConv.ProperCase)
+                Else
+                    tar13.TAR_tiempo_real = 1
+                End If
                 tar13.COL_id_colaborador = txt_id_colaborador.Text
                 tar13.ORT_id_orden_trabajo = txt_id_orden_trabajo13.Text
                 tar13.TAR_hora_fin = StrConv(txtHora_Finalizacion13.Text, VbStrConv.ProperCase)
@@ -238,7 +290,11 @@
                 'REGISTRO 14 DE TAREA
                 Dim tar14 = New TAREA
                 tar14.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado14.Text, VbStrConv.ProperCase)
-                tar14.TAR_tiempo_real = StrConv(txtTiempo_Real14.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real14.Text.Length <> 0 Then
+                    tar14.TAR_tiempo_real = StrConv(txtTiempo_Real14.Text, VbStrConv.ProperCase)
+                Else
+                    tar14.TAR_tiempo_real = 1
+                End If
                 tar14.COL_id_colaborador = txt_id_colaborador.Text
                 tar14.ORT_id_orden_trabajo = txt_id_orden_trabajo14.Text
                 tar14.TAR_hora_fin = StrConv(txtHora_Finalizacion14.Text, VbStrConv.ProperCase)
@@ -255,7 +311,11 @@
                 'REGISTRO 15 DE TAREA
                 Dim tar15 = New TAREA
                 tar15.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado15.Text, VbStrConv.ProperCase)
-                tar15.TAR_tiempo_real = StrConv(txtTiempo_Real15.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real15.Text.Length <> 0 Then
+                    tar15.TAR_tiempo_real = StrConv(txtTiempo_Real15.Text, VbStrConv.ProperCase)
+                Else
+                    tar15.TAR_tiempo_real = 1
+                End If
                 tar15.COL_id_colaborador = txt_id_colaborador.Text
                 tar15.ORT_id_orden_trabajo = txt_id_orden_trabajo15.Text
                 tar15.TAR_hora_fin = StrConv(txtHora_Finalizacion15.Text, VbStrConv.ProperCase)
@@ -272,7 +332,11 @@
                 'REGISTRO 16 DE TAREA
                 Dim tar16 = New TAREA
                 tar16.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado16.Text, VbStrConv.ProperCase)
-                tar16.TAR_tiempo_real = StrConv(txtTiempo_Real16.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real16.Text.Length <> 0 Then
+                    tar16.TAR_tiempo_real = StrConv(txtTiempo_Real16.Text, VbStrConv.ProperCase)
+                Else
+                    tar16.TAR_tiempo_real = 1
+                End If
                 tar16.COL_id_colaborador = txt_id_colaborador.Text
                 tar16.ORT_id_orden_trabajo = txt_id_orden_trabajo16.Text
                 tar16.TAR_hora_fin = StrConv(txtHora_Finalizacion16.Text, VbStrConv.ProperCase)
@@ -289,7 +353,11 @@
                 'REGISTRO 17 DE TAREA
                 Dim tar17 = New TAREA
                 tar17.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado17.Text, VbStrConv.ProperCase)
-                tar17.TAR_tiempo_real = StrConv(txtTiempo_Real17.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real17.Text.Length <> 0 Then
+                    tar17.TAR_tiempo_real = StrConv(txtTiempo_Real17.Text, VbStrConv.ProperCase)
+                Else
+                    tar17.TAR_tiempo_real = 1
+                End If
                 tar17.COL_id_colaborador = txt_id_colaborador.Text
                 tar17.ORT_id_orden_trabajo = txt_id_orden_trabajo17.Text
                 tar17.TAR_hora_fin = StrConv(txtHora_Finalizacion17.Text, VbStrConv.ProperCase)
@@ -306,7 +374,11 @@
                 'REGISTRO 18 DE TAREA
                 Dim tar18 = New TAREA
                 tar18.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado18.Text, VbStrConv.ProperCase)
-                tar18.TAR_tiempo_real = StrConv(txtTiempo_Real18.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real18.Text.Length <> 0 Then
+                    tar18.TAR_tiempo_real = StrConv(txtTiempo_Real18.Text, VbStrConv.ProperCase)
+                Else
+                    tar18.TAR_tiempo_real = 1
+                End If
                 tar18.COL_id_colaborador = txt_id_colaborador.Text
                 tar18.ORT_id_orden_trabajo = txt_id_orden_trabajo18.Text
                 tar18.TAR_hora_fin = StrConv(txtHora_Finalizacion18.Text, VbStrConv.ProperCase)
@@ -323,7 +395,11 @@
                 'REGISTRO 19 DE TAREA
                 Dim tar19 = New TAREA
                 tar19.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado19.Text, VbStrConv.ProperCase)
-                tar19.TAR_tiempo_real = StrConv(txtTiempo_Real19.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real19.Text.Length <> 0 Then
+                    tar19.TAR_tiempo_real = StrConv(txtTiempo_Real19.Text, VbStrConv.ProperCase)
+                Else
+                    tar19.TAR_tiempo_real = 1
+                End If
                 tar19.COL_id_colaborador = txt_id_colaborador.Text
                 tar19.ORT_id_orden_trabajo = txt_id_orden_trabajo19.Text
                 tar19.TAR_hora_fin = StrConv(txtHora_Finalizacion19.Text, VbStrConv.ProperCase)
@@ -340,7 +416,11 @@
                 'REGISTRO 20 DE TAREA
                 Dim tar20 = New TAREA
                 tar20.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado20.Text, VbStrConv.ProperCase)
-                tar20.TAR_tiempo_real = StrConv(txtTiempo_Real20.Text, VbStrConv.ProperCase)
+                If txtTiempo_Real20.Text.Length <> 0 Then
+                    tar20.TAR_tiempo_real = StrConv(txtTiempo_Real20.Text, VbStrConv.ProperCase)
+                Else
+                    tar20.TAR_tiempo_real = 1
+                End If
                 tar20.COL_id_colaborador = txt_id_colaborador.Text
                 tar20.ORT_id_orden_trabajo = txt_id_orden_trabajo20.Text
                 tar20.TAR_hora_fin = StrConv(txtHora_Finalizacion20.Text, VbStrConv.ProperCase)
