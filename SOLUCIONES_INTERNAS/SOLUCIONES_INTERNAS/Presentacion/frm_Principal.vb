@@ -412,6 +412,7 @@ Public Class frm_Principal
         ' End If
         frm_Listado_Tareas.btnExportarListado.Enabled = False
         frm_Listado_Tareas.dtpFecha.Text = Now
+        frm_Listado_Tareas.btnAgregar.Enabled = True
         frm_Listado_Tareas.ShowDialog()
     End Sub
 
