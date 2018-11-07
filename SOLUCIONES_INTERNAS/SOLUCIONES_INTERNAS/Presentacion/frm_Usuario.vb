@@ -31,19 +31,20 @@
 
         dgvLista_Usuarios.Columns.Add("USU_id_usuario", "id_usuario")
         dgvLista_Usuarios.Columns.Add("USU_usuario", "Usuario")
-        dgvLista_Usuarios.Columns.Add("USU_contraseña", "Contraseña")
         dgvLista_Usuarios.Columns.Add("USU_perfil", "Perfil")
         dgvLista_Usuarios.Columns.Add("COL_id_colaborador", "id_colaborador")
         dgvLista_Usuarios.Columns.Add("COL_nombre_col", "Colaborador")
+        dgvLista_Usuarios.Columns.Add("USU_contraseña", "Contraseña")
 
         dgvLista_Usuarios.Columns(0).DataPropertyName = "USU_id_usuario"
         dgvLista_Usuarios.Columns(0).Visible = False
         dgvLista_Usuarios.Columns(1).DataPropertyName = "USU_usuario"
-        dgvLista_Usuarios.Columns(2).DataPropertyName = "USU_contraseña"
-        dgvLista_Usuarios.Columns(3).DataPropertyName = "USU_perfil"
-        dgvLista_Usuarios.Columns(4).DataPropertyName = "COL_id_colaborador"
-        dgvLista_Usuarios.Columns(4).Visible = False
-        dgvLista_Usuarios.Columns(5).DataPropertyName = "COL_nombre_col"
+        dgvLista_Usuarios.Columns(1).Width = 150
+        dgvLista_Usuarios.Columns(2).DataPropertyName = "USU_perfil"
+        dgvLista_Usuarios.Columns(3).DataPropertyName = "COL_id_colaborador"
+        dgvLista_Usuarios.Columns(3).Visible = False
+        dgvLista_Usuarios.Columns(4).DataPropertyName = "COL_nombre_col"
+        dgvLista_Usuarios.Columns(5).DataPropertyName = "USU_contraseña"
     End Sub
 
     Private Sub btnGuardar_Usuario_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar_Usuario.Click

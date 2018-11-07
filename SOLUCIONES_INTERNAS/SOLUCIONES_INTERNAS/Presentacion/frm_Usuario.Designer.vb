@@ -119,7 +119,6 @@ Partial Class frm_Usuario
         '
         'dgvLista_Usuarios
         '
-        Me.dgvLista_Usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvLista_Usuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         Me.dgvLista_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvLista_Usuarios.Location = New System.Drawing.Point(9, 50)
