@@ -2061,4 +2061,89 @@ Public Class frm_Listado_Tareas
         ' DeshabilitarText()
         frm_Tarea.ShowDialog()
     End Sub
+
+    ' boton para generar informe diario--lo tengo que terminar
+    Private Sub Btn_informe_diario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_informe_diario.Click
+        'Try
+        'intentar generar el documento
+        Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
+        'path que guarda el reporte en el escritorio de windows (desktop)
+        Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Tareas diarias resumen.pdf"
+        Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+        PdfWriter.GetInstance(doc, file)
+        doc.Open()
+        contadorcolumnasvisibles = 0
+        For i = 0 To dgvColaboradores.RowCount - 1
+            dgvColaboradores_CellClick(i, Nothing)
+            'dgvColaboradores.CurrentRow.SetValues(i)
+            pdf_informe_diario(doc, i)
+        Next
+        doc.Close()
+        Process.Start(filename)
+        Me.Close()
+        'Catch ex As Exception
+        'si el mensaje es fallido mostrar msgbox
+        MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'End Try
+    End Sub
+    '*****sub para generar el informe diario---lo tengo que terminar
+    Sub pdf_informe_diario(ByVal document As Document, ByVal colab As Integer)
+        'If contadorcolumnasvisibles <> 0 Then
+        For c = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+            If dgvTarea_x_Colaborador.Columns(c).Visible = True Then
+                contadorcolumnasvisibles = contadorcolumnasvisibles + 1
+            End If
+        Next
+        ' End If
+        'se crea un objeto PDFTable con el numero de columnas  del datagridview
+        Dim datatable As New PdfPTable(contadorcolumnasvisibles)
+
+        'se asignan algunas propiedades para el diseño del PDF
+        datatable.DefaultCell.Padding = 3
+
+        Dim headerwidths As Single() = GetColumnsSize(dgvTarea_x_Colaborador)
+        datatable.SetWidths(headerwidths)
+
+        datatable.WidthPercentage = 100
+        datatable.DefaultCell.BorderWidth = 2
+        'datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+
+        'se crea el encabezado en el PDF
+        Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.Rows(colab).Index).Value, New Font(Font.Name = "Tahoma", 16, Font.Bold))
+
+        'se crea el texto abajo de los horarios
+        Dim entradasalida As New Paragraph("Entrada: " + dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(colab).Index).Value + " Salida: " + _
+                                           dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(colab).Index).Value, New Font(Font.Name = "Tahoma", 14, Font.Bold))
+
+        Dim texto As New Phrase("Fecha: " + dtpFecha.Text, New Font(Font.Name = "Tahoma", 12, Font.Bold))
+
+        'se capturan los nombres de las columnas del datagridview
+        For i As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+            If dgvTarea_x_Colaborador.Columns(i).Visible = True Then
+                datatable.AddCell(dgvTarea_x_Colaborador.Columns(i).HeaderText)
+            End If
+        Next
+        datatable.HeaderRows = 1
+        datatable.DefaultCell.BorderWidth = 1
+
+        'se generan las columnas del datagridview
+
+        For i As Integer = 0 To dgvTarea_x_Colaborador.RowCount - 1
+            For j As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+                If dgvTarea_x_Colaborador.Columns(j).Visible = True Then
+                    Try
+                        datatable.AddCell(dgvTarea_x_Colaborador(j, i).Value.ToString())
+                    Catch ex As Exception
+                        datatable.AddCell(" ")
+                    End Try
+                End If
+            Next
+            datatable.CompleteRow()
+        Next
+        document.Add(encabezado)
+        document.Add(entradasalida)
+        document.Add(texto)
+        document.Add(datatable)
+    End Sub
+
 End Class

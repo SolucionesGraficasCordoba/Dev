@@ -43,6 +43,7 @@ Partial Class frm_Listado_Tareas
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnVer = New System.Windows.Forms.Button()
         Me.btnExportarListado = New System.Windows.Forms.Button()
+        Me.Btn_informe_diario = New System.Windows.Forms.Button()
         Me.GroupListadoTareas.SuspendLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupListadoDetalleTarea.SuspendLayout()
@@ -51,6 +52,7 @@ Partial Class frm_Listado_Tareas
         '
         'GroupListadoTareas
         '
+        Me.GroupListadoTareas.Controls.Add(Me.Btn_informe_diario)
         Me.GroupListadoTareas.Controls.Add(Me.btnModificarTodas)
         Me.GroupListadoTareas.Controls.Add(Me.dtpFecha)
         Me.GroupListadoTareas.Controls.Add(Me.Label31)
@@ -258,6 +260,15 @@ Partial Class frm_Listado_Tareas
         Me.btnExportarListado.Text = "Exportar Listado a PDF"
         Me.btnExportarListado.UseVisualStyleBackColor = True
         '
+        'Btn_informe_diario
+        '
+        Me.Btn_informe_diario.Location = New System.Drawing.Point(269, 241)
+        Me.Btn_informe_diario.Name = "Btn_informe_diario"
+        Me.Btn_informe_diario.Size = New System.Drawing.Size(91, 22)
+        Me.Btn_informe_diario.TabIndex = 50
+        Me.Btn_informe_diario.Text = "Informe diario"
+        Me.Btn_informe_diario.UseVisualStyleBackColor = True
+        '
         'frm_Listado_Tareas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -304,4 +315,5 @@ Partial Class frm_Listado_Tareas
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents btnExportarListado As System.Windows.Forms.Button
     Friend WithEvents btnModificarTodas As System.Windows.Forms.Button
+    Friend WithEvents Btn_informe_diario As System.Windows.Forms.Button
 End Class
