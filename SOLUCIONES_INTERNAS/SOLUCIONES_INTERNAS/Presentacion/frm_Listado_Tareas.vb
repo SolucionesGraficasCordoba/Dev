@@ -10,7 +10,12 @@ Public Class frm_Listado_Tareas
     Public vble_id_colaborador As Integer
     Dim vble_colaborador, vble_fecha As String
 
+
+    'campos y vbles para generar pdf
     Dim contadorcolumnasvisibles As Integer
+    Dim interlineado As New Phrase(" ")
+    Dim linea As New Phrase("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ")
+
 
     Private Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -24,6 +29,8 @@ Public Class frm_Listado_Tareas
             cbo_sector.SelectedIndex = 0
             cbo_sector.DisplayMember = "SEC_nombre_sector"
             cbo_sector.ValueMember = "SEC_id_sector"
+
+            Btn_informe_diario.Visible = True
         Else
             Dim combosector = (From sec In datacontext.SECTOR
                               Join col In datacontext.COLABORADOR
@@ -37,6 +44,8 @@ Public Class frm_Listado_Tareas
             ' cbo_sector.SelectedIndex = 0
             cbo_sector.DisplayMember = "SEC_nombre_sector"
             cbo_sector.ValueMember = "SEC_id_sector"
+
+            Btn_informe_diario.Visible = False
         End If
         dgvColaboradores.ClearSelection()
     End Sub
@@ -2064,58 +2073,56 @@ Public Class frm_Listado_Tareas
 
     ' boton para generar informe diario--lo tengo que terminar
     Private Sub Btn_informe_diario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_informe_diario.Click
-        'Try
-        'intentar generar el documento
-        Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
-        'path que guarda el reporte en el escritorio de windows (desktop)
-        Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Tareas diarias resumen.pdf"
-        Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
-        PdfWriter.GetInstance(doc, file)
-        doc.Open()
-        contadorcolumnasvisibles = 0
-        For i = 0 To dgvColaboradores.RowCount - 1
-            dgvColaboradores_CellClick(i, Nothing)
-            'dgvColaboradores.CurrentRow.SetValues(i)
-            pdf_informe_diario(doc, i)
-        Next
-        doc.Close()
-        Process.Start(filename)
-        Me.Close()
-        'Catch ex As Exception
-        'si el mensaje es fallido mostrar msgbox
-        MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        'End Try
+        Try
+            contadorcolumnasvisibles = 0
+
+            'intentar generar el documento
+            Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
+            'path que guarda el reporte en el escritorio de windows (desktop)
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Tareas diarias resumen.pdf"
+            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+            PdfWriter.GetInstance(doc, file)
+            doc.Open()
+
+            Dim encabezado As New Paragraph("Sector: " + cbo_sector.Text + "              " + _
+                                       "Fecha: " + dtpFecha.Text, New Font(Font.Name = "Tahoma", 16, Font.Bold))
+            doc.Add(encabezado)
+
+            For i = 0 To dgvColaboradores.RowCount - 1
+                dgvColaboradores.Rows(i).Selected = True
+                dgvColaboradores_CellClick(i, Nothing)
+                pdf_informe_diario(doc, i)
+            Next
+            doc.Close()
+            Process.Start(filename)
+            ' Me.Close()
+        Catch ex As Exception
+            'si el mensaje es fallido mostrar msgbox
+            MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
-    '*****sub para generar el informe diario---lo tengo que terminar
+
     Sub pdf_informe_diario(ByVal document As Document, ByVal colab As Integer)
-        'If contadorcolumnasvisibles <> 0 Then
-        For c = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
-            If dgvTarea_x_Colaborador.Columns(c).Visible = True Then
-                contadorcolumnasvisibles = contadorcolumnasvisibles + 1
-            End If
-        Next
-        ' End If
+
+        If contadorcolumnasvisibles = 0 Then
+            For c = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+                If dgvTarea_x_Colaborador.Columns(c).Visible = True Then
+                    contadorcolumnasvisibles = contadorcolumnasvisibles + 1
+                End If
+            Next
+        End If
+
         'se crea un objeto PDFTable con el numero de columnas  del datagridview
         Dim datatable As New PdfPTable(contadorcolumnasvisibles)
 
         'se asignan algunas propiedades para el diseño del PDF
-        datatable.DefaultCell.Padding = 3
+        datatable.DefaultCell.Padding = 2
 
         Dim headerwidths As Single() = GetColumnsSize(dgvTarea_x_Colaborador)
         datatable.SetWidths(headerwidths)
 
         datatable.WidthPercentage = 100
-        datatable.DefaultCell.BorderWidth = 2
-        'datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
-
-        'se crea el encabezado en el PDF
-        Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.Rows(colab).Index).Value, New Font(Font.Name = "Tahoma", 16, Font.Bold))
-
-        'se crea el texto abajo de los horarios
-        Dim entradasalida As New Paragraph("Entrada: " + dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(colab).Index).Value + " Salida: " + _
-                                           dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(colab).Index).Value, New Font(Font.Name = "Tahoma", 14, Font.Bold))
-
-        Dim texto As New Phrase("Fecha: " + dtpFecha.Text, New Font(Font.Name = "Tahoma", 12, Font.Bold))
+        datatable.DefaultCell.BorderWidth = 1
 
         'se capturan los nombres de las columnas del datagridview
         For i As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
@@ -2126,8 +2133,7 @@ Public Class frm_Listado_Tareas
         datatable.HeaderRows = 1
         datatable.DefaultCell.BorderWidth = 1
 
-        'se generan las columnas del datagridview
-
+        'se generan las columnas y filas del datagridview
         For i As Integer = 0 To dgvTarea_x_Colaborador.RowCount - 1
             For j As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
                 If dgvTarea_x_Colaborador.Columns(j).Visible = True Then
@@ -2140,9 +2146,27 @@ Public Class frm_Listado_Tareas
             Next
             datatable.CompleteRow()
         Next
-        document.Add(encabezado)
-        document.Add(entradasalida)
+
+        'Se ponen las distintas partes en el pdf
+        document.Add(linea)
+        document.Add(linea)
+
+        Dim texto As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.Rows(colab).Index).Value, New Font(Font.Name = "Tahoma", 14, Font.Bold))
         document.Add(texto)
+
+        If dgvTarea_x_Colaborador.Rows.Count Then
+            Try
+                Dim entradasalida As New Paragraph("Entrada: " + dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(colab).Index).Value + " Salida: " + _
+                                                 dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(colab).Index).Value, New Font(Font.Name = "Tahoma", 12, Font.Bold))
+                document.Add(entradasalida)
+            Catch ex As Exception
+                Dim entradasalida As New Paragraph("No se encontro horario de entrada y salida asociado.", New Font(Font.Name = "Tahoma", 10, Font.Bold))
+            End Try
+        Else
+            Dim entradasalida As New Paragraph("Sin tareas cargadas por el momento.", New Font(Font.Name = "Tahoma", 10, Font.Bold))
+            document.Add(entradasalida)
+        End If
+        document.Add(interlineado)
         document.Add(datatable)
     End Sub
 
