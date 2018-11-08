@@ -73,7 +73,7 @@ Partial Class frm_Listado_Tareas
         Me.Btn_informe_diario.Location = New System.Drawing.Point(269, 241)
         Me.Btn_informe_diario.Name = "Btn_informe_diario"
         Me.Btn_informe_diario.Size = New System.Drawing.Size(91, 23)
-        Me.Btn_informe_diario.TabIndex = 50
+        Me.Btn_informe_diario.TabIndex = 3
         Me.Btn_informe_diario.Text = "Informe diario"
         Me.Btn_informe_diario.UseVisualStyleBackColor = True
         '
@@ -82,7 +82,7 @@ Partial Class frm_Listado_Tareas
         Me.btnModificarTodas.Location = New System.Drawing.Point(391, 241)
         Me.btnModificarTodas.Name = "btnModificarTodas"
         Me.btnModificarTodas.Size = New System.Drawing.Size(104, 23)
-        Me.btnModificarTodas.TabIndex = 49
+        Me.btnModificarTodas.TabIndex = 4
         Me.btnModificarTodas.Text = "Modificar Todas"
         Me.btnModificarTodas.UseVisualStyleBackColor = True
         '
@@ -92,7 +92,7 @@ Partial Class frm_Listado_Tareas
         Me.dtpFecha.Location = New System.Drawing.Point(129, 20)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(105, 20)
-        Me.dtpFecha.TabIndex = 48
+        Me.dtpFecha.TabIndex = 1
         '
         'Label31
         '
@@ -109,7 +109,7 @@ Partial Class frm_Listado_Tareas
         Me.cbo_sector.Location = New System.Drawing.Point(301, 19)
         Me.cbo_sector.Name = "cbo_sector"
         Me.cbo_sector.Size = New System.Drawing.Size(114, 21)
-        Me.cbo_sector.TabIndex = 30
+        Me.cbo_sector.TabIndex = 2
         '
         'Label6
         '
@@ -140,7 +140,7 @@ Partial Class frm_Listado_Tareas
         Me.dgvColaboradores.Name = "dgvColaboradores"
         Me.dgvColaboradores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvColaboradores.Size = New System.Drawing.Size(486, 189)
-        Me.dgvColaboradores.TabIndex = 0
+        Me.dgvColaboradores.TabIndex = 5
         '
         'Label4
         '
@@ -156,7 +156,7 @@ Partial Class frm_Listado_Tareas
         Me.btnEliminar_Tarea.Location = New System.Drawing.Point(390, 550)
         Me.btnEliminar_Tarea.Name = "btnEliminar_Tarea"
         Me.btnEliminar_Tarea.Size = New System.Drawing.Size(63, 23)
-        Me.btnEliminar_Tarea.TabIndex = 3
+        Me.btnEliminar_Tarea.TabIndex = 9
         Me.btnEliminar_Tarea.Text = "Eliminar"
         Me.btnEliminar_Tarea.UseVisualStyleBackColor = True
         '
@@ -222,23 +222,24 @@ Partial Class frm_Listado_Tareas
         Me.dgvTarea_x_Colaborador.Name = "dgvTarea_x_Colaborador"
         Me.dgvTarea_x_Colaborador.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvTarea_x_Colaborador.Size = New System.Drawing.Size(480, 210)
-        Me.dgvTarea_x_Colaborador.TabIndex = 0
+        Me.dgvTarea_x_Colaborador.TabIndex = 11
         '
         'btnModificar_Una
         '
         Me.btnModificar_Una.Location = New System.Drawing.Point(299, 550)
         Me.btnModificar_Una.Name = "btnModificar_Una"
         Me.btnModificar_Una.Size = New System.Drawing.Size(85, 23)
-        Me.btnModificar_Una.TabIndex = 31
+        Me.btnModificar_Una.TabIndex = 8
         Me.btnModificar_Una.Text = "Modificar Una"
         Me.btnModificar_Una.UseVisualStyleBackColor = True
         '
         'btnCancelar
         '
+        Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancelar.Location = New System.Drawing.Point(459, 550)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(63, 23)
-        Me.btnCancelar.TabIndex = 32
+        Me.btnCancelar.TabIndex = 10
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
@@ -247,7 +248,7 @@ Partial Class frm_Listado_Tareas
         Me.btnAgregar.Location = New System.Drawing.Point(205, 550)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(88, 23)
-        Me.btnAgregar.TabIndex = 33
+        Me.btnAgregar.TabIndex = 7
         Me.btnAgregar.Text = "Agregar Tarea"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
@@ -256,7 +257,7 @@ Partial Class frm_Listado_Tareas
         Me.btnVer.Location = New System.Drawing.Point(144, 550)
         Me.btnVer.Name = "btnVer"
         Me.btnVer.Size = New System.Drawing.Size(55, 23)
-        Me.btnVer.TabIndex = 34
+        Me.btnVer.TabIndex = 6
         Me.btnVer.Text = "Ver"
         Me.btnVer.UseVisualStyleBackColor = True
         '
@@ -265,14 +266,16 @@ Partial Class frm_Listado_Tareas
         Me.btnExportarListado.Location = New System.Drawing.Point(8, 550)
         Me.btnExportarListado.Name = "btnExportarListado"
         Me.btnExportarListado.Size = New System.Drawing.Size(130, 23)
-        Me.btnExportarListado.TabIndex = 35
+        Me.btnExportarListado.TabIndex = 5
         Me.btnExportarListado.Text = "Exportar Listado a PDF"
         Me.btnExportarListado.UseVisualStyleBackColor = True
         '
         'frm_Listado_Tareas
         '
+        Me.AcceptButton = Me.Btn_informe_diario
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.CancelButton = Me.btnCancelar
         Me.ClientSize = New System.Drawing.Size(536, 584)
         Me.Controls.Add(Me.btnExportarListado)
         Me.Controls.Add(Me.btnVer)

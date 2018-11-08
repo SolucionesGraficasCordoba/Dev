@@ -31,6 +31,7 @@ Public Class frm_Listado_Tareas
             cbo_sector.ValueMember = "SEC_id_sector"
 
             Btn_informe_diario.Visible = True
+            Btn_informe_diario.Focus()
         Else
             Dim combosector = (From sec In datacontext.SECTOR
                               Join col In datacontext.COLABORADOR
@@ -2085,7 +2086,7 @@ Public Class frm_Listado_Tareas
             doc.Open()
 
             Dim encabezado As New Paragraph("Sector: " + cbo_sector.Text + "              " + _
-                                       "Fecha: " + dtpFecha.Text, New Font(Font.Name = "Tahoma", 16, Font.Bold))
+                                       "Fecha: " + dtpFecha.Text, New Font(Font.Name = "Arial", 16, Font.Bold))
             doc.Add(encabezado)
 
             For i = 0 To dgvColaboradores.RowCount - 1
@@ -2116,7 +2117,7 @@ Public Class frm_Listado_Tareas
         Dim datatable As New PdfPTable(contadorcolumnasvisibles)
 
         'se asignan algunas propiedades para el diseño del PDF
-        datatable.DefaultCell.Padding = 2
+        datatable.DefaultCell.Padding = 3
 
         Dim headerwidths As Single() = GetColumnsSize(dgvTarea_x_Colaborador)
         datatable.SetWidths(headerwidths)
