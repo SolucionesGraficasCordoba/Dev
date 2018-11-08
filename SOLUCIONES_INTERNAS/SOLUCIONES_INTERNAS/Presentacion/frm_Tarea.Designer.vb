@@ -296,6 +296,8 @@ Partial Class frm_Tarea
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label59 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -2671,6 +2673,8 @@ Partial Class frm_Tarea
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label59)
+        Me.GroupBox2.Controls.Add(Me.Label32)
         Me.GroupBox2.Controls.Add(Me.txtSalida)
         Me.GroupBox2.Controls.Add(Me.txtEntrada)
         Me.GroupBox2.Controls.Add(Me.Label58)
@@ -2693,7 +2697,7 @@ Partial Class frm_Tarea
         '
         'txtSalida
         '
-        Me.txtSalida.Location = New System.Drawing.Point(658, 20)
+        Me.txtSalida.Location = New System.Drawing.Point(668, 21)
         Me.txtSalida.MaxLength = 5
         Me.txtSalida.Name = "txtSalida"
         Me.txtSalida.Size = New System.Drawing.Size(51, 20)
@@ -2710,7 +2714,7 @@ Partial Class frm_Tarea
         'Label58
         '
         Me.Label58.AutoSize = True
-        Me.Label58.Location = New System.Drawing.Point(613, 23)
+        Me.Label58.Location = New System.Drawing.Point(613, 24)
         Me.Label58.Name = "Label58"
         Me.Label58.Size = New System.Drawing.Size(39, 13)
         Me.Label58.TabIndex = 46
@@ -2719,7 +2723,7 @@ Partial Class frm_Tarea
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(495, 23)
+        Me.Label33.Location = New System.Drawing.Point(481, 22)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(47, 13)
         Me.Label33.TabIndex = 46
@@ -2741,6 +2745,28 @@ Partial Class frm_Tarea
         Me.btnActualizar.TabIndex = 128
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.ForeColor = System.Drawing.Color.Red
+        Me.Label32.Location = New System.Drawing.Point(534, 23)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(11, 13)
+        Me.Label32.TabIndex = 48
+        Me.Label32.Text = "*"
+        '
+        'Label59
+        '
+        Me.Label59.AutoSize = True
+        Me.Label59.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label59.ForeColor = System.Drawing.Color.Red
+        Me.Label59.Location = New System.Drawing.Point(655, 25)
+        Me.Label59.Name = "Label59"
+        Me.Label59.Size = New System.Drawing.Size(11, 13)
+        Me.Label59.TabIndex = 49
+        Me.Label59.Text = "*"
         '
         'frm_Tarea
         '
@@ -3044,4 +3070,6 @@ Partial Class frm_Tarea
     Friend WithEvents txt_Id_Tarea2 As System.Windows.Forms.TextBox
     Friend WithEvents txt_Id_Tarea3 As System.Windows.Forms.TextBox
     Friend WithEvents txt_Id_Tarea1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label59 As System.Windows.Forms.Label
+    Friend WithEvents Label32 As System.Windows.Forms.Label
 End Class

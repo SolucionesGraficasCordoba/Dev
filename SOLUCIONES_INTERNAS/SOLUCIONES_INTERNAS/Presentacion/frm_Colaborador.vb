@@ -176,7 +176,11 @@ Public Class frm_Colaborador
         Dim buscar As String
         armargrilla()
         buscar = Me.txt_Buscar_Colaborador.Text & "*"
-        Dim consultaalu = From U In datacontext.COLABORADOR Select U.COL_id_colaborador, U.COL_nombre_col, U.COL_apellido_col, U.SEC_id_sector Where COL_nombre_col Like buscar.ToString
+        Dim consultaalu = From U In datacontext.COLABORADOR
+                          Join S In datacontext.SECTOR
+                          On S.SEC_id_sector Equals U.SEC_id_sector
+                          Select U.COL_id_colaborador, U.COL_nombre_col, U.COL_apellido_col, U.SEC_id_sector, S.SEC_nombre_sector
+                          Where COL_nombre_col Like buscar.ToString
         dgvLista_Colaboradores.DataSource = consultaalu
         dgvLista_Colaboradores.ClearSelection()
     End Sub
