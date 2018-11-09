@@ -437,19 +437,50 @@
 
     Private Sub btnGuardar_Orden_Trabajo_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar_Orden_Trabajo.Click
 
-        'VALIDA LOS CAMPOS OBLIGATORIOS
+        Dim buscaorden = (From odt In datacontext.ORDEN_TRABAJO Select odt.ORT_fecha_ot, odt.ORT_tipo_ot, odt.ORT_numero_ot, odt.ORT_observaciones_ot, odt.VEN_id_vendedor, odt.CLI_id_cliente, odt.ORT_fecha_entrega
+                               Where ORT_numero_ot = txtNumero_Orden_Trabajo.Text.ToUpper).Any
+        If buscaorden = True Then
+            MsgBox("La Orden ingresada ya existe")
+            limpiarcontroles()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL TIPO DE ORDEN NO ESTE VACIO
+        If cboTipo_Orden.Text.Length = 0 Then
+            MsgBox("Complete el campo Tipo de Orden")
+            cboTipo_Orden.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL NUMERO DE ORDEN NO ESTE VACIO
+        If txtNumero_Orden_Trabajo.Text.Length = 0 Then
+            MsgBox("Complete el campo Número de Orden")
+            txtNumero_Orden_Trabajo.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO VENDEDOR NO ESTE VACIO
+        If txtNombre_vendedor.Text.Length = 0 Then
+            MsgBox("Cargue el nombre Vendedor")
+            btnBuscar_Vendedor.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO CLIENTE NO ESTE VACIO
+        If txt_nombre_cliente.Text.Length = 0 Then
+            MsgBox("Cargue el nombre Cliente")
+            btnBuscar_cliente.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DIRECCION DE ENTREGA NO ESTE VACIO
+        If txt_mejoras.Text.Length = 0 Then
+            MsgBox("Cargue la Dirección de Entrega")
+            txt_mejoras.Focus()
+            Exit Sub
+        End If
+
         Try
-            If txtNumero_Orden_Trabajo.Text.Length = 0 _
-              Or cboTipo_Orden.Text.Length = 0 _
-              Or txtid_vendedor.Text.Length = 0 _
-              Or txt_id_cliente.Text.Length = 0 _
-              Or txt_cantidad1_detalle1.Text.Length = 0 _
-              Or cboPiezas1_Detalle1.Text.Length = 0 _
-              Or txtTamaño1_Detalle1.Text.Length = 0 _
-              Or cboTipoImpresion1_Detalle1.Text.Length = 0 Then
-                MsgBox("Debe completar todos los campos requeridos")
-                Exit Sub
-            End If
             'GUARDA ORDEN DE TRABAJO
             Dim clie = New ORDEN_TRABAJO
             If cargamasprod = "NO" Then
@@ -823,7 +854,7 @@
                 limpiarcontroles()
                 Me.Close()
             End If
-         Catch ex As Exception
+        Catch ex As Exception
             MsgBox("Error al cargar la Orden")
         End Try
     End Sub

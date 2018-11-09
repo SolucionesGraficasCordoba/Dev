@@ -2335,148 +2335,66 @@
     Private Sub Calcular()
 
         Dim val1 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado1.Text, val1)
+        Int32.TryParse(txtTiempo_Real1.Text, val1)
 
         Dim val2 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado2.Text, val2)
+        Int32.TryParse(txtTiempo_Real2.Text, val2)
 
         Dim val3 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado3.Text, val3)
+        Int32.TryParse(txtTiempo_Real3.Text, val3)
 
         Dim val4 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado4.Text, val4)
+        Int32.TryParse(txtTiempo_Real4.Text, val4)
 
         Dim val5 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado5.Text, val5)
+        Int32.TryParse(txtTiempo_Real5.Text, val5)
 
         Dim val6 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado6.Text, val6)
+        Int32.TryParse(txtTiempo_Real6.Text, val6)
 
         Dim val7 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado7.Text, val7)
+        Int32.TryParse(txtTiempo_Real7.Text, val7)
 
         Dim val8 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado8.Text, val8)
+        Int32.TryParse(txtTiempo_Real8.Text, val8)
 
         Dim val9 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado9.Text, val9)
+        Int32.TryParse(txtTiempo_Real9.Text, val9)
 
         Dim val10 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado10.Text, val10)
+        Int32.TryParse(txtTiempo_Real10.Text, val10)
 
         Dim val11 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado11.Text, val11)
+        Int32.TryParse(txtTiempo_Real11.Text, val11)
 
         Dim val12 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado12.Text, val12)
+        Int32.TryParse(txtTiempo_Real12.Text, val12)
 
         Dim val13 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado13.Text, val13)
+        Int32.TryParse(txtTiempo_Real13.Text, val13)
 
         Dim val14 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado14.Text, val14)
+        Int32.TryParse(txtTiempo_Real14.Text, val14)
 
         Dim val15 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado15.Text, val15)
+        Int32.TryParse(txtTiempo_Real15.Text, val15)
 
         Dim val16 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado16.Text, val16)
+        Int32.TryParse(txtTiempo_Real16.Text, val16)
 
         Dim val17 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado17.Text, val17)
+        Int32.TryParse(txtTiempo_Real17.Text, val17)
 
         Dim val18 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado18.Text, val18)
+        Int32.TryParse(txtTiempo_Real18.Text, val18)
 
         Dim val19 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado19.Text, val19)
+        Int32.TryParse(txtTiempo_Real19.Text, val19)
 
         Dim val20 As Integer = 0
-        Int32.TryParse(txtTiempo_Estimado20.Text, val20)
+        Int32.TryParse(txtTiempo_Real20.Text, val20)
 
         Label35.Text = Convert.ToString(val1 + val2 + val3 + val4 + val5 + val6 + val7 + val8 + val9 + val10 + val11 + val12 + val13 + val14 + val15 + val16 + val17 + val18 + val19 + val20)
-
-
-    End Sub
-
-    Private Sub txtTiempo_Estimado1_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado1.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado2_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado2.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado3_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado3.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado4_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado4.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado5_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado5.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado6_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado6.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado7_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado7.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado8_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado8.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado9_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado9.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado10_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado10.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado11_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado11.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado12_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado12.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado13_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado13.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado14_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado14.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado15_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado15.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado16_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado16.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado17_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado17.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado18_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado18.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado19_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado19.TextChanged
-        Calcular()
-    End Sub
-
-    Private Sub txtTiempo_Estimado20_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado20.TextChanged
-        Calcular()
     End Sub
 
     Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimirFormulario.Click
@@ -3138,4 +3056,83 @@
         End Select
     End Sub
 
+    Private Sub txtTiempo_Real1_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real1.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real2_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real2.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real3_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real3.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real4_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real4.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real5_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real5.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real6_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real6.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real7_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real7.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real8_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real8.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real9_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real9.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real10_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real10.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real11_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real11.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real12_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real12.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real13_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real13.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real14_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real14.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real15_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real15.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real16_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real16.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real17_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real17.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real18_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real18.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real19_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real19.TextChanged
+        Calcular()
+    End Sub
+
+    Private Sub txtTiempo_Real20_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real20.TextChanged
+        Calcular()
+    End Sub
 End Class

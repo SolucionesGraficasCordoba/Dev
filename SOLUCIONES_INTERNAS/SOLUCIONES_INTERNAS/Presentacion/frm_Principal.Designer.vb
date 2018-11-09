@@ -323,32 +323,32 @@ Partial Class frm_Principal
         'AltaTareaToolStripMenuItem
         '
         Me.AltaTareaToolStripMenuItem.Name = "AltaTareaToolStripMenuItem"
-        Me.AltaTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AltaTareaToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.AltaTareaToolStripMenuItem.Text = "Nueva"
         '
         'ListaTareaToolStripMenuItem
         '
         Me.ListaTareaToolStripMenuItem.Name = "ListaTareaToolStripMenuItem"
-        Me.ListaTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ListaTareaToolStripMenuItem.Text = "Modificar"
+        Me.ListaTareaToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
+        Me.ListaTareaToolStripMenuItem.Text = "Agregar / Modificar"
         '
         'EliminarTareaToolStripMenuItem
         '
         Me.EliminarTareaToolStripMenuItem.Name = "EliminarTareaToolStripMenuItem"
-        Me.EliminarTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EliminarTareaToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.EliminarTareaToolStripMenuItem.Text = "Eliminar"
         '
         'ConsultarTareaToolStripMenuItem
         '
         Me.ConsultarTareaToolStripMenuItem.Name = "ConsultarTareaToolStripMenuItem"
-        Me.ConsultarTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ConsultarTareaToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.ConsultarTareaToolStripMenuItem.Text = "Consultar"
         '
         'GráficosToolStripMenuItem
         '
         Me.GráficosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TareasMensulesToolStripMenuItem})
         Me.GráficosToolStripMenuItem.Name = "GráficosToolStripMenuItem"
-        Me.GráficosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.GráficosToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
         Me.GráficosToolStripMenuItem.Text = "Gráficos"
         '
         'TareasMensulesToolStripMenuItem

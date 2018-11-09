@@ -289,6 +289,8 @@ Partial Class frm_Tarea
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label59 = New System.Windows.Forms.Label()
+        Me.Label32 = New System.Windows.Forms.Label()
         Me.txtSalida = New System.Windows.Forms.TextBox()
         Me.txtEntrada = New System.Windows.Forms.TextBox()
         Me.Label58 = New System.Windows.Forms.Label()
@@ -296,8 +298,6 @@ Partial Class frm_Tarea
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.btnActualizar = New System.Windows.Forms.Button()
-        Me.Label32 = New System.Windows.Forms.Label()
-        Me.Label59 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -2654,11 +2654,11 @@ Partial Class frm_Tarea
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(244, 634)
+        Me.Label7.Location = New System.Drawing.Point(328, 645)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(76, 13)
+        Me.Label7.Size = New System.Drawing.Size(56, 13)
         Me.Label7.TabIndex = 48
-        Me.Label7.Text = "Total estimado"
+        Me.Label7.Text = "Total Real"
         '
         'Label35
         '
@@ -2666,7 +2666,7 @@ Partial Class frm_Tarea
         Me.Label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label35.ForeColor = System.Drawing.Color.Black
-        Me.Label35.Location = New System.Drawing.Point(326, 634)
+        Me.Label35.Location = New System.Drawing.Point(390, 645)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(2, 15)
         Me.Label35.TabIndex = 49
@@ -2694,6 +2694,28 @@ Partial Class frm_Tarea
         Me.GroupBox2.Size = New System.Drawing.Size(918, 51)
         Me.GroupBox2.TabIndex = 50
         Me.GroupBox2.TabStop = False
+        '
+        'Label59
+        '
+        Me.Label59.AutoSize = True
+        Me.Label59.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label59.ForeColor = System.Drawing.Color.Red
+        Me.Label59.Location = New System.Drawing.Point(655, 25)
+        Me.Label59.Name = "Label59"
+        Me.Label59.Size = New System.Drawing.Size(11, 13)
+        Me.Label59.TabIndex = 49
+        Me.Label59.Text = "*"
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.ForeColor = System.Drawing.Color.Red
+        Me.Label32.Location = New System.Drawing.Point(534, 23)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(11, 13)
+        Me.Label32.TabIndex = 48
+        Me.Label32.Text = "*"
         '
         'txtSalida
         '
@@ -2745,28 +2767,6 @@ Partial Class frm_Tarea
         Me.btnActualizar.TabIndex = 128
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.ForeColor = System.Drawing.Color.Red
-        Me.Label32.Location = New System.Drawing.Point(534, 23)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(11, 13)
-        Me.Label32.TabIndex = 48
-        Me.Label32.Text = "*"
-        '
-        'Label59
-        '
-        Me.Label59.AutoSize = True
-        Me.Label59.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label59.ForeColor = System.Drawing.Color.Red
-        Me.Label59.Location = New System.Drawing.Point(655, 25)
-        Me.Label59.Name = "Label59"
-        Me.Label59.Size = New System.Drawing.Size(11, 13)
-        Me.Label59.TabIndex = 49
-        Me.Label59.Text = "*"
         '
         'frm_Tarea
         '
