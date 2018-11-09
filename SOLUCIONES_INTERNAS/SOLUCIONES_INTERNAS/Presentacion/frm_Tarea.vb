@@ -3,6 +3,7 @@
     Dim quienllamoboton As Button
 
     Private Sub btnGuardar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Tarea.Click
+
         'VALIDA CAMPO COLABORADOR
         If txt_nombre_colaborador.Text.Length = 0 Then
             MsgBox("Seleccione al colaborador")
@@ -781,6 +782,27 @@
 
     Sub limpiarcontroles()
         txt_id_tarea.Clear()
+        txt_Id_Tarea1.Clear()
+        txt_Id_Tarea2.Clear()
+        txt_Id_Tarea3.Clear()
+        txt_Id_Tarea4.Clear()
+        txt_Id_Tarea5.Clear()
+        txt_Id_Tarea6.Clear()
+        txt_Id_Tarea7.Clear()
+        txt_Id_Tarea8.Clear()
+        txt_Id_Tarea9.Clear()
+        txt_Id_Tarea10.Clear()
+        txt_Id_Tarea11.Clear()
+        txt_Id_Tarea12.Clear()
+        txt_Id_Tarea13.Clear()
+        txt_Id_Tarea14.Clear()
+        txt_Id_Tarea15.Clear()
+        txt_Id_Tarea16.Clear()
+        txt_Id_Tarea17.Clear()
+        txt_Id_Tarea18.Clear()
+        txt_Id_Tarea19.Clear()
+        txt_Id_Tarea20.Clear()
+
         txt_detalle_tarea1.Clear()
         txt_detalle_tarea2.Clear()
         txt_detalle_tarea3.Clear()
@@ -890,6 +912,48 @@
         txtObservaciones18.Clear()
         txtObservaciones19.Clear()
         txtObservaciones20.Clear()
+
+        txtNumero_Orden_Trabajo1.Clear()
+        txtNumero_Orden_Trabajo2.Clear()
+        txtNumero_Orden_Trabajo3.Clear()
+        txtNumero_Orden_Trabajo4.Clear()
+        txtNumero_Orden_Trabajo5.Clear()
+        txtNumero_Orden_Trabajo6.Clear()
+        txtNumero_Orden_Trabajo7.Clear()
+        txtNumero_Orden_Trabajo8.Clear()
+        txtNumero_Orden_Trabajo9.Clear()
+        txtNumero_Orden_Trabajo10.Clear()
+        txtNumero_Orden_Trabajo11.Clear()
+        txtNumero_Orden_Trabajo12.Clear()
+        txtNumero_Orden_Trabajo13.Clear()
+        txtNumero_Orden_Trabajo14.Clear()
+        txtNumero_Orden_Trabajo15.Clear()
+        txtNumero_Orden_Trabajo16.Clear()
+        txtNumero_Orden_Trabajo17.Clear()
+        txtNumero_Orden_Trabajo18.Clear()
+        txtNumero_Orden_Trabajo19.Clear()
+        txtNumero_Orden_Trabajo20.Clear()
+
+        txt_id_orden_trabajo1.Clear()
+        txt_id_orden_trabajo2.Clear()
+        txt_id_orden_trabajo3.Clear()
+        txt_id_orden_trabajo4.Clear()
+        txt_id_orden_trabajo5.Clear()
+        txt_id_orden_trabajo6.Clear()
+        txt_id_orden_trabajo7.Clear()
+        txt_id_orden_trabajo8.Clear()
+        txt_id_orden_trabajo9.Clear()
+        txt_id_orden_trabajo10.Clear()
+        txt_id_orden_trabajo11.Clear()
+        txt_id_orden_trabajo12.Clear()
+        txt_id_orden_trabajo13.Clear()
+        txt_id_orden_trabajo14.Clear()
+        txt_id_orden_trabajo15.Clear()
+        txt_id_orden_trabajo16.Clear()
+        txt_id_orden_trabajo17.Clear()
+        txt_id_orden_trabajo18.Clear()
+        txt_id_orden_trabajo19.Clear()
+        txt_id_orden_trabajo20.Clear()
 
     End Sub
 
@@ -2440,10 +2504,335 @@
 
     Private Sub btnActualizar_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar.Click
 
-        If txt_detalle_tarea1.Text.Length = 0 Or txt_id_colaborador.Text.Length = 0 Then
-            MsgBox("Debe completar todos los campos requeridos")
+        'VALIDA CAMPO COLABORADOR
+        If txt_nombre_colaborador.Text.Length = 0 Then
+            MsgBox("Seleccione al colaborador")
+            btnBuscar_Colaborador.Focus()
             Exit Sub
         End If
+        'VALIDA CAMPO ENTRADA
+        If txtEntrada.Text.Length = 0 Then
+            MsgBox("Debe ingresar horario de entrada")
+            txtEntrada.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA CAMPO SALIDA
+        If txtSalida.Text.Length = 0 Then
+            MsgBox("Debe ingresar horario de salida")
+            txtSalida.Focus()
+            Exit Sub
+        End If
+        '-------------------------------------------------------------------------------------------------
+        'VALIDA QUE SE INGRESE AL MENOS UNA TAREA
+        If txtNumero_Orden_Trabajo1.Text.Length = 0 And txt_detalle_tarea1.Text.Length = 0 Then
+            MsgBox("Debe cargar al menos una tarea")
+            txt_detalle_tarea1.Focus()
+            Exit Sub
+        End If
+        '-------------------------------------------------------------------------------------------------
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA PRIMERA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo1.Text.Length = 0 And txt_detalle_tarea1.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 1")
+            btnBuscar_Numero_Orden1.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA PRIMERA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo1.Text.Length <> 0 And txt_detalle_tarea1.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 1")
+            txt_detalle_tarea1.Focus()
+            Exit Sub
+        End If
+        '--------------------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA SEGUNDA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo2.Text.Length = 0 And txt_detalle_tarea2.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 2")
+            btnBuscar_Numero_Orden2.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA SEGUNDA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo2.Text.Length <> 0 And txt_detalle_tarea2.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 2")
+            txt_detalle_tarea2.Focus()
+            Exit Sub
+        End If
+        '----------------------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA TERCER TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo3.Text.Length = 0 And txt_detalle_tarea3.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 3")
+            btnBuscar_Numero_Orden3.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA TERCER TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo3.Text.Length <> 0 And txt_detalle_tarea3.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 3")
+            txt_detalle_tarea3.Focus()
+            Exit Sub
+        End If
+
+        '------------------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA CUARTA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo4.Text.Length = 0 And txt_detalle_tarea4.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 4")
+            btnBuscar_Numero_Orden4.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA CUARTA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo4.Text.Length <> 0 And txt_detalle_tarea4.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 4")
+            txt_detalle_tarea4.Focus()
+            Exit Sub
+        End If
+
+        '----------------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA QUINTA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo5.Text.Length = 0 And txt_detalle_tarea5.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 5")
+            btnBuscar_Numero_Orden5.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA QUINTA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo5.Text.Length <> 0 And txt_detalle_tarea5.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 5")
+            txt_detalle_tarea5.Focus()
+            Exit Sub
+        End If
+        '---------------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA SEXTA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo6.Text.Length = 0 And txt_detalle_tarea6.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 6")
+            btnBuscar_Numero_Orden6.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA SEXTA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo6.Text.Length <> 0 And txt_detalle_tarea6.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 6")
+            txt_detalle_tarea6.Focus()
+            Exit Sub
+        End If
+        '--------------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA SEPTIMA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo7.Text.Length = 0 And txt_detalle_tarea7.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 7")
+            btnBuscar_Numero_Orden7.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA SEPTIMA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo7.Text.Length <> 0 And txt_detalle_tarea7.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 7")
+            txt_detalle_tarea7.Focus()
+            Exit Sub
+        End If
+
+        '---------------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA OCTAVA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo8.Text.Length = 0 And txt_detalle_tarea8.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 8")
+            btnBuscar_Numero_Orden8.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA OCTAVA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo8.Text.Length <> 0 And txt_detalle_tarea8.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 8")
+            txt_detalle_tarea8.Focus()
+            Exit Sub
+        End If
+        '----------------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA NOVENA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo9.Text.Length = 0 And txt_detalle_tarea9.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 9")
+            btnBuscar_Numero_Orden9.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA NOVENA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo9.Text.Length <> 0 And txt_detalle_tarea9.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 9")
+            txt_detalle_tarea9.Focus()
+            Exit Sub
+        End If
+        '----------------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA DECIMA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo10.Text.Length = 0 And txt_detalle_tarea10.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 10")
+            btnBuscar_Numero_Orden10.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA DECIMA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo10.Text.Length <> 0 And txt_detalle_tarea10.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 10")
+            txt_detalle_tarea10.Focus()
+            Exit Sub
+        End If
+        '----------------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA UNDECIMA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo11.Text.Length = 0 And txt_detalle_tarea11.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 11")
+            btnBuscar_Numero_Orden11.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA UNDECIMA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo11.Text.Length <> 0 And txt_detalle_tarea11.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 11")
+            txt_detalle_tarea11.Focus()
+            Exit Sub
+        End If
+        '----------------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA DUODECIMA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo12.Text.Length = 0 And txt_detalle_tarea12.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 12")
+            btnBuscar_Numero_Orden12.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA DUODECIMA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo12.Text.Length <> 0 And txt_detalle_tarea12.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 12")
+            txt_detalle_tarea12.Focus()
+            Exit Sub
+        End If
+        '---------------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA DECIMOTERCERA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo13.Text.Length = 0 And txt_detalle_tarea13.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 13")
+            btnBuscar_Numero_Orden13.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA DECIMOTERCERA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo13.Text.Length <> 0 And txt_detalle_tarea13.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 13")
+            txt_detalle_tarea13.Focus()
+            Exit Sub
+        End If
+        '---------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA DECIMOCUARTA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo14.Text.Length = 0 And txt_detalle_tarea14.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 14")
+            btnBuscar_Numero_Orden14.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA DECIMOCUARTA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo14.Text.Length <> 0 And txt_detalle_tarea14.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 14")
+            txt_detalle_tarea14.Focus()
+            Exit Sub
+        End If
+        '-------------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA DECIMOQUINTA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo15.Text.Length = 0 And txt_detalle_tarea15.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 15")
+            btnBuscar_Numero_Orden15.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA DECIMOQUINTA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo15.Text.Length <> 0 And txt_detalle_tarea15.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 15")
+            txt_detalle_tarea15.Focus()
+            Exit Sub
+        End If
+
+        '---------------------------------------------------------------------------------------------------
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA DECIMOSEXTA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo16.Text.Length = 0 And txt_detalle_tarea16.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 16")
+            btnBuscar_Numero_Orden16.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA DECIMOSEXTA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo16.Text.Length <> 0 And txt_detalle_tarea16.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 16")
+            txt_detalle_tarea16.Focus()
+            Exit Sub
+        End If
+        '-----------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA DECIMOSEPTIMA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo17.Text.Length = 0 And txt_detalle_tarea17.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 17")
+            btnBuscar_Numero_Orden17.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA DECIMOSEPTIMA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo17.Text.Length <> 0 And txt_detalle_tarea17.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 17")
+            txt_detalle_tarea17.Focus()
+            Exit Sub
+        End If
+        '-----------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA DECIMOOCTAVA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo18.Text.Length = 0 And txt_detalle_tarea18.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 18")
+            btnBuscar_Numero_Orden18.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA DECIMOOCTAVA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo18.Text.Length <> 0 And txt_detalle_tarea18.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 18")
+            txt_detalle_tarea18.Focus()
+            Exit Sub
+        End If
+        '-----------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA DECIMONOVENA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo19.Text.Length = 0 And txt_detalle_tarea19.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 19")
+            btnBuscar_Numero_Orden19.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA DECIMONOVENA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo19.Text.Length <> 0 And txt_detalle_tarea19.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 19")
+            txt_detalle_tarea19.Focus()
+            Exit Sub
+        End If
+        '-----------------------------------------------------------------------------------------
+
+        'VALIDA QUE EL NUMERO DE ORDEN DE LA BIGESIMA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo20.Text.Length = 0 And txt_detalle_tarea20.Text.Length <> 0 Then
+            MsgBox("Seleccione una orden para la tarea 20")
+            btnBuscar_Numero_Orden20.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO DE LA BIGESIMA TAREA NO ESTE VACIO
+        If txtNumero_Orden_Trabajo20.Text.Length <> 0 And txt_detalle_tarea20.Text.Length = 0 Then
+            MsgBox("Complete el campo de la tarea 20")
+            txt_detalle_tarea20.Focus()
+            Exit Sub
+        End If
+        '-----------------------------------------------------------------------------------------
 
         Try
             Dim ActualizarTarea1 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea1.Text.ToUpper)).ToList()(0)

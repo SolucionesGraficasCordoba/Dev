@@ -129,13 +129,18 @@
 
     Private Sub btnIngresar_Stock_Click(sender As System.Object, e As System.EventArgs) Handles btnIngresar_Stock.Click
 
-        'ACA DEBERIA GUARDAR EN LA TABLA MOVIMIENTO_PRODUCTO Y ADEMAS ACTUALIZAR STOCK EN LA TABLA PRODUCTOS
-        Try
-            If txt_Cantidad.TextLength = 0 Then
-                MsgBox("Debe completar todos los campos requeridos")
-                Exit Sub
-            End If
+          If txt_descripcion.TextLength = 0 Then
+            MsgBox("Seleccione un producto del listado")
+            Exit Sub
+        End If
 
+        If txt_Cantidad.TextLength = 0 Then
+            MsgBox("Ingrese una Cantidad")
+            txt_Cantidad.Focus()
+            Exit Sub
+        End If
+
+        Try
             Dim prod_mov = New PRODUCTO_MOVIMIENTO
             txt_id_producto_movimiento.Text = prod_mov.PROD_MOV_id
             prod_mov.PROD_MOV_id = txt_id_producto_movimiento.Text

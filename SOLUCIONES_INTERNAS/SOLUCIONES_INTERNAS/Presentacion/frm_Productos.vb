@@ -16,12 +16,36 @@ Public Class frm_Productos
                 MsgBox("El código de producto ya existe")
                 Exit Sub
             End If
-            'controla que la descripcion y el stock no esten vacios
-            If tb_prod_descripcion.TextLength = 0 Or tb_prod_stock.TextLength = 0 Or tb_prod_stock_minimo.TextLength = 0 Then
-                MsgBox("Debe completar todos los campos requeridos")
+
+            'VALIDA QUE EL CODIGO NO ESTE VACIO
+            If tb_prod_codigo.TextLength = 0 Then
+                MsgBox("Complete el campo Código del producto")
+                tb_prod_codigo.Focus()
                 Exit Sub
             End If
-            'instancia y guarda en nuevoo producto
+
+            'VALIDA QUE LA DESCRIPCION NO ESTE VACIA
+            If tb_prod_descripcion.TextLength = 0 Then
+                MsgBox("Complete el campo Descripción del producto")
+                tb_prod_descripcion.Focus()
+                Exit Sub
+            End If
+
+            'VALIDA QUE EL STOCK MINIMO NO ESTE VACIO
+            If tb_prod_stock_minimo.TextLength = 0 Then
+                MsgBox("Complete el campo Stock Mínimo del producto")
+                tb_prod_stock_minimo.Focus()
+                Exit Sub
+            End If
+
+            'VALIDA QUE LA CANTIDAD EN STOCK NO ESTE VACIO
+            If tb_prod_stock.TextLength = 0 Then
+                MsgBox("Complete el campo Cantidad en Stock del producto")
+                tb_prod_stock.Focus()
+                Exit Sub
+            End If
+         
+            'instancia y guarda en nuevo producto
             Dim prod = New PRODUCTO
             prod.PROD_codigo = StrConv(tb_prod_codigo.Text, VbStrConv.ProperCase)
             prod.PROD_descripcion = StrConv(tb_prod_descripcion.Text, VbStrConv.ProperCase)
@@ -123,10 +147,31 @@ Public Class frm_Productos
     End Sub
 
     Private Sub btn_prod_actualizar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_prod_actualizar.Click
+        'VALIDA QUE EL CODIGO NO ESTE VACIO
+        If tb_prod_codigo.TextLength = 0 Then
+            MsgBox("Complete el campo Código del producto")
+            tb_prod_codigo.Focus()
+            Exit Sub
+        End If
 
-        'controla que la descripcion y el stock no esten vacios
-        If tb_prod_descripcion.TextLength = 0 Or tb_prod_stock.TextLength = 0 Or tb_prod_stock_minimo.TextLength = 0 Then
-            MsgBox("Debe completar todos los campos requeridos")
+        'VALIDA QUE LA DESCRIPCION NO ESTE VACIA
+        If tb_prod_descripcion.TextLength = 0 Then
+            MsgBox("Complete el campo Descripción del producto")
+            tb_prod_descripcion.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL STOCK MINIMO NO ESTE VACIO
+        If tb_prod_stock_minimo.TextLength = 0 Then
+            MsgBox("Complete el campo Stock Mínimo del producto")
+            tb_prod_stock_minimo.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE LA CANTIDAD EN STOCK NO ESTE VACIO
+        If tb_prod_stock.TextLength = 0 Then
+            MsgBox("Complete el campo Cantidad en Stock del producto")
+            tb_prod_stock.Focus()
             Exit Sub
         End If
         Try
@@ -314,5 +359,9 @@ Public Class frm_Productos
         Try
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As System.Object, e As System.EventArgs) Handles GroupBox1.Enter
+
     End Sub
 End Class
