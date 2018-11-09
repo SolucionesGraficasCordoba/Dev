@@ -51,4 +51,5 @@
         frm_Cliente.GroupNuevoCliente.Enabled = False
         frm_Cliente.Show()
     End Sub
+
 End Class
