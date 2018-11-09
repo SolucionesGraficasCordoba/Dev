@@ -220,6 +220,7 @@
         ElseIf quienllamocliente.Name = frm_Actualizar_Orden.Name Then
             frm_Actualizar_Orden.txt_id_cliente.Text = dgvLista_Clientes.SelectedCells(0).Value
             frm_Actualizar_Orden.txt_nombre_cliente.Text = dgvLista_Clientes.SelectedCells(1).Value
+            frm_Actualizar_Orden.txt_mejoras.Text = dgvLista_Clientes.SelectedCells(4).Value
         End If
         Me.Close()
     End Sub
