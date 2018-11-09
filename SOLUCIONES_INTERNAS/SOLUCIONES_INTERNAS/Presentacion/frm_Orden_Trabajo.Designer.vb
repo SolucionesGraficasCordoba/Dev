@@ -51,6 +51,7 @@ Partial Class frm_Orden_Trabajo
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.btnImprimirFormulario = New System.Windows.Forms.Button()
         Me.GroupProducto3 = New System.Windows.Forms.GroupBox()
+        Me.Label42 = New System.Windows.Forms.Label()
         Me.txt_id_detalle_orden_trabajo3 = New System.Windows.Forms.TextBox()
         Me.Label53 = New System.Windows.Forms.Label()
         Me.cboPiezas3_Detalle3 = New System.Windows.Forms.ComboBox()
@@ -84,6 +85,7 @@ Partial Class frm_Orden_Trabajo
         Me.Label17 = New System.Windows.Forms.Label()
         Me.btnGuardar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.GroupProducto2 = New System.Windows.Forms.GroupBox()
+        Me.Label31 = New System.Windows.Forms.Label()
         Me.txt_id_detalle_orden_trabajo2 = New System.Windows.Forms.TextBox()
         Me.Label52 = New System.Windows.Forms.Label()
         Me.cboPiezas2_Detalle2 = New System.Windows.Forms.ComboBox()
@@ -155,8 +157,6 @@ Partial Class frm_Orden_Trabajo
         Me.btnNueva_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.dtpFecha_Entrega = New System.Windows.Forms.DateTimePicker()
         Me.Label54 = New System.Windows.Forms.Label()
-        Me.Label31 = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
         Me.Label55 = New System.Windows.Forms.Label()
         Me.Label56 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
@@ -419,6 +419,15 @@ Partial Class frm_Orden_Trabajo
         Me.GroupProducto3.TabIndex = 61
         Me.GroupProducto3.TabStop = False
         Me.GroupProducto3.Text = "Producto 3"
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Location = New System.Drawing.Point(117, 87)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(110, 13)
+        Me.Label42.TabIndex = 62
+        Me.Label42.Text = "Tamaño (°°° x °°° Mm)"
         '
         'txt_id_detalle_orden_trabajo3
         '
@@ -714,6 +723,7 @@ Partial Class frm_Orden_Trabajo
         Me.btnGuardar_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardar_Orden_Trabajo.TabIndex = 58
         Me.btnGuardar_Orden_Trabajo.Text = "Guardar"
+        Me.ToolTip1.SetToolTip(Me.btnGuardar_Orden_Trabajo, "Antes de Guardar..Por favor, verifique que la Fecha de Entrega sea la correcta!.")
         Me.btnGuardar_Orden_Trabajo.UseVisualStyleBackColor = True
         '
         'GroupProducto2
@@ -735,6 +745,15 @@ Partial Class frm_Orden_Trabajo
         Me.GroupProducto2.TabIndex = 60
         Me.GroupProducto2.TabStop = False
         Me.GroupProducto2.Text = "Producto 2"
+        '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Location = New System.Drawing.Point(120, 91)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(110, 13)
+        Me.Label31.TabIndex = 60
+        Me.Label31.Text = "Tamaño (°°° x °°° Mm)"
         '
         'txt_id_detalle_orden_trabajo2
         '
@@ -1407,24 +1426,6 @@ Partial Class frm_Orden_Trabajo
         Me.Label54.Size = New System.Drawing.Size(77, 13)
         Me.Label54.TabIndex = 63
         Me.Label54.Text = "Fecha Entrega"
-        '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(120, 91)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(110, 13)
-        Me.Label31.TabIndex = 60
-        Me.Label31.Text = "Tamaño (°°° x °°° Mm)"
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(117, 87)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(110, 13)
-        Me.Label42.TabIndex = 62
-        Me.Label42.Text = "Tamaño (°°° x °°° Mm)"
         '
         'Label55
         '
