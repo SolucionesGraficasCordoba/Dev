@@ -238,7 +238,7 @@ Partial Class frm_Ayuda
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Ayuda"
-        Me.Text = "frm_Ayuda"
+        Me.Text = "Ayuda"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
