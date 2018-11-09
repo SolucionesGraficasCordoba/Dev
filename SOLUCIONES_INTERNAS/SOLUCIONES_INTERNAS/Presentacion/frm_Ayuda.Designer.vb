@@ -70,13 +70,14 @@ Partial Class frm_Ayuda
         '
         'TextBox1
         '
+        Me.TextBox1.Enabled = False
         Me.TextBox1.Location = New System.Drawing.Point(105, 19)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(505, 39)
         Me.TextBox1.TabIndex = 0
         Me.TextBox1.Text = "Para crear una nueva ODT es necesario haber cargado previamente el CLIENTE y el V" & _
-            "ENDEDOR"
+            "ENDEDOR."
         '
         'Label1
         '
@@ -98,6 +99,7 @@ Partial Class frm_Ayuda
         '
         'TextBox2
         '
+        Me.TextBox2.Enabled = False
         Me.TextBox2.Location = New System.Drawing.Point(105, 64)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
@@ -118,13 +120,14 @@ Partial Class frm_Ayuda
         '
         'TextBox3
         '
+        Me.TextBox3.Enabled = False
         Me.TextBox3.Location = New System.Drawing.Point(105, 109)
         Me.TextBox3.Multiline = True
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(505, 39)
         Me.TextBox3.TabIndex = 4
         Me.TextBox3.Text = "Para crear una nueva Etiqueta es necesario haber cargado previamente la ODT y CLI" & _
-            "ENTE"
+            "ENTE."
         '
         'Label4
         '
@@ -137,13 +140,14 @@ Partial Class frm_Ayuda
         '
         'TextBox4
         '
+        Me.TextBox4.Enabled = False
         Me.TextBox4.Location = New System.Drawing.Point(105, 154)
         Me.TextBox4.Multiline = True
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(505, 39)
         Me.TextBox4.TabIndex = 6
         Me.TextBox4.Text = "Para conocer el stock actualizado de productos en necesario previamente haber car" & _
-            "gado el PRODUCTO"
+            "gado el PRODUCTO, con sus altas y bajas diarias."
         '
         'Label5
         '
@@ -156,6 +160,7 @@ Partial Class frm_Ayuda
         '
         'TextBox5
         '
+        Me.TextBox5.Enabled = False
         Me.TextBox5.Location = New System.Drawing.Point(105, 199)
         Me.TextBox5.Multiline = True
         Me.TextBox5.Name = "TextBox5"
@@ -174,6 +179,7 @@ Partial Class frm_Ayuda
         '
         'TextBox6
         '
+        Me.TextBox6.Enabled = False
         Me.TextBox6.Location = New System.Drawing.Point(105, 244)
         Me.TextBox6.Multiline = True
         Me.TextBox6.Name = "TextBox6"
@@ -193,6 +199,7 @@ Partial Class frm_Ayuda
         '
         'TextBox7
         '
+        Me.TextBox7.Enabled = False
         Me.TextBox7.Location = New System.Drawing.Point(105, 289)
         Me.TextBox7.Multiline = True
         Me.TextBox7.Name = "TextBox7"
@@ -211,6 +218,7 @@ Partial Class frm_Ayuda
         '
         'TextBox8
         '
+        Me.TextBox8.Enabled = False
         Me.TextBox8.Location = New System.Drawing.Point(105, 334)
         Me.TextBox8.Multiline = True
         Me.TextBox8.Name = "TextBox8"
@@ -238,6 +246,7 @@ Partial Class frm_Ayuda
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Ayuda"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ayuda"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
