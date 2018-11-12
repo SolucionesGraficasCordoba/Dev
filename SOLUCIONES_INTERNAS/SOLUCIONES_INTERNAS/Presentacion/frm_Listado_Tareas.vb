@@ -113,6 +113,7 @@ Public Class frm_Listado_Tareas
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
                 End If
+
             End If
             vble_colaborador = dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
             vble_fecha = dtpFecha.Text
@@ -130,14 +131,14 @@ Public Class frm_Listado_Tareas
                     Exit Sub
                 ElseIf Me.Text = "Eliminar Tarea" Then
                     MsgBox("No tiene tareas asignadas para eliminar", MsgBoxStyle.Information, "Listado de tareas")
-                    Label1.Text = dgvTarea_x_Colaborador.Rows.Count
+                    Label6.Text = dgvTarea_x_Colaborador.Rows.Count
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
                     Exit Sub
                 ElseIf frm_Tarea.Text = "Ver Tarea" Then
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
-                    Label1.Text = dgvTarea_x_Colaborador.Rows.Count
+                    Label6.Text = dgvTarea_x_Colaborador.Rows.Count
 
                 End If
             End If
