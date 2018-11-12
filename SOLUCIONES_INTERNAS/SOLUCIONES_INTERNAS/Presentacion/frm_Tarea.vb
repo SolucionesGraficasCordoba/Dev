@@ -3135,4 +3135,224 @@
     Private Sub txtTiempo_Real20_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real20.TextChanged
         Calcular()
     End Sub
+
+    Private Sub btnLimpiarTarea1_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea1.Click
+        txt_Id_Tarea1.Clear()
+        txt_detalle_tarea1.Clear()
+        txtTiempo_Estimado1.Clear()
+        txtTiempo_Real1.Clear()
+        txt_id_orden_trabajo1.Clear()
+        txtHora_Finalizacion1.Clear()
+        txtObservaciones1.Clear()
+        txtNumero_Orden_Trabajo1.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea2_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea2.Click
+        txt_Id_Tarea2.Clear()
+        txt_detalle_tarea2.Clear()
+        txtTiempo_Estimado2.Clear()
+        txtTiempo_Real2.Clear()
+        txt_id_orden_trabajo2.Clear()
+        txtHora_Finalizacion2.Clear()
+        txtObservaciones2.Clear()
+        txtNumero_Orden_Trabajo2.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea3_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea3.Click
+        txt_Id_Tarea3.Clear()
+        txt_detalle_tarea3.Clear()
+        txtTiempo_Estimado3.Clear()
+        txtTiempo_Real3.Clear()
+        txt_id_orden_trabajo3.Clear()
+        txtHora_Finalizacion3.Clear()
+        txtObservaciones3.Clear()
+        txtNumero_Orden_Trabajo3.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea4_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea4.Click
+        txt_Id_Tarea4.Clear()
+        txt_detalle_tarea4.Clear()
+        txtTiempo_Estimado4.Clear()
+        txtTiempo_Real4.Clear()
+        txt_id_orden_trabajo4.Clear()
+        txtHora_Finalizacion4.Clear()
+        txtObservaciones4.Clear()
+        txtNumero_Orden_Trabajo4.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea5_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea5.Click
+        txt_Id_Tarea5.Clear()
+        txt_detalle_tarea5.Clear()
+        txtTiempo_Estimado5.Clear()
+        txtTiempo_Real5.Clear()
+        txt_id_orden_trabajo5.Clear()
+        txtHora_Finalizacion5.Clear()
+        txtObservaciones5.Clear()
+        txtNumero_Orden_Trabajo5.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea6_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea6.Click
+        txt_Id_Tarea6.Clear()
+        txt_detalle_tarea6.Clear()
+        txtTiempo_Estimado6.Clear()
+        txtTiempo_Real6.Clear()
+        txt_id_orden_trabajo6.Clear()
+        txtHora_Finalizacion6.Clear()
+        txtObservaciones6.Clear()
+        txtNumero_Orden_Trabajo6.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea7_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea7.Click
+        txt_Id_Tarea7.Clear()
+        txt_detalle_tarea7.Clear()
+        txtTiempo_Estimado7.Clear()
+        txtTiempo_Real7.Clear()
+        txt_id_orden_trabajo7.Clear()
+        txtHora_Finalizacion7.Clear()
+        txtObservaciones7.Clear()
+        txtNumero_Orden_Trabajo7.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea8_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea8.Click
+        txt_Id_Tarea8.Clear()
+        txt_detalle_tarea8.Clear()
+        txtTiempo_Estimado8.Clear()
+        txtTiempo_Real8.Clear()
+        txt_id_orden_trabajo8.Clear()
+        txtHora_Finalizacion8.Clear()
+        txtObservaciones8.Clear()
+        txtNumero_Orden_Trabajo8.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea9_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea9.Click
+        txt_Id_Tarea9.Clear()
+        txt_detalle_tarea9.Clear()
+        txtTiempo_Estimado9.Clear()
+        txtTiempo_Real9.Clear()
+        txt_id_orden_trabajo9.Clear()
+        txtHora_Finalizacion9.Clear()
+        txtObservaciones9.Clear()
+        txtNumero_Orden_Trabajo9.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea10_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea10.Click
+        txt_Id_Tarea10.Clear()
+        txt_detalle_tarea10.Clear()
+        txtTiempo_Estimado10.Clear()
+        txtTiempo_Real10.Clear()
+        txt_id_orden_trabajo10.Clear()
+        txtHora_Finalizacion10.Clear()
+        txtObservaciones10.Clear()
+        txtNumero_Orden_Trabajo10.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea11_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea11.Click
+        txt_Id_Tarea11.Clear()
+        txt_detalle_tarea11.Clear()
+        txtTiempo_Estimado11.Clear()
+        txtTiempo_Real11.Clear()
+        txt_id_orden_trabajo11.Clear()
+        txtHora_Finalizacion11.Clear()
+        txtObservaciones11.Clear()
+        txtNumero_Orden_Trabajo11.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea12_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea12.Click
+        txt_Id_Tarea12.Clear()
+        txt_detalle_tarea12.Clear()
+        txtTiempo_Estimado12.Clear()
+        txtTiempo_Real12.Clear()
+        txt_id_orden_trabajo12.Clear()
+        txtHora_Finalizacion12.Clear()
+        txtObservaciones12.Clear()
+        txtNumero_Orden_Trabajo12.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea13_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea13.Click
+        txt_Id_Tarea13.Clear()
+        txt_detalle_tarea13.Clear()
+        txtTiempo_Estimado13.Clear()
+        txtTiempo_Real13.Clear()
+        txt_id_orden_trabajo13.Clear()
+        txtHora_Finalizacion13.Clear()
+        txtObservaciones13.Clear()
+        txtNumero_Orden_Trabajo13.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea14_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea14.Click
+        txt_Id_Tarea14.Clear()
+        txt_detalle_tarea14.Clear()
+        txtTiempo_Estimado14.Clear()
+        txtTiempo_Real14.Clear()
+        txt_id_orden_trabajo14.Clear()
+        txtHora_Finalizacion14.Clear()
+        txtObservaciones14.Clear()
+        txtNumero_Orden_Trabajo14.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea15_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea15.Click
+        txt_Id_Tarea15.Clear()
+        txt_detalle_tarea15.Clear()
+        txtTiempo_Estimado15.Clear()
+        txtTiempo_Real15.Clear()
+        txt_id_orden_trabajo15.Clear()
+        txtHora_Finalizacion15.Clear()
+        txtObservaciones15.Clear()
+        txtNumero_Orden_Trabajo15.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea16_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea16.Click
+        txt_Id_Tarea16.Clear()
+        txt_detalle_tarea16.Clear()
+        txtTiempo_Estimado16.Clear()
+        txtTiempo_Real16.Clear()
+        txt_id_orden_trabajo16.Clear()
+        txtHora_Finalizacion16.Clear()
+        txtObservaciones16.Clear()
+        txtNumero_Orden_Trabajo16.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea17_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea17.Click
+        txt_Id_Tarea17.Clear()
+        txt_detalle_tarea17.Clear()
+        txtTiempo_Estimado17.Clear()
+        txtTiempo_Real17.Clear()
+        txt_id_orden_trabajo17.Clear()
+        txtHora_Finalizacion17.Clear()
+        txtObservaciones17.Clear()
+        txtNumero_Orden_Trabajo17.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea18_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea18.Click
+        txt_Id_Tarea18.Clear()
+        txt_detalle_tarea18.Clear()
+        txtTiempo_Estimado18.Clear()
+        txtTiempo_Real18.Clear()
+        txt_id_orden_trabajo18.Clear()
+        txtHora_Finalizacion18.Clear()
+        txtObservaciones18.Clear()
+        txtNumero_Orden_Trabajo18.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea19_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea19.Click
+        txt_Id_Tarea19.Clear()
+        txt_detalle_tarea19.Clear()
+        txtTiempo_Estimado19.Clear()
+        txtTiempo_Real19.Clear()
+        txt_id_orden_trabajo19.Clear()
+        txtHora_Finalizacion19.Clear()
+        txtObservaciones19.Clear()
+        txtNumero_Orden_Trabajo19.Clear()
+    End Sub
+
+    Private Sub btnLimpiarTarea20_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea20.Click
+        txt_Id_Tarea20.Clear()
+        txt_detalle_tarea20.Clear()
+        txtTiempo_Estimado20.Clear()
+        txtTiempo_Real20.Clear()
+        txt_id_orden_trabajo20.Clear()
+        txtHora_Finalizacion20.Clear()
+        txtObservaciones20.Clear()
+        txtNumero_Orden_Trabajo20.Clear()
+    End Sub
 End Class

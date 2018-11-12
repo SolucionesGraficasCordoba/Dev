@@ -49,6 +49,27 @@ Partial Class frm_Tarea
         Me.txt_detalle_tarea1 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label60 = New System.Windows.Forms.Label()
+        Me.btnLimpiarTarea20 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea19 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea18 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea17 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea16 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea15 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea14 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea13 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea12 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea11 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea10 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea9 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea8 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea7 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea6 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea5 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea4 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea3 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea2 = New System.Windows.Forms.Button()
+        Me.btnLimpiarTarea1 = New System.Windows.Forms.Button()
         Me.txt_Id_Tarea20 = New System.Windows.Forms.TextBox()
         Me.txt_Id_Tarea19 = New System.Windows.Forms.TextBox()
         Me.txt_Id_Tarea17 = New System.Windows.Forms.TextBox()
@@ -503,6 +524,27 @@ Partial Class frm_Tarea
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label60)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea20)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea19)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea18)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea17)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea16)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea15)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea14)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea13)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea12)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea11)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea10)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea9)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea8)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea7)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea6)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea5)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea4)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea3)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea2)
+        Me.GroupBox1.Controls.Add(Me.btnLimpiarTarea1)
         Me.GroupBox1.Controls.Add(Me.txt_Id_Tarea20)
         Me.GroupBox1.Controls.Add(Me.txt_Id_Tarea19)
         Me.GroupBox1.Controls.Add(Me.txt_Id_Tarea17)
@@ -747,148 +789,317 @@ Partial Class frm_Tarea
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.txt_detalle_tarea1)
         Me.GroupBox1.Controls.Add(Me.Label10)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 71)
+        Me.GroupBox1.Location = New System.Drawing.Point(5, 71)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(949, 562)
+        Me.GroupBox1.Size = New System.Drawing.Size(964, 562)
         Me.GroupBox1.TabIndex = 44
         Me.GroupBox1.TabStop = False
         '
+        'Label60
+        '
+        Me.Label60.AutoSize = True
+        Me.Label60.Location = New System.Drawing.Point(15, 13)
+        Me.Label60.Name = "Label60"
+        Me.Label60.Size = New System.Drawing.Size(40, 13)
+        Me.Label60.TabIndex = 50
+        Me.Label60.Text = "Limpiar"
+        '
+        'btnLimpiarTarea20
+        '
+        Me.btnLimpiarTarea20.Location = New System.Drawing.Point(22, 528)
+        Me.btnLimpiarTarea20.Name = "btnLimpiarTarea20"
+        Me.btnLimpiarTarea20.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea20.TabIndex = 129
+        Me.btnLimpiarTarea20.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea19
+        '
+        Me.btnLimpiarTarea19.Location = New System.Drawing.Point(22, 502)
+        Me.btnLimpiarTarea19.Name = "btnLimpiarTarea19"
+        Me.btnLimpiarTarea19.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea19.TabIndex = 129
+        Me.btnLimpiarTarea19.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea18
+        '
+        Me.btnLimpiarTarea18.Location = New System.Drawing.Point(22, 474)
+        Me.btnLimpiarTarea18.Name = "btnLimpiarTarea18"
+        Me.btnLimpiarTarea18.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea18.TabIndex = 129
+        Me.btnLimpiarTarea18.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea17
+        '
+        Me.btnLimpiarTarea17.Location = New System.Drawing.Point(22, 448)
+        Me.btnLimpiarTarea17.Name = "btnLimpiarTarea17"
+        Me.btnLimpiarTarea17.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea17.TabIndex = 129
+        Me.btnLimpiarTarea17.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea16
+        '
+        Me.btnLimpiarTarea16.Location = New System.Drawing.Point(22, 419)
+        Me.btnLimpiarTarea16.Name = "btnLimpiarTarea16"
+        Me.btnLimpiarTarea16.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea16.TabIndex = 129
+        Me.btnLimpiarTarea16.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea15
+        '
+        Me.btnLimpiarTarea15.Location = New System.Drawing.Point(22, 393)
+        Me.btnLimpiarTarea15.Name = "btnLimpiarTarea15"
+        Me.btnLimpiarTarea15.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea15.TabIndex = 129
+        Me.btnLimpiarTarea15.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea14
+        '
+        Me.btnLimpiarTarea14.Location = New System.Drawing.Point(22, 367)
+        Me.btnLimpiarTarea14.Name = "btnLimpiarTarea14"
+        Me.btnLimpiarTarea14.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea14.TabIndex = 129
+        Me.btnLimpiarTarea14.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea13
+        '
+        Me.btnLimpiarTarea13.Location = New System.Drawing.Point(22, 341)
+        Me.btnLimpiarTarea13.Name = "btnLimpiarTarea13"
+        Me.btnLimpiarTarea13.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea13.TabIndex = 129
+        Me.btnLimpiarTarea13.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea12
+        '
+        Me.btnLimpiarTarea12.Location = New System.Drawing.Point(22, 314)
+        Me.btnLimpiarTarea12.Name = "btnLimpiarTarea12"
+        Me.btnLimpiarTarea12.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea12.TabIndex = 129
+        Me.btnLimpiarTarea12.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea11
+        '
+        Me.btnLimpiarTarea11.Location = New System.Drawing.Point(22, 288)
+        Me.btnLimpiarTarea11.Name = "btnLimpiarTarea11"
+        Me.btnLimpiarTarea11.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea11.TabIndex = 129
+        Me.btnLimpiarTarea11.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea10
+        '
+        Me.btnLimpiarTarea10.Location = New System.Drawing.Point(22, 262)
+        Me.btnLimpiarTarea10.Name = "btnLimpiarTarea10"
+        Me.btnLimpiarTarea10.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea10.TabIndex = 129
+        Me.btnLimpiarTarea10.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea9
+        '
+        Me.btnLimpiarTarea9.Location = New System.Drawing.Point(22, 236)
+        Me.btnLimpiarTarea9.Name = "btnLimpiarTarea9"
+        Me.btnLimpiarTarea9.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea9.TabIndex = 129
+        Me.btnLimpiarTarea9.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea8
+        '
+        Me.btnLimpiarTarea8.Location = New System.Drawing.Point(22, 210)
+        Me.btnLimpiarTarea8.Name = "btnLimpiarTarea8"
+        Me.btnLimpiarTarea8.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea8.TabIndex = 129
+        Me.btnLimpiarTarea8.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea7
+        '
+        Me.btnLimpiarTarea7.Location = New System.Drawing.Point(22, 184)
+        Me.btnLimpiarTarea7.Name = "btnLimpiarTarea7"
+        Me.btnLimpiarTarea7.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea7.TabIndex = 129
+        Me.btnLimpiarTarea7.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea6
+        '
+        Me.btnLimpiarTarea6.Location = New System.Drawing.Point(22, 158)
+        Me.btnLimpiarTarea6.Name = "btnLimpiarTarea6"
+        Me.btnLimpiarTarea6.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea6.TabIndex = 129
+        Me.btnLimpiarTarea6.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea5
+        '
+        Me.btnLimpiarTarea5.Location = New System.Drawing.Point(22, 132)
+        Me.btnLimpiarTarea5.Name = "btnLimpiarTarea5"
+        Me.btnLimpiarTarea5.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea5.TabIndex = 129
+        Me.btnLimpiarTarea5.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea4
+        '
+        Me.btnLimpiarTarea4.Location = New System.Drawing.Point(22, 105)
+        Me.btnLimpiarTarea4.Name = "btnLimpiarTarea4"
+        Me.btnLimpiarTarea4.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea4.TabIndex = 129
+        Me.btnLimpiarTarea4.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea3
+        '
+        Me.btnLimpiarTarea3.Location = New System.Drawing.Point(22, 79)
+        Me.btnLimpiarTarea3.Name = "btnLimpiarTarea3"
+        Me.btnLimpiarTarea3.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea3.TabIndex = 129
+        Me.btnLimpiarTarea3.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea2
+        '
+        Me.btnLimpiarTarea2.Location = New System.Drawing.Point(22, 53)
+        Me.btnLimpiarTarea2.Name = "btnLimpiarTarea2"
+        Me.btnLimpiarTarea2.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea2.TabIndex = 129
+        Me.btnLimpiarTarea2.UseVisualStyleBackColor = True
+        '
+        'btnLimpiarTarea1
+        '
+        Me.btnLimpiarTarea1.Location = New System.Drawing.Point(22, 26)
+        Me.btnLimpiarTarea1.Name = "btnLimpiarTarea1"
+        Me.btnLimpiarTarea1.Size = New System.Drawing.Size(24, 23)
+        Me.btnLimpiarTarea1.TabIndex = 129
+        Me.btnLimpiarTarea1.UseVisualStyleBackColor = True
+        '
         'txt_Id_Tarea20
         '
-        Me.txt_Id_Tarea20.Location = New System.Drawing.Point(36, 530)
+        Me.txt_Id_Tarea20.Location = New System.Drawing.Point(939, 530)
         Me.txt_Id_Tarea20.Name = "txt_Id_Tarea20"
         Me.txt_Id_Tarea20.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea20.TabIndex = 181
         '
         'txt_Id_Tarea19
         '
-        Me.txt_Id_Tarea19.Location = New System.Drawing.Point(36, 504)
+        Me.txt_Id_Tarea19.Location = New System.Drawing.Point(939, 504)
         Me.txt_Id_Tarea19.Name = "txt_Id_Tarea19"
         Me.txt_Id_Tarea19.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea19.TabIndex = 182
         '
         'txt_Id_Tarea17
         '
-        Me.txt_Id_Tarea17.Location = New System.Drawing.Point(36, 450)
+        Me.txt_Id_Tarea17.Location = New System.Drawing.Point(939, 450)
         Me.txt_Id_Tarea17.Name = "txt_Id_Tarea17"
         Me.txt_Id_Tarea17.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea17.TabIndex = 180
         '
         'txt_Id_Tarea15
         '
-        Me.txt_Id_Tarea15.Location = New System.Drawing.Point(36, 395)
+        Me.txt_Id_Tarea15.Location = New System.Drawing.Point(939, 395)
         Me.txt_Id_Tarea15.Name = "txt_Id_Tarea15"
         Me.txt_Id_Tarea15.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea15.TabIndex = 178
         '
         'txt_Id_Tarea13
         '
-        Me.txt_Id_Tarea13.Location = New System.Drawing.Point(36, 343)
+        Me.txt_Id_Tarea13.Location = New System.Drawing.Point(939, 343)
         Me.txt_Id_Tarea13.Name = "txt_Id_Tarea13"
         Me.txt_Id_Tarea13.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea13.TabIndex = 179
         '
         'txt_Id_Tarea11
         '
-        Me.txt_Id_Tarea11.Location = New System.Drawing.Point(36, 290)
+        Me.txt_Id_Tarea11.Location = New System.Drawing.Point(939, 290)
         Me.txt_Id_Tarea11.Name = "txt_Id_Tarea11"
         Me.txt_Id_Tarea11.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea11.TabIndex = 186
         '
         'txt_Id_Tarea9
         '
-        Me.txt_Id_Tarea9.Location = New System.Drawing.Point(36, 238)
+        Me.txt_Id_Tarea9.Location = New System.Drawing.Point(939, 238)
         Me.txt_Id_Tarea9.Name = "txt_Id_Tarea9"
         Me.txt_Id_Tarea9.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea9.TabIndex = 187
         '
         'txt_Id_Tarea18
         '
-        Me.txt_Id_Tarea18.Location = New System.Drawing.Point(36, 476)
+        Me.txt_Id_Tarea18.Location = New System.Drawing.Point(939, 476)
         Me.txt_Id_Tarea18.Name = "txt_Id_Tarea18"
         Me.txt_Id_Tarea18.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea18.TabIndex = 185
         '
         'txt_Id_Tarea16
         '
-        Me.txt_Id_Tarea16.Location = New System.Drawing.Point(36, 424)
+        Me.txt_Id_Tarea16.Location = New System.Drawing.Point(939, 424)
         Me.txt_Id_Tarea16.Name = "txt_Id_Tarea16"
         Me.txt_Id_Tarea16.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea16.TabIndex = 183
         '
         'txt_Id_Tarea14
         '
-        Me.txt_Id_Tarea14.Location = New System.Drawing.Point(36, 369)
+        Me.txt_Id_Tarea14.Location = New System.Drawing.Point(939, 369)
         Me.txt_Id_Tarea14.Name = "txt_Id_Tarea14"
         Me.txt_Id_Tarea14.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea14.TabIndex = 184
         '
         'txt_Id_Tarea12
         '
-        Me.txt_Id_Tarea12.Location = New System.Drawing.Point(36, 317)
+        Me.txt_Id_Tarea12.Location = New System.Drawing.Point(939, 317)
         Me.txt_Id_Tarea12.Name = "txt_Id_Tarea12"
         Me.txt_Id_Tarea12.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea12.TabIndex = 171
         '
         'txt_Id_Tarea6
         '
-        Me.txt_Id_Tarea6.Location = New System.Drawing.Point(36, 160)
+        Me.txt_Id_Tarea6.Location = New System.Drawing.Point(939, 160)
         Me.txt_Id_Tarea6.Name = "txt_Id_Tarea6"
         Me.txt_Id_Tarea6.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea6.TabIndex = 172
         '
         'txt_Id_Tarea10
         '
-        Me.txt_Id_Tarea10.Location = New System.Drawing.Point(36, 264)
+        Me.txt_Id_Tarea10.Location = New System.Drawing.Point(939, 264)
         Me.txt_Id_Tarea10.Name = "txt_Id_Tarea10"
         Me.txt_Id_Tarea10.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea10.TabIndex = 170
         '
         'txt_Id_Tarea8
         '
-        Me.txt_Id_Tarea8.Location = New System.Drawing.Point(36, 212)
+        Me.txt_Id_Tarea8.Location = New System.Drawing.Point(939, 212)
         Me.txt_Id_Tarea8.Name = "txt_Id_Tarea8"
         Me.txt_Id_Tarea8.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea8.TabIndex = 168
         '
         'txt_Id_Tarea4
         '
-        Me.txt_Id_Tarea4.Location = New System.Drawing.Point(36, 107)
+        Me.txt_Id_Tarea4.Location = New System.Drawing.Point(939, 107)
         Me.txt_Id_Tarea4.Name = "txt_Id_Tarea4"
         Me.txt_Id_Tarea4.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea4.TabIndex = 169
         '
         'txt_Id_Tarea7
         '
-        Me.txt_Id_Tarea7.Location = New System.Drawing.Point(36, 186)
+        Me.txt_Id_Tarea7.Location = New System.Drawing.Point(939, 186)
         Me.txt_Id_Tarea7.Name = "txt_Id_Tarea7"
         Me.txt_Id_Tarea7.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea7.TabIndex = 176
         '
         'txt_Id_Tarea5
         '
-        Me.txt_Id_Tarea5.Location = New System.Drawing.Point(36, 134)
+        Me.txt_Id_Tarea5.Location = New System.Drawing.Point(939, 134)
         Me.txt_Id_Tarea5.Name = "txt_Id_Tarea5"
         Me.txt_Id_Tarea5.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea5.TabIndex = 177
         '
         'txt_Id_Tarea2
         '
-        Me.txt_Id_Tarea2.Location = New System.Drawing.Point(36, 55)
+        Me.txt_Id_Tarea2.Location = New System.Drawing.Point(939, 55)
         Me.txt_Id_Tarea2.Name = "txt_Id_Tarea2"
         Me.txt_Id_Tarea2.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea2.TabIndex = 175
         '
         'txt_Id_Tarea3
         '
-        Me.txt_Id_Tarea3.Location = New System.Drawing.Point(36, 81)
+        Me.txt_Id_Tarea3.Location = New System.Drawing.Point(939, 81)
         Me.txt_Id_Tarea3.Name = "txt_Id_Tarea3"
         Me.txt_Id_Tarea3.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea3.TabIndex = 173
         '
         'txt_Id_Tarea1
         '
-        Me.txt_Id_Tarea1.Location = New System.Drawing.Point(36, 29)
+        Me.txt_Id_Tarea1.Location = New System.Drawing.Point(939, 29)
         Me.txt_Id_Tarea1.Name = "txt_Id_Tarea1"
         Me.txt_Id_Tarea1.Size = New System.Drawing.Size(10, 20)
         Me.txt_Id_Tarea1.TabIndex = 174
@@ -1313,7 +1524,7 @@ Partial Class frm_Tarea
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(12, 533)
+        Me.Label27.Location = New System.Drawing.Point(-2, 533)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(19, 13)
         Me.Label27.TabIndex = 165
@@ -1322,7 +1533,7 @@ Partial Class frm_Tarea
         'Label28
         '
         Me.Label28.AutoSize = True
-        Me.Label28.Location = New System.Drawing.Point(12, 504)
+        Me.Label28.Location = New System.Drawing.Point(-2, 504)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(19, 13)
         Me.Label28.TabIndex = 164
@@ -1340,7 +1551,7 @@ Partial Class frm_Tarea
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(13, 479)
+        Me.Label29.Location = New System.Drawing.Point(-1, 479)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(19, 13)
         Me.Label29.TabIndex = 167
@@ -1631,7 +1842,7 @@ Partial Class frm_Tarea
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(13, 453)
+        Me.Label30.Location = New System.Drawing.Point(-1, 453)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(19, 13)
         Me.Label30.TabIndex = 166
@@ -1863,7 +2074,7 @@ Partial Class frm_Tarea
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(12, 424)
+        Me.Label26.Location = New System.Drawing.Point(-2, 424)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(19, 13)
         Me.Label26.TabIndex = 139
@@ -1879,7 +2090,7 @@ Partial Class frm_Tarea
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(12, 398)
+        Me.Label25.Location = New System.Drawing.Point(-2, 398)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(19, 13)
         Me.Label25.TabIndex = 139
@@ -1888,7 +2099,7 @@ Partial Class frm_Tarea
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(12, 372)
+        Me.Label24.Location = New System.Drawing.Point(-2, 372)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(19, 13)
         Me.Label24.TabIndex = 139
@@ -1906,7 +2117,7 @@ Partial Class frm_Tarea
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(12, 346)
+        Me.Label23.Location = New System.Drawing.Point(-2, 346)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(19, 13)
         Me.Label23.TabIndex = 139
@@ -1915,7 +2126,7 @@ Partial Class frm_Tarea
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(13, 320)
+        Me.Label22.Location = New System.Drawing.Point(-1, 320)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(19, 13)
         Me.Label22.TabIndex = 139
@@ -1932,7 +2143,7 @@ Partial Class frm_Tarea
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(12, 293)
+        Me.Label21.Location = New System.Drawing.Point(-2, 293)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(19, 13)
         Me.Label21.TabIndex = 139
@@ -1941,7 +2152,7 @@ Partial Class frm_Tarea
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(13, 267)
+        Me.Label20.Location = New System.Drawing.Point(-1, 267)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(19, 13)
         Me.Label20.TabIndex = 139
@@ -1959,7 +2170,7 @@ Partial Class frm_Tarea
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(18, 241)
+        Me.Label19.Location = New System.Drawing.Point(4, 241)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(13, 13)
         Me.Label19.TabIndex = 139
@@ -1968,7 +2179,7 @@ Partial Class frm_Tarea
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(18, 215)
+        Me.Label18.Location = New System.Drawing.Point(4, 215)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(13, 13)
         Me.Label18.TabIndex = 139
@@ -1977,7 +2188,7 @@ Partial Class frm_Tarea
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(18, 189)
+        Me.Label17.Location = New System.Drawing.Point(4, 189)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(13, 13)
         Me.Label17.TabIndex = 139
@@ -1986,7 +2197,7 @@ Partial Class frm_Tarea
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(18, 163)
+        Me.Label16.Location = New System.Drawing.Point(4, 163)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(13, 13)
         Me.Label16.TabIndex = 139
@@ -1995,7 +2206,7 @@ Partial Class frm_Tarea
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(18, 137)
+        Me.Label15.Location = New System.Drawing.Point(4, 137)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(13, 13)
         Me.Label15.TabIndex = 139
@@ -2004,7 +2215,7 @@ Partial Class frm_Tarea
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(19, 110)
+        Me.Label8.Location = New System.Drawing.Point(5, 110)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(13, 13)
         Me.Label8.TabIndex = 139
@@ -2013,7 +2224,7 @@ Partial Class frm_Tarea
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(19, 84)
+        Me.Label6.Location = New System.Drawing.Point(5, 84)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(13, 13)
         Me.Label6.TabIndex = 139
@@ -2022,7 +2233,7 @@ Partial Class frm_Tarea
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(19, 58)
+        Me.Label5.Location = New System.Drawing.Point(5, 58)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(13, 13)
         Me.Label5.TabIndex = 139
@@ -2031,7 +2242,7 @@ Partial Class frm_Tarea
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(19, 32)
+        Me.Label4.Location = New System.Drawing.Point(5, 32)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(13, 13)
         Me.Label4.TabIndex = 139
@@ -3072,4 +3283,25 @@ Partial Class frm_Tarea
     Friend WithEvents txt_Id_Tarea1 As System.Windows.Forms.TextBox
     Friend WithEvents Label59 As System.Windows.Forms.Label
     Friend WithEvents Label32 As System.Windows.Forms.Label
+    Friend WithEvents Label60 As System.Windows.Forms.Label
+    Friend WithEvents btnLimpiarTarea20 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea19 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea18 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea17 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea16 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea15 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea14 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea13 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea12 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea11 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea10 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea9 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea8 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea7 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea6 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea5 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea4 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea3 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea2 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea1 As System.Windows.Forms.Button
 End Class
