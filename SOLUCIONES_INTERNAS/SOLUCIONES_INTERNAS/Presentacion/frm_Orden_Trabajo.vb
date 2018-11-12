@@ -42,6 +42,7 @@
 
     Sub limpiarcontroles()
         'LIMPIA ORDEN TRABAJO
+        txt_id_orden_trabajo.Clear()
         dtpFecha_Orden_Trabajo.Text = Now
         dtpFecha_Entrega.Text = Now
         cboTipo_Orden.SelectedIndex = -1
