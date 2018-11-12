@@ -6,8 +6,21 @@
 
     Private Sub btn_Actualizar_Tarea_Click(sender As System.Object, e As System.EventArgs) Handles btn_Actualizar_Tarea.Click
 
-        If txt_tarea.Text.Length = 0 Or txt_id_colaborador.Text.Length = 0 Or txt_nombre_colaborador.Text.Length = 0 Then
-            MsgBox("Debe completar todos los campos requeridos")
+        If txt_tarea.Text.Length = 0 Then
+            MsgBox("Complete la descripción de la Tarea")
+            txt_tarea.Focus()
+            Exit Sub
+        End If
+
+        If txt_numero_orden.Text.Length = 0 Then
+            MsgBox("Seleccione una Orden del listado")
+            btn_buscar_numero_orden.Focus()
+            Exit Sub
+        End If
+
+        If txt_nombre_colaborador.Text.Length = 0 Then
+            MsgBox("Seleccione una Colaborador del listado")
+            btn_buscar_colaborador.Focus()
             Exit Sub
         End If
         Try
@@ -35,8 +48,8 @@
             Label1.Text = frm_Listado_Tareas.dgvTarea_x_Colaborador.Rows.Count
 
         Catch ex As Exception
-            'MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar tarea")
-            'Me.limpiarcontroles()
+            MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar tarea")
+            ' Me.limpiarcontroles()
             Label1.Text = frm_Listado_Tareas.dgvTarea_x_Colaborador.Rows.Count
         End Try
     End Sub

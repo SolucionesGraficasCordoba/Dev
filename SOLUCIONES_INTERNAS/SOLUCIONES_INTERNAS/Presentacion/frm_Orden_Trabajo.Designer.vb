@@ -1416,7 +1416,6 @@ Partial Class frm_Orden_Trabajo
         Me.dtpFecha_Entrega.Name = "dtpFecha_Entrega"
         Me.dtpFecha_Entrega.Size = New System.Drawing.Size(82, 20)
         Me.dtpFecha_Entrega.TabIndex = 64
-        Me.ToolTip1.SetToolTip(Me.dtpFecha_Entrega, "Por favor, verifique que la Fecha de Entrega sea la correcta.")
         '
         'Label54
         '

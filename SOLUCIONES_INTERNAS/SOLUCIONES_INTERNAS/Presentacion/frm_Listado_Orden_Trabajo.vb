@@ -369,6 +369,8 @@
         ElseIf quienllamolistado_ot.Name = frm_retrabajo.Name Then
             frm_retrabajo.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
             frm_retrabajo.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+            'frm_retrabajo.dtp_Fecha_Ingreso_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(3).Value
+            'frm_retrabajo.dtpFecha_Entrega_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(10).Value
 
         ElseIf quienllamolistado_ot.Name = frm_Etiqueta_Modelo_1.Name Then
             frm_Etiqueta_Modelo_1.txt_id_orden.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
@@ -755,7 +757,9 @@
         frm_retrabajo.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(12).Value
         frm_retrabajo.cboTipoImpresion1_Detalle1.Text = dgv_detalle_orden.SelectedCells(13).Value
         frm_retrabajo.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.SelectedCells(10).Value
-        frm_retrabajo.dtp_Fecha_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(3).Value
+        frm_retrabajo.dtp_Fecha_Ingreso_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(3).Value
+        frm_retrabajo.dtpFecha_Entrega_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(10).Value
+
         Me.Close()
     End Sub
 

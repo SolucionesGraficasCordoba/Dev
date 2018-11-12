@@ -54,7 +54,6 @@ Partial Class frm_Actualizar_Producto_Orden
         Me.txt_Papel1_Soporte = New System.Windows.Forms.TextBox()
         Me.cboTipoImpresion = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtTamaño = New System.Windows.Forms.TextBox()
@@ -63,12 +62,14 @@ Partial Class frm_Actualizar_Producto_Orden
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txt_id_orden_trabajo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupProducto1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupProducto1
         '
+        Me.GroupProducto1.Controls.Add(Me.Label7)
         Me.GroupProducto1.Controls.Add(Me.btnCancelar)
         Me.GroupProducto1.Controls.Add(Me.btnActualizar)
         Me.GroupProducto1.Controls.Add(Me.Label51)
@@ -81,7 +82,6 @@ Partial Class frm_Actualizar_Producto_Orden
         Me.GroupProducto1.Controls.Add(Me.GroupBox5)
         Me.GroupProducto1.Controls.Add(Me.cboTipoImpresion)
         Me.GroupProducto1.Controls.Add(Me.Label8)
-        Me.GroupProducto1.Controls.Add(Me.Label7)
         Me.GroupProducto1.Controls.Add(Me.Label3)
         Me.GroupProducto1.Controls.Add(Me.Label2)
         Me.GroupProducto1.Controls.Add(Me.txtTamaño)
@@ -115,7 +115,7 @@ Partial Class frm_Actualizar_Producto_Orden
         '
         Me.Label51.AutoSize = True
         Me.Label51.ForeColor = System.Drawing.Color.Red
-        Me.Label51.Location = New System.Drawing.Point(432, 20)
+        Me.Label51.Location = New System.Drawing.Point(441, 26)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(11, 13)
         Me.Label51.TabIndex = 60
@@ -132,7 +132,7 @@ Partial Class frm_Actualizar_Producto_Orden
         '
         Me.Label50.AutoSize = True
         Me.Label50.ForeColor = System.Drawing.Color.Red
-        Me.Label50.Location = New System.Drawing.Point(328, 19)
+        Me.Label50.Location = New System.Drawing.Point(348, 27)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(11, 13)
         Me.Label50.TabIndex = 59
@@ -142,7 +142,7 @@ Partial Class frm_Actualizar_Producto_Orden
         '
         Me.Label49.AutoSize = True
         Me.Label49.ForeColor = System.Drawing.Color.Red
-        Me.Label49.Location = New System.Drawing.Point(180, 21)
+        Me.Label49.Location = New System.Drawing.Point(166, 27)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(11, 13)
         Me.Label49.TabIndex = 58
@@ -161,7 +161,7 @@ Partial Class frm_Actualizar_Producto_Orden
         '
         Me.Label48.AutoSize = True
         Me.Label48.ForeColor = System.Drawing.Color.Red
-        Me.Label48.Location = New System.Drawing.Point(79, 19)
+        Me.Label48.Location = New System.Drawing.Point(65, 26)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(11, 13)
         Me.Label48.TabIndex = 57
@@ -171,7 +171,7 @@ Partial Class frm_Actualizar_Producto_Orden
         '
         Me.cboPiezas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboPiezas.FormattingEnabled = True
-        Me.cboPiezas.Location = New System.Drawing.Point(94, 41)
+        Me.cboPiezas.Location = New System.Drawing.Point(80, 41)
         Me.cboPiezas.Name = "cboPiezas"
         Me.cboPiezas.Size = New System.Drawing.Size(162, 21)
         Me.cboPiezas.TabIndex = 8
@@ -364,7 +364,7 @@ Partial Class frm_Actualizar_Producto_Orden
         '
         Me.cboTipoImpresion.FormattingEnabled = True
         Me.cboTipoImpresion.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
-        Me.cboTipoImpresion.Location = New System.Drawing.Point(364, 41)
+        Me.cboTipoImpresion.Location = New System.Drawing.Point(373, 41)
         Me.cboTipoImpresion.Name = "cboTipoImpresion"
         Me.cboTipoImpresion.Size = New System.Drawing.Size(63, 21)
         Me.cboTipoImpresion.TabIndex = 10
@@ -372,25 +372,16 @@ Partial Class frm_Actualizar_Producto_Orden
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(358, 19)
+        Me.Label8.Location = New System.Drawing.Point(367, 25)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(76, 13)
         Me.Label8.TabIndex = 36
         Me.Label8.Text = "Tipo Impresión"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(285, 19)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(46, 13)
-        Me.Label7.TabIndex = 35
-        Me.Label7.Text = "Tamaño"
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(144, 19)
+        Me.Label3.Location = New System.Drawing.Point(130, 25)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(38, 13)
         Me.Label3.TabIndex = 35
@@ -399,7 +390,7 @@ Partial Class frm_Actualizar_Producto_Orden
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(33, 19)
+        Me.Label2.Location = New System.Drawing.Point(19, 26)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 13)
         Me.Label2.TabIndex = 35
@@ -407,14 +398,14 @@ Partial Class frm_Actualizar_Producto_Orden
         '
         'txtTamaño
         '
-        Me.txtTamaño.Location = New System.Drawing.Point(262, 41)
+        Me.txtTamaño.Location = New System.Drawing.Point(248, 41)
         Me.txtTamaño.Name = "txtTamaño"
-        Me.txtTamaño.Size = New System.Drawing.Size(92, 20)
+        Me.txtTamaño.Size = New System.Drawing.Size(106, 20)
         Me.txtTamaño.TabIndex = 9
         '
         'txt_cantidad
         '
-        Me.txt_cantidad.Location = New System.Drawing.Point(29, 42)
+        Me.txt_cantidad.Location = New System.Drawing.Point(15, 42)
         Me.txt_cantidad.Name = "txt_cantidad"
         Me.txt_cantidad.Size = New System.Drawing.Size(59, 20)
         Me.txt_cantidad.TabIndex = 7
@@ -454,6 +445,15 @@ Partial Class frm_Actualizar_Producto_Orden
         Me.Label1.Size = New System.Drawing.Size(48, 13)
         Me.Label1.TabIndex = 65
         Me.Label1.Text = "id_orden"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(242, 25)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(110, 13)
+        Me.Label7.TabIndex = 63
+        Me.Label7.Text = "Tamaño (°°° x °°° Mm)"
         '
         'frm_Actualizar_Producto_Orden
         '
@@ -506,7 +506,6 @@ Partial Class frm_Actualizar_Producto_Orden
     Friend WithEvents txt_Papel1_Soporte As System.Windows.Forms.TextBox
     Friend WithEvents cboTipoImpresion As System.Windows.Forms.ComboBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtTamaño As System.Windows.Forms.TextBox
@@ -517,4 +516,5 @@ Partial Class frm_Actualizar_Producto_Orden
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents txt_id_orden_trabajo As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
 End Class

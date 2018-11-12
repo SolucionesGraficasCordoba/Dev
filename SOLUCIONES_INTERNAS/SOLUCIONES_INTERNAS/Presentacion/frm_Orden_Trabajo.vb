@@ -512,7 +512,7 @@
                 detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
                 detalle.DOT_cantidad_dot = txt_cantidad1_detalle1.Text  'CANTIDAD PRODUCTO 1
                 detalle.DOT_tamaño_dot = StrConv(txtTamaño1_Detalle1.Text, VbStrConv.ProperCase) 'TAMAÑO PRODUCTO 1
-                detalle.DOT_tipo_impresion_dot = cboTipoImpresion1_Detalle1.SelectedItem 'TIPO IMPRESION PRODUCTO 1
+                detalle.DOT_tipo_impresion_dot = cboTipoImpresion1_Detalle1.Text 'TIPO IMPRESION PRODUCTO 1
                 detalle.PIE_id_pieza = cboPiezas1_Detalle1.SelectedValue 'TIPO PIEZA PRODUCTO 1
 
                 If cargamasprod = "NO" Then
@@ -630,7 +630,7 @@
                 'TAMAÑO REGISTRO 1
                 detalle2.DOT_tamaño_dot = txtTamaño2_Detalle2.Text
                 'TIPO IMPRESION REGISTRO 2
-                detalle2.DOT_tipo_impresion_dot = cboTipoImpresion2_Detalle2.SelectedItem
+                detalle2.DOT_tipo_impresion_dot = cboTipoImpresion2_Detalle2.Text
                 'TIPO PIEZA REGISTRO 2
                 detalle2.PIE_id_pieza = cboPiezas2_Detalle2.SelectedValue
 
@@ -744,7 +744,7 @@
                 'TAMAÑO REGISTRO 3
                 detalle3.DOT_tamaño_dot = txtTamaño3_Detalle3.Text
                 'TIPO IMPRESION REGISTRO 3
-                detalle3.DOT_tipo_impresion_dot = cboTipoImpresion3_Detalle3.SelectedItem
+                detalle3.DOT_tipo_impresion_dot = cboTipoImpresion3_Detalle3.Text
                 'TIPO PIEZA REGISTRO 3
                 detalle3.PIE_id_pieza = cboPiezas3_Detalle3.SelectedValue
 
@@ -1061,7 +1061,7 @@
                     ActualizarDetalle3.DOT_cantidad_dot = txt_cantidad3_detalle3.Text
                     ActualizarDetalle3.PIE_id_pieza = cboPiezas3_Detalle3.SelectedValue
                     ActualizarDetalle3.DOT_tamaño_dot = txtTamaño3_Detalle3.Text
-                    ActualizarDetalle3.DOT_tipo_impresion_dot = cboTipoImpresion3_Detalle3.SelectedItem
+                    ActualizarDetalle3.DOT_tipo_impresion_dot = cboTipoImpresion3_Detalle3.Text
 
                     ActualizarDetalle3.DOT_papel_soporte_1 = StrConv(txt_Papel1_Soporte3.Text, VbStrConv.ProperCase)
                     ActualizarDetalle3.DOT_papel_soporte_2 = StrConv(txt_Papel2_Soporte3.Text, VbStrConv.ProperCase)
@@ -1119,7 +1119,7 @@
                     detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo3.Text
                     detalle.DOT_cantidad_dot = txt_cantidad3_detalle3.Text
                     detalle.DOT_tamaño_dot = txtTamaño3_Detalle3.Text
-                    detalle.DOT_tipo_impresion_dot = cboTipoImpresion3_Detalle3.SelectedItem
+                    detalle.DOT_tipo_impresion_dot = cboTipoImpresion3_Detalle3.Text
                     detalle.PIE_id_pieza = cboPiezas3_Detalle3.SelectedValue
                     detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
                     detalle.DOT_papel_soporte_1 = StrConv(txt_Papel1_Soporte3.Text, VbStrConv.ProperCase)

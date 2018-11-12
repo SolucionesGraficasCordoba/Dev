@@ -47,10 +47,10 @@ Partial Class frm_Actualizar_Orden
         Me.txtid_vendedor = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btnActualizar = New System.Windows.Forms.Button()
-        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.txt_observaciones = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -289,6 +289,23 @@ Partial Class frm_Actualizar_Orden
         Me.GroupBox1.TabIndex = 91
         Me.GroupBox1.TabStop = False
         '
+        'txt_observaciones
+        '
+        Me.txt_observaciones.Location = New System.Drawing.Point(86, 236)
+        Me.txt_observaciones.Multiline = True
+        Me.txt_observaciones.Name = "txt_observaciones"
+        Me.txt_observaciones.Size = New System.Drawing.Size(341, 98)
+        Me.txt_observaciones.TabIndex = 91
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(8, 239)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(78, 13)
+        Me.Label18.TabIndex = 92
+        Me.Label18.Text = "Observaciones"
+        '
         'btnActualizar
         '
         Me.btnActualizar.Location = New System.Drawing.Point(308, 369)
@@ -306,23 +323,6 @@ Partial Class frm_Actualizar_Orden
         Me.btnCancelar.TabIndex = 92
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
-        '
-        'txt_observaciones
-        '
-        Me.txt_observaciones.Location = New System.Drawing.Point(86, 236)
-        Me.txt_observaciones.Multiline = True
-        Me.txt_observaciones.Name = "txt_observaciones"
-        Me.txt_observaciones.Size = New System.Drawing.Size(341, 98)
-        Me.txt_observaciones.TabIndex = 91
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(8, 239)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(78, 13)
-        Me.Label18.TabIndex = 92
-        Me.Label18.Text = "Observaciones"
         '
         'frm_Actualizar_Orden
         '

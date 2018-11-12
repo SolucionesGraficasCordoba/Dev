@@ -2,6 +2,29 @@
     Dim datacontext As New DataS_Interno
 
     Private Sub btnActualizar_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar.Click
+        If txt_cantidad.Text.Length = 0 Then
+            MsgBox("Complete la Cantidad")
+            txt_cantidad.Focus()
+            Exit Sub
+        End If
+
+        If cboPiezas.Text.Length = 0 Then
+            MsgBox("Seleccione un Pieza")
+            cboPiezas.Focus()
+            Exit Sub
+        End If
+
+        If txtTamaño.Text.Length = 0 Then
+            MsgBox("Complete el Tamaño")
+            txtTamaño.Focus()
+            Exit Sub
+        End If
+
+        If cboTipoImpresion.Text.Length = 0 Then
+            MsgBox("Seleccione un Tipo de Impresión")
+            cboTipoImpresion.Focus()
+            Exit Sub
+        End If
 
         Dim ActualizarDetalle = (From D In datacontext.DETALLE_ORDEN_TRABAJO
                                   Where D.id_detalle_orden_trabajo = CInt(txt_id_detalle_orden_trabajo1.Text)).ToList()(0)
@@ -64,5 +87,9 @@
     Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.Close()
         Me.Dispose()
+    End Sub
+
+    Private Sub txtTamaño_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTamaño.TextChanged
+
     End Sub
 End Class

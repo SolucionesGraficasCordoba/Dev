@@ -66,6 +66,7 @@
     End Sub
 
     Private Sub btnActualizar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar_Cliente.Click
+
         If txt_razonsocial_cliente.Text.Length = 0 Then
             MsgBox("Debe completar Nombre o Razón Social del Cliente")
             Exit Sub

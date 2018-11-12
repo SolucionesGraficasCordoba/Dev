@@ -11,18 +11,28 @@
 
     Private Sub btnActualizar_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar.Click
         'VALIDA CAMPOS OBLIGATORIOS
-        If txtNumero_Orden_Trabajo.Text.Length = 0 _
-                Or cboTipo_Orden.Text.Length = 0 _
-                Or txtid_vendedor.Text.Length = 0 _
-                Or txt_id_cliente.Text.Length = 0 Then
-            MsgBox("Debe completar todos los campos requeridos")
+        If cboTipo_Orden.Text.Length = 0 Then
+            MsgBox("Seleccione un Tipo de Orden")
+            cboTipo_Orden.Focus()
+            Exit Sub
+        End If
+
+        If txtNombre_vendedor.Text.Length = 0 Then
+            MsgBox("Seleccione un Vendedor")
+            btnBuscar_Vendedor.Focus()
+            Exit Sub
+        End If
+
+        If txt_nombre_cliente.Text.Length = 0 Then
+            MsgBox("Seleccione un Cliente")
+            btnBuscar_cliente.Focus()
             Exit Sub
         End If
         Try
             'ACTUALIZA LA ORDEN DE TRABAJO
             Dim ActualizarOrden = (From P In datacontext.ORDEN_TRABAJO Where P.ORT_id_orden_trabajo = (txt_id_orden_trabajo.Text.ToUpper)).ToList()(0)
             ActualizarOrden.ORT_fecha_ot = dtpFecha_Orden_Trabajo.Text
-            ActualizarOrden.ORT_tipo_ot = cboTipo_Orden.SelectedItem
+            ActualizarOrden.ORT_tipo_ot = cboTipo_Orden.Text
             ActualizarOrden.ORT_numero_ot = txtNumero_Orden_Trabajo.Text
             ActualizarOrden.ORT_observaciones_ot = txt_observaciones.Text
             ActualizarOrden.ORT_mejoras_ot = txt_mejoras.Text

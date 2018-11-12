@@ -23,7 +23,8 @@
         cboTipoImpresion1_Detalle1.Enabled = False
         txt_id_detalle_orden_trabajo1.Visible = False
         txt_cantidad_original.Enabled = False
-        dtp_Fecha_Original.Enabled = False
+        dtp_Fecha_Ingreso_Original.Enabled = False
+        dtpFecha_Entrega_Original.Enabled = False
         Label45.Visible = False
         Label1.Visible = False
         txt_id_re_trabajo.Visible = False
@@ -38,12 +39,15 @@
 
     Private Sub btnGuardar_Orden_Trabajo_Click_1(sender As System.Object, e As System.EventArgs) Handles btnGuardar_ReTrabajo.Click
         Try
-            If txtNumero_Orden_Trabajo.Text.Length = 0 _
-              Or txt_cantidad_original.Text.Length = 0 _
-              Or cboPiezas1_Detalle1.Text.Length = 0 _
-              Or txtTamaño1_Detalle1.Text.Length = 0 _
-              Or cboTipoImpresion1_Detalle1.Text.Length = 0 Then
-                MsgBox("Debe completar todos los campos requeridos")
+            If txtNumero_Orden_Trabajo.Text.Length = 0 Then
+                MsgBox("Debe seleccionar una Orden")
+                btnBuscar_Numero_Orden1.Focus()
+                Exit Sub
+            End If
+
+            If txt_cantidad_retrabajo.Text.Length = 0 Then
+                MsgBox("Ingrese la nueva Cantidad")
+                txt_cantidad_retrabajo.Focus()
                 Exit Sub
             End If
 
@@ -52,11 +56,14 @@
 
             ret.RET_origen_area = StrConv(txt_origen.Text, VbStrConv.ProperCase)
             ret.RET_procedimiento = StrConv(txt_procedimiento.Text, VbStrConv.ProperCase)
-            ret.RET_fecha = dtpFecha_Re_Trabajo.Text
+            ret.RET_fecha = StrConv(dtpFecha_Re_Trabajo.Text, VbStrConv.ProperCase)
+            ret.RET_fecha_entrega = StrConv(dtp_Nueva_Fecha_Entrega.Text, VbStrConv.ProperCase)
 
             ret.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
-            ret.RET_tamaño_dort = txtTamaño1_Detalle1.Text
+
             ret.RET_cantidad_dort = txt_cantidad_retrabajo.Text
+            ret.RET_tamaño_dort = txtTamaño1_Detalle1.Text
+
             ret.RET_tipo_impresion_dort = cboTipoImpresion1_Detalle1.Text
             ret.RET_papel_soporte_1 = StrConv(txt_Papel1_Soporte1.Text, VbStrConv.ProperCase)
             ret.RET_papel_soporte_2 = StrConv(txt_Papel2_Soporte1.Text, VbStrConv.ProperCase)
@@ -87,7 +94,7 @@
             MsgBox("El re_trabajo se ha creado correctamente", vbInformation)
             Me.Close()
         Catch ex As Exception
-            MsgBox("El re_trabajo NO fue creado")
+            MsgBox("Error al cargar el Re-Trabajo")
         End Try
     End Sub
 
@@ -186,12 +193,10 @@
 
         'PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
 
-
         PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Left = 30
         PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Right = 30
         PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Top = 30
         PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Bottom = 30
-
 
         btnImprimirFormulario.Visible = False
         btnGuardar_ReTrabajo.Visible = False

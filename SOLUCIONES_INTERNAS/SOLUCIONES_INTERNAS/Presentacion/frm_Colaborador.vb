@@ -51,8 +51,15 @@ Public Class frm_Colaborador
                 Exit Sub
             End If
 
-            If txt_nombre_colaborador.Text.Length = 0 Or cbo_sector.Text.Length = 0 Then
-                MsgBox("Debe completar todos los campos requeridos")
+            If txt_nombre_colaborador.Text.Length = 0 Then
+                MsgBox("Ingrese el Nombre del Colaborador")
+                txt_nombre_colaborador.Focus()
+                Exit Sub
+            End If
+
+            If cbo_sector.Text.Length = 0 Then
+                MsgBox("Debe seleccionar un Sector")
+                cbo_sector.Focus()
                 Exit Sub
             End If
 
@@ -69,7 +76,7 @@ Public Class frm_Colaborador
             Me.Close()
             ' Me.Dispose()
         Catch ex As Exception
-            MsgBox("El colaborador NO fue creado")
+            MsgBox("Error al guardar al Colaborador")
             limpiarcontroles()
             cargargrilla()
         End Try
@@ -83,8 +90,15 @@ Public Class frm_Colaborador
     End Sub
 
     Private Sub btnActualizar_Colaborador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar_Colaborador.Click
-        If txt_nombre_colaborador.Text.Length = 0 Or cbo_sector.Text.Length = 0 Then
-            MsgBox("Debe completar todos los campos requeridos")
+        If txt_nombre_colaborador.Text.Length = 0 Then
+            MsgBox("Ingrese el Nombre del Colaborador")
+            txt_nombre_colaborador.Focus()
+            Exit Sub
+        End If
+
+        If cbo_sector.Text.Length = 0 Then
+            MsgBox("Debe seleccionar un Sector")
+            cbo_sector.Focus()
             Exit Sub
         End If
         Try
@@ -99,7 +113,7 @@ Public Class frm_Colaborador
             Me.limpiarcontroles()
             Me.Close()
         Catch ex As Exception
-            MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar cliente")
+            MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar Colaborador")
             Me.limpiarcontroles()
             Me.cargargrilla()
             Me.Close()

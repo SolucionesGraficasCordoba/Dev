@@ -38,6 +38,7 @@ Public Class frm_Listado_Retrabajo
                                     ret.RET_origen_area,
                                     ret.RET_procedimiento,
                                     ret.RET_fecha,
+                                    ret.RET_fecha_entrega,
                                     ret.RET_papel_soporte_1,
                                     ret.RET_papel_soporte_2,
                                     ret.RET_papel_soporte_3,
@@ -53,7 +54,9 @@ Public Class frm_Listado_Retrabajo
                                     ort.ORT_id_orden_trabajo,
                                     dot.id_detalle_orden_trabajo,
                                     ort.ORT_fecha_ot,
-                                    dot.DOT_cantidad_dot, dot.DOT_tamaño_dot
+                                    ort.ORT_fecha_entrega,
+                                    dot.DOT_cantidad_dot,
+                                    dot.DOT_tamaño_dot
                                             Order By ORT_numero_ot Ascending)
         dgvLista_ReTrabajos.DataSource = carga
     End Sub
@@ -74,24 +77,21 @@ Public Class frm_Listado_Retrabajo
         dgvLista_ReTrabajos.Columns.Add("RET_procedimiento", "Procedimiento")
         dgvLista_ReTrabajos.Columns.Add("RET_fecha", "Fecha")
         dgvLista_ReTrabajos.Columns.Add("ORT_id_orden_trabajo", "id_orden_trabajo")
-
         dgvLista_ReTrabajos.Columns.Add("RET_papel_soporte_1", "Papel")
         dgvLista_ReTrabajos.Columns.Add("RET_gramaje_soporte_1", "Gramaje")
         dgvLista_ReTrabajos.Columns.Add("RET_cantidad_soporte_1", "Cantidad")
         dgvLista_ReTrabajos.Columns.Add("RET_formato_soporte_1", "Formato")
-
         dgvLista_ReTrabajos.Columns.Add("RET_papel_soporte_2", "Papel")
         dgvLista_ReTrabajos.Columns.Add("RET_gramaje_soporte_2", "Gramaje")
         dgvLista_ReTrabajos.Columns.Add("RET_cantidad_soporte_2", "Cantidad")
         dgvLista_ReTrabajos.Columns.Add("RET_formato_soporte_2", "Formato")
-
         dgvLista_ReTrabajos.Columns.Add("RET_papel_soporte_3", "Papel")
         dgvLista_ReTrabajos.Columns.Add("RET_gramaje_soporte_3", "Gramaje")
         dgvLista_ReTrabajos.Columns.Add("RET_cantidad_soporte_3", "Cantidad")
         dgvLista_ReTrabajos.Columns.Add("RET_formato_soporte_3", "Formato")
         dgvLista_ReTrabajos.Columns.Add("DOT_cantidad_dot", "Cantidad Original")
         dgvLista_ReTrabajos.Columns.Add("ORT_fecha_ot", "Fecha Original")
-
+        dgvLista_ReTrabajos.Columns.Add("ORT_fecha_entrega", "Nueva Fecha de Entrega")
 
         dgvLista_ReTrabajos.Columns(0).DataPropertyName = "RET_id_retrabajo"
         dgvLista_ReTrabajos.Columns(0).Visible = False
@@ -129,11 +129,11 @@ Public Class frm_Listado_Retrabajo
         dgvLista_ReTrabajos.Columns(21).Visible = False
         dgvLista_ReTrabajos.Columns(22).DataPropertyName = "RET_formato_soporte_3"
         dgvLista_ReTrabajos.Columns(22).Visible = False
-        dgvLista_ReTrabajos.Columns(23).DataPropertyName = "DOT_cantidad_dot"
+        dgvLista_ReTrabajos.Columns(23).DataPropertyName = "RET_cantidad_dort"
         'dgvLista_ReTrabajos.Columns(23).Visible = False
         dgvLista_ReTrabajos.Columns(24).DataPropertyName = "ORT_fecha_ot"
-        ' dgvLista_ReTrabajos.Columns(24).Visible = False
-
+        'dgvLista_ReTrabajos.Columns(24).Visible = False
+        dgvLista_ReTrabajos.Columns(25).DataPropertyName = "RET_fecha_entrega"
 
     End Sub
 
@@ -161,6 +161,7 @@ Public Class frm_Listado_Retrabajo
         Me.Dispose()
     End Sub
 
+    'CONTROLAR BOTON VER
 
     Private Sub btnVer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVer.Click
         'LLENA LOS CAMPOS DE LA ORDEN
@@ -173,7 +174,7 @@ Public Class frm_Listado_Retrabajo
             frm_retrabajo.cboTipoImpresion1_Detalle1.Text = dgvLista_ReTrabajos.Item("RET_tipo_impresion_dort", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             frm_retrabajo.txt_origen.Text = dgvLista_ReTrabajos.Item("RET_origen_area", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             frm_retrabajo.txt_procedimiento.Text = dgvLista_ReTrabajos.Item("RET_procedimiento", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
-            frm_retrabajo.dtp_Fecha_Original.Text = dgvLista_ReTrabajos.Item("ORT_fecha_ot", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
+            frm_retrabajo.dtp_Fecha_Ingreso_Original.Text = dgvLista_ReTrabajos.Item("ORT_fecha_ot", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             frm_retrabajo.txt_id_orden_trabajo.Text = dgvLista_ReTrabajos.Item("ORT_id_orden_trabajo", dgvLista_ReTrabajos.Rows(0).Index).Value
 
             frm_retrabajo.txt_cantidad_retrabajo.Text = dgvLista_ReTrabajos.Item("RET_cantidad_dort", dgvLista_ReTrabajos.Rows(0).Index).Value
@@ -204,7 +205,7 @@ Public Class frm_Listado_Retrabajo
         frm_retrabajo.txtNumero_Orden_Trabajo.Enabled = False
         frm_retrabajo.txt_origen.Enabled = False
         frm_retrabajo.txt_procedimiento.Enabled = False
-        frm_retrabajo.dtp_Fecha_Original.Enabled = False
+        frm_retrabajo.dtp_Fecha_Ingreso_Original.Enabled = False
         frm_retrabajo.Label1.Visible = False
         frm_retrabajo.GroupProducto1.Enabled = False
         frm_retrabajo.txt_id_re_trabajo.Visible = False
