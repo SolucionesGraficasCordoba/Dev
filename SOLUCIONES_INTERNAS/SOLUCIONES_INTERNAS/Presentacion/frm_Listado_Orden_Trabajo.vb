@@ -1,4 +1,11 @@
-﻿Public Class frm_Listado_Orden_Trabajo
+﻿Imports System.Drawing.Printing
+Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+Imports System.IO
+Imports SOLUCIONES_INTERNAS.Class_Generar_pdf
+
+
+Public Class frm_Listado_Orden_Trabajo
 
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
@@ -9,6 +16,10 @@
     Public vble_id_detalle As Integer
     Dim vble_id_proceso As Integer
     Dim vble_colaborador, vble_fecha As String
+
+    'campos y vbles para generar pdf
+    'Public contadorcolumnasvisibles As Integer
+    
 
     Private Sub frm_Detalle_Orden_Trabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         armargrilla()
@@ -75,7 +86,7 @@
         dgvLista_Orden_Trabajo.Columns(10).DataPropertyName = "ORT_fecha_entrega"
     End Sub
 
-    Private Sub dgvLista_Orden_Trabajo_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Orden_Trabajo.CellClick
+    Private Sub dgvLista_Orden_Trabajo_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Orden_Trabajo.CellClick
         'VALIDA QUE SE HAYA SELECCONADO UN SECTOR Y UNA FECHA
         If dgvLista_Orden_Trabajo.Rows.Count = 0 Then
             MsgBox("No hay órdenes", MsgBoxStyle.Information + MsgBoxStyle.Information, "Seleccionar")
@@ -130,7 +141,7 @@
         Label1.Text = dgv_detalle_orden.Rows.Count
     End Sub
 
-    Private Sub dgv_detalle_orden_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellClick
+    Private Sub dgv_detalle_orden_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellClick
         If dgvLista_Orden_Trabajo.Rows.Count = 0 Then
             MsgBox("No hay procesos por mostrar", MsgBoxStyle.Information + MsgBoxStyle.Information, "Seleccionar")
             Exit Sub
@@ -159,7 +170,7 @@
                                p.id_detalle_orden_trabajo
                                Where id_detalle_orden_trabajo = vble_id_proceso)
         CargaProcesoProducto(datagridproceso)
-        dgvProcesos.ClearSelection()
+        'dgvProcesos.ClearSelection()
     End Sub
 
     Public Sub CargaProcesoProducto(ByVal dataproceso As System.Linq.IQueryable)
@@ -287,7 +298,7 @@
     End Sub
 
     'MODIFICA ORDEN
-    Private Sub btnModificar_Orden_Click(sender As System.Object, e As System.EventArgs) Handles btnModificar_Orden.Click
+    Private Sub btnModificar_Orden_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificar_Orden.Click
 
         If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
             frm_Actualizar_Orden.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
@@ -492,12 +503,12 @@
         Me.Close()
     End Sub
 
-    Private Sub btn_Cancelar_Click(sender As System.Object, e As System.EventArgs) Handles btn_Cancelar.Click
+    Private Sub btn_Cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Cancelar.Click
         Me.Close()
         Me.Dispose()
     End Sub
 
-    Private Sub btnEliminar_Detalle_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar_Producto.Click
+    Private Sub btnEliminar_Detalle_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar_Producto.Click
         If dgv_detalle_orden.SelectedRows.Count > 0 Then
 
             Dim eliminar = (From C In datacontext.DETALLE_ORDEN_TRABAJO Where C.id_detalle_orden_trabajo = CInt(dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value)).ToList()(0)
@@ -515,7 +526,7 @@
         End If
     End Sub
 
-    Private Sub btnVer_Click(sender As System.Object, e As System.EventArgs) Handles btnVer.Click
+    Private Sub btnVer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVer.Click
 
         'CARGA COMBOBOX PIEZA DETALLE 1
         Dim combopieza1 = (From sec In datacontext.PIEZA
@@ -748,7 +759,7 @@
         frm_Orden_Trabajo.ShowDialog()
     End Sub
 
-    Private Sub dgv_detalle_orden_CellDoubleClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellDoubleClick
+    Private Sub dgv_detalle_orden_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellDoubleClick
         quienllamolistado_ot.Name = frm_retrabajo.Name
         frm_retrabajo.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
         frm_retrabajo.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
@@ -767,7 +778,7 @@
         Me.Dispose()
     End Sub
 
-    Private Sub btnModificarProducto_Click(sender As System.Object, e As System.EventArgs) Handles btnModificarProducto.Click
+    Private Sub btnModificarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarProducto.Click
 
         If dgv_detalle_orden.Rows.Count > 0 Then
             frm_Actualizar_Producto_Orden.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
@@ -816,7 +827,7 @@
         End If
     End Sub
 
-    Private Sub btnEliminarProceso_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminarProceso.Click
+    Private Sub btnEliminarProceso_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminarProceso.Click
 
         If dgvProcesos.SelectedRows.Count > 0 Then
             Dim eliminar = (From C In datacontext.PROCESO Where C.PROC_id_proceso = CInt(dgvProcesos.Item("PROC_id_proceso", dgvProcesos.SelectedRows(0).Index).Value)).ToList()(0)
@@ -833,7 +844,7 @@
         End If
     End Sub
 
-    Private Sub TextBox1_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_Buscar_Cliente.TextChanged
+    Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_Cliente.TextChanged
         Dim buscar As String
         armargrilla()
         buscar = Me.txt_Buscar_Cliente.Text & "*"
@@ -862,7 +873,7 @@
         Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
     End Sub
 
-    Private Sub dtp_Buscar_Fecha_Entrega_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtp_Buscar_Fecha_Entrega.ValueChanged
+    Private Sub dtp_Buscar_Fecha_Entrega_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtp_Buscar_Fecha_Entrega.ValueChanged
         Dim buscar As String
         armargrilla()
         buscar = Me.dtp_Buscar_Fecha_Entrega.Text & "*"
@@ -892,8 +903,8 @@
         Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
     End Sub
 
-    Private Sub rbtNroOrden_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbtNroOrden.CheckedChanged
-      
+    Private Sub rbtNroOrden_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtNroOrden.CheckedChanged
+
 
         If rbtNroOrden.Checked = True Then
             txt_Buscar_Cliente.Enabled = False
@@ -907,8 +918,8 @@
         Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
     End Sub
 
-    Private Sub rbtCliente_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbtCliente.CheckedChanged
-     
+    Private Sub rbtCliente_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtCliente.CheckedChanged
+
 
         If rbtCliente.Checked = True Then
             txt_Buscar_orden_trabajo.Enabled = False
@@ -922,8 +933,8 @@
         Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
     End Sub
 
-    Private Sub rbtFechaEntrega_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbtFechaEntrega.CheckedChanged
-      
+    Private Sub rbtFechaEntrega_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtFechaEntrega.CheckedChanged
+
         If rbtFechaEntrega.Checked = True Then
             Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
             txt_Buscar_orden_trabajo.Enabled = False
@@ -939,6 +950,180 @@
         End If
         cargargrilla()
         Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
+    End Sub
+
+    Public Sub btn_ODT_mostrar_pdf_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_ODT_mostrar_pdf.Click
+
+        'Try
+
+        'intentar generar el documento
+        Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
+        'path que guarda el reporte en el escritorio de windows (desktop)
+        Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Tareas diarias resumen.pdf"
+        Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+        PdfWriter.GetInstance(doc, file)
+        doc.Open()
+
+        Dim linea As New Paragraph("......................................................................................." _
+                                 & ".......................................................................................")
+        Dim espacio As New Paragraph(" ")
+
+        Dim orden As New Phrase(dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgv_detalle_orden.CurrentRow.Index).Value _
+                                         & " " _
+                                         & dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                         & "          " _
+                                         , New Font(Font.Name = "Arial", 22, Font.Bold))
+
+        Dim fecha_entrega As New Phrase("Entrega: " & dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                         , New Font(Font.Name = "Arial", 16, Font.Bold))
+
+        Dim ingreso_vendedor As New Paragraph("Fecha ingreso: " & dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgv_detalle_orden.CurrentRow.Index).Value _
+                                         & "  " _
+                                         & "           " _
+                                         & "Vendedor: " & dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                         , New Font(Font.Name = "Arial", 12, Font.Bold))
+
+        Dim cliente As New Paragraph("Cliente: " & dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                         , New Font(Font.Name = "Arial", 12))
+        Dim entrega As New Paragraph("Entregar en: " & dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                         , New Font(Font.Name = "Arial", 12))
+
+        'Encabezado
+        doc.Add(espacio)
+        doc.Add(orden)
+        doc.Add(fecha_entrega)
+        doc.Add(linea)
+
+
+        'Info
+        doc.Add(ingreso_vendedor)
+        doc.Add(cliente)
+        doc.Add(entrega)
+
+
+
+        'Productos
+
+        For i = 0 To dgv_detalle_orden.RowCount - 1
+            doc.Add(linea)
+            dgv_detalle_orden.Rows(i).Selected = True
+            dgv_detalle_orden_CellClick(0, Nothing)
+            pdf_informe_diario_sin_tablas(doc, i)
+        Next
+        doc.Close()
+        Process.Start(filename)
+
+        ' Me.Close()
+        'Catch ex As Exception
+        'si el mensaje es fallido mostrar msgbox
+        'MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'End Try
+    End Sub
+   
+    Sub pdf_informe_diario(ByVal document As Document, ByVal fila_actual As Integer)
+
+        Dim Pdf_odt As New Class_Generar_pdf
+
+        'PRODUCTO
+        '**********************************************
+        Pdf_odt.contadorcolumnasvisibles1 = 0
+        Pdf_odt.contadorcolumnasvisibles1 = Pdf_odt.Contar_Columnas_Visibles(dgv_detalle_orden)
+
+        Dim datatable As New PdfPTable(Pdf_odt.contadorcolumnasvisibles1)
+
+        datatable.DefaultCell.Padding = 3
+
+        Dim headerwidths As Single() = Pdf_odt.GetColumnsSize(dgv_detalle_orden, Pdf_odt.contadorcolumnasvisibles1)
+
+        datatable.SetWidths(headerwidths)
+
+        datatable.WidthPercentage = 100
+        datatable.DefaultCell.BorderWidth = 1
+
+        Pdf_odt.obtener_encabezados(dgv_detalle_orden, datatable)
+
+        datatable.HeaderRows = 1
+        datatable.DefaultCell.BorderWidth = 1
+
+        Pdf_odt.exportar_filas_una(dgv_detalle_orden, datatable, fila_actual)
+
+        document.Add(datatable)
+
+        'PROCESO
+        '***************************************************
+        Pdf_odt.contadorcolumnasvisibles1 = 0
+        Pdf_odt.contadorcolumnasvisibles1 = Pdf_odt.Contar_Columnas_Visibles(dgvProcesos)
+
+        Dim datatableProcesos As New PdfPTable(Pdf_odt.contadorcolumnasvisibles1)
+
+        datatableProcesos.DefaultCell.Padding = 3
+
+        Dim headerwidthsProcesos As Single() = Pdf_odt.GetColumnsSize(dgvProcesos, Pdf_odt.contadorcolumnasvisibles1)
+        datatableProcesos.SetWidths(headerwidthsProcesos)
+
+        datatable.WidthPercentage = 100
+        datatable.DefaultCell.BorderWidth = 1
+
+        Pdf_odt.obtener_encabezados(dgvProcesos, datatableProcesos)
+
+        datatableProcesos.HeaderRows = 1
+        datatableProcesos.DefaultCell.BorderWidth = 1
+
+        Pdf_odt.exportar_filas_una(dgvProcesos, datatableProcesos, 0)
+        document.Add(datatableProcesos)
+    End Sub
+    Sub pdf_informe_diario_sin_tablas(ByVal doc As Document, ByVal fila_actual As Integer)
+        Dim prod_tit As New Paragraph("PRODUCTO " & (fila_actual + 1))
+        Dim prod_det As New Paragraph(dgv_detalle_orden.Item("DOT_cantidad_dot", dgv_detalle_orden.Rows(fila_actual).Index).Value _
+                                      & "  " _
+                                      & dgv_detalle_orden.Item("PIE_nombre_pie", dgv_detalle_orden.Rows(fila_actual).Index).Value _
+                                      & "   " _
+                                      & dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.Rows(fila_actual).Index).Value _
+                                      & "   " _
+                                      & dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.Rows(fila_actual).Index).Value _
+                                      , New Font(Font.Name = "Arial", 16, Font.Bold))
+
+        doc.Add(prod_tit)
+        doc.Add(prod_det)
+
+        Dim soporte As New Paragraph
+        'Dim soporte2 As New Paragraph
+        'Dim soporte3 As New Paragraph
+        Dim temp_cadena_cant, temp_cadena_papel, temp_cadena_gram, temp_cadena_formato As String
+        For j = 0 To dgv_detalle_orden.RowCount
+            temp_cadena_cant = "DOT_cantidad_soporte_" & j + 1
+            temp_cadena_papel = "DOT_papel_soporte_" & j + 1
+            temp_cadena_gram = "DOT_gramaje_soporte_" & j + 1
+            temp_cadena_formato = "DOT_formato_soporte_" & j + 1
+            If Len(dgv_detalle_orden.Item(temp_cadena_cant, dgv_detalle_orden.Rows(fila_actual).Index).Value) <> 0 Then
+                soporte = New Paragraph("Soporte 1: " & dgv_detalle_orden.Item(temp_cadena_cant, dgv_detalle_orden.Rows(fila_actual).Index).Value & "  " _
+                                         & dgv_detalle_orden.Item(temp_cadena_formato, dgv_detalle_orden.Rows(fila_actual).Index).Value & "  " _
+                                         & dgv_detalle_orden.Item(temp_cadena_papel, dgv_detalle_orden.Rows(fila_actual).Index).Value & "  " _
+                                         & dgv_detalle_orden.Item(temp_cadena_gram, dgv_detalle_orden.Rows(fila_actual).Index).Value & "  " _
+                                         , New Font(Font.Name = "Arial", 8))
+            Else
+                soporte = New Paragraph("")
+            End If
+            'If Len(dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.Rows(fila_actual).Index).Value) <> 0 Then
+            '    soporte2 = New Paragraph("Soporte 2: " & dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.Rows(fila_actual).Index).Value, New Font(Font.Name = "Arial", 8))
+            'Else
+            '    soporte2 = New Paragraph(" ")
+            'End If
+            'If Len(dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.Rows(fila_actual).Index).Value) <> 0 Then
+            '    soporte3 = New Paragraph("Soporte 3: " & dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.Rows(fila_actual).Index).Value, New Font(Font.Name = "Arial", 8))
+            'Else
+            '    soporte3 = New Paragraph("")
+            'End If
+            doc.Add(soporte)
+        Next
+        Dim proc_tit As New Paragraph("Proceso")
+
+        'Dim desc1 As New Paragraph("p " + dgv_detalle_orden.Item("Pieza", dgv_detalle_orden.CurrentRow.Index).Value)
+
+       
+        'doc.Add(soporte1)
+        'doc.Add(soporte2)
+        'doc.Add(soporte3)
     End Sub
 End Class
 
