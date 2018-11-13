@@ -37,6 +37,8 @@ Partial Class frm_retrabajo
         Me.Label17 = New System.Windows.Forms.Label()
         Me.btnGuardar_ReTrabajo = New System.Windows.Forms.Button()
         Me.GroupProducto1 = New System.Windows.Forms.GroupBox()
+        Me.dtp_Nueva_Fecha_Entrega = New System.Windows.Forms.DateTimePicker()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_cantidad_retrabajo = New System.Windows.Forms.TextBox()
@@ -72,8 +74,6 @@ Partial Class frm_retrabajo
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.dtpFecha_Entrega_Original = New System.Windows.Forms.DateTimePicker()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.dtp_Nueva_Fecha_Entrega = New System.Windows.Forms.DateTimePicker()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cboPiezas1_Detalle1 = New System.Windows.Forms.ComboBox()
@@ -140,7 +140,7 @@ Partial Class frm_retrabajo
         '
         'btnBuscar_Numero_Orden1
         '
-        Me.btnBuscar_Numero_Orden1.Location = New System.Drawing.Point(325, 19)
+        Me.btnBuscar_Numero_Orden1.Location = New System.Drawing.Point(312, 19)
         Me.btnBuscar_Numero_Orden1.Name = "btnBuscar_Numero_Orden1"
         Me.btnBuscar_Numero_Orden1.Size = New System.Drawing.Size(63, 23)
         Me.btnBuscar_Numero_Orden1.TabIndex = 1
@@ -150,7 +150,7 @@ Partial Class frm_retrabajo
         'txtNumero_Orden_Trabajo
         '
         Me.txtNumero_Orden_Trabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(137, 21)
+        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(124, 21)
         Me.txtNumero_Orden_Trabajo.Multiline = True
         Me.txtNumero_Orden_Trabajo.Name = "txtNumero_Orden_Trabajo"
         Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(182, 20)
@@ -159,7 +159,7 @@ Partial Class frm_retrabajo
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(99, 24)
+        Me.Label5.Location = New System.Drawing.Point(86, 24)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(22, 13)
         Me.Label5.TabIndex = 76
@@ -167,7 +167,7 @@ Partial Class frm_retrabajo
         '
         'txt_id_orden_trabajo
         '
-        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(394, 21)
+        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(381, 21)
         Me.txt_id_orden_trabajo.Name = "txt_id_orden_trabajo"
         Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(23, 20)
         Me.txt_id_orden_trabajo.TabIndex = 77
@@ -207,6 +207,23 @@ Partial Class frm_retrabajo
         Me.GroupProducto1.TabIndex = 84
         Me.GroupProducto1.TabStop = False
         Me.GroupProducto1.Text = "Producto "
+        '
+        'dtp_Nueva_Fecha_Entrega
+        '
+        Me.dtp_Nueva_Fecha_Entrega.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp_Nueva_Fecha_Entrega.Location = New System.Drawing.Point(66, 79)
+        Me.dtp_Nueva_Fecha_Entrega.Name = "dtp_Nueva_Fecha_Entrega"
+        Me.dtp_Nueva_Fecha_Entrega.Size = New System.Drawing.Size(110, 20)
+        Me.dtp_Nueva_Fecha_Entrega.TabIndex = 91
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(60, 63)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(127, 13)
+        Me.Label13.TabIndex = 92
+        Me.Label13.Text = "Nueva Fecha de Entrega"
         '
         'Label9
         '
@@ -469,7 +486,7 @@ Partial Class frm_retrabajo
         'dtp_Fecha_Ingreso_Original
         '
         Me.dtp_Fecha_Ingreso_Original.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_Fecha_Ingreso_Original.Location = New System.Drawing.Point(145, 59)
+        Me.dtp_Fecha_Ingreso_Original.Location = New System.Drawing.Point(132, 59)
         Me.dtp_Fecha_Ingreso_Original.Name = "dtp_Fecha_Ingreso_Original"
         Me.dtp_Fecha_Ingreso_Original.Size = New System.Drawing.Size(109, 20)
         Me.dtp_Fecha_Ingreso_Original.TabIndex = 2
@@ -477,7 +494,7 @@ Partial Class frm_retrabajo
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(49, 62)
+        Me.Label11.Location = New System.Drawing.Point(36, 62)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(90, 13)
         Me.Label11.TabIndex = 89
@@ -497,7 +514,7 @@ Partial Class frm_retrabajo
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Red
-        Me.Label4.Location = New System.Drawing.Point(120, 24)
+        Me.Label4.Location = New System.Drawing.Point(107, 24)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(11, 13)
         Me.Label4.TabIndex = 90
@@ -514,7 +531,7 @@ Partial Class frm_retrabajo
         'dtpFecha_Entrega_Original
         '
         Me.dtpFecha_Entrega_Original.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha_Entrega_Original.Location = New System.Drawing.Point(374, 59)
+        Me.dtpFecha_Entrega_Original.Location = New System.Drawing.Point(361, 59)
         Me.dtpFecha_Entrega_Original.Name = "dtpFecha_Entrega_Original"
         Me.dtpFecha_Entrega_Original.Size = New System.Drawing.Size(109, 20)
         Me.dtpFecha_Entrega_Original.TabIndex = 91
@@ -522,28 +539,11 @@ Partial Class frm_retrabajo
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(278, 62)
+        Me.Label12.Location = New System.Drawing.Point(265, 62)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(92, 13)
         Me.Label12.TabIndex = 92
         Me.Label12.Text = "Fecha de Entrega"
-        '
-        'dtp_Nueva_Fecha_Entrega
-        '
-        Me.dtp_Nueva_Fecha_Entrega.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_Nueva_Fecha_Entrega.Location = New System.Drawing.Point(66, 79)
-        Me.dtp_Nueva_Fecha_Entrega.Name = "dtp_Nueva_Fecha_Entrega"
-        Me.dtp_Nueva_Fecha_Entrega.Size = New System.Drawing.Size(110, 20)
-        Me.dtp_Nueva_Fecha_Entrega.TabIndex = 91
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(60, 63)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(127, 13)
-        Me.Label13.TabIndex = 92
-        Me.Label13.Text = "Nueva Fecha de Entrega"
         '
         'GroupBox1
         '
@@ -564,9 +564,9 @@ Partial Class frm_retrabajo
         Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.txtNumero_Orden_Trabajo)
-        Me.GroupBox1.Location = New System.Drawing.Point(84, 9)
+        Me.GroupBox1.Location = New System.Drawing.Point(103, 9)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(526, 154)
+        Me.GroupBox1.Size = New System.Drawing.Size(507, 154)
         Me.GroupBox1.TabIndex = 93
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos originales"
@@ -574,7 +574,7 @@ Partial Class frm_retrabajo
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(293, 101)
+        Me.Label7.Location = New System.Drawing.Point(280, 101)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(110, 13)
         Me.Label7.TabIndex = 91
@@ -584,7 +584,7 @@ Partial Class frm_retrabajo
         '
         Me.cboPiezas1_Detalle1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple
         Me.cboPiezas1_Detalle1.FormattingEnabled = True
-        Me.cboPiezas1_Detalle1.Location = New System.Drawing.Point(103, 116)
+        Me.cboPiezas1_Detalle1.Location = New System.Drawing.Point(90, 116)
         Me.cboPiezas1_Detalle1.Name = "cboPiezas1_Detalle1"
         Me.cboPiezas1_Detalle1.Size = New System.Drawing.Size(162, 21)
         Me.cboPiezas1_Detalle1.TabIndex = 56
@@ -594,7 +594,7 @@ Partial Class frm_retrabajo
         Me.cboTipoImpresion1_Detalle1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple
         Me.cboTipoImpresion1_Detalle1.FormattingEnabled = True
         Me.cboTipoImpresion1_Detalle1.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
-        Me.cboTipoImpresion1_Detalle1.Location = New System.Drawing.Point(430, 116)
+        Me.cboTipoImpresion1_Detalle1.Location = New System.Drawing.Point(417, 116)
         Me.cboTipoImpresion1_Detalle1.Name = "cboTipoImpresion1_Detalle1"
         Me.cboTipoImpresion1_Detalle1.Size = New System.Drawing.Size(63, 21)
         Me.cboTipoImpresion1_Detalle1.TabIndex = 37
@@ -602,7 +602,7 @@ Partial Class frm_retrabajo
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(424, 101)
+        Me.Label8.Location = New System.Drawing.Point(411, 101)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(76, 13)
         Me.Label8.TabIndex = 36
@@ -611,7 +611,7 @@ Partial Class frm_retrabajo
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(164, 100)
+        Me.Label3.Location = New System.Drawing.Point(151, 100)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(38, 13)
         Me.Label3.TabIndex = 35
@@ -620,7 +620,7 @@ Partial Class frm_retrabajo
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(44, 102)
+        Me.Label2.Location = New System.Drawing.Point(31, 102)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 13)
         Me.Label2.TabIndex = 35
@@ -628,7 +628,7 @@ Partial Class frm_retrabajo
         '
         'txtTamaño1_Detalle1
         '
-        Me.txtTamaño1_Detalle1.Location = New System.Drawing.Point(271, 117)
+        Me.txtTamaño1_Detalle1.Location = New System.Drawing.Point(258, 117)
         Me.txtTamaño1_Detalle1.MaxLength = 50
         Me.txtTamaño1_Detalle1.Name = "txtTamaño1_Detalle1"
         Me.txtTamaño1_Detalle1.Size = New System.Drawing.Size(153, 20)
@@ -636,7 +636,7 @@ Partial Class frm_retrabajo
         '
         'txt_cantidad_original
         '
-        Me.txt_cantidad_original.Location = New System.Drawing.Point(38, 116)
+        Me.txt_cantidad_original.Location = New System.Drawing.Point(25, 116)
         Me.txt_cantidad_original.Name = "txt_cantidad_original"
         Me.txt_cantidad_original.Size = New System.Drawing.Size(59, 20)
         Me.txt_cantidad_original.TabIndex = 33
