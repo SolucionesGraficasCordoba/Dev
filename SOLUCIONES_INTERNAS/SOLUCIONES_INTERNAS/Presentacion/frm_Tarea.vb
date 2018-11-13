@@ -759,23 +759,25 @@
             Else
             End If
 
-            Select Case MsgBox("La tarea se ha creado correctamente, desea imprimir??", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Imprimir Tareas")
-                Case MsgBoxResult.Yes
-                    PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
-                    PrintForm1.PrinterSettings.DefaultPageSettings.Landscape = True
-                    '  PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
+            'Select Case MsgBox("La tarea se ha creado correctamente, desea imprimir??", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Imprimir Tareas")
+            '    Case MsgBoxResult.Yes
+            '        PrintForm1.PrintAction = Printing.PrintAction.PrintToPrinter
+            '        PrintForm1.PrinterSettings.DefaultPageSettings.Landscape = True
+            '        '  PrintForm1.PrinterSettings.DefaultPageSettings.PaperSize.PaperName = "A4"
 
-                    PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Left = 30
-                    PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Right = 30
-                    PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Top = 30
-                    PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Bottom = 30
+            '        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Left = 30
+            '        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Right = 30
+            '        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Top = 30
+            '        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Bottom = 30
 
 
-                    PrintForm1.Print() 'imprimir
-            End Select
+            '        PrintForm1.Print() 'imprimir
+            'End Select
+
+            MsgBox("Las tareas se ha guardado correctamente" + MsgBoxStyle.Information, "Guardar Tareas")
             Me.Close()
         Catch ex As Exception
-            MsgBox("La tarea NO fue creada")
+            MsgBox("Error al intentar guardar las Tareas" + MsgBoxStyle.Critical, "Guardar Tareas")
             limpiarcontroles()
         End Try
     End Sub
