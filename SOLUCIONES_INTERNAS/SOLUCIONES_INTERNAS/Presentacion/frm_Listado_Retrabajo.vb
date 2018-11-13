@@ -123,7 +123,6 @@ Order By ORT_numero_ot Ascending)
         dgvLista_ReTrabajos.Columns(17).Visible = False
         dgvLista_ReTrabajos.Columns(18).DataPropertyName = "RET_formato_soporte_2"
         dgvLista_ReTrabajos.Columns(18).Visible = False
-
         dgvLista_ReTrabajos.Columns(19).DataPropertyName = "RET_papel_soporte_3"
         dgvLista_ReTrabajos.Columns(19).Visible = False
         dgvLista_ReTrabajos.Columns(20).DataPropertyName = "RET_gramaje_soporte_3"
@@ -133,9 +132,7 @@ Order By ORT_numero_ot Ascending)
         dgvLista_ReTrabajos.Columns(22).DataPropertyName = "RET_formato_soporte_3"
         dgvLista_ReTrabajos.Columns(22).Visible = False
         dgvLista_ReTrabajos.Columns(23).DataPropertyName = "RET_origen_area"
-        'dgvLista_ReTrabajos.Columns(23).Visible = False
         dgvLista_ReTrabajos.Columns(24).DataPropertyName = "RET_procedimiento"
-        'dgvLista_ReTrabajos.Columns(24).Visible = False
         dgvLista_ReTrabajos.Columns(25).DataPropertyName = "ORT_fecha_ot"
         dgvLista_ReTrabajos.Columns(25).Visible = False
         dgvLista_ReTrabajos.Columns(26).DataPropertyName = "ORT_fecha_entrega"
