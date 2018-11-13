@@ -63,7 +63,7 @@ Partial Class frm_Listado_Retrabajo
         Me.GroupBox1.Controls.Add(Me.rbtNumeroOrden)
         Me.GroupBox1.Controls.Add(Me.cboBuscar_Mes)
         Me.GroupBox1.Controls.Add(Me.txt_Buscar_ReTrabajo)
-        Me.GroupBox1.Location = New System.Drawing.Point(11, 19)
+        Me.GroupBox1.Location = New System.Drawing.Point(222, 19)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(475, 54)
         Me.GroupBox1.TabIndex = 9
@@ -110,7 +110,7 @@ Partial Class frm_Listado_Retrabajo
         '
         'btnVer
         '
-        Me.btnVer.Location = New System.Drawing.Point(262, 318)
+        Me.btnVer.Location = New System.Drawing.Point(650, 320)
         Me.btnVer.Name = "btnVer"
         Me.btnVer.Size = New System.Drawing.Size(75, 23)
         Me.btnVer.TabIndex = 8
@@ -119,7 +119,7 @@ Partial Class frm_Listado_Retrabajo
         '
         'btnExportarPDF
         '
-        Me.btnExportarPDF.Location = New System.Drawing.Point(155, 318)
+        Me.btnExportarPDF.Location = New System.Drawing.Point(543, 320)
         Me.btnExportarPDF.Name = "btnExportarPDF"
         Me.btnExportarPDF.Size = New System.Drawing.Size(101, 23)
         Me.btnExportarPDF.TabIndex = 7
@@ -128,7 +128,7 @@ Partial Class frm_Listado_Retrabajo
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(424, 318)
+        Me.btnCancelar.Location = New System.Drawing.Point(812, 320)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btnCancelar.TabIndex = 6
@@ -155,7 +155,7 @@ Partial Class frm_Listado_Retrabajo
         '
         'btnEliminar_ReTrabajo
         '
-        Me.btnEliminar_ReTrabajo.Location = New System.Drawing.Point(343, 318)
+        Me.btnEliminar_ReTrabajo.Location = New System.Drawing.Point(731, 320)
         Me.btnEliminar_ReTrabajo.Name = "btnEliminar_ReTrabajo"
         Me.btnEliminar_ReTrabajo.Size = New System.Drawing.Size(75, 23)
         Me.btnEliminar_ReTrabajo.TabIndex = 3
