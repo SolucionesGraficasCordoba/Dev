@@ -2,7 +2,7 @@
 Imports iTextSharp.text
 Imports iTextSharp.text.pdf
 Imports System.IO
-Imports SOLUCIONES_INTERNAS.Class_Generar_pdf
+'Imports SOLUCIONES_INTERNAS.Class_Generar_pdf
 
 
 Public Class frm_Listado_Orden_Trabajo
