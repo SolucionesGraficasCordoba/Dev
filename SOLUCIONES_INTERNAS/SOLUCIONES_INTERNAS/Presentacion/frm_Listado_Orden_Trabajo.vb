@@ -957,18 +957,22 @@ Public Class frm_Listado_Orden_Trabajo
         'Try
 
         'intentar generar el documento
-        Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
+        Dim doc As New Document(PageSize.A4, 5, 5, 5, 5)
         'path que guarda el reporte en el escritorio de windows (desktop)
         Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Tareas diarias resumen.pdf"
         Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
         PdfWriter.GetInstance(doc, file)
         doc.Open()
 
-        Dim linea As New Paragraph("......................................................................................." _
-                                 & ".......................................................................................")
-        Dim espacio As New Paragraph(" ")
+        'Vbles formato
+        Dim linea As New Paragraph(".  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ." _
+                                 & "  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .")
+        Dim medialinea As New Paragraph("                                               " _
+                                        & ".......................................................................................")
+        'Dim espacio As New Paragraph()
 
-        Dim orden As New Phrase(dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgv_detalle_orden.CurrentRow.Index).Value _
+        'vbles de grids
+        Dim orden As New Phrase("   " & dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgv_detalle_orden.CurrentRow.Index).Value _
                                          & " " _
                                          & dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
                                          & "          " _
@@ -985,30 +989,45 @@ Public Class frm_Listado_Orden_Trabajo
 
         Dim cliente As New Paragraph("Cliente: " & dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
                                          , New Font(Font.Name = "Arial", 12))
+
         Dim entrega As New Paragraph("Entregar en: " & dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
                                          , New Font(Font.Name = "Arial", 12))
 
-        'Encabezado
-        doc.Add(espacio)
-        doc.Add(orden)
-        doc.Add(fecha_entrega)
-        doc.Add(linea)
+        Dim prod_desc As New Paragraph("Descripción: " _
+                                       & dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                       , New Font(Font.Name = "Arial", 10, Font.Bold))
 
+
+
+        Dim encabezado As New Paragraph
+        encabezado.Add(orden)
+        encabezado.Add(fecha_entrega)
+
+        'Encabezado
+        'doc.Add(espacio)
+        'doc.Add(orden)
+        'doc.Add(fecha_entrega)
+        doc.Add(encabezado)
+        doc.Add(linea)
 
         'Info
         doc.Add(ingreso_vendedor)
         doc.Add(cliente)
         doc.Add(entrega)
+        doc.Add(linea)
 
+        'Descripción
+        doc.Add(prod_desc)
+        doc.Add(linea)
 
 
         'Productos
 
         For i = 0 To dgv_detalle_orden.RowCount - 1
-            doc.Add(linea)
             dgv_detalle_orden.Rows(i).Selected = True
             dgv_detalle_orden_CellClick(0, Nothing)
             pdf_informe_diario_sin_tablas(doc, i)
+            doc.Add(medialinea)
         Next
         doc.Close()
         Process.Start(filename)
@@ -1073,7 +1092,8 @@ Public Class frm_Listado_Orden_Trabajo
         document.Add(datatableProcesos)
     End Sub
     Sub pdf_informe_diario_sin_tablas(ByVal doc As Document, ByVal fila_actual As Integer)
-        Dim prod_tit As New Paragraph("PRODUCTO " & (fila_actual + 1))
+        'Agregado de productos
+        Dim prod_tit As New Paragraph("ITEM " & (fila_actual + 1))
         Dim prod_det As New Paragraph(dgv_detalle_orden.Item("DOT_cantidad_dot", dgv_detalle_orden.Rows(fila_actual).Index).Value _
                                       & "  " _
                                       & dgv_detalle_orden.Item("PIE_nombre_pie", dgv_detalle_orden.Rows(fila_actual).Index).Value _
@@ -1086,9 +1106,12 @@ Public Class frm_Listado_Orden_Trabajo
         doc.Add(prod_tit)
         doc.Add(prod_det)
 
+
+
+
+
+        'Agregado de soportes
         Dim soporte As New Paragraph
-        'Dim soporte2 As New Paragraph
-        'Dim soporte3 As New Paragraph
         Dim temp_cadena_cant, temp_cadena_papel, temp_cadena_gram, temp_cadena_formato As String
         For j = 0 To dgv_detalle_orden.RowCount
             temp_cadena_cant = "DOT_cantidad_soporte_" & j + 1
@@ -1096,34 +1119,28 @@ Public Class frm_Listado_Orden_Trabajo
             temp_cadena_gram = "DOT_gramaje_soporte_" & j + 1
             temp_cadena_formato = "DOT_formato_soporte_" & j + 1
             If Len(dgv_detalle_orden.Item(temp_cadena_cant, dgv_detalle_orden.Rows(fila_actual).Index).Value) <> 0 Then
-                soporte = New Paragraph("Soporte 1: " & dgv_detalle_orden.Item(temp_cadena_cant, dgv_detalle_orden.Rows(fila_actual).Index).Value & "  " _
-                                         & dgv_detalle_orden.Item(temp_cadena_formato, dgv_detalle_orden.Rows(fila_actual).Index).Value & "  " _
-                                         & dgv_detalle_orden.Item(temp_cadena_papel, dgv_detalle_orden.Rows(fila_actual).Index).Value & "  " _
-                                         & dgv_detalle_orden.Item(temp_cadena_gram, dgv_detalle_orden.Rows(fila_actual).Index).Value & "  " _
+                soporte = New Paragraph("           Soporte " & j + 1 & " : " _
+                                         & dgv_detalle_orden.Item(temp_cadena_cant, dgv_detalle_orden.Rows(fila_actual).Index).Value & "   " _
+                                         & dgv_detalle_orden.Item(temp_cadena_formato, dgv_detalle_orden.Rows(fila_actual).Index).Value & " " _
+                                         & dgv_detalle_orden.Item(temp_cadena_papel, dgv_detalle_orden.Rows(fila_actual).Index).Value & "   " _
+                                         & dgv_detalle_orden.Item(temp_cadena_gram, dgv_detalle_orden.Rows(fila_actual).Index).Value & "    " _
                                          , New Font(Font.Name = "Arial", 8))
             Else
                 soporte = New Paragraph("")
             End If
-            'If Len(dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.Rows(fila_actual).Index).Value) <> 0 Then
-            '    soporte2 = New Paragraph("Soporte 2: " & dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.Rows(fila_actual).Index).Value, New Font(Font.Name = "Arial", 8))
-            'Else
-            '    soporte2 = New Paragraph(" ")
-            'End If
-            'If Len(dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.Rows(fila_actual).Index).Value) <> 0 Then
-            '    soporte3 = New Paragraph("Soporte 3: " & dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.Rows(fila_actual).Index).Value, New Font(Font.Name = "Arial", 8))
-            'Else
-            '    soporte3 = New Paragraph("")
-            'End If
             doc.Add(soporte)
         Next
-        Dim proc_tit As New Paragraph("Proceso")
+        Dim pro_offset As New Paragraph("  Offset: " & dgvProcesos.Item("PROC_descrip_offset", dgvProcesos.Rows(0).Index).Value, New Font(Font.Name = "Arial", 12, Font.Bold))
+        Dim pro_digital As New Paragraph("  Digital: " & dgvProcesos.Item("PROC_descrip_digital", dgvProcesos.Rows(0).Index).Value, New Font(Font.Name = "Arial", 12, Font.Bold))
+        Dim pro_g_form As New Paragraph("  Gran formato: " & dgvProcesos.Item("PROC_descrip_gran_formato", dgvProcesos.Rows(0).Index).Value, New Font(Font.Name = "Arial", 12, Font.Bold))
+        Dim pro_term As New Paragraph("  Terminación: " & dgvProcesos.Item("PROC_descrip_terminacion", dgvProcesos.Rows(0).Index).Value, New Font(Font.Name = "Arial", 12, Font.Bold))
+        Dim pro_logi As New Paragraph("  Logística: " & dgvProcesos.Item("PROC_descrip_logistica", dgvProcesos.Rows(0).Index).Value, New Font(Font.Name = "Arial", 12, Font.Bold))
 
-        'Dim desc1 As New Paragraph("p " + dgv_detalle_orden.Item("Pieza", dgv_detalle_orden.CurrentRow.Index).Value)
-
-       
-        'doc.Add(soporte1)
-        'doc.Add(soporte2)
-        'doc.Add(soporte3)
+        doc.Add(pro_offset)
+        doc.Add(pro_digital)
+        doc.Add(pro_g_form)
+        doc.Add(pro_term)
+        doc.Add(pro_logi)
     End Sub
 End Class
 
