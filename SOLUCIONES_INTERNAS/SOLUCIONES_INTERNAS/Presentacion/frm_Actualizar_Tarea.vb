@@ -190,14 +190,18 @@
                 tar1.COL_id_colaborador = txt_id_colaborador.Text
                 tar1.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
                 tar1.TAR_hora_fin = StrConv(txt_hora_fin.Text, VbStrConv.ProperCase)
-                tar1.TAR_carga_horaria = StrConv(txt_Carga_Horaria.Text, VbStrConv.ProperCase)
+
+
+                '  tar1.TAR_carga_horaria = StrConv(txt_Carga_Horaria.Text, VbStrConv.ProperCase)
+                tar1.TAR_carga_horaria = "0"
+
                 tar1.TAR_detalle_tarea = StrConv(txt_tarea.Text, VbStrConv.ProperCase)
                 tar1.TAR_observaciones = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
                 tar1.TAR_fecha = dtpFecha.Text
                 datacontext.TAREA.InsertOnSubmit(tar1)
                 datacontext.SubmitChanges()
             End If
-            Select Case MsgBox("La tarea se ha creado correctamente, agregar otra tarea?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Guardar tarea")
+            Select Case MsgBox("La Tarea se ha guardado correctamente, desea agregar otra?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Guardar Tarea")
                 Case MsgBoxResult.Yes
                     limpiarcampos()
                     Exit Sub
@@ -208,7 +212,7 @@
             'Me.Close()
             frm_Listado_Tareas.Close()
         Catch ex As Exception
-            MsgBox("La tarea NO fue creada")
+            MsgBox("Error al guardar la Tarea" + MsgBoxStyle.Critical, "Guardando Tareas")
         End Try
 
     End Sub
