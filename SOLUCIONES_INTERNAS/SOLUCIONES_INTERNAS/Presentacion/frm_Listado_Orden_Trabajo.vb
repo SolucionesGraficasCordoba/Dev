@@ -1041,55 +1041,55 @@ Public Class frm_Listado_Orden_Trabajo
    
     Sub pdf_informe_diario(ByVal document As Document, ByVal fila_actual As Integer)
 
-        Dim Pdf_odt As New Class_Generar_pdf
+        'Dim Pdf_odt As New Class_Generar_pdf
 
-        'PRODUCTO
-        '**********************************************
-        Pdf_odt.contadorcolumnasvisibles1 = 0
-        Pdf_odt.contadorcolumnasvisibles1 = Pdf_odt.Contar_Columnas_Visibles(dgv_detalle_orden)
+        ''PRODUCTO
+        ''**********************************************
+        'Pdf_odt.contadorcolumnasvisibles1 = 0
+        'Pdf_odt.contadorcolumnasvisibles1 = Pdf_odt.Contar_Columnas_Visibles(dgv_detalle_orden)
 
-        Dim datatable As New PdfPTable(Pdf_odt.contadorcolumnasvisibles1)
+        'Dim datatable As New PdfPTable(Pdf_odt.contadorcolumnasvisibles1)
 
-        datatable.DefaultCell.Padding = 3
+        'datatable.DefaultCell.Padding = 3
 
-        Dim headerwidths As Single() = Pdf_odt.GetColumnsSize(dgv_detalle_orden, Pdf_odt.contadorcolumnasvisibles1)
+        'Dim headerwidths As Single() = Pdf_odt.GetColumnsSize(dgv_detalle_orden, Pdf_odt.contadorcolumnasvisibles1)
 
-        datatable.SetWidths(headerwidths)
+        'datatable.SetWidths(headerwidths)
 
-        datatable.WidthPercentage = 100
-        datatable.DefaultCell.BorderWidth = 1
+        'datatable.WidthPercentage = 100
+        'datatable.DefaultCell.BorderWidth = 1
 
-        Pdf_odt.obtener_encabezados(dgv_detalle_orden, datatable)
+        'Pdf_odt.obtener_encabezados(dgv_detalle_orden, datatable)
 
-        datatable.HeaderRows = 1
-        datatable.DefaultCell.BorderWidth = 1
+        'datatable.HeaderRows = 1
+        'datatable.DefaultCell.BorderWidth = 1
 
-        Pdf_odt.exportar_filas_una(dgv_detalle_orden, datatable, fila_actual)
+        'Pdf_odt.exportar_filas_una(dgv_detalle_orden, datatable, fila_actual)
 
-        document.Add(datatable)
+        'document.Add(datatable)
 
-        'PROCESO
-        '***************************************************
-        Pdf_odt.contadorcolumnasvisibles1 = 0
-        Pdf_odt.contadorcolumnasvisibles1 = Pdf_odt.Contar_Columnas_Visibles(dgvProcesos)
+        ''PROCESO
+        ''***************************************************
+        'Pdf_odt.contadorcolumnasvisibles1 = 0
+        'Pdf_odt.contadorcolumnasvisibles1 = Pdf_odt.Contar_Columnas_Visibles(dgvProcesos)
 
-        Dim datatableProcesos As New PdfPTable(Pdf_odt.contadorcolumnasvisibles1)
+        'Dim datatableProcesos As New PdfPTable(Pdf_odt.contadorcolumnasvisibles1)
 
-        datatableProcesos.DefaultCell.Padding = 3
+        'datatableProcesos.DefaultCell.Padding = 3
 
-        Dim headerwidthsProcesos As Single() = Pdf_odt.GetColumnsSize(dgvProcesos, Pdf_odt.contadorcolumnasvisibles1)
-        datatableProcesos.SetWidths(headerwidthsProcesos)
+        'Dim headerwidthsProcesos As Single() = Pdf_odt.GetColumnsSize(dgvProcesos, Pdf_odt.contadorcolumnasvisibles1)
+        'datatableProcesos.SetWidths(headerwidthsProcesos)
 
-        datatable.WidthPercentage = 100
-        datatable.DefaultCell.BorderWidth = 1
+        'datatable.WidthPercentage = 100
+        'datatable.DefaultCell.BorderWidth = 1
 
-        Pdf_odt.obtener_encabezados(dgvProcesos, datatableProcesos)
+        'Pdf_odt.obtener_encabezados(dgvProcesos, datatableProcesos)
 
-        datatableProcesos.HeaderRows = 1
-        datatableProcesos.DefaultCell.BorderWidth = 1
+        'datatableProcesos.HeaderRows = 1
+        'datatableProcesos.DefaultCell.BorderWidth = 1
 
-        Pdf_odt.exportar_filas_una(dgvProcesos, datatableProcesos, 0)
-        document.Add(datatableProcesos)
+        'Pdf_odt.exportar_filas_una(dgvProcesos, datatableProcesos, 0)
+        'document.Add(datatableProcesos)
     End Sub
     Sub pdf_informe_diario_sin_tablas(ByVal doc As Document, ByVal fila_actual As Integer)
         'Agregado de productos
