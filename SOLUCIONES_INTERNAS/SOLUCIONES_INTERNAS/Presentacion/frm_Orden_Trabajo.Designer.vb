@@ -263,9 +263,9 @@ Partial Class frm_Orden_Trabajo
         Me.Label18.AutoSize = True
         Me.Label18.Location = New System.Drawing.Point(722, 13)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(78, 13)
+        Me.Label18.Size = New System.Drawing.Size(63, 13)
         Me.Label18.TabIndex = 42
-        Me.Label18.Text = "Observaciones"
+        Me.Label18.Text = "Descripción"
         '
         'Label1
         '
@@ -514,7 +514,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato3_Soporte3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato3_Soporte3.FormattingEnabled = True
-        Me.cboFormato3_Soporte3.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
+        Me.cboFormato3_Soporte3.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
         Me.cboFormato3_Soporte3.Location = New System.Drawing.Point(338, 93)
         Me.cboFormato3_Soporte3.Name = "cboFormato3_Soporte3"
         Me.cboFormato3_Soporte3.Size = New System.Drawing.Size(89, 21)
@@ -524,7 +524,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato2_Soporte3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato2_Soporte3.FormattingEnabled = True
-        Me.cboFormato2_Soporte3.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
+        Me.cboFormato2_Soporte3.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
         Me.cboFormato2_Soporte3.Location = New System.Drawing.Point(338, 68)
         Me.cboFormato2_Soporte3.Name = "cboFormato2_Soporte3"
         Me.cboFormato2_Soporte3.Size = New System.Drawing.Size(89, 21)
@@ -534,7 +534,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato1_Soporte3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato1_Soporte3.FormattingEnabled = True
-        Me.cboFormato1_Soporte3.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
+        Me.cboFormato1_Soporte3.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
         Me.cboFormato1_Soporte3.Location = New System.Drawing.Point(338, 42)
         Me.cboFormato1_Soporte3.Name = "cboFormato1_Soporte3"
         Me.cboFormato1_Soporte3.Size = New System.Drawing.Size(89, 21)
@@ -840,7 +840,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato3_Soporte2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato3_Soporte2.FormattingEnabled = True
-        Me.cboFormato3_Soporte2.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
+        Me.cboFormato3_Soporte2.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
         Me.cboFormato3_Soporte2.Location = New System.Drawing.Point(338, 88)
         Me.cboFormato3_Soporte2.Name = "cboFormato3_Soporte2"
         Me.cboFormato3_Soporte2.Size = New System.Drawing.Size(89, 21)
@@ -850,7 +850,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato2_Soporte2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato2_Soporte2.FormattingEnabled = True
-        Me.cboFormato2_Soporte2.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
+        Me.cboFormato2_Soporte2.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
         Me.cboFormato2_Soporte2.Location = New System.Drawing.Point(338, 63)
         Me.cboFormato2_Soporte2.Name = "cboFormato2_Soporte2"
         Me.cboFormato2_Soporte2.Size = New System.Drawing.Size(89, 21)
@@ -860,7 +860,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato1_Soporte2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato1_Soporte2.FormattingEnabled = True
-        Me.cboFormato1_Soporte2.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
+        Me.cboFormato1_Soporte2.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
         Me.cboFormato1_Soporte2.Location = New System.Drawing.Point(338, 37)
         Me.cboFormato1_Soporte2.Name = "cboFormato1_Soporte2"
         Me.cboFormato1_Soporte2.Size = New System.Drawing.Size(89, 21)
@@ -1163,7 +1163,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato3_Soporte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato3_Soporte1.FormattingEnabled = True
-        Me.cboFormato3_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
+        Me.cboFormato3_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
         Me.cboFormato3_Soporte1.Location = New System.Drawing.Point(338, 89)
         Me.cboFormato3_Soporte1.Name = "cboFormato3_Soporte1"
         Me.cboFormato3_Soporte1.Size = New System.Drawing.Size(89, 21)
@@ -1173,7 +1173,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato2_Soporte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato2_Soporte1.FormattingEnabled = True
-        Me.cboFormato2_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
+        Me.cboFormato2_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
         Me.cboFormato2_Soporte1.Location = New System.Drawing.Point(338, 64)
         Me.cboFormato2_Soporte1.Name = "cboFormato2_Soporte1"
         Me.cboFormato2_Soporte1.Size = New System.Drawing.Size(89, 21)
@@ -1256,7 +1256,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato1_Soporte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato1_Soporte1.FormattingEnabled = True
-        Me.cboFormato1_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
+        Me.cboFormato1_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
         Me.cboFormato1_Soporte1.Location = New System.Drawing.Point(338, 38)
         Me.cboFormato1_Soporte1.Name = "cboFormato1_Soporte1"
         Me.cboFormato1_Soporte1.Size = New System.Drawing.Size(89, 21)
