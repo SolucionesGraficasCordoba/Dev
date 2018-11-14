@@ -70,6 +70,7 @@ Partial Class frm_Proceso1
         Me.txt_descripc_offset.Name = "txt_descripc_offset"
         Me.txt_descripc_offset.Size = New System.Drawing.Size(281, 54)
         Me.txt_descripc_offset.TabIndex = 1
+        Me.txt_descripc_offset.Text = "Máquina:         " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Chapas:     " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Pliego máquina:"
         '
         'Label1
         '
