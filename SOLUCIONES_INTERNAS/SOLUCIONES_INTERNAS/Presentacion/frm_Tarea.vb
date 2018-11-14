@@ -1,6 +1,7 @@
 ﻿Public Class frm_Tarea
     Dim datacontext As New DataS_Interno
     Dim quienllamoboton As Button
+    Dim buscartarea
 
     Private Sub btnGuardar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Tarea.Click
 
@@ -331,8 +332,6 @@
             txt_detalle_tarea20.Focus()
             Exit Sub
         End If
-        '-----------------------------------------------------------------------------------------
-
 
         Try
             If txt_detalle_tarea1.Text.Length <> 0 Or txtNumero_Orden_Trabajo1.Text.Length <> 0 Then
@@ -348,13 +347,17 @@
                 tar1.COL_id_colaborador = txt_id_colaborador.Text
                 tar1.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
                 tar1.TAR_hora_fin = StrConv(txtHora_Finalizacion1.Text, VbStrConv.ProperCase)
-                tar1.TAR_carga_horaria = StrConv(txt_Carga_Horaria1.Text, VbStrConv.ProperCase)
+
                 tar1.TAR_detalle_tarea = StrConv(txt_detalle_tarea1.Text, VbStrConv.ProperCase)
                 tar1.TAR_observaciones = StrConv(txtObservaciones1.Text, VbStrConv.ProperCase)
                 tar1.TAR_fecha = dtpFecha.Text
-                tar1.TAR_entrada = txtEntrada.Text
-                tar1.TAR_salida = txtSalida.Text
 
+              
+                If buscartarea = False Then
+                    tar1.TAR_carga_horaria = StrConv(txt_Carga_Horaria1.Text, VbStrConv.ProperCase)
+                    tar1.TAR_entrada = txtEntrada.Text
+                    tar1.TAR_salida = txtSalida.Text
+                End If
                 datacontext.TAREA.InsertOnSubmit(tar1)
                 datacontext.SubmitChanges()
             Else
@@ -372,6 +375,7 @@
                 tar2.COL_id_colaborador = txt_id_colaborador.Text
                 tar2.ORT_id_orden_trabajo = txt_id_orden_trabajo2.Text
                 tar2.TAR_hora_fin = StrConv(txtHora_Finalizacion2.Text, VbStrConv.ProperCase)
+                '   tar2.TAR_carga_horaria = "0"
                 tar2.TAR_detalle_tarea = StrConv(txt_detalle_tarea2.Text, VbStrConv.ProperCase)
                 tar2.TAR_observaciones = StrConv(txtObservaciones2.Text, VbStrConv.ProperCase)
                 tar2.TAR_fecha = dtpFecha.Text
@@ -393,6 +397,7 @@
                 tar3.COL_id_colaborador = txt_id_colaborador.Text
                 tar3.ORT_id_orden_trabajo = txt_id_orden_trabajo3.Text
                 tar3.TAR_hora_fin = StrConv(txtHora_Finalizacion3.Text, VbStrConv.ProperCase)
+                'tar3.TAR_carga_horaria = "0"
                 tar3.TAR_detalle_tarea = StrConv(txt_detalle_tarea3.Text, VbStrConv.ProperCase)
                 tar3.TAR_observaciones = StrConv(txtObservaciones3.Text, VbStrConv.ProperCase)
                 tar3.TAR_fecha = dtpFecha.Text
@@ -414,6 +419,7 @@
                 tar4.COL_id_colaborador = txt_id_colaborador.Text
                 tar4.ORT_id_orden_trabajo = txt_id_orden_trabajo4.Text
                 tar4.TAR_hora_fin = StrConv(txtHora_Finalizacion4.Text, VbStrConv.ProperCase)
+                '    tar4.TAR_carga_horaria = "0"
                 tar4.TAR_detalle_tarea = StrConv(txt_detalle_tarea4.Text, VbStrConv.ProperCase)
                 tar4.TAR_observaciones = StrConv(txtObservaciones4.Text, VbStrConv.ProperCase)
                 tar4.TAR_fecha = dtpFecha.Text
@@ -435,6 +441,7 @@
                 tar5.COL_id_colaborador = txt_id_colaborador.Text
                 tar5.ORT_id_orden_trabajo = txt_id_orden_trabajo5.Text
                 tar5.TAR_hora_fin = StrConv(txtHora_Finalizacion5.Text, VbStrConv.ProperCase)
+                '  tar5.TAR_carga_horaria = "0"
                 tar5.TAR_detalle_tarea = StrConv(txt_detalle_tarea5.Text, VbStrConv.ProperCase)
                 tar5.TAR_observaciones = StrConv(txtObservaciones5.Text, VbStrConv.ProperCase)
                 tar5.TAR_fecha = dtpFecha.Text
@@ -456,6 +463,7 @@
                 tar6.COL_id_colaborador = txt_id_colaborador.Text
                 tar6.ORT_id_orden_trabajo = txt_id_orden_trabajo6.Text
                 tar6.TAR_hora_fin = StrConv(txtHora_Finalizacion6.Text, VbStrConv.ProperCase)
+                '  tar6.TAR_carga_horaria = "0"
                 tar6.TAR_detalle_tarea = StrConv(txt_detalle_tarea6.Text, VbStrConv.ProperCase)
                 tar6.TAR_observaciones = StrConv(txtObservaciones6.Text, VbStrConv.ProperCase)
                 tar6.TAR_fecha = dtpFecha.Text
@@ -477,6 +485,7 @@
                 tar7.COL_id_colaborador = txt_id_colaborador.Text
                 tar7.ORT_id_orden_trabajo = txt_id_orden_trabajo7.Text
                 tar7.TAR_hora_fin = StrConv(txtHora_Finalizacion7.Text, VbStrConv.ProperCase)
+                '   tar7.TAR_carga_horaria = "0"
                 tar7.TAR_detalle_tarea = StrConv(txt_detalle_tarea7.Text, VbStrConv.ProperCase)
                 tar7.TAR_observaciones = StrConv(txtObservaciones5.Text, VbStrConv.ProperCase)
                 tar7.TAR_fecha = dtpFecha.Text
@@ -498,6 +507,7 @@
                 tar8.COL_id_colaborador = txt_id_colaborador.Text
                 tar8.ORT_id_orden_trabajo = txt_id_orden_trabajo8.Text
                 tar8.TAR_hora_fin = StrConv(txtHora_Finalizacion8.Text, VbStrConv.ProperCase)
+                '  tar8.TAR_carga_horaria = "0"
                 tar8.TAR_detalle_tarea = StrConv(txt_detalle_tarea8.Text, VbStrConv.ProperCase)
                 tar8.TAR_observaciones = StrConv(txtObservaciones8.Text, VbStrConv.ProperCase)
                 tar8.TAR_fecha = dtpFecha.Text
@@ -519,6 +529,7 @@
                 tar9.COL_id_colaborador = txt_id_colaborador.Text
                 tar9.ORT_id_orden_trabajo = txt_id_orden_trabajo9.Text
                 tar9.TAR_hora_fin = StrConv(txtHora_Finalizacion9.Text, VbStrConv.ProperCase)
+                '  tar9.TAR_carga_horaria = "0"
                 tar9.TAR_detalle_tarea = StrConv(txt_detalle_tarea9.Text, VbStrConv.ProperCase)
                 tar9.TAR_observaciones = StrConv(txtObservaciones9.Text, VbStrConv.ProperCase)
                 tar9.TAR_fecha = dtpFecha.Text
@@ -540,6 +551,7 @@
                 tar10.COL_id_colaborador = txt_id_colaborador.Text
                 tar10.ORT_id_orden_trabajo = txt_id_orden_trabajo10.Text
                 tar10.TAR_hora_fin = StrConv(txtHora_Finalizacion10.Text, VbStrConv.ProperCase)
+                '  tar10.TAR_carga_horaria = "0"
                 tar10.TAR_detalle_tarea = StrConv(txt_detalle_tarea10.Text, VbStrConv.ProperCase)
                 tar10.TAR_observaciones = StrConv(txtObservaciones10.Text, VbStrConv.ProperCase)
                 tar10.TAR_fecha = dtpFecha.Text
@@ -561,6 +573,7 @@
                 tar11.COL_id_colaborador = txt_id_colaborador.Text
                 tar11.ORT_id_orden_trabajo = txt_id_orden_trabajo11.Text
                 tar11.TAR_hora_fin = StrConv(txtHora_Finalizacion11.Text, VbStrConv.ProperCase)
+                '    tar11.TAR_carga_horaria = "0"
                 tar11.TAR_detalle_tarea = StrConv(txt_detalle_tarea11.Text, VbStrConv.ProperCase)
                 tar11.TAR_observaciones = StrConv(txtObservaciones11.Text, VbStrConv.ProperCase)
                 tar11.TAR_fecha = dtpFecha.Text
@@ -582,6 +595,7 @@
                 tar12.COL_id_colaborador = txt_id_colaborador.Text
                 tar12.ORT_id_orden_trabajo = txt_id_orden_trabajo12.Text
                 tar12.TAR_hora_fin = StrConv(txtHora_Finalizacion12.Text, VbStrConv.ProperCase)
+                '   tar12.TAR_carga_horaria = "0"
                 tar12.TAR_detalle_tarea = StrConv(txt_detalle_tarea12.Text, VbStrConv.ProperCase)
                 tar12.TAR_observaciones = StrConv(txtObservaciones12.Text, VbStrConv.ProperCase)
                 tar12.TAR_fecha = dtpFecha.Text
@@ -603,6 +617,7 @@
                 tar13.COL_id_colaborador = txt_id_colaborador.Text
                 tar13.ORT_id_orden_trabajo = txt_id_orden_trabajo13.Text
                 tar13.TAR_hora_fin = StrConv(txtHora_Finalizacion13.Text, VbStrConv.ProperCase)
+                '  tar13.TAR_carga_horaria = "0"
                 tar13.TAR_detalle_tarea = StrConv(txt_detalle_tarea13.Text, VbStrConv.ProperCase)
                 tar13.TAR_observaciones = StrConv(txtObservaciones13.Text, VbStrConv.ProperCase)
                 tar13.TAR_fecha = dtpFecha.Text
@@ -624,6 +639,7 @@
                 tar14.COL_id_colaborador = txt_id_colaborador.Text
                 tar14.ORT_id_orden_trabajo = txt_id_orden_trabajo14.Text
                 tar14.TAR_hora_fin = StrConv(txtHora_Finalizacion14.Text, VbStrConv.ProperCase)
+                '  tar14.TAR_carga_horaria = "0"
                 tar14.TAR_detalle_tarea = StrConv(txt_detalle_tarea14.Text, VbStrConv.ProperCase)
                 tar14.TAR_observaciones = StrConv(txtObservaciones14.Text, VbStrConv.ProperCase)
                 tar14.TAR_fecha = dtpFecha.Text
@@ -645,6 +661,7 @@
                 tar15.COL_id_colaborador = txt_id_colaborador.Text
                 tar15.ORT_id_orden_trabajo = txt_id_orden_trabajo15.Text
                 tar15.TAR_hora_fin = StrConv(txtHora_Finalizacion15.Text, VbStrConv.ProperCase)
+                '   tar15.TAR_carga_horaria = "0"
                 tar15.TAR_detalle_tarea = StrConv(txt_detalle_tarea15.Text, VbStrConv.ProperCase)
                 tar15.TAR_observaciones = StrConv(txtObservaciones15.Text, VbStrConv.ProperCase)
                 tar15.TAR_fecha = dtpFecha.Text
@@ -666,6 +683,7 @@
                 tar16.COL_id_colaborador = txt_id_colaborador.Text
                 tar16.ORT_id_orden_trabajo = txt_id_orden_trabajo16.Text
                 tar16.TAR_hora_fin = StrConv(txtHora_Finalizacion16.Text, VbStrConv.ProperCase)
+                '    tar16.TAR_carga_horaria = "0"
                 tar16.TAR_detalle_tarea = StrConv(txt_detalle_tarea16.Text, VbStrConv.ProperCase)
                 tar16.TAR_observaciones = StrConv(txtObservaciones16.Text, VbStrConv.ProperCase)
                 tar16.TAR_fecha = dtpFecha.Text
@@ -687,6 +705,7 @@
                 tar17.COL_id_colaborador = txt_id_colaborador.Text
                 tar17.ORT_id_orden_trabajo = txt_id_orden_trabajo17.Text
                 tar17.TAR_hora_fin = StrConv(txtHora_Finalizacion17.Text, VbStrConv.ProperCase)
+                '  tar17.TAR_carga_horaria = "0"
                 tar17.TAR_detalle_tarea = StrConv(txt_detalle_tarea17.Text, VbStrConv.ProperCase)
                 tar17.TAR_observaciones = StrConv(txtObservaciones17.Text, VbStrConv.ProperCase)
                 tar17.TAR_fecha = dtpFecha.Text
@@ -708,6 +727,7 @@
                 tar18.COL_id_colaborador = txt_id_colaborador.Text
                 tar18.ORT_id_orden_trabajo = txt_id_orden_trabajo18.Text
                 tar18.TAR_hora_fin = StrConv(txtHora_Finalizacion18.Text, VbStrConv.ProperCase)
+                '  tar18.TAR_carga_horaria = "0"
                 tar18.TAR_detalle_tarea = StrConv(txt_detalle_tarea18.Text, VbStrConv.ProperCase)
                 tar18.TAR_observaciones = StrConv(txtObservaciones18.Text, VbStrConv.ProperCase)
                 tar18.TAR_fecha = dtpFecha.Text
@@ -729,6 +749,7 @@
                 tar19.COL_id_colaborador = txt_id_colaborador.Text
                 tar19.ORT_id_orden_trabajo = txt_id_orden_trabajo19.Text
                 tar19.TAR_hora_fin = StrConv(txtHora_Finalizacion19.Text, VbStrConv.ProperCase)
+                '  tar19.TAR_carga_horaria = "0"
                 tar19.TAR_detalle_tarea = StrConv(txt_detalle_tarea19.Text, VbStrConv.ProperCase)
                 tar19.TAR_observaciones = StrConv(txtObservaciones19.Text, VbStrConv.ProperCase)
                 tar19.TAR_fecha = dtpFecha.Text
@@ -750,6 +771,7 @@
                 tar20.COL_id_colaborador = txt_id_colaborador.Text
                 tar20.ORT_id_orden_trabajo = txt_id_orden_trabajo20.Text
                 tar20.TAR_hora_fin = StrConv(txtHora_Finalizacion20.Text, VbStrConv.ProperCase)
+                ' tar20.TAR_carga_horaria = "0"
                 tar20.TAR_detalle_tarea = StrConv(txt_detalle_tarea20.Text, VbStrConv.ProperCase)
                 tar20.TAR_observaciones = StrConv(txtObservaciones20.Text, VbStrConv.ProperCase)
                 tar20.TAR_fecha = dtpFecha.Text
@@ -769,15 +791,13 @@
             '        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Right = 30
             '        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Top = 30
             '        PrintForm1.PrinterSettings.DefaultPageSettings.Margins.Bottom = 30
-
-
             '        PrintForm1.Print() 'imprimir
             'End Select
 
-            MsgBox("Las tareas se ha guardado correctamente" + MsgBoxStyle.Information, "Guardar Tareas")
+            MsgBox("Las tareas se ha guardado correctamente")
             Me.Close()
         Catch ex As Exception
-            MsgBox("Error al intentar guardar las Tareas" + MsgBoxStyle.Critical, "Guardar Tareas")
+            MsgBox("Error al intentar guardar las Tareas")
             limpiarcontroles()
         End Try
     End Sub
@@ -3356,5 +3376,41 @@
         txtHora_Finalizacion20.Clear()
         txtObservaciones20.Clear()
         txtNumero_Orden_Trabajo20.Clear()
+    End Sub
+
+    Private Sub txt_nombre_colaborador_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_nombre_colaborador.TextChanged
+        validatar()
+    End Sub
+
+    Sub validatar()
+        If txt_nombre_colaborador.TextLength <> 0 Then
+
+
+            buscartarea = (From ta In datacontext.TAREA
+                           Select ta.COL_id_colaborador, ta.TAR_fecha
+                               Where COL_id_colaborador = CInt(txt_id_colaborador.Text) And TAR_fecha = dtpFecha.Text).Any
+            If buscartarea = True Then
+                Dim traetarea = (From ta In datacontext.TAREA
+                          Select ta.TAR_entrada, ta.TAR_salida, ta.TAR_carga_horaria, ta.COL_id_colaborador, ta.TAR_fecha
+                                          Where COL_id_colaborador = CInt(txt_id_colaborador.Text) And TAR_fecha = dtpFecha.Text).ToList(0)
+                txtEntrada.Text = traetarea.TAR_entrada
+                txtEntrada.Enabled = False
+                txtSalida.Text = traetarea.TAR_salida
+                txtSalida.Enabled = False
+                txt_Carga_Horaria1.Text = traetarea.TAR_carga_horaria
+                txt_Carga_Horaria1.Enabled = False
+            Else
+                txtEntrada.Clear()
+                txtEntrada.Enabled = True
+                txtSalida.Clear()
+                txtSalida.Enabled = True
+                txt_Carga_Horaria1.Clear()
+                txt_Carga_Horaria1.Enabled = True
+            End If
+        End If
+    End Sub
+
+    Private Sub dtpFecha_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpFecha.ValueChanged
+        validatar()
     End Sub
 End Class
