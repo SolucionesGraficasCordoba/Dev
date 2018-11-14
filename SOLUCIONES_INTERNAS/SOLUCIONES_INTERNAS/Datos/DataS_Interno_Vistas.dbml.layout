@@ -56,10 +56,10 @@
         <elementListCompartment Id="4158875d-ed35-429f-9e1b-3a827ef77a94" absoluteBounds="7.0150000000000006, 4.085, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="1ad97cb3-56a7-4f66-bb77-fc58edc10934" absoluteBounds="7, 2.75, 2, 2.9247054036458326">
+    <classShape Id="25b717a9-193a-403e-9b80-9576da177401" absoluteBounds="4.75, 4.25, 2, 2.5401025390625">
       <DataClassMoniker Name="/DataS_Interno_Vistas/Tiempos_Totales" />
       <nestedChildShapes>
-        <elementListCompartment Id="306dfbf0-bd4c-4a47-adb0-3160ade40b2c" absoluteBounds="7.015, 3.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="98af5e86-d2a9-4992-a6ab-c58b35bc92ea" absoluteBounds="4.765, 4.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

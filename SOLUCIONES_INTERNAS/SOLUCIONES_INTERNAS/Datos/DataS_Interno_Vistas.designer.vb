@@ -1918,10 +1918,6 @@ Partial Public Class Tiempos_Totales
 	
 	Private _CADENA As String
 	
-	Private _TAR_entrada As String
-	
-	Private _TAR_salida As String
-	
 	Public Sub New()
 		MyBase.New
 	End Sub
@@ -2032,30 +2028,6 @@ Partial Public Class Tiempos_Totales
 		Set
 			If (String.Equals(Me._CADENA, value) = false) Then
 				Me._CADENA = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_entrada", DbType:="VarChar(10)")>  _
-	Public Property TAR_entrada() As String
-		Get
-			Return Me._TAR_entrada
-		End Get
-		Set
-			If (String.Equals(Me._TAR_entrada, value) = false) Then
-				Me._TAR_entrada = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_salida", DbType:="VarChar(10)")>  _
-	Public Property TAR_salida() As String
-		Get
-			Return Me._TAR_salida
-		End Get
-		Set
-			If (String.Equals(Me._TAR_salida, value) = false) Then
-				Me._TAR_salida = value
 			End If
 		End Set
 	End Property

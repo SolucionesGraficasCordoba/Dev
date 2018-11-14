@@ -167,8 +167,6 @@
       <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="Asignacion" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="CADENA" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="TAR_entrada" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
-      <Column Name="TAR_salida" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
