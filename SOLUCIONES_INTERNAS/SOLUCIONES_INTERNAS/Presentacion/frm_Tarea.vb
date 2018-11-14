@@ -3385,7 +3385,6 @@
     Sub validatar()
         If txt_nombre_colaborador.TextLength <> 0 Then
 
-
             buscartarea = (From ta In datacontext.TAREA
                            Select ta.COL_id_colaborador, ta.TAR_fecha
                                Where COL_id_colaborador = CInt(txt_id_colaborador.Text) And TAR_fecha = dtpFecha.Text).Any
