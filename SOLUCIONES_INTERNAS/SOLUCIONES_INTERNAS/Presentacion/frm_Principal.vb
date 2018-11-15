@@ -1330,4 +1330,5 @@ Public Class frm_Principal
     Private Sub AyudaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AyudaToolStripMenuItem.Click
         frm_Acerca_de.ShowDialog()
     End Sub
+
 End Class
