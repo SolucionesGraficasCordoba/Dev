@@ -3417,10 +3417,25 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        'calcula minutos
         Dim qtddias As TimeSpan
-        Dim totalhoras As Integer = 0
+        Dim totalmin As Integer = 0
         qtddias = CDate(txtSalida.Text).Subtract(CDate(txtEntrada.Text))
-        totalhoras = qtddias.TotalMinutes
-        txt_Carga_Horaria1.Text = totalhoras
+        totalmin = qtddias.TotalMinutes
+        txt_Carga_Horaria1.Text = totalmin
+
+        'Dim qdias As TimeSpan
+        'Dim totaldias As Integer = 0
+
+        'qdias = CDate(txtdata2.Text).Subtract(CDate(txtdata1.Text))
+        'totaldias = qdias.TotalDays
+        'txtdia.text = totaldias
+
+        'If totaldias > 30 Then
+        '    txttotalmeses.text = totaldias / 30
+        'End If
+        'If totaldias >= 365 Then
+        '    txttotalaños.text = totaldias / 365
+        'End If
     End Sub
 End Class
