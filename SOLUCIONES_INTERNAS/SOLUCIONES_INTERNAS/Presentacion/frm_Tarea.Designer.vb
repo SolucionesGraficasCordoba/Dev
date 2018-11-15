@@ -439,7 +439,7 @@ Partial Class frm_Tarea
         Me.btnNueva_Tarea.Location = New System.Drawing.Point(643, 638)
         Me.btnNueva_Tarea.Name = "btnNueva_Tarea"
         Me.btnNueva_Tarea.Size = New System.Drawing.Size(75, 23)
-        Me.btnNueva_Tarea.TabIndex = 126
+        Me.btnNueva_Tarea.TabIndex = 140
         Me.btnNueva_Tarea.Text = "Nuevo"
         Me.btnNueva_Tarea.UseVisualStyleBackColor = True
         '
@@ -464,7 +464,7 @@ Partial Class frm_Tarea
         Me.txtNumero_Orden_Trabajo1.Location = New System.Drawing.Point(778, 29)
         Me.txtNumero_Orden_Trabajo1.Name = "txtNumero_Orden_Trabajo1"
         Me.txtNumero_Orden_Trabajo1.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo1.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo1.TabIndex = 200
         '
         'txt_id_orden_trabajo1
         '
@@ -1561,84 +1561,84 @@ Partial Class frm_Tarea
         Me.txtNumero_Orden_Trabajo20.Location = New System.Drawing.Point(778, 530)
         Me.txtNumero_Orden_Trabajo20.Name = "txtNumero_Orden_Trabajo20"
         Me.txtNumero_Orden_Trabajo20.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo20.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo20.TabIndex = 219
         '
         'txtNumero_Orden_Trabajo19
         '
         Me.txtNumero_Orden_Trabajo19.Location = New System.Drawing.Point(778, 504)
         Me.txtNumero_Orden_Trabajo19.Name = "txtNumero_Orden_Trabajo19"
         Me.txtNumero_Orden_Trabajo19.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo19.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo19.TabIndex = 218
         '
         'txtNumero_Orden_Trabajo18
         '
         Me.txtNumero_Orden_Trabajo18.Location = New System.Drawing.Point(778, 476)
         Me.txtNumero_Orden_Trabajo18.Name = "txtNumero_Orden_Trabajo18"
         Me.txtNumero_Orden_Trabajo18.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo18.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo18.TabIndex = 217
         '
         'txtNumero_Orden_Trabajo17
         '
         Me.txtNumero_Orden_Trabajo17.Location = New System.Drawing.Point(778, 450)
         Me.txtNumero_Orden_Trabajo17.Name = "txtNumero_Orden_Trabajo17"
         Me.txtNumero_Orden_Trabajo17.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo17.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo17.TabIndex = 216
         '
         'txtNumero_Orden_Trabajo16
         '
         Me.txtNumero_Orden_Trabajo16.Location = New System.Drawing.Point(778, 421)
         Me.txtNumero_Orden_Trabajo16.Name = "txtNumero_Orden_Trabajo16"
         Me.txtNumero_Orden_Trabajo16.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo16.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo16.TabIndex = 215
         '
         'txtNumero_Orden_Trabajo15
         '
         Me.txtNumero_Orden_Trabajo15.Location = New System.Drawing.Point(778, 395)
         Me.txtNumero_Orden_Trabajo15.Name = "txtNumero_Orden_Trabajo15"
         Me.txtNumero_Orden_Trabajo15.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo15.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo15.TabIndex = 214
         '
         'txtNumero_Orden_Trabajo14
         '
         Me.txtNumero_Orden_Trabajo14.Location = New System.Drawing.Point(778, 369)
         Me.txtNumero_Orden_Trabajo14.Name = "txtNumero_Orden_Trabajo14"
         Me.txtNumero_Orden_Trabajo14.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo14.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo14.TabIndex = 213
         '
         'txtNumero_Orden_Trabajo13
         '
         Me.txtNumero_Orden_Trabajo13.Location = New System.Drawing.Point(778, 343)
         Me.txtNumero_Orden_Trabajo13.Name = "txtNumero_Orden_Trabajo13"
         Me.txtNumero_Orden_Trabajo13.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo13.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo13.TabIndex = 212
         '
         'txtNumero_Orden_Trabajo12
         '
         Me.txtNumero_Orden_Trabajo12.Location = New System.Drawing.Point(778, 317)
         Me.txtNumero_Orden_Trabajo12.Name = "txtNumero_Orden_Trabajo12"
         Me.txtNumero_Orden_Trabajo12.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo12.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo12.TabIndex = 211
         '
         'txtNumero_Orden_Trabajo11
         '
         Me.txtNumero_Orden_Trabajo11.Location = New System.Drawing.Point(778, 290)
         Me.txtNumero_Orden_Trabajo11.Name = "txtNumero_Orden_Trabajo11"
         Me.txtNumero_Orden_Trabajo11.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo11.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo11.TabIndex = 210
         '
         'txtNumero_Orden_Trabajo10
         '
         Me.txtNumero_Orden_Trabajo10.Location = New System.Drawing.Point(778, 264)
         Me.txtNumero_Orden_Trabajo10.Name = "txtNumero_Orden_Trabajo10"
         Me.txtNumero_Orden_Trabajo10.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo10.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo10.TabIndex = 209
         '
         'txtNumero_Orden_Trabajo9
         '
         Me.txtNumero_Orden_Trabajo9.Location = New System.Drawing.Point(778, 238)
         Me.txtNumero_Orden_Trabajo9.Name = "txtNumero_Orden_Trabajo9"
         Me.txtNumero_Orden_Trabajo9.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo9.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo9.TabIndex = 208
         '
         'txt_id_orden_trabajo20
         '
@@ -1652,7 +1652,7 @@ Partial Class frm_Tarea
         Me.txtNumero_Orden_Trabajo8.Location = New System.Drawing.Point(778, 212)
         Me.txtNumero_Orden_Trabajo8.Name = "txtNumero_Orden_Trabajo8"
         Me.txtNumero_Orden_Trabajo8.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo8.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo8.TabIndex = 207
         '
         'txt_id_orden_trabajo19
         '
@@ -1680,7 +1680,7 @@ Partial Class frm_Tarea
         Me.txtNumero_Orden_Trabajo7.Location = New System.Drawing.Point(778, 186)
         Me.txtNumero_Orden_Trabajo7.Name = "txtNumero_Orden_Trabajo7"
         Me.txtNumero_Orden_Trabajo7.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo7.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo7.TabIndex = 206
         '
         'txt_id_orden_trabajo15
         '
@@ -1694,7 +1694,7 @@ Partial Class frm_Tarea
         Me.txtNumero_Orden_Trabajo6.Location = New System.Drawing.Point(778, 160)
         Me.txtNumero_Orden_Trabajo6.Name = "txtNumero_Orden_Trabajo6"
         Me.txtNumero_Orden_Trabajo6.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo6.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo6.TabIndex = 205
         '
         'txt_id_orden_trabajo13
         '
@@ -1708,7 +1708,7 @@ Partial Class frm_Tarea
         Me.txtNumero_Orden_Trabajo5.Location = New System.Drawing.Point(778, 134)
         Me.txtNumero_Orden_Trabajo5.Name = "txtNumero_Orden_Trabajo5"
         Me.txtNumero_Orden_Trabajo5.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo5.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo5.TabIndex = 204
         '
         'txt_id_orden_trabajo11
         '
@@ -1722,7 +1722,7 @@ Partial Class frm_Tarea
         Me.txtNumero_Orden_Trabajo4.Location = New System.Drawing.Point(778, 107)
         Me.txtNumero_Orden_Trabajo4.Name = "txtNumero_Orden_Trabajo4"
         Me.txtNumero_Orden_Trabajo4.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo4.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo4.TabIndex = 203
         '
         'txt_id_orden_trabajo9
         '
@@ -1743,7 +1743,7 @@ Partial Class frm_Tarea
         Me.txtNumero_Orden_Trabajo3.Location = New System.Drawing.Point(778, 81)
         Me.txtNumero_Orden_Trabajo3.Name = "txtNumero_Orden_Trabajo3"
         Me.txtNumero_Orden_Trabajo3.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo3.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo3.TabIndex = 202
         '
         'txt_id_orden_trabajo16
         '
@@ -1764,7 +1764,7 @@ Partial Class frm_Tarea
         Me.txtNumero_Orden_Trabajo2.Location = New System.Drawing.Point(778, 55)
         Me.txtNumero_Orden_Trabajo2.Name = "txtNumero_Orden_Trabajo2"
         Me.txtNumero_Orden_Trabajo2.Size = New System.Drawing.Size(69, 20)
-        Me.txtNumero_Orden_Trabajo2.TabIndex = 40
+        Me.txtNumero_Orden_Trabajo2.TabIndex = 201
         '
         'txt_id_orden_trabajo12
         '
@@ -2855,7 +2855,7 @@ Partial Class frm_Tarea
         Me.btnImprimirFormulario.Location = New System.Drawing.Point(533, 638)
         Me.btnImprimirFormulario.Name = "btnImprimirFormulario"
         Me.btnImprimirFormulario.Size = New System.Drawing.Size(104, 23)
-        Me.btnImprimirFormulario.TabIndex = 127
+        Me.btnImprimirFormulario.TabIndex = 182
         Me.btnImprimirFormulario.Text = "Imprimir Formulario"
         Me.btnImprimirFormulario.UseVisualStyleBackColor = True
         '
@@ -2974,7 +2974,7 @@ Partial Class frm_Tarea
         Me.btnActualizar.Location = New System.Drawing.Point(805, 638)
         Me.btnActualizar.Name = "btnActualizar"
         Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
-        Me.btnActualizar.TabIndex = 128
+        Me.btnActualizar.TabIndex = 150
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '

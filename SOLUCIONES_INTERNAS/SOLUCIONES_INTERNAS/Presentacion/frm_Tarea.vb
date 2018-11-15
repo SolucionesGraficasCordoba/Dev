@@ -1,6 +1,7 @@
 ﻿Public Class frm_Tarea
     Dim datacontext As New DataS_Interno
     Dim quienllamoboton As Button
+    Public quienllamoatarea As Integer
     Dim buscartarea
 
     Private Sub btnGuardar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Tarea.Click
@@ -1138,32 +1139,31 @@
         frm_Colaborador.Show()
         frm_Colaborador.GroupNuevoColaborador.Enabled = False
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
+
+        quienllamoatarea = 0
+
     End Sub
 
     Private Sub txtHora_Finalizacion1_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion1.TextChanged
         'VALIDA LA HORA INGRESADA
         Try
-
-       
-
-
-        Select Case Len(txtHora_Finalizacion1.Text)
-            Case 5
-                If Microsoft.VisualBasic.Right(txtHora_Finalizacion1.Text, 2) > 59 Then
-                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
-                    txtHora_Finalizacion1.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion1.Text, Len(txtHora_Finalizacion1.Text) - 2)
-                Else
-                    txtHora_Finalizacion1.Text = txtHora_Finalizacion1.Text & ""
-                End If
-            Case 2
-                If Microsoft.VisualBasic.Left(txtHora_Finalizacion1.Text, 2) > 23 Then
-                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
-                    txtHora_Finalizacion1.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion1.Text, Len(txtHora_Finalizacion1.Text) - 2)
-                Else
-                    txtHora_Finalizacion1.Text = txtHora_Finalizacion1.Text & ":"
-                    Me.txtHora_Finalizacion1.SelectionStart = 3
-                End If
-        End Select
+            Select Case Len(txtHora_Finalizacion1.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion1.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion1.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion1.Text, Len(txtHora_Finalizacion1.Text) - 2)
+                    Else
+                        txtHora_Finalizacion1.Text = txtHora_Finalizacion1.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion1.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion1.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion1.Text, Len(txtHora_Finalizacion1.Text) - 2)
+                    Else
+                        txtHora_Finalizacion1.Text = txtHora_Finalizacion1.Text & ":"
+                        Me.txtHora_Finalizacion1.SelectionStart = 3
+                    End If
+            End Select
         Catch ex As Exception
 
         End Try
@@ -3394,7 +3394,9 @@
     End Sub
 
     Private Sub txt_nombre_colaborador_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_nombre_colaborador.TextChanged
-        validatar()
+        If quienllamoatarea = 0 Then
+            validatar()
+        End If
     End Sub
 
     Sub validatar()
@@ -3425,24 +3427,9 @@
     End Sub
 
     Private Sub dtpFecha_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtpFecha.ValueChanged
-        validatar()
-    End Sub
-
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-        'Dim qdias As TimeSpan
-        'Dim totaldias As Integer = 0
-
-        'qdias = CDate(txtdata2.Text).Subtract(CDate(txtdata1.Text))
-        'totaldias = qdias.TotalDays
-        'txtdia.text = totaldias
-
-        'If totaldias > 30 Then
-        '    txttotalmeses.text = totaldias / 30
-        'End If
-        'If totaldias >= 365 Then
-        '    txttotalaños.text = totaldias / 365
-        'End If
+        If quienllamoatarea = 0 Then
+            validatar()
+        End If
     End Sub
 
     Sub calcula_minutos()
