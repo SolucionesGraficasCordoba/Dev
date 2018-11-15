@@ -3,6 +3,7 @@ Imports iTextSharp.text
 Imports iTextSharp.text.pdf
 Imports System.IO
 'Imports SOLUCIONES_INTERNAS.Class_Generar_pdf
+'creo la fuente
 
 
 Public Class frm_Listado_Orden_Trabajo
@@ -19,6 +20,7 @@ Public Class frm_Listado_Orden_Trabajo
 
     'campos y vbles para generar pdf
     'Public contadorcolumnasvisibles As Integer
+    Dim fuente As iTextSharp.text.pdf.BaseFont = FontFactory.GetFont(FontFactory.HELVETICA).BaseFont
     
 
     Private Sub frm_Detalle_Orden_Trabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -954,91 +956,162 @@ Public Class frm_Listado_Orden_Trabajo
 
     Public Sub btn_ODT_mostrar_pdf_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_ODT_mostrar_pdf.Click
 
-        'Try
+        Try
 
-        'intentar generar el documento
-        Dim doc As New Document(PageSize.A4, 5, 5, 5, 5)
-        'path que guarda el reporte en el escritorio de windows (desktop)
-        Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Tareas diarias resumen.pdf"
-        Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
-        PdfWriter.GetInstance(doc, file)
-        doc.Open()
+            'intentar generar el documento
+            Dim doc As New Document(PageSize.A4, 5, 5, 10, 5)
 
-        'Vbles formato
-        Dim linea As New Paragraph(".  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  ." _
-                                 & "  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .")
-        Dim medialinea As New Paragraph("                                               " _
-                                        & ".......................................................................................")
-        'Dim espacio As New Paragraph()
+            'path que guarda el reporte en el escritorio de windows (desktop)
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Orden_" _
+                                     + dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgv_detalle_orden.CurrentRow.Index).Value + "_" _
+                                     + dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                     + ".pdf"
+            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+            ' PARA LAS LINEAS DE FONDO
+            Dim writer As PdfWriter = PdfWriter.GetInstance(doc, file)
 
-        'vbles de grids
-        Dim orden As New Phrase("   " & dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgv_detalle_orden.CurrentRow.Index).Value _
-                                         & " " _
-                                         & dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                         & "          " _
-                                         , New Font(Font.Name = "Arial", 22, Font.Bold))
 
-        Dim fecha_entrega As New Phrase("Entrega: " & dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                         , New Font(Font.Name = "Arial", 16, Font.Bold))
+            doc.Open()
 
-        Dim ingreso_vendedor As New Paragraph("Fecha ingreso: " & dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgv_detalle_orden.CurrentRow.Index).Value _
-                                         & "  " _
-                                         & "           " _
-                                         & "Vendedor: " & dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                         , New Font(Font.Name = "Arial", 12, Font.Bold))
+            'Dim filebyte As Byte() = My.Resources.Planet_press_3
+            'Dim fondo_odt As Image = Image.GetInstance(My.Resources.Planet_press_3)
+            'Dim fondo2 As Rectangle = New Rectangle(doc.PageSize)
+            'fondo2.BackgroundColor = New BaseColor(System.Drawing.Color.Aqua)
 
-        Dim cliente As New Paragraph("Cliente: " & dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                         , New Font(Font.Name = "Arial", 12))
+            Dim cb As PdfContentByte = writer.DirectContent
+            Dibujar_Lineas(cb, doc)
+            Escribir_Pdf(cb)
+            'Dim png As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(My.Resources.Planet_press_3)
+            'png.ScaleAbsolute(75, 52)
+            'png.SetAbsolutePosition(40, 40)
 
-        Dim entrega As New Paragraph("Entregar en: " & dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                         , New Font(Font.Name = "Arial", 12))
-
-        Dim prod_desc As New Paragraph("Descripción: " _
-                                       & dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                       , New Font(Font.Name = "Arial", 10, Font.Bold))
+            'cb.AddImage(png)
 
 
 
-        Dim encabezado As New Paragraph
-        encabezado.Add(orden)
-        encabezado.Add(fecha_entrega)
-
-        'Encabezado
-        'doc.Add(espacio)
-        'doc.Add(orden)
-        'doc.Add(fecha_entrega)
-        doc.Add(encabezado)
-        doc.Add(linea)
-
-        'Info
-        doc.Add(ingreso_vendedor)
-        doc.Add(cliente)
-        doc.Add(entrega)
-        doc.Add(linea)
-
-        'Descripción
-        doc.Add(prod_desc)
-        doc.Add(linea)
+            ''fondo_odt.Alignment = iTextSharp.text.Image.UNDERLYING
+            'doc.Add(fondo_odt)
 
 
-        'Productos
+            'Vbles formato
+            Dim medialinea As New Paragraph("                                       " _
+            & "--------------------------------------------------------------------------------------")
 
-        For i = 0 To dgv_detalle_orden.RowCount - 1
-            dgv_detalle_orden.Rows(i).Selected = True
-            dgv_detalle_orden_CellClick(0, Nothing)
-            pdf_informe_diario_sin_tablas(doc, i)
-            doc.Add(medialinea)
-        Next
-        doc.Close()
-        Process.Start(filename)
+            Dim linea As New Paragraph("-------------------------------------------------------------------------" _
+                                      & "------------------------------------------------------------------------")
+            'Dim espacio As New Paragraph()
 
-        ' Me.Close()
-        'Catch ex As Exception
-        'si el mensaje es fallido mostrar msgbox
-        'MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        'End Try
+            'vbles de grids
+            Dim orden As New Phrase("   " & dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgv_detalle_orden.CurrentRow.Index).Value _
+                                             & " " _
+                                             & dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                             & "                   " _
+                                            , New Font(fuente, 22, Font.Bold))
+
+            'Dim fecha_entrega As New Phrase("Entrega: " & dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+            '                                 , New Font(fuente, 16))
+
+            Dim ingreso_vendedor As New Paragraph("Fecha ingreso: " & dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgv_detalle_orden.CurrentRow.Index).Value _
+                                             & "  " _
+                                             & "                          " _
+                                             & "Vendedor: " & dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                             , New Font(fuente, 12, Font.Bold))
+
+            Dim cliente As New Paragraph("Cliente: " & dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                             , New Font(fuente, 12))
+
+            Dim entrega As New Paragraph("Entregar en: " & dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                             , New Font(fuente, 12))
+
+            Dim prod_desc As New Paragraph("Descripción: " _
+                                           & dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                           , New Font(fuente, 10, Font.Bold))
+
+
+
+            Dim encabezado As New Paragraph
+            encabezado.Add(orden)
+            'encabezado.Add(fecha_entrega)
+
+            'Encabezado
+            'doc.Add(espacio)
+            'doc.Add(orden)
+            'doc.Add(fecha_entrega)
+            doc.Add(encabezado)
+            'doc.Add(linea)
+
+            'Info
+            doc.Add(ingreso_vendedor)
+            doc.Add(cliente)
+            doc.Add(entrega)
+            'doc.Add(linea)
+
+            'Descripción
+            doc.Add(prod_desc)
+            doc.Add(linea)
+
+
+            'Productos
+
+            For i = 0 To dgv_detalle_orden.RowCount - 1
+                dgv_detalle_orden.Rows(i).Selected = True
+                dgv_detalle_orden_CellClick(0, Nothing)
+                pdf_informe_diario_sin_tablas(doc, i)
+                doc.Add(linea)
+            Next
+            doc.Close()
+            writer.Close()
+            Process.Start(filename)
+
+            'Me.Close()
+        Catch ex As Exception
+            'si el mensaje es fallido mostrar msgbox
+            MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
-   
+    Sub Dibujar_Lineas(ByVal cb As PdfContentByte, ByVal doc As Document)
+        'LINEAS DE FONDO
+        'cb.MoveTo(doc.PageSize.Width / 2, doc.PageSize.Height / 2)
+        'cb.LineTo(doc.PageSize.Width / 2, doc.PageSize.Height)
+        'cb.Stroke()
+
+        'H1
+        cb.MoveTo(0, 810)
+        cb.LineTo(doc.PageSize.Width, 810)
+        cb.Stroke()
+
+        'H2
+        cb.MoveTo(0, 757)
+        cb.LineTo(doc.PageSize.Width, 757)
+        cb.Stroke()
+
+        'V1
+        cb.MoveTo(400, doc.PageSize.Height)
+        cb.LineTo(400, 810)
+        cb.Stroke()
+
+        ''H4
+        'cb.MoveTo(0, 400)
+        'cb.LineTo(doc.PageSize.Width, 400)
+        'cb.Stroke()
+
+    End Sub
+
+    Sub Escribir_Pdf(ByVal cb As PdfContentByte)
+
+        'ESCRIBIR EN EL PDF
+        ' Write text in the PDF
+        'PARA LA FUENTE
+        cb.SetFontAndSize(fuente, 16)
+        cb.BeginText()
+        Dim text As String = "Entrega: " & dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.CurrentRow.Index).Value
+
+        ' Set the alignment and coordinates here
+        cb.ShowTextAligned(1, text, 480, 820, 0)
+        cb.EndText()
+    End Sub
+
+
     Sub pdf_informe_diario(ByVal document As Document, ByVal fila_actual As Integer)
 
         'Dim Pdf_odt As New Class_Generar_pdf
@@ -1101,7 +1174,7 @@ Public Class frm_Listado_Orden_Trabajo
                                       & dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.Rows(fila_actual).Index).Value _
                                       & "   " _
                                       & dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.Rows(fila_actual).Index).Value _
-                                      , New Font(Font.Name = "Arial", 16, Font.Bold))
+                                      , New Font(fuente, 16, Font.Bold))
 
         doc.Add(prod_tit)
         doc.Add(prod_det)
@@ -1113,7 +1186,7 @@ Public Class frm_Listado_Orden_Trabajo
         'Agregado de soportes
         Dim soporte As New Paragraph
         Dim temp_cadena_cant, temp_cadena_papel, temp_cadena_gram, temp_cadena_formato As String
-        For j = 0 To dgv_detalle_orden.RowCount
+        For j = 0 To 2 'dgv_detalle_orden.RowCount
             temp_cadena_cant = "DOT_cantidad_soporte_" & j + 1
             temp_cadena_papel = "DOT_papel_soporte_" & j + 1
             temp_cadena_gram = "DOT_gramaje_soporte_" & j + 1
@@ -1124,17 +1197,17 @@ Public Class frm_Listado_Orden_Trabajo
                                          & dgv_detalle_orden.Item(temp_cadena_formato, dgv_detalle_orden.Rows(fila_actual).Index).Value & " " _
                                          & dgv_detalle_orden.Item(temp_cadena_papel, dgv_detalle_orden.Rows(fila_actual).Index).Value & "   " _
                                          & dgv_detalle_orden.Item(temp_cadena_gram, dgv_detalle_orden.Rows(fila_actual).Index).Value & "    " _
-                                         , New Font(Font.Name = "Arial", 8))
+                                         , New Font(fuente, 8))
             Else
                 soporte = New Paragraph("")
             End If
             doc.Add(soporte)
         Next
-        Dim pro_offset As New Paragraph("  Offset: " & dgvProcesos.Item("PROC_descrip_offset", dgvProcesos.Rows(0).Index).Value, New Font(Font.Name = "Arial", 12, Font.Bold))
-        Dim pro_digital As New Paragraph("  Digital: " & dgvProcesos.Item("PROC_descrip_digital", dgvProcesos.Rows(0).Index).Value, New Font(Font.Name = "Arial", 12, Font.Bold))
-        Dim pro_g_form As New Paragraph("  Gran formato: " & dgvProcesos.Item("PROC_descrip_gran_formato", dgvProcesos.Rows(0).Index).Value, New Font(Font.Name = "Arial", 12, Font.Bold))
-        Dim pro_term As New Paragraph("  Terminación: " & dgvProcesos.Item("PROC_descrip_terminacion", dgvProcesos.Rows(0).Index).Value, New Font(Font.Name = "Arial", 12, Font.Bold))
-        Dim pro_logi As New Paragraph("  Logística: " & dgvProcesos.Item("PROC_descrip_logistica", dgvProcesos.Rows(0).Index).Value, New Font(Font.Name = "Arial", 12, Font.Bold))
+        Dim pro_offset As New Paragraph("  Offset: " & dgvProcesos.Item("PROC_descrip_offset", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
+        Dim pro_digital As New Paragraph("  Digital: " & dgvProcesos.Item("PROC_descrip_digital", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
+        Dim pro_g_form As New Paragraph("  Gran formato: " & dgvProcesos.Item("PROC_descrip_gran_formato", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
+        Dim pro_term As New Paragraph("  Terminación: " & dgvProcesos.Item("PROC_descrip_terminacion", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
+        Dim pro_logi As New Paragraph("  Logística: " & dgvProcesos.Item("PROC_descrip_logistica", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
 
         doc.Add(pro_offset)
         doc.Add(pro_digital)
