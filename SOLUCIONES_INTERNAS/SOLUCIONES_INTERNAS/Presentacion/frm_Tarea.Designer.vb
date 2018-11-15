@@ -49,6 +49,7 @@ Partial Class frm_Tarea
         Me.txt_detalle_tarea1 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Label60 = New System.Windows.Forms.Label()
         Me.btnLimpiarTarea20 = New System.Windows.Forms.Button()
         Me.btnLimpiarTarea19 = New System.Windows.Forms.Button()
@@ -329,7 +330,6 @@ Partial Class frm_Tarea
         Me.txt_Carga_Horaria1.Name = "txt_Carga_Horaria1"
         Me.txt_Carga_Horaria1.Size = New System.Drawing.Size(53, 20)
         Me.txt_Carga_Horaria1.TabIndex = 3
-        Me.txt_Carga_Horaria1.Text = "540"
         '
         'Label13
         '
@@ -794,6 +794,15 @@ Partial Class frm_Tarea
         Me.GroupBox1.Size = New System.Drawing.Size(964, 562)
         Me.GroupBox1.TabIndex = 44
         Me.GroupBox1.TabStop = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(725, 20)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(23, 23)
+        Me.Button1.TabIndex = 129
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Label60
         '
@@ -2884,6 +2893,7 @@ Partial Class frm_Tarea
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.Label59)
         Me.GroupBox2.Controls.Add(Me.Label32)
         Me.GroupBox2.Controls.Add(Me.txtSalida)
@@ -3304,4 +3314,5 @@ Partial Class frm_Tarea
     Friend WithEvents btnLimpiarTarea3 As System.Windows.Forms.Button
     Friend WithEvents btnLimpiarTarea2 As System.Windows.Forms.Button
     Friend WithEvents btnLimpiarTarea1 As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

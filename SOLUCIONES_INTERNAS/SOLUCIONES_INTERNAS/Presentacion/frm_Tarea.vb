@@ -3057,7 +3057,7 @@
         End Select
     End Sub
 
-    Private Sub txtSalida_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtSalida.TextChanged
+    Private Sub txtSalida_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSalida.TextChanged
         'VALIDA LA HORA INGRESADA
         Select Case Len(txtSalida.Text)
             Case 5
@@ -3075,90 +3075,93 @@
                     txtSalida.Text = txtSalida.Text & ":"
                     Me.txtSalida.SelectionStart = 3
                 End If
+
         End Select
     End Sub
 
-    Private Sub txtTiempo_Real1_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real1.TextChanged
+
+
+    Private Sub txtTiempo_Real1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real1.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real2_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real2.TextChanged
+    Private Sub txtTiempo_Real2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real2.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real3_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real3.TextChanged
+    Private Sub txtTiempo_Real3_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real3.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real4_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real4.TextChanged
+    Private Sub txtTiempo_Real4_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real4.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real5_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real5.TextChanged
+    Private Sub txtTiempo_Real5_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real5.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real6_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real6.TextChanged
+    Private Sub txtTiempo_Real6_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real6.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real7_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real7.TextChanged
+    Private Sub txtTiempo_Real7_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real7.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real8_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real8.TextChanged
+    Private Sub txtTiempo_Real8_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real8.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real9_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real9.TextChanged
+    Private Sub txtTiempo_Real9_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real9.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real10_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real10.TextChanged
+    Private Sub txtTiempo_Real10_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real10.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real11_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real11.TextChanged
+    Private Sub txtTiempo_Real11_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real11.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real12_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real12.TextChanged
+    Private Sub txtTiempo_Real12_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real12.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real13_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real13.TextChanged
+    Private Sub txtTiempo_Real13_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real13.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real14_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real14.TextChanged
+    Private Sub txtTiempo_Real14_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real14.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real15_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real15.TextChanged
+    Private Sub txtTiempo_Real15_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real15.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real16_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real16.TextChanged
+    Private Sub txtTiempo_Real16_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real16.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real17_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real17.TextChanged
+    Private Sub txtTiempo_Real17_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real17.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real18_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real18.TextChanged
+    Private Sub txtTiempo_Real18_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real18.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real19_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real19.TextChanged
+    Private Sub txtTiempo_Real19_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real19.TextChanged
         Calcular()
     End Sub
 
-    Private Sub txtTiempo_Real20_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Real20.TextChanged
+    Private Sub txtTiempo_Real20_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real20.TextChanged
         Calcular()
     End Sub
 
-    Private Sub btnLimpiarTarea1_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea1.Click
+    Private Sub btnLimpiarTarea1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea1.Click
         txt_Id_Tarea1.Clear()
         txt_detalle_tarea1.Clear()
         txtTiempo_Estimado1.Clear()
@@ -3169,7 +3172,7 @@
         txtNumero_Orden_Trabajo1.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea2_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea2.Click
+    Private Sub btnLimpiarTarea2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea2.Click
         txt_Id_Tarea2.Clear()
         txt_detalle_tarea2.Clear()
         txtTiempo_Estimado2.Clear()
@@ -3180,7 +3183,7 @@
         txtNumero_Orden_Trabajo2.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea3_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea3.Click
+    Private Sub btnLimpiarTarea3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea3.Click
         txt_Id_Tarea3.Clear()
         txt_detalle_tarea3.Clear()
         txtTiempo_Estimado3.Clear()
@@ -3191,7 +3194,7 @@
         txtNumero_Orden_Trabajo3.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea4_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea4.Click
+    Private Sub btnLimpiarTarea4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea4.Click
         txt_Id_Tarea4.Clear()
         txt_detalle_tarea4.Clear()
         txtTiempo_Estimado4.Clear()
@@ -3202,7 +3205,7 @@
         txtNumero_Orden_Trabajo4.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea5_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea5.Click
+    Private Sub btnLimpiarTarea5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea5.Click
         txt_Id_Tarea5.Clear()
         txt_detalle_tarea5.Clear()
         txtTiempo_Estimado5.Clear()
@@ -3213,7 +3216,7 @@
         txtNumero_Orden_Trabajo5.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea6_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea6.Click
+    Private Sub btnLimpiarTarea6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea6.Click
         txt_Id_Tarea6.Clear()
         txt_detalle_tarea6.Clear()
         txtTiempo_Estimado6.Clear()
@@ -3224,7 +3227,7 @@
         txtNumero_Orden_Trabajo6.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea7_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea7.Click
+    Private Sub btnLimpiarTarea7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea7.Click
         txt_Id_Tarea7.Clear()
         txt_detalle_tarea7.Clear()
         txtTiempo_Estimado7.Clear()
@@ -3235,7 +3238,7 @@
         txtNumero_Orden_Trabajo7.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea8_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea8.Click
+    Private Sub btnLimpiarTarea8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea8.Click
         txt_Id_Tarea8.Clear()
         txt_detalle_tarea8.Clear()
         txtTiempo_Estimado8.Clear()
@@ -3246,7 +3249,7 @@
         txtNumero_Orden_Trabajo8.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea9_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea9.Click
+    Private Sub btnLimpiarTarea9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea9.Click
         txt_Id_Tarea9.Clear()
         txt_detalle_tarea9.Clear()
         txtTiempo_Estimado9.Clear()
@@ -3257,7 +3260,7 @@
         txtNumero_Orden_Trabajo9.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea10_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea10.Click
+    Private Sub btnLimpiarTarea10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea10.Click
         txt_Id_Tarea10.Clear()
         txt_detalle_tarea10.Clear()
         txtTiempo_Estimado10.Clear()
@@ -3268,7 +3271,7 @@
         txtNumero_Orden_Trabajo10.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea11_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea11.Click
+    Private Sub btnLimpiarTarea11_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea11.Click
         txt_Id_Tarea11.Clear()
         txt_detalle_tarea11.Clear()
         txtTiempo_Estimado11.Clear()
@@ -3279,7 +3282,7 @@
         txtNumero_Orden_Trabajo11.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea12_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea12.Click
+    Private Sub btnLimpiarTarea12_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea12.Click
         txt_Id_Tarea12.Clear()
         txt_detalle_tarea12.Clear()
         txtTiempo_Estimado12.Clear()
@@ -3290,7 +3293,7 @@
         txtNumero_Orden_Trabajo12.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea13_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea13.Click
+    Private Sub btnLimpiarTarea13_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea13.Click
         txt_Id_Tarea13.Clear()
         txt_detalle_tarea13.Clear()
         txtTiempo_Estimado13.Clear()
@@ -3301,7 +3304,7 @@
         txtNumero_Orden_Trabajo13.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea14_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea14.Click
+    Private Sub btnLimpiarTarea14_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea14.Click
         txt_Id_Tarea14.Clear()
         txt_detalle_tarea14.Clear()
         txtTiempo_Estimado14.Clear()
@@ -3312,7 +3315,7 @@
         txtNumero_Orden_Trabajo14.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea15_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea15.Click
+    Private Sub btnLimpiarTarea15_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea15.Click
         txt_Id_Tarea15.Clear()
         txt_detalle_tarea15.Clear()
         txtTiempo_Estimado15.Clear()
@@ -3323,7 +3326,7 @@
         txtNumero_Orden_Trabajo15.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea16_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea16.Click
+    Private Sub btnLimpiarTarea16_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea16.Click
         txt_Id_Tarea16.Clear()
         txt_detalle_tarea16.Clear()
         txtTiempo_Estimado16.Clear()
@@ -3334,7 +3337,7 @@
         txtNumero_Orden_Trabajo16.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea17_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea17.Click
+    Private Sub btnLimpiarTarea17_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea17.Click
         txt_Id_Tarea17.Clear()
         txt_detalle_tarea17.Clear()
         txtTiempo_Estimado17.Clear()
@@ -3345,7 +3348,7 @@
         txtNumero_Orden_Trabajo17.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea18_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea18.Click
+    Private Sub btnLimpiarTarea18_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea18.Click
         txt_Id_Tarea18.Clear()
         txt_detalle_tarea18.Clear()
         txtTiempo_Estimado18.Clear()
@@ -3356,7 +3359,7 @@
         txtNumero_Orden_Trabajo18.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea19_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea19.Click
+    Private Sub btnLimpiarTarea19_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea19.Click
         txt_Id_Tarea19.Clear()
         txt_detalle_tarea19.Clear()
         txtTiempo_Estimado19.Clear()
@@ -3367,7 +3370,7 @@
         txtNumero_Orden_Trabajo19.Clear()
     End Sub
 
-    Private Sub btnLimpiarTarea20_Click(sender As System.Object, e As System.EventArgs) Handles btnLimpiarTarea20.Click
+    Private Sub btnLimpiarTarea20_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea20.Click
         txt_Id_Tarea20.Clear()
         txt_detalle_tarea20.Clear()
         txtTiempo_Estimado20.Clear()
@@ -3378,7 +3381,7 @@
         txtNumero_Orden_Trabajo20.Clear()
     End Sub
 
-    Private Sub txt_nombre_colaborador_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_nombre_colaborador.TextChanged
+    Private Sub txt_nombre_colaborador_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_nombre_colaborador.TextChanged
         validatar()
     End Sub
 
@@ -3409,7 +3412,15 @@
         End If
     End Sub
 
-    Private Sub dtpFecha_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpFecha.ValueChanged
+    Private Sub dtpFecha_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtpFecha.ValueChanged
         validatar()
+    End Sub
+
+    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+        Dim qtddias As TimeSpan
+        Dim totalhoras As Integer = 0
+        qtddias = CDate(txtSalida.Text).Subtract(CDate(txtEntrada.Text))
+        totalhoras = qtddias.TotalMinutes
+        txt_Carga_Horaria1.Text = totalhoras
     End Sub
 End Class
