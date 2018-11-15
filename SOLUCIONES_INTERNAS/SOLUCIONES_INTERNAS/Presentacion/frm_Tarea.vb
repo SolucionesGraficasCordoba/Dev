@@ -3036,6 +3036,12 @@
         End Try
     End Sub
 
+    Private Sub txtEntrada_LostFocus(sender As Object, e As System.EventArgs) Handles txtEntrada.LostFocus
+        If txtEntrada.TextLength <> 0 And txtSalida.TextLength <> 0 Then
+            calcula_minutos()
+        End If
+    End Sub
+
     Private Sub txtEntrada_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtEntrada.TextChanged
         'VALIDA LA HORA INGRESADA
         Select Case Len(txtEntrada.Text)
@@ -3055,6 +3061,12 @@
                     Me.txtEntrada.SelectionStart = 3
                 End If
         End Select
+    End Sub
+
+    Private Sub txtSalida_LostFocus(sender As Object, e As System.EventArgs) Handles txtSalida.LostFocus
+        If txtEntrada.TextLength <> 0 And txtSalida.TextLength <> 0 Then
+            calcula_minutos()
+        End If
     End Sub
 
     Private Sub txtSalida_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSalida.TextChanged
@@ -3417,13 +3429,7 @@
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        'calcula minutos
-        Dim qtddias As TimeSpan
-        Dim totalmin As Integer = 0
-        qtddias = CDate(txtSalida.Text).Subtract(CDate(txtEntrada.Text))
-        totalmin = qtddias.TotalMinutes
-        txt_Carga_Horaria1.Text = totalmin
-
+       
         'Dim qdias As TimeSpan
         'Dim totaldias As Integer = 0
 
@@ -3437,5 +3443,14 @@
         'If totaldias >= 365 Then
         '    txttotalaños.text = totaldias / 365
         'End If
+    End Sub
+
+    Sub calcula_minutos()
+        'calcula minutos
+        Dim qtddias As TimeSpan
+        Dim totalmin As Integer = 0
+        qtddias = CDate(txtSalida.Text).Subtract(CDate(txtEntrada.Text))
+        totalmin = qtddias.TotalMinutes
+        txt_Carga_Horaria1.Text = totalmin
     End Sub
 End Class
