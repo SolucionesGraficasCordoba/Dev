@@ -125,7 +125,7 @@ Public Class frm_Listado_Tareas
             mostrargrillaobligaciones(datagridtarea)
 
             If dgvTarea_x_Colaborador.Rows.Count = 0 Then
-                If Me.Text = "Modificar Tarea" Then 
+                If Me.Text = "Modificar Tarea" Then
                     MsgBox("No se le ha asignado ninguna tarea", MsgBoxStyle.Information, "Sin tarea")
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
@@ -750,8 +750,8 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
         frm_Tarea.txt_id_orden_trabajo2.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden2.Enabled = False
-       
-       
+
+
     End Sub
 
     Sub desab_tarea_3()
@@ -763,8 +763,8 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
         frm_Tarea.txt_id_orden_trabajo3.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden3.Enabled = False
-       
-       
+
+
     End Sub
 
     Sub desab_tarea_4()
@@ -776,8 +776,8 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
         frm_Tarea.txt_id_orden_trabajo4.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden4.Enabled = False
-       
-       
+
+
     End Sub
 
     Sub desab_tarea_5()
@@ -801,7 +801,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
         frm_Tarea.txt_id_orden_trabajo6.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden6.Enabled = False
-       
+
     End Sub
 
     Sub desab_tarea_7()
@@ -824,8 +824,8 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
         frm_Tarea.txt_id_orden_trabajo8.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden8.Enabled = False
-      
-      
+
+
     End Sub
 
     Sub desab_tarea_9()
@@ -837,7 +837,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
         frm_Tarea.txt_id_orden_trabajo9.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden9.Enabled = False
-      
+
     End Sub
 
     Sub desab_tarea_10()
@@ -849,7 +849,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
         frm_Tarea.txt_id_orden_trabajo10.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden10.Enabled = False
-     
+
     End Sub
 
     Sub desab_tarea_11()
@@ -861,7 +861,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
         frm_Tarea.txt_id_orden_trabajo11.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden11.Enabled = False
-       
+
     End Sub
 
     Sub desab_tarea_12()
@@ -873,7 +873,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
         frm_Tarea.txt_id_orden_trabajo12.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden12.Enabled = False
-       
+
     End Sub
 
     Sub desab_tarea_13()
@@ -885,7 +885,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
         frm_Tarea.txt_id_orden_trabajo13.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden13.Enabled = False
-      
+
     End Sub
 
     Sub desab_tarea_14()
@@ -897,7 +897,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo14.Enabled = False
         frm_Tarea.txt_id_orden_trabajo14.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden14.Enabled = False
-       
+
     End Sub
 
     Sub desab_tarea_15()
@@ -909,7 +909,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo15.Enabled = False
         frm_Tarea.txt_id_orden_trabajo15.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden15.Enabled = False
-       
+
     End Sub
 
     Sub desab_tarea_16()
@@ -921,7 +921,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo16.Enabled = False
         frm_Tarea.txt_id_orden_trabajo16.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden16.Enabled = False
-       
+
     End Sub
 
     Sub desab_tarea_17()
@@ -933,7 +933,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo17.Enabled = False
         frm_Tarea.txt_id_orden_trabajo17.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden17.Enabled = False
-       
+
     End Sub
 
     Sub desab_tarea_18()
@@ -945,7 +945,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo18.Enabled = False
         frm_Tarea.txt_id_orden_trabajo18.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden18.Enabled = False
-      
+
     End Sub
 
     Sub desab_tarea_19()
@@ -1836,7 +1836,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones1.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(0).Index).Value
                 frm_Tarea.txt_id_orden_trabajo1.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(0).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo1.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(0).Index).Value
-        
+
             End If
 
             If flag2 = 1 Then
@@ -1848,7 +1848,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones2.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(1).Index).Value
                 frm_Tarea.txt_id_orden_trabajo2.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(1).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo2.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(1).Index).Value
-       
+
             End If
 
             If flag3 = 1 Then
@@ -1860,7 +1860,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones3.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(2).Index).Value
                 frm_Tarea.txt_id_orden_trabajo3.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(2).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo3.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(2).Index).Value
-           
+
             End If
 
             If flag4 = 1 Then
@@ -1872,7 +1872,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones4.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(3).Index).Value
                 frm_Tarea.txt_id_orden_trabajo4.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(3).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo4.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(3).Index).Value
-    
+
             End If
 
             If flag5 = 1 Then
@@ -1884,7 +1884,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones5.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(4).Index).Value
                 frm_Tarea.txt_id_orden_trabajo5.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(4).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo5.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(4).Index).Value
-         
+
             End If
 
             If flag6 = 1 Then
@@ -1896,7 +1896,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones6.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(5).Index).Value
                 frm_Tarea.txt_id_orden_trabajo6.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(5).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo6.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(5).Index).Value
-         
+
             End If
 
             If flag7 = 1 Then
@@ -1908,7 +1908,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones7.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(6).Index).Value
                 frm_Tarea.txt_id_orden_trabajo7.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(6).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo7.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(6).Index).Value
-            
+
             End If
 
             If flag8 = 1 Then
@@ -1920,7 +1920,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones8.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(7).Index).Value
                 frm_Tarea.txt_id_orden_trabajo8.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(7).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo8.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(7).Index).Value
-            
+
             End If
 
             If flag9 = 1 Then
@@ -1932,7 +1932,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones9.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(8).Index).Value
                 frm_Tarea.txt_id_orden_trabajo9.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(8).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo9.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(8).Index).Value
-           
+
             End If
 
             If flag10 = 1 Then
@@ -1944,7 +1944,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones10.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(9).Index).Value
                 frm_Tarea.txt_id_orden_trabajo10.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(9).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo10.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(9).Index).Value
-            
+
             End If
 
             If flag11 = 1 Then
@@ -1956,7 +1956,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones11.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(10).Index).Value
                 frm_Tarea.txt_id_orden_trabajo11.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(10).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo11.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(10).Index).Value
-              
+
             End If
 
             If flag12 = 1 Then
@@ -1968,7 +1968,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones12.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(11).Index).Value
                 frm_Tarea.txt_id_orden_trabajo12.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(11).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo12.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(11).Index).Value
-           
+
             End If
 
             If flag13 = 1 Then
@@ -1980,7 +1980,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones13.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(12).Index).Value
                 frm_Tarea.txt_id_orden_trabajo13.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(12).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo13.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(12).Index).Value
-           
+
             End If
 
             If flag14 = 1 Then
@@ -1992,7 +1992,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones14.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(13).Index).Value
                 frm_Tarea.txt_id_orden_trabajo14.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(13).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo14.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(13).Index).Value
-             
+
             End If
 
             If flag15 = 1 Then
@@ -2004,7 +2004,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones15.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(14).Index).Value
                 frm_Tarea.txt_id_orden_trabajo15.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(14).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo15.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(14).Index).Value
-            
+
             End If
 
             If flag16 = 1 Then
@@ -2016,7 +2016,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones16.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(15).Index).Value
                 frm_Tarea.txt_id_orden_trabajo16.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(15).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo16.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(15).Index).Value
-           
+
             End If
 
             If flag17 = 1 Then
@@ -2028,7 +2028,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones17.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(16).Index).Value
                 frm_Tarea.txt_id_orden_trabajo17.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(16).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo17.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(16).Index).Value
-           
+
             End If
 
             If flag18 = 1 Then
@@ -2040,7 +2040,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones18.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(17).Index).Value
                 frm_Tarea.txt_id_orden_trabajo18.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(17).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo18.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(17).Index).Value
-              
+
             End If
 
             If flag19 = 1 Then
@@ -2072,7 +2072,20 @@ Public Class frm_Listado_Tareas
         frm_Tarea.Text = "Actualizar Tareas"
         frm_Tarea.btnImprimirFormulario.Visible = False
         frm_Tarea.txt_nombre_colaborador.Enabled = False
-        ' DeshabilitarText()
+
+
+        ' frm_Tarea.btnImprimirFormulario.Enabled = True
+        frm_Tarea.btnBuscar_Colaborador.Enabled = False
+        frm_Tarea.dtpFecha.Enabled = False
+        frm_Tarea.txt_Carga_Horaria1.Enabled = False
+        '  frm_Tarea.btnNueva_Tarea.Enabled = False
+        frm_Tarea.btnGuardar_Tarea.Enabled = False
+        frm_Tarea.Label1.Visible = False
+        frm_Tarea.txt_id_colaborador.Visible = False
+        frm_Tarea.txt_id_tarea.Visible = False
+        frm_Tarea.btnActualizar.Enabled = True
+        frm_Tarea.txtEntrada.Enabled = False
+        frm_Tarea.txtSalida.Enabled = False
         frm_Tarea.ShowDialog()
     End Sub
 
