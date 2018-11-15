@@ -230,6 +230,7 @@ Public Class frm_Listado_Tareas
         frm_Actualizar_Tarea.btn_buscar_colaborador.Enabled = False
         frm_Actualizar_Tarea.btn_buscar_numero_orden.Enabled = False
         frm_Actualizar_Tarea.btn_buscar_numero_orden.Enabled = True
+        frm_Actualizar_Tarea.dtpFecha.Enabled = False
     End Sub
 
     'BOTON CANCELAR CIERRA EL FORMULARIO ACTUAL

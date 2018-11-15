@@ -343,7 +343,7 @@
                 If txtTiempo_Real1.Text.Length <> 0 Then
                     tar1.TAR_tiempo_real = StrConv(txtTiempo_Real1.Text, VbStrConv.ProperCase)
                 Else
-                    tar1.TAR_tiempo_real = 1
+                    '   tar1.TAR_tiempo_real = 1
                 End If
                 tar1.COL_id_colaborador = txt_id_colaborador.Text
                 tar1.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
@@ -371,7 +371,7 @@
                 If txtTiempo_Real2.Text.Length <> 0 Then
                     tar2.TAR_tiempo_real = StrConv(txtTiempo_Real2.Text, VbStrConv.ProperCase)
                 Else
-                    tar2.TAR_tiempo_real = 1
+                    'tar2.TAR_tiempo_real = 1
                 End If
                 tar2.COL_id_colaborador = txt_id_colaborador.Text
                 tar2.ORT_id_orden_trabajo = txt_id_orden_trabajo2.Text
@@ -393,7 +393,7 @@
                 If txtTiempo_Real3.Text.Length <> 0 Then
                     tar3.TAR_tiempo_real = StrConv(txtTiempo_Real3.Text, VbStrConv.ProperCase)
                 Else
-                    tar3.TAR_tiempo_real = 1
+                    '      tar3.TAR_tiempo_real = 1
                 End If
                 tar3.COL_id_colaborador = txt_id_colaborador.Text
                 tar3.ORT_id_orden_trabajo = txt_id_orden_trabajo3.Text
@@ -415,7 +415,7 @@
                 If txtTiempo_Real4.Text.Length <> 0 Then
                     tar4.TAR_tiempo_real = StrConv(txtTiempo_Real4.Text, VbStrConv.ProperCase)
                 Else
-                    tar4.TAR_tiempo_real = 1
+                    '     tar4.TAR_tiempo_real = 1
                 End If
                 tar4.COL_id_colaborador = txt_id_colaborador.Text
                 tar4.ORT_id_orden_trabajo = txt_id_orden_trabajo4.Text
@@ -437,7 +437,7 @@
                 If txtTiempo_Real5.Text.Length <> 0 Then
                     tar5.TAR_tiempo_real = StrConv(txtTiempo_Real5.Text, VbStrConv.ProperCase)
                 Else
-                    tar5.TAR_tiempo_real = 1
+                    '        tar5.TAR_tiempo_real = 1
                 End If
                 tar5.COL_id_colaborador = txt_id_colaborador.Text
                 tar5.ORT_id_orden_trabajo = txt_id_orden_trabajo5.Text
@@ -459,7 +459,7 @@
                 If txtTiempo_Real6.Text.Length <> 0 Then
                     tar6.TAR_tiempo_real = StrConv(txtTiempo_Real6.Text, VbStrConv.ProperCase)
                 Else
-                    tar6.TAR_tiempo_real = 1
+                    '        tar6.TAR_tiempo_real = 1
                 End If
                 tar6.COL_id_colaborador = txt_id_colaborador.Text
                 tar6.ORT_id_orden_trabajo = txt_id_orden_trabajo6.Text
@@ -481,7 +481,7 @@
                 If txtTiempo_Real7.Text.Length <> 0 Then
                     tar7.TAR_tiempo_real = StrConv(txtTiempo_Real7.Text, VbStrConv.ProperCase)
                 Else
-                    tar7.TAR_tiempo_real = 1
+                    '       tar7.TAR_tiempo_real = 1
                 End If
                 tar7.COL_id_colaborador = txt_id_colaborador.Text
                 tar7.ORT_id_orden_trabajo = txt_id_orden_trabajo7.Text
@@ -503,7 +503,7 @@
                 If txtTiempo_Real8.Text.Length <> 0 Then
                     tar8.TAR_tiempo_real = StrConv(txtTiempo_Real8.Text, VbStrConv.ProperCase)
                 Else
-                    tar8.TAR_tiempo_real = 1
+                    '        tar8.TAR_tiempo_real = 1
                 End If
                 tar8.COL_id_colaborador = txt_id_colaborador.Text
                 tar8.ORT_id_orden_trabajo = txt_id_orden_trabajo8.Text
@@ -525,7 +525,7 @@
                 If txtTiempo_Real9.Text.Length <> 0 Then
                     tar9.TAR_tiempo_real = StrConv(txtTiempo_Real9.Text, VbStrConv.ProperCase)
                 Else
-                    tar9.TAR_tiempo_real = 1
+                    '          tar9.TAR_tiempo_real = 1
                 End If
                 tar9.COL_id_colaborador = txt_id_colaborador.Text
                 tar9.ORT_id_orden_trabajo = txt_id_orden_trabajo9.Text
@@ -547,7 +547,7 @@
                 If txtTiempo_Real10.Text.Length <> 0 Then
                     tar10.TAR_tiempo_real = StrConv(txtTiempo_Real10.Text, VbStrConv.ProperCase)
                 Else
-                    tar10.TAR_tiempo_real = 1
+                    '           tar10.TAR_tiempo_real = 1
                 End If
                 tar10.COL_id_colaborador = txt_id_colaborador.Text
                 tar10.ORT_id_orden_trabajo = txt_id_orden_trabajo10.Text
@@ -569,7 +569,7 @@
                 If txtTiempo_Real11.Text.Length <> 0 Then
                     tar11.TAR_tiempo_real = StrConv(txtTiempo_Real11.Text, VbStrConv.ProperCase)
                 Else
-                    tar11.TAR_tiempo_real = 1
+                    '           tar11.TAR_tiempo_real = 1
                 End If
                 tar11.COL_id_colaborador = txt_id_colaborador.Text
                 tar11.ORT_id_orden_trabajo = txt_id_orden_trabajo11.Text
@@ -591,7 +591,7 @@
                 If txtTiempo_Real12.Text.Length <> 0 Then
                     tar12.TAR_tiempo_real = StrConv(txtTiempo_Real12.Text, VbStrConv.ProperCase)
                 Else
-                    tar12.TAR_tiempo_real = 1
+                    '          tar12.TAR_tiempo_real = 1
                 End If
                 tar12.COL_id_colaborador = txt_id_colaborador.Text
                 tar12.ORT_id_orden_trabajo = txt_id_orden_trabajo12.Text
@@ -613,7 +613,7 @@
                 If txtTiempo_Real13.Text.Length <> 0 Then
                     tar13.TAR_tiempo_real = StrConv(txtTiempo_Real13.Text, VbStrConv.ProperCase)
                 Else
-                    tar13.TAR_tiempo_real = 1
+                    '         tar13.TAR_tiempo_real = 1
                 End If
                 tar13.COL_id_colaborador = txt_id_colaborador.Text
                 tar13.ORT_id_orden_trabajo = txt_id_orden_trabajo13.Text
@@ -635,7 +635,7 @@
                 If txtTiempo_Real14.Text.Length <> 0 Then
                     tar14.TAR_tiempo_real = StrConv(txtTiempo_Real14.Text, VbStrConv.ProperCase)
                 Else
-                    tar14.TAR_tiempo_real = 1
+                    '        tar14.TAR_tiempo_real = 1
                 End If
                 tar14.COL_id_colaborador = txt_id_colaborador.Text
                 tar14.ORT_id_orden_trabajo = txt_id_orden_trabajo14.Text
@@ -657,7 +657,7 @@
                 If txtTiempo_Real15.Text.Length <> 0 Then
                     tar15.TAR_tiempo_real = StrConv(txtTiempo_Real15.Text, VbStrConv.ProperCase)
                 Else
-                    tar15.TAR_tiempo_real = 1
+                    '          tar15.TAR_tiempo_real = 1
                 End If
                 tar15.COL_id_colaborador = txt_id_colaborador.Text
                 tar15.ORT_id_orden_trabajo = txt_id_orden_trabajo15.Text
@@ -679,7 +679,7 @@
                 If txtTiempo_Real16.Text.Length <> 0 Then
                     tar16.TAR_tiempo_real = StrConv(txtTiempo_Real16.Text, VbStrConv.ProperCase)
                 Else
-                    tar16.TAR_tiempo_real = 1
+                    '         tar16.TAR_tiempo_real = 1
                 End If
                 tar16.COL_id_colaborador = txt_id_colaborador.Text
                 tar16.ORT_id_orden_trabajo = txt_id_orden_trabajo16.Text
@@ -701,7 +701,7 @@
                 If txtTiempo_Real17.Text.Length <> 0 Then
                     tar17.TAR_tiempo_real = StrConv(txtTiempo_Real17.Text, VbStrConv.ProperCase)
                 Else
-                    tar17.TAR_tiempo_real = 1
+                    '          tar17.TAR_tiempo_real = 1
                 End If
                 tar17.COL_id_colaborador = txt_id_colaborador.Text
                 tar17.ORT_id_orden_trabajo = txt_id_orden_trabajo17.Text
@@ -723,7 +723,7 @@
                 If txtTiempo_Real18.Text.Length <> 0 Then
                     tar18.TAR_tiempo_real = StrConv(txtTiempo_Real18.Text, VbStrConv.ProperCase)
                 Else
-                    tar18.TAR_tiempo_real = 1
+                    '          tar18.TAR_tiempo_real = 1
                 End If
                 tar18.COL_id_colaborador = txt_id_colaborador.Text
                 tar18.ORT_id_orden_trabajo = txt_id_orden_trabajo18.Text
@@ -745,7 +745,7 @@
                 If txtTiempo_Real19.Text.Length <> 0 Then
                     tar19.TAR_tiempo_real = StrConv(txtTiempo_Real19.Text, VbStrConv.ProperCase)
                 Else
-                    tar19.TAR_tiempo_real = 1
+                    '           tar19.TAR_tiempo_real = 1
                 End If
                 tar19.COL_id_colaborador = txt_id_colaborador.Text
                 tar19.ORT_id_orden_trabajo = txt_id_orden_trabajo19.Text
@@ -767,7 +767,7 @@
                 If txtTiempo_Real20.Text.Length <> 0 Then
                     tar20.TAR_tiempo_real = StrConv(txtTiempo_Real20.Text, VbStrConv.ProperCase)
                 Else
-                    tar20.TAR_tiempo_real = 1
+                    '         tar20.TAR_tiempo_real = 1
                 End If
                 tar20.COL_id_colaborador = txt_id_colaborador.Text
                 tar20.ORT_id_orden_trabajo = txt_id_orden_trabajo20.Text
