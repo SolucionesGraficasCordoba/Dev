@@ -15,6 +15,7 @@ Public Class frm_Listado_Tareas
     Dim contadorcolumnasvisibles As Integer
     Dim interlineado As New Phrase(" ")
     Dim linea As New Phrase("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ")
+    Dim fuente As iTextSharp.text.pdf.BaseFont = FontFactory.GetFont(FontFactory.HELVETICA).BaseFont
 
 
     Private Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -1104,13 +1105,13 @@ Public Class frm_Listado_Tareas
         'datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
 
         'se crea el encabezado en el PDF
-        Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col",dgvColaboradores.SelectedRows(0).Index).Value, New Font(Font.Name = "Tahoma", 16, Font.Bold))
+        Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value, New Font(fuente, 16, Font.Bold))
 
         'se crea el texto abajo de los horarios
         Dim entradasalida As New Paragraph("Entrada: " + dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(0).Index).Value + " Salida: " + _
-                                           dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(0).Index).Value, New Font(Font.Name = "Tahoma", 14, Font.Bold))
+                                           dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(0).Index).Value, New Font(fuente, 14, Font.Bold))
 
-        Dim texto As New Phrase("Fecha: " + dtpFecha.Text, New Font(Font.Name = "Tahoma", 12, Font.Bold))
+        Dim texto As New Phrase("Fecha: " + dtpFecha.Text, New Font(fuente, 12, Font.Bold))
 
         'se capturan los nombres de las columnas del datagridview
         For i As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
@@ -2079,15 +2080,15 @@ Public Class frm_Listado_Tareas
             contadorcolumnasvisibles = 0
 
             'intentar generar el documento
-            Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
+            Dim doc As New Document(PageSize.A4, 5, 5, 5, 5)
             'path que guarda el reporte en el escritorio de windows (desktop)
-            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Tareas diarias resumen.pdf"
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Tareas_diarias_resumen_" + cbo_sector.Text + ".pdf"
             Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
             PdfWriter.GetInstance(doc, file)
             doc.Open()
 
             Dim encabezado As New Paragraph("Sector: " + cbo_sector.Text + "              " + _
-                                       "Fecha: " + dtpFecha.Text, New Font(Font.Name = "Arial", 16, Font.Bold))
+                                       "Fecha: " + dtpFecha.Text, New Font(fuente, 16, Font.Bold))
             doc.Add(encabezado)
 
             For i = 0 To dgvColaboradores.RowCount - 1
@@ -2153,19 +2154,19 @@ Public Class frm_Listado_Tareas
         document.Add(linea)
         document.Add(linea)
 
-        Dim texto As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.Rows(colab).Index).Value, New Font(Font.Name = "Tahoma", 14, Font.Bold))
+        Dim texto As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.Rows(colab).Index).Value, New Font(fuente, 14, Font.Bold))
         document.Add(texto)
 
-        If dgvTarea_x_Colaborador.Rows.Count Then
+        If dgvTarea_x_Colaborador.Rows.Count > 1 Then
             Try
-                Dim entradasalida As New Paragraph("Entrada: " + dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(colab).Index).Value + " Salida: " + _
-                                                 dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(colab).Index).Value, New Font(Font.Name = "Tahoma", 12, Font.Bold))
+                Dim entradasalida As New Paragraph("Entrada: " + dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(0).Index).Value + " Salida: " + _
+                                                 dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(0).Index).Value, New Font(fuente, 12, Font.Bold))
                 document.Add(entradasalida)
             Catch ex As Exception
-                Dim entradasalida As New Paragraph("No se encontro horario de entrada y salida asociado.", New Font(Font.Name = "Tahoma", 10, Font.Bold))
+                Dim entradasalida As New Paragraph("No se encontro horario de entrada y salida asociado.", New Font(fuente, 10, Font.Bold))
             End Try
         Else
-            Dim entradasalida As New Paragraph("Sin tareas cargadas por el momento.", New Font(Font.Name = "Tahoma", 10, Font.Bold))
+            Dim entradasalida As New Paragraph("Sin tareas cargadas por el momento.", New Font(fuente, 10, Font.Bold))
             document.Add(entradasalida)
         End If
         document.Add(interlineado)
