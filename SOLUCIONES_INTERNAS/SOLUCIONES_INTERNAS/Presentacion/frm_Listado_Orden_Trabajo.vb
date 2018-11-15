@@ -21,7 +21,7 @@ Public Class frm_Listado_Orden_Trabajo
     'campos y vbles para generar pdf
     'Public contadorcolumnasvisibles As Integer
     Dim fuente As iTextSharp.text.pdf.BaseFont = FontFactory.GetFont(FontFactory.HELVETICA).BaseFont
-    
+
 
     Private Sub frm_Detalle_Orden_Trabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         armargrilla()
