@@ -68,7 +68,7 @@ Public Class frm_Principal
         frm_Tarea.txt_id_tarea.Visible = False
         Label1.Visible = False
         frm_Tarea.dtpFecha.Text = Now
-        frm_Tarea.txt_detalle_tarea1.Focus()
+        frm_Tarea.btnBuscar_Colaborador.Focus()
 
         frm_Tarea.txt_detalle_tarea1.Clear()
         frm_Tarea.txt_detalle_tarea2.Clear()
