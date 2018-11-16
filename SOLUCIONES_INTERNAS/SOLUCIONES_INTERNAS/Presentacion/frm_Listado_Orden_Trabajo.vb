@@ -966,7 +966,7 @@ Public Class frm_Listado_Orden_Trabajo
         Try
 
             'intentar generar el documento
-            Dim doc As New Document(PageSize.A4, 5, 5, 10, 5)
+            Dim doc As New Document(PageSize.A4, 20, 20, 20, 20)
 
             'path que guarda el reporte en el escritorio de windows (desktop)
             Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Orden_" _
@@ -1088,18 +1088,18 @@ Public Class frm_Listado_Orden_Trabajo
         'cb.Stroke()
 
         'H1
-        cb.MoveTo(0, 810)
-        cb.LineTo(doc.PageSize.Width, 810)
+        cb.MoveTo(0, 800)
+        cb.LineTo(doc.PageSize.Width, 800)
         cb.Stroke()
 
         'H2
-        cb.MoveTo(0, 757)
-        cb.LineTo(doc.PageSize.Width, 757)
+        cb.MoveTo(0, 747)
+        cb.LineTo(doc.PageSize.Width, 747)
         cb.Stroke()
 
         'V1
         cb.MoveTo(400, doc.PageSize.Height)
-        cb.LineTo(400, 810)
+        cb.LineTo(400, 800)
         cb.Stroke()
 
         ''H4
