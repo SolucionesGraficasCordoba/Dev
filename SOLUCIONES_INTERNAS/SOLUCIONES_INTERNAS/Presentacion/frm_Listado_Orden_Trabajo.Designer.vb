@@ -80,14 +80,14 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.GroupListadoPiezas.Controls.Add(Me.dgvLista_Orden_Trabajo)
         Me.GroupListadoPiezas.Location = New System.Drawing.Point(10, 9)
         Me.GroupListadoPiezas.Name = "GroupListadoPiezas"
-        Me.GroupListadoPiezas.Size = New System.Drawing.Size(777, 243)
+        Me.GroupListadoPiezas.Size = New System.Drawing.Size(777, 351)
         Me.GroupListadoPiezas.TabIndex = 29
         Me.GroupListadoPiezas.TabStop = False
         Me.GroupListadoPiezas.Text = "Listado de Ordenes"
         '
         'btn_ODT_mostrar_pdf
         '
-        Me.btn_ODT_mostrar_pdf.Location = New System.Drawing.Point(426, 210)
+        Me.btn_ODT_mostrar_pdf.Location = New System.Drawing.Point(428, 317)
         Me.btn_ODT_mostrar_pdf.Name = "btn_ODT_mostrar_pdf"
         Me.btn_ODT_mostrar_pdf.Size = New System.Drawing.Size(94, 23)
         Me.btn_ODT_mostrar_pdf.TabIndex = 37
@@ -144,7 +144,7 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         'btnEliminar_Orden
         '
-        Me.btnEliminar_Orden.Location = New System.Drawing.Point(651, 210)
+        Me.btnEliminar_Orden.Location = New System.Drawing.Point(653, 317)
         Me.btnEliminar_Orden.Name = "btnEliminar_Orden"
         Me.btnEliminar_Orden.Size = New System.Drawing.Size(113, 23)
         Me.btnEliminar_Orden.TabIndex = 28
@@ -153,7 +153,7 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         'btnModificar_Orden
         '
-        Me.btnModificar_Orden.Location = New System.Drawing.Point(526, 210)
+        Me.btnModificar_Orden.Location = New System.Drawing.Point(528, 317)
         Me.btnModificar_Orden.Name = "btnModificar_Orden"
         Me.btnModificar_Orden.Size = New System.Drawing.Size(119, 23)
         Me.btnModificar_Orden.TabIndex = 29
@@ -164,7 +164,7 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         Me.Label3.AutoSize = True
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label3.Location = New System.Drawing.Point(104, 214)
+        Me.Label3.Location = New System.Drawing.Point(106, 321)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(2, 15)
         Me.Label3.TabIndex = 5
@@ -172,7 +172,7 @@ Partial Class frm_Listado_Orden_Trabajo
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(11, 214)
+        Me.Label7.Location = New System.Drawing.Point(13, 321)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(87, 13)
         Me.Label7.TabIndex = 4
@@ -215,7 +215,7 @@ Partial Class frm_Listado_Orden_Trabajo
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvLista_Orden_Trabajo.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvLista_Orden_Trabajo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_Orden_Trabajo.Size = New System.Drawing.Size(747, 158)
+        Me.dgvLista_Orden_Trabajo.Size = New System.Drawing.Size(747, 266)
         Me.dgvLista_Orden_Trabajo.TabIndex = 0
         '
         'GroupDetallesOrden
@@ -226,16 +226,16 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.GroupDetallesOrden.Controls.Add(Me.Label1)
         Me.GroupDetallesOrden.Controls.Add(Me.dgv_detalle_orden)
         Me.GroupDetallesOrden.Controls.Add(Me.Label2)
-        Me.GroupDetallesOrden.Location = New System.Drawing.Point(10, 258)
+        Me.GroupDetallesOrden.Location = New System.Drawing.Point(10, 366)
         Me.GroupDetallesOrden.Name = "GroupDetallesOrden"
-        Me.GroupDetallesOrden.Size = New System.Drawing.Size(777, 218)
+        Me.GroupDetallesOrden.Size = New System.Drawing.Size(777, 197)
         Me.GroupDetallesOrden.TabIndex = 30
         Me.GroupDetallesOrden.TabStop = False
         Me.GroupDetallesOrden.Text = "Detalles de la orden"
         '
         'btnModificarProducto
         '
-        Me.btnModificarProducto.Location = New System.Drawing.Point(526, 185)
+        Me.btnModificarProducto.Location = New System.Drawing.Point(526, 165)
         Me.btnModificarProducto.Name = "btnModificarProducto"
         Me.btnModificarProducto.Size = New System.Drawing.Size(119, 23)
         Me.btnModificarProducto.TabIndex = 38
@@ -244,7 +244,7 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         'btnVer
         '
-        Me.btnVer.Location = New System.Drawing.Point(176, 184)
+        Me.btnVer.Location = New System.Drawing.Point(176, 164)
         Me.btnVer.Name = "btnVer"
         Me.btnVer.Size = New System.Drawing.Size(67, 23)
         Me.btnVer.TabIndex = 37
@@ -254,7 +254,7 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         'btnEliminar_Producto
         '
-        Me.btnEliminar_Producto.Location = New System.Drawing.Point(651, 185)
+        Me.btnEliminar_Producto.Location = New System.Drawing.Point(651, 165)
         Me.btnEliminar_Producto.Name = "btnEliminar_Producto"
         Me.btnEliminar_Producto.Size = New System.Drawing.Size(113, 23)
         Me.btnEliminar_Producto.TabIndex = 35
@@ -265,7 +265,7 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         Me.Label1.AutoSize = True
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Location = New System.Drawing.Point(127, 191)
+        Me.Label1.Location = New System.Drawing.Point(127, 171)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(2, 15)
         Me.Label1.TabIndex = 34
@@ -301,13 +301,13 @@ Partial Class frm_Listado_Orden_Trabajo
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv_detalle_orden.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgv_detalle_orden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_detalle_orden.Size = New System.Drawing.Size(747, 158)
+        Me.dgv_detalle_orden.Size = New System.Drawing.Size(747, 140)
         Me.dgv_detalle_orden.TabIndex = 32
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(10, 191)
+        Me.Label2.Location = New System.Drawing.Point(10, 171)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(111, 13)
         Me.Label2.TabIndex = 33
@@ -342,7 +342,7 @@ Partial Class frm_Listado_Orden_Trabajo
         DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgvProcesos.DefaultCellStyle = DataGridViewCellStyle8
-        Me.dgvProcesos.Location = New System.Drawing.Point(15, 19)
+        Me.dgvProcesos.Location = New System.Drawing.Point(11, 19)
         Me.dgvProcesos.MultiSelect = False
         Me.dgvProcesos.Name = "dgvProcesos"
         DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -354,15 +354,15 @@ Partial Class frm_Listado_Orden_Trabajo
         DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvProcesos.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvProcesos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvProcesos.Size = New System.Drawing.Size(747, 158)
+        Me.dgvProcesos.Size = New System.Drawing.Size(747, 73)
         Me.dgvProcesos.TabIndex = 39
         '
         'GroupProcesoOrden
         '
         Me.GroupProcesoOrden.Controls.Add(Me.dgvProcesos)
-        Me.GroupProcesoOrden.Location = New System.Drawing.Point(12, 482)
+        Me.GroupProcesoOrden.Location = New System.Drawing.Point(12, 569)
         Me.GroupProcesoOrden.Name = "GroupProcesoOrden"
-        Me.GroupProcesoOrden.Size = New System.Drawing.Size(775, 189)
+        Me.GroupProcesoOrden.Size = New System.Drawing.Size(775, 104)
         Me.GroupProcesoOrden.TabIndex = 40
         Me.GroupProcesoOrden.TabStop = False
         Me.GroupProcesoOrden.Text = "Procesos"
