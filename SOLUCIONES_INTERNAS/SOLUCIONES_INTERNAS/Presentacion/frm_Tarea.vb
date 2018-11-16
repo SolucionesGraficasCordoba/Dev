@@ -1682,6 +1682,7 @@
         frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
         frm_Listado_Orden_Trabajo.dgv_detalle_orden.Enabled = False
         frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
+        frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Focus()
     End Sub
 
     Private Sub btnBuscar_Numero_Orden2_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden2.Click

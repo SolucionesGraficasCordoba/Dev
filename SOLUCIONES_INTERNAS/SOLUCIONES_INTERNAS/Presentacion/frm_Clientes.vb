@@ -18,7 +18,7 @@
     Private Sub btnGuardar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Cliente.Click
         Try
             Dim buscacliente = (From cli In datacontext.CLIENTE Select cli.CLI_razon_social, cli.CLI_mail_cli, cli.CLI_telefono_cli, cli.CLI_domicilio, cli.CLI_localidad, cli.CLI_codigo_postal
-                                Where CLI_razon_social = txt_razonsocial_cliente.Text.ToUpper).Any
+                                Where CLI_razon_social = StrConv(txt_razonsocial_cliente.Text, VbStrConv.ProperCase)).Any
             If buscacliente = True Then
                 MsgBox("El cliente ingresado ya existe")
                 limpiarcontroles()
@@ -115,7 +115,7 @@
         dgvLista_Clientes.Columns(0).DataPropertyName = "CLI_id_cliente"
         dgvLista_Clientes.Columns(0).Visible = False
         dgvLista_Clientes.Columns(1).DataPropertyName = "CLI_razon_social"
-        ' dgvLista_Clientes.Columns(1).Width = 200
+        dgvLista_Clientes.Columns(1).Width = 200
         dgvLista_Clientes.Columns(2).DataPropertyName = "CLI_mail_cli"
         ' dgvLista_Clientes.Columns(2).Width = 150
         dgvLista_Clientes.Columns(3).DataPropertyName = "CLI_telefono_cli"
@@ -205,24 +205,31 @@
     End Sub
 
     Private Sub dgvLista_Clientes_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Clientes.CellDoubleClick
+        Try
+            If quienllamocliente.Name = frm_Etiqueta_Modelo_1.Name Then
+                frm_Etiqueta_Modelo_1.txtId_Cliente.Text = dgvLista_Clientes.SelectedCells(0).Value
+                frm_Etiqueta_Modelo_1.txtDirigidoA.Text = dgvLista_Clientes.SelectedCells(1).Value
+                frm_Etiqueta_Modelo_1.txtDomicilio.Text = dgvLista_Clientes.SelectedCells(4).Value
+                frm_Etiqueta_Modelo_1.txtLocalidad.Text = dgvLista_Clientes.SelectedCells(5).Value
+                frm_Etiqueta_Modelo_1.txtCodigoPostal.Text = dgvLista_Clientes.SelectedCells(6).Value
 
-        If quienllamocliente.Name = frm_Etiqueta_Modelo_1.Name Then
-            frm_Etiqueta_Modelo_1.txtId_Cliente.Text = dgvLista_Clientes.SelectedCells(0).Value
-            frm_Etiqueta_Modelo_1.txtDirigidoA.Text = dgvLista_Clientes.SelectedCells(1).Value
-            frm_Etiqueta_Modelo_1.txtDomicilio.Text = dgvLista_Clientes.SelectedCells(4).Value
-            frm_Etiqueta_Modelo_1.txtLocalidad.Text = dgvLista_Clientes.SelectedCells(5).Value
-            frm_Etiqueta_Modelo_1.txtCodigoPostal.Text = dgvLista_Clientes.SelectedCells(6).Value
+            ElseIf quienllamocliente.Name = frm_Orden_Trabajo.Name Then
+                frm_Orden_Trabajo.txt_id_cliente.Text = dgvLista_Clientes.SelectedCells(0).Value
+                frm_Orden_Trabajo.txt_nombre_cliente.Text = dgvLista_Clientes.SelectedCells(1).Value
+                frm_Orden_Trabajo.txt_mejoras.Text = dgvLista_Clientes.SelectedCells(4).Value
 
-        ElseIf quienllamocliente.Name = frm_Orden_Trabajo.Name Then
-            frm_Orden_Trabajo.txt_id_cliente.Text = dgvLista_Clientes.SelectedCells(0).Value
-            frm_Orden_Trabajo.txt_nombre_cliente.Text = dgvLista_Clientes.SelectedCells(1).Value
-            frm_Orden_Trabajo.txt_mejoras.Text = dgvLista_Clientes.SelectedCells(4).Value
+            ElseIf quienllamocliente.Name = frm_Actualizar_Orden.Name Then
+                frm_Actualizar_Orden.txt_id_cliente.Text = dgvLista_Clientes.SelectedCells(0).Value
+                frm_Actualizar_Orden.txt_nombre_cliente.Text = dgvLista_Clientes.SelectedCells(1).Value
+                frm_Actualizar_Orden.txt_mejoras.Text = dgvLista_Clientes.SelectedCells(4).Value
+            End If
+        Catch ex As Exception
 
-        ElseIf quienllamocliente.Name = frm_Actualizar_Orden.Name Then
-            frm_Actualizar_Orden.txt_id_cliente.Text = dgvLista_Clientes.SelectedCells(0).Value
-            frm_Actualizar_Orden.txt_nombre_cliente.Text = dgvLista_Clientes.SelectedCells(1).Value
-            frm_Actualizar_Orden.txt_mejoras.Text = dgvLista_Clientes.SelectedCells(4).Value
-        End If
+        End Try
         Me.Close()
+    End Sub
+
+    Private Sub GroupNuevoCliente_Enter(sender As System.Object, e As System.EventArgs) Handles GroupNuevoCliente.Enter
+
     End Sub
 End Class

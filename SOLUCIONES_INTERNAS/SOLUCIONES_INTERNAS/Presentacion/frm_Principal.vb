@@ -1047,11 +1047,12 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.btnModificarProducto.Enabled = False
         frm_Listado_Orden_Trabajo.btnModificarProceso.Enabled = False
         frm_Listado_Orden_Trabajo.btnEliminarProceso.Enabled = False
-        frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
         frm_Listado_Orden_Trabajo.dgv_detalle_orden.ClearSelection()
 
         frm_Listado_Orden_Trabajo.MdiParent = Me
         frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
+        frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Focus()
     End Sub
 
     Private Sub ModificarOrdenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarOrdenToolStripMenuItem.Click
@@ -1065,16 +1066,13 @@ Public Class frm_Principal
         frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = True
         frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Enabled = True
         frm_Listado_Orden_Trabajo.btnEliminarProceso.Enabled = False
-
+        frm_Listado_Orden_Trabajo.btn_ODT_mostrar_pdf.Enabled = False
         frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
         frm_Listado_Orden_Trabajo.btnModificarProducto.Enabled = False
         frm_Listado_Orden_Trabajo.btnModificarProceso.Enabled = False
-
-        frm_Listado_Orden_Trabajo.dgv_detalle_orden.ClearSelection()
-        frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
-
         frm_Listado_Orden_Trabajo.MdiParent = Me
         frm_Listado_Orden_Trabajo.Show()
+        frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
     End Sub
 
     Private Sub EliminarOrdenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarOrdenToolStripMenuItem.Click
@@ -1090,15 +1088,11 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.btnEliminar_Producto.Enabled = False
         frm_Listado_Orden_Trabajo.btnEliminarProceso.Enabled = False
         frm_Listado_Orden_Trabajo.btn_Cancelar.Enabled = True
-
+        frm_Listado_Orden_Trabajo.btn_ODT_mostrar_pdf.Enabled = False
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
         frm_Listado_Orden_Trabajo.dgv_detalle_orden.ClearSelection()
 
         frm_Listado_Orden_Trabajo.ShowDialog()
-    End Sub
-
-    Private Sub TareasToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
     End Sub
 
     Private Sub NuevoRetrabajoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NuevoRetrabajoToolStripMenuItem.Click
@@ -1142,8 +1136,9 @@ Public Class frm_Principal
 
         frm_Productos.btn_prod_guardar.Enabled = True
         frm_Productos.btn_prod_actualizar.Enabled = False
-        frm_Productos.btn_prod_salir.Enabled = True
+        frm_Productos.btn_prod_cancelar.Enabled = True
         frm_Productos.btn_prod_eliminar.Enabled = False
+        frm_Productos.btnExportarPDF.Enabled = False
 
         For Each row As DataGridViewRow In frm_Productos.dgvLista_Productos.Rows
             If row.Cells(3).Value <= row.Cells(4).Value Then
@@ -1170,8 +1165,9 @@ Public Class frm_Principal
 
         frm_Productos.btn_prod_guardar.Enabled = False
         frm_Productos.btn_prod_actualizar.Enabled = True
-        frm_Productos.btn_prod_salir.Enabled = True
+        frm_Productos.btn_prod_cancelar.Enabled = True
         frm_Productos.btn_prod_eliminar.Enabled = False
+        frm_Productos.btnExportarPDF.Enabled = False
 
         frm_Productos.dgvLista_Productos.ClearSelection()
         frm_Productos.dgvLista_Productos.Enabled = True
@@ -1200,8 +1196,9 @@ Public Class frm_Principal
 
         frm_Productos.btn_prod_guardar.Enabled = False
         frm_Productos.btn_prod_actualizar.Enabled = False
-        frm_Productos.btn_prod_salir.Enabled = True
+        frm_Productos.btn_prod_cancelar.Enabled = True
         frm_Productos.btn_prod_eliminar.Enabled = True
+        frm_Productos.btnExportarPDF.Enabled = False
 
         frm_Productos.dgvLista_Productos.Enabled = True
         frm_Productos.ShowDialog()
@@ -1283,7 +1280,7 @@ Public Class frm_Principal
 
         frm_Productos.btn_prod_guardar.Enabled = False
         frm_Productos.btn_prod_actualizar.Enabled = False
-        frm_Productos.btn_prod_salir.Enabled = True
+        frm_Productos.btn_prod_cancelar.Enabled = True
         frm_Productos.btn_prod_eliminar.Enabled = False
 
         frm_Productos.dgvLista_Productos.ClearSelection()

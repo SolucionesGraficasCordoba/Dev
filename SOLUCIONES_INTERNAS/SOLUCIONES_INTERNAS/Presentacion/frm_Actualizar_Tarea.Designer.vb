@@ -91,9 +91,9 @@ Partial Class frm_Actualizar_Tarea
         '
         'txt_tarea
         '
-        Me.txt_tarea.Location = New System.Drawing.Point(52, 18)
+        Me.txt_tarea.Location = New System.Drawing.Point(69, 18)
         Me.txt_tarea.Name = "txt_tarea"
-        Me.txt_tarea.Size = New System.Drawing.Size(371, 20)
+        Me.txt_tarea.Size = New System.Drawing.Size(410, 20)
         Me.txt_tarea.TabIndex = 1
         '
         'Label61
@@ -109,12 +109,12 @@ Partial Class frm_Actualizar_Tarea
         '
         Me.txt_numero_orden.Location = New System.Drawing.Point(115, 47)
         Me.txt_numero_orden.Name = "txt_numero_orden"
-        Me.txt_numero_orden.Size = New System.Drawing.Size(245, 20)
+        Me.txt_numero_orden.Size = New System.Drawing.Size(289, 20)
         Me.txt_numero_orden.TabIndex = 162
         '
         'btn_buscar_numero_orden
         '
-        Me.btn_buscar_numero_orden.Location = New System.Drawing.Point(379, 45)
+        Me.btn_buscar_numero_orden.Location = New System.Drawing.Point(425, 45)
         Me.btn_buscar_numero_orden.Name = "btn_buscar_numero_orden"
         Me.btn_buscar_numero_orden.Size = New System.Drawing.Size(54, 23)
         Me.btn_buscar_numero_orden.TabIndex = 2
@@ -125,7 +125,7 @@ Partial Class frm_Actualizar_Tarea
         '
         Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(115, 47)
         Me.txtNumero_Orden_Trabajo.Name = "txtNumero_Orden_Trabajo"
-        Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(245, 20)
+        Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(289, 20)
         Me.txtNumero_Orden_Trabajo.TabIndex = 163
         '
         'Label36
@@ -155,7 +155,7 @@ Partial Class frm_Actualizar_Tarea
         '
         'btn_buscar_colaborador
         '
-        Me.btn_buscar_colaborador.Location = New System.Drawing.Point(379, 75)
+        Me.btn_buscar_colaborador.Location = New System.Drawing.Point(425, 75)
         Me.btn_buscar_colaborador.Name = "btn_buscar_colaborador"
         Me.btn_buscar_colaborador.Size = New System.Drawing.Size(54, 23)
         Me.btn_buscar_colaborador.TabIndex = 3
@@ -166,7 +166,7 @@ Partial Class frm_Actualizar_Tarea
         '
         Me.txt_nombre_colaborador.Location = New System.Drawing.Point(115, 77)
         Me.txt_nombre_colaborador.Name = "txt_nombre_colaborador"
-        Me.txt_nombre_colaborador.Size = New System.Drawing.Size(245, 20)
+        Me.txt_nombre_colaborador.Size = New System.Drawing.Size(289, 20)
         Me.txt_nombre_colaborador.TabIndex = 155
         '
         'Label4
@@ -196,9 +196,9 @@ Partial Class frm_Actualizar_Tarea
         '
         'txt_tiempo_estimado
         '
-        Me.txt_tiempo_estimado.Location = New System.Drawing.Point(107, 144)
+        Me.txt_tiempo_estimado.Location = New System.Drawing.Point(136, 144)
         Me.txt_tiempo_estimado.Name = "txt_tiempo_estimado"
-        Me.txt_tiempo_estimado.Size = New System.Drawing.Size(39, 20)
+        Me.txt_tiempo_estimado.Size = New System.Drawing.Size(44, 20)
         Me.txt_tiempo_estimado.TabIndex = 7
         '
         'Label58
@@ -206,23 +206,23 @@ Partial Class frm_Actualizar_Tarea
         Me.Label58.AutoSize = True
         Me.Label58.Location = New System.Drawing.Point(14, 147)
         Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(87, 13)
+        Me.Label58.Size = New System.Drawing.Size(116, 13)
         Me.Label58.TabIndex = 174
-        Me.Label58.Text = "Tiempo estimado"
+        Me.Label58.Text = "Tiempo estimado (Min.)"
         '
         'Label59
         '
         Me.Label59.AutoSize = True
-        Me.Label59.Location = New System.Drawing.Point(158, 147)
+        Me.Label59.Location = New System.Drawing.Point(202, 147)
         Me.Label59.Name = "Label59"
-        Me.Label59.Size = New System.Drawing.Size(62, 13)
+        Me.Label59.Size = New System.Drawing.Size(91, 13)
         Me.Label59.TabIndex = 175
-        Me.Label59.Text = "Tiempo real"
+        Me.Label59.Text = "Tiempo real (Min.)"
         '
         'dtpFecha
         '
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(48, 109)
+        Me.dtpFecha.Location = New System.Drawing.Point(107, 116)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(82, 20)
         Me.dtpFecha.TabIndex = 4
@@ -230,7 +230,7 @@ Partial Class frm_Actualizar_Tarea
         'Label62
         '
         Me.Label62.AutoSize = True
-        Me.Label62.Location = New System.Drawing.Point(5, 112)
+        Me.Label62.Location = New System.Drawing.Point(64, 119)
         Me.Label62.Name = "Label62"
         Me.Label62.Size = New System.Drawing.Size(37, 13)
         Me.Label62.TabIndex = 170
@@ -239,7 +239,7 @@ Partial Class frm_Actualizar_Tarea
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(5, 112)
+        Me.Label31.Location = New System.Drawing.Point(64, 119)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(37, 13)
         Me.Label31.TabIndex = 171
@@ -299,13 +299,13 @@ Partial Class frm_Actualizar_Tarea
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 6)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(441, 271)
+        Me.GroupBox1.Size = New System.Drawing.Size(485, 271)
         Me.GroupBox1.TabIndex = 178
         Me.GroupBox1.TabStop = False
         '
         'txtSalida
         '
-        Me.txtSalida.Location = New System.Drawing.Point(348, 144)
+        Me.txtSalida.Location = New System.Drawing.Point(412, 144)
         Me.txtSalida.Name = "txtSalida"
         Me.txtSalida.Size = New System.Drawing.Size(51, 20)
         Me.txtSalida.TabIndex = 187
@@ -313,7 +313,7 @@ Partial Class frm_Actualizar_Tarea
         '
         'txtEntrada
         '
-        Me.txtEntrada.Location = New System.Drawing.Point(348, 116)
+        Me.txtEntrada.Location = New System.Drawing.Point(412, 116)
         Me.txtEntrada.Name = "txtEntrada"
         Me.txtEntrada.Size = New System.Drawing.Size(51, 20)
         Me.txtEntrada.TabIndex = 188
@@ -322,7 +322,7 @@ Partial Class frm_Actualizar_Tarea
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(301, 147)
+        Me.Label8.Location = New System.Drawing.Point(365, 147)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(39, 13)
         Me.Label8.TabIndex = 185
@@ -332,7 +332,7 @@ Partial Class frm_Actualizar_Tarea
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(295, 119)
+        Me.Label33.Location = New System.Drawing.Point(359, 119)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(47, 13)
         Me.Label33.TabIndex = 186
@@ -344,7 +344,7 @@ Partial Class frm_Actualizar_Tarea
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(364, 80)
+        Me.Label7.Location = New System.Drawing.Point(410, 80)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(11, 13)
         Me.Label7.TabIndex = 184
@@ -355,7 +355,7 @@ Partial Class frm_Actualizar_Tarea
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Red
-        Me.Label6.Location = New System.Drawing.Point(364, 50)
+        Me.Label6.Location = New System.Drawing.Point(410, 50)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(11, 13)
         Me.Label6.TabIndex = 183
@@ -366,7 +366,7 @@ Partial Class frm_Actualizar_Tarea
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label37.ForeColor = System.Drawing.Color.Red
-        Me.Label37.Location = New System.Drawing.Point(425, 21)
+        Me.Label37.Location = New System.Drawing.Point(51, 21)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(11, 13)
         Me.Label37.TabIndex = 182
@@ -375,7 +375,7 @@ Partial Class frm_Actualizar_Tarea
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(167, 112)
+        Me.Label3.Location = New System.Drawing.Point(246, 119)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(47, 13)
         Me.Label3.TabIndex = 181
@@ -383,7 +383,7 @@ Partial Class frm_Actualizar_Tarea
         '
         'txt_hora_fin
         '
-        Me.txt_hora_fin.Location = New System.Drawing.Point(220, 109)
+        Me.txt_hora_fin.Location = New System.Drawing.Point(299, 116)
         Me.txt_hora_fin.Name = "txt_hora_fin"
         Me.txt_hora_fin.Size = New System.Drawing.Size(45, 20)
         Me.txt_hora_fin.TabIndex = 5
@@ -393,39 +393,39 @@ Partial Class frm_Actualizar_Tarea
         Me.txt_observaciones.Location = New System.Drawing.Point(94, 179)
         Me.txt_observaciones.Multiline = True
         Me.txt_observaciones.Name = "txt_observaciones"
-        Me.txt_observaciones.Size = New System.Drawing.Size(339, 78)
+        Me.txt_observaciones.Size = New System.Drawing.Size(385, 78)
         Me.txt_observaciones.TabIndex = 9
         '
         'txt_tiempo_real
         '
-        Me.txt_tiempo_real.Location = New System.Drawing.Point(226, 144)
+        Me.txt_tiempo_real.Location = New System.Drawing.Point(299, 144)
         Me.txt_tiempo_real.Name = "txt_tiempo_real"
-        Me.txt_tiempo_real.Size = New System.Drawing.Size(39, 20)
+        Me.txt_tiempo_real.Size = New System.Drawing.Size(45, 20)
         Me.txt_tiempo_real.TabIndex = 8
         '
         'btn_Actualizar_Tarea
         '
-        Me.btn_Actualizar_Tarea.Location = New System.Drawing.Point(297, 283)
+        Me.btn_Actualizar_Tarea.Location = New System.Drawing.Point(335, 285)
         Me.btn_Actualizar_Tarea.Name = "btn_Actualizar_Tarea"
-        Me.btn_Actualizar_Tarea.Size = New System.Drawing.Size(75, 23)
+        Me.btn_Actualizar_Tarea.Size = New System.Drawing.Size(75, 33)
         Me.btn_Actualizar_Tarea.TabIndex = 10
         Me.btn_Actualizar_Tarea.Text = "Actualizar"
         Me.btn_Actualizar_Tarea.UseVisualStyleBackColor = True
         '
         'btn_Cancelar
         '
-        Me.btn_Cancelar.Location = New System.Drawing.Point(382, 283)
+        Me.btn_Cancelar.Location = New System.Drawing.Point(416, 285)
         Me.btn_Cancelar.Name = "btn_Cancelar"
-        Me.btn_Cancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btn_Cancelar.Size = New System.Drawing.Size(75, 33)
         Me.btn_Cancelar.TabIndex = 11
         Me.btn_Cancelar.Text = "Cancelar"
         Me.btn_Cancelar.UseVisualStyleBackColor = True
         '
         'btnGuardar
         '
-        Me.btnGuardar.Location = New System.Drawing.Point(216, 283)
+        Me.btnGuardar.Location = New System.Drawing.Point(254, 285)
         Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar.Size = New System.Drawing.Size(75, 33)
         Me.btnGuardar.TabIndex = 12
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
@@ -434,7 +434,7 @@ Partial Class frm_Actualizar_Tarea
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(463, 314)
+        Me.ClientSize = New System.Drawing.Size(509, 326)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.btn_Cancelar)
         Me.Controls.Add(Me.btn_Actualizar_Tarea)

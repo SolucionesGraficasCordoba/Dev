@@ -217,7 +217,7 @@ Partial Class frm_Actualizar_Orden
         'dtpFecha_Orden_Trabajo
         '
         Me.dtpFecha_Orden_Trabajo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha_Orden_Trabajo.Location = New System.Drawing.Point(86, 101)
+        Me.dtpFecha_Orden_Trabajo.Location = New System.Drawing.Point(94, 101)
         Me.dtpFecha_Orden_Trabajo.Name = "dtpFecha_Orden_Trabajo"
         Me.dtpFecha_Orden_Trabajo.Size = New System.Drawing.Size(82, 20)
         Me.dtpFecha_Orden_Trabajo.TabIndex = 77
@@ -225,11 +225,11 @@ Partial Class frm_Actualizar_Orden
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(43, 105)
+        Me.Label4.Location = New System.Drawing.Point(13, 104)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(37, 13)
+        Me.Label4.Size = New System.Drawing.Size(75, 13)
         Me.Label4.TabIndex = 76
-        Me.Label4.Text = "Fecha"
+        Me.Label4.Text = "Fecha Ingreso"
         '
         'btnBuscar_Vendedor
         '
@@ -285,7 +285,7 @@ Partial Class frm_Actualizar_Orden
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(452, 351)
+        Me.GroupBox1.Size = New System.Drawing.Size(453, 351)
         Me.GroupBox1.TabIndex = 91
         Me.GroupBox1.TabStop = False
         '
@@ -308,18 +308,18 @@ Partial Class frm_Actualizar_Orden
         '
         'btnActualizar
         '
-        Me.btnActualizar.Location = New System.Drawing.Point(308, 369)
+        Me.btnActualizar.Location = New System.Drawing.Point(309, 369)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar.Size = New System.Drawing.Size(75, 33)
         Me.btnActualizar.TabIndex = 92
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(389, 369)
+        Me.btnCancelar.Location = New System.Drawing.Point(390, 369)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar.TabIndex = 92
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
@@ -328,7 +328,7 @@ Partial Class frm_Actualizar_Orden
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(477, 402)
+        Me.ClientSize = New System.Drawing.Size(477, 410)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.Label6)

@@ -64,9 +64,9 @@ Partial Class frm_Colaborador
         Me.GroupListadoColaboradores.Controls.Add(Me.txt_Buscar_Colaborador)
         Me.GroupListadoColaboradores.Controls.Add(Me.dgvLista_Colaboradores)
         Me.GroupListadoColaboradores.Controls.Add(Me.Label4)
-        Me.GroupListadoColaboradores.Location = New System.Drawing.Point(12, 170)
+        Me.GroupListadoColaboradores.Location = New System.Drawing.Point(12, 177)
         Me.GroupListadoColaboradores.Name = "GroupListadoColaboradores"
-        Me.GroupListadoColaboradores.Size = New System.Drawing.Size(382, 270)
+        Me.GroupListadoColaboradores.Size = New System.Drawing.Size(412, 285)
         Me.GroupListadoColaboradores.TabIndex = 5
         Me.GroupListadoColaboradores.TabStop = False
         Me.GroupListadoColaboradores.Text = "Listado de Colaborador"
@@ -75,7 +75,7 @@ Partial Class frm_Colaborador
         '
         Me.lblTotal_Colaboradores.AutoSize = True
         Me.lblTotal_Colaboradores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblTotal_Colaboradores.Location = New System.Drawing.Point(345, 241)
+        Me.lblTotal_Colaboradores.Location = New System.Drawing.Point(343, 259)
         Me.lblTotal_Colaboradores.Name = "lblTotal_Colaboradores"
         Me.lblTotal_Colaboradores.Size = New System.Drawing.Size(2, 15)
         Me.lblTotal_Colaboradores.TabIndex = 5
@@ -83,7 +83,7 @@ Partial Class frm_Colaborador
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(222, 241)
+        Me.Label5.Location = New System.Drawing.Point(220, 259)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(117, 13)
         Me.Label5.TabIndex = 4
@@ -94,7 +94,7 @@ Partial Class frm_Colaborador
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(18, 243)
+        Me.Label8.Location = New System.Drawing.Point(16, 261)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(98, 13)
         Me.Label8.TabIndex = 4
@@ -102,16 +102,16 @@ Partial Class frm_Colaborador
         '
         'btnEliminar_Colaborador
         '
-        Me.btnEliminar_Colaborador.Location = New System.Drawing.Point(282, 23)
+        Me.btnEliminar_Colaborador.Location = New System.Drawing.Point(321, 16)
         Me.btnEliminar_Colaborador.Name = "btnEliminar_Colaborador"
-        Me.btnEliminar_Colaborador.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar_Colaborador.Size = New System.Drawing.Size(75, 33)
         Me.btnEliminar_Colaborador.TabIndex = 7
         Me.btnEliminar_Colaborador.Text = "Eliminar"
         Me.btnEliminar_Colaborador.UseVisualStyleBackColor = True
         '
         'txt_Buscar_Colaborador
         '
-        Me.txt_Buscar_Colaborador.Location = New System.Drawing.Point(96, 25)
+        Me.txt_Buscar_Colaborador.Location = New System.Drawing.Point(109, 29)
         Me.txt_Buscar_Colaborador.Name = "txt_Buscar_Colaborador"
         Me.txt_Buscar_Colaborador.Size = New System.Drawing.Size(180, 20)
         Me.txt_Buscar_Colaborador.TabIndex = 6
@@ -127,7 +127,7 @@ Partial Class frm_Colaborador
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvLista_Colaboradores.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgvLista_Colaboradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLista_Colaboradores.Location = New System.Drawing.Point(17, 59)
+        Me.dgvLista_Colaboradores.Location = New System.Drawing.Point(17, 55)
         Me.dgvLista_Colaboradores.Name = "dgvLista_Colaboradores"
         DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -139,13 +139,13 @@ Partial Class frm_Colaborador
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.dgvLista_Colaboradores.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvLista_Colaboradores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_Colaboradores.Size = New System.Drawing.Size(349, 172)
+        Me.dgvLista_Colaboradores.Size = New System.Drawing.Size(379, 190)
         Me.dgvLista_Colaboradores.TabIndex = 8
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(8, 28)
+        Me.Label4.Location = New System.Drawing.Point(21, 32)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(82, 13)
         Me.Label4.TabIndex = 0
@@ -169,7 +169,7 @@ Partial Class frm_Colaborador
         Me.GroupNuevoColaborador.Controls.Add(Me.Label1)
         Me.GroupNuevoColaborador.Location = New System.Drawing.Point(12, 12)
         Me.GroupNuevoColaborador.Name = "GroupNuevoColaborador"
-        Me.GroupNuevoColaborador.Size = New System.Drawing.Size(382, 152)
+        Me.GroupNuevoColaborador.Size = New System.Drawing.Size(412, 159)
         Me.GroupNuevoColaborador.TabIndex = 4
         Me.GroupNuevoColaborador.TabStop = False
         Me.GroupNuevoColaborador.Text = "Nuevo Colaborador"
@@ -223,36 +223,37 @@ Partial Class frm_Colaborador
         '
         'btnCancelar_Colaborador
         '
-        Me.btnCancelar_Colaborador.Location = New System.Drawing.Point(282, 119)
+        Me.btnCancelar_Colaborador.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.btnCancelar_Colaborador.Location = New System.Drawing.Point(321, 117)
         Me.btnCancelar_Colaborador.Name = "btnCancelar_Colaborador"
-        Me.btnCancelar_Colaborador.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar_Colaborador.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar_Colaborador.TabIndex = 5
         Me.btnCancelar_Colaborador.Text = "Cancelar"
         Me.btnCancelar_Colaborador.UseVisualStyleBackColor = True
         '
         'btnActualizar_Colaborador
         '
-        Me.btnActualizar_Colaborador.Location = New System.Drawing.Point(201, 119)
+        Me.btnActualizar_Colaborador.Location = New System.Drawing.Point(240, 117)
         Me.btnActualizar_Colaborador.Name = "btnActualizar_Colaborador"
-        Me.btnActualizar_Colaborador.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar_Colaborador.Size = New System.Drawing.Size(75, 33)
         Me.btnActualizar_Colaborador.TabIndex = 10
         Me.btnActualizar_Colaborador.Text = "Actualizar"
         Me.btnActualizar_Colaborador.UseVisualStyleBackColor = True
         '
         'btnGuardar_Colaborador
         '
-        Me.btnGuardar_Colaborador.Location = New System.Drawing.Point(120, 119)
+        Me.btnGuardar_Colaborador.Location = New System.Drawing.Point(159, 117)
         Me.btnGuardar_Colaborador.Name = "btnGuardar_Colaborador"
-        Me.btnGuardar_Colaborador.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar_Colaborador.Size = New System.Drawing.Size(75, 33)
         Me.btnGuardar_Colaborador.TabIndex = 4
         Me.btnGuardar_Colaborador.Text = "Guardar"
         Me.btnGuardar_Colaborador.UseVisualStyleBackColor = True
         '
         'btnNuevo_Colaborador
         '
-        Me.btnNuevo_Colaborador.Location = New System.Drawing.Point(39, 119)
+        Me.btnNuevo_Colaborador.Location = New System.Drawing.Point(78, 117)
         Me.btnNuevo_Colaborador.Name = "btnNuevo_Colaborador"
-        Me.btnNuevo_Colaborador.Size = New System.Drawing.Size(75, 23)
+        Me.btnNuevo_Colaborador.Size = New System.Drawing.Size(75, 33)
         Me.btnNuevo_Colaborador.TabIndex = 2
         Me.btnNuevo_Colaborador.Text = "Nuevo"
         Me.btnNuevo_Colaborador.UseVisualStyleBackColor = True
@@ -310,7 +311,8 @@ Partial Class frm_Colaborador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(406, 448)
+        Me.CancelButton = Me.btnCancelar_Colaborador
+        Me.ClientSize = New System.Drawing.Size(436, 472)
         Me.Controls.Add(Me.GroupNuevoColaborador)
         Me.Controls.Add(Me.GroupListadoColaboradores)
         Me.Name = "frm_Colaborador"

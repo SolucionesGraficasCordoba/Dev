@@ -23,6 +23,7 @@ Partial Class frm_Actualizar_Producto_Orden
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupProducto1 = New System.Windows.Forms.GroupBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.Label51 = New System.Windows.Forms.Label()
@@ -62,7 +63,6 @@ Partial Class frm_Actualizar_Producto_Orden
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txt_id_orden_trabajo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupProducto1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
@@ -88,16 +88,25 @@ Partial Class frm_Actualizar_Producto_Orden
         Me.GroupProducto1.Controls.Add(Me.txt_cantidad)
         Me.GroupProducto1.Location = New System.Drawing.Point(12, 69)
         Me.GroupProducto1.Name = "GroupProducto1"
-        Me.GroupProducto1.Size = New System.Drawing.Size(456, 247)
+        Me.GroupProducto1.Size = New System.Drawing.Size(456, 258)
         Me.GroupProducto1.TabIndex = 60
         Me.GroupProducto1.TabStop = False
         Me.GroupProducto1.Text = "Producto"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(242, 25)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(110, 13)
+        Me.Label7.TabIndex = 63
+        Me.Label7.Text = "Tamaño (°°° x °°° Mm)"
         '
         'btnCancelar
         '
         Me.btnCancelar.Location = New System.Drawing.Point(369, 214)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar.TabIndex = 62
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
@@ -106,7 +115,7 @@ Partial Class frm_Actualizar_Producto_Orden
         '
         Me.btnActualizar.Location = New System.Drawing.Point(288, 214)
         Me.btnActualizar.Name = "btnActualizar"
-        Me.btnActualizar.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar.Size = New System.Drawing.Size(75, 33)
         Me.btnActualizar.TabIndex = 61
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
@@ -446,20 +455,11 @@ Partial Class frm_Actualizar_Producto_Orden
         Me.Label1.TabIndex = 65
         Me.Label1.Text = "id_orden"
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(242, 25)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(110, 13)
-        Me.Label7.TabIndex = 63
-        Me.Label7.Text = "Tamaño (°°° x °°° Mm)"
-        '
         'frm_Actualizar_Producto_Orden
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(481, 327)
+        Me.ClientSize = New System.Drawing.Size(481, 337)
         Me.Controls.Add(Me.txt_id_orden_trabajo)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtNumero_Orden_Trabajo)

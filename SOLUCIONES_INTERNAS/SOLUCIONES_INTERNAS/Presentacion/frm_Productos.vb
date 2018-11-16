@@ -193,51 +193,12 @@ Public Class frm_Productos
         End Try
     End Sub
 
-    Private Sub btn_prod_eliminar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_prod_eliminar.Click
-        If dgvLista_Productos.SelectedRows.Count > 0 Then
-            Dim eliminar = (From p In datacontext.PRODUCTO Where p.PROD_id = CInt(dgvLista_Productos.Item("PROD_id", dgvLista_Productos.SelectedRows(0).Index).Value)).ToList()(0)
-            Select Case MsgBox("Se eliminará el producto seleccionado, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar producto")
-                Case MsgBoxResult.Yes
-                    datacontext.PRODUCTO.DeleteOnSubmit(eliminar)
-                    datacontext.SubmitChanges()
-                    MsgBox("El producto fue eliminado")
-                    cargargrilla()
-                    Label9.Text = dgvLista_Productos.Rows.Count
-                    Me.Close()
-                Case MsgBoxResult.No
-                    Exit Sub
-            End Select
-        End If
-    End Sub
-
-    Private Sub btn_prod_salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_prod_salir.Click
-        Me.Close()
-        Me.Dispose()
-    End Sub
-
     Private Sub frm_Productos_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
     End Sub
 
-    Private Sub btnExportarPDF_Click(sender As System.Object, e As System.EventArgs) Handles btnExportarPDF.Click
-        Try
-            'intentar generar el documento
-            Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
-
-            'path que guarda el reporte en el escritorio de windows (desktop)
-            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Consulta de Productos.pdf"
-            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
-
-            PdfWriter.GetInstance(doc, file)
-            doc.Open()
-            ExportarDatosPDF(doc)
-            doc.Close()
-            Process.Start(filename)
-            Me.Close()
-        Catch ex As Exception
-            'si el mensaje es fallido mostrar msgbox
-            MessageBox.Show("No se puede generar. Cierre el pdf anterior y vuelva a intentar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+    Private Sub btnExportarPDF_Click(sender As System.Object, e As System.EventArgs)
+      
     End Sub
 
     Public Sub ExportarDatosPDF(ByVal document As Document)
@@ -361,7 +322,46 @@ Public Class frm_Productos
         End Try
     End Sub
 
-    Private Sub GroupBox1_Enter(sender As System.Object, e As System.EventArgs) Handles GroupBox1.Enter
+    Private Sub btnExportarPDF_Click_1(sender As System.Object, e As System.EventArgs) Handles btnExportarPDF.Click
+        Try
+            'intentar generar el documento
+            Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
 
+            'path que guarda el reporte en el escritorio de windows (desktop)
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Consulta de Productos.pdf"
+            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+
+            PdfWriter.GetInstance(doc, file)
+            doc.Open()
+            ExportarDatosPDF(doc)
+            doc.Close()
+            Process.Start(filename)
+            Me.Close()
+        Catch ex As Exception
+            'si el mensaje es fallido mostrar msgbox
+            MessageBox.Show("No se puede generar. Cierre el pdf anterior y vuelva a intentar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub btn_prod_eliminar_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_prod_eliminar.Click
+        If dgvLista_Productos.SelectedRows.Count > 0 Then
+            Dim eliminar = (From p In datacontext.PRODUCTO Where p.PROD_id = CInt(dgvLista_Productos.Item("PROD_id", dgvLista_Productos.SelectedRows(0).Index).Value)).ToList()(0)
+            Select Case MsgBox("Se eliminará el producto seleccionado, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar producto")
+                Case MsgBoxResult.Yes
+                    datacontext.PRODUCTO.DeleteOnSubmit(eliminar)
+                    datacontext.SubmitChanges()
+                    MsgBox("El producto fue eliminado")
+                    cargargrilla()
+                    Label9.Text = dgvLista_Productos.Rows.Count
+                    Me.Close()
+                Case MsgBoxResult.No
+                    Exit Sub
+            End Select
+        End If
+    End Sub
+
+    Private Sub btn_prod_cancelar_Click(sender As System.Object, e As System.EventArgs) Handles btn_prod_cancelar.Click
+        Me.Close()
+        Me.Dispose()
     End Sub
 End Class
