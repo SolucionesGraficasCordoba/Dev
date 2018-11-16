@@ -24,6 +24,7 @@ Public Class frm_Listado_Orden_Trabajo
 
 
     Private Sub frm_Detalle_Orden_Trabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
         armargrilla()
         cargargrilla()
         'armargrilla()
@@ -34,8 +35,10 @@ Public Class frm_Listado_Orden_Trabajo
         dgvProcesos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
 
         txt_Buscar_Cliente.Enabled = False
-        txt_Buscar_orden_trabajo.Enabled = False
         dtp_Buscar_Fecha_Entrega.Enabled = False
+        rbtNroOrden.Checked = True
+        txt_Buscar_orden_trabajo.Enabled = True
+        txt_Buscar_orden_trabajo.Focus()
     End Sub
 
     'CARGA GRILLA ORDEN TRABAJO
@@ -146,23 +149,23 @@ Public Class frm_Listado_Orden_Trabajo
     Private Sub dgv_detalle_orden_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellClick
         Try
 
-       
-        If dgvLista_Orden_Trabajo.Rows.Count = 0 Then
-            MsgBox("No hay procesos por mostrar", MsgBoxStyle.Information + MsgBoxStyle.Information, "Seleccionar")
-            Exit Sub
-        End If
-        'CARGA PROCESOS DEL PRODUCTO
 
-        vble_id_proceso = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
-        CargarProceso()
+            If dgvLista_Orden_Trabajo.Rows.Count = 0 Then
+                MsgBox("No hay procesos por mostrar", MsgBoxStyle.Information + MsgBoxStyle.Information, "Seleccionar")
+                Exit Sub
+            End If
+            'CARGA PROCESOS DEL PRODUCTO
 
-        If Me.Text = "Modificar Orden / Producto / Proceso" Then
-            btnModificarProducto.Enabled = True
-            btnEliminar_Producto.Enabled = False
-        ElseIf Me.Text = "Eliminar Orden / Producto / Proceso" Then
-            btnModificarProducto.Enabled = False
-            btnEliminar_Producto.Enabled = True
-        End If
+            vble_id_proceso = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
+            CargarProceso()
+
+            If Me.Text = "Modificar Orden / Producto / Proceso" Then
+                btnModificarProducto.Enabled = True
+                btnEliminar_Producto.Enabled = False
+            ElseIf Me.Text = "Eliminar Orden / Producto / Proceso" Then
+                btnModificarProducto.Enabled = False
+                btnEliminar_Producto.Enabled = True
+            End If
         Catch ex As Exception
 
         End Try

@@ -100,7 +100,7 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.rbtFechaEntrega.Location = New System.Drawing.Point(478, 20)
         Me.rbtFechaEntrega.Name = "rbtFechaEntrega"
         Me.rbtFechaEntrega.Size = New System.Drawing.Size(110, 17)
-        Me.rbtFechaEntrega.TabIndex = 36
+        Me.rbtFechaEntrega.TabIndex = 5
         Me.rbtFechaEntrega.TabStop = True
         Me.rbtFechaEntrega.Text = "Fecha de Entrega"
         Me.rbtFechaEntrega.UseVisualStyleBackColor = True
@@ -111,7 +111,7 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.rbtCliente.Location = New System.Drawing.Point(240, 19)
         Me.rbtCliente.Name = "rbtCliente"
         Me.rbtCliente.Size = New System.Drawing.Size(131, 17)
-        Me.rbtCliente.TabIndex = 35
+        Me.rbtCliente.TabIndex = 3
         Me.rbtCliente.TabStop = True
         Me.rbtCliente.Text = "Cliente / Razón Social"
         Me.rbtCliente.UseVisualStyleBackColor = True
@@ -122,7 +122,7 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.rbtNroOrden.Location = New System.Drawing.Point(59, 19)
         Me.rbtNroOrden.Name = "rbtNroOrden"
         Me.rbtNroOrden.Size = New System.Drawing.Size(74, 17)
-        Me.rbtNroOrden.TabIndex = 34
+        Me.rbtNroOrden.TabIndex = 1
         Me.rbtNroOrden.TabStop = True
         Me.rbtNroOrden.Text = "Nro Orden"
         Me.rbtNroOrden.UseVisualStyleBackColor = True
@@ -133,14 +133,14 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.dtp_Buscar_Fecha_Entrega.Location = New System.Drawing.Point(594, 19)
         Me.dtp_Buscar_Fecha_Entrega.Name = "dtp_Buscar_Fecha_Entrega"
         Me.dtp_Buscar_Fecha_Entrega.Size = New System.Drawing.Size(134, 20)
-        Me.dtp_Buscar_Fecha_Entrega.TabIndex = 33
+        Me.dtp_Buscar_Fecha_Entrega.TabIndex = 6
         '
         'txt_Buscar_Cliente
         '
         Me.txt_Buscar_Cliente.Location = New System.Drawing.Point(377, 18)
         Me.txt_Buscar_Cliente.Name = "txt_Buscar_Cliente"
         Me.txt_Buscar_Cliente.Size = New System.Drawing.Size(95, 20)
-        Me.txt_Buscar_Cliente.TabIndex = 31
+        Me.txt_Buscar_Cliente.TabIndex = 4
         '
         'btnEliminar_Orden
         '
