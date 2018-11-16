@@ -27,7 +27,7 @@ Public Class frm_Listado_Orden_Trabajo
 
         armargrilla()
         cargargrilla()
-        'armargrilla()
+
         Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
 
         dgvLista_Orden_Trabajo.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
@@ -38,7 +38,6 @@ Public Class frm_Listado_Orden_Trabajo
         dtp_Buscar_Fecha_Entrega.Enabled = False
         rbtNroOrden.Checked = True
         txt_Buscar_orden_trabajo.Enabled = True
-        txt_Buscar_orden_trabajo.Focus()
     End Sub
 
     'CARGA GRILLA ORDEN TRABAJO
@@ -983,36 +982,16 @@ Public Class frm_Listado_Orden_Trabajo
 
             doc.Open()
 
-            'Dim filebyte As Byte() = My.Resources.Planet_press_3
-            'Dim fondo_odt As Image = Image.GetInstance(My.Resources.Planet_press_3)
-            'Dim fondo2 As Rectangle = New Rectangle(doc.PageSize)
-            'fondo2.BackgroundColor = New BaseColor(System.Drawing.Color.Aqua)
-
             Dim cb As PdfContentByte = writer.DirectContent
             Dibujar_Lineas(cb, doc)
             Escribir_Pdf(cb)
-            'Dim png As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(My.Resources.Planet_press_3)
-            'png.ScaleAbsolute(75, 52)
-            'png.SetAbsolutePosition(40, 40)
-
-            'cb.AddImage(png)
-
-
-
-            ''fondo_odt.Alignment = iTextSharp.text.Image.UNDERLYING
-            'doc.Add(fondo_odt)
-
 
             'Vbles formato
             Dim medialinea As New Paragraph("                                       " _
             & "--------------------------------------------------------------------------------------")
 
-            Dim linea As New Paragraph("-------------------------------------------------------------------------" _
-                                      & "------------------------------------------------------------------------")
-            'Dim espacio As New Paragraph()
-
-            'vbles de grids
-
+            Dim linea As New Paragraph("---------------------------------------------------------------------" _
+                                      & "---------------------------------------------------------------------")
 
 
             Dim orden As New Phrase("   " & dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
@@ -1021,8 +1000,6 @@ Public Class frm_Listado_Orden_Trabajo
                                              & "                   " _
                                             , New Font(fuente, 22, Font.Bold))
 
-            'Dim fecha_entrega As New Phrase("Entrega: " & dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-            '                                 , New Font(fuente, 16))
 
             Dim ingreso_vendedor As New Paragraph("Fecha ingreso: " & dgvLista_Orden_Trabajo.SelectedRows(0).Cells("ORT_fecha_ot").Value _
                                              & "  " _
@@ -1030,7 +1007,6 @@ Public Class frm_Listado_Orden_Trabajo
                                              & "Vendedor: " & dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
                                              , New Font(fuente, 12, Font.Bold))
 
-            'Dim ingreso_vendedor As New Paragraph(dgvLista_Orden_Trabajo.SelectedRows(0).Cells("ORT_fecha_ot").Value, New Font(fuente, 16))
 
             Dim cliente As New Paragraph("Cliente: " & dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
                                              , New Font(fuente, 12))
@@ -1046,20 +1022,14 @@ Public Class frm_Listado_Orden_Trabajo
 
             Dim encabezado As New Paragraph
             encabezado.Add(orden)
-            'encabezado.Add(fecha_entrega)
 
             'Encabezado
-            'doc.Add(espacio)
-            'doc.Add(orden)
-            'doc.Add(fecha_entrega)
             doc.Add(encabezado)
-            'doc.Add(linea)
 
             'Info
             doc.Add(ingreso_vendedor)
             doc.Add(cliente)
             doc.Add(entrega)
-            'doc.Add(linea)
 
             'Descripción
             doc.Add(prod_desc)
@@ -1086,9 +1056,6 @@ Public Class frm_Listado_Orden_Trabajo
     End Sub
     Sub Dibujar_Lineas(ByVal cb As PdfContentByte, ByVal doc As Document)
         'LINEAS DE FONDO
-        'cb.MoveTo(doc.PageSize.Width / 2, doc.PageSize.Height / 2)
-        'cb.LineTo(doc.PageSize.Width / 2, doc.PageSize.Height)
-        'cb.Stroke()
 
         'H1
         cb.MoveTo(0, 800)
@@ -1105,17 +1072,11 @@ Public Class frm_Listado_Orden_Trabajo
         cb.LineTo(400, 800)
         cb.Stroke()
 
-        ''H4
-        'cb.MoveTo(0, 400)
-        'cb.LineTo(doc.PageSize.Width, 400)
-        'cb.Stroke()
-
     End Sub
 
     Sub Escribir_Pdf(ByVal cb As PdfContentByte)
 
         'ESCRIBIR EN EL PDF
-        ' Write text in the PDF
         'PARA LA FUENTE
         cb.SetFontAndSize(fuente, 16)
         cb.BeginText()
