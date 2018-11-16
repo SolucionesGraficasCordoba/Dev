@@ -80,16 +80,16 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.GroupListadoPiezas.Controls.Add(Me.dgvLista_Orden_Trabajo)
         Me.GroupListadoPiezas.Location = New System.Drawing.Point(10, 9)
         Me.GroupListadoPiezas.Name = "GroupListadoPiezas"
-        Me.GroupListadoPiezas.Size = New System.Drawing.Size(777, 351)
+        Me.GroupListadoPiezas.Size = New System.Drawing.Size(1091, 351)
         Me.GroupListadoPiezas.TabIndex = 29
         Me.GroupListadoPiezas.TabStop = False
         Me.GroupListadoPiezas.Text = "Listado de Ordenes"
         '
         'btn_ODT_mostrar_pdf
         '
-        Me.btn_ODT_mostrar_pdf.Location = New System.Drawing.Point(428, 317)
+        Me.btn_ODT_mostrar_pdf.Location = New System.Drawing.Point(736, 311)
         Me.btn_ODT_mostrar_pdf.Name = "btn_ODT_mostrar_pdf"
-        Me.btn_ODT_mostrar_pdf.Size = New System.Drawing.Size(94, 23)
+        Me.btn_ODT_mostrar_pdf.Size = New System.Drawing.Size(94, 33)
         Me.btn_ODT_mostrar_pdf.TabIndex = 37
         Me.btn_ODT_mostrar_pdf.Text = "Mostrar pdf"
         Me.btn_ODT_mostrar_pdf.UseVisualStyleBackColor = True
@@ -144,18 +144,18 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         'btnEliminar_Orden
         '
-        Me.btnEliminar_Orden.Location = New System.Drawing.Point(653, 317)
+        Me.btnEliminar_Orden.Location = New System.Drawing.Point(961, 311)
         Me.btnEliminar_Orden.Name = "btnEliminar_Orden"
-        Me.btnEliminar_Orden.Size = New System.Drawing.Size(113, 23)
+        Me.btnEliminar_Orden.Size = New System.Drawing.Size(113, 33)
         Me.btnEliminar_Orden.TabIndex = 28
         Me.btnEliminar_Orden.Text = "Eliminar Orden"
         Me.btnEliminar_Orden.UseVisualStyleBackColor = True
         '
         'btnModificar_Orden
         '
-        Me.btnModificar_Orden.Location = New System.Drawing.Point(528, 317)
+        Me.btnModificar_Orden.Location = New System.Drawing.Point(836, 311)
         Me.btnModificar_Orden.Name = "btnModificar_Orden"
-        Me.btnModificar_Orden.Size = New System.Drawing.Size(119, 23)
+        Me.btnModificar_Orden.Size = New System.Drawing.Size(119, 33)
         Me.btnModificar_Orden.TabIndex = 29
         Me.btnModificar_Orden.Text = "Modificar Orden"
         Me.btnModificar_Orden.UseVisualStyleBackColor = True
@@ -215,7 +215,7 @@ Partial Class frm_Listado_Orden_Trabajo
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvLista_Orden_Trabajo.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvLista_Orden_Trabajo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_Orden_Trabajo.Size = New System.Drawing.Size(747, 266)
+        Me.dgvLista_Orden_Trabajo.Size = New System.Drawing.Size(1057, 258)
         Me.dgvLista_Orden_Trabajo.TabIndex = 0
         '
         'GroupDetallesOrden
@@ -228,16 +228,16 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.GroupDetallesOrden.Controls.Add(Me.Label2)
         Me.GroupDetallesOrden.Location = New System.Drawing.Point(10, 366)
         Me.GroupDetallesOrden.Name = "GroupDetallesOrden"
-        Me.GroupDetallesOrden.Size = New System.Drawing.Size(777, 197)
+        Me.GroupDetallesOrden.Size = New System.Drawing.Size(1091, 208)
         Me.GroupDetallesOrden.TabIndex = 30
         Me.GroupDetallesOrden.TabStop = False
         Me.GroupDetallesOrden.Text = "Detalles de la orden"
         '
         'btnModificarProducto
         '
-        Me.btnModificarProducto.Location = New System.Drawing.Point(526, 165)
+        Me.btnModificarProducto.Location = New System.Drawing.Point(836, 169)
         Me.btnModificarProducto.Name = "btnModificarProducto"
-        Me.btnModificarProducto.Size = New System.Drawing.Size(119, 23)
+        Me.btnModificarProducto.Size = New System.Drawing.Size(119, 33)
         Me.btnModificarProducto.TabIndex = 38
         Me.btnModificarProducto.Text = "Modificar Producto"
         Me.btnModificarProducto.UseVisualStyleBackColor = True
@@ -246,7 +246,7 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         Me.btnVer.Location = New System.Drawing.Point(176, 164)
         Me.btnVer.Name = "btnVer"
-        Me.btnVer.Size = New System.Drawing.Size(67, 23)
+        Me.btnVer.Size = New System.Drawing.Size(67, 33)
         Me.btnVer.TabIndex = 37
         Me.btnVer.Text = "Ver"
         Me.btnVer.UseVisualStyleBackColor = True
@@ -254,9 +254,9 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         'btnEliminar_Producto
         '
-        Me.btnEliminar_Producto.Location = New System.Drawing.Point(651, 165)
+        Me.btnEliminar_Producto.Location = New System.Drawing.Point(961, 169)
         Me.btnEliminar_Producto.Name = "btnEliminar_Producto"
-        Me.btnEliminar_Producto.Size = New System.Drawing.Size(113, 23)
+        Me.btnEliminar_Producto.Size = New System.Drawing.Size(113, 33)
         Me.btnEliminar_Producto.TabIndex = 35
         Me.btnEliminar_Producto.Text = "Eliminar Producto"
         Me.btnEliminar_Producto.UseVisualStyleBackColor = True
@@ -301,7 +301,7 @@ Partial Class frm_Listado_Orden_Trabajo
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv_detalle_orden.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgv_detalle_orden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_detalle_orden.Size = New System.Drawing.Size(747, 140)
+        Me.dgv_detalle_orden.Size = New System.Drawing.Size(1057, 140)
         Me.dgv_detalle_orden.TabIndex = 32
         '
         'Label2
@@ -315,9 +315,9 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         'btn_Cancelar
         '
-        Me.btn_Cancelar.Location = New System.Drawing.Point(707, 679)
+        Me.btn_Cancelar.Location = New System.Drawing.Point(1017, 692)
         Me.btn_Cancelar.Name = "btn_Cancelar"
-        Me.btn_Cancelar.Size = New System.Drawing.Size(67, 23)
+        Me.btn_Cancelar.Size = New System.Drawing.Size(67, 33)
         Me.btn_Cancelar.TabIndex = 36
         Me.btn_Cancelar.Text = "Cancelar"
         Me.btn_Cancelar.UseVisualStyleBackColor = True
@@ -354,33 +354,33 @@ Partial Class frm_Listado_Orden_Trabajo
         DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvProcesos.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
         Me.dgvProcesos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvProcesos.Size = New System.Drawing.Size(747, 73)
+        Me.dgvProcesos.Size = New System.Drawing.Size(1061, 73)
         Me.dgvProcesos.TabIndex = 39
         '
         'GroupProcesoOrden
         '
         Me.GroupProcesoOrden.Controls.Add(Me.dgvProcesos)
-        Me.GroupProcesoOrden.Location = New System.Drawing.Point(12, 569)
+        Me.GroupProcesoOrden.Location = New System.Drawing.Point(12, 580)
         Me.GroupProcesoOrden.Name = "GroupProcesoOrden"
-        Me.GroupProcesoOrden.Size = New System.Drawing.Size(775, 104)
+        Me.GroupProcesoOrden.Size = New System.Drawing.Size(1089, 104)
         Me.GroupProcesoOrden.TabIndex = 40
         Me.GroupProcesoOrden.TabStop = False
         Me.GroupProcesoOrden.Text = "Procesos"
         '
         'btnEliminarProceso
         '
-        Me.btnEliminarProceso.Location = New System.Drawing.Point(588, 679)
+        Me.btnEliminarProceso.Location = New System.Drawing.Point(898, 692)
         Me.btnEliminarProceso.Name = "btnEliminarProceso"
-        Me.btnEliminarProceso.Size = New System.Drawing.Size(113, 23)
+        Me.btnEliminarProceso.Size = New System.Drawing.Size(113, 33)
         Me.btnEliminarProceso.TabIndex = 41
         Me.btnEliminarProceso.Text = "Eliminar Proceso"
         Me.btnEliminarProceso.UseVisualStyleBackColor = True
         '
         'btnModificarProceso
         '
-        Me.btnModificarProceso.Location = New System.Drawing.Point(463, 679)
+        Me.btnModificarProceso.Location = New System.Drawing.Point(773, 692)
         Me.btnModificarProceso.Name = "btnModificarProceso"
-        Me.btnModificarProceso.Size = New System.Drawing.Size(119, 23)
+        Me.btnModificarProceso.Size = New System.Drawing.Size(119, 33)
         Me.btnModificarProceso.TabIndex = 42
         Me.btnModificarProceso.Text = "Modificar Proceso"
         Me.btnModificarProceso.UseVisualStyleBackColor = True
@@ -389,7 +389,7 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(799, 710)
+        Me.ClientSize = New System.Drawing.Size(1119, 737)
         Me.Controls.Add(Me.btnModificarProceso)
         Me.Controls.Add(Me.btnEliminarProceso)
         Me.Controls.Add(Me.GroupProcesoOrden)
