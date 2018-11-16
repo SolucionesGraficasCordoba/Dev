@@ -31,7 +31,7 @@
             End If
             Dim clie = New CLIENTE
             clie.CLI_razon_social = StrConv(txt_razonsocial_cliente.Text, VbStrConv.ProperCase)
-            clie.CLI_mail_cli = StrConv(txt_mail_cliente.Text, VbStrConv.ProperCase)
+            clie.CLI_mail_cli = txt_mail_cliente.Text
             clie.CLI_telefono_cli = StrConv(txtTelefono_Cliente.Text, VbStrConv.ProperCase)
             clie.CLI_domicilio = StrConv(txt_Domicilio_Cliente.Text, VbStrConv.ProperCase)
             clie.CLI_localidad = StrConv(txt_Localidad_Cliente.Text, VbStrConv.ProperCase)
@@ -74,7 +74,7 @@
         Try
             Dim ActualizarCliente = (From P In datacontext.CLIENTE Where P.CLI_id_cliente = (txt_id_cliente.Text.ToUpper)).ToList()(0)
             ActualizarCliente.CLI_razon_social = StrConv(txt_razonsocial_cliente.Text, VbStrConv.ProperCase)
-            ActualizarCliente.CLI_mail_cli = StrConv(txt_mail_cliente.Text, VbStrConv.ProperCase)
+            ActualizarCliente.CLI_mail_cli = txt_mail_cliente.Text
             ActualizarCliente.CLI_telefono_cli = StrConv(txtTelefono_Cliente.Text, VbStrConv.ProperCase)
             ActualizarCliente.CLI_domicilio = StrConv(txt_Domicilio_Cliente.Text, VbStrConv.ProperCase)
             ActualizarCliente.CLI_localidad = StrConv(txt_Localidad_Cliente.Text, VbStrConv.ProperCase)

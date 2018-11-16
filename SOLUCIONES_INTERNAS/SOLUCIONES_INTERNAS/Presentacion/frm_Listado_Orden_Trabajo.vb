@@ -144,11 +144,15 @@ Public Class frm_Listado_Orden_Trabajo
     End Sub
 
     Private Sub dgv_detalle_orden_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellClick
+        Try
+
+       
         If dgvLista_Orden_Trabajo.Rows.Count = 0 Then
             MsgBox("No hay procesos por mostrar", MsgBoxStyle.Information + MsgBoxStyle.Information, "Seleccionar")
             Exit Sub
         End If
         'CARGA PROCESOS DEL PRODUCTO
+
         vble_id_proceso = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
         CargarProceso()
 
@@ -159,6 +163,9 @@ Public Class frm_Listado_Orden_Trabajo
             btnModificarProducto.Enabled = False
             btnEliminar_Producto.Enabled = True
         End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Sub CargarProceso()
