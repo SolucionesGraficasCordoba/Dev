@@ -1002,7 +1002,10 @@ Public Class frm_Listado_Orden_Trabajo
             'Dim espacio As New Paragraph()
 
             'vbles de grids
-            Dim orden As New Phrase("   " & dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgv_detalle_orden.CurrentRow.Index).Value _
+
+
+
+            Dim orden As New Phrase("   " & dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
                                              & " " _
                                              & dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
                                              & "                   " _
@@ -1011,11 +1014,13 @@ Public Class frm_Listado_Orden_Trabajo
             'Dim fecha_entrega As New Phrase("Entrega: " & dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
             '                                 , New Font(fuente, 16))
 
-            Dim ingreso_vendedor As New Paragraph("Fecha ingreso: " & dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgv_detalle_orden.CurrentRow.Index).Value _
+            Dim ingreso_vendedor As New Paragraph("Fecha ingreso: " & dgvLista_Orden_Trabajo.SelectedRows(0).Cells("ORT_fecha_ot").Value _
                                              & "  " _
                                              & "                          " _
                                              & "Vendedor: " & dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
                                              , New Font(fuente, 12, Font.Bold))
+
+            'Dim ingreso_vendedor As New Paragraph(dgvLista_Orden_Trabajo.SelectedRows(0).Cells("ORT_fecha_ot").Value, New Font(fuente, 16))
 
             Dim cliente As New Paragraph("Cliente: " & dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
                                              , New Font(fuente, 12))
