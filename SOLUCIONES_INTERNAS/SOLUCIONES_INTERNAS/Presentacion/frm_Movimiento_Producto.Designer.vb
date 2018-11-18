@@ -80,7 +80,7 @@ Partial Class frm_Movimiento_Producto
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(7, 54)
+        Me.Label3.Location = New System.Drawing.Point(4, 55)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 13)
         Me.Label3.TabIndex = 0
@@ -89,7 +89,7 @@ Partial Class frm_Movimiento_Producto
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(340, 24)
+        Me.Label5.Location = New System.Drawing.Point(344, 23)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(28, 13)
         Me.Label5.TabIndex = 3
@@ -160,7 +160,7 @@ Partial Class frm_Movimiento_Producto
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(21, 120)
+        Me.Label9.Location = New System.Drawing.Point(14, 127)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(49, 13)
         Me.Label9.TabIndex = 11
@@ -234,7 +234,7 @@ Partial Class frm_Movimiento_Producto
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Red
-        Me.Label12.Location = New System.Drawing.Point(170, 122)
+        Me.Label12.Location = New System.Drawing.Point(63, 130)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(11, 13)
         Me.Label12.TabIndex = 75
@@ -245,7 +245,7 @@ Partial Class frm_Movimiento_Producto
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.Red
-        Me.Label4.Location = New System.Drawing.Point(427, 56)
+        Me.Label4.Location = New System.Drawing.Point(63, 58)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(11, 13)
         Me.Label4.TabIndex = 74
@@ -255,33 +255,33 @@ Partial Class frm_Movimiento_Producto
         '
         Me.cbo_Tipo_Producto.FormattingEnabled = True
         Me.cbo_Tipo_Producto.Items.AddRange(New Object() {"Alta", "Baja"})
-        Me.cbo_Tipo_Producto.Location = New System.Drawing.Point(374, 20)
+        Me.cbo_Tipo_Producto.Location = New System.Drawing.Point(378, 20)
         Me.cbo_Tipo_Producto.Name = "cbo_Tipo_Producto"
         Me.cbo_Tipo_Producto.Size = New System.Drawing.Size(64, 21)
         Me.cbo_Tipo_Producto.TabIndex = 73
         '
         'txt_descripcion
         '
-        Me.txt_descripcion.Location = New System.Drawing.Point(76, 54)
+        Me.txt_descripcion.Location = New System.Drawing.Point(76, 52)
         Me.txt_descripcion.Multiline = True
         Me.txt_descripcion.Name = "txt_descripcion"
-        Me.txt_descripcion.Size = New System.Drawing.Size(342, 20)
+        Me.txt_descripcion.Size = New System.Drawing.Size(366, 20)
         Me.txt_descripcion.TabIndex = 72
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(363, 127)
+        Me.btnCancelar.Location = New System.Drawing.Point(367, 117)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar.TabIndex = 5
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'btnIngresar_Stock
         '
-        Me.btnIngresar_Stock.Location = New System.Drawing.Point(257, 127)
+        Me.btnIngresar_Stock.Location = New System.Drawing.Point(261, 117)
         Me.btnIngresar_Stock.Name = "btnIngresar_Stock"
-        Me.btnIngresar_Stock.Size = New System.Drawing.Size(100, 23)
+        Me.btnIngresar_Stock.Size = New System.Drawing.Size(100, 33)
         Me.btnIngresar_Stock.TabIndex = 4
         Me.btnIngresar_Stock.Text = "Ingresar Stock"
         Me.btnIngresar_Stock.UseVisualStyleBackColor = True
@@ -337,9 +337,9 @@ Partial Class frm_Movimiento_Producto
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(363, 22)
+        Me.btnEliminar.Location = New System.Drawing.Point(363, 18)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 33)
         Me.btnEliminar.TabIndex = 7
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True

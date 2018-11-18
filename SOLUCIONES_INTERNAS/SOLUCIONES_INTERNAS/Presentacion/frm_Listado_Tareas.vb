@@ -65,6 +65,7 @@ Public Class frm_Listado_Tareas
         dgvColaboradores.Columns(0).Visible = False
         dgvColaboradores.Columns(1).DataPropertyName = "COL_nombre_col"
         'dgvColaboradores.Columns(1).Width = 350
+      
     End Sub
 
     'BOTON ELIMINAR

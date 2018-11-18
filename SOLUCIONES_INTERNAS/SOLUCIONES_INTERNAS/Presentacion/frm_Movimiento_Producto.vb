@@ -75,6 +75,8 @@
                           Select U.PROD_id, U.PROD_codigo, U.PROD_descripcion, U.PROD_stock
                           Where PROD_descripcion Like buscar.ToString
         dgvLista_Productos.DataSource = consultaprod
+
+     
     End Sub
 
     Private Sub armargrilla()
@@ -193,4 +195,5 @@
     Private Sub frm_Movimiento_Producto_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
     End Sub
+
 End Class

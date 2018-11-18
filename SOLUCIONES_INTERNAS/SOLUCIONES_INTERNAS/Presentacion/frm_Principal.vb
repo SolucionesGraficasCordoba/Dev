@@ -1073,6 +1073,7 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.MdiParent = Me
         frm_Listado_Orden_Trabajo.Show()
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
+        frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Focus()
     End Sub
 
     Private Sub EliminarOrdenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarOrdenToolStripMenuItem.Click
@@ -1090,9 +1091,12 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.btn_Cancelar.Enabled = True
         frm_Listado_Orden_Trabajo.btn_ODT_mostrar_pdf.Enabled = False
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
-        frm_Listado_Orden_Trabajo.dgv_detalle_orden.ClearSelection()
 
         frm_Listado_Orden_Trabajo.ShowDialog()
+        frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
+        frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Focus()
+
+
     End Sub
 
     Private Sub NuevoRetrabajoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NuevoRetrabajoToolStripMenuItem.Click
@@ -1123,7 +1127,7 @@ Public Class frm_Principal
 
         frm_Productos.Text = "Nuevo Producto"
         frm_Productos.dgvLista_Productos.ClearSelection()
-        frm_Productos.GroupBox2.Enabled = False
+        '  frm_Productos.GroupBox2.Enabled = False
 
         frm_Productos.tb_prod_id.Visible = False
         frm_Productos.Label1.Visible = False
@@ -1139,13 +1143,9 @@ Public Class frm_Principal
         frm_Productos.btn_prod_cancelar.Enabled = True
         frm_Productos.btn_prod_eliminar.Enabled = False
         frm_Productos.btnExportarPDF.Enabled = False
-
-        For Each row As DataGridViewRow In frm_Productos.dgvLista_Productos.Rows
-            If row.Cells(3).Value <= row.Cells(4).Value Then
-                row.DefaultCellStyle.BackColor = Color.Red
-            End If
-        Next
         frm_Productos.ShowDialog()
+        frm_Productos.rbtProducto.Checked = False
+
     End Sub
 
     Private Sub ModificarToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarToolStripMenuItem.Click
@@ -1283,11 +1283,16 @@ Public Class frm_Principal
         frm_Productos.btn_prod_cancelar.Enabled = True
         frm_Productos.btn_prod_eliminar.Enabled = False
 
-        frm_Productos.dgvLista_Productos.ClearSelection()
         frm_Productos.dgvLista_Productos.Enabled = True
 
         frm_Productos.MdiParent = Me
         frm_Productos.Show()
+        For Each row As DataGridViewRow In frm_Productos.dgvLista_Productos.Rows
+            If row.Cells(3).Value <= row.Cells(4).Value Then
+                row.DefaultCellStyle.BackColor = Color.Red
+            End If
+        Next
+        frm_Productos.dgvLista_Productos.ClearSelection()
     End Sub
 
     Private Sub frm_Principal_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
@@ -1302,6 +1307,7 @@ Public Class frm_Principal
         frm_Listado_Movimientos.Text = "Consultar Movimiento"
         frm_Listado_Movimientos.MdiParent = Me
         frm_Listado_Movimientos.Show()
+        frm_Listado_Movimientos.dgv_movimientos.ClearSelection()
     End Sub
 
     Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

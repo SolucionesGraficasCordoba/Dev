@@ -11,7 +11,9 @@ Public Class frm_Productos
     Private Sub btn_prod_guardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_prod_guardar.Click
         Try
             'consulta si el codigo de prod ya existe
-            Dim buscaproducto = (From P In datacontext.PRODUCTO Select P.PROD_codigo, P.PROD_descripcion, P.PROD_id, P.PROD_stock, P.PROD_stock_minimo Where PROD_codigo = tb_prod_codigo.Text).Any
+            Dim buscaproducto = (From P In datacontext.PRODUCTO
+                                 Select P.PROD_codigo, P.PROD_descripcion, P.PROD_id, P.PROD_stock, P.PROD_stock_minimo
+                                 Where PROD_codigo = tb_prod_codigo.Text).Any
             If buscaproducto = True Then
                 MsgBox("El código de producto ya existe")
                 Exit Sub
@@ -111,12 +113,7 @@ Public Class frm_Productos
                            Order By PROD_descripcion Ascending
         dgvLista_Productos.DataSource = consultaprod
         Label9.Text = dgvLista_Productos.Rows.Count
-
-        For Each row As DataGridViewRow In dgvLista_Productos.Rows
-            If row.Cells("PROD_stock").Value <= row.Cells("PROD_stock_minimo").Value Then
-                row.DefaultCellStyle.BackColor = Color.Red
-            End If
-        Next
+        ColorStock()
     End Sub
 
     Private Sub frm_Productos_FormClosing(sender As Object, e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -294,11 +291,7 @@ Public Class frm_Productos
                            Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo Where PROD_descripcion Like buscarprod.ToString
         dgvLista_Productos.DataSource = consultaprod
         dgvLista_Productos.ClearSelection()
-        For Each row As DataGridViewRow In dgvLista_Productos.Rows
-            If row.Cells(3).Value <= row.Cells(4).Value Then
-                row.DefaultCellStyle.BackColor = Color.Red
-            End If
-        Next
+        ColorStock()
     End Sub
 
     Private Sub tb_cod_busqueda_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tb_cod_busqueda.TextChanged
@@ -309,11 +302,7 @@ Public Class frm_Productos
                            Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo Where PROD_codigo Like buscarcod.ToString
         dgvLista_Productos.DataSource = consultacod
         dgvLista_Productos.ClearSelection()
-        For Each row As DataGridViewRow In dgvLista_Productos.Rows
-            If row.Cells(3).Value <= row.Cells(4).Value Then
-                row.DefaultCellStyle.BackColor = Color.Red
-            End If
-        Next
+        ColorStock()
     End Sub
 
     Private Sub dgvLista_Productos_CellClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Productos.CellClick
@@ -343,7 +332,8 @@ Public Class frm_Productos
         End Try
     End Sub
 
-    Private Sub btn_prod_eliminar_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_prod_eliminar.Click
+    Private Sub btn_prod_eliminar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_prod_eliminar.Click
+
         If dgvLista_Productos.SelectedRows.Count > 0 Then
             Dim eliminar = (From p In datacontext.PRODUCTO Where p.PROD_id = CInt(dgvLista_Productos.Item("PROD_id", dgvLista_Productos.SelectedRows(0).Index).Value)).ToList()(0)
             Select Case MsgBox("Se eliminará el producto seleccionado, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar producto")
@@ -363,5 +353,13 @@ Public Class frm_Productos
     Private Sub btn_prod_cancelar_Click(sender As System.Object, e As System.EventArgs) Handles btn_prod_cancelar.Click
         Me.Close()
         Me.Dispose()
+    End Sub
+
+    Public Sub ColorStock()
+        For Each row As DataGridViewRow In dgvLista_Productos.Rows
+            If row.Cells(3).Value <= row.Cells(4).Value Then
+                row.DefaultCellStyle.BackColor = Color.Red
+            End If
+        Next
     End Sub
 End Class
