@@ -238,11 +238,13 @@ Public Class frm_Generar_Informe
     End Sub
 
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
-        If dgvTotalesMensuales.Rows.Count = 0 Then
-            MsgBox("No hay registros de tareas mensuales")
-            Exit Sub
-        Else
-            frm_Grafico_Totales_Mensuales.Show()
-        End If
+
+        MsgBox("AREA EN CONSTRUCCION...!!!, DISCULPE LAS MOLESTIAS", MsgBoxStyle.OkOnly)
+        'If dgvTotalesMensuales.Rows.Count = 0 Then
+        '    MsgBox("No hay registros de tareas mensuales")
+        '    Exit Sub
+        'Else
+        '    frm_Grafico_Totales_Mensuales.Show()
+        'End If
     End Sub
 End Class

@@ -23,8 +23,8 @@ Public Class frm_Grafico_Totales_Mensuales
         grafico.Series(2).YValueMembers = "Asignacion"
         grafico.Titles(0).Text = CStr(frm_Generar_Informe.dgvTotalesMensuales.Rows(fila).Cells(1).Value)
         grafico.Series(0).XValueMember = "COL_nombre_col"
-        ' grafico.Series(1).XValueMember = "COL_nombre_col"
-        ' grafico.Series(2).XValueMember = "COL_nombre_col"
+        grafico.Series(1).XValueMember = "COL_nombre_col"
+        grafico.Series(2).XValueMember = "COL_nombre_col"
         grafico.DataSource = llenargrafico(fila)
     End Sub
 
@@ -45,7 +45,6 @@ Public Class frm_Grafico_Totales_Mensuales
     End Function
 
     Sub TipoGrafico()
-
         totalgrafico = frm_Generar_Informe.dgvTotalesMensuales.Rows.Count
 
         '************************inicio grafico 1*********************************
