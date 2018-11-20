@@ -209,7 +209,14 @@ Public Class frm_Generar_Informe
     End Sub
 
     Private Sub btnVerGraficos_Click(sender As System.Object, e As System.EventArgs) Handles btnVerGraficos.Click
-        frm_graficos_tareas_mensuales.Show()
+        If dgvColaboradores.Rows.Count = 0 Then
+            MsgBox("Seleccione Mes Y Sector para ver el gráfico")
+            cboMes.Focus()
+            Exit Sub
+        Else
+            frm_graficos_tareas_mensuales.Show()
+        End If
+
         'frm_graficos_tareas_mensuales.MdiParent = frm_Principal
         'frm_graficos_tareas_mensuales.Show()
     End Sub
@@ -228,5 +235,14 @@ Public Class frm_Generar_Informe
         Try
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+        If dgvTotalesMensuales.Rows.Count = 0 Then
+            MsgBox("No hay registros de tareas mensuales")
+            Exit Sub
+        Else
+            frm_Grafico_Totales_Mensuales.Show()
+        End If
     End Sub
 End Class

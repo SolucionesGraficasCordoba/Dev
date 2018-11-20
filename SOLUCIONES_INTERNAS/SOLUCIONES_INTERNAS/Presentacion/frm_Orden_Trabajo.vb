@@ -1203,12 +1203,10 @@
             frm_Proceso1.txt_descripc_terminacion.Enabled = True
             frm_Proceso1.btnAceptar.Enabled = True
 
-
             frm_Proceso1.ShowDialog()
         Else
             frm_Proceso1.Text = "Proceso Primer Producto"
             frm_Proceso1.ShowDialog()
         End If
     End Sub
-
 End Class

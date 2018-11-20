@@ -33,6 +33,7 @@ Partial Class frm_Generar_Informe
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgvTotalesMensuales = New System.Windows.Forms.DataGridView()
         Me.btnVerGraficos = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupListadoTareas.SuspendLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -108,7 +109,7 @@ Partial Class frm_Generar_Informe
         '
         'btnGenerar_Informe
         '
-        Me.btnGenerar_Informe.Location = New System.Drawing.Point(475, 459)
+        Me.btnGenerar_Informe.Location = New System.Drawing.Point(184, 459)
         Me.btnGenerar_Informe.Name = "btnGenerar_Informe"
         Me.btnGenerar_Informe.Size = New System.Drawing.Size(108, 23)
         Me.btnGenerar_Informe.TabIndex = 35
@@ -136,12 +137,21 @@ Partial Class frm_Generar_Informe
         '
         'btnVerGraficos
         '
-        Me.btnVerGraficos.Location = New System.Drawing.Point(589, 459)
+        Me.btnVerGraficos.Location = New System.Drawing.Point(496, 459)
         Me.btnVerGraficos.Name = "btnVerGraficos"
-        Me.btnVerGraficos.Size = New System.Drawing.Size(86, 23)
+        Me.btnVerGraficos.Size = New System.Drawing.Size(179, 23)
         Me.btnVerGraficos.TabIndex = 3
-        Me.btnVerGraficos.Text = "Ver Gráficos"
+        Me.btnVerGraficos.Text = "Totales por Día por Colaborador"
         Me.btnVerGraficos.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(298, 459)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(192, 23)
+        Me.Button1.TabIndex = 41
+        Me.Button1.Text = "Totales Mensuales por Colaborador"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'frm_Generar_Informe
         '
@@ -149,6 +159,7 @@ Partial Class frm_Generar_Informe
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(772, 490)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnVerGraficos)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnCancelar)
@@ -176,4 +187,5 @@ Partial Class frm_Generar_Informe
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents dgvTotalesMensuales As System.Windows.Forms.DataGridView
     Friend WithEvents btnVerGraficos As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

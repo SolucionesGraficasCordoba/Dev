@@ -67,7 +67,7 @@ Partial Class frm_ingreso
         '
         Me.btnIngresar.Location = New System.Drawing.Point(12, 86)
         Me.btnIngresar.Name = "btnIngresar"
-        Me.btnIngresar.Size = New System.Drawing.Size(65, 23)
+        Me.btnIngresar.Size = New System.Drawing.Size(65, 33)
         Me.btnIngresar.TabIndex = 3
         Me.btnIngresar.Text = "Ingresar"
         Me.btnIngresar.UseVisualStyleBackColor = True
@@ -77,7 +77,7 @@ Partial Class frm_ingreso
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.btnCancelar.Location = New System.Drawing.Point(83, 86)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(65, 23)
+        Me.btnCancelar.Size = New System.Drawing.Size(65, 33)
         Me.btnCancelar.TabIndex = 4
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
@@ -87,17 +87,17 @@ Partial Class frm_ingreso
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(115, 135)
+        Me.Label8.Location = New System.Drawing.Point(12, 117)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(108, 13)
+        Me.Label8.Size = New System.Drawing.Size(62, 26)
         Me.Label8.TabIndex = 21
-        Me.Label8.Text = "*  (Campo Requerido)"
+        Me.Label8.Text = "*  (Campo " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Requerido)"
         '
         'btnCambiarContraseña
         '
         Me.btnCambiarContraseña.Location = New System.Drawing.Point(154, 86)
         Me.btnCambiarContraseña.Name = "btnCambiarContraseña"
-        Me.btnCambiarContraseña.Size = New System.Drawing.Size(122, 23)
+        Me.btnCambiarContraseña.Size = New System.Drawing.Size(122, 33)
         Me.btnCambiarContraseña.TabIndex = 5
         Me.btnCambiarContraseña.Text = "Cambiar Contraseña"
         Me.btnCambiarContraseña.UseVisualStyleBackColor = True
@@ -123,7 +123,7 @@ Partial Class frm_ingreso
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Location = New System.Drawing.Point(118, 5)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(282, 127)
+        Me.GroupBox1.Size = New System.Drawing.Size(282, 132)
         Me.GroupBox1.TabIndex = 23
         Me.GroupBox1.TabStop = False
         '
@@ -166,7 +166,7 @@ Partial Class frm_ingreso
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.CancelButton = Me.btnCancelar
-        Me.ClientSize = New System.Drawing.Size(410, 156)
+        Me.ClientSize = New System.Drawing.Size(410, 150)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label8)

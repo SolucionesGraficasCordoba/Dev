@@ -504,7 +504,7 @@ Partial Class frm_Orden_Trabajo
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(21, 18)
+        Me.Label40.Location = New System.Drawing.Point(68, 18)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(78, 13)
         Me.Label40.TabIndex = 86
@@ -514,7 +514,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato3_Soporte3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato3_Soporte3.FormattingEnabled = True
-        Me.cboFormato3_Soporte3.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
+        Me.cboFormato3_Soporte3.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato3_Soporte3.Location = New System.Drawing.Point(338, 93)
         Me.cboFormato3_Soporte3.Name = "cboFormato3_Soporte3"
         Me.cboFormato3_Soporte3.Size = New System.Drawing.Size(89, 21)
@@ -524,7 +524,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato2_Soporte3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato2_Soporte3.FormattingEnabled = True
-        Me.cboFormato2_Soporte3.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
+        Me.cboFormato2_Soporte3.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato2_Soporte3.Location = New System.Drawing.Point(338, 68)
         Me.cboFormato2_Soporte3.Name = "cboFormato2_Soporte3"
         Me.cboFormato2_Soporte3.Size = New System.Drawing.Size(89, 21)
@@ -534,7 +534,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato1_Soporte3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato1_Soporte3.FormattingEnabled = True
-        Me.cboFormato1_Soporte3.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
+        Me.cboFormato1_Soporte3.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato1_Soporte3.Location = New System.Drawing.Point(338, 42)
         Me.cboFormato1_Soporte3.Name = "cboFormato1_Soporte3"
         Me.cboFormato1_Soporte3.Size = New System.Drawing.Size(89, 21)
@@ -639,11 +639,11 @@ Partial Class frm_Orden_Trabajo
         'Label37
         '
         Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(335, 18)
+        Me.Label37.Location = New System.Drawing.Point(350, 18)
         Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(45, 13)
+        Me.Label37.Size = New System.Drawing.Size(71, 13)
         Me.Label37.TabIndex = 29
-        Me.Label37.Text = "Formato"
+        Me.Label37.Text = "Formato (Mm)"
         '
         'Label38
         '
@@ -830,7 +830,7 @@ Partial Class frm_Orden_Trabajo
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(21, 17)
+        Me.Label29.Location = New System.Drawing.Point(67, 16)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(78, 13)
         Me.Label29.TabIndex = 74
@@ -840,7 +840,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato3_Soporte2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato3_Soporte2.FormattingEnabled = True
-        Me.cboFormato3_Soporte2.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
+        Me.cboFormato3_Soporte2.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato3_Soporte2.Location = New System.Drawing.Point(338, 88)
         Me.cboFormato3_Soporte2.Name = "cboFormato3_Soporte2"
         Me.cboFormato3_Soporte2.Size = New System.Drawing.Size(89, 21)
@@ -850,7 +850,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato2_Soporte2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato2_Soporte2.FormattingEnabled = True
-        Me.cboFormato2_Soporte2.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
+        Me.cboFormato2_Soporte2.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato2_Soporte2.Location = New System.Drawing.Point(338, 63)
         Me.cboFormato2_Soporte2.Name = "cboFormato2_Soporte2"
         Me.cboFormato2_Soporte2.Size = New System.Drawing.Size(89, 21)
@@ -860,7 +860,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato1_Soporte2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato1_Soporte2.FormattingEnabled = True
-        Me.cboFormato1_Soporte2.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
+        Me.cboFormato1_Soporte2.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato1_Soporte2.Location = New System.Drawing.Point(338, 37)
         Me.cboFormato1_Soporte2.Name = "cboFormato1_Soporte2"
         Me.cboFormato1_Soporte2.Size = New System.Drawing.Size(89, 21)
@@ -965,11 +965,11 @@ Partial Class frm_Orden_Trabajo
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(335, 16)
+        Me.Label22.Location = New System.Drawing.Point(349, 16)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(45, 13)
+        Me.Label22.Size = New System.Drawing.Size(71, 13)
         Me.Label22.TabIndex = 29
-        Me.Label22.Text = "Formato"
+        Me.Label22.Text = "Formato (Mm)"
         '
         'Label27
         '
@@ -1163,7 +1163,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato3_Soporte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato3_Soporte1.FormattingEnabled = True
-        Me.cboFormato3_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
+        Me.cboFormato3_Soporte1.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato3_Soporte1.Location = New System.Drawing.Point(338, 89)
         Me.cboFormato3_Soporte1.Name = "cboFormato3_Soporte1"
         Me.cboFormato3_Soporte1.Size = New System.Drawing.Size(89, 21)
@@ -1173,7 +1173,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato2_Soporte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato2_Soporte1.FormattingEnabled = True
-        Me.cboFormato2_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
+        Me.cboFormato2_Soporte1.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato2_Soporte1.Location = New System.Drawing.Point(338, 64)
         Me.cboFormato2_Soporte1.Name = "cboFormato2_Soporte1"
         Me.cboFormato2_Soporte1.Size = New System.Drawing.Size(89, 21)
@@ -1256,7 +1256,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.cboFormato1_Soporte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato1_Soporte1.FormattingEnabled = True
-        Me.cboFormato1_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidades"})
+        Me.cboFormato1_Soporte1.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato1_Soporte1.Location = New System.Drawing.Point(338, 38)
         Me.cboFormato1_Soporte1.Name = "cboFormato1_Soporte1"
         Me.cboFormato1_Soporte1.Size = New System.Drawing.Size(89, 21)
@@ -1265,11 +1265,11 @@ Partial Class frm_Orden_Trabajo
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(335, 17)
+        Me.Label26.Location = New System.Drawing.Point(349, 17)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(45, 13)
+        Me.Label26.Size = New System.Drawing.Size(71, 13)
         Me.Label26.TabIndex = 29
-        Me.Label26.Text = "Formato"
+        Me.Label26.Text = "Formato (Mm)"
         '
         'Label23
         '
@@ -1292,7 +1292,7 @@ Partial Class frm_Orden_Trabajo
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(21, 17)
+        Me.Label25.Location = New System.Drawing.Point(67, 17)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(78, 13)
         Me.Label25.TabIndex = 41
