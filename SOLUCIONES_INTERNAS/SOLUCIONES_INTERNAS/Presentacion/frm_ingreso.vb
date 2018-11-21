@@ -144,7 +144,7 @@
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
-                frm_Principal.TareasToolStripMenuItem.DropDownItems(4).Visible = True
+                '  frm_Principal.TareasToolStripMenuItem.DropDownItems(4).Visible = True
 
                 frm_Principal.ProductoToolStripMenuItem.Visible = True
                 frm_Principal.GestiónDeProductosToolStripMenuItem.Visible = False
@@ -217,7 +217,7 @@
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = False
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = False
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
-                frm_Principal.TareasToolStripMenuItem.DropDownItems(4).Visible = True
+                '  frm_Principal.TareasToolStripMenuItem.DropDownItems(4).Visible = True
 
                 frm_Principal.ProductoToolStripMenuItem.Visible = True
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = False
@@ -305,7 +305,7 @@
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
-                frm_Principal.TareasToolStripMenuItem.DropDownItems(4).Visible = True
+                ' frm_Principal.TareasToolStripMenuItem.DropDownItems(4).Visible = True
 
                 frm_Principal.OrdenTrabajoToolStripMenuItem.Visible = True
                 frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = True 'nueva
@@ -362,7 +362,7 @@
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
-                frm_Principal.TareasToolStripMenuItem.DropDownItems(4).Visible = True
+                '    frm_Principal.TareasToolStripMenuItem.DropDownItems(4).Visible = True
 
                 frm_Principal.ProductoToolStripMenuItem.Visible = True
                 frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = True

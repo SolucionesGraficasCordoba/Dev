@@ -32,8 +32,8 @@ Partial Class frm_Generar_Informe
         Me.btnGenerar_Informe = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgvTotalesMensuales = New System.Windows.Forms.DataGridView()
-        Me.btnVerGraficos = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnTotales_por_Dia = New System.Windows.Forms.Button()
+        Me.btn_Totales_Mensuales_por_Colaborador = New System.Windows.Forms.Button()
         Me.GroupListadoTareas.SuspendLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -135,23 +135,23 @@ Partial Class frm_Generar_Informe
         Me.dgvTotalesMensuales.Size = New System.Drawing.Size(734, 174)
         Me.dgvTotalesMensuales.TabIndex = 6
         '
-        'btnVerGraficos
+        'btnTotales_por_Dia
         '
-        Me.btnVerGraficos.Location = New System.Drawing.Point(496, 459)
-        Me.btnVerGraficos.Name = "btnVerGraficos"
-        Me.btnVerGraficos.Size = New System.Drawing.Size(179, 23)
-        Me.btnVerGraficos.TabIndex = 3
-        Me.btnVerGraficos.Text = "Totales por Día por Colaborador"
-        Me.btnVerGraficos.UseVisualStyleBackColor = True
+        Me.btnTotales_por_Dia.Location = New System.Drawing.Point(496, 459)
+        Me.btnTotales_por_Dia.Name = "btnTotales_por_Dia"
+        Me.btnTotales_por_Dia.Size = New System.Drawing.Size(179, 23)
+        Me.btnTotales_por_Dia.TabIndex = 3
+        Me.btnTotales_por_Dia.Text = "Totales por Día por Colaborador"
+        Me.btnTotales_por_Dia.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btn_Totales_Mensuales_por_Colaborador
         '
-        Me.Button1.Location = New System.Drawing.Point(298, 459)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(192, 23)
-        Me.Button1.TabIndex = 41
-        Me.Button1.Text = "Totales Mensuales por Colaborador"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_Totales_Mensuales_por_Colaborador.Location = New System.Drawing.Point(298, 459)
+        Me.btn_Totales_Mensuales_por_Colaborador.Name = "btn_Totales_Mensuales_por_Colaborador"
+        Me.btn_Totales_Mensuales_por_Colaborador.Size = New System.Drawing.Size(192, 23)
+        Me.btn_Totales_Mensuales_por_Colaborador.TabIndex = 41
+        Me.btn_Totales_Mensuales_por_Colaborador.Text = "Totales Mensuales por Colaborador"
+        Me.btn_Totales_Mensuales_por_Colaborador.UseVisualStyleBackColor = True
         '
         'frm_Generar_Informe
         '
@@ -159,8 +159,8 @@ Partial Class frm_Generar_Informe
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(772, 490)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.btnVerGraficos)
+        Me.Controls.Add(Me.btn_Totales_Mensuales_por_Colaborador)
+        Me.Controls.Add(Me.btnTotales_por_Dia)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.GroupListadoTareas)
@@ -186,6 +186,6 @@ Partial Class frm_Generar_Informe
     Friend WithEvents btnGenerar_Informe As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents dgvTotalesMensuales As System.Windows.Forms.DataGridView
-    Friend WithEvents btnVerGraficos As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnTotales_por_Dia As System.Windows.Forms.Button
+    Friend WithEvents btn_Totales_Mensuales_por_Colaborador As System.Windows.Forms.Button
 End Class

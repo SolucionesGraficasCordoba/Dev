@@ -208,7 +208,7 @@ Public Class frm_Generar_Informe
         totalgrafico = dgvTotalesMensuales.Rows.Count
     End Sub
 
-    Private Sub btnVerGraficos_Click(sender As System.Object, e As System.EventArgs) Handles btnVerGraficos.Click
+    Private Sub btnVerGraficos_Click(sender As System.Object, e As System.EventArgs) Handles btnTotales_por_Dia.Click
         If dgvColaboradores.Rows.Count = 0 Then
             MsgBox("Seleccione Mes Y Sector para ver el gráfico")
             cboMes.Focus()
@@ -237,7 +237,7 @@ Public Class frm_Generar_Informe
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles btn_Totales_Mensuales_por_Colaborador.Click
 
         '  MsgBox("AREA EN CONSTRUCCION...!!!, DISCULPE LAS MOLESTIAS", MsgBoxStyle.OkOnly)
         If dgvTotalesMensuales.Rows.Count = 0 Then
