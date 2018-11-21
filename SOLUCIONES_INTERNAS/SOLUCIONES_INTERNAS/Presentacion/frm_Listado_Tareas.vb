@@ -496,7 +496,7 @@ Public Class frm_Listado_Tareas
                 flag17 = 1
                 flag18 = 1
                 flag19 = 1
-            ElseIf dgvTarea_x_Colaborador.RowCount = 20 Then
+            ElseIf dgvTarea_x_Colaborador.RowCount >= 20 Then
                 flag1 = 1
                 flag2 = 1
                 flag3 = 1
@@ -517,6 +517,11 @@ Public Class frm_Listado_Tareas
                 flag18 = 1
                 flag19 = 1
                 flag20 = 1
+
+                If dgvTarea_x_Colaborador.RowCount > 20 Then
+                    MsgBox("Sólo se muestran las primeras 20 tareas, para ver las demás exporte el Listado")
+                    btnExportarListado.Focus()
+                End If
             End If
             If flag1 = 1 Then
                 frm_Tarea.txt_detalle_tarea1.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(0).Index).Value
