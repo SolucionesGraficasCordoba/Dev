@@ -179,6 +179,7 @@ Partial Class frm_Vendedor
         'txt_telefono_vendedor
         '
         Me.txt_telefono_vendedor.Location = New System.Drawing.Point(77, 109)
+        Me.txt_telefono_vendedor.MaxLength = 15
         Me.txt_telefono_vendedor.Name = "txt_telefono_vendedor"
         Me.txt_telefono_vendedor.Size = New System.Drawing.Size(164, 20)
         Me.txt_telefono_vendedor.TabIndex = 10
@@ -186,6 +187,7 @@ Partial Class frm_Vendedor
         'txt_mail_vendedor
         '
         Me.txt_mail_vendedor.Location = New System.Drawing.Point(77, 79)
+        Me.txt_mail_vendedor.MaxLength = 50
         Me.txt_mail_vendedor.Name = "txt_mail_vendedor"
         Me.txt_mail_vendedor.Size = New System.Drawing.Size(321, 20)
         Me.txt_mail_vendedor.TabIndex = 8
@@ -202,6 +204,7 @@ Partial Class frm_Vendedor
         'txt_apellido_vendedor
         '
         Me.txt_apellido_vendedor.Location = New System.Drawing.Point(77, 49)
+        Me.txt_apellido_vendedor.MaxLength = 50
         Me.txt_apellido_vendedor.Name = "txt_apellido_vendedor"
         Me.txt_apellido_vendedor.Size = New System.Drawing.Size(321, 20)
         Me.txt_apellido_vendedor.TabIndex = 6
@@ -254,6 +257,7 @@ Partial Class frm_Vendedor
         'txt_nombre_vendedor
         '
         Me.txt_nombre_vendedor.Location = New System.Drawing.Point(77, 19)
+        Me.txt_nombre_vendedor.MaxLength = 50
         Me.txt_nombre_vendedor.Name = "txt_nombre_vendedor"
         Me.txt_nombre_vendedor.Size = New System.Drawing.Size(321, 20)
         Me.txt_nombre_vendedor.TabIndex = 1

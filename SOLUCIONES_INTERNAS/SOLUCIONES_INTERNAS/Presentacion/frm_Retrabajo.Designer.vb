@@ -305,6 +305,7 @@ Partial Class frm_retrabajo
         Me.cboFormato3_Soporte1.FormattingEnabled = True
         Me.cboFormato3_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
         Me.cboFormato3_Soporte1.Location = New System.Drawing.Point(338, 92)
+        Me.cboFormato3_Soporte1.MaxLength = 15
         Me.cboFormato3_Soporte1.Name = "cboFormato3_Soporte1"
         Me.cboFormato3_Soporte1.Size = New System.Drawing.Size(89, 21)
         Me.cboFormato3_Soporte1.TabIndex = 18
@@ -315,6 +316,7 @@ Partial Class frm_retrabajo
         Me.cboFormato2_Soporte1.FormattingEnabled = True
         Me.cboFormato2_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
         Me.cboFormato2_Soporte1.Location = New System.Drawing.Point(338, 67)
+        Me.cboFormato2_Soporte1.MaxLength = 15
         Me.cboFormato2_Soporte1.Name = "cboFormato2_Soporte1"
         Me.cboFormato2_Soporte1.Size = New System.Drawing.Size(89, 21)
         Me.cboFormato2_Soporte1.TabIndex = 14
@@ -396,6 +398,7 @@ Partial Class frm_retrabajo
         Me.cboFormato1_Soporte1.FormattingEnabled = True
         Me.cboFormato1_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
         Me.cboFormato1_Soporte1.Location = New System.Drawing.Point(338, 41)
+        Me.cboFormato1_Soporte1.MaxLength = 15
         Me.cboFormato1_Soporte1.Name = "cboFormato1_Soporte1"
         Me.cboFormato1_Soporte1.Size = New System.Drawing.Size(89, 21)
         Me.cboFormato1_Soporte1.TabIndex = 10

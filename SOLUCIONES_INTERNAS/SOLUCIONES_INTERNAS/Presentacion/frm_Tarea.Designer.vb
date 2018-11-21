@@ -342,6 +342,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real1
         '
         Me.txtTiempo_Real1.Location = New System.Drawing.Point(400, 29)
+        Me.txtTiempo_Real1.MaxLength = 3
         Me.txtTiempo_Real1.Name = "txtTiempo_Real1"
         Me.txtTiempo_Real1.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real1.TabIndex = 8
@@ -349,6 +350,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado1
         '
         Me.txtTiempo_Estimado1.Location = New System.Drawing.Point(354, 29)
+        Me.txtTiempo_Estimado1.MaxLength = 3
         Me.txtTiempo_Estimado1.Name = "txtTiempo_Estimado1"
         Me.txtTiempo_Estimado1.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado1.TabIndex = 7
@@ -402,6 +404,7 @@ Partial Class frm_Tarea
         'txtObservaciones1
         '
         Me.txtObservaciones1.Location = New System.Drawing.Point(497, 29)
+        Me.txtObservaciones1.MaxLength = 200
         Me.txtObservaciones1.Multiline = True
         Me.txtObservaciones1.Name = "txtObservaciones1"
         Me.txtObservaciones1.Size = New System.Drawing.Size(294, 20)
@@ -509,6 +512,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea1
         '
         Me.txt_detalle_tarea1.Location = New System.Drawing.Point(52, 29)
+        Me.txt_detalle_tarea1.MaxLength = 100
         Me.txt_detalle_tarea1.Name = "txt_detalle_tarea1"
         Me.txt_detalle_tarea1.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea1.TabIndex = 6
@@ -1860,6 +1864,7 @@ Partial Class frm_Tarea
         'txtObservaciones20
         '
         Me.txtObservaciones20.Location = New System.Drawing.Point(497, 530)
+        Me.txtObservaciones20.MaxLength = 200
         Me.txtObservaciones20.Multiline = True
         Me.txtObservaciones20.Name = "txtObservaciones20"
         Me.txtObservaciones20.Size = New System.Drawing.Size(294, 20)
@@ -1868,6 +1873,7 @@ Partial Class frm_Tarea
         'txtObservaciones19
         '
         Me.txtObservaciones19.Location = New System.Drawing.Point(497, 504)
+        Me.txtObservaciones19.MaxLength = 200
         Me.txtObservaciones19.Multiline = True
         Me.txtObservaciones19.Name = "txtObservaciones19"
         Me.txtObservaciones19.Size = New System.Drawing.Size(294, 20)
@@ -1883,6 +1889,7 @@ Partial Class frm_Tarea
         'txtObservaciones18
         '
         Me.txtObservaciones18.Location = New System.Drawing.Point(497, 476)
+        Me.txtObservaciones18.MaxLength = 200
         Me.txtObservaciones18.Multiline = True
         Me.txtObservaciones18.Name = "txtObservaciones18"
         Me.txtObservaciones18.Size = New System.Drawing.Size(294, 20)
@@ -1891,6 +1898,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado20
         '
         Me.txtTiempo_Estimado20.Location = New System.Drawing.Point(354, 530)
+        Me.txtTiempo_Estimado20.MaxLength = 3
         Me.txtTiempo_Estimado20.Name = "txtTiempo_Estimado20"
         Me.txtTiempo_Estimado20.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado20.TabIndex = 121
@@ -1905,6 +1913,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real20
         '
         Me.txtTiempo_Real20.Location = New System.Drawing.Point(400, 530)
+        Me.txtTiempo_Real20.MaxLength = 3
         Me.txtTiempo_Real20.Name = "txtTiempo_Real20"
         Me.txtTiempo_Real20.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real20.TabIndex = 122
@@ -1929,6 +1938,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea20
         '
         Me.txt_detalle_tarea20.Location = New System.Drawing.Point(52, 530)
+        Me.txt_detalle_tarea20.MaxLength = 100
         Me.txt_detalle_tarea20.Name = "txt_detalle_tarea20"
         Me.txt_detalle_tarea20.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea20.TabIndex = 120
@@ -1936,6 +1946,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado19
         '
         Me.txtTiempo_Estimado19.Location = New System.Drawing.Point(354, 504)
+        Me.txtTiempo_Estimado19.MaxLength = 3
         Me.txtTiempo_Estimado19.Name = "txtTiempo_Estimado19"
         Me.txtTiempo_Estimado19.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado19.TabIndex = 115
@@ -1952,6 +1963,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real19
         '
         Me.txtTiempo_Real19.Location = New System.Drawing.Point(400, 504)
+        Me.txtTiempo_Real19.MaxLength = 3
         Me.txtTiempo_Real19.Name = "txtTiempo_Real19"
         Me.txtTiempo_Real19.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real19.TabIndex = 116
@@ -1974,6 +1986,7 @@ Partial Class frm_Tarea
         'txtObservaciones17
         '
         Me.txtObservaciones17.Location = New System.Drawing.Point(497, 450)
+        Me.txtObservaciones17.MaxLength = 200
         Me.txtObservaciones17.Multiline = True
         Me.txtObservaciones17.Name = "txtObservaciones17"
         Me.txtObservaciones17.Size = New System.Drawing.Size(294, 20)
@@ -1982,6 +1995,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea19
         '
         Me.txt_detalle_tarea19.Location = New System.Drawing.Point(52, 504)
+        Me.txt_detalle_tarea19.MaxLength = 100
         Me.txt_detalle_tarea19.Name = "txt_detalle_tarea19"
         Me.txt_detalle_tarea19.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea19.TabIndex = 114
@@ -1996,6 +2010,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado18
         '
         Me.txtTiempo_Estimado18.Location = New System.Drawing.Point(354, 476)
+        Me.txtTiempo_Estimado18.MaxLength = 3
         Me.txtTiempo_Estimado18.Name = "txtTiempo_Estimado18"
         Me.txtTiempo_Estimado18.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado18.TabIndex = 109
@@ -2003,6 +2018,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real18
         '
         Me.txtTiempo_Real18.Location = New System.Drawing.Point(400, 476)
+        Me.txtTiempo_Real18.MaxLength = 3
         Me.txtTiempo_Real18.Name = "txtTiempo_Real18"
         Me.txtTiempo_Real18.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real18.TabIndex = 110
@@ -2027,6 +2043,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea18
         '
         Me.txt_detalle_tarea18.Location = New System.Drawing.Point(52, 476)
+        Me.txt_detalle_tarea18.MaxLength = 100
         Me.txt_detalle_tarea18.Name = "txt_detalle_tarea18"
         Me.txt_detalle_tarea18.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea18.TabIndex = 108
@@ -2045,6 +2062,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado17
         '
         Me.txtTiempo_Estimado17.Location = New System.Drawing.Point(354, 450)
+        Me.txtTiempo_Estimado17.MaxLength = 3
         Me.txtTiempo_Estimado17.Name = "txtTiempo_Estimado17"
         Me.txtTiempo_Estimado17.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado17.TabIndex = 103
@@ -2052,6 +2070,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real17
         '
         Me.txtTiempo_Real17.Location = New System.Drawing.Point(400, 450)
+        Me.txtTiempo_Real17.MaxLength = 3
         Me.txtTiempo_Real17.Name = "txtTiempo_Real17"
         Me.txtTiempo_Real17.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real17.TabIndex = 104
@@ -2067,6 +2086,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea17
         '
         Me.txt_detalle_tarea17.Location = New System.Drawing.Point(52, 450)
+        Me.txt_detalle_tarea17.MaxLength = 100
         Me.txt_detalle_tarea17.Name = "txt_detalle_tarea17"
         Me.txt_detalle_tarea17.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea17.TabIndex = 102
@@ -2251,6 +2271,7 @@ Partial Class frm_Tarea
         'txtObservaciones16
         '
         Me.txtObservaciones16.Location = New System.Drawing.Point(497, 421)
+        Me.txtObservaciones16.MaxLength = 200
         Me.txtObservaciones16.Multiline = True
         Me.txtObservaciones16.Name = "txtObservaciones16"
         Me.txtObservaciones16.Size = New System.Drawing.Size(294, 20)
@@ -2259,6 +2280,7 @@ Partial Class frm_Tarea
         'txtObservaciones15
         '
         Me.txtObservaciones15.Location = New System.Drawing.Point(497, 395)
+        Me.txtObservaciones15.MaxLength = 200
         Me.txtObservaciones15.Multiline = True
         Me.txtObservaciones15.Name = "txtObservaciones15"
         Me.txtObservaciones15.Size = New System.Drawing.Size(294, 20)
@@ -2267,6 +2289,7 @@ Partial Class frm_Tarea
         'txtObservaciones14
         '
         Me.txtObservaciones14.Location = New System.Drawing.Point(497, 369)
+        Me.txtObservaciones14.MaxLength = 200
         Me.txtObservaciones14.Multiline = True
         Me.txtObservaciones14.Name = "txtObservaciones14"
         Me.txtObservaciones14.Size = New System.Drawing.Size(294, 20)
@@ -2275,6 +2298,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado16
         '
         Me.txtTiempo_Estimado16.Location = New System.Drawing.Point(354, 421)
+        Me.txtTiempo_Estimado16.MaxLength = 3
         Me.txtTiempo_Estimado16.Name = "txtTiempo_Estimado16"
         Me.txtTiempo_Estimado16.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado16.TabIndex = 97
@@ -2282,6 +2306,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real16
         '
         Me.txtTiempo_Real16.Location = New System.Drawing.Point(400, 421)
+        Me.txtTiempo_Real16.MaxLength = 3
         Me.txtTiempo_Real16.Name = "txtTiempo_Real16"
         Me.txtTiempo_Real16.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real16.TabIndex = 98
@@ -2297,6 +2322,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea16
         '
         Me.txt_detalle_tarea16.Location = New System.Drawing.Point(52, 421)
+        Me.txt_detalle_tarea16.MaxLength = 100
         Me.txt_detalle_tarea16.Name = "txt_detalle_tarea16"
         Me.txt_detalle_tarea16.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea16.TabIndex = 96
@@ -2304,6 +2330,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado15
         '
         Me.txtTiempo_Estimado15.Location = New System.Drawing.Point(354, 395)
+        Me.txtTiempo_Estimado15.MaxLength = 3
         Me.txtTiempo_Estimado15.Name = "txtTiempo_Estimado15"
         Me.txtTiempo_Estimado15.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado15.TabIndex = 91
@@ -2311,6 +2338,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real15
         '
         Me.txtTiempo_Real15.Location = New System.Drawing.Point(400, 395)
+        Me.txtTiempo_Real15.MaxLength = 3
         Me.txtTiempo_Real15.Name = "txtTiempo_Real15"
         Me.txtTiempo_Real15.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real15.TabIndex = 92
@@ -2326,6 +2354,7 @@ Partial Class frm_Tarea
         'txtObservaciones13
         '
         Me.txtObservaciones13.Location = New System.Drawing.Point(497, 343)
+        Me.txtObservaciones13.MaxLength = 200
         Me.txtObservaciones13.Multiline = True
         Me.txtObservaciones13.Name = "txtObservaciones13"
         Me.txtObservaciones13.Size = New System.Drawing.Size(294, 20)
@@ -2334,6 +2363,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea15
         '
         Me.txt_detalle_tarea15.Location = New System.Drawing.Point(52, 395)
+        Me.txt_detalle_tarea15.MaxLength = 100
         Me.txt_detalle_tarea15.Name = "txt_detalle_tarea15"
         Me.txt_detalle_tarea15.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea15.TabIndex = 90
@@ -2341,6 +2371,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado14
         '
         Me.txtTiempo_Estimado14.Location = New System.Drawing.Point(354, 369)
+        Me.txtTiempo_Estimado14.MaxLength = 3
         Me.txtTiempo_Estimado14.Name = "txtTiempo_Estimado14"
         Me.txtTiempo_Estimado14.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado14.TabIndex = 85
@@ -2348,6 +2379,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real14
         '
         Me.txtTiempo_Real14.Location = New System.Drawing.Point(400, 369)
+        Me.txtTiempo_Real14.MaxLength = 3
         Me.txtTiempo_Real14.Name = "txtTiempo_Real14"
         Me.txtTiempo_Real14.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real14.TabIndex = 86
@@ -2363,6 +2395,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea14
         '
         Me.txt_detalle_tarea14.Location = New System.Drawing.Point(52, 369)
+        Me.txt_detalle_tarea14.MaxLength = 100
         Me.txt_detalle_tarea14.Name = "txt_detalle_tarea14"
         Me.txt_detalle_tarea14.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea14.TabIndex = 84
@@ -2370,6 +2403,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado13
         '
         Me.txtTiempo_Estimado13.Location = New System.Drawing.Point(354, 343)
+        Me.txtTiempo_Estimado13.MaxLength = 3
         Me.txtTiempo_Estimado13.Name = "txtTiempo_Estimado13"
         Me.txtTiempo_Estimado13.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado13.TabIndex = 79
@@ -2377,6 +2411,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real13
         '
         Me.txtTiempo_Real13.Location = New System.Drawing.Point(400, 343)
+        Me.txtTiempo_Real13.MaxLength = 3
         Me.txtTiempo_Real13.Name = "txtTiempo_Real13"
         Me.txtTiempo_Real13.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real13.TabIndex = 80
@@ -2392,6 +2427,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea13
         '
         Me.txt_detalle_tarea13.Location = New System.Drawing.Point(52, 343)
+        Me.txt_detalle_tarea13.MaxLength = 100
         Me.txt_detalle_tarea13.Name = "txt_detalle_tarea13"
         Me.txt_detalle_tarea13.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea13.TabIndex = 78
@@ -2399,6 +2435,7 @@ Partial Class frm_Tarea
         'txtObservaciones12
         '
         Me.txtObservaciones12.Location = New System.Drawing.Point(497, 316)
+        Me.txtObservaciones12.MaxLength = 200
         Me.txtObservaciones12.Multiline = True
         Me.txtObservaciones12.Name = "txtObservaciones12"
         Me.txtObservaciones12.Size = New System.Drawing.Size(294, 20)
@@ -2407,6 +2444,7 @@ Partial Class frm_Tarea
         'txtObservaciones11
         '
         Me.txtObservaciones11.Location = New System.Drawing.Point(497, 290)
+        Me.txtObservaciones11.MaxLength = 200
         Me.txtObservaciones11.Multiline = True
         Me.txtObservaciones11.Name = "txtObservaciones11"
         Me.txtObservaciones11.Size = New System.Drawing.Size(294, 20)
@@ -2415,6 +2453,7 @@ Partial Class frm_Tarea
         'txtObservaciones10
         '
         Me.txtObservaciones10.Location = New System.Drawing.Point(497, 264)
+        Me.txtObservaciones10.MaxLength = 200
         Me.txtObservaciones10.Multiline = True
         Me.txtObservaciones10.Name = "txtObservaciones10"
         Me.txtObservaciones10.Size = New System.Drawing.Size(294, 20)
@@ -2423,6 +2462,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado12
         '
         Me.txtTiempo_Estimado12.Location = New System.Drawing.Point(354, 316)
+        Me.txtTiempo_Estimado12.MaxLength = 3
         Me.txtTiempo_Estimado12.Name = "txtTiempo_Estimado12"
         Me.txtTiempo_Estimado12.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado12.TabIndex = 73
@@ -2430,6 +2470,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real12
         '
         Me.txtTiempo_Real12.Location = New System.Drawing.Point(400, 316)
+        Me.txtTiempo_Real12.MaxLength = 3
         Me.txtTiempo_Real12.Name = "txtTiempo_Real12"
         Me.txtTiempo_Real12.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real12.TabIndex = 74
@@ -2445,6 +2486,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea12
         '
         Me.txt_detalle_tarea12.Location = New System.Drawing.Point(52, 316)
+        Me.txt_detalle_tarea12.MaxLength = 100
         Me.txt_detalle_tarea12.Name = "txt_detalle_tarea12"
         Me.txt_detalle_tarea12.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea12.TabIndex = 72
@@ -2452,6 +2494,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado11
         '
         Me.txtTiempo_Estimado11.Location = New System.Drawing.Point(354, 290)
+        Me.txtTiempo_Estimado11.MaxLength = 3
         Me.txtTiempo_Estimado11.Name = "txtTiempo_Estimado11"
         Me.txtTiempo_Estimado11.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado11.TabIndex = 67
@@ -2459,6 +2502,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real11
         '
         Me.txtTiempo_Real11.Location = New System.Drawing.Point(400, 290)
+        Me.txtTiempo_Real11.MaxLength = 3
         Me.txtTiempo_Real11.Name = "txtTiempo_Real11"
         Me.txtTiempo_Real11.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real11.TabIndex = 68
@@ -2474,6 +2518,7 @@ Partial Class frm_Tarea
         'txtObservaciones9
         '
         Me.txtObservaciones9.Location = New System.Drawing.Point(497, 238)
+        Me.txtObservaciones9.MaxLength = 200
         Me.txtObservaciones9.Multiline = True
         Me.txtObservaciones9.Name = "txtObservaciones9"
         Me.txtObservaciones9.Size = New System.Drawing.Size(294, 20)
@@ -2482,6 +2527,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea11
         '
         Me.txt_detalle_tarea11.Location = New System.Drawing.Point(52, 290)
+        Me.txt_detalle_tarea11.MaxLength = 100
         Me.txt_detalle_tarea11.Name = "txt_detalle_tarea11"
         Me.txt_detalle_tarea11.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea11.TabIndex = 66
@@ -2489,6 +2535,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado10
         '
         Me.txtTiempo_Estimado10.Location = New System.Drawing.Point(354, 264)
+        Me.txtTiempo_Estimado10.MaxLength = 3
         Me.txtTiempo_Estimado10.Name = "txtTiempo_Estimado10"
         Me.txtTiempo_Estimado10.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado10.TabIndex = 61
@@ -2496,6 +2543,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real10
         '
         Me.txtTiempo_Real10.Location = New System.Drawing.Point(400, 264)
+        Me.txtTiempo_Real10.MaxLength = 3
         Me.txtTiempo_Real10.Name = "txtTiempo_Real10"
         Me.txtTiempo_Real10.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real10.TabIndex = 62
@@ -2511,6 +2559,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea10
         '
         Me.txt_detalle_tarea10.Location = New System.Drawing.Point(52, 264)
+        Me.txt_detalle_tarea10.MaxLength = 100
         Me.txt_detalle_tarea10.Name = "txt_detalle_tarea10"
         Me.txt_detalle_tarea10.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea10.TabIndex = 60
@@ -2518,6 +2567,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado9
         '
         Me.txtTiempo_Estimado9.Location = New System.Drawing.Point(354, 238)
+        Me.txtTiempo_Estimado9.MaxLength = 3
         Me.txtTiempo_Estimado9.Name = "txtTiempo_Estimado9"
         Me.txtTiempo_Estimado9.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado9.TabIndex = 55
@@ -2525,6 +2575,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real9
         '
         Me.txtTiempo_Real9.Location = New System.Drawing.Point(400, 238)
+        Me.txtTiempo_Real9.MaxLength = 3
         Me.txtTiempo_Real9.Name = "txtTiempo_Real9"
         Me.txtTiempo_Real9.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real9.TabIndex = 56
@@ -2540,6 +2591,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea9
         '
         Me.txt_detalle_tarea9.Location = New System.Drawing.Point(52, 238)
+        Me.txt_detalle_tarea9.MaxLength = 100
         Me.txt_detalle_tarea9.Name = "txt_detalle_tarea9"
         Me.txt_detalle_tarea9.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea9.TabIndex = 54
@@ -2547,6 +2599,7 @@ Partial Class frm_Tarea
         'txtObservaciones8
         '
         Me.txtObservaciones8.Location = New System.Drawing.Point(497, 212)
+        Me.txtObservaciones8.MaxLength = 200
         Me.txtObservaciones8.Multiline = True
         Me.txtObservaciones8.Name = "txtObservaciones8"
         Me.txtObservaciones8.Size = New System.Drawing.Size(294, 20)
@@ -2555,6 +2608,7 @@ Partial Class frm_Tarea
         'txtObservaciones7
         '
         Me.txtObservaciones7.Location = New System.Drawing.Point(497, 186)
+        Me.txtObservaciones7.MaxLength = 200
         Me.txtObservaciones7.Multiline = True
         Me.txtObservaciones7.Name = "txtObservaciones7"
         Me.txtObservaciones7.Size = New System.Drawing.Size(294, 20)
@@ -2563,6 +2617,7 @@ Partial Class frm_Tarea
         'txtObservaciones6
         '
         Me.txtObservaciones6.Location = New System.Drawing.Point(497, 160)
+        Me.txtObservaciones6.MaxLength = 200
         Me.txtObservaciones6.Multiline = True
         Me.txtObservaciones6.Name = "txtObservaciones6"
         Me.txtObservaciones6.Size = New System.Drawing.Size(294, 20)
@@ -2571,6 +2626,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado8
         '
         Me.txtTiempo_Estimado8.Location = New System.Drawing.Point(354, 212)
+        Me.txtTiempo_Estimado8.MaxLength = 3
         Me.txtTiempo_Estimado8.Name = "txtTiempo_Estimado8"
         Me.txtTiempo_Estimado8.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado8.TabIndex = 49
@@ -2578,6 +2634,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real8
         '
         Me.txtTiempo_Real8.Location = New System.Drawing.Point(400, 212)
+        Me.txtTiempo_Real8.MaxLength = 3
         Me.txtTiempo_Real8.Name = "txtTiempo_Real8"
         Me.txtTiempo_Real8.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real8.TabIndex = 50
@@ -2593,6 +2650,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea8
         '
         Me.txt_detalle_tarea8.Location = New System.Drawing.Point(52, 212)
+        Me.txt_detalle_tarea8.MaxLength = 100
         Me.txt_detalle_tarea8.Name = "txt_detalle_tarea8"
         Me.txt_detalle_tarea8.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea8.TabIndex = 48
@@ -2600,6 +2658,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado7
         '
         Me.txtTiempo_Estimado7.Location = New System.Drawing.Point(354, 186)
+        Me.txtTiempo_Estimado7.MaxLength = 3
         Me.txtTiempo_Estimado7.Name = "txtTiempo_Estimado7"
         Me.txtTiempo_Estimado7.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado7.TabIndex = 43
@@ -2607,6 +2666,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real7
         '
         Me.txtTiempo_Real7.Location = New System.Drawing.Point(400, 186)
+        Me.txtTiempo_Real7.MaxLength = 3
         Me.txtTiempo_Real7.Name = "txtTiempo_Real7"
         Me.txtTiempo_Real7.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real7.TabIndex = 44
@@ -2622,6 +2682,7 @@ Partial Class frm_Tarea
         'txtObservaciones5
         '
         Me.txtObservaciones5.Location = New System.Drawing.Point(497, 134)
+        Me.txtObservaciones5.MaxLength = 200
         Me.txtObservaciones5.Multiline = True
         Me.txtObservaciones5.Name = "txtObservaciones5"
         Me.txtObservaciones5.Size = New System.Drawing.Size(294, 20)
@@ -2630,6 +2691,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea7
         '
         Me.txt_detalle_tarea7.Location = New System.Drawing.Point(52, 186)
+        Me.txt_detalle_tarea7.MaxLength = 100
         Me.txt_detalle_tarea7.Name = "txt_detalle_tarea7"
         Me.txt_detalle_tarea7.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea7.TabIndex = 42
@@ -2637,6 +2699,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado6
         '
         Me.txtTiempo_Estimado6.Location = New System.Drawing.Point(354, 160)
+        Me.txtTiempo_Estimado6.MaxLength = 3
         Me.txtTiempo_Estimado6.Name = "txtTiempo_Estimado6"
         Me.txtTiempo_Estimado6.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado6.TabIndex = 37
@@ -2644,6 +2707,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real6
         '
         Me.txtTiempo_Real6.Location = New System.Drawing.Point(400, 160)
+        Me.txtTiempo_Real6.MaxLength = 3
         Me.txtTiempo_Real6.Name = "txtTiempo_Real6"
         Me.txtTiempo_Real6.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real6.TabIndex = 38
@@ -2659,6 +2723,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea6
         '
         Me.txt_detalle_tarea6.Location = New System.Drawing.Point(52, 160)
+        Me.txt_detalle_tarea6.MaxLength = 100
         Me.txt_detalle_tarea6.Name = "txt_detalle_tarea6"
         Me.txt_detalle_tarea6.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea6.TabIndex = 36
@@ -2666,6 +2731,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado5
         '
         Me.txtTiempo_Estimado5.Location = New System.Drawing.Point(354, 134)
+        Me.txtTiempo_Estimado5.MaxLength = 3
         Me.txtTiempo_Estimado5.Name = "txtTiempo_Estimado5"
         Me.txtTiempo_Estimado5.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado5.TabIndex = 31
@@ -2673,6 +2739,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real5
         '
         Me.txtTiempo_Real5.Location = New System.Drawing.Point(400, 134)
+        Me.txtTiempo_Real5.MaxLength = 3
         Me.txtTiempo_Real5.Name = "txtTiempo_Real5"
         Me.txtTiempo_Real5.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real5.TabIndex = 32
@@ -2688,6 +2755,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea5
         '
         Me.txt_detalle_tarea5.Location = New System.Drawing.Point(52, 134)
+        Me.txt_detalle_tarea5.MaxLength = 100
         Me.txt_detalle_tarea5.Name = "txt_detalle_tarea5"
         Me.txt_detalle_tarea5.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea5.TabIndex = 30
@@ -2695,6 +2763,7 @@ Partial Class frm_Tarea
         'txtObservaciones4
         '
         Me.txtObservaciones4.Location = New System.Drawing.Point(497, 107)
+        Me.txtObservaciones4.MaxLength = 200
         Me.txtObservaciones4.Multiline = True
         Me.txtObservaciones4.Name = "txtObservaciones4"
         Me.txtObservaciones4.Size = New System.Drawing.Size(294, 20)
@@ -2703,6 +2772,7 @@ Partial Class frm_Tarea
         'txtObservaciones3
         '
         Me.txtObservaciones3.Location = New System.Drawing.Point(497, 81)
+        Me.txtObservaciones3.MaxLength = 200
         Me.txtObservaciones3.Multiline = True
         Me.txtObservaciones3.Name = "txtObservaciones3"
         Me.txtObservaciones3.Size = New System.Drawing.Size(294, 20)
@@ -2711,6 +2781,7 @@ Partial Class frm_Tarea
         'txtObservaciones2
         '
         Me.txtObservaciones2.Location = New System.Drawing.Point(497, 55)
+        Me.txtObservaciones2.MaxLength = 200
         Me.txtObservaciones2.Multiline = True
         Me.txtObservaciones2.Name = "txtObservaciones2"
         Me.txtObservaciones2.Size = New System.Drawing.Size(294, 20)
@@ -2719,6 +2790,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado4
         '
         Me.txtTiempo_Estimado4.Location = New System.Drawing.Point(354, 107)
+        Me.txtTiempo_Estimado4.MaxLength = 3
         Me.txtTiempo_Estimado4.Name = "txtTiempo_Estimado4"
         Me.txtTiempo_Estimado4.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado4.TabIndex = 25
@@ -2726,6 +2798,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real4
         '
         Me.txtTiempo_Real4.Location = New System.Drawing.Point(400, 107)
+        Me.txtTiempo_Real4.MaxLength = 3
         Me.txtTiempo_Real4.Name = "txtTiempo_Real4"
         Me.txtTiempo_Real4.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real4.TabIndex = 26
@@ -2741,6 +2814,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea4
         '
         Me.txt_detalle_tarea4.Location = New System.Drawing.Point(52, 107)
+        Me.txt_detalle_tarea4.MaxLength = 100
         Me.txt_detalle_tarea4.Name = "txt_detalle_tarea4"
         Me.txt_detalle_tarea4.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea4.TabIndex = 24
@@ -2748,6 +2822,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado3
         '
         Me.txtTiempo_Estimado3.Location = New System.Drawing.Point(354, 81)
+        Me.txtTiempo_Estimado3.MaxLength = 3
         Me.txtTiempo_Estimado3.Name = "txtTiempo_Estimado3"
         Me.txtTiempo_Estimado3.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado3.TabIndex = 19
@@ -2755,6 +2830,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real3
         '
         Me.txtTiempo_Real3.Location = New System.Drawing.Point(400, 81)
+        Me.txtTiempo_Real3.MaxLength = 3
         Me.txtTiempo_Real3.Name = "txtTiempo_Real3"
         Me.txtTiempo_Real3.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real3.TabIndex = 20
@@ -2770,6 +2846,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea3
         '
         Me.txt_detalle_tarea3.Location = New System.Drawing.Point(52, 81)
+        Me.txt_detalle_tarea3.MaxLength = 100
         Me.txt_detalle_tarea3.Name = "txt_detalle_tarea3"
         Me.txt_detalle_tarea3.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea3.TabIndex = 18
@@ -2777,6 +2854,7 @@ Partial Class frm_Tarea
         'txtTiempo_Estimado2
         '
         Me.txtTiempo_Estimado2.Location = New System.Drawing.Point(354, 55)
+        Me.txtTiempo_Estimado2.MaxLength = 3
         Me.txtTiempo_Estimado2.Name = "txtTiempo_Estimado2"
         Me.txtTiempo_Estimado2.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Estimado2.TabIndex = 13
@@ -2784,6 +2862,7 @@ Partial Class frm_Tarea
         'txtTiempo_Real2
         '
         Me.txtTiempo_Real2.Location = New System.Drawing.Point(400, 55)
+        Me.txtTiempo_Real2.MaxLength = 3
         Me.txtTiempo_Real2.Name = "txtTiempo_Real2"
         Me.txtTiempo_Real2.Size = New System.Drawing.Size(40, 20)
         Me.txtTiempo_Real2.TabIndex = 14
@@ -2799,6 +2878,7 @@ Partial Class frm_Tarea
         'txt_detalle_tarea2
         '
         Me.txt_detalle_tarea2.Location = New System.Drawing.Point(52, 55)
+        Me.txt_detalle_tarea2.MaxLength = 100
         Me.txt_detalle_tarea2.Name = "txt_detalle_tarea2"
         Me.txt_detalle_tarea2.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea2.TabIndex = 12

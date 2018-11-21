@@ -1334,4 +1334,7 @@ Public Class frm_Principal
         frm_Acerca_de.ShowDialog()
     End Sub
 
+    Private Sub GráficosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles GráficosToolStripMenuItem.Click
+
+    End Sub
 End Class

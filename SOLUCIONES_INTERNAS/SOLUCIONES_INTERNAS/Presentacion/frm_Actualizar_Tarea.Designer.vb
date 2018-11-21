@@ -92,6 +92,7 @@ Partial Class frm_Actualizar_Tarea
         'txt_tarea
         '
         Me.txt_tarea.Location = New System.Drawing.Point(69, 18)
+        Me.txt_tarea.MaxLength = 100
         Me.txt_tarea.Name = "txt_tarea"
         Me.txt_tarea.Size = New System.Drawing.Size(410, 20)
         Me.txt_tarea.TabIndex = 1
@@ -391,6 +392,7 @@ Partial Class frm_Actualizar_Tarea
         'txt_observaciones
         '
         Me.txt_observaciones.Location = New System.Drawing.Point(94, 179)
+        Me.txt_observaciones.MaxLength = 200
         Me.txt_observaciones.Multiline = True
         Me.txt_observaciones.Name = "txt_observaciones"
         Me.txt_observaciones.Size = New System.Drawing.Size(385, 78)

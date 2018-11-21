@@ -1209,4 +1209,8 @@
             frm_Proceso1.ShowDialog()
         End If
     End Sub
+
+    Private Sub txt_mejoras_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_mejoras.TextChanged
+
+    End Sub
 End Class

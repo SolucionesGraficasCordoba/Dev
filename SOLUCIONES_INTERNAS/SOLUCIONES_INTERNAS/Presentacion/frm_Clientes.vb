@@ -232,4 +232,8 @@
     Private Sub GroupNuevoCliente_Enter(sender As System.Object, e As System.EventArgs) Handles GroupNuevoCliente.Enter
 
     End Sub
+
+    Private Sub txtTelefono_Cliente_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTelefono_Cliente.TextChanged
+
+    End Sub
 End Class

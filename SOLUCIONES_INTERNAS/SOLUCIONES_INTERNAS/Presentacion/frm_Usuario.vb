@@ -223,4 +223,12 @@
         Catch ex As Exception
         End Try
     End Sub
+
+    Private Sub txt_usuario_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_usuario.TextChanged
+
+    End Sub
+
+    Private Sub txt_contraseña_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_contraseña.TextChanged
+
+    End Sub
 End Class

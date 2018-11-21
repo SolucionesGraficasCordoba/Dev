@@ -362,4 +362,12 @@ Public Class frm_Productos
             End If
         Next
     End Sub
+
+    Private Sub tb_prod_descripcion_TextChanged(sender As System.Object, e As System.EventArgs) Handles tb_prod_descripcion.TextChanged
+
+    End Sub
+
+    Private Sub tb_prod_stock_minimo_TextChanged(sender As System.Object, e As System.EventArgs) Handles tb_prod_stock_minimo.TextChanged
+
+    End Sub
 End Class

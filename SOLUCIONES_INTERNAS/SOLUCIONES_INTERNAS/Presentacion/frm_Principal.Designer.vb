@@ -93,6 +93,9 @@ Partial Class frm_Principal
         Me.LBL_MENU_USU = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TareasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DiariasPorColaboradorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MensualesPorSectorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -118,13 +121,13 @@ Partial Class frm_Principal
         'CerrarSesiónToolStripMenuItem
         '
         Me.CerrarSesiónToolStripMenuItem.Name = "CerrarSesiónToolStripMenuItem"
-        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CerrarSesiónToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.CerrarSesiónToolStripMenuItem.Text = "Cerrar Sesión"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(143, 22)
         Me.ExitToolStripMenuItem.Text = "&Salir"
         '
         'UsuarioToolStripMenuItem
@@ -374,19 +377,19 @@ Partial Class frm_Principal
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'ModificarToolStripMenuItem
         '
         Me.ModificarToolStripMenuItem.Name = "ModificarToolStripMenuItem"
-        Me.ModificarToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.ModificarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ModificarToolStripMenuItem.Text = "Modificar"
         '
         'EliminarToolStripMenuItem1
         '
         Me.EliminarToolStripMenuItem1.Name = "EliminarToolStripMenuItem1"
-        Me.EliminarToolStripMenuItem1.Size = New System.Drawing.Size(125, 22)
+        Me.EliminarToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.EliminarToolStripMenuItem1.Text = "Eliminar"
         '
         'StockDeProductosToolStripMenuItem
@@ -484,9 +487,10 @@ Partial Class frm_Principal
         '
         'GenerarInformesToolStripMenuItem
         '
+        Me.GenerarInformesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.TareasToolStripMenuItem1})
         Me.GenerarInformesToolStripMenuItem.Name = "GenerarInformesToolStripMenuItem"
-        Me.GenerarInformesToolStripMenuItem.Size = New System.Drawing.Size(110, 20)
-        Me.GenerarInformesToolStripMenuItem.Text = "Generar Informes"
+        Me.GenerarInformesToolStripMenuItem.Size = New System.Drawing.Size(79, 20)
+        Me.GenerarInformesToolStripMenuItem.Text = "Estadísticas"
         '
         'AyudaToolStripMenuItem
         '
@@ -546,6 +550,25 @@ Partial Class frm_Principal
         Me.GroupBox1.Size = New System.Drawing.Size(1360, 38)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
+        '
+        'TareasToolStripMenuItem1
+        '
+        Me.TareasToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DiariasPorColaboradorToolStripMenuItem, Me.MensualesPorSectorToolStripMenuItem})
+        Me.TareasToolStripMenuItem1.Name = "TareasToolStripMenuItem1"
+        Me.TareasToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.TareasToolStripMenuItem1.Text = "Tareas"
+        '
+        'DiariasPorColaboradorToolStripMenuItem
+        '
+        Me.DiariasPorColaboradorToolStripMenuItem.Name = "DiariasPorColaboradorToolStripMenuItem"
+        Me.DiariasPorColaboradorToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.DiariasPorColaboradorToolStripMenuItem.Text = "Diarias por Colaborador"
+        '
+        'MensualesPorSectorToolStripMenuItem
+        '
+        Me.MensualesPorSectorToolStripMenuItem.Name = "MensualesPorSectorToolStripMenuItem"
+        Me.MensualesPorSectorToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.MensualesPorSectorToolStripMenuItem.Text = "Mensuales por Sector"
         '
         'frm_Principal
         '
@@ -638,6 +661,9 @@ Partial Class frm_Principal
     Friend WithEvents GráficosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents TareasMensulesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents AyudaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TareasToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DiariasPorColaboradorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MensualesPorSectorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class
