@@ -1321,20 +1321,36 @@ Public Class frm_Principal
         Next
     End Sub
 
-    Private Sub TareasMensulesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TareasMensulesToolStripMenuItem.Click
+    Private Sub TareasMensulesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         frm_Generar_Informe.MdiParent = Me
         frm_Generar_Informe.Show()
     End Sub
 
     Private Sub GenerarInformesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarInformesToolStripMenuItem.Click
-        MsgBox("AREA EN CONSTRUCCION...!!!, DISCULPE LAS MOLESTIAS", MsgBoxStyle.OkOnly)
+        '   MsgBox("AREA EN CONSTRUCCION...!!!, DISCULPE LAS MOLESTIAS", MsgBoxStyle.OkOnly)
     End Sub
 
     Private Sub AyudaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AyudaToolStripMenuItem.Click
         frm_Acerca_de.ShowDialog()
     End Sub
 
-    Private Sub GráficosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles GráficosToolStripMenuItem.Click
+    Private Sub GráficosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
 
+    End Sub
+
+    Private Sub TareasToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TareasToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub DiariasPorColaboradorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles DiariasPorColaboradorToolStripMenuItem.Click
+        frm_Generar_Informe.MdiParent = Me
+        frm_Generar_Informe.Show()
+        frm_Generar_Informe.btn_Totales_Mensuales_por_Colaborador.Enabled = False
+    End Sub
+
+    Private Sub MensualesPorSectorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles MensualesPorSectorToolStripMenuItem.Click
+        frm_Generar_Informe.MdiParent = Me
+        frm_Generar_Informe.Show()
+        frm_Generar_Informe.btnTotales_por_Dia.Enabled = False
     End Sub
 End Class
