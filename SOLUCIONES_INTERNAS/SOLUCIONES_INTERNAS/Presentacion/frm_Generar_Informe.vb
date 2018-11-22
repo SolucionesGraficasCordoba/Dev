@@ -216,7 +216,6 @@ Public Class frm_Generar_Informe
         Else
             frm_graficos_tareas_mensuales.Show()
         End If
-
         'frm_graficos_tareas_mensuales.MdiParent = frm_Principal
         'frm_graficos_tareas_mensuales.Show()
     End Sub
@@ -238,8 +237,6 @@ Public Class frm_Generar_Informe
     End Sub
 
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles btn_Totales_Mensuales_por_Colaborador.Click
-
-        '  MsgBox("AREA EN CONSTRUCCION...!!!, DISCULPE LAS MOLESTIAS", MsgBoxStyle.OkOnly)
         If dgvTotalesMensuales.Rows.Count = 0 Then
             MsgBox("No hay registros de tareas mensuales")
             Exit Sub
