@@ -56,4 +56,38 @@ Public Class frm_Grafico_Totales_Mensuales
             Chart1.DataSource = Nothing
         End If
     End Sub
+
+    Private Sub btnExportarPDF_Click(sender As System.Object, e As System.EventArgs) Handles btnExportarPDF.Click
+
+        'intentar generar el documento
+        Dim file1 As String = (Environ("TEMP") + "\grafico1.jpg")
+        Dim grafico1 As Bitmap
+        Dim imagen1 As Image
+        Dim ancho, alto As Single
+        ancho = 800.0F
+        alto = 150.0F
+        Dim doc As New Document(PageSize.A4.Rotate, 25, 25, 10, 10)
+        'path que guarda el reporte en el escritorio de windows (desktop)
+        Dim ruta_reporte_grafico As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Graficos_totales_mensuales.pdf"
+        Dim reporte As New FileStream(ruta_reporte_grafico, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+        PdfWriter.GetInstance(doc, reporte)
+        doc.Open()
+        Dim encabezado As New Paragraph("Tiempos Totales Mensuales")
+        Dim interlineado As New Paragraph("")
+        doc.Add(encabezado)
+        '************************inicio grafico 1*********************************
+        If 1 <= totalgrafico Then
+            grafico1 = New Bitmap(Chart1.Width, Chart1.Height)
+            Chart1.DrawToBitmap(grafico1, Chart1.DisplayRectangle)
+            grafico1.Save(file1)
+            imagen1 = Image.GetInstance(file1)
+            imagen1.ScaleAbsolute(ancho, alto)
+            doc.Add(imagen1)
+            doc.Add(interlineado)
+        End If
+        'cierra la edicion y abre el archivo
+        doc.Close()
+        My.Computer.FileSystem.DeleteFile(file1)
+        Process.Start(ruta_reporte_grafico)
+    End Sub
 End Class
