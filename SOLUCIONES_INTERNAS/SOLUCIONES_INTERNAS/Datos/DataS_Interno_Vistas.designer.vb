@@ -70,12 +70,6 @@ Partial Public Class DataS_Interno_Vistas
 		End Get
 	End Property
 	
-	Public ReadOnly Property Colaborador_por_Sector() As System.Data.Linq.Table(Of Colaborador_por_Sector)
-		Get
-			Return Me.GetTable(Of Colaborador_por_Sector)
-		End Get
-	End Property
-	
 	Public ReadOnly Property Producto_Movimento() As System.Data.Linq.Table(Of Producto_Movimento)
 		Get
 			Return Me.GetTable(Of Producto_Movimento)
@@ -115,6 +109,12 @@ Partial Public Class DataS_Interno_Vistas
 	Public ReadOnly Property Tiempos_Totales() As System.Data.Linq.Table(Of Tiempos_Totales)
 		Get
 			Return Me.GetTable(Of Tiempos_Totales)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Colaborador_por_Sector() As System.Data.Linq.Table(Of Colaborador_por_Sector)
+		Get
+			Return Me.GetTable(Of Colaborador_por_Sector)
 		End Get
 	End Property
 End Class
@@ -372,72 +372,6 @@ Partial Public Class Tiempos_x_Sector
 		Set
 			If (Me._TAR_fecha.Equals(value) = false) Then
 				Me._TAR_fecha = value
-			End If
-		End Set
-	End Property
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Colaborador_por_Sector")>  _
-Partial Public Class Colaborador_por_Sector
-	
-	Private _COL_id_colaborador As Integer
-	
-	Private _COL_nombre_col As String
-	
-	Private _SEC_id_sector As Integer
-	
-	Private _SEC_nombre_sector As String
-	
-	Public Sub New()
-		MyBase.New
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_id_colaborador", DbType:="Int NOT NULL")>  _
-	Public Property COL_id_colaborador() As Integer
-		Get
-			Return Me._COL_id_colaborador
-		End Get
-		Set
-			If ((Me._COL_id_colaborador = value)  _
-						= false) Then
-				Me._COL_id_colaborador = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_nombre_col", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property COL_nombre_col() As String
-		Get
-			Return Me._COL_nombre_col
-		End Get
-		Set
-			If (String.Equals(Me._COL_nombre_col, value) = false) Then
-				Me._COL_nombre_col = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_id_sector", DbType:="Int NOT NULL")>  _
-	Public Property SEC_id_sector() As Integer
-		Get
-			Return Me._SEC_id_sector
-		End Get
-		Set
-			If ((Me._SEC_id_sector = value)  _
-						= false) Then
-				Me._SEC_id_sector = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_nombre_sector", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property SEC_nombre_sector() As String
-		Get
-			Return Me._SEC_nombre_sector
-		End Get
-		Set
-			If (String.Equals(Me._SEC_nombre_sector, value) = false) Then
-				Me._SEC_nombre_sector = value
 			End If
 		End Set
 	End Property
@@ -2028,6 +1962,72 @@ Partial Public Class Tiempos_Totales
 		Set
 			If (String.Equals(Me._CADENA, value) = false) Then
 				Me._CADENA = value
+			End If
+		End Set
+	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Colaborador_por_Sector")>  _
+Partial Public Class Colaborador_por_Sector
+	
+	Private _COL_id_colaborador As Integer
+	
+	Private _COL_nombre_col As String
+	
+	Private _SEC_id_sector As Integer
+	
+	Private _SEC_nombre_sector As String
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_id_colaborador", DbType:="Int NOT NULL")>  _
+	Public Property COL_id_colaborador() As Integer
+		Get
+			Return Me._COL_id_colaborador
+		End Get
+		Set
+			If ((Me._COL_id_colaborador = value)  _
+						= false) Then
+				Me._COL_id_colaborador = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_nombre_col", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property COL_nombre_col() As String
+		Get
+			Return Me._COL_nombre_col
+		End Get
+		Set
+			If (String.Equals(Me._COL_nombre_col, value) = false) Then
+				Me._COL_nombre_col = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_id_sector", DbType:="Int NOT NULL")>  _
+	Public Property SEC_id_sector() As Integer
+		Get
+			Return Me._SEC_id_sector
+		End Get
+		Set
+			If ((Me._SEC_id_sector = value)  _
+						= false) Then
+				Me._SEC_id_sector = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_nombre_sector", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property SEC_nombre_sector() As String
+		Get
+			Return Me._SEC_nombre_sector
+		End Get
+		Set
+			If (String.Equals(Me._SEC_nombre_sector, value) = false) Then
+				Me._SEC_nombre_sector = value
 			End If
 		End Set
 	End Property

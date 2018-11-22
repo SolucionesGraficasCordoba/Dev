@@ -30,6 +30,8 @@ Module Correo
             envios.Port = 587
             envios.EnableSsl = True
 
+            'Para Hotmail solo se cambia esto envios.Host = "smtp.live.com" y para yahoo es  envios.Host =smtp.mail.yahoo.com
+
             envios.Send(correos)
             MsgBox("El mensaje fue enviado correctamente. ", MsgBoxStyle.Information, "Mensaje")
 

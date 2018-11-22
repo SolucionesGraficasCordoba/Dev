@@ -65,7 +65,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="itextsharp">
-      <HintPath>\\WSMALDIS4\trabajos\Trabajo Vale\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\Downloads\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -101,10 +101,17 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Módulos\Correo.vb" />
     <Compile Include="Presentacion\frm_Acerca_de.Designer.vb">
       <DependentUpon>frm_Acerca_de.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frm_Acerca_de.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_Enviar_Correo.Designer.vb">
+      <DependentUpon>frm_Enviar_Correo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Enviar_Correo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frm_Graficos_tareas_mensuales.Designer.vb">
@@ -334,6 +341,9 @@
     </None>
     <EmbeddedResource Include="Presentacion\frm_Acerca_de.resx">
       <DependentUpon>frm_Acerca_de.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Enviar_Correo.resx">
+      <DependentUpon>frm_Enviar_Correo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Graficos_tareas_mensuales.resx">
       <DependentUpon>frm_Graficos_tareas_mensuales.vb</DependentUpon>
