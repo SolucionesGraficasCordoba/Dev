@@ -63,7 +63,7 @@
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = True
                 frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
-                frm_Principal.TareasToolStripMenuItem.DropDownItems(4).Visible = True
+                'frm_Principal.TareasToolStripMenuItem.DropDownItems(4).Visible = True
 
                 frm_Principal.ProductoToolStripMenuItem.Visible = True
 

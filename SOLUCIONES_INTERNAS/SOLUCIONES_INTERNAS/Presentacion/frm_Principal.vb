@@ -1355,6 +1355,6 @@ Public Class frm_Principal
     End Sub
 
     Private Sub CorreoElectrónicoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CorreoElectrónicoToolStripMenuItem.Click
-        frm_Enviar_Correo.ShowDialog()
+        'frm_Enviar_Correo.ShowDialog()
     End Sub
 End Class
