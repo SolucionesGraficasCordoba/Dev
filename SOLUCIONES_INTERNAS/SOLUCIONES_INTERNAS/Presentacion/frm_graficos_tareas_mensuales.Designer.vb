@@ -212,7 +212,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart2.ChartAreas.Add(ChartArea1)
         Legend1.Name = "Legend1"
         Me.Chart2.Legends.Add(Legend1)
-        Me.Chart2.Location = New System.Drawing.Point(19, 271)
+        Me.Chart2.Location = New System.Drawing.Point(17, 285)
         Me.Chart2.Name = "Chart2"
         Series1.ChartArea = "ChartArea1"
         Series1.IsValueShownAsLabel = True
@@ -263,7 +263,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart1.ChartAreas.Add(ChartArea2)
         Legend2.Name = "Legend1"
         Me.Chart1.Legends.Add(Legend2)
-        Me.Chart1.Location = New System.Drawing.Point(19, 43)
+        Me.Chart1.Location = New System.Drawing.Point(17, 57)
         Me.Chart1.Name = "Chart1"
         Series4.ChartArea = "ChartArea1"
         Series4.IsValueShownAsLabel = True
@@ -313,7 +313,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart3.ChartAreas.Add(ChartArea3)
         Legend3.Name = "Legend1"
         Me.Chart3.Legends.Add(Legend3)
-        Me.Chart3.Location = New System.Drawing.Point(17, 508)
+        Me.Chart3.Location = New System.Drawing.Point(17, 513)
         Me.Chart3.Name = "Chart3"
         Series7.ChartArea = "ChartArea1"
         Series7.IsValueShownAsLabel = True
@@ -336,7 +336,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart3.Series.Add(Series7)
         Me.Chart3.Series.Add(Series8)
         Me.Chart3.Series.Add(Series9)
-        Me.Chart3.Size = New System.Drawing.Size(1337, 222)
+        Me.Chart3.Size = New System.Drawing.Size(1335, 222)
         Me.Chart3.TabIndex = 100
         Me.Chart3.Text = "Chart3"
         Title3.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -363,7 +363,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart6.ChartAreas.Add(ChartArea4)
         Legend4.Name = "Legend1"
         Me.Chart6.Legends.Add(Legend4)
-        Me.Chart6.Location = New System.Drawing.Point(17, 1263)
+        Me.Chart6.Location = New System.Drawing.Point(17, 1197)
         Me.Chart6.Name = "Chart6"
         Series10.ChartArea = "ChartArea1"
         Series10.IsValueShownAsLabel = True
@@ -386,7 +386,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart6.Series.Add(Series10)
         Me.Chart6.Series.Add(Series11)
         Me.Chart6.Series.Add(Series12)
-        Me.Chart6.Size = New System.Drawing.Size(1337, 233)
+        Me.Chart6.Size = New System.Drawing.Size(1335, 222)
         Me.Chart6.TabIndex = 108
         Me.Chart6.Text = "Chart4"
         Title4.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -413,7 +413,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart5.ChartAreas.Add(ChartArea5)
         Legend5.Name = "Legend1"
         Me.Chart5.Legends.Add(Legend5)
-        Me.Chart5.Location = New System.Drawing.Point(17, 1014)
+        Me.Chart5.Location = New System.Drawing.Point(17, 969)
         Me.Chart5.Name = "Chart5"
         Series13.ChartArea = "ChartArea1"
         Series13.IsValueShownAsLabel = True
@@ -436,7 +436,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart5.Series.Add(Series13)
         Me.Chart5.Series.Add(Series14)
         Me.Chart5.Series.Add(Series15)
-        Me.Chart5.Size = New System.Drawing.Size(1337, 233)
+        Me.Chart5.Size = New System.Drawing.Size(1335, 222)
         Me.Chart5.TabIndex = 107
         Me.Chart5.Text = "Chart5"
         Title5.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -463,7 +463,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart4.ChartAreas.Add(ChartArea6)
         Legend6.Name = "Legend1"
         Me.Chart4.Legends.Add(Legend6)
-        Me.Chart4.Location = New System.Drawing.Point(17, 758)
+        Me.Chart4.Location = New System.Drawing.Point(17, 741)
         Me.Chart4.Name = "Chart4"
         Series16.ChartArea = "ChartArea1"
         Series16.IsValueShownAsLabel = True
@@ -486,7 +486,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart4.Series.Add(Series16)
         Me.Chart4.Series.Add(Series17)
         Me.Chart4.Series.Add(Series18)
-        Me.Chart4.Size = New System.Drawing.Size(1337, 233)
+        Me.Chart4.Size = New System.Drawing.Size(1335, 222)
         Me.Chart4.TabIndex = 106
         Me.Chart4.Text = "Chart6"
         Title6.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -513,7 +513,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart9.ChartAreas.Add(ChartArea7)
         Legend7.Name = "Legend1"
         Me.Chart9.Legends.Add(Legend7)
-        Me.Chart9.Location = New System.Drawing.Point(17, 2028)
+        Me.Chart9.Location = New System.Drawing.Point(17, 1881)
         Me.Chart9.Name = "Chart9"
         Series19.ChartArea = "ChartArea1"
         Series19.IsValueShownAsLabel = True
@@ -536,7 +536,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart9.Series.Add(Series19)
         Me.Chart9.Series.Add(Series20)
         Me.Chart9.Series.Add(Series21)
-        Me.Chart9.Size = New System.Drawing.Size(1335, 250)
+        Me.Chart9.Size = New System.Drawing.Size(1335, 222)
         Me.Chart9.TabIndex = 111
         Me.Chart9.Text = "Chart7"
         Title7.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -563,7 +563,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart8.ChartAreas.Add(ChartArea8)
         Legend8.Name = "Legend1"
         Me.Chart8.Legends.Add(Legend8)
-        Me.Chart8.Location = New System.Drawing.Point(17, 1772)
+        Me.Chart8.Location = New System.Drawing.Point(17, 1653)
         Me.Chart8.Name = "Chart8"
         Series22.ChartArea = "ChartArea1"
         Series22.IsValueShownAsLabel = True
@@ -586,7 +586,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart8.Series.Add(Series22)
         Me.Chart8.Series.Add(Series23)
         Me.Chart8.Series.Add(Series24)
-        Me.Chart8.Size = New System.Drawing.Size(1335, 250)
+        Me.Chart8.Size = New System.Drawing.Size(1335, 222)
         Me.Chart8.TabIndex = 110
         Me.Chart8.Text = "Chart8"
         Title8.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -613,7 +613,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart7.ChartAreas.Add(ChartArea9)
         Legend9.Name = "Legend1"
         Me.Chart7.Legends.Add(Legend9)
-        Me.Chart7.Location = New System.Drawing.Point(17, 1510)
+        Me.Chart7.Location = New System.Drawing.Point(17, 1425)
         Me.Chart7.Name = "Chart7"
         Series25.ChartArea = "ChartArea1"
         Series25.IsValueShownAsLabel = True
@@ -636,7 +636,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart7.Series.Add(Series25)
         Me.Chart7.Series.Add(Series26)
         Me.Chart7.Series.Add(Series27)
-        Me.Chart7.Size = New System.Drawing.Size(1337, 250)
+        Me.Chart7.Size = New System.Drawing.Size(1335, 222)
         Me.Chart7.TabIndex = 109
         Me.Chart7.Text = "Chart9"
         Title9.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -663,7 +663,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart12.ChartAreas.Add(ChartArea10)
         Legend10.Name = "Legend1"
         Me.Chart12.Legends.Add(Legend10)
-        Me.Chart12.Location = New System.Drawing.Point(17, 2812)
+        Me.Chart12.Location = New System.Drawing.Point(17, 2565)
         Me.Chart12.Name = "Chart12"
         Series28.ChartArea = "ChartArea1"
         Series28.IsValueShownAsLabel = True
@@ -686,7 +686,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart12.Series.Add(Series28)
         Me.Chart12.Series.Add(Series29)
         Me.Chart12.Series.Add(Series30)
-        Me.Chart12.Size = New System.Drawing.Size(1335, 250)
+        Me.Chart12.Size = New System.Drawing.Size(1335, 222)
         Me.Chart12.TabIndex = 114
         Me.Chart12.Text = "Chart10"
         Title10.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -713,7 +713,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart11.ChartAreas.Add(ChartArea11)
         Legend11.Name = "Legend1"
         Me.Chart11.Legends.Add(Legend11)
-        Me.Chart11.Location = New System.Drawing.Point(17, 2556)
+        Me.Chart11.Location = New System.Drawing.Point(17, 2337)
         Me.Chart11.Name = "Chart11"
         Series31.ChartArea = "ChartArea1"
         Series31.IsValueShownAsLabel = True
@@ -736,7 +736,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart11.Series.Add(Series31)
         Me.Chart11.Series.Add(Series32)
         Me.Chart11.Series.Add(Series33)
-        Me.Chart11.Size = New System.Drawing.Size(1335, 250)
+        Me.Chart11.Size = New System.Drawing.Size(1335, 222)
         Me.Chart11.TabIndex = 113
         Me.Chart11.Text = "Chart11"
         Title11.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -763,7 +763,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart10.ChartAreas.Add(ChartArea12)
         Legend12.Name = "Legend1"
         Me.Chart10.Legends.Add(Legend12)
-        Me.Chart10.Location = New System.Drawing.Point(17, 2300)
+        Me.Chart10.Location = New System.Drawing.Point(17, 2109)
         Me.Chart10.Name = "Chart10"
         Series34.ChartArea = "ChartArea1"
         Series34.IsValueShownAsLabel = True
@@ -786,7 +786,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart10.Series.Add(Series34)
         Me.Chart10.Series.Add(Series35)
         Me.Chart10.Series.Add(Series36)
-        Me.Chart10.Size = New System.Drawing.Size(1335, 250)
+        Me.Chart10.Size = New System.Drawing.Size(1335, 222)
         Me.Chart10.TabIndex = 112
         Me.Chart10.Text = "Chart12"
         Title12.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -813,7 +813,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart15.ChartAreas.Add(ChartArea13)
         Legend13.Name = "Legend1"
         Me.Chart15.Legends.Add(Legend13)
-        Me.Chart15.Location = New System.Drawing.Point(12, 3580)
+        Me.Chart15.Location = New System.Drawing.Point(17, 3249)
         Me.Chart15.Name = "Chart15"
         Series37.ChartArea = "ChartArea1"
         Series37.IsValueShownAsLabel = True
@@ -836,7 +836,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart15.Series.Add(Series37)
         Me.Chart15.Series.Add(Series38)
         Me.Chart15.Series.Add(Series39)
-        Me.Chart15.Size = New System.Drawing.Size(1340, 250)
+        Me.Chart15.Size = New System.Drawing.Size(1335, 222)
         Me.Chart15.TabIndex = 117
         Me.Chart15.Text = "Chart13"
         Title13.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -863,7 +863,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart14.ChartAreas.Add(ChartArea14)
         Legend14.Name = "Legend1"
         Me.Chart14.Legends.Add(Legend14)
-        Me.Chart14.Location = New System.Drawing.Point(12, 3324)
+        Me.Chart14.Location = New System.Drawing.Point(17, 3021)
         Me.Chart14.Name = "Chart14"
         Series40.ChartArea = "ChartArea1"
         Series40.IsValueShownAsLabel = True
@@ -886,7 +886,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart14.Series.Add(Series40)
         Me.Chart14.Series.Add(Series41)
         Me.Chart14.Series.Add(Series42)
-        Me.Chart14.Size = New System.Drawing.Size(1340, 250)
+        Me.Chart14.Size = New System.Drawing.Size(1335, 222)
         Me.Chart14.TabIndex = 116
         Me.Chart14.Text = "Chart14"
         Title14.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -913,7 +913,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart13.ChartAreas.Add(ChartArea15)
         Legend15.Name = "Legend1"
         Me.Chart13.Legends.Add(Legend15)
-        Me.Chart13.Location = New System.Drawing.Point(12, 3068)
+        Me.Chart13.Location = New System.Drawing.Point(17, 2793)
         Me.Chart13.Name = "Chart13"
         Series43.ChartArea = "ChartArea1"
         Series43.IsValueShownAsLabel = True
@@ -936,7 +936,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart13.Series.Add(Series43)
         Me.Chart13.Series.Add(Series44)
         Me.Chart13.Series.Add(Series45)
-        Me.Chart13.Size = New System.Drawing.Size(1340, 250)
+        Me.Chart13.Size = New System.Drawing.Size(1335, 222)
         Me.Chart13.TabIndex = 115
         Me.Chart13.Text = "Chart15"
         Title15.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -963,7 +963,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart18.ChartAreas.Add(ChartArea16)
         Legend16.Name = "Legend1"
         Me.Chart18.Legends.Add(Legend16)
-        Me.Chart18.Location = New System.Drawing.Point(2, 4348)
+        Me.Chart18.Location = New System.Drawing.Point(17, 3933)
         Me.Chart18.Name = "Chart18"
         Series46.ChartArea = "ChartArea1"
         Series46.IsValueShownAsLabel = True
@@ -986,7 +986,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart18.Series.Add(Series46)
         Me.Chart18.Series.Add(Series47)
         Me.Chart18.Series.Add(Series48)
-        Me.Chart18.Size = New System.Drawing.Size(1350, 250)
+        Me.Chart18.Size = New System.Drawing.Size(1335, 222)
         Me.Chart18.TabIndex = 120
         Me.Chart18.Text = "Chart16"
         Title16.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -1013,7 +1013,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart17.ChartAreas.Add(ChartArea17)
         Legend17.Name = "Legend1"
         Me.Chart17.Legends.Add(Legend17)
-        Me.Chart17.Location = New System.Drawing.Point(12, 4092)
+        Me.Chart17.Location = New System.Drawing.Point(17, 3705)
         Me.Chart17.Name = "Chart17"
         Series49.ChartArea = "ChartArea1"
         Series49.IsValueShownAsLabel = True
@@ -1036,7 +1036,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart17.Series.Add(Series49)
         Me.Chart17.Series.Add(Series50)
         Me.Chart17.Series.Add(Series51)
-        Me.Chart17.Size = New System.Drawing.Size(1340, 250)
+        Me.Chart17.Size = New System.Drawing.Size(1335, 222)
         Me.Chart17.TabIndex = 119
         Me.Chart17.Text = "Chart17"
         Title17.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -1063,7 +1063,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart16.ChartAreas.Add(ChartArea18)
         Legend18.Name = "Legend1"
         Me.Chart16.Legends.Add(Legend18)
-        Me.Chart16.Location = New System.Drawing.Point(12, 3836)
+        Me.Chart16.Location = New System.Drawing.Point(17, 3477)
         Me.Chart16.Name = "Chart16"
         Series52.ChartArea = "ChartArea1"
         Series52.IsValueShownAsLabel = True
@@ -1086,7 +1086,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart16.Series.Add(Series52)
         Me.Chart16.Series.Add(Series53)
         Me.Chart16.Series.Add(Series54)
-        Me.Chart16.Size = New System.Drawing.Size(1340, 250)
+        Me.Chart16.Size = New System.Drawing.Size(1335, 222)
         Me.Chart16.TabIndex = 118
         Me.Chart16.Text = "Chart18"
         Title18.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -1113,7 +1113,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart19.ChartAreas.Add(ChartArea19)
         Legend19.Name = "Legend1"
         Me.Chart19.Legends.Add(Legend19)
-        Me.Chart19.Location = New System.Drawing.Point(2, 4604)
+        Me.Chart19.Location = New System.Drawing.Point(17, 4161)
         Me.Chart19.Name = "Chart19"
         Series55.ChartArea = "ChartArea1"
         Series55.IsValueShownAsLabel = True
@@ -1136,7 +1136,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart19.Series.Add(Series55)
         Me.Chart19.Series.Add(Series56)
         Me.Chart19.Series.Add(Series57)
-        Me.Chart19.Size = New System.Drawing.Size(1350, 250)
+        Me.Chart19.Size = New System.Drawing.Size(1335, 222)
         Me.Chart19.TabIndex = 122
         Me.Chart19.Text = "Chart20"
         Title19.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -1163,7 +1163,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart21.ChartAreas.Add(ChartArea20)
         Legend20.Name = "Legend1"
         Me.Chart21.Legends.Add(Legend20)
-        Me.Chart21.Location = New System.Drawing.Point(2, 4860)
+        Me.Chart21.Location = New System.Drawing.Point(17, 4389)
         Me.Chart21.Name = "Chart21"
         Series58.ChartArea = "ChartArea1"
         Series58.IsValueShownAsLabel = True
@@ -1186,7 +1186,7 @@ Partial Class frm_graficos_tareas_mensuales
         Me.Chart21.Series.Add(Series58)
         Me.Chart21.Series.Add(Series59)
         Me.Chart21.Series.Add(Series60)
-        Me.Chart21.Size = New System.Drawing.Size(1350, 250)
+        Me.Chart21.Size = New System.Drawing.Size(1335, 222)
         Me.Chart21.TabIndex = 121
         Me.Chart21.Text = "Chart21"
         Title20.Alignment = System.Drawing.ContentAlignment.BottomRight
@@ -1273,7 +1273,7 @@ Partial Class frm_graficos_tareas_mensuales
         '
         Me.btnExportarPDF.Location = New System.Drawing.Point(1158, 14)
         Me.btnExportarPDF.Name = "btnExportarPDF"
-        Me.btnExportarPDF.Size = New System.Drawing.Size(115, 23)
+        Me.btnExportarPDF.Size = New System.Drawing.Size(115, 33)
         Me.btnExportarPDF.TabIndex = 132
         Me.btnExportarPDF.Text = "Exportar a PDF"
         Me.btnExportarPDF.UseVisualStyleBackColor = True
@@ -1282,16 +1282,16 @@ Partial Class frm_graficos_tareas_mensuales
         '
         Me.btnCancelar.Location = New System.Drawing.Point(1279, 14)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar.TabIndex = 133
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'btnSubir
         '
-        Me.btnSubir.Location = New System.Drawing.Point(1277, 5121)
+        Me.btnSubir.Location = New System.Drawing.Point(1277, 4631)
         Me.btnSubir.Name = "btnSubir"
-        Me.btnSubir.Size = New System.Drawing.Size(75, 23)
+        Me.btnSubir.Size = New System.Drawing.Size(75, 33)
         Me.btnSubir.TabIndex = 134
         Me.btnSubir.Text = "Subir"
         Me.btnSubir.UseVisualStyleBackColor = True

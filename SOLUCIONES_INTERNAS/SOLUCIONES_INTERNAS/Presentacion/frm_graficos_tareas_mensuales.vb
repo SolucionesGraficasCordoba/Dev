@@ -398,5 +398,4 @@ Public Class frm_graficos_tareas_mensuales
         My.Computer.FileSystem.DeleteFile(file1)
         Process.Start(ruta_reporte_grafico)
     End Sub
-
 End Class
