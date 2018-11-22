@@ -65,7 +65,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\..\..\..\Downloads\itextsharp.dll</HintPath>
+      <HintPath>Resources\dll\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -101,7 +101,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Módulos\Correo.vb" />
+    <Compile Include="Modulo\Mail_Modulo.vb" />
     <Compile Include="Presentacion\frm_Acerca_de.Designer.vb">
       <DependentUpon>frm_Acerca_de.vb</DependentUpon>
     </Compile>
@@ -512,6 +512,7 @@
     <Content Include="Resources\Acceso_Usuarios.jpg" />
     <Content Include="Resources\LOGO SISTEMA INTERNO %281%29.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
