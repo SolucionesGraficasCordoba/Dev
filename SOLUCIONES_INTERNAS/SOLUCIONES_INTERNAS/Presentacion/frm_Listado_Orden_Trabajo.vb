@@ -96,19 +96,24 @@ Public Class frm_Listado_Orden_Trabajo
             MsgBox("No hay órdenes", MsgBoxStyle.Information + MsgBoxStyle.Information, "Seleccionar")
             Exit Sub
         End If
-        vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-        CargarDetalle()
-        'LIMPIA EL GRID DE PROCESOS
-        dgvProcesos.DataSource = ""
+        Try
+            vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            CargarDetalle()
+            'LIMPIA EL GRID DE PROCESOS
+            dgvProcesos.DataSource = ""
 
-        'SE FIJA QUIEN LLAMO PARA HABILITAR BOTONES
-        If Me.Text = "Modificar Orden / Producto / Proceso" Then
-            btnModificar_Orden.Enabled = True
-            btnEliminar_Orden.Enabled = False
-        ElseIf Me.Text = "Eliminar Orden / Producto / Proceso" Then
-            btnModificar_Orden.Enabled = False
-            btnEliminar_Orden.Enabled = True
-        End If
+            'SE FIJA QUIEN LLAMO PARA HABILITAR BOTONES
+            If Me.Text = "Modificar Orden / Producto / Proceso" Then
+                btnModificar_Orden.Enabled = True
+                btnEliminar_Orden.Enabled = False
+            ElseIf Me.Text = "Eliminar Orden / Producto / Proceso" Then
+                btnModificar_Orden.Enabled = False
+                btnEliminar_Orden.Enabled = True
+            End If
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     'CARGA DETALLES DE LA ORDEN
@@ -382,7 +387,9 @@ Public Class frm_Listado_Orden_Trabajo
     End Sub
 
     Private Sub dgvLista_Orden_Trabajo_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Orden_Trabajo.CellDoubleClick
+        Try
 
+      
         'LLAMA AL FORMULARIO ACTUALIZAR TAREA
         If quienllamolistado_ot.Name = frm_Actualizar_Tarea.Name Then
             frm_Actualizar_Tarea.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
@@ -511,7 +518,10 @@ Public Class frm_Listado_Orden_Trabajo
         Else
             Exit Sub
         End If
-        Me.Close()
+            Me.Close()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btn_Cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_Cancelar.Click
