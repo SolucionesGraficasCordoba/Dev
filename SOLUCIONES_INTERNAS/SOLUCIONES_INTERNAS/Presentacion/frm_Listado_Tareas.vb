@@ -50,6 +50,7 @@ Public Class frm_Listado_Tareas
             Btn_informe_diario.Visible = False
         End If
         dgvColaboradores.ClearSelection()
+
     End Sub
 
     'ARMA LA GRILLA DEL COLABORADOR
@@ -140,11 +141,27 @@ Public Class frm_Listado_Tareas
                 ElseIf frm_Tarea.Text = "Ver Tarea" Then
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
-                    Label6.Text = dgvTarea_x_Colaborador.Rows.Count
-
                 End If
             End If
         Catch
+        End Try
+
+
+        'CALCULA LA SUMA DEL TIEMPO REAL DE CADA TAREA POR COLABORADOR
+        Try
+            'Declarar variable que acumulará la sumatoria de las celdas
+            Dim Sumatoria As Integer = 0
+
+            'Recorrer las filas del objeto de tipo DataGridView
+            For Each row As DataGridViewRow In dgvTarea_x_Colaborador.Rows
+                'Acumular valores
+                Sumatoria += Convert.ToInt32(row.Cells("TAR_tiempo_real").Value)
+            Next
+
+            Label35.Text = Sumatoria
+            Label1.Text = dgvTarea_x_Colaborador.Rows.Count
+        Catch ex As Exception
+
         End Try
     End Sub
 
@@ -1145,10 +1162,13 @@ Public Class frm_Listado_Tareas
             Next
             datatable.CompleteRow()
         Next
+
+        Dim TotalTareas As New Phrase("Total Real de Tareas: " + Label35.Text, New Font(fuente, 10, Font.Bold))
         document.Add(encabezado)
         document.Add(entradasalida)
         document.Add(texto)
         document.Add(datatable)
+        document.Add(TotalTareas)
     End Sub
 
     Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
@@ -2192,8 +2212,11 @@ Public Class frm_Listado_Tareas
             Dim entradasalida As New Paragraph("Sin tareas cargadas por el momento.", New Font(fuente, 10, Font.Bold))
             document.Add(entradasalida)
         End If
+
+        Dim TotalTareas As New Paragraph("Total Real de Tareas: " + Label35.Text, New Font(fuente, 10, Font.Bold))
         document.Add(interlineado)
         document.Add(datatable)
+        document.Add(TotalTareas)
     End Sub
 
 End Class

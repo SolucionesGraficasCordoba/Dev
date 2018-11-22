@@ -23,7 +23,6 @@ Partial Class frm_Listado_Tareas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupListadoTareas = New System.Windows.Forms.GroupBox()
-        Me.Btn_informe_diario = New System.Windows.Forms.Button()
         Me.btnModificarTodas = New System.Windows.Forms.Button()
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.Label31 = New System.Windows.Forms.Label()
@@ -32,6 +31,7 @@ Partial Class frm_Listado_Tareas
         Me.Label5 = New System.Windows.Forms.Label()
         Me.dgvColaboradores = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.Btn_informe_diario = New System.Windows.Forms.Button()
         Me.btnEliminar_Tarea = New System.Windows.Forms.Button()
         Me.groupListadoDetalleTarea = New System.Windows.Forms.GroupBox()
         Me.Label35 = New System.Windows.Forms.Label()
@@ -62,25 +62,16 @@ Partial Class frm_Listado_Tareas
         Me.GroupListadoTareas.Controls.Add(Me.Label4)
         Me.GroupListadoTareas.Location = New System.Drawing.Point(12, 12)
         Me.GroupListadoTareas.Name = "GroupListadoTareas"
-        Me.GroupListadoTareas.Size = New System.Drawing.Size(698, 272)
+        Me.GroupListadoTareas.Size = New System.Drawing.Size(698, 291)
         Me.GroupListadoTareas.TabIndex = 4
         Me.GroupListadoTareas.TabStop = False
         Me.GroupListadoTareas.Text = "Listado de Tareas"
-        '
-        'Btn_informe_diario
-        '
-        Me.Btn_informe_diario.Location = New System.Drawing.Point(26, 550)
-        Me.Btn_informe_diario.Name = "Btn_informe_diario"
-        Me.Btn_informe_diario.Size = New System.Drawing.Size(138, 23)
-        Me.Btn_informe_diario.TabIndex = 3
-        Me.Btn_informe_diario.Text = "Exportar Listado General"
-        Me.Btn_informe_diario.UseVisualStyleBackColor = True
         '
         'btnModificarTodas
         '
         Me.btnModificarTodas.Location = New System.Drawing.Point(582, 241)
         Me.btnModificarTodas.Name = "btnModificarTodas"
-        Me.btnModificarTodas.Size = New System.Drawing.Size(104, 23)
+        Me.btnModificarTodas.Size = New System.Drawing.Size(104, 33)
         Me.btnModificarTodas.TabIndex = 4
         Me.btnModificarTodas.Text = "Modificar Todas"
         Me.btnModificarTodas.UseVisualStyleBackColor = True
@@ -114,17 +105,19 @@ Partial Class frm_Listado_Tareas
         '
         Me.Label6.AutoSize = True
         Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label6.Location = New System.Drawing.Point(178, 238)
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(222, 252)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(2, 15)
+        Me.Label6.Size = New System.Drawing.Size(2, 18)
         Me.Label6.TabIndex = 5
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(6, 238)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(6, 252)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(166, 13)
+        Me.Label5.Size = New System.Drawing.Size(214, 16)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "Total de Colaboradores del sector"
         '
@@ -150,11 +143,20 @@ Partial Class frm_Listado_Tareas
         Me.Label4.TabIndex = 0
         Me.Label4.Text = "Sector"
         '
+        'Btn_informe_diario
+        '
+        Me.Btn_informe_diario.Location = New System.Drawing.Point(35, 592)
+        Me.Btn_informe_diario.Name = "Btn_informe_diario"
+        Me.Btn_informe_diario.Size = New System.Drawing.Size(138, 33)
+        Me.Btn_informe_diario.TabIndex = 3
+        Me.Btn_informe_diario.Text = "Exportar Listado General"
+        Me.Btn_informe_diario.UseVisualStyleBackColor = True
+        '
         'btnEliminar_Tarea
         '
-        Me.btnEliminar_Tarea.Location = New System.Drawing.Point(570, 550)
+        Me.btnEliminar_Tarea.Location = New System.Drawing.Point(579, 592)
         Me.btnEliminar_Tarea.Name = "btnEliminar_Tarea"
-        Me.btnEliminar_Tarea.Size = New System.Drawing.Size(63, 23)
+        Me.btnEliminar_Tarea.Size = New System.Drawing.Size(63, 33)
         Me.btnEliminar_Tarea.TabIndex = 9
         Me.btnEliminar_Tarea.Text = "Eliminar"
         Me.btnEliminar_Tarea.UseVisualStyleBackColor = True
@@ -166,9 +168,9 @@ Partial Class frm_Listado_Tareas
         Me.groupListadoDetalleTarea.Controls.Add(Me.Label1)
         Me.groupListadoDetalleTarea.Controls.Add(Me.Label2)
         Me.groupListadoDetalleTarea.Controls.Add(Me.dgvTarea_x_Colaborador)
-        Me.groupListadoDetalleTarea.Location = New System.Drawing.Point(12, 290)
+        Me.groupListadoDetalleTarea.Location = New System.Drawing.Point(12, 309)
         Me.groupListadoDetalleTarea.Name = "groupListadoDetalleTarea"
-        Me.groupListadoDetalleTarea.Size = New System.Drawing.Size(698, 254)
+        Me.groupListadoDetalleTarea.Size = New System.Drawing.Size(698, 271)
         Me.groupListadoDetalleTarea.TabIndex = 5
         Me.groupListadoDetalleTarea.TabStop = False
         Me.groupListadoDetalleTarea.Text = "Detalle de Tareas"
@@ -177,21 +179,21 @@ Partial Class frm_Listado_Tareas
         '
         Me.Label35.AutoSize = True
         Me.Label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label35.ForeColor = System.Drawing.Color.Black
-        Me.Label35.Location = New System.Drawing.Point(389, 233)
+        Me.Label35.Location = New System.Drawing.Point(402, 244)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(2, 15)
+        Me.Label35.Size = New System.Drawing.Size(2, 18)
         Me.Label35.TabIndex = 51
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(328, 233)
+        Me.Label7.Location = New System.Drawing.Point(328, 244)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(56, 13)
+        Me.Label7.Size = New System.Drawing.Size(71, 16)
         Me.Label7.TabIndex = 50
         Me.Label7.Text = "Total Real"
         '
@@ -199,17 +201,19 @@ Partial Class frm_Listado_Tareas
         '
         Me.Label1.AutoSize = True
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Location = New System.Drawing.Point(121, 233)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(142, 244)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(2, 15)
+        Me.Label1.Size = New System.Drawing.Size(2, 18)
         Me.Label1.TabIndex = 5
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 233)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(12, 244)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(100, 13)
+        Me.Label2.Size = New System.Drawing.Size(128, 16)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Cantidad de Tareas"
         '
@@ -225,9 +229,9 @@ Partial Class frm_Listado_Tareas
         '
         'btnModificar_Una
         '
-        Me.btnModificar_Una.Location = New System.Drawing.Point(479, 550)
+        Me.btnModificar_Una.Location = New System.Drawing.Point(488, 592)
         Me.btnModificar_Una.Name = "btnModificar_Una"
-        Me.btnModificar_Una.Size = New System.Drawing.Size(85, 23)
+        Me.btnModificar_Una.Size = New System.Drawing.Size(85, 33)
         Me.btnModificar_Una.TabIndex = 8
         Me.btnModificar_Una.Text = "Modificar Una"
         Me.btnModificar_Una.UseVisualStyleBackColor = True
@@ -235,36 +239,36 @@ Partial Class frm_Listado_Tareas
         'btnCancelar
         '
         Me.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnCancelar.Location = New System.Drawing.Point(639, 550)
+        Me.btnCancelar.Location = New System.Drawing.Point(648, 592)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(63, 23)
+        Me.btnCancelar.Size = New System.Drawing.Size(63, 33)
         Me.btnCancelar.TabIndex = 10
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(385, 550)
+        Me.btnAgregar.Location = New System.Drawing.Point(394, 592)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(88, 23)
+        Me.btnAgregar.Size = New System.Drawing.Size(88, 33)
         Me.btnAgregar.TabIndex = 7
         Me.btnAgregar.Text = "Agregar Tarea"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'btnVer
         '
-        Me.btnVer.Location = New System.Drawing.Point(324, 550)
+        Me.btnVer.Location = New System.Drawing.Point(333, 592)
         Me.btnVer.Name = "btnVer"
-        Me.btnVer.Size = New System.Drawing.Size(55, 23)
+        Me.btnVer.Size = New System.Drawing.Size(55, 33)
         Me.btnVer.TabIndex = 6
         Me.btnVer.Text = "Ver"
         Me.btnVer.UseVisualStyleBackColor = True
         '
         'btnExportarListado
         '
-        Me.btnExportarListado.Location = New System.Drawing.Point(170, 550)
+        Me.btnExportarListado.Location = New System.Drawing.Point(179, 592)
         Me.btnExportarListado.Name = "btnExportarListado"
-        Me.btnExportarListado.Size = New System.Drawing.Size(148, 23)
+        Me.btnExportarListado.Size = New System.Drawing.Size(148, 33)
         Me.btnExportarListado.TabIndex = 5
         Me.btnExportarListado.Text = "Exportar Listado Individual"
         Me.btnExportarListado.UseVisualStyleBackColor = True
@@ -275,7 +279,7 @@ Partial Class frm_Listado_Tareas
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.btnCancelar
-        Me.ClientSize = New System.Drawing.Size(725, 584)
+        Me.ClientSize = New System.Drawing.Size(725, 637)
         Me.Controls.Add(Me.Btn_informe_diario)
         Me.Controls.Add(Me.btnExportarListado)
         Me.Controls.Add(Me.btnVer)
