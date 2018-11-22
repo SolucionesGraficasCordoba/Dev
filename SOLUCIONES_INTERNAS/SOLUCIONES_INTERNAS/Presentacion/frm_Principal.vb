@@ -1334,23 +1334,27 @@ Public Class frm_Principal
         frm_Acerca_de.ShowDialog()
     End Sub
 
-    Private Sub GráficosToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
+    Private Sub GráficosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
     End Sub
 
-    Private Sub TareasToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TareasToolStripMenuItem.Click
+    Private Sub TareasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TareasToolStripMenuItem.Click
 
     End Sub
 
-    Private Sub DiariasPorColaboradorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles DiariasPorColaboradorToolStripMenuItem.Click
+    Private Sub DiariasPorColaboradorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DiariasPorColaboradorToolStripMenuItem.Click
         frm_Generar_Informe.MdiParent = Me
         frm_Generar_Informe.Show()
         frm_Generar_Informe.btn_Totales_Mensuales_por_Colaborador.Enabled = False
     End Sub
 
-    Private Sub MensualesPorSectorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles MensualesPorSectorToolStripMenuItem.Click
+    Private Sub MensualesPorSectorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MensualesPorSectorToolStripMenuItem.Click
         frm_Generar_Informe.MdiParent = Me
         frm_Generar_Informe.Show()
         frm_Generar_Informe.btnTotales_por_Dia.Enabled = False
+    End Sub
+
+    Private Sub CorreoElectrónicoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CorreoElectrónicoToolStripMenuItem.Click
+        frm_Enviar_Correo.ShowDialog()
     End Sub
 End Class

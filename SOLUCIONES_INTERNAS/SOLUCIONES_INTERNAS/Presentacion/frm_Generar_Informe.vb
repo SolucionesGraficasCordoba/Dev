@@ -244,7 +244,7 @@ Public Class frm_Generar_Informe
             MsgBox("No hay registros de tareas mensuales")
             Exit Sub
         Else
-            frm_Grafico_Totales_Mensuales.Show()
+            'frm_Grafico_Totales_Mensuales.Show()
         End If
     End Sub
 End Class

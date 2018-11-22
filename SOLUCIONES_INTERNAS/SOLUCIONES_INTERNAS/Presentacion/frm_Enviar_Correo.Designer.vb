@@ -172,6 +172,7 @@ Partial Class frm_Enviar_Correo
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frm_Enviar_Correo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_Enviar_Correo"
         Me.ResumeLayout(False)
         Me.PerformLayout()
