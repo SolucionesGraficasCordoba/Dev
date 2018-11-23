@@ -181,7 +181,7 @@
         armargrilla()
         buscar = Me.txt_Buscar_Cliente.Text & "*"
         Dim consultaalu = From U In datacontext.CLIENTE
-                          Select U.CLI_id_cliente, U.CLI_razon_social, U.CLI_mail_cli, U.CLI_telefono_cli
+                          Select U.CLI_id_cliente, U.CLI_razon_social, U.CLI_mail_cli, U.CLI_telefono_cli, U.CLI_domicilio, U.CLI_localidad, U.CLI_codigo_postal
                           Where CLI_razon_social Like buscar.ToString
         dgvLista_Clientes.DataSource = consultaalu
     End Sub

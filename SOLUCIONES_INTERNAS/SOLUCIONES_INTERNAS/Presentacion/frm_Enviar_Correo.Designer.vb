@@ -85,7 +85,7 @@ Partial Class frm_Enviar_Correo
         Me.BtnEnviar.BackColor = System.Drawing.SystemColors.Control
         Me.BtnEnviar.Location = New System.Drawing.Point(244, 256)
         Me.BtnEnviar.Name = "BtnEnviar"
-        Me.BtnEnviar.Size = New System.Drawing.Size(75, 23)
+        Me.BtnEnviar.Size = New System.Drawing.Size(75, 33)
         Me.BtnEnviar.TabIndex = 20
         Me.BtnEnviar.Text = "Enviar"
         Me.BtnEnviar.UseVisualStyleBackColor = False
@@ -173,7 +173,7 @@ Partial Class frm_Enviar_Correo
         Me.Controls.Add(Me.Label1)
         Me.Name = "frm_Enviar_Correo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frm_Enviar_Correo"
+        Me.Text = "Enviar Correo"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
