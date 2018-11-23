@@ -61,6 +61,7 @@ Partial Class frm_Actualizar_Tarea
         Me.btn_Actualizar_Tarea = New System.Windows.Forms.Button()
         Me.btn_Cancelar = New System.Windows.Forms.Button()
         Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -214,7 +215,7 @@ Partial Class frm_Actualizar_Tarea
         'Label59
         '
         Me.Label59.AutoSize = True
-        Me.Label59.Location = New System.Drawing.Point(202, 147)
+        Me.Label59.Location = New System.Drawing.Point(195, 147)
         Me.Label59.Name = "Label59"
         Me.Label59.Size = New System.Drawing.Size(91, 13)
         Me.Label59.TabIndex = 175
@@ -265,6 +266,7 @@ Partial Class frm_Actualizar_Tarea
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.txtSalida)
         Me.GroupBox1.Controls.Add(Me.txtEntrada)
         Me.GroupBox1.Controls.Add(Me.Label8)
@@ -400,7 +402,7 @@ Partial Class frm_Actualizar_Tarea
         '
         'txt_tiempo_real
         '
-        Me.txt_tiempo_real.Location = New System.Drawing.Point(299, 144)
+        Me.txt_tiempo_real.Location = New System.Drawing.Point(299, 142)
         Me.txt_tiempo_real.Name = "txt_tiempo_real"
         Me.txt_tiempo_real.Size = New System.Drawing.Size(45, 20)
         Me.txt_tiempo_real.TabIndex = 8
@@ -431,6 +433,17 @@ Partial Class frm_Actualizar_Tarea
         Me.btnGuardar.TabIndex = 12
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.Red
+        Me.Label9.Location = New System.Drawing.Point(285, 149)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(11, 13)
+        Me.Label9.TabIndex = 185
+        Me.Label9.Text = "*"
         '
         'frm_Actualizar_Tarea
         '
@@ -491,4 +504,5 @@ Partial Class frm_Actualizar_Tarea
     Friend WithEvents txtEntrada As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label33 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class

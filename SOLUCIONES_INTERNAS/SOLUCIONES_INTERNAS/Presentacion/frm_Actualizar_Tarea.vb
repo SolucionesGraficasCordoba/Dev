@@ -182,6 +182,12 @@
                 Exit Sub
             End If
 
+            If txt_tiempo_real.Text.Length = 0 Then
+                MsgBox("Complete el campo Tiempo Real")
+                txt_tiempo_real.Focus()
+                Exit Sub
+            End If
+
             If txt_tarea.Text.Length <> 0 Then
                 'REGISTRO 1 DE TAREA
                 Dim tar1 = New TAREA
@@ -190,7 +196,6 @@
                 tar1.COL_id_colaborador = txt_id_colaborador.Text
                 tar1.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
                 tar1.TAR_hora_fin = StrConv(txt_hora_fin.Text, VbStrConv.ProperCase)
-
 
                 '  tar1.TAR_carga_horaria = StrConv(txt_Carga_Horaria.Text, VbStrConv.ProperCase)
                 tar1.TAR_carga_horaria = "0"
@@ -275,4 +280,6 @@
         txt_tiempo_estimado.Clear()
         txt_tiempo_real.Clear()
     End Sub
+
+   
 End Class

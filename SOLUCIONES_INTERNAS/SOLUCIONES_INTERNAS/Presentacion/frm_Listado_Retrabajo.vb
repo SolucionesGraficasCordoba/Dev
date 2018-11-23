@@ -232,7 +232,7 @@ Order By ORT_numero_ot Ascending)
         Dim buscar As String
         If rbtNumeroOrden.Checked = True Then
             ArmaGrillaRetrabajo()
-            buscar = Me.txt_Buscar_ReTrabajo.Text & "*"
+            buscar = "*" & Me.txt_Buscar_ReTrabajo.Text & "*"
             Dim consultaalu =
                  (From dot In datacontext.DETALLE_ORDEN_TRABAJO
                                         Join ret In datacontext.RE_TRABAJO

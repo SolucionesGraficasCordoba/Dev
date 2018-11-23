@@ -189,7 +189,7 @@ Public Class frm_Colaborador
     Private Sub txt_Buscar_Colaborador_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_Colaborador.TextChanged
         Dim buscar As String
         armargrilla()
-        buscar = Me.txt_Buscar_Colaborador.Text & "*"
+        buscar = "*" & Me.txt_Buscar_Colaborador.Text & "*"
         Dim consultaalu = From U In datacontext.COLABORADOR
                           Join S In datacontext.SECTOR
                           On S.SEC_id_sector Equals U.SEC_id_sector

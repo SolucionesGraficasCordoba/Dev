@@ -157,7 +157,7 @@
     Private Sub txt_Buscar_Usuario_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_Buscar_Usuario.TextChanged
         Dim buscar As String
         armargrilla()
-        buscar = Me.txt_Buscar_Usuario.Text & "*"
+        buscar = "*" & Me.txt_Buscar_Usuario.Text & "*"
         Dim consultausuario = From U In datacontext.USUARIO
                               Join C In datacontext.COLABORADOR
                               On C.COL_id_colaborador Equals U.COL_id_colaborador

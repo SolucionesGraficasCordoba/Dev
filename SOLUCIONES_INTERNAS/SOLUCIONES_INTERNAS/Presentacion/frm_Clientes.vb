@@ -179,7 +179,7 @@
     Private Sub TextBox5_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_Cliente.TextChanged
         Dim buscar As String
         armargrilla()
-        buscar = Me.txt_Buscar_Cliente.Text & "*"
+        buscar = "*" & Me.txt_Buscar_Cliente.Text & "*"
         Dim consultaalu = From U In datacontext.CLIENTE
                           Select U.CLI_id_cliente, U.CLI_razon_social, U.CLI_mail_cli, U.CLI_telefono_cli, U.CLI_domicilio, U.CLI_localidad, U.CLI_codigo_postal
                           Where CLI_razon_social Like buscar.ToString

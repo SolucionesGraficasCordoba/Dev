@@ -149,7 +149,7 @@
     Private Sub txt_Buscar_Vendedor_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_vendedor.TextChanged
         Dim buscar As String
         armargrilla()
-        buscar = Me.txt_Buscar_vendedor.Text & "*"
+        buscar = "*" & Me.txt_Buscar_vendedor.Text & "*"
         Dim consultaalu = From U In datacontext.VENDEDOR Select U.VEN_id_vendedor, U.VEN_nombre_ven, U.VEN_apellido_ven, U.VEN_mail_ven, U.VEN_telefono_ven Where VEN_nombre_ven Like buscar.ToString
         dgvLista_vendedores.DataSource = consultaalu
     End Sub

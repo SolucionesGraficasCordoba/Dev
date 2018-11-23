@@ -127,7 +127,7 @@
     Private Sub txt_Buscar_Pieza_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_Pieza.TextChanged
         Dim buscar As String
         armargrilla()
-        buscar = Me.txt_Buscar_Pieza.Text & "*"
+        buscar = "*" & Me.txt_Buscar_Pieza.Text & "*"
         Dim consultaalu = From U In datacontext.PIEZA Select U.PIE_id_pieza, U.PIE_nombre_pie Where PIE_nombre_pie Like buscar.ToString
         dgvLista_Piezas.DataSource = consultaalu
     End Sub

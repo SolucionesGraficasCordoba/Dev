@@ -868,7 +868,7 @@ Public Class frm_Listado_Orden_Trabajo
     Private Sub TextBox1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_Cliente.TextChanged
         Dim buscar As String
         armargrilla()
-        buscar = Me.txt_Buscar_Cliente.Text & "*"
+        buscar = "*" & Me.txt_Buscar_Cliente.Text & "*"
         Dim BuscaCliente = (From U In datacontext.ORDEN_TRABAJO
                               Join ort In datacontext.VENDEDOR
                               On U.VEN_id_vendedor Equals ort.VEN_id_vendedor

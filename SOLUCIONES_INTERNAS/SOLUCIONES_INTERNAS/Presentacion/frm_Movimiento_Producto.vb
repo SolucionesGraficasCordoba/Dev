@@ -70,7 +70,7 @@
     Private Sub txt_Buscar_Colaborador_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_Buscar_Producto.TextChanged
         Dim buscar As String
         armargrilla()
-        buscar = Me.txt_Buscar_Producto.Text & "*"
+        buscar = "*" & Me.txt_Buscar_Producto.Text & "*"
         Dim consultaprod = From U In datacontext.PRODUCTO
                           Select U.PROD_id, U.PROD_codigo, U.PROD_descripcion, U.PROD_stock
                           Where PROD_descripcion Like buscar.ToString

@@ -123,7 +123,7 @@
     Private Sub txt_Buscar_Sector_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_Sector.TextChanged
         Dim buscar As String
         armargrilla()
-        buscar = Me.txt_Buscar_Sector.Text & "*"
+        buscar = "*" & Me.txt_Buscar_Sector.Text & "*"
         Dim consultaalu = From U In datacontext.SECTOR Select U.SEC_id_sector, U.SEC_nombre_sector Where SEC_nombre_sector Like buscar.ToString
         dgvLista_Sector.DataSource = consultaalu
     End Sub
