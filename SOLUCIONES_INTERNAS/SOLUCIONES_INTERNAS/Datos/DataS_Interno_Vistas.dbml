@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SOLUCIONES_INTERNAS" Class="DataS_Interno_Vistas" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-84P9IMQ\SQLEXPRESS;Initial Catalog=SOLUCIONES_INTERNAS;Integrated Security=True" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SV-PLANET-01;Initial Catalog=SOLUCIONES_INTERNAS;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.VistaTareas" Member="VistaTareas">
     <Type Name="VistaTareas">
       <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -166,6 +166,22 @@
       <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="COL_nombre_col" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Movimiento_Orden" Member="Movimiento_Orden">
+    <Type Name="Movimiento_Orden">
+      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORT_numero_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="TAR_id_tarea" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TAR_detalle_tarea" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TAR_tiempo_real" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="TAR_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PIE_id_pieza" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PIE_nombre_pie" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="COL_nombre_col" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
