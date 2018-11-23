@@ -1357,4 +1357,9 @@ Public Class frm_Principal
     Private Sub CorreoElectrónicoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CorreoElectrónicoToolStripMenuItem.Click
         frm_Enviar_Correo.ShowDialog()
     End Sub
+
+    Private Sub MovimientoDeÓrdenesToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles MovimientoDeÓrdenesToolStripMenuItem.Click
+        frm_Movimiento_Orden.ShowDialog()
+        frm_Movimiento_Orden.dgvMovimiento_Orden.ClearSelection()
+    End Sub
 End Class

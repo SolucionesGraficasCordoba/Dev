@@ -96,6 +96,7 @@ Partial Class frm_Principal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.OrdenDeTrabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MovimientoDeÓrdenesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -565,9 +566,16 @@ Partial Class frm_Principal
         '
         'OrdenDeTrabajoToolStripMenuItem
         '
+        Me.OrdenDeTrabajoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MovimientoDeÓrdenesToolStripMenuItem})
         Me.OrdenDeTrabajoToolStripMenuItem.Name = "OrdenDeTrabajoToolStripMenuItem"
         Me.OrdenDeTrabajoToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
-        Me.OrdenDeTrabajoToolStripMenuItem.Text = "Orden de Trabajo"
+        Me.OrdenDeTrabajoToolStripMenuItem.Text = "Órden de Trabajo"
+        '
+        'MovimientoDeÓrdenesToolStripMenuItem
+        '
+        Me.MovimientoDeÓrdenesToolStripMenuItem.Name = "MovimientoDeÓrdenesToolStripMenuItem"
+        Me.MovimientoDeÓrdenesToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
+        Me.MovimientoDeÓrdenesToolStripMenuItem.Text = "Movimiento de Órdenes"
         '
         'frm_Principal
         '
@@ -663,6 +671,7 @@ Partial Class frm_Principal
     Friend WithEvents MensualesPorSectorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents CorreoElectrónicoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OrdenDeTrabajoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents MovimientoDeÓrdenesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class

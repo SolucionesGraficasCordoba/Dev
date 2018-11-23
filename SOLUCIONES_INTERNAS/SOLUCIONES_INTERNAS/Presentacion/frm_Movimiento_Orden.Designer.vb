@@ -22,123 +22,32 @@ Partial Class frm_Movimiento_Orden
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupListadoPiezas = New System.Windows.Forms.GroupBox()
-        Me.btn_ODT_mostrar_pdf = New System.Windows.Forms.Button()
-        Me.btnEliminar_Orden = New System.Windows.Forms.Button()
-        Me.btnModificar_Orden = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txt_Buscar_orden_trabajo = New System.Windows.Forms.TextBox()
-        Me.dgvLista_Orden_Trabajo = New System.Windows.Forms.DataGridView()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.btnExportarPDF = New System.Windows.Forms.Button()
+        Me.txt_Buscar_orden_trabajo = New System.Windows.Forms.TextBox()
+        Me.dgvMovimiento_Orden = New System.Windows.Forms.DataGridView()
         Me.GroupListadoPiezas.SuspendLayout()
-        CType(Me.dgvLista_Orden_Trabajo, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvMovimiento_Orden, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupListadoPiezas
         '
         Me.GroupListadoPiezas.Controls.Add(Me.Label4)
-        Me.GroupListadoPiezas.Controls.Add(Me.btn_ODT_mostrar_pdf)
-        Me.GroupListadoPiezas.Controls.Add(Me.btnEliminar_Orden)
-        Me.GroupListadoPiezas.Controls.Add(Me.btnModificar_Orden)
-        Me.GroupListadoPiezas.Controls.Add(Me.Label3)
-        Me.GroupListadoPiezas.Controls.Add(Me.Label7)
+        Me.GroupListadoPiezas.Controls.Add(Me.btnCancelar)
+        Me.GroupListadoPiezas.Controls.Add(Me.btnExportarPDF)
         Me.GroupListadoPiezas.Controls.Add(Me.txt_Buscar_orden_trabajo)
-        Me.GroupListadoPiezas.Controls.Add(Me.dgvLista_Orden_Trabajo)
+        Me.GroupListadoPiezas.Controls.Add(Me.dgvMovimiento_Orden)
         Me.GroupListadoPiezas.Location = New System.Drawing.Point(12, 12)
         Me.GroupListadoPiezas.Name = "GroupListadoPiezas"
         Me.GroupListadoPiezas.Size = New System.Drawing.Size(864, 411)
         Me.GroupListadoPiezas.TabIndex = 30
         Me.GroupListadoPiezas.TabStop = False
         Me.GroupListadoPiezas.Text = "Movimiento de Ordenes"
-        '
-        'btn_ODT_mostrar_pdf
-        '
-        Me.btn_ODT_mostrar_pdf.Location = New System.Drawing.Point(511, 366)
-        Me.btn_ODT_mostrar_pdf.Name = "btn_ODT_mostrar_pdf"
-        Me.btn_ODT_mostrar_pdf.Size = New System.Drawing.Size(94, 33)
-        Me.btn_ODT_mostrar_pdf.TabIndex = 37
-        Me.btn_ODT_mostrar_pdf.Text = "Mostrar pdf"
-        Me.btn_ODT_mostrar_pdf.UseVisualStyleBackColor = True
-        '
-        'btnEliminar_Orden
-        '
-        Me.btnEliminar_Orden.Location = New System.Drawing.Point(736, 366)
-        Me.btnEliminar_Orden.Name = "btnEliminar_Orden"
-        Me.btnEliminar_Orden.Size = New System.Drawing.Size(113, 33)
-        Me.btnEliminar_Orden.TabIndex = 28
-        Me.btnEliminar_Orden.Text = "Eliminar Orden"
-        Me.btnEliminar_Orden.UseVisualStyleBackColor = True
-        '
-        'btnModificar_Orden
-        '
-        Me.btnModificar_Orden.Location = New System.Drawing.Point(611, 366)
-        Me.btnModificar_Orden.Name = "btnModificar_Orden"
-        Me.btnModificar_Orden.Size = New System.Drawing.Size(119, 33)
-        Me.btnModificar_Orden.TabIndex = 29
-        Me.btnModificar_Orden.Text = "Modificar Orden"
-        Me.btnModificar_Orden.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label3.Location = New System.Drawing.Point(108, 371)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(2, 15)
-        Me.Label3.TabIndex = 5
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(15, 371)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(87, 13)
-        Me.Label7.TabIndex = 4
-        Me.Label7.Text = "Total de ordenes"
-        '
-        'txt_Buscar_orden_trabajo
-        '
-        Me.txt_Buscar_orden_trabajo.Location = New System.Drawing.Point(430, 26)
-        Me.txt_Buscar_orden_trabajo.Name = "txt_Buscar_orden_trabajo"
-        Me.txt_Buscar_orden_trabajo.Size = New System.Drawing.Size(175, 20)
-        Me.txt_Buscar_orden_trabajo.TabIndex = 2
-        '
-        'dgvLista_Orden_Trabajo
-        '
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvLista_Orden_Trabajo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgvLista_Orden_Trabajo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgvLista_Orden_Trabajo.DefaultCellStyle = DataGridViewCellStyle5
-        Me.dgvLista_Orden_Trabajo.Location = New System.Drawing.Point(18, 57)
-        Me.dgvLista_Orden_Trabajo.Name = "dgvLista_Orden_Trabajo"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgvLista_Orden_Trabajo.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
-        Me.dgvLista_Orden_Trabajo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_Orden_Trabajo.Size = New System.Drawing.Size(831, 296)
-        Me.dgvLista_Orden_Trabajo.TabIndex = 0
         '
         'Label4
         '
@@ -149,6 +58,65 @@ Partial Class frm_Movimiento_Orden
         Me.Label4.TabIndex = 38
         Me.Label4.Text = "Ingrese Número de Orden"
         '
+        'btnCancelar
+        '
+        Me.btnCancelar.Location = New System.Drawing.Point(736, 366)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(113, 33)
+        Me.btnCancelar.TabIndex = 28
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
+        '
+        'btnExportarPDF
+        '
+        Me.btnExportarPDF.Location = New System.Drawing.Point(611, 366)
+        Me.btnExportarPDF.Name = "btnExportarPDF"
+        Me.btnExportarPDF.Size = New System.Drawing.Size(119, 33)
+        Me.btnExportarPDF.TabIndex = 29
+        Me.btnExportarPDF.Text = "Exportar Órden a PDF"
+        Me.btnExportarPDF.UseVisualStyleBackColor = True
+        '
+        'txt_Buscar_orden_trabajo
+        '
+        Me.txt_Buscar_orden_trabajo.Location = New System.Drawing.Point(430, 26)
+        Me.txt_Buscar_orden_trabajo.Name = "txt_Buscar_orden_trabajo"
+        Me.txt_Buscar_orden_trabajo.Size = New System.Drawing.Size(175, 20)
+        Me.txt_Buscar_orden_trabajo.TabIndex = 2
+        '
+        'dgvMovimiento_Orden
+        '
+        Me.dgvMovimiento_Orden.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvMovimiento_Orden.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        Me.dgvMovimiento_Orden.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgvMovimiento_Orden.DefaultCellStyle = DataGridViewCellStyle11
+        Me.dgvMovimiento_Orden.Location = New System.Drawing.Point(18, 57)
+        Me.dgvMovimiento_Orden.Name = "dgvMovimiento_Orden"
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgvMovimiento_Orden.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        Me.dgvMovimiento_Orden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgvMovimiento_Orden.Size = New System.Drawing.Size(831, 296)
+        Me.dgvMovimiento_Orden.TabIndex = 0
+        '
         'frm_Movimiento_Orden
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -156,20 +124,18 @@ Partial Class frm_Movimiento_Orden
         Me.ClientSize = New System.Drawing.Size(889, 435)
         Me.Controls.Add(Me.GroupListadoPiezas)
         Me.Name = "frm_Movimiento_Orden"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Movimiento de Ordenes"
         Me.GroupListadoPiezas.ResumeLayout(False)
         Me.GroupListadoPiezas.PerformLayout()
-        CType(Me.dgvLista_Orden_Trabajo, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvMovimiento_Orden, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents GroupListadoPiezas As System.Windows.Forms.GroupBox
-    Friend WithEvents btn_ODT_mostrar_pdf As System.Windows.Forms.Button
-    Friend WithEvents btnEliminar_Orden As System.Windows.Forms.Button
-    Friend WithEvents btnModificar_Orden As System.Windows.Forms.Button
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents btnCancelar As System.Windows.Forms.Button
+    Friend WithEvents btnExportarPDF As System.Windows.Forms.Button
     Friend WithEvents txt_Buscar_orden_trabajo As System.Windows.Forms.TextBox
-    Friend WithEvents dgvLista_Orden_Trabajo As System.Windows.Forms.DataGridView
+    Friend WithEvents dgvMovimiento_Orden As System.Windows.Forms.DataGridView
     Friend WithEvents Label4 As System.Windows.Forms.Label
 End Class
