@@ -5,15 +5,6 @@
         txt_usuario.Focus()
     End Sub
 
-    Sub habilitargeneral()
-        'ARCHIVO
-        frm_Principal.ArchivoToolStripMenuItem.Enabled = True
-        frm_Principal.ArchivoToolStripMenuItem.DropDownItems(0).Enabled = True
-        frm_Principal.ArchivoToolStripMenuItem.DropDownItems(1).Enabled = True
-
-
-    End Sub
-
     Private Sub btnIngresar_Click(sender As System.Object, e As System.EventArgs) Handles btnIngresar.Click
 
         'DESHABILITA PERMISOS
@@ -367,6 +358,25 @@
         'End Try
     End Sub
 
+    Sub habilitargeneral()
+        'ARCHIVO
+        frm_Principal.ArchivoToolStripMenuItem.Enabled = True
+        frm_Principal.ArchivoToolStripMenuItem.DropDownItems(0).Enabled = True
+        frm_Principal.ArchivoToolStripMenuItem.DropDownItems(1).Enabled = True
+        'COLABORADOR
+        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(3).Visible = True
+        'VENDEDOR
+        frm_Principal.VendedorToolStripMenuItem.DropDownItems(3).Visible = True
+        'CLIENTE
+        frm_Principal.ClienteToolStripMenuItem.DropDownItems(3).Visible = True
+        'PIEZA
+        frm_Principal.PiezaToolStripMenuItem.DropDownItems(3).Visible = True
+        'SECTOR
+        frm_Principal.SectorToolStripMenuItem.DropDownItems(3).Visible = True
+        'TAREA
+        frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
+    End Sub
+
     Sub Archivo()
         frm_Principal.ArchivoToolStripMenuItem.Enabled = True
         frm_Principal.ArchivoToolStripMenuItem.DropDownItems(0).Enabled = True
@@ -383,59 +393,57 @@
 
     Sub Colaborador(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
         frm_Principal.ColaboradorToolStripMenuItem.Enabled = True
-        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(0).Visible = True
-        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(1).Visible = True
-        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(2).Visible = True
-        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(3).Visible = True
-
+        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(0).Visible = nuevo
+        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(1).Visible = modif
+        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(2).Visible = elim
     End Sub
 
     Sub Vendedor(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
         frm_Principal.VendedorToolStripMenuItem.Enabled = True
-        frm_Principal.VendedorToolStripMenuItem.DropDownItems(0).Visible = True
-        frm_Principal.VendedorToolStripMenuItem.DropDownItems(1).Visible = True
-        frm_Principal.VendedorToolStripMenuItem.DropDownItems(2).Visible = True
-        frm_Principal.VendedorToolStripMenuItem.DropDownItems(3).Visible = True
+        frm_Principal.VendedorToolStripMenuItem.DropDownItems(0).Visible = nuevo
+        frm_Principal.VendedorToolStripMenuItem.DropDownItems(1).Visible = modif
+        frm_Principal.VendedorToolStripMenuItem.DropDownItems(2).Visible = elim
+
     End Sub
 
     Sub Cliente(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
         frm_Principal.ClienteToolStripMenuItem.Enabled = True
-        frm_Principal.ClienteToolStripMenuItem.DropDownItems(0).Visible = True
-        frm_Principal.ClienteToolStripMenuItem.DropDownItems(1).Visible = True
-        frm_Principal.ClienteToolStripMenuItem.DropDownItems(2).Visible = True
-        frm_Principal.ClienteToolStripMenuItem.DropDownItems(3).Visible = True
+        frm_Principal.ClienteToolStripMenuItem.DropDownItems(0).Visible = nuevo
+        frm_Principal.ClienteToolStripMenuItem.DropDownItems(1).Visible = modif
+        frm_Principal.ClienteToolStripMenuItem.DropDownItems(2).Visible = elim
+
     End Sub
 
     Sub Pieza(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
         frm_Principal.PiezaToolStripMenuItem.Enabled = True
-        frm_Principal.PiezaToolStripMenuItem.DropDownItems(0).Visible = True
-        frm_Principal.PiezaToolStripMenuItem.DropDownItems(1).Visible = True
-        frm_Principal.PiezaToolStripMenuItem.DropDownItems(2).Visible = True
-        frm_Principal.PiezaToolStripMenuItem.DropDownItems(3).Visible = True
+        frm_Principal.PiezaToolStripMenuItem.DropDownItems(0).Visible = nuevo
+        frm_Principal.PiezaToolStripMenuItem.DropDownItems(1).Visible = modif
+        frm_Principal.PiezaToolStripMenuItem.DropDownItems(2).Visible = elim
+
     End Sub
 
     Sub Sector(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
         frm_Principal.SectorToolStripMenuItem.Enabled = True
-        frm_Principal.SectorToolStripMenuItem.DropDownItems(0).Visible = True
-        frm_Principal.SectorToolStripMenuItem.DropDownItems(1).Visible = True
-        frm_Principal.SectorToolStripMenuItem.DropDownItems(2).Visible = True
-        frm_Principal.SectorToolStripMenuItem.DropDownItems(3).Visible = True
+        frm_Principal.SectorToolStripMenuItem.DropDownItems(0).Visible = nuevo
+        frm_Principal.SectorToolStripMenuItem.DropDownItems(1).Visible = modif
+        frm_Principal.SectorToolStripMenuItem.DropDownItems(2).Visible = elim
+
     End Sub
 
     Sub Tarea(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
         frm_Principal.TareasToolStripMenuItem.Enabled = True
-        frm_Principal.TareasToolStripMenuItem.DropDownItems(0).Visible = True
-        frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = True
-        frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = True
-        frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
+        frm_Principal.TareasToolStripMenuItem.DropDownItems(0).Visible = nuevo
+        frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = modif
+        frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = elim
+
     End Sub
 
     Sub Producto(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
         frm_Principal.ProductoToolStripMenuItem.Enabled = True
 
-        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
-        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
-        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
+        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = nuevo
+        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Visible = modif
+        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Visible = elim
 
         frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
         frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = True

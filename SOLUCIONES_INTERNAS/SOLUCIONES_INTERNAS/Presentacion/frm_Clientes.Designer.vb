@@ -208,6 +208,8 @@ Partial Class frm_Cliente
         '
         'txt_razonsocial_cliente
         '
+        Me.txt_razonsocial_cliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txt_razonsocial_cliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
         Me.txt_razonsocial_cliente.Location = New System.Drawing.Point(104, 19)
         Me.txt_razonsocial_cliente.MaxLength = 50
         Me.txt_razonsocial_cliente.Name = "txt_razonsocial_cliente"

@@ -109,6 +109,12 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeleteRE_TRABAJO(instance As RE_TRABAJO)
     End Sub
+  Partial Private Sub InsertPERMISO(instance As PERMISO)
+    End Sub
+  Partial Private Sub UpdatePERMISO(instance As PERMISO)
+    End Sub
+  Partial Private Sub DeletePERMISO(instance As PERMISO)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -211,6 +217,12 @@ Partial Public Class DataS_Interno
 	Public ReadOnly Property RE_TRABAJO() As System.Data.Linq.Table(Of RE_TRABAJO)
 		Get
 			Return Me.GetTable(Of RE_TRABAJO)
+		End Get
+	End Property
+	
+	Public ReadOnly Property PERMISO() As System.Data.Linq.Table(Of PERMISO)
+		Get
+			Return Me.GetTable(Of PERMISO)
 		End Get
 	End Property
 End Class
@@ -826,6 +838,8 @@ Partial Public Class USUARIO
 	
 	Private _COL_id_colaborador As System.Nullable(Of Integer)
 	
+	Private _PERMISO As EntitySet(Of PERMISO)
+	
 	Private _COLABORADOR As EntityRef(Of COLABORADOR)
 	
     #Region "Definiciones de métodos de extensibilidad"
@@ -859,6 +873,7 @@ Partial Public Class USUARIO
 	
 	Public Sub New()
 		MyBase.New
+		Me._PERMISO = New EntitySet(Of PERMISO)(AddressOf Me.attach_PERMISO, AddressOf Me.detach_PERMISO)
 		Me._COLABORADOR = CType(Nothing, EntityRef(Of COLABORADOR))
 		OnCreated
 	End Sub
@@ -947,6 +962,16 @@ Partial Public Class USUARIO
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USUARIO_PERMISO", Storage:="_PERMISO", ThisKey:="USU_id_usuario", OtherKey:="USU_id_usuario")>  _
+	Public Property PERMISO() As EntitySet(Of PERMISO)
+		Get
+			Return Me._PERMISO
+		End Get
+		Set
+			Me._PERMISO.Assign(value)
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="COLABORADOR_USUARIO", Storage:="_COLABORADOR", ThisKey:="COL_id_colaborador", OtherKey:="COL_id_colaborador", IsForeignKey:=true)>  _
 	Public Property COLABORADOR() As COLABORADOR
 		Get
@@ -991,6 +1016,16 @@ Partial Public Class USUARIO
 					= false) Then
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
+	End Sub
+	
+	Private Sub attach_PERMISO(ByVal entity As PERMISO)
+		Me.SendPropertyChanging
+		entity.USUARIO = Me
+	End Sub
+	
+	Private Sub detach_PERMISO(ByVal entity As PERMISO)
+		Me.SendPropertyChanging
+		entity.USUARIO = Nothing
 	End Sub
 End Class
 
@@ -3722,6 +3757,168 @@ Partial Public Class RE_TRABAJO
 					Me._id_detalle_orden_trabajo = CType(Nothing, Nullable(Of Integer))
 				End If
 				Me.SendPropertyChanged("DETALLE_ORDEN_TRABAJO")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PERMISO")>  _
+Partial Public Class PERMISO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _PER_id_permiso As Integer
+	
+	Private _PER_permiso As String
+	
+	Private _PER_abm As String
+	
+	Private _USU_id_usuario As System.Nullable(Of Integer)
+	
+	Private _USUARIO As EntityRef(Of USUARIO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnPER_id_permisoChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPER_id_permisoChanged()
+    End Sub
+    Partial Private Sub OnPER_permisoChanging(value As String)
+    End Sub
+    Partial Private Sub OnPER_permisoChanged()
+    End Sub
+    Partial Private Sub OnPER_abmChanging(value As String)
+    End Sub
+    Partial Private Sub OnPER_abmChanged()
+    End Sub
+    Partial Private Sub OnUSU_id_usuarioChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUSU_id_usuarioChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._USUARIO = CType(Nothing, EntityRef(Of USUARIO))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PER_id_permiso", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property PER_id_permiso() As Integer
+		Get
+			Return Me._PER_id_permiso
+		End Get
+		Set
+			If ((Me._PER_id_permiso = value)  _
+						= false) Then
+				Me.OnPER_id_permisoChanging(value)
+				Me.SendPropertyChanging
+				Me._PER_id_permiso = value
+				Me.SendPropertyChanged("PER_id_permiso")
+				Me.OnPER_id_permisoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PER_permiso", DbType:="VarChar(20)")>  _
+	Public Property PER_permiso() As String
+		Get
+			Return Me._PER_permiso
+		End Get
+		Set
+			If (String.Equals(Me._PER_permiso, value) = false) Then
+				Me.OnPER_permisoChanging(value)
+				Me.SendPropertyChanging
+				Me._PER_permiso = value
+				Me.SendPropertyChanged("PER_permiso")
+				Me.OnPER_permisoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PER_abm", DbType:="VarChar(5)")>  _
+	Public Property PER_abm() As String
+		Get
+			Return Me._PER_abm
+		End Get
+		Set
+			If (String.Equals(Me._PER_abm, value) = false) Then
+				Me.OnPER_abmChanging(value)
+				Me.SendPropertyChanging
+				Me._PER_abm = value
+				Me.SendPropertyChanged("PER_abm")
+				Me.OnPER_abmChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USU_id_usuario", DbType:="Int")>  _
+	Public Property USU_id_usuario() As System.Nullable(Of Integer)
+		Get
+			Return Me._USU_id_usuario
+		End Get
+		Set
+			If (Me._USU_id_usuario.Equals(value) = false) Then
+				If Me._USUARIO.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnUSU_id_usuarioChanging(value)
+				Me.SendPropertyChanging
+				Me._USU_id_usuario = value
+				Me.SendPropertyChanged("USU_id_usuario")
+				Me.OnUSU_id_usuarioChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USUARIO_PERMISO", Storage:="_USUARIO", ThisKey:="USU_id_usuario", OtherKey:="USU_id_usuario", IsForeignKey:=true)>  _
+	Public Property USUARIO() As USUARIO
+		Get
+			Return Me._USUARIO.Entity
+		End Get
+		Set
+			Dim previousValue As USUARIO = Me._USUARIO.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._USUARIO.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._USUARIO.Entity = Nothing
+					previousValue.PERMISO.Remove(Me)
+				End If
+				Me._USUARIO.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.PERMISO.Add(Me)
+					Me._USU_id_usuario = value.USU_id_usuario
+				Else
+					Me._USU_id_usuario = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("USUARIO")
 			End If
 		End Set
 	End Property

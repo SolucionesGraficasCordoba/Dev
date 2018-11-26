@@ -229,11 +229,13 @@
         Me.Close()
     End Sub
 
-    Private Sub GroupNuevoCliente_Enter(sender As System.Object, e As System.EventArgs) Handles GroupNuevoCliente.Enter
-
-    End Sub
-
-    Private Sub txtTelefono_Cliente_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTelefono_Cliente.TextChanged
-
+    Sub autoCompletarTexbox(ByVal campoTexto As TextBox)
+        Try
+            Dim autocompletar = From auto In datacontext.CLIENTE
+                                Select auto.CLI_razon_social
+            campoTexto.AutoCompleteCustomSource.Add(autocompletar("CLI_razon_social"))
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
     End Sub
 End Class
