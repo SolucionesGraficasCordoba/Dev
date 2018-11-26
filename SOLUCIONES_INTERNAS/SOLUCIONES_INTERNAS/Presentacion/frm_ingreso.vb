@@ -62,6 +62,7 @@
 
 
                 Select Case permisos.PER_permiso
+
                     Case "USUARIO"
                         If permisos.PER_abm = "A" Then
                             Usuario(True, flagb, flagm)
@@ -75,6 +76,51 @@
                             Usuario(flaga, flagb, True)
                             flagm = 1
                         End If
+                        '-------------------------------------------------------
+                    Case "COLABORADOR"
+                        If permisos.PER_abm = "A" Then
+                            Colaborador(True, flagb, flagm)
+                            flaga = 1
+                        End If
+                        If permisos.PER_abm = "B" Then
+                            Colaborador(flaga, True, flagm)
+                            flagb = 1
+                        End If
+                        If permisos.PER_abm = "M" Then
+                            Colaborador(flaga, flagb, True)
+                            flagm = 1
+                        End If
+                        '-----------------------------------------------
+
+                    Case "VENDEDOR"
+                        If permisos.PER_abm = "A" Then
+                            Vendedor(True, flagb, flagm)
+                            flaga = 1
+                        End If
+                        If permisos.PER_abm = "B" Then
+                            Vendedor(flaga, True, flagm)
+                            flagb = 1
+                        End If
+                        If permisos.PER_abm = "M" Then
+                            Vendedor(flaga, flagb, True)
+                            flagm = 1
+                        End If
+                        '-----------------------------------------------
+
+                    Case "CLIENTE"
+                        If permisos.PER_abm = "A" Then
+                            Cliente(True, flagb, flagm)
+                            flaga = 1
+                        End If
+                        If permisos.PER_abm = "B" Then
+                            Cliente(flaga, True, flagm)
+                            flagb = 1
+                        End If
+                        If permisos.PER_abm = "M" Then
+                            Cliente(flaga, flagb, True)
+                            flagm = 1
+                        End If
+                        '-----------------------------------------------
 
                     Case "PIEZA"
                         If permisos.PER_abm = "A" Then
@@ -89,6 +135,10 @@
                             Pieza(flaga, flagb, True)
                             flagm = 1
                         End If
+                        '-----------------------------------------------
+
+
+
                 End Select
             Next
         End If
@@ -375,6 +425,10 @@
         frm_Principal.SectorToolStripMenuItem.DropDownItems(3).Visible = True
         'TAREA
         frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
+        'ORDEN
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Visible = True 'consultar
+        'RETRABAJO
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = True
     End Sub
 
     Sub Archivo()
@@ -411,7 +465,6 @@
         frm_Principal.ClienteToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.ClienteToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.ClienteToolStripMenuItem.DropDownItems(2).Visible = elim
-
     End Sub
 
     Sub Pieza(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
@@ -419,7 +472,6 @@
         frm_Principal.PiezaToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.PiezaToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.PiezaToolStripMenuItem.DropDownItems(2).Visible = elim
-
     End Sub
 
     Sub Sector(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
@@ -427,7 +479,6 @@
         frm_Principal.SectorToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.SectorToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.SectorToolStripMenuItem.DropDownItems(2).Visible = elim
-
     End Sub
 
     Sub Tarea(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
@@ -435,7 +486,6 @@
         frm_Principal.TareasToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = elim
-
     End Sub
 
     Sub Producto(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
@@ -453,17 +503,15 @@
 
     Sub Orden(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
         frm_Principal.OrdenTrabajoToolStripMenuItem.Enabled = True
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = True 'nueva
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = True 'modificar
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = True 'eliminar
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Visible = True 'consultar
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = nuevo 'nueva
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = modif 'modificar
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = elim 'eliminar
     End Sub
 
     Sub Retrabajo(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
         frm_Principal.ReTrabajoToolStripMenuItem1.Enabled = True
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = True
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = True
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = True
     End Sub
 
     Sub Etiquetas()

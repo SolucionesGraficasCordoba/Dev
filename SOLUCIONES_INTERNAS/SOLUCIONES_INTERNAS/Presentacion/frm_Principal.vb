@@ -1311,6 +1311,7 @@ Public Class frm_Principal
     End Sub
 
     Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
         Dim c As Control
         For Each c In Me.Controls
             If TypeOf c Is MdiClient Then
@@ -1326,20 +1327,8 @@ Public Class frm_Principal
         frm_Generar_Informe.Show()
     End Sub
 
-    Private Sub GenerarInformesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles GenerarInformesToolStripMenuItem.Click
-        '   MsgBox("AREA EN CONSTRUCCION...!!!, DISCULPE LAS MOLESTIAS", MsgBoxStyle.OkOnly)
-    End Sub
-
-    Private Sub AyudaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AyudaToolStripMenuItem.Click
+    Private Sub AyudaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AcercadeToolStripMenuItem.Click
         frm_Acerca_de.ShowDialog()
-    End Sub
-
-    Private Sub GráficosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-
-    End Sub
-
-    Private Sub TareasToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TareasToolStripMenuItem.Click
-
     End Sub
 
     Private Sub DiariasPorColaboradorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DiariasPorColaboradorToolStripMenuItem.Click
