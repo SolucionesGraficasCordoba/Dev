@@ -13,6 +13,9 @@
         cargargrilla()
         Label6.Text = dgvLista_Clientes.Rows.Count
         btnNuevo_Cliente.Visible = False
+        abrir()
+        autoCompletarTexbox(txt_razonsocial_cliente)
+        ' autoCompletarTexbox(txt_razonsocial_cliente)
     End Sub
 
     Private Sub btnGuardar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Cliente.Click
@@ -231,11 +234,13 @@
 
     Sub autoCompletarTexbox(ByVal campoTexto As TextBox)
         Try
-            Dim autocompletar = From auto In datacontext.CLIENTE
-                                Select auto.CLI_razon_social
+            Dim autocompletar = (From auto In datacontext.CLIENTE
+                                Select auto.CLI_razon_social).ToList()(0)
             campoTexto.AutoCompleteCustomSource.Add(autocompletar("CLI_razon_social"))
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
     End Sub
+
+
 End Class

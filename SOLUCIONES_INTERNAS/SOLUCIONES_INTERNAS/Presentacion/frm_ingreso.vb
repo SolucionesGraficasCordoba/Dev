@@ -7,14 +7,41 @@
 
     Private Sub btnIngresar_Click(sender As System.Object, e As System.EventArgs) Handles btnIngresar.Click
         'DESHABILITA PERMISOS
-        frm_Principal.ArchivoToolStripMenuItem.Enabled = False
         frm_Principal.UsuarioToolStripMenuItem.Enabled = False
+        frm_Principal.UsuarioToolStripMenuItem.DropDownItems(0).Enabled = False
+        frm_Principal.UsuarioToolStripMenuItem.DropDownItems(1).Enabled = False
+        frm_Principal.UsuarioToolStripMenuItem.DropDownItems(2).Enabled = False
+
         frm_Principal.ColaboradorToolStripMenuItem.Enabled = False
+        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(0).Enabled = False
+        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(1).Enabled = False
+        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(2).Enabled = False
+
         frm_Principal.VendedorToolStripMenuItem.Enabled = False
+        frm_Principal.VendedorToolStripMenuItem.DropDownItems(0).Enabled = False
+        frm_Principal.VendedorToolStripMenuItem.DropDownItems(1).Enabled = False
+        frm_Principal.VendedorToolStripMenuItem.DropDownItems(2).Enabled = False
+
         frm_Principal.ClienteToolStripMenuItem.Enabled = False
+        frm_Principal.ClienteToolStripMenuItem.DropDownItems(0).Enabled = False
+        frm_Principal.ClienteToolStripMenuItem.DropDownItems(1).Enabled = False
+        frm_Principal.ClienteToolStripMenuItem.DropDownItems(2).Enabled = False
+
         frm_Principal.PiezaToolStripMenuItem.Enabled = False
+        frm_Principal.PiezaToolStripMenuItem.DropDownItems(0).Enabled = False
+        frm_Principal.PiezaToolStripMenuItem.DropDownItems(1).Enabled = False
+        frm_Principal.PiezaToolStripMenuItem.DropDownItems(2).Enabled = False
+
         frm_Principal.SectorToolStripMenuItem.Enabled = False
+        frm_Principal.SectorToolStripMenuItem.DropDownItems(0).Enabled = False
+        frm_Principal.SectorToolStripMenuItem.DropDownItems(1).Enabled = False
+        frm_Principal.SectorToolStripMenuItem.DropDownItems(2).Enabled = False
+
         frm_Principal.TareasToolStripMenuItem.Enabled = False
+        frm_Principal.TareasToolStripMenuItem.DropDownItems(0).Enabled = False
+        frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Enabled = False
+        frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Enabled = False
+
         frm_Principal.ProductoToolStripMenuItem.Enabled = False
         frm_Principal.OrdenTrabajoToolStripMenuItem.Enabled = False
         frm_Principal.ReTrabajoToolStripMenuItem1.Enabled = False
@@ -32,19 +59,14 @@
 
         Select Case Buscausuario.USU_perfil
             Case "SUPERVISOR"
-                Usuario(False, False, False)
-                Colaborador(False, False, False)
-                Vendedor(False, False, False)
                 Cliente(True, True, True)
-                Pieza(True, True, True)
-                Sector(True, True, True)
                 Tarea(True, True, True)
                 Producto(True, True, True)
                 Orden(True, True, True)
                 Retrabajo(True, True, True)
-                Etiquetas()
+                ' Etiquetas()
                 Estadistica()
-                CorreoElectronico()
+                '  CorreoElectronico()
             Case "ADMINISTRADOR"
                 Usuario(True, True, True)
                 Colaborador(True, True, True)
@@ -506,12 +528,12 @@
         frm_Principal.ArchivoToolStripMenuItem.Enabled = True
         frm_Principal.ArchivoToolStripMenuItem.DropDownItems(0).Enabled = True
         frm_Principal.ArchivoToolStripMenuItem.DropDownItems(1).Enabled = True
+
         'COLABORADOR
         frm_Principal.ColaboradorToolStripMenuItem.Enabled = True
 
         frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(3).Enabled = True
         'VENDEDOR
-
         frm_Principal.VendedorToolStripMenuItem.DropDownItems(3).Enabled = True
         'CLIENTE
         frm_Principal.ClienteToolStripMenuItem.DropDownItems(3).Enabled = True
