@@ -5,8 +5,8 @@
         txt_usuario.Focus()
     End Sub
 
-    Private Sub btnIngresar_Click(sender As System.Object, e As System.EventArgs) Handles btnIngresar.Click
-        'DESHABILITA PERMISOS
+    Sub DeshabilitarGeneral()
+
         frm_Principal.UsuarioToolStripMenuItem.Enabled = False
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(0).Enabled = False
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(1).Enabled = False
@@ -43,15 +43,35 @@
         frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Enabled = False
 
         frm_Principal.ProductoToolStripMenuItem.Enabled = False
+        frm_Principal.GestiónDeProductosToolStripMenuItem.Enabled = False
+        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Enabled = False
+        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Enabled = False
+        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Enabled = False
+
+        frm_Principal.StockDeProductosToolStripMenuItem.Enabled = False
+        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Enabled = False
+        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Enabled = False
+        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Enabled = False
+
         frm_Principal.OrdenTrabajoToolStripMenuItem.Enabled = False
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Enabled = False
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Enabled = False
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Enabled = False
+
         frm_Principal.ReTrabajoToolStripMenuItem1.Enabled = False
+        frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(0).Enabled = False
+        frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(1).Enabled = False
+
         frm_Principal.EtiquetasToolStripMenuItem.Enabled = False
         frm_Principal.EstadisticasToolStripMenuItem.Enabled = False
         frm_Principal.CorreoElectrónicoToolStripMenuItem.Enabled = False
         frm_Principal.AcercadeToolStripMenuItem.Enabled = False
+    End Sub
 
-        'HABILITAR CONSULTAS (HABILITA LAS PESTAÑAS COMUN A TODOS LOS USUARIO. EJ.: ARCHIVO, ACERCA DE)
-        habilitargeneral()
+    Private Sub btnIngresar_Click(sender As System.Object, e As System.EventArgs) Handles btnIngresar.Click
+
+        DeshabilitarGeneral()
+        HabilitarGeneral()
 
         'HABILITA SEGUN PERFIL USUARIO
         '  Try
@@ -262,72 +282,6 @@
         End If
         If Buscausuario.USU_perfil = "SUPERVISOR" Then
 
-            'frm_Principal.UsuarioToolStripMenuItem.Visible = True
-            'frm_Principal.UsuarioToolStripMenuItem.DropDownItems(0).Visible = False
-            'frm_Principal.UsuarioToolStripMenuItem.DropDownItems(1).Visible = False
-            'frm_Principal.UsuarioToolStripMenuItem.DropDownItems(2).Visible = False
-            'frm_Principal.UsuarioToolStripMenuItem.DropDownItems(3).Visible = False
-
-            'frm_Principal.ColaboradorToolStripMenuItem.Visible = False
-            'frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(0).Visible = False
-            'frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(1).Visible = False
-            'frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(2).Visible = False
-            'frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(3).Visible = False
-
-            'frm_Principal.VendedorToolStripMenuItem.Visible = False
-            'frm_Principal.VendedorToolStripMenuItem.DropDownItems(0).Visible = False
-            'frm_Principal.VendedorToolStripMenuItem.DropDownItems(1).Visible = False
-            'frm_Principal.VendedorToolStripMenuItem.DropDownItems(2).Visible = False
-            'frm_Principal.VendedorToolStripMenuItem.DropDownItems(3).Visible = False
-
-            'frm_Principal.ClienteToolStripMenuItem.Visible = True
-            'frm_Principal.ClienteToolStripMenuItem.DropDownItems(0).Visible = True
-            'frm_Principal.ClienteToolStripMenuItem.DropDownItems(1).Visible = False
-            'frm_Principal.ClienteToolStripMenuItem.DropDownItems(2).Visible = False
-            'frm_Principal.ClienteToolStripMenuItem.DropDownItems(3).Visible = True
-
-            'frm_Principal.PiezaToolStripMenuItem.Visible = False
-            'frm_Principal.PiezaToolStripMenuItem.DropDownItems(0).Visible = False
-            'frm_Principal.PiezaToolStripMenuItem.DropDownItems(1).Visible = False
-            'frm_Principal.PiezaToolStripMenuItem.DropDownItems(2).Visible = False
-            'frm_Principal.PiezaToolStripMenuItem.DropDownItems(3).Visible = False
-
-            'frm_Principal.SectorToolStripMenuItem.Visible = False
-            'frm_Principal.SectorToolStripMenuItem.DropDownItems(0).Visible = False
-            'frm_Principal.SectorToolStripMenuItem.DropDownItems(1).Visible = False
-            'frm_Principal.SectorToolStripMenuItem.DropDownItems(2).Visible = False
-            'frm_Principal.SectorToolStripMenuItem.DropDownItems(3).Visible = False
-
-            'frm_Principal.TareasToolStripMenuItem.Visible = True
-            'frm_Principal.TareasToolStripMenuItem.DropDownItems(0).Visible = True
-            'frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = True
-            'frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = True
-            'frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = True
-
-            'frm_Principal.ProductoToolStripMenuItem.Visible = True
-
-            'frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
-            'frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
-            'frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
-
-            'frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
-            'frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
-            'frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
-            'frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(3).Visible = True
-
-            'frm_Principal.OrdenTrabajoToolStripMenuItem.Visible = True
-            'frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = True 'nueva
-            'frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = True 'modificar
-            'frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = True 'eliminar
-            'frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Visible = True 'consultar
-
-            'frm_Principal.ReTrabajoToolStripMenuItem1.Visible = True
-            'frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(0).Visible = True 'nueva
-            'frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(1).Visible = True 'eliminar
-            'frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(2).Visible = True 'consultar
-
-            'frm_Principal.EstadisticasToolStripMenuItem.Visible = True
-
         ElseIf Buscausuario.USU_perfil = "TAREA" Then
             Archivo()
 
@@ -523,7 +477,7 @@
         'End Try
     End Sub
 
-    Sub habilitargeneral()
+    Sub HabilitarGeneral()
         'ARCHIVO
         frm_Principal.ArchivoToolStripMenuItem.Enabled = True
         frm_Principal.ArchivoToolStripMenuItem.DropDownItems(0).Enabled = True
