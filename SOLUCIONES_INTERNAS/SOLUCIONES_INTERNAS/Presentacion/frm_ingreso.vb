@@ -8,59 +8,69 @@
     Sub DeshabilitarGeneral()
 
         frm_Principal.UsuarioToolStripMenuItem.Enabled = False
-        frm_Principal.UsuarioToolStripMenuItem.DropDownItems(0).Enabled = False
-        frm_Principal.UsuarioToolStripMenuItem.DropDownItems(1).Enabled = False
-        frm_Principal.UsuarioToolStripMenuItem.DropDownItems(2).Enabled = False
+        frm_Principal.UsuarioToolStripMenuItem.DropDownItems(0).Enabled = False 'nuevo
+        frm_Principal.UsuarioToolStripMenuItem.DropDownItems(1).Enabled = False 'modificar
+        frm_Principal.UsuarioToolStripMenuItem.DropDownItems(2).Enabled = False 'eliminar
+        frm_Principal.UsuarioToolStripMenuItem.DropDownItems(3).Enabled = False 'consultar
 
         frm_Principal.ColaboradorToolStripMenuItem.Enabled = False
-        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(0).Enabled = False
-        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(1).Enabled = False
-        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(2).Enabled = False
+        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(0).Enabled = False 'nuevo
+        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(1).Enabled = False 'modificar
+        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(2).Enabled = False 'eliminar
+        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(3).Enabled = False 'consultar
 
         frm_Principal.VendedorToolStripMenuItem.Enabled = False
-        frm_Principal.VendedorToolStripMenuItem.DropDownItems(0).Enabled = False
-        frm_Principal.VendedorToolStripMenuItem.DropDownItems(1).Enabled = False
-        frm_Principal.VendedorToolStripMenuItem.DropDownItems(2).Enabled = False
+        frm_Principal.VendedorToolStripMenuItem.DropDownItems(0).Enabled = False 'nuevo
+        frm_Principal.VendedorToolStripMenuItem.DropDownItems(1).Enabled = False 'modificar
+        frm_Principal.VendedorToolStripMenuItem.DropDownItems(2).Enabled = False 'eliminar
+        frm_Principal.VendedorToolStripMenuItem.DropDownItems(3).Enabled = False 'consultar
 
         frm_Principal.ClienteToolStripMenuItem.Enabled = False
-        frm_Principal.ClienteToolStripMenuItem.DropDownItems(0).Enabled = False
-        frm_Principal.ClienteToolStripMenuItem.DropDownItems(1).Enabled = False
-        frm_Principal.ClienteToolStripMenuItem.DropDownItems(2).Enabled = False
+        frm_Principal.ClienteToolStripMenuItem.DropDownItems(0).Enabled = False 'nuevo
+        frm_Principal.ClienteToolStripMenuItem.DropDownItems(1).Enabled = False 'modificar
+        frm_Principal.ClienteToolStripMenuItem.DropDownItems(2).Enabled = False 'eliminar
+        frm_Principal.ClienteToolStripMenuItem.DropDownItems(3).Enabled = False 'consultar
 
         frm_Principal.PiezaToolStripMenuItem.Enabled = False
-        frm_Principal.PiezaToolStripMenuItem.DropDownItems(0).Enabled = False
-        frm_Principal.PiezaToolStripMenuItem.DropDownItems(1).Enabled = False
-        frm_Principal.PiezaToolStripMenuItem.DropDownItems(2).Enabled = False
+        frm_Principal.PiezaToolStripMenuItem.DropDownItems(0).Enabled = False 'nuevo
+        frm_Principal.PiezaToolStripMenuItem.DropDownItems(1).Enabled = False 'modificar
+        frm_Principal.PiezaToolStripMenuItem.DropDownItems(2).Enabled = False 'eliminar
+        frm_Principal.PiezaToolStripMenuItem.DropDownItems(2).Enabled = False 'consultar
 
         frm_Principal.SectorToolStripMenuItem.Enabled = False
-        frm_Principal.SectorToolStripMenuItem.DropDownItems(0).Enabled = False
-        frm_Principal.SectorToolStripMenuItem.DropDownItems(1).Enabled = False
-        frm_Principal.SectorToolStripMenuItem.DropDownItems(2).Enabled = False
+        frm_Principal.SectorToolStripMenuItem.DropDownItems(0).Enabled = False 'nuevo
+        frm_Principal.SectorToolStripMenuItem.DropDownItems(1).Enabled = False 'modificar
+        frm_Principal.SectorToolStripMenuItem.DropDownItems(2).Enabled = False 'eliminar
+        frm_Principal.SectorToolStripMenuItem.DropDownItems(3).Enabled = False 'consultar
 
         frm_Principal.TareasToolStripMenuItem.Enabled = False
-        frm_Principal.TareasToolStripMenuItem.DropDownItems(0).Enabled = False
-        frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Enabled = False
-        frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Enabled = False
+        frm_Principal.TareasToolStripMenuItem.DropDownItems(0).Enabled = False 'nuevo
+        frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Enabled = False 'modificar
+        frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Enabled = False 'eliminar
+        frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Enabled = False 'consultar
 
         frm_Principal.ProductoToolStripMenuItem.Enabled = False
         frm_Principal.GestiónDeProductosToolStripMenuItem.Enabled = False
-        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Enabled = False
-        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Enabled = False
-        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Enabled = False
+        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Enabled = False 'nuevo
+        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Enabled = False 'modificar
+        frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Enabled = False 'eliminar
 
         frm_Principal.StockDeProductosToolStripMenuItem.Enabled = False
-        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Enabled = False
-        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Enabled = False
-        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Enabled = False
+        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Enabled = False 'alta
+        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Enabled = False 'baja
+        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Enabled = False 'consulta producto
+        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(3).Enabled = False 'consulta movimiento producto
 
         frm_Principal.OrdenTrabajoToolStripMenuItem.Enabled = False
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Enabled = False
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Enabled = False
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Enabled = False
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Enabled = False 'nuevo
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Enabled = False 'modificar
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Enabled = False 'eliminar
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Enabled = False 'consultar
 
         frm_Principal.ReTrabajoToolStripMenuItem1.Enabled = False
-        frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(0).Enabled = False
-        frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(1).Enabled = False
+        frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(0).Enabled = False 'nuevo
+        frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(1).Enabled = False 'eliminar
+        frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(2).Enabled = False 'consultar
 
         frm_Principal.EtiquetasToolStripMenuItem.Enabled = False
         frm_Principal.EstadisticasToolStripMenuItem.Enabled = False
@@ -71,15 +81,22 @@
     Private Sub btnIngresar_Click(sender As System.Object, e As System.EventArgs) Handles btnIngresar.Click
 
         DeshabilitarGeneral()
-        HabilitarGeneral()
+        '  HabilitarGeneral()
 
         'HABILITA SEGUN PERFIL USUARIO
         '  Try
         Dim Buscausuario = (From I In datacontext.USUARIO Where I.USU_usuario = (txt_usuario.Text) And I.USU_contraseña = (txt_contraseña.Text)).ToList()(0)
 
         Select Case Buscausuario.USU_perfil
+
+            Case "ADMINISTRADOR"
+                'tiene habilitado todas las pestañas, las cuales se habilitan desde el Sub HabilitarGeneral()
+
+            Case "GERENCIA"
+                'tiene habilitado todas las pestañas, las cuales se habilitan desde el Sub HabilitarGeneral()
+
             Case "SUPERVISOR"
-                Usuario(False, False, False)
+                Usuario(False, False, False, False)
                 Colaborador(False, False, False)
                 Vendedor(False, False, False)
                 Cliente(False, False, False)
@@ -91,57 +108,17 @@
                 Retrabajo(False, False, False)
                 ' Etiquetas()
                 ' Estadistica()
-                '  CorreoElectronico()
-            Case "ADMINISTRADOR"
-                Usuario(True, True, True)
-                Colaborador(True, True, True)
-                Vendedor(True, True, True)
-                Cliente(True, True, True)
-                Pieza(True, True, True)
-                Sector(True, True, True)
-                Tarea(True, True, True)
-                Producto(True, True, True)
-                Orden(True, True, True)
-                Retrabajo(True, True, True)
-                Etiquetas()
-                Estadistica()
-                CorreoElectronico()
-            Case "GERENCIA"
-                Usuario(True, True, True)
-                Colaborador(True, True, True)
-                Vendedor(True, True, True)
-                Cliente(True, True, True)
-                Pieza(True, True, True)
-                Sector(True, True, True)
-                Tarea(True, True, True)
-                Producto(True, True, True)
-                Orden(True, True, True)
-                Retrabajo(True, True, True)
-                Etiquetas()
-                Estadistica()
-                CorreoElectronico()
+                ' CorreoElectronico()
+
             Case "COLABORADOR"
                 HabilitarGeneral()
-                '    Usuario(False, False, False)
-                '  Colaborador(False, False, False)
-                '  Vendedor(False, False, False)
-                Cliente(False, False, False)
-                'Pieza(False, False, False)
-               ' Sector(False, False, False)
-                Tarea(False, False, False)
-                Producto(False, False, False)
-                Orden(False, False, False)
-                Retrabajo(False, False, False)
-                Etiquetas()
-                Estadistica()
-                CorreoElectronico()
         End Select
 
         'HABILITA SEGUN PERMISOS ESPECIALES
         Dim contadorpermisos As Integer = (From P In datacontext.PERMISO Where P.USU_id_usuario = Buscausuario.USU_id_usuario).Count
         If contadorpermisos > 0 Then
 
-            Dim flaga = 0, flagb = 0, flagm = 0
+            Dim flaga = 0, flagb = 0, flagm = 0, flagc = 0
             For i = 0 To contadorpermisos - 1
                 Dim permisos = (From A In datacontext.PERMISO Select A.PER_permiso, A.PER_abm, A.USU_id_usuario Where USU_id_usuario = Buscausuario.USU_id_usuario).ToList()(i)
 
@@ -149,15 +126,19 @@
 
                     Case "USUARIO"
                         If permisos.PER_abm = "A" Then
-                            Usuario(True, flagb, flagm)
+                            Usuario(True, flagb, flagm, flagc)
                             flaga = 1
                         End If
                         If permisos.PER_abm = "B" Then
-                            Usuario(flaga, True, flagm)
+                            Usuario(flaga, True, flagm, flagc)
                             flagb = 1
                         End If
                         If permisos.PER_abm = "M" Then
-                            Usuario(flaga, flagb, True)
+                            Usuario(flaga, flagb, True, flagc)
+                            flagm = 1
+                        End If
+                        If permisos.PER_abm = "C" Then
+                            Usuario(flaga, flagb, flagm, True)
                             flagm = 1
                         End If
                         '-------------------------------------------------------
@@ -172,6 +153,10 @@
                         End If
                         If permisos.PER_abm = "M" Then
                             Colaborador(flaga, flagb, True)
+                            flagm = 1
+                        End If
+                        If permisos.PER_abm = "C" Then
+                            Colaborador(flaga, flagb, flagm, True)
                             flagm = 1
                         End If
                         '-----------------------------------------------
@@ -189,6 +174,10 @@
                             Vendedor(flaga, flagb, True)
                             flagm = 1
                         End If
+                        If permisos.PER_abm = "C" Then
+                            Vendedor(flaga, flagb, flagm, True)
+                            flagm = 1
+                        End If
                         '-----------------------------------------------
 
                     Case "CLIENTE"
@@ -202,6 +191,10 @@
                         End If
                         If permisos.PER_abm = "M" Then
                             Cliente(flaga, flagb, True)
+                            flagm = 1
+                        End If
+                        If permisos.PER_abm = "C" Then
+                            Cliente(flaga, flagb, flagm, True)
                             flagm = 1
                         End If
                         '-----------------------------------------------
@@ -219,6 +212,10 @@
                             Pieza(flaga, flagb, True)
                             flagm = 1
                         End If
+                        If permisos.PER_abm = "C" Then
+                            Pieza(flaga, flagb, flagm, True)
+                            flagm = 1
+                        End If
                         '-----------------------------------------------
 
                     Case "SECTOR"
@@ -232,6 +229,10 @@
                         End If
                         If permisos.PER_abm = "M" Then
                             Sector(flaga, flagb, True)
+                            flagm = 1
+                        End If
+                        If permisos.PER_abm = "C" Then
+                            Sector(flaga, flagb, flagm, True)
                             flagm = 1
                         End If
                         '-----------------------------------------------
@@ -249,6 +250,10 @@
                             Tarea(flaga, flagb, True)
                             flagm = 1
                         End If
+                        If permisos.PER_abm = "C" Then
+                            Tarea(flaga, flagb, flagm, True)
+                            flagm = 1
+                        End If
                         '-----------------------------------------------
 
                     Case "PRODUCTO"
@@ -264,6 +269,10 @@
                             Producto(flaga, flagb, True)
                             flagm = 1
                         End If
+                        If permisos.PER_abm = "C" Then
+                            Producto(flaga, flagb, flagm, True)
+                            flagm = 1
+                        End If
                         '-----------------------------------------------
 
                     Case "ORDEN TRABAJO"
@@ -277,6 +286,10 @@
                         End If
                         If permisos.PER_abm = "M" Then
                             Orden(flaga, flagb, True)
+                            flagm = 1
+                        End If
+                        If permisos.PER_abm = "C" Then
+                            Orden(flaga, flagb, flagm, True)
                             flagm = 1
                         End If
                         '-----------------------------------------------
@@ -299,25 +312,11 @@
             Next
         End If
         If Buscausuario.USU_perfil = "SUPERVISOR" Then
+            Usuario(False, False, False, False)
 
         ElseIf Buscausuario.USU_perfil = "COLABORADOR" Then
 
         ElseIf Buscausuario.USU_perfil = "ADMINISTRADOR" Then
-            'Archivo()
-            'Usuario()
-            'Colaborador()
-            'Vendedor()
-            'Cliente()
-            'Pieza()
-            'Sector()
-            'Tarea()
-            'Producto()
-            'Orden()
-            'Retrabajo()
-            'Etiquetas()
-            'Estadistica()
-            'CorreoElectronico()
-            'Acercade()
 
         ElseIf Buscausuario.USU_perfil = "GERENCIA" Then
             Colaborador(True, True, True)
@@ -353,10 +352,11 @@
     End Sub
 
     Sub HabilitarGeneral()
-        frm_Principal.UsuarioToolStripMenuItem.Enabled = True
+        frm_Principal.UsuarioToolStripMenuItem.Visible = True
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(0).Enabled = True
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(1).Enabled = True
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(2).Enabled = True
+        frm_Principal.UsuarioToolStripMenuItem.DropDownItems(3).Enabled = True
 
         frm_Principal.ColaboradorToolStripMenuItem.Enabled = True
         frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(0).Enabled = True
@@ -420,78 +420,84 @@
         frm_Principal.ArchivoToolStripMenuItem.DropDownItems(1).Enabled = True
     End Sub
 
-    Sub Usuario(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+    Sub Usuario(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean, ByVal cons As Boolean)
         frm_Principal.UsuarioToolStripMenuItem.Enabled = True
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(2).Visible = elim
-        '  frm_Principal.UsuarioToolStripMenuItem.DropDownItems(3).Visible = True
+        frm_Principal.UsuarioToolStripMenuItem.DropDownItems(3).Visible = cons
     End Sub
 
-    Sub Colaborador(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+    Sub Colaborador(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean, ByVal cons As Boolean)
         frm_Principal.ColaboradorToolStripMenuItem.Enabled = True
         frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(2).Visible = elim
+        frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(3).Visible = cons
     End Sub
 
-    Sub Vendedor(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+    Sub Vendedor(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean, ByVal cons As Boolean)
         frm_Principal.VendedorToolStripMenuItem.Enabled = True
         frm_Principal.VendedorToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.VendedorToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.VendedorToolStripMenuItem.DropDownItems(2).Visible = elim
+        frm_Principal.VendedorToolStripMenuItem.DropDownItems(3).Visible = cons
 
     End Sub
 
-    Sub Cliente(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+    Sub Cliente(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean, ByVal cons As Boolean)
         frm_Principal.ClienteToolStripMenuItem.Enabled = True
         frm_Principal.ClienteToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.ClienteToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.ClienteToolStripMenuItem.DropDownItems(2).Visible = elim
+        frm_Principal.ClienteToolStripMenuItem.DropDownItems(3).Visible = cons
     End Sub
 
-    Sub Pieza(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+    Sub Pieza(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean, ByVal cons As Boolean)
         frm_Principal.PiezaToolStripMenuItem.Enabled = True
         frm_Principal.PiezaToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.PiezaToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.PiezaToolStripMenuItem.DropDownItems(2).Visible = elim
+        frm_Principal.PiezaToolStripMenuItem.DropDownItems(3).Visible = cons
     End Sub
 
-    Sub Sector(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+    Sub Sector(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean, ByVal cons As Boolean)
         frm_Principal.SectorToolStripMenuItem.Enabled = True
         frm_Principal.SectorToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.SectorToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.SectorToolStripMenuItem.DropDownItems(2).Visible = elim
+        frm_Principal.SectorToolStripMenuItem.DropDownItems(3).Visible = cons
     End Sub
 
-    Sub Tarea(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+    Sub Tarea(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean, ByVal cons As Boolean)
         frm_Principal.TareasToolStripMenuItem.Enabled = True
         frm_Principal.TareasToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.TareasToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.TareasToolStripMenuItem.DropDownItems(2).Visible = elim
+        frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Visible = cons
     End Sub
 
-    Sub Producto(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+    Sub Producto(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean, ByVal alta As Boolean, ByVal baja As Boolean, ByVal cons_prod As Boolean, ByVal cons_mov As Boolean)
         frm_Principal.ProductoToolStripMenuItem.Enabled = True
 
         frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(2).Visible = elim
 
-        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Visible = True
-        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = True
-        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Visible = True
-        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(3).Visible = True
+        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(0).Visible = alta
+        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = baja
+        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Visible = cons_prod
+        frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(3).Visible = cons_mov
     End Sub
 
-    Sub Orden(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+    Sub Orden(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean, ByVal cons As Boolean)
         frm_Principal.OrdenTrabajoToolStripMenuItem.Enabled = True
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = nuevo 'nueva
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = modif 'modificar
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = elim 'eliminar
     End Sub
 
-    Sub Retrabajo(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+    Sub Retrabajo(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean, ByVal cons As Boolean)
         frm_Principal.ReTrabajoToolStripMenuItem1.Enabled = True
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = True
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = True
