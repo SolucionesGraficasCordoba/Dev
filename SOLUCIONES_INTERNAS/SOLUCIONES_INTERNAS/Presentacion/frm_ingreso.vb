@@ -495,20 +495,29 @@
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = nuevo 'nueva
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = modif 'modificar
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = elim 'eliminar
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Visible = cons 'consultar
     End Sub
 
-    Sub Retrabajo(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean, ByVal cons As Boolean)
+    Sub Retrabajo(ByVal nuevo As Boolean, ByVal elim As Boolean, ByVal cons As Boolean)
         frm_Principal.ReTrabajoToolStripMenuItem1.Enabled = True
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = True
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = True
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = nuevo 'nuevo
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = elim 'eliminar
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = cons 'consultar
+    End Sub
+
+    Sub Estadistica(ByVal tarea As Boolean, ByVal diaria As Boolean, ByVal mensual As Boolean, ByVal orden As Boolean, ByVal movim As Boolean)
+        frm_Principal.EstadisticasToolStripMenuItem.Enabled = True 'pestaña
+
+        frm_Principal.TareasToolStripMenuItem1.Enabled = True 'tarea
+        frm_Principal.TareasToolStripMenuItem1.DropDownItems(0).Visible = diaria 'diarias por colaborador
+        frm_Principal.TareasToolStripMenuItem1.DropDownItems(1).Visible = mensual 'mensuales por sector
+
+        frm_Principal.OrdenDeTrabajoToolStripMenuItem.Enabled = True 'orden
+        frm_Principal.OrdenDeTrabajoToolStripMenuItem.DropDownItems(0).Visible = movim 'movimiento de orden
     End Sub
 
     Sub Etiquetas()
         frm_Principal.EtiquetasToolStripMenuItem.Enabled = True
-    End Sub
-
-    Sub Estadistica()
-        frm_Principal.EstadisticasToolStripMenuItem.Enabled = True
     End Sub
 
     Sub CorreoElectronico()
