@@ -80,7 +80,7 @@
 
     Private Sub btnIngresar_Click(sender As System.Object, e As System.EventArgs) Handles btnIngresar.Click
 
-        DeshabilitarGeneral()
+        ' DeshabilitarGeneral()
         '  HabilitarGeneral()
 
         'HABILITA SEGUN PERFIL USUARIO
@@ -106,12 +106,12 @@
                 Producto(False, False, False, False, False, False, False)
                 Orden(True, True, True, False)
                 Retrabajo(False, False, False)
-                ' Etiquetas()
-                ' Estadistica()
-                ' CorreoElectronico()
+                Etiquetas()
+                Estadistica(False, False, False, False, False)
+                CorreoElectronico()
 
             Case "COLABORADOR"
-                HabilitarGeneral()
+                ' HabilitarGeneral()
         End Select
 
         'HABILITA SEGUN PERMISOS ESPECIALES
@@ -141,6 +141,7 @@
                             Usuario(flaga, flagb, flagm, True)
                         flagc = 1
                         End If
+
                         '-------------------------------------------------------
                     Case "COLABORADOR"
                         If permisos.PER_abm = "A" Then
@@ -318,7 +319,7 @@
                         End If
                         If permisos.PER_abm = "C" Then
                             Retrabajo(flaga, flagb, True)
-                            flagm = 1
+                            flagc = 1
                         End If
                         '-----------------------------------------------
                 End Select
@@ -326,11 +327,35 @@
         End If
         If Buscausuario.USU_perfil = "SUPERVISOR" Then
             Usuario(False, False, False, False)
-
+            Colaborador(False, False, False, False)
+            Vendedor(False, False, False, False)
+            Cliente(True, True, True, True)
+            Pieza(False, False, False, False)
+            Sector(False, False, False, False)
+            Tarea(True, True, True, True)
+            Producto(True, True, True, True, True, True, True)
+            Orden(True, True, True, True)
+            Retrabajo(True, True, True)
+            Etiquetas()
+            Estadistica(False, False, False, False, False)
+            CorreoElectronico()
+            Acercade()
         ElseIf Buscausuario.USU_perfil = "COLABORADOR" Then
 
         ElseIf Buscausuario.USU_perfil = "ADMINISTRADOR" Then
-
+            Colaborador(True, True, True, True)
+            Vendedor(True, True, True, True)
+            Cliente(True, True, True, True)
+            Pieza(True, True, True, True)
+            Sector(True, True, True, True)
+            Tarea(True, True, True, True)
+            Producto(True, True, True, True, True, True, True)
+            Orden(True, True, True, True)
+            Retrabajo(True, True, True)
+            Etiquetas()
+            Estadistica(True, True, True, True, True)
+            CorreoElectronico()
+            Acercade()
         ElseIf Buscausuario.USU_perfil = "GERENCIA" Then
             Colaborador(True, True, True, True)
             Vendedor(True, True, True, True)
@@ -434,7 +459,7 @@
     End Sub
 
     Sub Usuario(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean, ByVal cons As Boolean)
-        frm_Principal.UsuarioToolStripMenuItem.Enabled = True
+        frm_Principal.UsuarioToolStripMenuItem.Visible = True
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(2).Visible = elim
