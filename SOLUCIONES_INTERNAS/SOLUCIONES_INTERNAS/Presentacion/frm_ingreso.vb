@@ -97,14 +97,14 @@
 
             Case "SUPERVISOR"
                 Usuario(False, False, False, False)
-                Colaborador(False, False, False)
-                Vendedor(False, False, False)
-                Cliente(False, False, False)
-                Pieza(False, False, False)
-                Sector(False, False, False)
-                Tarea(True, True, True)
-                Producto(False, False, False)
-                Orden(True, True, True)
+                Colaborador(False, False, False, False)
+                Vendedor(False, False, False, False)
+                Cliente(False, False, False, False)
+                Pieza(False, False, False, False)
+                Sector(False, False, False, False)
+                Tarea(True, True, True, False)
+                Producto(False, False, False, False, False, False, False)
+                Orden(True, True, True, False)
                 Retrabajo(False, False, False)
                 ' Etiquetas()
                 ' Estadistica()
@@ -118,7 +118,7 @@
         Dim contadorpermisos As Integer = (From P In datacontext.PERMISO Where P.USU_id_usuario = Buscausuario.USU_id_usuario).Count
         If contadorpermisos > 0 Then
 
-            Dim flaga = 0, flagb = 0, flagm = 0, flagc = 0
+            Dim flaga = 0, flagb = 0, flagm = 0, flagc = 0, flagalta = 0, flagbaja = 0, flagconsprod = 0, flagconsmov = 0
             For i = 0 To contadorpermisos - 1
                 Dim permisos = (From A In datacontext.PERMISO Select A.PER_permiso, A.PER_abm, A.USU_id_usuario Where USU_id_usuario = Buscausuario.USU_id_usuario).ToList()(i)
 
@@ -139,20 +139,20 @@
                         End If
                         If permisos.PER_abm = "C" Then
                             Usuario(flaga, flagb, flagm, True)
-                            flagm = 1
+                        flagc = 1
                         End If
                         '-------------------------------------------------------
                     Case "COLABORADOR"
                         If permisos.PER_abm = "A" Then
-                            Colaborador(True, flagb, flagm)
+                            Colaborador(True, flagb, flagm, flagc)
                             flaga = 1
                         End If
                         If permisos.PER_abm = "B" Then
-                            Colaborador(flaga, True, flagm)
+                            Colaborador(flaga, True, flagm, flagc)
                             flagb = 1
                         End If
                         If permisos.PER_abm = "M" Then
-                            Colaborador(flaga, flagb, True)
+                            Colaborador(flaga, flagb, True, flagc)
                             flagm = 1
                         End If
                         If permisos.PER_abm = "C" Then
@@ -163,15 +163,15 @@
 
                     Case "VENDEDOR"
                         If permisos.PER_abm = "A" Then
-                            Vendedor(True, flagb, flagm)
+                            Vendedor(True, flagb, flagm, flagc)
                             flaga = 1
                         End If
                         If permisos.PER_abm = "B" Then
-                            Vendedor(flaga, True, flagm)
+                            Vendedor(flaga, True, flagm, flagc)
                             flagb = 1
                         End If
                         If permisos.PER_abm = "M" Then
-                            Vendedor(flaga, flagb, True)
+                            Vendedor(flaga, flagb, True, flagc)
                             flagm = 1
                         End If
                         If permisos.PER_abm = "C" Then
@@ -182,15 +182,15 @@
 
                     Case "CLIENTE"
                         If permisos.PER_abm = "A" Then
-                            Cliente(True, flagb, flagm)
+                            Cliente(True, flagb, flagm, flagc)
                             flaga = 1
                         End If
                         If permisos.PER_abm = "B" Then
-                            Cliente(flaga, True, flagm)
+                            Cliente(flaga, True, flagm, flagc)
                             flagb = 1
                         End If
                         If permisos.PER_abm = "M" Then
-                            Cliente(flaga, flagb, True)
+                            Cliente(flaga, flagb, True, flagc)
                             flagm = 1
                         End If
                         If permisos.PER_abm = "C" Then
@@ -201,15 +201,15 @@
 
                     Case "PIEZA"
                         If permisos.PER_abm = "A" Then
-                            Pieza(True, flagb, flagm)
+                            Pieza(True, flagb, flagm, flagc)
                             flaga = 1
                         End If
                         If permisos.PER_abm = "B" Then
-                            Pieza(flaga, True, flagm)
+                            Pieza(flaga, True, flagm, flagc)
                             flagb = 1
                         End If
                         If permisos.PER_abm = "M" Then
-                            Pieza(flaga, flagb, True)
+                            Pieza(flaga, flagb, True, flagc)
                             flagm = 1
                         End If
                         If permisos.PER_abm = "C" Then
@@ -220,15 +220,15 @@
 
                     Case "SECTOR"
                         If permisos.PER_abm = "A" Then
-                            Sector(True, flagb, flagm)
+                            Sector(True, flagb, flagm, flagc)
                             flaga = 1
                         End If
                         If permisos.PER_abm = "B" Then
-                            Sector(flaga, True, flagm)
+                            Sector(flaga, True, flagm, flagc)
                             flagb = 1
                         End If
                         If permisos.PER_abm = "M" Then
-                            Sector(flaga, flagb, True)
+                            Sector(flaga, flagb, True, flagc)
                             flagm = 1
                         End If
                         If permisos.PER_abm = "C" Then
@@ -239,15 +239,15 @@
 
                     Case "TAREA"
                         If permisos.PER_abm = "A" Then
-                            Tarea(True, flagb, flagm)
+                            Tarea(True, flagb, flagm, flagc)
                             flaga = 1
                         End If
                         If permisos.PER_abm = "B" Then
-                            Tarea(flaga, True, flagm)
+                            Tarea(flaga, True, flagm, flagc)
                             flagb = 1
                         End If
                         If permisos.PER_abm = "M" Then
-                            Tarea(flaga, flagb, True)
+                            Tarea(flaga, flagb, True, flagc)
                             flagm = 1
                         End If
                         If permisos.PER_abm = "C" Then
@@ -258,34 +258,47 @@
 
                     Case "PRODUCTO"
                         If permisos.PER_abm = "A" Then
-                            Producto(True, flagb, flagm)
+                            Producto(True, flagb, flagm, flagc, flagalta, flagbaja, flagconsprod)
                             flaga = 1
                         End If
                         If permisos.PER_abm = "B" Then
-                            Producto(flaga, True, flagm)
+                            Producto(flaga, True, flagm, flagc, flagalta, flagbaja, flagconsprod)
                             flagb = 1
                         End If
                         If permisos.PER_abm = "M" Then
-                            Producto(flaga, flagb, True)
+                            Producto(flaga, flagb, True, flagc, flagalta, flagbaja, flagconsprod)
                             flagm = 1
                         End If
                         If permisos.PER_abm = "C" Then
-                            Producto(flaga, flagb, flagm, True)
-                            flagm = 1
+                            Producto(flaga, flagb, flagm, True, flagalta, flagbaja, flagconsprod)
+                            flagc = 1
                         End If
+                        If permisos.PER_abm = "ALTA" Then
+                            Producto(flaga, flagb, flagm, flagc, True, flagbaja, flagconsprod)
+                            flagalta = 1
+                        End If
+                        If permisos.PER_abm = "BAJA" Then
+                            Producto(flaga, flagb, flagm, flagc, flagalta, True, flagconsprod)
+                            flagbaja = 1
+                        End If
+                        If permisos.PER_abm = "CONSULTA_PRODUCTO" Then
+                            Producto(flaga, flagb, flagm, flagc, flagalta, flagbaja, True)
+                            flagconsprod = 1
+                        End If
+
                         '-----------------------------------------------
 
                     Case "ORDEN TRABAJO"
                         If permisos.PER_abm = "A" Then
-                            Orden(True, flagb, flagm)
+                            Orden(True, flagb, flagm, flagc)
                             flaga = 1
                         End If
                         If permisos.PER_abm = "B" Then
-                            Orden(flaga, True, flagm)
+                            Orden(flaga, True, flagm, flagc)
                             flagb = 1
                         End If
                         If permisos.PER_abm = "M" Then
-                            Orden(flaga, flagb, True)
+                            Orden(flaga, flagb, True, flagc)
                             flagm = 1
                         End If
                         If permisos.PER_abm = "C" Then
@@ -303,7 +316,7 @@
                             Retrabajo(flaga, True, flagm)
                             flagb = 1
                         End If
-                        If permisos.PER_abm = "M" Then
+                        If permisos.PER_abm = "C" Then
                             Retrabajo(flaga, flagb, True)
                             flagm = 1
                         End If
@@ -319,17 +332,17 @@
         ElseIf Buscausuario.USU_perfil = "ADMINISTRADOR" Then
 
         ElseIf Buscausuario.USU_perfil = "GERENCIA" Then
-            Colaborador(True, True, True)
-            Vendedor(True, True, True)
-            Cliente(True, True, True)
-            Pieza(True, True, True)
-            Sector(True, True, True)
-            Tarea(True, True, True)
-            Producto(True, True, True)
-            Orden(True, True, True)
+            Colaborador(True, True, True, True)
+            Vendedor(True, True, True, True)
+            Cliente(True, True, True, True)
+            Pieza(True, True, True, True)
+            Sector(True, True, True, True)
+            Tarea(True, True, True, True)
+            Producto(True, True, True, True, True, True, True)
+            Orden(True, True, True, True)
             Retrabajo(True, True, True)
             Etiquetas()
-            Estadistica()
+            Estadistica(True, True, True, True, True)
             CorreoElectronico()
             Acercade()
         End If
