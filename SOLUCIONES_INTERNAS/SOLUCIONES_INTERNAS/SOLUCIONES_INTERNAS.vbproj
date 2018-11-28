@@ -101,6 +101,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modulo\Autocompletar_Textbox.vb" />
     <Compile Include="Modulo\Mail_Modulo.vb" />
     <Compile Include="Presentacion\frm_Acerca_de.Designer.vb">
       <DependentUpon>frm_Acerca_de.vb</DependentUpon>
