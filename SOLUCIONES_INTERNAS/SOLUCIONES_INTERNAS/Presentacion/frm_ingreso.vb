@@ -8,7 +8,7 @@
     Private Sub btnIngresar_Click(sender As System.Object, e As System.EventArgs) Handles btnIngresar.Click
 
         ' DeshabilitarGeneral()
-        '  HabilitarGeneral()
+        ' HabilitarGeneral()
 
         'HABILITA SEGUN PERFIL USUARIO
         '  Try
