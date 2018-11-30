@@ -1,4 +1,5 @@
 ﻿Imports System.Windows.Forms
+Imports automatico
 
 Public Class frm_Principal
 
@@ -1350,5 +1351,19 @@ Public Class frm_Principal
     Private Sub MovimientoDeÓrdenesToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles MovimientoDeÓrdenesToolStripMenuItem.Click
         frm_Movimiento_Orden.ShowDialog()
         frm_Movimiento_Orden.dgvMovimiento_Orden.ClearSelection()
+    End Sub
+
+    Dim hora As Integer
+    Dim minuto As Integer
+    Dim tempcadena As String
+    Private Sub Timer_automatico_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_automatico.Tick
+        hora = DateTime.Now.Hour
+        minuto = DateTime.Now.Minute
+        tempcadena = hora & ":" & minuto
+        If tempcadena = "13:21" Then
+            Dim lanzar_automatico As New Automatico
+            lanzar_automatico.informe_diario_tareas()
+        End If
+        
     End Sub
 End Class

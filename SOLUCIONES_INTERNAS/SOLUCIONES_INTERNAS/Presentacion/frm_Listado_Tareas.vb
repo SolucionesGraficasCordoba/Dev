@@ -18,7 +18,7 @@ Public Class frm_Listado_Tareas
     Dim fuente As iTextSharp.text.pdf.BaseFont = FontFactory.GetFont(FontFactory.HELVETICA).BaseFont
 
 
-    Private Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    Public Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         Label6.Text = dgvColaboradores.Rows.Count
 
@@ -2118,7 +2118,7 @@ Public Class frm_Listado_Tareas
     End Sub
 
     ' boton para generar informe diario--lo tengo que terminar
-    Private Sub Btn_informe_diario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_informe_diario.Click
+    Public Sub Btn_informe_diario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_informe_diario.Click
         Try
             contadorcolumnasvisibles = 0
 
@@ -2131,7 +2131,7 @@ Public Class frm_Listado_Tareas
             doc.Open()
 
             Dim encabezado As New Paragraph("Sector: " + cbo_sector.Text + "              " + _
-                                       "Fecha: " + dtpFecha.Text, New Font(fuente, 16, Font.Bold))
+                                       "Fecha: " + dtpFecha.Value, New Font(fuente, 16, Font.Bold))
             doc.Add(encabezado)
 
             For i = 0 To dgvColaboradores.RowCount - 1
