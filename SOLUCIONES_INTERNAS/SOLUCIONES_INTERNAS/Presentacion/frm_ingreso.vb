@@ -11,325 +11,325 @@
         ' HabilitarGeneral()
 
         'HABILITA SEGUN PERFIL USUARIO
-        '  Try
-        Dim Buscausuario = (From I In datacontext.USUARIO Where I.USU_usuario = (txt_usuario.Text) And I.USU_contraseña = (txt_contraseña.Text)).ToList()(0)
+        Try
+            Dim Buscausuario = (From I In datacontext.USUARIO Where I.USU_usuario = (txt_usuario.Text) And I.USU_contraseña = (txt_contraseña.Text)).ToList()(0)
 
-        Select Case Buscausuario.USU_perfil
+            Select Case Buscausuario.USU_perfil
 
-            Case "ADMINISTRADOR"
-                'tiene habilitado todas las pestañas, las cuales se habilitan desde el Sub HabilitarGeneral()
+                Case "ADMINISTRADOR"
+                    'tiene habilitado todas las pestañas, las cuales se habilitan desde el Sub HabilitarGeneral()
 
-            Case "GERENCIA"
-                'tiene habilitado todas las pestañas, las cuales se habilitan desde el Sub HabilitarGeneral()
+                Case "GERENCIA"
+                    'tiene habilitado todas las pestañas, las cuales se habilitan desde el Sub HabilitarGeneral()
 
-            Case "SUPERVISOR"
+                Case "SUPERVISOR"
+                    Usuario(False, False, False, False)
+                    Colaborador(False, False, False, False)
+                    Vendedor(False, False, False, False)
+                    Cliente(False, False, False, False)
+                    Pieza(False, False, False, False)
+                    Sector(False, False, False, False)
+                    Tarea(True, True, True, False)
+                    Producto(False, False, False, False, False, False, False)
+                    Orden(True, True, True, False)
+                    Retrabajo(False, False, False)
+                    Etiquetas()
+                    Estadistica(False, False, False, False, False)
+                    CorreoElectronico()
+
+                Case "COLABORADOR"
+                    ' HabilitarGeneral()
+            End Select
+
+            'HABILITA SEGUN PERMISOS ESPECIALES
+            Dim contadorpermisos As Integer = (From P In datacontext.PERMISO Where P.USU_id_usuario = Buscausuario.USU_id_usuario).Count
+            If contadorpermisos > 0 Then
+
+                Dim flaga = 0, flagb = 0, flagm = 0, flagc = 0, flagalta = 0, flagbaja = 0, flagconsprod = 0, flagconsmov = 0
+                For i = 0 To contadorpermisos - 1
+                    Dim permisos = (From A In datacontext.PERMISO Select A.PER_permiso, A.PER_abm, A.USU_id_usuario Where USU_id_usuario = Buscausuario.USU_id_usuario).ToList()(i)
+
+                    Select Case permisos.PER_permiso
+
+                        Case "USUARIO"
+                            If permisos.PER_abm = "A" Then
+                                Usuario(True, flagb, flagm, flagc)
+                                flaga = 1
+                            End If
+                            If permisos.PER_abm = "B" Then
+                                Usuario(flaga, True, flagm, flagc)
+                                flagb = 1
+                            End If
+                            If permisos.PER_abm = "M" Then
+                                Usuario(flaga, flagb, True, flagc)
+                                flagm = 1
+                            End If
+                            If permisos.PER_abm = "C" Then
+                                Usuario(flaga, flagb, flagm, True)
+                                flagc = 1
+                            End If
+
+                            '-------------------------------------------------------
+                        Case "COLABORADOR"
+                            If permisos.PER_abm = "A" Then
+                                Colaborador(True, flagb, flagm, flagc)
+                                flaga = 1
+                            End If
+                            If permisos.PER_abm = "B" Then
+                                Colaborador(flaga, True, flagm, flagc)
+                                flagb = 1
+                            End If
+                            If permisos.PER_abm = "M" Then
+                                Colaborador(flaga, flagb, True, flagc)
+                                flagm = 1
+                            End If
+                            If permisos.PER_abm = "C" Then
+                                Colaborador(flaga, flagb, flagm, True)
+                                flagc = 1
+                            End If
+                            '-----------------------------------------------
+
+                        Case "VENDEDOR"
+                            If permisos.PER_abm = "A" Then
+                                Vendedor(True, flagb, flagm, flagc)
+                                flaga = 1
+                            End If
+                            If permisos.PER_abm = "B" Then
+                                Vendedor(flaga, True, flagm, flagc)
+                                flagb = 1
+                            End If
+                            If permisos.PER_abm = "M" Then
+                                Vendedor(flaga, flagb, True, flagc)
+                                flagm = 1
+                            End If
+                            If permisos.PER_abm = "C" Then
+                                Vendedor(flaga, flagb, flagm, True)
+                                flagc = 1
+                            End If
+                            '-----------------------------------------------
+
+                        Case "CLIENTE"
+                            If permisos.PER_abm = "A" Then
+                                Cliente(True, flagb, flagm, flagc)
+                                flaga = 1
+                            End If
+                            If permisos.PER_abm = "B" Then
+                                Cliente(flaga, True, flagm, flagc)
+                                flagb = 1
+                            End If
+                            If permisos.PER_abm = "M" Then
+                                Cliente(flaga, flagb, True, flagc)
+                                flagm = 1
+                            End If
+                            If permisos.PER_abm = "C" Then
+                                Cliente(flaga, flagb, flagm, True)
+                                flagc = 1
+                            End If
+                            '-----------------------------------------------
+
+                        Case "PIEZA"
+                            If permisos.PER_abm = "A" Then
+                                Pieza(True, flagb, flagm, flagc)
+                                flaga = 1
+                            End If
+                            If permisos.PER_abm = "B" Then
+                                Pieza(flaga, True, flagm, flagc)
+                                flagb = 1
+                            End If
+                            If permisos.PER_abm = "M" Then
+                                Pieza(flaga, flagb, True, flagc)
+                                flagm = 1
+                            End If
+                            If permisos.PER_abm = "C" Then
+                                Pieza(flaga, flagb, flagm, True)
+                                flagc = 1
+                            End If
+                            '-----------------------------------------------
+
+                        Case "SECTOR"
+                            If permisos.PER_abm = "A" Then
+                                Sector(True, flagb, flagm, flagc)
+                                flaga = 1
+                            End If
+                            If permisos.PER_abm = "B" Then
+                                Sector(flaga, True, flagm, flagc)
+                                flagb = 1
+                            End If
+                            If permisos.PER_abm = "M" Then
+                                Sector(flaga, flagb, True, flagc)
+                                flagm = 1
+                            End If
+                            If permisos.PER_abm = "C" Then
+                                Sector(flaga, flagb, flagm, True)
+                                flagc = 1
+                            End If
+                            '-----------------------------------------------
+
+                        Case "TAREA"
+                            If permisos.PER_abm = "A" Then
+                                Tarea(True, flagb, flagm, flagc)
+                                flaga = 1
+                            End If
+                            If permisos.PER_abm = "B" Then
+                                Tarea(flaga, True, flagm, flagc)
+                                flagb = 1
+                            End If
+                            If permisos.PER_abm = "M" Then
+                                Tarea(flaga, flagb, True, flagc)
+                                flagm = 1
+                            End If
+                            If permisos.PER_abm = "C" Then
+                                Tarea(flaga, flagb, flagm, True)
+                                flagc = 1
+                            End If
+                            '-----------------------------------------------
+
+                        Case "PRODUCTO"
+                            If permisos.PER_abm = "A" Then
+                                Producto(True, flagb, flagm, flagalta, flagbaja, flagconsprod, flagconsmov)
+                                flaga = 1
+                            End If
+                            If permisos.PER_abm = "B" Then
+                                Producto(flaga, True, flagm, flagalta, flagbaja, flagconsprod, flagconsmov)
+                                flagb = 1
+                            End If
+                            If permisos.PER_abm = "M" Then
+                                Producto(flaga, flagb, True, flagalta, flagbaja, flagconsprod, flagconsmov)
+                                flagm = 1
+                            End If
+
+                            If permisos.PER_abm = "ALTA" Then
+                                Producto(flaga, flagb, flagm, True, flagbaja, flagconsprod, flagconsmov)
+                                flagalta = 1
+                            End If
+                            If permisos.PER_abm = "BAJA" Then
+                                Producto(flaga, flagb, flagm, flagalta, True, flagconsprod, flagconsmov)
+                                flagbaja = 1
+                            End If
+                            If permisos.PER_abm = "C_PRO" Then
+                                Producto(flaga, flagb, flagm, flagalta, flagbaja, True, flagconsmov)
+                                flagconsprod = 1
+                            End If
+                            If permisos.PER_abm = "C_MOV" Then
+                                Producto(flaga, flagb, flagm, flagalta, flagbaja, flagconsprod, True)
+                                flagconsmov = 1
+                            End If
+
+                            '-----------------------------------------------
+
+                        Case "ORDEN TRABAJO"
+                            If permisos.PER_abm = "A" Then
+                                Orden(True, flagb, flagm, flagc)
+                                flaga = 1
+                            End If
+                            If permisos.PER_abm = "B" Then
+                                Orden(flaga, True, flagm, flagc)
+                                flagb = 1
+                            End If
+                            If permisos.PER_abm = "M" Then
+                                Orden(flaga, flagb, True, flagc)
+                                flagm = 1
+                            End If
+                            If permisos.PER_abm = "C" Then
+                                Orden(flaga, flagb, flagm, True)
+                                flagm = 1
+                            End If
+                            '-----------------------------------------------
+
+                        Case "RE-TRABAJO"
+                            If permisos.PER_abm = "A" Then
+                                Retrabajo(True, flagb, flagm)
+                                flaga = 1
+                            End If
+                            If permisos.PER_abm = "B" Then
+                                Retrabajo(flaga, True, flagm)
+                                flagb = 1
+                            End If
+                            If permisos.PER_abm = "C" Then
+                                Retrabajo(flaga, flagb, True)
+                                flagc = 1
+                            End If
+                            '-----------------------------------------------
+                    End Select
+                Next
+            End If
+            If Buscausuario.USU_perfil = "SUPERVISOR" Then
                 Usuario(False, False, False, False)
                 Colaborador(False, False, False, False)
                 Vendedor(False, False, False, False)
-                Cliente(False, False, False, False)
+                Cliente(True, True, True, True)
                 Pieza(False, False, False, False)
                 Sector(False, False, False, False)
-                Tarea(True, True, True, False)
-                Producto(False, False, False, False, False, False, False)
-                Orden(True, True, True, False)
-                Retrabajo(False, False, False)
+                Tarea(True, True, True, True)
+                Producto(True, True, True, False, True, True, True)
+                Orden(True, True, True, True)
+                Retrabajo(True, True, True)
                 Etiquetas()
                 Estadistica(False, False, False, False, False)
                 CorreoElectronico()
+                Acercade()
+            ElseIf Buscausuario.USU_perfil = "COLABORADOR" Then
 
-            Case "COLABORADOR"
-                ' HabilitarGeneral()
-        End Select
+                Colaborador(True, True, True, True)
+                Vendedor(True, True, True, True)
+                Cliente(True, True, True, True)
+                Pieza(True, True, True, True)
+                Sector(True, True, True, True)
+                Tarea(True, True, True, True)
+                Producto(True, True, True, True, True, True, True)
+                Orden(True, True, True, True)
+                Retrabajo(True, True, True)
+                Etiquetas()
+                Estadistica(True, True, True, True, True)
+                CorreoElectronico()
+                Acercade()
 
-        'HABILITA SEGUN PERMISOS ESPECIALES
-        Dim contadorpermisos As Integer = (From P In datacontext.PERMISO Where P.USU_id_usuario = Buscausuario.USU_id_usuario).Count
-        If contadorpermisos > 0 Then
+            ElseIf Buscausuario.USU_perfil = "ADMINISTRADOR" Then
+                Colaborador(True, True, True, True)
+                Vendedor(True, True, True, True)
+                Cliente(True, True, True, True)
+                Pieza(True, True, True, True)
+                Sector(True, True, True, True)
+                Tarea(True, True, True, True)
+                Producto(True, True, True, True, True, True, True)
+                Orden(True, True, True, True)
+                Retrabajo(True, True, True)
+                Etiquetas()
+                Estadistica(True, True, True, True, True)
+                CorreoElectronico()
+                Acercade()
 
-            Dim flaga = 0, flagb = 0, flagm = 0, flagc = 0, flagalta = 0, flagbaja = 0, flagconsprod = 0, flagconsmov = 0
-            For i = 0 To contadorpermisos - 1
-                Dim permisos = (From A In datacontext.PERMISO Select A.PER_permiso, A.PER_abm, A.USU_id_usuario Where USU_id_usuario = Buscausuario.USU_id_usuario).ToList()(i)
+            ElseIf Buscausuario.USU_perfil = "GERENCIA" Then
+                Colaborador(True, True, True, True)
+                Vendedor(True, True, True, True)
+                Cliente(True, True, True, True)
+                Pieza(True, True, True, True)
+                Sector(True, True, True, True)
+                Tarea(True, True, True, True)
+                Producto(True, True, True, True, True, True, True)
+                Orden(True, True, True, True)
+                Retrabajo(True, True, True)
+                Etiquetas()
+                Estadistica(True, True, True, True, True)
+                CorreoElectronico()
+                Acercade()
+            End If
 
-                Select Case permisos.PER_permiso
+            'PASAR USUARIO Y PERFIL A LOS LABEL DEL MENUUU!!!! PARA LUEGO TOMAR EL USUARIO PARA
+            'ACTUALIZAR PASS DESDE ADENTRO
+            frm_Principal.LBL_MENU_PERFIL.Text = Buscausuario.USU_perfil.ToString
+            frm_Principal.LBL_MENU_USU.Text = Buscausuario.USU_usuario.ToString
 
-                    Case "USUARIO"
-                        If permisos.PER_abm = "A" Then
-                            Usuario(True, flagb, flagm, flagc)
-                            flaga = 1
-                        End If
-                        If permisos.PER_abm = "B" Then
-                            Usuario(flaga, True, flagm, flagc)
-                            flagb = 1
-                        End If
-                        If permisos.PER_abm = "M" Then
-                            Usuario(flaga, flagb, True, flagc)
-                            flagm = 1
-                        End If
-                        If permisos.PER_abm = "C" Then
-                            Usuario(flaga, flagb, flagm, True)
-                            flagc = 1
-                        End If
-
-                        '-------------------------------------------------------
-                    Case "COLABORADOR"
-                        If permisos.PER_abm = "A" Then
-                            Colaborador(True, flagb, flagm, flagc)
-                            flaga = 1
-                        End If
-                        If permisos.PER_abm = "B" Then
-                            Colaborador(flaga, True, flagm, flagc)
-                            flagb = 1
-                        End If
-                        If permisos.PER_abm = "M" Then
-                            Colaborador(flaga, flagb, True, flagc)
-                            flagm = 1
-                        End If
-                        If permisos.PER_abm = "C" Then
-                            Colaborador(flaga, flagb, flagm, True)
-                            flagc = 1
-                        End If
-                        '-----------------------------------------------
-
-                    Case "VENDEDOR"
-                        If permisos.PER_abm = "A" Then
-                            Vendedor(True, flagb, flagm, flagc)
-                            flaga = 1
-                        End If
-                        If permisos.PER_abm = "B" Then
-                            Vendedor(flaga, True, flagm, flagc)
-                            flagb = 1
-                        End If
-                        If permisos.PER_abm = "M" Then
-                            Vendedor(flaga, flagb, True, flagc)
-                            flagm = 1
-                        End If
-                        If permisos.PER_abm = "C" Then
-                            Vendedor(flaga, flagb, flagm, True)
-                            flagc = 1
-                        End If
-                        '-----------------------------------------------
-
-                    Case "CLIENTE"
-                        If permisos.PER_abm = "A" Then
-                            Cliente(True, flagb, flagm, flagc)
-                            flaga = 1
-                        End If
-                        If permisos.PER_abm = "B" Then
-                            Cliente(flaga, True, flagm, flagc)
-                            flagb = 1
-                        End If
-                        If permisos.PER_abm = "M" Then
-                            Cliente(flaga, flagb, True, flagc)
-                            flagm = 1
-                        End If
-                        If permisos.PER_abm = "C" Then
-                            Cliente(flaga, flagb, flagm, True)
-                            flagc = 1
-                        End If
-                        '-----------------------------------------------
-
-                    Case "PIEZA"
-                        If permisos.PER_abm = "A" Then
-                            Pieza(True, flagb, flagm, flagc)
-                            flaga = 1
-                        End If
-                        If permisos.PER_abm = "B" Then
-                            Pieza(flaga, True, flagm, flagc)
-                            flagb = 1
-                        End If
-                        If permisos.PER_abm = "M" Then
-                            Pieza(flaga, flagb, True, flagc)
-                            flagm = 1
-                        End If
-                        If permisos.PER_abm = "C" Then
-                            Pieza(flaga, flagb, flagm, True)
-                            flagc = 1
-                        End If
-                        '-----------------------------------------------
-
-                    Case "SECTOR"
-                        If permisos.PER_abm = "A" Then
-                            Sector(True, flagb, flagm, flagc)
-                            flaga = 1
-                        End If
-                        If permisos.PER_abm = "B" Then
-                            Sector(flaga, True, flagm, flagc)
-                            flagb = 1
-                        End If
-                        If permisos.PER_abm = "M" Then
-                            Sector(flaga, flagb, True, flagc)
-                            flagm = 1
-                        End If
-                        If permisos.PER_abm = "C" Then
-                            Sector(flaga, flagb, flagm, True)
-                            flagc = 1
-                        End If
-                        '-----------------------------------------------
-
-                    Case "TAREA"
-                        If permisos.PER_abm = "A" Then
-                            Tarea(True, flagb, flagm, flagc)
-                            flaga = 1
-                        End If
-                        If permisos.PER_abm = "B" Then
-                            Tarea(flaga, True, flagm, flagc)
-                            flagb = 1
-                        End If
-                        If permisos.PER_abm = "M" Then
-                            Tarea(flaga, flagb, True, flagc)
-                            flagm = 1
-                        End If
-                        If permisos.PER_abm = "C" Then
-                            Tarea(flaga, flagb, flagm, True)
-                            flagc = 1
-                        End If
-                        '-----------------------------------------------
-
-                    Case "PRODUCTO"
-                        If permisos.PER_abm = "A" Then
-                            Producto(True, flagb, flagm, flagalta, flagbaja, flagconsprod, flagconsmov)
-                            flaga = 1
-                        End If
-                        If permisos.PER_abm = "B" Then
-                            Producto(flaga, True, flagm, flagalta, flagbaja, flagconsprod, flagconsmov)
-                            flagb = 1
-                        End If
-                        If permisos.PER_abm = "M" Then
-                            Producto(flaga, flagb, True, flagalta, flagbaja, flagconsprod, flagconsmov)
-                            flagm = 1
-                        End If
-                   
-                        If permisos.PER_abm = "ALTA" Then
-                            Producto(flaga, flagb, flagm, True, flagbaja, flagconsprod, flagconsmov)
-                            flagalta = 1
-                        End If
-                        If permisos.PER_abm = "BAJA" Then
-                            Producto(flaga, flagb, flagm, flagalta, True, flagconsprod, flagconsmov)
-                            flagbaja = 1
-                        End If
-                        If permisos.PER_abm = "C_PRO" Then
-                            Producto(flaga, flagb, flagm, flagalta, flagbaja, True, flagconsmov)
-                            flagconsprod = 1
-                        End If
-                        If permisos.PER_abm = "C_MOV" Then
-                            Producto(flaga, flagb, flagm, flagalta, flagbaja, flagconsprod, True)
-                            flagconsmov = 1
-                        End If
-
-                        '-----------------------------------------------
-
-                    Case "ORDEN TRABAJO"
-                        If permisos.PER_abm = "A" Then
-                            Orden(True, flagb, flagm, flagc)
-                            flaga = 1
-                        End If
-                        If permisos.PER_abm = "B" Then
-                            Orden(flaga, True, flagm, flagc)
-                            flagb = 1
-                        End If
-                        If permisos.PER_abm = "M" Then
-                            Orden(flaga, flagb, True, flagc)
-                            flagm = 1
-                        End If
-                        If permisos.PER_abm = "C" Then
-                            Orden(flaga, flagb, flagm, True)
-                            flagm = 1
-                        End If
-                        '-----------------------------------------------
-
-                    Case "RE-TRABAJO"
-                        If permisos.PER_abm = "A" Then
-                            Retrabajo(True, flagb, flagm)
-                            flaga = 1
-                        End If
-                        If permisos.PER_abm = "B" Then
-                            Retrabajo(flaga, True, flagm)
-                            flagb = 1
-                        End If
-                        If permisos.PER_abm = "C" Then
-                            Retrabajo(flaga, flagb, True)
-                            flagc = 1
-                        End If
-                        '-----------------------------------------------
-                End Select
-            Next
-        End If
-        If Buscausuario.USU_perfil = "SUPERVISOR" Then
-            Usuario(False, False, False, False)
-            Colaborador(False, False, False, False)
-            Vendedor(False, False, False, False)
-            Cliente(True, True, True, True)
-            Pieza(False, False, False, False)
-            Sector(False, False, False, False)
-            Tarea(True, True, True, True)
-            Producto(True, True, True, False, True, True, True)
-            Orden(True, True, True, True)
-            Retrabajo(True, True, True)
-            Etiquetas()
-            Estadistica(False, False, False, False, False)
-            CorreoElectronico()
-            Acercade()
-        ElseIf Buscausuario.USU_perfil = "COLABORADOR" Then
-
-            Colaborador(True, True, True, True)
-            Vendedor(True, True, True, True)
-            Cliente(True, True, True, True)
-            Pieza(True, True, True, True)
-            Sector(True, True, True, True)
-            Tarea(True, True, True, True)
-            Producto(True, True, True, True, True, True, True)
-            Orden(True, True, True, True)
-            Retrabajo(True, True, True)
-            Etiquetas()
-            Estadistica(True, True, True, True, True)
-            CorreoElectronico()
-            Acercade()
-
-        ElseIf Buscausuario.USU_perfil = "ADMINISTRADOR" Then
-            Colaborador(True, True, True, True)
-            Vendedor(True, True, True, True)
-            Cliente(True, True, True, True)
-            Pieza(True, True, True, True)
-            Sector(True, True, True, True)
-            Tarea(True, True, True, True)
-            Producto(True, True, True, True, True, True, True)
-            Orden(True, True, True, True)
-            Retrabajo(True, True, True)
-            Etiquetas()
-            Estadistica(True, True, True, True, True)
-            CorreoElectronico()
-            Acercade()
-
-        ElseIf Buscausuario.USU_perfil = "GERENCIA" Then
-            Colaborador(True, True, True, True)
-            Vendedor(True, True, True, True)
-            Cliente(True, True, True, True)
-            Pieza(True, True, True, True)
-            Sector(True, True, True, True)
-            Tarea(True, True, True, True)
-            Producto(True, True, True, True, True, True, True)
-            Orden(True, True, True, True)
-            Retrabajo(True, True, True)
-            Etiquetas()
-            Estadistica(True, True, True, True, True)
-            CorreoElectronico()
-            Acercade()
-        End If
-
-        'PASAR USUARIO Y PERFIL A LOS LABEL DEL MENUUU!!!! PARA LUEGO TOMAR EL USUARIO PARA
-        'ACTUALIZAR PASS DESDE ADENTRO
-        frm_Principal.LBL_MENU_PERFIL.Text = Buscausuario.USU_perfil.ToString
-        frm_Principal.LBL_MENU_USU.Text = Buscausuario.USU_usuario.ToString
-
-        frm_Principal.Show()
-        Me.Hide()
-        ''Me.Finalize()
-        ''Me.Close()
-        ''Me.Dispose()
-        'Catch ex As Exception
-        '    MsgBox("Verifique Usuario y contraseña!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Inicio de sesión")
-        '    txt_usuario.Select()
-        '    limpiarcontroles()
-        'End Try
+            frm_Principal.Show()
+            Me.Hide()
+            ''Me.Finalize()
+            ''Me.Close()
+            ''Me.Dispose()
+        Catch ex As Exception
+            MsgBox("Verifique Usuario y contraseña!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Inicio de sesión")
+            txt_usuario.Select()
+            limpiarcontroles()
+        End Try
     End Sub
 
     Sub HabilitarGeneral()
