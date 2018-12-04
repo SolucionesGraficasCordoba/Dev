@@ -1366,6 +1366,7 @@ Public Class frm_Principal
     Dim hora As Integer
     Dim minuto As Integer
     Dim tempcadena As String
+
     Private Sub Timer_automatico_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_automatico.Tick
         'hora = DateTime.Now.Hour
         'minuto = DateTime.Now.Minute
@@ -1374,7 +1375,5 @@ Public Class frm_Principal
         '    Dim lanzar_automatico As New Automatico
         '    lanzar_automatico.informe_diario_tareas()
         'End If
-        
     End Sub
-
 End Class
