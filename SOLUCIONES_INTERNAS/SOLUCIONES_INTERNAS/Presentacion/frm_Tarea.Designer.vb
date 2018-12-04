@@ -2964,6 +2964,7 @@ Partial Class frm_Tarea
         '
         'GroupBox2
         '
+        Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.GroupBox2.Controls.Add(Me.Label59)
         Me.GroupBox2.Controls.Add(Me.Label32)
         Me.GroupBox2.Controls.Add(Me.txtSalida)

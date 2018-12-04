@@ -795,7 +795,7 @@
             '        PrintForm1.Print() 'imprimir
             'End Select
 
-            MsgBox("Las tareas se ha guardado correctamente")
+            MsgBox("Las tareas se han guardado correctamente")
             Me.Close()
         Catch ex As Exception
             MsgBox("Error al intentar guardar las Tareas")
