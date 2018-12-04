@@ -32,7 +32,8 @@ Partial Class frm_Listado_Orden_Trabajo
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupListadoPiezas = New System.Windows.Forms.GroupBox()
-        Me.btn_ODT_mostrar_pdf = New System.Windows.Forms.Button()
+        Me.btn_ODT_mostrar_listado_pdf = New System.Windows.Forms.Button()
+        Me.btnVer = New System.Windows.Forms.Button()
         Me.rbtFechaEntrega = New System.Windows.Forms.RadioButton()
         Me.rbtCliente = New System.Windows.Forms.RadioButton()
         Me.rbtNroOrden = New System.Windows.Forms.RadioButton()
@@ -46,7 +47,6 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.dgvLista_Orden_Trabajo = New System.Windows.Forms.DataGridView()
         Me.GroupDetallesOrden = New System.Windows.Forms.GroupBox()
         Me.btnModificarProducto = New System.Windows.Forms.Button()
-        Me.btnVer = New System.Windows.Forms.Button()
         Me.btnEliminar_Producto = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgv_detalle_orden = New System.Windows.Forms.DataGridView()
@@ -66,7 +66,8 @@ Partial Class frm_Listado_Orden_Trabajo
         '
         'GroupListadoPiezas
         '
-        Me.GroupListadoPiezas.Controls.Add(Me.btn_ODT_mostrar_pdf)
+        Me.GroupListadoPiezas.Controls.Add(Me.btn_ODT_mostrar_listado_pdf)
+        Me.GroupListadoPiezas.Controls.Add(Me.btnVer)
         Me.GroupListadoPiezas.Controls.Add(Me.rbtFechaEntrega)
         Me.GroupListadoPiezas.Controls.Add(Me.rbtCliente)
         Me.GroupListadoPiezas.Controls.Add(Me.rbtNroOrden)
@@ -85,14 +86,24 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.GroupListadoPiezas.TabStop = False
         Me.GroupListadoPiezas.Text = "Listado de Ordenes"
         '
-        'btn_ODT_mostrar_pdf
+        'btn_ODT_mostrar_listado_pdf
         '
-        Me.btn_ODT_mostrar_pdf.Location = New System.Drawing.Point(736, 311)
-        Me.btn_ODT_mostrar_pdf.Name = "btn_ODT_mostrar_pdf"
-        Me.btn_ODT_mostrar_pdf.Size = New System.Drawing.Size(94, 33)
-        Me.btn_ODT_mostrar_pdf.TabIndex = 37
-        Me.btn_ODT_mostrar_pdf.Text = "Mostrar pdf"
-        Me.btn_ODT_mostrar_pdf.UseVisualStyleBackColor = True
+        Me.btn_ODT_mostrar_listado_pdf.Location = New System.Drawing.Point(702, 311)
+        Me.btn_ODT_mostrar_listado_pdf.Name = "btn_ODT_mostrar_listado_pdf"
+        Me.btn_ODT_mostrar_listado_pdf.Size = New System.Drawing.Size(128, 33)
+        Me.btn_ODT_mostrar_listado_pdf.TabIndex = 37
+        Me.btn_ODT_mostrar_listado_pdf.Text = "Exportar LIstado a PDF"
+        Me.btn_ODT_mostrar_listado_pdf.UseVisualStyleBackColor = True
+        '
+        'btnVer
+        '
+        Me.btnVer.Location = New System.Drawing.Point(629, 311)
+        Me.btnVer.Name = "btnVer"
+        Me.btnVer.Size = New System.Drawing.Size(67, 33)
+        Me.btnVer.TabIndex = 37
+        Me.btnVer.Text = "Ver"
+        Me.btnVer.UseVisualStyleBackColor = True
+        Me.btnVer.Visible = False
         '
         'rbtFechaEntrega
         '
@@ -221,7 +232,6 @@ Partial Class frm_Listado_Orden_Trabajo
         'GroupDetallesOrden
         '
         Me.GroupDetallesOrden.Controls.Add(Me.btnModificarProducto)
-        Me.GroupDetallesOrden.Controls.Add(Me.btnVer)
         Me.GroupDetallesOrden.Controls.Add(Me.btnEliminar_Producto)
         Me.GroupDetallesOrden.Controls.Add(Me.Label1)
         Me.GroupDetallesOrden.Controls.Add(Me.dgv_detalle_orden)
@@ -241,16 +251,6 @@ Partial Class frm_Listado_Orden_Trabajo
         Me.btnModificarProducto.TabIndex = 38
         Me.btnModificarProducto.Text = "Modificar Producto"
         Me.btnModificarProducto.UseVisualStyleBackColor = True
-        '
-        'btnVer
-        '
-        Me.btnVer.Location = New System.Drawing.Point(176, 164)
-        Me.btnVer.Name = "btnVer"
-        Me.btnVer.Size = New System.Drawing.Size(67, 33)
-        Me.btnVer.TabIndex = 37
-        Me.btnVer.Text = "Ver"
-        Me.btnVer.UseVisualStyleBackColor = True
-        Me.btnVer.Visible = False
         '
         'btnEliminar_Producto
         '
@@ -434,5 +434,5 @@ Partial Class frm_Listado_Orden_Trabajo
     Friend WithEvents rbtNroOrden As System.Windows.Forms.RadioButton
     Friend WithEvents dtp_Buscar_Fecha_Entrega As System.Windows.Forms.DateTimePicker
     Friend WithEvents txt_Buscar_Cliente As System.Windows.Forms.TextBox
-    Friend WithEvents btn_ODT_mostrar_pdf As System.Windows.Forms.Button
+    Friend WithEvents btn_ODT_mostrar_listado_pdf As System.Windows.Forms.Button
 End Class

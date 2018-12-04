@@ -573,10 +573,18 @@ Public Class frm_Listado_Orden_Trabajo
         frm_Orden_Trabajo.cboPiezas3_Detalle3.DisplayMember = "PIE_nombre_pie"
         frm_Orden_Trabajo.cboPiezas3_Detalle3.ValueMember = "PIE_id_pieza"
 
-        vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+        Try
+            If dgv_detalle_orden.Rows.Count > 0 Then
+                vble_id_orden = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            Else
+                MsgBox("Seleccione una Orden del listado")
+                Exit Sub
+            End If
+        Catch ex As Exception
+        End Try
 
         'LLENA LOS CAMPOS DE LA ORDEN
-        If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
+        If dgvLista_Orden_Trabajo.SelectedRows.Count <> 0 Then
             frm_Orden_Trabajo.txt_id_orden_trabajo.Text = vble_id_orden
             frm_Orden_Trabajo.cboTipo_Orden.SelectedItem = dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
@@ -605,6 +613,12 @@ Public Class frm_Listado_Orden_Trabajo
                 flag1 = 1
                 flag2 = 1
                 flag3 = 1
+            End If
+
+            If dgv_detalle_orden.RowCount > 3 Then
+                MsgBox("Para ver total de Productos exporte el listado")
+                btn_ODT_mostrar_listado_pdf.Focus()
+                Exit Sub
             End If
 
             If flag1 = 1 Then
@@ -658,7 +672,6 @@ Public Class frm_Listado_Orden_Trabajo
                 frm_Orden_Trabajo.cboFormato3_Soporte2.SelectedItem = dgv_detalle_orden("DOT_formato_soporte_3", dgv_detalle_orden.Rows(1).Index).Value
 
                 frm_Orden_Trabajo.cboPiezas3_Detalle3.SelectedIndex = -1
-
             End If
 
             If flag3 = 1 Then
@@ -684,6 +697,7 @@ Public Class frm_Listado_Orden_Trabajo
                 frm_Orden_Trabajo.cboFormato2_Soporte3.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_2", dgv_detalle_orden.Rows(2).Index).Value
                 frm_Orden_Trabajo.cboFormato3_Soporte3.SelectedItem = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.Rows(2).Index).Value
             End If
+
         End If
 
         frm_Orden_Trabajo.Text = "Ver Orden"
@@ -781,18 +795,21 @@ Public Class frm_Listado_Orden_Trabajo
     End Sub
 
     Private Sub dgv_detalle_orden_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellDoubleClick
-        quienllamolistado_ot.Name = frm_retrabajo.Name
-        frm_retrabajo.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
-        frm_retrabajo.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
-        frm_retrabajo.txt_cantidad_original.Text = dgv_detalle_orden.SelectedCells(11).Value
-        frm_retrabajo.cboPiezas1_Detalle1.Text = dgv_detalle_orden.SelectedCells(9).Value
-        frm_retrabajo.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(12).Value
-        frm_retrabajo.cboTipoImpresion1_Detalle1.Text = dgv_detalle_orden.SelectedCells(13).Value
-        frm_retrabajo.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.SelectedCells(10).Value
-        frm_retrabajo.dtp_Fecha_Ingreso_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(3).Value
-        frm_retrabajo.dtpFecha_Entrega_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(10).Value
+        Try
+            quienllamolistado_ot.Name = frm_retrabajo.Name
+            frm_retrabajo.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+            frm_retrabajo.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+            frm_retrabajo.txt_cantidad_original.Text = dgv_detalle_orden.SelectedCells(11).Value
+            frm_retrabajo.cboPiezas1_Detalle1.Text = dgv_detalle_orden.SelectedCells(9).Value
+            frm_retrabajo.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(12).Value
+            frm_retrabajo.cboTipoImpresion1_Detalle1.Text = dgv_detalle_orden.SelectedCells(13).Value
+            frm_retrabajo.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.SelectedCells(10).Value
+            frm_retrabajo.dtp_Fecha_Ingreso_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(3).Value
+            frm_retrabajo.dtpFecha_Entrega_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(10).Value
 
-        Me.Close()
+            Me.Close()
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub frm_Listado_Orden_Trabajo_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
@@ -925,8 +942,6 @@ Public Class frm_Listado_Orden_Trabajo
     End Sub
 
     Private Sub rbtNroOrden_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtNroOrden.CheckedChanged
-
-
         If rbtNroOrden.Checked = True Then
             txt_Buscar_Cliente.Enabled = False
             dtp_Buscar_Fecha_Entrega.Enabled = False
@@ -940,8 +955,6 @@ Public Class frm_Listado_Orden_Trabajo
     End Sub
 
     Private Sub rbtCliente_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtCliente.CheckedChanged
-
-
         If rbtCliente.Checked = True Then
             txt_Buscar_orden_trabajo.Enabled = False
             dtp_Buscar_Fecha_Entrega.Enabled = False
@@ -955,7 +968,6 @@ Public Class frm_Listado_Orden_Trabajo
     End Sub
 
     Private Sub rbtFechaEntrega_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtFechaEntrega.CheckedChanged
-
         If rbtFechaEntrega.Checked = True Then
             Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
             txt_Buscar_orden_trabajo.Enabled = False
@@ -973,10 +985,8 @@ Public Class frm_Listado_Orden_Trabajo
         Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
     End Sub
 
-    Public Sub btn_ODT_mostrar_pdf_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_ODT_mostrar_pdf.Click
-
+    Public Sub btn_ODT_mostrar_pdf_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_ODT_mostrar_listado_pdf.Click
         Try
-
             'intentar generar el documento
             Dim doc As New Document(PageSize.A4, 20, 20, 20, 20)
 
@@ -988,10 +998,7 @@ Public Class frm_Listado_Orden_Trabajo
             Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
             ' PARA LAS LINEAS DE FONDO
             Dim writer As PdfWriter = PdfWriter.GetInstance(doc, file)
-
-
             doc.Open()
-
             Dim cb As PdfContentByte = writer.DirectContent
             Dibujar_Lineas(cb, doc)
             Escribir_Pdf(cb)
@@ -1002,22 +1009,16 @@ Public Class frm_Listado_Orden_Trabajo
 
             Dim linea As New Paragraph("---------------------------------------------------------------------" _
                                       & "---------------------------------------------------------------------")
-
-
             Dim orden As New Phrase("   " & dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
                                              & " " _
                                              & dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
                                              & "                   " _
                                             , New Font(fuente, 22, Font.Bold))
-
-
             Dim ingreso_vendedor As New Paragraph("Fecha ingreso: " & dgvLista_Orden_Trabajo.SelectedRows(0).Cells("ORT_fecha_ot").Value _
                                              & "  " _
                                              & "                          " _
                                              & "Vendedor: " & dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
                                              , New Font(fuente, 12, Font.Bold))
-
-
             Dim cliente As New Paragraph("Cliente: " & dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
                                              , New Font(fuente, 12))
 
@@ -1028,26 +1029,18 @@ Public Class frm_Listado_Orden_Trabajo
                                            & dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
                                            , New Font(fuente, 10, Font.Bold))
 
-
-
             Dim encabezado As New Paragraph
             encabezado.Add(orden)
-
             'Encabezado
             doc.Add(encabezado)
-
             'Info
             doc.Add(ingreso_vendedor)
             doc.Add(cliente)
             doc.Add(entrega)
-
             'Descripción
             doc.Add(prod_desc)
             doc.Add(linea)
-
-
             'Productos
-
             For i = 0 To dgv_detalle_orden.RowCount - 1
                 dgv_detalle_orden.Rows(i).Selected = True
                 dgv_detalle_orden_CellClick(0, Nothing)
@@ -1064,24 +1057,21 @@ Public Class frm_Listado_Orden_Trabajo
             MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
     Sub Dibujar_Lineas(ByVal cb As PdfContentByte, ByVal doc As Document)
         'LINEAS DE FONDO
-
         'H1
         cb.MoveTo(0, 800)
         cb.LineTo(doc.PageSize.Width, 800)
         cb.Stroke()
-
         'H2
         cb.MoveTo(0, 747)
         cb.LineTo(doc.PageSize.Width, 747)
         cb.Stroke()
-
         'V1
         cb.MoveTo(400, doc.PageSize.Height)
         cb.LineTo(400, 800)
         cb.Stroke()
-
     End Sub
 
     Sub Escribir_Pdf(ByVal cb As PdfContentByte)
@@ -1096,7 +1086,6 @@ Public Class frm_Listado_Orden_Trabajo
         cb.ShowTextAligned(1, text, 480, 820, 0)
         cb.EndText()
     End Sub
-
 
     Sub pdf_informe_diario(ByVal document As Document, ByVal fila_actual As Integer)
 
@@ -1150,6 +1139,7 @@ Public Class frm_Listado_Orden_Trabajo
         'Pdf_odt.exportar_filas_una(dgvProcesos, datatableProcesos, 0)
         'document.Add(datatableProcesos)
     End Sub
+
     Sub pdf_informe_diario_sin_tablas(ByVal doc As Document, ByVal fila_actual As Integer)
         'Agregado de productos
         Dim prod_tit As New Paragraph("ITEM " & (fila_actual + 1))
@@ -1164,10 +1154,6 @@ Public Class frm_Listado_Orden_Trabajo
 
         doc.Add(prod_tit)
         doc.Add(prod_det)
-
-
-
-
 
         'Agregado de soportes
         Dim soporte As New Paragraph

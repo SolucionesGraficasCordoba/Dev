@@ -175,7 +175,7 @@
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = PRODUCTO") Then
                         If permisos.Item(i).ToString.Contains("PER_abm = A") Then
-                            Producto(True, flagb, flagm, flagalta, flagbaja)
+                            Producto(True, flagm, flagb, flagalta, flagbaja)
                             flaga = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = M") Then
@@ -187,11 +187,11 @@
                             flagb = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = ALTA") Then
-                            Producto(flaga, flagb, flagm, True, flagbaja)
+                            Producto(flaga, flagm, flagb, True, flagbaja)
                             flagalta = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = BAJA") Then
-                            Producto(flaga, flagb, flagm, flagalta, True)
+                            Producto(flaga, flagm, flagb, flagalta, True)
                             flagbaja = 1
                         End If
                     End If
@@ -333,6 +333,7 @@
     End Sub
 
     Sub Producto(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean, ByVal alta As Boolean, ByVal baja As Boolean)
+
         frm_Principal.ProductoToolStripMenuItem.Enabled = True
 
         frm_Principal.GestiónDeProductosToolStripMenuItem.DropDownItems(0).Visible = nuevo
