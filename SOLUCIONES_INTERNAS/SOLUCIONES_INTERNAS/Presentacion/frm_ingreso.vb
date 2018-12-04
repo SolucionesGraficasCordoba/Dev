@@ -179,20 +179,20 @@
                             flaga = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = M") Then
-                            Producto(flaga, True, flagm, flagalta, flagbaja)
-                            flagb = 1
+                            Producto(flaga, True, flagb, flagalta, flagbaja)
+                            flagm = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = B") Then
-                            Producto(flaga, flagb, True, flagalta, flagbaja)
-                            flagm = 1
+                            Producto(flaga, flagm, True, flagalta, flagbaja)
+                            flagb = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = ALTA") Then
                             Producto(flaga, flagb, True, flagalta, flagbaja)
-                            flagm = 1
+                            flagalta = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = BAJA") Then
                             Producto(flaga, flagb, True, flagalta, flagbaja)
-                            flagm = 1
+                            flagbaja = 1
                         End If
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = ODT") Then
