@@ -422,25 +422,25 @@ Partial Class frm_Principal
         'NuevaOrdenToolStripMenuItem
         '
         Me.NuevaOrdenToolStripMenuItem.Name = "NuevaOrdenToolStripMenuItem"
-        Me.NuevaOrdenToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.NuevaOrdenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.NuevaOrdenToolStripMenuItem.Text = "Nueva"
         '
         'ModificarOrdenToolStripMenuItem
         '
         Me.ModificarOrdenToolStripMenuItem.Name = "ModificarOrdenToolStripMenuItem"
-        Me.ModificarOrdenToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.ModificarOrdenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ModificarOrdenToolStripMenuItem.Text = "Modificar"
         '
         'EliminarOrdenToolStripMenuItem
         '
         Me.EliminarOrdenToolStripMenuItem.Name = "EliminarOrdenToolStripMenuItem"
-        Me.EliminarOrdenToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.EliminarOrdenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EliminarOrdenToolStripMenuItem.Text = "Eliminar"
         '
         'ConsultarToolStripMenuItem
         '
         Me.ConsultarToolStripMenuItem.Name = "ConsultarToolStripMenuItem"
-        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ConsultarToolStripMenuItem.Text = "Consultar"
         '
         'ReTrabajoToolStripMenuItem1

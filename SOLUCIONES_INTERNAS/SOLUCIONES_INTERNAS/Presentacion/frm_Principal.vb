@@ -930,12 +930,21 @@ Public Class frm_Principal
         frm_Listado_Tareas.ShowDialog()
     End Sub
 
+    Public Sub DiaAnterior()
+        'PROCEDIMIENTO QUE SE CREO PARA EL CORRECTO INGRESO DE LA FECHA DE ENTREGA, ESTE MUESTRA EL DIA ANTERIOR AL ABRIR EL FORMULARIO DE LA ORDEN
+        frm_Orden_Trabajo.dtpFecha_Entrega.Value = Today
+        frm_Orden_Trabajo.dtpFecha_Entrega.Value = frm_Orden_Trabajo.dtpFecha_Entrega.Value.Add(TimeSpan.FromDays(-1))
+    End Sub
+
     Private Sub NuevaOrdenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NuevaOrdenToolStripMenuItem.Click
+
+        DiaAnterior()
         frm_Orden_Trabajo.quienllamo_listado_orden = Me
         frm_Orden_Trabajo.Text = "Nueva Orden"
 
         frm_Orden_Trabajo.txtid_vendedor.Visible = False
         frm_Orden_Trabajo.txt_id_cliente.Visible = False
+        frm_Orden_Trabajo.dtpFecha_Orden_Trabajo.Enabled = False
 
         frm_Orden_Trabajo.Label45.Visible = False
         frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Visible = False
@@ -1043,6 +1052,7 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
         frm_Listado_Orden_Trabajo.btnEliminar_Producto.Enabled = False
         frm_Listado_Orden_Trabajo.btnVer.Enabled = True
+        frm_Listado_Orden_Trabajo.btnVer.Visible = True
         frm_Listado_Orden_Trabajo.btn_Cancelar.Enabled = True
         frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Enabled = True
         frm_Listado_Orden_Trabajo.btnModificarProducto.Enabled = False
@@ -1067,7 +1077,7 @@ Public Class frm_Principal
         frm_Orden_Trabajo.btnActualizar_Orden_Trabajo.Enabled = True
         frm_Listado_Orden_Trabajo.txt_Buscar_orden_trabajo.Enabled = True
         frm_Listado_Orden_Trabajo.btnEliminarProceso.Enabled = False
-        frm_Listado_Orden_Trabajo.btn_ODT_mostrar_pdf.Enabled = False
+        frm_Listado_Orden_Trabajo.btn_ODT_mostrar_listado_pdf.Enabled = False
         frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
         frm_Listado_Orden_Trabajo.btnModificarProducto.Enabled = False
         frm_Listado_Orden_Trabajo.btnModificarProceso.Enabled = False
@@ -1090,7 +1100,7 @@ Public Class frm_Principal
         frm_Listado_Orden_Trabajo.btnEliminar_Producto.Enabled = False
         frm_Listado_Orden_Trabajo.btnEliminarProceso.Enabled = False
         frm_Listado_Orden_Trabajo.btn_Cancelar.Enabled = True
-        frm_Listado_Orden_Trabajo.btn_ODT_mostrar_pdf.Enabled = False
+        frm_Listado_Orden_Trabajo.btn_ODT_mostrar_listado_pdf.Enabled = False
         frm_Listado_Orden_Trabajo.dgvLista_Orden_Trabajo.ClearSelection()
 
         frm_Listado_Orden_Trabajo.ShowDialog()
@@ -1357,13 +1367,14 @@ Public Class frm_Principal
     Dim minuto As Integer
     Dim tempcadena As String
     Private Sub Timer_automatico_Tick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Timer_automatico.Tick
-        hora = DateTime.Now.Hour
-        minuto = DateTime.Now.Minute
-        tempcadena = hora & ":" & minuto
-        If tempcadena = "13:21" Then
-            Dim lanzar_automatico As New Automatico
-            lanzar_automatico.informe_diario_tareas()
-        End If
+        'hora = DateTime.Now.Hour
+        'minuto = DateTime.Now.Minute
+        'tempcadena = hora & ":" & minuto
+        'If tempcadena = "13:21" Then
+        '    Dim lanzar_automatico As New Automatico
+        '    lanzar_automatico.informe_diario_tareas()
+        'End If
         
     End Sub
+
 End Class
