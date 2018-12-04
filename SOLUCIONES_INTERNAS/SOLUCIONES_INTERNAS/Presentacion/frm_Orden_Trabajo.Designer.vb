@@ -395,7 +395,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.btnImprimirFormulario.Location = New System.Drawing.Point(558, 654)
         Me.btnImprimirFormulario.Name = "btnImprimirFormulario"
-        Me.btnImprimirFormulario.Size = New System.Drawing.Size(108, 23)
+        Me.btnImprimirFormulario.Size = New System.Drawing.Size(108, 33)
         Me.btnImprimirFormulario.TabIndex = 61
         Me.btnImprimirFormulario.Text = "Imprimir Formulario"
         Me.btnImprimirFormulario.UseVisualStyleBackColor = True
@@ -720,10 +720,9 @@ Partial Class frm_Orden_Trabajo
         '
         Me.btnGuardar_Orden_Trabajo.Location = New System.Drawing.Point(672, 654)
         Me.btnGuardar_Orden_Trabajo.Name = "btnGuardar_Orden_Trabajo"
-        Me.btnGuardar_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar_Orden_Trabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnGuardar_Orden_Trabajo.TabIndex = 58
         Me.btnGuardar_Orden_Trabajo.Text = "Guardar"
-        Me.ToolTip1.SetToolTip(Me.btnGuardar_Orden_Trabajo, "Antes de Guardar..Por favor, verifique que la Fecha de Entrega sea la correcta!.")
         Me.btnGuardar_Orden_Trabajo.UseVisualStyleBackColor = True
         '
         'GroupProducto2
@@ -1386,7 +1385,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.btnCancelar_Orden_Trabajo.Location = New System.Drawing.Point(834, 654)
         Me.btnCancelar_Orden_Trabajo.Name = "btnCancelar_Orden_Trabajo"
-        Me.btnCancelar_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar_Orden_Trabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar_Orden_Trabajo.TabIndex = 59
         Me.btnCancelar_Orden_Trabajo.Text = "Cancelar"
         Me.btnCancelar_Orden_Trabajo.UseVisualStyleBackColor = True
@@ -1395,7 +1394,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.btnActualizar_Orden_Trabajo.Location = New System.Drawing.Point(753, 654)
         Me.btnActualizar_Orden_Trabajo.Name = "btnActualizar_Orden_Trabajo"
-        Me.btnActualizar_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar_Orden_Trabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnActualizar_Orden_Trabajo.TabIndex = 62
         Me.btnActualizar_Orden_Trabajo.Text = "Actualizar"
         Me.btnActualizar_Orden_Trabajo.UseVisualStyleBackColor = True
@@ -1404,7 +1403,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.btnNueva_Orden_Trabajo.Location = New System.Drawing.Point(477, 654)
         Me.btnNueva_Orden_Trabajo.Name = "btnNueva_Orden_Trabajo"
-        Me.btnNueva_Orden_Trabajo.Size = New System.Drawing.Size(75, 23)
+        Me.btnNueva_Orden_Trabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnNueva_Orden_Trabajo.TabIndex = 60
         Me.btnNueva_Orden_Trabajo.Text = "Nuevo"
         Me.btnNueva_Orden_Trabajo.UseVisualStyleBackColor = True
@@ -1450,7 +1449,7 @@ Partial Class frm_Orden_Trabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(926, 686)
+        Me.ClientSize = New System.Drawing.Size(926, 696)
         Me.Controls.Add(Me.Label56)
         Me.Controls.Add(Me.Label55)
         Me.Controls.Add(Me.dtpFecha_Entrega)
