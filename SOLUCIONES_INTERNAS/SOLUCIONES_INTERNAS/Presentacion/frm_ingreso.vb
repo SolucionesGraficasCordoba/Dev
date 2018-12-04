@@ -81,12 +81,12 @@
                             flaga = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = M") Then
-                            Usuario(flaga, True, flagm)
-                            flagb = 1
+                            Usuario(flaga, True, flagb)
+                            flagm = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = B") Then
-                            Usuario(flaga, flagb, True)
-                            flagm = 1
+                            Usuario(flaga, flagm, True)
+                            flagb = 1
                         End If
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = COLABORADOR") Then
@@ -95,12 +95,12 @@
                             flaga = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = M") Then
-                            Colaborador(flaga, True, flagm)
-                            flagb = 1
+                            Colaborador(flaga, True, flagb)
+                            flagm = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = B") Then
-                            Colaborador(flaga, flagb, True)
-                            flagm = 1
+                            Colaborador(flaga, flagm, True)
+                            flagb = 1
                         End If
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = VENDEDOR") Then
@@ -109,12 +109,12 @@
                             flaga = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = M") Then
-                            Vendedor(flaga, True, flagm)
-                            flagb = 1
+                            Vendedor(flaga, True, flagb)
+                            flagm = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = B") Then
-                            Vendedor(flaga, flagb, True)
-                            flagm = 1
+                            Vendedor(flaga, flagm, True)
+                            flagb = 1
                         End If
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = CLIENTE") Then
@@ -123,12 +123,12 @@
                             flaga = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = M") Then
-                            Cliente(flaga, True, flagm)
-                            flagb = 1
+                            Cliente(flaga, True, flagb)
+                            flagm = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = B") Then
-                            Cliente(flaga, flagb, True)
-                            flagm = 1
+                            Cliente(flaga, flagm, True)
+                            flagb = 1
                         End If
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = PIEZA") Then
@@ -137,12 +137,12 @@
                             flaga = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = M") Then
-                            Pieza(flaga, True, flagm)
-                            flagb = 1
+                            Pieza(flaga, True, flagb)
+                            flagm = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = B") Then
-                            Pieza(flaga, flagb, True)
-                            flagm = 1
+                            Pieza(flaga, flagm, True)
+                            flagb = 1
                         End If
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = SECTOR") Then
@@ -151,12 +151,12 @@
                             flaga = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = M") Then
-                            Sector(flaga, True, flagm)
-                            flagb = 1
+                            Sector(flaga, True, flagb)
+                            flagm = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = B") Then
-                            Sector(flaga, flagb, True)
-                            flagm = 1
+                            Sector(flaga, flagm, True)
+                            flagb = 1
                         End If
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = TAREA") Then
@@ -165,12 +165,12 @@
                             flaga = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = M") Then
-                            Tarea(flaga, True, flagm)
-                            flagb = 1
+                            Tarea(flaga, True, flagb)
+                            flagm = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = B") Then
-                            Tarea(flaga, flagb, True)
-                            flagm = 1
+                            Tarea(flaga, flagm, True)
+                            flagb = 1
                         End If
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = PRODUCTO") Then
@@ -187,11 +187,11 @@
                             flagb = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = ALTA") Then
-                            Producto(flaga, flagb, True, flagalta, flagbaja)
+                            Producto(flaga, flagb, flagm, True, flagbaja)
                             flagalta = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = BAJA") Then
-                            Producto(flaga, flagb, True, flagalta, flagbaja)
+                            Producto(flaga, flagb, flagm, flagalta, True)
                             flagbaja = 1
                         End If
                     End If
@@ -201,12 +201,12 @@
                             flaga = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = M") Then
-                            Orden(flaga, True, flagm)
-                            flagb = 1
+                            Orden(flaga, True, flagb)
+                            flagm = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = B") Then
-                            Orden(flaga, flagb, True)
-                            flagm = 1
+                            Orden(flaga, flagm, True)
+                            flagb = 1
                         End If
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = RETRABAJO") Then
@@ -215,8 +215,8 @@
                             flaga = 1
                         End If
                         If permisos.Item(i).ToString.Contains("PER_abm = B") Then
-                            Retrabajo(flaga, flagb)
-                            flagm = 1
+                            Retrabajo(flaga, True)
+                            flagb = 1
                         End If
                     End If
 
