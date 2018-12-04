@@ -78,7 +78,7 @@ Partial Class frm_Cliente
         Me.GroupNuevoCliente.Controls.Add(Me.Label1)
         Me.GroupNuevoCliente.Location = New System.Drawing.Point(12, 12)
         Me.GroupNuevoCliente.Name = "GroupNuevoCliente"
-        Me.GroupNuevoCliente.Size = New System.Drawing.Size(618, 215)
+        Me.GroupNuevoCliente.Size = New System.Drawing.Size(618, 191)
         Me.GroupNuevoCliente.TabIndex = 0
         Me.GroupNuevoCliente.TabStop = False
         Me.GroupNuevoCliente.Text = "Nuevo Cliente"
@@ -131,7 +131,7 @@ Partial Class frm_Cliente
         Me.txtTelefono_Cliente.Location = New System.Drawing.Point(104, 139)
         Me.txtTelefono_Cliente.MaxLength = 15
         Me.txtTelefono_Cliente.Name = "txtTelefono_Cliente"
-        Me.txtTelefono_Cliente.Size = New System.Drawing.Size(172, 20)
+        Me.txtTelefono_Cliente.Size = New System.Drawing.Size(145, 20)
         Me.txtTelefono_Cliente.TabIndex = 6
         '
         'Label8
@@ -156,7 +156,7 @@ Partial Class frm_Cliente
         '
         'btnCancelar_Cliente
         '
-        Me.btnCancelar_Cliente.Location = New System.Drawing.Point(522, 169)
+        Me.btnCancelar_Cliente.Location = New System.Drawing.Point(522, 142)
         Me.btnCancelar_Cliente.Name = "btnCancelar_Cliente"
         Me.btnCancelar_Cliente.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar_Cliente.TabIndex = 8
@@ -165,7 +165,7 @@ Partial Class frm_Cliente
         '
         'btnActualizar_Cliente
         '
-        Me.btnActualizar_Cliente.Location = New System.Drawing.Point(441, 169)
+        Me.btnActualizar_Cliente.Location = New System.Drawing.Point(441, 142)
         Me.btnActualizar_Cliente.Name = "btnActualizar_Cliente"
         Me.btnActualizar_Cliente.Size = New System.Drawing.Size(75, 33)
         Me.btnActualizar_Cliente.TabIndex = 11
@@ -174,7 +174,7 @@ Partial Class frm_Cliente
         '
         'btnGuardar_Cliente
         '
-        Me.btnGuardar_Cliente.Location = New System.Drawing.Point(360, 169)
+        Me.btnGuardar_Cliente.Location = New System.Drawing.Point(360, 142)
         Me.btnGuardar_Cliente.Name = "btnGuardar_Cliente"
         Me.btnGuardar_Cliente.Size = New System.Drawing.Size(75, 33)
         Me.btnGuardar_Cliente.TabIndex = 7
@@ -183,7 +183,7 @@ Partial Class frm_Cliente
         '
         'btnNuevo_Cliente
         '
-        Me.btnNuevo_Cliente.Location = New System.Drawing.Point(279, 169)
+        Me.btnNuevo_Cliente.Location = New System.Drawing.Point(279, 142)
         Me.btnNuevo_Cliente.Name = "btnNuevo_Cliente"
         Me.btnNuevo_Cliente.Size = New System.Drawing.Size(75, 33)
         Me.btnNuevo_Cliente.TabIndex = 2
@@ -218,7 +218,7 @@ Partial Class frm_Cliente
         '
         'txt_id_cliente
         '
-        Me.txt_id_cliente.Location = New System.Drawing.Point(362, 142)
+        Me.txt_id_cliente.Location = New System.Drawing.Point(454, 118)
         Me.txt_id_cliente.Name = "txt_id_cliente"
         Me.txt_id_cliente.Size = New System.Drawing.Size(24, 20)
         Me.txt_id_cliente.TabIndex = 1
@@ -244,7 +244,7 @@ Partial Class frm_Cliente
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(304, 145)
+        Me.Label1.Location = New System.Drawing.Point(438, 102)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(52, 13)
         Me.Label1.TabIndex = 0
@@ -259,9 +259,9 @@ Partial Class frm_Cliente
         Me.GroupListadoClientes.Controls.Add(Me.txt_Buscar_Cliente)
         Me.GroupListadoClientes.Controls.Add(Me.dgvLista_Clientes)
         Me.GroupListadoClientes.Controls.Add(Me.Label4)
-        Me.GroupListadoClientes.Location = New System.Drawing.Point(12, 233)
+        Me.GroupListadoClientes.Location = New System.Drawing.Point(12, 209)
         Me.GroupListadoClientes.Name = "GroupListadoClientes"
-        Me.GroupListadoClientes.Size = New System.Drawing.Size(618, 290)
+        Me.GroupListadoClientes.Size = New System.Drawing.Size(618, 398)
         Me.GroupListadoClientes.TabIndex = 1
         Me.GroupListadoClientes.TabStop = False
         Me.GroupListadoClientes.Text = "Listado de Clientes"
@@ -271,7 +271,7 @@ Partial Class frm_Cliente
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Red
-        Me.Label12.Location = New System.Drawing.Point(21, 268)
+        Me.Label12.Location = New System.Drawing.Point(16, 371)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(98, 13)
         Me.Label12.TabIndex = 17
@@ -281,7 +281,7 @@ Partial Class frm_Cliente
         '
         Me.Label6.AutoSize = True
         Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label6.Location = New System.Drawing.Point(414, 266)
+        Me.Label6.Location = New System.Drawing.Point(397, 369)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(2, 15)
         Me.Label6.TabIndex = 5
@@ -289,7 +289,7 @@ Partial Class frm_Cliente
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(321, 268)
+        Me.Label5.Location = New System.Drawing.Point(304, 371)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(86, 13)
         Me.Label5.TabIndex = 4
@@ -297,7 +297,7 @@ Partial Class frm_Cliente
         '
         'btnEliminar_Cliente
         '
-        Me.btnEliminar_Cliente.Location = New System.Drawing.Point(522, 19)
+        Me.btnEliminar_Cliente.Location = New System.Drawing.Point(522, 23)
         Me.btnEliminar_Cliente.Name = "btnEliminar_Cliente"
         Me.btnEliminar_Cliente.Size = New System.Drawing.Size(75, 33)
         Me.btnEliminar_Cliente.TabIndex = 12
@@ -317,10 +317,10 @@ Partial Class frm_Cliente
         Me.dgvLista_Clientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgvLista_Clientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         Me.dgvLista_Clientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLista_Clientes.Location = New System.Drawing.Point(19, 58)
+        Me.dgvLista_Clientes.Location = New System.Drawing.Point(19, 68)
         Me.dgvLista_Clientes.Name = "dgvLista_Clientes"
         Me.dgvLista_Clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_Clientes.Size = New System.Drawing.Size(578, 201)
+        Me.dgvLista_Clientes.Size = New System.Drawing.Size(578, 285)
         Me.dgvLista_Clientes.TabIndex = 10
         '
         'Label4
@@ -336,7 +336,7 @@ Partial Class frm_Cliente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(642, 535)
+        Me.ClientSize = New System.Drawing.Size(642, 616)
         Me.Controls.Add(Me.GroupListadoClientes)
         Me.Controls.Add(Me.GroupNuevoCliente)
         Me.Name = "frm_Cliente"
