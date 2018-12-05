@@ -438,14 +438,6 @@
 
     Private Sub btnGuardar_Orden_Trabajo_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar_Orden_Trabajo.Click
 
-        Dim buscaorden = (From odt In datacontext.ORDEN_TRABAJO
-                          Select odt.ORT_fecha_ot, odt.ORT_tipo_ot, odt.ORT_numero_ot, odt.ORT_observaciones_ot, odt.VEN_id_vendedor, odt.CLI_id_cliente, odt.ORT_fecha_entrega
-                          Where ORT_numero_ot = txtNumero_Orden_Trabajo.Text.ToUpper).Any
-        MsgBox("La Orden ingresada ya existe")
-        limpiarcontroles()
-        If buscaorden = True Then
-            Exit Sub
-        End If
         'VALIDA QUE EL TIPO DE ORDEN NO ESTE VACIO
         If cboTipo_Orden.Text.Length = 0 Then
             MsgBox("Complete el campo Tipo de Orden")
@@ -484,6 +476,16 @@
         'VALIDA QUE LA FECHA DE ENTREGA SEA CORRECTA
         If dtpFecha_Entrega.Value < Today Then
             MsgBox("Verifique la Fecha de Entrega")
+            Exit Sub
+        End If
+
+        Dim buscaorden = (From odt In datacontext.ORDEN_TRABAJO
+                      Select odt.ORT_fecha_ot, odt.ORT_tipo_ot, odt.ORT_numero_ot, odt.ORT_observaciones_ot, odt.VEN_id_vendedor, odt.CLI_id_cliente, odt.ORT_fecha_entrega
+                      Where ORT_numero_ot = txtNumero_Orden_Trabajo.Text.ToUpper).Any
+       
+        If buscaorden = True Then
+            MsgBox("La Orden ingresada ya existe")
+            limpiarcontroles()
             Exit Sub
         End If
 
