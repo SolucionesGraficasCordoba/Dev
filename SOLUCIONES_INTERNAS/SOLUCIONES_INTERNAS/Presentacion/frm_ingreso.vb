@@ -57,7 +57,7 @@
                     Orden(True, True, False)
                     Retrabajo(True, True)
                     Etiquetas(False)
-
+                    Estadistica(True, True, True, True, True)
                 Case "COLABORADOR"
                     'HabilitarGeneral()
             End Select
@@ -240,7 +240,6 @@
                             Etiquetas(True)
                         End If
                     End If
-
                 Next
             End If
 
@@ -380,8 +379,8 @@
 
     End Sub
 
-    Sub Estadistica(ByVal tarea As Boolean, ByVal diaria As Boolean, ByVal mensual As Boolean, ByVal orden As Boolean, ByVal movim As Boolean)
-        frm_Principal.EstadisticasToolStripMenuItem.Enabled = True 'pestaña
+    Sub Estadistica(ByVal pestaña As Boolean, ByVal diaria As Boolean, ByVal mensual As Boolean, ByVal orden As Boolean, ByVal movim As Boolean)
+        frm_Principal.EstadisticasToolStripMenuItem.Enabled = pestaña 'pestaña
 
         frm_Principal.TareasToolStripMenuItem1.Enabled = True 'tarea
         frm_Principal.TareasToolStripMenuItem1.DropDownItems(0).Visible = diaria 'diarias por colaborador

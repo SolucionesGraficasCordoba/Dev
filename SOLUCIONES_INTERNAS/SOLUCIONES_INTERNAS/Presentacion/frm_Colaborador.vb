@@ -218,19 +218,25 @@ Public Class frm_Colaborador
     End Sub
 
     Private Sub dgvLista_Colaboradores_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Colaboradores.CellDoubleClick
-        If quienllamo_col.Name = frm_Actualizar_Tarea.Name Then
-            frm_Actualizar_Tarea.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
-            frm_Actualizar_Tarea.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
+        Try
+            If quienllamo_col.Name = frm_Actualizar_Tarea.Name Then
+                frm_Actualizar_Tarea.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
+                frm_Actualizar_Tarea.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
 
-        ElseIf quienllamo_col.Name = frm_Tarea.Name Then
-            frm_Tarea.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
-            frm_Tarea.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
+            ElseIf quienllamo_col.Name = frm_Tarea.Name Then
+                frm_Tarea.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
+                frm_Tarea.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
 
-        ElseIf quienllamo_col.Name = frm_Usuario.Name Then
-            frm_Usuario.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
-            frm_Usuario.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
-        End If
-        Me.Close()
+            ElseIf quienllamo_col.Name = frm_Usuario.Name Then
+                frm_Usuario.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
+                frm_Usuario.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
+            End If
+            Me.Close()
+        Catch ex As Exception
+
+        End Try
+
+       
     End Sub
 
     Private Sub frm_Colaborador_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
