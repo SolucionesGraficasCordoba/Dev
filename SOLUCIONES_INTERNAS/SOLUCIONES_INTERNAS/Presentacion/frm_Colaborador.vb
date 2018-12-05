@@ -233,10 +233,7 @@ Public Class frm_Colaborador
             End If
             Me.Close()
         Catch ex As Exception
-
         End Try
-
-       
     End Sub
 
     Private Sub frm_Colaborador_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
