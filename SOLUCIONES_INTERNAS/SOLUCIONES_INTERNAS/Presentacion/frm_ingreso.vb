@@ -21,6 +21,7 @@
             Select Case Buscausuario.USU_perfil
 
                 Case "ADMINISTRADOR"
+                    frm_Principal.UsuarioToolStripMenuItem.Visible = True
                     Usuario(True, True, True)
                     Colaborador(True, True, True)
                     Vendedor(True, True, True)
@@ -31,7 +32,7 @@
                     Producto(True, True, True, True, True)
                     Orden(True, True, True)
                     Retrabajo(True, True)
-                    Etiquetas()
+                    Etiquetas(True)
                     Estadistica(True, True, True, True, True)
                     CorreoElectronico(True)
 
@@ -46,7 +47,7 @@
                     Producto(True, True, True, True, True)
                     Orden(True, True, True)
                     Retrabajo(True, True)
-                    Etiquetas()
+                    Etiquetas(False)
                     Estadistica(True, True, True, True, True)
                     CorreoElectronico(False)
 
@@ -55,7 +56,7 @@
                     Producto(False, False, False, True, True)
                     Orden(True, True, False)
                     Retrabajo(True, True)
-                    Etiquetas()
+                    Etiquetas(False)
 
                 Case "COLABORADOR"
                     'HabilitarGeneral()
@@ -70,11 +71,7 @@
             contadorpermisos = permisos.Count
 
             If contadorpermisos > 0 Then
-                'Public flaga = 0, flagb = 0, flagm = 0, flagalta = 0, flagbaja = 0
-
                 For i = 0 To contadorpermisos - 1
-                    '*********resultado del array*******'
-                    '{ PER_permiso = USUARIO, PER_abm = A, USU_id_usuario = 9 }
                     If permisos.Item(i).PER_permiso <> Permiso_anterior Then
                         Permiso_anterior = permisos.Item(i).PER_permiso
                         flaga = 0
@@ -83,7 +80,7 @@
                         flagalta = 0
                         flagbaja = 0
                     End If
-
+                    '-------------------USUARIO-----------------------'
                     If permisos.Item(i).PER_permiso = "USUARIO" Then
                         If permisos.Item(i).PER_abm = "A" Then
                             Usuario(True, flagb, flagm)
@@ -98,6 +95,7 @@
                             flagb = 1
                         End If
                     End If
+                    '-----------------COLABORADOR----------------------'
                     If permisos.Item(i).PER_permiso = "COLABORADOR" Then
                         If permisos.Item(i).PER_abm = "A" Then
                             Colaborador(True, flagb, flagm)
@@ -112,6 +110,7 @@
                             flagb = 1
                         End If
                     End If
+                    '-----------------VENDEDOR----------------------'
                     If permisos.Item(i).PER_permiso = "VENDEDOR" Then
                         If permisos.Item(i).PER_abm = "A" Then
                             Vendedor(True, flagb, flagm)
@@ -126,6 +125,7 @@
                             flagb = 1
                         End If
                     End If
+                    '-----------------CLIENTE----------------------'
                     If permisos.Item(i).PER_permiso = "CLIENTE" Then
                         If permisos.Item(i).PER_abm = "A" Then
                             Cliente(True, flagb, flagm)
@@ -140,6 +140,7 @@
                             flagb = 1
                         End If
                     End If
+                    '-----------------PIEZA---------------------'
                     If permisos.Item(i).PER_permiso = "PIEZA" Then
                         If permisos.Item(i).PER_abm = "A" Then
                             Pieza(True, flagb, flagm)
@@ -154,6 +155,7 @@
                             flagb = 1
                         End If
                     End If
+                    '----------------------SECTOR------------------'
                     If permisos.Item(i).PER_permiso = "SECTOR" Then
                         If permisos.Item(i).PER_abm = "A" Then
                             Sector(True, flagb, flagm)
@@ -168,6 +170,7 @@
                             flagb = 1
                         End If
                     End If
+                    '--------------------TAREA-------------------'
                     If permisos.Item(i).PER_permiso = "TAREA" Then
                         If permisos.Item(i).PER_abm = "A" Then
                             Tarea(True, flagb, flagm)
@@ -182,6 +185,7 @@
                             flagb = 1
                         End If
                     End If
+                    '--------------------PRODUCTO------------------'
                     If permisos.Item(i).PER_permiso = "PRODUCTO" Then
                         If permisos.Item(i).PER_abm = "A" Then
                             Producto(True, flagm, flagb, flagalta, flagbaja)
@@ -204,6 +208,7 @@
                             flagbaja = 1
                         End If
                     End If
+                    '----------------------ODT-----------------'
                     If permisos.Item(i).PER_permiso = "ODT" Then
                         If permisos.Item(i).PER_abm = "A" Then
                             Orden(True, flagb, flagm)
@@ -218,6 +223,7 @@
                             flagb = 1
                         End If
                     End If
+                    '---------------------RETRABAJO-------------------'
                     If permisos.Item(i).PER_permiso = "RETRABAJO" Then
                         If permisos.Item(i).PER_abm = "A" Then
                             Retrabajo(True, flagb)
@@ -226,6 +232,12 @@
                         If permisos.Item(i).PER_abm = "B" Then
                             Retrabajo(flaga, True)
                             flagb = 1
+                        End If
+                    End If
+                    '------------------ETIQUETA---------------------'
+                    If permisos.Item(i).PER_permiso = "ETIQUETA" Then
+                        If permisos.Item(i).PER_abm = "A" Then
+                            Etiquetas(True)
                         End If
                     End If
 
@@ -260,11 +272,11 @@
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Enabled = True 'consultar
         frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(2).Enabled = True 'consultar
 
-        Etiquetas()
         Acercade()
     End Sub
 
     Sub DeshabilitarGeneral()
+        frm_Principal.UsuarioToolStripMenuItem.Visible = False
         Usuario(False, False, False)
         Colaborador(False, False, False)
         Vendedor(False, False, False)
@@ -275,7 +287,7 @@
         Producto(False, False, False, False, False)
         Orden(False, False, False)
         Retrabajo(False, False)
-        Etiquetas()
+        Etiquetas(False)
         Estadistica(False, False, False, False, False)
         CorreoElectronico(False)
         Acercade()
@@ -288,7 +300,7 @@
     End Sub
 
     Sub Usuario(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
-        frm_Principal.UsuarioToolStripMenuItem.Visible = True
+
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(2).Visible = elim
@@ -379,8 +391,8 @@
         frm_Principal.OrdenDeTrabajoToolStripMenuItem.DropDownItems(0).Visible = movim 'movimiento de orden
     End Sub
 
-    Sub Etiquetas()
-        frm_Principal.EtiquetasToolStripMenuItem.Visible = True
+    Sub Etiquetas(ByVal flaga)
+        frm_Principal.EtiquetasToolStripMenuItem.Visible = flaga
     End Sub
 
     Sub CorreoElectronico(ByVal ver As Boolean)
