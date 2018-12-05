@@ -63,6 +63,7 @@
 
             'HABILITA SEGUN PERMISOS ESPECIALES
             Dim contadorpermisos As Integer
+            Dim Permiso_anterior As String = ""
 
             Dim permisos = (From A In datacontext.PERMISO Select A.PER_permiso, A.PER_abm, A.USU_id_usuario Where USU_id_usuario = Buscausuario.USU_id_usuario Order By PER_permiso).ToList
 
@@ -74,160 +75,158 @@
                 For i = 0 To contadorpermisos - 1
                     '*********resultado del array*******'
                     '{ PER_permiso = USUARIO, PER_abm = A, USU_id_usuario = 9 }
+                    If permisos.Item(i).PER_permiso <> Permiso_anterior Then
+                        Permiso_anterior = permisos.Item(i).PER_permiso
+                        flaga = 0
+                        flagb = 0
+                        flagm = 0
+                        flagalta = 0
+                        flagbaja = 0
+                    End If
 
-                    If permisos.Item(i).ToString.Contains("PER_permiso = USUARIO") Then
-                        If permisos.Item(i).ToString.Contains("PER_abm = A") Then
+                    If permisos.Item(i).PER_permiso = "USUARIO" Then
+                        If permisos.Item(i).PER_abm = "A" Then
                             Usuario(True, flagb, flagm)
                             flaga = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = M") Then
+                        If permisos.Item(i).PER_abm = "M" Then
                             Usuario(flaga, True, flagb)
                             flagm = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = B") Then
+                        If permisos.Item(i).PER_abm = "B" Then
                             Usuario(flaga, flagm, True)
                             flagb = 1
                         End If
-                        inicializa_flags()
                     End If
-                    If permisos.Item(i).ToString.Contains("PER_permiso = COLABORADOR") Then
-                        If permisos.Item(i).ToString.Contains("PER_abm = A") Then
+                    If permisos.Item(i).PER_permiso = "COLABORADOR" Then
+                        If permisos.Item(i).PER_abm = "A" Then
                             Colaborador(True, flagb, flagm)
                             flaga = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = M") Then
+                        If permisos.Item(i).PER_abm = "M" Then
                             Colaborador(flaga, True, flagb)
                             flagm = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = B") Then
+                        If permisos.Item(i).PER_abm = "B" Then
                             Colaborador(flaga, flagm, True)
                             flagb = 1
                         End If
-                        inicializa_flags()
                     End If
-                    If permisos.Item(i).ToString.Contains("PER_permiso = VENDEDOR") Then
-                        If permisos.Item(i).ToString.Contains("PER_abm = A") Then
+                    If permisos.Item(i).PER_permiso = "VENDEDOR" Then
+                        If permisos.Item(i).PER_abm = "A" Then
                             Vendedor(True, flagb, flagm)
                             flaga = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = M") Then
+                        If permisos.Item(i).PER_abm = "M" Then
                             Vendedor(flaga, True, flagb)
                             flagm = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = B") Then
+                        If permisos.Item(i).PER_abm = "B" Then
                             Vendedor(flaga, flagm, True)
                             flagb = 1
                         End If
-                        inicializa_flags()
                     End If
-                    If permisos.Item(i).ToString.Contains("PER_permiso = CLIENTE") Then
-                        If permisos.Item(i).ToString.Contains("PER_abm = A") Then
+                    If permisos.Item(i).PER_permiso = "CLIENTE" Then
+                        If permisos.Item(i).PER_abm = "A" Then
                             Cliente(True, flagb, flagm)
                             flaga = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = M") Then
+                        If permisos.Item(i).PER_abm = "M" Then
                             Cliente(flaga, True, flagb)
                             flagm = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = B") Then
+                        If permisos.Item(i).PER_abm = "B" Then
                             Cliente(flaga, flagm, True)
                             flagb = 1
                         End If
-                        inicializa_flags()
                     End If
-                    If permisos.Item(i).ToString.Contains("PER_permiso = PIEZA") Then
-                        If permisos.Item(i).ToString.Contains("PER_abm = A") Then
+                    If permisos.Item(i).PER_permiso = "PIEZA" Then
+                        If permisos.Item(i).PER_abm = "A" Then
                             Pieza(True, flagb, flagm)
                             flaga = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = M") Then
+                        If permisos.Item(i).PER_abm = "M" Then
                             Pieza(flaga, True, flagb)
                             flagm = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = B") Then
+                        If permisos.Item(i).PER_abm = "B" Then
                             Pieza(flaga, flagm, True)
                             flagb = 1
                         End If
-                        inicializa_flags()
                     End If
-                    If permisos.Item(i).ToString.Contains("PER_permiso = SECTOR") Then
-                        If permisos.Item(i).ToString.Contains("PER_abm = A") Then
+                    If permisos.Item(i).PER_permiso = "SECTOR" Then
+                        If permisos.Item(i).PER_abm = "A" Then
                             Sector(True, flagb, flagm)
                             flaga = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = M") Then
+                        If permisos.Item(i).PER_abm = "M" Then
                             Sector(flaga, True, flagb)
                             flagm = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = B") Then
+                        If permisos.Item(i).PER_abm = "B" Then
                             Sector(flaga, flagm, True)
                             flagb = 1
                         End If
-                        inicializa_flags()
                     End If
-                    If permisos.Item(i).ToString.Contains("PER_permiso = TAREA") Then
-                        If permisos.Item(i).ToString.Contains("PER_abm = A") Then
+                    If permisos.Item(i).PER_permiso = "TAREA" Then
+                        If permisos.Item(i).PER_abm = "A" Then
                             Tarea(True, flagb, flagm)
                             flaga = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = M") Then
+                        If permisos.Item(i).PER_abm = "M" Then
                             Tarea(flaga, True, flagb)
                             flagm = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = B") Then
+                        If permisos.Item(i).PER_abm = "B" Then
                             Tarea(flaga, flagm, True)
                             flagb = 1
                         End If
-                        inicializa_flags()
                     End If
-                    If permisos.Item(i).ToString.Contains("PER_permiso = PRODUCTO") Then
-                        If permisos.Item(i).ToString.Contains("PER_abm = A") Then
+                    If permisos.Item(i).PER_permiso = "PRODUCTO" Then
+                        If permisos.Item(i).PER_abm = "A" Then
                             Producto(True, flagm, flagb, flagalta, flagbaja)
                             flaga = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = M") Then
+                        If permisos.Item(i).PER_abm = "M" Then
                             Producto(flaga, True, flagb, flagalta, flagbaja)
                             flagm = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = B") Then
+                        If permisos.Item(i).PER_abm = "B" Then
                             Producto(flaga, flagm, True, flagalta, flagbaja)
                             flagb = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = ALTA") Then
+                        If permisos.Item(i).PER_abm = "ALTA" Then
                             Producto(flaga, flagm, flagb, True, flagbaja)
                             flagalta = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = BAJA") Then
+                        If permisos.Item(i).PER_abm = "BAJA" Then
                             Producto(flaga, flagm, flagb, flagalta, True)
                             flagbaja = 1
                         End If
-                        inicializa_flags()
                     End If
-                    If permisos.Item(i).ToString.Contains("PER_permiso = ODT") Then
-                        If permisos.Item(i).ToString.Contains("PER_abm = A") Then
+                    If permisos.Item(i).PER_permiso = "ODT" Then
+                        If permisos.Item(i).PER_abm = "A" Then
                             Orden(True, flagb, flagm)
                             flaga = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = M") Then
+                        If permisos.Item(i).PER_abm = "M" Then
                             Orden(flaga, True, flagb)
                             flagm = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = B") Then
+                        If permisos.Item(i).PER_abm = "B" Then
                             Orden(flaga, flagm, True)
                             flagb = 1
                         End If
-                        inicializa_flags()
                     End If
-                    If permisos.Item(i).ToString.Contains("PER_permiso = RETRABAJO") Then
-                        If permisos.Item(i).ToString.Contains("PER_abm = A") Then
+                    If permisos.Item(i).PER_permiso = "RETRABAJO" Then
+                        If permisos.Item(i).PER_abm = "A" Then
                             Retrabajo(True, flagb)
                             flaga = 1
                         End If
-                        If permisos.Item(i).ToString.Contains("PER_abm = B") Then
+                        If permisos.Item(i).PER_abm = "B" Then
                             Retrabajo(flaga, True)
                             flagb = 1
                         End If
-                        inicializa_flags()
                     End If
 
                 Next
@@ -246,13 +245,7 @@
             limpiarcontroles()
         End Try
     End Sub
-    Sub inicializa_flags()
-        flaga = 0
-        flagb = 0
-        flagm = 0
-        flagalta = 0
-        flagbaja = 0
-    End Sub
+
     Sub HabilitarGeneral()
 
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(3).Visible = True
@@ -403,7 +396,7 @@
         txt_usuario.Clear()
     End Sub
 
-    Private Sub btnCambiar_Click(sender As System.Object, e As System.EventArgs) Handles btnCambiarContraseña.Click
+    Private Sub btnCambiar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCambiarContraseña.Click
         Try
             Dim Buscausuario = (From I In datacontext.USUARIO Where I.USU_usuario = (txt_usuario.Text) And I.USU_contraseña = (txt_contraseña.Text)).ToList()(0)
             frm_gestion_usuarios.txt_usuario.Text = Buscausuario.USU_usuario
@@ -419,7 +412,7 @@
         End Try
     End Sub
 
-    Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.Close()
         Application.ExitThread()
         Me.Dispose()
