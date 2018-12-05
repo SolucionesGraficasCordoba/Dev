@@ -1,10 +1,10 @@
 ﻿Public Class frm_ingreso
     Dim datacontext As New DataS_Interno
     'Variables para marcar los ingresos
-    Dim flag_usuario, flag_colaborador, flag_vendedor, flag_cliente, flag_pieza, _
-    flag_sector, flag_tarea, flag_producto, flag_orden, flag_retrabajo As String
+    '   Dim flag_usuario, flag_colaborador, flag_vendedor, flag_cliente, flag_pieza, _
+    ' flag_sector, flag_tarea, flag_producto, flag_orden, flag_retrabajo As String
 
-
+    Public flaga = 0, flagb = 0, flagm = 0, flagalta = 0, flagbaja = 0
     Private Sub frm_ingreso_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txt_usuario.Focus()
     End Sub
@@ -64,12 +64,12 @@
             'HABILITA SEGUN PERMISOS ESPECIALES
             Dim contadorpermisos As Integer
 
-            Dim permisos = (From A In datacontext.PERMISO Select A.PER_permiso, A.PER_abm, A.USU_id_usuario Where USU_id_usuario = Buscausuario.USU_id_usuario).ToList
+            Dim permisos = (From A In datacontext.PERMISO Select A.PER_permiso, A.PER_abm, A.USU_id_usuario Where USU_id_usuario = Buscausuario.USU_id_usuario Order By PER_permiso).ToList
 
             contadorpermisos = permisos.Count
 
             If contadorpermisos > 0 Then
-                Dim flaga = 0, flagb = 0, flagm = 0, flagc = 0, flagalta = 0, flagbaja = 0, flagconsprod = 0, flagconsmov = 0
+                'Public flaga = 0, flagb = 0, flagm = 0, flagalta = 0, flagbaja = 0
 
                 For i = 0 To contadorpermisos - 1
                     '*********resultado del array*******'
@@ -88,6 +88,7 @@
                             Usuario(flaga, flagm, True)
                             flagb = 1
                         End If
+                        inicializa_flags()
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = COLABORADOR") Then
                         If permisos.Item(i).ToString.Contains("PER_abm = A") Then
@@ -102,6 +103,7 @@
                             Colaborador(flaga, flagm, True)
                             flagb = 1
                         End If
+                        inicializa_flags()
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = VENDEDOR") Then
                         If permisos.Item(i).ToString.Contains("PER_abm = A") Then
@@ -116,6 +118,7 @@
                             Vendedor(flaga, flagm, True)
                             flagb = 1
                         End If
+                        inicializa_flags()
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = CLIENTE") Then
                         If permisos.Item(i).ToString.Contains("PER_abm = A") Then
@@ -130,6 +133,7 @@
                             Cliente(flaga, flagm, True)
                             flagb = 1
                         End If
+                        inicializa_flags()
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = PIEZA") Then
                         If permisos.Item(i).ToString.Contains("PER_abm = A") Then
@@ -144,6 +148,7 @@
                             Pieza(flaga, flagm, True)
                             flagb = 1
                         End If
+                        inicializa_flags()
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = SECTOR") Then
                         If permisos.Item(i).ToString.Contains("PER_abm = A") Then
@@ -158,6 +163,7 @@
                             Sector(flaga, flagm, True)
                             flagb = 1
                         End If
+                        inicializa_flags()
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = TAREA") Then
                         If permisos.Item(i).ToString.Contains("PER_abm = A") Then
@@ -172,6 +178,7 @@
                             Tarea(flaga, flagm, True)
                             flagb = 1
                         End If
+                        inicializa_flags()
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = PRODUCTO") Then
                         If permisos.Item(i).ToString.Contains("PER_abm = A") Then
@@ -194,6 +201,7 @@
                             Producto(flaga, flagm, flagb, flagalta, True)
                             flagbaja = 1
                         End If
+                        inicializa_flags()
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = ODT") Then
                         If permisos.Item(i).ToString.Contains("PER_abm = A") Then
@@ -208,6 +216,7 @@
                             Orden(flaga, flagm, True)
                             flagb = 1
                         End If
+                        inicializa_flags()
                     End If
                     If permisos.Item(i).ToString.Contains("PER_permiso = RETRABAJO") Then
                         If permisos.Item(i).ToString.Contains("PER_abm = A") Then
@@ -218,6 +227,7 @@
                             Retrabajo(flaga, True)
                             flagb = 1
                         End If
+                        inicializa_flags()
                     End If
 
                 Next
@@ -236,7 +246,13 @@
             limpiarcontroles()
         End Try
     End Sub
-
+    Sub inicializa_flags()
+        flaga = 0
+        flagb = 0
+        flagm = 0
+        flagalta = 0
+        flagbaja = 0
+    End Sub
     Sub HabilitarGeneral()
 
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(3).Visible = True
@@ -283,7 +299,7 @@
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(2).Visible = elim
-        flag_usuario = nuevo & modif & elim
+        ' flag_usuario = nuevo & modif & elim
     End Sub
 
     Sub Colaborador(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
