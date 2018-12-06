@@ -3434,7 +3434,6 @@
     End Sub
 
     Sub calcula_minutos()
-        'calcula minutos
         Dim qtddias As TimeSpan
         Dim totalmin As Integer = 0
         qtddias = CDate(txtSalida.Text).Subtract(CDate(txtEntrada.Text))
