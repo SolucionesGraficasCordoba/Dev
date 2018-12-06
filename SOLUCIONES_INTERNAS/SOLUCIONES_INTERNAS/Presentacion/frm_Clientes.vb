@@ -1,4 +1,6 @@
-﻿Public Class frm_Cliente
+﻿Imports System.Windows.Forms.TextBox
+
+Public Class frm_Cliente
     Dim datacontext As New DataS_Interno
     Public quienllamocliente As Form
 
@@ -107,7 +109,7 @@
         dgvLista_Clientes.Columns.Clear()
 
         dgvLista_Clientes.Columns.Add("CLI_id_cliente", "id_cliente")
-        dgvLista_Clientes.Columns.Add("CLI_razon_social", " Razón Social")
+        dgvLista_Clientes.Columns.Add("CLI_razon_social", "Razón Social")
         dgvLista_Clientes.Columns.Add("CLI_mail_cli", "Mail")
         dgvLista_Clientes.Columns.Add("CLI_telefono_cli", "Teléfono")
         dgvLista_Clientes.Columns.Add("CLI_domicilio", "Domicilio")
@@ -231,6 +233,25 @@
         Me.Close()
     End Sub
 
+    Private Sub txt_razonsocial_cliente_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_razonsocial_cliente.Leave
+
+        Dim completar = (From C In datacontext.CLIENTE Where C.CLI_razon_social = txt_razonsocial_cliente.Text)
+
+        'Si el texto no está vacío y no está en la lista
+        If Not String.IsNullOrEmpty(txt_razonsocial_cliente.Text) _
+        AndAlso Not txt_razonsocial_cliente.AutoCompleteCustomSource.Contains(completar) Then
+            'Obtengo control actual
+            Dim ctrl As Control = Me.ActiveControl
+
+            'Inserto texto en la lista de autocompletar
+            txt_razonsocial_cliente.AutoCompleteCustomSource.Add(txt_razonsocial_cliente.Text)
+
+            'Selecciono control actual
+            ctrl.Select()
+        End If
+
+    End Sub
+
     'Sub autoCompletarTexbox(ByVal campoTexto As TextBox)
     '    Try
     '        Dim autocompletar = (From auto In datacontext.CLIENTE
@@ -242,4 +263,5 @@
     '        MsgBox(ex.ToString)
     '    End Try
     'End Sub
+
 End Class
