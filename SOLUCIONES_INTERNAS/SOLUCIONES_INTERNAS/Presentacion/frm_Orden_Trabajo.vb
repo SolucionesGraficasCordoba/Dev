@@ -482,13 +482,14 @@
         Dim buscaorden = (From odt In datacontext.ORDEN_TRABAJO
                       Select odt.ORT_fecha_ot, odt.ORT_tipo_ot, odt.ORT_numero_ot, odt.ORT_observaciones_ot, odt.VEN_id_vendedor, odt.CLI_id_cliente, odt.ORT_fecha_entrega
                       Where ORT_numero_ot = txtNumero_Orden_Trabajo.Text.ToUpper).Any
-       
-        If buscaorden = True Then
-            MsgBox("La Orden ingresada ya existe")
-            limpiarcontroles()
-            Exit Sub
-        End If
 
+        If cargamasprod = "NO" Then
+            If buscaorden = True Then
+                MsgBox("La Orden ingresada ya existe")
+                limpiarcontroles()
+                Exit Sub
+            End If
+        End If
         'GUARDA ORDEN DE TRABAJO
         Try
             Dim clie = New ORDEN_TRABAJO
@@ -774,7 +775,7 @@
         End Try
     End Sub
 
-    Private Sub btnActualizar_Orden_Trabajo_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar_Orden_Trabajo.Click
+    Private Sub btnActualizar_Orden_Trabajo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnActualizar_Orden_Trabajo.Click
 
         'VALIDA CAMPOS OBLIGATORIOS
         If txtNumero_Orden_Trabajo.Text.Length = 0 _
