@@ -83,7 +83,7 @@
                     '-------------------USUARIO-----------------------'
                     If permisos.Item(i).PER_permiso = "USUARIO" Then
                         If permisos.Item(i).PER_abm = "A" Then
-                            Usuario(True, flagb, flagm)
+                            Usuario(True, flagm, flagb)
                             flaga = 1
                         End If
                         If permisos.Item(i).PER_abm = "M" Then
@@ -98,7 +98,7 @@
                     '-----------------COLABORADOR----------------------'
                     If permisos.Item(i).PER_permiso = "COLABORADOR" Then
                         If permisos.Item(i).PER_abm = "A" Then
-                            Colaborador(True, flagb, flagm)
+                            Colaborador(True, flagm, flagb)
                             flaga = 1
                         End If
                         If permisos.Item(i).PER_abm = "M" Then
@@ -113,7 +113,7 @@
                     '-----------------VENDEDOR----------------------'
                     If permisos.Item(i).PER_permiso = "VENDEDOR" Then
                         If permisos.Item(i).PER_abm = "A" Then
-                            Vendedor(True, flagb, flagm)
+                            Vendedor(True, flagm, flagb)
                             flaga = 1
                         End If
                         If permisos.Item(i).PER_abm = "M" Then
@@ -128,7 +128,7 @@
                     '-----------------CLIENTE----------------------'
                     If permisos.Item(i).PER_permiso = "CLIENTE" Then
                         If permisos.Item(i).PER_abm = "A" Then
-                            Cliente(True, flagb, flagm)
+                            Cliente(True, flagm, flagb)
                             flaga = 1
                         End If
                         If permisos.Item(i).PER_abm = "M" Then
@@ -143,7 +143,7 @@
                     '-----------------PIEZA---------------------'
                     If permisos.Item(i).PER_permiso = "PIEZA" Then
                         If permisos.Item(i).PER_abm = "A" Then
-                            Pieza(True, flagb, flagm)
+                            Pieza(True, flagm, flagb)
                             flaga = 1
                         End If
                         If permisos.Item(i).PER_abm = "M" Then
@@ -158,7 +158,7 @@
                     '----------------------SECTOR------------------'
                     If permisos.Item(i).PER_permiso = "SECTOR" Then
                         If permisos.Item(i).PER_abm = "A" Then
-                            Sector(True, flagb, flagm)
+                            Sector(True, flagm, flagb)
                             flaga = 1
                         End If
                         If permisos.Item(i).PER_abm = "M" Then
@@ -173,7 +173,7 @@
                     '--------------------TAREA-------------------'
                     If permisos.Item(i).PER_permiso = "TAREA" Then
                         If permisos.Item(i).PER_abm = "A" Then
-                            Tarea(True, flagb, flagm)
+                            Tarea(True, flagm, flagb)
                             flaga = 1
                         End If
                         If permisos.Item(i).PER_abm = "M" Then
@@ -211,7 +211,7 @@
                     '----------------------ODT-----------------'
                     If permisos.Item(i).PER_permiso = "ODT" Then
                         If permisos.Item(i).PER_abm = "A" Then
-                            Orden(True, flagb, flagm)
+                            Orden(True, flagm, flagb)
                             flaga = 1
                         End If
                         If permisos.Item(i).PER_abm = "M" Then
