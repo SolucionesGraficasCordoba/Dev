@@ -4,7 +4,6 @@ Imports iTextSharp.text.pdf
 Imports System.IO
 
 Public Class frm_Movimiento_Orden
-
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
 
@@ -95,10 +94,11 @@ Public Class frm_Movimiento_Orden
                              Order By TAR_fecha Descending)
         dgvMovimiento_Orden.DataSource = MovimientoOrden
         dgvMovimiento_Orden.ClearSelection()
-
     End Sub
 
     Private Sub btnExportarPDF_Click(sender As System.Object, e As System.EventArgs) Handles btnExportarPDF.Click
 
     End Sub
 End Class
+
+'Punchado De Chapas , Carga Papel Y Pone A Punto Maquina
