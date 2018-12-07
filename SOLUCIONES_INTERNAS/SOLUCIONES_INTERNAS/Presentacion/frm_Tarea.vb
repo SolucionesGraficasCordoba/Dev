@@ -3438,6 +3438,9 @@
         Dim totalmin As Integer = 0
         qtddias = CDate(txtSalida.Text).Subtract(CDate(txtEntrada.Text))
         totalmin = qtddias.TotalMinutes
+        If totalmin < 0 Then
+            totalmin = totalmin + 1440
+        End If
         txt_Carga_Horaria1.Text = totalmin
     End Sub
 End Class
