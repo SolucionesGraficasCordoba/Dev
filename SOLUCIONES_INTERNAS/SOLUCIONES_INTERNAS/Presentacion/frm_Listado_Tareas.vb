@@ -101,8 +101,8 @@ Public Class frm_Listado_Tareas
         dgvColaboradores.ClearSelection()
     End Sub
 
+    'CARGA TAREAS DEL COLABORADOR SEGUN SECTOR Y FECHA
     Public Sub dgvColaboradores_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvColaboradores.CellClick
-        'CARGA TAREAS DEL COLABORADOR SEGUN SECTOR Y FECHA
         Try
             If dgvColaboradores.SelectedRows.Count > 0 Then
                 vble_id_colaborador = dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
@@ -116,7 +116,6 @@ Public Class frm_Listado_Tareas
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
                 End If
-
             End If
             vble_colaborador = dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
             vble_fecha = dtpFecha.Text
@@ -145,7 +144,6 @@ Public Class frm_Listado_Tareas
             End If
         Catch
         End Try
-
 
         'CALCULA LA SUMA DEL TIEMPO REAL DE CADA TAREA POR COLABORADOR
         Try

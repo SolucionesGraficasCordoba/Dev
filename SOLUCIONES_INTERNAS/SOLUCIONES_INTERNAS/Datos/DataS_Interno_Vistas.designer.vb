@@ -2042,8 +2042,6 @@ End Class
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Movimiento_Orden")>  _
 Partial Public Class Movimiento_Orden
 	
-	Private _ORT_id_orden_trabajo As System.Nullable(Of Integer)
-	
 	Private _ORT_numero_ot As String
 	
 	Private _TAR_id_tarea As Integer
@@ -2054,10 +2052,6 @@ Partial Public Class Movimiento_Orden
 	
 	Private _TAR_fecha As System.Nullable(Of Date)
 	
-	Private _PIE_id_pieza As Integer
-	
-	Private _PIE_nombre_pie As String
-	
 	Private _COL_id_colaborador As Integer
 	
 	Private _COL_nombre_col As String
@@ -2066,21 +2060,11 @@ Partial Public Class Movimiento_Orden
 	
 	Private _SEC_nombre_sector As String
 	
+	Private _ORT_id_orden_trabajo As Integer
+	
 	Public Sub New()
 		MyBase.New
 	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int")>  _
-	Public Property ORT_id_orden_trabajo() As System.Nullable(Of Integer)
-		Get
-			Return Me._ORT_id_orden_trabajo
-		End Get
-		Set
-			If (Me._ORT_id_orden_trabajo.Equals(value) = false) Then
-				Me._ORT_id_orden_trabajo = value
-			End If
-		End Set
-	End Property
 	
 	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_numero_ot", DbType:="VarChar(10) NOT NULL", CanBeNull:=false)>  _
 	Public Property ORT_numero_ot() As String
@@ -2143,31 +2127,6 @@ Partial Public Class Movimiento_Orden
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_id_pieza", DbType:="Int NOT NULL")>  _
-	Public Property PIE_id_pieza() As Integer
-		Get
-			Return Me._PIE_id_pieza
-		End Get
-		Set
-			If ((Me._PIE_id_pieza = value)  _
-						= false) Then
-				Me._PIE_id_pieza = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_nombre_pie", DbType:="VarChar(30) NOT NULL", CanBeNull:=false)>  _
-	Public Property PIE_nombre_pie() As String
-		Get
-			Return Me._PIE_nombre_pie
-		End Get
-		Set
-			If (String.Equals(Me._PIE_nombre_pie, value) = false) Then
-				Me._PIE_nombre_pie = value
-			End If
-		End Set
-	End Property
-	
 	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_id_colaborador", DbType:="Int NOT NULL")>  _
 	Public Property COL_id_colaborador() As Integer
 		Get
@@ -2213,6 +2172,19 @@ Partial Public Class Movimiento_Orden
 		Set
 			If (String.Equals(Me._SEC_nombre_sector, value) = false) Then
 				Me._SEC_nombre_sector = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int NOT NULL")>  _
+	Public Property ORT_id_orden_trabajo() As Integer
+		Get
+			Return Me._ORT_id_orden_trabajo
+		End Get
+		Set
+			If ((Me._ORT_id_orden_trabajo = value)  _
+						= false) Then
+				Me._ORT_id_orden_trabajo = value
 			End If
 		End Set
 	End Property

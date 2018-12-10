@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.125, 8.5" name="DataS_Interno_Vistas">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.25, 8.5" name="DataS_Interno_Vistas">
   <DataContextMoniker Name="/DataS_Interno_Vistas" />
   <nestedChildShapes>
     <classShape Id="e146fe0b-01d4-42ab-bfd2-352bb0791de6" isExpanded="false" absoluteBounds="3.75, 0.75, 2, 0.45">
@@ -62,10 +62,10 @@
         <elementListCompartment Id="84316249-a406-4d45-99a3-8ecedeab9192" absoluteBounds="6.64, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="695d2286-a315-4e3c-9653-666095e8cca9" absoluteBounds="9.875, 3.5, 2, 3.1170068359375">
+    <classShape Id="b663d774-ce3f-4b94-ace3-f51ee1d2eddb" absoluteBounds="10, 1.875, 2, 2.7324039713541666">
       <DataClassMoniker Name="/DataS_Interno_Vistas/Movimiento_Orden" />
       <nestedChildShapes>
-        <elementListCompartment Id="cb688eb8-cf5d-4823-b4b3-9b87f645ada0" absoluteBounds="9.89, 3.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cfd5d096-440e-434b-b838-64edbe960227" absoluteBounds="10.015, 2.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

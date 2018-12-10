@@ -69,7 +69,7 @@ Partial Class frm_Listado_Tareas
         '
         'btnModificarTodas
         '
-        Me.btnModificarTodas.Location = New System.Drawing.Point(582, 241)
+        Me.btnModificarTodas.Location = New System.Drawing.Point(582, 246)
         Me.btnModificarTodas.Name = "btnModificarTodas"
         Me.btnModificarTodas.Size = New System.Drawing.Size(104, 33)
         Me.btnModificarTodas.TabIndex = 4
@@ -106,7 +106,7 @@ Partial Class frm_Listado_Tareas
         Me.Label6.AutoSize = True
         Me.Label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(222, 252)
+        Me.Label6.Location = New System.Drawing.Point(228, 254)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(2, 18)
         Me.Label6.TabIndex = 5
@@ -115,7 +115,7 @@ Partial Class frm_Listado_Tareas
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(6, 252)
+        Me.Label5.Location = New System.Drawing.Point(12, 254)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(214, 16)
         Me.Label5.TabIndex = 4
@@ -127,11 +127,11 @@ Partial Class frm_Listado_Tareas
         Me.dgvColaboradores.AllowUserToDeleteRows = False
         Me.dgvColaboradores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgvColaboradores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvColaboradores.Location = New System.Drawing.Point(9, 46)
+        Me.dgvColaboradores.Location = New System.Drawing.Point(15, 46)
         Me.dgvColaboradores.MultiSelect = False
         Me.dgvColaboradores.Name = "dgvColaboradores"
         Me.dgvColaboradores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvColaboradores.Size = New System.Drawing.Size(677, 189)
+        Me.dgvColaboradores.Size = New System.Drawing.Size(671, 189)
         Me.dgvColaboradores.TabIndex = 5
         '
         'Label4

@@ -1359,6 +1359,7 @@ Public Class frm_Principal
     End Sub
 
     Private Sub MovimientoDeÓrdenesToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles MovimientoDeÓrdenesToolStripMenuItem.Click
+        frm_Movimiento_Orden.txt_Buscar_orden_trabajo.Clear()
         frm_Movimiento_Orden.ShowDialog()
         frm_Movimiento_Orden.dgvMovimiento_Orden.ClearSelection()
     End Sub
