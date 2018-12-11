@@ -66,6 +66,7 @@ Public Class frm_Movimiento_Orden
         dgvMovimiento_Orden.Columns(6).DataPropertyName = "PIE_id_pieza"
         dgvMovimiento_Orden.Columns(6).Visible = False
         dgvMovimiento_Orden.Columns(7).DataPropertyName = "PIE_nombre_pie"
+        dgvMovimiento_Orden.Columns(7).Visible = False
         dgvMovimiento_Orden.Columns(8).DataPropertyName = "COL_id_colaborador"
         dgvMovimiento_Orden.Columns(8).Visible = False
         dgvMovimiento_Orden.Columns(9).DataPropertyName = "COL_nombre_col"
