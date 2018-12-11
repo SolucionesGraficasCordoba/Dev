@@ -1377,4 +1377,5 @@ Public Class frm_Principal
         '    lanzar_automatico.informe_diario_tareas()
         'End If
     End Sub
+
 End Class

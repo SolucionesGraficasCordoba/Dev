@@ -88,19 +88,14 @@ Public Class frm_Movimiento_Orden
         Try
             'Declarar variable que acumulará la sumatoria de las celdas
             Dim Sumatoria As Integer = 0
-
             'Recorrer las filas del objeto de tipo DataGridView
             For Each row As DataGridViewRow In dgvMovimiento_Orden.Rows
                 'Acumular valores
                 Sumatoria += Convert.ToInt32(row.Cells("TAR_tiempo_real").Value)
             Next
-
             Label2.Text = Sumatoria
-            ' Label2.Text = dgvMovimiento_Orden.Rows.Count
         Catch ex As Exception
-
         End Try
-
     End Sub
 
     Sub buscar()
@@ -123,29 +118,21 @@ Public Class frm_Movimiento_Orden
                              Order By TAR_fecha Descending)
         dgvMovimiento_Orden.DataSource = MovimientoOrden
         dgvMovimiento_Orden.ClearSelection()
-
-      
     End Sub
 
     Private Sub btnExportarPDF_Click(sender As System.Object, e As System.EventArgs) Handles btnExportarPDF.Click
         Try
             If txt_Buscar_orden_trabajo.TextLength = 0 Then
-                MsgBox("Seleccione una Órden del listado", MsgBoxStyle.Information, "Exportar Órden")
+                MsgBox("Seleccione una Orden del listado", MsgBoxStyle.Information, "Exportar Orden")
                 Exit Sub
             End If
             'intentar generar el documento
             Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
             'path que guarda el reporte en el escritorio de windows (desktop)
-            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Movimiento de la Órden.pdf"
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Movimiento de la Orden.pdf"
             Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
             PdfWriter.GetInstance(doc, file)
             doc.Open()
-
-            Dim encabezado As New Paragraph("Movimiento de la Orden ", New Font(fuente, 16, Font.Bold))
-            Dim fecha As New Phrase("Fecha de Impresión: " + Date.Now, New Font(fuente, 10, Font.Bold))
-            doc.Add(encabezado)
-            doc.Add(fecha)
-
             ExportarDatosPDF(doc)
             doc.Close()
             Process.Start(filename)
@@ -174,7 +161,12 @@ Public Class frm_Movimiento_Orden
 
         datatable.WidthPercentage = 100
         datatable.DefaultCell.BorderWidth = 2
-        datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+        'datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+
+        Dim encabezado As New Paragraph("Movimiento de la Orden ", New Font(fuente, 16, Font.Bold))
+        Dim fecha As New Phrase("Fecha de Impresión: " + Date.Now, New Font(fuente, 10, Font.Bold))
+        ' doc.Add(encabezado)
+        '  doc.Add(fecha)
 
         'se capturan los nombres de las columnas del datagridview
         For i As Integer = 0 To dgvMovimiento_Orden.ColumnCount - 1
@@ -200,6 +192,8 @@ Public Class frm_Movimiento_Orden
         Next
 
         Dim TotalTareas As New Phrase("Tiempo Consumido: " + Label2.Text, New Font(fuente, 10, Font.Bold))
+        document.Add(encabezado)
+        document.Add(fecha)
         document.Add(linea)
         document.Add(datatable)
         document.Add(TotalTareas)
