@@ -2110,8 +2110,8 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txt_id_colaborador.Visible = False
         frm_Tarea.txt_id_tarea.Visible = False
         frm_Tarea.btnActualizar.Enabled = True
-        frm_Tarea.txtEntrada.Enabled = False
-        frm_Tarea.txtSalida.Enabled = False
+        frm_Tarea.txtEntrada.Enabled = True
+        frm_Tarea.txtSalida.Enabled = True
 
         frm_Tarea.ShowDialog()
     End Sub

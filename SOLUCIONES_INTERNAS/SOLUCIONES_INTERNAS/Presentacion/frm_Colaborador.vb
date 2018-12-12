@@ -44,7 +44,7 @@ Public Class frm_Colaborador
         Try
             Dim buscacliente = (From cli In datacontext.COLABORADOR
                                 Select cli.COL_nombre_col, cli.COL_apellido_col, cli.SEC_id_sector
-                                Where COL_nombre_col = txt_nombre_colaborador.Text.ToUpper).Any
+                                Where COL_nombre_col = txt_nombre_colaborador.Text.ToUpper And COL_apellido_col = txt_apellido_colaborador.Text.ToUpper).Any
             If buscacliente = True Then
                 MsgBox("El colaborador ingresado ya existe")
                 limpiarcontroles()
