@@ -102,7 +102,7 @@ Public Class frm_Listado_Tareas
     End Sub
 
     'CARGA TAREAS DEL COLABORADOR SEGUN SECTOR Y FECHA
-    Public Sub dgvColaboradores_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvColaboradores.CellClick
+    Public Sub dgvColaboradores_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvColaboradores.CellClick
         Try
             If dgvColaboradores.SelectedRows.Count > 0 Then
                 vble_id_colaborador = dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
@@ -117,12 +117,13 @@ Public Class frm_Listado_Tareas
                     btnModificarTodas.Enabled = False
                 End If
             End If
-            vble_colaborador = dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
+            'vble_colaborador = dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
+            vble_colaborador = dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
             vble_fecha = dtpFecha.Text
             Dim datagridtarea = (From o In datavistas.Vista_Tarea_x_Colaborador
                                Select o.TAR_id_tarea, o.TAR_detalle_tarea, o.TAR_tiempo_estimado, o.TAR_tiempo_real,
                                o.TAR_observaciones, o.ORT_id_orden_trabajo, o.ORT_numero_ot, o.TAR_fecha, o.TAR_carga_horaria, o.TAR_hora_fin, o.Expr1, o.COL_nombre_col, o.TAR_entrada, o.TAR_salida
-                               Where COL_nombre_col = vble_colaborador And TAR_fecha = vble_fecha)
+                               Where Expr1 = vble_colaborador And TAR_fecha = vble_fecha)
             mostrargrillaobligaciones(datagridtarea)
 
             If dgvTarea_x_Colaborador.Rows.Count = 0 Then
@@ -216,7 +217,7 @@ Public Class frm_Listado_Tareas
     End Sub
 
     'BOTON MODIFICAR (CARGA LOS DATOS EN CADA UNO DE LOS CONTROLES)
-    Private Sub btnModificar_Tarea_Click(sender As System.Object, e As System.EventArgs) Handles btnModificar_Una.Click
+    Private Sub btnModificar_Tarea_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificar_Una.Click
 
         If dgvColaboradores.RowCount = 0 Then
             MsgBox("Debe seleccionar un Sector")
@@ -250,12 +251,12 @@ Public Class frm_Listado_Tareas
     End Sub
 
     'BOTON CANCELAR CIERRA EL FORMULARIO ACTUAL
-    Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
+    Private Sub btnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar.Click
         Me.Close()
         Me.Dispose()
     End Sub
 
-    Private Sub btnAgregar_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregar.Click
+    Private Sub btnAgregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAgregar.Click
         If Me.dgvColaboradores.SelectedRows.Count > 0 Then
             frm_Actualizar_Tarea.dtpFecha.Text = dtpFecha.Text
             frm_Actualizar_Tarea.txt_id_colaborador.Text = Me.dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
@@ -268,7 +269,7 @@ Public Class frm_Listado_Tareas
         frm_Actualizar_Tarea.btn_Actualizar_Tarea.Enabled = False
     End Sub
 
-    Private Sub dtpFecha_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpFecha.ValueChanged
+    Private Sub dtpFecha_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtpFecha.ValueChanged
         '***LO COMENTE XQ HABILITA BOTON MODIFICAR EN CUANDO SE CONSULTA..
         '*** POR EL MOMENTO SE PUEDE CARGAR UNA TAREA VENCIDA
         'Dim fechaactual = System.DateTime.Now.ToString("dd/mm/yyyy")
@@ -280,7 +281,7 @@ Public Class frm_Listado_Tareas
         dgvTarea_x_Colaborador.DataSource = ""
     End Sub
 
-    Private Sub btnVer_Click(sender As System.Object, e As System.EventArgs) Handles btnVer.Click
+    Private Sub btnVer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVer.Click
 
         'CARGA EL ENCABEZADO DEL FORMULARIO TAREAS
         If dgvColaboradores.Rows.Count = 0 Then
@@ -1086,7 +1087,7 @@ Public Class frm_Listado_Tareas
         Me.Dispose()
     End Sub
 
-    Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnExportarListado.Click
+    Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExportarListado.Click
         Try
             If dgvColaboradores.SelectedRows.Count < 1 Then
                 MsgBox("Debe seleccionar un colaborador", MsgBoxStyle.Information, "Imprimir tareas")
@@ -1183,7 +1184,7 @@ Public Class frm_Listado_Tareas
         Return values
     End Function
 
-    Private Sub btnModificarTodas_Click(sender As System.Object, e As System.EventArgs) Handles btnModificarTodas.Click
+    Private Sub btnModificarTodas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarTodas.Click
 
         'CARGA EL ENCABEZADO DEL FORMULARIO TAREAS
         If dgvColaboradores.Rows.Count = 0 Then
