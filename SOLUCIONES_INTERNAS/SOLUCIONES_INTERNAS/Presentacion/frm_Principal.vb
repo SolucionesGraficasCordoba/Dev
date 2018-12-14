@@ -1358,7 +1358,7 @@ Public Class frm_Principal
         frm_Enviar_Correo.ShowDialog()
     End Sub
 
-    Private Sub MovimientoDeÓrdenesToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles MovimientoDeÓrdenesToolStripMenuItem.Click
+    Private Sub MovimientoDeÓrdenesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MovimientoDeÓrdenesToolStripMenuItem.Click
         frm_Movimiento_Orden.txt_Buscar_orden_trabajo.Clear()
         frm_Movimiento_Orden.ShowDialog()
         frm_Movimiento_Orden.dgvMovimiento_Orden.ClearSelection()
@@ -1372,7 +1372,7 @@ Public Class frm_Principal
         'hora = DateTime.Now.Hour
         'minuto = DateTime.Now.Minute
         'tempcadena = hora & ":" & minuto
-        'If tempcadena = "13:21" Then
+        'If tempcadena = "16:15" Then
         '    Dim lanzar_automatico As New Automatico
         '    lanzar_automatico.informe_diario_tareas()
         'End If
