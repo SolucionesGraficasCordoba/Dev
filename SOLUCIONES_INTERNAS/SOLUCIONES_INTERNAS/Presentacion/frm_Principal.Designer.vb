@@ -580,7 +580,6 @@ Partial Class frm_Principal
         '
         'Timer_automatico
         '
-        Me.Timer_automatico.Enabled = True
         Me.Timer_automatico.Interval = 20000
         '
         'frm_Principal
