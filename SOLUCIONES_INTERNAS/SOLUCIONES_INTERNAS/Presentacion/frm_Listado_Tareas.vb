@@ -1162,7 +1162,6 @@ Public Class frm_Listado_Tareas
             Next
             datatable.CompleteRow()
         Next
-
         Dim TotalTareas As New Phrase("Total Real de Tareas: " + Label35.Text, New Font(fuente, 10, Font.Bold))
         document.Add(encabezado)
         document.Add(entradasalida)
@@ -1812,7 +1811,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtNumero_Orden_Trabajo17.Enabled = False
                 frm_Tarea.txtNumero_Orden_Trabajo18.Enabled = False
                 frm_Tarea.txtNumero_Orden_Trabajo19.Enabled = False
-            ElseIf dgvTarea_x_Colaborador.RowCount = 20 Then
+            ElseIf dgvTarea_x_Colaborador.RowCount >= 20 Then
                 flag1 = 1
                 flag2 = 1
                 flag3 = 1
@@ -1853,7 +1852,17 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtNumero_Orden_Trabajo18.Enabled = False
                 frm_Tarea.txtNumero_Orden_Trabajo19.Enabled = False
                 frm_Tarea.txtNumero_Orden_Trabajo20.Enabled = False
+
+                If dgvTarea_x_Colaborador.RowCount > 20 Then
+                    MsgBox("Sólo se muestran las primeras 20 tareas,para modificar una específca selecciónela de la grilla")
+                    btnExportarListado.Focus()
+                End If
+
+                If dgvTarea_x_Colaborador.RowCount >= 20 Then
+                    OcultarId()
+                End If
             End If
+
             If flag1 = 1 Then
                 frm_Tarea.txt_Id_Tarea1.Text = Me.dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.Rows(0).Index).Value
                 frm_Tarea.txt_detalle_tarea1.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(0).Index).Value
