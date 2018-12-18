@@ -1857,12 +1857,10 @@ Public Class frm_Listado_Tareas
                     MsgBox("Sólo se muestran las primeras 20 tareas,para modificar una específca selecciónela de la grilla")
                     btnExportarListado.Focus()
                 End If
-
                 If dgvTarea_x_Colaborador.RowCount >= 20 Then
                     OcultarId()
                 End If
             End If
-
             If flag1 = 1 Then
                 frm_Tarea.txt_Id_Tarea1.Text = Me.dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.Rows(0).Index).Value
                 frm_Tarea.txt_detalle_tarea1.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(0).Index).Value
@@ -1872,9 +1870,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones1.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(0).Index).Value
                 frm_Tarea.txt_id_orden_trabajo1.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(0).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo1.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(0).Index).Value
-
             End If
-
             If flag2 = 1 Then
                 frm_Tarea.txt_Id_Tarea2.Text = Me.dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.Rows(1).Index).Value
                 frm_Tarea.txt_detalle_tarea2.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(1).Index).Value
@@ -1884,9 +1880,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones2.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(1).Index).Value
                 frm_Tarea.txt_id_orden_trabajo2.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(1).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo2.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(1).Index).Value
-
             End If
-
             If flag3 = 1 Then
                 frm_Tarea.txt_Id_Tarea3.Text = Me.dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.Rows(2).Index).Value
                 frm_Tarea.txt_detalle_tarea3.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(2).Index).Value
@@ -1896,9 +1890,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtObservaciones3.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(2).Index).Value
                 frm_Tarea.txt_id_orden_trabajo3.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(2).Index).Value
                 frm_Tarea.txtNumero_Orden_Trabajo3.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(2).Index).Value
-
             End If
-
             If flag4 = 1 Then
                 frm_Tarea.txt_Id_Tarea4.Text = Me.dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.Rows(3).Index).Value
                 frm_Tarea.txt_detalle_tarea4.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(3).Index).Value
@@ -2201,7 +2193,6 @@ Public Class frm_Listado_Tareas
             Next
             datatable.CompleteRow()
         Next
-
         'Se ponen las distintas partes en el pdf
         document.Add(linea)
         document.Add(linea)
@@ -2221,7 +2212,6 @@ Public Class frm_Listado_Tareas
             Dim entradasalida As New Paragraph("Sin tareas cargadas por el momento.", New Font(fuente, 10, Font.Bold))
             document.Add(entradasalida)
         End If
-
         Dim TotalTareas As New Paragraph("Total Real de Tareas: " + Label35.Text, New Font(fuente, 10, Font.Bold))
         document.Add(interlineado)
         document.Add(datatable)
