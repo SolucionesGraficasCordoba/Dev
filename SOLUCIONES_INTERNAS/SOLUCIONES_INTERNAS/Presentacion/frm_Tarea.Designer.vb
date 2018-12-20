@@ -325,7 +325,7 @@ Partial Class frm_Tarea
         '
         'txt_Carga_Horaria1
         '
-        Me.txt_Carga_Horaria1.Location = New System.Drawing.Point(827, 21)
+        Me.txt_Carga_Horaria1.Location = New System.Drawing.Point(842, 21)
         Me.txt_Carga_Horaria1.Name = "txt_Carga_Horaria1"
         Me.txt_Carga_Horaria1.Size = New System.Drawing.Size(53, 20)
         Me.txt_Carga_Horaria1.TabIndex = 5
@@ -333,7 +333,7 @@ Partial Class frm_Tarea
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(751, 24)
+        Me.Label13.Location = New System.Drawing.Point(766, 24)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(70, 13)
         Me.Label13.TabIndex = 32
@@ -479,7 +479,7 @@ Partial Class frm_Tarea
         '
         'btnBuscar_Colaborador
         '
-        Me.btnBuscar_Colaborador.Location = New System.Drawing.Point(264, 18)
+        Me.btnBuscar_Colaborador.Location = New System.Drawing.Point(263, 20)
         Me.btnBuscar_Colaborador.Name = "btnBuscar_Colaborador"
         Me.btnBuscar_Colaborador.Size = New System.Drawing.Size(54, 23)
         Me.btnBuscar_Colaborador.TabIndex = 1
@@ -488,14 +488,14 @@ Partial Class frm_Tarea
         '
         'txt_nombre_colaborador
         '
-        Me.txt_nombre_colaborador.Location = New System.Drawing.Point(111, 19)
+        Me.txt_nombre_colaborador.Location = New System.Drawing.Point(110, 21)
         Me.txt_nombre_colaborador.Name = "txt_nombre_colaborador"
         Me.txt_nombre_colaborador.Size = New System.Drawing.Size(147, 20)
         Me.txt_nombre_colaborador.TabIndex = 36
         '
         'txt_id_colaborador
         '
-        Me.txt_id_colaborador.Location = New System.Drawing.Point(324, 20)
+        Me.txt_id_colaborador.Location = New System.Drawing.Point(323, 22)
         Me.txt_id_colaborador.Name = "txt_id_colaborador"
         Me.txt_id_colaborador.Size = New System.Drawing.Size(13, 20)
         Me.txt_id_colaborador.TabIndex = 35
@@ -503,7 +503,7 @@ Partial Class frm_Tarea
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(34, 22)
+        Me.Label3.Location = New System.Drawing.Point(33, 24)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(64, 13)
         Me.Label3.TabIndex = 34
@@ -2886,7 +2886,7 @@ Partial Class frm_Tarea
         'dtpFecha
         '
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(388, 18)
+        Me.dtpFecha.Location = New System.Drawing.Point(404, 21)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(82, 20)
         Me.dtpFecha.TabIndex = 2
@@ -2894,7 +2894,7 @@ Partial Class frm_Tarea
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(345, 21)
+        Me.Label31.Location = New System.Drawing.Point(360, 21)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(37, 13)
         Me.Label31.TabIndex = 45
@@ -2914,7 +2914,7 @@ Partial Class frm_Tarea
         'Label62
         '
         Me.Label62.AutoSize = True
-        Me.Label62.Location = New System.Drawing.Point(345, 21)
+        Me.Label62.Location = New System.Drawing.Point(359, 25)
         Me.Label62.Name = "Label62"
         Me.Label62.Size = New System.Drawing.Size(37, 13)
         Me.Label62.TabIndex = 45
@@ -2925,7 +2925,7 @@ Partial Class frm_Tarea
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label37.ForeColor = System.Drawing.Color.Red
-        Me.Label37.Location = New System.Drawing.Point(98, 23)
+        Me.Label37.Location = New System.Drawing.Point(97, 25)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(11, 13)
         Me.Label37.TabIndex = 24
@@ -2981,9 +2981,9 @@ Partial Class frm_Tarea
         Me.GroupBox2.Controls.Add(Me.Label37)
         Me.GroupBox2.Controls.Add(Me.txt_Carga_Horaria1)
         Me.GroupBox2.Controls.Add(Me.Label13)
-        Me.GroupBox2.Location = New System.Drawing.Point(27, 12)
+        Me.GroupBox2.Location = New System.Drawing.Point(27, 4)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(918, 51)
+        Me.GroupBox2.Size = New System.Drawing.Size(918, 59)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         '
@@ -2992,7 +2992,7 @@ Partial Class frm_Tarea
         Me.Label59.AutoSize = True
         Me.Label59.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label59.ForeColor = System.Drawing.Color.Red
-        Me.Label59.Location = New System.Drawing.Point(655, 25)
+        Me.Label59.Location = New System.Drawing.Point(670, 25)
         Me.Label59.Name = "Label59"
         Me.Label59.Size = New System.Drawing.Size(11, 13)
         Me.Label59.TabIndex = 49
@@ -3003,7 +3003,7 @@ Partial Class frm_Tarea
         Me.Label32.AutoSize = True
         Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label32.ForeColor = System.Drawing.Color.Red
-        Me.Label32.Location = New System.Drawing.Point(534, 23)
+        Me.Label32.Location = New System.Drawing.Point(549, 23)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(11, 13)
         Me.Label32.TabIndex = 48
@@ -3011,7 +3011,7 @@ Partial Class frm_Tarea
         '
         'txtSalida
         '
-        Me.txtSalida.Location = New System.Drawing.Point(668, 21)
+        Me.txtSalida.Location = New System.Drawing.Point(683, 21)
         Me.txtSalida.MaxLength = 5
         Me.txtSalida.Name = "txtSalida"
         Me.txtSalida.Size = New System.Drawing.Size(51, 20)
@@ -3019,7 +3019,7 @@ Partial Class frm_Tarea
         '
         'txtEntrada
         '
-        Me.txtEntrada.Location = New System.Drawing.Point(548, 20)
+        Me.txtEntrada.Location = New System.Drawing.Point(563, 20)
         Me.txtEntrada.MaxLength = 5
         Me.txtEntrada.Name = "txtEntrada"
         Me.txtEntrada.Size = New System.Drawing.Size(51, 20)
@@ -3028,7 +3028,7 @@ Partial Class frm_Tarea
         'Label58
         '
         Me.Label58.AutoSize = True
-        Me.Label58.Location = New System.Drawing.Point(613, 24)
+        Me.Label58.Location = New System.Drawing.Point(628, 24)
         Me.Label58.Name = "Label58"
         Me.Label58.Size = New System.Drawing.Size(39, 13)
         Me.Label58.TabIndex = 46
@@ -3037,7 +3037,7 @@ Partial Class frm_Tarea
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(481, 22)
+        Me.Label33.Location = New System.Drawing.Point(496, 22)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(47, 13)
         Me.Label33.TabIndex = 46
