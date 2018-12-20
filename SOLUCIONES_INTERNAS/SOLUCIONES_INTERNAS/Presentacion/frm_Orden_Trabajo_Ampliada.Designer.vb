@@ -457,7 +457,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(492, 76)
+        Me.Label19.Location = New System.Drawing.Point(492, 87)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(107, 13)
         Me.Label19.TabIndex = 85
@@ -466,11 +466,11 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'txt_observaciones
         '
         Me.txt_observaciones.Location = New System.Drawing.Point(680, 34)
-        Me.txt_observaciones.MaxLength = 250
+        Me.txt_observaciones.MaxLength = 350
         Me.txt_observaciones.Multiline = True
         Me.txt_observaciones.Name = "txt_observaciones"
         Me.txt_observaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txt_observaciones.Size = New System.Drawing.Size(370, 88)
+        Me.txt_observaciones.Size = New System.Drawing.Size(370, 92)
         Me.txt_observaciones.TabIndex = 71
         '
         'Label18
@@ -933,7 +933,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboDireccion_Entrega.FormattingEnabled = True
         Me.cboDireccion_Entrega.Items.AddRange(New Object() {"Casa Central", "Planta Industrial"})
-        Me.cboDireccion_Entrega.Location = New System.Drawing.Point(453, 101)
+        Me.cboDireccion_Entrega.Location = New System.Drawing.Point(453, 106)
         Me.cboDireccion_Entrega.Name = "cboDireccion_Entrega"
         Me.cboDireccion_Entrega.Size = New System.Drawing.Size(212, 21)
         Me.cboDireccion_Entrega.TabIndex = 128
@@ -1156,9 +1156,9 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'txtDato_Variable
         '
-        Me.txtDato_Variable.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtDato_Variable.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtDato_Variable.Location = New System.Drawing.Point(6, 240)
-        Me.txtDato_Variable.MaxLength = 10
+        Me.txtDato_Variable.MaxLength = 350
         Me.txtDato_Variable.Multiline = True
         Me.txtDato_Variable.Name = "txtDato_Variable"
         Me.txtDato_Variable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -1543,7 +1543,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'txt_descripcion_terminacion
         '
         Me.txt_descripcion_terminacion.Location = New System.Drawing.Point(99, 213)
-        Me.txt_descripcion_terminacion.MaxLength = 50
+        Me.txt_descripcion_terminacion.MaxLength = 350
         Me.txt_descripcion_terminacion.Multiline = True
         Me.txt_descripcion_terminacion.Name = "txt_descripcion_terminacion"
         Me.txt_descripcion_terminacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
