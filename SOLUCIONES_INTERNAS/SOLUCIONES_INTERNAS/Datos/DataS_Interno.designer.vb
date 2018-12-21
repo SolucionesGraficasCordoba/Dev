@@ -22,7 +22,7 @@ Imports System.Linq.Expressions
 Imports System.Reflection
 
 
-<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="PREPRODUCCION")>  _
+<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="SOLUCIONES_INTERNAS")>  _
 Partial Public Class DataS_Interno
 	Inherits System.Data.Linq.DataContext
 	

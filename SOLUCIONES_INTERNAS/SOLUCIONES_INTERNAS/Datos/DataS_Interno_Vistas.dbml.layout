@@ -62,7 +62,7 @@
         <elementListCompartment Id="84316249-a406-4d45-99a3-8ecedeab9192" absoluteBounds="6.64, 3.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="b663d774-ce3f-4b94-ace3-f51ee1d2eddb" absoluteBounds="10, 1.875, 2, 2.7324039713541666">
+    <classShape Id="b663d774-ce3f-4b94-ace3-f51ee1d2eddb" isExpanded="false" absoluteBounds="10, 1.875, 2, 0.45">
       <DataClassMoniker Name="/DataS_Interno_Vistas/Movimiento_Orden" />
       <nestedChildShapes>
         <elementListCompartment Id="cfd5d096-440e-434b-b838-64edbe960227" absoluteBounds="10.015, 2.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />

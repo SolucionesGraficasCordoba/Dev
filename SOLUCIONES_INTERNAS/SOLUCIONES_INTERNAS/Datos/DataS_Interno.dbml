@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PREPRODUCCION" Class="DataS_Interno" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SOLUCIONES_INTERNAS" Class="DataS_Interno" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-84P9IMQ\SQLEXPRESS;Initial Catalog=SOLUCIONES_INTERNAS;Integrated Security=True" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.VENDEDOR" Member="VENDEDOR">
     <Type Name="VENDEDOR">

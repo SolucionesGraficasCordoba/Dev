@@ -187,6 +187,11 @@
         ElseIf quienllamovendedor.Name = frm_Actualizar_Orden.Name Then
             frm_Actualizar_Orden.txtid_vendedor.Text = dgvLista_vendedores.SelectedCells(0).Value
             frm_Actualizar_Orden.txtNombre_vendedor.Text = dgvLista_vendedores.SelectedCells(1).Value
+
+        ElseIf quienllamovendedor.Name = frm_Orden_Trabajo_Ampliada.Name Then
+            frm_Orden_Trabajo_Ampliada.txtid_vendedor.Text = dgvLista_vendedores.SelectedCells(0).Value
+            frm_Orden_Trabajo_Ampliada.txtNombre_vendedor.Text = dgvLista_vendedores.SelectedCells(1).Value
+
         End If
         Me.Close()
 

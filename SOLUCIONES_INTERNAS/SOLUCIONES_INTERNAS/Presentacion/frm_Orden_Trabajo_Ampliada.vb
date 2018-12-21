@@ -5,8 +5,7 @@
     Private Sub frm_Orden_Trabajo_Ampliada_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         'CARGA COMBOBOX PIEZA DETALLE 1
         Dim combopieza1 = (From sec In datacontext.PIEZA
-                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
-                           Where PIE_ubicacion = "D"
+                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
                            Order By PIE_nombre_pie Ascending)
         cboPiezas_Producto.DataSource = combopieza1
         cboPiezas_Producto.DisplayMember = "PIE_nombre_pie"
@@ -15,13 +14,13 @@
 
         'CARGA COMBOBOX PIEZA DETALLE 1
         Dim combopieza2 = (From sec In datacontext.PIEZA
-                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
-                           Where PIE_ubicacion = "G"
+                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
                            Order By PIE_nombre_pie Ascending)
         cboPiezas_Producto_Gran_Formato.DataSource = combopieza2
         cboPiezas_Producto_Gran_Formato.DisplayMember = "PIE_nombre_pie"
         cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza"
         cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
+
     End Sub
 
     Private Sub btnBuscar_cliente_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_cliente.Click
@@ -31,4 +30,14 @@
         frm_Cliente.GroupNuevoCliente.Enabled = False
         frm_Cliente.Show()
     End Sub
+
+    Private Sub btnBuscar_Vendedor_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Vendedor.Click
+        frm_Vendedor.quienllamovendedor = Me
+        frm_Vendedor.Text = "Seleccionar Vendedor"
+        frm_Vendedor.btnEliminar_vendedor.Enabled = False
+        frm_Vendedor.GroupNuevoVendedor.Enabled = False
+        frm_Vendedor.Show()
+    End Sub
+
+   
 End Class

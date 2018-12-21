@@ -97,8 +97,8 @@
         <classShapeMoniker Id="33885703-7f19-4fe4-8585-50a511aff228" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(3 : 2.65549967447917); (3 : 5.46875); (6.625 : 5.46875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-    <associationConnector edgePoints="[(3 : 2.65549967447917); (3 : 5.46875); (6.625 : 5.46875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <!--<associationConnector edgePoints="[(3 : 2.65549967447917); (3 : 5.46875); (6.625 : 5.46875)]" fixedFrom="NotFixed" fixedTo="NotFixed">-->
+    <!--<associationConnector edgePoints="[(3 : 2.65549967447917); (3 : 5.46875); (6.625 : 5.46875)]" fixedFrom="Algorithm" fixedTo="Algorithm">-->
     <associationConnector edgePoints="[(3 : 2.65549967447917); (3 : 6.02809895833333); (6.625 : 6.02809895833333)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataS_Interno/CLIENTE/CLIENTE_ORDEN_TRABAJO" />
       <nodes>

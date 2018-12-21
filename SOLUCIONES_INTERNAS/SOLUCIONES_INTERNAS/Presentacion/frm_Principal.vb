@@ -1,5 +1,5 @@
 ﻿Imports System.Windows.Forms
-Imports automatico
+'Imports automatico
 
 Public Class frm_Principal
 
@@ -1383,6 +1383,14 @@ Public Class frm_Principal
     End Sub
 
     Private Sub OrdenAmpliadaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles OrdenAmpliadaToolStripMenuItem.Click
+        frm_Orden_Trabajo_Ampliada.txt_id_cliente.Visible = False
+        frm_Orden_Trabajo_Ampliada.txtid_vendedor.Visible = False
+        frm_Orden_Trabajo_Ampliada.Label45.Visible = False
+        frm_Orden_Trabajo_Ampliada.txt_id_detalle_orden_trabajo1.Visible = False
+        frm_Orden_Trabajo_Ampliada.Label1.Visible = False
+        frm_Orden_Trabajo_Ampliada.txt_id_orden_trabajo.Visible = False
+        frm_Orden_Trabajo_Ampliada.Label8.Visible = False
+        frm_Orden_Trabajo_Ampliada.cboTipo_Orden.Visible = False
         frm_Orden_Trabajo_Ampliada.Show()
 
     End Sub
