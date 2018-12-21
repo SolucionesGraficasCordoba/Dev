@@ -1378,4 +1378,12 @@ Public Class frm_Principal
         'End If
     End Sub
 
+    Private Sub OrdenTrabajoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles OrdenTrabajoToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub OrdenAmpliadaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles OrdenAmpliadaToolStripMenuItem.Click
+        frm_Orden_Trabajo_Ampliada.Show()
+
+    End Sub
 End Class

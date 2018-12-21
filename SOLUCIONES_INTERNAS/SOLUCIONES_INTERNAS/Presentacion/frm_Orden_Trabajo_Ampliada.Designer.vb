@@ -864,7 +864,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_3_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_3_Pliego_Maquina_Offset.FormattingEnabled = True
-        Me.cboFormato_3_Pliego_Maquina_Offset.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
+        Me.cboFormato_3_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
         Me.cboFormato_3_Pliego_Maquina_Offset.Location = New System.Drawing.Point(82, 94)
         Me.cboFormato_3_Pliego_Maquina_Offset.Name = "cboFormato_3_Pliego_Maquina_Offset"
         Me.cboFormato_3_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
@@ -890,7 +890,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_2_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_2_Pliego_Maquina_Offset.FormattingEnabled = True
-        Me.cboFormato_2_Pliego_Maquina_Offset.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
+        Me.cboFormato_2_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
         Me.cboFormato_2_Pliego_Maquina_Offset.Location = New System.Drawing.Point(82, 69)
         Me.cboFormato_2_Pliego_Maquina_Offset.Name = "cboFormato_2_Pliego_Maquina_Offset"
         Me.cboFormato_2_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
@@ -916,7 +916,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_1_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_1_Pliego_Maquina_Offset.FormattingEnabled = True
-        Me.cboFormato_1_Pliego_Maquina_Offset.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
+        Me.cboFormato_1_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
         Me.cboFormato_1_Pliego_Maquina_Offset.Location = New System.Drawing.Point(82, 43)
         Me.cboFormato_1_Pliego_Maquina_Offset.Name = "cboFormato_1_Pliego_Maquina_Offset"
         Me.cboFormato_1_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
@@ -1089,7 +1089,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_3_Pliego_Maquina_Digital.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_3_Pliego_Maquina_Digital.FormattingEnabled = True
-        Me.cboFormato_3_Pliego_Maquina_Digital.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
+        Me.cboFormato_3_Pliego_Maquina_Digital.Items.AddRange(New Object() {"473 x 323", "480 x 323", "440 x 315", "400 x 295", "420 x 297", "356 x 215", "323 x 235", "340 x 220", "650 x 313", "630 x 220", "500 x 323", "700 x 330", "297 x 210", "360 x 255"})
         Me.cboFormato_3_Pliego_Maquina_Digital.Location = New System.Drawing.Point(82, 94)
         Me.cboFormato_3_Pliego_Maquina_Digital.Name = "cboFormato_3_Pliego_Maquina_Digital"
         Me.cboFormato_3_Pliego_Maquina_Digital.Size = New System.Drawing.Size(138, 21)
@@ -1115,7 +1115,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_2_Pliego_Maquina_Digital.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_2_Pliego_Maquina_Digital.FormattingEnabled = True
-        Me.cboFormato_2_Pliego_Maquina_Digital.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
+        Me.cboFormato_2_Pliego_Maquina_Digital.Items.AddRange(New Object() {"473 x 323", "480 x 323", "440 x 315", "400 x 295", "420 x 297", "356 x 215", "323 x 235", "340 x 220", "650 x 313", "630 x 220", "500 x 323", "700 x 330", "297 x 210", "360 x 255"})
         Me.cboFormato_2_Pliego_Maquina_Digital.Location = New System.Drawing.Point(82, 69)
         Me.cboFormato_2_Pliego_Maquina_Digital.Name = "cboFormato_2_Pliego_Maquina_Digital"
         Me.cboFormato_2_Pliego_Maquina_Digital.Size = New System.Drawing.Size(138, 21)
@@ -1141,7 +1141,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_1_Pliego_Maquina_Digital.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_1_Pliego_Maquina_Digital.FormattingEnabled = True
-        Me.cboFormato_1_Pliego_Maquina_Digital.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
+        Me.cboFormato_1_Pliego_Maquina_Digital.Items.AddRange(New Object() {"473 x 323", "480 x 323", "440 x 315", "400 x 295", "420 x 297", "356 x 215", "323 x 235", "340 x 220", "650 x 313", "630 x 220", "500 x 323", "700 x 330", "297 x 210", "360 x 255"})
         Me.cboFormato_1_Pliego_Maquina_Digital.Location = New System.Drawing.Point(82, 43)
         Me.cboFormato_1_Pliego_Maquina_Digital.Name = "cboFormato_1_Pliego_Maquina_Digital"
         Me.cboFormato_1_Pliego_Maquina_Digital.Size = New System.Drawing.Size(138, 21)
@@ -1601,6 +1601,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Controls.Add(Me.txt_id_orden_trabajo)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frm_Orden_Trabajo_Ampliada"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_Orden_Trabajo_Ampliada"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
