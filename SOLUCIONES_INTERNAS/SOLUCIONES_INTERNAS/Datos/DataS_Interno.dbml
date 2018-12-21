@@ -1,12 +1,5 @@
-
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PREPRODUCCION" Class="DataS_Interno" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString1" Provider="System.Data.SqlClient" />
-
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SOLUCIONES_INTERNAS" Class="DataS_Interno" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=NB-BALDO;Initial Catalog=SOLUCIONES_INTERNAS;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString1" Provider="System.Data.SqlClient" />
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SOLUCIONES_INTERNAS" Class="DataS_Interno" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-84P9IMQ\SQLEXPRESS;Initial Catalog=SOLUCIONES_INTERNAS;Integrated Security=True" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString1" Provider="System.Data.SqlClient" />
-
   <Table Name="dbo.VENDEDOR" Member="VENDEDOR">
     <Type Name="VENDEDOR">
       <Column Name="VEN_id_vendedor" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -26,6 +19,13 @@
       <Association Name="COLABORADOR_USUARIO" Member="USUARIO" ThisKey="COL_id_colaborador" OtherKey="COL_id_colaborador" Type="USUARIO" />
       <Association Name="COLABORADOR_TAREA" Member="TAREA" ThisKey="COL_id_colaborador" OtherKey="COL_id_colaborador" Type="TAREA" />
       <Association Name="SECTOR_COLABORADOR" Member="SECTOR" ThisKey="SEC_id_sector" OtherKey="SEC_id_sector" Type="SECTOR" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PIEZA" Member="PIEZA">
+    <Type Name="PIEZA">
+      <Column Name="PIE_id_pieza" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PIE_nombre_pie" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Association Name="PIEZA_DETALLE_ORDEN_TRABAJO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="PIE_id_pieza" OtherKey="PIE_id_pieza" Type="DETALLE_ORDEN_TRABAJO" />
     </Type>
   </Table>
   <Table Name="dbo.SECTOR" Member="SECTOR">
@@ -80,8 +80,8 @@
       <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="DETALLE_ORDEN_TRABAJO_PROCESO" Member="PROCESO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="PROCESO" />
       <Association Name="DETALLE_ORDEN_TRABAJO_RE_TRABAJO" Member="RE_TRABAJO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="RE_TRABAJO" />
-      <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="PIEZA_DETALLE_ORDEN_TRABAJO" Member="PIEZA" ThisKey="PIE_id_pieza" OtherKey="PIE_id_pieza" Type="PIEZA" IsForeignKey="true" />
+      <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" DeleteRule="CASCADE" />
     </Type>
   </Table>
   <Table Name="dbo.PRODUCTO" Member="PRODUCTO">
@@ -190,14 +190,6 @@
       <Column Name="PER_abm" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
       <Column Name="USU_id_usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="USUARIO_PERMISO" Member="USUARIO" ThisKey="USU_id_usuario" OtherKey="USU_id_usuario" Type="USUARIO" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.PIEZA" Member="PIEZA">
-    <Type Name="PIEZA">
-      <Column Name="PIE_id_pieza" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="PIE_nombre_pie" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="PIE_ubicacion" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
-      <Association Name="PIEZA_DETALLE_ORDEN_TRABAJO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="PIE_id_pieza" OtherKey="PIE_id_pieza" Type="DETALLE_ORDEN_TRABAJO" />
     </Type>
   </Table>
 </Database>
