@@ -302,7 +302,6 @@ Partial Class frm_Tarea
         Me.txtHora_Finalizacion2 = New System.Windows.Forms.TextBox()
         Me.txt_detalle_tarea2 = New System.Windows.Forms.TextBox()
         Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
-        Me.Label31 = New System.Windows.Forms.Label()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Label62 = New System.Windows.Forms.Label()
         Me.Label37 = New System.Windows.Forms.Label()
@@ -2891,15 +2890,6 @@ Partial Class frm_Tarea
         Me.dtpFecha.Size = New System.Drawing.Size(82, 20)
         Me.dtpFecha.TabIndex = 2
         '
-        'Label31
-        '
-        Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(360, 21)
-        Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(37, 13)
-        Me.Label31.TabIndex = 45
-        Me.Label31.Text = "Fecha"
-        '
         'Label34
         '
         Me.Label34.AutoSize = True
@@ -2973,7 +2963,6 @@ Partial Class frm_Tarea
         Me.GroupBox2.Controls.Add(Me.Label33)
         Me.GroupBox2.Controls.Add(Me.dtpFecha)
         Me.GroupBox2.Controls.Add(Me.Label62)
-        Me.GroupBox2.Controls.Add(Me.Label31)
         Me.GroupBox2.Controls.Add(Me.btnBuscar_Colaborador)
         Me.GroupBox2.Controls.Add(Me.txt_nombre_colaborador)
         Me.GroupBox2.Controls.Add(Me.txt_id_colaborador)
@@ -3232,7 +3221,6 @@ Partial Class frm_Tarea
     Friend WithEvents txtHora_Finalizacion2 As System.Windows.Forms.TextBox
     Friend WithEvents txt_detalle_tarea2 As System.Windows.Forms.TextBox
     Friend WithEvents dtpFecha As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label31 As System.Windows.Forms.Label
     Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label93 As System.Windows.Forms.Label
     Friend WithEvents Button4 As System.Windows.Forms.Button
