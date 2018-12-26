@@ -552,7 +552,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.Label49.AutoSize = True
         Me.Label49.ForeColor = System.Drawing.Color.Red
-        Me.Label49.Location = New System.Drawing.Point(192, 36)
+        Me.Label49.Location = New System.Drawing.Point(295, 36)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(11, 13)
         Me.Label49.TabIndex = 164
@@ -562,7 +562,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.Label48.AutoSize = True
         Me.Label48.ForeColor = System.Drawing.Color.Red
-        Me.Label48.Location = New System.Drawing.Point(78, 35)
+        Me.Label48.Location = New System.Drawing.Point(181, 35)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(11, 13)
         Me.Label48.TabIndex = 163
@@ -572,7 +572,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboPiezas_Producto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboPiezas_Producto.FormattingEnabled = True
-        Me.cboPiezas_Producto.Location = New System.Drawing.Point(93, 49)
+        Me.cboPiezas_Producto.Location = New System.Drawing.Point(196, 49)
         Me.cboPiezas_Producto.Name = "cboPiezas_Producto"
         Me.cboPiezas_Producto.Size = New System.Drawing.Size(159, 21)
         Me.cboPiezas_Producto.TabIndex = 158
@@ -580,7 +580,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(266, 33)
+        Me.Label7.Location = New System.Drawing.Point(369, 33)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(110, 13)
         Me.Label7.TabIndex = 162
@@ -589,7 +589,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(156, 32)
+        Me.Label3.Location = New System.Drawing.Point(259, 32)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(38, 13)
         Me.Label3.TabIndex = 161
@@ -598,7 +598,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(32, 32)
+        Me.Label2.Location = New System.Drawing.Point(135, 32)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 13)
         Me.Label2.TabIndex = 160
@@ -606,7 +606,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'txtTamaño_Producto
         '
-        Me.txtTamaño_Producto.Location = New System.Drawing.Point(259, 50)
+        Me.txtTamaño_Producto.Location = New System.Drawing.Point(362, 50)
         Me.txtTamaño_Producto.MaxLength = 50
         Me.txtTamaño_Producto.Name = "txtTamaño_Producto"
         Me.txtTamaño_Producto.Size = New System.Drawing.Size(117, 20)
@@ -614,7 +614,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'txt_cantidad_producto
         '
-        Me.txt_cantidad_producto.Location = New System.Drawing.Point(28, 49)
+        Me.txt_cantidad_producto.Location = New System.Drawing.Point(131, 49)
         Me.txt_cantidad_producto.Name = "txt_cantidad_producto"
         Me.txt_cantidad_producto.Size = New System.Drawing.Size(59, 20)
         Me.txt_cantidad_producto.TabIndex = 157
@@ -800,6 +800,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'cboImpresora_Offset
         '
+        Me.cboImpresora_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboImpresora_Offset.FormattingEnabled = True
         Me.cboImpresora_Offset.Items.AddRange(New Object() {"CD/4", "CD/6", "SM", "SOR"})
         Me.cboImpresora_Offset.Location = New System.Drawing.Point(66, 61)
@@ -984,6 +985,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'cboMarca_Offset
         '
+        Me.cboMarca_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboMarca_Offset.FormattingEnabled = True
         Me.cboMarca_Offset.Items.AddRange(New Object() {"Agfa TU", "Kodak", "KTP - Konita"})
         Me.cboMarca_Offset.Location = New System.Drawing.Point(211, 61)
@@ -1248,6 +1250,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'cboCalidad_Gran_Formato
         '
+        Me.cboCalidad_Gran_Formato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCalidad_Gran_Formato.FormattingEnabled = True
         Me.cboCalidad_Gran_Formato.Items.AddRange(New Object() {"Cartelería", "Alta", "Premium"})
         Me.cboCalidad_Gran_Formato.Location = New System.Drawing.Point(80, 101)

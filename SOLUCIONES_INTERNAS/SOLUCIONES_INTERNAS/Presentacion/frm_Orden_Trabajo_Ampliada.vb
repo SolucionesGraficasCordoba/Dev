@@ -7,7 +7,8 @@
         ' If quienllamo_listado_orden.Name <> frm_Listado_Orden_Trabajo.Name Then
         'CARGA COMBOBOX PIEZA DETALLE 1
         Dim combopieza1 = (From sec In datacontext.PIEZA
-                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
+                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
+                           Where PIE_ubicacion = "D"
                            Order By PIE_nombre_pie Ascending)
         cboPiezas_Producto.DataSource = combopieza1
         cboPiezas_Producto.DisplayMember = "PIE_nombre_pie"
@@ -16,7 +17,8 @@
 
         'CARGA COMBOBOX PIEZA DETALLE 1
         Dim combopieza2 = (From sec In datacontext.PIEZA
-                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie
+                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
+                           Where PIE_ubicacion = "G"
                            Order By PIE_nombre_pie Ascending)
         cboPiezas_Producto_Gran_Formato.DataSource = combopieza2
         cboPiezas_Producto_Gran_Formato.DisplayMember = "PIE_nombre_pie"
@@ -161,5 +163,101 @@
         txtSustrato_Gran_Formato.Clear()
         cboCalidad_Gran_Formato.SelectedIndex = -1
         cboSistema_Gran_Formato.SelectedIndex = -1
+    End Sub
+
+    Private Sub btnGuardar_Orden_Trabajo_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar_Orden_Trabajo.Click
+        '  Try
+        Dim ODT = New ORDEN_TRABAJO
+        '  If cargamasprod = "NO" Then
+
+
+        ODT.ORT_numero_ot = StrConv(txtNumero_Orden_Trabajo.Text, VbStrConv.ProperCase)
+        ODT.ORT_fecha_ot = dtpFecha_Ingreso_ODT.Text
+        ODT.ORT_fecha_entrega = dtpFecha_Entrega_ODT.Text
+        ODT.ORT_tipo_ot = cboTipo_Orden.Text
+
+        ODT.ORT_observaciones_ot = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
+        ODT.ORT_mejoras_ot = StrConv(cboDireccion_Entrega.Text, VbStrConv.ProperCase)
+        ODT.VEN_id_vendedor = txtid_vendedor.Text
+        ODT.CLI_id_cliente = txt_id_cliente.Text
+
+
+        datacontext.ORDEN_TRABAJO.InsertOnSubmit(ODT)
+        datacontext.SubmitChanges()
+        '   End If
+
+        'GUARDA EL REGISTRO 1 DEL DETALLE DE LA ORDEN DE TRABAJO
+        'If txt_cantidad1_detalle1.Text.Length >= 1 Then
+        '    If cboPiezas1_Detalle1.Text.Length = 0 Then
+        '        MsgBox("Seleccione una pieza")
+        '    End If
+
+        Dim detalle = New DETALLE_ORDEN_TRABAJO
+        'id
+        txt_id_detalle_orden_trabajo1.Text = detalle.id_detalle_orden_trabajo
+        detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
+
+        If txt_cantidad_producto.TextLength <> 0 Then
+            detalle.DOT_cantidad_producto = txt_cantidad_producto.Text  'CANTIDAD PRODUCTO 1
+        End If
+        detalle.DOT_tamaño_producto = StrConv(txtTamaño_Producto.Text, VbStrConv.ProperCase) 'TAMAÑO PRODUCTO 1
+        detalle.DOT_tipo_impresion_dot = cboTipo_Orden.SelectedItem 'TIPO IMPRESION PRODUCTO 1
+        detalle.PIE_id_pieza = cboPiezas_Producto.SelectedValue 'TIPO PIEZA PRODUCTO 1
+
+        'If cargamasprod = "NO" Then
+        txt_id_orden_trabajo.Text = ODT.ORT_id_orden_trabajo
+        'End If
+        detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text 'ID ORDEN TRABAJO
+
+        'PAPEL PRODUCTO 1
+        detalle.DOT_papel_soporte_1 = StrConv(txt_Papel_1_Soporte.Text, VbStrConv.ProperCase)
+        detalle.DOT_papel_soporte_2 = StrConv(txt_Papel_2_Soporte.Text, VbStrConv.ProperCase)
+        detalle.DOT_papel_soporte_3 = StrConv(txt_Papel_3_Soporte.Text, VbStrConv.ProperCase)
+
+        'GRAMAJE PRODUCTO 1
+        detalle.DOT_gramaje_soporte_1 = txt_Gramaje_1_Soporte.Text
+        detalle.DOT_gramaje_soporte_2 = txt_Gramaje_2_Soporte.Text
+        detalle.DOT_gramaje_soporte_3 = txt_Gramaje_3_Soporte.Text
+
+        'CANTIDAD PRODUCTO 1
+        If txt_Cantidad_1_Pliego_Entero.TextLength <> 0 Then
+            detalle.DOT_cantidad_soporte_1 = txt_Cantidad_1_Pliego_Entero.Text
+        End If
+        If txt_Cantidad_2_Pliego_Entero.TextLength <> 0 Then
+            detalle.DOT_cantidad_soporte_2 = txt_Cantidad_2_Pliego_Entero.Text
+        End If
+        If txt_Cantidad_3_Pliego_Entero.TextLength <> 0 Then
+            detalle.DOT_cantidad_soporte_3 = txt_Cantidad_3_Pliego_Entero.Text
+        End If
+        'FORMATO PRODUCTO 1
+        detalle.DOT_formato_soporte_1 = cboFormato_1_Pliego_Entero.SelectedItem
+        detalle.DOT_formato_soporte_2 = cboFormato_2_Pliego_Entero.SelectedItem
+        detalle.DOT_formato_soporte_3 = cboFormato_3_Pliego_Entero.SelectedItem
+
+        detalle.tipo_impresion_digital = cboTipo_Impresion_Digital.SelectedItem
+
+        If txtCantidad_1_Pliego_Maquina_Digital.TextLength <> 0 Then
+            detalle.cantidad_1_PM_digital = txtCantidad_1_Pliego_Maquina_Digital.Text
+        End If
+        If txtCantidad_2_Pliego_Maquina_Digital.TextLength <> 0 Then
+            detalle.cantidad_2_PM_digital = txtCantidad_2_Pliego_Maquina_Digital.Text
+        End If
+        If txtCantidad_3_Pliego_Maquina_Digital.TextLength <> 0 Then
+            detalle.cantidad_3_PM_digital = txtCantidad_3_Pliego_Maquina_Digital.Text
+        End If
+
+        detalle.formato_1_PM_digital = cboFormato_1_Pliego_Maquina_Digital.SelectedItem
+        detalle.formato_2_PM_digital = cboFormato_2_Pliego_Maquina_Digital.SelectedItem
+        detalle.formato_3_PM_digital = cboFormato_3_Pliego_Maquina_Digital.SelectedItem
+
+        detalle.dato_variable = txtDato_Variable.Text
+
+        datacontext.DETALLE_ORDEN_TRABAJO.InsertOnSubmit(detalle)
+        datacontext.SubmitChanges()
+
+        MsgBox("La orden se ha guardado correctamente")
+        ' Catch ex As Exception
+        '   MsgBox("Error al cargar la Orden")
+        '  End Try
     End Sub
 End Class

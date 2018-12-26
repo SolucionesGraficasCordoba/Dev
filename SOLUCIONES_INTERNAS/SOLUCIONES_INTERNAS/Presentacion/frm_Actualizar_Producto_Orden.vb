@@ -35,9 +35,9 @@
         Try
             txt_id_detalle_orden_trabajo1.Text = ActualizarDetalle.id_detalle_orden_trabajo
             ActualizarDetalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
-            ActualizarDetalle.DOT_cantidad_dot = txt_cantidad.Text
+            ActualizarDetalle.DOT_cantidad_producto = txt_cantidad.Text
             ActualizarDetalle.PIE_id_pieza = cboPiezas.SelectedValue
-            ActualizarDetalle.DOT_tamaño_dot = txtTamaño.Text
+            ActualizarDetalle.DOT_tamaño_producto = txtTamaño.Text
             ActualizarDetalle.DOT_tipo_impresion_dot = cboTipoImpresion.Text
 
             ActualizarDetalle.DOT_papel_soporte_1 = StrConv(txt_Papel1_Soporte.Text, VbStrConv.ProperCase)
