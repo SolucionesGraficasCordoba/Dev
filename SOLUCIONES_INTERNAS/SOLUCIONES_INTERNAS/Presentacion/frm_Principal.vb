@@ -1391,6 +1391,11 @@ Public Class frm_Principal
         frm_Orden_Trabajo_Ampliada.txt_id_orden_trabajo.Visible = False
         frm_Orden_Trabajo_Ampliada.Label8.Visible = False
         frm_Orden_Trabajo_Ampliada.cboTipo_Orden.Visible = False
+        frm_Orden_Trabajo_Ampliada.GroupDigital.Enabled = False
+        frm_Orden_Trabajo_Ampliada.GroupGranFormato.Enabled = False
+        frm_Orden_Trabajo_Ampliada.groupOffset.Enabled = False
+        frm_Orden_Trabajo_Ampliada.GroupProducto_Soportes.Enabled = False
+        frm_Orden_Trabajo_Ampliada.GroupTerminacion.Enabled = False
         frm_Orden_Trabajo_Ampliada.Show()
 
     End Sub
