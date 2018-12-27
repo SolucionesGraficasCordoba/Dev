@@ -166,98 +166,267 @@
     End Sub
 
     Private Sub btnGuardar_Orden_Trabajo_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar_Orden_Trabajo.Click
-        '  Try
-        Dim ODT = New ORDEN_TRABAJO
-        '  If cargamasprod = "NO" Then
-
-
-        ODT.ORT_numero_ot = StrConv(txtNumero_Orden_Trabajo.Text, VbStrConv.ProperCase)
-        ODT.ORT_fecha_ot = dtpFecha_Ingreso_ODT.Text
-        ODT.ORT_fecha_entrega = dtpFecha_Entrega_ODT.Text
-        ODT.ORT_tipo_ot = cboTipo_Orden.Text
-
-        ODT.ORT_observaciones_ot = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
-        ODT.ORT_mejoras_ot = StrConv(cboDireccion_Entrega.Text, VbStrConv.ProperCase)
-        ODT.VEN_id_vendedor = txtid_vendedor.Text
-        ODT.CLI_id_cliente = txt_id_cliente.Text
-
-
-        datacontext.ORDEN_TRABAJO.InsertOnSubmit(ODT)
-        datacontext.SubmitChanges()
-        '   End If
-
-        'GUARDA EL REGISTRO 1 DEL DETALLE DE LA ORDEN DE TRABAJO
-        'If txt_cantidad1_detalle1.Text.Length >= 1 Then
-        '    If cboPiezas1_Detalle1.Text.Length = 0 Then
-        '        MsgBox("Seleccione una pieza")
-        '    End If
-
-        Dim detalle = New DETALLE_ORDEN_TRABAJO
-        'id
-        txt_id_detalle_orden_trabajo1.Text = detalle.id_detalle_orden_trabajo
-        detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
-
-        If txt_cantidad_producto.TextLength <> 0 Then
-            detalle.DOT_cantidad_producto = txt_cantidad_producto.Text  'CANTIDAD PRODUCTO 1
-        End If
-        detalle.DOT_tamaño_producto = StrConv(txtTamaño_Producto.Text, VbStrConv.ProperCase) 'TAMAÑO PRODUCTO 1
-        detalle.DOT_tipo_impresion_dot = cboTipo_Orden.SelectedItem 'TIPO IMPRESION PRODUCTO 1
-        detalle.PIE_id_pieza = cboPiezas_Producto.SelectedValue 'TIPO PIEZA PRODUCTO 1
-
-        'If cargamasprod = "NO" Then
-        txt_id_orden_trabajo.Text = ODT.ORT_id_orden_trabajo
-        'End If
-        detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text 'ID ORDEN TRABAJO
-
-        'PAPEL PRODUCTO 1
-        detalle.DOT_papel_soporte_1 = StrConv(txt_Papel_1_Soporte.Text, VbStrConv.ProperCase)
-        detalle.DOT_papel_soporte_2 = StrConv(txt_Papel_2_Soporte.Text, VbStrConv.ProperCase)
-        detalle.DOT_papel_soporte_3 = StrConv(txt_Papel_3_Soporte.Text, VbStrConv.ProperCase)
-
-        'GRAMAJE PRODUCTO 1
-        detalle.DOT_gramaje_soporte_1 = txt_Gramaje_1_Soporte.Text
-        detalle.DOT_gramaje_soporte_2 = txt_Gramaje_2_Soporte.Text
-        detalle.DOT_gramaje_soporte_3 = txt_Gramaje_3_Soporte.Text
-
-        'CANTIDAD PRODUCTO 1
-        If txt_Cantidad_1_Pliego_Entero.TextLength <> 0 Then
-            detalle.DOT_cantidad_soporte_1 = txt_Cantidad_1_Pliego_Entero.Text
-        End If
-        If txt_Cantidad_2_Pliego_Entero.TextLength <> 0 Then
-            detalle.DOT_cantidad_soporte_2 = txt_Cantidad_2_Pliego_Entero.Text
-        End If
-        If txt_Cantidad_3_Pliego_Entero.TextLength <> 0 Then
-            detalle.DOT_cantidad_soporte_3 = txt_Cantidad_3_Pliego_Entero.Text
-        End If
-        'FORMATO PRODUCTO 1
-        detalle.DOT_formato_soporte_1 = cboFormato_1_Pliego_Entero.SelectedItem
-        detalle.DOT_formato_soporte_2 = cboFormato_2_Pliego_Entero.SelectedItem
-        detalle.DOT_formato_soporte_3 = cboFormato_3_Pliego_Entero.SelectedItem
-
-        detalle.tipo_impresion_digital = cboTipo_Impresion_Digital.SelectedItem
-
-        If txtCantidad_1_Pliego_Maquina_Digital.TextLength <> 0 Then
-            detalle.cantidad_1_PM_digital = txtCantidad_1_Pliego_Maquina_Digital.Text
-        End If
-        If txtCantidad_2_Pliego_Maquina_Digital.TextLength <> 0 Then
-            detalle.cantidad_2_PM_digital = txtCantidad_2_Pliego_Maquina_Digital.Text
-        End If
-        If txtCantidad_3_Pliego_Maquina_Digital.TextLength <> 0 Then
-            detalle.cantidad_3_PM_digital = txtCantidad_3_Pliego_Maquina_Digital.Text
+    
+        'VALIDA QUE EL NUMERO DE ORDEN NO ESTE VACIO
+        If txtNumero_Orden_Trabajo.Text.Length = 0 Then
+            MsgBox("Complete el campo Número de Orden")
+            txtNumero_Orden_Trabajo.Focus()
+            Exit Sub
         End If
 
-        detalle.formato_1_PM_digital = cboFormato_1_Pliego_Maquina_Digital.SelectedItem
-        detalle.formato_2_PM_digital = cboFormato_2_Pliego_Maquina_Digital.SelectedItem
-        detalle.formato_3_PM_digital = cboFormato_3_Pliego_Maquina_Digital.SelectedItem
+        'VALIDA QUE EL CAMPO VENDEDOR NO ESTE VACIO
+        If txtNombre_vendedor.Text.Length = 0 Then
+            MsgBox("Cargue el nombre Vendedor")
+            btnBuscar_Vendedor.Focus()
+            Exit Sub
+        End If
 
-        detalle.dato_variable = txtDato_Variable.Text
+        'VALIDA QUE EL CAMPO CLIENTE NO ESTE VACIO
+        If txt_nombre_cliente.Text.Length = 0 Then
+            MsgBox("Cargue el nombre Cliente")
+            btnBuscar_cliente.Focus()
+            Exit Sub
+        End If
 
-        datacontext.DETALLE_ORDEN_TRABAJO.InsertOnSubmit(detalle)
-        datacontext.SubmitChanges()
+        'VALIDA QUE EL CAMPO DIRECCION DE ENTREGA NO ESTE VACIO
+        If cboDireccion_Entrega.Text.Length = 0 Then
+            MsgBox("Cargue la Dirección de Entrega")
+            cboDireccion_Entrega.Focus()
+            Exit Sub
+        End If
 
-        MsgBox("La orden se ha guardado correctamente")
-        ' Catch ex As Exception
-        '   MsgBox("Error al cargar la Orden")
-        '  End Try
+        'VALIDA QUE LA FECHA DE ENTREGA SEA CORRECTA
+        If dtpFecha_Entrega_ODT.Value < Today Then
+            MsgBox("Verifique la Fecha de Entrega")
+            Exit Sub
+        End If
+        Try
+            '---------------------------GUARDA ORDEN------------------------------
+            Dim ODT = New ORDEN_TRABAJO
+            '  If cargamasprod = "NO" Then
+
+            ODT.ORT_numero_ot = StrConv(txtNumero_Orden_Trabajo.Text, VbStrConv.ProperCase)
+            ODT.ORT_fecha_ot = dtpFecha_Ingreso_ODT.Text
+            ODT.ORT_fecha_entrega = dtpFecha_Entrega_ODT.Text
+            ODT.ORT_tipo_ot = cboTipo_Orden.Text
+
+            ODT.ORT_observaciones_ot = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
+            ODT.ORT_mejoras_ot = StrConv(cboDireccion_Entrega.Text, VbStrConv.ProperCase)
+            ODT.VEN_id_vendedor = txtid_vendedor.Text
+            ODT.CLI_id_cliente = txt_id_cliente.Text
+
+            datacontext.ORDEN_TRABAJO.InsertOnSubmit(ODT)
+            datacontext.SubmitChanges()
+            '   End If
+
+            'GUARDA EL REGISTRO 1 DEL DETALLE DE LA ORDEN DE TRABAJO
+            'If txt_cantidad1_detalle1.Text.Length >= 1 Then
+            '    If cboPiezas1_Detalle1.Text.Length = 0 Then
+            '        MsgBox("Seleccione una pieza")
+            '    End If
+            '--------------------------------------------------------------------------------------
+
+
+            Dim detalle = New DETALLE_ORDEN_TRABAJO
+
+            txt_id_detalle_orden_trabajo1.Text = detalle.id_detalle_orden_trabajo  'id
+            detalle.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
+
+            If txt_cantidad_producto.TextLength <> 0 Then
+                detalle.DOT_cantidad_producto = txt_cantidad_producto.Text  'CANTIDAD PRODUCTO 1
+            End If
+            detalle.DOT_tamaño_producto = StrConv(txtTamaño_Producto.Text, VbStrConv.ProperCase) 'TAMAÑO PRODUCTO 1
+            detalle.DOT_tipo_impresion_dot = cboTipo_Orden.SelectedItem 'TIPO IMPRESION PRODUCTO 1
+            detalle.PIE_id_pieza = cboPiezas_Producto.SelectedValue 'TIPO PIEZA PRODUCTO 1
+
+            'If cargamasprod = "NO" Then
+            txt_id_orden_trabajo.Text = ODT.ORT_id_orden_trabajo
+            'End If
+            detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text 'ID ORDEN TRABAJO
+
+            'PAPEL PRODUCTO 1
+            detalle.DOT_papel_soporte_1 = StrConv(txt_Papel_1_Soporte.Text, VbStrConv.ProperCase)
+            detalle.DOT_papel_soporte_2 = StrConv(txt_Papel_2_Soporte.Text, VbStrConv.ProperCase)
+            detalle.DOT_papel_soporte_3 = StrConv(txt_Papel_3_Soporte.Text, VbStrConv.ProperCase)
+
+            'GRAMAJE PRODUCTO 1
+            detalle.DOT_gramaje_soporte_1 = txt_Gramaje_1_Soporte.Text
+            detalle.DOT_gramaje_soporte_2 = txt_Gramaje_2_Soporte.Text
+            detalle.DOT_gramaje_soporte_3 = txt_Gramaje_3_Soporte.Text
+
+            'CANTIDAD PRODUCTO 1
+            If txt_Cantidad_1_Pliego_Entero.TextLength <> 0 Then
+                detalle.DOT_cantidad_soporte_1 = txt_Cantidad_1_Pliego_Entero.Text
+            End If
+            If txt_Cantidad_2_Pliego_Entero.TextLength <> 0 Then
+                detalle.DOT_cantidad_soporte_2 = txt_Cantidad_2_Pliego_Entero.Text
+            End If
+            If txt_Cantidad_3_Pliego_Entero.TextLength <> 0 Then
+                detalle.DOT_cantidad_soporte_3 = txt_Cantidad_3_Pliego_Entero.Text
+            End If
+            'FORMATO PRODUCTO 1
+            detalle.DOT_formato_soporte_1 = cboFormato_1_Pliego_Entero.SelectedItem
+            detalle.DOT_formato_soporte_2 = cboFormato_2_Pliego_Entero.SelectedItem
+            detalle.DOT_formato_soporte_3 = cboFormato_3_Pliego_Entero.SelectedItem
+
+            '--------------------------------DIGITAL---------------------------------------------
+            detalle.tipo_impresion_digital = cboTipo_Impresion_Digital.SelectedItem
+
+            If txtCantidad_1_Pliego_Maquina_Digital.TextLength <> 0 Then
+                detalle.cantidad_1_PM_digital = txtCantidad_1_Pliego_Maquina_Digital.Text
+            End If
+            If txtCantidad_2_Pliego_Maquina_Digital.TextLength <> 0 Then
+                detalle.cantidad_2_PM_digital = txtCantidad_2_Pliego_Maquina_Digital.Text
+            End If
+            If txtCantidad_3_Pliego_Maquina_Digital.TextLength <> 0 Then
+                detalle.cantidad_3_PM_digital = txtCantidad_3_Pliego_Maquina_Digital.Text
+            End If
+
+            detalle.formato_1_PM_digital = cboFormato_1_Pliego_Maquina_Digital.SelectedItem
+            detalle.formato_2_PM_digital = cboFormato_2_Pliego_Maquina_Digital.SelectedItem
+            detalle.formato_3_PM_digital = cboFormato_3_Pliego_Maquina_Digital.SelectedItem
+
+            detalle.dato_variable = txtDato_Variable.Text
+            '------------------------------------------------------------------------------------
+
+            '---------------------------OFFSET---------------------------------------------------
+            detalle.tipo_impresion_offset = cboTipo_Impresion_Offset.SelectedItem
+            detalle.impresora_offset = cboImpresora_Offset.SelectedItem
+            detalle.modo_impresion_offset = cboModo_Impresion_Offset.SelectedItem
+            detalle.marca_offset = cboMarca_Offset.SelectedItem
+            If txtCantidad_1_Pliego_Maquina_Offset.TextLength <> 0 Then
+                detalle.cantidad_1_PM_offset = txtCantidad_1_Pliego_Maquina_Offset.Text
+            End If
+            If txtCantidad_2_Pliego_Maquina_Offset.TextLength <> 0 Then
+                detalle.cantidad_2_PM_offset = txtCantidad_2_Pliego_Maquina_Offset.Text
+            End If
+            If txtCantidad_3_Pliego_Maquina_Offset.TextLength <> 0 Then
+                detalle.cantidad_3_PM_offset = txtCantidad_3_Pliego_Maquina_Offset.Text
+            End If
+            detalle.formato_1_PM_offset = cboFormato_1_Pliego_Maquina_Offset.SelectedItem
+            detalle.formato_2_PM_offset = cboFormato_2_Pliego_Maquina_Offset.SelectedItem
+            detalle.formato_3_PM_offset = cboFormato_3_Pliego_Maquina_Offset.SelectedItem
+            If txt_chapa_soporte_1.TextLength <> 0 Then
+                detalle.chapas_soporte1_offset = txt_chapa_soporte_1.Text
+            End If
+            If txt_chapa_soporte_2.TextLength <> 0 Then
+                detalle.chapas_soporte2_offset = txt_chapa_soporte_2.Text
+            End If
+            If txt_chapa_soporte_3.TextLength <> 0 Then
+                detalle.chapas_soporte3_offset = txt_chapa_soporte_3.Text
+            End If
+            '------------------------------------------------------------------------------------
+
+            '-------------------------------GRAN FORMATO----------------------------------------
+            If txt_cantidad_producto_Gran_Formato.TextLength <> 0 Then
+                detalle.cantidad_gran_formato = txt_cantidad_producto_Gran_Formato.Text
+            End If
+            detalle.PIE_id_pieza_offset = cboPiezas_Producto_Gran_Formato.SelectedValue
+            detalle.tamaño_gran_formato = txtTamaño_Producto_Gran_Formato.Text
+            detalle.sustrato_gran_formato = txtSustrato_Gran_Formato.Text
+            detalle.calidad_gran_formato = cboCalidad_Gran_Formato.SelectedItem
+            detalle.sistema_gran_formato = cboSistema_Gran_Formato.SelectedItem
+            '------------------------------------------------------------------------------------
+
+            '-------------------------------- TERMINACION----------------------------------------
+            Dim temlaca, temposicionado, temdoblado, temtroquelado, temcorte, temmediocorte, tembarniz, temmontado, temencuadernacion, temstamping, temadhesivado, temtrazado, temsoldado, temcocido, temruedo, tempolipropileno, temotros As String
+
+            If chkLaca_UV.Checked = True Then
+                temlaca = "LA"
+            Else
+                temlaca = ""
+            End If
+            If chkPosicionado.Checked = True Then
+                temposicionado = "PS"
+            Else
+                temposicionado = ""
+            End If
+            If chkDoblado.Checked = True Then
+                temdoblado = "DO"
+            Else
+                temdoblado = ""
+            End If
+            If chkTroquelado.Checked = True Then
+                temtroquelado = "TR"
+            Else
+                temtroquelado = ""
+            End If
+            If chkCorte.Checked = True Then
+                temcorte = "CO"
+            Else
+                temcorte = ""
+            End If
+            If chkMedio_Corte.Checked = True Then
+                temmediocorte = "MC"
+            Else
+                temmediocorte = ""
+            End If
+            If chkBarniz.Checked = True Then
+                tembarniz = "BA"
+            Else
+                tembarniz = ""
+            End If
+            If chkMontado.Checked = True Then
+                temmontado = "MO"
+            Else
+                temmontado = ""
+            End If
+            If chkEncuadernacion.Checked = True Then
+                temencuadernacion = "EN"
+            Else
+                temencuadernacion = ""
+            End If
+            If chkStamping.Checked = True Then
+                temstamping = "ST"
+            Else
+                temstamping = ""
+            End If
+            If chkAdhesivado.Checked = True Then
+                temadhesivado = "AD"
+            Else
+                temadhesivado = ""
+            End If
+            If chkTrazado.Checked = True Then
+                temtrazado = "TR"
+            Else
+                temtrazado = ""
+            End If
+            If chkSoldado.Checked = True Then
+                temsoldado = "SL"
+            Else
+                temsoldado = ""
+            End If
+            If chkCocido.Checked = True Then
+                temcocido = "CC"
+            Else
+                temcocido = ""
+            End If
+            If chkRuedo.Checked = True Then
+                temruedo = "RU"
+            Else
+                temruedo = ""
+            End If
+            If chkPolipropileno.Checked = True Then
+                tempolipropileno = "PL"
+            Else
+                tempolipropileno = ""
+            End If
+            If chkOtros.Checked = True Then
+                temotros = "OT"
+            Else
+                temotros = ""
+            End If
+            detalle.tipo_terminacion = temlaca & temposicionado & temdoblado & temtroquelado & temcorte & temmediocorte & tembarniz & temmontado _
+                & temencuadernacion & temstamping & temadhesivado & temtrazado & temsoldado & temcocido & temruedo & tempolipropileno & temotros
+
+            detalle.descripcion_terminacion = txt_descripcion_terminacion.Text
+
+            datacontext.DETALLE_ORDEN_TRABAJO.InsertOnSubmit(detalle)
+            datacontext.SubmitChanges()
+
+            MsgBox("La orden se ha guardado correctamente")
+        Catch ex As Exception
+            MsgBox("Error al cargar la Orden")
+        End Try
     End Sub
 End Class

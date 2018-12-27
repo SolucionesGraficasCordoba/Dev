@@ -111,7 +111,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Label13 = New System.Windows.Forms.Label()
         Me.cboTipo_Impresion_Offset = New System.Windows.Forms.ComboBox()
         Me.Label35 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.cboTipo_Orden = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -243,7 +242,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'txt_id_detalle_orden_trabajo1
         '
-        Me.txt_id_detalle_orden_trabajo1.Location = New System.Drawing.Point(990, 23)
+        Me.txt_id_detalle_orden_trabajo1.Location = New System.Drawing.Point(1178, 23)
         Me.txt_id_detalle_orden_trabajo1.Name = "txt_id_detalle_orden_trabajo1"
         Me.txt_id_detalle_orden_trabajo1.Size = New System.Drawing.Size(32, 20)
         Me.txt_id_detalle_orden_trabajo1.TabIndex = 57
@@ -251,7 +250,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(861, 26)
+        Me.Label45.Location = New System.Drawing.Point(1049, 26)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(129, 13)
         Me.Label45.TabIndex = 56
@@ -470,7 +469,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.GroupBox1.Controls.Add(Me.txt_id_detalle_orden_trabajo1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 148)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1056, 56)
+        Me.GroupBox1.Size = New System.Drawing.Size(1219, 56)
         Me.GroupBox1.TabIndex = 104
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Tipo de Orden"
@@ -479,7 +478,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.chkTerminacion.AutoSize = True
         Me.chkTerminacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkTerminacion.Location = New System.Drawing.Point(664, 17)
+        Me.chkTerminacion.Location = New System.Drawing.Point(712, 17)
         Me.chkTerminacion.Name = "chkTerminacion"
         Me.chkTerminacion.Size = New System.Drawing.Size(135, 28)
         Me.chkTerminacion.TabIndex = 0
@@ -490,7 +489,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.chkGranFormato.AutoSize = True
         Me.chkGranFormato.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkGranFormato.Location = New System.Drawing.Point(480, 17)
+        Me.chkGranFormato.Location = New System.Drawing.Point(528, 17)
         Me.chkGranFormato.Name = "chkGranFormato"
         Me.chkGranFormato.Size = New System.Drawing.Size(145, 28)
         Me.chkGranFormato.TabIndex = 0
@@ -501,7 +500,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.chkOffset.AutoSize = True
         Me.chkOffset.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkOffset.Location = New System.Drawing.Point(224, 17)
+        Me.chkOffset.Location = New System.Drawing.Point(272, 17)
         Me.chkOffset.Name = "chkOffset"
         Me.chkOffset.Size = New System.Drawing.Size(76, 28)
         Me.chkOffset.TabIndex = 0
@@ -512,7 +511,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.chkDigital.AutoSize = True
         Me.chkDigital.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkDigital.Location = New System.Drawing.Point(354, 17)
+        Me.chkDigital.Location = New System.Drawing.Point(402, 17)
         Me.chkDigital.Name = "chkDigital"
         Me.chkDigital.Size = New System.Drawing.Size(79, 28)
         Me.chkDigital.TabIndex = 0
@@ -1020,15 +1019,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Label35.TabIndex = 139
         Me.Label35.Text = "    Tipo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Impresión"
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(1154, 473)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 33)
-        Me.Button1.TabIndex = 142
-        Me.Button1.Text = "Repetición"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'GroupBox4
         '
         Me.GroupBox4.Controls.Add(Me.cboDireccion_Entrega)
@@ -1067,7 +1057,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboTipo_Orden.Location = New System.Drawing.Point(994, 445)
         Me.cboTipo_Orden.MaxLength = 10
         Me.cboTipo_Orden.Name = "cboTipo_Orden"
-        Me.cboTipo_Orden.Size = New System.Drawing.Size(62, 21)
+        Me.cboTipo_Orden.Size = New System.Drawing.Size(75, 21)
         Me.cboTipo_Orden.TabIndex = 58
         '
         'Label8
@@ -1589,7 +1579,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1241, 726)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupTerminacion)
         Me.Controls.Add(Me.cboTipo_Orden)
         Me.Controls.Add(Me.GroupGranFormato)
@@ -1771,7 +1760,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
     Friend WithEvents txt_cantidad_producto As System.Windows.Forms.TextBox
     Friend WithEvents cboMarca_Offset As System.Windows.Forms.ComboBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents txt_chapa_soporte_1 As System.Windows.Forms.TextBox
     Friend WithEvents Label36 As System.Windows.Forms.Label
     Friend WithEvents txt_chapa_soporte_3 As System.Windows.Forms.TextBox

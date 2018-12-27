@@ -3451,7 +3451,7 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 	
 	Private _DOT_formato_soporte_3 As String
 	
-	Private _PIE_id_pieza As Integer
+	Private _PIE_id_pieza As System.Nullable(Of Integer)
 	
 	Private _ORT_id_orden_trabajo As System.Nullable(Of Integer)
 	
@@ -3467,6 +3467,8 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 	
 	Private _formato_3_PM_offset As String
 	
+	Private _PIE_id_pieza_offset As System.Nullable(Of Integer)
+	
 	Private _modo_impresion_offset As String
 	
 	Private _tipo_impresion_offset As String
@@ -3478,6 +3480,8 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 	Private _chapas_soporte3_offset As System.Nullable(Of Integer)
 	
 	Private _impresora_offset As String
+	
+	Private _marca_offset As String
 	
 	Private _cantidad_1_PM_digital As System.Nullable(Of Integer)
 	
@@ -3590,7 +3594,7 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
     End Sub
     Partial Private Sub OnDOT_formato_soporte_3Changed()
     End Sub
-    Partial Private Sub OnPIE_id_piezaChanging(value As Integer)
+    Partial Private Sub OnPIE_id_piezaChanging(value As System.Nullable(Of Integer))
     End Sub
     Partial Private Sub OnPIE_id_piezaChanged()
     End Sub
@@ -3622,6 +3626,10 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
     End Sub
     Partial Private Sub Onformato_3_PM_offsetChanged()
     End Sub
+    Partial Private Sub OnPIE_id_pieza_offsetChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnPIE_id_pieza_offsetChanged()
+    End Sub
     Partial Private Sub Onmodo_impresion_offsetChanging(value As String)
     End Sub
     Partial Private Sub Onmodo_impresion_offsetChanged()
@@ -3645,6 +3653,10 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
     Partial Private Sub Onimpresora_offsetChanging(value As String)
     End Sub
     Partial Private Sub Onimpresora_offsetChanged()
+    End Sub
+    Partial Private Sub Onmarca_offsetChanging(value As String)
+    End Sub
+    Partial Private Sub Onmarca_offsetChanged()
     End Sub
     Partial Private Sub Oncantidad_1_PM_digitalChanging(value As System.Nullable(Of Integer))
     End Sub
@@ -3978,14 +3990,13 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_id_pieza", DbType:="Int NOT NULL")>  _
-	Public Property PIE_id_pieza() As Integer
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_id_pieza", DbType:="Int")>  _
+	Public Property PIE_id_pieza() As System.Nullable(Of Integer)
 		Get
 			Return Me._PIE_id_pieza
 		End Get
 		Set
-			If ((Me._PIE_id_pieza = value)  _
-						= false) Then
+			If (Me._PIE_id_pieza.Equals(value) = false) Then
 				If Me._PIEZA.HasLoadedOrAssignedValue Then
 					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
 				End If
@@ -4113,6 +4124,22 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_id_pieza_offset", DbType:="Int")>  _
+	Public Property PIE_id_pieza_offset() As System.Nullable(Of Integer)
+		Get
+			Return Me._PIE_id_pieza_offset
+		End Get
+		Set
+			If (Me._PIE_id_pieza_offset.Equals(value) = false) Then
+				Me.OnPIE_id_pieza_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._PIE_id_pieza_offset = value
+				Me.SendPropertyChanged("PIE_id_pieza_offset")
+				Me.OnPIE_id_pieza_offsetChanged
+			End If
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_modo_impresion_offset", DbType:="VarChar(25)")>  _
 	Public Property modo_impresion_offset() As String
 		Get
@@ -4205,6 +4232,22 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 				Me._impresora_offset = value
 				Me.SendPropertyChanged("impresora_offset")
 				Me.Onimpresora_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_marca_offset", DbType:="VarChar(15)")>  _
+	Public Property marca_offset() As String
+		Get
+			Return Me._marca_offset
+		End Get
+		Set
+			If (String.Equals(Me._marca_offset, value) = false) Then
+				Me.Onmarca_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._marca_offset = value
+				Me.SendPropertyChanged("marca_offset")
+				Me.Onmarca_offsetChanged
 			End If
 		End Set
 	End Property
@@ -4433,7 +4476,7 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_tipo_terminacion", DbType:="VarChar(20)")>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_tipo_terminacion", DbType:="VarChar(60)")>  _
 	Public Property tipo_terminacion() As String
 		Get
 			Return Me._tipo_terminacion
@@ -4534,7 +4577,7 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 					value.DETALLE_ORDEN_TRABAJO.Add(Me)
 					Me._PIE_id_pieza = value.PIE_id_pieza
 				Else
-					Me._PIE_id_pieza = CType(Nothing, Integer)
+					Me._PIE_id_pieza = CType(Nothing, Nullable(Of Integer))
 				End If
 				Me.SendPropertyChanged("PIEZA")
 			End If

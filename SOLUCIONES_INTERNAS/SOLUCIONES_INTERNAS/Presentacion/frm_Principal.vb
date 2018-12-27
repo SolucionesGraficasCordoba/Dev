@@ -1396,6 +1396,11 @@ Public Class frm_Principal
         frm_Orden_Trabajo_Ampliada.groupOffset.Enabled = False
         frm_Orden_Trabajo_Ampliada.GroupProducto_Soportes.Enabled = False
         frm_Orden_Trabajo_Ampliada.GroupTerminacion.Enabled = False
+        frm_Orden_Trabajo_Ampliada.txt_nombre_cliente.Enabled = False
+        frm_Orden_Trabajo_Ampliada.txtNombre_vendedor.Enabled = False
+        frm_Orden_Trabajo_Ampliada.btnNueva_Orden_Trabajo.Visible = False
+        frm_Orden_Trabajo_Ampliada.btnImprimirFormulario.Visible = False
+
         frm_Orden_Trabajo_Ampliada.Show()
 
     End Sub

@@ -185,7 +185,7 @@
       <Column Name="DOT_formato_soporte_1" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="DOT_formato_soporte_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="DOT_formato_soporte_3" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="PIE_id_pieza" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PIE_id_pieza" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="cantidad_1_PM_offset" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="cantidad_2_PM_offset" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -193,12 +193,14 @@
       <Column Name="formato_1_PM_offset" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="formato_2_PM_offset" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="formato_3_PM_offset" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PIE_id_pieza_offset" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="modo_impresion_offset" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="tipo_impresion_offset" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="chapas_soporte1_offset" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="chapas_soporte2_offset" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="chapas_soporte3_offset" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="impresora_offset" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="marca_offset" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="cantidad_1_PM_digital" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="cantidad_2_PM_digital" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="cantidad_3_PM_digital" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -213,7 +215,7 @@
       <Column Name="sustrato_gran_formato" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="calidad_gran_formato" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="sistema_gran_formato" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="tipo_terminacion" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="tipo_terminacion" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
       <Column Name="descripcion_terminacion" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
       <Association Name="DETALLE_ORDEN_TRABAJO_PROCESO" Member="PROCESO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="PROCESO" />
       <Association Name="DETALLE_ORDEN_TRABAJO_RE_TRABAJO" Member="RE_TRABAJO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="RE_TRABAJO" />
