@@ -2,6 +2,7 @@
 
     Dim datacontext As New DataS_Interno
     Public quienllamo_listado_orden As Form
+    Dim cargamasprod As String = "NO"
 
     Private Sub frm_Orden_Trabajo_Ampliada_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         ' If quienllamo_listado_orden.Name <> frm_Listado_Orden_Trabajo.Name Then
@@ -90,7 +91,7 @@
     End Sub
 
     Sub LimpiarDigital()
-        cboTipo_Impresion_Digital.SelectedIndex = -1
+        cboTipo_Impresion_Digital.Text = ""
         txtCantidad_1_Pliego_Maquina_Digital.Clear()
         cboFormato_1_Pliego_Maquina_Digital.SelectedIndex = -1
         txtCantidad_2_Pliego_Maquina_Digital.Clear()
@@ -141,7 +142,7 @@
     End Sub
 
     Sub LimpiarOffset()
-        cboTipo_Impresion_Offset.SelectedIndex = -1
+        cboTipo_Impresion_Offset.Text = ""
         cboModo_Impresion_Offset.SelectedIndex = -1
         cboImpresora_Offset.SelectedIndex = -1
         cboMarca_Offset.SelectedIndex = -1
@@ -200,32 +201,62 @@
             MsgBox("Verifique la Fecha de Entrega")
             Exit Sub
         End If
+
+        If chkOffset.Checked = True Or chkDigital.Checked = True Then
+            If txt_cantidad_producto.Text.Length >= 1 Then
+                If cboPiezas_Producto.Text.Length = 0 Then
+                    MsgBox("Seleccione una pieza")
+                    cboPiezas_Producto.Focus()
+                    Exit Sub
+                End If
+            Else
+                MsgBox("Ingrese Cantidad")
+                txt_cantidad_producto.Focus()
+                Exit Sub
+            End If
+        End If
+
+        If chkGranFormato.Checked = True Then
+            If txt_cantidad_producto_Gran_Formato.Text.Length >= 1 Then
+                If cboPiezas_Producto_Gran_Formato.Text.Length = 0 Then
+                    MsgBox("Seleccione una pieza")
+                End If
+            End If
+        End If
+
+        Dim buscaorden = (From odt In datacontext.ORDEN_TRABAJO
+                      Select odt.ORT_fecha_ot, odt.ORT_tipo_ot, odt.ORT_numero_ot, odt.ORT_observaciones_ot, odt.VEN_id_vendedor, odt.CLI_id_cliente, odt.ORT_fecha_entrega
+                      Where ORT_numero_ot = txtNumero_Orden_Trabajo.Text.ToUpper).Any
+
+        If cargamasprod = "NO" Then
+            If buscaorden = True Then
+                MsgBox("La Orden ingresada ya existe")
+                Exit Sub
+            End If
+        End If
+
         Try
             '---------------------------GUARDA ORDEN------------------------------
             Dim ODT = New ORDEN_TRABAJO
-            '  If cargamasprod = "NO" Then
+            If cargamasprod = "NO" Then
 
-            ODT.ORT_numero_ot = StrConv(txtNumero_Orden_Trabajo.Text, VbStrConv.ProperCase)
-            ODT.ORT_fecha_ot = dtpFecha_Ingreso_ODT.Text
-            ODT.ORT_fecha_entrega = dtpFecha_Entrega_ODT.Text
-            ODT.ORT_tipo_ot = cboTipo_Orden.Text
+                ODT.ORT_numero_ot = StrConv(txtNumero_Orden_Trabajo.Text, VbStrConv.ProperCase)
+                ODT.ORT_fecha_ot = dtpFecha_Ingreso_ODT.Text
+                ODT.ORT_fecha_entrega = dtpFecha_Entrega_ODT.Text
+                ODT.ORT_tipo_ot = cboTipo_Orden.Text
 
-            ODT.ORT_observaciones_ot = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
-            ODT.ORT_mejoras_ot = StrConv(cboDireccion_Entrega.Text, VbStrConv.ProperCase)
-            ODT.VEN_id_vendedor = txtid_vendedor.Text
-            ODT.CLI_id_cliente = txt_id_cliente.Text
+                ODT.ORT_observaciones_ot = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
+                ODT.ORT_mejoras_ot = StrConv(cboDireccion_Entrega.Text, VbStrConv.ProperCase)
+                ODT.VEN_id_vendedor = txtid_vendedor.Text
+                ODT.CLI_id_cliente = txt_id_cliente.Text
 
-            datacontext.ORDEN_TRABAJO.InsertOnSubmit(ODT)
-            datacontext.SubmitChanges()
-            '   End If
+                datacontext.ORDEN_TRABAJO.InsertOnSubmit(ODT)
+                datacontext.SubmitChanges()
+            End If
 
             'GUARDA EL REGISTRO 1 DEL DETALLE DE LA ORDEN DE TRABAJO
-            'If txt_cantidad1_detalle1.Text.Length >= 1 Then
-            '    If cboPiezas1_Detalle1.Text.Length = 0 Then
-            '        MsgBox("Seleccione una pieza")
-            '    End If
-            '--------------------------------------------------------------------------------------
 
+            '--------------------------------------------------------------------------------------
 
             Dim detalle = New DETALLE_ORDEN_TRABAJO
 
@@ -239,9 +270,9 @@
             detalle.DOT_tipo_impresion_dot = cboTipo_Orden.SelectedItem 'TIPO IMPRESION PRODUCTO 1
             detalle.PIE_id_pieza = cboPiezas_Producto.SelectedValue 'TIPO PIEZA PRODUCTO 1
 
-            'If cargamasprod = "NO" Then
-            txt_id_orden_trabajo.Text = ODT.ORT_id_orden_trabajo
-            'End If
+            If cargamasprod = "NO" Then
+                txt_id_orden_trabajo.Text = ODT.ORT_id_orden_trabajo
+            End If
             detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text 'ID ORDEN TRABAJO
 
             'PAPEL PRODUCTO 1
@@ -270,7 +301,7 @@
             detalle.DOT_formato_soporte_3 = cboFormato_3_Pliego_Entero.SelectedItem
 
             '--------------------------------DIGITAL---------------------------------------------
-            detalle.tipo_impresion_digital = cboTipo_Impresion_Digital.SelectedItem
+            detalle.tipo_impresion_digital = cboTipo_Impresion_Digital.Text
 
             If txtCantidad_1_Pliego_Maquina_Digital.TextLength <> 0 Then
                 detalle.cantidad_1_PM_digital = txtCantidad_1_Pliego_Maquina_Digital.Text
@@ -290,7 +321,7 @@
             '------------------------------------------------------------------------------------
 
             '---------------------------OFFSET---------------------------------------------------
-            detalle.tipo_impresion_offset = cboTipo_Impresion_Offset.SelectedItem
+            detalle.tipo_impresion_offset = cboTipo_Impresion_Offset.Text
             detalle.impresora_offset = cboImpresora_Offset.SelectedItem
             detalle.modo_impresion_offset = cboModo_Impresion_Offset.SelectedItem
             detalle.marca_offset = cboMarca_Offset.SelectedItem
@@ -424,7 +455,23 @@
             datacontext.DETALLE_ORDEN_TRABAJO.InsertOnSubmit(detalle)
             datacontext.SubmitChanges()
 
-            MsgBox("La orden se ha guardado correctamente")
+            Select Case MsgBox("Agregar mas productos?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Guardar orden")
+                Case MsgBoxResult.Yes
+                    cargamasprod = "SI"
+                    chkDigital.Checked = False
+                    chkOffset.Checked = False
+                    chkTerminacion.Checked = False
+                    chkGranFormato.Checked = False
+                    'LimpiarDigital()
+                    'LimpiarGranFormato()
+                    'LimpiarOffset()
+                    'LimpiarProducto_Soportes()
+                    'LimpiarTerminacion()
+                    Exit Sub
+                Case Else
+                    MsgBox("la Orden se ha creado correctamente", vbInformation)
+                    Me.Close()
+            End Select
         Catch ex As Exception
             MsgBox("Error al cargar la Orden")
         End Try

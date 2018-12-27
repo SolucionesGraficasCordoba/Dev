@@ -1301,6 +1301,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'cboSistema_Gran_Formato
         '
+        Me.cboSistema_Gran_Formato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSistema_Gran_Formato.FormattingEnabled = True
         Me.cboSistema_Gran_Formato.Items.AddRange(New Object() {"Solvente", "Latex", "UV"})
         Me.cboSistema_Gran_Formato.Location = New System.Drawing.Point(268, 101)

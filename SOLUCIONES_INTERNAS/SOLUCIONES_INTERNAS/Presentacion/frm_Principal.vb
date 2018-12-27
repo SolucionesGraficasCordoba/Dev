@@ -1378,11 +1378,11 @@ Public Class frm_Principal
         'End If
     End Sub
 
-    Private Sub OrdenTrabajoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles OrdenTrabajoToolStripMenuItem.Click
-
-    End Sub
 
     Private Sub OrdenAmpliadaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles OrdenAmpliadaToolStripMenuItem.Click
+        frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value = Today
+        frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value = frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value.Add(TimeSpan.FromDays(-1))
+
         frm_Orden_Trabajo_Ampliada.txt_id_cliente.Visible = False
         frm_Orden_Trabajo_Ampliada.txtid_vendedor.Visible = False
         frm_Orden_Trabajo_Ampliada.Label45.Visible = False
