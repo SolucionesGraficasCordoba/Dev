@@ -219,7 +219,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.Label17.AutoSize = True
         Me.Label17.ForeColor = System.Drawing.Color.Red
-        Me.Label17.Location = New System.Drawing.Point(12, 716)
+        Me.Label17.Location = New System.Drawing.Point(9, 737)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(109, 13)
         Me.Label17.TabIndex = 91
@@ -1170,7 +1170,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkPosicionado
         '
         Me.chkPosicionado.AutoSize = True
-        Me.chkPosicionado.Location = New System.Drawing.Point(94, 37)
+        Me.chkPosicionado.Location = New System.Drawing.Point(637, 64)
         Me.chkPosicionado.Name = "chkPosicionado"
         Me.chkPosicionado.Size = New System.Drawing.Size(84, 17)
         Me.chkPosicionado.TabIndex = 152
@@ -1180,17 +1180,17 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkMedio_Corte
         '
         Me.chkMedio_Corte.AutoSize = True
-        Me.chkMedio_Corte.Location = New System.Drawing.Point(434, 37)
+        Me.chkMedio_Corte.Location = New System.Drawing.Point(114, 57)
         Me.chkMedio_Corte.Name = "chkMedio_Corte"
-        Me.chkMedio_Corte.Size = New System.Drawing.Size(83, 17)
+        Me.chkMedio_Corte.Size = New System.Drawing.Size(55, 30)
         Me.chkMedio_Corte.TabIndex = 151
-        Me.chkMedio_Corte.Text = "Medio Corte"
+        Me.chkMedio_Corte.Text = "Medio" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Corte"
         Me.chkMedio_Corte.UseVisualStyleBackColor = True
         '
         'chkSoldado
         '
         Me.chkSoldado.AutoSize = True
-        Me.chkSoldado.Location = New System.Drawing.Point(435, 72)
+        Me.chkSoldado.Location = New System.Drawing.Point(114, 103)
         Me.chkSoldado.Name = "chkSoldado"
         Me.chkSoldado.Size = New System.Drawing.Size(65, 17)
         Me.chkSoldado.TabIndex = 150
@@ -1200,7 +1200,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkRuedo
         '
         Me.chkRuedo.AutoSize = True
-        Me.chkRuedo.Location = New System.Drawing.Point(20, 107)
+        Me.chkRuedo.Location = New System.Drawing.Point(19, 103)
         Me.chkRuedo.Name = "chkRuedo"
         Me.chkRuedo.Size = New System.Drawing.Size(58, 17)
         Me.chkRuedo.TabIndex = 149
@@ -1210,7 +1210,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkCocido
         '
         Me.chkCocido.AutoSize = True
-        Me.chkCocido.Location = New System.Drawing.Point(366, 37)
+        Me.chkCocido.Location = New System.Drawing.Point(190, 27)
         Me.chkCocido.Name = "chkCocido"
         Me.chkCocido.Size = New System.Drawing.Size(59, 17)
         Me.chkCocido.TabIndex = 148
@@ -1220,7 +1220,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkOtros
         '
         Me.chkOtros.AutoSize = True
-        Me.chkOtros.Location = New System.Drawing.Point(366, 107)
+        Me.chkOtros.Location = New System.Drawing.Point(449, 64)
         Me.chkOtros.Name = "chkOtros"
         Me.chkOtros.Size = New System.Drawing.Size(51, 17)
         Me.chkOtros.TabIndex = 147
@@ -1230,7 +1230,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkMontado
         '
         Me.chkMontado.AutoSize = True
-        Me.chkMontado.Location = New System.Drawing.Point(20, 72)
+        Me.chkMontado.Location = New System.Drawing.Point(190, 64)
         Me.chkMontado.Name = "chkMontado"
         Me.chkMontado.Size = New System.Drawing.Size(68, 17)
         Me.chkMontado.TabIndex = 147
@@ -1240,7 +1240,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkTrazado
         '
         Me.chkTrazado.AutoSize = True
-        Me.chkTrazado.Location = New System.Drawing.Point(366, 72)
+        Me.chkTrazado.Location = New System.Drawing.Point(269, 103)
         Me.chkTrazado.Name = "chkTrazado"
         Me.chkTrazado.Size = New System.Drawing.Size(65, 17)
         Me.chkTrazado.TabIndex = 147
@@ -1250,7 +1250,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkDoblado
         '
         Me.chkDoblado.AutoSize = True
-        Me.chkDoblado.Location = New System.Drawing.Point(202, 37)
+        Me.chkDoblado.Location = New System.Drawing.Point(365, 27)
         Me.chkDoblado.Name = "chkDoblado"
         Me.chkDoblado.Size = New System.Drawing.Size(66, 17)
         Me.chkDoblado.TabIndex = 147
@@ -1260,7 +1260,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkStamping
         '
         Me.chkStamping.AutoSize = True
-        Me.chkStamping.Location = New System.Drawing.Point(202, 72)
+        Me.chkStamping.Location = New System.Drawing.Point(190, 103)
         Me.chkStamping.Name = "chkStamping"
         Me.chkStamping.Size = New System.Drawing.Size(70, 17)
         Me.chkStamping.TabIndex = 147
@@ -1270,7 +1270,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkEncuadernacion
         '
         Me.chkEncuadernacion.AutoSize = True
-        Me.chkEncuadernacion.Location = New System.Drawing.Point(94, 72)
+        Me.chkEncuadernacion.Location = New System.Drawing.Point(449, 27)
         Me.chkEncuadernacion.Name = "chkEncuadernacion"
         Me.chkEncuadernacion.Size = New System.Drawing.Size(104, 17)
         Me.chkEncuadernacion.TabIndex = 147
@@ -1280,7 +1280,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkAdhesivado
         '
         Me.chkAdhesivado.AutoSize = True
-        Me.chkAdhesivado.Location = New System.Drawing.Point(281, 72)
+        Me.chkAdhesivado.Location = New System.Drawing.Point(20, 27)
         Me.chkAdhesivado.Name = "chkAdhesivado"
         Me.chkAdhesivado.Size = New System.Drawing.Size(82, 17)
         Me.chkAdhesivado.TabIndex = 147
@@ -1290,7 +1290,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkPolipropileno
         '
         Me.chkPolipropileno.AutoSize = True
-        Me.chkPolipropileno.Location = New System.Drawing.Point(94, 107)
+        Me.chkPolipropileno.Location = New System.Drawing.Point(552, 64)
         Me.chkPolipropileno.Name = "chkPolipropileno"
         Me.chkPolipropileno.Size = New System.Drawing.Size(86, 17)
         Me.chkPolipropileno.TabIndex = 147
@@ -1300,7 +1300,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkCorte
         '
         Me.chkCorte.AutoSize = True
-        Me.chkCorte.Location = New System.Drawing.Point(524, 72)
+        Me.chkCorte.Location = New System.Drawing.Point(637, 27)
         Me.chkCorte.Name = "chkCorte"
         Me.chkCorte.Size = New System.Drawing.Size(81, 17)
         Me.chkCorte.TabIndex = 147
@@ -1310,7 +1310,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkTroquelado
         '
         Me.chkTroquelado.AutoSize = True
-        Me.chkTroquelado.Location = New System.Drawing.Point(281, 37)
+        Me.chkTroquelado.Location = New System.Drawing.Point(365, 103)
         Me.chkTroquelado.Name = "chkTroquelado"
         Me.chkTroquelado.Size = New System.Drawing.Size(80, 17)
         Me.chkTroquelado.TabIndex = 147
@@ -1320,7 +1320,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkBarniz
         '
         Me.chkBarniz.AutoSize = True
-        Me.chkBarniz.Location = New System.Drawing.Point(524, 37)
+        Me.chkBarniz.Location = New System.Drawing.Point(114, 27)
         Me.chkBarniz.Name = "chkBarniz"
         Me.chkBarniz.Size = New System.Drawing.Size(55, 17)
         Me.chkBarniz.TabIndex = 147
@@ -1330,7 +1330,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkLaca_UV
         '
         Me.chkLaca_UV.AutoSize = True
-        Me.chkLaca_UV.Location = New System.Drawing.Point(20, 37)
+        Me.chkLaca_UV.Location = New System.Drawing.Point(733, 27)
         Me.chkLaca_UV.Name = "chkLaca_UV"
         Me.chkLaca_UV.Size = New System.Drawing.Size(68, 17)
         Me.chkLaca_UV.TabIndex = 147
@@ -1572,7 +1572,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(610, 72)
+        Me.CheckBox1.Location = New System.Drawing.Point(365, 64)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(75, 17)
         Me.CheckBox1.TabIndex = 154
@@ -1582,7 +1582,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(610, 37)
+        Me.CheckBox2.Location = New System.Drawing.Point(269, 64)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(88, 17)
         Me.CheckBox2.TabIndex = 153
@@ -1592,7 +1592,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'CheckBox3
         '
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(712, 72)
+        Me.CheckBox3.Location = New System.Drawing.Point(552, 27)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(64, 17)
         Me.CheckBox3.TabIndex = 156
@@ -1602,7 +1602,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'CheckBox4
         '
         Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(712, 37)
+        Me.CheckBox4.Location = New System.Drawing.Point(269, 27)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(79, 17)
         Me.CheckBox4.TabIndex = 155
@@ -1612,11 +1612,11 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'CheckBox5
         '
         Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(202, 107)
+        Me.CheckBox5.Location = New System.Drawing.Point(19, 57)
         Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(127, 17)
+        Me.CheckBox5.Size = New System.Drawing.Size(82, 30)
         Me.CheckBox5.TabIndex = 157
-        Me.CheckBox5.Text = "Laca UV Sectorizada"
+        Me.CheckBox5.Text = "   Laca UV " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sectorizada"
         Me.CheckBox5.UseVisualStyleBackColor = True
         '
         'frm_Orden_Trabajo_Ampliada
