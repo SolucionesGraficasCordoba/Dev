@@ -117,8 +117,10 @@ Public Class frm_Listado_Orden_Trabajo
 
     'CARGA DETALLES DE LA ORDEN
     Public Sub CargarDetalle()
-        Dim datagriddetalleorden = (From o In datavistas.Vista_Detalle_Orden_Trabajo_1
-                          Select o.ORT_id_orden_trabajo,
+        'datavistas.Vista_Detalle_Orden_Trabajo_1
+        Dim datagriddetalleorden =
+                (From o In datavistas.Vista_Detalle_Orden_Trabajo_2
+         Select o.ORT_id_orden_trabajo,
                           o.ORT_tipo_ot,
                           o.ORT_numero_ot,
                           o.ORT_observaciones_ot,
@@ -129,8 +131,8 @@ Public Class frm_Listado_Orden_Trabajo
                           o.PIE_id_pieza,
                           o.PIE_nombre_pie,
                           o.id_detalle_orden_trabajo,
-                          o.DOT_cantidad_dot,
-                          o.DOT_tamaño_dot,
+                          o.DOT_cantidad_producto,
+                          o.DOT_tamaño_producto,
                           o.DOT_tipo_impresion_dot,
                           o.DOT_papel_soporte_1,
                           o.DOT_papel_soporte_2,
