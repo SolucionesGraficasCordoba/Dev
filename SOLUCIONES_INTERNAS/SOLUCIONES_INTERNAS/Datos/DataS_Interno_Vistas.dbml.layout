@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.25, 8.5" name="DataS_Interno_Vistas">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.625, 8.5" name="DataS_Interno_Vistas">
   <DataContextMoniker Name="/DataS_Interno_Vistas" />
   <nestedChildShapes>
     <classShape Id="e146fe0b-01d4-42ab-bfd2-352bb0791de6" isExpanded="false" absoluteBounds="3.75, 0.75, 2, 0.45">
@@ -66,6 +66,12 @@
       <DataClassMoniker Name="/DataS_Interno_Vistas/Movimiento_Orden" />
       <nestedChildShapes>
         <elementListCompartment Id="cfd5d096-440e-434b-b838-64edbe960227" absoluteBounds="10.015, 2.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e1179ed1-33ec-402f-9800-0ea1ccfe3c36" isExpanded="false" absoluteBounds="12.375, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/DataS_Interno_Vistas/Vista_Detalle_Orden_Trabajo_2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da93fb98-2cdf-4acf-8a60-396dac500d32" absoluteBounds="12.39, 1.21, 1.9700000000000002, 11.979777018229166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

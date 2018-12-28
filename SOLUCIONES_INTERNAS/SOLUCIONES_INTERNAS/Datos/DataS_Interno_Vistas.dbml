@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SOLUCIONES_INTERNAS" Class="DataS_Interno_Vistas" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PREPRODUCCION" Class="DataS_Interno_Vistas" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.VistaTareas" Member="VistaTareas">
     <Type Name="VistaTareas">
@@ -181,6 +181,71 @@
       <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vista_Detalle_Orden_Trabajo_2" Member="Vista_Detalle_Orden_Trabajo_2">
+    <Type Name="Vista_Detalle_Orden_Trabajo_2">
+      <Column Name="id_detalle_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DOT_cantidad_producto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_tamaño_producto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT_tipo_impresion_dot" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="DOT_papel_soporte_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT_papel_soporte_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT_papel_soporte_3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOT_gramaje_soporte_1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DOT_gramaje_soporte_2" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DOT_gramaje_soporte_3" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="DOT_cantidad_soporte_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_cantidad_soporte_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_cantidad_soporte_3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOT_formato_soporte_1" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DOT_formato_soporte_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="DOT_formato_soporte_3" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PIE_id_pieza" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cantidad_1_PM_offset" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cantidad_2_PM_offset" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cantidad_3_PM_offset" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="formato_1_PM_offset" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="formato_2_PM_offset" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="formato_3_PM_offset" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="PIE_id_pieza_offset" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="modo_impresion_offset" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="tipo_impresion_offset" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="chapas_soporte1_offset" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="chapas_soporte2_offset" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="chapas_soporte3_offset" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="impresora_offset" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="marca_offset" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cantidad_1_PM_digital" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cantidad_2_PM_digital" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cantidad_3_PM_digital" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="formato_1_PM_digital" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="formato_2_PM_digital" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="formato_3_PM_digital" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="modo_impresion_digital" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="tipo_impresion_digital" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="dato_variable" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="cantidad_gran_formato" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tamaño_gran_formato" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="sustrato_gran_formato" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="calidad_gran_formato" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="sistema_gran_formato" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="tipo_terminacion" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="descripcion_terminacion" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="PIE_nombre_pie" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PIE_ubicacion" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="VEN_nombre_ven" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="VEN_apellido_ven" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_fecha_ot" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_tipo_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_numero_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_observaciones_ot" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="ORT_mejoras_ot" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="VEN_id_vendedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_fecha_entrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CLI_id_cliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CLI_razon_social" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>
