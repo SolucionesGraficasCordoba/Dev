@@ -26,14 +26,12 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Label55 = New System.Windows.Forms.Label()
         Me.dtpFecha_Entrega_ODT = New System.Windows.Forms.DateTimePicker()
         Me.Label54 = New System.Windows.Forms.Label()
-        Me.btnImprimirFormulario = New System.Windows.Forms.Button()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.btnGuardar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.txt_id_detalle_orden_trabajo1 = New System.Windows.Forms.TextBox()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.btnCancelar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.btnActualizar_Orden_Trabajo = New System.Windows.Forms.Button()
-        Me.btnNueva_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.Label46 = New System.Windows.Forms.Label()
         Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -88,29 +86,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Label25 = New System.Windows.Forms.Label()
         Me.txt_Gramaje_1_Soporte = New System.Windows.Forms.TextBox()
         Me.txt_Papel_1_Soporte = New System.Windows.Forms.TextBox()
-        Me.cboImpresora_Offset = New System.Windows.Forms.ComboBox()
-        Me.Label66 = New System.Windows.Forms.Label()
-        Me.cboModo_Impresion_Offset = New System.Windows.Forms.ComboBox()
-        Me.Label61 = New System.Windows.Forms.Label()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.txt_chapa_soporte_3 = New System.Windows.Forms.TextBox()
-        Me.txt_chapa_soporte_2 = New System.Windows.Forms.TextBox()
-        Me.txt_chapa_soporte_1 = New System.Windows.Forms.TextBox()
-        Me.Label36 = New System.Windows.Forms.Label()
-        Me.cboFormato_3_Pliego_Maquina_Offset = New System.Windows.Forms.ComboBox()
-        Me.txtCantidad_1_Pliego_Maquina_Offset = New System.Windows.Forms.TextBox()
-        Me.Label58 = New System.Windows.Forms.Label()
-        Me.cboFormato_2_Pliego_Maquina_Offset = New System.Windows.Forms.ComboBox()
-        Me.Label57 = New System.Windows.Forms.Label()
-        Me.txtCantidad_3_Pliego_Maquina_Offset = New System.Windows.Forms.TextBox()
-        Me.cboFormato_1_Pliego_Maquina_Offset = New System.Windows.Forms.ComboBox()
-        Me.txtCantidad_2_Pliego_Maquina_Offset = New System.Windows.Forms.TextBox()
         Me.cboDireccion_Entrega = New System.Windows.Forms.ComboBox()
-        Me.groupOffset = New System.Windows.Forms.GroupBox()
-        Me.cboMarca_Offset = New System.Windows.Forms.ComboBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.cboTipo_Impresion_Offset = New System.Windows.Forms.ComboBox()
-        Me.Label35 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.cboTipo_Orden = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -163,16 +139,43 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.chkLaca_UV = New System.Windows.Forms.CheckBox()
         Me.txt_descripcion_terminacion = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.groupOffset = New System.Windows.Forms.GroupBox()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.txt_chapa_soporte_3 = New System.Windows.Forms.TextBox()
+        Me.txt_chapa_soporte_2 = New System.Windows.Forms.TextBox()
+        Me.txt_chapa_soporte_1 = New System.Windows.Forms.TextBox()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.cboFormato_3_Pliego_Maquina_Offset = New System.Windows.Forms.ComboBox()
+        Me.txtCantidad_1_Pliego_Maquina_Offset = New System.Windows.Forms.TextBox()
+        Me.Label58 = New System.Windows.Forms.Label()
+        Me.cboFormato_2_Pliego_Maquina_Offset = New System.Windows.Forms.ComboBox()
+        Me.Label57 = New System.Windows.Forms.Label()
+        Me.txtCantidad_3_Pliego_Maquina_Offset = New System.Windows.Forms.TextBox()
+        Me.cboFormato_1_Pliego_Maquina_Offset = New System.Windows.Forms.ComboBox()
+        Me.txtCantidad_2_Pliego_Maquina_Offset = New System.Windows.Forms.TextBox()
+        Me.cboMarca_Offset = New System.Windows.Forms.ComboBox()
+        Me.Label61 = New System.Windows.Forms.Label()
+        Me.cboModo_Impresion_Offset = New System.Windows.Forms.ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label66 = New System.Windows.Forms.Label()
+        Me.cboImpresora_Offset = New System.Windows.Forms.ComboBox()
+        Me.cboTipo_Impresion_Offset = New System.Windows.Forms.ComboBox()
+        Me.Label35 = New System.Windows.Forms.Label()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupProducto_Soportes.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
-        Me.groupOffset.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupDigital.SuspendLayout()
         Me.GroupBox7.SuspendLayout()
         Me.GroupGranFormato.SuspendLayout()
         Me.GroupTerminacion.SuspendLayout()
+        Me.groupOffset.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Label56
@@ -212,20 +215,11 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Label54.TabIndex = 100
         Me.Label54.Text = "Fecha Entrega"
         '
-        'btnImprimirFormulario
-        '
-        Me.btnImprimirFormulario.Location = New System.Drawing.Point(1123, 551)
-        Me.btnImprimirFormulario.Name = "btnImprimirFormulario"
-        Me.btnImprimirFormulario.Size = New System.Drawing.Size(108, 33)
-        Me.btnImprimirFormulario.TabIndex = 98
-        Me.btnImprimirFormulario.Text = "Imprimir Formulario"
-        Me.btnImprimirFormulario.UseVisualStyleBackColor = True
-        '
         'Label17
         '
         Me.Label17.AutoSize = True
         Me.Label17.ForeColor = System.Drawing.Color.Red
-        Me.Label17.Location = New System.Drawing.Point(12, 704)
+        Me.Label17.Location = New System.Drawing.Point(12, 716)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(109, 13)
         Me.Label17.TabIndex = 91
@@ -233,7 +227,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'btnGuardar_Orden_Trabajo
         '
-        Me.btnGuardar_Orden_Trabajo.Location = New System.Drawing.Point(1156, 590)
+        Me.btnGuardar_Orden_Trabajo.Location = New System.Drawing.Point(988, 727)
         Me.btnGuardar_Orden_Trabajo.Name = "btnGuardar_Orden_Trabajo"
         Me.btnGuardar_Orden_Trabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnGuardar_Orden_Trabajo.TabIndex = 92
@@ -258,7 +252,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'btnCancelar_Orden_Trabajo
         '
-        Me.btnCancelar_Orden_Trabajo.Location = New System.Drawing.Point(1156, 668)
+        Me.btnCancelar_Orden_Trabajo.Location = New System.Drawing.Point(1150, 727)
         Me.btnCancelar_Orden_Trabajo.Name = "btnCancelar_Orden_Trabajo"
         Me.btnCancelar_Orden_Trabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar_Orden_Trabajo.TabIndex = 94
@@ -267,21 +261,12 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'btnActualizar_Orden_Trabajo
         '
-        Me.btnActualizar_Orden_Trabajo.Location = New System.Drawing.Point(1156, 629)
+        Me.btnActualizar_Orden_Trabajo.Location = New System.Drawing.Point(1069, 727)
         Me.btnActualizar_Orden_Trabajo.Name = "btnActualizar_Orden_Trabajo"
         Me.btnActualizar_Orden_Trabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnActualizar_Orden_Trabajo.TabIndex = 99
         Me.btnActualizar_Orden_Trabajo.Text = "Actualizar"
         Me.btnActualizar_Orden_Trabajo.UseVisualStyleBackColor = True
-        '
-        'btnNueva_Orden_Trabajo
-        '
-        Me.btnNueva_Orden_Trabajo.Location = New System.Drawing.Point(1154, 512)
-        Me.btnNueva_Orden_Trabajo.Name = "btnNueva_Orden_Trabajo"
-        Me.btnNueva_Orden_Trabajo.Size = New System.Drawing.Size(75, 33)
-        Me.btnNueva_Orden_Trabajo.TabIndex = 96
-        Me.btnNueva_Orden_Trabajo.Text = "Nuevo"
-        Me.btnNueva_Orden_Trabajo.UseVisualStyleBackColor = True
         '
         'Label46
         '
@@ -361,7 +346,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'txt_id_orden_trabajo
         '
-        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(994, 472)
+        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(920, 16)
         Me.txt_id_orden_trabajo.Name = "txt_id_orden_trabajo"
         Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(75, 20)
         Me.txt_id_orden_trabajo.TabIndex = 77
@@ -376,7 +361,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(968, 475)
+        Me.Label1.Location = New System.Drawing.Point(894, 19)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(22, 13)
         Me.Label1.TabIndex = 76
@@ -462,11 +447,15 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.chkTerminacion)
+        Me.GroupBox1.Controls.Add(Me.cboTipo_Orden)
         Me.GroupBox1.Controls.Add(Me.chkGranFormato)
         Me.GroupBox1.Controls.Add(Me.chkOffset)
+        Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.chkDigital)
         Me.GroupBox1.Controls.Add(Me.Label45)
         Me.GroupBox1.Controls.Add(Me.txt_id_detalle_orden_trabajo1)
+        Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo)
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 148)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(1219, 56)
@@ -797,164 +786,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_Papel_1_Soporte.Size = New System.Drawing.Size(225, 20)
         Me.txt_Papel_1_Soporte.TabIndex = 11
         '
-        'cboImpresora_Offset
-        '
-        Me.cboImpresora_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboImpresora_Offset.FormattingEnabled = True
-        Me.cboImpresora_Offset.Items.AddRange(New Object() {"CD/4", "CD/6", "SM", "SOR"})
-        Me.cboImpresora_Offset.Location = New System.Drawing.Point(66, 61)
-        Me.cboImpresora_Offset.Name = "cboImpresora_Offset"
-        Me.cboImpresora_Offset.Size = New System.Drawing.Size(75, 21)
-        Me.cboImpresora_Offset.TabIndex = 135
-        '
-        'Label66
-        '
-        Me.Label66.AutoSize = True
-        Me.Label66.Location = New System.Drawing.Point(4, 64)
-        Me.Label66.Name = "Label66"
-        Me.Label66.Size = New System.Drawing.Size(53, 13)
-        Me.Label66.TabIndex = 134
-        Me.Label66.Text = "Impresora"
-        '
-        'cboModo_Impresion_Offset
-        '
-        Me.cboModo_Impresion_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboModo_Impresion_Offset.FormattingEnabled = True
-        Me.cboModo_Impresion_Offset.Items.AddRange(New Object() {"Tire y Retire", "Pinza y Contrapinza", "Frente y Dorso", "Solo Frente"})
-        Me.cboModo_Impresion_Offset.Location = New System.Drawing.Point(211, 27)
-        Me.cboModo_Impresion_Offset.Name = "cboModo_Impresion_Offset"
-        Me.cboModo_Impresion_Offset.Size = New System.Drawing.Size(110, 21)
-        Me.cboModo_Impresion_Offset.TabIndex = 128
-        '
-        'Label61
-        '
-        Me.Label61.AutoSize = True
-        Me.Label61.Location = New System.Drawing.Point(153, 27)
-        Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(52, 26)
-        Me.Label61.TabIndex = 129
-        Me.Label61.Text = "   Modo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Impresión"
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.txt_chapa_soporte_3)
-        Me.GroupBox3.Controls.Add(Me.txt_chapa_soporte_2)
-        Me.GroupBox3.Controls.Add(Me.txt_chapa_soporte_1)
-        Me.GroupBox3.Controls.Add(Me.Label36)
-        Me.GroupBox3.Controls.Add(Me.cboFormato_3_Pliego_Maquina_Offset)
-        Me.GroupBox3.Controls.Add(Me.txtCantidad_1_Pliego_Maquina_Offset)
-        Me.GroupBox3.Controls.Add(Me.Label58)
-        Me.GroupBox3.Controls.Add(Me.cboFormato_2_Pliego_Maquina_Offset)
-        Me.GroupBox3.Controls.Add(Me.Label57)
-        Me.GroupBox3.Controls.Add(Me.txtCantidad_3_Pliego_Maquina_Offset)
-        Me.GroupBox3.Controls.Add(Me.cboFormato_1_Pliego_Maquina_Offset)
-        Me.GroupBox3.Controls.Add(Me.txtCantidad_2_Pliego_Maquina_Offset)
-        Me.GroupBox3.Location = New System.Drawing.Point(13, 88)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(316, 121)
-        Me.GroupBox3.TabIndex = 128
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Pliego Máquina"
-        '
-        'txt_chapa_soporte_3
-        '
-        Me.txt_chapa_soporte_3.Location = New System.Drawing.Point(231, 94)
-        Me.txt_chapa_soporte_3.Name = "txt_chapa_soporte_3"
-        Me.txt_chapa_soporte_3.Size = New System.Drawing.Size(75, 20)
-        Me.txt_chapa_soporte_3.TabIndex = 150
-        '
-        'txt_chapa_soporte_2
-        '
-        Me.txt_chapa_soporte_2.Location = New System.Drawing.Point(232, 68)
-        Me.txt_chapa_soporte_2.Name = "txt_chapa_soporte_2"
-        Me.txt_chapa_soporte_2.Size = New System.Drawing.Size(75, 20)
-        Me.txt_chapa_soporte_2.TabIndex = 150
-        '
-        'txt_chapa_soporte_1
-        '
-        Me.txt_chapa_soporte_1.Location = New System.Drawing.Point(232, 43)
-        Me.txt_chapa_soporte_1.Name = "txt_chapa_soporte_1"
-        Me.txt_chapa_soporte_1.Size = New System.Drawing.Size(75, 20)
-        Me.txt_chapa_soporte_1.TabIndex = 150
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(247, 26)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(43, 13)
-        Me.Label36.TabIndex = 149
-        Me.Label36.Text = "Chapas"
-        '
-        'cboFormato_3_Pliego_Maquina_Offset
-        '
-        Me.cboFormato_3_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboFormato_3_Pliego_Maquina_Offset.FormattingEnabled = True
-        Me.cboFormato_3_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
-        Me.cboFormato_3_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 94)
-        Me.cboFormato_3_Pliego_Maquina_Offset.Name = "cboFormato_3_Pliego_Maquina_Offset"
-        Me.cboFormato_3_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
-        Me.cboFormato_3_Pliego_Maquina_Offset.TabIndex = 65
-        '
-        'txtCantidad_1_Pliego_Maquina_Offset
-        '
-        Me.txtCantidad_1_Pliego_Maquina_Offset.Location = New System.Drawing.Point(13, 43)
-        Me.txtCantidad_1_Pliego_Maquina_Offset.Name = "txtCantidad_1_Pliego_Maquina_Offset"
-        Me.txtCantidad_1_Pliego_Maquina_Offset.Size = New System.Drawing.Size(69, 20)
-        Me.txtCantidad_1_Pliego_Maquina_Offset.TabIndex = 60
-        '
-        'Label58
-        '
-        Me.Label58.AutoSize = True
-        Me.Label58.Location = New System.Drawing.Point(23, 26)
-        Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(49, 13)
-        Me.Label58.TabIndex = 67
-        Me.Label58.Text = "Cantidad"
-        '
-        'cboFormato_2_Pliego_Maquina_Offset
-        '
-        Me.cboFormato_2_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboFormato_2_Pliego_Maquina_Offset.FormattingEnabled = True
-        Me.cboFormato_2_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
-        Me.cboFormato_2_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 69)
-        Me.cboFormato_2_Pliego_Maquina_Offset.Name = "cboFormato_2_Pliego_Maquina_Offset"
-        Me.cboFormato_2_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
-        Me.cboFormato_2_Pliego_Maquina_Offset.TabIndex = 63
-        '
-        'Label57
-        '
-        Me.Label57.AutoSize = True
-        Me.Label57.Location = New System.Drawing.Point(121, 26)
-        Me.Label57.Name = "Label57"
-        Me.Label57.Size = New System.Drawing.Size(71, 13)
-        Me.Label57.TabIndex = 66
-        Me.Label57.Text = "Formato (Mm)"
-        '
-        'txtCantidad_3_Pliego_Maquina_Offset
-        '
-        Me.txtCantidad_3_Pliego_Maquina_Offset.Location = New System.Drawing.Point(13, 94)
-        Me.txtCantidad_3_Pliego_Maquina_Offset.Name = "txtCantidad_3_Pliego_Maquina_Offset"
-        Me.txtCantidad_3_Pliego_Maquina_Offset.Size = New System.Drawing.Size(69, 20)
-        Me.txtCantidad_3_Pliego_Maquina_Offset.TabIndex = 64
-        '
-        'cboFormato_1_Pliego_Maquina_Offset
-        '
-        Me.cboFormato_1_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboFormato_1_Pliego_Maquina_Offset.FormattingEnabled = True
-        Me.cboFormato_1_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
-        Me.cboFormato_1_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 43)
-        Me.cboFormato_1_Pliego_Maquina_Offset.Name = "cboFormato_1_Pliego_Maquina_Offset"
-        Me.cboFormato_1_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
-        Me.cboFormato_1_Pliego_Maquina_Offset.TabIndex = 61
-        '
-        'txtCantidad_2_Pliego_Maquina_Offset
-        '
-        Me.txtCantidad_2_Pliego_Maquina_Offset.Location = New System.Drawing.Point(13, 68)
-        Me.txtCantidad_2_Pliego_Maquina_Offset.Name = "txtCantidad_2_Pliego_Maquina_Offset"
-        Me.txtCantidad_2_Pliego_Maquina_Offset.Size = New System.Drawing.Size(69, 20)
-        Me.txtCantidad_2_Pliego_Maquina_Offset.TabIndex = 62
-        '
         'cboDireccion_Entrega
         '
         Me.cboDireccion_Entrega.FormattingEnabled = True
@@ -963,61 +794,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboDireccion_Entrega.Name = "cboDireccion_Entrega"
         Me.cboDireccion_Entrega.Size = New System.Drawing.Size(212, 21)
         Me.cboDireccion_Entrega.TabIndex = 128
-        '
-        'groupOffset
-        '
-        Me.groupOffset.Controls.Add(Me.GroupBox3)
-        Me.groupOffset.Controls.Add(Me.cboMarca_Offset)
-        Me.groupOffset.Controls.Add(Me.Label61)
-        Me.groupOffset.Controls.Add(Me.cboModo_Impresion_Offset)
-        Me.groupOffset.Controls.Add(Me.Label13)
-        Me.groupOffset.Controls.Add(Me.Label66)
-        Me.groupOffset.Controls.Add(Me.cboImpresora_Offset)
-        Me.groupOffset.Controls.Add(Me.cboTipo_Impresion_Offset)
-        Me.groupOffset.Controls.Add(Me.Label35)
-        Me.groupOffset.Location = New System.Drawing.Point(893, 210)
-        Me.groupOffset.Name = "groupOffset"
-        Me.groupOffset.Size = New System.Drawing.Size(338, 216)
-        Me.groupOffset.TabIndex = 129
-        Me.groupOffset.TabStop = False
-        Me.groupOffset.Text = "Offset"
-        '
-        'cboMarca_Offset
-        '
-        Me.cboMarca_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cboMarca_Offset.FormattingEnabled = True
-        Me.cboMarca_Offset.Items.AddRange(New Object() {"Agfa TU", "Kodak", "KTP - Konita"})
-        Me.cboMarca_Offset.Location = New System.Drawing.Point(211, 61)
-        Me.cboMarca_Offset.Name = "cboMarca_Offset"
-        Me.cboMarca_Offset.Size = New System.Drawing.Size(112, 21)
-        Me.cboMarca_Offset.TabIndex = 141
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(168, 64)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(37, 13)
-        Me.Label13.TabIndex = 140
-        Me.Label13.Text = "Marca"
-        '
-        'cboTipo_Impresion_Offset
-        '
-        Me.cboTipo_Impresion_Offset.FormattingEnabled = True
-        Me.cboTipo_Impresion_Offset.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
-        Me.cboTipo_Impresion_Offset.Location = New System.Drawing.Point(66, 24)
-        Me.cboTipo_Impresion_Offset.Name = "cboTipo_Impresion_Offset"
-        Me.cboTipo_Impresion_Offset.Size = New System.Drawing.Size(75, 21)
-        Me.cboTipo_Impresion_Offset.TabIndex = 138
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(10, 27)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(52, 26)
-        Me.Label35.TabIndex = 139
-        Me.Label35.Text = "    Tipo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Impresión"
         '
         'GroupBox4
         '
@@ -1054,7 +830,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboTipo_Orden.FormattingEnabled = True
         Me.cboTipo_Orden.Items.AddRange(New Object() {"DG", "DO", "DI", "DV", "DS"})
-        Me.cboTipo_Orden.Location = New System.Drawing.Point(994, 445)
+        Me.cboTipo_Orden.Location = New System.Drawing.Point(165, 21)
         Me.cboTipo_Orden.MaxLength = 10
         Me.cboTipo_Orden.Name = "cboTipo_Orden"
         Me.cboTipo_Orden.Size = New System.Drawing.Size(75, 21)
@@ -1063,7 +839,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(918, 447)
+        Me.Label8.Location = New System.Drawing.Point(89, 23)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(60, 13)
         Me.Label8.TabIndex = 59
@@ -1076,7 +852,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.GroupDigital.Controls.Add(Me.Label34)
         Me.GroupDigital.Controls.Add(Me.txtDato_Variable)
         Me.GroupDigital.Controls.Add(Me.Label23)
-        Me.GroupDigital.Location = New System.Drawing.Point(631, 210)
+        Me.GroupDigital.Location = New System.Drawing.Point(975, 217)
         Me.GroupDigital.Name = "GroupDigital"
         Me.GroupDigital.Size = New System.Drawing.Size(256, 352)
         Me.GroupDigital.TabIndex = 131
@@ -1351,7 +1127,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.GroupGranFormato.Controls.Add(Me.Label28)
         Me.GroupGranFormato.Controls.Add(Me.cboCalidad_Gran_Formato)
         Me.GroupGranFormato.Controls.Add(Me.cboPiezas_Producto_Gran_Formato)
-        Me.GroupGranFormato.Location = New System.Drawing.Point(631, 568)
+        Me.GroupGranFormato.Location = New System.Drawing.Point(840, 580)
         Me.GroupGranFormato.Name = "GroupGranFormato"
         Me.GroupGranFormato.Size = New System.Drawing.Size(391, 133)
         Me.GroupGranFormato.TabIndex = 147
@@ -1360,6 +1136,11 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'GroupTerminacion
         '
+        Me.GroupTerminacion.Controls.Add(Me.CheckBox5)
+        Me.GroupTerminacion.Controls.Add(Me.CheckBox3)
+        Me.GroupTerminacion.Controls.Add(Me.CheckBox4)
+        Me.GroupTerminacion.Controls.Add(Me.CheckBox1)
+        Me.GroupTerminacion.Controls.Add(Me.CheckBox2)
         Me.GroupTerminacion.Controls.Add(Me.chkPosicionado)
         Me.GroupTerminacion.Controls.Add(Me.chkMedio_Corte)
         Me.GroupTerminacion.Controls.Add(Me.chkSoldado)
@@ -1381,7 +1162,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.GroupTerminacion.Controls.Add(Me.Label12)
         Me.GroupTerminacion.Location = New System.Drawing.Point(12, 445)
         Me.GroupTerminacion.Name = "GroupTerminacion"
-        Me.GroupTerminacion.Size = New System.Drawing.Size(615, 256)
+        Me.GroupTerminacion.Size = New System.Drawing.Size(822, 268)
         Me.GroupTerminacion.TabIndex = 148
         Me.GroupTerminacion.TabStop = False
         Me.GroupTerminacion.Text = "Terminación"
@@ -1429,7 +1210,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkCocido
         '
         Me.chkCocido.AutoSize = True
-        Me.chkCocido.Location = New System.Drawing.Point(524, 72)
+        Me.chkCocido.Location = New System.Drawing.Point(366, 37)
         Me.chkCocido.Name = "chkCocido"
         Me.chkCocido.Size = New System.Drawing.Size(59, 17)
         Me.chkCocido.TabIndex = 148
@@ -1439,7 +1220,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkOtros
         '
         Me.chkOtros.AutoSize = True
-        Me.chkOtros.Location = New System.Drawing.Point(202, 107)
+        Me.chkOtros.Location = New System.Drawing.Point(366, 107)
         Me.chkOtros.Name = "chkOtros"
         Me.chkOtros.Size = New System.Drawing.Size(51, 17)
         Me.chkOtros.TabIndex = 147
@@ -1519,11 +1300,11 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkCorte
         '
         Me.chkCorte.AutoSize = True
-        Me.chkCorte.Location = New System.Drawing.Point(366, 37)
+        Me.chkCorte.Location = New System.Drawing.Point(524, 72)
         Me.chkCorte.Name = "chkCorte"
-        Me.chkCorte.Size = New System.Drawing.Size(51, 17)
+        Me.chkCorte.Size = New System.Drawing.Size(81, 17)
         Me.chkCorte.TabIndex = 147
-        Me.chkCorte.Text = "Corte"
+        Me.chkCorte.Text = "Guillotinado"
         Me.chkCorte.UseVisualStyleBackColor = True
         '
         'chkTroquelado
@@ -1563,7 +1344,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_descripcion_terminacion.Multiline = True
         Me.txt_descripcion_terminacion.Name = "txt_descripcion_terminacion"
         Me.txt_descripcion_terminacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txt_descripcion_terminacion.Size = New System.Drawing.Size(503, 107)
+        Me.txt_descripcion_terminacion.Size = New System.Drawing.Size(713, 119)
         Me.txt_descripcion_terminacion.TabIndex = 145
         '
         'Label12
@@ -1575,28 +1356,285 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Label12.TabIndex = 146
         Me.Label12.Text = "Descripción"
         '
+        'groupOffset
+        '
+        Me.groupOffset.Controls.Add(Me.GroupBox3)
+        Me.groupOffset.Controls.Add(Me.cboMarca_Offset)
+        Me.groupOffset.Controls.Add(Me.Label61)
+        Me.groupOffset.Controls.Add(Me.cboModo_Impresion_Offset)
+        Me.groupOffset.Controls.Add(Me.Label13)
+        Me.groupOffset.Controls.Add(Me.Label66)
+        Me.groupOffset.Controls.Add(Me.cboImpresora_Offset)
+        Me.groupOffset.Controls.Add(Me.cboTipo_Impresion_Offset)
+        Me.groupOffset.Controls.Add(Me.Label35)
+        Me.groupOffset.Location = New System.Drawing.Point(631, 217)
+        Me.groupOffset.Name = "groupOffset"
+        Me.groupOffset.Size = New System.Drawing.Size(338, 216)
+        Me.groupOffset.TabIndex = 149
+        Me.groupOffset.TabStop = False
+        Me.groupOffset.Text = "Offset"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.txt_chapa_soporte_3)
+        Me.GroupBox3.Controls.Add(Me.txt_chapa_soporte_2)
+        Me.GroupBox3.Controls.Add(Me.txt_chapa_soporte_1)
+        Me.GroupBox3.Controls.Add(Me.Label36)
+        Me.GroupBox3.Controls.Add(Me.cboFormato_3_Pliego_Maquina_Offset)
+        Me.GroupBox3.Controls.Add(Me.txtCantidad_1_Pliego_Maquina_Offset)
+        Me.GroupBox3.Controls.Add(Me.Label58)
+        Me.GroupBox3.Controls.Add(Me.cboFormato_2_Pliego_Maquina_Offset)
+        Me.GroupBox3.Controls.Add(Me.Label57)
+        Me.GroupBox3.Controls.Add(Me.txtCantidad_3_Pliego_Maquina_Offset)
+        Me.GroupBox3.Controls.Add(Me.cboFormato_1_Pliego_Maquina_Offset)
+        Me.GroupBox3.Controls.Add(Me.txtCantidad_2_Pliego_Maquina_Offset)
+        Me.GroupBox3.Location = New System.Drawing.Point(13, 88)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(316, 121)
+        Me.GroupBox3.TabIndex = 128
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Pliego Máquina"
+        '
+        'txt_chapa_soporte_3
+        '
+        Me.txt_chapa_soporte_3.Location = New System.Drawing.Point(231, 94)
+        Me.txt_chapa_soporte_3.Name = "txt_chapa_soporte_3"
+        Me.txt_chapa_soporte_3.Size = New System.Drawing.Size(75, 20)
+        Me.txt_chapa_soporte_3.TabIndex = 150
+        '
+        'txt_chapa_soporte_2
+        '
+        Me.txt_chapa_soporte_2.Location = New System.Drawing.Point(232, 68)
+        Me.txt_chapa_soporte_2.Name = "txt_chapa_soporte_2"
+        Me.txt_chapa_soporte_2.Size = New System.Drawing.Size(75, 20)
+        Me.txt_chapa_soporte_2.TabIndex = 150
+        '
+        'txt_chapa_soporte_1
+        '
+        Me.txt_chapa_soporte_1.Location = New System.Drawing.Point(232, 43)
+        Me.txt_chapa_soporte_1.Name = "txt_chapa_soporte_1"
+        Me.txt_chapa_soporte_1.Size = New System.Drawing.Size(75, 20)
+        Me.txt_chapa_soporte_1.TabIndex = 150
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(247, 26)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(43, 13)
+        Me.Label36.TabIndex = 149
+        Me.Label36.Text = "Chapas"
+        '
+        'cboFormato_3_Pliego_Maquina_Offset
+        '
+        Me.cboFormato_3_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboFormato_3_Pliego_Maquina_Offset.FormattingEnabled = True
+        Me.cboFormato_3_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
+        Me.cboFormato_3_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 94)
+        Me.cboFormato_3_Pliego_Maquina_Offset.Name = "cboFormato_3_Pliego_Maquina_Offset"
+        Me.cboFormato_3_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
+        Me.cboFormato_3_Pliego_Maquina_Offset.TabIndex = 65
+        '
+        'txtCantidad_1_Pliego_Maquina_Offset
+        '
+        Me.txtCantidad_1_Pliego_Maquina_Offset.Location = New System.Drawing.Point(13, 43)
+        Me.txtCantidad_1_Pliego_Maquina_Offset.Name = "txtCantidad_1_Pliego_Maquina_Offset"
+        Me.txtCantidad_1_Pliego_Maquina_Offset.Size = New System.Drawing.Size(69, 20)
+        Me.txtCantidad_1_Pliego_Maquina_Offset.TabIndex = 60
+        '
+        'Label58
+        '
+        Me.Label58.AutoSize = True
+        Me.Label58.Location = New System.Drawing.Point(23, 26)
+        Me.Label58.Name = "Label58"
+        Me.Label58.Size = New System.Drawing.Size(49, 13)
+        Me.Label58.TabIndex = 67
+        Me.Label58.Text = "Cantidad"
+        '
+        'cboFormato_2_Pliego_Maquina_Offset
+        '
+        Me.cboFormato_2_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboFormato_2_Pliego_Maquina_Offset.FormattingEnabled = True
+        Me.cboFormato_2_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
+        Me.cboFormato_2_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 69)
+        Me.cboFormato_2_Pliego_Maquina_Offset.Name = "cboFormato_2_Pliego_Maquina_Offset"
+        Me.cboFormato_2_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
+        Me.cboFormato_2_Pliego_Maquina_Offset.TabIndex = 63
+        '
+        'Label57
+        '
+        Me.Label57.AutoSize = True
+        Me.Label57.Location = New System.Drawing.Point(121, 26)
+        Me.Label57.Name = "Label57"
+        Me.Label57.Size = New System.Drawing.Size(71, 13)
+        Me.Label57.TabIndex = 66
+        Me.Label57.Text = "Formato (Mm)"
+        '
+        'txtCantidad_3_Pliego_Maquina_Offset
+        '
+        Me.txtCantidad_3_Pliego_Maquina_Offset.Location = New System.Drawing.Point(13, 94)
+        Me.txtCantidad_3_Pliego_Maquina_Offset.Name = "txtCantidad_3_Pliego_Maquina_Offset"
+        Me.txtCantidad_3_Pliego_Maquina_Offset.Size = New System.Drawing.Size(69, 20)
+        Me.txtCantidad_3_Pliego_Maquina_Offset.TabIndex = 64
+        '
+        'cboFormato_1_Pliego_Maquina_Offset
+        '
+        Me.cboFormato_1_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboFormato_1_Pliego_Maquina_Offset.FormattingEnabled = True
+        Me.cboFormato_1_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
+        Me.cboFormato_1_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 43)
+        Me.cboFormato_1_Pliego_Maquina_Offset.Name = "cboFormato_1_Pliego_Maquina_Offset"
+        Me.cboFormato_1_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
+        Me.cboFormato_1_Pliego_Maquina_Offset.TabIndex = 61
+        '
+        'txtCantidad_2_Pliego_Maquina_Offset
+        '
+        Me.txtCantidad_2_Pliego_Maquina_Offset.Location = New System.Drawing.Point(13, 68)
+        Me.txtCantidad_2_Pliego_Maquina_Offset.Name = "txtCantidad_2_Pliego_Maquina_Offset"
+        Me.txtCantidad_2_Pliego_Maquina_Offset.Size = New System.Drawing.Size(69, 20)
+        Me.txtCantidad_2_Pliego_Maquina_Offset.TabIndex = 62
+        '
+        'cboMarca_Offset
+        '
+        Me.cboMarca_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboMarca_Offset.FormattingEnabled = True
+        Me.cboMarca_Offset.Items.AddRange(New Object() {"Agfa TU", "Kodak", "KTP - Konita"})
+        Me.cboMarca_Offset.Location = New System.Drawing.Point(211, 61)
+        Me.cboMarca_Offset.Name = "cboMarca_Offset"
+        Me.cboMarca_Offset.Size = New System.Drawing.Size(112, 21)
+        Me.cboMarca_Offset.TabIndex = 141
+        '
+        'Label61
+        '
+        Me.Label61.AutoSize = True
+        Me.Label61.Location = New System.Drawing.Point(153, 27)
+        Me.Label61.Name = "Label61"
+        Me.Label61.Size = New System.Drawing.Size(52, 26)
+        Me.Label61.TabIndex = 129
+        Me.Label61.Text = "   Modo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Impresión"
+        '
+        'cboModo_Impresion_Offset
+        '
+        Me.cboModo_Impresion_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboModo_Impresion_Offset.FormattingEnabled = True
+        Me.cboModo_Impresion_Offset.Items.AddRange(New Object() {"Tire y Retire", "Pinza y Contrapinza", "Frente y Dorso", "Solo Frente"})
+        Me.cboModo_Impresion_Offset.Location = New System.Drawing.Point(211, 27)
+        Me.cboModo_Impresion_Offset.Name = "cboModo_Impresion_Offset"
+        Me.cboModo_Impresion_Offset.Size = New System.Drawing.Size(110, 21)
+        Me.cboModo_Impresion_Offset.TabIndex = 128
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(168, 64)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(37, 13)
+        Me.Label13.TabIndex = 140
+        Me.Label13.Text = "Marca"
+        '
+        'Label66
+        '
+        Me.Label66.AutoSize = True
+        Me.Label66.Location = New System.Drawing.Point(4, 64)
+        Me.Label66.Name = "Label66"
+        Me.Label66.Size = New System.Drawing.Size(53, 13)
+        Me.Label66.TabIndex = 134
+        Me.Label66.Text = "Impresora"
+        '
+        'cboImpresora_Offset
+        '
+        Me.cboImpresora_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboImpresora_Offset.FormattingEnabled = True
+        Me.cboImpresora_Offset.Items.AddRange(New Object() {"CD/4", "CD/6", "SM", "SOR"})
+        Me.cboImpresora_Offset.Location = New System.Drawing.Point(66, 61)
+        Me.cboImpresora_Offset.Name = "cboImpresora_Offset"
+        Me.cboImpresora_Offset.Size = New System.Drawing.Size(75, 21)
+        Me.cboImpresora_Offset.TabIndex = 135
+        '
+        'cboTipo_Impresion_Offset
+        '
+        Me.cboTipo_Impresion_Offset.FormattingEnabled = True
+        Me.cboTipo_Impresion_Offset.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
+        Me.cboTipo_Impresion_Offset.Location = New System.Drawing.Point(66, 24)
+        Me.cboTipo_Impresion_Offset.Name = "cboTipo_Impresion_Offset"
+        Me.cboTipo_Impresion_Offset.Size = New System.Drawing.Size(75, 21)
+        Me.cboTipo_Impresion_Offset.TabIndex = 138
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(10, 27)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(52, 26)
+        Me.Label35.TabIndex = 139
+        Me.Label35.Text = "    Tipo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Impresión"
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(610, 72)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(75, 17)
+        Me.CheckBox1.TabIndex = 154
+        Me.CheckBox1.Text = "OPP Mate"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(610, 37)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(88, 17)
+        Me.CheckBox2.TabIndex = 153
+        Me.CheckBox2.Text = "OPP Brillante"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(712, 72)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(64, 17)
+        Me.CheckBox3.TabIndex = 156
+        Me.CheckBox3.Text = "Fresado"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Location = New System.Drawing.Point(712, 37)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(79, 17)
+        Me.CheckBox4.TabIndex = 155
+        Me.CheckBox4.Text = "Cuño Seco"
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
+        'CheckBox5
+        '
+        Me.CheckBox5.AutoSize = True
+        Me.CheckBox5.Location = New System.Drawing.Point(202, 107)
+        Me.CheckBox5.Name = "CheckBox5"
+        Me.CheckBox5.Size = New System.Drawing.Size(127, 17)
+        Me.CheckBox5.TabIndex = 157
+        Me.CheckBox5.Text = "Laca UV Sectorizada"
+        Me.CheckBox5.UseVisualStyleBackColor = True
+        '
         'frm_Orden_Trabajo_Ampliada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1241, 726)
+        Me.ClientSize = New System.Drawing.Size(1241, 774)
+        Me.Controls.Add(Me.groupOffset)
         Me.Controls.Add(Me.GroupTerminacion)
-        Me.Controls.Add(Me.cboTipo_Orden)
         Me.Controls.Add(Me.GroupGranFormato)
-        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.GroupDigital)
         Me.Controls.Add(Me.GroupBox4)
-        Me.Controls.Add(Me.groupOffset)
         Me.Controls.Add(Me.GroupProducto_Soportes)
         Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.btnImprimirFormulario)
         Me.Controls.Add(Me.btnGuardar_Orden_Trabajo)
         Me.Controls.Add(Me.btnCancelar_Orden_Trabajo)
         Me.Controls.Add(Me.btnActualizar_Orden_Trabajo)
-        Me.Controls.Add(Me.btnNueva_Orden_Trabajo)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.txt_id_orden_trabajo)
-        Me.Controls.Add(Me.Label1)
         Me.Name = "frm_Orden_Trabajo_Ampliada"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_Orden_Trabajo_Ampliada"
@@ -1606,10 +1644,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.GroupProducto_Soportes.PerformLayout()
         Me.GroupBox8.ResumeLayout(False)
         Me.GroupBox8.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
-        Me.groupOffset.ResumeLayout(False)
-        Me.groupOffset.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.GroupDigital.ResumeLayout(False)
@@ -1620,6 +1654,10 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.GroupGranFormato.PerformLayout()
         Me.GroupTerminacion.ResumeLayout(False)
         Me.GroupTerminacion.PerformLayout()
+        Me.groupOffset.ResumeLayout(False)
+        Me.groupOffset.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1628,14 +1666,12 @@ Partial Class frm_Orden_Trabajo_Ampliada
     Friend WithEvents Label55 As System.Windows.Forms.Label
     Friend WithEvents dtpFecha_Entrega_ODT As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label54 As System.Windows.Forms.Label
-    Friend WithEvents btnImprimirFormulario As System.Windows.Forms.Button
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents btnGuardar_Orden_Trabajo As System.Windows.Forms.Button
     Friend WithEvents txt_id_detalle_orden_trabajo1 As System.Windows.Forms.TextBox
     Friend WithEvents Label45 As System.Windows.Forms.Label
     Friend WithEvents btnCancelar_Orden_Trabajo As System.Windows.Forms.Button
     Friend WithEvents btnActualizar_Orden_Trabajo As System.Windows.Forms.Button
-    Friend WithEvents btnNueva_Orden_Trabajo As System.Windows.Forms.Button
     Friend WithEvents Label46 As System.Windows.Forms.Label
     Friend WithEvents txtNumero_Orden_Trabajo As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
@@ -1673,17 +1709,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents txt_Gramaje_1_Soporte As System.Windows.Forms.TextBox
     Friend WithEvents txt_Papel_1_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents cboModo_Impresion_Offset As System.Windows.Forms.ComboBox
-    Friend WithEvents Label61 As System.Windows.Forms.Label
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents cboFormato_3_Pliego_Maquina_Offset As System.Windows.Forms.ComboBox
-    Friend WithEvents txtCantidad_1_Pliego_Maquina_Offset As System.Windows.Forms.TextBox
-    Friend WithEvents Label58 As System.Windows.Forms.Label
-    Friend WithEvents cboFormato_2_Pliego_Maquina_Offset As System.Windows.Forms.ComboBox
-    Friend WithEvents Label57 As System.Windows.Forms.Label
-    Friend WithEvents txtCantidad_3_Pliego_Maquina_Offset As System.Windows.Forms.TextBox
-    Friend WithEvents cboFormato_1_Pliego_Maquina_Offset As System.Windows.Forms.ComboBox
-    Friend WithEvents txtCantidad_2_Pliego_Maquina_Offset As System.Windows.Forms.TextBox
     Friend WithEvents cboDireccion_Entrega As System.Windows.Forms.ComboBox
     Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
     Friend WithEvents cboFormato_3_Pliego_Entero As System.Windows.Forms.ComboBox
@@ -1694,9 +1719,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
     Friend WithEvents txt_Cantidad_3_Pliego_Entero As System.Windows.Forms.TextBox
     Friend WithEvents cboFormato_1_Pliego_Entero As System.Windows.Forms.ComboBox
     Friend WithEvents cboFormato_2_Pliego_Entero As System.Windows.Forms.ComboBox
-    Friend WithEvents cboImpresora_Offset As System.Windows.Forms.ComboBox
-    Friend WithEvents Label66 As System.Windows.Forms.Label
-    Friend WithEvents groupOffset As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupDigital As System.Windows.Forms.GroupBox
     Friend WithEvents txtDato_Variable As System.Windows.Forms.TextBox
@@ -1745,8 +1767,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
     Friend WithEvents txtCantidad_3_Pliego_Maquina_Digital As System.Windows.Forms.TextBox
     Friend WithEvents cboFormato_1_Pliego_Maquina_Digital As System.Windows.Forms.ComboBox
     Friend WithEvents txtCantidad_2_Pliego_Maquina_Digital As System.Windows.Forms.TextBox
-    Friend WithEvents cboTipo_Impresion_Offset As System.Windows.Forms.ComboBox
-    Friend WithEvents Label35 As System.Windows.Forms.Label
     Friend WithEvents cboTipo_Impresion_Digital As System.Windows.Forms.ComboBox
     Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents cboTipo_Orden As System.Windows.Forms.ComboBox
@@ -1759,10 +1779,31 @@ Partial Class frm_Orden_Trabajo_Ampliada
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtTamaño_Producto As System.Windows.Forms.TextBox
     Friend WithEvents txt_cantidad_producto As System.Windows.Forms.TextBox
-    Friend WithEvents cboMarca_Offset As System.Windows.Forms.ComboBox
-    Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents txt_chapa_soporte_1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label36 As System.Windows.Forms.Label
+    Friend WithEvents CheckBox5 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
+    Friend WithEvents groupOffset As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents txt_chapa_soporte_3 As System.Windows.Forms.TextBox
     Friend WithEvents txt_chapa_soporte_2 As System.Windows.Forms.TextBox
+    Friend WithEvents txt_chapa_soporte_1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label36 As System.Windows.Forms.Label
+    Friend WithEvents cboFormato_3_Pliego_Maquina_Offset As System.Windows.Forms.ComboBox
+    Friend WithEvents txtCantidad_1_Pliego_Maquina_Offset As System.Windows.Forms.TextBox
+    Friend WithEvents Label58 As System.Windows.Forms.Label
+    Friend WithEvents cboFormato_2_Pliego_Maquina_Offset As System.Windows.Forms.ComboBox
+    Friend WithEvents Label57 As System.Windows.Forms.Label
+    Friend WithEvents txtCantidad_3_Pliego_Maquina_Offset As System.Windows.Forms.TextBox
+    Friend WithEvents cboFormato_1_Pliego_Maquina_Offset As System.Windows.Forms.ComboBox
+    Friend WithEvents txtCantidad_2_Pliego_Maquina_Offset As System.Windows.Forms.TextBox
+    Friend WithEvents cboMarca_Offset As System.Windows.Forms.ComboBox
+    Friend WithEvents Label61 As System.Windows.Forms.Label
+    Friend WithEvents cboModo_Impresion_Offset As System.Windows.Forms.ComboBox
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label66 As System.Windows.Forms.Label
+    Friend WithEvents cboImpresora_Offset As System.Windows.Forms.ComboBox
+    Friend WithEvents cboTipo_Impresion_Offset As System.Windows.Forms.ComboBox
+    Friend WithEvents Label35 As System.Windows.Forms.Label
 End Class
