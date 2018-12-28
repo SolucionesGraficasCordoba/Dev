@@ -68,11 +68,21 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=NB-BALDO;Initial Catalog=SOLUCIONES_INTERNAS;Persist Security Info=Tr"& _ 
-            "ue;User ID=vheredia;Password=heredia")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;Persist Security Info=True"& _ 
+            ";User ID=vheredia;Password=heredia")>  _
         Public ReadOnly Property SOLUCIONES_INTERNASConnectionString1() As String
             Get
                 Return CType(Me("SOLUCIONES_INTERNASConnectionString1"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;User ID=vheredia")>  _
+        Public ReadOnly Property PREPRODUCCIONConnectionString() As String
+            Get
+                Return CType(Me("PREPRODUCCIONConnectionString"),String)
             End Get
         End Property
     End Class
