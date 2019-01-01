@@ -28,7 +28,6 @@ Partial Class frm_Actualizar_Orden
         Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txt_nombre_cliente = New System.Windows.Forms.TextBox()
-        Me.Label47 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cboTipo_Orden = New System.Windows.Forms.ComboBox()
@@ -75,7 +74,7 @@ Partial Class frm_Actualizar_Orden
         '
         Me.Label46.AutoSize = True
         Me.Label46.ForeColor = System.Drawing.Color.Red
-        Me.Label46.Location = New System.Drawing.Point(248, 37)
+        Me.Label46.Location = New System.Drawing.Point(164, 46)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(11, 13)
         Me.Label46.TabIndex = 88
@@ -84,7 +83,7 @@ Partial Class frm_Actualizar_Orden
         'txtNumero_Orden_Trabajo
         '
         Me.txtNumero_Orden_Trabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(265, 19)
+        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(181, 28)
         Me.txtNumero_Orden_Trabajo.Multiline = True
         Me.txtNumero_Orden_Trabajo.Name = "txtNumero_Orden_Trabajo"
         Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(118, 48)
@@ -94,7 +93,7 @@ Partial Class frm_Actualizar_Orden
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(216, 45)
+        Me.Label6.Location = New System.Drawing.Point(131, 54)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(44, 26)
         Me.Label6.TabIndex = 87
@@ -107,16 +106,6 @@ Partial Class frm_Actualizar_Orden
         Me.txt_nombre_cliente.Name = "txt_nombre_cliente"
         Me.txt_nombre_cliente.Size = New System.Drawing.Size(283, 20)
         Me.txt_nombre_cliente.TabIndex = 86
-        '
-        'Label47
-        '
-        Me.Label47.AutoSize = True
-        Me.Label47.ForeColor = System.Drawing.Color.Red
-        Me.Label47.Location = New System.Drawing.Point(88, 57)
-        Me.Label47.Name = "Label47"
-        Me.Label47.Size = New System.Drawing.Size(11, 13)
-        Me.Label47.TabIndex = 85
-        Me.Label47.Text = "*"
         '
         'Label16
         '
@@ -141,9 +130,9 @@ Partial Class frm_Actualizar_Orden
         '
         Me.cboTipo_Orden.FormattingEnabled = True
         Me.cboTipo_Orden.Items.AddRange(New Object() {"DG", "DO", "DI", "DV", "DS"})
-        Me.cboTipo_Orden.Location = New System.Drawing.Point(105, 55)
+        Me.cboTipo_Orden.Location = New System.Drawing.Point(381, 55)
         Me.cboTipo_Orden.Name = "cboTipo_Orden"
-        Me.cboTipo_Orden.Size = New System.Drawing.Size(80, 21)
+        Me.cboTipo_Orden.Size = New System.Drawing.Size(66, 21)
         Me.cboTipo_Orden.TabIndex = 65
         '
         'btnBuscar_cliente
@@ -158,7 +147,7 @@ Partial Class frm_Actualizar_Orden
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(28, 57)
+        Me.Label5.Location = New System.Drawing.Point(304, 57)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(60, 13)
         Me.Label5.TabIndex = 84
@@ -166,7 +155,7 @@ Partial Class frm_Actualizar_Orden
         '
         'txt_id_orden_trabajo
         '
-        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(105, 19)
+        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(381, 33)
         Me.txt_id_orden_trabajo.Name = "txt_id_orden_trabajo"
         Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(66, 20)
         Me.txt_id_orden_trabajo.TabIndex = 75
@@ -181,7 +170,7 @@ Partial Class frm_Actualizar_Orden
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(79, 22)
+        Me.Label1.Location = New System.Drawing.Point(355, 36)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(22, 13)
         Me.Label1.TabIndex = 74
@@ -269,20 +258,19 @@ Partial Class frm_Actualizar_Orden
         Me.GroupBox1.Controls.Add(Me.Label18)
         Me.GroupBox1.Controls.Add(Me.txtNumero_Orden_Trabajo)
         Me.GroupBox1.Controls.Add(Me.Label46)
-        Me.GroupBox1.Controls.Add(Me.Label47)
         Me.GroupBox1.Controls.Add(Me.dtpFecha_Orden_Trabajo)
-        Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.cboTipo_Orden)
         Me.GroupBox1.Controls.Add(Me.dtpFecha_Entrega)
+        Me.GroupBox1.Controls.Add(Me.txt_id_orden_trabajo)
         Me.GroupBox1.Controls.Add(Me.Label54)
         Me.GroupBox1.Controls.Add(Me.txt_id_cliente)
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txt_mejoras)
         Me.GroupBox1.Controls.Add(Me.Label10)
+        Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label19)
         Me.GroupBox1.Controls.Add(Me.Label9)
+        Me.GroupBox1.Controls.Add(Me.cboTipo_Orden)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(453, 351)
@@ -355,7 +343,6 @@ Partial Class frm_Actualizar_Orden
     Friend WithEvents txtNumero_Orden_Trabajo As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents txt_nombre_cliente As System.Windows.Forms.TextBox
-    Friend WithEvents Label47 As System.Windows.Forms.Label
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents cboTipo_Orden As System.Windows.Forms.ComboBox

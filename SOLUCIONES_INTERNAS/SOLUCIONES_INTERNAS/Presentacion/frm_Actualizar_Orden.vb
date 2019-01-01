@@ -11,11 +11,11 @@
 
     Private Sub btnActualizar_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar.Click
         'VALIDA CAMPOS OBLIGATORIOS
-        If cboTipo_Orden.Text.Length = 0 Then
-            MsgBox("Seleccione un Tipo de Orden")
-            cboTipo_Orden.Focus()
-            Exit Sub
-        End If
+        'If cboTipo_Orden.Text.Length = 0 Then
+        '    MsgBox("Seleccione un Tipo de Orden")
+        '    cboTipo_Orden.Focus()
+        '    Exit Sub
+        'End If
 
         If txtNombre_vendedor.Text.Length = 0 Then
             MsgBox("Seleccione un Vendedor")
@@ -61,5 +61,4 @@
         frm_Cliente.GroupNuevoCliente.Enabled = False
         frm_Cliente.Show()
     End Sub
-
 End Class
