@@ -40,15 +40,7 @@
         frm_Cliente.Show()
     End Sub
 
-    Private Sub btnBuscar_Vendedor_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Vendedor.Click
-        frm_Vendedor.quienllamovendedor = Me
-        frm_Vendedor.Text = "Seleccionar Vendedor"
-        frm_Vendedor.btnEliminar_vendedor.Enabled = False
-        frm_Vendedor.GroupNuevoVendedor.Enabled = False
-        frm_Vendedor.Show()
-    End Sub
-
-    Private Sub chkOffset_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkOffset.CheckedChanged
+    Private Sub chkOffset_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkOffset.CheckedChanged
         If chkOffset.Checked = True Then
             GroupProducto_Soportes.Enabled = True
             groupOffset.Enabled = True
@@ -506,6 +498,14 @@
             MsgBox("Error al cargar la Orden")
         End Try
     End Sub
+
+    Private Sub btnBuscar_Vendedor_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_Vendedor.Click
+        frm_Vendedor.quienllamovendedor = Me
+        frm_Vendedor.Text = "Seleccionar Vendedor"
+        frm_Vendedor.btnEliminar_vendedor.Enabled = False
+        frm_Vendedor.GroupNuevoVendedor.Enabled = False
+        frm_Vendedor.Show()
+    End Sub
 End Class
 
 'USE [SOLUCIONES_INTERNAS1]
@@ -684,7 +684,8 @@ End Class
 '         GroupBy = 1350
 '         Filter = 1350
 '         Or = 1350
-'         Or = 1350'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'Vista_Detalle_Orden_Trabajo_Ampliada'
+'         Or = 1350
+'' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'VIEW',@level1name=N'Vista_Detalle_Orden_Trabajo_Ampliada'
 'GO
 'EXEC sys.sp_addextendedproperty @name=N'MS_DiagramPane2', @value=N'
 '         Or = 1350

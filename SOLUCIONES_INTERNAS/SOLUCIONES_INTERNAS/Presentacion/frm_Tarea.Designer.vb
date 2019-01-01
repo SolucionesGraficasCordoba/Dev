@@ -406,6 +406,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones1.MaxLength = 200
         Me.txtObservaciones1.Multiline = True
         Me.txtObservaciones1.Name = "txtObservaciones1"
+        Me.txtObservaciones1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones1.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones1.TabIndex = 10
         '
@@ -512,7 +513,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea1.Location = New System.Drawing.Point(52, 29)
         Me.txt_detalle_tarea1.MaxLength = 100
+        Me.txt_detalle_tarea1.Multiline = True
         Me.txt_detalle_tarea1.Name = "txt_detalle_tarea1"
+        Me.txt_detalle_tarea1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea1.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea1.TabIndex = 6
         '
@@ -1866,6 +1869,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones20.MaxLength = 200
         Me.txtObservaciones20.Multiline = True
         Me.txtObservaciones20.Name = "txtObservaciones20"
+        Me.txtObservaciones20.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones20.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones20.TabIndex = 124
         '
@@ -1875,6 +1879,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones19.MaxLength = 200
         Me.txtObservaciones19.Multiline = True
         Me.txtObservaciones19.Name = "txtObservaciones19"
+        Me.txtObservaciones19.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones19.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones19.TabIndex = 118
         '
@@ -1891,6 +1896,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones18.MaxLength = 200
         Me.txtObservaciones18.Multiline = True
         Me.txtObservaciones18.Name = "txtObservaciones18"
+        Me.txtObservaciones18.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones18.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones18.TabIndex = 112
         '
@@ -1938,7 +1944,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea20.Location = New System.Drawing.Point(52, 530)
         Me.txt_detalle_tarea20.MaxLength = 100
+        Me.txt_detalle_tarea20.Multiline = True
         Me.txt_detalle_tarea20.Name = "txt_detalle_tarea20"
+        Me.txt_detalle_tarea20.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea20.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea20.TabIndex = 120
         '
@@ -1988,6 +1996,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones17.MaxLength = 200
         Me.txtObservaciones17.Multiline = True
         Me.txtObservaciones17.Name = "txtObservaciones17"
+        Me.txtObservaciones17.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones17.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones17.TabIndex = 106
         '
@@ -1995,7 +2004,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea19.Location = New System.Drawing.Point(52, 504)
         Me.txt_detalle_tarea19.MaxLength = 100
+        Me.txt_detalle_tarea19.Multiline = True
         Me.txt_detalle_tarea19.Name = "txt_detalle_tarea19"
+        Me.txt_detalle_tarea19.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea19.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea19.TabIndex = 114
         '
@@ -2043,7 +2054,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea18.Location = New System.Drawing.Point(52, 476)
         Me.txt_detalle_tarea18.MaxLength = 100
+        Me.txt_detalle_tarea18.Multiline = True
         Me.txt_detalle_tarea18.Name = "txt_detalle_tarea18"
+        Me.txt_detalle_tarea18.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea18.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea18.TabIndex = 108
         '
@@ -2086,7 +2099,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea17.Location = New System.Drawing.Point(52, 450)
         Me.txt_detalle_tarea17.MaxLength = 100
+        Me.txt_detalle_tarea17.Multiline = True
         Me.txt_detalle_tarea17.Name = "txt_detalle_tarea17"
+        Me.txt_detalle_tarea17.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea17.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea17.TabIndex = 102
         '
@@ -2273,6 +2288,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones16.MaxLength = 200
         Me.txtObservaciones16.Multiline = True
         Me.txtObservaciones16.Name = "txtObservaciones16"
+        Me.txtObservaciones16.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones16.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones16.TabIndex = 100
         '
@@ -2282,6 +2298,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones15.MaxLength = 200
         Me.txtObservaciones15.Multiline = True
         Me.txtObservaciones15.Name = "txtObservaciones15"
+        Me.txtObservaciones15.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones15.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones15.TabIndex = 94
         '
@@ -2291,6 +2308,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones14.MaxLength = 200
         Me.txtObservaciones14.Multiline = True
         Me.txtObservaciones14.Name = "txtObservaciones14"
+        Me.txtObservaciones14.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones14.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones14.TabIndex = 88
         '
@@ -2322,7 +2340,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea16.Location = New System.Drawing.Point(52, 421)
         Me.txt_detalle_tarea16.MaxLength = 100
+        Me.txt_detalle_tarea16.Multiline = True
         Me.txt_detalle_tarea16.Name = "txt_detalle_tarea16"
+        Me.txt_detalle_tarea16.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea16.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea16.TabIndex = 96
         '
@@ -2356,6 +2376,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones13.MaxLength = 200
         Me.txtObservaciones13.Multiline = True
         Me.txtObservaciones13.Name = "txtObservaciones13"
+        Me.txtObservaciones13.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones13.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones13.TabIndex = 82
         '
@@ -2363,7 +2384,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea15.Location = New System.Drawing.Point(52, 395)
         Me.txt_detalle_tarea15.MaxLength = 100
+        Me.txt_detalle_tarea15.Multiline = True
         Me.txt_detalle_tarea15.Name = "txt_detalle_tarea15"
+        Me.txt_detalle_tarea15.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea15.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea15.TabIndex = 90
         '
@@ -2395,7 +2418,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea14.Location = New System.Drawing.Point(52, 369)
         Me.txt_detalle_tarea14.MaxLength = 100
+        Me.txt_detalle_tarea14.Multiline = True
         Me.txt_detalle_tarea14.Name = "txt_detalle_tarea14"
+        Me.txt_detalle_tarea14.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea14.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea14.TabIndex = 84
         '
@@ -2427,7 +2452,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea13.Location = New System.Drawing.Point(52, 343)
         Me.txt_detalle_tarea13.MaxLength = 100
+        Me.txt_detalle_tarea13.Multiline = True
         Me.txt_detalle_tarea13.Name = "txt_detalle_tarea13"
+        Me.txt_detalle_tarea13.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea13.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea13.TabIndex = 78
         '
@@ -2437,6 +2464,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones12.MaxLength = 200
         Me.txtObservaciones12.Multiline = True
         Me.txtObservaciones12.Name = "txtObservaciones12"
+        Me.txtObservaciones12.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones12.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones12.TabIndex = 76
         '
@@ -2446,6 +2474,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones11.MaxLength = 200
         Me.txtObservaciones11.Multiline = True
         Me.txtObservaciones11.Name = "txtObservaciones11"
+        Me.txtObservaciones11.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones11.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones11.TabIndex = 70
         '
@@ -2455,6 +2484,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones10.MaxLength = 200
         Me.txtObservaciones10.Multiline = True
         Me.txtObservaciones10.Name = "txtObservaciones10"
+        Me.txtObservaciones10.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones10.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones10.TabIndex = 64
         '
@@ -2486,7 +2516,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea12.Location = New System.Drawing.Point(52, 316)
         Me.txt_detalle_tarea12.MaxLength = 100
+        Me.txt_detalle_tarea12.Multiline = True
         Me.txt_detalle_tarea12.Name = "txt_detalle_tarea12"
+        Me.txt_detalle_tarea12.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea12.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea12.TabIndex = 72
         '
@@ -2520,6 +2552,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones9.MaxLength = 200
         Me.txtObservaciones9.Multiline = True
         Me.txtObservaciones9.Name = "txtObservaciones9"
+        Me.txtObservaciones9.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones9.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones9.TabIndex = 58
         '
@@ -2527,7 +2560,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea11.Location = New System.Drawing.Point(52, 290)
         Me.txt_detalle_tarea11.MaxLength = 100
+        Me.txt_detalle_tarea11.Multiline = True
         Me.txt_detalle_tarea11.Name = "txt_detalle_tarea11"
+        Me.txt_detalle_tarea11.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea11.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea11.TabIndex = 66
         '
@@ -2559,7 +2594,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea10.Location = New System.Drawing.Point(52, 264)
         Me.txt_detalle_tarea10.MaxLength = 100
+        Me.txt_detalle_tarea10.Multiline = True
         Me.txt_detalle_tarea10.Name = "txt_detalle_tarea10"
+        Me.txt_detalle_tarea10.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea10.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea10.TabIndex = 60
         '
@@ -2591,7 +2628,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea9.Location = New System.Drawing.Point(52, 238)
         Me.txt_detalle_tarea9.MaxLength = 100
+        Me.txt_detalle_tarea9.Multiline = True
         Me.txt_detalle_tarea9.Name = "txt_detalle_tarea9"
+        Me.txt_detalle_tarea9.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea9.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea9.TabIndex = 54
         '
@@ -2601,6 +2640,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones8.MaxLength = 200
         Me.txtObservaciones8.Multiline = True
         Me.txtObservaciones8.Name = "txtObservaciones8"
+        Me.txtObservaciones8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones8.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones8.TabIndex = 52
         '
@@ -2610,6 +2650,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones7.MaxLength = 200
         Me.txtObservaciones7.Multiline = True
         Me.txtObservaciones7.Name = "txtObservaciones7"
+        Me.txtObservaciones7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones7.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones7.TabIndex = 46
         '
@@ -2619,6 +2660,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones6.MaxLength = 200
         Me.txtObservaciones6.Multiline = True
         Me.txtObservaciones6.Name = "txtObservaciones6"
+        Me.txtObservaciones6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones6.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones6.TabIndex = 40
         '
@@ -2650,7 +2692,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea8.Location = New System.Drawing.Point(52, 212)
         Me.txt_detalle_tarea8.MaxLength = 100
+        Me.txt_detalle_tarea8.Multiline = True
         Me.txt_detalle_tarea8.Name = "txt_detalle_tarea8"
+        Me.txt_detalle_tarea8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea8.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea8.TabIndex = 48
         '
@@ -2684,6 +2728,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones5.MaxLength = 200
         Me.txtObservaciones5.Multiline = True
         Me.txtObservaciones5.Name = "txtObservaciones5"
+        Me.txtObservaciones5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones5.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones5.TabIndex = 34
         '
@@ -2691,7 +2736,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea7.Location = New System.Drawing.Point(52, 186)
         Me.txt_detalle_tarea7.MaxLength = 100
+        Me.txt_detalle_tarea7.Multiline = True
         Me.txt_detalle_tarea7.Name = "txt_detalle_tarea7"
+        Me.txt_detalle_tarea7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea7.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea7.TabIndex = 42
         '
@@ -2723,7 +2770,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea6.Location = New System.Drawing.Point(52, 160)
         Me.txt_detalle_tarea6.MaxLength = 100
+        Me.txt_detalle_tarea6.Multiline = True
         Me.txt_detalle_tarea6.Name = "txt_detalle_tarea6"
+        Me.txt_detalle_tarea6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea6.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea6.TabIndex = 36
         '
@@ -2755,7 +2804,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea5.Location = New System.Drawing.Point(52, 134)
         Me.txt_detalle_tarea5.MaxLength = 100
+        Me.txt_detalle_tarea5.Multiline = True
         Me.txt_detalle_tarea5.Name = "txt_detalle_tarea5"
+        Me.txt_detalle_tarea5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea5.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea5.TabIndex = 30
         '
@@ -2765,6 +2816,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones4.MaxLength = 200
         Me.txtObservaciones4.Multiline = True
         Me.txtObservaciones4.Name = "txtObservaciones4"
+        Me.txtObservaciones4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones4.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones4.TabIndex = 28
         '
@@ -2774,6 +2826,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones3.MaxLength = 200
         Me.txtObservaciones3.Multiline = True
         Me.txtObservaciones3.Name = "txtObservaciones3"
+        Me.txtObservaciones3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones3.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones3.TabIndex = 22
         '
@@ -2783,6 +2836,7 @@ Partial Class frm_Tarea
         Me.txtObservaciones2.MaxLength = 200
         Me.txtObservaciones2.Multiline = True
         Me.txtObservaciones2.Name = "txtObservaciones2"
+        Me.txtObservaciones2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtObservaciones2.Size = New System.Drawing.Size(294, 20)
         Me.txtObservaciones2.TabIndex = 16
         '
@@ -2814,7 +2868,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea4.Location = New System.Drawing.Point(52, 107)
         Me.txt_detalle_tarea4.MaxLength = 100
+        Me.txt_detalle_tarea4.Multiline = True
         Me.txt_detalle_tarea4.Name = "txt_detalle_tarea4"
+        Me.txt_detalle_tarea4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea4.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea4.TabIndex = 24
         '
@@ -2846,7 +2902,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea3.Location = New System.Drawing.Point(52, 81)
         Me.txt_detalle_tarea3.MaxLength = 100
+        Me.txt_detalle_tarea3.Multiline = True
         Me.txt_detalle_tarea3.Name = "txt_detalle_tarea3"
+        Me.txt_detalle_tarea3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea3.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea3.TabIndex = 18
         '
@@ -2878,7 +2936,9 @@ Partial Class frm_Tarea
         '
         Me.txt_detalle_tarea2.Location = New System.Drawing.Point(52, 55)
         Me.txt_detalle_tarea2.MaxLength = 100
+        Me.txt_detalle_tarea2.Multiline = True
         Me.txt_detalle_tarea2.Name = "txt_detalle_tarea2"
+        Me.txt_detalle_tarea2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_detalle_tarea2.Size = New System.Drawing.Size(296, 20)
         Me.txt_detalle_tarea2.TabIndex = 12
         '

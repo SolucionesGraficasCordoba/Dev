@@ -295,4 +295,147 @@ det_ord.descripcion_terminacion
 Where ORT_id_orden_trabajo = vble_id_orden)
         ArmarGrillaDetalle(dgDetalleOrden)
     End Sub
+
+    Private Sub txt_Buscar_orden_trabajo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_orden_trabajo.TextChanged
+        Dim buscar As String
+        ArmarGrillaOrden()
+        buscar = "*" & Me.txt_Buscar_orden_trabajo.Text & "*"
+        Dim consultaCliente = (From U In datacontext.ORDEN_TRABAJO
+                              Join ort In datacontext.VENDEDOR
+                              On U.VEN_id_vendedor Equals ort.VEN_id_vendedor
+                              Join col In datacontext.CLIENTE
+                              On col.CLI_id_cliente Equals U.CLI_id_cliente
+                             Select U.ORT_id_orden_trabajo, U.ORT_fecha_ot, U.ORT_fecha_entrega, U.ORT_tipo_ot, U.ORT_numero_ot,
+                             U.ORT_observaciones_ot, U.ORT_mejoras_ot, U.VEN_id_vendedor, ort.VEN_nombre_ven, U.CLI_id_cliente, col.CLI_razon_social
+                              Where ORT_numero_ot Like buscar.ToString
+                             Order By ORT_numero_ot Ascending)
+        dgvLista_Orden_Trabajo.DataSource = consultaCliente
+        dgvLista_Orden_Trabajo.ClearSelection()
+        dgv_detalle_orden.DataSource = ""
+        Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
+    End Sub
+
+    Private Sub txt_Buscar_Cliente_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_Cliente.TextChanged
+        Dim buscar As String
+        ArmarGrillaOrden()
+        buscar = "*" & Me.txt_Buscar_Cliente.Text & "*"
+        Dim BuscaCliente = (From U In datacontext.ORDEN_TRABAJO
+                              Join ort In datacontext.VENDEDOR
+                              On U.VEN_id_vendedor Equals ort.VEN_id_vendedor
+                              Join col In datacontext.CLIENTE
+                              On col.CLI_id_cliente Equals U.CLI_id_cliente
+                             Select U.ORT_id_orden_trabajo,
+                             U.ORT_fecha_ot,
+                             U.ORT_fecha_entrega,
+                             U.ORT_tipo_ot,
+                             U.ORT_numero_ot,
+                             U.ORT_observaciones_ot,
+                             U.ORT_mejoras_ot,
+                             U.VEN_id_vendedor,
+                             ort.VEN_nombre_ven,
+                             U.CLI_id_cliente,
+                             col.CLI_razon_social
+                              Where CLI_razon_social Like buscar.ToString)
+        ' Order By ORT_numero_ot Ascending)
+        dgvLista_Orden_Trabajo.DataSource = BuscaCliente
+        dgvLista_Orden_Trabajo.ClearSelection()
+        dgv_detalle_orden.DataSource = ""
+        Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
+    End Sub
+
+    Private Sub dtp_Buscar_Fecha_Entrega_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtp_Buscar_Fecha_Entrega.ValueChanged
+        Dim buscar As String
+        ArmarGrillaOrden()
+        buscar = Me.dtp_Buscar_Fecha_Entrega.Text & "*"
+
+        Dim BuscaFecha = (From U In datacontext.ORDEN_TRABAJO
+                              Join ort In datacontext.VENDEDOR
+                              On U.VEN_id_vendedor Equals ort.VEN_id_vendedor
+                              Join col In datacontext.CLIENTE
+                              On col.CLI_id_cliente Equals U.CLI_id_cliente
+                             Select U.ORT_id_orden_trabajo,
+                             U.ORT_fecha_ot,
+                             U.ORT_fecha_entrega,
+                             U.ORT_tipo_ot,
+                             U.ORT_numero_ot,
+                             U.ORT_observaciones_ot,
+                             U.ORT_mejoras_ot,
+                             U.VEN_id_vendedor,
+                             ort.VEN_nombre_ven,
+                             U.CLI_id_cliente,
+                             col.CLI_razon_social
+                              Where ORT_fecha_entrega.Value.Date = dtp_Buscar_Fecha_Entrega.Text)
+        ' Order By ORT_numero_ot Ascending)
+        dgvLista_Orden_Trabajo.DataSource = BuscaFecha
+        dgvLista_Orden_Trabajo.ClearSelection()
+        dgv_detalle_orden.DataSource = ""
+        Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
+    End Sub
+
+    Private Sub btnModificar_Orden_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificar_Orden.Click
+
+        If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
+            frm_Actualizar_Orden.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.dtpFecha_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.cboTipo_Orden.Text = dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.dtpFecha_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.txt_id_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_id_cliente", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.txt_nombre_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.txtid_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_id_vendedor", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.txtNombre_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.txt_observaciones.Text = dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.txt_mejoras.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+        End If
+        frm_Actualizar_Orden.txtNumero_Orden_Trabajo.Enabled = False
+        frm_Actualizar_Orden.Label1.Visible = False
+        frm_Actualizar_Orden.txt_id_orden_trabajo.Visible = False
+        frm_Actualizar_Orden.txt_id_cliente.Visible = False
+        frm_Actualizar_Orden.txtid_vendedor.Visible = False
+        frm_Actualizar_Orden.txtNombre_vendedor.Enabled = False
+        frm_Actualizar_Orden.txt_nombre_cliente.Enabled = False
+        frm_Actualizar_Orden.cboTipo_Orden.Visible = False
+        frm_Actualizar_Orden.Label5.Visible = False
+        frm_Actualizar_Orden.ShowDialog()
+    End Sub
+
+    Private Sub btnEliminar_Orden_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar_Orden.Click
+        If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
+
+            Dim eliminar = (From C In datacontext.ORDEN_TRABAJO Where C.ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value)).ToList()(0)
+
+            Select Case MsgBox("Se eliminará la orden y su detalle correspondiente, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar orden y detalle")
+                Case MsgBoxResult.Yes
+                    datacontext.ORDEN_TRABAJO.DeleteOnSubmit(eliminar)
+                    datacontext.SubmitChanges()
+                    MsgBox("La orden y su detalle han sido eliminados")
+                    CargarGrillaOrden()
+                    Me.Close()
+            End Select
+        Else
+            MsgBox("Debe seleccionar un orden")
+        End If
+    End Sub
+
+    Private Sub btnModificarProducto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarProducto.Click
+
+    End Sub
+
+    Private Sub btnEliminar_Producto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar_Producto.Click
+        If dgv_detalle_orden.SelectedRows.Count > 0 Then
+
+            Dim eliminar = (From C In datacontext.DETALLE_ORDEN_TRABAJO Where C.id_detalle_orden_trabajo = CInt(dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value)).ToList()(0)
+
+            Select Case MsgBox("Se eliminará el detalle y proceso relacionado a él, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar detalle de la orden")
+                Case MsgBoxResult.Yes
+                    datacontext.DETALLE_ORDEN_TRABAJO.DeleteOnSubmit(eliminar)
+                    datacontext.SubmitChanges()
+                    MsgBox("El detalle de la orden ha sido eliminada")
+                    ' CargarDetalle()
+                    Me.Close()
+            End Select
+        Else
+            MsgBox("Debe seleccionar un detalle")
+        End If
+    End Sub
 End Class

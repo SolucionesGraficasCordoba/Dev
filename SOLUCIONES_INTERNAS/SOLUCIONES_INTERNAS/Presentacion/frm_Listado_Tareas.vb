@@ -2104,6 +2104,8 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtEntrada.Enabled = True
         frm_Tarea.txtSalida.Enabled = True
 
+        'frm_Tarea.MdiParent = Me
+        'frm_Tarea.Show()
         frm_Tarea.ShowDialog()
     End Sub
 
