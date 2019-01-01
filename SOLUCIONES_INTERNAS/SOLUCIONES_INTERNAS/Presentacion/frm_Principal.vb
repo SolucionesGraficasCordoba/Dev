@@ -1399,7 +1399,13 @@ Public Class frm_Principal
         frm_Orden_Trabajo_Ampliada.txt_nombre_cliente.Enabled = False
         frm_Orden_Trabajo_Ampliada.txtNombre_vendedor.Enabled = False
        
+        frm_Orden_Trabajo_Ampliada.MdiParent = Me
         frm_Orden_Trabajo_Ampliada.Show()
 
+    End Sub
+
+    Private Sub ListaOrdenAmpliadaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaOrdenAmpliadaToolStripMenuItem.Click
+        frm_listado_orden_trabajo_ampliada.MdiParent = Me
+        frm_listado_orden_trabajo_ampliada.Show()
     End Sub
 End Class

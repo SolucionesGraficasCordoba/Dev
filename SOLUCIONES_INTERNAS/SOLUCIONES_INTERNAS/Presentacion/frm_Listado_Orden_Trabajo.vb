@@ -119,7 +119,7 @@ Public Class frm_Listado_Orden_Trabajo
     Public Sub CargarDetalle()
         'datavistas.Vista_Detalle_Orden_Trabajo_1
         Dim datagriddetalleorden =
-                (From o In datavistas.Vista_Detalle_Orden_Trabajo_2
+                (From o In datavistas.Vista_Detalle_Orden_Trabajo_1
          Select o.ORT_id_orden_trabajo,
                           o.ORT_tipo_ot,
                           o.ORT_numero_ot,
@@ -153,8 +153,6 @@ Public Class frm_Listado_Orden_Trabajo
 
     Private Sub dgv_detalle_orden_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellClick
         Try
-
-
             If dgvLista_Orden_Trabajo.Rows.Count = 0 Then
                 MsgBox("No hay procesos por mostrar", MsgBoxStyle.Information + MsgBoxStyle.Information, "Seleccionar")
                 Exit Sub
@@ -389,8 +387,6 @@ Public Class frm_Listado_Orden_Trabajo
 
     Private Sub dgvLista_Orden_Trabajo_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Orden_Trabajo.CellDoubleClick
         Try
-
-
             'LLAMA AL FORMULARIO ACTUALIZAR TAREA
             If quienllamolistado_ot.Name = frm_Actualizar_Tarea.Name Then
                 frm_Actualizar_Tarea.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
