@@ -68,8 +68,18 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;Persist Security Info=True"& _ 
-            ";User ID=vheredia;Password=heredia")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;User ID=vheredia")>  _
+        Public ReadOnly Property PREPRODUCCIONConnectionString() As String
+            Get
+                Return CType(Me("PREPRODUCCIONConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-84P9IMQ\SQLEXPRESS;Initial Catalog=SOLUCIONES_INTERNAS;Integr"& _ 
+            "ated Security=True")>  _
         Public ReadOnly Property SOLUCIONES_INTERNASConnectionString1() As String
             Get
                 Return CType(Me("SOLUCIONES_INTERNASConnectionString1"),String)
@@ -79,10 +89,11 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;User ID=vheredia")>  _
-        Public ReadOnly Property PREPRODUCCIONConnectionString() As String
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-84P9IMQ\SQLEXPRESS;Initial Catalog=SOLUCIONES_INTERNAS1;Integ"& _ 
+            "rated Security=True")>  _
+        Public ReadOnly Property SOLUCIONES_INTERNAS1ConnectionString() As String
             Get
-                Return CType(Me("PREPRODUCCIONConnectionString"),String)
+                Return CType(Me("SOLUCIONES_INTERNAS1ConnectionString"),String)
             End Get
         End Property
     End Class

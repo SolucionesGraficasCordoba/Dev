@@ -3443,4 +3443,8 @@
         End If
         txt_Carga_Horaria1.Text = totalmin
     End Sub
+
+    Private Sub frm_Tarea_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

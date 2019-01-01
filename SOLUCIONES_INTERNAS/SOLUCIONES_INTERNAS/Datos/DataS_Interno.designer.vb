@@ -22,7 +22,7 @@ Imports System.Linq.Expressions
 Imports System.Reflection
 
 
-<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="PREPRODUCCION")>  _
+<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="SOLUCIONES_INTERNAS1")>  _
 Partial Public Class DataS_Interno
 	Inherits System.Data.Linq.DataContext
 	
@@ -31,6 +31,12 @@ Partial Public Class DataS_Interno
   #Region "Definiciones de métodos de extensibilidad"
   Partial Private Sub OnCreated()
   End Sub
+  Partial Private Sub InsertCLIENTE(instance As CLIENTE)
+    End Sub
+  Partial Private Sub UpdateCLIENTE(instance As CLIENTE)
+    End Sub
+  Partial Private Sub DeleteCLIENTE(instance As CLIENTE)
+    End Sub
   Partial Private Sub InsertVENDEDOR(instance As VENDEDOR)
     End Sub
   Partial Private Sub UpdateVENDEDOR(instance As VENDEDOR)
@@ -43,59 +49,17 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeleteCOLABORADOR(instance As COLABORADOR)
     End Sub
-  Partial Private Sub InsertSECTOR(instance As SECTOR)
+  Partial Private Sub InsertDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
     End Sub
-  Partial Private Sub UpdateSECTOR(instance As SECTOR)
+  Partial Private Sub UpdateDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
     End Sub
-  Partial Private Sub DeleteSECTOR(instance As SECTOR)
-    End Sub
-  Partial Private Sub InsertUSUARIO(instance As USUARIO)
-    End Sub
-  Partial Private Sub UpdateUSUARIO(instance As USUARIO)
-    End Sub
-  Partial Private Sub DeleteUSUARIO(instance As USUARIO)
-    End Sub
-  Partial Private Sub InsertCLIENTE(instance As CLIENTE)
-    End Sub
-  Partial Private Sub UpdateCLIENTE(instance As CLIENTE)
-    End Sub
-  Partial Private Sub DeleteCLIENTE(instance As CLIENTE)
-    End Sub
-  Partial Private Sub InsertPRODUCTO(instance As PRODUCTO)
-    End Sub
-  Partial Private Sub UpdatePRODUCTO(instance As PRODUCTO)
-    End Sub
-  Partial Private Sub DeletePRODUCTO(instance As PRODUCTO)
-    End Sub
-  Partial Private Sub InsertPRODUCTO_MOVIMIENTO(instance As PRODUCTO_MOVIMIENTO)
-    End Sub
-  Partial Private Sub UpdatePRODUCTO_MOVIMIENTO(instance As PRODUCTO_MOVIMIENTO)
-    End Sub
-  Partial Private Sub DeletePRODUCTO_MOVIMIENTO(instance As PRODUCTO_MOVIMIENTO)
-    End Sub
-  Partial Private Sub InsertPROCESO(instance As PROCESO)
-    End Sub
-  Partial Private Sub UpdatePROCESO(instance As PROCESO)
-    End Sub
-  Partial Private Sub DeletePROCESO(instance As PROCESO)
+  Partial Private Sub DeleteDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
     End Sub
   Partial Private Sub InsertORDEN_TRABAJO(instance As ORDEN_TRABAJO)
     End Sub
   Partial Private Sub UpdateORDEN_TRABAJO(instance As ORDEN_TRABAJO)
     End Sub
   Partial Private Sub DeleteORDEN_TRABAJO(instance As ORDEN_TRABAJO)
-    End Sub
-  Partial Private Sub InsertTAREA(instance As TAREA)
-    End Sub
-  Partial Private Sub UpdateTAREA(instance As TAREA)
-    End Sub
-  Partial Private Sub DeleteTAREA(instance As TAREA)
-    End Sub
-  Partial Private Sub InsertRE_TRABAJO(instance As RE_TRABAJO)
-    End Sub
-  Partial Private Sub UpdateRE_TRABAJO(instance As RE_TRABAJO)
-    End Sub
-  Partial Private Sub DeleteRE_TRABAJO(instance As RE_TRABAJO)
     End Sub
   Partial Private Sub InsertPERMISO(instance As PERMISO)
     End Sub
@@ -109,16 +73,52 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeletePIEZA(instance As PIEZA)
     End Sub
-  Partial Private Sub InsertDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
+  Partial Private Sub InsertPROCESO(instance As PROCESO)
     End Sub
-  Partial Private Sub UpdateDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
+  Partial Private Sub UpdatePROCESO(instance As PROCESO)
     End Sub
-  Partial Private Sub DeleteDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
+  Partial Private Sub DeletePROCESO(instance As PROCESO)
+    End Sub
+  Partial Private Sub InsertPRODUCTO(instance As PRODUCTO)
+    End Sub
+  Partial Private Sub UpdatePRODUCTO(instance As PRODUCTO)
+    End Sub
+  Partial Private Sub DeletePRODUCTO(instance As PRODUCTO)
+    End Sub
+  Partial Private Sub InsertPRODUCTO_MOVIMIENTO(instance As PRODUCTO_MOVIMIENTO)
+    End Sub
+  Partial Private Sub UpdatePRODUCTO_MOVIMIENTO(instance As PRODUCTO_MOVIMIENTO)
+    End Sub
+  Partial Private Sub DeletePRODUCTO_MOVIMIENTO(instance As PRODUCTO_MOVIMIENTO)
+    End Sub
+  Partial Private Sub InsertRE_TRABAJO(instance As RE_TRABAJO)
+    End Sub
+  Partial Private Sub UpdateRE_TRABAJO(instance As RE_TRABAJO)
+    End Sub
+  Partial Private Sub DeleteRE_TRABAJO(instance As RE_TRABAJO)
+    End Sub
+  Partial Private Sub InsertSECTOR(instance As SECTOR)
+    End Sub
+  Partial Private Sub UpdateSECTOR(instance As SECTOR)
+    End Sub
+  Partial Private Sub DeleteSECTOR(instance As SECTOR)
+    End Sub
+  Partial Private Sub InsertTAREA(instance As TAREA)
+    End Sub
+  Partial Private Sub UpdateTAREA(instance As TAREA)
+    End Sub
+  Partial Private Sub DeleteTAREA(instance As TAREA)
+    End Sub
+  Partial Private Sub InsertUSUARIO(instance As USUARIO)
+    End Sub
+  Partial Private Sub UpdateUSUARIO(instance As USUARIO)
+    End Sub
+  Partial Private Sub DeleteUSUARIO(instance As USUARIO)
     End Sub
   #End Region
 	
 	Public Sub New()
-		MyBase.New(Global.SOLUCIONES_INTERNAS.My.MySettings.Default.SOLUCIONES_INTERNASConnectionString1, mappingSource)
+		MyBase.New(Global.SOLUCIONES_INTERNAS.My.MySettings.Default.SOLUCIONES_INTERNAS1ConnectionString, mappingSource)
 		OnCreated
 	End Sub
 	
@@ -142,6 +142,12 @@ Partial Public Class DataS_Interno
 		OnCreated
 	End Sub
 	
+	Public ReadOnly Property CLIENTE() As System.Data.Linq.Table(Of CLIENTE)
+		Get
+			Return Me.GetTable(Of CLIENTE)
+		End Get
+	End Property
+	
 	Public ReadOnly Property VENDEDOR() As System.Data.Linq.Table(Of VENDEDOR)
 		Get
 			Return Me.GetTable(Of VENDEDOR)
@@ -154,57 +160,15 @@ Partial Public Class DataS_Interno
 		End Get
 	End Property
 	
-	Public ReadOnly Property SECTOR() As System.Data.Linq.Table(Of SECTOR)
+	Public ReadOnly Property DETALLE_ORDEN_TRABAJO() As System.Data.Linq.Table(Of DETALLE_ORDEN_TRABAJO)
 		Get
-			Return Me.GetTable(Of SECTOR)
-		End Get
-	End Property
-	
-	Public ReadOnly Property USUARIO() As System.Data.Linq.Table(Of USUARIO)
-		Get
-			Return Me.GetTable(Of USUARIO)
-		End Get
-	End Property
-	
-	Public ReadOnly Property CLIENTE() As System.Data.Linq.Table(Of CLIENTE)
-		Get
-			Return Me.GetTable(Of CLIENTE)
-		End Get
-	End Property
-	
-	Public ReadOnly Property PRODUCTO() As System.Data.Linq.Table(Of PRODUCTO)
-		Get
-			Return Me.GetTable(Of PRODUCTO)
-		End Get
-	End Property
-	
-	Public ReadOnly Property PRODUCTO_MOVIMIENTO() As System.Data.Linq.Table(Of PRODUCTO_MOVIMIENTO)
-		Get
-			Return Me.GetTable(Of PRODUCTO_MOVIMIENTO)
-		End Get
-	End Property
-	
-	Public ReadOnly Property PROCESO() As System.Data.Linq.Table(Of PROCESO)
-		Get
-			Return Me.GetTable(Of PROCESO)
+			Return Me.GetTable(Of DETALLE_ORDEN_TRABAJO)
 		End Get
 	End Property
 	
 	Public ReadOnly Property ORDEN_TRABAJO() As System.Data.Linq.Table(Of ORDEN_TRABAJO)
 		Get
 			Return Me.GetTable(Of ORDEN_TRABAJO)
-		End Get
-	End Property
-	
-	Public ReadOnly Property TAREA() As System.Data.Linq.Table(Of TAREA)
-		Get
-			Return Me.GetTable(Of TAREA)
-		End Get
-	End Property
-	
-	Public ReadOnly Property RE_TRABAJO() As System.Data.Linq.Table(Of RE_TRABAJO)
-		Get
-			Return Me.GetTable(Of RE_TRABAJO)
 		End Get
 	End Property
 	
@@ -220,706 +184,47 @@ Partial Public Class DataS_Interno
 		End Get
 	End Property
 	
-	Public ReadOnly Property DETALLE_ORDEN_TRABAJO() As System.Data.Linq.Table(Of DETALLE_ORDEN_TRABAJO)
+	Public ReadOnly Property PROCESO() As System.Data.Linq.Table(Of PROCESO)
 		Get
-			Return Me.GetTable(Of DETALLE_ORDEN_TRABAJO)
+			Return Me.GetTable(Of PROCESO)
 		End Get
 	End Property
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.VENDEDOR")>  _
-Partial Public Class VENDEDOR
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _VEN_id_vendedor As Integer
-	
-	Private _VEN_nombre_ven As String
-	
-	Private _VEN_apellido_ven As String
-	
-	Private _VEN_mail_ven As String
-	
-	Private _VEN_telefono_ven As String
-	
-	Private _ORDEN_TRABAJO As EntitySet(Of ORDEN_TRABAJO)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnVEN_id_vendedorChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnVEN_id_vendedorChanged()
-    End Sub
-    Partial Private Sub OnVEN_nombre_venChanging(value As String)
-    End Sub
-    Partial Private Sub OnVEN_nombre_venChanged()
-    End Sub
-    Partial Private Sub OnVEN_apellido_venChanging(value As String)
-    End Sub
-    Partial Private Sub OnVEN_apellido_venChanged()
-    End Sub
-    Partial Private Sub OnVEN_mail_venChanging(value As String)
-    End Sub
-    Partial Private Sub OnVEN_mail_venChanged()
-    End Sub
-    Partial Private Sub OnVEN_telefono_venChanging(value As String)
-    End Sub
-    Partial Private Sub OnVEN_telefono_venChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._ORDEN_TRABAJO = New EntitySet(Of ORDEN_TRABAJO)(AddressOf Me.attach_ORDEN_TRABAJO, AddressOf Me.detach_ORDEN_TRABAJO)
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VEN_id_vendedor", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property VEN_id_vendedor() As Integer
+	Public ReadOnly Property PRODUCTO() As System.Data.Linq.Table(Of PRODUCTO)
 		Get
-			Return Me._VEN_id_vendedor
+			Return Me.GetTable(Of PRODUCTO)
 		End Get
-		Set
-			If ((Me._VEN_id_vendedor = value)  _
-						= false) Then
-				Me.OnVEN_id_vendedorChanging(value)
-				Me.SendPropertyChanging
-				Me._VEN_id_vendedor = value
-				Me.SendPropertyChanged("VEN_id_vendedor")
-				Me.OnVEN_id_vendedorChanged
-			End If
-		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VEN_nombre_ven", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property VEN_nombre_ven() As String
+	Public ReadOnly Property PRODUCTO_MOVIMIENTO() As System.Data.Linq.Table(Of PRODUCTO_MOVIMIENTO)
 		Get
-			Return Me._VEN_nombre_ven
+			Return Me.GetTable(Of PRODUCTO_MOVIMIENTO)
 		End Get
-		Set
-			If (String.Equals(Me._VEN_nombre_ven, value) = false) Then
-				Me.OnVEN_nombre_venChanging(value)
-				Me.SendPropertyChanging
-				Me._VEN_nombre_ven = value
-				Me.SendPropertyChanged("VEN_nombre_ven")
-				Me.OnVEN_nombre_venChanged
-			End If
-		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VEN_apellido_ven", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property VEN_apellido_ven() As String
+	Public ReadOnly Property RE_TRABAJO() As System.Data.Linq.Table(Of RE_TRABAJO)
 		Get
-			Return Me._VEN_apellido_ven
+			Return Me.GetTable(Of RE_TRABAJO)
 		End Get
-		Set
-			If (String.Equals(Me._VEN_apellido_ven, value) = false) Then
-				Me.OnVEN_apellido_venChanging(value)
-				Me.SendPropertyChanging
-				Me._VEN_apellido_ven = value
-				Me.SendPropertyChanged("VEN_apellido_ven")
-				Me.OnVEN_apellido_venChanged
-			End If
-		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VEN_mail_ven", DbType:="VarChar(50)")>  _
-	Public Property VEN_mail_ven() As String
+	Public ReadOnly Property SECTOR() As System.Data.Linq.Table(Of SECTOR)
 		Get
-			Return Me._VEN_mail_ven
+			Return Me.GetTable(Of SECTOR)
 		End Get
-		Set
-			If (String.Equals(Me._VEN_mail_ven, value) = false) Then
-				Me.OnVEN_mail_venChanging(value)
-				Me.SendPropertyChanging
-				Me._VEN_mail_ven = value
-				Me.SendPropertyChanged("VEN_mail_ven")
-				Me.OnVEN_mail_venChanged
-			End If
-		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VEN_telefono_ven", DbType:="VarChar(15)")>  _
-	Public Property VEN_telefono_ven() As String
+	Public ReadOnly Property TAREA() As System.Data.Linq.Table(Of TAREA)
 		Get
-			Return Me._VEN_telefono_ven
+			Return Me.GetTable(Of TAREA)
 		End Get
-		Set
-			If (String.Equals(Me._VEN_telefono_ven, value) = false) Then
-				Me.OnVEN_telefono_venChanging(value)
-				Me.SendPropertyChanging
-				Me._VEN_telefono_ven = value
-				Me.SendPropertyChanged("VEN_telefono_ven")
-				Me.OnVEN_telefono_venChanged
-			End If
-		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="VENDEDOR_ORDEN_TRABAJO", Storage:="_ORDEN_TRABAJO", ThisKey:="VEN_id_vendedor", OtherKey:="VEN_id_vendedor")>  _
-	Public Property ORDEN_TRABAJO() As EntitySet(Of ORDEN_TRABAJO)
+	Public ReadOnly Property USUARIO() As System.Data.Linq.Table(Of USUARIO)
 		Get
-			Return Me._ORDEN_TRABAJO
+			Return Me.GetTable(Of USUARIO)
 		End Get
-		Set
-			Me._ORDEN_TRABAJO.Assign(value)
-		End Set
 	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_ORDEN_TRABAJO(ByVal entity As ORDEN_TRABAJO)
-		Me.SendPropertyChanging
-		entity.VENDEDOR = Me
-	End Sub
-	
-	Private Sub detach_ORDEN_TRABAJO(ByVal entity As ORDEN_TRABAJO)
-		Me.SendPropertyChanging
-		entity.VENDEDOR = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.COLABORADOR")>  _
-Partial Public Class COLABORADOR
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _COL_id_colaborador As Integer
-	
-	Private _COL_nombre_col As String
-	
-	Private _COL_apellido_col As String
-	
-	Private _SEC_id_sector As System.Nullable(Of Integer)
-	
-	Private _USUARIO As EntitySet(Of USUARIO)
-	
-	Private _TAREA As EntitySet(Of TAREA)
-	
-	Private _SECTOR As EntityRef(Of SECTOR)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnCOL_id_colaboradorChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnCOL_id_colaboradorChanged()
-    End Sub
-    Partial Private Sub OnCOL_nombre_colChanging(value As String)
-    End Sub
-    Partial Private Sub OnCOL_nombre_colChanged()
-    End Sub
-    Partial Private Sub OnCOL_apellido_colChanging(value As String)
-    End Sub
-    Partial Private Sub OnCOL_apellido_colChanged()
-    End Sub
-    Partial Private Sub OnSEC_id_sectorChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnSEC_id_sectorChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._USUARIO = New EntitySet(Of USUARIO)(AddressOf Me.attach_USUARIO, AddressOf Me.detach_USUARIO)
-		Me._TAREA = New EntitySet(Of TAREA)(AddressOf Me.attach_TAREA, AddressOf Me.detach_TAREA)
-		Me._SECTOR = CType(Nothing, EntityRef(Of SECTOR))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_id_colaborador", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property COL_id_colaborador() As Integer
-		Get
-			Return Me._COL_id_colaborador
-		End Get
-		Set
-			If ((Me._COL_id_colaborador = value)  _
-						= false) Then
-				Me.OnCOL_id_colaboradorChanging(value)
-				Me.SendPropertyChanging
-				Me._COL_id_colaborador = value
-				Me.SendPropertyChanged("COL_id_colaborador")
-				Me.OnCOL_id_colaboradorChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_nombre_col", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property COL_nombre_col() As String
-		Get
-			Return Me._COL_nombre_col
-		End Get
-		Set
-			If (String.Equals(Me._COL_nombre_col, value) = false) Then
-				Me.OnCOL_nombre_colChanging(value)
-				Me.SendPropertyChanging
-				Me._COL_nombre_col = value
-				Me.SendPropertyChanged("COL_nombre_col")
-				Me.OnCOL_nombre_colChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_apellido_col", DbType:="VarChar(50)")>  _
-	Public Property COL_apellido_col() As String
-		Get
-			Return Me._COL_apellido_col
-		End Get
-		Set
-			If (String.Equals(Me._COL_apellido_col, value) = false) Then
-				Me.OnCOL_apellido_colChanging(value)
-				Me.SendPropertyChanging
-				Me._COL_apellido_col = value
-				Me.SendPropertyChanged("COL_apellido_col")
-				Me.OnCOL_apellido_colChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_id_sector", DbType:="Int")>  _
-	Public Property SEC_id_sector() As System.Nullable(Of Integer)
-		Get
-			Return Me._SEC_id_sector
-		End Get
-		Set
-			If (Me._SEC_id_sector.Equals(value) = false) Then
-				If Me._SECTOR.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnSEC_id_sectorChanging(value)
-				Me.SendPropertyChanging
-				Me._SEC_id_sector = value
-				Me.SendPropertyChanged("SEC_id_sector")
-				Me.OnSEC_id_sectorChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="COLABORADOR_USUARIO", Storage:="_USUARIO", ThisKey:="COL_id_colaborador", OtherKey:="COL_id_colaborador")>  _
-	Public Property USUARIO() As EntitySet(Of USUARIO)
-		Get
-			Return Me._USUARIO
-		End Get
-		Set
-			Me._USUARIO.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="COLABORADOR_TAREA", Storage:="_TAREA", ThisKey:="COL_id_colaborador", OtherKey:="COL_id_colaborador")>  _
-	Public Property TAREA() As EntitySet(Of TAREA)
-		Get
-			Return Me._TAREA
-		End Get
-		Set
-			Me._TAREA.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="SECTOR_COLABORADOR", Storage:="_SECTOR", ThisKey:="SEC_id_sector", OtherKey:="SEC_id_sector", IsForeignKey:=true)>  _
-	Public Property SECTOR() As SECTOR
-		Get
-			Return Me._SECTOR.Entity
-		End Get
-		Set
-			Dim previousValue As SECTOR = Me._SECTOR.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._SECTOR.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._SECTOR.Entity = Nothing
-					previousValue.COLABORADOR.Remove(Me)
-				End If
-				Me._SECTOR.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.COLABORADOR.Add(Me)
-					Me._SEC_id_sector = value.SEC_id_sector
-				Else
-					Me._SEC_id_sector = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("SECTOR")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_USUARIO(ByVal entity As USUARIO)
-		Me.SendPropertyChanging
-		entity.COLABORADOR = Me
-	End Sub
-	
-	Private Sub detach_USUARIO(ByVal entity As USUARIO)
-		Me.SendPropertyChanging
-		entity.COLABORADOR = Nothing
-	End Sub
-	
-	Private Sub attach_TAREA(ByVal entity As TAREA)
-		Me.SendPropertyChanging
-		entity.COLABORADOR = Me
-	End Sub
-	
-	Private Sub detach_TAREA(ByVal entity As TAREA)
-		Me.SendPropertyChanging
-		entity.COLABORADOR = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.SECTOR")>  _
-Partial Public Class SECTOR
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _SEC_id_sector As Integer
-	
-	Private _SEC_nombre_sector As String
-	
-	Private _COLABORADOR As EntitySet(Of COLABORADOR)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnSEC_id_sectorChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnSEC_id_sectorChanged()
-    End Sub
-    Partial Private Sub OnSEC_nombre_sectorChanging(value As String)
-    End Sub
-    Partial Private Sub OnSEC_nombre_sectorChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._COLABORADOR = New EntitySet(Of COLABORADOR)(AddressOf Me.attach_COLABORADOR, AddressOf Me.detach_COLABORADOR)
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_id_sector", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property SEC_id_sector() As Integer
-		Get
-			Return Me._SEC_id_sector
-		End Get
-		Set
-			If ((Me._SEC_id_sector = value)  _
-						= false) Then
-				Me.OnSEC_id_sectorChanging(value)
-				Me.SendPropertyChanging
-				Me._SEC_id_sector = value
-				Me.SendPropertyChanged("SEC_id_sector")
-				Me.OnSEC_id_sectorChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_nombre_sector", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property SEC_nombre_sector() As String
-		Get
-			Return Me._SEC_nombre_sector
-		End Get
-		Set
-			If (String.Equals(Me._SEC_nombre_sector, value) = false) Then
-				Me.OnSEC_nombre_sectorChanging(value)
-				Me.SendPropertyChanging
-				Me._SEC_nombre_sector = value
-				Me.SendPropertyChanged("SEC_nombre_sector")
-				Me.OnSEC_nombre_sectorChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="SECTOR_COLABORADOR", Storage:="_COLABORADOR", ThisKey:="SEC_id_sector", OtherKey:="SEC_id_sector")>  _
-	Public Property COLABORADOR() As EntitySet(Of COLABORADOR)
-		Get
-			Return Me._COLABORADOR
-		End Get
-		Set
-			Me._COLABORADOR.Assign(value)
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_COLABORADOR(ByVal entity As COLABORADOR)
-		Me.SendPropertyChanging
-		entity.SECTOR = Me
-	End Sub
-	
-	Private Sub detach_COLABORADOR(ByVal entity As COLABORADOR)
-		Me.SendPropertyChanging
-		entity.SECTOR = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.USUARIO")>  _
-Partial Public Class USUARIO
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _USU_id_usuario As Integer
-	
-	Private _USU_usuario As String
-	
-	Private _USU_contraseña As String
-	
-	Private _USU_perfil As String
-	
-	Private _COL_id_colaborador As System.Nullable(Of Integer)
-	
-	Private _PERMISO As EntitySet(Of PERMISO)
-	
-	Private _COLABORADOR As EntityRef(Of COLABORADOR)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnUSU_id_usuarioChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnUSU_id_usuarioChanged()
-    End Sub
-    Partial Private Sub OnUSU_usuarioChanging(value As String)
-    End Sub
-    Partial Private Sub OnUSU_usuarioChanged()
-    End Sub
-    Partial Private Sub OnUSU_contraseñaChanging(value As String)
-    End Sub
-    Partial Private Sub OnUSU_contraseñaChanged()
-    End Sub
-    Partial Private Sub OnUSU_perfilChanging(value As String)
-    End Sub
-    Partial Private Sub OnUSU_perfilChanged()
-    End Sub
-    Partial Private Sub OnCOL_id_colaboradorChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnCOL_id_colaboradorChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._PERMISO = New EntitySet(Of PERMISO)(AddressOf Me.attach_PERMISO, AddressOf Me.detach_PERMISO)
-		Me._COLABORADOR = CType(Nothing, EntityRef(Of COLABORADOR))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USU_id_usuario", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property USU_id_usuario() As Integer
-		Get
-			Return Me._USU_id_usuario
-		End Get
-		Set
-			If ((Me._USU_id_usuario = value)  _
-						= false) Then
-				Me.OnUSU_id_usuarioChanging(value)
-				Me.SendPropertyChanging
-				Me._USU_id_usuario = value
-				Me.SendPropertyChanged("USU_id_usuario")
-				Me.OnUSU_id_usuarioChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USU_usuario", DbType:="VarChar(50)")>  _
-	Public Property USU_usuario() As String
-		Get
-			Return Me._USU_usuario
-		End Get
-		Set
-			If (String.Equals(Me._USU_usuario, value) = false) Then
-				Me.OnUSU_usuarioChanging(value)
-				Me.SendPropertyChanging
-				Me._USU_usuario = value
-				Me.SendPropertyChanged("USU_usuario")
-				Me.OnUSU_usuarioChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USU_contraseña", DbType:="VarChar(50)")>  _
-	Public Property USU_contraseña() As String
-		Get
-			Return Me._USU_contraseña
-		End Get
-		Set
-			If (String.Equals(Me._USU_contraseña, value) = false) Then
-				Me.OnUSU_contraseñaChanging(value)
-				Me.SendPropertyChanging
-				Me._USU_contraseña = value
-				Me.SendPropertyChanged("USU_contraseña")
-				Me.OnUSU_contraseñaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USU_perfil", DbType:="VarChar(15)")>  _
-	Public Property USU_perfil() As String
-		Get
-			Return Me._USU_perfil
-		End Get
-		Set
-			If (String.Equals(Me._USU_perfil, value) = false) Then
-				Me.OnUSU_perfilChanging(value)
-				Me.SendPropertyChanging
-				Me._USU_perfil = value
-				Me.SendPropertyChanged("USU_perfil")
-				Me.OnUSU_perfilChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_id_colaborador", DbType:="Int")>  _
-	Public Property COL_id_colaborador() As System.Nullable(Of Integer)
-		Get
-			Return Me._COL_id_colaborador
-		End Get
-		Set
-			If (Me._COL_id_colaborador.Equals(value) = false) Then
-				If Me._COLABORADOR.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnCOL_id_colaboradorChanging(value)
-				Me.SendPropertyChanging
-				Me._COL_id_colaborador = value
-				Me.SendPropertyChanged("COL_id_colaborador")
-				Me.OnCOL_id_colaboradorChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USUARIO_PERMISO", Storage:="_PERMISO", ThisKey:="USU_id_usuario", OtherKey:="USU_id_usuario")>  _
-	Public Property PERMISO() As EntitySet(Of PERMISO)
-		Get
-			Return Me._PERMISO
-		End Get
-		Set
-			Me._PERMISO.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="COLABORADOR_USUARIO", Storage:="_COLABORADOR", ThisKey:="COL_id_colaborador", OtherKey:="COL_id_colaborador", IsForeignKey:=true)>  _
-	Public Property COLABORADOR() As COLABORADOR
-		Get
-			Return Me._COLABORADOR.Entity
-		End Get
-		Set
-			Dim previousValue As COLABORADOR = Me._COLABORADOR.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._COLABORADOR.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._COLABORADOR.Entity = Nothing
-					previousValue.USUARIO.Remove(Me)
-				End If
-				Me._COLABORADOR.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.USUARIO.Add(Me)
-					Me._COL_id_colaborador = value.COL_id_colaborador
-				Else
-					Me._COL_id_colaborador = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("COLABORADOR")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_PERMISO(ByVal entity As PERMISO)
-		Me.SendPropertyChanging
-		entity.USUARIO = Me
-	End Sub
-	
-	Private Sub detach_PERMISO(ByVal entity As PERMISO)
-		Me.SendPropertyChanging
-		entity.USUARIO = Nothing
-	End Sub
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.CLIENTE")>  _
@@ -1139,756 +444,23 @@ Partial Public Class CLIENTE
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PRODUCTO")>  _
-Partial Public Class PRODUCTO
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.VENDEDOR")>  _
+Partial Public Class VENDEDOR
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
 	
 	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _PROD_id As Integer
-	
-	Private _PROD_codigo As String
-	
-	Private _PROD_descripcion As String
-	
-	Private _PROD_stock As Integer
-	
-	Private _PROD_stock_minimo As System.Nullable(Of Integer)
-	
-	Private _PRODUCTO_MOVIMIENTO As EntitySet(Of PRODUCTO_MOVIMIENTO)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnPROD_idChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnPROD_idChanged()
-    End Sub
-    Partial Private Sub OnPROD_codigoChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROD_codigoChanged()
-    End Sub
-    Partial Private Sub OnPROD_descripcionChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROD_descripcionChanged()
-    End Sub
-    Partial Private Sub OnPROD_stockChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnPROD_stockChanged()
-    End Sub
-    Partial Private Sub OnPROD_stock_minimoChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnPROD_stock_minimoChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._PRODUCTO_MOVIMIENTO = New EntitySet(Of PRODUCTO_MOVIMIENTO)(AddressOf Me.attach_PRODUCTO_MOVIMIENTO, AddressOf Me.detach_PRODUCTO_MOVIMIENTO)
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property PROD_id() As Integer
-		Get
-			Return Me._PROD_id
-		End Get
-		Set
-			If ((Me._PROD_id = value)  _
-						= false) Then
-				Me.OnPROD_idChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_id = value
-				Me.SendPropertyChanged("PROD_id")
-				Me.OnPROD_idChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_codigo", DbType:="VarChar(15)")>  _
-	Public Property PROD_codigo() As String
-		Get
-			Return Me._PROD_codigo
-		End Get
-		Set
-			If (String.Equals(Me._PROD_codigo, value) = false) Then
-				Me.OnPROD_codigoChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_codigo = value
-				Me.SendPropertyChanged("PROD_codigo")
-				Me.OnPROD_codigoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_descripcion", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property PROD_descripcion() As String
-		Get
-			Return Me._PROD_descripcion
-		End Get
-		Set
-			If (String.Equals(Me._PROD_descripcion, value) = false) Then
-				Me.OnPROD_descripcionChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_descripcion = value
-				Me.SendPropertyChanged("PROD_descripcion")
-				Me.OnPROD_descripcionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_stock", DbType:="Int NOT NULL")>  _
-	Public Property PROD_stock() As Integer
-		Get
-			Return Me._PROD_stock
-		End Get
-		Set
-			If ((Me._PROD_stock = value)  _
-						= false) Then
-				Me.OnPROD_stockChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_stock = value
-				Me.SendPropertyChanged("PROD_stock")
-				Me.OnPROD_stockChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_stock_minimo", DbType:="Int")>  _
-	Public Property PROD_stock_minimo() As System.Nullable(Of Integer)
-		Get
-			Return Me._PROD_stock_minimo
-		End Get
-		Set
-			If (Me._PROD_stock_minimo.Equals(value) = false) Then
-				Me.OnPROD_stock_minimoChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_stock_minimo = value
-				Me.SendPropertyChanged("PROD_stock_minimo")
-				Me.OnPROD_stock_minimoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PRODUCTO_PRODUCTO_MOVIMIENTO", Storage:="_PRODUCTO_MOVIMIENTO", ThisKey:="PROD_id", OtherKey:="PROD_id")>  _
-	Public Property PRODUCTO_MOVIMIENTO() As EntitySet(Of PRODUCTO_MOVIMIENTO)
-		Get
-			Return Me._PRODUCTO_MOVIMIENTO
-		End Get
-		Set
-			Me._PRODUCTO_MOVIMIENTO.Assign(value)
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_PRODUCTO_MOVIMIENTO(ByVal entity As PRODUCTO_MOVIMIENTO)
-		Me.SendPropertyChanging
-		entity.PRODUCTO = Me
-	End Sub
-	
-	Private Sub detach_PRODUCTO_MOVIMIENTO(ByVal entity As PRODUCTO_MOVIMIENTO)
-		Me.SendPropertyChanging
-		entity.PRODUCTO = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PRODUCTO_MOVIMIENTO")>  _
-Partial Public Class PRODUCTO_MOVIMIENTO
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _PROD_MOV_id As Integer
-	
-	Private _PROD_MOV_fecha As System.Nullable(Of Date)
-	
-	Private _ORT_id_orden_trabajo As String
-	
-	Private _PROD_MOV_tipo As String
-	
-	Private _PROD_MOV_cantidad As System.Nullable(Of Integer)
-	
-	Private _PROD_id As Integer
-	
-	Private _PRODUCTO As EntityRef(Of PRODUCTO)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnPROD_MOV_idChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnPROD_MOV_idChanged()
-    End Sub
-    Partial Private Sub OnPROD_MOV_fechaChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnPROD_MOV_fechaChanged()
-    End Sub
-    Partial Private Sub OnORT_id_orden_trabajoChanging(value As String)
-    End Sub
-    Partial Private Sub OnORT_id_orden_trabajoChanged()
-    End Sub
-    Partial Private Sub OnPROD_MOV_tipoChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROD_MOV_tipoChanged()
-    End Sub
-    Partial Private Sub OnPROD_MOV_cantidadChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnPROD_MOV_cantidadChanged()
-    End Sub
-    Partial Private Sub OnPROD_idChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnPROD_idChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._PRODUCTO = CType(Nothing, EntityRef(Of PRODUCTO))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property PROD_MOV_id() As Integer
-		Get
-			Return Me._PROD_MOV_id
-		End Get
-		Set
-			If ((Me._PROD_MOV_id = value)  _
-						= false) Then
-				Me.OnPROD_MOV_idChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_MOV_id = value
-				Me.SendPropertyChanged("PROD_MOV_id")
-				Me.OnPROD_MOV_idChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_fecha", DbType:="Date")>  _
-	Public Property PROD_MOV_fecha() As System.Nullable(Of Date)
-		Get
-			Return Me._PROD_MOV_fecha
-		End Get
-		Set
-			If (Me._PROD_MOV_fecha.Equals(value) = false) Then
-				Me.OnPROD_MOV_fechaChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_MOV_fecha = value
-				Me.SendPropertyChanged("PROD_MOV_fecha")
-				Me.OnPROD_MOV_fechaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="VarChar(15)")>  _
-	Public Property ORT_id_orden_trabajo() As String
-		Get
-			Return Me._ORT_id_orden_trabajo
-		End Get
-		Set
-			If (String.Equals(Me._ORT_id_orden_trabajo, value) = false) Then
-				Me.OnORT_id_orden_trabajoChanging(value)
-				Me.SendPropertyChanging
-				Me._ORT_id_orden_trabajo = value
-				Me.SendPropertyChanged("ORT_id_orden_trabajo")
-				Me.OnORT_id_orden_trabajoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_tipo", DbType:="VarChar(15)")>  _
-	Public Property PROD_MOV_tipo() As String
-		Get
-			Return Me._PROD_MOV_tipo
-		End Get
-		Set
-			If (String.Equals(Me._PROD_MOV_tipo, value) = false) Then
-				Me.OnPROD_MOV_tipoChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_MOV_tipo = value
-				Me.SendPropertyChanged("PROD_MOV_tipo")
-				Me.OnPROD_MOV_tipoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_cantidad", DbType:="Int")>  _
-	Public Property PROD_MOV_cantidad() As System.Nullable(Of Integer)
-		Get
-			Return Me._PROD_MOV_cantidad
-		End Get
-		Set
-			If (Me._PROD_MOV_cantidad.Equals(value) = false) Then
-				Me.OnPROD_MOV_cantidadChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_MOV_cantidad = value
-				Me.SendPropertyChanged("PROD_MOV_cantidad")
-				Me.OnPROD_MOV_cantidadChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_id", DbType:="Int NOT NULL")>  _
-	Public Property PROD_id() As Integer
-		Get
-			Return Me._PROD_id
-		End Get
-		Set
-			If ((Me._PROD_id = value)  _
-						= false) Then
-				If Me._PRODUCTO.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnPROD_idChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_id = value
-				Me.SendPropertyChanged("PROD_id")
-				Me.OnPROD_idChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PRODUCTO_PRODUCTO_MOVIMIENTO", Storage:="_PRODUCTO", ThisKey:="PROD_id", OtherKey:="PROD_id", IsForeignKey:=true)>  _
-	Public Property PRODUCTO() As PRODUCTO
-		Get
-			Return Me._PRODUCTO.Entity
-		End Get
-		Set
-			Dim previousValue As PRODUCTO = Me._PRODUCTO.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._PRODUCTO.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._PRODUCTO.Entity = Nothing
-					previousValue.PRODUCTO_MOVIMIENTO.Remove(Me)
-				End If
-				Me._PRODUCTO.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.PRODUCTO_MOVIMIENTO.Add(Me)
-					Me._PROD_id = value.PROD_id
-				Else
-					Me._PROD_id = CType(Nothing, Integer)
-				End If
-				Me.SendPropertyChanged("PRODUCTO")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PROCESO")>  _
-Partial Public Class PROCESO
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _PROC_id_proceso As Integer
-	
-	Private _id_detalle_orden_trabajo As System.Nullable(Of Integer)
-	
-	Private _PROC_offset As String
-	
-	Private _PROC_descrip_offset As String
-	
-	Private _PROC_digital As String
-	
-	Private _PROC_descrip_digital As String
-	
-	Private _PROC_gran_formato As String
-	
-	Private _PROC_descrip_gran_formato As String
-	
-	Private _PROC_terminacion As String
-	
-	Private _PROC_descrip_terminacion As String
-	
-	Private _PROC_logistica As String
-	
-	Private _PROC_descrip_logistica As String
-	
-	Private _DETALLE_ORDEN_TRABAJO As EntityRef(Of DETALLE_ORDEN_TRABAJO)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnPROC_id_procesoChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnPROC_id_procesoChanged()
-    End Sub
-    Partial Private Sub Onid_detalle_orden_trabajoChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub Onid_detalle_orden_trabajoChanged()
-    End Sub
-    Partial Private Sub OnPROC_offsetChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_offsetChanged()
-    End Sub
-    Partial Private Sub OnPROC_descrip_offsetChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_descrip_offsetChanged()
-    End Sub
-    Partial Private Sub OnPROC_digitalChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_digitalChanged()
-    End Sub
-    Partial Private Sub OnPROC_descrip_digitalChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_descrip_digitalChanged()
-    End Sub
-    Partial Private Sub OnPROC_gran_formatoChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_gran_formatoChanged()
-    End Sub
-    Partial Private Sub OnPROC_descrip_gran_formatoChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_descrip_gran_formatoChanged()
-    End Sub
-    Partial Private Sub OnPROC_terminacionChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_terminacionChanged()
-    End Sub
-    Partial Private Sub OnPROC_descrip_terminacionChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_descrip_terminacionChanged()
-    End Sub
-    Partial Private Sub OnPROC_logisticaChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_logisticaChanged()
-    End Sub
-    Partial Private Sub OnPROC_descrip_logisticaChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROC_descrip_logisticaChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._DETALLE_ORDEN_TRABAJO = CType(Nothing, EntityRef(Of DETALLE_ORDEN_TRABAJO))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_id_proceso", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property PROC_id_proceso() As Integer
-		Get
-			Return Me._PROC_id_proceso
-		End Get
-		Set
-			If ((Me._PROC_id_proceso = value)  _
-						= false) Then
-				Me.OnPROC_id_procesoChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_id_proceso = value
-				Me.SendPropertyChanged("PROC_id_proceso")
-				Me.OnPROC_id_procesoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id_detalle_orden_trabajo", DbType:="Int")>  _
-	Public Property id_detalle_orden_trabajo() As System.Nullable(Of Integer)
-		Get
-			Return Me._id_detalle_orden_trabajo
-		End Get
-		Set
-			If (Me._id_detalle_orden_trabajo.Equals(value) = false) Then
-				If Me._DETALLE_ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.Onid_detalle_orden_trabajoChanging(value)
-				Me.SendPropertyChanging
-				Me._id_detalle_orden_trabajo = value
-				Me.SendPropertyChanged("id_detalle_orden_trabajo")
-				Me.Onid_detalle_orden_trabajoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_offset", DbType:="VarChar(20)")>  _
-	Public Property PROC_offset() As String
-		Get
-			Return Me._PROC_offset
-		End Get
-		Set
-			If (String.Equals(Me._PROC_offset, value) = false) Then
-				Me.OnPROC_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_offset = value
-				Me.SendPropertyChanged("PROC_offset")
-				Me.OnPROC_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_offset", DbType:="VarChar(250)")>  _
-	Public Property PROC_descrip_offset() As String
-		Get
-			Return Me._PROC_descrip_offset
-		End Get
-		Set
-			If (String.Equals(Me._PROC_descrip_offset, value) = false) Then
-				Me.OnPROC_descrip_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_descrip_offset = value
-				Me.SendPropertyChanged("PROC_descrip_offset")
-				Me.OnPROC_descrip_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_digital", DbType:="VarChar(20)")>  _
-	Public Property PROC_digital() As String
-		Get
-			Return Me._PROC_digital
-		End Get
-		Set
-			If (String.Equals(Me._PROC_digital, value) = false) Then
-				Me.OnPROC_digitalChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_digital = value
-				Me.SendPropertyChanged("PROC_digital")
-				Me.OnPROC_digitalChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_digital", DbType:="VarChar(250)")>  _
-	Public Property PROC_descrip_digital() As String
-		Get
-			Return Me._PROC_descrip_digital
-		End Get
-		Set
-			If (String.Equals(Me._PROC_descrip_digital, value) = false) Then
-				Me.OnPROC_descrip_digitalChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_descrip_digital = value
-				Me.SendPropertyChanged("PROC_descrip_digital")
-				Me.OnPROC_descrip_digitalChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_gran_formato", DbType:="VarChar(50)")>  _
-	Public Property PROC_gran_formato() As String
-		Get
-			Return Me._PROC_gran_formato
-		End Get
-		Set
-			If (String.Equals(Me._PROC_gran_formato, value) = false) Then
-				Me.OnPROC_gran_formatoChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_gran_formato = value
-				Me.SendPropertyChanged("PROC_gran_formato")
-				Me.OnPROC_gran_formatoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_gran_formato", DbType:="VarChar(250)")>  _
-	Public Property PROC_descrip_gran_formato() As String
-		Get
-			Return Me._PROC_descrip_gran_formato
-		End Get
-		Set
-			If (String.Equals(Me._PROC_descrip_gran_formato, value) = false) Then
-				Me.OnPROC_descrip_gran_formatoChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_descrip_gran_formato = value
-				Me.SendPropertyChanged("PROC_descrip_gran_formato")
-				Me.OnPROC_descrip_gran_formatoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_terminacion", DbType:="VarChar(50)")>  _
-	Public Property PROC_terminacion() As String
-		Get
-			Return Me._PROC_terminacion
-		End Get
-		Set
-			If (String.Equals(Me._PROC_terminacion, value) = false) Then
-				Me.OnPROC_terminacionChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_terminacion = value
-				Me.SendPropertyChanged("PROC_terminacion")
-				Me.OnPROC_terminacionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_terminacion", DbType:="VarChar(250)")>  _
-	Public Property PROC_descrip_terminacion() As String
-		Get
-			Return Me._PROC_descrip_terminacion
-		End Get
-		Set
-			If (String.Equals(Me._PROC_descrip_terminacion, value) = false) Then
-				Me.OnPROC_descrip_terminacionChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_descrip_terminacion = value
-				Me.SendPropertyChanged("PROC_descrip_terminacion")
-				Me.OnPROC_descrip_terminacionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_logistica", DbType:="VarChar(50)")>  _
-	Public Property PROC_logistica() As String
-		Get
-			Return Me._PROC_logistica
-		End Get
-		Set
-			If (String.Equals(Me._PROC_logistica, value) = false) Then
-				Me.OnPROC_logisticaChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_logistica = value
-				Me.SendPropertyChanged("PROC_logistica")
-				Me.OnPROC_logisticaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_logistica", DbType:="VarChar(250)")>  _
-	Public Property PROC_descrip_logistica() As String
-		Get
-			Return Me._PROC_descrip_logistica
-		End Get
-		Set
-			If (String.Equals(Me._PROC_descrip_logistica, value) = false) Then
-				Me.OnPROC_descrip_logisticaChanging(value)
-				Me.SendPropertyChanging
-				Me._PROC_descrip_logistica = value
-				Me.SendPropertyChanged("PROC_descrip_logistica")
-				Me.OnPROC_descrip_logisticaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="DETALLE_ORDEN_TRABAJO_PROCESO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="id_detalle_orden_trabajo", OtherKey:="id_detalle_orden_trabajo", IsForeignKey:=true, DeleteRule:="CASCADE")>  _
-	Public Property DETALLE_ORDEN_TRABAJO() As DETALLE_ORDEN_TRABAJO
-		Get
-			Return Me._DETALLE_ORDEN_TRABAJO.Entity
-		End Get
-		Set
-			Dim previousValue As DETALLE_ORDEN_TRABAJO = Me._DETALLE_ORDEN_TRABAJO.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._DETALLE_ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._DETALLE_ORDEN_TRABAJO.Entity = Nothing
-					previousValue.PROCESO.Remove(Me)
-				End If
-				Me._DETALLE_ORDEN_TRABAJO.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.PROCESO.Add(Me)
-					Me._id_detalle_orden_trabajo = value.id_detalle_orden_trabajo
-				Else
-					Me._id_detalle_orden_trabajo = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("DETALLE_ORDEN_TRABAJO")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.ORDEN_TRABAJO")>  _
-Partial Public Class ORDEN_TRABAJO
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _ORT_id_orden_trabajo As Integer
-	
-	Private _ORT_fecha_ot As Date
-	
-	Private _ORT_tipo_ot As String
-	
-	Private _ORT_numero_ot As String
-	
-	Private _ORT_observaciones_ot As String
-	
-	Private _ORT_mejoras_ot As String
 	
 	Private _VEN_id_vendedor As Integer
 	
-	Private _CLI_id_cliente As Integer
+	Private _VEN_nombre_ven As String
 	
-	Private _ORT_fecha_entrega As System.Nullable(Of Date)
+	Private _VEN_apellido_ven As String
 	
-	Private _TAREA As EntitySet(Of TAREA)
+	Private _VEN_mail_ven As String
 	
-	Private _DETALLE_ORDEN_TRABAJO As EntitySet(Of DETALLE_ORDEN_TRABAJO)
+	Private _VEN_telefono_ven As String
 	
-	Private _CLIENTE As EntityRef(Of CLIENTE)
-	
-	Private _VENDEDOR As EntityRef(Of VENDEDOR)
+	Private _ORDEN_TRABAJO As EntitySet(Of ORDEN_TRABAJO)
 	
     #Region "Definiciones de métodos de extensibilidad"
     Partial Private Sub OnLoaded()
@@ -1896,153 +468,36 @@ Partial Public Class ORDEN_TRABAJO
     Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
     End Sub
     Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnORT_id_orden_trabajoChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnORT_id_orden_trabajoChanged()
-    End Sub
-    Partial Private Sub OnORT_fecha_otChanging(value As Date)
-    End Sub
-    Partial Private Sub OnORT_fecha_otChanged()
-    End Sub
-    Partial Private Sub OnORT_tipo_otChanging(value As String)
-    End Sub
-    Partial Private Sub OnORT_tipo_otChanged()
-    End Sub
-    Partial Private Sub OnORT_numero_otChanging(value As String)
-    End Sub
-    Partial Private Sub OnORT_numero_otChanged()
-    End Sub
-    Partial Private Sub OnORT_observaciones_otChanging(value As String)
-    End Sub
-    Partial Private Sub OnORT_observaciones_otChanged()
-    End Sub
-    Partial Private Sub OnORT_mejoras_otChanging(value As String)
-    End Sub
-    Partial Private Sub OnORT_mejoras_otChanged()
     End Sub
     Partial Private Sub OnVEN_id_vendedorChanging(value As Integer)
     End Sub
     Partial Private Sub OnVEN_id_vendedorChanged()
     End Sub
-    Partial Private Sub OnCLI_id_clienteChanging(value As Integer)
+    Partial Private Sub OnVEN_nombre_venChanging(value As String)
     End Sub
-    Partial Private Sub OnCLI_id_clienteChanged()
+    Partial Private Sub OnVEN_nombre_venChanged()
     End Sub
-    Partial Private Sub OnORT_fecha_entregaChanging(value As System.Nullable(Of Date))
+    Partial Private Sub OnVEN_apellido_venChanging(value As String)
     End Sub
-    Partial Private Sub OnORT_fecha_entregaChanged()
+    Partial Private Sub OnVEN_apellido_venChanged()
+    End Sub
+    Partial Private Sub OnVEN_mail_venChanging(value As String)
+    End Sub
+    Partial Private Sub OnVEN_mail_venChanged()
+    End Sub
+    Partial Private Sub OnVEN_telefono_venChanging(value As String)
+    End Sub
+    Partial Private Sub OnVEN_telefono_venChanged()
     End Sub
     #End Region
 	
 	Public Sub New()
 		MyBase.New
-		Me._TAREA = New EntitySet(Of TAREA)(AddressOf Me.attach_TAREA, AddressOf Me.detach_TAREA)
-		Me._DETALLE_ORDEN_TRABAJO = New EntitySet(Of DETALLE_ORDEN_TRABAJO)(AddressOf Me.attach_DETALLE_ORDEN_TRABAJO, AddressOf Me.detach_DETALLE_ORDEN_TRABAJO)
-		Me._CLIENTE = CType(Nothing, EntityRef(Of CLIENTE))
-		Me._VENDEDOR = CType(Nothing, EntityRef(Of VENDEDOR))
+		Me._ORDEN_TRABAJO = New EntitySet(Of ORDEN_TRABAJO)(AddressOf Me.attach_ORDEN_TRABAJO, AddressOf Me.detach_ORDEN_TRABAJO)
 		OnCreated
 	End Sub
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property ORT_id_orden_trabajo() As Integer
-		Get
-			Return Me._ORT_id_orden_trabajo
-		End Get
-		Set
-			If ((Me._ORT_id_orden_trabajo = value)  _
-						= false) Then
-				Me.OnORT_id_orden_trabajoChanging(value)
-				Me.SendPropertyChanging
-				Me._ORT_id_orden_trabajo = value
-				Me.SendPropertyChanged("ORT_id_orden_trabajo")
-				Me.OnORT_id_orden_trabajoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_fecha_ot", DbType:="Date NOT NULL")>  _
-	Public Property ORT_fecha_ot() As Date
-		Get
-			Return Me._ORT_fecha_ot
-		End Get
-		Set
-			If ((Me._ORT_fecha_ot = value)  _
-						= false) Then
-				Me.OnORT_fecha_otChanging(value)
-				Me.SendPropertyChanging
-				Me._ORT_fecha_ot = value
-				Me.SendPropertyChanged("ORT_fecha_ot")
-				Me.OnORT_fecha_otChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_tipo_ot", DbType:="VarChar(10) NOT NULL", CanBeNull:=false)>  _
-	Public Property ORT_tipo_ot() As String
-		Get
-			Return Me._ORT_tipo_ot
-		End Get
-		Set
-			If (String.Equals(Me._ORT_tipo_ot, value) = false) Then
-				Me.OnORT_tipo_otChanging(value)
-				Me.SendPropertyChanging
-				Me._ORT_tipo_ot = value
-				Me.SendPropertyChanged("ORT_tipo_ot")
-				Me.OnORT_tipo_otChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_numero_ot", DbType:="VarChar(10) NOT NULL", CanBeNull:=false)>  _
-	Public Property ORT_numero_ot() As String
-		Get
-			Return Me._ORT_numero_ot
-		End Get
-		Set
-			If (String.Equals(Me._ORT_numero_ot, value) = false) Then
-				Me.OnORT_numero_otChanging(value)
-				Me.SendPropertyChanging
-				Me._ORT_numero_ot = value
-				Me.SendPropertyChanged("ORT_numero_ot")
-				Me.OnORT_numero_otChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_observaciones_ot", DbType:="VarChar(250)")>  _
-	Public Property ORT_observaciones_ot() As String
-		Get
-			Return Me._ORT_observaciones_ot
-		End Get
-		Set
-			If (String.Equals(Me._ORT_observaciones_ot, value) = false) Then
-				Me.OnORT_observaciones_otChanging(value)
-				Me.SendPropertyChanging
-				Me._ORT_observaciones_ot = value
-				Me.SendPropertyChanged("ORT_observaciones_ot")
-				Me.OnORT_observaciones_otChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_mejoras_ot", DbType:="VarChar(250)")>  _
-	Public Property ORT_mejoras_ot() As String
-		Get
-			Return Me._ORT_mejoras_ot
-		End Get
-		Set
-			If (String.Equals(Me._ORT_mejoras_ot, value) = false) Then
-				Me.OnORT_mejoras_otChanging(value)
-				Me.SendPropertyChanging
-				Me._ORT_mejoras_ot = value
-				Me.SendPropertyChanged("ORT_mejoras_ot")
-				Me.OnORT_mejoras_otChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VEN_id_vendedor", DbType:="Int NOT NULL")>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VEN_id_vendedor", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
 	Public Property VEN_id_vendedor() As Integer
 		Get
 			Return Me._VEN_id_vendedor
@@ -2050,9 +505,6 @@ Partial Public Class ORDEN_TRABAJO
 		Set
 			If ((Me._VEN_id_vendedor = value)  _
 						= false) Then
-				If Me._VENDEDOR.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
 				Me.OnVEN_id_vendedorChanging(value)
 				Me.SendPropertyChanging
 				Me._VEN_id_vendedor = value
@@ -2062,43 +514,231 @@ Partial Public Class ORDEN_TRABAJO
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_id_cliente", DbType:="Int NOT NULL")>  _
-	Public Property CLI_id_cliente() As Integer
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VEN_nombre_ven", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property VEN_nombre_ven() As String
 		Get
-			Return Me._CLI_id_cliente
+			Return Me._VEN_nombre_ven
 		End Get
 		Set
-			If ((Me._CLI_id_cliente = value)  _
+			If (String.Equals(Me._VEN_nombre_ven, value) = false) Then
+				Me.OnVEN_nombre_venChanging(value)
+				Me.SendPropertyChanging
+				Me._VEN_nombre_ven = value
+				Me.SendPropertyChanged("VEN_nombre_ven")
+				Me.OnVEN_nombre_venChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VEN_apellido_ven", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property VEN_apellido_ven() As String
+		Get
+			Return Me._VEN_apellido_ven
+		End Get
+		Set
+			If (String.Equals(Me._VEN_apellido_ven, value) = false) Then
+				Me.OnVEN_apellido_venChanging(value)
+				Me.SendPropertyChanging
+				Me._VEN_apellido_ven = value
+				Me.SendPropertyChanged("VEN_apellido_ven")
+				Me.OnVEN_apellido_venChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VEN_mail_ven", DbType:="VarChar(50)")>  _
+	Public Property VEN_mail_ven() As String
+		Get
+			Return Me._VEN_mail_ven
+		End Get
+		Set
+			If (String.Equals(Me._VEN_mail_ven, value) = false) Then
+				Me.OnVEN_mail_venChanging(value)
+				Me.SendPropertyChanging
+				Me._VEN_mail_ven = value
+				Me.SendPropertyChanged("VEN_mail_ven")
+				Me.OnVEN_mail_venChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VEN_telefono_ven", DbType:="VarChar(15)")>  _
+	Public Property VEN_telefono_ven() As String
+		Get
+			Return Me._VEN_telefono_ven
+		End Get
+		Set
+			If (String.Equals(Me._VEN_telefono_ven, value) = false) Then
+				Me.OnVEN_telefono_venChanging(value)
+				Me.SendPropertyChanging
+				Me._VEN_telefono_ven = value
+				Me.SendPropertyChanged("VEN_telefono_ven")
+				Me.OnVEN_telefono_venChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="VENDEDOR_ORDEN_TRABAJO", Storage:="_ORDEN_TRABAJO", ThisKey:="VEN_id_vendedor", OtherKey:="VEN_id_vendedor")>  _
+	Public Property ORDEN_TRABAJO() As EntitySet(Of ORDEN_TRABAJO)
+		Get
+			Return Me._ORDEN_TRABAJO
+		End Get
+		Set
+			Me._ORDEN_TRABAJO.Assign(value)
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_ORDEN_TRABAJO(ByVal entity As ORDEN_TRABAJO)
+		Me.SendPropertyChanging
+		entity.VENDEDOR = Me
+	End Sub
+	
+	Private Sub detach_ORDEN_TRABAJO(ByVal entity As ORDEN_TRABAJO)
+		Me.SendPropertyChanging
+		entity.VENDEDOR = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.COLABORADOR")>  _
+Partial Public Class COLABORADOR
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _COL_id_colaborador As Integer
+	
+	Private _COL_nombre_col As String
+	
+	Private _COL_apellido_col As String
+	
+	Private _SEC_id_sector As System.Nullable(Of Integer)
+	
+	Private _TAREA As EntitySet(Of TAREA)
+	
+	Private _USUARIO As EntitySet(Of USUARIO)
+	
+	Private _SECTOR As EntityRef(Of SECTOR)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnCOL_id_colaboradorChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnCOL_id_colaboradorChanged()
+    End Sub
+    Partial Private Sub OnCOL_nombre_colChanging(value As String)
+    End Sub
+    Partial Private Sub OnCOL_nombre_colChanged()
+    End Sub
+    Partial Private Sub OnCOL_apellido_colChanging(value As String)
+    End Sub
+    Partial Private Sub OnCOL_apellido_colChanged()
+    End Sub
+    Partial Private Sub OnSEC_id_sectorChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnSEC_id_sectorChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._TAREA = New EntitySet(Of TAREA)(AddressOf Me.attach_TAREA, AddressOf Me.detach_TAREA)
+		Me._USUARIO = New EntitySet(Of USUARIO)(AddressOf Me.attach_USUARIO, AddressOf Me.detach_USUARIO)
+		Me._SECTOR = CType(Nothing, EntityRef(Of SECTOR))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_id_colaborador", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property COL_id_colaborador() As Integer
+		Get
+			Return Me._COL_id_colaborador
+		End Get
+		Set
+			If ((Me._COL_id_colaborador = value)  _
 						= false) Then
-				If Me._CLIENTE.HasLoadedOrAssignedValue Then
+				Me.OnCOL_id_colaboradorChanging(value)
+				Me.SendPropertyChanging
+				Me._COL_id_colaborador = value
+				Me.SendPropertyChanged("COL_id_colaborador")
+				Me.OnCOL_id_colaboradorChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_nombre_col", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property COL_nombre_col() As String
+		Get
+			Return Me._COL_nombre_col
+		End Get
+		Set
+			If (String.Equals(Me._COL_nombre_col, value) = false) Then
+				Me.OnCOL_nombre_colChanging(value)
+				Me.SendPropertyChanging
+				Me._COL_nombre_col = value
+				Me.SendPropertyChanged("COL_nombre_col")
+				Me.OnCOL_nombre_colChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_apellido_col", DbType:="VarChar(50)")>  _
+	Public Property COL_apellido_col() As String
+		Get
+			Return Me._COL_apellido_col
+		End Get
+		Set
+			If (String.Equals(Me._COL_apellido_col, value) = false) Then
+				Me.OnCOL_apellido_colChanging(value)
+				Me.SendPropertyChanging
+				Me._COL_apellido_col = value
+				Me.SendPropertyChanged("COL_apellido_col")
+				Me.OnCOL_apellido_colChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_id_sector", DbType:="Int")>  _
+	Public Property SEC_id_sector() As System.Nullable(Of Integer)
+		Get
+			Return Me._SEC_id_sector
+		End Get
+		Set
+			If (Me._SEC_id_sector.Equals(value) = false) Then
+				If Me._SECTOR.HasLoadedOrAssignedValue Then
 					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
 				End If
-				Me.OnCLI_id_clienteChanging(value)
+				Me.OnSEC_id_sectorChanging(value)
 				Me.SendPropertyChanging
-				Me._CLI_id_cliente = value
-				Me.SendPropertyChanged("CLI_id_cliente")
-				Me.OnCLI_id_clienteChanged
+				Me._SEC_id_sector = value
+				Me.SendPropertyChanged("SEC_id_sector")
+				Me.OnSEC_id_sectorChanged
 			End If
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_fecha_entrega", DbType:="Date")>  _
-	Public Property ORT_fecha_entrega() As System.Nullable(Of Date)
-		Get
-			Return Me._ORT_fecha_entrega
-		End Get
-		Set
-			If (Me._ORT_fecha_entrega.Equals(value) = false) Then
-				Me.OnORT_fecha_entregaChanging(value)
-				Me.SendPropertyChanging
-				Me._ORT_fecha_entrega = value
-				Me.SendPropertyChanged("ORT_fecha_entrega")
-				Me.OnORT_fecha_entregaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_TAREA", Storage:="_TAREA", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo")>  _
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="COLABORADOR_TAREA", Storage:="_TAREA", ThisKey:="COL_id_colaborador", OtherKey:="COL_id_colaborador")>  _
 	Public Property TAREA() As EntitySet(Of TAREA)
 		Get
 			Return Me._TAREA
@@ -2108,68 +748,40 @@ Partial Public Class ORDEN_TRABAJO
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo")>  _
-	Public Property DETALLE_ORDEN_TRABAJO() As EntitySet(Of DETALLE_ORDEN_TRABAJO)
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="COLABORADOR_USUARIO", Storage:="_USUARIO", ThisKey:="COL_id_colaborador", OtherKey:="COL_id_colaborador")>  _
+	Public Property USUARIO() As EntitySet(Of USUARIO)
 		Get
-			Return Me._DETALLE_ORDEN_TRABAJO
+			Return Me._USUARIO
 		End Get
 		Set
-			Me._DETALLE_ORDEN_TRABAJO.Assign(value)
+			Me._USUARIO.Assign(value)
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="CLIENTE_ORDEN_TRABAJO", Storage:="_CLIENTE", ThisKey:="CLI_id_cliente", OtherKey:="CLI_id_cliente", IsForeignKey:=true)>  _
-	Public Property CLIENTE() As CLIENTE
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="SECTOR_COLABORADOR", Storage:="_SECTOR", ThisKey:="SEC_id_sector", OtherKey:="SEC_id_sector", IsForeignKey:=true)>  _
+	Public Property SECTOR() As SECTOR
 		Get
-			Return Me._CLIENTE.Entity
+			Return Me._SECTOR.Entity
 		End Get
 		Set
-			Dim previousValue As CLIENTE = Me._CLIENTE.Entity
+			Dim previousValue As SECTOR = Me._SECTOR.Entity
 			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._CLIENTE.HasLoadedOrAssignedValue = false)) Then
+						OrElse (Me._SECTOR.HasLoadedOrAssignedValue = false)) Then
 				Me.SendPropertyChanging
 				If ((previousValue Is Nothing)  _
 							= false) Then
-					Me._CLIENTE.Entity = Nothing
-					previousValue.ORDEN_TRABAJO.Remove(Me)
+					Me._SECTOR.Entity = Nothing
+					previousValue.COLABORADOR.Remove(Me)
 				End If
-				Me._CLIENTE.Entity = value
+				Me._SECTOR.Entity = value
 				If ((value Is Nothing)  _
 							= false) Then
-					value.ORDEN_TRABAJO.Add(Me)
-					Me._CLI_id_cliente = value.CLI_id_cliente
+					value.COLABORADOR.Add(Me)
+					Me._SEC_id_sector = value.SEC_id_sector
 				Else
-					Me._CLI_id_cliente = CType(Nothing, Integer)
+					Me._SEC_id_sector = CType(Nothing, Nullable(Of Integer))
 				End If
-				Me.SendPropertyChanged("CLIENTE")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="VENDEDOR_ORDEN_TRABAJO", Storage:="_VENDEDOR", ThisKey:="VEN_id_vendedor", OtherKey:="VEN_id_vendedor", IsForeignKey:=true)>  _
-	Public Property VENDEDOR() As VENDEDOR
-		Get
-			Return Me._VENDEDOR.Entity
-		End Get
-		Set
-			Dim previousValue As VENDEDOR = Me._VENDEDOR.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._VENDEDOR.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._VENDEDOR.Entity = Nothing
-					previousValue.ORDEN_TRABAJO.Remove(Me)
-				End If
-				Me._VENDEDOR.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.ORDEN_TRABAJO.Add(Me)
-					Me._VEN_id_vendedor = value.VEN_id_vendedor
-				Else
-					Me._VEN_id_vendedor = CType(Nothing, Integer)
-				End If
-				Me.SendPropertyChanged("VENDEDOR")
+				Me.SendPropertyChanged("SECTOR")
 			End If
 		End Set
 	End Property
@@ -2194,1222 +806,22 @@ Partial Public Class ORDEN_TRABAJO
 	
 	Private Sub attach_TAREA(ByVal entity As TAREA)
 		Me.SendPropertyChanging
-		entity.ORDEN_TRABAJO = Me
+		entity.COLABORADOR = Me
 	End Sub
 	
 	Private Sub detach_TAREA(ByVal entity As TAREA)
 		Me.SendPropertyChanging
-		entity.ORDEN_TRABAJO = Nothing
+		entity.COLABORADOR = Nothing
 	End Sub
 	
-	Private Sub attach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
+	Private Sub attach_USUARIO(ByVal entity As USUARIO)
 		Me.SendPropertyChanging
-		entity.ORDEN_TRABAJO = Me
+		entity.COLABORADOR = Me
 	End Sub
 	
-	Private Sub detach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
+	Private Sub detach_USUARIO(ByVal entity As USUARIO)
 		Me.SendPropertyChanging
-		entity.ORDEN_TRABAJO = Nothing
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.TAREA")>  _
-Partial Public Class TAREA
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _TAR_id_tarea As Integer
-	
-	Private _TAR_tiempo_estimado As String
-	
-	Private _TAR_tiempo_real As String
-	
-	Private _COL_id_colaborador As Integer
-	
-	Private _ORT_id_orden_trabajo As System.Nullable(Of Integer)
-	
-	Private _TAR_hora_fin As String
-	
-	Private _TAR_carga_horaria As String
-	
-	Private _TAR_detalle_tarea As String
-	
-	Private _TAR_observaciones As String
-	
-	Private _TAR_fecha As System.Nullable(Of Date)
-	
-	Private _TAR_entrada As String
-	
-	Private _TAR_salida As String
-	
-	Private _COLABORADOR As EntityRef(Of COLABORADOR)
-	
-	Private _ORDEN_TRABAJO As EntityRef(Of ORDEN_TRABAJO)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnTAR_id_tareaChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnTAR_id_tareaChanged()
-    End Sub
-    Partial Private Sub OnTAR_tiempo_estimadoChanging(value As String)
-    End Sub
-    Partial Private Sub OnTAR_tiempo_estimadoChanged()
-    End Sub
-    Partial Private Sub OnTAR_tiempo_realChanging(value As String)
-    End Sub
-    Partial Private Sub OnTAR_tiempo_realChanged()
-    End Sub
-    Partial Private Sub OnCOL_id_colaboradorChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnCOL_id_colaboradorChanged()
-    End Sub
-    Partial Private Sub OnORT_id_orden_trabajoChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnORT_id_orden_trabajoChanged()
-    End Sub
-    Partial Private Sub OnTAR_hora_finChanging(value As String)
-    End Sub
-    Partial Private Sub OnTAR_hora_finChanged()
-    End Sub
-    Partial Private Sub OnTAR_carga_horariaChanging(value As String)
-    End Sub
-    Partial Private Sub OnTAR_carga_horariaChanged()
-    End Sub
-    Partial Private Sub OnTAR_detalle_tareaChanging(value As String)
-    End Sub
-    Partial Private Sub OnTAR_detalle_tareaChanged()
-    End Sub
-    Partial Private Sub OnTAR_observacionesChanging(value As String)
-    End Sub
-    Partial Private Sub OnTAR_observacionesChanged()
-    End Sub
-    Partial Private Sub OnTAR_fechaChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnTAR_fechaChanged()
-    End Sub
-    Partial Private Sub OnTAR_entradaChanging(value As String)
-    End Sub
-    Partial Private Sub OnTAR_entradaChanged()
-    End Sub
-    Partial Private Sub OnTAR_salidaChanging(value As String)
-    End Sub
-    Partial Private Sub OnTAR_salidaChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._COLABORADOR = CType(Nothing, EntityRef(Of COLABORADOR))
-		Me._ORDEN_TRABAJO = CType(Nothing, EntityRef(Of ORDEN_TRABAJO))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_id_tarea", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property TAR_id_tarea() As Integer
-		Get
-			Return Me._TAR_id_tarea
-		End Get
-		Set
-			If ((Me._TAR_id_tarea = value)  _
-						= false) Then
-				Me.OnTAR_id_tareaChanging(value)
-				Me.SendPropertyChanging
-				Me._TAR_id_tarea = value
-				Me.SendPropertyChanged("TAR_id_tarea")
-				Me.OnTAR_id_tareaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_tiempo_estimado", DbType:="VarChar(10)")>  _
-	Public Property TAR_tiempo_estimado() As String
-		Get
-			Return Me._TAR_tiempo_estimado
-		End Get
-		Set
-			If (String.Equals(Me._TAR_tiempo_estimado, value) = false) Then
-				Me.OnTAR_tiempo_estimadoChanging(value)
-				Me.SendPropertyChanging
-				Me._TAR_tiempo_estimado = value
-				Me.SendPropertyChanged("TAR_tiempo_estimado")
-				Me.OnTAR_tiempo_estimadoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_tiempo_real", DbType:="VarChar(10)")>  _
-	Public Property TAR_tiempo_real() As String
-		Get
-			Return Me._TAR_tiempo_real
-		End Get
-		Set
-			If (String.Equals(Me._TAR_tiempo_real, value) = false) Then
-				Me.OnTAR_tiempo_realChanging(value)
-				Me.SendPropertyChanging
-				Me._TAR_tiempo_real = value
-				Me.SendPropertyChanged("TAR_tiempo_real")
-				Me.OnTAR_tiempo_realChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_id_colaborador", DbType:="Int NOT NULL")>  _
-	Public Property COL_id_colaborador() As Integer
-		Get
-			Return Me._COL_id_colaborador
-		End Get
-		Set
-			If ((Me._COL_id_colaborador = value)  _
-						= false) Then
-				If Me._COLABORADOR.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnCOL_id_colaboradorChanging(value)
-				Me.SendPropertyChanging
-				Me._COL_id_colaborador = value
-				Me.SendPropertyChanged("COL_id_colaborador")
-				Me.OnCOL_id_colaboradorChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int")>  _
-	Public Property ORT_id_orden_trabajo() As System.Nullable(Of Integer)
-		Get
-			Return Me._ORT_id_orden_trabajo
-		End Get
-		Set
-			If (Me._ORT_id_orden_trabajo.Equals(value) = false) Then
-				If Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnORT_id_orden_trabajoChanging(value)
-				Me.SendPropertyChanging
-				Me._ORT_id_orden_trabajo = value
-				Me.SendPropertyChanged("ORT_id_orden_trabajo")
-				Me.OnORT_id_orden_trabajoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_hora_fin", DbType:="VarChar(10)")>  _
-	Public Property TAR_hora_fin() As String
-		Get
-			Return Me._TAR_hora_fin
-		End Get
-		Set
-			If (String.Equals(Me._TAR_hora_fin, value) = false) Then
-				Me.OnTAR_hora_finChanging(value)
-				Me.SendPropertyChanging
-				Me._TAR_hora_fin = value
-				Me.SendPropertyChanged("TAR_hora_fin")
-				Me.OnTAR_hora_finChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_carga_horaria", DbType:="VarChar(10)")>  _
-	Public Property TAR_carga_horaria() As String
-		Get
-			Return Me._TAR_carga_horaria
-		End Get
-		Set
-			If (String.Equals(Me._TAR_carga_horaria, value) = false) Then
-				Me.OnTAR_carga_horariaChanging(value)
-				Me.SendPropertyChanging
-				Me._TAR_carga_horaria = value
-				Me.SendPropertyChanged("TAR_carga_horaria")
-				Me.OnTAR_carga_horariaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_detalle_tarea", DbType:="VarChar(100) NOT NULL", CanBeNull:=false)>  _
-	Public Property TAR_detalle_tarea() As String
-		Get
-			Return Me._TAR_detalle_tarea
-		End Get
-		Set
-			If (String.Equals(Me._TAR_detalle_tarea, value) = false) Then
-				Me.OnTAR_detalle_tareaChanging(value)
-				Me.SendPropertyChanging
-				Me._TAR_detalle_tarea = value
-				Me.SendPropertyChanged("TAR_detalle_tarea")
-				Me.OnTAR_detalle_tareaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_observaciones", DbType:="VarChar(200)")>  _
-	Public Property TAR_observaciones() As String
-		Get
-			Return Me._TAR_observaciones
-		End Get
-		Set
-			If (String.Equals(Me._TAR_observaciones, value) = false) Then
-				Me.OnTAR_observacionesChanging(value)
-				Me.SendPropertyChanging
-				Me._TAR_observaciones = value
-				Me.SendPropertyChanged("TAR_observaciones")
-				Me.OnTAR_observacionesChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_fecha", DbType:="Date")>  _
-	Public Property TAR_fecha() As System.Nullable(Of Date)
-		Get
-			Return Me._TAR_fecha
-		End Get
-		Set
-			If (Me._TAR_fecha.Equals(value) = false) Then
-				Me.OnTAR_fechaChanging(value)
-				Me.SendPropertyChanging
-				Me._TAR_fecha = value
-				Me.SendPropertyChanged("TAR_fecha")
-				Me.OnTAR_fechaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_entrada", DbType:="VarChar(10)")>  _
-	Public Property TAR_entrada() As String
-		Get
-			Return Me._TAR_entrada
-		End Get
-		Set
-			If (String.Equals(Me._TAR_entrada, value) = false) Then
-				Me.OnTAR_entradaChanging(value)
-				Me.SendPropertyChanging
-				Me._TAR_entrada = value
-				Me.SendPropertyChanged("TAR_entrada")
-				Me.OnTAR_entradaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_salida", DbType:="VarChar(10)")>  _
-	Public Property TAR_salida() As String
-		Get
-			Return Me._TAR_salida
-		End Get
-		Set
-			If (String.Equals(Me._TAR_salida, value) = false) Then
-				Me.OnTAR_salidaChanging(value)
-				Me.SendPropertyChanging
-				Me._TAR_salida = value
-				Me.SendPropertyChanged("TAR_salida")
-				Me.OnTAR_salidaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="COLABORADOR_TAREA", Storage:="_COLABORADOR", ThisKey:="COL_id_colaborador", OtherKey:="COL_id_colaborador", IsForeignKey:=true)>  _
-	Public Property COLABORADOR() As COLABORADOR
-		Get
-			Return Me._COLABORADOR.Entity
-		End Get
-		Set
-			Dim previousValue As COLABORADOR = Me._COLABORADOR.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._COLABORADOR.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._COLABORADOR.Entity = Nothing
-					previousValue.TAREA.Remove(Me)
-				End If
-				Me._COLABORADOR.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.TAREA.Add(Me)
-					Me._COL_id_colaborador = value.COL_id_colaborador
-				Else
-					Me._COL_id_colaborador = CType(Nothing, Integer)
-				End If
-				Me.SendPropertyChanged("COLABORADOR")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_TAREA", Storage:="_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo", IsForeignKey:=true, DeleteRule:="CASCADE")>  _
-	Public Property ORDEN_TRABAJO() As ORDEN_TRABAJO
-		Get
-			Return Me._ORDEN_TRABAJO.Entity
-		End Get
-		Set
-			Dim previousValue As ORDEN_TRABAJO = Me._ORDEN_TRABAJO.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._ORDEN_TRABAJO.Entity = Nothing
-					previousValue.TAREA.Remove(Me)
-				End If
-				Me._ORDEN_TRABAJO.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.TAREA.Add(Me)
-					Me._ORT_id_orden_trabajo = value.ORT_id_orden_trabajo
-				Else
-					Me._ORT_id_orden_trabajo = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("ORDEN_TRABAJO")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.[RE-TRABAJO]")>  _
-Partial Public Class RE_TRABAJO
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _RET_id_retrabajo As Integer
-	
-	Private _id_detalle_orden_trabajo As System.Nullable(Of Integer)
-	
-	Private _RET_cantidad_dort As System.Nullable(Of Integer)
-	
-	Private _RET_tamaño_dort As String
-	
-	Private _RET_tipo_impresion_dort As String
-	
-	Private _RET_origen_area As String
-	
-	Private _RET_procedimiento As String
-	
-	Private _RET_fecha As System.Nullable(Of Date)
-	
-	Private _RET_papel_soporte_1 As String
-	
-	Private _RET_papel_soporte_2 As String
-	
-	Private _RET_papel_soporte_3 As String
-	
-	Private _RET_gramaje_soporte_1 As System.Nullable(Of Integer)
-	
-	Private _RET_gramaje_soporte_2 As String
-	
-	Private _RET_gramaje_soporte_3 As String
-	
-	Private _RET_cantidad_soporte_1 As System.Nullable(Of Integer)
-	
-	Private _RET_cantidad_soporte_2 As System.Nullable(Of Integer)
-	
-	Private _RET_cantidad_soporte_3 As System.Nullable(Of Integer)
-	
-	Private _RET_formato_soporte_1 As String
-	
-	Private _RET_formato_soporte_2 As String
-	
-	Private _RET_formato_soporte_3 As String
-	
-	Private _RET_fecha_entrega As System.Nullable(Of Date)
-	
-	Private _DETALLE_ORDEN_TRABAJO As EntityRef(Of DETALLE_ORDEN_TRABAJO)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnRET_id_retrabajoChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnRET_id_retrabajoChanged()
-    End Sub
-    Partial Private Sub Onid_detalle_orden_trabajoChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub Onid_detalle_orden_trabajoChanged()
-    End Sub
-    Partial Private Sub OnRET_cantidad_dortChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnRET_cantidad_dortChanged()
-    End Sub
-    Partial Private Sub OnRET_tamaño_dortChanging(value As String)
-    End Sub
-    Partial Private Sub OnRET_tamaño_dortChanged()
-    End Sub
-    Partial Private Sub OnRET_tipo_impresion_dortChanging(value As String)
-    End Sub
-    Partial Private Sub OnRET_tipo_impresion_dortChanged()
-    End Sub
-    Partial Private Sub OnRET_origen_areaChanging(value As String)
-    End Sub
-    Partial Private Sub OnRET_origen_areaChanged()
-    End Sub
-    Partial Private Sub OnRET_procedimientoChanging(value As String)
-    End Sub
-    Partial Private Sub OnRET_procedimientoChanged()
-    End Sub
-    Partial Private Sub OnRET_fechaChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnRET_fechaChanged()
-    End Sub
-    Partial Private Sub OnRET_papel_soporte_1Changing(value As String)
-    End Sub
-    Partial Private Sub OnRET_papel_soporte_1Changed()
-    End Sub
-    Partial Private Sub OnRET_papel_soporte_2Changing(value As String)
-    End Sub
-    Partial Private Sub OnRET_papel_soporte_2Changed()
-    End Sub
-    Partial Private Sub OnRET_papel_soporte_3Changing(value As String)
-    End Sub
-    Partial Private Sub OnRET_papel_soporte_3Changed()
-    End Sub
-    Partial Private Sub OnRET_gramaje_soporte_1Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnRET_gramaje_soporte_1Changed()
-    End Sub
-    Partial Private Sub OnRET_gramaje_soporte_2Changing(value As String)
-    End Sub
-    Partial Private Sub OnRET_gramaje_soporte_2Changed()
-    End Sub
-    Partial Private Sub OnRET_gramaje_soporte_3Changing(value As String)
-    End Sub
-    Partial Private Sub OnRET_gramaje_soporte_3Changed()
-    End Sub
-    Partial Private Sub OnRET_cantidad_soporte_1Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnRET_cantidad_soporte_1Changed()
-    End Sub
-    Partial Private Sub OnRET_cantidad_soporte_2Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnRET_cantidad_soporte_2Changed()
-    End Sub
-    Partial Private Sub OnRET_cantidad_soporte_3Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnRET_cantidad_soporte_3Changed()
-    End Sub
-    Partial Private Sub OnRET_formato_soporte_1Changing(value As String)
-    End Sub
-    Partial Private Sub OnRET_formato_soporte_1Changed()
-    End Sub
-    Partial Private Sub OnRET_formato_soporte_2Changing(value As String)
-    End Sub
-    Partial Private Sub OnRET_formato_soporte_2Changed()
-    End Sub
-    Partial Private Sub OnRET_formato_soporte_3Changing(value As String)
-    End Sub
-    Partial Private Sub OnRET_formato_soporte_3Changed()
-    End Sub
-    Partial Private Sub OnRET_fecha_entregaChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnRET_fecha_entregaChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._DETALLE_ORDEN_TRABAJO = CType(Nothing, EntityRef(Of DETALLE_ORDEN_TRABAJO))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_id_retrabajo", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property RET_id_retrabajo() As Integer
-		Get
-			Return Me._RET_id_retrabajo
-		End Get
-		Set
-			If ((Me._RET_id_retrabajo = value)  _
-						= false) Then
-				Me.OnRET_id_retrabajoChanging(value)
-				Me.SendPropertyChanging
-				Me._RET_id_retrabajo = value
-				Me.SendPropertyChanged("RET_id_retrabajo")
-				Me.OnRET_id_retrabajoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id_detalle_orden_trabajo", DbType:="Int")>  _
-	Public Property id_detalle_orden_trabajo() As System.Nullable(Of Integer)
-		Get
-			Return Me._id_detalle_orden_trabajo
-		End Get
-		Set
-			If (Me._id_detalle_orden_trabajo.Equals(value) = false) Then
-				If Me._DETALLE_ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.Onid_detalle_orden_trabajoChanging(value)
-				Me.SendPropertyChanging
-				Me._id_detalle_orden_trabajo = value
-				Me.SendPropertyChanged("id_detalle_orden_trabajo")
-				Me.Onid_detalle_orden_trabajoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_cantidad_dort", DbType:="Int")>  _
-	Public Property RET_cantidad_dort() As System.Nullable(Of Integer)
-		Get
-			Return Me._RET_cantidad_dort
-		End Get
-		Set
-			If (Me._RET_cantidad_dort.Equals(value) = false) Then
-				Me.OnRET_cantidad_dortChanging(value)
-				Me.SendPropertyChanging
-				Me._RET_cantidad_dort = value
-				Me.SendPropertyChanged("RET_cantidad_dort")
-				Me.OnRET_cantidad_dortChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_tamaño_dort", DbType:="VarChar(50)")>  _
-	Public Property RET_tamaño_dort() As String
-		Get
-			Return Me._RET_tamaño_dort
-		End Get
-		Set
-			If (String.Equals(Me._RET_tamaño_dort, value) = false) Then
-				Me.OnRET_tamaño_dortChanging(value)
-				Me.SendPropertyChanging
-				Me._RET_tamaño_dort = value
-				Me.SendPropertyChanged("RET_tamaño_dort")
-				Me.OnRET_tamaño_dortChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_tipo_impresion_dort", DbType:="VarChar(4)")>  _
-	Public Property RET_tipo_impresion_dort() As String
-		Get
-			Return Me._RET_tipo_impresion_dort
-		End Get
-		Set
-			If (String.Equals(Me._RET_tipo_impresion_dort, value) = false) Then
-				Me.OnRET_tipo_impresion_dortChanging(value)
-				Me.SendPropertyChanging
-				Me._RET_tipo_impresion_dort = value
-				Me.SendPropertyChanged("RET_tipo_impresion_dort")
-				Me.OnRET_tipo_impresion_dortChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_origen_area", DbType:="VarChar(100)")>  _
-	Public Property RET_origen_area() As String
-		Get
-			Return Me._RET_origen_area
-		End Get
-		Set
-			If (String.Equals(Me._RET_origen_area, value) = false) Then
-				Me.OnRET_origen_areaChanging(value)
-				Me.SendPropertyChanging
-				Me._RET_origen_area = value
-				Me.SendPropertyChanged("RET_origen_area")
-				Me.OnRET_origen_areaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_procedimiento", DbType:="VarChar(100)")>  _
-	Public Property RET_procedimiento() As String
-		Get
-			Return Me._RET_procedimiento
-		End Get
-		Set
-			If (String.Equals(Me._RET_procedimiento, value) = false) Then
-				Me.OnRET_procedimientoChanging(value)
-				Me.SendPropertyChanging
-				Me._RET_procedimiento = value
-				Me.SendPropertyChanged("RET_procedimiento")
-				Me.OnRET_procedimientoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_fecha", DbType:="Date")>  _
-	Public Property RET_fecha() As System.Nullable(Of Date)
-		Get
-			Return Me._RET_fecha
-		End Get
-		Set
-			If (Me._RET_fecha.Equals(value) = false) Then
-				Me.OnRET_fechaChanging(value)
-				Me.SendPropertyChanging
-				Me._RET_fecha = value
-				Me.SendPropertyChanged("RET_fecha")
-				Me.OnRET_fechaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_papel_soporte_1", DbType:="VarChar(50)")>  _
-	Public Property RET_papel_soporte_1() As String
-		Get
-			Return Me._RET_papel_soporte_1
-		End Get
-		Set
-			If (String.Equals(Me._RET_papel_soporte_1, value) = false) Then
-				Me.OnRET_papel_soporte_1Changing(value)
-				Me.SendPropertyChanging
-				Me._RET_papel_soporte_1 = value
-				Me.SendPropertyChanged("RET_papel_soporte_1")
-				Me.OnRET_papel_soporte_1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_papel_soporte_2", DbType:="VarChar(50)")>  _
-	Public Property RET_papel_soporte_2() As String
-		Get
-			Return Me._RET_papel_soporte_2
-		End Get
-		Set
-			If (String.Equals(Me._RET_papel_soporte_2, value) = false) Then
-				Me.OnRET_papel_soporte_2Changing(value)
-				Me.SendPropertyChanging
-				Me._RET_papel_soporte_2 = value
-				Me.SendPropertyChanged("RET_papel_soporte_2")
-				Me.OnRET_papel_soporte_2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_papel_soporte_3", DbType:="VarChar(50)")>  _
-	Public Property RET_papel_soporte_3() As String
-		Get
-			Return Me._RET_papel_soporte_3
-		End Get
-		Set
-			If (String.Equals(Me._RET_papel_soporte_3, value) = false) Then
-				Me.OnRET_papel_soporte_3Changing(value)
-				Me.SendPropertyChanging
-				Me._RET_papel_soporte_3 = value
-				Me.SendPropertyChanged("RET_papel_soporte_3")
-				Me.OnRET_papel_soporte_3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_gramaje_soporte_1", DbType:="Int")>  _
-	Public Property RET_gramaje_soporte_1() As System.Nullable(Of Integer)
-		Get
-			Return Me._RET_gramaje_soporte_1
-		End Get
-		Set
-			If (Me._RET_gramaje_soporte_1.Equals(value) = false) Then
-				Me.OnRET_gramaje_soporte_1Changing(value)
-				Me.SendPropertyChanging
-				Me._RET_gramaje_soporte_1 = value
-				Me.SendPropertyChanged("RET_gramaje_soporte_1")
-				Me.OnRET_gramaje_soporte_1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_gramaje_soporte_2", DbType:="VarChar(50)")>  _
-	Public Property RET_gramaje_soporte_2() As String
-		Get
-			Return Me._RET_gramaje_soporte_2
-		End Get
-		Set
-			If (String.Equals(Me._RET_gramaje_soporte_2, value) = false) Then
-				Me.OnRET_gramaje_soporte_2Changing(value)
-				Me.SendPropertyChanging
-				Me._RET_gramaje_soporte_2 = value
-				Me.SendPropertyChanged("RET_gramaje_soporte_2")
-				Me.OnRET_gramaje_soporte_2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_gramaje_soporte_3", DbType:="VarChar(50)")>  _
-	Public Property RET_gramaje_soporte_3() As String
-		Get
-			Return Me._RET_gramaje_soporte_3
-		End Get
-		Set
-			If (String.Equals(Me._RET_gramaje_soporte_3, value) = false) Then
-				Me.OnRET_gramaje_soporte_3Changing(value)
-				Me.SendPropertyChanging
-				Me._RET_gramaje_soporte_3 = value
-				Me.SendPropertyChanged("RET_gramaje_soporte_3")
-				Me.OnRET_gramaje_soporte_3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_cantidad_soporte_1", DbType:="Int")>  _
-	Public Property RET_cantidad_soporte_1() As System.Nullable(Of Integer)
-		Get
-			Return Me._RET_cantidad_soporte_1
-		End Get
-		Set
-			If (Me._RET_cantidad_soporte_1.Equals(value) = false) Then
-				Me.OnRET_cantidad_soporte_1Changing(value)
-				Me.SendPropertyChanging
-				Me._RET_cantidad_soporte_1 = value
-				Me.SendPropertyChanged("RET_cantidad_soporte_1")
-				Me.OnRET_cantidad_soporte_1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_cantidad_soporte_2", DbType:="Int")>  _
-	Public Property RET_cantidad_soporte_2() As System.Nullable(Of Integer)
-		Get
-			Return Me._RET_cantidad_soporte_2
-		End Get
-		Set
-			If (Me._RET_cantidad_soporte_2.Equals(value) = false) Then
-				Me.OnRET_cantidad_soporte_2Changing(value)
-				Me.SendPropertyChanging
-				Me._RET_cantidad_soporte_2 = value
-				Me.SendPropertyChanged("RET_cantidad_soporte_2")
-				Me.OnRET_cantidad_soporte_2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_cantidad_soporte_3", DbType:="Int")>  _
-	Public Property RET_cantidad_soporte_3() As System.Nullable(Of Integer)
-		Get
-			Return Me._RET_cantidad_soporte_3
-		End Get
-		Set
-			If (Me._RET_cantidad_soporte_3.Equals(value) = false) Then
-				Me.OnRET_cantidad_soporte_3Changing(value)
-				Me.SendPropertyChanging
-				Me._RET_cantidad_soporte_3 = value
-				Me.SendPropertyChanged("RET_cantidad_soporte_3")
-				Me.OnRET_cantidad_soporte_3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_formato_soporte_1", DbType:="VarChar(15)")>  _
-	Public Property RET_formato_soporte_1() As String
-		Get
-			Return Me._RET_formato_soporte_1
-		End Get
-		Set
-			If (String.Equals(Me._RET_formato_soporte_1, value) = false) Then
-				Me.OnRET_formato_soporte_1Changing(value)
-				Me.SendPropertyChanging
-				Me._RET_formato_soporte_1 = value
-				Me.SendPropertyChanged("RET_formato_soporte_1")
-				Me.OnRET_formato_soporte_1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_formato_soporte_2", DbType:="VarChar(15)")>  _
-	Public Property RET_formato_soporte_2() As String
-		Get
-			Return Me._RET_formato_soporte_2
-		End Get
-		Set
-			If (String.Equals(Me._RET_formato_soporte_2, value) = false) Then
-				Me.OnRET_formato_soporte_2Changing(value)
-				Me.SendPropertyChanging
-				Me._RET_formato_soporte_2 = value
-				Me.SendPropertyChanged("RET_formato_soporte_2")
-				Me.OnRET_formato_soporte_2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_formato_soporte_3", DbType:="VarChar(15)")>  _
-	Public Property RET_formato_soporte_3() As String
-		Get
-			Return Me._RET_formato_soporte_3
-		End Get
-		Set
-			If (String.Equals(Me._RET_formato_soporte_3, value) = false) Then
-				Me.OnRET_formato_soporte_3Changing(value)
-				Me.SendPropertyChanging
-				Me._RET_formato_soporte_3 = value
-				Me.SendPropertyChanged("RET_formato_soporte_3")
-				Me.OnRET_formato_soporte_3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_fecha_entrega", DbType:="Date")>  _
-	Public Property RET_fecha_entrega() As System.Nullable(Of Date)
-		Get
-			Return Me._RET_fecha_entrega
-		End Get
-		Set
-			If (Me._RET_fecha_entrega.Equals(value) = false) Then
-				Me.OnRET_fecha_entregaChanging(value)
-				Me.SendPropertyChanging
-				Me._RET_fecha_entrega = value
-				Me.SendPropertyChanged("RET_fecha_entrega")
-				Me.OnRET_fecha_entregaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="DETALLE_ORDEN_TRABAJO_RE_TRABAJO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="id_detalle_orden_trabajo", OtherKey:="id_detalle_orden_trabajo", IsForeignKey:=true)>  _
-	Public Property DETALLE_ORDEN_TRABAJO() As DETALLE_ORDEN_TRABAJO
-		Get
-			Return Me._DETALLE_ORDEN_TRABAJO.Entity
-		End Get
-		Set
-			Dim previousValue As DETALLE_ORDEN_TRABAJO = Me._DETALLE_ORDEN_TRABAJO.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._DETALLE_ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._DETALLE_ORDEN_TRABAJO.Entity = Nothing
-					previousValue.RE_TRABAJO.Remove(Me)
-				End If
-				Me._DETALLE_ORDEN_TRABAJO.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.RE_TRABAJO.Add(Me)
-					Me._id_detalle_orden_trabajo = value.id_detalle_orden_trabajo
-				Else
-					Me._id_detalle_orden_trabajo = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("DETALLE_ORDEN_TRABAJO")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PERMISO")>  _
-Partial Public Class PERMISO
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _PER_id_permiso As Integer
-	
-	Private _PER_permiso As String
-	
-	Private _PER_abm As String
-	
-	Private _USU_id_usuario As System.Nullable(Of Integer)
-	
-	Private _USUARIO As EntityRef(Of USUARIO)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnPER_id_permisoChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnPER_id_permisoChanged()
-    End Sub
-    Partial Private Sub OnPER_permisoChanging(value As String)
-    End Sub
-    Partial Private Sub OnPER_permisoChanged()
-    End Sub
-    Partial Private Sub OnPER_abmChanging(value As String)
-    End Sub
-    Partial Private Sub OnPER_abmChanged()
-    End Sub
-    Partial Private Sub OnUSU_id_usuarioChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnUSU_id_usuarioChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._USUARIO = CType(Nothing, EntityRef(Of USUARIO))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PER_id_permiso", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property PER_id_permiso() As Integer
-		Get
-			Return Me._PER_id_permiso
-		End Get
-		Set
-			If ((Me._PER_id_permiso = value)  _
-						= false) Then
-				Me.OnPER_id_permisoChanging(value)
-				Me.SendPropertyChanging
-				Me._PER_id_permiso = value
-				Me.SendPropertyChanged("PER_id_permiso")
-				Me.OnPER_id_permisoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PER_permiso", DbType:="VarChar(20)")>  _
-	Public Property PER_permiso() As String
-		Get
-			Return Me._PER_permiso
-		End Get
-		Set
-			If (String.Equals(Me._PER_permiso, value) = false) Then
-				Me.OnPER_permisoChanging(value)
-				Me.SendPropertyChanging
-				Me._PER_permiso = value
-				Me.SendPropertyChanged("PER_permiso")
-				Me.OnPER_permisoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PER_abm", DbType:="VarChar(5)")>  _
-	Public Property PER_abm() As String
-		Get
-			Return Me._PER_abm
-		End Get
-		Set
-			If (String.Equals(Me._PER_abm, value) = false) Then
-				Me.OnPER_abmChanging(value)
-				Me.SendPropertyChanging
-				Me._PER_abm = value
-				Me.SendPropertyChanged("PER_abm")
-				Me.OnPER_abmChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USU_id_usuario", DbType:="Int")>  _
-	Public Property USU_id_usuario() As System.Nullable(Of Integer)
-		Get
-			Return Me._USU_id_usuario
-		End Get
-		Set
-			If (Me._USU_id_usuario.Equals(value) = false) Then
-				If Me._USUARIO.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnUSU_id_usuarioChanging(value)
-				Me.SendPropertyChanging
-				Me._USU_id_usuario = value
-				Me.SendPropertyChanged("USU_id_usuario")
-				Me.OnUSU_id_usuarioChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USUARIO_PERMISO", Storage:="_USUARIO", ThisKey:="USU_id_usuario", OtherKey:="USU_id_usuario", IsForeignKey:=true)>  _
-	Public Property USUARIO() As USUARIO
-		Get
-			Return Me._USUARIO.Entity
-		End Get
-		Set
-			Dim previousValue As USUARIO = Me._USUARIO.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._USUARIO.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._USUARIO.Entity = Nothing
-					previousValue.PERMISO.Remove(Me)
-				End If
-				Me._USUARIO.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.PERMISO.Add(Me)
-					Me._USU_id_usuario = value.USU_id_usuario
-				Else
-					Me._USU_id_usuario = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("USUARIO")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PIEZA")>  _
-Partial Public Class PIEZA
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _PIE_id_pieza As Integer
-	
-	Private _PIE_nombre_pie As String
-	
-	Private _PIE_ubicacion As String
-	
-	Private _DETALLE_ORDEN_TRABAJO As EntitySet(Of DETALLE_ORDEN_TRABAJO)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnPIE_id_piezaChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnPIE_id_piezaChanged()
-    End Sub
-    Partial Private Sub OnPIE_nombre_pieChanging(value As String)
-    End Sub
-    Partial Private Sub OnPIE_nombre_pieChanged()
-    End Sub
-    Partial Private Sub OnPIE_ubicacionChanging(value As String)
-    End Sub
-    Partial Private Sub OnPIE_ubicacionChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._DETALLE_ORDEN_TRABAJO = New EntitySet(Of DETALLE_ORDEN_TRABAJO)(AddressOf Me.attach_DETALLE_ORDEN_TRABAJO, AddressOf Me.detach_DETALLE_ORDEN_TRABAJO)
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_id_pieza", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property PIE_id_pieza() As Integer
-		Get
-			Return Me._PIE_id_pieza
-		End Get
-		Set
-			If ((Me._PIE_id_pieza = value)  _
-						= false) Then
-				Me.OnPIE_id_piezaChanging(value)
-				Me.SendPropertyChanging
-				Me._PIE_id_pieza = value
-				Me.SendPropertyChanged("PIE_id_pieza")
-				Me.OnPIE_id_piezaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_nombre_pie", DbType:="VarChar(30) NOT NULL", CanBeNull:=false)>  _
-	Public Property PIE_nombre_pie() As String
-		Get
-			Return Me._PIE_nombre_pie
-		End Get
-		Set
-			If (String.Equals(Me._PIE_nombre_pie, value) = false) Then
-				Me.OnPIE_nombre_pieChanging(value)
-				Me.SendPropertyChanging
-				Me._PIE_nombre_pie = value
-				Me.SendPropertyChanged("PIE_nombre_pie")
-				Me.OnPIE_nombre_pieChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_ubicacion", DbType:="VarChar(1)")>  _
-	Public Property PIE_ubicacion() As String
-		Get
-			Return Me._PIE_ubicacion
-		End Get
-		Set
-			If (String.Equals(Me._PIE_ubicacion, value) = false) Then
-				Me.OnPIE_ubicacionChanging(value)
-				Me.SendPropertyChanging
-				Me._PIE_ubicacion = value
-				Me.SendPropertyChanged("PIE_ubicacion")
-				Me.OnPIE_ubicacionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PIEZA_DETALLE_ORDEN_TRABAJO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="PIE_id_pieza", OtherKey:="PIE_id_pieza")>  _
-	Public Property DETALLE_ORDEN_TRABAJO() As EntitySet(Of DETALLE_ORDEN_TRABAJO)
-		Get
-			Return Me._DETALLE_ORDEN_TRABAJO
-		End Get
-		Set
-			Me._DETALLE_ORDEN_TRABAJO.Assign(value)
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
-		Me.SendPropertyChanging
-		entity.PIEZA = Me
-	End Sub
-	
-	Private Sub detach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
-		Me.SendPropertyChanging
-		entity.PIEZA = Nothing
+		entity.COLABORADOR = Nothing
 	End Sub
 End Class
 
@@ -4620,5 +2032,2558 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 	Private Sub detach_RE_TRABAJO(ByVal entity As RE_TRABAJO)
 		Me.SendPropertyChanging
 		entity.DETALLE_ORDEN_TRABAJO = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.ORDEN_TRABAJO")>  _
+Partial Public Class ORDEN_TRABAJO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _ORT_id_orden_trabajo As Integer
+	
+	Private _ORT_fecha_ot As Date
+	
+	Private _ORT_tipo_ot As String
+	
+	Private _ORT_numero_ot As String
+	
+	Private _ORT_observaciones_ot As String
+	
+	Private _ORT_mejoras_ot As String
+	
+	Private _VEN_id_vendedor As Integer
+	
+	Private _CLI_id_cliente As Integer
+	
+	Private _ORT_fecha_entrega As System.Nullable(Of Date)
+	
+	Private _DETALLE_ORDEN_TRABAJO As EntitySet(Of DETALLE_ORDEN_TRABAJO)
+	
+	Private _TAREA As EntitySet(Of TAREA)
+	
+	Private _CLIENTE As EntityRef(Of CLIENTE)
+	
+	Private _VENDEDOR As EntityRef(Of VENDEDOR)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnORT_id_orden_trabajoChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnORT_id_orden_trabajoChanged()
+    End Sub
+    Partial Private Sub OnORT_fecha_otChanging(value As Date)
+    End Sub
+    Partial Private Sub OnORT_fecha_otChanged()
+    End Sub
+    Partial Private Sub OnORT_tipo_otChanging(value As String)
+    End Sub
+    Partial Private Sub OnORT_tipo_otChanged()
+    End Sub
+    Partial Private Sub OnORT_numero_otChanging(value As String)
+    End Sub
+    Partial Private Sub OnORT_numero_otChanged()
+    End Sub
+    Partial Private Sub OnORT_observaciones_otChanging(value As String)
+    End Sub
+    Partial Private Sub OnORT_observaciones_otChanged()
+    End Sub
+    Partial Private Sub OnORT_mejoras_otChanging(value As String)
+    End Sub
+    Partial Private Sub OnORT_mejoras_otChanged()
+    End Sub
+    Partial Private Sub OnVEN_id_vendedorChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnVEN_id_vendedorChanged()
+    End Sub
+    Partial Private Sub OnCLI_id_clienteChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnCLI_id_clienteChanged()
+    End Sub
+    Partial Private Sub OnORT_fecha_entregaChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnORT_fecha_entregaChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._DETALLE_ORDEN_TRABAJO = New EntitySet(Of DETALLE_ORDEN_TRABAJO)(AddressOf Me.attach_DETALLE_ORDEN_TRABAJO, AddressOf Me.detach_DETALLE_ORDEN_TRABAJO)
+		Me._TAREA = New EntitySet(Of TAREA)(AddressOf Me.attach_TAREA, AddressOf Me.detach_TAREA)
+		Me._CLIENTE = CType(Nothing, EntityRef(Of CLIENTE))
+		Me._VENDEDOR = CType(Nothing, EntityRef(Of VENDEDOR))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property ORT_id_orden_trabajo() As Integer
+		Get
+			Return Me._ORT_id_orden_trabajo
+		End Get
+		Set
+			If ((Me._ORT_id_orden_trabajo = value)  _
+						= false) Then
+				Me.OnORT_id_orden_trabajoChanging(value)
+				Me.SendPropertyChanging
+				Me._ORT_id_orden_trabajo = value
+				Me.SendPropertyChanged("ORT_id_orden_trabajo")
+				Me.OnORT_id_orden_trabajoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_fecha_ot", DbType:="Date NOT NULL")>  _
+	Public Property ORT_fecha_ot() As Date
+		Get
+			Return Me._ORT_fecha_ot
+		End Get
+		Set
+			If ((Me._ORT_fecha_ot = value)  _
+						= false) Then
+				Me.OnORT_fecha_otChanging(value)
+				Me.SendPropertyChanging
+				Me._ORT_fecha_ot = value
+				Me.SendPropertyChanged("ORT_fecha_ot")
+				Me.OnORT_fecha_otChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_tipo_ot", DbType:="VarChar(10) NOT NULL", CanBeNull:=false)>  _
+	Public Property ORT_tipo_ot() As String
+		Get
+			Return Me._ORT_tipo_ot
+		End Get
+		Set
+			If (String.Equals(Me._ORT_tipo_ot, value) = false) Then
+				Me.OnORT_tipo_otChanging(value)
+				Me.SendPropertyChanging
+				Me._ORT_tipo_ot = value
+				Me.SendPropertyChanged("ORT_tipo_ot")
+				Me.OnORT_tipo_otChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_numero_ot", DbType:="VarChar(10) NOT NULL", CanBeNull:=false)>  _
+	Public Property ORT_numero_ot() As String
+		Get
+			Return Me._ORT_numero_ot
+		End Get
+		Set
+			If (String.Equals(Me._ORT_numero_ot, value) = false) Then
+				Me.OnORT_numero_otChanging(value)
+				Me.SendPropertyChanging
+				Me._ORT_numero_ot = value
+				Me.SendPropertyChanged("ORT_numero_ot")
+				Me.OnORT_numero_otChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_observaciones_ot", DbType:="VarChar(350)")>  _
+	Public Property ORT_observaciones_ot() As String
+		Get
+			Return Me._ORT_observaciones_ot
+		End Get
+		Set
+			If (String.Equals(Me._ORT_observaciones_ot, value) = false) Then
+				Me.OnORT_observaciones_otChanging(value)
+				Me.SendPropertyChanging
+				Me._ORT_observaciones_ot = value
+				Me.SendPropertyChanged("ORT_observaciones_ot")
+				Me.OnORT_observaciones_otChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_mejoras_ot", DbType:="VarChar(250)")>  _
+	Public Property ORT_mejoras_ot() As String
+		Get
+			Return Me._ORT_mejoras_ot
+		End Get
+		Set
+			If (String.Equals(Me._ORT_mejoras_ot, value) = false) Then
+				Me.OnORT_mejoras_otChanging(value)
+				Me.SendPropertyChanging
+				Me._ORT_mejoras_ot = value
+				Me.SendPropertyChanged("ORT_mejoras_ot")
+				Me.OnORT_mejoras_otChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_VEN_id_vendedor", DbType:="Int NOT NULL")>  _
+	Public Property VEN_id_vendedor() As Integer
+		Get
+			Return Me._VEN_id_vendedor
+		End Get
+		Set
+			If ((Me._VEN_id_vendedor = value)  _
+						= false) Then
+				If Me._VENDEDOR.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnVEN_id_vendedorChanging(value)
+				Me.SendPropertyChanging
+				Me._VEN_id_vendedor = value
+				Me.SendPropertyChanged("VEN_id_vendedor")
+				Me.OnVEN_id_vendedorChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_id_cliente", DbType:="Int NOT NULL")>  _
+	Public Property CLI_id_cliente() As Integer
+		Get
+			Return Me._CLI_id_cliente
+		End Get
+		Set
+			If ((Me._CLI_id_cliente = value)  _
+						= false) Then
+				If Me._CLIENTE.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnCLI_id_clienteChanging(value)
+				Me.SendPropertyChanging
+				Me._CLI_id_cliente = value
+				Me.SendPropertyChanged("CLI_id_cliente")
+				Me.OnCLI_id_clienteChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_fecha_entrega", DbType:="Date")>  _
+	Public Property ORT_fecha_entrega() As System.Nullable(Of Date)
+		Get
+			Return Me._ORT_fecha_entrega
+		End Get
+		Set
+			If (Me._ORT_fecha_entrega.Equals(value) = false) Then
+				Me.OnORT_fecha_entregaChanging(value)
+				Me.SendPropertyChanging
+				Me._ORT_fecha_entrega = value
+				Me.SendPropertyChanged("ORT_fecha_entrega")
+				Me.OnORT_fecha_entregaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo")>  _
+	Public Property DETALLE_ORDEN_TRABAJO() As EntitySet(Of DETALLE_ORDEN_TRABAJO)
+		Get
+			Return Me._DETALLE_ORDEN_TRABAJO
+		End Get
+		Set
+			Me._DETALLE_ORDEN_TRABAJO.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_TAREA", Storage:="_TAREA", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo")>  _
+	Public Property TAREA() As EntitySet(Of TAREA)
+		Get
+			Return Me._TAREA
+		End Get
+		Set
+			Me._TAREA.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="CLIENTE_ORDEN_TRABAJO", Storage:="_CLIENTE", ThisKey:="CLI_id_cliente", OtherKey:="CLI_id_cliente", IsForeignKey:=true)>  _
+	Public Property CLIENTE() As CLIENTE
+		Get
+			Return Me._CLIENTE.Entity
+		End Get
+		Set
+			Dim previousValue As CLIENTE = Me._CLIENTE.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._CLIENTE.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._CLIENTE.Entity = Nothing
+					previousValue.ORDEN_TRABAJO.Remove(Me)
+				End If
+				Me._CLIENTE.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.ORDEN_TRABAJO.Add(Me)
+					Me._CLI_id_cliente = value.CLI_id_cliente
+				Else
+					Me._CLI_id_cliente = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("CLIENTE")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="VENDEDOR_ORDEN_TRABAJO", Storage:="_VENDEDOR", ThisKey:="VEN_id_vendedor", OtherKey:="VEN_id_vendedor", IsForeignKey:=true)>  _
+	Public Property VENDEDOR() As VENDEDOR
+		Get
+			Return Me._VENDEDOR.Entity
+		End Get
+		Set
+			Dim previousValue As VENDEDOR = Me._VENDEDOR.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._VENDEDOR.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._VENDEDOR.Entity = Nothing
+					previousValue.ORDEN_TRABAJO.Remove(Me)
+				End If
+				Me._VENDEDOR.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.ORDEN_TRABAJO.Add(Me)
+					Me._VEN_id_vendedor = value.VEN_id_vendedor
+				Else
+					Me._VEN_id_vendedor = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("VENDEDOR")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
+		Me.SendPropertyChanging
+		entity.ORDEN_TRABAJO = Me
+	End Sub
+	
+	Private Sub detach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
+		Me.SendPropertyChanging
+		entity.ORDEN_TRABAJO = Nothing
+	End Sub
+	
+	Private Sub attach_TAREA(ByVal entity As TAREA)
+		Me.SendPropertyChanging
+		entity.ORDEN_TRABAJO = Me
+	End Sub
+	
+	Private Sub detach_TAREA(ByVal entity As TAREA)
+		Me.SendPropertyChanging
+		entity.ORDEN_TRABAJO = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PERMISO")>  _
+Partial Public Class PERMISO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _PER_id_permiso As Integer
+	
+	Private _PER_permiso As String
+	
+	Private _PER_abm As String
+	
+	Private _USU_id_usuario As System.Nullable(Of Integer)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnPER_id_permisoChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPER_id_permisoChanged()
+    End Sub
+    Partial Private Sub OnPER_permisoChanging(value As String)
+    End Sub
+    Partial Private Sub OnPER_permisoChanged()
+    End Sub
+    Partial Private Sub OnPER_abmChanging(value As String)
+    End Sub
+    Partial Private Sub OnPER_abmChanged()
+    End Sub
+    Partial Private Sub OnUSU_id_usuarioChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUSU_id_usuarioChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PER_id_permiso", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property PER_id_permiso() As Integer
+		Get
+			Return Me._PER_id_permiso
+		End Get
+		Set
+			If ((Me._PER_id_permiso = value)  _
+						= false) Then
+				Me.OnPER_id_permisoChanging(value)
+				Me.SendPropertyChanging
+				Me._PER_id_permiso = value
+				Me.SendPropertyChanged("PER_id_permiso")
+				Me.OnPER_id_permisoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PER_permiso", DbType:="VarChar(20)")>  _
+	Public Property PER_permiso() As String
+		Get
+			Return Me._PER_permiso
+		End Get
+		Set
+			If (String.Equals(Me._PER_permiso, value) = false) Then
+				Me.OnPER_permisoChanging(value)
+				Me.SendPropertyChanging
+				Me._PER_permiso = value
+				Me.SendPropertyChanged("PER_permiso")
+				Me.OnPER_permisoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PER_abm", DbType:="VarChar(5)")>  _
+	Public Property PER_abm() As String
+		Get
+			Return Me._PER_abm
+		End Get
+		Set
+			If (String.Equals(Me._PER_abm, value) = false) Then
+				Me.OnPER_abmChanging(value)
+				Me.SendPropertyChanging
+				Me._PER_abm = value
+				Me.SendPropertyChanged("PER_abm")
+				Me.OnPER_abmChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USU_id_usuario", DbType:="Int")>  _
+	Public Property USU_id_usuario() As System.Nullable(Of Integer)
+		Get
+			Return Me._USU_id_usuario
+		End Get
+		Set
+			If (Me._USU_id_usuario.Equals(value) = false) Then
+				Me.OnUSU_id_usuarioChanging(value)
+				Me.SendPropertyChanging
+				Me._USU_id_usuario = value
+				Me.SendPropertyChanged("USU_id_usuario")
+				Me.OnUSU_id_usuarioChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PIEZA")>  _
+Partial Public Class PIEZA
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _PIE_id_pieza As Integer
+	
+	Private _PIE_nombre_pie As String
+	
+	Private _PIE_ubicacion As String
+	
+	Private _DETALLE_ORDEN_TRABAJO As EntitySet(Of DETALLE_ORDEN_TRABAJO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnPIE_id_piezaChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPIE_id_piezaChanged()
+    End Sub
+    Partial Private Sub OnPIE_nombre_pieChanging(value As String)
+    End Sub
+    Partial Private Sub OnPIE_nombre_pieChanged()
+    End Sub
+    Partial Private Sub OnPIE_ubicacionChanging(value As String)
+    End Sub
+    Partial Private Sub OnPIE_ubicacionChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._DETALLE_ORDEN_TRABAJO = New EntitySet(Of DETALLE_ORDEN_TRABAJO)(AddressOf Me.attach_DETALLE_ORDEN_TRABAJO, AddressOf Me.detach_DETALLE_ORDEN_TRABAJO)
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_id_pieza", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property PIE_id_pieza() As Integer
+		Get
+			Return Me._PIE_id_pieza
+		End Get
+		Set
+			If ((Me._PIE_id_pieza = value)  _
+						= false) Then
+				Me.OnPIE_id_piezaChanging(value)
+				Me.SendPropertyChanging
+				Me._PIE_id_pieza = value
+				Me.SendPropertyChanged("PIE_id_pieza")
+				Me.OnPIE_id_piezaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_nombre_pie", DbType:="VarChar(30) NOT NULL", CanBeNull:=false)>  _
+	Public Property PIE_nombre_pie() As String
+		Get
+			Return Me._PIE_nombre_pie
+		End Get
+		Set
+			If (String.Equals(Me._PIE_nombre_pie, value) = false) Then
+				Me.OnPIE_nombre_pieChanging(value)
+				Me.SendPropertyChanging
+				Me._PIE_nombre_pie = value
+				Me.SendPropertyChanged("PIE_nombre_pie")
+				Me.OnPIE_nombre_pieChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_ubicacion", DbType:="VarChar(1)")>  _
+	Public Property PIE_ubicacion() As String
+		Get
+			Return Me._PIE_ubicacion
+		End Get
+		Set
+			If (String.Equals(Me._PIE_ubicacion, value) = false) Then
+				Me.OnPIE_ubicacionChanging(value)
+				Me.SendPropertyChanging
+				Me._PIE_ubicacion = value
+				Me.SendPropertyChanged("PIE_ubicacion")
+				Me.OnPIE_ubicacionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PIEZA_DETALLE_ORDEN_TRABAJO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="PIE_id_pieza", OtherKey:="PIE_id_pieza")>  _
+	Public Property DETALLE_ORDEN_TRABAJO() As EntitySet(Of DETALLE_ORDEN_TRABAJO)
+		Get
+			Return Me._DETALLE_ORDEN_TRABAJO
+		End Get
+		Set
+			Me._DETALLE_ORDEN_TRABAJO.Assign(value)
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
+		Me.SendPropertyChanging
+		entity.PIEZA = Me
+	End Sub
+	
+	Private Sub detach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
+		Me.SendPropertyChanging
+		entity.PIEZA = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PROCESO")>  _
+Partial Public Class PROCESO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _PROC_id_proceso As Integer
+	
+	Private _id_detalle_orden_trabajo As System.Nullable(Of Integer)
+	
+	Private _PROC_offset As String
+	
+	Private _PROC_descrip_offset As String
+	
+	Private _PROC_digital As String
+	
+	Private _PROC_descrip_digital As String
+	
+	Private _PROC_gran_formato As String
+	
+	Private _PROC_descrip_gran_formato As String
+	
+	Private _PROC_terminacion As String
+	
+	Private _PROC_descrip_terminacion As String
+	
+	Private _PROC_logistica As String
+	
+	Private _PROC_descrip_logistica As String
+	
+	Private _DETALLE_ORDEN_TRABAJO As EntityRef(Of DETALLE_ORDEN_TRABAJO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnPROC_id_procesoChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPROC_id_procesoChanged()
+    End Sub
+    Partial Private Sub Onid_detalle_orden_trabajoChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Onid_detalle_orden_trabajoChanged()
+    End Sub
+    Partial Private Sub OnPROC_offsetChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_offsetChanged()
+    End Sub
+    Partial Private Sub OnPROC_descrip_offsetChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_descrip_offsetChanged()
+    End Sub
+    Partial Private Sub OnPROC_digitalChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_digitalChanged()
+    End Sub
+    Partial Private Sub OnPROC_descrip_digitalChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_descrip_digitalChanged()
+    End Sub
+    Partial Private Sub OnPROC_gran_formatoChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_gran_formatoChanged()
+    End Sub
+    Partial Private Sub OnPROC_descrip_gran_formatoChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_descrip_gran_formatoChanged()
+    End Sub
+    Partial Private Sub OnPROC_terminacionChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_terminacionChanged()
+    End Sub
+    Partial Private Sub OnPROC_descrip_terminacionChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_descrip_terminacionChanged()
+    End Sub
+    Partial Private Sub OnPROC_logisticaChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_logisticaChanged()
+    End Sub
+    Partial Private Sub OnPROC_descrip_logisticaChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROC_descrip_logisticaChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._DETALLE_ORDEN_TRABAJO = CType(Nothing, EntityRef(Of DETALLE_ORDEN_TRABAJO))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_id_proceso", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property PROC_id_proceso() As Integer
+		Get
+			Return Me._PROC_id_proceso
+		End Get
+		Set
+			If ((Me._PROC_id_proceso = value)  _
+						= false) Then
+				Me.OnPROC_id_procesoChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_id_proceso = value
+				Me.SendPropertyChanged("PROC_id_proceso")
+				Me.OnPROC_id_procesoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id_detalle_orden_trabajo", DbType:="Int")>  _
+	Public Property id_detalle_orden_trabajo() As System.Nullable(Of Integer)
+		Get
+			Return Me._id_detalle_orden_trabajo
+		End Get
+		Set
+			If (Me._id_detalle_orden_trabajo.Equals(value) = false) Then
+				If Me._DETALLE_ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.Onid_detalle_orden_trabajoChanging(value)
+				Me.SendPropertyChanging
+				Me._id_detalle_orden_trabajo = value
+				Me.SendPropertyChanged("id_detalle_orden_trabajo")
+				Me.Onid_detalle_orden_trabajoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_offset", DbType:="VarChar(20)")>  _
+	Public Property PROC_offset() As String
+		Get
+			Return Me._PROC_offset
+		End Get
+		Set
+			If (String.Equals(Me._PROC_offset, value) = false) Then
+				Me.OnPROC_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_offset = value
+				Me.SendPropertyChanged("PROC_offset")
+				Me.OnPROC_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_offset", DbType:="VarChar(250)")>  _
+	Public Property PROC_descrip_offset() As String
+		Get
+			Return Me._PROC_descrip_offset
+		End Get
+		Set
+			If (String.Equals(Me._PROC_descrip_offset, value) = false) Then
+				Me.OnPROC_descrip_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_descrip_offset = value
+				Me.SendPropertyChanged("PROC_descrip_offset")
+				Me.OnPROC_descrip_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_digital", DbType:="VarChar(20)")>  _
+	Public Property PROC_digital() As String
+		Get
+			Return Me._PROC_digital
+		End Get
+		Set
+			If (String.Equals(Me._PROC_digital, value) = false) Then
+				Me.OnPROC_digitalChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_digital = value
+				Me.SendPropertyChanged("PROC_digital")
+				Me.OnPROC_digitalChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_digital", DbType:="VarChar(250)")>  _
+	Public Property PROC_descrip_digital() As String
+		Get
+			Return Me._PROC_descrip_digital
+		End Get
+		Set
+			If (String.Equals(Me._PROC_descrip_digital, value) = false) Then
+				Me.OnPROC_descrip_digitalChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_descrip_digital = value
+				Me.SendPropertyChanged("PROC_descrip_digital")
+				Me.OnPROC_descrip_digitalChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_gran_formato", DbType:="VarChar(50)")>  _
+	Public Property PROC_gran_formato() As String
+		Get
+			Return Me._PROC_gran_formato
+		End Get
+		Set
+			If (String.Equals(Me._PROC_gran_formato, value) = false) Then
+				Me.OnPROC_gran_formatoChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_gran_formato = value
+				Me.SendPropertyChanged("PROC_gran_formato")
+				Me.OnPROC_gran_formatoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_gran_formato", DbType:="VarChar(250)")>  _
+	Public Property PROC_descrip_gran_formato() As String
+		Get
+			Return Me._PROC_descrip_gran_formato
+		End Get
+		Set
+			If (String.Equals(Me._PROC_descrip_gran_formato, value) = false) Then
+				Me.OnPROC_descrip_gran_formatoChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_descrip_gran_formato = value
+				Me.SendPropertyChanged("PROC_descrip_gran_formato")
+				Me.OnPROC_descrip_gran_formatoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_terminacion", DbType:="VarChar(50)")>  _
+	Public Property PROC_terminacion() As String
+		Get
+			Return Me._PROC_terminacion
+		End Get
+		Set
+			If (String.Equals(Me._PROC_terminacion, value) = false) Then
+				Me.OnPROC_terminacionChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_terminacion = value
+				Me.SendPropertyChanged("PROC_terminacion")
+				Me.OnPROC_terminacionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_terminacion", DbType:="VarChar(250)")>  _
+	Public Property PROC_descrip_terminacion() As String
+		Get
+			Return Me._PROC_descrip_terminacion
+		End Get
+		Set
+			If (String.Equals(Me._PROC_descrip_terminacion, value) = false) Then
+				Me.OnPROC_descrip_terminacionChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_descrip_terminacion = value
+				Me.SendPropertyChanged("PROC_descrip_terminacion")
+				Me.OnPROC_descrip_terminacionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_logistica", DbType:="VarChar(50)")>  _
+	Public Property PROC_logistica() As String
+		Get
+			Return Me._PROC_logistica
+		End Get
+		Set
+			If (String.Equals(Me._PROC_logistica, value) = false) Then
+				Me.OnPROC_logisticaChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_logistica = value
+				Me.SendPropertyChanged("PROC_logistica")
+				Me.OnPROC_logisticaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROC_descrip_logistica", DbType:="VarChar(250)")>  _
+	Public Property PROC_descrip_logistica() As String
+		Get
+			Return Me._PROC_descrip_logistica
+		End Get
+		Set
+			If (String.Equals(Me._PROC_descrip_logistica, value) = false) Then
+				Me.OnPROC_descrip_logisticaChanging(value)
+				Me.SendPropertyChanging
+				Me._PROC_descrip_logistica = value
+				Me.SendPropertyChanged("PROC_descrip_logistica")
+				Me.OnPROC_descrip_logisticaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="DETALLE_ORDEN_TRABAJO_PROCESO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="id_detalle_orden_trabajo", OtherKey:="id_detalle_orden_trabajo", IsForeignKey:=true, DeleteRule:="CASCADE")>  _
+	Public Property DETALLE_ORDEN_TRABAJO() As DETALLE_ORDEN_TRABAJO
+		Get
+			Return Me._DETALLE_ORDEN_TRABAJO.Entity
+		End Get
+		Set
+			Dim previousValue As DETALLE_ORDEN_TRABAJO = Me._DETALLE_ORDEN_TRABAJO.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._DETALLE_ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._DETALLE_ORDEN_TRABAJO.Entity = Nothing
+					previousValue.PROCESO.Remove(Me)
+				End If
+				Me._DETALLE_ORDEN_TRABAJO.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.PROCESO.Add(Me)
+					Me._id_detalle_orden_trabajo = value.id_detalle_orden_trabajo
+				Else
+					Me._id_detalle_orden_trabajo = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("DETALLE_ORDEN_TRABAJO")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PRODUCTO")>  _
+Partial Public Class PRODUCTO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _PROD_id As Integer
+	
+	Private _PROD_codigo As String
+	
+	Private _PROD_descripcion As String
+	
+	Private _PROD_stock As Integer
+	
+	Private _PROD_stock_minimo As System.Nullable(Of Integer)
+	
+	Private _PRODUCTO_MOVIMIENTO As EntitySet(Of PRODUCTO_MOVIMIENTO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnPROD_idChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPROD_idChanged()
+    End Sub
+    Partial Private Sub OnPROD_codigoChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROD_codigoChanged()
+    End Sub
+    Partial Private Sub OnPROD_descripcionChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROD_descripcionChanged()
+    End Sub
+    Partial Private Sub OnPROD_stockChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPROD_stockChanged()
+    End Sub
+    Partial Private Sub OnPROD_stock_minimoChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnPROD_stock_minimoChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._PRODUCTO_MOVIMIENTO = New EntitySet(Of PRODUCTO_MOVIMIENTO)(AddressOf Me.attach_PRODUCTO_MOVIMIENTO, AddressOf Me.detach_PRODUCTO_MOVIMIENTO)
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property PROD_id() As Integer
+		Get
+			Return Me._PROD_id
+		End Get
+		Set
+			If ((Me._PROD_id = value)  _
+						= false) Then
+				Me.OnPROD_idChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_id = value
+				Me.SendPropertyChanged("PROD_id")
+				Me.OnPROD_idChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_codigo", DbType:="VarChar(15)")>  _
+	Public Property PROD_codigo() As String
+		Get
+			Return Me._PROD_codigo
+		End Get
+		Set
+			If (String.Equals(Me._PROD_codigo, value) = false) Then
+				Me.OnPROD_codigoChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_codigo = value
+				Me.SendPropertyChanged("PROD_codigo")
+				Me.OnPROD_codigoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_descripcion", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property PROD_descripcion() As String
+		Get
+			Return Me._PROD_descripcion
+		End Get
+		Set
+			If (String.Equals(Me._PROD_descripcion, value) = false) Then
+				Me.OnPROD_descripcionChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_descripcion = value
+				Me.SendPropertyChanged("PROD_descripcion")
+				Me.OnPROD_descripcionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_stock", DbType:="Int NOT NULL")>  _
+	Public Property PROD_stock() As Integer
+		Get
+			Return Me._PROD_stock
+		End Get
+		Set
+			If ((Me._PROD_stock = value)  _
+						= false) Then
+				Me.OnPROD_stockChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_stock = value
+				Me.SendPropertyChanged("PROD_stock")
+				Me.OnPROD_stockChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_stock_minimo", DbType:="Int")>  _
+	Public Property PROD_stock_minimo() As System.Nullable(Of Integer)
+		Get
+			Return Me._PROD_stock_minimo
+		End Get
+		Set
+			If (Me._PROD_stock_minimo.Equals(value) = false) Then
+				Me.OnPROD_stock_minimoChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_stock_minimo = value
+				Me.SendPropertyChanged("PROD_stock_minimo")
+				Me.OnPROD_stock_minimoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PRODUCTO_PRODUCTO_MOVIMIENTO", Storage:="_PRODUCTO_MOVIMIENTO", ThisKey:="PROD_id", OtherKey:="PROD_id")>  _
+	Public Property PRODUCTO_MOVIMIENTO() As EntitySet(Of PRODUCTO_MOVIMIENTO)
+		Get
+			Return Me._PRODUCTO_MOVIMIENTO
+		End Get
+		Set
+			Me._PRODUCTO_MOVIMIENTO.Assign(value)
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_PRODUCTO_MOVIMIENTO(ByVal entity As PRODUCTO_MOVIMIENTO)
+		Me.SendPropertyChanging
+		entity.PRODUCTO = Me
+	End Sub
+	
+	Private Sub detach_PRODUCTO_MOVIMIENTO(ByVal entity As PRODUCTO_MOVIMIENTO)
+		Me.SendPropertyChanging
+		entity.PRODUCTO = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PRODUCTO_MOVIMIENTO")>  _
+Partial Public Class PRODUCTO_MOVIMIENTO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _PROD_MOV_id As Integer
+	
+	Private _PROD_MOV_fecha As System.Nullable(Of Date)
+	
+	Private _ORT_id_orden_trabajo As String
+	
+	Private _PROD_MOV_tipo As String
+	
+	Private _PROD_MOV_cantidad As System.Nullable(Of Integer)
+	
+	Private _PROD_id As Integer
+	
+	Private _PRODUCTO As EntityRef(Of PRODUCTO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnPROD_MOV_idChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPROD_MOV_idChanged()
+    End Sub
+    Partial Private Sub OnPROD_MOV_fechaChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnPROD_MOV_fechaChanged()
+    End Sub
+    Partial Private Sub OnORT_id_orden_trabajoChanging(value As String)
+    End Sub
+    Partial Private Sub OnORT_id_orden_trabajoChanged()
+    End Sub
+    Partial Private Sub OnPROD_MOV_tipoChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROD_MOV_tipoChanged()
+    End Sub
+    Partial Private Sub OnPROD_MOV_cantidadChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnPROD_MOV_cantidadChanged()
+    End Sub
+    Partial Private Sub OnPROD_idChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPROD_idChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._PRODUCTO = CType(Nothing, EntityRef(Of PRODUCTO))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property PROD_MOV_id() As Integer
+		Get
+			Return Me._PROD_MOV_id
+		End Get
+		Set
+			If ((Me._PROD_MOV_id = value)  _
+						= false) Then
+				Me.OnPROD_MOV_idChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_MOV_id = value
+				Me.SendPropertyChanged("PROD_MOV_id")
+				Me.OnPROD_MOV_idChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_fecha", DbType:="Date")>  _
+	Public Property PROD_MOV_fecha() As System.Nullable(Of Date)
+		Get
+			Return Me._PROD_MOV_fecha
+		End Get
+		Set
+			If (Me._PROD_MOV_fecha.Equals(value) = false) Then
+				Me.OnPROD_MOV_fechaChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_MOV_fecha = value
+				Me.SendPropertyChanged("PROD_MOV_fecha")
+				Me.OnPROD_MOV_fechaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="VarChar(15)")>  _
+	Public Property ORT_id_orden_trabajo() As String
+		Get
+			Return Me._ORT_id_orden_trabajo
+		End Get
+		Set
+			If (String.Equals(Me._ORT_id_orden_trabajo, value) = false) Then
+				Me.OnORT_id_orden_trabajoChanging(value)
+				Me.SendPropertyChanging
+				Me._ORT_id_orden_trabajo = value
+				Me.SendPropertyChanged("ORT_id_orden_trabajo")
+				Me.OnORT_id_orden_trabajoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_tipo", DbType:="VarChar(15)")>  _
+	Public Property PROD_MOV_tipo() As String
+		Get
+			Return Me._PROD_MOV_tipo
+		End Get
+		Set
+			If (String.Equals(Me._PROD_MOV_tipo, value) = false) Then
+				Me.OnPROD_MOV_tipoChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_MOV_tipo = value
+				Me.SendPropertyChanged("PROD_MOV_tipo")
+				Me.OnPROD_MOV_tipoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_MOV_cantidad", DbType:="Int")>  _
+	Public Property PROD_MOV_cantidad() As System.Nullable(Of Integer)
+		Get
+			Return Me._PROD_MOV_cantidad
+		End Get
+		Set
+			If (Me._PROD_MOV_cantidad.Equals(value) = false) Then
+				Me.OnPROD_MOV_cantidadChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_MOV_cantidad = value
+				Me.SendPropertyChanged("PROD_MOV_cantidad")
+				Me.OnPROD_MOV_cantidadChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_id", DbType:="Int NOT NULL")>  _
+	Public Property PROD_id() As Integer
+		Get
+			Return Me._PROD_id
+		End Get
+		Set
+			If ((Me._PROD_id = value)  _
+						= false) Then
+				If Me._PRODUCTO.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnPROD_idChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_id = value
+				Me.SendPropertyChanged("PROD_id")
+				Me.OnPROD_idChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PRODUCTO_PRODUCTO_MOVIMIENTO", Storage:="_PRODUCTO", ThisKey:="PROD_id", OtherKey:="PROD_id", IsForeignKey:=true, DeleteOnNull:=true, DeleteRule:="CASCADE")>  _
+	Public Property PRODUCTO() As PRODUCTO
+		Get
+			Return Me._PRODUCTO.Entity
+		End Get
+		Set
+			Dim previousValue As PRODUCTO = Me._PRODUCTO.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._PRODUCTO.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._PRODUCTO.Entity = Nothing
+					previousValue.PRODUCTO_MOVIMIENTO.Remove(Me)
+				End If
+				Me._PRODUCTO.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.PRODUCTO_MOVIMIENTO.Add(Me)
+					Me._PROD_id = value.PROD_id
+				Else
+					Me._PROD_id = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("PRODUCTO")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.[RE-TRABAJO]")>  _
+Partial Public Class RE_TRABAJO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _RET_id_retrabajo As Integer
+	
+	Private _id_detalle_orden_trabajo As System.Nullable(Of Integer)
+	
+	Private _RET_cantidad_dort As System.Nullable(Of Integer)
+	
+	Private _RET_tamaño_dort As String
+	
+	Private _RET_tipo_impresion_dort As String
+	
+	Private _RET_origen_area As String
+	
+	Private _RET_procedimiento As String
+	
+	Private _RET_fecha As System.Nullable(Of Date)
+	
+	Private _RET_papel_soporte_1 As String
+	
+	Private _RET_papel_soporte_2 As String
+	
+	Private _RET_papel_soporte_3 As String
+	
+	Private _RET_gramaje_soporte_1 As System.Nullable(Of Integer)
+	
+	Private _RET_gramaje_soporte_2 As String
+	
+	Private _RET_gramaje_soporte_3 As String
+	
+	Private _RET_cantidad_soporte_1 As System.Nullable(Of Integer)
+	
+	Private _RET_cantidad_soporte_2 As System.Nullable(Of Integer)
+	
+	Private _RET_cantidad_soporte_3 As System.Nullable(Of Integer)
+	
+	Private _RET_formato_soporte_1 As String
+	
+	Private _RET_formato_soporte_2 As String
+	
+	Private _RET_formato_soporte_3 As String
+	
+	Private _RET_fecha_entrega As System.Nullable(Of Date)
+	
+	Private _RET_impresora_offset As String
+	
+	Private _DETALLE_ORDEN_TRABAJO As EntityRef(Of DETALLE_ORDEN_TRABAJO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnRET_id_retrabajoChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnRET_id_retrabajoChanged()
+    End Sub
+    Partial Private Sub Onid_detalle_orden_trabajoChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Onid_detalle_orden_trabajoChanged()
+    End Sub
+    Partial Private Sub OnRET_cantidad_dortChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnRET_cantidad_dortChanged()
+    End Sub
+    Partial Private Sub OnRET_tamaño_dortChanging(value As String)
+    End Sub
+    Partial Private Sub OnRET_tamaño_dortChanged()
+    End Sub
+    Partial Private Sub OnRET_tipo_impresion_dortChanging(value As String)
+    End Sub
+    Partial Private Sub OnRET_tipo_impresion_dortChanged()
+    End Sub
+    Partial Private Sub OnRET_origen_areaChanging(value As String)
+    End Sub
+    Partial Private Sub OnRET_origen_areaChanged()
+    End Sub
+    Partial Private Sub OnRET_procedimientoChanging(value As String)
+    End Sub
+    Partial Private Sub OnRET_procedimientoChanged()
+    End Sub
+    Partial Private Sub OnRET_fechaChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnRET_fechaChanged()
+    End Sub
+    Partial Private Sub OnRET_papel_soporte_1Changing(value As String)
+    End Sub
+    Partial Private Sub OnRET_papel_soporte_1Changed()
+    End Sub
+    Partial Private Sub OnRET_papel_soporte_2Changing(value As String)
+    End Sub
+    Partial Private Sub OnRET_papel_soporte_2Changed()
+    End Sub
+    Partial Private Sub OnRET_papel_soporte_3Changing(value As String)
+    End Sub
+    Partial Private Sub OnRET_papel_soporte_3Changed()
+    End Sub
+    Partial Private Sub OnRET_gramaje_soporte_1Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnRET_gramaje_soporte_1Changed()
+    End Sub
+    Partial Private Sub OnRET_gramaje_soporte_2Changing(value As String)
+    End Sub
+    Partial Private Sub OnRET_gramaje_soporte_2Changed()
+    End Sub
+    Partial Private Sub OnRET_gramaje_soporte_3Changing(value As String)
+    End Sub
+    Partial Private Sub OnRET_gramaje_soporte_3Changed()
+    End Sub
+    Partial Private Sub OnRET_cantidad_soporte_1Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnRET_cantidad_soporte_1Changed()
+    End Sub
+    Partial Private Sub OnRET_cantidad_soporte_2Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnRET_cantidad_soporte_2Changed()
+    End Sub
+    Partial Private Sub OnRET_cantidad_soporte_3Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnRET_cantidad_soporte_3Changed()
+    End Sub
+    Partial Private Sub OnRET_formato_soporte_1Changing(value As String)
+    End Sub
+    Partial Private Sub OnRET_formato_soporte_1Changed()
+    End Sub
+    Partial Private Sub OnRET_formato_soporte_2Changing(value As String)
+    End Sub
+    Partial Private Sub OnRET_formato_soporte_2Changed()
+    End Sub
+    Partial Private Sub OnRET_formato_soporte_3Changing(value As String)
+    End Sub
+    Partial Private Sub OnRET_formato_soporte_3Changed()
+    End Sub
+    Partial Private Sub OnRET_fecha_entregaChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnRET_fecha_entregaChanged()
+    End Sub
+    Partial Private Sub OnRET_impresora_offsetChanging(value As String)
+    End Sub
+    Partial Private Sub OnRET_impresora_offsetChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._DETALLE_ORDEN_TRABAJO = CType(Nothing, EntityRef(Of DETALLE_ORDEN_TRABAJO))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_id_retrabajo", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property RET_id_retrabajo() As Integer
+		Get
+			Return Me._RET_id_retrabajo
+		End Get
+		Set
+			If ((Me._RET_id_retrabajo = value)  _
+						= false) Then
+				Me.OnRET_id_retrabajoChanging(value)
+				Me.SendPropertyChanging
+				Me._RET_id_retrabajo = value
+				Me.SendPropertyChanged("RET_id_retrabajo")
+				Me.OnRET_id_retrabajoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id_detalle_orden_trabajo", DbType:="Int")>  _
+	Public Property id_detalle_orden_trabajo() As System.Nullable(Of Integer)
+		Get
+			Return Me._id_detalle_orden_trabajo
+		End Get
+		Set
+			If (Me._id_detalle_orden_trabajo.Equals(value) = false) Then
+				If Me._DETALLE_ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.Onid_detalle_orden_trabajoChanging(value)
+				Me.SendPropertyChanging
+				Me._id_detalle_orden_trabajo = value
+				Me.SendPropertyChanged("id_detalle_orden_trabajo")
+				Me.Onid_detalle_orden_trabajoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_cantidad_dort", DbType:="Int")>  _
+	Public Property RET_cantidad_dort() As System.Nullable(Of Integer)
+		Get
+			Return Me._RET_cantidad_dort
+		End Get
+		Set
+			If (Me._RET_cantidad_dort.Equals(value) = false) Then
+				Me.OnRET_cantidad_dortChanging(value)
+				Me.SendPropertyChanging
+				Me._RET_cantidad_dort = value
+				Me.SendPropertyChanged("RET_cantidad_dort")
+				Me.OnRET_cantidad_dortChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_tamaño_dort", DbType:="VarChar(50)")>  _
+	Public Property RET_tamaño_dort() As String
+		Get
+			Return Me._RET_tamaño_dort
+		End Get
+		Set
+			If (String.Equals(Me._RET_tamaño_dort, value) = false) Then
+				Me.OnRET_tamaño_dortChanging(value)
+				Me.SendPropertyChanging
+				Me._RET_tamaño_dort = value
+				Me.SendPropertyChanged("RET_tamaño_dort")
+				Me.OnRET_tamaño_dortChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_tipo_impresion_dort", DbType:="VarChar(4)")>  _
+	Public Property RET_tipo_impresion_dort() As String
+		Get
+			Return Me._RET_tipo_impresion_dort
+		End Get
+		Set
+			If (String.Equals(Me._RET_tipo_impresion_dort, value) = false) Then
+				Me.OnRET_tipo_impresion_dortChanging(value)
+				Me.SendPropertyChanging
+				Me._RET_tipo_impresion_dort = value
+				Me.SendPropertyChanged("RET_tipo_impresion_dort")
+				Me.OnRET_tipo_impresion_dortChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_origen_area", DbType:="VarChar(100)")>  _
+	Public Property RET_origen_area() As String
+		Get
+			Return Me._RET_origen_area
+		End Get
+		Set
+			If (String.Equals(Me._RET_origen_area, value) = false) Then
+				Me.OnRET_origen_areaChanging(value)
+				Me.SendPropertyChanging
+				Me._RET_origen_area = value
+				Me.SendPropertyChanged("RET_origen_area")
+				Me.OnRET_origen_areaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_procedimiento", DbType:="VarChar(350)")>  _
+	Public Property RET_procedimiento() As String
+		Get
+			Return Me._RET_procedimiento
+		End Get
+		Set
+			If (String.Equals(Me._RET_procedimiento, value) = false) Then
+				Me.OnRET_procedimientoChanging(value)
+				Me.SendPropertyChanging
+				Me._RET_procedimiento = value
+				Me.SendPropertyChanged("RET_procedimiento")
+				Me.OnRET_procedimientoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_fecha", DbType:="Date")>  _
+	Public Property RET_fecha() As System.Nullable(Of Date)
+		Get
+			Return Me._RET_fecha
+		End Get
+		Set
+			If (Me._RET_fecha.Equals(value) = false) Then
+				Me.OnRET_fechaChanging(value)
+				Me.SendPropertyChanging
+				Me._RET_fecha = value
+				Me.SendPropertyChanged("RET_fecha")
+				Me.OnRET_fechaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_papel_soporte_1", DbType:="VarChar(50)")>  _
+	Public Property RET_papel_soporte_1() As String
+		Get
+			Return Me._RET_papel_soporte_1
+		End Get
+		Set
+			If (String.Equals(Me._RET_papel_soporte_1, value) = false) Then
+				Me.OnRET_papel_soporte_1Changing(value)
+				Me.SendPropertyChanging
+				Me._RET_papel_soporte_1 = value
+				Me.SendPropertyChanged("RET_papel_soporte_1")
+				Me.OnRET_papel_soporte_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_papel_soporte_2", DbType:="VarChar(50)")>  _
+	Public Property RET_papel_soporte_2() As String
+		Get
+			Return Me._RET_papel_soporte_2
+		End Get
+		Set
+			If (String.Equals(Me._RET_papel_soporte_2, value) = false) Then
+				Me.OnRET_papel_soporte_2Changing(value)
+				Me.SendPropertyChanging
+				Me._RET_papel_soporte_2 = value
+				Me.SendPropertyChanged("RET_papel_soporte_2")
+				Me.OnRET_papel_soporte_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_papel_soporte_3", DbType:="VarChar(50)")>  _
+	Public Property RET_papel_soporte_3() As String
+		Get
+			Return Me._RET_papel_soporte_3
+		End Get
+		Set
+			If (String.Equals(Me._RET_papel_soporte_3, value) = false) Then
+				Me.OnRET_papel_soporte_3Changing(value)
+				Me.SendPropertyChanging
+				Me._RET_papel_soporte_3 = value
+				Me.SendPropertyChanged("RET_papel_soporte_3")
+				Me.OnRET_papel_soporte_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_gramaje_soporte_1", DbType:="Int")>  _
+	Public Property RET_gramaje_soporte_1() As System.Nullable(Of Integer)
+		Get
+			Return Me._RET_gramaje_soporte_1
+		End Get
+		Set
+			If (Me._RET_gramaje_soporte_1.Equals(value) = false) Then
+				Me.OnRET_gramaje_soporte_1Changing(value)
+				Me.SendPropertyChanging
+				Me._RET_gramaje_soporte_1 = value
+				Me.SendPropertyChanged("RET_gramaje_soporte_1")
+				Me.OnRET_gramaje_soporte_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_gramaje_soporte_2", DbType:="VarChar(50)")>  _
+	Public Property RET_gramaje_soporte_2() As String
+		Get
+			Return Me._RET_gramaje_soporte_2
+		End Get
+		Set
+			If (String.Equals(Me._RET_gramaje_soporte_2, value) = false) Then
+				Me.OnRET_gramaje_soporte_2Changing(value)
+				Me.SendPropertyChanging
+				Me._RET_gramaje_soporte_2 = value
+				Me.SendPropertyChanged("RET_gramaje_soporte_2")
+				Me.OnRET_gramaje_soporte_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_gramaje_soporte_3", DbType:="VarChar(50)")>  _
+	Public Property RET_gramaje_soporte_3() As String
+		Get
+			Return Me._RET_gramaje_soporte_3
+		End Get
+		Set
+			If (String.Equals(Me._RET_gramaje_soporte_3, value) = false) Then
+				Me.OnRET_gramaje_soporte_3Changing(value)
+				Me.SendPropertyChanging
+				Me._RET_gramaje_soporte_3 = value
+				Me.SendPropertyChanged("RET_gramaje_soporte_3")
+				Me.OnRET_gramaje_soporte_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_cantidad_soporte_1", DbType:="Int")>  _
+	Public Property RET_cantidad_soporte_1() As System.Nullable(Of Integer)
+		Get
+			Return Me._RET_cantidad_soporte_1
+		End Get
+		Set
+			If (Me._RET_cantidad_soporte_1.Equals(value) = false) Then
+				Me.OnRET_cantidad_soporte_1Changing(value)
+				Me.SendPropertyChanging
+				Me._RET_cantidad_soporte_1 = value
+				Me.SendPropertyChanged("RET_cantidad_soporte_1")
+				Me.OnRET_cantidad_soporte_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_cantidad_soporte_2", DbType:="Int")>  _
+	Public Property RET_cantidad_soporte_2() As System.Nullable(Of Integer)
+		Get
+			Return Me._RET_cantidad_soporte_2
+		End Get
+		Set
+			If (Me._RET_cantidad_soporte_2.Equals(value) = false) Then
+				Me.OnRET_cantidad_soporte_2Changing(value)
+				Me.SendPropertyChanging
+				Me._RET_cantidad_soporte_2 = value
+				Me.SendPropertyChanged("RET_cantidad_soporte_2")
+				Me.OnRET_cantidad_soporte_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_cantidad_soporte_3", DbType:="Int")>  _
+	Public Property RET_cantidad_soporte_3() As System.Nullable(Of Integer)
+		Get
+			Return Me._RET_cantidad_soporte_3
+		End Get
+		Set
+			If (Me._RET_cantidad_soporte_3.Equals(value) = false) Then
+				Me.OnRET_cantidad_soporte_3Changing(value)
+				Me.SendPropertyChanging
+				Me._RET_cantidad_soporte_3 = value
+				Me.SendPropertyChanged("RET_cantidad_soporte_3")
+				Me.OnRET_cantidad_soporte_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_formato_soporte_1", DbType:="VarChar(15)")>  _
+	Public Property RET_formato_soporte_1() As String
+		Get
+			Return Me._RET_formato_soporte_1
+		End Get
+		Set
+			If (String.Equals(Me._RET_formato_soporte_1, value) = false) Then
+				Me.OnRET_formato_soporte_1Changing(value)
+				Me.SendPropertyChanging
+				Me._RET_formato_soporte_1 = value
+				Me.SendPropertyChanged("RET_formato_soporte_1")
+				Me.OnRET_formato_soporte_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_formato_soporte_2", DbType:="VarChar(15)")>  _
+	Public Property RET_formato_soporte_2() As String
+		Get
+			Return Me._RET_formato_soporte_2
+		End Get
+		Set
+			If (String.Equals(Me._RET_formato_soporte_2, value) = false) Then
+				Me.OnRET_formato_soporte_2Changing(value)
+				Me.SendPropertyChanging
+				Me._RET_formato_soporte_2 = value
+				Me.SendPropertyChanged("RET_formato_soporte_2")
+				Me.OnRET_formato_soporte_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_formato_soporte_3", DbType:="VarChar(15)")>  _
+	Public Property RET_formato_soporte_3() As String
+		Get
+			Return Me._RET_formato_soporte_3
+		End Get
+		Set
+			If (String.Equals(Me._RET_formato_soporte_3, value) = false) Then
+				Me.OnRET_formato_soporte_3Changing(value)
+				Me.SendPropertyChanging
+				Me._RET_formato_soporte_3 = value
+				Me.SendPropertyChanged("RET_formato_soporte_3")
+				Me.OnRET_formato_soporte_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_fecha_entrega", DbType:="Date")>  _
+	Public Property RET_fecha_entrega() As System.Nullable(Of Date)
+		Get
+			Return Me._RET_fecha_entrega
+		End Get
+		Set
+			If (Me._RET_fecha_entrega.Equals(value) = false) Then
+				Me.OnRET_fecha_entregaChanging(value)
+				Me.SendPropertyChanging
+				Me._RET_fecha_entrega = value
+				Me.SendPropertyChanged("RET_fecha_entrega")
+				Me.OnRET_fecha_entregaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_impresora_offset", DbType:="VarChar(15)")>  _
+	Public Property RET_impresora_offset() As String
+		Get
+			Return Me._RET_impresora_offset
+		End Get
+		Set
+			If (String.Equals(Me._RET_impresora_offset, value) = false) Then
+				Me.OnRET_impresora_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._RET_impresora_offset = value
+				Me.SendPropertyChanged("RET_impresora_offset")
+				Me.OnRET_impresora_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="DETALLE_ORDEN_TRABAJO_RE_TRABAJO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="id_detalle_orden_trabajo", OtherKey:="id_detalle_orden_trabajo", IsForeignKey:=true)>  _
+	Public Property DETALLE_ORDEN_TRABAJO() As DETALLE_ORDEN_TRABAJO
+		Get
+			Return Me._DETALLE_ORDEN_TRABAJO.Entity
+		End Get
+		Set
+			Dim previousValue As DETALLE_ORDEN_TRABAJO = Me._DETALLE_ORDEN_TRABAJO.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._DETALLE_ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._DETALLE_ORDEN_TRABAJO.Entity = Nothing
+					previousValue.RE_TRABAJO.Remove(Me)
+				End If
+				Me._DETALLE_ORDEN_TRABAJO.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.RE_TRABAJO.Add(Me)
+					Me._id_detalle_orden_trabajo = value.id_detalle_orden_trabajo
+				Else
+					Me._id_detalle_orden_trabajo = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("DETALLE_ORDEN_TRABAJO")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.SECTOR")>  _
+Partial Public Class SECTOR
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _SEC_id_sector As Integer
+	
+	Private _SEC_nombre_sector As String
+	
+	Private _COLABORADOR As EntitySet(Of COLABORADOR)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnSEC_id_sectorChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnSEC_id_sectorChanged()
+    End Sub
+    Partial Private Sub OnSEC_nombre_sectorChanging(value As String)
+    End Sub
+    Partial Private Sub OnSEC_nombre_sectorChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._COLABORADOR = New EntitySet(Of COLABORADOR)(AddressOf Me.attach_COLABORADOR, AddressOf Me.detach_COLABORADOR)
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_id_sector", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property SEC_id_sector() As Integer
+		Get
+			Return Me._SEC_id_sector
+		End Get
+		Set
+			If ((Me._SEC_id_sector = value)  _
+						= false) Then
+				Me.OnSEC_id_sectorChanging(value)
+				Me.SendPropertyChanging
+				Me._SEC_id_sector = value
+				Me.SendPropertyChanged("SEC_id_sector")
+				Me.OnSEC_id_sectorChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_nombre_sector", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property SEC_nombre_sector() As String
+		Get
+			Return Me._SEC_nombre_sector
+		End Get
+		Set
+			If (String.Equals(Me._SEC_nombre_sector, value) = false) Then
+				Me.OnSEC_nombre_sectorChanging(value)
+				Me.SendPropertyChanging
+				Me._SEC_nombre_sector = value
+				Me.SendPropertyChanged("SEC_nombre_sector")
+				Me.OnSEC_nombre_sectorChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="SECTOR_COLABORADOR", Storage:="_COLABORADOR", ThisKey:="SEC_id_sector", OtherKey:="SEC_id_sector")>  _
+	Public Property COLABORADOR() As EntitySet(Of COLABORADOR)
+		Get
+			Return Me._COLABORADOR
+		End Get
+		Set
+			Me._COLABORADOR.Assign(value)
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_COLABORADOR(ByVal entity As COLABORADOR)
+		Me.SendPropertyChanging
+		entity.SECTOR = Me
+	End Sub
+	
+	Private Sub detach_COLABORADOR(ByVal entity As COLABORADOR)
+		Me.SendPropertyChanging
+		entity.SECTOR = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.TAREA")>  _
+Partial Public Class TAREA
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _TAR_id_tarea As Integer
+	
+	Private _TAR_tiempo_estimado As String
+	
+	Private _TAR_tiempo_real As String
+	
+	Private _COL_id_colaborador As Integer
+	
+	Private _ORT_id_orden_trabajo As System.Nullable(Of Integer)
+	
+	Private _TAR_hora_fin As String
+	
+	Private _TAR_carga_horaria As String
+	
+	Private _TAR_detalle_tarea As String
+	
+	Private _TAR_observaciones As String
+	
+	Private _TAR_fecha As System.Nullable(Of Date)
+	
+	Private _TAR_entrada As String
+	
+	Private _TAR_salida As String
+	
+	Private _COLABORADOR As EntityRef(Of COLABORADOR)
+	
+	Private _ORDEN_TRABAJO As EntityRef(Of ORDEN_TRABAJO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnTAR_id_tareaChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnTAR_id_tareaChanged()
+    End Sub
+    Partial Private Sub OnTAR_tiempo_estimadoChanging(value As String)
+    End Sub
+    Partial Private Sub OnTAR_tiempo_estimadoChanged()
+    End Sub
+    Partial Private Sub OnTAR_tiempo_realChanging(value As String)
+    End Sub
+    Partial Private Sub OnTAR_tiempo_realChanged()
+    End Sub
+    Partial Private Sub OnCOL_id_colaboradorChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnCOL_id_colaboradorChanged()
+    End Sub
+    Partial Private Sub OnORT_id_orden_trabajoChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnORT_id_orden_trabajoChanged()
+    End Sub
+    Partial Private Sub OnTAR_hora_finChanging(value As String)
+    End Sub
+    Partial Private Sub OnTAR_hora_finChanged()
+    End Sub
+    Partial Private Sub OnTAR_carga_horariaChanging(value As String)
+    End Sub
+    Partial Private Sub OnTAR_carga_horariaChanged()
+    End Sub
+    Partial Private Sub OnTAR_detalle_tareaChanging(value As String)
+    End Sub
+    Partial Private Sub OnTAR_detalle_tareaChanged()
+    End Sub
+    Partial Private Sub OnTAR_observacionesChanging(value As String)
+    End Sub
+    Partial Private Sub OnTAR_observacionesChanged()
+    End Sub
+    Partial Private Sub OnTAR_fechaChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnTAR_fechaChanged()
+    End Sub
+    Partial Private Sub OnTAR_entradaChanging(value As String)
+    End Sub
+    Partial Private Sub OnTAR_entradaChanged()
+    End Sub
+    Partial Private Sub OnTAR_salidaChanging(value As String)
+    End Sub
+    Partial Private Sub OnTAR_salidaChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._COLABORADOR = CType(Nothing, EntityRef(Of COLABORADOR))
+		Me._ORDEN_TRABAJO = CType(Nothing, EntityRef(Of ORDEN_TRABAJO))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_id_tarea", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property TAR_id_tarea() As Integer
+		Get
+			Return Me._TAR_id_tarea
+		End Get
+		Set
+			If ((Me._TAR_id_tarea = value)  _
+						= false) Then
+				Me.OnTAR_id_tareaChanging(value)
+				Me.SendPropertyChanging
+				Me._TAR_id_tarea = value
+				Me.SendPropertyChanged("TAR_id_tarea")
+				Me.OnTAR_id_tareaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_tiempo_estimado", DbType:="VarChar(10)")>  _
+	Public Property TAR_tiempo_estimado() As String
+		Get
+			Return Me._TAR_tiempo_estimado
+		End Get
+		Set
+			If (String.Equals(Me._TAR_tiempo_estimado, value) = false) Then
+				Me.OnTAR_tiempo_estimadoChanging(value)
+				Me.SendPropertyChanging
+				Me._TAR_tiempo_estimado = value
+				Me.SendPropertyChanged("TAR_tiempo_estimado")
+				Me.OnTAR_tiempo_estimadoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_tiempo_real", DbType:="VarChar(10)")>  _
+	Public Property TAR_tiempo_real() As String
+		Get
+			Return Me._TAR_tiempo_real
+		End Get
+		Set
+			If (String.Equals(Me._TAR_tiempo_real, value) = false) Then
+				Me.OnTAR_tiempo_realChanging(value)
+				Me.SendPropertyChanging
+				Me._TAR_tiempo_real = value
+				Me.SendPropertyChanged("TAR_tiempo_real")
+				Me.OnTAR_tiempo_realChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_id_colaborador", DbType:="Int NOT NULL")>  _
+	Public Property COL_id_colaborador() As Integer
+		Get
+			Return Me._COL_id_colaborador
+		End Get
+		Set
+			If ((Me._COL_id_colaborador = value)  _
+						= false) Then
+				If Me._COLABORADOR.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnCOL_id_colaboradorChanging(value)
+				Me.SendPropertyChanging
+				Me._COL_id_colaborador = value
+				Me.SendPropertyChanged("COL_id_colaborador")
+				Me.OnCOL_id_colaboradorChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int")>  _
+	Public Property ORT_id_orden_trabajo() As System.Nullable(Of Integer)
+		Get
+			Return Me._ORT_id_orden_trabajo
+		End Get
+		Set
+			If (Me._ORT_id_orden_trabajo.Equals(value) = false) Then
+				If Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnORT_id_orden_trabajoChanging(value)
+				Me.SendPropertyChanging
+				Me._ORT_id_orden_trabajo = value
+				Me.SendPropertyChanged("ORT_id_orden_trabajo")
+				Me.OnORT_id_orden_trabajoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_hora_fin", DbType:="VarChar(10)")>  _
+	Public Property TAR_hora_fin() As String
+		Get
+			Return Me._TAR_hora_fin
+		End Get
+		Set
+			If (String.Equals(Me._TAR_hora_fin, value) = false) Then
+				Me.OnTAR_hora_finChanging(value)
+				Me.SendPropertyChanging
+				Me._TAR_hora_fin = value
+				Me.SendPropertyChanged("TAR_hora_fin")
+				Me.OnTAR_hora_finChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_carga_horaria", DbType:="VarChar(10)")>  _
+	Public Property TAR_carga_horaria() As String
+		Get
+			Return Me._TAR_carga_horaria
+		End Get
+		Set
+			If (String.Equals(Me._TAR_carga_horaria, value) = false) Then
+				Me.OnTAR_carga_horariaChanging(value)
+				Me.SendPropertyChanging
+				Me._TAR_carga_horaria = value
+				Me.SendPropertyChanged("TAR_carga_horaria")
+				Me.OnTAR_carga_horariaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_detalle_tarea", DbType:="VarChar(100) NOT NULL", CanBeNull:=false)>  _
+	Public Property TAR_detalle_tarea() As String
+		Get
+			Return Me._TAR_detalle_tarea
+		End Get
+		Set
+			If (String.Equals(Me._TAR_detalle_tarea, value) = false) Then
+				Me.OnTAR_detalle_tareaChanging(value)
+				Me.SendPropertyChanging
+				Me._TAR_detalle_tarea = value
+				Me.SendPropertyChanged("TAR_detalle_tarea")
+				Me.OnTAR_detalle_tareaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_observaciones", DbType:="VarChar(200)")>  _
+	Public Property TAR_observaciones() As String
+		Get
+			Return Me._TAR_observaciones
+		End Get
+		Set
+			If (String.Equals(Me._TAR_observaciones, value) = false) Then
+				Me.OnTAR_observacionesChanging(value)
+				Me.SendPropertyChanging
+				Me._TAR_observaciones = value
+				Me.SendPropertyChanged("TAR_observaciones")
+				Me.OnTAR_observacionesChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_fecha", DbType:="Date")>  _
+	Public Property TAR_fecha() As System.Nullable(Of Date)
+		Get
+			Return Me._TAR_fecha
+		End Get
+		Set
+			If (Me._TAR_fecha.Equals(value) = false) Then
+				Me.OnTAR_fechaChanging(value)
+				Me.SendPropertyChanging
+				Me._TAR_fecha = value
+				Me.SendPropertyChanged("TAR_fecha")
+				Me.OnTAR_fechaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_entrada", DbType:="VarChar(10)")>  _
+	Public Property TAR_entrada() As String
+		Get
+			Return Me._TAR_entrada
+		End Get
+		Set
+			If (String.Equals(Me._TAR_entrada, value) = false) Then
+				Me.OnTAR_entradaChanging(value)
+				Me.SendPropertyChanging
+				Me._TAR_entrada = value
+				Me.SendPropertyChanged("TAR_entrada")
+				Me.OnTAR_entradaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_salida", DbType:="VarChar(10)")>  _
+	Public Property TAR_salida() As String
+		Get
+			Return Me._TAR_salida
+		End Get
+		Set
+			If (String.Equals(Me._TAR_salida, value) = false) Then
+				Me.OnTAR_salidaChanging(value)
+				Me.SendPropertyChanging
+				Me._TAR_salida = value
+				Me.SendPropertyChanged("TAR_salida")
+				Me.OnTAR_salidaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="COLABORADOR_TAREA", Storage:="_COLABORADOR", ThisKey:="COL_id_colaborador", OtherKey:="COL_id_colaborador", IsForeignKey:=true)>  _
+	Public Property COLABORADOR() As COLABORADOR
+		Get
+			Return Me._COLABORADOR.Entity
+		End Get
+		Set
+			Dim previousValue As COLABORADOR = Me._COLABORADOR.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._COLABORADOR.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._COLABORADOR.Entity = Nothing
+					previousValue.TAREA.Remove(Me)
+				End If
+				Me._COLABORADOR.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.TAREA.Add(Me)
+					Me._COL_id_colaborador = value.COL_id_colaborador
+				Else
+					Me._COL_id_colaborador = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("COLABORADOR")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_TAREA", Storage:="_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo", IsForeignKey:=true, DeleteRule:="CASCADE")>  _
+	Public Property ORDEN_TRABAJO() As ORDEN_TRABAJO
+		Get
+			Return Me._ORDEN_TRABAJO.Entity
+		End Get
+		Set
+			Dim previousValue As ORDEN_TRABAJO = Me._ORDEN_TRABAJO.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._ORDEN_TRABAJO.Entity = Nothing
+					previousValue.TAREA.Remove(Me)
+				End If
+				Me._ORDEN_TRABAJO.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.TAREA.Add(Me)
+					Me._ORT_id_orden_trabajo = value.ORT_id_orden_trabajo
+				Else
+					Me._ORT_id_orden_trabajo = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("ORDEN_TRABAJO")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.USUARIO")>  _
+Partial Public Class USUARIO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _USU_id_usuario As Integer
+	
+	Private _USU_usuario As String
+	
+	Private _USU_contraseña As String
+	
+	Private _USU_perfil As String
+	
+	Private _COL_id_colaborador As System.Nullable(Of Integer)
+	
+	Private _COLABORADOR As EntityRef(Of COLABORADOR)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnUSU_id_usuarioChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnUSU_id_usuarioChanged()
+    End Sub
+    Partial Private Sub OnUSU_usuarioChanging(value As String)
+    End Sub
+    Partial Private Sub OnUSU_usuarioChanged()
+    End Sub
+    Partial Private Sub OnUSU_contraseñaChanging(value As String)
+    End Sub
+    Partial Private Sub OnUSU_contraseñaChanged()
+    End Sub
+    Partial Private Sub OnUSU_perfilChanging(value As String)
+    End Sub
+    Partial Private Sub OnUSU_perfilChanged()
+    End Sub
+    Partial Private Sub OnCOL_id_colaboradorChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnCOL_id_colaboradorChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._COLABORADOR = CType(Nothing, EntityRef(Of COLABORADOR))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USU_id_usuario", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property USU_id_usuario() As Integer
+		Get
+			Return Me._USU_id_usuario
+		End Get
+		Set
+			If ((Me._USU_id_usuario = value)  _
+						= false) Then
+				Me.OnUSU_id_usuarioChanging(value)
+				Me.SendPropertyChanging
+				Me._USU_id_usuario = value
+				Me.SendPropertyChanged("USU_id_usuario")
+				Me.OnUSU_id_usuarioChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USU_usuario", DbType:="VarChar(50)")>  _
+	Public Property USU_usuario() As String
+		Get
+			Return Me._USU_usuario
+		End Get
+		Set
+			If (String.Equals(Me._USU_usuario, value) = false) Then
+				Me.OnUSU_usuarioChanging(value)
+				Me.SendPropertyChanging
+				Me._USU_usuario = value
+				Me.SendPropertyChanged("USU_usuario")
+				Me.OnUSU_usuarioChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USU_contraseña", DbType:="VarChar(50)")>  _
+	Public Property USU_contraseña() As String
+		Get
+			Return Me._USU_contraseña
+		End Get
+		Set
+			If (String.Equals(Me._USU_contraseña, value) = false) Then
+				Me.OnUSU_contraseñaChanging(value)
+				Me.SendPropertyChanging
+				Me._USU_contraseña = value
+				Me.SendPropertyChanged("USU_contraseña")
+				Me.OnUSU_contraseñaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USU_perfil", DbType:="VarChar(15)")>  _
+	Public Property USU_perfil() As String
+		Get
+			Return Me._USU_perfil
+		End Get
+		Set
+			If (String.Equals(Me._USU_perfil, value) = false) Then
+				Me.OnUSU_perfilChanging(value)
+				Me.SendPropertyChanging
+				Me._USU_perfil = value
+				Me.SendPropertyChanged("USU_perfil")
+				Me.OnUSU_perfilChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_id_colaborador", DbType:="Int")>  _
+	Public Property COL_id_colaborador() As System.Nullable(Of Integer)
+		Get
+			Return Me._COL_id_colaborador
+		End Get
+		Set
+			If (Me._COL_id_colaborador.Equals(value) = false) Then
+				If Me._COLABORADOR.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnCOL_id_colaboradorChanging(value)
+				Me.SendPropertyChanging
+				Me._COL_id_colaborador = value
+				Me.SendPropertyChanged("COL_id_colaborador")
+				Me.OnCOL_id_colaboradorChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="COLABORADOR_USUARIO", Storage:="_COLABORADOR", ThisKey:="COL_id_colaborador", OtherKey:="COL_id_colaborador", IsForeignKey:=true)>  _
+	Public Property COLABORADOR() As COLABORADOR
+		Get
+			Return Me._COLABORADOR.Entity
+		End Get
+		Set
+			Dim previousValue As COLABORADOR = Me._COLABORADOR.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._COLABORADOR.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._COLABORADOR.Entity = Nothing
+					previousValue.USUARIO.Remove(Me)
+				End If
+				Me._COLABORADOR.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.USUARIO.Add(Me)
+					Me._COL_id_colaborador = value.COL_id_colaborador
+				Else
+					Me._COL_id_colaborador = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("COLABORADOR")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
 	End Sub
 End Class

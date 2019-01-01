@@ -9,7 +9,7 @@
         txt_usuario.Focus()
     End Sub
 
-    Private Sub btnIngresar_Click(sender As System.Object, e As System.EventArgs) Handles btnIngresar.Click
+    Private Sub btnIngresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnIngresar.Click
 
         DeshabilitarGeneral()
         HabilitarGeneral()
