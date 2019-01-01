@@ -106,7 +106,7 @@
         chkPosicionado.Checked = False
         chkDoblado.Checked = False
         chkTroquelado.Checked = False
-        chkCorte.Checked = False
+        chkGuillotinado.Checked = False
         chkMedio_Corte.Checked = False
         chkBarniz.Checked = False
         chkMontado.Checked = False
@@ -360,95 +360,125 @@
             '------------------------------------------------------------------------------------
 
             '-------------------------------- TERMINACION----------------------------------------
-            Dim temlaca, temposicionado, temdoblado, temtroquelado, temcorte, temmediocorte, tembarniz, temmontado, temencuadernacion, temstamping, temadhesivado, temtrazado, temsoldado, temcocido, temruedo, tempolipropileno, temotros As String
+            Dim temlaca, temposicionado, temdoblado, temtroquelado, temguillotinado, temmediocorte, tembarniz, temmontado, temencuadernacion, temstamping, _
+                temadhesivado, temtrazado, temsoldado, temcocido, temruedo, tempolipropileno, temotros, temcuñoseco, temfresado, temLacaUVSect, _
+                temOPPBrillante, temOPPMate As String
 
-            If chkLaca_UV.Checked = True Then
-                temlaca = "LA"
+            If chkAdhesivado.Checked = True Then
+                temadhesivado = "AD"
             Else
-                temlaca = ""
-            End If
-            If chkPosicionado.Checked = True Then
-                temposicionado = "PS"
-            Else
-                temposicionado = ""
-            End If
-            If chkDoblado.Checked = True Then
-                temdoblado = "DO"
-            Else
-                temdoblado = ""
-            End If
-            If chkTroquelado.Checked = True Then
-                temtroquelado = "TR"
-            Else
-                temtroquelado = ""
-            End If
-            If chkCorte.Checked = True Then
-                temcorte = "CO"
-            Else
-                temcorte = ""
-            End If
-            If chkMedio_Corte.Checked = True Then
-                temmediocorte = "MC"
-            Else
-                temmediocorte = ""
+                temadhesivado = ""
             End If
             If chkBarniz.Checked = True Then
                 tembarniz = "BA"
             Else
                 tembarniz = ""
             End If
-            If chkMontado.Checked = True Then
-                temmontado = "MO"
+            If chkCocido.Checked = True Then
+                temcocido = "CC"
             Else
-                temmontado = ""
+                temcocido = ""
+            End If
+            If chkCuñoSeco.Checked = True Then
+                temcuñoseco = "CS"
+            Else
+                temcuñoseco = ""
+            End If
+            If chkDoblado.Checked = True Then
+                temdoblado = "DO"
+            Else
+                temdoblado = ""
             End If
             If chkEncuadernacion.Checked = True Then
                 temencuadernacion = "EN"
             Else
                 temencuadernacion = ""
             End If
-            If chkStamping.Checked = True Then
-                temstamping = "ST"
+            If chkFresado.Checked = True Then
+                temfresado = "FR"
             Else
-                temstamping = ""
+                temfresado = ""
             End If
-            If chkAdhesivado.Checked = True Then
-                temadhesivado = "AD"
+            If chkGuillotinado.Checked = True Then
+                temguillotinado = "GI"
             Else
-                temadhesivado = ""
+                temguillotinado = ""
             End If
-            If chkTrazado.Checked = True Then
-                temtrazado = "TR"
+            If chkLaca_UV.Checked = True Then
+                temlaca = "LA"
             Else
-                temtrazado = ""
+                temlaca = ""
             End If
-            If chkSoldado.Checked = True Then
-                temsoldado = "SL"
+            If chkLacaUVSectorizada.Checked = True Then
+                temLacaUVSect = "LS"
             Else
-                temsoldado = ""
+                temLacaUVSect = ""
             End If
-            If chkCocido.Checked = True Then
-                temcocido = "CC"
+            If chkMedio_Corte.Checked = True Then
+                temmediocorte = "MC"
             Else
-                temcocido = ""
+                temmediocorte = ""
             End If
-            If chkRuedo.Checked = True Then
-                temruedo = "RU"
+            If chkMontado.Checked = True Then
+                temmontado = "MO"
             Else
-                temruedo = ""
+                temmontado = ""
             End If
-            If chkPolipropileno.Checked = True Then
-                tempolipropileno = "PL"
+            If chkOPPBrillante.Checked = True Then
+                temOPPBrillante = "OB"
             Else
-                tempolipropileno = ""
+                temOPPBrillante = ""
+            End If
+            If chkOPPMate.Checked = True Then
+                temOPPMate = "OM"
+            Else
+                temOPPMate = ""
             End If
             If chkOtros.Checked = True Then
                 temotros = "OT"
             Else
                 temotros = ""
             End If
-            detalle.tipo_terminacion = temlaca & temposicionado & temdoblado & temtroquelado & temcorte & temmediocorte & tembarniz & temmontado _
-                & temencuadernacion & temstamping & temadhesivado & temtrazado & temsoldado & temcocido & temruedo & tempolipropileno & temotros
+            If chkPolipropileno.Checked = True Then
+                tempolipropileno = "PL"
+            Else
+                tempolipropileno = ""
+            End If
+            If chkPosicionado.Checked = True Then
+                temposicionado = "PS"
+            Else
+                temposicionado = ""
+            End If
+            If chkRuedo.Checked = True Then
+                temruedo = "RU"
+            Else
+                temruedo = ""
+            End If
+            If chkSoldado.Checked = True Then
+                temsoldado = "SL"
+            Else
+                temsoldado = ""
+            End If
+            If chkStamping.Checked = True Then
+                temstamping = "ST"
+            Else
+                temstamping = ""
+            End If
+            If chkTrazado.Checked = True Then
+                temtrazado = "TZ"
+            Else
+                temtrazado = ""
+            End If
+            If chkTroquelado.Checked = True Then
+                temtroquelado = "TQ"
+            Else
+                temtroquelado = ""
+            End If
+      
+           
+            detalle.tipo_terminacion = temlaca & temposicionado & temdoblado & temtroquelado & temguillotinado & temmediocorte & tembarniz & temmontado _
+                & temencuadernacion & temstamping & temadhesivado & temtrazado & temsoldado & temcocido & temruedo & tempolipropileno & temotros _
+                & temcuñoseco & temfresado & temLacaUVSect & temOPPBrillante & temOPPMate
 
             detalle.descripcion_terminacion = txt_descripcion_terminacion.Text
 

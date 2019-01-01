@@ -54,8 +54,10 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.chkTerminacion = New System.Windows.Forms.CheckBox()
+        Me.cboTipo_Orden = New System.Windows.Forms.ComboBox()
         Me.chkGranFormato = New System.Windows.Forms.CheckBox()
         Me.chkOffset = New System.Windows.Forms.CheckBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.chkDigital = New System.Windows.Forms.CheckBox()
         Me.GroupProducto_Soportes = New System.Windows.Forms.GroupBox()
         Me.Label49 = New System.Windows.Forms.Label()
@@ -88,8 +90,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_Papel_1_Soporte = New System.Windows.Forms.TextBox()
         Me.cboDireccion_Entrega = New System.Windows.Forms.ComboBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.cboTipo_Orden = New System.Windows.Forms.ComboBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupDigital = New System.Windows.Forms.GroupBox()
         Me.cboTipo_Impresion_Digital = New System.Windows.Forms.ComboBox()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
@@ -120,6 +120,11 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txtSustrato_Gran_Formato = New System.Windows.Forms.TextBox()
         Me.GroupGranFormato = New System.Windows.Forms.GroupBox()
         Me.GroupTerminacion = New System.Windows.Forms.GroupBox()
+        Me.chkLacaUVSectorizada = New System.Windows.Forms.CheckBox()
+        Me.chkFresado = New System.Windows.Forms.CheckBox()
+        Me.chkCuñoSeco = New System.Windows.Forms.CheckBox()
+        Me.chkOPPMate = New System.Windows.Forms.CheckBox()
+        Me.chkOPPBrillante = New System.Windows.Forms.CheckBox()
         Me.chkPosicionado = New System.Windows.Forms.CheckBox()
         Me.chkMedio_Corte = New System.Windows.Forms.CheckBox()
         Me.chkSoldado = New System.Windows.Forms.CheckBox()
@@ -133,7 +138,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.chkEncuadernacion = New System.Windows.Forms.CheckBox()
         Me.chkAdhesivado = New System.Windows.Forms.CheckBox()
         Me.chkPolipropileno = New System.Windows.Forms.CheckBox()
-        Me.chkCorte = New System.Windows.Forms.CheckBox()
+        Me.chkGuillotinado = New System.Windows.Forms.CheckBox()
         Me.chkTroquelado = New System.Windows.Forms.CheckBox()
         Me.chkBarniz = New System.Windows.Forms.CheckBox()
         Me.chkLaca_UV = New System.Windows.Forms.CheckBox()
@@ -161,11 +166,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboImpresora_Offset = New System.Windows.Forms.ComboBox()
         Me.cboTipo_Impresion_Offset = New System.Windows.Forms.ComboBox()
         Me.Label35 = New System.Windows.Forms.Label()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox5 = New System.Windows.Forms.CheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupProducto_Soportes.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -474,6 +474,16 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.chkTerminacion.Text = "Terminación"
         Me.chkTerminacion.UseVisualStyleBackColor = True
         '
+        'cboTipo_Orden
+        '
+        Me.cboTipo_Orden.FormattingEnabled = True
+        Me.cboTipo_Orden.Items.AddRange(New Object() {"DG", "DO", "DI", "DV", "DS"})
+        Me.cboTipo_Orden.Location = New System.Drawing.Point(165, 21)
+        Me.cboTipo_Orden.MaxLength = 10
+        Me.cboTipo_Orden.Name = "cboTipo_Orden"
+        Me.cboTipo_Orden.Size = New System.Drawing.Size(75, 21)
+        Me.cboTipo_Orden.TabIndex = 58
+        '
         'chkGranFormato
         '
         Me.chkGranFormato.AutoSize = True
@@ -495,6 +505,15 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.chkOffset.TabIndex = 0
         Me.chkOffset.Text = "Offset"
         Me.chkOffset.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(89, 23)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(60, 13)
+        Me.Label8.TabIndex = 59
+        Me.Label8.Text = "Tipo Orden"
         '
         'chkDigital
         '
@@ -826,25 +845,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.GroupBox4.TabIndex = 130
         Me.GroupBox4.TabStop = False
         '
-        'cboTipo_Orden
-        '
-        Me.cboTipo_Orden.FormattingEnabled = True
-        Me.cboTipo_Orden.Items.AddRange(New Object() {"DG", "DO", "DI", "DV", "DS"})
-        Me.cboTipo_Orden.Location = New System.Drawing.Point(165, 21)
-        Me.cboTipo_Orden.MaxLength = 10
-        Me.cboTipo_Orden.Name = "cboTipo_Orden"
-        Me.cboTipo_Orden.Size = New System.Drawing.Size(75, 21)
-        Me.cboTipo_Orden.TabIndex = 58
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(89, 23)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(60, 13)
-        Me.Label8.TabIndex = 59
-        Me.Label8.Text = "Tipo Orden"
-        '
         'GroupDigital
         '
         Me.GroupDigital.Controls.Add(Me.cboTipo_Impresion_Digital)
@@ -1136,11 +1136,11 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'GroupTerminacion
         '
-        Me.GroupTerminacion.Controls.Add(Me.CheckBox5)
-        Me.GroupTerminacion.Controls.Add(Me.CheckBox3)
-        Me.GroupTerminacion.Controls.Add(Me.CheckBox4)
-        Me.GroupTerminacion.Controls.Add(Me.CheckBox1)
-        Me.GroupTerminacion.Controls.Add(Me.CheckBox2)
+        Me.GroupTerminacion.Controls.Add(Me.chkLacaUVSectorizada)
+        Me.GroupTerminacion.Controls.Add(Me.chkFresado)
+        Me.GroupTerminacion.Controls.Add(Me.chkCuñoSeco)
+        Me.GroupTerminacion.Controls.Add(Me.chkOPPMate)
+        Me.GroupTerminacion.Controls.Add(Me.chkOPPBrillante)
         Me.GroupTerminacion.Controls.Add(Me.chkPosicionado)
         Me.GroupTerminacion.Controls.Add(Me.chkMedio_Corte)
         Me.GroupTerminacion.Controls.Add(Me.chkSoldado)
@@ -1154,7 +1154,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.GroupTerminacion.Controls.Add(Me.chkEncuadernacion)
         Me.GroupTerminacion.Controls.Add(Me.chkAdhesivado)
         Me.GroupTerminacion.Controls.Add(Me.chkPolipropileno)
-        Me.GroupTerminacion.Controls.Add(Me.chkCorte)
+        Me.GroupTerminacion.Controls.Add(Me.chkGuillotinado)
         Me.GroupTerminacion.Controls.Add(Me.chkTroquelado)
         Me.GroupTerminacion.Controls.Add(Me.chkBarniz)
         Me.GroupTerminacion.Controls.Add(Me.chkLaca_UV)
@@ -1166,6 +1166,56 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.GroupTerminacion.TabIndex = 148
         Me.GroupTerminacion.TabStop = False
         Me.GroupTerminacion.Text = "Terminación"
+        '
+        'chkLacaUVSectorizada
+        '
+        Me.chkLacaUVSectorizada.AutoSize = True
+        Me.chkLacaUVSectorizada.Location = New System.Drawing.Point(19, 57)
+        Me.chkLacaUVSectorizada.Name = "chkLacaUVSectorizada"
+        Me.chkLacaUVSectorizada.Size = New System.Drawing.Size(82, 30)
+        Me.chkLacaUVSectorizada.TabIndex = 157
+        Me.chkLacaUVSectorizada.Text = "   Laca UV " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sectorizada"
+        Me.chkLacaUVSectorizada.UseVisualStyleBackColor = True
+        '
+        'chkFresado
+        '
+        Me.chkFresado.AutoSize = True
+        Me.chkFresado.Location = New System.Drawing.Point(552, 27)
+        Me.chkFresado.Name = "chkFresado"
+        Me.chkFresado.Size = New System.Drawing.Size(64, 17)
+        Me.chkFresado.TabIndex = 156
+        Me.chkFresado.Text = "Fresado"
+        Me.chkFresado.UseVisualStyleBackColor = True
+        '
+        'chkCuñoSeco
+        '
+        Me.chkCuñoSeco.AutoSize = True
+        Me.chkCuñoSeco.Location = New System.Drawing.Point(269, 27)
+        Me.chkCuñoSeco.Name = "chkCuñoSeco"
+        Me.chkCuñoSeco.Size = New System.Drawing.Size(79, 17)
+        Me.chkCuñoSeco.TabIndex = 155
+        Me.chkCuñoSeco.Text = "Cuño Seco"
+        Me.chkCuñoSeco.UseVisualStyleBackColor = True
+        '
+        'chkOPPMate
+        '
+        Me.chkOPPMate.AutoSize = True
+        Me.chkOPPMate.Location = New System.Drawing.Point(365, 64)
+        Me.chkOPPMate.Name = "chkOPPMate"
+        Me.chkOPPMate.Size = New System.Drawing.Size(75, 17)
+        Me.chkOPPMate.TabIndex = 154
+        Me.chkOPPMate.Text = "OPP Mate"
+        Me.chkOPPMate.UseVisualStyleBackColor = True
+        '
+        'chkOPPBrillante
+        '
+        Me.chkOPPBrillante.AutoSize = True
+        Me.chkOPPBrillante.Location = New System.Drawing.Point(269, 64)
+        Me.chkOPPBrillante.Name = "chkOPPBrillante"
+        Me.chkOPPBrillante.Size = New System.Drawing.Size(88, 17)
+        Me.chkOPPBrillante.TabIndex = 153
+        Me.chkOPPBrillante.Text = "OPP Brillante"
+        Me.chkOPPBrillante.UseVisualStyleBackColor = True
         '
         'chkPosicionado
         '
@@ -1297,15 +1347,15 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.chkPolipropileno.Text = "Polipropileno"
         Me.chkPolipropileno.UseVisualStyleBackColor = True
         '
-        'chkCorte
+        'chkGuillotinado
         '
-        Me.chkCorte.AutoSize = True
-        Me.chkCorte.Location = New System.Drawing.Point(637, 27)
-        Me.chkCorte.Name = "chkCorte"
-        Me.chkCorte.Size = New System.Drawing.Size(81, 17)
-        Me.chkCorte.TabIndex = 147
-        Me.chkCorte.Text = "Guillotinado"
-        Me.chkCorte.UseVisualStyleBackColor = True
+        Me.chkGuillotinado.AutoSize = True
+        Me.chkGuillotinado.Location = New System.Drawing.Point(637, 27)
+        Me.chkGuillotinado.Name = "chkGuillotinado"
+        Me.chkGuillotinado.Size = New System.Drawing.Size(81, 17)
+        Me.chkGuillotinado.TabIndex = 147
+        Me.chkGuillotinado.Text = "Guillotinado"
+        Me.chkGuillotinado.UseVisualStyleBackColor = True
         '
         'chkTroquelado
         '
@@ -1569,61 +1619,11 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Label35.TabIndex = 139
         Me.Label35.Text = "    Tipo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Impresión"
         '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(365, 64)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(75, 17)
-        Me.CheckBox1.TabIndex = 154
-        Me.CheckBox1.Text = "OPP Mate"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(269, 64)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(88, 17)
-        Me.CheckBox2.TabIndex = 153
-        Me.CheckBox2.Text = "OPP Brillante"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(552, 27)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(64, 17)
-        Me.CheckBox3.TabIndex = 156
-        Me.CheckBox3.Text = "Fresado"
-        Me.CheckBox3.UseVisualStyleBackColor = True
-        '
-        'CheckBox4
-        '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(269, 27)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(79, 17)
-        Me.CheckBox4.TabIndex = 155
-        Me.CheckBox4.Text = "Cuño Seco"
-        Me.CheckBox4.UseVisualStyleBackColor = True
-        '
-        'CheckBox5
-        '
-        Me.CheckBox5.AutoSize = True
-        Me.CheckBox5.Location = New System.Drawing.Point(19, 57)
-        Me.CheckBox5.Name = "CheckBox5"
-        Me.CheckBox5.Size = New System.Drawing.Size(82, 30)
-        Me.CheckBox5.TabIndex = 157
-        Me.CheckBox5.Text = "   Laca UV " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sectorizada"
-        Me.CheckBox5.UseVisualStyleBackColor = True
-        '
         'frm_Orden_Trabajo_Ampliada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1241, 774)
+        Me.ClientSize = New System.Drawing.Size(1241, 749)
         Me.Controls.Add(Me.groupOffset)
         Me.Controls.Add(Me.GroupTerminacion)
         Me.Controls.Add(Me.GroupGranFormato)
@@ -1748,7 +1748,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
     Friend WithEvents chkTrazado As System.Windows.Forms.CheckBox
     Friend WithEvents chkAdhesivado As System.Windows.Forms.CheckBox
     Friend WithEvents chkPolipropileno As System.Windows.Forms.CheckBox
-    Friend WithEvents chkCorte As System.Windows.Forms.CheckBox
+    Friend WithEvents chkGuillotinado As System.Windows.Forms.CheckBox
     Friend WithEvents chkTroquelado As System.Windows.Forms.CheckBox
     Friend WithEvents chkOtros As System.Windows.Forms.CheckBox
     Friend WithEvents chkStamping As System.Windows.Forms.CheckBox
@@ -1779,11 +1779,11 @@ Partial Class frm_Orden_Trabajo_Ampliada
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtTamaño_Producto As System.Windows.Forms.TextBox
     Friend WithEvents txt_cantidad_producto As System.Windows.Forms.TextBox
-    Friend WithEvents CheckBox5 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
+    Friend WithEvents chkLacaUVSectorizada As System.Windows.Forms.CheckBox
+    Friend WithEvents chkFresado As System.Windows.Forms.CheckBox
+    Friend WithEvents chkCuñoSeco As System.Windows.Forms.CheckBox
+    Friend WithEvents chkOPPMate As System.Windows.Forms.CheckBox
+    Friend WithEvents chkOPPBrillante As System.Windows.Forms.CheckBox
     Friend WithEvents groupOffset As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents txt_chapa_soporte_3 As System.Windows.Forms.TextBox
