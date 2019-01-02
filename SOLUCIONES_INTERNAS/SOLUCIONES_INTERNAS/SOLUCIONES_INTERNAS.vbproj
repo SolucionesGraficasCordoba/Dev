@@ -115,6 +115,12 @@
     <Compile Include="Presentacion\frm_Actualizar_Offset.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\frm_Actualizar_Producto_Orden_Ampliada.Designer.vb">
+      <DependentUpon>frm_Actualizar_Producto_Orden_Ampliada.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Actualizar_Producto_Orden_Ampliada.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_Enviar_Correo.Designer.vb">
       <DependentUpon>frm_Enviar_Correo.vb</DependentUpon>
     </Compile>
@@ -369,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Actualizar_Offset.resx">
       <DependentUpon>frm_Actualizar_Offset.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Actualizar_Producto_Orden_Ampliada.resx">
+      <DependentUpon>frm_Actualizar_Producto_Orden_Ampliada.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Enviar_Correo.resx">
       <DependentUpon>frm_Enviar_Correo.vb</DependentUpon>

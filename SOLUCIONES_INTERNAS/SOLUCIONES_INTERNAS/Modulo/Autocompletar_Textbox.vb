@@ -9,7 +9,7 @@ Module Autocompletar_Textbox
 
     Sub abrir()
         Try
-            conexiones = New SqlConnection("Data Source=DESKTOP-84P9IMQ\SQLEXPRESS;Initial Catalog=SOLUCIONES_INTERNAS;Integrated Security=True")
+            conexiones = New SqlConnection("Data Source=DESKTOP-84P9IMQ\SQLEXPRESS;Initial Catalog=SOLUCIONES_INTERNAS1;Integrated Security=True")
             conexiones.Open()
             ' MsgBox("Conexion exitosa", MsgBoxStyle.Information, "Se ha conectado correctamente") '
         Catch ex As Exception
