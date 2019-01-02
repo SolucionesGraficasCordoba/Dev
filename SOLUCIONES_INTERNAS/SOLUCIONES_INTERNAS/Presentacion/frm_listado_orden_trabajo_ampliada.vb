@@ -407,6 +407,8 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     End Sub
 
     Private Sub btnModificarProducto_Click(sender As System.Object, e As System.EventArgs) Handles btnModificarProducto.Click
+
+
         If dgv_detalle_orden.SelectedRows.Count > 0 Then
             frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Text = dgv_detalle_orden.Item("ORT_id_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.Item("ORT_numero_ot", dgv_detalle_orden.SelectedRows(0).Index).Value
@@ -471,6 +473,9 @@ Where ORT_id_orden_trabajo = vble_id_orden)
         frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Visible = False
         frm_Actualizar_Producto_Orden_Ampliada.cboTipo_Orden.Visible = False
         frm_Actualizar_Producto_Orden_Ampliada.Label5.Visible = False
+
+        ' frm_Orden_Trabajo_Ampliada.quienllamo_listado_orden_ampliada = Me
+
         frm_Actualizar_Producto_Orden_Ampliada.ShowDialog()
     End Sub
 End Class

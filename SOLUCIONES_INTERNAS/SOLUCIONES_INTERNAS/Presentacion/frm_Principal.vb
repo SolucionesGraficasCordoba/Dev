@@ -1408,6 +1408,8 @@ Public Class frm_Principal
     End Sub
 
     Private Sub ListaOrdenAmpliadaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaOrdenAmpliadaToolStripMenuItem.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+
         frm_listado_orden_trabajo_ampliada.MdiParent = Me
         frm_listado_orden_trabajo_ampliada.Show()
     End Sub
