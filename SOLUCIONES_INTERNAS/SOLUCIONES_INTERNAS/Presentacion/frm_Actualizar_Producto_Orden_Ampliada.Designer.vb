@@ -142,6 +142,8 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.txt_id_detalle_orden_trabajo1 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
+        Me.btnCancelar_Orden_Trabajo = New System.Windows.Forms.Button()
+        Me.btnActualizar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.groupOffset.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupTerminacion.SuspendLayout()
@@ -1356,11 +1358,31 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.Label4.TabIndex = 76
         Me.Label4.Text = "TN"
         '
+        'btnCancelar_Orden_Trabajo
+        '
+        Me.btnCancelar_Orden_Trabajo.Location = New System.Drawing.Point(1158, 611)
+        Me.btnCancelar_Orden_Trabajo.Name = "btnCancelar_Orden_Trabajo"
+        Me.btnCancelar_Orden_Trabajo.Size = New System.Drawing.Size(75, 33)
+        Me.btnCancelar_Orden_Trabajo.TabIndex = 157
+        Me.btnCancelar_Orden_Trabajo.Text = "Cancelar"
+        Me.btnCancelar_Orden_Trabajo.UseVisualStyleBackColor = True
+        '
+        'btnActualizar_Orden_Trabajo
+        '
+        Me.btnActualizar_Orden_Trabajo.Location = New System.Drawing.Point(1077, 611)
+        Me.btnActualizar_Orden_Trabajo.Name = "btnActualizar_Orden_Trabajo"
+        Me.btnActualizar_Orden_Trabajo.Size = New System.Drawing.Size(75, 33)
+        Me.btnActualizar_Orden_Trabajo.TabIndex = 158
+        Me.btnActualizar_Orden_Trabajo.Text = "Actualizar"
+        Me.btnActualizar_Orden_Trabajo.UseVisualStyleBackColor = True
+        '
         'frm_Actualizar_Producto_Orden_Ampliada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1243, 666)
+        Me.Controls.Add(Me.btnCancelar_Orden_Trabajo)
+        Me.Controls.Add(Me.btnActualizar_Orden_Trabajo)
         Me.Controls.Add(Me.groupOffset)
         Me.Controls.Add(Me.GroupTerminacion)
         Me.Controls.Add(Me.GroupGranFormato)
@@ -1515,4 +1537,6 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
     Friend WithEvents txt_id_detalle_orden_trabajo1 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents btnCancelar_Orden_Trabajo As System.Windows.Forms.Button
+    Friend WithEvents btnActualizar_Orden_Trabajo As System.Windows.Forms.Button
 End Class

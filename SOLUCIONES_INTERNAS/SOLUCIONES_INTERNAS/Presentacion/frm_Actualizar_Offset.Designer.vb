@@ -40,7 +40,6 @@ Partial Class frm_Actualizar_Offset
         Me.txt_id_orden_trabajo = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
-        Me.btnImprimirFormulario = New System.Windows.Forms.Button()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txt_id_detalle_orden_trabajo1 = New System.Windows.Forms.TextBox()
         Me.Label45 = New System.Windows.Forms.Label()
@@ -60,8 +59,8 @@ Partial Class frm_Actualizar_Offset
         Me.Label18 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.cboImpresora_Offset = New System.Windows.Forms.ComboBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -241,15 +240,6 @@ Partial Class frm_Actualizar_Offset
         Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(182, 20)
         Me.txtNumero_Orden_Trabajo.TabIndex = 78
         '
-        'btnImprimirFormulario
-        '
-        Me.btnImprimirFormulario.Location = New System.Drawing.Point(245, 452)
-        Me.btnImprimirFormulario.Name = "btnImprimirFormulario"
-        Me.btnImprimirFormulario.Size = New System.Drawing.Size(119, 33)
-        Me.btnImprimirFormulario.TabIndex = 148
-        Me.btnImprimirFormulario.Text = "Imprimir Formulario"
-        Me.btnImprimirFormulario.UseVisualStyleBackColor = True
-        '
         'Label17
         '
         Me.Label17.AutoSize = True
@@ -402,8 +392,9 @@ Partial Class frm_Actualizar_Offset
         '
         'ComboBox1
         '
+        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"EPR - error prensa", "REI - reimpresión", "EFO - error fotomecánica", "DIS - cambio diseño"})
+        Me.ComboBox1.Items.AddRange(New Object() {"EPR - ERROR PRENSA", "REI - REIMPRESION", "EFO - ERROR FOTOMECANICA", "DIS - CAMBIO DISEÑO"})
         Me.ComboBox1.Location = New System.Drawing.Point(298, 62)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(189, 21)
@@ -434,15 +425,6 @@ Partial Class frm_Actualizar_Offset
         Me.GroupBox2.TabIndex = 160
         Me.GroupBox2.TabStop = False
         '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(55, 104)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(53, 13)
-        Me.Label14.TabIndex = 160
-        Me.Label14.Text = "Impresora"
-        '
         'cboImpresora_Offset
         '
         Me.cboImpresora_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -453,6 +435,15 @@ Partial Class frm_Actualizar_Offset
         Me.cboImpresora_Offset.Size = New System.Drawing.Size(110, 21)
         Me.cboImpresora_Offset.TabIndex = 161
         '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(55, 104)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(53, 13)
+        Me.Label14.TabIndex = 160
+        Me.Label14.Text = "Impresora"
+        '
         'frm_Actualizar_Offset
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -460,7 +451,6 @@ Partial Class frm_Actualizar_Offset
         Me.ClientSize = New System.Drawing.Size(541, 499)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.btnImprimirFormulario)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.btnGuardar_ReTrabajo)
         Me.Controls.Add(Me.btnCancelar_ReTrabajo)
@@ -492,7 +482,6 @@ Partial Class frm_Actualizar_Offset
     Friend WithEvents txt_id_orden_trabajo As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txtNumero_Orden_Trabajo As System.Windows.Forms.TextBox
-    Friend WithEvents btnImprimirFormulario As System.Windows.Forms.Button
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents txt_id_detalle_orden_trabajo1 As System.Windows.Forms.TextBox
     Friend WithEvents Label45 As System.Windows.Forms.Label

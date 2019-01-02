@@ -1,35 +1,34 @@
 ﻿Public Class frm_Orden_Trabajo_Ampliada
 
     Dim datacontext As New DataS_Interno
-    Public quienllamo_listado_orden As Form
+    Public quienllamo_listado_orden_ampliada As Form
     Dim cargamasprod As String = "NO"
 
     Private Sub frm_Orden_Trabajo_Ampliada_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-        ' If quienllamo_listado_orden.Name <> frm_Listado_Orden_Trabajo.Name Then
-        'CARGA COMBOBOX PIEZA DETALLE 1
-        Dim combopieza1 = (From sec In datacontext.PIEZA
-                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
-                           Where PIE_ubicacion = "D"
-                           Order By PIE_nombre_pie Ascending)
-        cboPiezas_Producto.DataSource = combopieza1
-        cboPiezas_Producto.DisplayMember = "PIE_nombre_pie"
-        cboPiezas_Producto.ValueMember = "PIE_id_pieza"
-        cboPiezas_Producto.SelectedIndex = -1
+        If quienllamo_listado_orden_ampliada.Name <> frm_listado_orden_trabajo_ampliada.Name Then
+            'CARGA COMBOBOX PIEZA DETALLE 1
+            Dim combopieza1 = (From sec In datacontext.PIEZA
+                               Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
+                               Where PIE_ubicacion = "D"
+                               Order By PIE_nombre_pie Ascending)
+            cboPiezas_Producto.DataSource = combopieza1
+            cboPiezas_Producto.DisplayMember = "PIE_nombre_pie"
+            cboPiezas_Producto.ValueMember = "PIE_id_pieza"
+            cboPiezas_Producto.SelectedIndex = -1
 
-        'CARGA COMBOBOX PIEZA DETALLE 1
-        Dim combopieza2 = (From sec In datacontext.PIEZA
-                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
-                           Where PIE_ubicacion = "G"
-                           Order By PIE_nombre_pie Ascending)
-        cboPiezas_Producto_Gran_Formato.DataSource = combopieza2
-        cboPiezas_Producto_Gran_Formato.DisplayMember = "PIE_nombre_pie"
-        cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza"
-        cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
-        '  Else
-        '    cboPiezas1_Detalle1.SelectedValue = frm_Listado_Orden_Trabajo.dgv_detalle_orden.Item("PIE_id_pieza", frm_Listado_Orden_Trabajo.dgv_detalle_orden.Rows(0).Index).Value
-        '    cboPiezas2_Detalle2.SelectedValue = frm_Listado_Orden_Trabajo.dgv_detalle_orden.Item("PIE_id_pieza", frm_Listado_Orden_Trabajo.dgv_detalle_orden.Rows(1).Index).Value
-        '    cboPiezas3_Detalle3.SelectedValue = frm_Listado_Orden_Trabajo.dgv_detalle_orden.Item("PIE_id_pieza", frm_Listado_Orden_Trabajo.dgv_detalle_orden.Rows(2).Index).Value
-        '   End If
+            'CARGA COMBOBOX PIEZA DETALLE 1
+            Dim combopieza2 = (From sec In datacontext.PIEZA
+                               Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
+                               Where PIE_ubicacion = "G"
+                               Order By PIE_nombre_pie Ascending)
+            cboPiezas_Producto_Gran_Formato.DataSource = combopieza2
+            cboPiezas_Producto_Gran_Formato.DisplayMember = "PIE_nombre_pie"
+            cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza"
+            cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
+        Else
+            cboPiezas_Producto.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Rows(0).Index).Value
+            cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Rows(1).Index).Value
+        End If
     End Sub
 
     Private Sub btnBuscar_cliente_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_cliente.Click
@@ -357,112 +356,112 @@
                 temOPPBrillante, temOPPMate As String
 
             If chkAdhesivado.Checked = True Then
-                temadhesivado = "AD"
+                temadhesivado = "T01"
             Else
                 temadhesivado = ""
             End If
             If chkBarniz.Checked = True Then
-                tembarniz = "BA"
+                tembarniz = "T02"
             Else
                 tembarniz = ""
             End If
             If chkCocido.Checked = True Then
-                temcocido = "CC"
+                temcocido = "T03"
             Else
                 temcocido = ""
             End If
             If chkCuñoSeco.Checked = True Then
-                temcuñoseco = "CS"
+                temcuñoseco = "T04"
             Else
                 temcuñoseco = ""
             End If
             If chkDoblado.Checked = True Then
-                temdoblado = "DO"
+                temdoblado = "T05"
             Else
                 temdoblado = ""
             End If
             If chkEncuadernacion.Checked = True Then
-                temencuadernacion = "EN"
+                temencuadernacion = "T06"
             Else
                 temencuadernacion = ""
             End If
             If chkFresado.Checked = True Then
-                temfresado = "FR"
+                temfresado = "T07"
             Else
                 temfresado = ""
             End If
             If chkGuillotinado.Checked = True Then
-                temguillotinado = "GI"
+                temguillotinado = "T08"
             Else
                 temguillotinado = ""
             End If
             If chkLaca_UV.Checked = True Then
-                temlaca = "LA"
+                temlaca = "T09"
             Else
                 temlaca = ""
             End If
             If chkLacaUVSectorizada.Checked = True Then
-                temLacaUVSect = "LS"
+                temLacaUVSect = "T10"
             Else
                 temLacaUVSect = ""
             End If
             If chkMedio_Corte.Checked = True Then
-                temmediocorte = "MC"
+                temmediocorte = "T11"
             Else
                 temmediocorte = ""
             End If
             If chkMontado.Checked = True Then
-                temmontado = "MO"
+                temmontado = "T12"
             Else
                 temmontado = ""
             End If
             If chkOPPBrillante.Checked = True Then
-                temOPPBrillante = "OB"
+                temOPPBrillante = "T13"
             Else
                 temOPPBrillante = ""
             End If
             If chkOPPMate.Checked = True Then
-                temOPPMate = "OM"
+                temOPPMate = "T14"
             Else
                 temOPPMate = ""
             End If
             If chkOtros.Checked = True Then
-                temotros = "OT"
+                temotros = "T15"
             Else
                 temotros = ""
             End If
             If chkPolipropileno.Checked = True Then
-                tempolipropileno = "PL"
+                tempolipropileno = "T16"
             Else
                 tempolipropileno = ""
             End If
             If chkPosicionado.Checked = True Then
-                temposicionado = "PS"
+                temposicionado = "T17"
             Else
                 temposicionado = ""
             End If
             If chkRuedo.Checked = True Then
-                temruedo = "RU"
+                temruedo = "T18"
             Else
                 temruedo = ""
             End If
             If chkSoldado.Checked = True Then
-                temsoldado = "SL"
+                temsoldado = "T19"
             Else
                 temsoldado = ""
             End If
             If chkStamping.Checked = True Then
-                temstamping = "ST"
+                temstamping = "T20"
             Else
                 temstamping = ""
             End If
             If chkTrazado.Checked = True Then
-                temtrazado = "TZ"
+                temtrazado = "T21"
             Else
                 temtrazado = ""
             End If
             If chkTroquelado.Checked = True Then
-                temtroquelado = "TQ"
+                temtroquelado = "T22"
             Else
                 temtroquelado = ""
             End If

@@ -158,7 +158,6 @@ Public Class frm_Listado_Orden_Trabajo
                 Exit Sub
             End If
             'CARGA PROCESOS DEL PRODUCTO
-
             vble_id_proceso = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
             CargarProceso()
 
@@ -170,7 +169,6 @@ Public Class frm_Listado_Orden_Trabajo
                 btnEliminar_Producto.Enabled = True
             End If
         Catch ex As Exception
-
         End Try
     End Sub
 

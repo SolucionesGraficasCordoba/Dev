@@ -1380,6 +1380,9 @@ Public Class frm_Principal
 
 
     Private Sub OrdenAmpliadaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles OrdenAmpliadaToolStripMenuItem.Click
+
+        frm_Orden_Trabajo_Ampliada.quienllamo_listado_orden_ampliada = Me
+        frm_Orden_Trabajo_Ampliada.Text = "Nueva Orden Ampliada"
         frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value = Today
         frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value = frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value.Add(TimeSpan.FromDays(-1))
 
@@ -1398,7 +1401,7 @@ Public Class frm_Principal
         frm_Orden_Trabajo_Ampliada.GroupTerminacion.Enabled = False
         frm_Orden_Trabajo_Ampliada.txt_nombre_cliente.Enabled = False
         frm_Orden_Trabajo_Ampliada.txtNombre_vendedor.Enabled = False
-       
+
         frm_Orden_Trabajo_Ampliada.MdiParent = Me
         frm_Orden_Trabajo_Ampliada.Show()
 
