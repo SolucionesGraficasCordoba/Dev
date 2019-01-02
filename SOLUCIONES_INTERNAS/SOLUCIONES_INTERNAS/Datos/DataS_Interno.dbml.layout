@@ -93,7 +93,7 @@
         <classShapeMoniker Id="fc2e22ab-e517-4179-a803-0d7aaaa2d191" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.19032348632813); (3.9687475 : 5.19032348632813); (3.9687475 : 7.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 5.42432332356771); (3.84375 : 5.42432332356771); (3.84375 : 7.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataS_Interno/CLIENTE/CLIENTE_ORDEN_TRABAJO" />
       <nodes>
         <classShapeMoniker Id="867c08b7-f3ba-404d-a9be-55dcc64c7204" />
