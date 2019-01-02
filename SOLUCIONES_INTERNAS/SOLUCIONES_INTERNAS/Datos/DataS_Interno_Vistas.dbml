@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SOLUCIONES_INTERNAS1" Class="DataS_Interno_Vistas" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-84P9IMQ\SQLEXPRESS;Initial Catalog=SOLUCIONES_INTERNAS1;Integrated Security=True" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNAS1ConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="PREPRODUCCIONConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Colaborador_por_Sector" Member="Colaborador_por_Sector">
     <Type Name="Colaborador_por_Sector">
       <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />

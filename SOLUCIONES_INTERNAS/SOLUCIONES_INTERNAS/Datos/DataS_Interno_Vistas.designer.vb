@@ -34,7 +34,7 @@ Partial Public Class DataS_Interno_Vistas
   #End Region
 	
 	Public Sub New()
-		MyBase.New(Global.SOLUCIONES_INTERNAS.My.MySettings.Default.SOLUCIONES_INTERNAS1ConnectionString, mappingSource)
+		MyBase.New(Global.SOLUCIONES_INTERNAS.My.MySettings.Default.PREPRODUCCIONConnectionString, mappingSource)
 		OnCreated
 	End Sub
 	
