@@ -416,10 +416,8 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             frm_Actualizar_Producto_Orden_Ampliada.cboPiezas_Producto.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.cboPiezas_Producto_Gran_Formato.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto.Text = dgv_detalle_orden.Item("DOT_cantidad_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txtTamaño_Producto.Text = dgv_detalle_orden.Item("DOT_tamaño_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
-            '  frm_Actualizar_Producto_Orden_Ampliada.txtTamaño_Producto.Text = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_1_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
+             frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_1_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_2_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_3_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txt_Gramaje_1_Soporte.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
@@ -467,14 +465,72 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             If tempterminacion.Contains("T02") Then
                 frm_Actualizar_Producto_Orden_Ampliada.chkBarniz.Checked = True
             End If
+            If tempterminacion.Contains("T03") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkCocido.Checked = True
+            End If
+            If tempterminacion.Contains("T04") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkCuñoSeco.Checked = True
+            End If
+            If tempterminacion.Contains("T05") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkDoblado.Checked = True
+            End If
+            If tempterminacion.Contains("T06") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkEncuadernacion.Checked = True
+            End If
+            If tempterminacion.Contains("T07") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkFresado.Checked = True
+            End If
+            If tempterminacion.Contains("T08") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkGuillotinado.Checked = True
+            End If
+            If tempterminacion.Contains("T09") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkLaca_UV.Checked = True
+            End If
+            If tempterminacion.Contains("T10") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkLacaUVSectorizada.Checked = True
+            End If
+            If tempterminacion.Contains("T11") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkMedio_Corte.Checked = True
+            End If
+            If tempterminacion.Contains("T12") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkMontado.Checked = True
+            End If
+            If tempterminacion.Contains("T13") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkOPPBrillante.Checked = True
+            End If
+            If tempterminacion.Contains("T14") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkOPPMate.Checked = True
+            End If
+            If tempterminacion.Contains("T15") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkOtros.Checked = True
+            End If
+            If tempterminacion.Contains("T16") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkPolipropileno.Checked = True
+            End If
+            If tempterminacion.Contains("T17") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkPosicionado.Checked = True
+            End If
+            If tempterminacion.Contains("T18") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkRuedo.Checked = True
+            End If
+            If tempterminacion.Contains("T19") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkSoldado.Checked = True
+            End If
+            If tempterminacion.Contains("T20") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkStamping.Checked = True
+            End If
+            If tempterminacion.Contains("T21") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkTrazado.Checked = True
+            End If
+            If tempterminacion.Contains("T22") Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkTroquelado.Checked = True
+            End If
         End If
         frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Enabled = False
         frm_Actualizar_Producto_Orden_Ampliada.Label1.Visible = False
         frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Visible = False
         frm_Actualizar_Producto_Orden_Ampliada.cboTipo_Orden.Visible = False
         frm_Actualizar_Producto_Orden_Ampliada.Label5.Visible = False
-
-        ' frm_Orden_Trabajo_Ampliada.quienllamo_listado_orden_ampliada = Me
 
         frm_Actualizar_Producto_Orden_Ampliada.ShowDialog()
     End Sub

@@ -1240,7 +1240,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkSoldado
         '
         Me.chkSoldado.AutoSize = True
-        Me.chkSoldado.Location = New System.Drawing.Point(114, 103)
+        Me.chkSoldado.Location = New System.Drawing.Point(20, 100)
         Me.chkSoldado.Name = "chkSoldado"
         Me.chkSoldado.Size = New System.Drawing.Size(65, 17)
         Me.chkSoldado.TabIndex = 150
@@ -1250,7 +1250,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkRuedo
         '
         Me.chkRuedo.AutoSize = True
-        Me.chkRuedo.Location = New System.Drawing.Point(19, 103)
+        Me.chkRuedo.Location = New System.Drawing.Point(733, 64)
         Me.chkRuedo.Name = "chkRuedo"
         Me.chkRuedo.Size = New System.Drawing.Size(58, 17)
         Me.chkRuedo.TabIndex = 149
@@ -1290,7 +1290,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkTrazado
         '
         Me.chkTrazado.AutoSize = True
-        Me.chkTrazado.Location = New System.Drawing.Point(269, 103)
+        Me.chkTrazado.Location = New System.Drawing.Point(190, 100)
         Me.chkTrazado.Name = "chkTrazado"
         Me.chkTrazado.Size = New System.Drawing.Size(65, 17)
         Me.chkTrazado.TabIndex = 147
@@ -1310,7 +1310,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkStamping
         '
         Me.chkStamping.AutoSize = True
-        Me.chkStamping.Location = New System.Drawing.Point(190, 103)
+        Me.chkStamping.Location = New System.Drawing.Point(114, 100)
         Me.chkStamping.Name = "chkStamping"
         Me.chkStamping.Size = New System.Drawing.Size(70, 17)
         Me.chkStamping.TabIndex = 147
@@ -1360,7 +1360,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'chkTroquelado
         '
         Me.chkTroquelado.AutoSize = True
-        Me.chkTroquelado.Location = New System.Drawing.Point(365, 103)
+        Me.chkTroquelado.Location = New System.Drawing.Point(269, 100)
         Me.chkTroquelado.Name = "chkTroquelado"
         Me.chkTroquelado.Size = New System.Drawing.Size(80, 17)
         Me.chkTroquelado.TabIndex = 147
