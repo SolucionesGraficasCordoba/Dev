@@ -12,7 +12,11 @@
         cboPiezas_Producto.DisplayMember = "PIE_nombre_pie"
         cboPiezas_Producto.ValueMember = "PIE_id_pieza"
 
+        Dim inv As Integer
+
         'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
+        inv = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value()
+
         cboPiezas_Producto.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
 
 
@@ -25,6 +29,9 @@
         cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza_offset"
 
         'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
+
+        inv = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.SelectedRows(0).Index).Value
+
         cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
 
     End Sub
