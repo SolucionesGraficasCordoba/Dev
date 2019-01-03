@@ -31,7 +31,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_id_detalle_orden_trabajo1 = New System.Windows.Forms.TextBox()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.btnCancelar_Orden_Trabajo = New System.Windows.Forms.Button()
-        Me.btnActualizar_Orden_Trabajo = New System.Windows.Forms.Button()
+        Me.btnActualizar_Orden_Trabajo_Ampliada = New System.Windows.Forms.Button()
         Me.Label46 = New System.Windows.Forms.Label()
         Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -259,14 +259,14 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.btnCancelar_Orden_Trabajo.Text = "Cancelar"
         Me.btnCancelar_Orden_Trabajo.UseVisualStyleBackColor = True
         '
-        'btnActualizar_Orden_Trabajo
+        'btnActualizar_Orden_Trabajo_Ampliada
         '
-        Me.btnActualizar_Orden_Trabajo.Location = New System.Drawing.Point(1076, 680)
-        Me.btnActualizar_Orden_Trabajo.Name = "btnActualizar_Orden_Trabajo"
-        Me.btnActualizar_Orden_Trabajo.Size = New System.Drawing.Size(75, 33)
-        Me.btnActualizar_Orden_Trabajo.TabIndex = 99
-        Me.btnActualizar_Orden_Trabajo.Text = "Actualizar"
-        Me.btnActualizar_Orden_Trabajo.UseVisualStyleBackColor = True
+        Me.btnActualizar_Orden_Trabajo_Ampliada.Location = New System.Drawing.Point(1076, 680)
+        Me.btnActualizar_Orden_Trabajo_Ampliada.Name = "btnActualizar_Orden_Trabajo_Ampliada"
+        Me.btnActualizar_Orden_Trabajo_Ampliada.Size = New System.Drawing.Size(75, 33)
+        Me.btnActualizar_Orden_Trabajo_Ampliada.TabIndex = 99
+        Me.btnActualizar_Orden_Trabajo_Ampliada.Text = "Actualizar"
+        Me.btnActualizar_Orden_Trabajo_Ampliada.UseVisualStyleBackColor = True
         '
         'Label46
         '
@@ -1633,7 +1633,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.btnGuardar_Orden_Trabajo)
         Me.Controls.Add(Me.btnCancelar_Orden_Trabajo)
-        Me.Controls.Add(Me.btnActualizar_Orden_Trabajo)
+        Me.Controls.Add(Me.btnActualizar_Orden_Trabajo_Ampliada)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Orden_Trabajo_Ampliada"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -1671,7 +1671,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
     Friend WithEvents txt_id_detalle_orden_trabajo1 As System.Windows.Forms.TextBox
     Friend WithEvents Label45 As System.Windows.Forms.Label
     Friend WithEvents btnCancelar_Orden_Trabajo As System.Windows.Forms.Button
-    Friend WithEvents btnActualizar_Orden_Trabajo As System.Windows.Forms.Button
+    Friend WithEvents btnActualizar_Orden_Trabajo_Ampliada As System.Windows.Forms.Button
     Friend WithEvents Label46 As System.Windows.Forms.Label
     Friend WithEvents txtNumero_Orden_Trabajo As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
