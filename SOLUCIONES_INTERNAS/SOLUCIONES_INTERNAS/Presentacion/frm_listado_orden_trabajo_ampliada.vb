@@ -28,7 +28,7 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.AutoGenerateColumns = False
         dgv_detalle_orden.Columns.Clear()
 
-        dgv_detalle_orden.Columns.Add("ORT_id_orden_trabajo", "TN")
+        dgv_detalle_orden.Columns.Add("ORT_id_orden_trabajo", "ORT_id_orden_trabajo")
         dgv_detalle_orden.Columns.Add("ORT_tipo_ot", "Tipo")
         dgv_detalle_orden.Columns.Add("ORT_numero_ot", "Número")
         dgv_detalle_orden.Columns.Add("ORT_observaciones_ot", "Observaciones")
@@ -92,20 +92,20 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns.Add("descripcion_terminacion", "descripcion_terminacion")
 
         dgv_detalle_orden.Columns(0).DataPropertyName = "ORT_id_orden_trabajo"
-        dgv_detalle_orden.Columns(0).Visible = False
+        ' dgv_detalle_orden.Columns(0).Visible = False
         dgv_detalle_orden.Columns(1).DataPropertyName = "ORT_tipo_ot"
         '  dgvLista_Orden_Trabajo.Columns(1).Width = 50
         dgv_detalle_orden.Columns(2).DataPropertyName = "ORT_numero_ot"
         dgv_detalle_orden.Columns(3).DataPropertyName = "ORT_observaciones_ot"
         dgv_detalle_orden.Columns(4).DataPropertyName = "ORT_mejoras_ot"
-        dgv_detalle_orden.Columns(4).Visible = False
+        ' dgv_detalle_orden.Columns(4).Visible = False
         dgv_detalle_orden.Columns(5).DataPropertyName = "VEN_id_vendedor"
         dgv_detalle_orden.Columns(6).DataPropertyName = "VEN_nombre_ven"
         dgv_detalle_orden.Columns(6).Visible = False
         dgv_detalle_orden.Columns(7).DataPropertyName = "VEN_apellido_ven"
         dgv_detalle_orden.Columns(8).DataPropertyName = "ORT_fecha_ot"
         dgv_detalle_orden.Columns(9).DataPropertyName = "ORT_fecha_entrega"
-        dgv_detalle_orden.Columns(9).Visible = False
+        ' dgv_detalle_orden.Columns(9).Visible = False
         dgv_detalle_orden.Columns(10).DataPropertyName = "CLI_id_cliente"
         dgv_detalle_orden.Columns(11).DataPropertyName = "CLI_razon_social"
         dgv_detalle_orden.Columns(12).DataPropertyName = "CLI_domicilio"
@@ -132,7 +132,7 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns(33).DataPropertyName = "cantidad_1_PM_offset"
         dgv_detalle_orden.Columns(34).DataPropertyName = "cantidad_2_PM_offset"
         dgv_detalle_orden.Columns(35).DataPropertyName = "cantidad_3_PM_offset"
-        dgv_detalle_orden.Columns(36).DataPropertyName = "formato_1_PM_offset"""
+        dgv_detalle_orden.Columns(36).DataPropertyName = "formato_1_PM_offset"
         dgv_detalle_orden.Columns(37).DataPropertyName = "formato_2_PM_offset"
         dgv_detalle_orden.Columns(38).DataPropertyName = "formato_3_PM_offset"
         dgv_detalle_orden.Columns(39).DataPropertyName = "modo_impresion_offset"
@@ -408,16 +408,15 @@ Where ORT_id_orden_trabajo = vble_id_orden)
 
     Private Sub btnModificarProducto_Click(sender As System.Object, e As System.EventArgs) Handles btnModificarProducto.Click
 
-
         If dgv_detalle_orden.SelectedRows.Count > 0 Then
-            frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Text = dgv_detalle_orden.Item("ORT_id_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.Item("ORT_numero_ot", dgv_detalle_orden.SelectedRows(0).Index).Value
+            frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Text = dgv_detalle_orden.Item("ORT_id_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value 'id_orden_trabajo
+            frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.Item("ORT_numero_ot", dgv_detalle_orden.SelectedRows(0).Index).Value 'numero orden
             frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto.Text = dgv_detalle_orden.Item("DOT_cantidad_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.cboPiezas_Producto.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.cboPiezas_Producto_Gran_Formato.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txtTamaño_Producto.Text = dgv_detalle_orden.Item("DOT_tamaño_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
-             frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_1_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
+            frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_1_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_2_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_3_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txt_Gramaje_1_Soporte.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
@@ -528,7 +527,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
         End If
         frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Enabled = False
         frm_Actualizar_Producto_Orden_Ampliada.Label1.Visible = False
-        frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Visible = False
+        '  frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Visible = False
         frm_Actualizar_Producto_Orden_Ampliada.cboTipo_Orden.Visible = False
         frm_Actualizar_Producto_Orden_Ampliada.Label5.Visible = False
 

@@ -23,7 +23,7 @@
                                Order By PIE_nombre_pie Ascending)
             cboPiezas_Producto_Gran_Formato.DataSource = combopieza2
             cboPiezas_Producto_Gran_Formato.DisplayMember = "PIE_nombre_pie"
-            cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza_offset"
+            cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza"
             cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
         Else
             cboPiezas_Producto.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Rows(0).Index).Value
@@ -245,8 +245,7 @@
                 datacontext.SubmitChanges()
             End If
 
-            'GUARDA EL REGISTRO 1 DEL DETALLE DE LA ORDEN DE TRABAJO
-
+            'GUARDA DETALLE DE LA ORDEN DE TRABAJO
             '--------------------------------------------------------------------------------------
 
             Dim detalle = New DETALLE_ORDEN_TRABAJO
@@ -465,8 +464,8 @@
             Else
                 temtroquelado = ""
             End If
-      
-           
+
+
             detalle.tipo_terminacion = temlaca & temposicionado & temdoblado & temtroquelado & temguillotinado & temmediocorte & tembarniz & temmontado _
                 & temencuadernacion & temstamping & temadhesivado & temtrazado & temsoldado & temcocido & temruedo & tempolipropileno & temotros _
                 & temcuñoseco & temfresado & temLacaUVSect & temOPPBrillante & temOPPMate

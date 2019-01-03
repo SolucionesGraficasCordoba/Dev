@@ -140,8 +140,6 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.chkDigital = New System.Windows.Forms.CheckBox()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.txt_id_detalle_orden_trabajo1 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.btnCancelar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.btnActualizar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.groupOffset.SuspendLayout()
@@ -1252,10 +1250,6 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.GroupBox1.Controls.Add(Me.chkOffset)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.chkDigital)
-        Me.GroupBox1.Controls.Add(Me.Label45)
-        Me.GroupBox1.Controls.Add(Me.txt_id_detalle_orden_trabajo1)
-        Me.GroupBox1.Controls.Add(Me.TextBox1)
-        Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 79)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(1219, 56)
@@ -1329,7 +1323,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(1049, 26)
+        Me.Label45.Location = New System.Drawing.Point(704, 33)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(129, 13)
         Me.Label45.TabIndex = 56
@@ -1337,26 +1331,10 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         'txt_id_detalle_orden_trabajo1
         '
-        Me.txt_id_detalle_orden_trabajo1.Location = New System.Drawing.Point(1178, 23)
+        Me.txt_id_detalle_orden_trabajo1.Location = New System.Drawing.Point(833, 30)
         Me.txt_id_detalle_orden_trabajo1.Name = "txt_id_detalle_orden_trabajo1"
         Me.txt_id_detalle_orden_trabajo1.Size = New System.Drawing.Size(32, 20)
         Me.txt_id_detalle_orden_trabajo1.TabIndex = 57
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(920, 16)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(75, 20)
-        Me.TextBox1.TabIndex = 77
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(894, 19)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(22, 13)
-        Me.Label4.TabIndex = 76
-        Me.Label4.Text = "TN"
         '
         'btnCancelar_Orden_Trabajo
         '
@@ -1387,7 +1365,9 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.Controls.Add(Me.GroupTerminacion)
         Me.Controls.Add(Me.GroupGranFormato)
         Me.Controls.Add(Me.GroupDigital)
+        Me.Controls.Add(Me.Label45)
         Me.Controls.Add(Me.GroupProducto_Soportes)
+        Me.Controls.Add(Me.txt_id_detalle_orden_trabajo1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.txt_id_orden_trabajo)
         Me.Controls.Add(Me.Label1)
@@ -1535,8 +1515,6 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
     Friend WithEvents chkDigital As System.Windows.Forms.CheckBox
     Friend WithEvents Label45 As System.Windows.Forms.Label
     Friend WithEvents txt_id_detalle_orden_trabajo1 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents btnCancelar_Orden_Trabajo As System.Windows.Forms.Button
     Friend WithEvents btnActualizar_Orden_Trabajo As System.Windows.Forms.Button
 End Class
