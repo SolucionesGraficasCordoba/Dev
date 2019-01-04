@@ -240,20 +240,20 @@ Public Class frm_Cliente
 
     Private Sub txt_razonsocial_cliente_Leave(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_razonsocial_cliente.Leave
 
-        Dim completar = (From C In datacontext.CLIENTE Where C.CLI_razon_social = txt_razonsocial_cliente.Text)
+        'Dim completar = (From C In datacontext.CLIENTE Where C.CLI_razon_social = txt_razonsocial_cliente.Text)
 
-        'Si el texto no está vacío y no está en la lista
-        If Not String.IsNullOrEmpty(txt_razonsocial_cliente.Text) _
-        AndAlso Not txt_razonsocial_cliente.AutoCompleteCustomSource.Contains(completar) Then
-            'Obtengo control actual
-            Dim ctrl As Control = Me.ActiveControl
+        ''Si el texto no está vacío y no está en la lista
+        'If Not String.IsNullOrEmpty(txt_razonsocial_cliente.Text) _
+        'AndAlso Not txt_razonsocial_cliente.AutoCompleteCustomSource.Contains(completar) Then
+        '    'Obtengo control actual
+        '    Dim ctrl As Control = Me.ActiveControl
 
-            'Inserto texto en la lista de autocompletar
-            txt_razonsocial_cliente.AutoCompleteCustomSource.Add(txt_razonsocial_cliente.Text)
+        '    'Inserto texto en la lista de autocompletar
+        '    txt_razonsocial_cliente.AutoCompleteCustomSource.Add(txt_razonsocial_cliente.Text)
 
-            'Selecciono control actual
-            ctrl.Select()
-        End If
+        '    'Selecciono control actual
+        '    ctrl.Select()
+        'End If
 
     End Sub
 
