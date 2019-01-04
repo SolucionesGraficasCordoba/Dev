@@ -1374,7 +1374,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.Controls.Add(Me.txtNumero_Orden_Trabajo)
         Me.Controls.Add(Me.Label6)
         Me.Name = "frm_Actualizar_Producto_Orden_Ampliada"
-        Me.Text = "frm_Actualizar_Producto_Orden_Ampliada"
+        Me.Text = "Actualizar Producto"
         Me.groupOffset.ResumeLayout(False)
         Me.groupOffset.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)

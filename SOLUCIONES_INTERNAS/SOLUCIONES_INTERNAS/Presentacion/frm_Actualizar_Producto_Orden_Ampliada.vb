@@ -1,7 +1,85 @@
 ﻿Public Class frm_Actualizar_Producto_Orden_Ampliada
     Dim datacontext As New DataS_Interno
 
+    Public Sub LimpiarDigital()
+        cboTipo_Impresion_Digital.SelectedIndex = -1
+        txtCantidad_1_Pliego_Maquina_Digital.Clear()
+        cboFormato_1_Pliego_Maquina_Digital.SelectedIndex = -1
+        txtCantidad_2_Pliego_Maquina_Digital.Clear()
+        cboFormato_2_Pliego_Maquina_Digital.SelectedIndex = -1
+        txtCantidad_3_Pliego_Maquina_Digital.Clear()
+        cboFormato_3_Pliego_Maquina_Digital.SelectedIndex = -1
+        txtDato_Variable.Clear()
+    End Sub
+
+    Sub LimpiarTerminacion()
+        chkLaca_UV.Checked = False
+        chkPosicionado.Checked = False
+        chkDoblado.Checked = False
+        chkTroquelado.Checked = False
+        chkGuillotinado.Checked = False
+        chkMedio_Corte.Checked = False
+        chkBarniz.Checked = False
+        chkMontado.Checked = False
+        chkEncuadernacion.Checked = False
+        chkStamping.Checked = False
+        chkAdhesivado.Checked = False
+        chkTrazado.Checked = False
+        chkSoldado.Checked = False
+        chkCocido.Checked = False
+        chkRuedo.Checked = False
+        chkPolipropileno.Checked = False
+        chkOtros.Checked = False
+        txt_descripcion_terminacion.Clear()
+    End Sub
+
+    Sub LimpiarProducto_Soportes()
+        txt_cantidad_producto.Clear()
+        cboPiezas_Producto.SelectedIndex = -1
+        txtTamaño_Producto.Clear()
+        txt_Papel_1_Soporte.Clear()
+        txt_Gramaje_1_Soporte.Clear()
+        txt_Cantidad_1_Pliego_Entero.Clear()
+        cboFormato_1_Pliego_Entero.SelectedIndex = -1
+        txt_Papel_2_Soporte.Clear()
+        txt_Cantidad_2_Pliego_Entero.Clear()
+        txt_Gramaje_2_Soporte.Clear()
+        txt_Cantidad_2_Pliego_Entero.Clear()
+        cboFormato_2_Pliego_Entero.SelectedIndex = -1
+        txt_Papel_3_Soporte.Clear()
+        txt_Gramaje_3_Soporte.Clear()
+        txt_Cantidad_3_Pliego_Entero.Clear()
+        cboFormato_3_Pliego_Entero.SelectedIndex = -1
+    End Sub
+
+    Sub LimpiarOffset()
+        cboTipo_Impresion_Offset.SelectedIndex = -1
+        cboModo_Impresion_Offset.SelectedIndex = -1
+        cboImpresora_Offset.SelectedIndex = -1
+        cboMarca_Offset.SelectedIndex = -1
+        txtCantidad_1_Pliego_Maquina_Offset.Clear()
+        txtCantidad_2_Pliego_Maquina_Offset.Clear()
+        txtCantidad_3_Pliego_Maquina_Offset.Clear()
+        txt_chapa_soporte_1.Clear()
+        txt_chapa_soporte_2.Clear()
+        txt_chapa_soporte_3.Clear()
+        cboFormato_1_Pliego_Maquina_Offset.SelectedIndex = -1
+        cboFormato_2_Pliego_Maquina_Offset.SelectedIndex = -1
+        cboFormato_3_Pliego_Maquina_Offset.SelectedIndex = -1
+    End Sub
+
+    Sub LimpiarGranFormato()
+        txt_cantidad_producto_Gran_Formato.Clear()
+        cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
+        txtTamaño_Producto_Gran_Formato.Clear()
+        txtSustrato_Gran_Formato.Clear()
+        cboCalidad_Gran_Formato.SelectedIndex = -1
+        cboSistema_Gran_Formato.SelectedIndex = -1
+    End Sub
+
     Private Sub frm_Actualizar_Producto_Orden_Ampliada_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+      
+
         'CARGA COMBO
         Dim combopieza1 = (From sec In datacontext.PIEZA
                              Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
@@ -25,13 +103,12 @@
         cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza"
 
         'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
-        If cboPiezas_Producto_Gran_Formato.Text.Length <> 0 Then
-            cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
-        Else
-            cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
 
-
-        End If
+        ' If cboPiezas_Producto_Gran_Formato.Text.Length <> 0 Then
+        ' cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
+        ' Else
+        cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
+        '   End If
     End Sub
 
     Private Sub btnActualizar_Orden_Trabajo_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar_Orden_Trabajo.Click
