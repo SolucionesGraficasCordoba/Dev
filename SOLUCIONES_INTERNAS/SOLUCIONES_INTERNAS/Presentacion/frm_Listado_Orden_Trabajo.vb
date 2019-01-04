@@ -1182,5 +1182,6 @@ Public Class frm_Listado_Orden_Trabajo
         doc.Add(pro_term)
         doc.Add(pro_logi)
     End Sub
+
 End Class
 

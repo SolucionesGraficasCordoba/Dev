@@ -31,7 +31,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_id_detalle_orden_trabajo1 = New System.Windows.Forms.TextBox()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.btnCancelar_Orden_Trabajo = New System.Windows.Forms.Button()
-        Me.btnActualizar_Orden_Trabajo_Ampliada = New System.Windows.Forms.Button()
         Me.Label46 = New System.Windows.Forms.Label()
         Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -227,7 +226,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'btnGuardar_Orden_Trabajo
         '
-        Me.btnGuardar_Orden_Trabajo.Location = New System.Drawing.Point(995, 680)
+        Me.btnGuardar_Orden_Trabajo.Location = New System.Drawing.Point(1076, 680)
         Me.btnGuardar_Orden_Trabajo.Name = "btnGuardar_Orden_Trabajo"
         Me.btnGuardar_Orden_Trabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnGuardar_Orden_Trabajo.TabIndex = 92
@@ -258,15 +257,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.btnCancelar_Orden_Trabajo.TabIndex = 94
         Me.btnCancelar_Orden_Trabajo.Text = "Cancelar"
         Me.btnCancelar_Orden_Trabajo.UseVisualStyleBackColor = True
-        '
-        'btnActualizar_Orden_Trabajo_Ampliada
-        '
-        Me.btnActualizar_Orden_Trabajo_Ampliada.Location = New System.Drawing.Point(1076, 680)
-        Me.btnActualizar_Orden_Trabajo_Ampliada.Name = "btnActualizar_Orden_Trabajo_Ampliada"
-        Me.btnActualizar_Orden_Trabajo_Ampliada.Size = New System.Drawing.Size(75, 33)
-        Me.btnActualizar_Orden_Trabajo_Ampliada.TabIndex = 99
-        Me.btnActualizar_Orden_Trabajo_Ampliada.Text = "Actualizar"
-        Me.btnActualizar_Orden_Trabajo_Ampliada.UseVisualStyleBackColor = True
         '
         'Label46
         '
@@ -594,7 +584,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.GroupBox8.Controls.Add(Me.txt_Cantidad_3_Pliego_Entero)
         Me.GroupBox8.Controls.Add(Me.cboFormato_1_Pliego_Entero)
         Me.GroupBox8.Controls.Add(Me.cboFormato_2_Pliego_Entero)
-        Me.GroupBox8.Location = New System.Drawing.Point(379, 91)
+        Me.GroupBox8.Location = New System.Drawing.Point(377, 97)
         Me.GroupBox8.Name = "GroupBox8"
         Me.GroupBox8.Size = New System.Drawing.Size(230, 121)
         Me.GroupBox8.TabIndex = 133
@@ -699,7 +689,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'txt_Gramaje_3_Soporte
         '
-        Me.txt_Gramaje_3_Soporte.Location = New System.Drawing.Point(265, 182)
+        Me.txt_Gramaje_3_Soporte.Location = New System.Drawing.Point(262, 187)
         Me.txt_Gramaje_3_Soporte.MaxLength = 10
         Me.txt_Gramaje_3_Soporte.Name = "txt_Gramaje_3_Soporte"
         Me.txt_Gramaje_3_Soporte.Size = New System.Drawing.Size(101, 20)
@@ -707,7 +697,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'txt_Papel_3_Soporte
         '
-        Me.txt_Papel_3_Soporte.Location = New System.Drawing.Point(34, 182)
+        Me.txt_Papel_3_Soporte.Location = New System.Drawing.Point(31, 187)
         Me.txt_Papel_3_Soporte.MaxLength = 50
         Me.txt_Papel_3_Soporte.Name = "txt_Papel_3_Soporte"
         Me.txt_Papel_3_Soporte.Size = New System.Drawing.Size(225, 20)
@@ -715,7 +705,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'txt_Gramaje_2_Soporte
         '
-        Me.txt_Gramaje_2_Soporte.Location = New System.Drawing.Point(265, 156)
+        Me.txt_Gramaje_2_Soporte.Location = New System.Drawing.Point(262, 161)
         Me.txt_Gramaje_2_Soporte.MaxLength = 10
         Me.txt_Gramaje_2_Soporte.Name = "txt_Gramaje_2_Soporte"
         Me.txt_Gramaje_2_Soporte.Size = New System.Drawing.Size(101, 20)
@@ -723,7 +713,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'txt_Papel_2_Soporte
         '
-        Me.txt_Papel_2_Soporte.Location = New System.Drawing.Point(34, 156)
+        Me.txt_Papel_2_Soporte.Location = New System.Drawing.Point(31, 161)
         Me.txt_Papel_2_Soporte.MaxLength = 50
         Me.txt_Papel_2_Soporte.Name = "txt_Papel_2_Soporte"
         Me.txt_Papel_2_Soporte.Size = New System.Drawing.Size(225, 20)
@@ -749,7 +739,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'txt_Gramaje_1_Soporte
         '
-        Me.txt_Gramaje_1_Soporte.Location = New System.Drawing.Point(265, 131)
+        Me.txt_Gramaje_1_Soporte.Location = New System.Drawing.Point(262, 136)
         Me.txt_Gramaje_1_Soporte.MaxLength = 10
         Me.txt_Gramaje_1_Soporte.Name = "txt_Gramaje_1_Soporte"
         Me.txt_Gramaje_1_Soporte.Size = New System.Drawing.Size(101, 20)
@@ -757,7 +747,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'txt_Papel_1_Soporte
         '
-        Me.txt_Papel_1_Soporte.Location = New System.Drawing.Point(34, 131)
+        Me.txt_Papel_1_Soporte.Location = New System.Drawing.Point(31, 136)
         Me.txt_Papel_1_Soporte.MaxLength = 50
         Me.txt_Papel_1_Soporte.Name = "txt_Papel_1_Soporte"
         Me.txt_Papel_1_Soporte.Size = New System.Drawing.Size(225, 20)
@@ -863,9 +853,9 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboTipo_Impresion_Digital.FormattingEnabled = True
         Me.cboTipo_Impresion_Digital.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
-        Me.cboTipo_Impresion_Digital.Location = New System.Drawing.Point(101, 34)
+        Me.cboTipo_Impresion_Digital.Location = New System.Drawing.Point(122, 25)
         Me.cboTipo_Impresion_Digital.Name = "cboTipo_Impresion_Digital"
-        Me.cboTipo_Impresion_Digital.Size = New System.Drawing.Size(138, 21)
+        Me.cboTipo_Impresion_Digital.Size = New System.Drawing.Size(85, 21)
         Me.cboTipo_Impresion_Digital.TabIndex = 136
         '
         'GroupBox7
@@ -957,7 +947,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(16, 37)
+        Me.Label34.Location = New System.Drawing.Point(40, 28)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(76, 13)
         Me.Label34.TabIndex = 137
@@ -1633,7 +1623,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.btnGuardar_Orden_Trabajo)
         Me.Controls.Add(Me.btnCancelar_Orden_Trabajo)
-        Me.Controls.Add(Me.btnActualizar_Orden_Trabajo_Ampliada)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Orden_Trabajo_Ampliada"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -1671,7 +1660,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
     Friend WithEvents txt_id_detalle_orden_trabajo1 As System.Windows.Forms.TextBox
     Friend WithEvents Label45 As System.Windows.Forms.Label
     Friend WithEvents btnCancelar_Orden_Trabajo As System.Windows.Forms.Button
-    Friend WithEvents btnActualizar_Orden_Trabajo_Ampliada As System.Windows.Forms.Button
     Friend WithEvents Label46 As System.Windows.Forms.Label
     Friend WithEvents txtNumero_Orden_Trabajo As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label

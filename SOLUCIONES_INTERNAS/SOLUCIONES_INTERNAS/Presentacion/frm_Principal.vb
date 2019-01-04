@@ -1401,6 +1401,8 @@ Public Class frm_Principal
         frm_Orden_Trabajo_Ampliada.GroupTerminacion.Enabled = False
         frm_Orden_Trabajo_Ampliada.txt_nombre_cliente.Enabled = False
         frm_Orden_Trabajo_Ampliada.txtNombre_vendedor.Enabled = False
+        frm_Orden_Trabajo_Ampliada.cboTipo_Impresion_Digital.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboTipo_Impresion_Offset.SelectedIndex = -1
 
         frm_Orden_Trabajo_Ampliada.MdiParent = Me
         frm_Orden_Trabajo_Ampliada.Show()
@@ -1409,8 +1411,27 @@ Public Class frm_Principal
 
     Private Sub ListaOrdenAmpliadaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaOrdenAmpliadaToolStripMenuItem.Click
         frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Producto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnVer.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btn_ODT_mostrar_listado_pdf.Enabled = False
 
         frm_listado_orden_trabajo_ampliada.MdiParent = Me
         frm_listado_orden_trabajo_ampliada.Show()
+        frm_listado_orden_trabajo_ampliada.dgvLista_Orden_Trabajo.ClearSelection()
+    End Sub
+
+    Private Sub ConsultarOrdenAmpliadaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarOrdenAmpliadaToolStripMenuItem.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Producto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnVer.Visible = True
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btn_ODT_mostrar_listado_pdf.Enabled = False
+
+        frm_listado_orden_trabajo_ampliada.MdiParent = Me
+        frm_listado_orden_trabajo_ampliada.Show()
+        frm_listado_orden_trabajo_ampliada.dgvLista_Orden_Trabajo.ClearSelection()
     End Sub
 End Class

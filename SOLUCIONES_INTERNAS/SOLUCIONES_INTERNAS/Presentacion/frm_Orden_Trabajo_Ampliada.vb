@@ -81,8 +81,8 @@
         End If
     End Sub
 
-    Sub LimpiarDigital()
-        cboTipo_Impresion_Digital.Text = ""
+    Public Sub LimpiarDigital()
+        cboTipo_Impresion_Digital.SelectedIndex = -1
         txtCantidad_1_Pliego_Maquina_Digital.Clear()
         cboFormato_1_Pliego_Maquina_Digital.SelectedIndex = -1
         txtCantidad_2_Pliego_Maquina_Digital.Clear()
@@ -133,19 +133,19 @@
     End Sub
 
     Sub LimpiarOffset()
-        cboTipo_Impresion_Offset.Text = ""
+        cboTipo_Impresion_Offset.SelectedIndex = -1
         cboModo_Impresion_Offset.SelectedIndex = -1
         cboImpresora_Offset.SelectedIndex = -1
         cboMarca_Offset.SelectedIndex = -1
         txtCantidad_1_Pliego_Maquina_Offset.Clear()
-        cboFormato_1_Pliego_Maquina_Offset.SelectedIndex = -1
-        txt_chapa_soporte_1.Clear()
         txtCantidad_2_Pliego_Maquina_Offset.Clear()
-        cboFormato_2_Pliego_Maquina_Offset.SelectedIndex = -1
-        txt_chapa_soporte_2.Clear()
         txtCantidad_3_Pliego_Maquina_Offset.Clear()
-        cboFormato_3_Pliego_Maquina_Offset.SelectedIndex = -1
+        txt_chapa_soporte_1.Clear()
+        txt_chapa_soporte_2.Clear()
         txt_chapa_soporte_3.Clear()
+        cboFormato_1_Pliego_Maquina_Offset.SelectedIndex = -1
+        cboFormato_2_Pliego_Maquina_Offset.SelectedIndex = -1
+        cboFormato_3_Pliego_Maquina_Offset.SelectedIndex = -1
     End Sub
 
     Sub LimpiarGranFormato()
@@ -157,8 +157,8 @@
         cboSistema_Gran_Formato.SelectedIndex = -1
     End Sub
 
-    Private Sub btnGuardar_Orden_Trabajo_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar_Orden_Trabajo.Click
-    
+    Private Sub btnGuardar_Orden_Trabajo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Orden_Trabajo.Click
+
         'VALIDA QUE EL NUMERO DE ORDEN NO ESTE VACIO
         If txtNumero_Orden_Trabajo.Text.Length = 0 Then
             MsgBox("Complete el campo Número de Orden")
@@ -505,6 +505,10 @@
         frm_Vendedor.Show()
     End Sub
 
+    Private Sub btnCancelar_Orden_Trabajo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar_Orden_Trabajo.Click
+        Me.Close()
+        Me.Dispose()
+    End Sub
 End Class
 
 'USE [SOLUCIONES_INTERNAS1]
