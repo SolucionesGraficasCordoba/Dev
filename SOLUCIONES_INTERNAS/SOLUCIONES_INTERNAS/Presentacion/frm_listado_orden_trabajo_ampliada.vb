@@ -92,31 +92,44 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns.Add("descripcion_terminacion", "descripcion_terminacion")
 
         dgv_detalle_orden.Columns(0).DataPropertyName = "ORT_id_orden_trabajo"
-        ' dgv_detalle_orden.Columns(0).Visible = False
+        dgv_detalle_orden.Columns(0).Visible = False
         dgv_detalle_orden.Columns(1).DataPropertyName = "ORT_tipo_ot"
-        '  dgvLista_Orden_Trabajo.Columns(1).Width = 50
+        dgv_detalle_orden.Columns(1).Visible = False
         dgv_detalle_orden.Columns(2).DataPropertyName = "ORT_numero_ot"
+        dgv_detalle_orden.Columns(2).Visible = False
         dgv_detalle_orden.Columns(3).DataPropertyName = "ORT_observaciones_ot"
+        dgv_detalle_orden.Columns(3).Visible = False
         dgv_detalle_orden.Columns(4).DataPropertyName = "ORT_mejoras_ot"
-        ' dgv_detalle_orden.Columns(4).Visible = False
+        dgv_detalle_orden.Columns(4).Visible = False
         dgv_detalle_orden.Columns(5).DataPropertyName = "VEN_id_vendedor"
+        dgv_detalle_orden.Columns(5).Visible = False
         dgv_detalle_orden.Columns(6).DataPropertyName = "VEN_nombre_ven"
-        '  dgv_detalle_orden.Columns(6).Visible = False
+        dgv_detalle_orden.Columns(6).Visible = False
         dgv_detalle_orden.Columns(7).DataPropertyName = "VEN_apellido_ven"
+        dgv_detalle_orden.Columns(7).Visible = False
         dgv_detalle_orden.Columns(8).DataPropertyName = "ORT_fecha_ot"
+        dgv_detalle_orden.Columns(8).Visible = False
         dgv_detalle_orden.Columns(9).DataPropertyName = "ORT_fecha_entrega"
-        ' dgv_detalle_orden.Columns(9).Visible = False
+        dgv_detalle_orden.Columns(9).Visible = False
         dgv_detalle_orden.Columns(10).DataPropertyName = "CLI_id_cliente"
+        dgv_detalle_orden.Columns(10).Visible = False
         dgv_detalle_orden.Columns(11).DataPropertyName = "CLI_razon_social"
+        dgv_detalle_orden.Columns(11).Visible = False
         dgv_detalle_orden.Columns(12).DataPropertyName = "CLI_domicilio"
+        dgv_detalle_orden.Columns(12).Visible = False
         dgv_detalle_orden.Columns(13).DataPropertyName = "PIE_id_pieza"
+        dgv_detalle_orden.Columns(13).Visible = False
         dgv_detalle_orden.Columns(14).DataPropertyName = "PIE_id_pieza_offset"
+        dgv_detalle_orden.Columns(14).Visible = False
         dgv_detalle_orden.Columns(15).DataPropertyName = "PIE_nombre_pie"
         dgv_detalle_orden.Columns(16).DataPropertyName = "PIE_ubicacion"
+        dgv_detalle_orden.Columns(16).Visible = False
         dgv_detalle_orden.Columns(17).DataPropertyName = "id_detalle_orden_trabajo"
+        dgv_detalle_orden.Columns(17).Visible = False
         dgv_detalle_orden.Columns(18).DataPropertyName = "DOT_cantidad_producto"
         dgv_detalle_orden.Columns(19).DataPropertyName = "DOT_tamaño_producto"
         dgv_detalle_orden.Columns(20).DataPropertyName = "DOT_tipo_impresion_dot"
+        dgv_detalle_orden.Columns(20).Visible = False
         dgv_detalle_orden.Columns(21).DataPropertyName = "DOT_papel_soporte_1"
         dgv_detalle_orden.Columns(22).DataPropertyName = "DOT_papel_soporte_2"
         dgv_detalle_orden.Columns(23).DataPropertyName = "DOT_papel_soporte_3"
@@ -149,6 +162,7 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns(50).DataPropertyName = "formato_2_PM_digital"
         dgv_detalle_orden.Columns(51).DataPropertyName = "formato_3_PM_digital"
         dgv_detalle_orden.Columns(52).DataPropertyName = "modo_impresion_digital"
+        dgv_detalle_orden.Columns(52).Visible = False
         dgv_detalle_orden.Columns(53).DataPropertyName = "tipo_impresion_digital"
         dgv_detalle_orden.Columns(54).DataPropertyName = "dato_variable"
         dgv_detalle_orden.Columns(55).DataPropertyName = "cantidad_gran_formato"
@@ -157,6 +171,7 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns(58).DataPropertyName = "calidad_gran_formato"
         dgv_detalle_orden.Columns(59).DataPropertyName = "sistema_gran_formato"
         dgv_detalle_orden.Columns(60).DataPropertyName = "tipo_terminacion"
+        dgv_detalle_orden.Columns(60).Visible = False
         dgv_detalle_orden.Columns(61).DataPropertyName = "descripcion_terminacion"
         dgv_detalle_orden.DataSource = datasource
         dgv_detalle_orden.ClearSelection()
@@ -213,6 +228,7 @@ Public Class frm_listado_orden_trabajo_ampliada
     End Sub
 
     Private Sub dgvLista_Orden_Trabajo_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Orden_Trabajo.CellClick
+
         'VALIDA QUE SE HAYA SELECCONADO UN SECTOR Y UNA FECHA
         If dgvLista_Orden_Trabajo.Rows.Count = 0 Then
             MsgBox("No hay órdenes", MsgBoxStyle.Information + MsgBoxStyle.Information, "Seleccionar")
@@ -460,7 +476,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             frm_Actualizar_Producto_Orden_Ampliada.cboSistema_Gran_Formato.Text = dgv_detalle_orden.Item("sistema_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txt_descripcion_terminacion.Text = dgv_detalle_orden.Item("descripcion_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value
 
-           
+
             Dim tempterminacion As String
             tempterminacion = dgv_detalle_orden.Item("tipo_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value
             If tempterminacion.Contains("T01") Then
@@ -536,7 +552,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = False
             frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = False
             frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = False
-           
+
             frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = False
             frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = False
             frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = False
