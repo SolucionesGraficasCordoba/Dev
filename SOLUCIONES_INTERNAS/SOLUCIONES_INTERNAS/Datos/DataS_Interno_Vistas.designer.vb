@@ -2901,6 +2901,10 @@ Partial Public Class Vista_Detalle_Orden_Trabajo_Ampliada
 	
 	Private _descripcion_terminacion As String
 	
+	Private _Expr1 As String
+	
+	Private _Expr2 As String
+	
 	Public Sub New()
 		MyBase.New
 	End Sub
@@ -3629,7 +3633,7 @@ Partial Public Class Vista_Detalle_Orden_Trabajo_Ampliada
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_tipo_terminacion", DbType:="VarChar(60)")>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_tipo_terminacion", DbType:="VarChar(120)")>  _
 	Public Property tipo_terminacion() As String
 		Get
 			Return Me._tipo_terminacion
@@ -3649,6 +3653,30 @@ Partial Public Class Vista_Detalle_Orden_Trabajo_Ampliada
 		Set
 			If (String.Equals(Me._descripcion_terminacion, value) = false) Then
 				Me._descripcion_terminacion = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Expr1", DbType:="VarChar(30) NOT NULL", CanBeNull:=false)>  _
+	Public Property Expr1() As String
+		Get
+			Return Me._Expr1
+		End Get
+		Set
+			If (String.Equals(Me._Expr1, value) = false) Then
+				Me._Expr1 = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_Expr2", DbType:="VarChar(1)")>  _
+	Public Property Expr2() As String
+		Get
+			Return Me._Expr2
+		End Get
+		Set
+			If (String.Equals(Me._Expr2, value) = false) Then
+				Me._Expr2 = value
 			End If
 		End Set
 	End Property

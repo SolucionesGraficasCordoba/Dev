@@ -258,8 +258,13 @@
             End If
             detalle.DOT_tamaño_producto = StrConv(txtTamaño_Producto.Text, VbStrConv.ProperCase) 'TAMAÑO PRODUCTO 1
             detalle.DOT_tipo_impresion_dot = cboTipo_Orden.SelectedItem 'TIPO IMPRESION PRODUCTO 1
-            detalle.PIE_id_pieza = cboPiezas_Producto.SelectedValue 'TIPO PIEZA PRODUCTO 1
 
+            If cboPiezas_Producto.Text.Length <> 0 Then
+                detalle.PIE_id_pieza = cboPiezas_Producto.SelectedValue 'TIPO PIEZA PRODUCTO 1
+            Else
+                detalle.PIE_id_pieza = 54
+            End If
+           
             If cargamasprod = "NO" Then
                 txt_id_orden_trabajo.Text = ODT.ORT_id_orden_trabajo
             End If
@@ -342,7 +347,13 @@
             If txt_cantidad_producto_Gran_Formato.TextLength <> 0 Then
                 detalle.cantidad_gran_formato = txt_cantidad_producto_Gran_Formato.Text
             End If
-            detalle.PIE_id_pieza_offset = cboPiezas_Producto_Gran_Formato.SelectedValue
+            If cboPiezas_Producto_Gran_Formato.Text.Length <> 0 Then
+                detalle.PIE_id_pieza_offset = cboPiezas_Producto_Gran_Formato.SelectedValue
+            Else
+                '54 es un id de pieza que funciona de parche en la base
+                detalle.PIE_id_pieza_offset = 54
+            End If
+
             detalle.tamaño_gran_formato = txtTamaño_Producto_Gran_Formato.Text
             detalle.sustrato_gran_formato = txtSustrato_Gran_Formato.Text
             detalle.calidad_gran_formato = cboCalidad_Gran_Formato.SelectedItem

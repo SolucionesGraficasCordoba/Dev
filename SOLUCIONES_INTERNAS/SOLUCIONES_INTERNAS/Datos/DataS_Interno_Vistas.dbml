@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PREPRODUCCION" Class="DataS_Interno_Vistas" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SV-PLANET-01;Initial Catalog=SOLUCIONES_INTERNAS;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Colaborador_por_Sector" Member="Colaborador_por_Sector">
     <Type Name="Colaborador_por_Sector">
       <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -292,8 +292,10 @@
       <Column Name="sustrato_gran_formato" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="calidad_gran_formato" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
       <Column Name="sistema_gran_formato" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="tipo_terminacion" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="tipo_terminacion" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
       <Column Name="descripcion_terminacion" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="Expr1" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Expr2" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

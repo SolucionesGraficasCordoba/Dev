@@ -722,7 +722,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(276, 114)
+        Me.Label24.Location = New System.Drawing.Point(272, 120)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(82, 13)
         Me.Label24.TabIndex = 40
@@ -731,7 +731,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(107, 114)
+        Me.Label25.Location = New System.Drawing.Point(106, 120)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(78, 13)
         Me.Label25.TabIndex = 41
