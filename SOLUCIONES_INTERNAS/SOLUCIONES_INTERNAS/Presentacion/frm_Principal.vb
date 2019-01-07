@@ -1383,9 +1383,18 @@ Public Class frm_Principal
 
         frm_Orden_Trabajo_Ampliada.quienllamo_listado_orden_ampliada = Me
         frm_Orden_Trabajo_Ampliada.Text = "Nueva Orden Ampliada"
+        Campos_Orden_ampliada()
+
+        frm_Orden_Trabajo_Ampliada.MdiParent = Me
+        frm_Orden_Trabajo_Ampliada.Show()
+
+    End Sub
+
+    Sub Campos_Orden_ampliada()
+        'FECHA DE ENTREGA ANTERIOR AL DIA DE LA FECHA 
         frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value = Today
         frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value = frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value.Add(TimeSpan.FromDays(-1))
-
+        'DESHABILITAR Y OCULTAR CAMPOS
         frm_Orden_Trabajo_Ampliada.txt_id_cliente.Visible = False
         frm_Orden_Trabajo_Ampliada.txtid_vendedor.Visible = False
         frm_Orden_Trabajo_Ampliada.Label45.Visible = False
@@ -1401,12 +1410,103 @@ Public Class frm_Principal
         frm_Orden_Trabajo_Ampliada.GroupTerminacion.Enabled = False
         frm_Orden_Trabajo_Ampliada.txt_nombre_cliente.Enabled = False
         frm_Orden_Trabajo_Ampliada.txtNombre_vendedor.Enabled = False
+        'COMBOS
         frm_Orden_Trabajo_Ampliada.cboTipo_Impresion_Digital.SelectedIndex = -1
         frm_Orden_Trabajo_Ampliada.cboTipo_Impresion_Offset.SelectedIndex = -1
-
-        frm_Orden_Trabajo_Ampliada.MdiParent = Me
-        frm_Orden_Trabajo_Ampliada.Show()
-
+        'LIMPIAR CAMPOS
+        frm_Orden_Trabajo_Ampliada.txtNumero_Orden_Trabajo.Clear()
+        frm_Orden_Trabajo_Ampliada.txtNombre_vendedor.Clear()
+        frm_Orden_Trabajo_Ampliada.txt_nombre_cliente.Clear()
+        frm_Orden_Trabajo_Ampliada.txtid_vendedor.Clear()
+        frm_Orden_Trabajo_Ampliada.txt_id_cliente.Clear()
+        frm_Orden_Trabajo_Ampliada.cboDireccion_Entrega.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.txt_observaciones.Clear()
+        frm_Orden_Trabajo_Ampliada.cboTipo_Orden.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.chkOffset.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkDigital.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkGranFormato.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkTerminacion.Checked = False
+        frm_Orden_Trabajo_Ampliada.txt_id_orden_trabajo.Clear()
+        frm_Orden_Trabajo_Ampliada.txt_id_detalle_orden_trabajo1.Clear()
+        'PRODUCTO
+        frm_Orden_Trabajo_Ampliada.txt_cantidad_producto.Clear()
+        frm_Orden_Trabajo_Ampliada.cboPiezas_Producto.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.txtTamaño_Producto.Clear()
+        frm_Orden_Trabajo_Ampliada.txt_Papel_1_Soporte.Clear()
+        frm_Orden_Trabajo_Ampliada.txt_Papel_2_Soporte.Clear()
+        frm_Orden_Trabajo_Ampliada.txt_Papel_3_Soporte.Clear()
+        frm_Orden_Trabajo_Ampliada.txt_Gramaje_1_Soporte.Clear()
+        frm_Orden_Trabajo_Ampliada.txt_Gramaje_2_Soporte.Clear()
+        frm_Orden_Trabajo_Ampliada.txt_Gramaje_3_Soporte.Clear()
+        frm_Orden_Trabajo_Ampliada.txt_Cantidad_1_Pliego_Entero.Clear()
+        frm_Orden_Trabajo_Ampliada.txt_Cantidad_2_Pliego_Entero.Clear()
+        frm_Orden_Trabajo_Ampliada.txt_Cantidad_3_Pliego_Entero.Clear()
+        frm_Orden_Trabajo_Ampliada.cboFormato_1_Pliego_Entero.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboFormato_2_Pliego_Entero.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboFormato_3_Pliego_Entero.SelectedIndex = -1
+        'OFFSET
+        frm_Orden_Trabajo_Ampliada.cboTipo_Impresion_Offset.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboImpresora_Offset.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboModo_Impresion_Offset.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboMarca_Offset.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.txtCantidad_1_Pliego_Maquina_Offset.Clear()
+        frm_Orden_Trabajo_Ampliada.txtCantidad_2_Pliego_Maquina_Offset.Clear()
+        frm_Orden_Trabajo_Ampliada.txtCantidad_3_Pliego_Maquina_Offset.Clear()
+        frm_Orden_Trabajo_Ampliada.cboFormato_1_Pliego_Maquina_Offset.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboFormato_2_Pliego_Maquina_Offset.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboFormato_3_Pliego_Maquina_Offset.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.txt_chapa_soporte_1.Clear()
+        frm_Orden_Trabajo_Ampliada.txt_chapa_soporte_2.Clear()
+        frm_Orden_Trabajo_Ampliada.txt_chapa_soporte_3.Clear()
+        'DIGITAL
+        frm_Orden_Trabajo_Ampliada.cboTipo_Impresion_Digital.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.txtCantidad_1_Pliego_Maquina_Digital.Clear()
+        frm_Orden_Trabajo_Ampliada.txtCantidad_2_Pliego_Maquina_Digital.Clear()
+        frm_Orden_Trabajo_Ampliada.txtCantidad_3_Pliego_Maquina_Digital.Clear()
+        frm_Orden_Trabajo_Ampliada.cboFormato_1_Pliego_Maquina_Digital.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboFormato_2_Pliego_Maquina_Digital.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboFormato_3_Pliego_Maquina_Digital.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.txtDato_Variable.Clear()
+        'GRAN FORMATO
+        frm_Orden_Trabajo_Ampliada.txt_cantidad_producto_Gran_Formato.Clear()
+        frm_Orden_Trabajo_Ampliada.cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.txtTamaño_Producto_Gran_Formato.Clear()
+        frm_Orden_Trabajo_Ampliada.txtSustrato_Gran_Formato.Clear()
+        frm_Orden_Trabajo_Ampliada.cboCalidad_Gran_Formato.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboSistema_Gran_Formato.SelectedIndex = -1
+        'TERMINACION
+        frm_Orden_Trabajo_Ampliada.chkAdhesivado.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkBarniz.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkCocido.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkCuñoSeco.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkDoblado.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkEncuadernacion.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkFresado.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkGuillotinado.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkLaca_UV.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkLacaUVSectorizada.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkMedio_Corte.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkMontado.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkOPPBrillante.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkOPPMate.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkOtros.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkPolipropileno.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkPosicionado.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkRuedo.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkSoldado.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkStamping.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkTrazado.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkTroquelado.Checked = False
+        'BOTONES
+        frm_Orden_Trabajo_Ampliada.btnBuscar_cliente.Enabled = True
+        frm_Orden_Trabajo_Ampliada.btnBuscar_cliente.Visible = True
+        frm_Orden_Trabajo_Ampliada.btnBuscar_Vendedor.Enabled = True
+        frm_Orden_Trabajo_Ampliada.btnBuscar_Vendedor.Visible = True
+        frm_Orden_Trabajo_Ampliada.btnGuardar_Orden_Trabajo.Enabled = True
+        frm_Orden_Trabajo_Ampliada.btnGuardar_Orden_Trabajo.Visible = True
+        frm_Orden_Trabajo_Ampliada.btnCancelar_Orden_Trabajo.Enabled = True
+        frm_Orden_Trabajo_Ampliada.btnCancelar_Orden_Trabajo.Visible = True
+        frm_Orden_Trabajo_Ampliada.txt_descripcion_terminacion.Clear()
     End Sub
 
     Private Sub ListaOrdenAmpliadaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaOrdenAmpliadaToolStripMenuItem.Click
