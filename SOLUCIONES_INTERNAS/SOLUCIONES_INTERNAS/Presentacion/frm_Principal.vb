@@ -1480,7 +1480,7 @@ Public Class frm_Principal
         frm_Orden_Trabajo_Ampliada.chkAdhesivado.Checked = False
         frm_Orden_Trabajo_Ampliada.chkBarniz.Checked = False
         frm_Orden_Trabajo_Ampliada.chkCocido.Checked = False
-        frm_Orden_Trabajo_Ampliada.chkCuñoSeco.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkCuño.Checked = False
         frm_Orden_Trabajo_Ampliada.chkDoblado.Checked = False
         frm_Orden_Trabajo_Ampliada.chkEncuadernacion.Checked = False
         frm_Orden_Trabajo_Ampliada.chkFresado.Checked = False
@@ -1492,7 +1492,7 @@ Public Class frm_Principal
         frm_Orden_Trabajo_Ampliada.chkOPPBrillante.Checked = False
         frm_Orden_Trabajo_Ampliada.chkOPPMate.Checked = False
         frm_Orden_Trabajo_Ampliada.chkOtros.Checked = False
-        frm_Orden_Trabajo_Ampliada.chkPolipropileno.Checked = False
+        frm_Orden_Trabajo_Ampliada.chkPlastificado.Checked = False
         frm_Orden_Trabajo_Ampliada.chkPosicionado.Checked = False
         frm_Orden_Trabajo_Ampliada.chkRuedo.Checked = False
         frm_Orden_Trabajo_Ampliada.chkSoldado.Checked = False

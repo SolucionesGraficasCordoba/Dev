@@ -108,7 +108,7 @@
         chkSoldado.Checked = False
         chkCocido.Checked = False
         chkRuedo.Checked = False
-        chkPolipropileno.Checked = False
+        chkPlastificado.Checked = False
         chkOtros.Checked = False
         txt_descripcion_terminacion.Clear()
     End Sub
@@ -165,34 +165,29 @@
             txtNumero_Orden_Trabajo.Focus()
             Exit Sub
         End If
-
         'VALIDA QUE EL CAMPO VENDEDOR NO ESTE VACIO
         If txtNombre_vendedor.Text.Length = 0 Then
             MsgBox("Cargue el nombre Vendedor")
             btnBuscar_Vendedor.Focus()
             Exit Sub
         End If
-
         'VALIDA QUE EL CAMPO CLIENTE NO ESTE VACIO
         If txt_nombre_cliente.Text.Length = 0 Then
             MsgBox("Cargue el nombre Cliente")
             btnBuscar_cliente.Focus()
             Exit Sub
         End If
-
         'VALIDA QUE EL CAMPO DIRECCION DE ENTREGA NO ESTE VACIO
         If cboDireccion_Entrega.Text.Length = 0 Then
             MsgBox("Cargue la Dirección de Entrega")
             cboDireccion_Entrega.Focus()
             Exit Sub
         End If
-
         'VALIDA QUE LA FECHA DE ENTREGA SEA CORRECTA
         If dtpFecha_Entrega_ODT.Value < Today Then
             MsgBox("Verifique la Fecha de Entrega")
             Exit Sub
         End If
-
         If chkOffset.Checked = True Or chkDigital.Checked = True Then
             If txt_cantidad_producto.Text.Length >= 1 Then
                 If cboPiezas_Producto.Text.Length = 0 Then
@@ -206,7 +201,6 @@
                 Exit Sub
             End If
         End If
-
         If chkGranFormato.Checked = True Then
             If txt_cantidad_producto_Gran_Formato.Text.Length >= 1 Then
                 If cboPiezas_Producto_Gran_Formato.Text.Length = 0 Then
@@ -214,7 +208,6 @@
                 End If
             End If
         End If
-
         Dim buscaorden = (From odt In datacontext.ORDEN_TRABAJO
                       Select odt.ORT_fecha_ot, odt.ORT_tipo_ot, odt.ORT_numero_ot, odt.ORT_observaciones_ot, odt.VEN_id_vendedor, odt.CLI_id_cliente, odt.ORT_fecha_entrega
                       Where ORT_numero_ot = txtNumero_Orden_Trabajo.Text.ToUpper).Any
@@ -225,7 +218,6 @@
                 Exit Sub
             End If
         End If
-
         Try
             '---------------------------GUARDA ORDEN------------------------------
             Dim ODT = New ORDEN_TRABAJO
@@ -264,7 +256,7 @@
             Else
                 detalle.PIE_id_pieza = 54
             End If
-           
+
             If cargamasprod = "NO" Then
                 txt_id_orden_trabajo.Text = ODT.ORT_id_orden_trabajo
             End If
@@ -361,125 +353,170 @@
             '------------------------------------------------------------------------------------
 
             '-------------------------------- TERMINACION----------------------------------------
-            Dim temlaca, temposicionado, temdoblado, temtroquelado, temguillotinado, temmediocorte, tembarniz, temmontado, temencuadernacion, temstamping, _
-                temadhesivado, temtrazado, temsoldado, temcocido, temruedo, tempolipropileno, temotros, temcuñoseco, temfresado, temLacaUVSect, _
+            Dim temtermosellado, tempegadomanual, temestampado, temarmadorevistas, temlaca, temposicionado, temdoblado, temtroquelado, temguillotinado, temmediocorte, tembarniz, temmontado, temencuadernacion, temstamping, _
+                temadhesivado, temtrazado, temsoldado, temcocido, temruedo, templastificado, temotros, temcuño, temfresado, temLacaUVSect, _
                 temOPPBrillante, temOPPMate As String
-
+            'ADHESIVADO
             If chkAdhesivado.Checked = True Then
                 temadhesivado = "T01"
             Else
                 temadhesivado = ""
             End If
+            'ARMADO REVISTAS
+            If chkArmadoRevistas.Checked = True Then
+                temarmadorevistas = "T02"
+            Else
+                temarmadorevistas = ""
+            End If
+            'BARNIZ
             If chkBarniz.Checked = True Then
-                tembarniz = "T02"
+                tembarniz = "T03"
             Else
                 tembarniz = ""
             End If
+            'COCIDO
             If chkCocido.Checked = True Then
-                temcocido = "T03"
+                temcocido = "T04"
             Else
                 temcocido = ""
             End If
-            If chkCuñoSeco.Checked = True Then
-                temcuñoseco = "T04"
+            'CUÑO
+            If chkCuño.Checked = True Then
+                temcuño = "T05"
             Else
-                temcuñoseco = ""
+                temcuño = ""
             End If
+            'DOBLADO
             If chkDoblado.Checked = True Then
-                temdoblado = "T05"
+                temdoblado = "T06"
             Else
                 temdoblado = ""
             End If
+            'ENCUADERNACION
             If chkEncuadernacion.Checked = True Then
-                temencuadernacion = "T06"
+                temencuadernacion = "T07"
             Else
                 temencuadernacion = ""
             End If
+            'ESTAMPADO
+            If chkEstampado.Checked = True Then
+                temestampado = "T08"
+            Else
+                temestampado = ""
+            End If
+            'FRESADO
             If chkFresado.Checked = True Then
-                temfresado = "T07"
+                temfresado = "T09"
             Else
                 temfresado = ""
             End If
+            'GUILLOTINADO
             If chkGuillotinado.Checked = True Then
-                temguillotinado = "T08"
+                temguillotinado = "T10"
             Else
                 temguillotinado = ""
             End If
+            'LACA UV
             If chkLaca_UV.Checked = True Then
-                temlaca = "T09"
+                temlaca = "T11"
             Else
                 temlaca = ""
             End If
+            'LACA UV SECTORIZADA
             If chkLacaUVSectorizada.Checked = True Then
-                temLacaUVSect = "T10"
+                temLacaUVSect = "T12"
             Else
                 temLacaUVSect = ""
             End If
+            'MEDIO CORTE
             If chkMedio_Corte.Checked = True Then
-                temmediocorte = "T11"
+                temmediocorte = "T13"
             Else
                 temmediocorte = ""
             End If
+            'MONTADO
             If chkMontado.Checked = True Then
-                temmontado = "T12"
+                temmontado = "T14"
             Else
                 temmontado = ""
             End If
+            'OPP BRILLANTE
             If chkOPPBrillante.Checked = True Then
-                temOPPBrillante = "T13"
+                temOPPBrillante = "T15"
             Else
                 temOPPBrillante = ""
             End If
+            'OPP MATE
             If chkOPPMate.Checked = True Then
-                temOPPMate = "T14"
+                temOPPMate = "T16"
             Else
                 temOPPMate = ""
             End If
+            'OTROS
             If chkOtros.Checked = True Then
-                temotros = "T15"
+                temotros = "T17"
             Else
                 temotros = ""
             End If
-            If chkPolipropileno.Checked = True Then
-                tempolipropileno = "T16"
+            'PEGADO MANUAL
+            If chkPegadoManual.Checked = True Then
+                tempegadomanual = "T18"
             Else
-                tempolipropileno = ""
+                tempegadomanual = ""
             End If
+            'PLASTIFICADO
+            If chkPlastificado.Checked = True Then
+                templastificado = "T19"
+            Else
+                templastificado = ""
+            End If
+            'POSICIONADO
             If chkPosicionado.Checked = True Then
-                temposicionado = "T17"
+                temposicionado = "T20"
             Else
                 temposicionado = ""
             End If
+            'RUEDO
             If chkRuedo.Checked = True Then
-                temruedo = "T18"
+                temruedo = "T21"
             Else
                 temruedo = ""
             End If
+            'SOLDADO
             If chkSoldado.Checked = True Then
-                temsoldado = "T19"
+                temsoldado = "T22"
             Else
                 temsoldado = ""
             End If
+            'STAMPING
             If chkStamping.Checked = True Then
-                temstamping = "T20"
+                temstamping = "T23"
             Else
                 temstamping = ""
             End If
+            'TERMOSELLADO
+            If chkTermosellado.Checked = True Then
+                temtermosellado = "T24"
+            Else
+                temtermosellado = ""
+            End If
+            'TRAZADO
             If chkTrazado.Checked = True Then
-                temtrazado = "T21"
+                temtrazado = "T25"
             Else
                 temtrazado = ""
             End If
+            'TROQUELADO
             If chkTroquelado.Checked = True Then
-                temtroquelado = "T22"
+                temtroquelado = "T26"
             Else
                 temtroquelado = ""
             End If
 
 
             detalle.tipo_terminacion = temlaca & temposicionado & temdoblado & temtroquelado & temguillotinado & temmediocorte & tembarniz & temmontado _
-                & temencuadernacion & temstamping & temadhesivado & temtrazado & temsoldado & temcocido & temruedo & tempolipropileno & temotros _
-                & temcuñoseco & temfresado & temLacaUVSect & temOPPBrillante & temOPPMate
+                & temencuadernacion & temstamping & temadhesivado & temtrazado & temsoldado & temcocido & temruedo & temotros & temcuño & temfresado & _
+                temLacaUVSect & temOPPBrillante & temOPPMate & temarmadorevistas & temestampado & tempegadomanual & templastificado & temtermosellado
 
             detalle.descripcion_terminacion = txt_descripcion_terminacion.Text
 

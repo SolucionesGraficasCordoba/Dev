@@ -763,7 +763,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 frm_Orden_Trabajo_Ampliada.chkCocido.Checked = False
             End If
             If tempterminacion.Contains("T04") Then
-                frm_Orden_Trabajo_Ampliada.chkCuñoSeco.Checked = False
+                frm_Orden_Trabajo_Ampliada.chkCuño.Checked = False
             End If
             If tempterminacion.Contains("T05") Then
                 frm_Orden_Trabajo_Ampliada.chkDoblado.Checked = False
@@ -799,7 +799,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 frm_Orden_Trabajo_Ampliada.chkOtros.Checked = False
             End If
             If tempterminacion.Contains("T16") Then
-                frm_Orden_Trabajo_Ampliada.chkPolipropileno.Checked = False
+                frm_Orden_Trabajo_Ampliada.chkPlastificado.Checked = False
             End If
             If tempterminacion.Contains("T17") Then
                 frm_Orden_Trabajo_Ampliada.chkPosicionado.Checked = False
