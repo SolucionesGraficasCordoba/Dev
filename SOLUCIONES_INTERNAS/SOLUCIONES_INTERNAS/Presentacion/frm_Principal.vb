@@ -1391,10 +1391,12 @@ Public Class frm_Principal
     End Sub
 
     Sub Campos_Orden_ampliada()
+
         'FECHA DE ENTREGA ANTERIOR AL DIA DE LA FECHA 
         frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value = Today
         frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value = frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value.Add(TimeSpan.FromDays(-1))
         'DESHABILITAR Y OCULTAR CAMPOS
+        frm_Orden_Trabajo_Ampliada.GroupBox4.Enabled = True
         frm_Orden_Trabajo_Ampliada.txt_id_cliente.Visible = False
         frm_Orden_Trabajo_Ampliada.txtid_vendedor.Visible = False
         frm_Orden_Trabajo_Ampliada.Label45.Visible = False
