@@ -492,7 +492,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 frm_Actualizar_Producto_Orden_Ampliada.chkCocido.Checked = True
             End If
             If tempterminacion.Contains("T04") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkCuñoSeco.Checked = True
+                frm_Actualizar_Producto_Orden_Ampliada.chkCuño.Checked = True
             End If
             If tempterminacion.Contains("T05") Then
                 frm_Actualizar_Producto_Orden_Ampliada.chkDoblado.Checked = True
@@ -621,7 +621,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
 
         'CONTROLES TERMINACION
         If frm_Actualizar_Producto_Orden_Ampliada.chkAdhesivado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkBarniz.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkCocido.Checked = True _
-            Or frm_Actualizar_Producto_Orden_Ampliada.chkCuñoSeco.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkDoblado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkEncuadernacion.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkCuño.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkDoblado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkEncuadernacion.Checked = True _
             Or frm_Actualizar_Producto_Orden_Ampliada.chkFresado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkGuillotinado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkLaca_UV.Checked = True _
             Or frm_Actualizar_Producto_Orden_Ampliada.chkLacaUVSectorizada.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkMedio_Corte.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkMontado.Checked = True _
             Or frm_Actualizar_Producto_Orden_Ampliada.chkOPPBrillante.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkOPPMate.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkOtros.Checked = True _
@@ -947,6 +947,11 @@ Where ORT_id_orden_trabajo = vble_id_orden)
         End If
         CargarGrillaOrden()
         Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
+    End Sub
+
+    Private Sub btn_Cancelar_Click(sender As System.Object, e As System.EventArgs) Handles btn_Cancelar.Click
+        Me.Close()
+        Me.Dispose()
     End Sub
 End Class
 

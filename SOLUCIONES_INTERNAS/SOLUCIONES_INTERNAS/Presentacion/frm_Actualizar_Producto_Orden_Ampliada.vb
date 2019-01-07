@@ -127,7 +127,6 @@
                 Exit Sub
             End If
         End If
-
         If chkGranFormato.Checked = True Then
             If txt_cantidad_producto_Gran_Formato.Text.Length >= 1 Then
                 If cboPiezas_Producto_Gran_Formato.Text.Length = 0 Then
@@ -135,7 +134,6 @@
                 End If
             End If
         End If
-
         Try
             Dim ActualizaDetalle = (From D In datacontext.DETALLE_ORDEN_TRABAJO
                                    Where D.id_detalle_orden_trabajo = CInt(txt_id_detalle_orden_trabajo1.Text)).ToList()(0)
@@ -232,4 +230,8 @@
         End Try
     End Sub
 
+    Private Sub btnCancelar_Orden_Trabajo_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar_Orden_Trabajo.Click
+        Me.Close()
+        Me.Dispose()
+    End Sub
 End Class

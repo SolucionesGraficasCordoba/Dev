@@ -51,7 +51,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.GroupTerminacion = New System.Windows.Forms.GroupBox()
         Me.chkLacaUVSectorizada = New System.Windows.Forms.CheckBox()
         Me.chkFresado = New System.Windows.Forms.CheckBox()
-        Me.chkCuñoSeco = New System.Windows.Forms.CheckBox()
+        Me.chkCuño = New System.Windows.Forms.CheckBox()
         Me.chkOPPMate = New System.Windows.Forms.CheckBox()
         Me.chkOPPBrillante = New System.Windows.Forms.CheckBox()
         Me.chkPosicionado = New System.Windows.Forms.CheckBox()
@@ -142,6 +142,10 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.txt_id_detalle_orden_trabajo1 = New System.Windows.Forms.TextBox()
         Me.btnCancelar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.btnActualizar_Orden_Trabajo = New System.Windows.Forms.Button()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.groupOffset.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupTerminacion.SuspendLayout()
@@ -155,7 +159,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         'txt_id_orden_trabajo
         '
-        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(381, 30)
+        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(1187, 53)
         Me.txt_id_orden_trabajo.Name = "txt_id_orden_trabajo"
         Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(35, 20)
         Me.txt_id_orden_trabajo.TabIndex = 71
@@ -163,7 +167,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(327, 33)
+        Me.Label1.Location = New System.Drawing.Point(1133, 56)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(48, 13)
         Me.Label1.TabIndex = 70
@@ -172,7 +176,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'txtNumero_Orden_Trabajo
         '
         Me.txtNumero_Orden_Trabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(195, 14)
+        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(564, 21)
         Me.txtNumero_Orden_Trabajo.Multiline = True
         Me.txtNumero_Orden_Trabajo.Name = "txtNumero_Orden_Trabajo"
         Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(118, 48)
@@ -182,7 +186,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(143, 30)
+        Me.Label6.Location = New System.Drawing.Point(512, 37)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(44, 26)
         Me.Label6.TabIndex = 69
@@ -200,9 +204,9 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.groupOffset.Controls.Add(Me.cboImpresora_Offset)
         Me.groupOffset.Controls.Add(Me.cboTipo_Impresion_Offset)
         Me.groupOffset.Controls.Add(Me.Label35)
-        Me.groupOffset.Location = New System.Drawing.Point(631, 148)
+        Me.groupOffset.Location = New System.Drawing.Point(631, 141)
         Me.groupOffset.Name = "groupOffset"
-        Me.groupOffset.Size = New System.Drawing.Size(338, 216)
+        Me.groupOffset.Size = New System.Drawing.Size(338, 229)
         Me.groupOffset.TabIndex = 155
         Me.groupOffset.TabStop = False
         Me.groupOffset.Text = "Offset"
@@ -221,7 +225,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.GroupBox3.Controls.Add(Me.txtCantidad_3_Pliego_Maquina_Offset)
         Me.GroupBox3.Controls.Add(Me.cboFormato_1_Pliego_Maquina_Offset)
         Me.GroupBox3.Controls.Add(Me.txtCantidad_2_Pliego_Maquina_Offset)
-        Me.GroupBox3.Location = New System.Drawing.Point(13, 88)
+        Me.GroupBox3.Location = New System.Drawing.Point(13, 91)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(316, 121)
         Me.GroupBox3.TabIndex = 128
@@ -230,21 +234,21 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         'txt_chapa_soporte_3
         '
-        Me.txt_chapa_soporte_3.Location = New System.Drawing.Point(231, 94)
+        Me.txt_chapa_soporte_3.Location = New System.Drawing.Point(223, 90)
         Me.txt_chapa_soporte_3.Name = "txt_chapa_soporte_3"
         Me.txt_chapa_soporte_3.Size = New System.Drawing.Size(75, 20)
         Me.txt_chapa_soporte_3.TabIndex = 150
         '
         'txt_chapa_soporte_2
         '
-        Me.txt_chapa_soporte_2.Location = New System.Drawing.Point(232, 68)
+        Me.txt_chapa_soporte_2.Location = New System.Drawing.Point(224, 64)
         Me.txt_chapa_soporte_2.Name = "txt_chapa_soporte_2"
         Me.txt_chapa_soporte_2.Size = New System.Drawing.Size(75, 20)
         Me.txt_chapa_soporte_2.TabIndex = 150
         '
         'txt_chapa_soporte_1
         '
-        Me.txt_chapa_soporte_1.Location = New System.Drawing.Point(232, 43)
+        Me.txt_chapa_soporte_1.Location = New System.Drawing.Point(224, 39)
         Me.txt_chapa_soporte_1.Name = "txt_chapa_soporte_1"
         Me.txt_chapa_soporte_1.Size = New System.Drawing.Size(75, 20)
         Me.txt_chapa_soporte_1.TabIndex = 150
@@ -252,7 +256,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(247, 26)
+        Me.Label36.Location = New System.Drawing.Point(239, 22)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(43, 13)
         Me.Label36.TabIndex = 149
@@ -263,14 +267,14 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.cboFormato_3_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_3_Pliego_Maquina_Offset.FormattingEnabled = True
         Me.cboFormato_3_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
-        Me.cboFormato_3_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 94)
+        Me.cboFormato_3_Pliego_Maquina_Offset.Location = New System.Drawing.Point(80, 90)
         Me.cboFormato_3_Pliego_Maquina_Offset.Name = "cboFormato_3_Pliego_Maquina_Offset"
         Me.cboFormato_3_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
         Me.cboFormato_3_Pliego_Maquina_Offset.TabIndex = 65
         '
         'txtCantidad_1_Pliego_Maquina_Offset
         '
-        Me.txtCantidad_1_Pliego_Maquina_Offset.Location = New System.Drawing.Point(13, 43)
+        Me.txtCantidad_1_Pliego_Maquina_Offset.Location = New System.Drawing.Point(5, 39)
         Me.txtCantidad_1_Pliego_Maquina_Offset.Name = "txtCantidad_1_Pliego_Maquina_Offset"
         Me.txtCantidad_1_Pliego_Maquina_Offset.Size = New System.Drawing.Size(69, 20)
         Me.txtCantidad_1_Pliego_Maquina_Offset.TabIndex = 60
@@ -278,7 +282,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'Label58
         '
         Me.Label58.AutoSize = True
-        Me.Label58.Location = New System.Drawing.Point(23, 26)
+        Me.Label58.Location = New System.Drawing.Point(15, 22)
         Me.Label58.Name = "Label58"
         Me.Label58.Size = New System.Drawing.Size(49, 13)
         Me.Label58.TabIndex = 67
@@ -289,7 +293,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.cboFormato_2_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_2_Pliego_Maquina_Offset.FormattingEnabled = True
         Me.cboFormato_2_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
-        Me.cboFormato_2_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 69)
+        Me.cboFormato_2_Pliego_Maquina_Offset.Location = New System.Drawing.Point(80, 65)
         Me.cboFormato_2_Pliego_Maquina_Offset.Name = "cboFormato_2_Pliego_Maquina_Offset"
         Me.cboFormato_2_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
         Me.cboFormato_2_Pliego_Maquina_Offset.TabIndex = 63
@@ -297,7 +301,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'Label57
         '
         Me.Label57.AutoSize = True
-        Me.Label57.Location = New System.Drawing.Point(121, 26)
+        Me.Label57.Location = New System.Drawing.Point(113, 22)
         Me.Label57.Name = "Label57"
         Me.Label57.Size = New System.Drawing.Size(71, 13)
         Me.Label57.TabIndex = 66
@@ -305,7 +309,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         'txtCantidad_3_Pliego_Maquina_Offset
         '
-        Me.txtCantidad_3_Pliego_Maquina_Offset.Location = New System.Drawing.Point(13, 94)
+        Me.txtCantidad_3_Pliego_Maquina_Offset.Location = New System.Drawing.Point(5, 90)
         Me.txtCantidad_3_Pliego_Maquina_Offset.Name = "txtCantidad_3_Pliego_Maquina_Offset"
         Me.txtCantidad_3_Pliego_Maquina_Offset.Size = New System.Drawing.Size(69, 20)
         Me.txtCantidad_3_Pliego_Maquina_Offset.TabIndex = 64
@@ -315,14 +319,14 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.cboFormato_1_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_1_Pliego_Maquina_Offset.FormattingEnabled = True
         Me.cboFormato_1_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
-        Me.cboFormato_1_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 43)
+        Me.cboFormato_1_Pliego_Maquina_Offset.Location = New System.Drawing.Point(80, 39)
         Me.cboFormato_1_Pliego_Maquina_Offset.Name = "cboFormato_1_Pliego_Maquina_Offset"
         Me.cboFormato_1_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
         Me.cboFormato_1_Pliego_Maquina_Offset.TabIndex = 61
         '
         'txtCantidad_2_Pliego_Maquina_Offset
         '
-        Me.txtCantidad_2_Pliego_Maquina_Offset.Location = New System.Drawing.Point(13, 68)
+        Me.txtCantidad_2_Pliego_Maquina_Offset.Location = New System.Drawing.Point(5, 64)
         Me.txtCantidad_2_Pliego_Maquina_Offset.Name = "txtCantidad_2_Pliego_Maquina_Offset"
         Me.txtCantidad_2_Pliego_Maquina_Offset.Size = New System.Drawing.Size(69, 20)
         Me.txtCantidad_2_Pliego_Maquina_Offset.TabIndex = 62
@@ -404,9 +408,13 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         'GroupTerminacion
         '
+        Me.GroupTerminacion.Controls.Add(Me.CheckBox4)
+        Me.GroupTerminacion.Controls.Add(Me.CheckBox3)
+        Me.GroupTerminacion.Controls.Add(Me.CheckBox2)
+        Me.GroupTerminacion.Controls.Add(Me.CheckBox1)
         Me.GroupTerminacion.Controls.Add(Me.chkLacaUVSectorizada)
         Me.GroupTerminacion.Controls.Add(Me.chkFresado)
-        Me.GroupTerminacion.Controls.Add(Me.chkCuñoSeco)
+        Me.GroupTerminacion.Controls.Add(Me.chkCuño)
         Me.GroupTerminacion.Controls.Add(Me.chkOPPMate)
         Me.GroupTerminacion.Controls.Add(Me.chkOPPBrillante)
         Me.GroupTerminacion.Controls.Add(Me.chkPosicionado)
@@ -428,9 +436,9 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.GroupTerminacion.Controls.Add(Me.chkLaca_UV)
         Me.GroupTerminacion.Controls.Add(Me.txt_descripcion_terminacion)
         Me.GroupTerminacion.Controls.Add(Me.Label12)
-        Me.GroupTerminacion.Location = New System.Drawing.Point(12, 376)
+        Me.GroupTerminacion.Location = New System.Drawing.Point(12, 450)
         Me.GroupTerminacion.Name = "GroupTerminacion"
-        Me.GroupTerminacion.Size = New System.Drawing.Size(822, 268)
+        Me.GroupTerminacion.Size = New System.Drawing.Size(957, 210)
         Me.GroupTerminacion.TabIndex = 154
         Me.GroupTerminacion.TabStop = False
         Me.GroupTerminacion.Text = "Terminación"
@@ -438,7 +446,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkLacaUVSectorizada
         '
         Me.chkLacaUVSectorizada.AutoSize = True
-        Me.chkLacaUVSectorizada.Location = New System.Drawing.Point(19, 57)
+        Me.chkLacaUVSectorizada.Location = New System.Drawing.Point(108, 42)
         Me.chkLacaUVSectorizada.Name = "chkLacaUVSectorizada"
         Me.chkLacaUVSectorizada.Size = New System.Drawing.Size(82, 30)
         Me.chkLacaUVSectorizada.TabIndex = 157
@@ -448,27 +456,27 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkFresado
         '
         Me.chkFresado.AutoSize = True
-        Me.chkFresado.Location = New System.Drawing.Point(552, 27)
+        Me.chkFresado.Location = New System.Drawing.Point(734, 15)
         Me.chkFresado.Name = "chkFresado"
         Me.chkFresado.Size = New System.Drawing.Size(64, 17)
         Me.chkFresado.TabIndex = 156
         Me.chkFresado.Text = "Fresado"
         Me.chkFresado.UseVisualStyleBackColor = True
         '
-        'chkCuñoSeco
+        'chkCuño
         '
-        Me.chkCuñoSeco.AutoSize = True
-        Me.chkCuñoSeco.Location = New System.Drawing.Point(269, 27)
-        Me.chkCuñoSeco.Name = "chkCuñoSeco"
-        Me.chkCuñoSeco.Size = New System.Drawing.Size(79, 17)
-        Me.chkCuñoSeco.TabIndex = 155
-        Me.chkCuñoSeco.Text = "Cuño Seco"
-        Me.chkCuñoSeco.UseVisualStyleBackColor = True
+        Me.chkCuño.AutoSize = True
+        Me.chkCuño.Location = New System.Drawing.Point(365, 15)
+        Me.chkCuño.Name = "chkCuño"
+        Me.chkCuño.Size = New System.Drawing.Size(51, 17)
+        Me.chkCuño.TabIndex = 155
+        Me.chkCuño.Text = "Cuño"
+        Me.chkCuño.UseVisualStyleBackColor = True
         '
         'chkOPPMate
         '
         Me.chkOPPMate.AutoSize = True
-        Me.chkOPPMate.Location = New System.Drawing.Point(365, 64)
+        Me.chkOPPMate.Location = New System.Drawing.Point(461, 49)
         Me.chkOPPMate.Name = "chkOPPMate"
         Me.chkOPPMate.Size = New System.Drawing.Size(75, 17)
         Me.chkOPPMate.TabIndex = 154
@@ -478,7 +486,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkOPPBrillante
         '
         Me.chkOPPBrillante.AutoSize = True
-        Me.chkOPPBrillante.Location = New System.Drawing.Point(269, 64)
+        Me.chkOPPBrillante.Location = New System.Drawing.Point(365, 49)
         Me.chkOPPBrillante.Name = "chkOPPBrillante"
         Me.chkOPPBrillante.Size = New System.Drawing.Size(88, 17)
         Me.chkOPPBrillante.TabIndex = 153
@@ -488,7 +496,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkPosicionado
         '
         Me.chkPosicionado.AutoSize = True
-        Me.chkPosicionado.Location = New System.Drawing.Point(637, 64)
+        Me.chkPosicionado.Location = New System.Drawing.Point(819, 49)
         Me.chkPosicionado.Name = "chkPosicionado"
         Me.chkPosicionado.Size = New System.Drawing.Size(84, 17)
         Me.chkPosicionado.TabIndex = 152
@@ -498,7 +506,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkMedio_Corte
         '
         Me.chkMedio_Corte.AutoSize = True
-        Me.chkMedio_Corte.Location = New System.Drawing.Point(114, 57)
+        Me.chkMedio_Corte.Location = New System.Drawing.Point(199, 42)
         Me.chkMedio_Corte.Name = "chkMedio_Corte"
         Me.chkMedio_Corte.Size = New System.Drawing.Size(55, 30)
         Me.chkMedio_Corte.TabIndex = 151
@@ -508,7 +516,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkSoldado
         '
         Me.chkSoldado.AutoSize = True
-        Me.chkSoldado.Location = New System.Drawing.Point(114, 103)
+        Me.chkSoldado.Location = New System.Drawing.Point(108, 83)
         Me.chkSoldado.Name = "chkSoldado"
         Me.chkSoldado.Size = New System.Drawing.Size(65, 17)
         Me.chkSoldado.TabIndex = 150
@@ -518,7 +526,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkRuedo
         '
         Me.chkRuedo.AutoSize = True
-        Me.chkRuedo.Location = New System.Drawing.Point(19, 103)
+        Me.chkRuedo.Location = New System.Drawing.Point(20, 83)
         Me.chkRuedo.Name = "chkRuedo"
         Me.chkRuedo.Size = New System.Drawing.Size(58, 17)
         Me.chkRuedo.TabIndex = 149
@@ -528,7 +536,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkCocido
         '
         Me.chkCocido.AutoSize = True
-        Me.chkCocido.Location = New System.Drawing.Point(190, 27)
+        Me.chkCocido.Location = New System.Drawing.Point(274, 15)
         Me.chkCocido.Name = "chkCocido"
         Me.chkCocido.Size = New System.Drawing.Size(59, 17)
         Me.chkCocido.TabIndex = 148
@@ -538,7 +546,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkOtros
         '
         Me.chkOtros.AutoSize = True
-        Me.chkOtros.Location = New System.Drawing.Point(449, 64)
+        Me.chkOtros.Location = New System.Drawing.Point(545, 49)
         Me.chkOtros.Name = "chkOtros"
         Me.chkOtros.Size = New System.Drawing.Size(51, 17)
         Me.chkOtros.TabIndex = 147
@@ -548,7 +556,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkMontado
         '
         Me.chkMontado.AutoSize = True
-        Me.chkMontado.Location = New System.Drawing.Point(190, 64)
+        Me.chkMontado.Location = New System.Drawing.Point(274, 49)
         Me.chkMontado.Name = "chkMontado"
         Me.chkMontado.Size = New System.Drawing.Size(68, 17)
         Me.chkMontado.TabIndex = 147
@@ -558,7 +566,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkTrazado
         '
         Me.chkTrazado.AutoSize = True
-        Me.chkTrazado.Location = New System.Drawing.Point(269, 103)
+        Me.chkTrazado.Location = New System.Drawing.Point(365, 83)
         Me.chkTrazado.Name = "chkTrazado"
         Me.chkTrazado.Size = New System.Drawing.Size(65, 17)
         Me.chkTrazado.TabIndex = 147
@@ -568,7 +576,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkDoblado
         '
         Me.chkDoblado.AutoSize = True
-        Me.chkDoblado.Location = New System.Drawing.Point(365, 27)
+        Me.chkDoblado.Location = New System.Drawing.Point(461, 15)
         Me.chkDoblado.Name = "chkDoblado"
         Me.chkDoblado.Size = New System.Drawing.Size(66, 17)
         Me.chkDoblado.TabIndex = 147
@@ -578,7 +586,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkStamping
         '
         Me.chkStamping.AutoSize = True
-        Me.chkStamping.Location = New System.Drawing.Point(190, 103)
+        Me.chkStamping.Location = New System.Drawing.Point(199, 83)
         Me.chkStamping.Name = "chkStamping"
         Me.chkStamping.Size = New System.Drawing.Size(70, 17)
         Me.chkStamping.TabIndex = 147
@@ -588,7 +596,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkEncuadernacion
         '
         Me.chkEncuadernacion.AutoSize = True
-        Me.chkEncuadernacion.Location = New System.Drawing.Point(449, 27)
+        Me.chkEncuadernacion.Location = New System.Drawing.Point(545, 15)
         Me.chkEncuadernacion.Name = "chkEncuadernacion"
         Me.chkEncuadernacion.Size = New System.Drawing.Size(104, 17)
         Me.chkEncuadernacion.TabIndex = 147
@@ -598,7 +606,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkAdhesivado
         '
         Me.chkAdhesivado.AutoSize = True
-        Me.chkAdhesivado.Location = New System.Drawing.Point(20, 27)
+        Me.chkAdhesivado.Location = New System.Drawing.Point(20, 15)
         Me.chkAdhesivado.Name = "chkAdhesivado"
         Me.chkAdhesivado.Size = New System.Drawing.Size(82, 17)
         Me.chkAdhesivado.TabIndex = 147
@@ -608,17 +616,17 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkPolipropileno
         '
         Me.chkPolipropileno.AutoSize = True
-        Me.chkPolipropileno.Location = New System.Drawing.Point(552, 64)
+        Me.chkPolipropileno.Location = New System.Drawing.Point(734, 49)
         Me.chkPolipropileno.Name = "chkPolipropileno"
-        Me.chkPolipropileno.Size = New System.Drawing.Size(86, 17)
+        Me.chkPolipropileno.Size = New System.Drawing.Size(80, 17)
         Me.chkPolipropileno.TabIndex = 147
-        Me.chkPolipropileno.Text = "Polipropileno"
+        Me.chkPolipropileno.Text = "Plastificado"
         Me.chkPolipropileno.UseVisualStyleBackColor = True
         '
         'chkGuillotinado
         '
         Me.chkGuillotinado.AutoSize = True
-        Me.chkGuillotinado.Location = New System.Drawing.Point(637, 27)
+        Me.chkGuillotinado.Location = New System.Drawing.Point(819, 15)
         Me.chkGuillotinado.Name = "chkGuillotinado"
         Me.chkGuillotinado.Size = New System.Drawing.Size(81, 17)
         Me.chkGuillotinado.TabIndex = 147
@@ -628,7 +636,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkTroquelado
         '
         Me.chkTroquelado.AutoSize = True
-        Me.chkTroquelado.Location = New System.Drawing.Point(365, 103)
+        Me.chkTroquelado.Location = New System.Drawing.Point(461, 83)
         Me.chkTroquelado.Name = "chkTroquelado"
         Me.chkTroquelado.Size = New System.Drawing.Size(80, 17)
         Me.chkTroquelado.TabIndex = 147
@@ -638,7 +646,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkBarniz
         '
         Me.chkBarniz.AutoSize = True
-        Me.chkBarniz.Location = New System.Drawing.Point(114, 27)
+        Me.chkBarniz.Location = New System.Drawing.Point(199, 15)
         Me.chkBarniz.Name = "chkBarniz"
         Me.chkBarniz.Size = New System.Drawing.Size(55, 17)
         Me.chkBarniz.TabIndex = 147
@@ -648,7 +656,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'chkLaca_UV
         '
         Me.chkLaca_UV.AutoSize = True
-        Me.chkLaca_UV.Location = New System.Drawing.Point(733, 27)
+        Me.chkLaca_UV.Location = New System.Drawing.Point(20, 49)
         Me.chkLaca_UV.Name = "chkLaca_UV"
         Me.chkLaca_UV.Size = New System.Drawing.Size(68, 17)
         Me.chkLaca_UV.TabIndex = 147
@@ -657,18 +665,18 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         'txt_descripcion_terminacion
         '
-        Me.txt_descripcion_terminacion.Location = New System.Drawing.Point(88, 138)
+        Me.txt_descripcion_terminacion.Location = New System.Drawing.Point(85, 123)
         Me.txt_descripcion_terminacion.MaxLength = 350
         Me.txt_descripcion_terminacion.Multiline = True
         Me.txt_descripcion_terminacion.Name = "txt_descripcion_terminacion"
         Me.txt_descripcion_terminacion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txt_descripcion_terminacion.Size = New System.Drawing.Size(713, 119)
+        Me.txt_descripcion_terminacion.Size = New System.Drawing.Size(863, 71)
         Me.txt_descripcion_terminacion.TabIndex = 145
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(14, 138)
+        Me.Label12.Location = New System.Drawing.Point(11, 123)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(63, 13)
         Me.Label12.TabIndex = 146
@@ -690,25 +698,25 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.GroupGranFormato.Controls.Add(Me.Label28)
         Me.GroupGranFormato.Controls.Add(Me.cboCalidad_Gran_Formato)
         Me.GroupGranFormato.Controls.Add(Me.cboPiezas_Producto_Gran_Formato)
-        Me.GroupGranFormato.Location = New System.Drawing.Point(842, 463)
+        Me.GroupGranFormato.Location = New System.Drawing.Point(12, 372)
         Me.GroupGranFormato.Name = "GroupGranFormato"
-        Me.GroupGranFormato.Size = New System.Drawing.Size(391, 133)
+        Me.GroupGranFormato.Size = New System.Drawing.Size(957, 72)
         Me.GroupGranFormato.TabIndex = 153
         Me.GroupGranFormato.TabStop = False
         Me.GroupGranFormato.Text = "Gran Formato"
         '
         'txtSustrato_Gran_Formato
         '
-        Me.txtSustrato_Gran_Formato.Location = New System.Drawing.Point(80, 72)
+        Me.txtSustrato_Gran_Formato.Location = New System.Drawing.Point(419, 34)
         Me.txtSustrato_Gran_Formato.MaxLength = 50
         Me.txtSustrato_Gran_Formato.Name = "txtSustrato_Gran_Formato"
-        Me.txtSustrato_Gran_Formato.Size = New System.Drawing.Size(299, 20)
+        Me.txtSustrato_Gran_Formato.Size = New System.Drawing.Size(166, 20)
         Me.txtSustrato_Gran_Formato.TabIndex = 145
         '
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(28, 75)
+        Me.Label40.Location = New System.Drawing.Point(367, 37)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(46, 13)
         Me.Label40.TabIndex = 146
@@ -716,14 +724,14 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         'txt_cantidad_producto_Gran_Formato
         '
-        Me.txt_cantidad_producto_Gran_Formato.Location = New System.Drawing.Point(15, 41)
+        Me.txt_cantidad_producto_Gran_Formato.Location = New System.Drawing.Point(15, 34)
         Me.txt_cantidad_producto_Gran_Formato.Name = "txt_cantidad_producto_Gran_Formato"
         Me.txt_cantidad_producto_Gran_Formato.Size = New System.Drawing.Size(59, 20)
         Me.txt_cantidad_producto_Gran_Formato.TabIndex = 132
         '
         'txtTamaño_Producto_Gran_Formato
         '
-        Me.txtTamaño_Producto_Gran_Formato.Location = New System.Drawing.Point(256, 42)
+        Me.txtTamaño_Producto_Gran_Formato.Location = New System.Drawing.Point(235, 35)
         Me.txtTamaño_Producto_Gran_Formato.MaxLength = 50
         Me.txtTamaño_Producto_Gran_Formato.Name = "txtTamaño_Producto_Gran_Formato"
         Me.txtTamaño_Producto_Gran_Formato.Size = New System.Drawing.Size(123, 20)
@@ -733,16 +741,16 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         Me.cboSistema_Gran_Formato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSistema_Gran_Formato.FormattingEnabled = True
-        Me.cboSistema_Gran_Formato.Items.AddRange(New Object() {"Solvente", "Latex", "UV"})
-        Me.cboSistema_Gran_Formato.Location = New System.Drawing.Point(268, 101)
+        Me.cboSistema_Gran_Formato.Items.AddRange(New Object() {"SOLVENTE", "LATEX", "UV"})
+        Me.cboSistema_Gran_Formato.Location = New System.Drawing.Point(833, 35)
         Me.cboSistema_Gran_Formato.Name = "cboSistema_Gran_Formato"
-        Me.cboSistema_Gran_Formato.Size = New System.Drawing.Size(111, 21)
+        Me.cboSistema_Gran_Formato.Size = New System.Drawing.Size(115, 21)
         Me.cboSistema_Gran_Formato.TabIndex = 143
         '
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(19, 24)
+        Me.Label32.Location = New System.Drawing.Point(19, 17)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(49, 13)
         Me.Label32.TabIndex = 138
@@ -751,7 +759,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(216, 104)
+        Me.Label33.Location = New System.Drawing.Point(781, 38)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(44, 13)
         Me.Label33.TabIndex = 144
@@ -760,7 +768,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(145, 24)
+        Me.Label31.Location = New System.Drawing.Point(145, 17)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(38, 13)
         Me.Label31.TabIndex = 137
@@ -769,7 +777,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(260, 25)
+        Me.Label30.Location = New System.Drawing.Point(239, 18)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(110, 13)
         Me.Label30.TabIndex = 136
@@ -779,7 +787,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         Me.Label26.AutoSize = True
         Me.Label26.ForeColor = System.Drawing.Color.Red
-        Me.Label26.Location = New System.Drawing.Point(181, 28)
+        Me.Label26.Location = New System.Drawing.Point(181, 21)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(11, 13)
         Me.Label26.TabIndex = 141
@@ -788,7 +796,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(32, 104)
+        Me.Label29.Location = New System.Drawing.Point(597, 37)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(42, 13)
         Me.Label29.TabIndex = 139
@@ -798,7 +806,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         Me.Label28.AutoSize = True
         Me.Label28.ForeColor = System.Drawing.Color.Red
-        Me.Label28.Location = New System.Drawing.Point(65, 27)
+        Me.Label28.Location = New System.Drawing.Point(65, 20)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(11, 13)
         Me.Label28.TabIndex = 140
@@ -808,8 +816,8 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         Me.cboCalidad_Gran_Formato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboCalidad_Gran_Formato.FormattingEnabled = True
-        Me.cboCalidad_Gran_Formato.Items.AddRange(New Object() {"Cartelería", "Alta", "Premium"})
-        Me.cboCalidad_Gran_Formato.Location = New System.Drawing.Point(80, 101)
+        Me.cboCalidad_Gran_Formato.Items.AddRange(New Object() {"CARTELERIA", "ALTA", "PREMIUM"})
+        Me.cboCalidad_Gran_Formato.Location = New System.Drawing.Point(645, 34)
         Me.cboCalidad_Gran_Formato.Name = "cboCalidad_Gran_Formato"
         Me.cboCalidad_Gran_Formato.Size = New System.Drawing.Size(123, 21)
         Me.cboCalidad_Gran_Formato.TabIndex = 135
@@ -818,9 +826,9 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         Me.cboPiezas_Producto_Gran_Formato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboPiezas_Producto_Gran_Formato.FormattingEnabled = True
-        Me.cboPiezas_Producto_Gran_Formato.Location = New System.Drawing.Point(80, 41)
+        Me.cboPiezas_Producto_Gran_Formato.Location = New System.Drawing.Point(80, 34)
         Me.cboPiezas_Producto_Gran_Formato.Name = "cboPiezas_Producto_Gran_Formato"
-        Me.cboPiezas_Producto_Gran_Formato.Size = New System.Drawing.Size(168, 21)
+        Me.cboPiezas_Producto_Gran_Formato.Size = New System.Drawing.Size(145, 21)
         Me.cboPiezas_Producto_Gran_Formato.TabIndex = 133
         '
         'GroupDigital
@@ -830,9 +838,9 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.GroupDigital.Controls.Add(Me.Label34)
         Me.GroupDigital.Controls.Add(Me.txtDato_Variable)
         Me.GroupDigital.Controls.Add(Me.Label23)
-        Me.GroupDigital.Location = New System.Drawing.Point(975, 148)
+        Me.GroupDigital.Location = New System.Drawing.Point(975, 141)
         Me.GroupDigital.Name = "GroupDigital"
-        Me.GroupDigital.Size = New System.Drawing.Size(256, 309)
+        Me.GroupDigital.Size = New System.Drawing.Size(256, 448)
         Me.GroupDigital.TabIndex = 152
         Me.GroupDigital.TabStop = False
         Me.GroupDigital.Text = "Digital"
@@ -949,7 +957,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.txtDato_Variable.Multiline = True
         Me.txtDato_Variable.Name = "txtDato_Variable"
         Me.txtDato_Variable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtDato_Variable.Size = New System.Drawing.Size(241, 58)
+        Me.txtDato_Variable.Size = New System.Drawing.Size(241, 203)
         Me.txtDato_Variable.TabIndex = 130
         Me.txtDato_Variable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -1323,7 +1331,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(704, 33)
+        Me.Label45.Location = New System.Drawing.Point(1058, 30)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(129, 13)
         Me.Label45.TabIndex = 56
@@ -1331,14 +1339,14 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         'txt_id_detalle_orden_trabajo1
         '
-        Me.txt_id_detalle_orden_trabajo1.Location = New System.Drawing.Point(833, 30)
+        Me.txt_id_detalle_orden_trabajo1.Location = New System.Drawing.Point(1187, 27)
         Me.txt_id_detalle_orden_trabajo1.Name = "txt_id_detalle_orden_trabajo1"
         Me.txt_id_detalle_orden_trabajo1.Size = New System.Drawing.Size(32, 20)
         Me.txt_id_detalle_orden_trabajo1.TabIndex = 57
         '
         'btnCancelar_Orden_Trabajo
         '
-        Me.btnCancelar_Orden_Trabajo.Location = New System.Drawing.Point(1158, 611)
+        Me.btnCancelar_Orden_Trabajo.Location = New System.Drawing.Point(1156, 627)
         Me.btnCancelar_Orden_Trabajo.Name = "btnCancelar_Orden_Trabajo"
         Me.btnCancelar_Orden_Trabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar_Orden_Trabajo.TabIndex = 157
@@ -1347,18 +1355,58 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         'btnActualizar_Orden_Trabajo
         '
-        Me.btnActualizar_Orden_Trabajo.Location = New System.Drawing.Point(1077, 611)
+        Me.btnActualizar_Orden_Trabajo.Location = New System.Drawing.Point(1075, 627)
         Me.btnActualizar_Orden_Trabajo.Name = "btnActualizar_Orden_Trabajo"
         Me.btnActualizar_Orden_Trabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnActualizar_Orden_Trabajo.TabIndex = 158
         Me.btnActualizar_Orden_Trabajo.Text = "Actualizar"
         Me.btnActualizar_Orden_Trabajo.UseVisualStyleBackColor = True
         '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(108, 8)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(71, 30)
+        Me.CheckBox1.TabIndex = 158
+        Me.CheckBox1.Text = "Armadora" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Revistas"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(648, 15)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(79, 17)
+        Me.CheckBox2.TabIndex = 159
+        Me.CheckBox2.Text = "Estampado"
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(648, 42)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(66, 30)
+        Me.CheckBox3.TabIndex = 160
+        Me.CheckBox3.Text = "Pegado " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Manual"
+        Me.CheckBox3.UseVisualStyleBackColor = True
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Location = New System.Drawing.Point(274, 83)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(89, 17)
+        Me.CheckBox4.TabIndex = 161
+        Me.CheckBox4.Text = "Termosellado"
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
         'frm_Actualizar_Producto_Orden_Ampliada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1243, 666)
+        Me.ClientSize = New System.Drawing.Size(1247, 666)
         Me.Controls.Add(Me.btnCancelar_Orden_Trabajo)
         Me.Controls.Add(Me.btnActualizar_Orden_Trabajo)
         Me.Controls.Add(Me.groupOffset)
@@ -1374,6 +1422,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.Controls.Add(Me.txtNumero_Orden_Trabajo)
         Me.Controls.Add(Me.Label6)
         Me.Name = "frm_Actualizar_Producto_Orden_Ampliada"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Actualizar Producto"
         Me.groupOffset.ResumeLayout(False)
         Me.groupOffset.PerformLayout()
@@ -1426,7 +1475,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
     Friend WithEvents GroupTerminacion As System.Windows.Forms.GroupBox
     Friend WithEvents chkLacaUVSectorizada As System.Windows.Forms.CheckBox
     Friend WithEvents chkFresado As System.Windows.Forms.CheckBox
-    Friend WithEvents chkCuñoSeco As System.Windows.Forms.CheckBox
+    Friend WithEvents chkCuño As System.Windows.Forms.CheckBox
     Friend WithEvents chkOPPMate As System.Windows.Forms.CheckBox
     Friend WithEvents chkOPPBrillante As System.Windows.Forms.CheckBox
     Friend WithEvents chkPosicionado As System.Windows.Forms.CheckBox
@@ -1517,4 +1566,8 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
     Friend WithEvents txt_id_detalle_orden_trabajo1 As System.Windows.Forms.TextBox
     Friend WithEvents btnCancelar_Orden_Trabajo As System.Windows.Forms.Button
     Friend WithEvents btnActualizar_Orden_Trabajo As System.Windows.Forms.Button
+    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
 End Class

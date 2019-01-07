@@ -1382,7 +1382,7 @@ Public Class frm_Principal
     Private Sub OrdenAmpliadaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles OrdenAmpliadaToolStripMenuItem.Click
 
         frm_Orden_Trabajo_Ampliada.quienllamo_listado_orden_ampliada = Me
-        frm_Orden_Trabajo_Ampliada.Text = "Nueva Orden Ampliada"
+        frm_Orden_Trabajo_Ampliada.Text = ".:. Nueva Orden .:."
         Campos_Orden_ampliada()
 
         frm_Orden_Trabajo_Ampliada.MdiParent = Me
@@ -1513,6 +1513,7 @@ Public Class frm_Principal
 
     Private Sub ListaOrdenAmpliadaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaOrdenAmpliadaToolStripMenuItem.Click
         frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.Text = ".:. Modificar Orden .:."
         frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
         frm_listado_orden_trabajo_ampliada.btnEliminar_Producto.Enabled = False
         frm_listado_orden_trabajo_ampliada.btnVer.Enabled = False
@@ -1525,6 +1526,7 @@ Public Class frm_Principal
 
     Private Sub ConsultarOrdenAmpliadaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarOrdenAmpliadaToolStripMenuItem.Click
         frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.Text = ".:. Consultar Orden .:."
         frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
         frm_listado_orden_trabajo_ampliada.btnEliminar_Producto.Enabled = False
         frm_listado_orden_trabajo_ampliada.btnVer.Visible = True
@@ -1539,6 +1541,7 @@ Public Class frm_Principal
 
     Private Sub EliminarOrdenAmpliadaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles EliminarOrdenAmpliadaToolStripMenuItem.Click
         frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.Text = ".:.Eliminar Orden .:."
         frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = True
         frm_listado_orden_trabajo_ampliada.btnEliminar_Producto.Enabled = True
         frm_listado_orden_trabajo_ampliada.btnVer.Visible = False
