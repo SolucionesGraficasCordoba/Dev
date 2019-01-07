@@ -165,10 +165,20 @@
             ActualizaDetalle.DOT_formato_soporte_1 = cboFormato_1_Pliego_Entero.Text
             ActualizaDetalle.DOT_formato_soporte_2 = cboFormato_2_Pliego_Entero.Text
             ActualizaDetalle.DOT_formato_soporte_3 = cboFormato_3_Pliego_Entero.Text
-            ActualizaDetalle.PIE_id_pieza = cboPiezas_Producto.SelectedValue
-            If cboPiezas_Producto_Gran_Formato.SelectedIndex = 0 Then
-                ActualizaDetalle.PIE_id_pieza_offset = cboPiezas_Producto_Gran_Formato.SelectedValue
+            'CONTROLAR
+            If cboPiezas_Producto.SelectedIndex <> 0 Then
+                ActualizaDetalle.PIE_id_pieza = cboPiezas_Producto.SelectedValue
+            Else
+                ActualizaDetalle.PIE_id_pieza = 54
             End If
+            'CONTROLAR
+            If cboPiezas_Producto_Gran_Formato.SelectedIndex <> 0 Then
+                ActualizaDetalle.PIE_id_pieza_offset = cboPiezas_Producto_Gran_Formato.SelectedValue
+            Else
+                ActualizaDetalle.PIE_id_pieza_offset = 54
+            End If
+
+
             txt_id_orden_trabajo.Text = ActualizaDetalle.ORT_id_orden_trabajo
             ActualizaDetalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
             If txtCantidad_1_Pliego_Maquina_Offset.TextLength <> 0 Then
