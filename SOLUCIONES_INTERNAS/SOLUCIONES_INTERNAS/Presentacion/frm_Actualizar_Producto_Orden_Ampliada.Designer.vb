@@ -49,6 +49,10 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.cboTipo_Impresion_Offset = New System.Windows.Forms.ComboBox()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.GroupTerminacion = New System.Windows.Forms.GroupBox()
+        Me.chkTemposellado = New System.Windows.Forms.CheckBox()
+        Me.chkPegadoManual = New System.Windows.Forms.CheckBox()
+        Me.chkEstampado = New System.Windows.Forms.CheckBox()
+        Me.chkArmadoRevistas = New System.Windows.Forms.CheckBox()
         Me.chkLacaUVSectorizada = New System.Windows.Forms.CheckBox()
         Me.chkFresado = New System.Windows.Forms.CheckBox()
         Me.chkCuño = New System.Windows.Forms.CheckBox()
@@ -66,7 +70,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.chkStamping = New System.Windows.Forms.CheckBox()
         Me.chkEncuadernacion = New System.Windows.Forms.CheckBox()
         Me.chkAdhesivado = New System.Windows.Forms.CheckBox()
-        Me.chkPolipropileno = New System.Windows.Forms.CheckBox()
+        Me.chkPlastificado = New System.Windows.Forms.CheckBox()
         Me.chkGuillotinado = New System.Windows.Forms.CheckBox()
         Me.chkTroquelado = New System.Windows.Forms.CheckBox()
         Me.chkBarniz = New System.Windows.Forms.CheckBox()
@@ -142,10 +146,6 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.txt_id_detalle_orden_trabajo1 = New System.Windows.Forms.TextBox()
         Me.btnCancelar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.btnActualizar_Orden_Trabajo = New System.Windows.Forms.Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.groupOffset.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupTerminacion.SuspendLayout()
@@ -408,10 +408,10 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         'GroupTerminacion
         '
-        Me.GroupTerminacion.Controls.Add(Me.CheckBox4)
-        Me.GroupTerminacion.Controls.Add(Me.CheckBox3)
-        Me.GroupTerminacion.Controls.Add(Me.CheckBox2)
-        Me.GroupTerminacion.Controls.Add(Me.CheckBox1)
+        Me.GroupTerminacion.Controls.Add(Me.chkTemposellado)
+        Me.GroupTerminacion.Controls.Add(Me.chkPegadoManual)
+        Me.GroupTerminacion.Controls.Add(Me.chkEstampado)
+        Me.GroupTerminacion.Controls.Add(Me.chkArmadoRevistas)
         Me.GroupTerminacion.Controls.Add(Me.chkLacaUVSectorizada)
         Me.GroupTerminacion.Controls.Add(Me.chkFresado)
         Me.GroupTerminacion.Controls.Add(Me.chkCuño)
@@ -429,7 +429,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.GroupTerminacion.Controls.Add(Me.chkStamping)
         Me.GroupTerminacion.Controls.Add(Me.chkEncuadernacion)
         Me.GroupTerminacion.Controls.Add(Me.chkAdhesivado)
-        Me.GroupTerminacion.Controls.Add(Me.chkPolipropileno)
+        Me.GroupTerminacion.Controls.Add(Me.chkPlastificado)
         Me.GroupTerminacion.Controls.Add(Me.chkGuillotinado)
         Me.GroupTerminacion.Controls.Add(Me.chkTroquelado)
         Me.GroupTerminacion.Controls.Add(Me.chkBarniz)
@@ -442,6 +442,46 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.GroupTerminacion.TabIndex = 154
         Me.GroupTerminacion.TabStop = False
         Me.GroupTerminacion.Text = "Terminación"
+        '
+        'chkTemposellado
+        '
+        Me.chkTemposellado.AutoSize = True
+        Me.chkTemposellado.Location = New System.Drawing.Point(274, 83)
+        Me.chkTemposellado.Name = "chkTemposellado"
+        Me.chkTemposellado.Size = New System.Drawing.Size(89, 17)
+        Me.chkTemposellado.TabIndex = 161
+        Me.chkTemposellado.Text = "Termosellado"
+        Me.chkTemposellado.UseVisualStyleBackColor = True
+        '
+        'chkPegadoManual
+        '
+        Me.chkPegadoManual.AutoSize = True
+        Me.chkPegadoManual.Location = New System.Drawing.Point(648, 42)
+        Me.chkPegadoManual.Name = "chkPegadoManual"
+        Me.chkPegadoManual.Size = New System.Drawing.Size(66, 30)
+        Me.chkPegadoManual.TabIndex = 160
+        Me.chkPegadoManual.Text = "Pegado " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Manual"
+        Me.chkPegadoManual.UseVisualStyleBackColor = True
+        '
+        'chkEstampado
+        '
+        Me.chkEstampado.AutoSize = True
+        Me.chkEstampado.Location = New System.Drawing.Point(648, 15)
+        Me.chkEstampado.Name = "chkEstampado"
+        Me.chkEstampado.Size = New System.Drawing.Size(79, 17)
+        Me.chkEstampado.TabIndex = 159
+        Me.chkEstampado.Text = "Estampado"
+        Me.chkEstampado.UseVisualStyleBackColor = True
+        '
+        'chkArmadoRevistas
+        '
+        Me.chkArmadoRevistas.AutoSize = True
+        Me.chkArmadoRevistas.Location = New System.Drawing.Point(108, 8)
+        Me.chkArmadoRevistas.Name = "chkArmadoRevistas"
+        Me.chkArmadoRevistas.Size = New System.Drawing.Size(71, 30)
+        Me.chkArmadoRevistas.TabIndex = 158
+        Me.chkArmadoRevistas.Text = "Armadora" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Revistas"
+        Me.chkArmadoRevistas.UseVisualStyleBackColor = True
         '
         'chkLacaUVSectorizada
         '
@@ -613,15 +653,15 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.chkAdhesivado.Text = "Adhesivado"
         Me.chkAdhesivado.UseVisualStyleBackColor = True
         '
-        'chkPolipropileno
+        'chkPlastificado
         '
-        Me.chkPolipropileno.AutoSize = True
-        Me.chkPolipropileno.Location = New System.Drawing.Point(734, 49)
-        Me.chkPolipropileno.Name = "chkPolipropileno"
-        Me.chkPolipropileno.Size = New System.Drawing.Size(80, 17)
-        Me.chkPolipropileno.TabIndex = 147
-        Me.chkPolipropileno.Text = "Plastificado"
-        Me.chkPolipropileno.UseVisualStyleBackColor = True
+        Me.chkPlastificado.AutoSize = True
+        Me.chkPlastificado.Location = New System.Drawing.Point(734, 49)
+        Me.chkPlastificado.Name = "chkPlastificado"
+        Me.chkPlastificado.Size = New System.Drawing.Size(80, 17)
+        Me.chkPlastificado.TabIndex = 147
+        Me.chkPlastificado.Text = "Plastificado"
+        Me.chkPlastificado.UseVisualStyleBackColor = True
         '
         'chkGuillotinado
         '
@@ -1362,46 +1402,6 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.btnActualizar_Orden_Trabajo.Text = "Actualizar"
         Me.btnActualizar_Orden_Trabajo.UseVisualStyleBackColor = True
         '
-        'CheckBox1
-        '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(108, 8)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(71, 30)
-        Me.CheckBox1.TabIndex = 158
-        Me.CheckBox1.Text = "Armadora" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Revistas"
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(648, 15)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(79, 17)
-        Me.CheckBox2.TabIndex = 159
-        Me.CheckBox2.Text = "Estampado"
-        Me.CheckBox2.UseVisualStyleBackColor = True
-        '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(648, 42)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(66, 30)
-        Me.CheckBox3.TabIndex = 160
-        Me.CheckBox3.Text = "Pegado " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Manual"
-        Me.CheckBox3.UseVisualStyleBackColor = True
-        '
-        'CheckBox4
-        '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(274, 83)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(89, 17)
-        Me.CheckBox4.TabIndex = 161
-        Me.CheckBox4.Text = "Termosellado"
-        Me.CheckBox4.UseVisualStyleBackColor = True
-        '
         'frm_Actualizar_Producto_Orden_Ampliada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1490,7 +1490,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
     Friend WithEvents chkStamping As System.Windows.Forms.CheckBox
     Friend WithEvents chkEncuadernacion As System.Windows.Forms.CheckBox
     Friend WithEvents chkAdhesivado As System.Windows.Forms.CheckBox
-    Friend WithEvents chkPolipropileno As System.Windows.Forms.CheckBox
+    Friend WithEvents chkPlastificado As System.Windows.Forms.CheckBox
     Friend WithEvents chkGuillotinado As System.Windows.Forms.CheckBox
     Friend WithEvents chkTroquelado As System.Windows.Forms.CheckBox
     Friend WithEvents chkBarniz As System.Windows.Forms.CheckBox
@@ -1566,8 +1566,8 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
     Friend WithEvents txt_id_detalle_orden_trabajo1 As System.Windows.Forms.TextBox
     Friend WithEvents btnCancelar_Orden_Trabajo As System.Windows.Forms.Button
     Friend WithEvents btnActualizar_Orden_Trabajo As System.Windows.Forms.Button
-    Friend WithEvents CheckBox4 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox3 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox2 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents chkTemposellado As System.Windows.Forms.CheckBox
+    Friend WithEvents chkPegadoManual As System.Windows.Forms.CheckBox
+    Friend WithEvents chkEstampado As System.Windows.Forms.CheckBox
+    Friend WithEvents chkArmadoRevistas As System.Windows.Forms.CheckBox
 End Class

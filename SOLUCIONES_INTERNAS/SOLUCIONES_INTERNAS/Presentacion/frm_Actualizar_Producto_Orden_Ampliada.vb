@@ -28,7 +28,7 @@
         chkSoldado.Checked = False
         chkCocido.Checked = False
         chkRuedo.Checked = False
-        chkPolipropileno.Checked = False
+        chkPlastificado.Checked = False
         chkOtros.Checked = False
         txt_descripcion_terminacion.Clear()
     End Sub
