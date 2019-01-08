@@ -49,7 +49,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.cboTipo_Impresion_Offset = New System.Windows.Forms.ComboBox()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.GroupTerminacion = New System.Windows.Forms.GroupBox()
-        Me.chkTemposellado = New System.Windows.Forms.CheckBox()
+        Me.chkTermosellado = New System.Windows.Forms.CheckBox()
         Me.chkPegadoManual = New System.Windows.Forms.CheckBox()
         Me.chkEstampado = New System.Windows.Forms.CheckBox()
         Me.chkArmadoRevistas = New System.Windows.Forms.CheckBox()
@@ -408,7 +408,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         'GroupTerminacion
         '
-        Me.GroupTerminacion.Controls.Add(Me.chkTemposellado)
+        Me.GroupTerminacion.Controls.Add(Me.chkTermosellado)
         Me.GroupTerminacion.Controls.Add(Me.chkPegadoManual)
         Me.GroupTerminacion.Controls.Add(Me.chkEstampado)
         Me.GroupTerminacion.Controls.Add(Me.chkArmadoRevistas)
@@ -443,15 +443,15 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.GroupTerminacion.TabStop = False
         Me.GroupTerminacion.Text = "Terminación"
         '
-        'chkTemposellado
+        'chkTermosellado
         '
-        Me.chkTemposellado.AutoSize = True
-        Me.chkTemposellado.Location = New System.Drawing.Point(274, 83)
-        Me.chkTemposellado.Name = "chkTemposellado"
-        Me.chkTemposellado.Size = New System.Drawing.Size(89, 17)
-        Me.chkTemposellado.TabIndex = 161
-        Me.chkTemposellado.Text = "Termosellado"
-        Me.chkTemposellado.UseVisualStyleBackColor = True
+        Me.chkTermosellado.AutoSize = True
+        Me.chkTermosellado.Location = New System.Drawing.Point(274, 83)
+        Me.chkTermosellado.Name = "chkTermosellado"
+        Me.chkTermosellado.Size = New System.Drawing.Size(89, 17)
+        Me.chkTermosellado.TabIndex = 161
+        Me.chkTermosellado.Text = "Termosellado"
+        Me.chkTermosellado.UseVisualStyleBackColor = True
         '
         'chkPegadoManual
         '
@@ -1566,7 +1566,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
     Friend WithEvents txt_id_detalle_orden_trabajo1 As System.Windows.Forms.TextBox
     Friend WithEvents btnCancelar_Orden_Trabajo As System.Windows.Forms.Button
     Friend WithEvents btnActualizar_Orden_Trabajo As System.Windows.Forms.Button
-    Friend WithEvents chkTemposellado As System.Windows.Forms.CheckBox
+    Friend WithEvents chkTermosellado As System.Windows.Forms.CheckBox
     Friend WithEvents chkPegadoManual As System.Windows.Forms.CheckBox
     Friend WithEvents chkEstampado As System.Windows.Forms.CheckBox
     Friend WithEvents chkArmadoRevistas As System.Windows.Forms.CheckBox

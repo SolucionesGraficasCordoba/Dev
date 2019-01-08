@@ -23,8 +23,6 @@ Public Class frm_listado_orden_trabajo_ampliada
         CargarGrillaOrden()
     End Sub
 
-
-
     Private Sub ArmarGrillaDetalle(ByVal datasource As System.Linq.IQueryable)
         dgv_detalle_orden.Enabled = True
         dgv_detalle_orden.AutoGenerateColumns = False
@@ -120,9 +118,9 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns(12).DataPropertyName = "CLI_domicilio"
         dgv_detalle_orden.Columns(12).Visible = False
         dgv_detalle_orden.Columns(13).DataPropertyName = "PIE_id_pieza"
-        'dgv_detalle_orden.Columns(13).Visible = False
+        dgv_detalle_orden.Columns(13).Visible = False
         dgv_detalle_orden.Columns(14).DataPropertyName = "PIE_id_pieza_offset"
-        ' dgv_detalle_orden.Columns(14).Visible = False
+        dgv_detalle_orden.Columns(14).Visible = False
         dgv_detalle_orden.Columns(15).DataPropertyName = "PIE_nombre_pie"
         dgv_detalle_orden.Columns(16).DataPropertyName = "PIE_ubicacion"
         dgv_detalle_orden.Columns(16).Visible = False
@@ -231,7 +229,6 @@ Public Class frm_listado_orden_trabajo_ampliada
     End Sub
 
     Private Sub dgvLista_Orden_Trabajo_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Orden_Trabajo.CellClick
-
         'VALIDA QUE SE HAYA SELECCONADO UN SECTOR Y UNA FECHA
         If dgvLista_Orden_Trabajo.Rows.Count = 0 Then
             MsgBox("No hay órdenes", MsgBoxStyle.Information + MsgBoxStyle.Information, "Seleccionar")
@@ -242,6 +239,15 @@ Public Class frm_listado_orden_trabajo_ampliada
             CargarGrillaDetalle()
         Catch ex As Exception
         End Try
+
+
+        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarDigital()
+        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarGranFormato()
+        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarOffset()
+        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarProducto_Soportes()
+        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarTerminacion()
+
+
     End Sub
 
     Public Sub CargarGrillaDetalle()
@@ -426,18 +432,21 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     End Sub
 
     Private Sub btnModificarProducto_Click(sender As System.Object, e As System.EventArgs) Handles btnModificarProducto.Click
+
+        'LIMPIA CAMPOS CUANDO SE ABRE EL FORMULARIO
         frm_Actualizar_Producto_Orden_Ampliada.LimpiarDigital()
         frm_Actualizar_Producto_Orden_Ampliada.LimpiarGranFormato()
         frm_Actualizar_Producto_Orden_Ampliada.LimpiarOffset()
         frm_Actualizar_Producto_Orden_Ampliada.LimpiarProducto_Soportes()
         frm_Actualizar_Producto_Orden_Ampliada.LimpiarTerminacion()
 
+        'LLENA EL FORMULARIO CON LOS DATOS DEL GRID
         If dgv_detalle_orden.SelectedRows.Count > 0 Then
             frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Text = dgv_detalle_orden.Item("ORT_id_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value 'id_orden_trabajo
             frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.Item("ORT_numero_ot", dgv_detalle_orden.SelectedRows(0).Index).Value 'numero orden
-            
+
             frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto.Text = dgv_detalle_orden.Item("DOT_cantidad_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
-           
+
             frm_Actualizar_Producto_Orden_Ampliada.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txtTamaño_Producto.Text = dgv_detalle_orden.Item("DOT_tamaño_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_1_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
@@ -479,7 +488,6 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             frm_Actualizar_Producto_Orden_Ampliada.cboCalidad_Gran_Formato.Text = dgv_detalle_orden.Item("calidad_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.cboSistema_Gran_Formato.Text = dgv_detalle_orden.Item("sistema_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
             frm_Actualizar_Producto_Orden_Ampliada.txt_descripcion_terminacion.Text = dgv_detalle_orden.Item("descripcion_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value
-
 
             Dim tempterminacion As String
             tempterminacion = dgv_detalle_orden.Item("tipo_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value
@@ -541,7 +549,6 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             If tempterminacion.Contains("T19") Then
                 frm_Actualizar_Producto_Orden_Ampliada.chkPlastificado.Checked = True
             End If
-          
             If tempterminacion.Contains("T20") Then
                 frm_Actualizar_Producto_Orden_Ampliada.chkPosicionado.Checked = True
             End If
@@ -555,7 +562,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 frm_Actualizar_Producto_Orden_Ampliada.chkStamping.Checked = True
             End If
             If tempterminacion.Contains("T24") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkTemposellado.Checked = True
+                frm_Actualizar_Producto_Orden_Ampliada.chkTermosellado.Checked = True
             End If
             If tempterminacion.Contains("T25") Then
                 frm_Actualizar_Producto_Orden_Ampliada.chkTrazado.Checked = True
@@ -567,61 +574,42 @@ Where ORT_id_orden_trabajo = vble_id_orden)
 
         'CONTROLES OFFSET
         If frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Offset.TextLength <> 0 Then
+
             'estado de checkbox
             frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Checked = True
             frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = False
             frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = False
             frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = False
-            'habilita y deshabilita de checkbox
-            frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Enabled = False
-            'habilita y deshabilita de groupbox
+
             frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = False
             frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = False
             frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = False
             frm_Actualizar_Producto_Orden_Ampliada.groupOffset.Enabled = True
             frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = True
-            'limpia campos de groupbox
-            'frm_Orden_Trabajo_Ampliada.LimpiarDigital()
-            'frm_Orden_Trabajo_Ampliada.LimpiarGranFormato()
-            'frm_Orden_Trabajo_Ampliada.LimpiarTerminacion()
-        End If
 
-        'CONTROLES DIGITAL
-        If frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Digital.TextLength <> 0 Then
+            'CONTROLES DIGITAL
+        ElseIf frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Digital.TextLength <> 0 Then
+
             'estado de checkbox
             frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = True
             frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Checked = False
             frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = False
             frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = False
-            'habilita y deshabilita de checkbox
-            frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Enabled = False
-            'habilita y deshabilita de groupbox
+
             frm_Actualizar_Producto_Orden_Ampliada.groupOffset.Enabled = False
             frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = False
             frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = False
             frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = True
             frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = True
 
-            'frm_Orden_Trabajo_Ampliada.LimpiarOffset()
-            'frm_Orden_Trabajo_Ampliada.LimpiarGranFormato()
-            'frm_Orden_Trabajo_Ampliada.LimpiarTerminacion()
-        End If
+            'CONTROLES GRAN FORMATO
+        ElseIf frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto_Gran_Formato.TextLength <> 0 Then
 
-        'CONTROLES GRAN FORMATO
-        If frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto_Gran_Formato.TextLength <> 0 Then
             'estado de checkbox
             frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = True
             frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = False
             frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Checked = False
             frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = False
-            'habilita y deshabilita de checkbox
-            frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Enabled = False
             'habilita y deshabilita de groupbox
             frm_Actualizar_Producto_Orden_Ampliada.groupOffset.Enabled = False
             frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = False
@@ -629,32 +617,208 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = False
             frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = True
 
-            'frm_Orden_Trabajo_Ampliada.LimpiarDigital()
-            'frm_Orden_Trabajo_Ampliada.LimpiarOffset()
-            'frm_Orden_Trabajo_Ampliada.LimpiarTerminacion()
-        End If
-
-        'CONTROLES TERMINACION
-        If frm_Actualizar_Producto_Orden_Ampliada.chkAdhesivado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkBarniz.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkCocido.Checked = True _
-            Or frm_Actualizar_Producto_Orden_Ampliada.chkCuño.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkDoblado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkEncuadernacion.Checked = True _
-            Or frm_Actualizar_Producto_Orden_Ampliada.chkFresado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkGuillotinado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkLaca_UV.Checked = True _
-            Or frm_Actualizar_Producto_Orden_Ampliada.chkLacaUVSectorizada.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkMedio_Corte.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkMontado.Checked = True _
-            Or frm_Actualizar_Producto_Orden_Ampliada.chkOPPBrillante.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkOPPMate.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkOtros.Checked = True _
-            Or frm_Actualizar_Producto_Orden_Ampliada.chkPlastificado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkPosicionado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkRuedo.Checked = True _
-            Or frm_Actualizar_Producto_Orden_Ampliada.chkSoldado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkStamping.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkTrazado.Checked = True _
+            'CONTROLES TERMINACION
+        ElseIf frm_Actualizar_Producto_Orden_Ampliada.chkAdhesivado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkArmadoRevistas.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkBarniz.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkCocido.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkCuño.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkDoblado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkEncuadernacion.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkEstampado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkFresado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkGuillotinado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkLaca_UV.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkLacaUVSectorizada.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkMedio_Corte.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkMontado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkOPPBrillante.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkOPPMate.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkOtros.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPegadoManual.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPlastificado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPlastificado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPosicionado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkRuedo.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkSoldado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkStamping.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkTermosellado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkTrazado.Checked = True _
             Or frm_Actualizar_Producto_Orden_Ampliada.chkTroquelado.Checked = True Then
 
             frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = True
+            frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = False
+            frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = False
+            frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Checked = False
 
+            frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = True
             frm_Actualizar_Producto_Orden_Ampliada.groupOffset.Enabled = False
             frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = True
             frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = False
             frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = False
 
-            'frm_Orden_Trabajo_Ampliada.LimpiarDigital()
-            'frm_Orden_Trabajo_Ampliada.LimpiarOffset()
-            'frm_Orden_Trabajo_Ampliada.LimpiarGranFormato()
+            'CONTROLES OFFSET Y DIGITAL
+        ElseIf frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Offset.TextLength <> 0 _
+            And frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Digital.TextLength <> 0 Then
+
+            frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Checked = True
+            frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = True
+            frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = False
+            frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = False
+
+            frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = True
+
+            frm_Actualizar_Producto_Orden_Ampliada.groupOffset.Enabled = True
+            frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = True
+            frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = False
+            frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = False
+
+
+            'CONTROLES OFFSET, DIGITAL Y TERMINACION
+        ElseIf frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Offset.TextLength <> 0 _
+            And frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Digital.TextLength <> 0 _
+            And frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto_Gran_Formato.TextLength <> 0 Then
+
+            frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Checked = True
+            frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = True
+            frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = True
+            frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = False
+
+            frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = True
+
+            frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = True
+            frm_Actualizar_Producto_Orden_Ampliada.groupOffset.Enabled = True
+            frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = True
+            frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = False
+
+
+            'CONTROLES DIGITAL,TERMINACION
+        ElseIf frm_Actualizar_Producto_Orden_Ampliada.chkAdhesivado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkArmadoRevistas.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkBarniz.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkCocido.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkCuño.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkDoblado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkEncuadernacion.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkEstampado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkFresado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkGuillotinado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkLaca_UV.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkLacaUVSectorizada.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkMedio_Corte.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkMontado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkOPPBrillante.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkOPPMate.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkOtros.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPegadoManual.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPlastificado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPlastificado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPosicionado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkRuedo.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkSoldado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkStamping.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkTermosellado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkTrazado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkTroquelado.Checked = True Then
+
+
+            frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = True
+            frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = True
+            frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = False
+            frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Checked = False
+
+            frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = True
+
+            frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = True
+            frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = False
+            frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = True
+            frm_Actualizar_Producto_Orden_Ampliada.groupOffset.Enabled = False
+
+
+            'CONTROLES OFFSET Y TERMINACION
+        ElseIf frm_Actualizar_Producto_Orden_Ampliada.chkAdhesivado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkArmadoRevistas.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkBarniz.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkCocido.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkCuño.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkDoblado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkEncuadernacion.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkEstampado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkFresado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkGuillotinado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkLaca_UV.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkLacaUVSectorizada.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkMedio_Corte.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkMontado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkOPPBrillante.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkOPPMate.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkOtros.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPegadoManual.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPlastificado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPlastificado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPosicionado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkRuedo.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkSoldado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkStamping.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkTermosellado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkTrazado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkTroquelado.Checked = True Then
+
+            frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Checked = True
+            frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = False
+            frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = False
+            frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = True
+
+            frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = True
+
+            frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = False
+            frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = False
+            frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = True
+            frm_Actualizar_Producto_Orden_Ampliada.groupOffset.Enabled = True
+
+
+            'CONTROLES GRAN FORMATO, TERMINACION
+        ElseIf frm_Actualizar_Producto_Orden_Ampliada.chkAdhesivado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkArmadoRevistas.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkBarniz.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkCocido.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkCuño.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkDoblado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkEncuadernacion.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkEstampado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkFresado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkGuillotinado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkLaca_UV.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkLacaUVSectorizada.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkMedio_Corte.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkMontado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkOPPBrillante.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkOPPMate.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkOtros.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPegadoManual.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPlastificado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPlastificado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPosicionado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkRuedo.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkSoldado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkStamping.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkTermosellado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkTrazado.Checked = True _
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkTroquelado.Checked = True Then
+
+            'estado de checkbox
+            frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = True
+            frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = False
+            frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Checked = False
+            frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = True
+
+            frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = False
+
+            'habilita y deshabilita de groupbox
+            frm_Actualizar_Producto_Orden_Ampliada.groupOffset.Enabled = False
+            frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = False
+            frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = True
+            frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = True
         End If
 
         frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Enabled = False
@@ -831,7 +995,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 frm_Actualizar_Producto_Orden_Ampliada.chkStamping.Checked = True
             End If
             If tempterminacion.Contains("T24") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkTemposellado.Checked = True
+                frm_Actualizar_Producto_Orden_Ampliada.chkTermosellado.Checked = True
             End If
             If tempterminacion.Contains("T25") Then
                 frm_Actualizar_Producto_Orden_Ampliada.chkTrazado.Checked = True
@@ -919,7 +1083,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             Or frm_Actualizar_Producto_Orden_Ampliada.chkPlastificado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkPosicionado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkRuedo.Checked = True _
             Or frm_Actualizar_Producto_Orden_Ampliada.chkSoldado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkStamping.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkTrazado.Checked = True _
             Or frm_Actualizar_Producto_Orden_Ampliada.chkTroquelado.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkArmadoRevistas.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkEstampado.Checked = True _
-            Or frm_Actualizar_Producto_Orden_Ampliada.chkPegadoManual.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkTemposellado.Checked = True Then
+            Or frm_Actualizar_Producto_Orden_Ampliada.chkPegadoManual.Checked = True Or frm_Actualizar_Producto_Orden_Ampliada.chkTermosellado.Checked = True Then
 
             frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = False
 

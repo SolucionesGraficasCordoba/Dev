@@ -14,7 +14,6 @@
 
     Sub LimpiarTerminacion()
         chkLaca_UV.Checked = False
-        chkPosicionado.Checked = False
         chkDoblado.Checked = False
         chkTroquelado.Checked = False
         chkGuillotinado.Checked = False
@@ -28,8 +27,18 @@
         chkSoldado.Checked = False
         chkCocido.Checked = False
         chkRuedo.Checked = False
-        chkPlastificado.Checked = False
         chkOtros.Checked = False
+        chkArmadoRevistas.Checked = False
+        chkCuño.Checked = False
+        chkEstampado.Checked = False
+        chkFresado.Checked = False
+        chkLacaUVSectorizada.Checked = False
+        chkOPPBrillante.Checked = False
+        chkOPPMate.Checked = False
+        chkPegadoManual.Checked = False
+        chkPlastificado.Checked = False
+        chkPosicionado.Checked = False
+        chkTermosellado.Checked = False
         txt_descripcion_terminacion.Clear()
     End Sub
 
@@ -78,8 +87,6 @@
     End Sub
 
     Private Sub frm_Actualizar_Producto_Orden_Ampliada_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-      
-
         'CARGA COMBO
         Dim combopieza1 = (From sec In datacontext.PIEZA
                              Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
@@ -92,7 +99,6 @@
 
         'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
         cboPiezas_Producto.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
-
 
         Dim combopieza2 = (From sec In datacontext.PIEZA
                             Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
