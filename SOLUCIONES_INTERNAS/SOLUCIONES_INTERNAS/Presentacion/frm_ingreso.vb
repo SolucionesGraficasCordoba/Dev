@@ -462,3 +462,82 @@
         Me.Dispose()
     End Sub
 End Class
+
+' para habilitar las nuevas pestañas de la orden de trabajo cree:
+
+'  Sub NuevaOrden(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+'       frm_Principal.OrdenTrabajoToolStripMenuItem.Enabled = True
+'       frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(4).Visible = nuevo 'nueva
+'       frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(5).Visible = modif 'modificar
+'       frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(6).Visible = elim 'eliminar
+'   End Sub
+
+'    Sub HabilitarGeneral()
+'       '------------------------------------
+'        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(6).Enabled = True 'consultar
+'       '---------------------------------
+'    End Sub
+
+'Sub DeshabilitarGeneral()
+'--------------------------------------------------
+'    NuevaOrden(False, False, False)
+' '----------------------------------------------
+
+
+''--------------------ODTN---------------------'
+'                    If permisos.Item(i).PER_permiso = "ODTN" Then
+'                        If permisos.Item(i).PER_abm = "A" Then
+'                            NuevaOrden(True, flagm, flagb)
+'                            flaga = 1
+'                        End If
+'                        If permisos.Item(i).PER_abm = "M" Then
+'                            NuevaOrden(flaga, True, flagb)
+'                            flagm = 1
+'                        End If
+'                        If permisos.Item(i).PER_abm = "B" Then
+'                            NuevaOrden(flaga, flagm, True)
+'                            flagb = 1
+'                        End If
+'                    End If
+'-----------------------------------------------------------
+
+
+
+
+
+'  Case "ADMINISTRADOR"
+'.........................................
+'                    NuevaOrden(True, True, True)
+'                  '..................................
+
+
+
+
+
+
+'                Case "GERENCIA"
+'                  '................................
+'                    NuevaOrden(True, True, True)
+'               '.......................................
+
+
+
+
+
+
+
+'                Case "SUPERVISOR"
+'                  '....................................
+'                    NuevaOrden(True, True, False)
+'                   '........................................
+'---------------------------------------
+
+
+'Private Sub frm_ingreso_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+'    frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = False 'alta vieja orden
+'    frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = False 'modificar vieja orden
+'    frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = False 'eliminar vieja orden
+'    frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Visible = False 'consultar vieja orden
+
+'End Sub
