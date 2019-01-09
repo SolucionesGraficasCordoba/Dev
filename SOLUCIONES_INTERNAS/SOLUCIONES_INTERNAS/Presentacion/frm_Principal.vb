@@ -1322,7 +1322,7 @@ Public Class frm_Principal
     End Sub
 
     Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+      
         Dim c As Control
         For Each c In Me.Controls
             If TypeOf c Is MdiClient Then
@@ -1331,6 +1331,7 @@ Public Class frm_Principal
                 c.BackgroundImageLayout = ImageLayout.Zoom
             End If
         Next
+
     End Sub
 
     Private Sub TareasMensulesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -1518,7 +1519,7 @@ Public Class frm_Principal
         frm_listado_orden_trabajo_ampliada.btnEliminar_Producto.Enabled = False
         frm_listado_orden_trabajo_ampliada.btnVer.Enabled = False
         frm_listado_orden_trabajo_ampliada.btn_ODT_mostrar_listado_pdf.Enabled = False
-
+        frm_listado_orden_trabajo_ampliada.btnVer.Visible = True
         frm_listado_orden_trabajo_ampliada.MdiParent = Me
         frm_listado_orden_trabajo_ampliada.Show()
         frm_listado_orden_trabajo_ampliada.dgvLista_Orden_Trabajo.ClearSelection()
