@@ -1677,7 +1677,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Orden_Trabajo_Ampliada"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frm_Orden_Trabajo_Ampliada"
+        Me.Text = "Nueva Orden"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupProducto_Soportes.ResumeLayout(False)
