@@ -232,7 +232,172 @@
             ActualizaDetalle.sustrato_gran_formato = txtSustrato_Gran_Formato.Text
             ActualizaDetalle.calidad_gran_formato = cboCalidad_Gran_Formato.Text
             ActualizaDetalle.sistema_gran_formato = cboSistema_Gran_Formato.Text
-            ' ActualizaDetalle.tipo_terminacion=
+
+
+            Dim temtermosellado, tempegadomanual, temestampado, temarmadorevistas, temlaca, temposicionado, temdoblado, temtroquelado, temguillotinado, temmediocorte, tembarniz, temmontado, temencuadernacion, temstamping, _
+              temadhesivado, temtrazado, temsoldado, temcocido, temruedo, templastificado, temotros, temcuño, temfresado, temLacaUVSect, _
+              temOPPBrillante, temOPPMate As String
+            'ADHESIVADO
+            If chkAdhesivado.Checked = True Then
+                temadhesivado = "T01"
+            Else
+                temadhesivado = ""
+            End If
+            'ARMADO REVISTAS
+            If chkArmadoRevistas.Checked = True Then
+                temarmadorevistas = "T02"
+            Else
+                temarmadorevistas = ""
+            End If
+            'BARNIZ
+            If chkBarniz.Checked = True Then
+                tembarniz = "T03"
+            Else
+                tembarniz = ""
+            End If
+            'COCIDO
+            If chkCocido.Checked = True Then
+                temcocido = "T04"
+            Else
+                temcocido = ""
+            End If
+            'CUÑO
+            If chkCuño.Checked = True Then
+                temcuño = "T05"
+            Else
+                temcuño = ""
+            End If
+            'DOBLADO
+            If chkDoblado.Checked = True Then
+                temdoblado = "T06"
+            Else
+                temdoblado = ""
+            End If
+            'ENCUADERNACION
+            If chkEncuadernacion.Checked = True Then
+                temencuadernacion = "T07"
+            Else
+                temencuadernacion = ""
+            End If
+            'ESTAMPADO
+            If chkEstampado.Checked = True Then
+                temestampado = "T08"
+            Else
+                temestampado = ""
+            End If
+            'FRESADO
+            If chkFresado.Checked = True Then
+                temfresado = "T09"
+            Else
+                temfresado = ""
+            End If
+            'GUILLOTINADO
+            If chkGuillotinado.Checked = True Then
+                temguillotinado = "T10"
+            Else
+                temguillotinado = ""
+            End If
+            'LACA UV
+            If chkLaca_UV.Checked = True Then
+                temlaca = "T11"
+            Else
+                temlaca = ""
+            End If
+            'LACA UV SECTORIZADA
+            If chkLacaUVSectorizada.Checked = True Then
+                temLacaUVSect = "T12"
+            Else
+                temLacaUVSect = ""
+            End If
+            'MEDIO CORTE
+            If chkMedio_Corte.Checked = True Then
+                temmediocorte = "T13"
+            Else
+                temmediocorte = ""
+            End If
+            'MONTADO
+            If chkMontado.Checked = True Then
+                temmontado = "T14"
+            Else
+                temmontado = ""
+            End If
+            'OPP BRILLANTE
+            If chkOPPBrillante.Checked = True Then
+                temOPPBrillante = "T15"
+            Else
+                temOPPBrillante = ""
+            End If
+            'OPP MATE
+            If chkOPPMate.Checked = True Then
+                temOPPMate = "T16"
+            Else
+                temOPPMate = ""
+            End If
+            'OTROS
+            If chkOtros.Checked = True Then
+                temotros = "T17"
+            Else
+                temotros = ""
+            End If
+            'PEGADO MANUAL
+            If chkPegadoManual.Checked = True Then
+                tempegadomanual = "T18"
+            Else
+                tempegadomanual = ""
+            End If
+            'PLASTIFICADO
+            If chkPlastificado.Checked = True Then
+                templastificado = "T19"
+            Else
+                templastificado = ""
+            End If
+            'POSICIONADO
+            If chkPosicionado.Checked = True Then
+                temposicionado = "T20"
+            Else
+                temposicionado = ""
+            End If
+            'RUEDO
+            If chkRuedo.Checked = True Then
+                temruedo = "T21"
+            Else
+                temruedo = ""
+            End If
+            'SOLDADO
+            If chkSoldado.Checked = True Then
+                temsoldado = "T22"
+            Else
+                temsoldado = ""
+            End If
+            'STAMPING
+            If chkStamping.Checked = True Then
+                temstamping = "T23"
+            Else
+                temstamping = ""
+            End If
+            'TERMOSELLADO
+            If chkTermosellado.Checked = True Then
+                temtermosellado = "T24"
+            Else
+                temtermosellado = ""
+            End If
+            'TRAZADO
+            If chkTrazado.Checked = True Then
+                temtrazado = "T25"
+            Else
+                temtrazado = ""
+            End If
+            'TROQUELADO
+            If chkTroquelado.Checked = True Then
+                temtroquelado = "T26"
+            Else
+                temtroquelado = ""
+            End If
+
+            ActualizaDetalle.tipo_terminacion = temlaca & temposicionado & temdoblado & temtroquelado & temguillotinado & temmediocorte & tembarniz & temmontado _
+                & temencuadernacion & temstamping & temadhesivado & temtrazado & temsoldado & temcocido & temruedo & temotros & temcuño & temfresado & _
+                temLacaUVSect & temOPPBrillante & temOPPMate & temarmadorevistas & temestampado & tempegadomanual & templastificado & temtermosellado
+
             ActualizaDetalle.descripcion_terminacion = txt_descripcion_terminacion.Text
 
             datacontext.SubmitChanges()
@@ -241,7 +406,6 @@
             frm_listado_orden_trabajo_ampliada.Close()
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar orden")
-
         End Try
     End Sub
 
