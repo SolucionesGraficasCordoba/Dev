@@ -5,8 +5,15 @@
     ' flag_sector, flag_tarea, flag_producto, flag_orden, flag_retrabajo As String
 
     Public flaga = 0, flagb = 0, flagm = 0, flagalta = 0, flagbaja = 0
+
     Private Sub frm_ingreso_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txt_usuario.Focus()
+
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = False 'alta vieja orden
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = False 'modificar vieja orden
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = False 'eliminar vieja orden
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Visible = False 'consultar vieja orden
+
     End Sub
 
     Private Sub btnIngresar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnIngresar.Click
@@ -30,7 +37,8 @@
                     Sector(True, True, True)
                     Tarea(True, True, True)
                     Producto(True, True, True, True, True)
-                    Orden(True, True, True)
+                    ' Orden(True, True, True)
+                    NuevaOrden(True, True, True)
                     Retrabajo(True, True)
                     Etiquetas(True)
                     Estadistica(True, True, True, True, True)
@@ -45,7 +53,8 @@
                     Sector(True, True, True)
                     Tarea(True, True, True)
                     Producto(True, True, True, True, True)
-                    Orden(True, True, True)
+                    ' Orden(True, True, True)
+                    NuevaOrden(True, True, True)
                     Retrabajo(True, True)
                     Etiquetas(False)
                     Estadistica(True, True, True, True, True)
@@ -54,10 +63,12 @@
                 Case "SUPERVISOR"
                     Tarea(True, True, True)
                     Producto(False, False, False, True, True)
-                    Orden(True, True, False)
+                    ' Orden(True, True, False)
+                    NuevaOrden(True, True, False)
                     Retrabajo(True, True)
                     Etiquetas(False)
                     Estadistica(True, True, True, True, True)
+
                 Case "COLABORADOR"
                     'HabilitarGeneral()
             End Select
@@ -208,18 +219,33 @@
                             flagbaja = 1
                         End If
                     End If
-                    '----------------------ODT-----------------'
-                    If permisos.Item(i).PER_permiso = "ODT" Then
+                    ''----------------------ODT-----------------'
+                    'If permisos.Item(i).PER_permiso = "ODT" Then
+                    '    If permisos.Item(i).PER_abm = "A" Then
+                    '        Orden(True, flagm, flagb)
+                    '        flaga = 1
+                    '    End If
+                    '    If permisos.Item(i).PER_abm = "M" Then
+                    '        Orden(flaga, True, flagb)
+                    '        flagm = 1
+                    '    End If
+                    '    If permisos.Item(i).PER_abm = "B" Then
+                    '        Orden(flaga, flagm, True)
+                    '        flagb = 1
+                    '    End If
+                    'End If
+                    '--------------------ODTN---------------------'
+                    If permisos.Item(i).PER_permiso = "ODTN" Then
                         If permisos.Item(i).PER_abm = "A" Then
-                            Orden(True, flagm, flagb)
+                            NuevaOrden(True, flagm, flagb)
                             flaga = 1
                         End If
                         If permisos.Item(i).PER_abm = "M" Then
-                            Orden(flaga, True, flagb)
+                            NuevaOrden(flaga, True, flagb)
                             flagm = 1
                         End If
                         If permisos.Item(i).PER_abm = "B" Then
-                            Orden(flaga, flagm, True)
+                            NuevaOrden(flaga, flagm, True)
                             flagb = 1
                         End If
                     End If
@@ -258,8 +284,7 @@
     End Sub
 
     Sub HabilitarGeneral()
-
-        frm_Principal.UsuarioToolStripMenuItem.DropDownItems(3).Visible = True
+        frm_Principal.UsuarioToolStripMenuItem.DropDownItems(3).Enabled = True
         frm_Principal.ColaboradorToolStripMenuItem.DropDownItems(3).Enabled = True 'consultar
         frm_Principal.VendedorToolStripMenuItem.DropDownItems(3).Enabled = True 'consultar
         frm_Principal.ClienteToolStripMenuItem.DropDownItems(3).Enabled = True 'consultar
@@ -268,7 +293,7 @@
         frm_Principal.TareasToolStripMenuItem.DropDownItems(3).Enabled = True 'consultar
         frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Enabled = True 'consulta producto
         frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(3).Enabled = True 'consulta movimiento producto
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Enabled = True 'consultar
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(6).Enabled = True 'consultar
         frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(2).Enabled = True 'consultar
 
         Acercade()
@@ -284,7 +309,8 @@
         Sector(False, False, False)
         Tarea(False, False, False)
         Producto(False, False, False, False, False)
-        Orden(False, False, False)
+        ' Orden(False, False, False)
+        NuevaOrden(False, False, False)
         Retrabajo(False, False)
         Etiquetas(False)
         Estadistica(False, False, False, False, False)
@@ -299,7 +325,6 @@
     End Sub
 
     Sub Usuario(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
-
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.UsuarioToolStripMenuItem.DropDownItems(2).Visible = elim
@@ -318,8 +343,6 @@
         frm_Principal.VendedorToolStripMenuItem.DropDownItems(0).Visible = nuevo
         frm_Principal.VendedorToolStripMenuItem.DropDownItems(1).Visible = modif
         frm_Principal.VendedorToolStripMenuItem.DropDownItems(2).Visible = elim
-
-
     End Sub
 
     Sub Cliente(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
@@ -364,12 +387,18 @@
         frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(1).Visible = baja
     End Sub
 
-    Sub Orden(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
-        frm_Principal.OrdenTrabajoToolStripMenuItem.Enabled = True
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = nuevo 'nueva
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = modif 'modificar
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = elim 'eliminar
+    'Sub Orden(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+    '    frm_Principal.OrdenTrabajoToolStripMenuItem.Enabled = True
+    '    frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = nuevo 'nueva
+    '    frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = modif 'modificar
+    '    frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = elim 'eliminar
+    'End Sub
 
+    Sub NuevaOrden(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+        frm_Principal.OrdenTrabajoToolStripMenuItem.Enabled = True
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(4).Visible = nuevo 'nueva
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(5).Visible = modif 'modificar
+        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(6).Visible = elim 'eliminar
     End Sub
 
     Sub Retrabajo(ByVal nuevo As Boolean, ByVal elim As Boolean)
