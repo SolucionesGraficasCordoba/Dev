@@ -29,15 +29,15 @@ Partial Class frm_listado_orden_trabajo_ampliada
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupDetallesOrden = New System.Windows.Forms.GroupBox()
+        Me.btn_ODT_mostrar_listado_pdf = New System.Windows.Forms.Button()
         Me.btn_Cancelar = New System.Windows.Forms.Button()
+        Me.btnVer = New System.Windows.Forms.Button()
         Me.btnModificarProducto = New System.Windows.Forms.Button()
         Me.btnEliminar_Producto = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgv_detalle_orden = New System.Windows.Forms.DataGridView()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupListadoPiezas = New System.Windows.Forms.GroupBox()
-        Me.btn_ODT_mostrar_listado_pdf = New System.Windows.Forms.Button()
-        Me.btnVer = New System.Windows.Forms.Button()
         Me.rbtFechaEntrega = New System.Windows.Forms.RadioButton()
         Me.rbtCliente = New System.Windows.Forms.RadioButton()
         Me.rbtNroOrden = New System.Windows.Forms.RadioButton()
@@ -72,6 +72,15 @@ Partial Class frm_listado_orden_trabajo_ampliada
         Me.GroupDetallesOrden.TabStop = False
         Me.GroupDetallesOrden.Text = "Productos de la órden"
         '
+        'btn_ODT_mostrar_listado_pdf
+        '
+        Me.btn_ODT_mostrar_listado_pdf.Location = New System.Drawing.Point(556, 169)
+        Me.btn_ODT_mostrar_listado_pdf.Name = "btn_ODT_mostrar_listado_pdf"
+        Me.btn_ODT_mostrar_listado_pdf.Size = New System.Drawing.Size(128, 33)
+        Me.btn_ODT_mostrar_listado_pdf.TabIndex = 37
+        Me.btn_ODT_mostrar_listado_pdf.Text = "Exportar Listado a PDF"
+        Me.btn_ODT_mostrar_listado_pdf.UseVisualStyleBackColor = True
+        '
         'btn_Cancelar
         '
         Me.btn_Cancelar.Location = New System.Drawing.Point(1007, 169)
@@ -80,6 +89,16 @@ Partial Class frm_listado_orden_trabajo_ampliada
         Me.btn_Cancelar.TabIndex = 39
         Me.btn_Cancelar.Text = "Cancelar"
         Me.btn_Cancelar.UseVisualStyleBackColor = True
+        '
+        'btnVer
+        '
+        Me.btnVer.Location = New System.Drawing.Point(690, 169)
+        Me.btnVer.Name = "btnVer"
+        Me.btnVer.Size = New System.Drawing.Size(67, 33)
+        Me.btnVer.TabIndex = 37
+        Me.btnVer.Text = "Ver"
+        Me.btnVer.UseVisualStyleBackColor = True
+        Me.btnVer.Visible = False
         '
         'btnModificarProducto
         '
@@ -170,25 +189,6 @@ Partial Class frm_listado_orden_trabajo_ampliada
         Me.GroupListadoPiezas.TabIndex = 31
         Me.GroupListadoPiezas.TabStop = False
         Me.GroupListadoPiezas.Text = "Listado de Ordenes"
-        '
-        'btn_ODT_mostrar_listado_pdf
-        '
-        Me.btn_ODT_mostrar_listado_pdf.Location = New System.Drawing.Point(556, 169)
-        Me.btn_ODT_mostrar_listado_pdf.Name = "btn_ODT_mostrar_listado_pdf"
-        Me.btn_ODT_mostrar_listado_pdf.Size = New System.Drawing.Size(128, 33)
-        Me.btn_ODT_mostrar_listado_pdf.TabIndex = 37
-        Me.btn_ODT_mostrar_listado_pdf.Text = "Exportar Listado a PDF"
-        Me.btn_ODT_mostrar_listado_pdf.UseVisualStyleBackColor = True
-        '
-        'btnVer
-        '
-        Me.btnVer.Location = New System.Drawing.Point(690, 169)
-        Me.btnVer.Name = "btnVer"
-        Me.btnVer.Size = New System.Drawing.Size(67, 33)
-        Me.btnVer.TabIndex = 37
-        Me.btnVer.Text = "Ver"
-        Me.btnVer.UseVisualStyleBackColor = True
-        Me.btnVer.Visible = False
         '
         'rbtFechaEntrega
         '
