@@ -129,6 +129,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         'dgv_detalle_orden
         '
+        Me.dgv_detalle_orden.AllowUserToAddRows = False
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -283,6 +284,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         'dgvLista_Orden_Trabajo
         '
+        Me.dgvLista_Orden_Trabajo.AllowUserToAddRows = False
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))

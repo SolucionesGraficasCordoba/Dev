@@ -36,7 +36,6 @@ Partial Class frm_Actualizar_Orden
         Me.txt_id_orden_trabajo = New System.Windows.Forms.TextBox()
         Me.txt_id_cliente = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt_mejoras = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.dtpFecha_Orden_Trabajo = New System.Windows.Forms.DateTimePicker()
@@ -50,6 +49,7 @@ Partial Class frm_Actualizar_Orden
         Me.Label18 = New System.Windows.Forms.Label()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
+        Me.cboDireccion_Entrega = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -102,7 +102,7 @@ Partial Class frm_Actualizar_Orden
         '
         'txt_nombre_cliente
         '
-        Me.txt_nombre_cliente.Location = New System.Drawing.Point(98, 178)
+        Me.txt_nombre_cliente.Location = New System.Drawing.Point(86, 164)
         Me.txt_nombre_cliente.Name = "txt_nombre_cliente"
         Me.txt_nombre_cliente.Size = New System.Drawing.Size(283, 20)
         Me.txt_nombre_cliente.TabIndex = 86
@@ -176,14 +176,6 @@ Partial Class frm_Actualizar_Orden
         Me.Label1.TabIndex = 74
         Me.Label1.Text = "TN"
         '
-        'txt_mejoras
-        '
-        Me.txt_mejoras.Location = New System.Drawing.Point(86, 202)
-        Me.txt_mejoras.Multiline = True
-        Me.txt_mejoras.Name = "txt_mejoras"
-        Me.txt_mejoras.Size = New System.Drawing.Size(341, 20)
-        Me.txt_mejoras.TabIndex = 70
-        '
         'Label19
         '
         Me.Label19.AutoSize = True
@@ -254,8 +246,10 @@ Partial Class frm_Actualizar_Orden
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.cboDireccion_Entrega)
         Me.GroupBox1.Controls.Add(Me.txt_observaciones)
         Me.GroupBox1.Controls.Add(Me.Label18)
+        Me.GroupBox1.Controls.Add(Me.txt_nombre_cliente)
         Me.GroupBox1.Controls.Add(Me.txtNumero_Orden_Trabajo)
         Me.GroupBox1.Controls.Add(Me.Label46)
         Me.GroupBox1.Controls.Add(Me.dtpFecha_Orden_Trabajo)
@@ -265,7 +259,6 @@ Partial Class frm_Actualizar_Orden
         Me.GroupBox1.Controls.Add(Me.Label54)
         Me.GroupBox1.Controls.Add(Me.txt_id_cliente)
         Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Me.txt_mejoras)
         Me.GroupBox1.Controls.Add(Me.Label10)
         Me.GroupBox1.Controls.Add(Me.Label5)
         Me.GroupBox1.Controls.Add(Me.Label19)
@@ -312,6 +305,16 @@ Partial Class frm_Actualizar_Orden
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
         '
+        'cboDireccion_Entrega
+        '
+        Me.cboDireccion_Entrega.FormattingEnabled = True
+        Me.cboDireccion_Entrega.Items.AddRange(New Object() {"Casa Central", "Planta Industrial"})
+        Me.cboDireccion_Entrega.Location = New System.Drawing.Point(86, 201)
+        Me.cboDireccion_Entrega.MaxLength = 250
+        Me.cboDireccion_Entrega.Name = "cboDireccion_Entrega"
+        Me.cboDireccion_Entrega.Size = New System.Drawing.Size(283, 21)
+        Me.cboDireccion_Entrega.TabIndex = 129
+        '
         'frm_Actualizar_Orden
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -320,7 +323,6 @@ Partial Class frm_Actualizar_Orden
         Me.Controls.Add(Me.btnCancelar)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.txt_nombre_cliente)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.btnBuscar_cliente)
         Me.Controls.Add(Me.Label15)
@@ -351,7 +353,6 @@ Partial Class frm_Actualizar_Orden
     Friend WithEvents txt_id_orden_trabajo As System.Windows.Forms.TextBox
     Friend WithEvents txt_id_cliente As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents txt_mejoras As System.Windows.Forms.TextBox
     Friend WithEvents Label19 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents dtpFecha_Orden_Trabajo As System.Windows.Forms.DateTimePicker
@@ -365,4 +366,5 @@ Partial Class frm_Actualizar_Orden
     Friend WithEvents btnCancelar As System.Windows.Forms.Button
     Friend WithEvents txt_observaciones As System.Windows.Forms.TextBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents cboDireccion_Entrega As System.Windows.Forms.ComboBox
 End Class

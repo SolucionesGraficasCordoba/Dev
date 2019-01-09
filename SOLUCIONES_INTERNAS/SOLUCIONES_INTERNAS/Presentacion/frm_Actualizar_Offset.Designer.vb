@@ -455,7 +455,7 @@ Partial Class frm_Actualizar_Offset
         Me.Controls.Add(Me.btnGuardar_ReTrabajo)
         Me.Controls.Add(Me.btnCancelar_ReTrabajo)
         Me.Name = "frm_Actualizar_Offset"
-        Me.Text = "frm_Actualizar_Offset"
+        Me.Text = "Repetición de Chapas"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)

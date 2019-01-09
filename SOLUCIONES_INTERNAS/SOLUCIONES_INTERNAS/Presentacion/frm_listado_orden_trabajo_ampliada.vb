@@ -1004,7 +1004,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             frm_Actualizar_Orden.txtid_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_id_vendedor", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Actualizar_Orden.txtNombre_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Actualizar_Orden.txt_observaciones.Text = dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-            frm_Actualizar_Orden.txt_mejoras.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            frm_Actualizar_Orden.cboDireccion_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
         End If
         frm_Actualizar_Orden.txtNumero_Orden_Trabajo.Enabled = False
         frm_Actualizar_Orden.Label1.Visible = False
@@ -1013,6 +1013,8 @@ Where ORT_id_orden_trabajo = vble_id_orden)
         frm_Actualizar_Orden.txtid_vendedor.Visible = False
         frm_Actualizar_Orden.txtNombre_vendedor.Enabled = False
         frm_Actualizar_Orden.txt_nombre_cliente.Enabled = False
+        frm_Actualizar_Orden.cboTipo_Orden.Visible = False
+        frm_Actualizar_Orden.Label5.Visible = False
         frm_Actualizar_Orden.ShowDialog()
 
     End Sub

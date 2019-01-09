@@ -35,7 +35,7 @@
             ActualizarOrden.ORT_tipo_ot = cboTipo_Orden.Text
             ActualizarOrden.ORT_numero_ot = txtNumero_Orden_Trabajo.Text
             ActualizarOrden.ORT_observaciones_ot = txt_observaciones.Text
-            ActualizarOrden.ORT_mejoras_ot = txt_mejoras.Text
+            ActualizarOrden.ORT_mejoras_ot = cboDireccion_Entrega.Text
             ActualizarOrden.VEN_id_vendedor = txtid_vendedor.Text
             ActualizarOrden.CLI_id_cliente = txt_id_cliente.Text
             ActualizarOrden.ORT_fecha_entrega = dtpFecha_Entrega.Text
@@ -44,6 +44,7 @@
             MsgBox("Los datos se han modificado correctamente!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar Orden")
             Me.Close()
             frm_Listado_Orden_Trabajo.Close()
+            frm_listado_orden_trabajo_ampliada.Close()
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar Orden")
         End Try
