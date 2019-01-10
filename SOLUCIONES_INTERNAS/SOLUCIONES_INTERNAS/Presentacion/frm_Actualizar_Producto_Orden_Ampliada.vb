@@ -414,27 +414,41 @@
         Me.Dispose()
     End Sub
 
+    Dim flagsoporte As Integer
+
+
     Private Sub chkOffset_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkOffset.CheckedChanged
-        If chkOffset.Checked = True Then
-            GroupProducto_Soportes.Enabled = True
-            groupOffset.Enabled = True
-        Else
-            GroupProducto_Soportes.Enabled = False
-            groupOffset.Enabled = False
-            'LimpiarProducto_Soportes()
-            ' LimpiarOffset()
-        End If
+        habilitaDigitalOffset()
+        ' LimpiarOffset()
     End Sub
 
     Private Sub chkDigital_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkDigital.CheckedChanged
-        If chkDigital.Checked = True Then
-            GroupDigital.Enabled = True
+        habilitaDigitalOffset()
+        ' LimpiarDigital()
+
+    End Sub
+
+    Sub habilitaDigitalOffset()
+        flagsoporte = 0
+        If chkOffset.Checked = True Then
+            groupOffset.Enabled = True
             GroupProducto_Soportes.Enabled = True
+            flagsoporte = 1
         Else
-            GroupDigital.Enabled = False
-            GroupProducto_Soportes.Enabled = False
-            ' LimpiarProducto_Soportes()
-            '  LimpiarDigital()
+            groupOffset.Enabled = False
+            If flagsoporte = 0 Then
+                GroupProducto_Soportes.Enabled = False
+            End If
+        End If
+        If chkDigital.Checked = True Then
+                GroupDigital.Enabled = True
+                GroupProducto_Soportes.Enabled = True
+                flagsoporte = 1
+            Else
+                GroupDigital.Enabled = False
+                If flagsoporte = 0 Then
+                    GroupProducto_Soportes.Enabled = False
+                End If
         End If
     End Sub
 

@@ -336,15 +336,15 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.cboMarca_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboMarca_Offset.FormattingEnabled = True
         Me.cboMarca_Offset.Items.AddRange(New Object() {"AGFA TU", "KODAK", "KTP - KONITA"})
-        Me.cboMarca_Offset.Location = New System.Drawing.Point(202, 61)
+        Me.cboMarca_Offset.Location = New System.Drawing.Point(189, 61)
         Me.cboMarca_Offset.Name = "cboMarca_Offset"
-        Me.cboMarca_Offset.Size = New System.Drawing.Size(127, 21)
+        Me.cboMarca_Offset.Size = New System.Drawing.Size(140, 21)
         Me.cboMarca_Offset.TabIndex = 141
         '
         'Label61
         '
         Me.Label61.AutoSize = True
-        Me.Label61.Location = New System.Drawing.Point(144, 27)
+        Me.Label61.Location = New System.Drawing.Point(131, 27)
         Me.Label61.Name = "Label61"
         Me.Label61.Size = New System.Drawing.Size(52, 26)
         Me.Label61.TabIndex = 129
@@ -355,15 +355,15 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.cboModo_Impresion_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboModo_Impresion_Offset.FormattingEnabled = True
         Me.cboModo_Impresion_Offset.Items.AddRange(New Object() {"TIRE Y RETIRE", "PINZA Y CONTRAPINZA", "FRENTE Y DORSO", "SOLO FRENTE"})
-        Me.cboModo_Impresion_Offset.Location = New System.Drawing.Point(202, 27)
+        Me.cboModo_Impresion_Offset.Location = New System.Drawing.Point(189, 27)
         Me.cboModo_Impresion_Offset.Name = "cboModo_Impresion_Offset"
-        Me.cboModo_Impresion_Offset.Size = New System.Drawing.Size(127, 21)
+        Me.cboModo_Impresion_Offset.Size = New System.Drawing.Size(140, 21)
         Me.cboModo_Impresion_Offset.TabIndex = 128
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(159, 64)
+        Me.Label13.Location = New System.Drawing.Point(146, 64)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(37, 13)
         Me.Label13.TabIndex = 140
@@ -385,7 +385,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.cboImpresora_Offset.Items.AddRange(New Object() {"CD/4", "CD/6", "SM", "SOR"})
         Me.cboImpresora_Offset.Location = New System.Drawing.Point(66, 61)
         Me.cboImpresora_Offset.Name = "cboImpresora_Offset"
-        Me.cboImpresora_Offset.Size = New System.Drawing.Size(75, 21)
+        Me.cboImpresora_Offset.Size = New System.Drawing.Size(58, 21)
         Me.cboImpresora_Offset.TabIndex = 135
         '
         'cboTipo_Impresion_Offset
@@ -394,7 +394,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.cboTipo_Impresion_Offset.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
         Me.cboTipo_Impresion_Offset.Location = New System.Drawing.Point(66, 24)
         Me.cboTipo_Impresion_Offset.Name = "cboTipo_Impresion_Offset"
-        Me.cboTipo_Impresion_Offset.Size = New System.Drawing.Size(75, 21)
+        Me.cboTipo_Impresion_Offset.Size = New System.Drawing.Size(58, 21)
         Me.cboTipo_Impresion_Offset.TabIndex = 138
         '
         'Label35
