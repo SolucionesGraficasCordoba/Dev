@@ -413,4 +413,46 @@
         Me.Close()
         Me.Dispose()
     End Sub
+
+    Private Sub chkOffset_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkOffset.CheckedChanged
+        If chkOffset.Checked = True Then
+            GroupProducto_Soportes.Enabled = True
+            groupOffset.Enabled = True
+        Else
+            GroupProducto_Soportes.Enabled = False
+            groupOffset.Enabled = False
+            'LimpiarProducto_Soportes()
+            ' LimpiarOffset()
+        End If
+    End Sub
+
+    Private Sub chkDigital_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkDigital.CheckedChanged
+        If chkDigital.Checked = True Then
+            GroupDigital.Enabled = True
+            GroupProducto_Soportes.Enabled = True
+        Else
+            GroupDigital.Enabled = False
+            GroupProducto_Soportes.Enabled = False
+            ' LimpiarProducto_Soportes()
+            '  LimpiarDigital()
+        End If
+    End Sub
+
+    Private Sub chkGranFormato_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkGranFormato.CheckedChanged
+        If chkGranFormato.Checked = True Then
+            GroupGranFormato.Enabled = True
+        Else
+            GroupGranFormato.Enabled = False
+            ' LimpiarGranFormato()
+        End If
+    End Sub
+
+    Private Sub chkTerminacion_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkTerminacion.CheckedChanged
+        If chkTerminacion.Checked = True Then
+            GroupTerminacion.Enabled = True
+        Else
+            GroupTerminacion.Enabled = False
+            '   LimpiarTerminacion()
+        End If
+    End Sub
 End Class
