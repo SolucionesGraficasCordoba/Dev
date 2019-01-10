@@ -416,19 +416,17 @@
 
     Dim flagsoporte As Integer
 
-
     Private Sub chkOffset_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkOffset.CheckedChanged
-        habilitaDigitalOffset()
+        HabilitaDigitalOffset()
         ' LimpiarOffset()
     End Sub
 
     Private Sub chkDigital_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chkDigital.CheckedChanged
-        habilitaDigitalOffset()
+        HabilitaDigitalOffset()
         ' LimpiarDigital()
-
     End Sub
 
-    Sub habilitaDigitalOffset()
+    Sub HabilitaDigitalOffset()
         flagsoporte = 0
         If chkOffset.Checked = True Then
             groupOffset.Enabled = True
@@ -441,14 +439,14 @@
             End If
         End If
         If chkDigital.Checked = True Then
-                GroupDigital.Enabled = True
-                GroupProducto_Soportes.Enabled = True
-                flagsoporte = 1
-            Else
-                GroupDigital.Enabled = False
-                If flagsoporte = 0 Then
-                    GroupProducto_Soportes.Enabled = False
-                End If
+            GroupDigital.Enabled = True
+            GroupProducto_Soportes.Enabled = True
+            flagsoporte = 1
+        Else
+            GroupDigital.Enabled = False
+            If flagsoporte = 0 Then
+                GroupProducto_Soportes.Enabled = False
+            End If
         End If
     End Sub
 
@@ -466,7 +464,7 @@
             GroupTerminacion.Enabled = True
         Else
             GroupTerminacion.Enabled = False
-            '   LimpiarTerminacion()
+            'LimpiarTerminacion()
         End If
     End Sub
 End Class
