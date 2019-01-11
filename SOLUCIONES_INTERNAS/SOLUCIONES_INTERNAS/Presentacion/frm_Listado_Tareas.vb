@@ -10,7 +10,6 @@ Public Class frm_Listado_Tareas
     Public vble_id_colaborador As Integer
     Dim vble_colaborador, vble_fecha As String
 
-
     'campos y vbles para generar pdf
     Dim contadorcolumnasvisibles As Integer
     Dim interlineado As New Phrase(" ")
@@ -19,7 +18,6 @@ Public Class frm_Listado_Tareas
 
 
     Public Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
         Label6.Text = dgvColaboradores.Rows.Count
 
         If frm_Principal.LBL_MENU_PERFIL.Text = "ADMINISTRADOR" Or frm_Principal.LBL_MENU_PERFIL.Text = "GERENCIA" Then
@@ -145,7 +143,6 @@ Public Class frm_Listado_Tareas
             End If
         Catch
         End Try
-
         'CALCULA LA SUMA DEL TIEMPO REAL DE CADA TAREA POR COLABORADOR
         Try
             'Declarar variable que acumulará la sumatoria de las celdas

@@ -1076,7 +1076,36 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     '    doc.Add(pro_logi)
     'End Sub
     Private Sub btnAgregarProducto_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarProducto.Click
-        frm_Orden_Trabajo_Ampliada.Show()
+        Try
+            If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
+                frm_Orden_Trabajo_Ampliada.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboTipo_Orden.Text = dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txt_id_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_id_cliente", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txt_nombre_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtid_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_id_vendedor", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtNombre_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txt_observaciones.Text = dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboDireccion_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            End If
+            'DESHABILITA EL ENCABEZADO DE LA ORDEN
+            frm_Orden_Trabajo_Ampliada.GroupBox4.Enabled = False
+            'OCULTA LABELS E ID 
+            frm_Orden_Trabajo_Ampliada.Label1.Visible = False
+            frm_Orden_Trabajo_Ampliada.txt_id_orden_trabajo.Visible = False
+            frm_Orden_Trabajo_Ampliada.Label5.Visible = False
+            frm_Orden_Trabajo_Ampliada.txt_id_detalle_orden_trabajo1.Visible = False
+            frm_Orden_Trabajo_Ampliada.Label45.Visible = False
+            frm_Orden_Trabajo_Ampliada.txt_id_cliente.Visible = False
+            frm_Orden_Trabajo_Ampliada.txtid_vendedor.Visible = False
+            frm_Orden_Trabajo_Ampliada.Show()
+
+
+
+        Catch ex As Exception
+        End Try
     End Sub
 End Class
 
