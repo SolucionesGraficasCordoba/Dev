@@ -426,49 +426,49 @@ Partial Class frm_Principal
         'NuevaOrdenToolStripMenuItem
         '
         Me.NuevaOrdenToolStripMenuItem.Name = "NuevaOrdenToolStripMenuItem"
-        Me.NuevaOrdenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevaOrdenToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.NuevaOrdenToolStripMenuItem.Text = "Nueva"
         '
         'ModificarOrdenToolStripMenuItem
         '
         Me.ModificarOrdenToolStripMenuItem.Name = "ModificarOrdenToolStripMenuItem"
-        Me.ModificarOrdenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ModificarOrdenToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.ModificarOrdenToolStripMenuItem.Text = "Modificar"
         '
         'EliminarOrdenToolStripMenuItem
         '
         Me.EliminarOrdenToolStripMenuItem.Name = "EliminarOrdenToolStripMenuItem"
-        Me.EliminarOrdenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EliminarOrdenToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.EliminarOrdenToolStripMenuItem.Text = "Eliminar"
         '
         'ConsultarToolStripMenuItem
         '
         Me.ConsultarToolStripMenuItem.Name = "ConsultarToolStripMenuItem"
-        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ConsultarToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.ConsultarToolStripMenuItem.Text = "Consultar"
         '
         'OrdenAmpliadaToolStripMenuItem
         '
         Me.OrdenAmpliadaToolStripMenuItem.Name = "OrdenAmpliadaToolStripMenuItem"
-        Me.OrdenAmpliadaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.OrdenAmpliadaToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.OrdenAmpliadaToolStripMenuItem.Text = "Nueva"
         '
         'ListaOrdenAmpliadaToolStripMenuItem
         '
         Me.ListaOrdenAmpliadaToolStripMenuItem.Name = "ListaOrdenAmpliadaToolStripMenuItem"
-        Me.ListaOrdenAmpliadaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.ListaOrdenAmpliadaToolStripMenuItem.Text = "Modificar"
+        Me.ListaOrdenAmpliadaToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
+        Me.ListaOrdenAmpliadaToolStripMenuItem.Text = "Agregar/Modificar"
         '
         'EliminarOrdenAmpliadaToolStripMenuItem
         '
         Me.EliminarOrdenAmpliadaToolStripMenuItem.Name = "EliminarOrdenAmpliadaToolStripMenuItem"
-        Me.EliminarOrdenAmpliadaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EliminarOrdenAmpliadaToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.EliminarOrdenAmpliadaToolStripMenuItem.Text = "Eliminar"
         '
         'ConsultarOrdenAmpliadaToolStripMenuItem
         '
         Me.ConsultarOrdenAmpliadaToolStripMenuItem.Name = "ConsultarOrdenAmpliadaToolStripMenuItem"
-        Me.ConsultarOrdenAmpliadaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ConsultarOrdenAmpliadaToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.ConsultarOrdenAmpliadaToolStripMenuItem.Text = "Consultar"
         '
         'ReTrabajoToolStripMenuItem1

@@ -109,9 +109,7 @@ Public Class frm_Listado_Orden_Trabajo
                 btnModificar_Orden.Enabled = False
                 btnEliminar_Orden.Enabled = True
             End If
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -238,8 +236,8 @@ Public Class frm_Listado_Orden_Trabajo
         dgv_detalle_orden.Columns.Add("PIE_id_pieza", "id_pieza")
         dgv_detalle_orden.Columns.Add("PIE_nombre_pie", "Pieza")
         dgv_detalle_orden.Columns.Add("id_detalle_orden_trabajo", "id_detalle_orden_trabajo")
-        dgv_detalle_orden.Columns.Add("DOT_cantidad_dot", "Cantidad")
-        dgv_detalle_orden.Columns.Add("DOT_tamaño_dot", "Tamaño")
+        dgv_detalle_orden.Columns.Add("DOT_cantidad_producto", "Cantidad")
+        dgv_detalle_orden.Columns.Add("DOT_tamaño_producto", "Tamaño")
         dgv_detalle_orden.Columns.Add("DOT_tipo_impresion_dot", "Tipo de impresión")
 
         dgv_detalle_orden.Columns.Add("DOT_papel_soporte_1", "Soporte 1")

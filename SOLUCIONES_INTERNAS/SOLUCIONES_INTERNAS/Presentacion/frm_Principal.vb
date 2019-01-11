@@ -365,7 +365,6 @@ Public Class frm_Principal
         frm_Tarea.txt_Id_Tarea19.Visible = False
         frm_Tarea.txt_Id_Tarea20.Visible = False
 
-
         frm_Tarea.btnNueva_Tarea.Visible = False
         frm_Tarea.btnImprimirFormulario.Visible = False
         frm_Tarea.btnGuardar_Tarea.Visible = True
@@ -393,10 +392,8 @@ Public Class frm_Principal
         frm_Tarea.btnBuscar_Numero_Orden18.Enabled = True
         frm_Tarea.btnBuscar_Numero_Orden19.Enabled = True
         frm_Tarea.btnBuscar_Numero_Orden20.Enabled = True
-
         frm_Tarea.MdiParent = Me
         frm_Tarea.Show()
-
     End Sub
 
     Private Sub ListaTareaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaTareaToolStripMenuItem.Click
@@ -1520,6 +1517,7 @@ Public Class frm_Principal
         frm_listado_orden_trabajo_ampliada.btnVer.Enabled = False
         frm_listado_orden_trabajo_ampliada.btn_ODT_mostrar_listado_pdf.Enabled = False
         frm_listado_orden_trabajo_ampliada.btnVer.Visible = True
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = True
         frm_listado_orden_trabajo_ampliada.MdiParent = Me
         frm_listado_orden_trabajo_ampliada.Show()
         frm_listado_orden_trabajo_ampliada.dgvLista_Orden_Trabajo.ClearSelection()
@@ -1534,6 +1532,7 @@ Public Class frm_Principal
         frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
         frm_listado_orden_trabajo_ampliada.btnModificarProducto.Enabled = False
         frm_listado_orden_trabajo_ampliada.btn_ODT_mostrar_listado_pdf.Enabled = True
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
 
         frm_listado_orden_trabajo_ampliada.MdiParent = Me
         frm_listado_orden_trabajo_ampliada.Show()
@@ -1545,10 +1544,11 @@ Public Class frm_Principal
         frm_listado_orden_trabajo_ampliada.Text = ".:.Eliminar Orden .:."
         frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = True
         frm_listado_orden_trabajo_ampliada.btnEliminar_Producto.Enabled = True
-        frm_listado_orden_trabajo_ampliada.btnVer.Visible = False
+        frm_listado_orden_trabajo_ampliada.btnVer.Enabled = False
         frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
         frm_listado_orden_trabajo_ampliada.btnModificarProducto.Enabled = False
         frm_listado_orden_trabajo_ampliada.btn_ODT_mostrar_listado_pdf.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
 
         frm_listado_orden_trabajo_ampliada.MdiParent = Me
         frm_listado_orden_trabajo_ampliada.Show()

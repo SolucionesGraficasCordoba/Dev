@@ -12,7 +12,7 @@
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(0).Visible = False 'alta vieja orden
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(1).Visible = False 'modificar vieja orden
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(2).Visible = False 'eliminar vieja orden
-        frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Visible = False 'consultar vieja orden
+        ' frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(3).Visible = False 'consultar vieja orden
 
     End Sub
 

@@ -49,6 +49,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txt_Buscar_orden_trabajo = New System.Windows.Forms.TextBox()
         Me.dgvLista_Orden_Trabajo = New System.Windows.Forms.DataGridView()
+        Me.btnAgregarProducto = New System.Windows.Forms.Button()
         Me.GroupDetallesOrden.SuspendLayout()
         CType(Me.dgv_detalle_orden, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupListadoPiezas.SuspendLayout()
@@ -57,6 +58,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         'GroupDetallesOrden
         '
+        Me.GroupDetallesOrden.Controls.Add(Me.btnAgregarProducto)
         Me.GroupDetallesOrden.Controls.Add(Me.btn_ODT_mostrar_listado_pdf)
         Me.GroupDetallesOrden.Controls.Add(Me.btn_Cancelar)
         Me.GroupDetallesOrden.Controls.Add(Me.btnVer)
@@ -74,7 +76,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         'btn_ODT_mostrar_listado_pdf
         '
-        Me.btn_ODT_mostrar_listado_pdf.Location = New System.Drawing.Point(556, 169)
+        Me.btn_ODT_mostrar_listado_pdf.Location = New System.Drawing.Point(431, 169)
         Me.btn_ODT_mostrar_listado_pdf.Name = "btn_ODT_mostrar_listado_pdf"
         Me.btn_ODT_mostrar_listado_pdf.Size = New System.Drawing.Size(128, 33)
         Me.btn_ODT_mostrar_listado_pdf.TabIndex = 37
@@ -92,7 +94,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         'btnVer
         '
-        Me.btnVer.Location = New System.Drawing.Point(690, 169)
+        Me.btnVer.Location = New System.Drawing.Point(565, 169)
         Me.btnVer.Name = "btnVer"
         Me.btnVer.Size = New System.Drawing.Size(67, 33)
         Me.btnVer.TabIndex = 37
@@ -316,6 +318,15 @@ Partial Class frm_listado_orden_trabajo_ampliada
         Me.dgvLista_Orden_Trabajo.Size = New System.Drawing.Size(1057, 258)
         Me.dgvLista_Orden_Trabajo.TabIndex = 0
         '
+        'btnAgregarProducto
+        '
+        Me.btnAgregarProducto.Location = New System.Drawing.Point(638, 169)
+        Me.btnAgregarProducto.Name = "btnAgregarProducto"
+        Me.btnAgregarProducto.Size = New System.Drawing.Size(119, 33)
+        Me.btnAgregarProducto.TabIndex = 40
+        Me.btnAgregarProducto.Text = "Agregar Producto"
+        Me.btnAgregarProducto.UseVisualStyleBackColor = True
+        '
         'frm_listado_orden_trabajo_ampliada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -356,4 +367,5 @@ Partial Class frm_listado_orden_trabajo_ampliada
     Friend WithEvents txt_Buscar_orden_trabajo As System.Windows.Forms.TextBox
     Friend WithEvents dgvLista_Orden_Trabajo As System.Windows.Forms.DataGridView
     Friend WithEvents btn_Cancelar As System.Windows.Forms.Button
+    Friend WithEvents btnAgregarProducto As System.Windows.Forms.Button
 End Class

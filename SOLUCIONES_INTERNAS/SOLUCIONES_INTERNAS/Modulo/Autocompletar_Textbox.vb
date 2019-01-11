@@ -9,7 +9,7 @@ Module Autocompletar_Textbox
 
     Sub abrir()
         Try
-            conexiones = New SqlConnection("Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;Persist Security Info=True;User ID=vheredia;Password=heredia")
+            conexiones = New SqlConnection("Data Source=SV-PLANET-01;Initial Catalog=SOLUCIONES_INTERNAS;Persist Security Info=True;User ID=vheredia;Password=heredia")
             conexiones.Open()
             ' MsgBox("Conexion exitosa", MsgBoxStyle.Information, "Se ha conectado correctamente") '
         Catch ex As Exception

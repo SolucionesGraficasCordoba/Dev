@@ -22,7 +22,7 @@ Imports System.Linq.Expressions
 Imports System.Reflection
 
 
-<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="PREPRODUCCION")>  _
+<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="SOLUCIONES_INTERNAS")>  _
 Partial Public Class DataS_Interno
 	Inherits System.Data.Linq.DataContext
 	
@@ -48,12 +48,6 @@ Partial Public Class DataS_Interno
   Partial Private Sub UpdateCOLABORADOR(instance As COLABORADOR)
     End Sub
   Partial Private Sub DeleteCOLABORADOR(instance As COLABORADOR)
-    End Sub
-  Partial Private Sub InsertDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
-    End Sub
-  Partial Private Sub UpdateDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
-    End Sub
-  Partial Private Sub DeleteDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
     End Sub
   Partial Private Sub InsertORDEN_TRABAJO(instance As ORDEN_TRABAJO)
     End Sub
@@ -115,6 +109,12 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeleteUSUARIO(instance As USUARIO)
     End Sub
+  Partial Private Sub InsertDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
+    End Sub
+  Partial Private Sub UpdateDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
+    End Sub
+  Partial Private Sub DeleteDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -157,12 +157,6 @@ Partial Public Class DataS_Interno
 	Public ReadOnly Property COLABORADOR() As System.Data.Linq.Table(Of COLABORADOR)
 		Get
 			Return Me.GetTable(Of COLABORADOR)
-		End Get
-	End Property
-	
-	Public ReadOnly Property DETALLE_ORDEN_TRABAJO() As System.Data.Linq.Table(Of DETALLE_ORDEN_TRABAJO)
-		Get
-			Return Me.GetTable(Of DETALLE_ORDEN_TRABAJO)
 		End Get
 	End Property
 	
@@ -223,6 +217,12 @@ Partial Public Class DataS_Interno
 	Public ReadOnly Property USUARIO() As System.Data.Linq.Table(Of USUARIO)
 		Get
 			Return Me.GetTable(Of USUARIO)
+		End Get
+	End Property
+	
+	Public ReadOnly Property DETALLE_ORDEN_TRABAJO() As System.Data.Linq.Table(Of DETALLE_ORDEN_TRABAJO)
+		Get
+			Return Me.GetTable(Of DETALLE_ORDEN_TRABAJO)
 		End Get
 	End Property
 End Class
@@ -825,1216 +825,6 @@ Partial Public Class COLABORADOR
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DETALLE_ORDEN_TRABAJO")>  _
-Partial Public Class DETALLE_ORDEN_TRABAJO
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _id_detalle_orden_trabajo As Integer
-	
-	Private _DOT_cantidad_producto As System.Nullable(Of Integer)
-	
-	Private _DOT_tamaño_producto As String
-	
-	Private _DOT_tipo_impresion_dot As String
-	
-	Private _DOT_papel_soporte_1 As String
-	
-	Private _DOT_papel_soporte_2 As String
-	
-	Private _DOT_papel_soporte_3 As String
-	
-	Private _DOT_gramaje_soporte_1 As String
-	
-	Private _DOT_gramaje_soporte_2 As String
-	
-	Private _DOT_gramaje_soporte_3 As String
-	
-	Private _DOT_cantidad_soporte_1 As System.Nullable(Of Integer)
-	
-	Private _DOT_cantidad_soporte_2 As System.Nullable(Of Integer)
-	
-	Private _DOT_cantidad_soporte_3 As System.Nullable(Of Integer)
-	
-	Private _DOT_formato_soporte_1 As String
-	
-	Private _DOT_formato_soporte_2 As String
-	
-	Private _DOT_formato_soporte_3 As String
-	
-	Private _PIE_id_pieza As System.Nullable(Of Integer)
-	
-	Private _ORT_id_orden_trabajo As System.Nullable(Of Integer)
-	
-	Private _cantidad_1_PM_offset As System.Nullable(Of Integer)
-	
-	Private _cantidad_2_PM_offset As System.Nullable(Of Integer)
-	
-	Private _cantidad_3_PM_offset As System.Nullable(Of Integer)
-	
-	Private _formato_1_PM_offset As String
-	
-	Private _formato_2_PM_offset As String
-	
-	Private _formato_3_PM_offset As String
-	
-	Private _PIE_id_pieza_offset As System.Nullable(Of Integer)
-	
-	Private _modo_impresion_offset As String
-	
-	Private _tipo_impresion_offset As String
-	
-	Private _chapas_soporte1_offset As System.Nullable(Of Integer)
-	
-	Private _chapas_soporte2_offset As System.Nullable(Of Integer)
-	
-	Private _chapas_soporte3_offset As System.Nullable(Of Integer)
-	
-	Private _impresora_offset As String
-	
-	Private _marca_offset As String
-	
-	Private _cantidad_1_PM_digital As System.Nullable(Of Integer)
-	
-	Private _cantidad_2_PM_digital As System.Nullable(Of Integer)
-	
-	Private _cantidad_3_PM_digital As System.Nullable(Of Integer)
-	
-	Private _formato_1_PM_digital As String
-	
-	Private _formato_2_PM_digital As String
-	
-	Private _formato_3_PM_digital As String
-	
-	Private _modo_impresion_digital As String
-	
-	Private _tipo_impresion_digital As String
-	
-	Private _dato_variable As String
-	
-	Private _cantidad_gran_formato As System.Nullable(Of Integer)
-	
-	Private _tamaño_gran_formato As String
-	
-	Private _sustrato_gran_formato As String
-	
-	Private _calidad_gran_formato As String
-	
-	Private _sistema_gran_formato As String
-	
-	Private _tipo_terminacion As String
-	
-	Private _descripcion_terminacion As String
-	
-	Private _PROCESO As EntitySet(Of PROCESO)
-	
-	Private _RE_TRABAJO As EntitySet(Of RE_TRABAJO)
-	
-	Private _ORDEN_TRABAJO As EntityRef(Of ORDEN_TRABAJO)
-	
-	Private _PIEZA As EntityRef(Of PIEZA)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub Onid_detalle_orden_trabajoChanging(value As Integer)
-    End Sub
-    Partial Private Sub Onid_detalle_orden_trabajoChanged()
-    End Sub
-    Partial Private Sub OnDOT_cantidad_productoChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDOT_cantidad_productoChanged()
-    End Sub
-    Partial Private Sub OnDOT_tamaño_productoChanging(value As String)
-    End Sub
-    Partial Private Sub OnDOT_tamaño_productoChanged()
-    End Sub
-    Partial Private Sub OnDOT_tipo_impresion_dotChanging(value As String)
-    End Sub
-    Partial Private Sub OnDOT_tipo_impresion_dotChanged()
-    End Sub
-    Partial Private Sub OnDOT_papel_soporte_1Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_papel_soporte_1Changed()
-    End Sub
-    Partial Private Sub OnDOT_papel_soporte_2Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_papel_soporte_2Changed()
-    End Sub
-    Partial Private Sub OnDOT_papel_soporte_3Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_papel_soporte_3Changed()
-    End Sub
-    Partial Private Sub OnDOT_gramaje_soporte_1Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_gramaje_soporte_1Changed()
-    End Sub
-    Partial Private Sub OnDOT_gramaje_soporte_2Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_gramaje_soporte_2Changed()
-    End Sub
-    Partial Private Sub OnDOT_gramaje_soporte_3Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_gramaje_soporte_3Changed()
-    End Sub
-    Partial Private Sub OnDOT_cantidad_soporte_1Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDOT_cantidad_soporte_1Changed()
-    End Sub
-    Partial Private Sub OnDOT_cantidad_soporte_2Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDOT_cantidad_soporte_2Changed()
-    End Sub
-    Partial Private Sub OnDOT_cantidad_soporte_3Changing(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnDOT_cantidad_soporte_3Changed()
-    End Sub
-    Partial Private Sub OnDOT_formato_soporte_1Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_formato_soporte_1Changed()
-    End Sub
-    Partial Private Sub OnDOT_formato_soporte_2Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_formato_soporte_2Changed()
-    End Sub
-    Partial Private Sub OnDOT_formato_soporte_3Changing(value As String)
-    End Sub
-    Partial Private Sub OnDOT_formato_soporte_3Changed()
-    End Sub
-    Partial Private Sub OnPIE_id_piezaChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnPIE_id_piezaChanged()
-    End Sub
-    Partial Private Sub OnORT_id_orden_trabajoChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnORT_id_orden_trabajoChanged()
-    End Sub
-    Partial Private Sub Oncantidad_1_PM_offsetChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub Oncantidad_1_PM_offsetChanged()
-    End Sub
-    Partial Private Sub Oncantidad_2_PM_offsetChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub Oncantidad_2_PM_offsetChanged()
-    End Sub
-    Partial Private Sub Oncantidad_3_PM_offsetChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub Oncantidad_3_PM_offsetChanged()
-    End Sub
-    Partial Private Sub Onformato_1_PM_offsetChanging(value As String)
-    End Sub
-    Partial Private Sub Onformato_1_PM_offsetChanged()
-    End Sub
-    Partial Private Sub Onformato_2_PM_offsetChanging(value As String)
-    End Sub
-    Partial Private Sub Onformato_2_PM_offsetChanged()
-    End Sub
-    Partial Private Sub Onformato_3_PM_offsetChanging(value As String)
-    End Sub
-    Partial Private Sub Onformato_3_PM_offsetChanged()
-    End Sub
-    Partial Private Sub OnPIE_id_pieza_offsetChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnPIE_id_pieza_offsetChanged()
-    End Sub
-    Partial Private Sub Onmodo_impresion_offsetChanging(value As String)
-    End Sub
-    Partial Private Sub Onmodo_impresion_offsetChanged()
-    End Sub
-    Partial Private Sub Ontipo_impresion_offsetChanging(value As String)
-    End Sub
-    Partial Private Sub Ontipo_impresion_offsetChanged()
-    End Sub
-    Partial Private Sub Onchapas_soporte1_offsetChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub Onchapas_soporte1_offsetChanged()
-    End Sub
-    Partial Private Sub Onchapas_soporte2_offsetChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub Onchapas_soporte2_offsetChanged()
-    End Sub
-    Partial Private Sub Onchapas_soporte3_offsetChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub Onchapas_soporte3_offsetChanged()
-    End Sub
-    Partial Private Sub Onimpresora_offsetChanging(value As String)
-    End Sub
-    Partial Private Sub Onimpresora_offsetChanged()
-    End Sub
-    Partial Private Sub Onmarca_offsetChanging(value As String)
-    End Sub
-    Partial Private Sub Onmarca_offsetChanged()
-    End Sub
-    Partial Private Sub Oncantidad_1_PM_digitalChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub Oncantidad_1_PM_digitalChanged()
-    End Sub
-    Partial Private Sub Oncantidad_2_PM_digitalChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub Oncantidad_2_PM_digitalChanged()
-    End Sub
-    Partial Private Sub Oncantidad_3_PM_digitalChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub Oncantidad_3_PM_digitalChanged()
-    End Sub
-    Partial Private Sub Onformato_1_PM_digitalChanging(value As String)
-    End Sub
-    Partial Private Sub Onformato_1_PM_digitalChanged()
-    End Sub
-    Partial Private Sub Onformato_2_PM_digitalChanging(value As String)
-    End Sub
-    Partial Private Sub Onformato_2_PM_digitalChanged()
-    End Sub
-    Partial Private Sub Onformato_3_PM_digitalChanging(value As String)
-    End Sub
-    Partial Private Sub Onformato_3_PM_digitalChanged()
-    End Sub
-    Partial Private Sub Onmodo_impresion_digitalChanging(value As String)
-    End Sub
-    Partial Private Sub Onmodo_impresion_digitalChanged()
-    End Sub
-    Partial Private Sub Ontipo_impresion_digitalChanging(value As String)
-    End Sub
-    Partial Private Sub Ontipo_impresion_digitalChanged()
-    End Sub
-    Partial Private Sub Ondato_variableChanging(value As String)
-    End Sub
-    Partial Private Sub Ondato_variableChanged()
-    End Sub
-    Partial Private Sub Oncantidad_gran_formatoChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub Oncantidad_gran_formatoChanged()
-    End Sub
-    Partial Private Sub Ontamaño_gran_formatoChanging(value As String)
-    End Sub
-    Partial Private Sub Ontamaño_gran_formatoChanged()
-    End Sub
-    Partial Private Sub Onsustrato_gran_formatoChanging(value As String)
-    End Sub
-    Partial Private Sub Onsustrato_gran_formatoChanged()
-    End Sub
-    Partial Private Sub Oncalidad_gran_formatoChanging(value As String)
-    End Sub
-    Partial Private Sub Oncalidad_gran_formatoChanged()
-    End Sub
-    Partial Private Sub Onsistema_gran_formatoChanging(value As String)
-    End Sub
-    Partial Private Sub Onsistema_gran_formatoChanged()
-    End Sub
-    Partial Private Sub Ontipo_terminacionChanging(value As String)
-    End Sub
-    Partial Private Sub Ontipo_terminacionChanged()
-    End Sub
-    Partial Private Sub Ondescripcion_terminacionChanging(value As String)
-    End Sub
-    Partial Private Sub Ondescripcion_terminacionChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._PROCESO = New EntitySet(Of PROCESO)(AddressOf Me.attach_PROCESO, AddressOf Me.detach_PROCESO)
-		Me._RE_TRABAJO = New EntitySet(Of RE_TRABAJO)(AddressOf Me.attach_RE_TRABAJO, AddressOf Me.detach_RE_TRABAJO)
-		Me._ORDEN_TRABAJO = CType(Nothing, EntityRef(Of ORDEN_TRABAJO))
-		Me._PIEZA = CType(Nothing, EntityRef(Of PIEZA))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id_detalle_orden_trabajo", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property id_detalle_orden_trabajo() As Integer
-		Get
-			Return Me._id_detalle_orden_trabajo
-		End Get
-		Set
-			If ((Me._id_detalle_orden_trabajo = value)  _
-						= false) Then
-				Me.Onid_detalle_orden_trabajoChanging(value)
-				Me.SendPropertyChanging
-				Me._id_detalle_orden_trabajo = value
-				Me.SendPropertyChanged("id_detalle_orden_trabajo")
-				Me.Onid_detalle_orden_trabajoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_producto", DbType:="Int")>  _
-	Public Property DOT_cantidad_producto() As System.Nullable(Of Integer)
-		Get
-			Return Me._DOT_cantidad_producto
-		End Get
-		Set
-			If (Me._DOT_cantidad_producto.Equals(value) = false) Then
-				Me.OnDOT_cantidad_productoChanging(value)
-				Me.SendPropertyChanging
-				Me._DOT_cantidad_producto = value
-				Me.SendPropertyChanged("DOT_cantidad_producto")
-				Me.OnDOT_cantidad_productoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_tamaño_producto", DbType:="VarChar(50)")>  _
-	Public Property DOT_tamaño_producto() As String
-		Get
-			Return Me._DOT_tamaño_producto
-		End Get
-		Set
-			If (String.Equals(Me._DOT_tamaño_producto, value) = false) Then
-				Me.OnDOT_tamaño_productoChanging(value)
-				Me.SendPropertyChanging
-				Me._DOT_tamaño_producto = value
-				Me.SendPropertyChanged("DOT_tamaño_producto")
-				Me.OnDOT_tamaño_productoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_tipo_impresion_dot", DbType:="VarChar(4)")>  _
-	Public Property DOT_tipo_impresion_dot() As String
-		Get
-			Return Me._DOT_tipo_impresion_dot
-		End Get
-		Set
-			If (String.Equals(Me._DOT_tipo_impresion_dot, value) = false) Then
-				Me.OnDOT_tipo_impresion_dotChanging(value)
-				Me.SendPropertyChanging
-				Me._DOT_tipo_impresion_dot = value
-				Me.SendPropertyChanged("DOT_tipo_impresion_dot")
-				Me.OnDOT_tipo_impresion_dotChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_papel_soporte_1", DbType:="VarChar(50)")>  _
-	Public Property DOT_papel_soporte_1() As String
-		Get
-			Return Me._DOT_papel_soporte_1
-		End Get
-		Set
-			If (String.Equals(Me._DOT_papel_soporte_1, value) = false) Then
-				Me.OnDOT_papel_soporte_1Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_papel_soporte_1 = value
-				Me.SendPropertyChanged("DOT_papel_soporte_1")
-				Me.OnDOT_papel_soporte_1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_papel_soporte_2", DbType:="VarChar(50)")>  _
-	Public Property DOT_papel_soporte_2() As String
-		Get
-			Return Me._DOT_papel_soporte_2
-		End Get
-		Set
-			If (String.Equals(Me._DOT_papel_soporte_2, value) = false) Then
-				Me.OnDOT_papel_soporte_2Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_papel_soporte_2 = value
-				Me.SendPropertyChanged("DOT_papel_soporte_2")
-				Me.OnDOT_papel_soporte_2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_papel_soporte_3", DbType:="VarChar(50)")>  _
-	Public Property DOT_papel_soporte_3() As String
-		Get
-			Return Me._DOT_papel_soporte_3
-		End Get
-		Set
-			If (String.Equals(Me._DOT_papel_soporte_3, value) = false) Then
-				Me.OnDOT_papel_soporte_3Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_papel_soporte_3 = value
-				Me.SendPropertyChanged("DOT_papel_soporte_3")
-				Me.OnDOT_papel_soporte_3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_gramaje_soporte_1", DbType:="VarChar(10)")>  _
-	Public Property DOT_gramaje_soporte_1() As String
-		Get
-			Return Me._DOT_gramaje_soporte_1
-		End Get
-		Set
-			If (String.Equals(Me._DOT_gramaje_soporte_1, value) = false) Then
-				Me.OnDOT_gramaje_soporte_1Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_gramaje_soporte_1 = value
-				Me.SendPropertyChanged("DOT_gramaje_soporte_1")
-				Me.OnDOT_gramaje_soporte_1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_gramaje_soporte_2", DbType:="VarChar(10)")>  _
-	Public Property DOT_gramaje_soporte_2() As String
-		Get
-			Return Me._DOT_gramaje_soporte_2
-		End Get
-		Set
-			If (String.Equals(Me._DOT_gramaje_soporte_2, value) = false) Then
-				Me.OnDOT_gramaje_soporte_2Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_gramaje_soporte_2 = value
-				Me.SendPropertyChanged("DOT_gramaje_soporte_2")
-				Me.OnDOT_gramaje_soporte_2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_gramaje_soporte_3", DbType:="VarChar(10)")>  _
-	Public Property DOT_gramaje_soporte_3() As String
-		Get
-			Return Me._DOT_gramaje_soporte_3
-		End Get
-		Set
-			If (String.Equals(Me._DOT_gramaje_soporte_3, value) = false) Then
-				Me.OnDOT_gramaje_soporte_3Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_gramaje_soporte_3 = value
-				Me.SendPropertyChanged("DOT_gramaje_soporte_3")
-				Me.OnDOT_gramaje_soporte_3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_soporte_1", DbType:="Int")>  _
-	Public Property DOT_cantidad_soporte_1() As System.Nullable(Of Integer)
-		Get
-			Return Me._DOT_cantidad_soporte_1
-		End Get
-		Set
-			If (Me._DOT_cantidad_soporte_1.Equals(value) = false) Then
-				Me.OnDOT_cantidad_soporte_1Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_cantidad_soporte_1 = value
-				Me.SendPropertyChanged("DOT_cantidad_soporte_1")
-				Me.OnDOT_cantidad_soporte_1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_soporte_2", DbType:="Int")>  _
-	Public Property DOT_cantidad_soporte_2() As System.Nullable(Of Integer)
-		Get
-			Return Me._DOT_cantidad_soporte_2
-		End Get
-		Set
-			If (Me._DOT_cantidad_soporte_2.Equals(value) = false) Then
-				Me.OnDOT_cantidad_soporte_2Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_cantidad_soporte_2 = value
-				Me.SendPropertyChanged("DOT_cantidad_soporte_2")
-				Me.OnDOT_cantidad_soporte_2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_soporte_3", DbType:="Int")>  _
-	Public Property DOT_cantidad_soporte_3() As System.Nullable(Of Integer)
-		Get
-			Return Me._DOT_cantidad_soporte_3
-		End Get
-		Set
-			If (Me._DOT_cantidad_soporte_3.Equals(value) = false) Then
-				Me.OnDOT_cantidad_soporte_3Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_cantidad_soporte_3 = value
-				Me.SendPropertyChanged("DOT_cantidad_soporte_3")
-				Me.OnDOT_cantidad_soporte_3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_formato_soporte_1", DbType:="VarChar(15)")>  _
-	Public Property DOT_formato_soporte_1() As String
-		Get
-			Return Me._DOT_formato_soporte_1
-		End Get
-		Set
-			If (String.Equals(Me._DOT_formato_soporte_1, value) = false) Then
-				Me.OnDOT_formato_soporte_1Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_formato_soporte_1 = value
-				Me.SendPropertyChanged("DOT_formato_soporte_1")
-				Me.OnDOT_formato_soporte_1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_formato_soporte_2", DbType:="VarChar(15)")>  _
-	Public Property DOT_formato_soporte_2() As String
-		Get
-			Return Me._DOT_formato_soporte_2
-		End Get
-		Set
-			If (String.Equals(Me._DOT_formato_soporte_2, value) = false) Then
-				Me.OnDOT_formato_soporte_2Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_formato_soporte_2 = value
-				Me.SendPropertyChanged("DOT_formato_soporte_2")
-				Me.OnDOT_formato_soporte_2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_formato_soporte_3", DbType:="VarChar(15)")>  _
-	Public Property DOT_formato_soporte_3() As String
-		Get
-			Return Me._DOT_formato_soporte_3
-		End Get
-		Set
-			If (String.Equals(Me._DOT_formato_soporte_3, value) = false) Then
-				Me.OnDOT_formato_soporte_3Changing(value)
-				Me.SendPropertyChanging
-				Me._DOT_formato_soporte_3 = value
-				Me.SendPropertyChanged("DOT_formato_soporte_3")
-				Me.OnDOT_formato_soporte_3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_id_pieza", DbType:="Int")>  _
-	Public Property PIE_id_pieza() As System.Nullable(Of Integer)
-		Get
-			Return Me._PIE_id_pieza
-		End Get
-		Set
-			If (Me._PIE_id_pieza.Equals(value) = false) Then
-				If Me._PIEZA.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnPIE_id_piezaChanging(value)
-				Me.SendPropertyChanging
-				Me._PIE_id_pieza = value
-				Me.SendPropertyChanged("PIE_id_pieza")
-				Me.OnPIE_id_piezaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int")>  _
-	Public Property ORT_id_orden_trabajo() As System.Nullable(Of Integer)
-		Get
-			Return Me._ORT_id_orden_trabajo
-		End Get
-		Set
-			If (Me._ORT_id_orden_trabajo.Equals(value) = false) Then
-				If Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnORT_id_orden_trabajoChanging(value)
-				Me.SendPropertyChanging
-				Me._ORT_id_orden_trabajo = value
-				Me.SendPropertyChanged("ORT_id_orden_trabajo")
-				Me.OnORT_id_orden_trabajoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_cantidad_1_PM_offset", DbType:="Int")>  _
-	Public Property cantidad_1_PM_offset() As System.Nullable(Of Integer)
-		Get
-			Return Me._cantidad_1_PM_offset
-		End Get
-		Set
-			If (Me._cantidad_1_PM_offset.Equals(value) = false) Then
-				Me.Oncantidad_1_PM_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._cantidad_1_PM_offset = value
-				Me.SendPropertyChanged("cantidad_1_PM_offset")
-				Me.Oncantidad_1_PM_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_cantidad_2_PM_offset", DbType:="Int")>  _
-	Public Property cantidad_2_PM_offset() As System.Nullable(Of Integer)
-		Get
-			Return Me._cantidad_2_PM_offset
-		End Get
-		Set
-			If (Me._cantidad_2_PM_offset.Equals(value) = false) Then
-				Me.Oncantidad_2_PM_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._cantidad_2_PM_offset = value
-				Me.SendPropertyChanged("cantidad_2_PM_offset")
-				Me.Oncantidad_2_PM_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_cantidad_3_PM_offset", DbType:="Int")>  _
-	Public Property cantidad_3_PM_offset() As System.Nullable(Of Integer)
-		Get
-			Return Me._cantidad_3_PM_offset
-		End Get
-		Set
-			If (Me._cantidad_3_PM_offset.Equals(value) = false) Then
-				Me.Oncantidad_3_PM_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._cantidad_3_PM_offset = value
-				Me.SendPropertyChanged("cantidad_3_PM_offset")
-				Me.Oncantidad_3_PM_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_formato_1_PM_offset", DbType:="VarChar(15)")>  _
-	Public Property formato_1_PM_offset() As String
-		Get
-			Return Me._formato_1_PM_offset
-		End Get
-		Set
-			If (String.Equals(Me._formato_1_PM_offset, value) = false) Then
-				Me.Onformato_1_PM_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._formato_1_PM_offset = value
-				Me.SendPropertyChanged("formato_1_PM_offset")
-				Me.Onformato_1_PM_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_formato_2_PM_offset", DbType:="VarChar(15)")>  _
-	Public Property formato_2_PM_offset() As String
-		Get
-			Return Me._formato_2_PM_offset
-		End Get
-		Set
-			If (String.Equals(Me._formato_2_PM_offset, value) = false) Then
-				Me.Onformato_2_PM_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._formato_2_PM_offset = value
-				Me.SendPropertyChanged("formato_2_PM_offset")
-				Me.Onformato_2_PM_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_formato_3_PM_offset", DbType:="VarChar(15)")>  _
-	Public Property formato_3_PM_offset() As String
-		Get
-			Return Me._formato_3_PM_offset
-		End Get
-		Set
-			If (String.Equals(Me._formato_3_PM_offset, value) = false) Then
-				Me.Onformato_3_PM_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._formato_3_PM_offset = value
-				Me.SendPropertyChanged("formato_3_PM_offset")
-				Me.Onformato_3_PM_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_id_pieza_offset", DbType:="Int")>  _
-	Public Property PIE_id_pieza_offset() As System.Nullable(Of Integer)
-		Get
-			Return Me._PIE_id_pieza_offset
-		End Get
-		Set
-			If (Me._PIE_id_pieza_offset.Equals(value) = false) Then
-				Me.OnPIE_id_pieza_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._PIE_id_pieza_offset = value
-				Me.SendPropertyChanged("PIE_id_pieza_offset")
-				Me.OnPIE_id_pieza_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_modo_impresion_offset", DbType:="VarChar(25)")>  _
-	Public Property modo_impresion_offset() As String
-		Get
-			Return Me._modo_impresion_offset
-		End Get
-		Set
-			If (String.Equals(Me._modo_impresion_offset, value) = false) Then
-				Me.Onmodo_impresion_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._modo_impresion_offset = value
-				Me.SendPropertyChanged("modo_impresion_offset")
-				Me.Onmodo_impresion_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_tipo_impresion_offset", DbType:="VarChar(15)")>  _
-	Public Property tipo_impresion_offset() As String
-		Get
-			Return Me._tipo_impresion_offset
-		End Get
-		Set
-			If (String.Equals(Me._tipo_impresion_offset, value) = false) Then
-				Me.Ontipo_impresion_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._tipo_impresion_offset = value
-				Me.SendPropertyChanged("tipo_impresion_offset")
-				Me.Ontipo_impresion_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_chapas_soporte1_offset", DbType:="Int")>  _
-	Public Property chapas_soporte1_offset() As System.Nullable(Of Integer)
-		Get
-			Return Me._chapas_soporte1_offset
-		End Get
-		Set
-			If (Me._chapas_soporte1_offset.Equals(value) = false) Then
-				Me.Onchapas_soporte1_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._chapas_soporte1_offset = value
-				Me.SendPropertyChanged("chapas_soporte1_offset")
-				Me.Onchapas_soporte1_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_chapas_soporte2_offset", DbType:="Int")>  _
-	Public Property chapas_soporte2_offset() As System.Nullable(Of Integer)
-		Get
-			Return Me._chapas_soporte2_offset
-		End Get
-		Set
-			If (Me._chapas_soporte2_offset.Equals(value) = false) Then
-				Me.Onchapas_soporte2_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._chapas_soporte2_offset = value
-				Me.SendPropertyChanged("chapas_soporte2_offset")
-				Me.Onchapas_soporte2_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_chapas_soporte3_offset", DbType:="Int")>  _
-	Public Property chapas_soporte3_offset() As System.Nullable(Of Integer)
-		Get
-			Return Me._chapas_soporte3_offset
-		End Get
-		Set
-			If (Me._chapas_soporte3_offset.Equals(value) = false) Then
-				Me.Onchapas_soporte3_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._chapas_soporte3_offset = value
-				Me.SendPropertyChanged("chapas_soporte3_offset")
-				Me.Onchapas_soporte3_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_impresora_offset", DbType:="VarChar(15)")>  _
-	Public Property impresora_offset() As String
-		Get
-			Return Me._impresora_offset
-		End Get
-		Set
-			If (String.Equals(Me._impresora_offset, value) = false) Then
-				Me.Onimpresora_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._impresora_offset = value
-				Me.SendPropertyChanged("impresora_offset")
-				Me.Onimpresora_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_marca_offset", DbType:="VarChar(15)")>  _
-	Public Property marca_offset() As String
-		Get
-			Return Me._marca_offset
-		End Get
-		Set
-			If (String.Equals(Me._marca_offset, value) = false) Then
-				Me.Onmarca_offsetChanging(value)
-				Me.SendPropertyChanging
-				Me._marca_offset = value
-				Me.SendPropertyChanged("marca_offset")
-				Me.Onmarca_offsetChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_cantidad_1_PM_digital", DbType:="Int")>  _
-	Public Property cantidad_1_PM_digital() As System.Nullable(Of Integer)
-		Get
-			Return Me._cantidad_1_PM_digital
-		End Get
-		Set
-			If (Me._cantidad_1_PM_digital.Equals(value) = false) Then
-				Me.Oncantidad_1_PM_digitalChanging(value)
-				Me.SendPropertyChanging
-				Me._cantidad_1_PM_digital = value
-				Me.SendPropertyChanged("cantidad_1_PM_digital")
-				Me.Oncantidad_1_PM_digitalChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_cantidad_2_PM_digital", DbType:="Int")>  _
-	Public Property cantidad_2_PM_digital() As System.Nullable(Of Integer)
-		Get
-			Return Me._cantidad_2_PM_digital
-		End Get
-		Set
-			If (Me._cantidad_2_PM_digital.Equals(value) = false) Then
-				Me.Oncantidad_2_PM_digitalChanging(value)
-				Me.SendPropertyChanging
-				Me._cantidad_2_PM_digital = value
-				Me.SendPropertyChanged("cantidad_2_PM_digital")
-				Me.Oncantidad_2_PM_digitalChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_cantidad_3_PM_digital", DbType:="Int")>  _
-	Public Property cantidad_3_PM_digital() As System.Nullable(Of Integer)
-		Get
-			Return Me._cantidad_3_PM_digital
-		End Get
-		Set
-			If (Me._cantidad_3_PM_digital.Equals(value) = false) Then
-				Me.Oncantidad_3_PM_digitalChanging(value)
-				Me.SendPropertyChanging
-				Me._cantidad_3_PM_digital = value
-				Me.SendPropertyChanged("cantidad_3_PM_digital")
-				Me.Oncantidad_3_PM_digitalChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_formato_1_PM_digital", DbType:="VarChar(15)")>  _
-	Public Property formato_1_PM_digital() As String
-		Get
-			Return Me._formato_1_PM_digital
-		End Get
-		Set
-			If (String.Equals(Me._formato_1_PM_digital, value) = false) Then
-				Me.Onformato_1_PM_digitalChanging(value)
-				Me.SendPropertyChanging
-				Me._formato_1_PM_digital = value
-				Me.SendPropertyChanged("formato_1_PM_digital")
-				Me.Onformato_1_PM_digitalChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_formato_2_PM_digital", DbType:="VarChar(15)")>  _
-	Public Property formato_2_PM_digital() As String
-		Get
-			Return Me._formato_2_PM_digital
-		End Get
-		Set
-			If (String.Equals(Me._formato_2_PM_digital, value) = false) Then
-				Me.Onformato_2_PM_digitalChanging(value)
-				Me.SendPropertyChanging
-				Me._formato_2_PM_digital = value
-				Me.SendPropertyChanged("formato_2_PM_digital")
-				Me.Onformato_2_PM_digitalChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_formato_3_PM_digital", DbType:="VarChar(15)")>  _
-	Public Property formato_3_PM_digital() As String
-		Get
-			Return Me._formato_3_PM_digital
-		End Get
-		Set
-			If (String.Equals(Me._formato_3_PM_digital, value) = false) Then
-				Me.Onformato_3_PM_digitalChanging(value)
-				Me.SendPropertyChanging
-				Me._formato_3_PM_digital = value
-				Me.SendPropertyChanged("formato_3_PM_digital")
-				Me.Onformato_3_PM_digitalChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_modo_impresion_digital", DbType:="VarChar(15)")>  _
-	Public Property modo_impresion_digital() As String
-		Get
-			Return Me._modo_impresion_digital
-		End Get
-		Set
-			If (String.Equals(Me._modo_impresion_digital, value) = false) Then
-				Me.Onmodo_impresion_digitalChanging(value)
-				Me.SendPropertyChanging
-				Me._modo_impresion_digital = value
-				Me.SendPropertyChanged("modo_impresion_digital")
-				Me.Onmodo_impresion_digitalChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_tipo_impresion_digital", DbType:="VarChar(15)")>  _
-	Public Property tipo_impresion_digital() As String
-		Get
-			Return Me._tipo_impresion_digital
-		End Get
-		Set
-			If (String.Equals(Me._tipo_impresion_digital, value) = false) Then
-				Me.Ontipo_impresion_digitalChanging(value)
-				Me.SendPropertyChanging
-				Me._tipo_impresion_digital = value
-				Me.SendPropertyChanged("tipo_impresion_digital")
-				Me.Ontipo_impresion_digitalChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_dato_variable", DbType:="VarChar(350)")>  _
-	Public Property dato_variable() As String
-		Get
-			Return Me._dato_variable
-		End Get
-		Set
-			If (String.Equals(Me._dato_variable, value) = false) Then
-				Me.Ondato_variableChanging(value)
-				Me.SendPropertyChanging
-				Me._dato_variable = value
-				Me.SendPropertyChanged("dato_variable")
-				Me.Ondato_variableChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_cantidad_gran_formato", DbType:="Int")>  _
-	Public Property cantidad_gran_formato() As System.Nullable(Of Integer)
-		Get
-			Return Me._cantidad_gran_formato
-		End Get
-		Set
-			If (Me._cantidad_gran_formato.Equals(value) = false) Then
-				Me.Oncantidad_gran_formatoChanging(value)
-				Me.SendPropertyChanging
-				Me._cantidad_gran_formato = value
-				Me.SendPropertyChanged("cantidad_gran_formato")
-				Me.Oncantidad_gran_formatoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_tamaño_gran_formato", DbType:="VarChar(15)")>  _
-	Public Property tamaño_gran_formato() As String
-		Get
-			Return Me._tamaño_gran_formato
-		End Get
-		Set
-			If (String.Equals(Me._tamaño_gran_formato, value) = false) Then
-				Me.Ontamaño_gran_formatoChanging(value)
-				Me.SendPropertyChanging
-				Me._tamaño_gran_formato = value
-				Me.SendPropertyChanged("tamaño_gran_formato")
-				Me.Ontamaño_gran_formatoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sustrato_gran_formato", DbType:="VarChar(25)")>  _
-	Public Property sustrato_gran_formato() As String
-		Get
-			Return Me._sustrato_gran_formato
-		End Get
-		Set
-			If (String.Equals(Me._sustrato_gran_formato, value) = false) Then
-				Me.Onsustrato_gran_formatoChanging(value)
-				Me.SendPropertyChanging
-				Me._sustrato_gran_formato = value
-				Me.SendPropertyChanged("sustrato_gran_formato")
-				Me.Onsustrato_gran_formatoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_calidad_gran_formato", DbType:="VarChar(25)")>  _
-	Public Property calidad_gran_formato() As String
-		Get
-			Return Me._calidad_gran_formato
-		End Get
-		Set
-			If (String.Equals(Me._calidad_gran_formato, value) = false) Then
-				Me.Oncalidad_gran_formatoChanging(value)
-				Me.SendPropertyChanging
-				Me._calidad_gran_formato = value
-				Me.SendPropertyChanged("calidad_gran_formato")
-				Me.Oncalidad_gran_formatoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sistema_gran_formato", DbType:="VarChar(25)")>  _
-	Public Property sistema_gran_formato() As String
-		Get
-			Return Me._sistema_gran_formato
-		End Get
-		Set
-			If (String.Equals(Me._sistema_gran_formato, value) = false) Then
-				Me.Onsistema_gran_formatoChanging(value)
-				Me.SendPropertyChanging
-				Me._sistema_gran_formato = value
-				Me.SendPropertyChanged("sistema_gran_formato")
-				Me.Onsistema_gran_formatoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_tipo_terminacion", DbType:="VarChar(60)")>  _
-	Public Property tipo_terminacion() As String
-		Get
-			Return Me._tipo_terminacion
-		End Get
-		Set
-			If (String.Equals(Me._tipo_terminacion, value) = false) Then
-				Me.Ontipo_terminacionChanging(value)
-				Me.SendPropertyChanging
-				Me._tipo_terminacion = value
-				Me.SendPropertyChanged("tipo_terminacion")
-				Me.Ontipo_terminacionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_descripcion_terminacion", DbType:="VarChar(350)")>  _
-	Public Property descripcion_terminacion() As String
-		Get
-			Return Me._descripcion_terminacion
-		End Get
-		Set
-			If (String.Equals(Me._descripcion_terminacion, value) = false) Then
-				Me.Ondescripcion_terminacionChanging(value)
-				Me.SendPropertyChanging
-				Me._descripcion_terminacion = value
-				Me.SendPropertyChanged("descripcion_terminacion")
-				Me.Ondescripcion_terminacionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="DETALLE_ORDEN_TRABAJO_PROCESO", Storage:="_PROCESO", ThisKey:="id_detalle_orden_trabajo", OtherKey:="id_detalle_orden_trabajo")>  _
-	Public Property PROCESO() As EntitySet(Of PROCESO)
-		Get
-			Return Me._PROCESO
-		End Get
-		Set
-			Me._PROCESO.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="DETALLE_ORDEN_TRABAJO_RE_TRABAJO", Storage:="_RE_TRABAJO", ThisKey:="id_detalle_orden_trabajo", OtherKey:="id_detalle_orden_trabajo")>  _
-	Public Property RE_TRABAJO() As EntitySet(Of RE_TRABAJO)
-		Get
-			Return Me._RE_TRABAJO
-		End Get
-		Set
-			Me._RE_TRABAJO.Assign(value)
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO", Storage:="_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo", IsForeignKey:=true, DeleteRule:="CASCADE")>  _
-	Public Property ORDEN_TRABAJO() As ORDEN_TRABAJO
-		Get
-			Return Me._ORDEN_TRABAJO.Entity
-		End Get
-		Set
-			Dim previousValue As ORDEN_TRABAJO = Me._ORDEN_TRABAJO.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._ORDEN_TRABAJO.Entity = Nothing
-					previousValue.DETALLE_ORDEN_TRABAJO.Remove(Me)
-				End If
-				Me._ORDEN_TRABAJO.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.DETALLE_ORDEN_TRABAJO.Add(Me)
-					Me._ORT_id_orden_trabajo = value.ORT_id_orden_trabajo
-				Else
-					Me._ORT_id_orden_trabajo = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("ORDEN_TRABAJO")
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PIEZA_DETALLE_ORDEN_TRABAJO", Storage:="_PIEZA", ThisKey:="PIE_id_pieza", OtherKey:="PIE_id_pieza", IsForeignKey:=true)>  _
-	Public Property PIEZA() As PIEZA
-		Get
-			Return Me._PIEZA.Entity
-		End Get
-		Set
-			Dim previousValue As PIEZA = Me._PIEZA.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._PIEZA.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._PIEZA.Entity = Nothing
-					previousValue.DETALLE_ORDEN_TRABAJO.Remove(Me)
-				End If
-				Me._PIEZA.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.DETALLE_ORDEN_TRABAJO.Add(Me)
-					Me._PIE_id_pieza = value.PIE_id_pieza
-				Else
-					Me._PIE_id_pieza = CType(Nothing, Nullable(Of Integer))
-				End If
-				Me.SendPropertyChanged("PIEZA")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_PROCESO(ByVal entity As PROCESO)
-		Me.SendPropertyChanging
-		entity.DETALLE_ORDEN_TRABAJO = Me
-	End Sub
-	
-	Private Sub detach_PROCESO(ByVal entity As PROCESO)
-		Me.SendPropertyChanging
-		entity.DETALLE_ORDEN_TRABAJO = Nothing
-	End Sub
-	
-	Private Sub attach_RE_TRABAJO(ByVal entity As RE_TRABAJO)
-		Me.SendPropertyChanging
-		entity.DETALLE_ORDEN_TRABAJO = Me
-	End Sub
-	
-	Private Sub detach_RE_TRABAJO(ByVal entity As RE_TRABAJO)
-		Me.SendPropertyChanging
-		entity.DETALLE_ORDEN_TRABAJO = Nothing
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.ORDEN_TRABAJO")>  _
 Partial Public Class ORDEN_TRABAJO
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -2059,9 +849,9 @@ Partial Public Class ORDEN_TRABAJO
 	
 	Private _ORT_fecha_entrega As System.Nullable(Of Date)
 	
-	Private _DETALLE_ORDEN_TRABAJO As EntitySet(Of DETALLE_ORDEN_TRABAJO)
-	
 	Private _TAREA As EntitySet(Of TAREA)
+	
+	Private _DETALLE_ORDEN_TRABAJO As EntitySet(Of DETALLE_ORDEN_TRABAJO)
 	
 	Private _CLIENTE As EntityRef(Of CLIENTE)
 	
@@ -2114,8 +904,8 @@ Partial Public Class ORDEN_TRABAJO
 	
 	Public Sub New()
 		MyBase.New
-		Me._DETALLE_ORDEN_TRABAJO = New EntitySet(Of DETALLE_ORDEN_TRABAJO)(AddressOf Me.attach_DETALLE_ORDEN_TRABAJO, AddressOf Me.detach_DETALLE_ORDEN_TRABAJO)
 		Me._TAREA = New EntitySet(Of TAREA)(AddressOf Me.attach_TAREA, AddressOf Me.detach_TAREA)
+		Me._DETALLE_ORDEN_TRABAJO = New EntitySet(Of DETALLE_ORDEN_TRABAJO)(AddressOf Me.attach_DETALLE_ORDEN_TRABAJO, AddressOf Me.detach_DETALLE_ORDEN_TRABAJO)
 		Me._CLIENTE = CType(Nothing, EntityRef(Of CLIENTE))
 		Me._VENDEDOR = CType(Nothing, EntityRef(Of VENDEDOR))
 		OnCreated
@@ -2275,16 +1065,6 @@ Partial Public Class ORDEN_TRABAJO
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo")>  _
-	Public Property DETALLE_ORDEN_TRABAJO() As EntitySet(Of DETALLE_ORDEN_TRABAJO)
-		Get
-			Return Me._DETALLE_ORDEN_TRABAJO
-		End Get
-		Set
-			Me._DETALLE_ORDEN_TRABAJO.Assign(value)
-		End Set
-	End Property
-	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_TAREA", Storage:="_TAREA", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo")>  _
 	Public Property TAREA() As EntitySet(Of TAREA)
 		Get
@@ -2292,6 +1072,16 @@ Partial Public Class ORDEN_TRABAJO
 		End Get
 		Set
 			Me._TAREA.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo")>  _
+	Public Property DETALLE_ORDEN_TRABAJO() As EntitySet(Of DETALLE_ORDEN_TRABAJO)
+		Get
+			Return Me._DETALLE_ORDEN_TRABAJO
+		End Get
+		Set
+			Me._DETALLE_ORDEN_TRABAJO.Assign(value)
 		End Set
 	End Property
 	
@@ -2369,22 +1159,22 @@ Partial Public Class ORDEN_TRABAJO
 		End If
 	End Sub
 	
-	Private Sub attach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
-		Me.SendPropertyChanging
-		entity.ORDEN_TRABAJO = Me
-	End Sub
-	
-	Private Sub detach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
-		Me.SendPropertyChanging
-		entity.ORDEN_TRABAJO = Nothing
-	End Sub
-	
 	Private Sub attach_TAREA(ByVal entity As TAREA)
 		Me.SendPropertyChanging
 		entity.ORDEN_TRABAJO = Me
 	End Sub
 	
 	Private Sub detach_TAREA(ByVal entity As TAREA)
+		Me.SendPropertyChanging
+		entity.ORDEN_TRABAJO = Nothing
+	End Sub
+	
+	Private Sub attach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
+		Me.SendPropertyChanging
+		entity.ORDEN_TRABAJO = Me
+	End Sub
+	
+	Private Sub detach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
 		Me.SendPropertyChanging
 		entity.ORDEN_TRABAJO = Nothing
 	End Sub
@@ -4585,5 +3375,1216 @@ Partial Public Class USUARIO
 					= false) Then
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DETALLE_ORDEN_TRABAJO")>  _
+Partial Public Class DETALLE_ORDEN_TRABAJO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _id_detalle_orden_trabajo As Integer
+	
+	Private _DOT_cantidad_producto As System.Nullable(Of Integer)
+	
+	Private _DOT_tamaño_producto As String
+	
+	Private _DOT_tipo_impresion_dot As String
+	
+	Private _DOT_papel_soporte_1 As String
+	
+	Private _DOT_papel_soporte_2 As String
+	
+	Private _DOT_papel_soporte_3 As String
+	
+	Private _DOT_gramaje_soporte_1 As String
+	
+	Private _DOT_gramaje_soporte_2 As String
+	
+	Private _DOT_gramaje_soporte_3 As String
+	
+	Private _DOT_cantidad_soporte_1 As System.Nullable(Of Integer)
+	
+	Private _DOT_cantidad_soporte_2 As System.Nullable(Of Integer)
+	
+	Private _DOT_cantidad_soporte_3 As System.Nullable(Of Integer)
+	
+	Private _DOT_formato_soporte_1 As String
+	
+	Private _DOT_formato_soporte_2 As String
+	
+	Private _DOT_formato_soporte_3 As String
+	
+	Private _PIE_id_pieza As Integer
+	
+	Private _ORT_id_orden_trabajo As System.Nullable(Of Integer)
+	
+	Private _cantidad_1_PM_offset As System.Nullable(Of Integer)
+	
+	Private _cantidad_2_PM_offset As System.Nullable(Of Integer)
+	
+	Private _cantidad_3_PM_offset As System.Nullable(Of Integer)
+	
+	Private _formato_1_PM_offset As String
+	
+	Private _formato_2_PM_offset As String
+	
+	Private _formato_3_PM_offset As String
+	
+	Private _PIE_id_pieza_offset As System.Nullable(Of Integer)
+	
+	Private _modo_impresion_offset As String
+	
+	Private _tipo_impresion_offset As String
+	
+	Private _chapas_soporte1_offset As System.Nullable(Of Integer)
+	
+	Private _chapas_soporte2_offset As System.Nullable(Of Integer)
+	
+	Private _chapas_soporte3_offset As System.Nullable(Of Integer)
+	
+	Private _impresora_offset As String
+	
+	Private _marca_offset As String
+	
+	Private _cantidad_1_PM_digital As System.Nullable(Of Integer)
+	
+	Private _cantidad_2_PM_digital As System.Nullable(Of Integer)
+	
+	Private _cantidad_3_PM_digital As System.Nullable(Of Integer)
+	
+	Private _formato_1_PM_digital As String
+	
+	Private _formato_2_PM_digital As String
+	
+	Private _formato_3_PM_digital As String
+	
+	Private _modo_impresion_digital As String
+	
+	Private _tipo_impresion_digital As String
+	
+	Private _dato_variable As String
+	
+	Private _cantidad_gran_formato As System.Nullable(Of Integer)
+	
+	Private _tamaño_gran_formato As String
+	
+	Private _sustrato_gran_formato As String
+	
+	Private _calidad_gran_formato As String
+	
+	Private _sistema_gran_formato As String
+	
+	Private _tipo_terminacion As String
+	
+	Private _descripcion_terminacion As String
+	
+	Private _PROCESO As EntitySet(Of PROCESO)
+	
+	Private _RE_TRABAJO As EntitySet(Of RE_TRABAJO)
+	
+	Private _ORDEN_TRABAJO As EntityRef(Of ORDEN_TRABAJO)
+	
+	Private _PIEZA As EntityRef(Of PIEZA)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub Onid_detalle_orden_trabajoChanging(value As Integer)
+    End Sub
+    Partial Private Sub Onid_detalle_orden_trabajoChanged()
+    End Sub
+    Partial Private Sub OnDOT_cantidad_productoChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDOT_cantidad_productoChanged()
+    End Sub
+    Partial Private Sub OnDOT_tamaño_productoChanging(value As String)
+    End Sub
+    Partial Private Sub OnDOT_tamaño_productoChanged()
+    End Sub
+    Partial Private Sub OnDOT_tipo_impresion_dotChanging(value As String)
+    End Sub
+    Partial Private Sub OnDOT_tipo_impresion_dotChanged()
+    End Sub
+    Partial Private Sub OnDOT_papel_soporte_1Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_papel_soporte_1Changed()
+    End Sub
+    Partial Private Sub OnDOT_papel_soporte_2Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_papel_soporte_2Changed()
+    End Sub
+    Partial Private Sub OnDOT_papel_soporte_3Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_papel_soporte_3Changed()
+    End Sub
+    Partial Private Sub OnDOT_gramaje_soporte_1Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_gramaje_soporte_1Changed()
+    End Sub
+    Partial Private Sub OnDOT_gramaje_soporte_2Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_gramaje_soporte_2Changed()
+    End Sub
+    Partial Private Sub OnDOT_gramaje_soporte_3Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_gramaje_soporte_3Changed()
+    End Sub
+    Partial Private Sub OnDOT_cantidad_soporte_1Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDOT_cantidad_soporte_1Changed()
+    End Sub
+    Partial Private Sub OnDOT_cantidad_soporte_2Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDOT_cantidad_soporte_2Changed()
+    End Sub
+    Partial Private Sub OnDOT_cantidad_soporte_3Changing(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnDOT_cantidad_soporte_3Changed()
+    End Sub
+    Partial Private Sub OnDOT_formato_soporte_1Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_formato_soporte_1Changed()
+    End Sub
+    Partial Private Sub OnDOT_formato_soporte_2Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_formato_soporte_2Changed()
+    End Sub
+    Partial Private Sub OnDOT_formato_soporte_3Changing(value As String)
+    End Sub
+    Partial Private Sub OnDOT_formato_soporte_3Changed()
+    End Sub
+    Partial Private Sub OnPIE_id_piezaChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPIE_id_piezaChanged()
+    End Sub
+    Partial Private Sub OnORT_id_orden_trabajoChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnORT_id_orden_trabajoChanged()
+    End Sub
+    Partial Private Sub Oncantidad_1_PM_offsetChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Oncantidad_1_PM_offsetChanged()
+    End Sub
+    Partial Private Sub Oncantidad_2_PM_offsetChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Oncantidad_2_PM_offsetChanged()
+    End Sub
+    Partial Private Sub Oncantidad_3_PM_offsetChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Oncantidad_3_PM_offsetChanged()
+    End Sub
+    Partial Private Sub Onformato_1_PM_offsetChanging(value As String)
+    End Sub
+    Partial Private Sub Onformato_1_PM_offsetChanged()
+    End Sub
+    Partial Private Sub Onformato_2_PM_offsetChanging(value As String)
+    End Sub
+    Partial Private Sub Onformato_2_PM_offsetChanged()
+    End Sub
+    Partial Private Sub Onformato_3_PM_offsetChanging(value As String)
+    End Sub
+    Partial Private Sub Onformato_3_PM_offsetChanged()
+    End Sub
+    Partial Private Sub OnPIE_id_pieza_offsetChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnPIE_id_pieza_offsetChanged()
+    End Sub
+    Partial Private Sub Onmodo_impresion_offsetChanging(value As String)
+    End Sub
+    Partial Private Sub Onmodo_impresion_offsetChanged()
+    End Sub
+    Partial Private Sub Ontipo_impresion_offsetChanging(value As String)
+    End Sub
+    Partial Private Sub Ontipo_impresion_offsetChanged()
+    End Sub
+    Partial Private Sub Onchapas_soporte1_offsetChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Onchapas_soporte1_offsetChanged()
+    End Sub
+    Partial Private Sub Onchapas_soporte2_offsetChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Onchapas_soporte2_offsetChanged()
+    End Sub
+    Partial Private Sub Onchapas_soporte3_offsetChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Onchapas_soporte3_offsetChanged()
+    End Sub
+    Partial Private Sub Onimpresora_offsetChanging(value As String)
+    End Sub
+    Partial Private Sub Onimpresora_offsetChanged()
+    End Sub
+    Partial Private Sub Onmarca_offsetChanging(value As String)
+    End Sub
+    Partial Private Sub Onmarca_offsetChanged()
+    End Sub
+    Partial Private Sub Oncantidad_1_PM_digitalChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Oncantidad_1_PM_digitalChanged()
+    End Sub
+    Partial Private Sub Oncantidad_2_PM_digitalChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Oncantidad_2_PM_digitalChanged()
+    End Sub
+    Partial Private Sub Oncantidad_3_PM_digitalChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Oncantidad_3_PM_digitalChanged()
+    End Sub
+    Partial Private Sub Onformato_1_PM_digitalChanging(value As String)
+    End Sub
+    Partial Private Sub Onformato_1_PM_digitalChanged()
+    End Sub
+    Partial Private Sub Onformato_2_PM_digitalChanging(value As String)
+    End Sub
+    Partial Private Sub Onformato_2_PM_digitalChanged()
+    End Sub
+    Partial Private Sub Onformato_3_PM_digitalChanging(value As String)
+    End Sub
+    Partial Private Sub Onformato_3_PM_digitalChanged()
+    End Sub
+    Partial Private Sub Onmodo_impresion_digitalChanging(value As String)
+    End Sub
+    Partial Private Sub Onmodo_impresion_digitalChanged()
+    End Sub
+    Partial Private Sub Ontipo_impresion_digitalChanging(value As String)
+    End Sub
+    Partial Private Sub Ontipo_impresion_digitalChanged()
+    End Sub
+    Partial Private Sub Ondato_variableChanging(value As String)
+    End Sub
+    Partial Private Sub Ondato_variableChanged()
+    End Sub
+    Partial Private Sub Oncantidad_gran_formatoChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub Oncantidad_gran_formatoChanged()
+    End Sub
+    Partial Private Sub Ontamaño_gran_formatoChanging(value As String)
+    End Sub
+    Partial Private Sub Ontamaño_gran_formatoChanged()
+    End Sub
+    Partial Private Sub Onsustrato_gran_formatoChanging(value As String)
+    End Sub
+    Partial Private Sub Onsustrato_gran_formatoChanged()
+    End Sub
+    Partial Private Sub Oncalidad_gran_formatoChanging(value As String)
+    End Sub
+    Partial Private Sub Oncalidad_gran_formatoChanged()
+    End Sub
+    Partial Private Sub Onsistema_gran_formatoChanging(value As String)
+    End Sub
+    Partial Private Sub Onsistema_gran_formatoChanged()
+    End Sub
+    Partial Private Sub Ontipo_terminacionChanging(value As String)
+    End Sub
+    Partial Private Sub Ontipo_terminacionChanged()
+    End Sub
+    Partial Private Sub Ondescripcion_terminacionChanging(value As String)
+    End Sub
+    Partial Private Sub Ondescripcion_terminacionChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._PROCESO = New EntitySet(Of PROCESO)(AddressOf Me.attach_PROCESO, AddressOf Me.detach_PROCESO)
+		Me._RE_TRABAJO = New EntitySet(Of RE_TRABAJO)(AddressOf Me.attach_RE_TRABAJO, AddressOf Me.detach_RE_TRABAJO)
+		Me._ORDEN_TRABAJO = CType(Nothing, EntityRef(Of ORDEN_TRABAJO))
+		Me._PIEZA = CType(Nothing, EntityRef(Of PIEZA))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_id_detalle_orden_trabajo", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property id_detalle_orden_trabajo() As Integer
+		Get
+			Return Me._id_detalle_orden_trabajo
+		End Get
+		Set
+			If ((Me._id_detalle_orden_trabajo = value)  _
+						= false) Then
+				Me.Onid_detalle_orden_trabajoChanging(value)
+				Me.SendPropertyChanging
+				Me._id_detalle_orden_trabajo = value
+				Me.SendPropertyChanged("id_detalle_orden_trabajo")
+				Me.Onid_detalle_orden_trabajoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_producto", DbType:="Int")>  _
+	Public Property DOT_cantidad_producto() As System.Nullable(Of Integer)
+		Get
+			Return Me._DOT_cantidad_producto
+		End Get
+		Set
+			If (Me._DOT_cantidad_producto.Equals(value) = false) Then
+				Me.OnDOT_cantidad_productoChanging(value)
+				Me.SendPropertyChanging
+				Me._DOT_cantidad_producto = value
+				Me.SendPropertyChanged("DOT_cantidad_producto")
+				Me.OnDOT_cantidad_productoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_tamaño_producto", DbType:="VarChar(50)")>  _
+	Public Property DOT_tamaño_producto() As String
+		Get
+			Return Me._DOT_tamaño_producto
+		End Get
+		Set
+			If (String.Equals(Me._DOT_tamaño_producto, value) = false) Then
+				Me.OnDOT_tamaño_productoChanging(value)
+				Me.SendPropertyChanging
+				Me._DOT_tamaño_producto = value
+				Me.SendPropertyChanged("DOT_tamaño_producto")
+				Me.OnDOT_tamaño_productoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_tipo_impresion_dot", DbType:="VarChar(4)")>  _
+	Public Property DOT_tipo_impresion_dot() As String
+		Get
+			Return Me._DOT_tipo_impresion_dot
+		End Get
+		Set
+			If (String.Equals(Me._DOT_tipo_impresion_dot, value) = false) Then
+				Me.OnDOT_tipo_impresion_dotChanging(value)
+				Me.SendPropertyChanging
+				Me._DOT_tipo_impresion_dot = value
+				Me.SendPropertyChanged("DOT_tipo_impresion_dot")
+				Me.OnDOT_tipo_impresion_dotChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_papel_soporte_1", DbType:="VarChar(50)")>  _
+	Public Property DOT_papel_soporte_1() As String
+		Get
+			Return Me._DOT_papel_soporte_1
+		End Get
+		Set
+			If (String.Equals(Me._DOT_papel_soporte_1, value) = false) Then
+				Me.OnDOT_papel_soporte_1Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_papel_soporte_1 = value
+				Me.SendPropertyChanged("DOT_papel_soporte_1")
+				Me.OnDOT_papel_soporte_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_papel_soporte_2", DbType:="VarChar(50)")>  _
+	Public Property DOT_papel_soporte_2() As String
+		Get
+			Return Me._DOT_papel_soporte_2
+		End Get
+		Set
+			If (String.Equals(Me._DOT_papel_soporte_2, value) = false) Then
+				Me.OnDOT_papel_soporte_2Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_papel_soporte_2 = value
+				Me.SendPropertyChanged("DOT_papel_soporte_2")
+				Me.OnDOT_papel_soporte_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_papel_soporte_3", DbType:="VarChar(50)")>  _
+	Public Property DOT_papel_soporte_3() As String
+		Get
+			Return Me._DOT_papel_soporte_3
+		End Get
+		Set
+			If (String.Equals(Me._DOT_papel_soporte_3, value) = false) Then
+				Me.OnDOT_papel_soporte_3Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_papel_soporte_3 = value
+				Me.SendPropertyChanged("DOT_papel_soporte_3")
+				Me.OnDOT_papel_soporte_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_gramaje_soporte_1", DbType:="VarChar(10)")>  _
+	Public Property DOT_gramaje_soporte_1() As String
+		Get
+			Return Me._DOT_gramaje_soporte_1
+		End Get
+		Set
+			If (String.Equals(Me._DOT_gramaje_soporte_1, value) = false) Then
+				Me.OnDOT_gramaje_soporte_1Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_gramaje_soporte_1 = value
+				Me.SendPropertyChanged("DOT_gramaje_soporte_1")
+				Me.OnDOT_gramaje_soporte_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_gramaje_soporte_2", DbType:="VarChar(10)")>  _
+	Public Property DOT_gramaje_soporte_2() As String
+		Get
+			Return Me._DOT_gramaje_soporte_2
+		End Get
+		Set
+			If (String.Equals(Me._DOT_gramaje_soporte_2, value) = false) Then
+				Me.OnDOT_gramaje_soporte_2Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_gramaje_soporte_2 = value
+				Me.SendPropertyChanged("DOT_gramaje_soporte_2")
+				Me.OnDOT_gramaje_soporte_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_gramaje_soporte_3", DbType:="VarChar(10)")>  _
+	Public Property DOT_gramaje_soporte_3() As String
+		Get
+			Return Me._DOT_gramaje_soporte_3
+		End Get
+		Set
+			If (String.Equals(Me._DOT_gramaje_soporte_3, value) = false) Then
+				Me.OnDOT_gramaje_soporte_3Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_gramaje_soporte_3 = value
+				Me.SendPropertyChanged("DOT_gramaje_soporte_3")
+				Me.OnDOT_gramaje_soporte_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_soporte_1", DbType:="Int")>  _
+	Public Property DOT_cantidad_soporte_1() As System.Nullable(Of Integer)
+		Get
+			Return Me._DOT_cantidad_soporte_1
+		End Get
+		Set
+			If (Me._DOT_cantidad_soporte_1.Equals(value) = false) Then
+				Me.OnDOT_cantidad_soporte_1Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_cantidad_soporte_1 = value
+				Me.SendPropertyChanged("DOT_cantidad_soporte_1")
+				Me.OnDOT_cantidad_soporte_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_soporte_2", DbType:="Int")>  _
+	Public Property DOT_cantidad_soporte_2() As System.Nullable(Of Integer)
+		Get
+			Return Me._DOT_cantidad_soporte_2
+		End Get
+		Set
+			If (Me._DOT_cantidad_soporte_2.Equals(value) = false) Then
+				Me.OnDOT_cantidad_soporte_2Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_cantidad_soporte_2 = value
+				Me.SendPropertyChanged("DOT_cantidad_soporte_2")
+				Me.OnDOT_cantidad_soporte_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_cantidad_soporte_3", DbType:="Int")>  _
+	Public Property DOT_cantidad_soporte_3() As System.Nullable(Of Integer)
+		Get
+			Return Me._DOT_cantidad_soporte_3
+		End Get
+		Set
+			If (Me._DOT_cantidad_soporte_3.Equals(value) = false) Then
+				Me.OnDOT_cantidad_soporte_3Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_cantidad_soporte_3 = value
+				Me.SendPropertyChanged("DOT_cantidad_soporte_3")
+				Me.OnDOT_cantidad_soporte_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_formato_soporte_1", DbType:="VarChar(15)")>  _
+	Public Property DOT_formato_soporte_1() As String
+		Get
+			Return Me._DOT_formato_soporte_1
+		End Get
+		Set
+			If (String.Equals(Me._DOT_formato_soporte_1, value) = false) Then
+				Me.OnDOT_formato_soporte_1Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_formato_soporte_1 = value
+				Me.SendPropertyChanged("DOT_formato_soporte_1")
+				Me.OnDOT_formato_soporte_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_formato_soporte_2", DbType:="VarChar(15)")>  _
+	Public Property DOT_formato_soporte_2() As String
+		Get
+			Return Me._DOT_formato_soporte_2
+		End Get
+		Set
+			If (String.Equals(Me._DOT_formato_soporte_2, value) = false) Then
+				Me.OnDOT_formato_soporte_2Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_formato_soporte_2 = value
+				Me.SendPropertyChanged("DOT_formato_soporte_2")
+				Me.OnDOT_formato_soporte_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DOT_formato_soporte_3", DbType:="VarChar(15)")>  _
+	Public Property DOT_formato_soporte_3() As String
+		Get
+			Return Me._DOT_formato_soporte_3
+		End Get
+		Set
+			If (String.Equals(Me._DOT_formato_soporte_3, value) = false) Then
+				Me.OnDOT_formato_soporte_3Changing(value)
+				Me.SendPropertyChanging
+				Me._DOT_formato_soporte_3 = value
+				Me.SendPropertyChanged("DOT_formato_soporte_3")
+				Me.OnDOT_formato_soporte_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_id_pieza", DbType:="Int NOT NULL")>  _
+	Public Property PIE_id_pieza() As Integer
+		Get
+			Return Me._PIE_id_pieza
+		End Get
+		Set
+			If ((Me._PIE_id_pieza = value)  _
+						= false) Then
+				If Me._PIEZA.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnPIE_id_piezaChanging(value)
+				Me.SendPropertyChanging
+				Me._PIE_id_pieza = value
+				Me.SendPropertyChanged("PIE_id_pieza")
+				Me.OnPIE_id_piezaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int")>  _
+	Public Property ORT_id_orden_trabajo() As System.Nullable(Of Integer)
+		Get
+			Return Me._ORT_id_orden_trabajo
+		End Get
+		Set
+			If (Me._ORT_id_orden_trabajo.Equals(value) = false) Then
+				If Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnORT_id_orden_trabajoChanging(value)
+				Me.SendPropertyChanging
+				Me._ORT_id_orden_trabajo = value
+				Me.SendPropertyChanged("ORT_id_orden_trabajo")
+				Me.OnORT_id_orden_trabajoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_cantidad_1_PM_offset", DbType:="Int")>  _
+	Public Property cantidad_1_PM_offset() As System.Nullable(Of Integer)
+		Get
+			Return Me._cantidad_1_PM_offset
+		End Get
+		Set
+			If (Me._cantidad_1_PM_offset.Equals(value) = false) Then
+				Me.Oncantidad_1_PM_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._cantidad_1_PM_offset = value
+				Me.SendPropertyChanged("cantidad_1_PM_offset")
+				Me.Oncantidad_1_PM_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_cantidad_2_PM_offset", DbType:="Int")>  _
+	Public Property cantidad_2_PM_offset() As System.Nullable(Of Integer)
+		Get
+			Return Me._cantidad_2_PM_offset
+		End Get
+		Set
+			If (Me._cantidad_2_PM_offset.Equals(value) = false) Then
+				Me.Oncantidad_2_PM_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._cantidad_2_PM_offset = value
+				Me.SendPropertyChanged("cantidad_2_PM_offset")
+				Me.Oncantidad_2_PM_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_cantidad_3_PM_offset", DbType:="Int")>  _
+	Public Property cantidad_3_PM_offset() As System.Nullable(Of Integer)
+		Get
+			Return Me._cantidad_3_PM_offset
+		End Get
+		Set
+			If (Me._cantidad_3_PM_offset.Equals(value) = false) Then
+				Me.Oncantidad_3_PM_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._cantidad_3_PM_offset = value
+				Me.SendPropertyChanged("cantidad_3_PM_offset")
+				Me.Oncantidad_3_PM_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_formato_1_PM_offset", DbType:="VarChar(15)")>  _
+	Public Property formato_1_PM_offset() As String
+		Get
+			Return Me._formato_1_PM_offset
+		End Get
+		Set
+			If (String.Equals(Me._formato_1_PM_offset, value) = false) Then
+				Me.Onformato_1_PM_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._formato_1_PM_offset = value
+				Me.SendPropertyChanged("formato_1_PM_offset")
+				Me.Onformato_1_PM_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_formato_2_PM_offset", DbType:="VarChar(15)")>  _
+	Public Property formato_2_PM_offset() As String
+		Get
+			Return Me._formato_2_PM_offset
+		End Get
+		Set
+			If (String.Equals(Me._formato_2_PM_offset, value) = false) Then
+				Me.Onformato_2_PM_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._formato_2_PM_offset = value
+				Me.SendPropertyChanged("formato_2_PM_offset")
+				Me.Onformato_2_PM_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_formato_3_PM_offset", DbType:="VarChar(15)")>  _
+	Public Property formato_3_PM_offset() As String
+		Get
+			Return Me._formato_3_PM_offset
+		End Get
+		Set
+			If (String.Equals(Me._formato_3_PM_offset, value) = false) Then
+				Me.Onformato_3_PM_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._formato_3_PM_offset = value
+				Me.SendPropertyChanged("formato_3_PM_offset")
+				Me.Onformato_3_PM_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_id_pieza_offset", DbType:="Int")>  _
+	Public Property PIE_id_pieza_offset() As System.Nullable(Of Integer)
+		Get
+			Return Me._PIE_id_pieza_offset
+		End Get
+		Set
+			If (Me._PIE_id_pieza_offset.Equals(value) = false) Then
+				Me.OnPIE_id_pieza_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._PIE_id_pieza_offset = value
+				Me.SendPropertyChanged("PIE_id_pieza_offset")
+				Me.OnPIE_id_pieza_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_modo_impresion_offset", DbType:="VarChar(25)")>  _
+	Public Property modo_impresion_offset() As String
+		Get
+			Return Me._modo_impresion_offset
+		End Get
+		Set
+			If (String.Equals(Me._modo_impresion_offset, value) = false) Then
+				Me.Onmodo_impresion_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._modo_impresion_offset = value
+				Me.SendPropertyChanged("modo_impresion_offset")
+				Me.Onmodo_impresion_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_tipo_impresion_offset", DbType:="VarChar(15)")>  _
+	Public Property tipo_impresion_offset() As String
+		Get
+			Return Me._tipo_impresion_offset
+		End Get
+		Set
+			If (String.Equals(Me._tipo_impresion_offset, value) = false) Then
+				Me.Ontipo_impresion_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._tipo_impresion_offset = value
+				Me.SendPropertyChanged("tipo_impresion_offset")
+				Me.Ontipo_impresion_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_chapas_soporte1_offset", DbType:="Int")>  _
+	Public Property chapas_soporte1_offset() As System.Nullable(Of Integer)
+		Get
+			Return Me._chapas_soporte1_offset
+		End Get
+		Set
+			If (Me._chapas_soporte1_offset.Equals(value) = false) Then
+				Me.Onchapas_soporte1_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._chapas_soporte1_offset = value
+				Me.SendPropertyChanged("chapas_soporte1_offset")
+				Me.Onchapas_soporte1_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_chapas_soporte2_offset", DbType:="Int")>  _
+	Public Property chapas_soporte2_offset() As System.Nullable(Of Integer)
+		Get
+			Return Me._chapas_soporte2_offset
+		End Get
+		Set
+			If (Me._chapas_soporte2_offset.Equals(value) = false) Then
+				Me.Onchapas_soporte2_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._chapas_soporte2_offset = value
+				Me.SendPropertyChanged("chapas_soporte2_offset")
+				Me.Onchapas_soporte2_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_chapas_soporte3_offset", DbType:="Int")>  _
+	Public Property chapas_soporte3_offset() As System.Nullable(Of Integer)
+		Get
+			Return Me._chapas_soporte3_offset
+		End Get
+		Set
+			If (Me._chapas_soporte3_offset.Equals(value) = false) Then
+				Me.Onchapas_soporte3_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._chapas_soporte3_offset = value
+				Me.SendPropertyChanged("chapas_soporte3_offset")
+				Me.Onchapas_soporte3_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_impresora_offset", DbType:="VarChar(15)")>  _
+	Public Property impresora_offset() As String
+		Get
+			Return Me._impresora_offset
+		End Get
+		Set
+			If (String.Equals(Me._impresora_offset, value) = false) Then
+				Me.Onimpresora_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._impresora_offset = value
+				Me.SendPropertyChanged("impresora_offset")
+				Me.Onimpresora_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_marca_offset", DbType:="VarChar(15)")>  _
+	Public Property marca_offset() As String
+		Get
+			Return Me._marca_offset
+		End Get
+		Set
+			If (String.Equals(Me._marca_offset, value) = false) Then
+				Me.Onmarca_offsetChanging(value)
+				Me.SendPropertyChanging
+				Me._marca_offset = value
+				Me.SendPropertyChanged("marca_offset")
+				Me.Onmarca_offsetChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_cantidad_1_PM_digital", DbType:="Int")>  _
+	Public Property cantidad_1_PM_digital() As System.Nullable(Of Integer)
+		Get
+			Return Me._cantidad_1_PM_digital
+		End Get
+		Set
+			If (Me._cantidad_1_PM_digital.Equals(value) = false) Then
+				Me.Oncantidad_1_PM_digitalChanging(value)
+				Me.SendPropertyChanging
+				Me._cantidad_1_PM_digital = value
+				Me.SendPropertyChanged("cantidad_1_PM_digital")
+				Me.Oncantidad_1_PM_digitalChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_cantidad_2_PM_digital", DbType:="Int")>  _
+	Public Property cantidad_2_PM_digital() As System.Nullable(Of Integer)
+		Get
+			Return Me._cantidad_2_PM_digital
+		End Get
+		Set
+			If (Me._cantidad_2_PM_digital.Equals(value) = false) Then
+				Me.Oncantidad_2_PM_digitalChanging(value)
+				Me.SendPropertyChanging
+				Me._cantidad_2_PM_digital = value
+				Me.SendPropertyChanged("cantidad_2_PM_digital")
+				Me.Oncantidad_2_PM_digitalChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_cantidad_3_PM_digital", DbType:="Int")>  _
+	Public Property cantidad_3_PM_digital() As System.Nullable(Of Integer)
+		Get
+			Return Me._cantidad_3_PM_digital
+		End Get
+		Set
+			If (Me._cantidad_3_PM_digital.Equals(value) = false) Then
+				Me.Oncantidad_3_PM_digitalChanging(value)
+				Me.SendPropertyChanging
+				Me._cantidad_3_PM_digital = value
+				Me.SendPropertyChanged("cantidad_3_PM_digital")
+				Me.Oncantidad_3_PM_digitalChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_formato_1_PM_digital", DbType:="VarChar(15)")>  _
+	Public Property formato_1_PM_digital() As String
+		Get
+			Return Me._formato_1_PM_digital
+		End Get
+		Set
+			If (String.Equals(Me._formato_1_PM_digital, value) = false) Then
+				Me.Onformato_1_PM_digitalChanging(value)
+				Me.SendPropertyChanging
+				Me._formato_1_PM_digital = value
+				Me.SendPropertyChanged("formato_1_PM_digital")
+				Me.Onformato_1_PM_digitalChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_formato_2_PM_digital", DbType:="VarChar(15)")>  _
+	Public Property formato_2_PM_digital() As String
+		Get
+			Return Me._formato_2_PM_digital
+		End Get
+		Set
+			If (String.Equals(Me._formato_2_PM_digital, value) = false) Then
+				Me.Onformato_2_PM_digitalChanging(value)
+				Me.SendPropertyChanging
+				Me._formato_2_PM_digital = value
+				Me.SendPropertyChanged("formato_2_PM_digital")
+				Me.Onformato_2_PM_digitalChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_formato_3_PM_digital", DbType:="VarChar(15)")>  _
+	Public Property formato_3_PM_digital() As String
+		Get
+			Return Me._formato_3_PM_digital
+		End Get
+		Set
+			If (String.Equals(Me._formato_3_PM_digital, value) = false) Then
+				Me.Onformato_3_PM_digitalChanging(value)
+				Me.SendPropertyChanging
+				Me._formato_3_PM_digital = value
+				Me.SendPropertyChanged("formato_3_PM_digital")
+				Me.Onformato_3_PM_digitalChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_modo_impresion_digital", DbType:="VarChar(15)")>  _
+	Public Property modo_impresion_digital() As String
+		Get
+			Return Me._modo_impresion_digital
+		End Get
+		Set
+			If (String.Equals(Me._modo_impresion_digital, value) = false) Then
+				Me.Onmodo_impresion_digitalChanging(value)
+				Me.SendPropertyChanging
+				Me._modo_impresion_digital = value
+				Me.SendPropertyChanged("modo_impresion_digital")
+				Me.Onmodo_impresion_digitalChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_tipo_impresion_digital", DbType:="VarChar(15)")>  _
+	Public Property tipo_impresion_digital() As String
+		Get
+			Return Me._tipo_impresion_digital
+		End Get
+		Set
+			If (String.Equals(Me._tipo_impresion_digital, value) = false) Then
+				Me.Ontipo_impresion_digitalChanging(value)
+				Me.SendPropertyChanging
+				Me._tipo_impresion_digital = value
+				Me.SendPropertyChanged("tipo_impresion_digital")
+				Me.Ontipo_impresion_digitalChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_dato_variable", DbType:="VarChar(350)")>  _
+	Public Property dato_variable() As String
+		Get
+			Return Me._dato_variable
+		End Get
+		Set
+			If (String.Equals(Me._dato_variable, value) = false) Then
+				Me.Ondato_variableChanging(value)
+				Me.SendPropertyChanging
+				Me._dato_variable = value
+				Me.SendPropertyChanged("dato_variable")
+				Me.Ondato_variableChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_cantidad_gran_formato", DbType:="Int")>  _
+	Public Property cantidad_gran_formato() As System.Nullable(Of Integer)
+		Get
+			Return Me._cantidad_gran_formato
+		End Get
+		Set
+			If (Me._cantidad_gran_formato.Equals(value) = false) Then
+				Me.Oncantidad_gran_formatoChanging(value)
+				Me.SendPropertyChanging
+				Me._cantidad_gran_formato = value
+				Me.SendPropertyChanged("cantidad_gran_formato")
+				Me.Oncantidad_gran_formatoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_tamaño_gran_formato", DbType:="VarChar(15)")>  _
+	Public Property tamaño_gran_formato() As String
+		Get
+			Return Me._tamaño_gran_formato
+		End Get
+		Set
+			If (String.Equals(Me._tamaño_gran_formato, value) = false) Then
+				Me.Ontamaño_gran_formatoChanging(value)
+				Me.SendPropertyChanging
+				Me._tamaño_gran_formato = value
+				Me.SendPropertyChanged("tamaño_gran_formato")
+				Me.Ontamaño_gran_formatoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sustrato_gran_formato", DbType:="VarChar(25)")>  _
+	Public Property sustrato_gran_formato() As String
+		Get
+			Return Me._sustrato_gran_formato
+		End Get
+		Set
+			If (String.Equals(Me._sustrato_gran_formato, value) = false) Then
+				Me.Onsustrato_gran_formatoChanging(value)
+				Me.SendPropertyChanging
+				Me._sustrato_gran_formato = value
+				Me.SendPropertyChanged("sustrato_gran_formato")
+				Me.Onsustrato_gran_formatoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_calidad_gran_formato", DbType:="VarChar(25)")>  _
+	Public Property calidad_gran_formato() As String
+		Get
+			Return Me._calidad_gran_formato
+		End Get
+		Set
+			If (String.Equals(Me._calidad_gran_formato, value) = false) Then
+				Me.Oncalidad_gran_formatoChanging(value)
+				Me.SendPropertyChanging
+				Me._calidad_gran_formato = value
+				Me.SendPropertyChanged("calidad_gran_formato")
+				Me.Oncalidad_gran_formatoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_sistema_gran_formato", DbType:="VarChar(25)")>  _
+	Public Property sistema_gran_formato() As String
+		Get
+			Return Me._sistema_gran_formato
+		End Get
+		Set
+			If (String.Equals(Me._sistema_gran_formato, value) = false) Then
+				Me.Onsistema_gran_formatoChanging(value)
+				Me.SendPropertyChanging
+				Me._sistema_gran_formato = value
+				Me.SendPropertyChanged("sistema_gran_formato")
+				Me.Onsistema_gran_formatoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_tipo_terminacion", DbType:="VarChar(120)")>  _
+	Public Property tipo_terminacion() As String
+		Get
+			Return Me._tipo_terminacion
+		End Get
+		Set
+			If (String.Equals(Me._tipo_terminacion, value) = false) Then
+				Me.Ontipo_terminacionChanging(value)
+				Me.SendPropertyChanging
+				Me._tipo_terminacion = value
+				Me.SendPropertyChanged("tipo_terminacion")
+				Me.Ontipo_terminacionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_descripcion_terminacion", DbType:="VarChar(350)")>  _
+	Public Property descripcion_terminacion() As String
+		Get
+			Return Me._descripcion_terminacion
+		End Get
+		Set
+			If (String.Equals(Me._descripcion_terminacion, value) = false) Then
+				Me.Ondescripcion_terminacionChanging(value)
+				Me.SendPropertyChanging
+				Me._descripcion_terminacion = value
+				Me.SendPropertyChanged("descripcion_terminacion")
+				Me.Ondescripcion_terminacionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="DETALLE_ORDEN_TRABAJO_PROCESO", Storage:="_PROCESO", ThisKey:="id_detalle_orden_trabajo", OtherKey:="id_detalle_orden_trabajo")>  _
+	Public Property PROCESO() As EntitySet(Of PROCESO)
+		Get
+			Return Me._PROCESO
+		End Get
+		Set
+			Me._PROCESO.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="DETALLE_ORDEN_TRABAJO_RE_TRABAJO", Storage:="_RE_TRABAJO", ThisKey:="id_detalle_orden_trabajo", OtherKey:="id_detalle_orden_trabajo")>  _
+	Public Property RE_TRABAJO() As EntitySet(Of RE_TRABAJO)
+		Get
+			Return Me._RE_TRABAJO
+		End Get
+		Set
+			Me._RE_TRABAJO.Assign(value)
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO", Storage:="_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo", IsForeignKey:=true, DeleteRule:="CASCADE")>  _
+	Public Property ORDEN_TRABAJO() As ORDEN_TRABAJO
+		Get
+			Return Me._ORDEN_TRABAJO.Entity
+		End Get
+		Set
+			Dim previousValue As ORDEN_TRABAJO = Me._ORDEN_TRABAJO.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._ORDEN_TRABAJO.Entity = Nothing
+					previousValue.DETALLE_ORDEN_TRABAJO.Remove(Me)
+				End If
+				Me._ORDEN_TRABAJO.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.DETALLE_ORDEN_TRABAJO.Add(Me)
+					Me._ORT_id_orden_trabajo = value.ORT_id_orden_trabajo
+				Else
+					Me._ORT_id_orden_trabajo = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("ORDEN_TRABAJO")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PIEZA_DETALLE_ORDEN_TRABAJO", Storage:="_PIEZA", ThisKey:="PIE_id_pieza", OtherKey:="PIE_id_pieza", IsForeignKey:=true)>  _
+	Public Property PIEZA() As PIEZA
+		Get
+			Return Me._PIEZA.Entity
+		End Get
+		Set
+			Dim previousValue As PIEZA = Me._PIEZA.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._PIEZA.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._PIEZA.Entity = Nothing
+					previousValue.DETALLE_ORDEN_TRABAJO.Remove(Me)
+				End If
+				Me._PIEZA.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.DETALLE_ORDEN_TRABAJO.Add(Me)
+					Me._PIE_id_pieza = value.PIE_id_pieza
+				Else
+					Me._PIE_id_pieza = CType(Nothing, Integer)
+				End If
+				Me.SendPropertyChanged("PIEZA")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_PROCESO(ByVal entity As PROCESO)
+		Me.SendPropertyChanging
+		entity.DETALLE_ORDEN_TRABAJO = Me
+	End Sub
+	
+	Private Sub detach_PROCESO(ByVal entity As PROCESO)
+		Me.SendPropertyChanging
+		entity.DETALLE_ORDEN_TRABAJO = Nothing
+	End Sub
+	
+	Private Sub attach_RE_TRABAJO(ByVal entity As RE_TRABAJO)
+		Me.SendPropertyChanging
+		entity.DETALLE_ORDEN_TRABAJO = Me
+	End Sub
+	
+	Private Sub detach_RE_TRABAJO(ByVal entity As RE_TRABAJO)
+		Me.SendPropertyChanging
+		entity.DETALLE_ORDEN_TRABAJO = Nothing
 	End Sub
 End Class

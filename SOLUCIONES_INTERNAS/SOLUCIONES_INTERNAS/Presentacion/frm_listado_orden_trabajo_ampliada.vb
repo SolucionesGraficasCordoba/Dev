@@ -199,8 +199,8 @@ Public Class frm_listado_orden_trabajo_ampliada
 
         dgvLista_Orden_Trabajo.Columns.Add("ORT_id_orden_trabajo", "TN")
         dgvLista_Orden_Trabajo.Columns.Add("ORT_tipo_ot", "Tipo")
-        dgvLista_Orden_Trabajo.Columns.Add("ORT_numero_ot", "Número")
-        dgvLista_Orden_Trabajo.Columns.Add("ORT_fecha_ot", "Fecha")
+        dgvLista_Orden_Trabajo.Columns.Add("ORT_numero_ot", "Número Orden")
+        dgvLista_Orden_Trabajo.Columns.Add("ORT_fecha_ot", "Fecha de Ingreso")
         dgvLista_Orden_Trabajo.Columns.Add("CLI_id_cliente", "id_cliente")
         dgvLista_Orden_Trabajo.Columns.Add("CLI_razon_social", "Razón Social")
         dgvLista_Orden_Trabajo.Columns.Add("VEN_id_vendedor", "id_vendedor")
@@ -212,7 +212,7 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgvLista_Orden_Trabajo.Columns(0).DataPropertyName = "ORT_id_orden_trabajo"
         dgvLista_Orden_Trabajo.Columns(0).Visible = False
         dgvLista_Orden_Trabajo.Columns(1).DataPropertyName = "ORT_tipo_ot"
-        '  dgvLista_Orden_Trabajo.Columns(1).Width = 50
+        dgvLista_Orden_Trabajo.Columns(1).Visible = False
         dgvLista_Orden_Trabajo.Columns(2).DataPropertyName = "ORT_numero_ot"
         dgvLista_Orden_Trabajo.Columns(3).DataPropertyName = "ORT_fecha_ot"
         dgvLista_Orden_Trabajo.Columns(4).DataPropertyName = "CLI_id_cliente"
@@ -430,8 +430,8 @@ Where ORT_id_orden_trabajo = vble_id_orden)
         frm_Actualizar_Producto_Orden_Ampliada.LimpiarOffset()
         frm_Actualizar_Producto_Orden_Ampliada.LimpiarProducto_Soportes()
         frm_Actualizar_Producto_Orden_Ampliada.LimpiarTerminacion()
-
-        'LLENA EL FORMULARIO CON LOS DATOS DEL GRID
+        Try
+            'LLENA EL FORMULARIO CON LOS DATOS DEL GRID
         If dgv_detalle_orden.SelectedRows.Count > 0 Then
             frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Text = dgv_detalle_orden.Item("ORT_id_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value 'id_orden_trabajo
             frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.Item("ORT_numero_ot", dgv_detalle_orden.SelectedRows(0).Index).Value 'numero orden
@@ -616,27 +616,29 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             'Try
             '    frm_Actualizar_Producto_Orden_Ampliada.cboPiezas_Producto.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.SelectedRows(0).Index).Value
             '    frm_Actualizar_Producto_Orden_Ampliada.cboPiezas_Producto_Gran_Formato.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
-            'Catch ex As Exception
-            'End Try
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub btnModificar_Orden_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificar_Orden.Click
-        If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
-            frm_Actualizar_Orden.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-            frm_Actualizar_Orden.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-            frm_Actualizar_Orden.dtpFecha_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-            frm_Actualizar_Orden.cboTipo_Orden.Text = dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+        Try
+            If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
+                frm_Actualizar_Orden.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Actualizar_Orden.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Actualizar_Orden.dtpFecha_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Actualizar_Orden.cboTipo_Orden.Text = dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
 
 
-            frm_Actualizar_Orden.dtpFecha_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Actualizar_Orden.dtpFecha_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
 
-            frm_Actualizar_Orden.txt_id_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_id_cliente", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-            frm_Actualizar_Orden.txt_nombre_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-            frm_Actualizar_Orden.txtid_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_id_vendedor", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-            frm_Actualizar_Orden.txtNombre_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-            frm_Actualizar_Orden.txt_observaciones.Text = dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-            frm_Actualizar_Orden.cboDireccion_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-        End If
+                frm_Actualizar_Orden.txt_id_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_id_cliente", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Actualizar_Orden.txt_nombre_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Actualizar_Orden.txtid_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_id_vendedor", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Actualizar_Orden.txtNombre_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Actualizar_Orden.txt_observaciones.Text = dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Actualizar_Orden.cboDireccion_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+            End If
         frm_Actualizar_Orden.txtNumero_Orden_Trabajo.Enabled = False
         frm_Actualizar_Orden.Label1.Visible = False
         frm_Actualizar_Orden.txt_id_orden_trabajo.Visible = False
@@ -647,227 +649,227 @@ Where ORT_id_orden_trabajo = vble_id_orden)
         frm_Actualizar_Orden.cboTipo_Orden.Visible = False
         frm_Actualizar_Orden.Label5.Visible = False
         frm_Actualizar_Orden.ShowDialog()
+         Catch ex As Exception
 
+        End Try
     End Sub
 
     Private Sub btnVer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVer.Click
 
         frm_Actualizar_Producto_Orden_Ampliada.Text = ".:. Ver Orden .:."
-        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarDigital()
-        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarGranFormato()
-        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarOffset()
-        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarProducto_Soportes()
-        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarTerminacion()
 
-        If dgv_detalle_orden.SelectedRows.Count > 0 Then
-            frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Text = dgv_detalle_orden.Item("ORT_id_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value 'id_orden_trabajo
-            frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.Item("ORT_numero_ot", dgv_detalle_orden.SelectedRows(0).Index).Value 'numero orden
+        Try
 
-            frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto.Text = dgv_detalle_orden.Item("DOT_cantidad_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
+            If dgv_detalle_orden.SelectedRows.Count > 0 Then
+                frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Text = dgv_detalle_orden.Item("ORT_id_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value 'id_orden_trabajo
+                frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.Item("ORT_numero_ot", dgv_detalle_orden.SelectedRows(0).Index).Value 'numero orden
 
-            frm_Actualizar_Producto_Orden_Ampliada.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txtTamaño_Producto.Text = dgv_detalle_orden.Item("DOT_tamaño_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_1_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_2_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_3_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_Gramaje_1_Soporte.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_Gramaje_2_Soporte.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_Gramaje_3_Soporte.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_Cantidad_1_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_Cantidad_2_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_Cantidad_3_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboFormato_1_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_formato_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboFormato_2_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_formato_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboFormato_3_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("cantidad_1_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_2_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("cantidad_2_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_3_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("cantidad_3_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboFormato_1_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("formato_1_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboFormato_2_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("formato_2_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboFormato_3_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("formato_3_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboModo_Impresion_Offset.Text = dgv_detalle_orden.Item("modo_impresion_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboTipo_Impresion_Offset.Text = dgv_detalle_orden.Item("tipo_impresion_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_chapa_soporte_1.Text = dgv_detalle_orden.Item("chapas_soporte1_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_chapa_soporte_2.Text = dgv_detalle_orden.Item("chapas_soporte2_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_chapa_soporte_3.Text = dgv_detalle_orden.Item("chapas_soporte3_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboImpresora_Offset.Text = dgv_detalle_orden.Item("impresora_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboMarca_Offset.Text = dgv_detalle_orden.Item("marca_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("cantidad_1_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_2_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("cantidad_2_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_3_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("cantidad_3_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboFormato_1_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("formato_1_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboFormato_2_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("formato_2_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboFormato_3_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("formato_3_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboTipo_Impresion_Digital.Text = dgv_detalle_orden.Item("tipo_impresion_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txtDato_Variable.Text = dgv_detalle_orden.Item("dato_variable", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto_Gran_Formato.Text = dgv_detalle_orden.Item("cantidad_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txtTamaño_Producto_Gran_Formato.Text = dgv_detalle_orden.Item("tamaño_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txtSustrato_Gran_Formato.Text = dgv_detalle_orden.Item("sustrato_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboCalidad_Gran_Formato.Text = dgv_detalle_orden.Item("calidad_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.cboSistema_Gran_Formato.Text = dgv_detalle_orden.Item("sistema_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
-            frm_Actualizar_Producto_Orden_Ampliada.txt_descripcion_terminacion.Text = dgv_detalle_orden.Item("descripcion_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto.Text = dgv_detalle_orden.Item("DOT_cantidad_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
+
+                frm_Actualizar_Producto_Orden_Ampliada.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txtTamaño_Producto.Text = dgv_detalle_orden.Item("DOT_tamaño_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_1_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_2_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_3_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_Gramaje_1_Soporte.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_Gramaje_2_Soporte.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_Gramaje_3_Soporte.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_Cantidad_1_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_Cantidad_2_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_Cantidad_3_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboFormato_1_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_formato_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboFormato_2_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_formato_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboFormato_3_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("cantidad_1_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_2_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("cantidad_2_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_3_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("cantidad_3_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboFormato_1_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("formato_1_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboFormato_2_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("formato_2_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboFormato_3_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("formato_3_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboModo_Impresion_Offset.Text = dgv_detalle_orden.Item("modo_impresion_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboTipo_Impresion_Offset.Text = dgv_detalle_orden.Item("tipo_impresion_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_chapa_soporte_1.Text = dgv_detalle_orden.Item("chapas_soporte1_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_chapa_soporte_2.Text = dgv_detalle_orden.Item("chapas_soporte2_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_chapa_soporte_3.Text = dgv_detalle_orden.Item("chapas_soporte3_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboImpresora_Offset.Text = dgv_detalle_orden.Item("impresora_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboMarca_Offset.Text = dgv_detalle_orden.Item("marca_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("cantidad_1_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_2_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("cantidad_2_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_3_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("cantidad_3_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboFormato_1_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("formato_1_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboFormato_2_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("formato_2_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboFormato_3_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("formato_3_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboTipo_Impresion_Digital.Text = dgv_detalle_orden.Item("tipo_impresion_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txtDato_Variable.Text = dgv_detalle_orden.Item("dato_variable", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto_Gran_Formato.Text = dgv_detalle_orden.Item("cantidad_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txtTamaño_Producto_Gran_Formato.Text = dgv_detalle_orden.Item("tamaño_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txtSustrato_Gran_Formato.Text = dgv_detalle_orden.Item("sustrato_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboCalidad_Gran_Formato.Text = dgv_detalle_orden.Item("calidad_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.cboSistema_Gran_Formato.Text = dgv_detalle_orden.Item("sistema_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Actualizar_Producto_Orden_Ampliada.txt_descripcion_terminacion.Text = dgv_detalle_orden.Item("descripcion_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value
 
 
-            Dim tempterminacion As String
-            tempterminacion = dgv_detalle_orden.Item("tipo_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value
+                Dim tempterminacion As String
+                tempterminacion = dgv_detalle_orden.Item("tipo_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value
 
-            If tempterminacion.Contains("T01") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkAdhesivado.Checked = True
-            End If
-            If tempterminacion.Contains("T02") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkArmadoRevistas.Checked = True
-            End If
-            If tempterminacion.Contains("T03") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkBarniz.Checked = True
-            End If
-            If tempterminacion.Contains("T04") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkCocido.Checked = True
-            End If
-            If tempterminacion.Contains("T05") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkCuño.Checked = True
-            End If
-            If tempterminacion.Contains("T06") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkDoblado.Checked = True
-            End If
-            If tempterminacion.Contains("T07") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkEncuadernacion.Checked = True
-            End If
-            If tempterminacion.Contains("T08") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkEstampado.Checked = True
-            End If
-            If tempterminacion.Contains("T09") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkFresado.Checked = True
-            End If
-            If tempterminacion.Contains("T10") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkGuillotinado.Checked = True
-            End If
-            If tempterminacion.Contains("T11") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkLaca_UV.Checked = True
-            End If
-            If tempterminacion.Contains("T12") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkLacaUVSectorizada.Checked = True
-            End If
-            If tempterminacion.Contains("T13") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkMedio_Corte.Checked = True
-            End If
-            If tempterminacion.Contains("T14") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkMontado.Checked = True
-            End If
-            If tempterminacion.Contains("T15") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkOPPBrillante.Checked = True
-            End If
-            If tempterminacion.Contains("T16") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkOPPMate.Checked = True
-            End If
-            If tempterminacion.Contains("T17") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkOtros.Checked = True
-            End If
-            If tempterminacion.Contains("T18") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkPegadoManual.Checked = True
-            End If
-            If tempterminacion.Contains("T19") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkPlastificado.Checked = True
+                If tempterminacion.Contains("T01") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkAdhesivado.Checked = True
+                End If
+                If tempterminacion.Contains("T02") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkArmadoRevistas.Checked = True
+                End If
+                If tempterminacion.Contains("T03") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkBarniz.Checked = True
+                End If
+                If tempterminacion.Contains("T04") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkCocido.Checked = True
+                End If
+                If tempterminacion.Contains("T05") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkCuño.Checked = True
+                End If
+                If tempterminacion.Contains("T06") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkDoblado.Checked = True
+                End If
+                If tempterminacion.Contains("T07") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkEncuadernacion.Checked = True
+                End If
+                If tempterminacion.Contains("T08") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkEstampado.Checked = True
+                End If
+                If tempterminacion.Contains("T09") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkFresado.Checked = True
+                End If
+                If tempterminacion.Contains("T10") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkGuillotinado.Checked = True
+                End If
+                If tempterminacion.Contains("T11") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkLaca_UV.Checked = True
+                End If
+                If tempterminacion.Contains("T12") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkLacaUVSectorizada.Checked = True
+                End If
+                If tempterminacion.Contains("T13") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkMedio_Corte.Checked = True
+                End If
+                If tempterminacion.Contains("T14") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkMontado.Checked = True
+                End If
+                If tempterminacion.Contains("T15") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkOPPBrillante.Checked = True
+                End If
+                If tempterminacion.Contains("T16") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkOPPMate.Checked = True
+                End If
+                If tempterminacion.Contains("T17") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkOtros.Checked = True
+                End If
+                If tempterminacion.Contains("T18") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkPegadoManual.Checked = True
+                End If
+                If tempterminacion.Contains("T19") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkPlastificado.Checked = True
+                End If
+
+                If tempterminacion.Contains("T20") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkPosicionado.Checked = True
+                End If
+                If tempterminacion.Contains("T21") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkRuedo.Checked = True
+                End If
+                If tempterminacion.Contains("T22") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkSoldado.Checked = True
+                End If
+                If tempterminacion.Contains("T23") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkStamping.Checked = True
+                End If
+                If tempterminacion.Contains("T24") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkTermosellado.Checked = True
+                End If
+                If tempterminacion.Contains("T25") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkTrazado.Checked = True
+                End If
+                If tempterminacion.Contains("T26") Then
+                    frm_Actualizar_Producto_Orden_Ampliada.chkTroquelado.Checked = True
+                End If
             End If
 
-            If tempterminacion.Contains("T20") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkPosicionado.Checked = True
-            End If
-            If tempterminacion.Contains("T21") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkRuedo.Checked = True
-            End If
-            If tempterminacion.Contains("T22") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkSoldado.Checked = True
-            End If
-            If tempterminacion.Contains("T23") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkStamping.Checked = True
-            End If
-            If tempterminacion.Contains("T24") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkTermosellado.Checked = True
-            End If
-            If tempterminacion.Contains("T25") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkTrazado.Checked = True
-            End If
-            If tempterminacion.Contains("T26") Then
-                frm_Actualizar_Producto_Orden_Ampliada.chkTroquelado.Checked = True
-            End If
-        End If
+            Dim flagsoporte As Integer = 0
 
-        Dim flagsoporte As Integer = 0
-
-        'CONTROLES OFFSET
-        If frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Offset.TextLength <> 0 Then
-            frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Checked = True
-            frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.groupOffset.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = False
-            flagsoporte = 1
-        Else
-            frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Checked = False
-            frm_Actualizar_Producto_Orden_Ampliada.groupOffset.Enabled = False
-            If flagsoporte = 0 Then
+            'CONTROLES OFFSET
+            If frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Offset.TextLength <> 0 Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Checked = True
+                frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.groupOffset.Enabled = False
                 frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = False
+                flagsoporte = 1
+            Else
+                frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Checked = False
+                frm_Actualizar_Producto_Orden_Ampliada.groupOffset.Enabled = False
+                If flagsoporte = 0 Then
+                    frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = False
+                End If
             End If
-        End If
-        'CONTROLES DIGITAL
-        If frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Digital.TextLength <> 0 Then
-            frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = True
-            frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Enabled = False
+            'CONTROLES DIGITAL
+            If frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Digital.TextLength <> 0 Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = True
+                frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Enabled = False
 
-            frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Enabled = False
 
-            frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = False
-            flagsoporte = 1
-        Else
-            frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = False
-            frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = False
-            If flagsoporte = 0 Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Enabled = False
                 frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = False
+                flagsoporte = 1
+            Else
+                frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = False
+                frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = False
+                If flagsoporte = 0 Then
+                    frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = False
+                End If
             End If
-        End If
-        'CONTROLES GRAN FORMATO
-        If frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto_Gran_Formato.TextLength <> 0 Then
-            frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = True
-            frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Enabled = False
+            'CONTROLES GRAN FORMATO
+            If frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto_Gran_Formato.TextLength <> 0 Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = True
+                frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Enabled = False
 
-            frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Enabled = False
-        Else
-            frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = False
-            frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = False
-        End If
-        'CONTROLES TERMINACION
-        If dgv_detalle_orden.Item("tipo_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value.ToString.Length <> 0 Then
-            frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = True
-            frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Enabled = False
-            frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Enabled = False
+            Else
+                frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = False
+                frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = False
+            End If
+            'CONTROLES TERMINACION
+            If dgv_detalle_orden.Item("tipo_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value.ToString.Length <> 0 Then
+                frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = True
+                frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.chkOffset.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Enabled = False
+                frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Enabled = False
 
-        Else
-            frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = False
-            frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = False
-        End If
+            Else
+                frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = False
+                frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = False
+            End If
 
-        frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Enabled = False
-        frm_Actualizar_Producto_Orden_Ampliada.Label1.Visible = False
-        frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Visible = False
-        frm_Actualizar_Producto_Orden_Ampliada.cboTipo_Orden.Visible = False
-        frm_Actualizar_Producto_Orden_Ampliada.Label5.Visible = False
-        frm_Actualizar_Producto_Orden_Ampliada.Label45.Visible = False
-        frm_Actualizar_Producto_Orden_Ampliada.txt_id_detalle_orden_trabajo1.Visible = False
-        frm_Actualizar_Producto_Orden_Ampliada.btnActualizar_Orden_Trabajo.Enabled = False
+            frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Enabled = False
+            frm_Actualizar_Producto_Orden_Ampliada.Label1.Visible = False
+            frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Visible = False
+            frm_Actualizar_Producto_Orden_Ampliada.cboTipo_Orden.Visible = False
+            frm_Actualizar_Producto_Orden_Ampliada.Label5.Visible = False
+            frm_Actualizar_Producto_Orden_Ampliada.Label45.Visible = False
+            frm_Actualizar_Producto_Orden_Ampliada.txt_id_detalle_orden_trabajo1.Visible = False
+            frm_Actualizar_Producto_Orden_Ampliada.btnActualizar_Orden_Trabajo.Enabled = False
 
-        frm_Actualizar_Producto_Orden_Ampliada.Show()
-
+            frm_Actualizar_Producto_Orden_Ampliada.Show()
+        Catch ex As Exception
+        End Try
     End Sub
 
 
@@ -920,17 +922,161 @@ Where ORT_id_orden_trabajo = vble_id_orden)
         Me.Dispose()
     End Sub
 
-    Private Sub dgv_detalle_orden_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellClick
-
-        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarDigital()
-        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarGranFormato()
-        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarOffset()
-        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarProducto_Soportes()
-        'frm_Actualizar_Producto_Orden_Ampliada.LimpiarTerminacion()
-    End Sub
-
     Private Sub frm_listado_orden_trabajo_ampliada_FormClosed(sender As System.Object, e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
+    End Sub
+
+    Private Sub btn_ODT_mostrar_listado_pdf_Click(sender As System.Object, e As System.EventArgs) Handles btn_ODT_mostrar_listado_pdf.Click
+        Try
+            'intentar generar el documento
+            Dim doc As New Document(PageSize.A4, 20, 20, 20, 20)
+
+            'path que guarda el reporte en el escritorio de windows (desktop)
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Orden_" _
+                                     + dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgv_detalle_orden.CurrentRow.Index).Value + "_" _
+                                     + dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                     + ".pdf"
+            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+            ' PARA LAS LINEAS DE FONDO
+            Dim writer As PdfWriter = PdfWriter.GetInstance(doc, file)
+            doc.Open()
+            Dim cb As PdfContentByte = writer.DirectContent
+            Dibujar_Lineas(cb, doc)
+            Escribir_Pdf(cb)
+
+            'Vbles formato
+            Dim medialinea As New Paragraph("                                       " _
+            & "--------------------------------------------------------------------------------------")
+
+            Dim linea As New Paragraph("---------------------------------------------------------------------" _
+                                      & "---------------------------------------------------------------------")
+            Dim orden As New Phrase("   " & dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                             & " " _
+                                             & dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                             & "                   " _
+                                            , New Font(fuente, 22, Font.Bold))
+            Dim ingreso_vendedor As New Paragraph("Fecha ingreso: " & dgvLista_Orden_Trabajo.SelectedRows(0).Cells("ORT_fecha_ot").Value _
+                                             & "  " _
+                                             & "                          " _
+                                             & "Vendedor: " & dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                             , New Font(fuente, 12, Font.Bold))
+            Dim cliente As New Paragraph("Cliente: " & dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                             , New Font(fuente, 12))
+
+            Dim entrega As New Paragraph("Entregar en: " & dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                             , New Font(fuente, 12))
+
+            Dim prod_desc As New Paragraph("Descripción: " _
+                                           & dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                           , New Font(fuente, 10, Font.Bold))
+
+            Dim encabezado As New Paragraph
+            encabezado.Add(orden)
+            'Encabezado
+            doc.Add(encabezado)
+            'Info
+            doc.Add(ingreso_vendedor)
+            doc.Add(cliente)
+            doc.Add(entrega)
+            'Descripción
+            doc.Add(prod_desc)
+            doc.Add(linea)
+            'Productos
+            For i = 0 To dgv_detalle_orden.RowCount - 1
+                dgv_detalle_orden.Rows(i).Selected = True
+                '  dgv_detalle_orden_CellClick(0, Nothing)
+                ' pdf_informe_diario_sin_tablas(doc, i)
+                doc.Add(linea)
+            Next
+            doc.Close()
+            writer.Close()
+            Process.Start(filename)
+
+            'Me.Close()
+        Catch ex As Exception
+            'si el mensaje es fallido mostrar msgbox
+            MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Sub Dibujar_Lineas(ByVal cb As PdfContentByte, ByVal doc As Document)
+        'LINEAS DE FONDO
+        'H1
+        cb.MoveTo(0, 800)
+        cb.LineTo(doc.PageSize.Width, 800)
+        cb.Stroke()
+        'H2
+        cb.MoveTo(0, 747)
+        cb.LineTo(doc.PageSize.Width, 747)
+        cb.Stroke()
+        'V1
+        cb.MoveTo(400, doc.PageSize.Height)
+        cb.LineTo(400, 800)
+        cb.Stroke()
+    End Sub
+
+    Sub Escribir_Pdf(ByVal cb As PdfContentByte)
+
+        'ESCRIBIR EN EL PDF
+        'PARA LA FUENTE
+        cb.SetFontAndSize(fuente, 16)
+        cb.BeginText()
+        Dim text As String = "Entrega: " & dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.CurrentRow.Index).Value
+
+        ' Set the alignment and coordinates here
+        cb.ShowTextAligned(1, text, 480, 820, 0)
+        cb.EndText()
+    End Sub
+
+    'Sub pdf_informe_diario_sin_tablas(ByVal doc As Document, ByVal fila_actual As Integer)
+    '    'Agregado de productos
+    '    Dim prod_tit As New Paragraph("ITEM " & (fila_actual + 1))
+    '    Dim prod_det As New Paragraph(dgv_detalle_orden.Item("DOT_cantidad_dot", dgv_detalle_orden.Rows(fila_actual).Index).Value _
+    '                                  & "  " _
+    '                                  & dgv_detalle_orden.Item("PIE_nombre_pie", dgv_detalle_orden.Rows(fila_actual).Index).Value _
+    '                                  & "   " _
+    '                                  & dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.Rows(fila_actual).Index).Value _
+    '                                  & "   " _
+    '                                  & dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.Rows(fila_actual).Index).Value _
+    '                                  , New Font(fuente, 16, Font.Bold))
+
+    '    doc.Add(prod_tit)
+    '    doc.Add(prod_det)
+
+    '    'Agregado de soportes
+    '    Dim soporte As New Paragraph
+    '    Dim temp_cadena_cant, temp_cadena_papel, temp_cadena_gram, temp_cadena_formato As String
+    '    For j = 0 To 2 'dgv_detalle_orden.RowCount
+    '        temp_cadena_cant = "DOT_cantidad_soporte_" & j + 1
+    '        temp_cadena_papel = "DOT_papel_soporte_" & j + 1
+    '        temp_cadena_gram = "DOT_gramaje_soporte_" & j + 1
+    '        temp_cadena_formato = "DOT_formato_soporte_" & j + 1
+    '        If Len(dgv_detalle_orden.Item(temp_cadena_cant, dgv_detalle_orden.Rows(fila_actual).Index).Value) <> 0 Then
+    '            soporte = New Paragraph("           Soporte " & j + 1 & " : " _
+    '                                     & dgv_detalle_orden.Item(temp_cadena_cant, dgv_detalle_orden.Rows(fila_actual).Index).Value & "   " _
+    '                                     & dgv_detalle_orden.Item(temp_cadena_formato, dgv_detalle_orden.Rows(fila_actual).Index).Value & " " _
+    '                                     & dgv_detalle_orden.Item(temp_cadena_papel, dgv_detalle_orden.Rows(fila_actual).Index).Value & "   " _
+    '                                     & dgv_detalle_orden.Item(temp_cadena_gram, dgv_detalle_orden.Rows(fila_actual).Index).Value & "    " _
+    '                                     , New Font(fuente, 8))
+    '        Else
+    '            soporte = New Paragraph("")
+    '        End If
+    '        doc.Add(soporte)
+    '    Next
+    '    Dim pro_offset As New Paragraph("  Offset: " & dgvProcesos.Item("PROC_descrip_offset", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
+    '    Dim pro_digital As New Paragraph("  Digital: " & dgvProcesos.Item("PROC_descrip_digital", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
+    '    Dim pro_g_form As New Paragraph("  Gran formato: " & dgvProcesos.Item("PROC_descrip_gran_formato", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
+    '    Dim pro_term As New Paragraph("  Terminación: " & dgvProcesos.Item("PROC_descrip_terminacion", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
+    '    Dim pro_logi As New Paragraph("  Logística: " & dgvProcesos.Item("PROC_descrip_logistica", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
+
+    '    doc.Add(pro_offset)
+    '    doc.Add(pro_digital)
+    '    doc.Add(pro_g_form)
+    '    doc.Add(pro_term)
+    '    doc.Add(pro_logi)
+    'End Sub
+    Private Sub btnAgregarProducto_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarProducto.Click
+        frm_Orden_Trabajo_Ampliada.Show()
     End Sub
 End Class
 

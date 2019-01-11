@@ -31,7 +31,7 @@ Public Class frm_Listado_Tareas
             cbo_sector.DisplayMember = "SEC_nombre_sector"
             cbo_sector.ValueMember = "SEC_id_sector"
 
-            Btn_informe_diario.Visible = True
+            ' Btn_informe_diario.Visible = True
             Btn_informe_diario.Focus()
         Else
             Dim combosector = (From sec In datacontext.SECTOR
@@ -47,7 +47,7 @@ Public Class frm_Listado_Tareas
             cbo_sector.DisplayMember = "SEC_nombre_sector"
             cbo_sector.ValueMember = "SEC_id_sector"
 
-            Btn_informe_diario.Visible = False
+            ' Btn_informe_diario.Visible = False
         End If
         dgvColaboradores.ClearSelection()
 

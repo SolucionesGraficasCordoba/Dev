@@ -321,7 +321,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(920, 16)
         Me.txt_id_orden_trabajo.Name = "txt_id_orden_trabajo"
-        Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(75, 20)
+        Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(61, 20)
         Me.txt_id_orden_trabajo.TabIndex = 77
         '
         'txt_id_cliente
@@ -1011,6 +1011,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboCalidad_Gran_Formato.FormattingEnabled = True
         Me.cboCalidad_Gran_Formato.Items.AddRange(New Object() {"CARTELERIA", "ALTA", "PREMIUM"})
         Me.cboCalidad_Gran_Formato.Location = New System.Drawing.Point(643, 36)
+        Me.cboCalidad_Gran_Formato.MaxLength = 25
         Me.cboCalidad_Gran_Formato.Name = "cboCalidad_Gran_Formato"
         Me.cboCalidad_Gran_Formato.Size = New System.Drawing.Size(123, 21)
         Me.cboCalidad_Gran_Formato.TabIndex = 135
@@ -1054,7 +1055,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'txtTamaño_Producto_Gran_Formato
         '
         Me.txtTamaño_Producto_Gran_Formato.Location = New System.Drawing.Point(220, 36)
-        Me.txtTamaño_Producto_Gran_Formato.MaxLength = 50
+        Me.txtTamaño_Producto_Gran_Formato.MaxLength = 15
         Me.txtTamaño_Producto_Gran_Formato.Name = "txtTamaño_Producto_Gran_Formato"
         Me.txtTamaño_Producto_Gran_Formato.Size = New System.Drawing.Size(123, 20)
         Me.txtTamaño_Producto_Gran_Formato.TabIndex = 134
@@ -1073,6 +1074,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboSistema_Gran_Formato.FormattingEnabled = True
         Me.cboSistema_Gran_Formato.Items.AddRange(New Object() {"SOLVENTE", "LATEX", "UV"})
         Me.cboSistema_Gran_Formato.Location = New System.Drawing.Point(831, 36)
+        Me.cboSistema_Gran_Formato.MaxLength = 25
         Me.cboSistema_Gran_Formato.Name = "cboSistema_Gran_Formato"
         Me.cboSistema_Gran_Formato.Size = New System.Drawing.Size(111, 21)
         Me.cboSistema_Gran_Formato.TabIndex = 143
@@ -1098,7 +1100,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'txtSustrato_Gran_Formato
         '
         Me.txtSustrato_Gran_Formato.Location = New System.Drawing.Point(402, 36)
-        Me.txtSustrato_Gran_Formato.MaxLength = 50
+        Me.txtSustrato_Gran_Formato.MaxLength = 25
         Me.txtSustrato_Gran_Formato.Name = "txtSustrato_Gran_Formato"
         Me.txtSustrato_Gran_Formato.Size = New System.Drawing.Size(178, 20)
         Me.txtSustrato_Gran_Formato.TabIndex = 145
