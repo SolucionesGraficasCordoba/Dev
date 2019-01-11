@@ -1076,6 +1076,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     '    doc.Add(pro_logi)
     'End Sub
     Private Sub btnAgregarProducto_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarProducto.Click
+        ' frm_Orden_Trabajo_Ampliada.quienllamoordenampliada = Me
         Try
             If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
                 frm_Orden_Trabajo_Ampliada.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
@@ -1090,6 +1091,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 frm_Orden_Trabajo_Ampliada.txt_observaciones.Text = dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
                 frm_Orden_Trabajo_Ampliada.cboDireccion_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             End If
+            frm_Orden_Trabajo_Ampliada.Text = ".:. Agregar Producto .:."
             'DESHABILITA EL ENCABEZADO DE LA ORDEN
             frm_Orden_Trabajo_Ampliada.GroupBox4.Enabled = False
             'OCULTA LABELS E ID 

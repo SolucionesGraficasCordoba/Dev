@@ -2515,7 +2515,6 @@
             txt_detalle_tarea3.Focus()
             Exit Sub
         End If
-
         '------------------------------------------------------------------------------------------------
 
         'VALIDA QUE EL NUMERO DE ORDEN DE LA CUARTA TAREA NO ESTE VACIO
@@ -2531,7 +2530,6 @@
             txt_detalle_tarea4.Focus()
             Exit Sub
         End If
-
         '----------------------------------------------------------------------------------------------
 
         'VALIDA QUE EL NUMERO DE ORDEN DE LA QUINTA TAREA NO ESTE VACIO
@@ -2577,7 +2575,6 @@
             txt_detalle_tarea7.Focus()
             Exit Sub
         End If
-
         '---------------------------------------------------------------------------------------------
 
         'VALIDA QUE EL NUMERO DE ORDEN DE LA OCTAVA TAREA NO ESTE VACIO
@@ -2784,7 +2781,6 @@
             ActualizarTarea1.TAR_salida = StrConv(txtSalida.Text, VbStrConv.ProperCase)
 
             If txt_detalle_tarea1.Text.Length <> 0 Or txtNumero_Orden_Trabajo1.Text.Length <> 0 Then
-
                 ActualizarTarea1.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado1.Text, VbStrConv.ProperCase)
                 ActualizarTarea1.TAR_tiempo_real = StrConv(txtTiempo_Real1.Text, VbStrConv.ProperCase)
                 ActualizarTarea1.ORT_id_orden_trabajo = txt_id_orden_trabajo1.Text
@@ -2792,12 +2788,9 @@
                 ActualizarTarea1.TAR_detalle_tarea = StrConv(txt_detalle_tarea1.Text, VbStrConv.ProperCase)
                 ActualizarTarea1.TAR_observaciones = StrConv(txtObservaciones1.Text, VbStrConv.ProperCase)
                 datacontext.SubmitChanges()
-
             End If
 
-
             If txt_detalle_tarea2.Text.Length <> 0 Or txtNumero_Orden_Trabajo2.Text.Length <> 0 Then
-
                 Dim ActualizarTarea2 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea2.Text.ToUpper)).ToList()(0)
                 ActualizarTarea2.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado2.Text, VbStrConv.ProperCase)
                 ActualizarTarea2.TAR_tiempo_real = StrConv(txtTiempo_Real2.Text, VbStrConv.ProperCase)
@@ -2807,8 +2800,6 @@
                 ActualizarTarea2.TAR_observaciones = StrConv(txtObservaciones2.Text, VbStrConv.ProperCase)
                 datacontext.SubmitChanges()
             End If
-
-
 
             If txt_detalle_tarea3.Text.Length <> 0 Or txtNumero_Orden_Trabajo3.Text.Length <> 0 Then
                 Dim ActualizarTarea3 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea3.Text.ToUpper)).ToList()(0)
@@ -2821,7 +2812,6 @@
                 datacontext.SubmitChanges()
             End If
 
-
             If txt_detalle_tarea4.Text.Length <> 0 Or txtNumero_Orden_Trabajo4.Text.Length <> 0 Then
                 Dim ActualizarTarea4 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea4.Text.ToUpper)).ToList()(0)
                 ActualizarTarea4.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado4.Text, VbStrConv.ProperCase)
@@ -2832,7 +2822,6 @@
                 ActualizarTarea4.TAR_observaciones = StrConv(txtObservaciones4.Text, VbStrConv.ProperCase)
                 datacontext.SubmitChanges()
             End If
-
 
             If txt_detalle_tarea5.Text.Length <> 0 Or txtNumero_Orden_Trabajo5.Text.Length <> 0 Then
                 Dim ActualizarTarea5 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea5.Text.ToUpper)).ToList()(0)
@@ -2845,7 +2834,6 @@
                 datacontext.SubmitChanges()
             End If
 
-
             If txt_detalle_tarea6.Text.Length <> 0 Or txtNumero_Orden_Trabajo6.Text.Length <> 0 Then
                 Dim ActualizarTarea6 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea6.Text.ToUpper)).ToList()(0)
                 ActualizarTarea6.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado6.Text, VbStrConv.ProperCase)
@@ -2856,7 +2844,6 @@
                 ActualizarTarea6.TAR_observaciones = StrConv(txtObservaciones6.Text, VbStrConv.ProperCase)
                 datacontext.SubmitChanges()
             End If
-
 
             If txt_detalle_tarea7.Text.Length <> 0 Or txtNumero_Orden_Trabajo7.Text.Length <> 0 Then
                 Dim ActualizarTarea7 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea7.Text.ToUpper)).ToList()(0)
@@ -2869,7 +2856,6 @@
                 datacontext.SubmitChanges()
             End If
 
-
             If txt_detalle_tarea8.Text.Length <> 0 Or txtNumero_Orden_Trabajo8.Text.Length <> 0 Then
                 Dim ActualizarTarea8 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea8.Text.ToUpper)).ToList()(0)
                 ActualizarTarea8.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado8.Text, VbStrConv.ProperCase)
@@ -2880,7 +2866,6 @@
                 ActualizarTarea8.TAR_observaciones = StrConv(txtObservaciones8.Text, VbStrConv.ProperCase)
                 datacontext.SubmitChanges()
             End If
-
 
             If txt_detalle_tarea9.Text.Length <> 0 Or txtNumero_Orden_Trabajo9.Text.Length <> 0 Then
                 Dim ActualizarTarea9 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea9.Text.ToUpper)).ToList()(0)
@@ -2893,7 +2878,6 @@
                 datacontext.SubmitChanges()
             End If
 
-
             If txt_detalle_tarea10.Text.Length <> 0 Or txtNumero_Orden_Trabajo10.Text.Length <> 0 Then
                 Dim ActualizarTarea10 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea10.Text.ToUpper)).ToList()(0)
                 ActualizarTarea10.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado10.Text, VbStrConv.ProperCase)
@@ -2904,7 +2888,6 @@
                 ActualizarTarea10.TAR_observaciones = StrConv(txtObservaciones10.Text, VbStrConv.ProperCase)
                 datacontext.SubmitChanges()
             End If
-
 
             If txt_detalle_tarea11.Text.Length <> 0 Or txtNumero_Orden_Trabajo11.Text.Length <> 0 Then
                 Dim ActualizarTarea11 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea11.Text.ToUpper)).ToList()(0)
@@ -2917,7 +2900,6 @@
                 datacontext.SubmitChanges()
             End If
 
-
             If txt_detalle_tarea12.Text.Length <> 0 Or txtNumero_Orden_Trabajo12.Text.Length <> 0 Then
                 Dim ActualizarTarea12 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea12.Text.ToUpper)).ToList()(0)
                 ActualizarTarea12.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado12.Text, VbStrConv.ProperCase)
@@ -2928,7 +2910,6 @@
                 ActualizarTarea12.TAR_observaciones = StrConv(txtObservaciones12.Text, VbStrConv.ProperCase)
                 datacontext.SubmitChanges()
             End If
-
 
             If txt_detalle_tarea13.Text.Length <> 0 Or txtNumero_Orden_Trabajo13.Text.Length <> 0 Then
                 Dim ActualizarTarea13 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea13.Text.ToUpper)).ToList()(0)
@@ -2941,7 +2922,6 @@
                 datacontext.SubmitChanges()
             End If
 
-
             If txt_detalle_tarea14.Text.Length <> 0 Or txtNumero_Orden_Trabajo14.Text.Length <> 0 Then
                 Dim ActualizarTarea14 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea14.Text.ToUpper)).ToList()(0)
                 ActualizarTarea14.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado14.Text, VbStrConv.ProperCase)
@@ -2952,7 +2932,6 @@
                 ActualizarTarea14.TAR_observaciones = StrConv(txtObservaciones14.Text, VbStrConv.ProperCase)
                 datacontext.SubmitChanges()
             End If
-
 
             If txt_detalle_tarea15.Text.Length <> 0 Or txtNumero_Orden_Trabajo15.Text.Length <> 0 Then
                 Dim ActualizarTarea15 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea15.Text.ToUpper)).ToList()(0)
@@ -2965,7 +2944,6 @@
                 datacontext.SubmitChanges()
             End If
 
-
             If txt_detalle_tarea16.Text.Length <> 0 Or txtNumero_Orden_Trabajo16.Text.Length <> 0 Then
                 Dim ActualizarTarea16 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea16.Text.ToUpper)).ToList()(0)
                 ActualizarTarea16.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado16.Text, VbStrConv.ProperCase)
@@ -2976,7 +2954,6 @@
                 ActualizarTarea16.TAR_observaciones = StrConv(txtObservaciones16.Text, VbStrConv.ProperCase)
                 datacontext.SubmitChanges()
             End If
-
 
             If txt_detalle_tarea17.Text.Length <> 0 Or txtNumero_Orden_Trabajo17.Text.Length <> 0 Then
                 Dim ActualizarTarea17 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea17.Text.ToUpper)).ToList()(0)
@@ -2989,7 +2966,6 @@
                 datacontext.SubmitChanges()
             End If
 
-
             If txt_detalle_tarea18.Text.Length <> 0 Or txtNumero_Orden_Trabajo18.Text.Length <> 0 Then
                 Dim ActualizarTarea18 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea18.Text.ToUpper)).ToList()(0)
                 ActualizarTarea18.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado18.Text, VbStrConv.ProperCase)
@@ -3001,7 +2977,6 @@
                 datacontext.SubmitChanges()
             End If
 
-
             If txt_detalle_tarea19.Text.Length <> 0 Or txtNumero_Orden_Trabajo19.Text.Length <> 0 Then
                 Dim ActualizarTarea19 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea19.Text.ToUpper)).ToList()(0)
                 ActualizarTarea19.TAR_tiempo_estimado = StrConv(txtTiempo_Estimado19.Text, VbStrConv.ProperCase)
@@ -3012,7 +2987,6 @@
                 ActualizarTarea19.TAR_observaciones = StrConv(txtObservaciones19.Text, VbStrConv.ProperCase)
                 datacontext.SubmitChanges()
             End If
-
 
             If txt_detalle_tarea20.Text.Length <> 0 Or txtNumero_Orden_Trabajo20.Text.Length <> 0 Then
                 Dim ActualizarTarea20 = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea20.Text.ToUpper)).ToList()(0)
@@ -3091,8 +3065,6 @@
 
         End Select
     End Sub
-
-
 
     Private Sub txtTiempo_Real1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real1.TextChanged
         Calcular()
