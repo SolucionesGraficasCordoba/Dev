@@ -7,7 +7,6 @@ Public Class frm_listado_orden_trabajo_ampliada
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
     Public quienllamolistado_ot As Form
-    Public quienllamoboton As Button
 
     Public vble_id_orden As Integer
     Public vble_id_detalle As Integer
@@ -657,15 +656,12 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     Private Sub btnVer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVer.Click
 
         frm_Actualizar_Producto_Orden_Ampliada.Text = ".:. Ver Orden .:."
-
         Try
 
             If dgv_detalle_orden.SelectedRows.Count > 0 Then
                 frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Text = dgv_detalle_orden.Item("ORT_id_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value 'id_orden_trabajo
                 frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.Item("ORT_numero_ot", dgv_detalle_orden.SelectedRows(0).Index).Value 'numero orden
-
                 frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto.Text = dgv_detalle_orden.Item("DOT_cantidad_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
-
                 frm_Actualizar_Producto_Orden_Ampliada.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
                 frm_Actualizar_Producto_Orden_Ampliada.txtTamaño_Producto.Text = dgv_detalle_orden.Item("DOT_tamaño_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
                 frm_Actualizar_Producto_Orden_Ampliada.txt_Papel_1_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
@@ -872,7 +868,6 @@ Where ORT_id_orden_trabajo = vble_id_orden)
         End Try
     End Sub
 
-
     Private Sub rbtNroOrden_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbtNroOrden.CheckedChanged
         If rbtNroOrden.Checked = True Then
             txt_Buscar_Cliente.Enabled = False
@@ -1076,7 +1071,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     '    doc.Add(pro_logi)
     'End Sub
     Private Sub btnAgregarProducto_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarProducto.Click
-        ' frm_Orden_Trabajo_Ampliada.quienllamoordenampliada = Me
+
         Try
             If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
                 frm_Orden_Trabajo_Ampliada.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
@@ -1102,12 +1097,18 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             frm_Orden_Trabajo_Ampliada.Label45.Visible = False
             frm_Orden_Trabajo_Ampliada.txt_id_cliente.Visible = False
             frm_Orden_Trabajo_Ampliada.txtid_vendedor.Visible = False
+
+            frm_Orden_Trabajo_Ampliada.GroupProducto_Soportes.Enabled = False
+            frm_Orden_Trabajo_Ampliada.GroupDigital.Enabled = False
+            frm_Orden_Trabajo_Ampliada.GroupGranFormato.Enabled = False
+            frm_Orden_Trabajo_Ampliada.groupOffset.Enabled = False
+            frm_Orden_Trabajo_Ampliada.GroupTerminacion.Enabled = False
+            frm_Orden_Trabajo_Ampliada.Label8.Visible = False
+            frm_Orden_Trabajo_Ampliada.cboTipo_Orden.Visible = False
             frm_Orden_Trabajo_Ampliada.Show()
-
-
-
         Catch ex As Exception
         End Try
+
     End Sub
 End Class
 

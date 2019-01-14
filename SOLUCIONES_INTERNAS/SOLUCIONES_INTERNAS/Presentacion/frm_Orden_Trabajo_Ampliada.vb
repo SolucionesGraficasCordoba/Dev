@@ -6,6 +6,7 @@
     Dim cargamasprod As String = "NO"
 
     Private Sub frm_Orden_Trabajo_Ampliada_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
         If quienllamo_listado_orden_ampliada.Name <> frm_listado_orden_trabajo_ampliada.Name Then
             'CARGA COMBOBOX PIEZA PRODUCTO
             Dim combopieza1 = (From sec In datacontext.PIEZA
@@ -26,10 +27,12 @@
             cboPiezas_Producto_Gran_Formato.DisplayMember = "PIE_nombre_pie"
             cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza"
             cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
+
         Else
             cboPiezas_Producto.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Rows(0).Index).Value
             cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Rows(0).Index).Value
         End If
+
     End Sub
 
     Private Sub btnBuscar_cliente_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_cliente.Click

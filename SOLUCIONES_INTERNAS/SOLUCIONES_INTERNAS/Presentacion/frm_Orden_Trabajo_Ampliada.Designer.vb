@@ -255,7 +255,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.Label46.AutoSize = True
         Me.Label46.ForeColor = System.Drawing.Color.Red
-        Me.Label46.Location = New System.Drawing.Point(95, 40)
+        Me.Label46.Location = New System.Drawing.Point(81, 43)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(11, 13)
         Me.Label46.TabIndex = 90
@@ -264,22 +264,22 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'txtNumero_Orden_Trabajo
         '
         Me.txtNumero_Orden_Trabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(108, 19)
+        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(94, 22)
         Me.txtNumero_Orden_Trabajo.MaxLength = 10
         Me.txtNumero_Orden_Trabajo.Multiline = True
         Me.txtNumero_Orden_Trabajo.Name = "txtNumero_Orden_Trabajo"
-        Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(101, 41)
+        Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(116, 41)
         Me.txtNumero_Orden_Trabajo.TabIndex = 68
         Me.txtNumero_Orden_Trabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(20, 37)
+        Me.Label6.Location = New System.Drawing.Point(28, 34)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(76, 13)
+        Me.Label6.Size = New System.Drawing.Size(47, 26)
         Me.Label6.TabIndex = 89
-        Me.Label6.Text = "Número Orden"
+        Me.Label6.Text = "Número " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  Orden"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'txt_nombre_cliente
@@ -326,7 +326,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'txt_id_cliente
         '
-        Me.txt_id_cliente.Location = New System.Drawing.Point(27, 106)
+        Me.txt_id_cliente.Location = New System.Drawing.Point(22, 104)
         Me.txt_id_cliente.Name = "txt_id_cliente"
         Me.txt_id_cliente.Size = New System.Drawing.Size(10, 20)
         Me.txt_id_cliente.TabIndex = 74
@@ -373,7 +373,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.dtpFecha_Ingreso_ODT.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtpFecha_Ingreso_ODT.Location = New System.Drawing.Point(309, 34)
         Me.dtpFecha_Ingreso_ODT.Name = "dtpFecha_Ingreso_ODT"
-        Me.dtpFecha_Ingreso_ODT.Size = New System.Drawing.Size(119, 20)
+        Me.dtpFecha_Ingreso_ODT.Size = New System.Drawing.Size(125, 20)
         Me.dtpFecha_Ingreso_ODT.TabIndex = 79
         '
         'Label4
@@ -589,7 +589,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_3_Pliego_Entero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_3_Pliego_Entero.FormattingEnabled = True
-        Me.cboFormato_3_Pliego_Entero.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
+        Me.cboFormato_3_Pliego_Entero.Items.AddRange(New Object() {"", "630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato_3_Pliego_Entero.Location = New System.Drawing.Point(84, 91)
         Me.cboFormato_3_Pliego_Entero.Name = "cboFormato_3_Pliego_Entero"
         Me.cboFormato_3_Pliego_Entero.Size = New System.Drawing.Size(134, 21)
@@ -641,7 +641,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_1_Pliego_Entero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_1_Pliego_Entero.FormattingEnabled = True
-        Me.cboFormato_1_Pliego_Entero.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
+        Me.cboFormato_1_Pliego_Entero.Items.AddRange(New Object() {"", "630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato_1_Pliego_Entero.Location = New System.Drawing.Point(84, 40)
         Me.cboFormato_1_Pliego_Entero.Name = "cboFormato_1_Pliego_Entero"
         Me.cboFormato_1_Pliego_Entero.Size = New System.Drawing.Size(134, 21)
@@ -651,7 +651,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_2_Pliego_Entero.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_2_Pliego_Entero.FormattingEnabled = True
-        Me.cboFormato_2_Pliego_Entero.Items.AddRange(New Object() {"630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
+        Me.cboFormato_2_Pliego_Entero.Items.AddRange(New Object() {"", "630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato_2_Pliego_Entero.Location = New System.Drawing.Point(84, 66)
         Me.cboFormato_2_Pliego_Entero.Name = "cboFormato_2_Pliego_Entero"
         Me.cboFormato_2_Pliego_Entero.Size = New System.Drawing.Size(134, 21)
@@ -842,7 +842,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.GroupDigital.Controls.Add(Me.Label23)
         Me.GroupDigital.Location = New System.Drawing.Point(975, 210)
         Me.GroupDigital.Name = "GroupDigital"
-        Me.GroupDigital.Size = New System.Drawing.Size(256, 440)
+        Me.GroupDigital.Size = New System.Drawing.Size(256, 485)
         Me.GroupDigital.TabIndex = 131
         Me.GroupDigital.TabStop = False
         Me.GroupDigital.Text = "Digital"
@@ -851,7 +851,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboTipo_Impresion_Digital.FormattingEnabled = True
         Me.cboTipo_Impresion_Digital.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
-        Me.cboTipo_Impresion_Digital.Location = New System.Drawing.Point(118, 61)
+        Me.cboTipo_Impresion_Digital.Location = New System.Drawing.Point(118, 45)
         Me.cboTipo_Impresion_Digital.Name = "cboTipo_Impresion_Digital"
         Me.cboTipo_Impresion_Digital.Size = New System.Drawing.Size(85, 21)
         Me.cboTipo_Impresion_Digital.TabIndex = 136
@@ -877,7 +877,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_3_Pliego_Maquina_Digital.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_3_Pliego_Maquina_Digital.FormattingEnabled = True
-        Me.cboFormato_3_Pliego_Maquina_Digital.Items.AddRange(New Object() {"473 x 323", "480 x 323", "440 x 315", "400 x 295", "420 x 297", "356 x 215", "323 x 235", "340 x 220", "650 x 313", "630 x 220", "500 x 323", "700 x 330", "297 x 210", "360 x 255"})
+        Me.cboFormato_3_Pliego_Maquina_Digital.Items.AddRange(New Object() {"", "473 x 323", "480 x 323", "440 x 315", "400 x 295", "420 x 297", "356 x 215", "323 x 235", "340 x 220", "650 x 313", "630 x 220", "500 x 323", "700 x 330", "297 x 210", "360 x 255"})
         Me.cboFormato_3_Pliego_Maquina_Digital.Location = New System.Drawing.Point(82, 94)
         Me.cboFormato_3_Pliego_Maquina_Digital.Name = "cboFormato_3_Pliego_Maquina_Digital"
         Me.cboFormato_3_Pliego_Maquina_Digital.Size = New System.Drawing.Size(138, 21)
@@ -904,7 +904,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_2_Pliego_Maquina_Digital.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_2_Pliego_Maquina_Digital.FormattingEnabled = True
-        Me.cboFormato_2_Pliego_Maquina_Digital.Items.AddRange(New Object() {"473 x 323", "480 x 323", "440 x 315", "400 x 295", "420 x 297", "356 x 215", "323 x 235", "340 x 220", "650 x 313", "630 x 220", "500 x 323", "700 x 330", "297 x 210", "360 x 255"})
+        Me.cboFormato_2_Pliego_Maquina_Digital.Items.AddRange(New Object() {"", "473 x 323", "480 x 323", "440 x 315", "400 x 295", "420 x 297", "356 x 215", "323 x 235", "340 x 220", "650 x 313", "630 x 220", "500 x 323", "700 x 330", "297 x 210", "360 x 255"})
         Me.cboFormato_2_Pliego_Maquina_Digital.Location = New System.Drawing.Point(82, 69)
         Me.cboFormato_2_Pliego_Maquina_Digital.Name = "cboFormato_2_Pliego_Maquina_Digital"
         Me.cboFormato_2_Pliego_Maquina_Digital.Size = New System.Drawing.Size(138, 21)
@@ -931,7 +931,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_1_Pliego_Maquina_Digital.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_1_Pliego_Maquina_Digital.FormattingEnabled = True
-        Me.cboFormato_1_Pliego_Maquina_Digital.Items.AddRange(New Object() {"473 x 323", "480 x 323", "440 x 315", "400 x 295", "420 x 297", "356 x 215", "323 x 235", "340 x 220", "650 x 313", "630 x 220", "500 x 323", "700 x 330", "297 x 210", "360 x 255", "650 x 235", "480 x 330", "457 x 350"})
+        Me.cboFormato_1_Pliego_Maquina_Digital.Items.AddRange(New Object() {"", "473 x 323", "480 x 323", "440 x 315", "400 x 295", "420 x 297", "356 x 215", "323 x 235", "340 x 220", "650 x 313", "630 x 220", "500 x 323", "700 x 330", "297 x 210", "360 x 255", "650 x 235", "480 x 330", "457 x 350"})
         Me.cboFormato_1_Pliego_Maquina_Digital.Location = New System.Drawing.Point(82, 43)
         Me.cboFormato_1_Pliego_Maquina_Digital.Name = "cboFormato_1_Pliego_Maquina_Digital"
         Me.cboFormato_1_Pliego_Maquina_Digital.Size = New System.Drawing.Size(138, 21)
@@ -948,7 +948,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(36, 64)
+        Me.Label34.Location = New System.Drawing.Point(36, 48)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(76, 13)
         Me.Label34.TabIndex = 137
@@ -962,7 +962,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txtDato_Variable.Multiline = True
         Me.txtDato_Variable.Name = "txtDato_Variable"
         Me.txtDato_Variable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtDato_Variable.Size = New System.Drawing.Size(241, 174)
+        Me.txtDato_Variable.Size = New System.Drawing.Size(241, 217)
         Me.txtDato_Variable.TabIndex = 130
         Me.txtDato_Variable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -1520,7 +1520,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_3_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_3_Pliego_Maquina_Offset.FormattingEnabled = True
-        Me.cboFormato_3_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
+        Me.cboFormato_3_Pliego_Maquina_Offset.Items.AddRange(New Object() {"", "650 x 470", "650 x 315", "630 x 440", "610 x 430", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
         Me.cboFormato_3_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 94)
         Me.cboFormato_3_Pliego_Maquina_Offset.Name = "cboFormato_3_Pliego_Maquina_Offset"
         Me.cboFormato_3_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
@@ -1547,7 +1547,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_2_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_2_Pliego_Maquina_Offset.FormattingEnabled = True
-        Me.cboFormato_2_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
+        Me.cboFormato_2_Pliego_Maquina_Offset.Items.AddRange(New Object() {"", "650 x 470", "650 x 315", "630 x 440", "610 x 430", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
         Me.cboFormato_2_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 69)
         Me.cboFormato_2_Pliego_Maquina_Offset.Name = "cboFormato_2_Pliego_Maquina_Offset"
         Me.cboFormato_2_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
@@ -1574,7 +1574,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.cboFormato_1_Pliego_Maquina_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato_1_Pliego_Maquina_Offset.FormattingEnabled = True
-        Me.cboFormato_1_Pliego_Maquina_Offset.Items.AddRange(New Object() {"650 x 470", "650 x 315", "630 x 440", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
+        Me.cboFormato_1_Pliego_Maquina_Offset.Items.AddRange(New Object() {"", "650 x 470", "650 x 315", "630 x 440", "610 x 430", "590 x 410", "550 x 370", "510 x 360", "500 x 350", "500 x 325", "470 x 325", "440 x 315", "820 x 590", "740 x 550", "720 x 510"})
         Me.cboFormato_1_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 43)
         Me.cboFormato_1_Pliego_Maquina_Offset.Name = "cboFormato_1_Pliego_Maquina_Offset"
         Me.cboFormato_1_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
