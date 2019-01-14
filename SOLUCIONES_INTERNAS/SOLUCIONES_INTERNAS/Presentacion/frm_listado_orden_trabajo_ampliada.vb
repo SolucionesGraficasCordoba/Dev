@@ -1070,6 +1070,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     '    doc.Add(pro_term)
     '    doc.Add(pro_logi)
     'End Sub
+
     Private Sub btnAgregarProducto_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarProducto.Click
 
         Try
