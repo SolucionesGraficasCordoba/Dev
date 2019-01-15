@@ -980,7 +980,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.Label26.AutoSize = True
         Me.Label26.ForeColor = System.Drawing.Color.Red
-        Me.Label26.Location = New System.Drawing.Point(181, 23)
+        Me.Label26.Location = New System.Drawing.Point(163, 23)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(11, 13)
         Me.Label26.TabIndex = 141
@@ -1037,7 +1037,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(145, 19)
+        Me.Label31.Location = New System.Drawing.Point(127, 19)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(38, 13)
         Me.Label31.TabIndex = 137

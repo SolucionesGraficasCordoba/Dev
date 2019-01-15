@@ -7,6 +7,7 @@ Public Class frm_listado_orden_trabajo_ampliada
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
     Public quienllamolistado_ot As Form
+    Public quien_llamo_listado_orden_ampliada As Form
 
     Public vble_id_orden As Integer
     Public vble_id_detalle As Integer
@@ -21,7 +22,7 @@ Public Class frm_listado_orden_trabajo_ampliada
         ArmarGrillaOrden()
         CargarGrillaOrden()
     End Sub
-
+    
     Private Sub ArmarGrillaDetalle(ByVal datasource As System.Linq.IQueryable)
         dgv_detalle_orden.Enabled = True
         dgv_detalle_orden.AutoGenerateColumns = False
@@ -174,6 +175,24 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns(61).DataPropertyName = "descripcion_terminacion"
         dgv_detalle_orden.DataSource = datasource
         dgv_detalle_orden.ClearSelection()
+    End Sub
+
+    Private Sub dgv_detalle_orden_CellDoubleClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellDoubleClick
+        Try
+            If quien_llamo_listado_orden_ampliada.Name = frm_Actualizar_Offset.Name Then
+                frm_Actualizar_Offset.txt_id_orden_trabajo.Text = dgv_detalle_orden.SelectedCells(0).Value
+                frm_Actualizar_Offset.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.SelectedCells(2).Value
+                frm_Actualizar_Offset.dtp_Fecha_Ingreso_Original.Text = dgv_detalle_orden.SelectedCells(8).Value
+                frm_Actualizar_Offset.txt_cantidad_original.Text = dgv_detalle_orden.SelectedCells(18).Value
+                frm_Actualizar_Offset.cboPiezas1_Detalle1.SelectedValue = dgv_detalle_orden.SelectedCells(13).Value
+                frm_Actualizar_Offset.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(19).Value
+                frm_Actualizar_Offset.txt_chapa_soporte_1.Text = dgv_detalle_orden.SelectedCells(41).Value
+                frm_Actualizar_Offset.cboImpresora_Original.Text = dgv_detalle_orden.SelectedCells(44).Value
+                frm_Actualizar_Offset.cboMarca_Offset.Text = dgv_detalle_orden.SelectedCells(45).Value
+                Me.Close()
+            End If
+        Catch ex As Exception
+        End Try
     End Sub
 
     'CARGA GRILLA ORDEN TRABAJO
@@ -557,8 +576,11 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             End If
             If tempterminacion.Contains("T26") Then
                 frm_Actualizar_Producto_Orden_Ampliada.chkTroquelado.Checked = True
+                End If
+            Else
+                MsgBox("Seleccione un Producto a modificar del segundo listado")
+                Exit Sub
             End If
-        End If
         Dim flagsoporte As Integer = 0
 
         If frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Offset.TextLength <> 0 Then
@@ -654,10 +676,8 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     End Sub
 
     Private Sub btnVer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVer.Click
-
-        frm_Actualizar_Producto_Orden_Ampliada.Text = ".:. Ver Orden .:."
         Try
-
+            frm_Actualizar_Producto_Orden_Ampliada.Text = ".:. Ver Orden .:."
             If dgv_detalle_orden.SelectedRows.Count > 0 Then
                 frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Text = dgv_detalle_orden.Item("ORT_id_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value 'id_orden_trabajo
                 frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.Item("ORT_numero_ot", dgv_detalle_orden.SelectedRows(0).Index).Value 'numero orden
@@ -787,6 +807,10 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 If tempterminacion.Contains("T26") Then
                     frm_Actualizar_Producto_Orden_Ampliada.chkTroquelado.Checked = True
                 End If
+
+            Else
+                MsgBox("Seleccione un Producto del segundo listado")
+                Exit Sub
             End If
 
             Dim flagsoporte As Integer = 0
@@ -1109,7 +1133,8 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             frm_Orden_Trabajo_Ampliada.Show()
         Catch ex As Exception
         End Try
-
     End Sub
+
+   
 End Class
 

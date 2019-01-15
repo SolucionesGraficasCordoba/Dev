@@ -23,20 +23,20 @@ Partial Class frm_Actualizar_Offset
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.dtpFecha_Entrega_Original = New System.Windows.Forms.DateTimePicker()
-        Me.cboPiezas1_Detalle1 = New System.Windows.Forms.ComboBox()
+        Me.txt_chapa_soporte_1 = New System.Windows.Forms.TextBox()
+        Me.Label36 = New System.Windows.Forms.Label()
+        Me.cboMarca_Offset = New System.Windows.Forms.ComboBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.cboTipoImpresion1_Detalle1 = New System.Windows.Forms.ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label66 = New System.Windows.Forms.Label()
+        Me.cboImpresora_Original = New System.Windows.Forms.ComboBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.cboPiezas1_Detalle1 = New System.Windows.Forms.ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.dtp_Fecha_Ingreso_Original = New System.Windows.Forms.DateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtTamaño1_Detalle1 = New System.Windows.Forms.TextBox()
         Me.txt_cantidad_original = New System.Windows.Forms.TextBox()
-        Me.btnBuscar_Numero_Orden1 = New System.Windows.Forms.Button()
         Me.txt_id_orden_trabajo = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtNumero_Orden_Trabajo = New System.Windows.Forms.TextBox()
@@ -59,21 +59,25 @@ Partial Class frm_Actualizar_Offset
         Me.Label18 = New System.Windows.Forms.Label()
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.cboImpresora_Offset = New System.Windows.Forms.ComboBox()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.btnBuscar_Numero_Orden1 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.dtpFecha_Entrega_Original)
-        Me.GroupBox1.Controls.Add(Me.cboPiezas1_Detalle1)
+        Me.GroupBox1.Controls.Add(Me.txt_chapa_soporte_1)
+        Me.GroupBox1.Controls.Add(Me.Label36)
+        Me.GroupBox1.Controls.Add(Me.cboMarca_Offset)
         Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.cboTipoImpresion1_Detalle1)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.Label8)
+        Me.GroupBox1.Controls.Add(Me.Label66)
+        Me.GroupBox1.Controls.Add(Me.cboImpresora_Original)
+        Me.GroupBox1.Controls.Add(Me.Label7)
+        Me.GroupBox1.Controls.Add(Me.cboPiezas1_Detalle1)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.dtp_Fecha_Ingreso_Original)
         Me.GroupBox1.Controls.Add(Me.Label2)
@@ -86,80 +90,88 @@ Partial Class frm_Actualizar_Offset
         Me.GroupBox1.Controls.Add(Me.txtNumero_Orden_Trabajo)
         Me.GroupBox1.Location = New System.Drawing.Point(19, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(507, 154)
+        Me.GroupBox1.Size = New System.Drawing.Size(507, 182)
         Me.GroupBox1.TabIndex = 157
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos originales"
         '
+        'txt_chapa_soporte_1
+        '
+        Me.txt_chapa_soporte_1.Location = New System.Drawing.Point(413, 107)
+        Me.txt_chapa_soporte_1.MaxLength = 2
+        Me.txt_chapa_soporte_1.Name = "txt_chapa_soporte_1"
+        Me.txt_chapa_soporte_1.Size = New System.Drawing.Size(75, 20)
+        Me.txt_chapa_soporte_1.TabIndex = 152
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(428, 91)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(43, 13)
+        Me.Label36.TabIndex = 151
+        Me.Label36.Text = "Chapas"
+        '
+        'cboMarca_Offset
+        '
+        Me.cboMarca_Offset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboMarca_Offset.FormattingEnabled = True
+        Me.cboMarca_Offset.Items.AddRange(New Object() {"AGFA TU", "KODAK", "KTP - KONITA"})
+        Me.cboMarca_Offset.Location = New System.Drawing.Point(214, 146)
+        Me.cboMarca_Offset.Name = "cboMarca_Offset"
+        Me.cboMarca_Offset.Size = New System.Drawing.Size(127, 21)
+        Me.cboMarca_Offset.TabIndex = 145
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(171, 149)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(37, 13)
+        Me.Label12.TabIndex = 144
+        Me.Label12.Text = "Marca"
+        '
+        'Label66
+        '
+        Me.Label66.AutoSize = True
+        Me.Label66.Location = New System.Drawing.Point(27, 149)
+        Me.Label66.Name = "Label66"
+        Me.Label66.Size = New System.Drawing.Size(53, 13)
+        Me.Label66.TabIndex = 142
+        Me.Label66.Text = "Impresora"
+        '
+        'cboImpresora_Original
+        '
+        Me.cboImpresora_Original.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cboImpresora_Original.FormattingEnabled = True
+        Me.cboImpresora_Original.Items.AddRange(New Object() {"CD/4", "CD/6", "SM", "SOR"})
+        Me.cboImpresora_Original.Location = New System.Drawing.Point(86, 146)
+        Me.cboImpresora_Original.Name = "cboImpresora_Original"
+        Me.cboImpresora_Original.Size = New System.Drawing.Size(75, 21)
+        Me.cboImpresora_Original.TabIndex = 143
+        '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(280, 101)
+        Me.Label7.Location = New System.Drawing.Point(276, 92)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(110, 13)
         Me.Label7.TabIndex = 91
         Me.Label7.Text = "Tamaño (°°° x °°° Mm)"
         '
-        'dtpFecha_Entrega_Original
-        '
-        Me.dtpFecha_Entrega_Original.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha_Entrega_Original.Location = New System.Drawing.Point(361, 59)
-        Me.dtpFecha_Entrega_Original.Name = "dtpFecha_Entrega_Original"
-        Me.dtpFecha_Entrega_Original.Size = New System.Drawing.Size(109, 20)
-        Me.dtpFecha_Entrega_Original.TabIndex = 91
-        '
         'cboPiezas1_Detalle1
         '
-        Me.cboPiezas1_Detalle1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple
+        Me.cboPiezas1_Detalle1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboPiezas1_Detalle1.FormattingEnabled = True
-        Me.cboPiezas1_Detalle1.Location = New System.Drawing.Point(90, 116)
+        Me.cboPiezas1_Detalle1.Location = New System.Drawing.Point(86, 107)
         Me.cboPiezas1_Detalle1.Name = "cboPiezas1_Detalle1"
         Me.cboPiezas1_Detalle1.Size = New System.Drawing.Size(162, 21)
         Me.cboPiezas1_Detalle1.TabIndex = 56
         '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(265, 62)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(92, 13)
-        Me.Label12.TabIndex = 92
-        Me.Label12.Text = "Fecha de Entrega"
-        '
-        'cboTipoImpresion1_Detalle1
-        '
-        Me.cboTipoImpresion1_Detalle1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple
-        Me.cboTipoImpresion1_Detalle1.FormattingEnabled = True
-        Me.cboTipoImpresion1_Detalle1.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
-        Me.cboTipoImpresion1_Detalle1.Location = New System.Drawing.Point(417, 116)
-        Me.cboTipoImpresion1_Detalle1.Name = "cboTipoImpresion1_Detalle1"
-        Me.cboTipoImpresion1_Detalle1.Size = New System.Drawing.Size(63, 21)
-        Me.cboTipoImpresion1_Detalle1.TabIndex = 37
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.Red
-        Me.Label4.Location = New System.Drawing.Point(107, 24)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(11, 13)
-        Me.Label4.TabIndex = 90
-        Me.Label4.Text = "*"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(411, 101)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(76, 13)
-        Me.Label8.TabIndex = 36
-        Me.Label8.Text = "Tipo Impresión"
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(151, 100)
+        Me.Label3.Location = New System.Drawing.Point(147, 91)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(38, 13)
         Me.Label3.TabIndex = 35
@@ -168,7 +180,7 @@ Partial Class frm_Actualizar_Offset
         'dtp_Fecha_Ingreso_Original
         '
         Me.dtp_Fecha_Ingreso_Original.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_Fecha_Ingreso_Original.Location = New System.Drawing.Point(132, 59)
+        Me.dtp_Fecha_Ingreso_Original.Location = New System.Drawing.Point(362, 41)
         Me.dtp_Fecha_Ingreso_Original.Name = "dtp_Fecha_Ingreso_Original"
         Me.dtp_Fecha_Ingreso_Original.Size = New System.Drawing.Size(109, 20)
         Me.dtp_Fecha_Ingreso_Original.TabIndex = 2
@@ -176,7 +188,7 @@ Partial Class frm_Actualizar_Offset
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(31, 102)
+        Me.Label2.Location = New System.Drawing.Point(27, 93)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(49, 13)
         Me.Label2.TabIndex = 35
@@ -185,15 +197,15 @@ Partial Class frm_Actualizar_Offset
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(36, 62)
+        Me.Label11.Location = New System.Drawing.Point(304, 35)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(90, 13)
+        Me.Label11.Size = New System.Drawing.Size(52, 26)
         Me.Label11.TabIndex = 89
-        Me.Label11.Text = "Fecha de Ingreso"
+        Me.Label11.Text = "Fecha de" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "  Ingreso"
         '
         'txtTamaño1_Detalle1
         '
-        Me.txtTamaño1_Detalle1.Location = New System.Drawing.Point(258, 117)
+        Me.txtTamaño1_Detalle1.Location = New System.Drawing.Point(254, 107)
         Me.txtTamaño1_Detalle1.MaxLength = 50
         Me.txtTamaño1_Detalle1.Name = "txtTamaño1_Detalle1"
         Me.txtTamaño1_Detalle1.Size = New System.Drawing.Size(153, 20)
@@ -201,23 +213,14 @@ Partial Class frm_Actualizar_Offset
         '
         'txt_cantidad_original
         '
-        Me.txt_cantidad_original.Location = New System.Drawing.Point(25, 116)
+        Me.txt_cantidad_original.Location = New System.Drawing.Point(21, 107)
         Me.txt_cantidad_original.Name = "txt_cantidad_original"
         Me.txt_cantidad_original.Size = New System.Drawing.Size(59, 20)
         Me.txt_cantidad_original.TabIndex = 33
         '
-        'btnBuscar_Numero_Orden1
-        '
-        Me.btnBuscar_Numero_Orden1.Location = New System.Drawing.Point(312, 19)
-        Me.btnBuscar_Numero_Orden1.Name = "btnBuscar_Numero_Orden1"
-        Me.btnBuscar_Numero_Orden1.Size = New System.Drawing.Size(63, 23)
-        Me.btnBuscar_Numero_Orden1.TabIndex = 1
-        Me.btnBuscar_Numero_Orden1.Text = "..."
-        Me.btnBuscar_Numero_Orden1.UseVisualStyleBackColor = True
-        '
         'txt_id_orden_trabajo
         '
-        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(381, 21)
+        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(247, 53)
         Me.txt_id_orden_trabajo.Name = "txt_id_orden_trabajo"
         Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(23, 20)
         Me.txt_id_orden_trabajo.TabIndex = 77
@@ -225,26 +228,26 @@ Partial Class frm_Actualizar_Offset
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(86, 24)
+        Me.Label5.Location = New System.Drawing.Point(21, 35)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(22, 13)
+        Me.Label5.Size = New System.Drawing.Size(59, 26)
         Me.Label5.TabIndex = 76
-        Me.Label5.Text = "OT"
+        Me.Label5.Text = "Número de" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "    Orden"
         '
         'txtNumero_Orden_Trabajo
         '
         Me.txtNumero_Orden_Trabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(124, 21)
+        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(86, 19)
         Me.txtNumero_Orden_Trabajo.Multiline = True
         Me.txtNumero_Orden_Trabajo.Name = "txtNumero_Orden_Trabajo"
-        Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(182, 20)
+        Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(154, 54)
         Me.txtNumero_Orden_Trabajo.TabIndex = 78
         '
         'Label17
         '
         Me.Label17.AutoSize = True
         Me.Label17.ForeColor = System.Drawing.Color.Red
-        Me.Label17.Location = New System.Drawing.Point(18, 449)
+        Me.Label17.Location = New System.Drawing.Point(18, 467)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(109, 13)
         Me.Label17.TabIndex = 155
@@ -252,7 +255,7 @@ Partial Class frm_Actualizar_Offset
         '
         'txt_id_detalle_orden_trabajo1
         '
-        Me.txt_id_detalle_orden_trabajo1.Location = New System.Drawing.Point(383, 104)
+        Me.txt_id_detalle_orden_trabajo1.Location = New System.Drawing.Point(233, 484)
         Me.txt_id_detalle_orden_trabajo1.Name = "txt_id_detalle_orden_trabajo1"
         Me.txt_id_detalle_orden_trabajo1.Size = New System.Drawing.Size(17, 20)
         Me.txt_id_detalle_orden_trabajo1.TabIndex = 150
@@ -260,7 +263,7 @@ Partial Class frm_Actualizar_Offset
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(254, 107)
+        Me.Label45.Location = New System.Drawing.Point(104, 487)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(129, 13)
         Me.Label45.TabIndex = 149
@@ -268,7 +271,7 @@ Partial Class frm_Actualizar_Offset
         '
         'btnGuardar_ReTrabajo
         '
-        Me.btnGuardar_ReTrabajo.Location = New System.Drawing.Point(370, 452)
+        Me.btnGuardar_ReTrabajo.Location = New System.Drawing.Point(370, 470)
         Me.btnGuardar_ReTrabajo.Name = "btnGuardar_ReTrabajo"
         Me.btnGuardar_ReTrabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnGuardar_ReTrabajo.TabIndex = 146
@@ -286,7 +289,7 @@ Partial Class frm_Actualizar_Offset
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(245, 28)
+        Me.Label13.Location = New System.Drawing.Point(244, 28)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(127, 13)
         Me.Label13.TabIndex = 92
@@ -296,7 +299,7 @@ Partial Class frm_Actualizar_Offset
         '
         Me.Label9.AutoSize = True
         Me.Label9.ForeColor = System.Drawing.Color.Red
-        Me.Label9.Location = New System.Drawing.Point(107, 68)
+        Me.Label9.Location = New System.Drawing.Point(111, 66)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(11, 13)
         Me.Label9.TabIndex = 90
@@ -305,18 +308,18 @@ Partial Class frm_Actualizar_Offset
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(59, 66)
+        Me.Label10.Location = New System.Drawing.Point(58, 58)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(49, 13)
+        Me.Label10.Size = New System.Drawing.Size(58, 26)
         Me.Label10.TabIndex = 89
-        Me.Label10.Text = "Cantidad"
+        Me.Label10.Text = " Cantidad " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Chapas"
         '
         'txt_cantidad_retrabajo
         '
         Me.txt_cantidad_retrabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_cantidad_retrabajo.Location = New System.Drawing.Point(124, 63)
+        Me.txt_cantidad_retrabajo.Location = New System.Drawing.Point(124, 62)
         Me.txt_cantidad_retrabajo.Name = "txt_cantidad_retrabajo"
-        Me.txt_cantidad_retrabajo.Size = New System.Drawing.Size(110, 20)
+        Me.txt_cantidad_retrabajo.Size = New System.Drawing.Size(107, 20)
         Me.txt_cantidad_retrabajo.TabIndex = 6
         Me.txt_cantidad_retrabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -339,7 +342,7 @@ Partial Class frm_Actualizar_Offset
         '
         'btnCancelar_ReTrabajo
         '
-        Me.btnCancelar_ReTrabajo.Location = New System.Drawing.Point(451, 452)
+        Me.btnCancelar_ReTrabajo.Location = New System.Drawing.Point(451, 470)
         Me.btnCancelar_ReTrabajo.Name = "btnCancelar_ReTrabajo"
         Me.btnCancelar_ReTrabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar_ReTrabajo.TabIndex = 147
@@ -348,7 +351,7 @@ Partial Class frm_Actualizar_Offset
         '
         'txt_id_re_trabajo
         '
-        Me.txt_id_re_trabajo.Location = New System.Drawing.Point(492, 103)
+        Me.txt_id_re_trabajo.Location = New System.Drawing.Point(342, 483)
         Me.txt_id_re_trabajo.Name = "txt_id_re_trabajo"
         Me.txt_id_re_trabajo.Size = New System.Drawing.Size(10, 20)
         Me.txt_id_re_trabajo.TabIndex = 152
@@ -356,7 +359,7 @@ Partial Class frm_Actualizar_Offset
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(419, 104)
+        Me.Label1.Location = New System.Drawing.Point(269, 484)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 151
@@ -384,7 +387,7 @@ Partial Class frm_Actualizar_Offset
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(253, 65)
+        Me.Label18.Location = New System.Drawing.Point(253, 66)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(39, 13)
         Me.Label18.TabIndex = 153
@@ -394,7 +397,7 @@ Partial Class frm_Actualizar_Offset
         '
         Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"EPR - ERROR PRENSA", "REI - REIMPRESION", "EFO - ERROR FOTOMECANICA", "DIS - CAMBIO DISEÑO"})
+        Me.ComboBox1.Items.AddRange(New Object() {"EPR - ERROR PRENSA", "REI - REIMPRESION", "EFO - ERROR FOTOMECANICA", "DIS - CAMBIO DISEÑO", "TL - TIRAJE LARGO"})
         Me.ComboBox1.Location = New System.Drawing.Point(298, 62)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(189, 21)
@@ -402,28 +405,45 @@ Partial Class frm_Actualizar_Offset
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.ComboBox3)
+        Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.cboImpresora_Offset)
         Me.GroupBox2.Controls.Add(Me.Label14)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.ComboBox1)
-        Me.GroupBox2.Controls.Add(Me.txt_id_detalle_orden_trabajo1)
         Me.GroupBox2.Controls.Add(Me.dtp_Nueva_Fecha_Entrega)
-        Me.GroupBox2.Controls.Add(Me.Label45)
         Me.GroupBox2.Controls.Add(Me.Label10)
         Me.GroupBox2.Controls.Add(Me.dtpFecha_Re_Trabajo)
         Me.GroupBox2.Controls.Add(Me.Label13)
-        Me.GroupBox2.Controls.Add(Me.txt_id_re_trabajo)
         Me.GroupBox2.Controls.Add(Me.txt_cantidad_retrabajo)
-        Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.Label18)
         Me.GroupBox2.Controls.Add(Me.txt_procedimiento)
         Me.GroupBox2.Controls.Add(Me.Label19)
-        Me.GroupBox2.Location = New System.Drawing.Point(19, 172)
+        Me.GroupBox2.Location = New System.Drawing.Point(19, 200)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(507, 264)
         Me.GroupBox2.TabIndex = 160
         Me.GroupBox2.TabStop = False
+        '
+        'ComboBox3
+        '
+        Me.ComboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Items.AddRange(New Object() {"AGFA TU", "KODAK", "KTP - KONITA"})
+        Me.ComboBox3.Location = New System.Drawing.Point(298, 101)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(127, 21)
+        Me.ComboBox3.TabIndex = 163
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(255, 104)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(37, 13)
+        Me.Label8.TabIndex = 162
+        Me.Label8.Text = "Marca"
         '
         'cboImpresora_Offset
         '
@@ -438,23 +458,37 @@ Partial Class frm_Actualizar_Offset
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(55, 104)
+        Me.Label14.Location = New System.Drawing.Point(65, 104)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(53, 13)
         Me.Label14.TabIndex = 160
         Me.Label14.Text = "Impresora"
         '
+        'btnBuscar_Numero_Orden1
+        '
+        Me.btnBuscar_Numero_Orden1.Location = New System.Drawing.Point(246, 19)
+        Me.btnBuscar_Numero_Orden1.Name = "btnBuscar_Numero_Orden1"
+        Me.btnBuscar_Numero_Orden1.Size = New System.Drawing.Size(46, 23)
+        Me.btnBuscar_Numero_Orden1.TabIndex = 1
+        Me.btnBuscar_Numero_Orden1.Text = "..."
+        Me.btnBuscar_Numero_Orden1.UseVisualStyleBackColor = True
+        '
         'frm_Actualizar_Offset
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(541, 499)
+        Me.ClientSize = New System.Drawing.Size(541, 516)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label17)
         Me.Controls.Add(Me.btnGuardar_ReTrabajo)
         Me.Controls.Add(Me.btnCancelar_ReTrabajo)
+        Me.Controls.Add(Me.txt_id_detalle_orden_trabajo1)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.Label45)
+        Me.Controls.Add(Me.txt_id_re_trabajo)
         Me.Name = "frm_Actualizar_Offset"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Repetición de Chapas"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -466,19 +500,13 @@ Partial Class frm_Actualizar_Offset
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents dtpFecha_Entrega_Original As System.Windows.Forms.DateTimePicker
     Friend WithEvents cboPiezas1_Detalle1 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents cboTipoImpresion1_Detalle1 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents dtp_Fecha_Ingreso_Original As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents txtTamaño1_Detalle1 As System.Windows.Forms.TextBox
     Friend WithEvents txt_cantidad_original As System.Windows.Forms.TextBox
-    Friend WithEvents btnBuscar_Numero_Orden1 As System.Windows.Forms.Button
     Friend WithEvents txt_id_orden_trabajo As System.Windows.Forms.TextBox
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txtNumero_Orden_Trabajo As System.Windows.Forms.TextBox
@@ -503,4 +531,13 @@ Partial Class frm_Actualizar_Offset
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents cboImpresora_Offset As System.Windows.Forms.ComboBox
+    Friend WithEvents cboMarca_Offset As System.Windows.Forms.ComboBox
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label66 As System.Windows.Forms.Label
+    Friend WithEvents cboImpresora_Original As System.Windows.Forms.ComboBox
+    Friend WithEvents txt_chapa_soporte_1 As System.Windows.Forms.TextBox
+    Friend WithEvents Label36 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents btnBuscar_Numero_Orden1 As System.Windows.Forms.Button
 End Class
