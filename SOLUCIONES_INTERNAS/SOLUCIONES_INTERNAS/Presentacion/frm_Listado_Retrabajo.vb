@@ -12,7 +12,7 @@ Public Class frm_Listado_Retrabajo
 
     Private Sub frm_Listado_Retrabajo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ArmaGrillaRetrabajo()
-        CargarGrillaRetrabajo()
+        '  CargarGrillaRetrabajo()
 
         txt_Buscar_ReTrabajo.Enabled = False
         cboBuscar_Mes.Enabled = False
@@ -20,45 +20,45 @@ Public Class frm_Listado_Retrabajo
         dgvLista_ReTrabajos.ClearSelection()
     End Sub
 
-    Public Sub CargarGrillaRetrabajo()
-        Dim carga = (From dot In datacontext.DETALLE_ORDEN_TRABAJO
-                                    Join ret In datacontext.RE_TRABAJO
-                                    On dot.id_detalle_orden_trabajo Equals ret.id_detalle_orden_trabajo
-                                    Join ot In datacontext.ORDEN_TRABAJO
-                                    On ot.ORT_id_orden_trabajo Equals dot.ORT_id_orden_trabajo
-                                    Join pie In datacontext.PIEZA
-                                    On pie.PIE_id_pieza Equals dot.PIE_id_pieza
-                                    Select
-                                    ret.RET_id_retrabajo,
-                                    ot.ORT_id_orden_trabajo,
-                                    ot.ORT_numero_ot,
-                                    ret.RET_cantidad_dort,
-                                    pie.PIE_id_pieza,
-                                    pie.PIE_nombre_pie,
-                                    ret.RET_fecha,
-                                    ret.RET_fecha_entrega,
-                                    dot.DOT_cantidad_producto,
-                                     dot.DOT_tamaño_producto,
-                                    ret.RET_tipo_impresion_dort,
-                                      ret.RET_papel_soporte_1,
-                                    ret.RET_papel_soporte_2,
-                                    ret.RET_papel_soporte_3,
-                                    ret.RET_gramaje_soporte_1,
-                                    ret.RET_gramaje_soporte_2,
-                                    ret.RET_gramaje_soporte_3,
-                                    ret.RET_cantidad_soporte_1,
-                                    ret.RET_cantidad_soporte_2,
-                                    ret.RET_cantidad_soporte_3,
-                                    ret.RET_formato_soporte_1,
-                                    ret.RET_formato_soporte_2,
-                                    ret.RET_formato_soporte_3,
-                                    ret.RET_origen_area,
-                                    ret.RET_procedimiento,
-                                    ot.ORT_fecha_ot,
-                                    ot.ORT_fecha_entrega
-Order By ORT_numero_ot Ascending)
-        dgvLista_ReTrabajos.DataSource = carga
-    End Sub
+    'Public Sub CargarGrillaRetrabajo()
+    '    Dim carga = (From dot In datacontext.DETALLE_ORDEN_TRABAJO
+    '                                Join ret In datacontext.RE_TRABAJO
+    '                                On dot.id_detalle_orden_trabajo Equals ret.id_detalle_orden_trabajo
+    '                                Join ot In datacontext.ORDEN_TRABAJO
+    '                                On ot.ORT_id_orden_trabajo Equals dot.ORT_id_orden_trabajo
+    '                                Join pie In datacontext.PIEZA
+    '                                On pie.PIE_id_pieza Equals dot.PIE_id_pieza
+    '                                Select
+    '                                ret.RET_id_retrabajo,
+    '                                ot.ORT_id_orden_trabajo,
+    '                                ot.ORT_numero_ot,
+    '                                ret.RET_cantidad_dort,
+    '                                pie.PIE_id_pieza,
+    '                                pie.PIE_nombre_pie,
+    '                                ret.RET_fecha,
+    '                                ret.RET_fecha_entrega,
+    '                                dot.DOT_cantidad_producto,
+    '                                 dot.DOT_tamaño_producto,
+    '                                ret.RET_tipo_impresion_dort,
+    '                                  ret.RET_papel_soporte_1,
+    '                                ret.RET_papel_soporte_2,
+    '                                ret.RET_papel_soporte_3,
+    '                                ret.RET_gramaje_soporte_1,
+    '                                ret.RET_gramaje_soporte_2,
+    '                                ret.RET_gramaje_soporte_3,
+    '                                ret.RET_cantidad_soporte_1,
+    '                                ret.RET_cantidad_soporte_2,
+    '                                ret.RET_cantidad_soporte_3,
+    '                                ret.RET_formato_soporte_1,
+    '                                ret.RET_formato_soporte_2,
+    '                                ret.RET_formato_soporte_3,
+    '                                ret.RET_origen_area,
+    '                                ret.RET_procedimiento,
+    '                                ot.ORT_fecha_ot,
+    '                                ot.ORT_fecha_entrega
+    'Order By ORT_numero_ot Ascending)
+    '    dgvLista_ReTrabajos.DataSource = carga
+    'End Sub
 
     Private Sub ArmaGrillaRetrabajo()
         dgvLista_ReTrabajos.Enabled = True
@@ -149,7 +149,7 @@ Order By ORT_numero_ot Ascending)
                     datacontext.RE_TRABAJO.DeleteOnSubmit(eliminar)
                     datacontext.SubmitChanges()
                     MsgBox("El ReTrabajo ha sido eliminado")
-                    CargarGrillaRetrabajo()
+                    ' CargarGrillaRetrabajo()
                     lblTotal_Retrabajo.Text = dgvLista_ReTrabajos.Rows.Count
                     Me.Close()
             End Select
@@ -228,92 +228,92 @@ Order By ORT_numero_ot Ascending)
         txt_Buscar_ReTrabajo.Clear()
     End Sub
 
-    Private Sub txt_Buscar_ReTrabajo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_ReTrabajo.TextChanged
-        Dim buscar As String
-        If rbtNumeroOrden.Checked = True Then
-            ArmaGrillaRetrabajo()
-            buscar = "*" & Me.txt_Buscar_ReTrabajo.Text & "*"
-            Dim consultaalu =
-                 (From dot In datacontext.DETALLE_ORDEN_TRABAJO
-                                        Join ret In datacontext.RE_TRABAJO
-                                        On dot.id_detalle_orden_trabajo Equals ret.id_detalle_orden_trabajo
-                                        Join ort In datacontext.ORDEN_TRABAJO
-                                        On ort.ORT_id_orden_trabajo Equals dot.ORT_id_orden_trabajo
-                                        Join pie In datacontext.PIEZA
-                                        On pie.PIE_id_pieza Equals dot.PIE_id_pieza
-                                                Select ret.RET_id_retrabajo,
-                                        dot.PIE_id_pieza,
-                                        pie.PIE_nombre_pie,
-                                        ort.ORT_numero_ot,
-                                        ret.RET_cantidad_dort,
-                                        ret.RET_tamaño_dort,
-                                        ret.RET_tipo_impresion_dort,
-                                        ret.RET_origen_area,
-                                        ret.RET_procedimiento,
-                                        ret.RET_fecha,
-                                        ret.RET_papel_soporte_1,
-                                        ret.RET_papel_soporte_2,
-                                        ret.RET_papel_soporte_3,
-                                        ret.RET_gramaje_soporte_1,
-                                        ret.RET_gramaje_soporte_2,
-                                        ret.RET_gramaje_soporte_3,
-                                        ret.RET_cantidad_soporte_1,
-                                        ret.RET_cantidad_soporte_2,
-                                        ret.RET_cantidad_soporte_3,
-                                        ret.RET_formato_soporte_1,
-                                        ret.RET_formato_soporte_2,
-                                        ret.RET_formato_soporte_3,
-                                        ort.ORT_id_orden_trabajo,
-                                        dot.id_detalle_orden_trabajo
-                                        Where ORT_numero_ot Like buscar.ToString
-                                        Order By ORT_numero_ot Ascending)
-            dgvLista_ReTrabajos.DataSource = consultaalu
-            lblTotal_Retrabajo.Text = dgvLista_ReTrabajos.Rows.Count
-        End If
-    End Sub
+    'Private Sub txt_Buscar_ReTrabajo_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_Buscar_ReTrabajo.TextChanged
+    '    Dim buscar As String
+    '    If rbtNumeroOrden.Checked = True Then
+    '        ArmaGrillaRetrabajo()
+    '        buscar = "*" & Me.txt_Buscar_ReTrabajo.Text & "*"
+    '        Dim consultaalu =
+    '             (From dot In datacontext.DETALLE_ORDEN_TRABAJO
+    '                                    Join ret In datacontext.RE_TRABAJO
+    '                                    On dot.id_detalle_orden_trabajo Equals ret.id_detalle_orden_trabajo
+    '                                    Join ort In datacontext.ORDEN_TRABAJO
+    '                                    On ort.ORT_id_orden_trabajo Equals dot.ORT_id_orden_trabajo
+    '                                    Join pie In datacontext.PIEZA
+    '                                    On pie.PIE_id_pieza Equals dot.PIE_id_pieza
+    '                                            Select ret.RET_id_retrabajo,
+    '                                    dot.PIE_id_pieza,
+    '                                    pie.PIE_nombre_pie,
+    '                                    ort.ORT_numero_ot,
+    '                                    ret.RET_cantidad_dort,
+    '                                    ret.RET_tamaño_dort,
+    '                                    ret.RET_tipo_impresion_dort,
+    '                                    ret.RET_origen_area,
+    '                                    ret.RET_procedimiento,
+    '                                    ret.RET_fecha,
+    '                                    ret.RET_papel_soporte_1,
+    '                                    ret.RET_papel_soporte_2,
+    '                                    ret.RET_papel_soporte_3,
+    '                                    ret.RET_gramaje_soporte_1,
+    '                                    ret.RET_gramaje_soporte_2,
+    '                                    ret.RET_gramaje_soporte_3,
+    '                                    ret.RET_cantidad_soporte_1,
+    '                                    ret.RET_cantidad_soporte_2,
+    '                                    ret.RET_cantidad_soporte_3,
+    '                                    ret.RET_formato_soporte_1,
+    '                                    ret.RET_formato_soporte_2,
+    '                                    ret.RET_formato_soporte_3,
+    '                                    ort.ORT_id_orden_trabajo,
+    '                                    dot.id_detalle_orden_trabajo
+    '                                    Where ORT_numero_ot Like buscar.ToString
+    '                                    Order By ORT_numero_ot Ascending)
+    '        dgvLista_ReTrabajos.DataSource = consultaalu
+    '        lblTotal_Retrabajo.Text = dgvLista_ReTrabajos.Rows.Count
+    '    End If
+    'End Sub
 
-    Private Sub cboBuscar_Mes_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboBuscar_Mes.SelectedIndexChanged
-        If rbtMes.Checked = True Then
-            Dim buscar As String
-            ArmaGrillaRetrabajo()
-            buscar = Me.cboBuscar_Mes.SelectedItem & "*"
-            Dim consultaalu =
-                 (From dot In datacontext.DETALLE_ORDEN_TRABAJO
-                                        Join ret In datacontext.RE_TRABAJO
-                                        On dot.id_detalle_orden_trabajo Equals ret.id_detalle_orden_trabajo
-                                        Join ort In datacontext.ORDEN_TRABAJO
-                                        On ort.ORT_id_orden_trabajo Equals dot.ORT_id_orden_trabajo
-                                        Join pie In datacontext.PIEZA
-                                        On pie.PIE_id_pieza Equals dot.PIE_id_pieza
-                                        Select ret.RET_id_retrabajo,
-                                        dot.PIE_id_pieza,
-                                        pie.PIE_nombre_pie,
-                                        ort.ORT_numero_ot,
-                                        ret.RET_cantidad_dort,
-                                        ret.RET_tamaño_dort,
-                                        ret.RET_tipo_impresion_dort,
-                                        ret.RET_origen_area,
-                                        ret.RET_procedimiento,
-                                        ret.RET_fecha,
-                                        ret.RET_papel_soporte_1,
-                                        ret.RET_papel_soporte_2,
-                                        ret.RET_papel_soporte_3,
-                                        ret.RET_gramaje_soporte_1,
-                                        ret.RET_gramaje_soporte_2,
-                                        ret.RET_gramaje_soporte_3,
-                                        ret.RET_cantidad_soporte_1,
-                                        ret.RET_cantidad_soporte_2,
-                                        ret.RET_cantidad_soporte_3,
-                                        ret.RET_formato_soporte_1,
-                                        ret.RET_formato_soporte_2,
-                                        ret.RET_formato_soporte_3,
-                                        ort.ORT_id_orden_trabajo,
-                                        dot.id_detalle_orden_trabajo
-                                        Where (RET_fecha.Value.Month = cboBuscar_Mes.SelectedIndex + 1))
-            dgvLista_ReTrabajos.DataSource = consultaalu
-            lblTotal_Retrabajo.Text = dgvLista_ReTrabajos.Rows.Count
-        End If
-    End Sub
+    'Private Sub cboBuscar_Mes_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cboBuscar_Mes.SelectedIndexChanged
+    '    If rbtMes.Checked = True Then
+    '        Dim buscar As String
+    '        ArmaGrillaRetrabajo()
+    '        buscar = Me.cboBuscar_Mes.SelectedItem & "*"
+    '        Dim consultaalu =
+    '             (From dot In datacontext.DETALLE_ORDEN_TRABAJO
+    '                                    Join ret In datacontext.RE_TRABAJO
+    '                                    On dot.id_detalle_orden_trabajo Equals ret.id_detalle_orden_trabajo
+    '                                    Join ort In datacontext.ORDEN_TRABAJO
+    '                                    On ort.ORT_id_orden_trabajo Equals dot.ORT_id_orden_trabajo
+    '                                    Join pie In datacontext.PIEZA
+    '                                    On pie.PIE_id_pieza Equals dot.PIE_id_pieza
+    '                                    Select ret.RET_id_retrabajo,
+    '                                    dot.PIE_id_pieza,
+    '                                    pie.PIE_nombre_pie,
+    '                                    ort.ORT_numero_ot,
+    '                                    ret.RET_cantidad_dort,
+    '                                    ret.RET_tamaño_dort,
+    '                                    ret.RET_tipo_impresion_dort,
+    '                                    ret.RET_origen_area,
+    '                                    ret.RET_procedimiento,
+    '                                    ret.RET_fecha,
+    '                                    ret.RET_papel_soporte_1,
+    '                                    ret.RET_papel_soporte_2,
+    '                                    ret.RET_papel_soporte_3,
+    '                                    ret.RET_gramaje_soporte_1,
+    '                                    ret.RET_gramaje_soporte_2,
+    '                                    ret.RET_gramaje_soporte_3,
+    '                                    ret.RET_cantidad_soporte_1,
+    '                                    ret.RET_cantidad_soporte_2,
+    '                                    ret.RET_cantidad_soporte_3,
+    '                                    ret.RET_formato_soporte_1,
+    '                                    ret.RET_formato_soporte_2,
+    '                                    ret.RET_formato_soporte_3,
+    '                                    ort.ORT_id_orden_trabajo,
+    '                                    dot.id_detalle_orden_trabajo
+    '                                    Where (RET_fecha.Value.Month = cboBuscar_Mes.SelectedIndex + 1))
+    '        dgvLista_ReTrabajos.DataSource = consultaalu
+    '        lblTotal_Retrabajo.Text = dgvLista_ReTrabajos.Rows.Count
+    '    End If
+    'End Sub
 
     Private Sub btnGenerarInforme_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExportarPDF.Click
 

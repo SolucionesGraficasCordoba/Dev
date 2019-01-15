@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SOLUCIONES_INTERNAS" Class="DataS_Interno" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SV-PLANET-01;Initial Catalog=SOLUCIONES_INTERNAS;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PREPRODUCCION" Class="DataS_Interno" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CLIENTE" Member="CLIENTE">
     <Type Name="CLIENTE">
       <Column Name="CLI_id_cliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -104,33 +104,6 @@
       <Association Name="PRODUCTO_PRODUCTO_MOVIMIENTO" Member="PRODUCTO" ThisKey="PROD_id" OtherKey="PROD_id" Type="PRODUCTO" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.[RE-TRABAJO]" Member="RE_TRABAJO">
-    <Type Name="RE_TRABAJO">
-      <Column Name="RET_id_retrabajo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="id_detalle_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RET_cantidad_dort" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RET_tamaño_dort" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="RET_tipo_impresion_dort" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
-      <Column Name="RET_origen_area" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="RET_procedimiento" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
-      <Column Name="RET_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="RET_papel_soporte_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="RET_papel_soporte_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="RET_papel_soporte_3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="RET_gramaje_soporte_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RET_gramaje_soporte_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="RET_gramaje_soporte_3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="RET_cantidad_soporte_1" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RET_cantidad_soporte_2" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RET_cantidad_soporte_3" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="RET_formato_soporte_1" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="RET_formato_soporte_2" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="RET_formato_soporte_3" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="RET_fecha_entrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="RET_impresora_offset" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Association Name="DETALLE_ORDEN_TRABAJO_RE_TRABAJO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="DETALLE_ORDEN_TRABAJO" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.SECTOR" Member="SECTOR">
     <Type Name="SECTOR">
       <Column Name="SEC_id_sector" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -220,6 +193,60 @@
       <Association Name="DETALLE_ORDEN_TRABAJO_RE_TRABAJO" Member="RE_TRABAJO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="RE_TRABAJO" />
       <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="PIEZA_DETALLE_ORDEN_TRABAJO" Member="PIEZA" ThisKey="PIE_id_pieza" OtherKey="PIE_id_pieza" Type="PIEZA" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[RE-TRABAJO]" Member="RE_TRABAJO">
+    <Type Name="RE_TRABAJO">
+      <Column Name="RET_id_retrabajo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RET_cantidad_producto_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RET_tamaño_producto_retrabajo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RET_tipo_impresion_retrabajo" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="RET_papel_soporte_1_retrabajo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RET_papel_soporte_2_retrabajo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RET_papel_soporte_3_retrabajo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RET_gramaje_soporte_1_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RET_gramaje_soporte_2_retrabajo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RET_gramaje_soporte_3_retrabajo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RET_cantidad_soporte_1_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RET_cantidad_soporte_2_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RET_cantidad_soporte_3_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RET_formato_soporte_1_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="RET_formato_soporte_2_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="RET_formato_soporte_3_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cantidad_1_PM_offset_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cantidad_2_PM_offset_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cantidad_3_PM_offset_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RET_fecha_entrega_retrabajo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="RET_impresora_offset" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="id_detalle_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RET_origen_area_motivo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RET_procedimiento_observaciones" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="RET_fecha_comienzo_retrabajo" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="formato_1_PM_offset_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="formato_2_PM_offset_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="formato_3_PM_offset_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="modo_impresion_offset_retrabajo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="tipo_impresion_offset_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cantidad_chapas_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="impresora_offset_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="marca_offset_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="cantidad_1_PM_digital_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cantidad_2_PM_digital_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="cantidad_3_PM_digital_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="formato_1_PM_digital_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="formato_2_PM_digital_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="formato_3_PM_digital_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="modo_impresion_digital_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="tipo_impresion_digital_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="dato_variable_retrabajo" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="cantidad_gran_formato_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tamaño_gran_formato_retrabajo" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="sustrato_gran_formato_retrabajo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="calidad_gran_formato_retrabajo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="sistema_gran_formato_retrabajo" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="tipo_terminacion_retrabajo" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
+      <Column Name="descripcion_terminacion_retrabajo" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Association Name="DETALLE_ORDEN_TRABAJO_RE_TRABAJO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="DETALLE_ORDEN_TRABAJO" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
