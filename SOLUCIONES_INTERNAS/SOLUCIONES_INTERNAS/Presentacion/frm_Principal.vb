@@ -1554,4 +1554,8 @@ Public Class frm_Principal
         frm_listado_orden_trabajo_ampliada.Show()
         frm_listado_orden_trabajo_ampliada.dgvLista_Orden_Trabajo.ClearSelection()
     End Sub
+
+    Private Sub RepeticiónDeChapasToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles RepeticiónDeChapasToolStripMenuItem.Click
+        frm_Actualizar_Offset.Show()
+    End Sub
 End Class
