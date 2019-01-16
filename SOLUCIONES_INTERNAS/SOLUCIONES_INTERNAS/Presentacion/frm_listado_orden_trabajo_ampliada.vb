@@ -7,7 +7,7 @@ Public Class frm_listado_orden_trabajo_ampliada
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
     Public quienllamolistado_ot As Form
-    Public quien_llamo_listado_orden_ampliada As Form
+    '  Public quien_llamo_listado_orden_ampliada As Form
 
     Public vble_id_orden As Integer
     Public vble_id_detalle As Integer
@@ -92,44 +92,44 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns.Add("descripcion_terminacion", "Descripcion Terminación")
 
         dgv_detalle_orden.Columns(0).DataPropertyName = "ORT_id_orden_trabajo"
-        dgv_detalle_orden.Columns(0).Visible = False
+        '   dgv_detalle_orden.Columns(0).Visible = False
         dgv_detalle_orden.Columns(1).DataPropertyName = "ORT_tipo_ot"
-        dgv_detalle_orden.Columns(1).Visible = False
+        '   dgv_detalle_orden.Columns(1).Visible = False
         dgv_detalle_orden.Columns(2).DataPropertyName = "ORT_numero_ot"
-        dgv_detalle_orden.Columns(2).Visible = False
+        '  dgv_detalle_orden.Columns(2).Visible = False
         dgv_detalle_orden.Columns(3).DataPropertyName = "ORT_observaciones_ot"
-        dgv_detalle_orden.Columns(3).Visible = False
+        '  dgv_detalle_orden.Columns(3).Visible = False
         dgv_detalle_orden.Columns(4).DataPropertyName = "ORT_mejoras_ot"
-        dgv_detalle_orden.Columns(4).Visible = False
+        '   dgv_detalle_orden.Columns(4).Visible = False
         dgv_detalle_orden.Columns(5).DataPropertyName = "VEN_id_vendedor"
-        dgv_detalle_orden.Columns(5).Visible = False
+        '   dgv_detalle_orden.Columns(5).Visible = False
         dgv_detalle_orden.Columns(6).DataPropertyName = "VEN_nombre_ven"
-        dgv_detalle_orden.Columns(6).Visible = False
+        '   dgv_detalle_orden.Columns(6).Visible = False
         dgv_detalle_orden.Columns(7).DataPropertyName = "VEN_apellido_ven"
-        dgv_detalle_orden.Columns(7).Visible = False
+        '   dgv_detalle_orden.Columns(7).Visible = False
         dgv_detalle_orden.Columns(8).DataPropertyName = "ORT_fecha_ot"
-        dgv_detalle_orden.Columns(8).Visible = False
+        '  dgv_detalle_orden.Columns(8).Visible = False
         dgv_detalle_orden.Columns(9).DataPropertyName = "ORT_fecha_entrega"
-        dgv_detalle_orden.Columns(9).Visible = False
+        '  dgv_detalle_orden.Columns(9).Visible = False
         dgv_detalle_orden.Columns(10).DataPropertyName = "CLI_id_cliente"
-        dgv_detalle_orden.Columns(10).Visible = False
+        ' dgv_detalle_orden.Columns(10).Visible = False
         dgv_detalle_orden.Columns(11).DataPropertyName = "CLI_razon_social"
-        dgv_detalle_orden.Columns(11).Visible = False
+        ' dgv_detalle_orden.Columns(11).Visible = False
         dgv_detalle_orden.Columns(12).DataPropertyName = "CLI_domicilio"
-        dgv_detalle_orden.Columns(12).Visible = False
+        ' dgv_detalle_orden.Columns(12).Visible = False
         dgv_detalle_orden.Columns(13).DataPropertyName = "PIE_id_pieza"
-        dgv_detalle_orden.Columns(13).Visible = False
+        '  dgv_detalle_orden.Columns(13).Visible = False
         dgv_detalle_orden.Columns(14).DataPropertyName = "PIE_id_pieza_offset"
-        dgv_detalle_orden.Columns(14).Visible = False
+        '   dgv_detalle_orden.Columns(14).Visible = False
         dgv_detalle_orden.Columns(15).DataPropertyName = "PIE_nombre_pie"
         dgv_detalle_orden.Columns(16).DataPropertyName = "PIE_ubicacion"
-        dgv_detalle_orden.Columns(16).Visible = False
+        '  dgv_detalle_orden.Columns(16).Visible = False
         dgv_detalle_orden.Columns(17).DataPropertyName = "id_detalle_orden_trabajo"
-        dgv_detalle_orden.Columns(17).Visible = False
+        '  dgv_detalle_orden.Columns(17).Visible = False
         dgv_detalle_orden.Columns(18).DataPropertyName = "DOT_cantidad_producto"
         dgv_detalle_orden.Columns(19).DataPropertyName = "DOT_tamaño_producto"
         dgv_detalle_orden.Columns(20).DataPropertyName = "DOT_tipo_impresion_dot"
-        dgv_detalle_orden.Columns(20).Visible = False
+        '   dgv_detalle_orden.Columns(20).Visible = False
         dgv_detalle_orden.Columns(21).DataPropertyName = "DOT_papel_soporte_1"
         dgv_detalle_orden.Columns(22).DataPropertyName = "DOT_papel_soporte_2"
         dgv_detalle_orden.Columns(23).DataPropertyName = "DOT_papel_soporte_3"
@@ -162,7 +162,7 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns(50).DataPropertyName = "formato_2_PM_digital"
         dgv_detalle_orden.Columns(51).DataPropertyName = "formato_3_PM_digital"
         dgv_detalle_orden.Columns(52).DataPropertyName = "modo_impresion_digital"
-        dgv_detalle_orden.Columns(52).Visible = False
+        '    dgv_detalle_orden.Columns(52).Visible = False
         dgv_detalle_orden.Columns(53).DataPropertyName = "tipo_impresion_digital"
         dgv_detalle_orden.Columns(54).DataPropertyName = "dato_variable"
         dgv_detalle_orden.Columns(55).DataPropertyName = "cantidad_gran_formato"
@@ -171,26 +171,53 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns(58).DataPropertyName = "calidad_gran_formato"
         dgv_detalle_orden.Columns(59).DataPropertyName = "sistema_gran_formato"
         dgv_detalle_orden.Columns(60).DataPropertyName = "tipo_terminacion"
-        dgv_detalle_orden.Columns(60).Visible = False
+        ' dgv_detalle_orden.Columns(60).Visible = False
         dgv_detalle_orden.Columns(61).DataPropertyName = "descripcion_terminacion"
         dgv_detalle_orden.DataSource = datasource
+
+        OcultarColumnas()
+
         dgv_detalle_orden.ClearSelection()
+    End Sub
+
+    Sub OcultarColumnas()
+        For i = 0 To dgv_detalle_orden.Columns.Count - 1
+            dgv_detalle_orden.Columns(i).Visible = False
+        Next
+
+        For i = 0 To dgv_detalle_orden.Columns.Count - 1 'recorre columnas
+            For j = 0 To dgv_detalle_orden.Rows.Count - 1 'recorre filas
+                If dgv_detalle_orden.Item(i, j).Value.ToString.Length <> 0 Then
+                    dgv_detalle_orden.Columns(i).Visible = True
+                    ' Exit For
+                End If
+            Next
+        Next
+        dgv_detalle_orden.Columns(0).Visible = False
+        dgv_detalle_orden.Columns(1).Visible = False
+        dgv_detalle_orden.Columns(5).Visible = False
+        dgv_detalle_orden.Columns(10).Visible = False
+        dgv_detalle_orden.Columns(13).Visible = False
+        dgv_detalle_orden.Columns(16).Visible = False
+        dgv_detalle_orden.Columns(17).Visible = False
+        dgv_detalle_orden.Columns(20).Visible = False
+        dgv_detalle_orden.Columns(60).Visible = False
     End Sub
 
     Private Sub dgv_detalle_orden_CellDoubleClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellDoubleClick
         Try
-            If quien_llamo_listado_orden_ampliada.Name = frm_Actualizar_Offset.Name Then
-                frm_Actualizar_Offset.txt_id_orden_trabajo.Text = dgv_detalle_orden.SelectedCells(0).Value
-                frm_Actualizar_Offset.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.SelectedCells(2).Value
-                frm_Actualizar_Offset.dtp_Fecha_Ingreso_Original.Text = dgv_detalle_orden.SelectedCells(8).Value
-                frm_Actualizar_Offset.txt_cantidad_original.Text = dgv_detalle_orden.SelectedCells(18).Value
-                frm_Actualizar_Offset.cboPiezas1_Detalle1.SelectedValue = dgv_detalle_orden.SelectedCells(13).Value
-                frm_Actualizar_Offset.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(19).Value
-                frm_Actualizar_Offset.txt_chapa_soporte_1.Text = dgv_detalle_orden.SelectedCells(41).Value
-                frm_Actualizar_Offset.cboImpresora_Original.Text = dgv_detalle_orden.SelectedCells(44).Value
-                frm_Actualizar_Offset.cboMarca_Offset.Text = dgv_detalle_orden.SelectedCells(45).Value
-                Me.Close()
-            End If
+            '  If quien_llamo_listado_orden_ampliada.Name = frm_Actualizar_Offset.Name Then
+            frm_Actualizar_Offset.txt_id_orden_trabajo.Text = dgv_detalle_orden.SelectedCells(0).Value
+            frm_Actualizar_Offset.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.SelectedCells(2).Value
+            frm_Actualizar_Offset.dtp_Fecha_Ingreso_Original.Text = dgv_detalle_orden.SelectedCells(8).Value
+            frm_Actualizar_Offset.txt_cantidad_original.Text = dgv_detalle_orden.SelectedCells(18).Value
+            frm_Actualizar_Offset.cboPiezas1_Detalle1.SelectedValue = dgv_detalle_orden.SelectedCells(13).Value
+            frm_Actualizar_Offset.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(19).Value
+            frm_Actualizar_Offset.txt_chapa_soporte_1.Text = dgv_detalle_orden.SelectedCells(41).Value
+            frm_Actualizar_Offset.cboImpresora_Original.Text = dgv_detalle_orden.SelectedCells(44).Value
+            frm_Actualizar_Offset.cboMarca_Offset.Text = dgv_detalle_orden.SelectedCells(45).Value
+            Me.Close()
+            '  End If
         Catch ex As Exception
         End Try
     End Sub
@@ -676,6 +703,9 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     End Sub
 
     Private Sub btnVer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVer.Click
+
+        'abrir el form nueva orden y no actualizar orden
+
         Try
             frm_Actualizar_Producto_Orden_Ampliada.Text = ".:. Ver Orden .:."
             If dgv_detalle_orden.SelectedRows.Count > 0 Then
@@ -1035,7 +1065,6 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     End Sub
 
     Sub Escribir_Pdf(ByVal cb As PdfContentByte)
-
         'ESCRIBIR EN EL PDF
         'PARA LA FUENTE
         cb.SetFontAndSize(fuente, 16)
@@ -1096,8 +1125,11 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     'End Sub
 
     Private Sub btnAgregarProducto_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarProducto.Click
-
         Try
+            'se indica al form orden_ampliada q el que llama no es el listado de orden_ampliada sino cualq (se le miente!!!!!!!)
+
+            frm_Orden_Trabajo_Ampliada.quienllamo_listado_orden_ampliada = frm_Principal
+            '------------------------------------------------------------------------------------------------------------------------------------
             If dgvLista_Orden_Trabajo.SelectedRows.Count > 0 Then
                 frm_Orden_Trabajo_Ampliada.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
                 frm_Orden_Trabajo_Ampliada.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
