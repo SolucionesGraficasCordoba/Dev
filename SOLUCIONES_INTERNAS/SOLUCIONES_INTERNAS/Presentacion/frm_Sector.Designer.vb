@@ -54,9 +54,9 @@ Partial Class frm_Sector
         Me.GroupListadoSectores.Controls.Add(Me.txt_Buscar_Sector)
         Me.GroupListadoSectores.Controls.Add(Me.dgvLista_Sector)
         Me.GroupListadoSectores.Controls.Add(Me.Label4)
-        Me.GroupListadoSectores.Location = New System.Drawing.Point(12, 108)
+        Me.GroupListadoSectores.Location = New System.Drawing.Point(11, 121)
         Me.GroupListadoSectores.Name = "GroupListadoSectores"
-        Me.GroupListadoSectores.Size = New System.Drawing.Size(359, 249)
+        Me.GroupListadoSectores.Size = New System.Drawing.Size(359, 253)
         Me.GroupListadoSectores.TabIndex = 5
         Me.GroupListadoSectores.TabStop = False
         Me.GroupListadoSectores.Text = "Listado de Sectores"
@@ -75,7 +75,7 @@ Partial Class frm_Sector
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(18, 227)
+        Me.Label8.Location = New System.Drawing.Point(18, 229)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(98, 13)
         Me.Label8.TabIndex = 4
@@ -84,7 +84,7 @@ Partial Class frm_Sector
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(230, 227)
+        Me.Label5.Location = New System.Drawing.Point(230, 229)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(91, 13)
         Me.Label5.TabIndex = 4
@@ -92,24 +92,24 @@ Partial Class frm_Sector
         '
         'btnEliminar_Sector
         '
-        Me.btnEliminar_Sector.Location = New System.Drawing.Point(276, 19)
+        Me.btnEliminar_Sector.Location = New System.Drawing.Point(273, 19)
         Me.btnEliminar_Sector.Name = "btnEliminar_Sector"
-        Me.btnEliminar_Sector.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar_Sector.Size = New System.Drawing.Size(75, 33)
         Me.btnEliminar_Sector.TabIndex = 6
         Me.btnEliminar_Sector.Text = "Eliminar"
         Me.btnEliminar_Sector.UseVisualStyleBackColor = True
         '
         'txt_Buscar_Sector
         '
-        Me.txt_Buscar_Sector.Location = New System.Drawing.Point(91, 22)
+        Me.txt_Buscar_Sector.Location = New System.Drawing.Point(92, 26)
         Me.txt_Buscar_Sector.Name = "txt_Buscar_Sector"
-        Me.txt_Buscar_Sector.Size = New System.Drawing.Size(179, 20)
+        Me.txt_Buscar_Sector.Size = New System.Drawing.Size(167, 20)
         Me.txt_Buscar_Sector.TabIndex = 5
         '
         'dgvLista_Sector
         '
         Me.dgvLista_Sector.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLista_Sector.Location = New System.Drawing.Point(10, 52)
+        Me.dgvLista_Sector.Location = New System.Drawing.Point(11, 58)
         Me.dgvLista_Sector.Name = "dgvLista_Sector"
         Me.dgvLista_Sector.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvLista_Sector.Size = New System.Drawing.Size(337, 166)
@@ -118,7 +118,7 @@ Partial Class frm_Sector
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(11, 24)
+        Me.Label4.Location = New System.Drawing.Point(12, 29)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(74, 13)
         Me.Label4.TabIndex = 0
@@ -137,7 +137,7 @@ Partial Class frm_Sector
         Me.GroupNuevoSector.Controls.Add(Me.Label1)
         Me.GroupNuevoSector.Location = New System.Drawing.Point(12, 12)
         Me.GroupNuevoSector.Name = "GroupNuevoSector"
-        Me.GroupNuevoSector.Size = New System.Drawing.Size(359, 90)
+        Me.GroupNuevoSector.Size = New System.Drawing.Size(359, 103)
         Me.GroupNuevoSector.TabIndex = 4
         Me.GroupNuevoSector.TabStop = False
         Me.GroupNuevoSector.Text = "Nueva Sector"
@@ -147,7 +147,7 @@ Partial Class frm_Sector
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(66, 22)
+        Me.Label3.Location = New System.Drawing.Point(66, 28)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(11, 13)
         Me.Label3.TabIndex = 6
@@ -155,45 +155,45 @@ Partial Class frm_Sector
         '
         'btnCancelar_Sector
         '
-        Me.btnCancelar_Sector.Location = New System.Drawing.Point(276, 54)
+        Me.btnCancelar_Sector.Location = New System.Drawing.Point(272, 64)
         Me.btnCancelar_Sector.Name = "btnCancelar_Sector"
-        Me.btnCancelar_Sector.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar_Sector.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar_Sector.TabIndex = 3
         Me.btnCancelar_Sector.Text = "Cancelar"
         Me.btnCancelar_Sector.UseVisualStyleBackColor = True
         '
         'btnActualizar_Sector
         '
-        Me.btnActualizar_Sector.Location = New System.Drawing.Point(195, 54)
+        Me.btnActualizar_Sector.Location = New System.Drawing.Point(191, 64)
         Me.btnActualizar_Sector.Name = "btnActualizar_Sector"
-        Me.btnActualizar_Sector.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar_Sector.Size = New System.Drawing.Size(75, 33)
         Me.btnActualizar_Sector.TabIndex = 8
         Me.btnActualizar_Sector.Text = "Actualizar"
         Me.btnActualizar_Sector.UseVisualStyleBackColor = True
         '
         'btnGuardar_Sector
         '
-        Me.btnGuardar_Sector.Location = New System.Drawing.Point(114, 54)
+        Me.btnGuardar_Sector.Location = New System.Drawing.Point(110, 64)
         Me.btnGuardar_Sector.Name = "btnGuardar_Sector"
-        Me.btnGuardar_Sector.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar_Sector.Size = New System.Drawing.Size(75, 33)
         Me.btnGuardar_Sector.TabIndex = 2
         Me.btnGuardar_Sector.Text = "Guardar"
         Me.btnGuardar_Sector.UseVisualStyleBackColor = True
         '
         'btnNuevo_Sector
         '
-        Me.btnNuevo_Sector.Location = New System.Drawing.Point(33, 54)
+        Me.btnNuevo_Sector.Location = New System.Drawing.Point(29, 64)
         Me.btnNuevo_Sector.Name = "btnNuevo_Sector"
-        Me.btnNuevo_Sector.Size = New System.Drawing.Size(75, 23)
+        Me.btnNuevo_Sector.Size = New System.Drawing.Size(75, 33)
         Me.btnNuevo_Sector.TabIndex = 4
         Me.btnNuevo_Sector.Text = "Nuevo"
         Me.btnNuevo_Sector.UseVisualStyleBackColor = True
         '
         'txt_nombre_sector
         '
-        Me.txt_nombre_sector.Location = New System.Drawing.Point(83, 19)
+        Me.txt_nombre_sector.Location = New System.Drawing.Point(83, 25)
         Me.txt_nombre_sector.Name = "txt_nombre_sector"
-        Me.txt_nombre_sector.Size = New System.Drawing.Size(268, 20)
+        Me.txt_nombre_sector.Size = New System.Drawing.Size(264, 20)
         Me.txt_nombre_sector.TabIndex = 1
         '
         'txt_id_sector
@@ -206,7 +206,7 @@ Partial Class frm_Sector
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(16, 22)
+        Me.Label2.Location = New System.Drawing.Point(16, 28)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(44, 13)
         Me.Label2.TabIndex = 0
@@ -215,7 +215,7 @@ Partial Class frm_Sector
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(11, 38)
+        Me.Label1.Location = New System.Drawing.Point(11, 44)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(50, 13)
         Me.Label1.TabIndex = 0
@@ -225,7 +225,7 @@ Partial Class frm_Sector
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(382, 366)
+        Me.ClientSize = New System.Drawing.Size(382, 383)
         Me.Controls.Add(Me.GroupListadoSectores)
         Me.Controls.Add(Me.GroupNuevoSector)
         Me.Name = "frm_Sector"

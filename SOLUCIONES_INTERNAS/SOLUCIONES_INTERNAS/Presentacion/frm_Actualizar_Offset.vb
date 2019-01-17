@@ -3,26 +3,26 @@
     Dim datacontext As New DataS_Interno
 
     Private Sub btnBuscar_Numero_Orden1_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden1.Click
-         frm_listado_orden_trabajo_ampliada.Show()
+        frm_listado_orden_trabajo_ampliada.Show()
     End Sub
 
     Private Sub btnGuardar_ReTrabajo_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar_ReTrabajo.Click
 
-        'VALIDA QUE EL TIPO DE ORDEN NO ESTE VACIO
+        'VALIDA QUE EL NUMERO DE ORDEN NO ESTE VACIO
+        If txtNumero_Orden_Trabajo.Text.Length = 0 Then
+            MsgBox("Complete el campo Número de Orden")
+            btnBuscar_Numero_Orden1.Focus()
+            Exit Sub
+        End If
+
+        'VALIDA QUE EL CAMPO CANTIDAD DE CHAPAS NO ESTE VACIO
         If txt_cantidad_chapas_retrabajo.Text.Length = 0 Then
-            MsgBox("Complete el campo Tipo de Orden")
+            MsgBox("Complete el campo Cantidad de Chapas")
             txt_cantidad_chapas_retrabajo.Focus()
             Exit Sub
         End If
 
-        'VALIDA QUE EL NUMERO DE ORDEN NO ESTE VACIO
-        If txtNumero_Orden_Trabajo.Text.Length = 0 Then
-            MsgBox("Complete el campo Cantidad de Chapas")
-            txtNumero_Orden_Trabajo.Focus()
-            Exit Sub
-        End If
-
-        'VALIDA QUE EL CAMPO VENDEDOR NO ESTE VACIO
+        'VALIDA QUE EL COMBO MOTIVO NO ESTE VACIO
         If cboMotivo.SelectedIndex = -1 Then
             MsgBox("Cargue el Motivo del retrabajo")
             cboMotivo.Focus()
@@ -130,32 +130,61 @@
         dgvRepeticion.DataSource = carga
     End Sub
 
-    'Private Sub txt_Buscar_Orden_Repeticion_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_Buscar_Orden_Repeticion.TextChanged
-    '    'CONTROLAR
-    '    Dim buscar As String
-    '    ArmarGrillaRepeticion()
-    '    buscar = "*" & Me.txt_Buscar_Orden_Repeticion.Text & "*"
-    '    Dim ConsultaRepeticion = (From dot In datacontext.DETALLE_ORDEN_TRABAJO
-    '                                Join ot In datacontext.ORDEN_TRABAJO
-    '                                On dot.ORT_id_orden_trabajo Equals ot.ORT_id_orden_trabajo
-    '                                Join ret In datacontext.RE_TRABAJO
-    '                                On dot.id_detalle_orden_trabajo Equals ret.id_detalle_orden_trabajo
-    '                                Select
-    '                                dot.id_detalle_orden_trabajo,
-    '                                ret.RET_id_retrabajo,
-    '                                ot.ORT_numero_ot,
-    '                                ret.cantidad_chapas_retrabajo,
-    '                                ret.impresora_offset_retrabajo,
-    '                                ret.marca_offset_retrabajo,
-    '                                ret.RET_origen_area_motivo,
-    '                                ret.RET_procedimiento_observaciones,
-    '                                ret.RET_fecha_comienzo_retrabajo,
-    '                                ret.RET_fecha_entrega_retrabajo
-    '                                Where ORT_numero_ot Like buscar.ToString
-    '                                Order By ORT_numero_ot Ascending)
-    '    dgvRepeticion.DataSource = ConsultaRepeticion
-    '    dgvRepeticion.ClearSelection()
-    '    dgvRepeticion.DataSource = ""
-    '    Label3.Text = dgvRepeticion.Rows.Count
-    'End Sub
+    Private Sub txt_Buscar_Orden_Repeticion_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_Buscar_Orden_Repeticion.TextChanged
+        'CONTROLAR
+        Dim buscar As String
+        ArmarGrillaRepeticion()
+        buscar = "*" & Me.txt_Buscar_Orden_Repeticion.Text & "*"
+        Dim ConsultaRepeticion = (From dot In datacontext.DETALLE_ORDEN_TRABAJO
+                                    Join ot In datacontext.ORDEN_TRABAJO
+                                    On dot.ORT_id_orden_trabajo Equals ot.ORT_id_orden_trabajo
+                                    Join ret In datacontext.RE_TRABAJO
+                                    On dot.id_detalle_orden_trabajo Equals ret.id_detalle_orden_trabajo
+                                    Select
+                                    dot.id_detalle_orden_trabajo,
+                                    ret.RET_id_retrabajo,
+                                    ot.ORT_numero_ot,
+                                    ret.cantidad_chapas_retrabajo,
+                                    ret.impresora_offset_retrabajo,
+                                    ret.marca_offset_retrabajo,
+                                    ret.RET_origen_area_motivo,
+                                    ret.RET_procedimiento_observaciones,
+                                    ret.RET_fecha_comienzo_retrabajo,
+                                    ret.RET_fecha_entrega_retrabajo
+                                    Where ORT_numero_ot Like buscar.ToString
+                                    Order By ORT_numero_ot Ascending)
+        dgvRepeticion.DataSource = ConsultaRepeticion
+        dgvRepeticion.ClearSelection()
+        dgvRepeticion.DataSource = ""
+        Label3.Text = dgvRepeticion.Rows.Count
+    End Sub
+
+    Private Sub btnEliminar_Repeticion_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar_Repeticion.Click
+        If dgvRepeticion.SelectedRows.Count > 0 Then
+
+            Dim eliminar = (From rep In datacontext.RE_TRABAJO Where rep.RET_id_retrabajo = CInt(dgvRepeticion.Item("RET_id_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value)).ToList()(0)
+
+            Select Case MsgBox("Se eliminará la Repetición seleccionada, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar Repetición")
+                Case MsgBoxResult.Yes
+                    datacontext.RE_TRABAJO.DeleteOnSubmit(eliminar)
+                    datacontext.SubmitChanges()
+                    MsgBox("La Repetición ha sido eliminada")
+                    CargarGrillaRepeticion()
+            End Select
+        Else
+            MsgBox("Debe seleccionar una Repetición")
+        End If
+    End Sub
+
+    Private Sub txt_cantidad_chapas_retrabajo_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_cantidad_chapas_retrabajo.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
 End Class

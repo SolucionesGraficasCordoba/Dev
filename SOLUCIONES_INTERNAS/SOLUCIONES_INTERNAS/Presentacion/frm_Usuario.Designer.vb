@@ -65,9 +65,9 @@ Partial Class frm_Usuario
         Me.GroupListadoUsuarios.Controls.Add(Me.Label8)
         Me.GroupListadoUsuarios.Controls.Add(Me.dgvLista_Usuarios)
         Me.GroupListadoUsuarios.Controls.Add(Me.Label4)
-        Me.GroupListadoUsuarios.Location = New System.Drawing.Point(12, 220)
+        Me.GroupListadoUsuarios.Location = New System.Drawing.Point(12, 226)
         Me.GroupListadoUsuarios.Name = "GroupListadoUsuarios"
-        Me.GroupListadoUsuarios.Size = New System.Drawing.Size(381, 287)
+        Me.GroupListadoUsuarios.Size = New System.Drawing.Size(381, 300)
         Me.GroupListadoUsuarios.TabIndex = 7
         Me.GroupListadoUsuarios.TabStop = False
         Me.GroupListadoUsuarios.Text = "Listado de Usuarios"
@@ -76,7 +76,7 @@ Partial Class frm_Usuario
         '
         Me.lblTotal_Usuarios.AutoSize = True
         Me.lblTotal_Usuarios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblTotal_Usuarios.Location = New System.Drawing.Point(347, 265)
+        Me.lblTotal_Usuarios.Location = New System.Drawing.Point(347, 274)
         Me.lblTotal_Usuarios.Name = "lblTotal_Usuarios"
         Me.lblTotal_Usuarios.Size = New System.Drawing.Size(2, 15)
         Me.lblTotal_Usuarios.TabIndex = 5
@@ -84,7 +84,7 @@ Partial Class frm_Usuario
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(251, 265)
+        Me.Label5.Location = New System.Drawing.Point(251, 274)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(90, 13)
         Me.Label5.TabIndex = 4
@@ -92,16 +92,16 @@ Partial Class frm_Usuario
         '
         'btnEliminar_Usuario
         '
-        Me.btnEliminar_Usuario.Location = New System.Drawing.Point(299, 21)
+        Me.btnEliminar_Usuario.Location = New System.Drawing.Point(293, 19)
         Me.btnEliminar_Usuario.Name = "btnEliminar_Usuario"
-        Me.btnEliminar_Usuario.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar_Usuario.Size = New System.Drawing.Size(75, 33)
         Me.btnEliminar_Usuario.TabIndex = 8
         Me.btnEliminar_Usuario.Text = "Eliminar"
         Me.btnEliminar_Usuario.UseVisualStyleBackColor = True
         '
         'txt_Buscar_Usuario
         '
-        Me.txt_Buscar_Usuario.Location = New System.Drawing.Point(161, 23)
+        Me.txt_Buscar_Usuario.Location = New System.Drawing.Point(161, 26)
         Me.txt_Buscar_Usuario.Name = "txt_Buscar_Usuario"
         Me.txt_Buscar_Usuario.Size = New System.Drawing.Size(118, 20)
         Me.txt_Buscar_Usuario.TabIndex = 7
@@ -111,7 +111,7 @@ Partial Class frm_Usuario
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(16, 265)
+        Me.Label8.Location = New System.Drawing.Point(16, 274)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(105, 13)
         Me.Label8.TabIndex = 4
@@ -121,7 +121,7 @@ Partial Class frm_Usuario
         '
         Me.dgvLista_Usuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         Me.dgvLista_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLista_Usuarios.Location = New System.Drawing.Point(9, 50)
+        Me.dgvLista_Usuarios.Location = New System.Drawing.Point(9, 59)
         Me.dgvLista_Usuarios.Name = "dgvLista_Usuarios"
         Me.dgvLista_Usuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvLista_Usuarios.Size = New System.Drawing.Size(359, 206)
@@ -130,7 +130,7 @@ Partial Class frm_Usuario
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(19, 26)
+        Me.Label4.Location = New System.Drawing.Point(19, 29)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(136, 13)
         Me.Label4.TabIndex = 0
@@ -160,7 +160,7 @@ Partial Class frm_Usuario
         Me.GroupNuevoUsuario.Controls.Add(Me.Label2)
         Me.GroupNuevoUsuario.Location = New System.Drawing.Point(12, 12)
         Me.GroupNuevoUsuario.Name = "GroupNuevoUsuario"
-        Me.GroupNuevoUsuario.Size = New System.Drawing.Size(381, 202)
+        Me.GroupNuevoUsuario.Size = New System.Drawing.Size(381, 208)
         Me.GroupNuevoUsuario.TabIndex = 6
         Me.GroupNuevoUsuario.TabStop = False
         Me.GroupNuevoUsuario.Text = "Nuevo Usuario"
@@ -289,7 +289,7 @@ Partial Class frm_Usuario
         '
         Me.btnCancelar_Usuario.Location = New System.Drawing.Point(292, 164)
         Me.btnCancelar_Usuario.Name = "btnCancelar_Usuario"
-        Me.btnCancelar_Usuario.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar_Usuario.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar_Usuario.TabIndex = 6
         Me.btnCancelar_Usuario.Text = "Cancelar"
         Me.btnCancelar_Usuario.UseVisualStyleBackColor = True
@@ -298,7 +298,7 @@ Partial Class frm_Usuario
         '
         Me.btnActualizar_Usuario.Location = New System.Drawing.Point(211, 164)
         Me.btnActualizar_Usuario.Name = "btnActualizar_Usuario"
-        Me.btnActualizar_Usuario.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar_Usuario.Size = New System.Drawing.Size(75, 33)
         Me.btnActualizar_Usuario.TabIndex = 2
         Me.btnActualizar_Usuario.Text = "Actualizar"
         Me.btnActualizar_Usuario.UseVisualStyleBackColor = True
@@ -307,7 +307,7 @@ Partial Class frm_Usuario
         '
         Me.btnGuardar_Usuario.Location = New System.Drawing.Point(130, 164)
         Me.btnGuardar_Usuario.Name = "btnGuardar_Usuario"
-        Me.btnGuardar_Usuario.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar_Usuario.Size = New System.Drawing.Size(75, 33)
         Me.btnGuardar_Usuario.TabIndex = 5
         Me.btnGuardar_Usuario.Text = "Guardar"
         Me.btnGuardar_Usuario.UseVisualStyleBackColor = True
@@ -316,7 +316,7 @@ Partial Class frm_Usuario
         '
         Me.btnNuevo_Usuario.Location = New System.Drawing.Point(49, 164)
         Me.btnNuevo_Usuario.Name = "btnNuevo_Usuario"
-        Me.btnNuevo_Usuario.Size = New System.Drawing.Size(75, 23)
+        Me.btnNuevo_Usuario.Size = New System.Drawing.Size(75, 33)
         Me.btnNuevo_Usuario.TabIndex = 2
         Me.btnNuevo_Usuario.Text = "Nuevo"
         Me.btnNuevo_Usuario.UseVisualStyleBackColor = True
@@ -351,7 +351,7 @@ Partial Class frm_Usuario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(407, 516)
+        Me.ClientSize = New System.Drawing.Size(407, 538)
         Me.Controls.Add(Me.GroupListadoUsuarios)
         Me.Controls.Add(Me.GroupNuevoUsuario)
         Me.Name = "frm_Usuario"

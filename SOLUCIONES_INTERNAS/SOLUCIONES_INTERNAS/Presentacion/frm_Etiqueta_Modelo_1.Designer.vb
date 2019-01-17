@@ -47,7 +47,9 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
+        Me.btnLimpiarEtiqueta = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.btnAgregar = New System.Windows.Forms.Button()
         Me.cboLogo = New System.Windows.Forms.ComboBox()
         Me.txtSeccion = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -67,15 +69,14 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.btnBuscar_Orden = New System.Windows.Forms.Button()
         Me.txt_orden = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
-        Me.btnAgregar = New System.Windows.Forms.Button()
-        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.dgv_Etiquetas = New System.Windows.Forms.DataGridView()
+        Me.btnCancelar = New System.Windows.Forms.Button()
         Me.btnGenerarEtiquetas = New System.Windows.Forms.Button()
-        Me.btnLimpiarEtiqueta = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -279,7 +280,6 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.GroupBox2.Controls.Add(Me.Label30)
         Me.GroupBox2.Controls.Add(Me.Label29)
         Me.GroupBox2.Controls.Add(Me.Label28)
-        Me.GroupBox2.Controls.Add(Me.btnLimpiarEtiqueta)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.btnAgregar)
         Me.GroupBox2.Controls.Add(Me.cboLogo)
@@ -307,7 +307,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label31.AutoSize = True
         Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label31.ForeColor = System.Drawing.Color.Red
-        Me.Label31.Location = New System.Drawing.Point(198, 24)
+        Me.Label31.Location = New System.Drawing.Point(140, 26)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(14, 13)
         Me.Label31.TabIndex = 31
@@ -318,7 +318,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label30.AutoSize = True
         Me.Label30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label30.ForeColor = System.Drawing.Color.Red
-        Me.Label30.Location = New System.Drawing.Point(466, 67)
+        Me.Label30.Location = New System.Drawing.Point(399, 54)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(14, 13)
         Me.Label30.TabIndex = 30
@@ -329,7 +329,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label29.ForeColor = System.Drawing.Color.Red
-        Me.Label29.Location = New System.Drawing.Point(197, 78)
+        Me.Label29.Location = New System.Drawing.Point(347, 83)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(14, 13)
         Me.Label29.TabIndex = 29
@@ -340,34 +340,52 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label28.AutoSize = True
         Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label28.ForeColor = System.Drawing.Color.Red
-        Me.Label28.Location = New System.Drawing.Point(466, 36)
+        Me.Label28.Location = New System.Drawing.Point(399, 23)
         Me.Label28.Name = "Label28"
         Me.Label28.Size = New System.Drawing.Size(14, 13)
         Me.Label28.TabIndex = 28
         Me.Label28.Text = "* "
         '
+        'btnLimpiarEtiqueta
+        '
+        Me.btnLimpiarEtiqueta.Location = New System.Drawing.Point(756, 551)
+        Me.btnLimpiarEtiqueta.Name = "btnLimpiarEtiqueta"
+        Me.btnLimpiarEtiqueta.Size = New System.Drawing.Size(108, 33)
+        Me.btnLimpiarEtiqueta.TabIndex = 25
+        Me.btnLimpiarEtiqueta.Text = "Limpiar Campos"
+        Me.btnLimpiarEtiqueta.UseVisualStyleBackColor = True
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(162, 78)
+        Me.Label1.Location = New System.Drawing.Point(312, 83)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(34, 13)
         Me.Label1.TabIndex = 25
         Me.Label1.Text = "Logo:"
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.Location = New System.Drawing.Point(837, 66)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(108, 33)
+        Me.btnAgregar.TabIndex = 17
+        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.UseVisualStyleBackColor = True
         '
         'cboLogo
         '
         Me.cboLogo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboLogo.FormattingEnabled = True
         Me.cboLogo.Items.AddRange(New Object() {"Aguas Cordobesas", "Fsc", "Soluciones Graficas", "Tarjeta Naranja", "Ninguno"})
-        Me.cboLogo.Location = New System.Drawing.Point(215, 73)
+        Me.cboLogo.Location = New System.Drawing.Point(365, 78)
         Me.cboLogo.Name = "cboLogo"
         Me.cboLogo.Size = New System.Drawing.Size(151, 21)
         Me.cboLogo.TabIndex = 16
         '
         'txtSeccion
         '
-        Me.txtSeccion.Location = New System.Drawing.Point(215, 47)
+        Me.txtSeccion.Location = New System.Drawing.Point(157, 49)
         Me.txtSeccion.Name = "txtSeccion"
         Me.txtSeccion.Size = New System.Drawing.Size(151, 20)
         Me.txtSeccion.TabIndex = 10
@@ -375,7 +393,7 @@ Partial Class frm_Etiqueta_Modelo_1
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(154, 50)
+        Me.Label23.Location = New System.Drawing.Point(96, 52)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(49, 13)
         Me.Label23.TabIndex = 22
@@ -383,7 +401,7 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         'txtPeso
         '
-        Me.txtPeso.Location = New System.Drawing.Point(645, 62)
+        Me.txtPeso.Location = New System.Drawing.Point(594, 49)
         Me.txtPeso.Name = "txtPeso"
         Me.txtPeso.Size = New System.Drawing.Size(55, 20)
         Me.txtPeso.TabIndex = 15
@@ -391,7 +409,7 @@ Partial Class frm_Etiqueta_Modelo_1
         'txtTotalBultos
         '
         Me.txtTotalBultos.Enabled = False
-        Me.txtTotalBultos.Location = New System.Drawing.Point(645, 32)
+        Me.txtTotalBultos.Location = New System.Drawing.Point(594, 23)
         Me.txtTotalBultos.Name = "txtTotalBultos"
         Me.txtTotalBultos.Size = New System.Drawing.Size(55, 20)
         Me.txtTotalBultos.TabIndex = 14
@@ -399,7 +417,7 @@ Partial Class frm_Etiqueta_Modelo_1
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(600, 67)
+        Me.Label20.Location = New System.Drawing.Point(551, 54)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(37, 13)
         Me.Label20.TabIndex = 16
@@ -407,21 +425,21 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         'txtUnidadxBulto
         '
-        Me.txtUnidadxBulto.Location = New System.Drawing.Point(485, 62)
+        Me.txtUnidadxBulto.Location = New System.Drawing.Point(418, 49)
         Me.txtUnidadxBulto.Name = "txtUnidadxBulto"
         Me.txtUnidadxBulto.Size = New System.Drawing.Size(55, 20)
         Me.txtUnidadxBulto.TabIndex = 13
         '
         'txtCantidadBultos
         '
-        Me.txtCantidadBultos.Location = New System.Drawing.Point(485, 32)
+        Me.txtCantidadBultos.Location = New System.Drawing.Point(418, 23)
         Me.txtCantidadBultos.Name = "txtCantidadBultos"
         Me.txtCantidadBultos.Size = New System.Drawing.Size(55, 20)
         Me.txtCantidadBultos.TabIndex = 11
         '
         'txtDespachado
         '
-        Me.txtDespachado.Location = New System.Drawing.Point(215, 20)
+        Me.txtDespachado.Location = New System.Drawing.Point(157, 22)
         Me.txtDespachado.Name = "txtDespachado"
         Me.txtDespachado.Size = New System.Drawing.Size(151, 20)
         Me.txtDespachado.TabIndex = 9
@@ -430,7 +448,7 @@ Partial Class frm_Etiqueta_Modelo_1
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(556, 36)
+        Me.Label13.Location = New System.Drawing.Point(507, 23)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(81, 13)
         Me.Label13.TabIndex = 10
@@ -439,7 +457,7 @@ Partial Class frm_Etiqueta_Modelo_1
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(396, 67)
+        Me.Label12.Location = New System.Drawing.Point(329, 54)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(70, 13)
         Me.Label12.TabIndex = 8
@@ -448,7 +466,7 @@ Partial Class frm_Etiqueta_Modelo_1
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(414, 36)
+        Me.Label11.Location = New System.Drawing.Point(347, 23)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(52, 13)
         Me.Label11.TabIndex = 6
@@ -457,7 +475,7 @@ Partial Class frm_Etiqueta_Modelo_1
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(125, 24)
+        Me.Label10.Location = New System.Drawing.Point(67, 26)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(71, 13)
         Me.Label10.TabIndex = 7
@@ -475,7 +493,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.GroupBox3.Controls.Add(Me.GroupBox2)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(966, 547)
+        Me.GroupBox3.Size = New System.Drawing.Size(966, 533)
         Me.GroupBox3.TabIndex = 15
         Me.GroupBox3.TabStop = False
         '
@@ -484,7 +502,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label33.AutoSize = True
         Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label33.ForeColor = System.Drawing.Color.Red
-        Me.Label33.Location = New System.Drawing.Point(314, 31)
+        Me.Label33.Location = New System.Drawing.Point(391, 31)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(14, 13)
         Me.Label33.TabIndex = 38
@@ -492,14 +510,14 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         'txt_id_orden
         '
-        Me.txt_id_orden.Location = New System.Drawing.Point(683, 28)
+        Me.txt_id_orden.Location = New System.Drawing.Point(602, 28)
         Me.txt_id_orden.Name = "txt_id_orden"
         Me.txt_id_orden.Size = New System.Drawing.Size(28, 20)
         Me.txt_id_orden.TabIndex = 37
         '
         'btnBuscar_Orden
         '
-        Me.btnBuscar_Orden.Location = New System.Drawing.Point(624, 26)
+        Me.btnBuscar_Orden.Location = New System.Drawing.Point(543, 26)
         Me.btnBuscar_Orden.Name = "btnBuscar_Orden"
         Me.btnBuscar_Orden.Size = New System.Drawing.Size(49, 23)
         Me.btnBuscar_Orden.TabIndex = 36
@@ -508,66 +526,51 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         'txt_orden
         '
-        Me.txt_orden.Location = New System.Drawing.Point(332, 28)
+        Me.txt_orden.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_orden.Location = New System.Drawing.Point(407, 16)
+        Me.txt_orden.Multiline = True
         Me.txt_orden.Name = "txt_orden"
-        Me.txt_orden.Size = New System.Drawing.Size(277, 20)
+        Me.txt_orden.Size = New System.Drawing.Size(130, 44)
         Me.txt_orden.TabIndex = 1
+        Me.txt_orden.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(274, 31)
+        Me.Label34.Location = New System.Drawing.Point(336, 26)
         Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(42, 13)
+        Me.Label34.Size = New System.Drawing.Size(57, 26)
         Me.Label34.TabIndex = 34
-        Me.Label34.Text = "Orden: "
-        '
-        'btnAgregar
-        '
-        Me.btnAgregar.Location = New System.Drawing.Point(837, 74)
-        Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(108, 23)
-        Me.btnAgregar.TabIndex = 17
-        Me.btnAgregar.Text = "Agregar"
-        Me.btnAgregar.UseVisualStyleBackColor = True
-        '
-        'btnCancelar
-        '
-        Me.btnCancelar.Location = New System.Drawing.Point(903, 565)
-        Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(75, 23)
-        Me.btnCancelar.TabIndex = 17
-        Me.btnCancelar.Text = "Cancelar"
-        Me.btnCancelar.UseVisualStyleBackColor = True
+        Me.Label34.Text = " Número" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "de Orden: "
         '
         'dgv_Etiquetas
         '
         Me.dgv_Etiquetas.AllowUserToAddRows = False
         Me.dgv_Etiquetas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgv_Etiquetas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_Etiquetas.Location = New System.Drawing.Point(6, 296)
+        Me.dgv_Etiquetas.Location = New System.Drawing.Point(6, 302)
         Me.dgv_Etiquetas.Name = "dgv_Etiquetas"
         Me.dgv_Etiquetas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_Etiquetas.Size = New System.Drawing.Size(954, 237)
+        Me.dgv_Etiquetas.Size = New System.Drawing.Size(954, 217)
         Me.dgv_Etiquetas.TabIndex = 23
+        '
+        'btnCancelar
+        '
+        Me.btnCancelar.Location = New System.Drawing.Point(870, 551)
+        Me.btnCancelar.Name = "btnCancelar"
+        Me.btnCancelar.Size = New System.Drawing.Size(108, 33)
+        Me.btnCancelar.TabIndex = 17
+        Me.btnCancelar.Text = "Cancelar"
+        Me.btnCancelar.UseVisualStyleBackColor = True
         '
         'btnGenerarEtiquetas
         '
-        Me.btnGenerarEtiquetas.Location = New System.Drawing.Point(708, 565)
+        Me.btnGenerarEtiquetas.Location = New System.Drawing.Point(528, 551)
         Me.btnGenerarEtiquetas.Name = "btnGenerarEtiquetas"
-        Me.btnGenerarEtiquetas.Size = New System.Drawing.Size(108, 23)
+        Me.btnGenerarEtiquetas.Size = New System.Drawing.Size(108, 33)
         Me.btnGenerarEtiquetas.TabIndex = 18
         Me.btnGenerarEtiquetas.Text = "Generar Etiquetas"
         Me.btnGenerarEtiquetas.UseVisualStyleBackColor = True
-        '
-        'btnLimpiarEtiqueta
-        '
-        Me.btnLimpiarEtiqueta.Location = New System.Drawing.Point(837, 45)
-        Me.btnLimpiarEtiqueta.Name = "btnLimpiarEtiqueta"
-        Me.btnLimpiarEtiqueta.Size = New System.Drawing.Size(108, 23)
-        Me.btnLimpiarEtiqueta.TabIndex = 25
-        Me.btnLimpiarEtiqueta.Text = "Limpiar"
-        Me.btnLimpiarEtiqueta.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -582,9 +585,9 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(822, 565)
+        Me.btnEliminar.Location = New System.Drawing.Point(642, 551)
         Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar.Size = New System.Drawing.Size(108, 33)
         Me.btnEliminar.TabIndex = 27
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
@@ -592,7 +595,7 @@ Partial Class frm_Etiqueta_Modelo_1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(451, 570)
+        Me.Label2.Location = New System.Drawing.Point(273, 561)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(114, 13)
         Me.Label2.TabIndex = 28
@@ -603,20 +606,33 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         Me.Label3.AutoSize = True
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label3.Location = New System.Drawing.Point(571, 570)
+        Me.Label3.Location = New System.Drawing.Point(393, 561)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(2, 15)
         Me.Label3.TabIndex = 29
         Me.Label3.Visible = False
         '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Red
+        Me.Label14.Location = New System.Drawing.Point(15, 551)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(105, 13)
+        Me.Label14.TabIndex = 30
+        Me.Label14.Text = "* (Campo Requerido)"
+        '
         'frm_Etiqueta_Modelo_1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(986, 596)
+        Me.ClientSize = New System.Drawing.Size(986, 593)
+        Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnEliminar)
+        Me.Controls.Add(Me.btnLimpiarEtiqueta)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnGenerarEtiquetas)
         Me.Controls.Add(Me.btnCancelar)
@@ -689,4 +705,5 @@ Partial Class frm_Etiqueta_Modelo_1
     Friend WithEvents Label34 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label14 As System.Windows.Forms.Label
 End Class

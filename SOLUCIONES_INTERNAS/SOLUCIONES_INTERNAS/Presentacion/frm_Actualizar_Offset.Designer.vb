@@ -23,6 +23,7 @@ Partial Class frm_Actualizar_Offset
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.txt_chapa_soporte_1 = New System.Windows.Forms.TextBox()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.cboMarca_Offset = New System.Windows.Forms.ComboBox()
@@ -78,6 +79,7 @@ Partial Class frm_Actualizar_Offset
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label16)
         Me.GroupBox1.Controls.Add(Me.txt_chapa_soporte_1)
         Me.GroupBox1.Controls.Add(Me.Label36)
         Me.GroupBox1.Controls.Add(Me.cboMarca_Offset)
@@ -106,6 +108,16 @@ Partial Class frm_Actualizar_Offset
         Me.GroupBox1.TabIndex = 157
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos originales"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.ForeColor = System.Drawing.Color.Red
+        Me.Label16.Location = New System.Drawing.Point(73, 39)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(11, 13)
+        Me.Label16.TabIndex = 165
+        Me.Label16.Text = "*"
         '
         'txt_chapa_soporte_1
         '
@@ -264,7 +276,7 @@ Partial Class frm_Actualizar_Offset
         '
         'btnBuscar_Numero_Orden1
         '
-        Me.btnBuscar_Numero_Orden1.Location = New System.Drawing.Point(246, 19)
+        Me.btnBuscar_Numero_Orden1.Location = New System.Drawing.Point(240, 19)
         Me.btnBuscar_Numero_Orden1.Name = "btnBuscar_Numero_Orden1"
         Me.btnBuscar_Numero_Orden1.Size = New System.Drawing.Size(46, 23)
         Me.btnBuscar_Numero_Orden1.TabIndex = 1
@@ -281,7 +293,7 @@ Partial Class frm_Actualizar_Offset
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(21, 35)
+        Me.Label5.Location = New System.Drawing.Point(15, 35)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(59, 26)
         Me.Label5.TabIndex = 76
@@ -310,7 +322,7 @@ Partial Class frm_Actualizar_Offset
         '
         'btnGuardar_ReTrabajo
         '
-        Me.btnGuardar_ReTrabajo.Location = New System.Drawing.Point(351, 418)
+        Me.btnGuardar_ReTrabajo.Location = New System.Drawing.Point(351, 423)
         Me.btnGuardar_ReTrabajo.Name = "btnGuardar_ReTrabajo"
         Me.btnGuardar_ReTrabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnGuardar_ReTrabajo.TabIndex = 146
@@ -381,7 +393,7 @@ Partial Class frm_Actualizar_Offset
         '
         'btnCancelar_ReTrabajo
         '
-        Me.btnCancelar_ReTrabajo.Location = New System.Drawing.Point(432, 418)
+        Me.btnCancelar_ReTrabajo.Location = New System.Drawing.Point(432, 423)
         Me.btnCancelar_ReTrabajo.Name = "btnCancelar_ReTrabajo"
         Me.btnCancelar_ReTrabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar_ReTrabajo.TabIndex = 147
@@ -618,4 +630,5 @@ Partial Class frm_Actualizar_Offset
     Friend WithEvents txt_Buscar_Orden_Repeticion As System.Windows.Forms.TextBox
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label16 As System.Windows.Forms.Label
 End Class

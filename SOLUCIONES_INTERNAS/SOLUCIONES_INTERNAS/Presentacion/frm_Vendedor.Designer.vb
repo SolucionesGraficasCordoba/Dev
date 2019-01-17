@@ -60,9 +60,9 @@ Partial Class frm_Vendedor
         Me.GroupListadoVendedor.Controls.Add(Me.btnEliminar_vendedor)
         Me.GroupListadoVendedor.Controls.Add(Me.txt_Buscar_vendedor)
         Me.GroupListadoVendedor.Controls.Add(Me.Label4)
-        Me.GroupListadoVendedor.Location = New System.Drawing.Point(12, 195)
+        Me.GroupListadoVendedor.Location = New System.Drawing.Point(12, 205)
         Me.GroupListadoVendedor.Name = "GroupListadoVendedor"
-        Me.GroupListadoVendedor.Size = New System.Drawing.Size(413, 258)
+        Me.GroupListadoVendedor.Size = New System.Drawing.Size(413, 265)
         Me.GroupListadoVendedor.TabIndex = 3
         Me.GroupListadoVendedor.TabStop = False
         Me.GroupListadoVendedor.Text = "Listado de Vendedores"
@@ -72,7 +72,7 @@ Partial Class frm_Vendedor
         Me.dgvLista_vendedores.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         Me.dgvLista_vendedores.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken
         Me.dgvLista_vendedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLista_vendedores.Location = New System.Drawing.Point(19, 53)
+        Me.dgvLista_vendedores.Location = New System.Drawing.Point(19, 58)
         Me.dgvLista_vendedores.Name = "dgvLista_vendedores"
         Me.dgvLista_vendedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvLista_vendedores.Size = New System.Drawing.Size(379, 172)
@@ -82,7 +82,7 @@ Partial Class frm_Vendedor
         '
         Me.lblTotal_Vendedores.AutoSize = True
         Me.lblTotal_Vendedores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblTotal_Vendedores.Location = New System.Drawing.Point(373, 235)
+        Me.lblTotal_Vendedores.Location = New System.Drawing.Point(373, 240)
         Me.lblTotal_Vendedores.Name = "lblTotal_Vendedores"
         Me.lblTotal_Vendedores.Size = New System.Drawing.Size(2, 15)
         Me.lblTotal_Vendedores.TabIndex = 5
@@ -90,7 +90,7 @@ Partial Class frm_Vendedor
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(249, 235)
+        Me.Label5.Location = New System.Drawing.Point(249, 240)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(106, 13)
         Me.Label5.TabIndex = 4
@@ -101,7 +101,7 @@ Partial Class frm_Vendedor
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(11, 235)
+        Me.Label8.Location = New System.Drawing.Point(11, 240)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(98, 13)
         Me.Label8.TabIndex = 4
@@ -111,14 +111,14 @@ Partial Class frm_Vendedor
         '
         Me.btnEliminar_vendedor.Location = New System.Drawing.Point(323, 19)
         Me.btnEliminar_vendedor.Name = "btnEliminar_vendedor"
-        Me.btnEliminar_vendedor.Size = New System.Drawing.Size(75, 23)
+        Me.btnEliminar_vendedor.Size = New System.Drawing.Size(75, 33)
         Me.btnEliminar_vendedor.TabIndex = 3
         Me.btnEliminar_vendedor.Text = "Eliminar"
         Me.btnEliminar_vendedor.UseVisualStyleBackColor = True
         '
         'txt_Buscar_vendedor
         '
-        Me.txt_Buscar_vendedor.Location = New System.Drawing.Point(103, 21)
+        Me.txt_Buscar_vendedor.Location = New System.Drawing.Point(103, 26)
         Me.txt_Buscar_vendedor.Name = "txt_Buscar_vendedor"
         Me.txt_Buscar_vendedor.Size = New System.Drawing.Size(144, 20)
         Me.txt_Buscar_vendedor.TabIndex = 2
@@ -126,7 +126,7 @@ Partial Class frm_Vendedor
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(15, 24)
+        Me.Label4.Location = New System.Drawing.Point(15, 29)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(82, 13)
         Me.Label4.TabIndex = 0
@@ -151,7 +151,7 @@ Partial Class frm_Vendedor
         Me.GroupNuevoVendedor.Controls.Add(Me.Label1)
         Me.GroupNuevoVendedor.Location = New System.Drawing.Point(12, 12)
         Me.GroupNuevoVendedor.Name = "GroupNuevoVendedor"
-        Me.GroupNuevoVendedor.Size = New System.Drawing.Size(413, 177)
+        Me.GroupNuevoVendedor.Size = New System.Drawing.Size(413, 187)
         Me.GroupNuevoVendedor.TabIndex = 2
         Me.GroupNuevoVendedor.TabStop = False
         Me.GroupNuevoVendedor.Text = "Nuevo Vendedor"
@@ -222,7 +222,7 @@ Partial Class frm_Vendedor
         '
         Me.btnCancelar_Vendedor.Location = New System.Drawing.Point(323, 141)
         Me.btnCancelar_Vendedor.Name = "btnCancelar_Vendedor"
-        Me.btnCancelar_Vendedor.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar_Vendedor.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar_Vendedor.TabIndex = 2
         Me.btnCancelar_Vendedor.Text = "Cancelar"
         Me.btnCancelar_Vendedor.UseVisualStyleBackColor = True
@@ -231,7 +231,7 @@ Partial Class frm_Vendedor
         '
         Me.btnActualizar_Vendedor.Location = New System.Drawing.Point(242, 141)
         Me.btnActualizar_Vendedor.Name = "btnActualizar_Vendedor"
-        Me.btnActualizar_Vendedor.Size = New System.Drawing.Size(75, 23)
+        Me.btnActualizar_Vendedor.Size = New System.Drawing.Size(75, 33)
         Me.btnActualizar_Vendedor.TabIndex = 2
         Me.btnActualizar_Vendedor.Text = "Actualizar"
         Me.btnActualizar_Vendedor.UseVisualStyleBackColor = True
@@ -240,7 +240,7 @@ Partial Class frm_Vendedor
         '
         Me.btnGuardar_Vendedor.Location = New System.Drawing.Point(161, 141)
         Me.btnGuardar_Vendedor.Name = "btnGuardar_Vendedor"
-        Me.btnGuardar_Vendedor.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar_Vendedor.Size = New System.Drawing.Size(75, 33)
         Me.btnGuardar_Vendedor.TabIndex = 4
         Me.btnGuardar_Vendedor.Text = "Guardar"
         Me.btnGuardar_Vendedor.UseVisualStyleBackColor = True
@@ -249,7 +249,7 @@ Partial Class frm_Vendedor
         '
         Me.btnNuevo_Vendedor.Location = New System.Drawing.Point(80, 141)
         Me.btnNuevo_Vendedor.Name = "btnNuevo_Vendedor"
-        Me.btnNuevo_Vendedor.Size = New System.Drawing.Size(75, 23)
+        Me.btnNuevo_Vendedor.Size = New System.Drawing.Size(75, 33)
         Me.btnNuevo_Vendedor.TabIndex = 2
         Me.btnNuevo_Vendedor.Text = "Nuevo"
         Me.btnNuevo_Vendedor.UseVisualStyleBackColor = True
@@ -291,7 +291,7 @@ Partial Class frm_Vendedor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(437, 466)
+        Me.ClientSize = New System.Drawing.Size(437, 480)
         Me.Controls.Add(Me.GroupListadoVendedor)
         Me.Controls.Add(Me.GroupNuevoVendedor)
         Me.Name = "frm_Vendedor"
