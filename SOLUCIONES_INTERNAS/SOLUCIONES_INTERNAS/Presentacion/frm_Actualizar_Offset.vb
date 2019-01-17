@@ -130,48 +130,32 @@
         dgvRepeticion.DataSource = carga
     End Sub
 
-    Private Sub txt_Buscar_Orden_Repeticion_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_Buscar_Orden_Repeticion.TextChanged
-        Dim buscar As String
-        ArmarGrillaRepeticion()
-        buscar = "*" & Me.txt_Buscar_Orden_Repeticion.Text & "*"
-        Dim consultaCliente = (From dot In datacontext.DETALLE_ORDEN_TRABAJO
-                                    Join ot In datacontext.ORDEN_TRABAJO
-                                    On dot.ORT_id_orden_trabajo Equals ot.ORT_id_orden_trabajo
-                                    Join ret In datacontext.RE_TRABAJO
-                                    On dot.id_detalle_orden_trabajo Equals ret.id_detalle_orden_trabajo
-                                    Select
-                                    dot.id_detalle_orden_trabajo,
-                                    ret.RET_id_retrabajo,
-                                    ot.ORT_numero_ot,
-                                    ret.cantidad_chapas_retrabajo,
-                                    ret.impresora_offset_retrabajo,
-                                    ret.marca_offset_retrabajo,
-                                    ret.RET_origen_area_motivo,
-                                    ret.RET_procedimiento_observaciones,
-                                    ret.RET_fecha_comienzo_retrabajo,
-                                    ret.RET_fecha_entrega_retrabajo
-        Order By RET_fecha_comienzo_retrabajo Descending)
-        dgvRepeticion.DataSource = consultaCliente
-        dgvRepeticion.ClearSelection()
-        dgvRepeticion.DataSource = ""
-        Label3.Text = dgvRepeticion.Rows.Count
-    End Sub
+    'Private Sub txt_Buscar_Orden_Repeticion_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_Buscar_Orden_Repeticion.TextChanged
+    '    'CONTROLAR
+    '    Dim buscar As String
+    '    ArmarGrillaRepeticion()
+    '    buscar = "*" & Me.txt_Buscar_Orden_Repeticion.Text & "*"
+    '    Dim ConsultaRepeticion = (From dot In datacontext.DETALLE_ORDEN_TRABAJO
+    '                                Join ot In datacontext.ORDEN_TRABAJO
+    '                                On dot.ORT_id_orden_trabajo Equals ot.ORT_id_orden_trabajo
+    '                                Join ret In datacontext.RE_TRABAJO
+    '                                On dot.id_detalle_orden_trabajo Equals ret.id_detalle_orden_trabajo
+    '                                Select
+    '                                dot.id_detalle_orden_trabajo,
+    '                                ret.RET_id_retrabajo,
+    '                                ot.ORT_numero_ot,
+    '                                ret.cantidad_chapas_retrabajo,
+    '                                ret.impresora_offset_retrabajo,
+    '                                ret.marca_offset_retrabajo,
+    '                                ret.RET_origen_area_motivo,
+    '                                ret.RET_procedimiento_observaciones,
+    '                                ret.RET_fecha_comienzo_retrabajo,
+    '                                ret.RET_fecha_entrega_retrabajo
+    '                                Where ORT_numero_ot Like buscar.ToString
+    '                                Order By ORT_numero_ot Ascending)
+    '    dgvRepeticion.DataSource = ConsultaRepeticion
+    '    dgvRepeticion.ClearSelection()
+    '    dgvRepeticion.DataSource = ""
+    '    Label3.Text = dgvRepeticion.Rows.Count
+    'End Sub
 End Class
-
-'SELECT dbo.DETALLE_ORDEN_TRABAJO.id_detalle_orden_trabajo, 
-'    dbo.[RE-TRABAJO].RET_id_retrabajo, 
-'    dbo.ORDEN_TRABAJO.ORT_numero_ot,
-'    dbo.[RE-TRABAJO].cantidad_chapas_retrabajo, 
-'    dbo.[RE-TRABAJO].impresora_offset_retrabajo, 
-'    dbo.[RE-TRABAJO].marca_offset_retrabajo, 
-'    dbo.[RE-TRABAJO].RET_origen_area_motivo, 
-'    dbo.[RE-TRABAJO].RET_procedimiento_observaciones, 
-'    dbo.[RE-TRABAJO].RET_fecha_comienzo_retrabajo
-'    dbo.[RE-TRABAJO].RET_fecha_entrega_retrabajo, 
-
-'FROM dbo.DETALLE_ORDEN_TRABAJO 
-'INNER JOIN
-'dbo.ORDEN_TRABAJO 
-'ON dbo.DETALLE_ORDEN_TRABAJO.ORT_id_orden_trabajo = dbo.ORDEN_TRABAJO.ORT_id_orden_trabajo 
-'INNER JOIN dbo.[RE-TRABAJO] 
-'ON dbo.DETALLE_ORDEN_TRABAJO.id_detalle_orden_trabajo = dbo.[RE-TRABAJO].id_detalle_orden_trabajo

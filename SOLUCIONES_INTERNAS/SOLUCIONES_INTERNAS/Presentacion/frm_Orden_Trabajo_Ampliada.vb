@@ -32,9 +32,6 @@
             cboPiezas_Producto.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Rows(0).Index).Value
             cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Rows(0).Index).Value
         End If
-
-
-
     End Sub
 
     Private Sub btnBuscar_cliente_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_cliente.Click
@@ -214,6 +211,7 @@
                 End If
             End If
         End If
+
         Dim buscaorden = (From odt In datacontext.ORDEN_TRABAJO
                       Select odt.ORT_fecha_ot, odt.ORT_tipo_ot, odt.ORT_numero_ot, odt.ORT_observaciones_ot, odt.VEN_id_vendedor, odt.CLI_id_cliente, odt.ORT_fecha_entrega
                       Where ORT_numero_ot = txtNumero_Orden_Trabajo.Text.ToUpper).Any
@@ -226,6 +224,7 @@
         End If
         Try
             '---------------------------GUARDA ORDEN------------------------------
+
             Dim ODT = New ORDEN_TRABAJO
             If cargamasprod = "NO" Then
 
