@@ -1573,5 +1573,6 @@ Public Class frm_Principal
         frm_Actualizar_Offset.cboMarca_Offset.Enabled = False
         frm_Actualizar_Offset.dtp_Fecha_Ingreso_Original.Enabled = False
         frm_Actualizar_Offset.Show()
+        frm_Actualizar_Offset.dgvRepeticion.ClearSelection()
     End Sub
 End Class
