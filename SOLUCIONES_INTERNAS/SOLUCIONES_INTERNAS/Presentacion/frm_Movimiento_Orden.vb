@@ -26,6 +26,7 @@ Public Class frm_Movimiento_Orden
                                mo.TAR_detalle_tarea,
                                mo.TAR_tiempo_real,
                               mo.TAR_fecha,
+                              mo.TAR_observaciones,
                               mo.COL_id_colaborador,
                               mo.COL_nombre_col,
                               mo.SEC_id_sector,
@@ -48,6 +49,7 @@ Public Class frm_Movimiento_Orden
         dgvMovimiento_Orden.Columns.Add("TAR_detalle_tarea", "Tarea")
         dgvMovimiento_Orden.Columns.Add("TAR_tiempo_real", "Tiempo Real")
         dgvMovimiento_Orden.Columns.Add("TAR_fecha", "Fecha Tarea")
+        dgvMovimiento_Orden.Columns.Add("TAR_observaciones", "Observaciones")
         dgvMovimiento_Orden.Columns.Add("PIE_id_pieza", "id_pieza")
         dgvMovimiento_Orden.Columns.Add("PIE_nombre_pie", "Pieza")
         dgvMovimiento_Orden.Columns.Add("COL_id_colaborador", "id_colaborador")
@@ -63,17 +65,18 @@ Public Class frm_Movimiento_Orden
         dgvMovimiento_Orden.Columns(3).DataPropertyName = "TAR_detalle_tarea"
         dgvMovimiento_Orden.Columns(4).DataPropertyName = "TAR_tiempo_real"
         dgvMovimiento_Orden.Columns(5).DataPropertyName = "TAR_fecha"
-        dgvMovimiento_Orden.Columns(6).DataPropertyName = "PIE_id_pieza"
-        dgvMovimiento_Orden.Columns(6).Visible = False
-        dgvMovimiento_Orden.Columns(7).DataPropertyName = "PIE_nombre_pie"
+        dgvMovimiento_Orden.Columns(6).DataPropertyName = "TAR_observaciones"
+        dgvMovimiento_Orden.Columns(7).DataPropertyName = "PIE_id_pieza"
         dgvMovimiento_Orden.Columns(7).Visible = False
-        dgvMovimiento_Orden.Columns(8).DataPropertyName = "COL_id_colaborador"
+        dgvMovimiento_Orden.Columns(8).DataPropertyName = "PIE_nombre_pie"
         dgvMovimiento_Orden.Columns(8).Visible = False
-        dgvMovimiento_Orden.Columns(9).DataPropertyName = "COL_nombre_col"
+        dgvMovimiento_Orden.Columns(9).DataPropertyName = "COL_id_colaborador"
         dgvMovimiento_Orden.Columns(9).Visible = False
-        dgvMovimiento_Orden.Columns(10).DataPropertyName = "SEC_id_sector"
-        dgvMovimiento_Orden.Columns(10).Visible = False
-        dgvMovimiento_Orden.Columns(11).DataPropertyName = "SEC_nombre_sector"
+        dgvMovimiento_Orden.Columns(10).DataPropertyName = "COL_nombre_col"
+        ' dgvMovimiento_Orden.Columns(10).Visible = False
+        dgvMovimiento_Orden.Columns(11).DataPropertyName = "SEC_id_sector"
+        dgvMovimiento_Orden.Columns(11).Visible = False
+        dgvMovimiento_Orden.Columns(12).DataPropertyName = "SEC_nombre_sector"
     End Sub
 
     Private Sub txt_Buscar_orden_trabajo_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_Buscar_orden_trabajo.TextChanged
@@ -211,4 +214,9 @@ Public Class frm_Movimiento_Orden
         Next
         Return values
     End Function
+
+    Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
+        Me.Close()
+        Me.Dispose()
+    End Sub
 End Class

@@ -206,7 +206,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.dtpFecha_Entrega_ODT.Location = New System.Drawing.Point(547, 34)
         Me.dtpFecha_Entrega_ODT.Name = "dtpFecha_Entrega_ODT"
         Me.dtpFecha_Entrega_ODT.Size = New System.Drawing.Size(118, 20)
-        Me.dtpFecha_Entrega_ODT.TabIndex = 101
+        Me.dtpFecha_Entrega_ODT.TabIndex = 3
         '
         'Label54
         '
@@ -269,7 +269,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txtNumero_Orden_Trabajo.Multiline = True
         Me.txtNumero_Orden_Trabajo.Name = "txtNumero_Orden_Trabajo"
         Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(116, 41)
-        Me.txtNumero_Orden_Trabajo.TabIndex = 68
+        Me.txtNumero_Orden_Trabajo.TabIndex = 1
         Me.txtNumero_Orden_Trabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label6
@@ -313,7 +313,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.btnBuscar_cliente.Location = New System.Drawing.Point(394, 105)
         Me.btnBuscar_cliente.Name = "btnBuscar_cliente"
         Me.btnBuscar_cliente.Size = New System.Drawing.Size(40, 23)
-        Me.btnBuscar_cliente.TabIndex = 70
+        Me.btnBuscar_cliente.TabIndex = 5
         Me.btnBuscar_cliente.Text = "..."
         Me.btnBuscar_cliente.UseVisualStyleBackColor = True
         '
@@ -357,7 +357,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_observaciones.Name = "txt_observaciones"
         Me.txt_observaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_observaciones.Size = New System.Drawing.Size(524, 92)
-        Me.txt_observaciones.TabIndex = 71
+        Me.txt_observaciones.TabIndex = 7
         '
         'Label18
         '
@@ -374,7 +374,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.dtpFecha_Ingreso_ODT.Location = New System.Drawing.Point(309, 34)
         Me.dtpFecha_Ingreso_ODT.Name = "dtpFecha_Ingreso_ODT"
         Me.dtpFecha_Ingreso_ODT.Size = New System.Drawing.Size(125, 20)
-        Me.dtpFecha_Ingreso_ODT.TabIndex = 79
+        Me.dtpFecha_Ingreso_ODT.TabIndex = 2
         '
         'Label4
         '
@@ -523,7 +523,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboPiezas_Producto.Location = New System.Drawing.Point(196, 49)
         Me.cboPiezas_Producto.Name = "cboPiezas_Producto"
         Me.cboPiezas_Producto.Size = New System.Drawing.Size(159, 21)
-        Me.cboPiezas_Producto.TabIndex = 158
+        Me.cboPiezas_Producto.TabIndex = 9
         '
         'Label7
         '
@@ -558,7 +558,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txtTamaño_Producto.MaxLength = 50
         Me.txtTamaño_Producto.Name = "txtTamaño_Producto"
         Me.txtTamaño_Producto.Size = New System.Drawing.Size(117, 20)
-        Me.txtTamaño_Producto.TabIndex = 159
+        Me.txtTamaño_Producto.TabIndex = 10
         '
         'txt_cantidad_producto
         '
@@ -566,7 +566,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_cantidad_producto.MaxLength = 7
         Me.txt_cantidad_producto.Name = "txt_cantidad_producto"
         Me.txt_cantidad_producto.Size = New System.Drawing.Size(59, 20)
-        Me.txt_cantidad_producto.TabIndex = 157
+        Me.txt_cantidad_producto.TabIndex = 8
         '
         'GroupBox8
         '
@@ -593,7 +593,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboFormato_3_Pliego_Entero.Location = New System.Drawing.Point(84, 91)
         Me.cboFormato_3_Pliego_Entero.Name = "cboFormato_3_Pliego_Entero"
         Me.cboFormato_3_Pliego_Entero.Size = New System.Drawing.Size(134, 21)
-        Me.cboFormato_3_Pliego_Entero.TabIndex = 39
+        Me.cboFormato_3_Pliego_Entero.TabIndex = 28
         '
         'Label27
         '
@@ -619,7 +619,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_Cantidad_1_Pliego_Entero.MaxLength = 7
         Me.txt_Cantidad_1_Pliego_Entero.Name = "txt_Cantidad_1_Pliego_Entero"
         Me.txt_Cantidad_1_Pliego_Entero.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad_1_Pliego_Entero.TabIndex = 30
+        Me.txt_Cantidad_1_Pliego_Entero.TabIndex = 13
         '
         'txt_Cantidad_2_Pliego_Entero
         '
@@ -627,7 +627,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_Cantidad_2_Pliego_Entero.MaxLength = 7
         Me.txt_Cantidad_2_Pliego_Entero.Name = "txt_Cantidad_2_Pliego_Entero"
         Me.txt_Cantidad_2_Pliego_Entero.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad_2_Pliego_Entero.TabIndex = 34
+        Me.txt_Cantidad_2_Pliego_Entero.TabIndex = 20
         '
         'txt_Cantidad_3_Pliego_Entero
         '
@@ -635,7 +635,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_Cantidad_3_Pliego_Entero.MaxLength = 7
         Me.txt_Cantidad_3_Pliego_Entero.Name = "txt_Cantidad_3_Pliego_Entero"
         Me.txt_Cantidad_3_Pliego_Entero.Size = New System.Drawing.Size(69, 20)
-        Me.txt_Cantidad_3_Pliego_Entero.TabIndex = 38
+        Me.txt_Cantidad_3_Pliego_Entero.TabIndex = 27
         '
         'cboFormato_1_Pliego_Entero
         '
@@ -645,7 +645,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboFormato_1_Pliego_Entero.Location = New System.Drawing.Point(84, 40)
         Me.cboFormato_1_Pliego_Entero.Name = "cboFormato_1_Pliego_Entero"
         Me.cboFormato_1_Pliego_Entero.Size = New System.Drawing.Size(134, 21)
-        Me.cboFormato_1_Pliego_Entero.TabIndex = 31
+        Me.cboFormato_1_Pliego_Entero.TabIndex = 14
         '
         'cboFormato_2_Pliego_Entero
         '
@@ -655,7 +655,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboFormato_2_Pliego_Entero.Location = New System.Drawing.Point(84, 66)
         Me.cboFormato_2_Pliego_Entero.Name = "cboFormato_2_Pliego_Entero"
         Me.cboFormato_2_Pliego_Entero.Size = New System.Drawing.Size(134, 21)
-        Me.cboFormato_2_Pliego_Entero.TabIndex = 35
+        Me.cboFormato_2_Pliego_Entero.TabIndex = 21
         '
         'Label21
         '
@@ -690,7 +690,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_Gramaje_3_Soporte.MaxLength = 10
         Me.txt_Gramaje_3_Soporte.Name = "txt_Gramaje_3_Soporte"
         Me.txt_Gramaje_3_Soporte.Size = New System.Drawing.Size(101, 20)
-        Me.txt_Gramaje_3_Soporte.TabIndex = 20
+        Me.txt_Gramaje_3_Soporte.TabIndex = 26
         '
         'txt_Papel_3_Soporte
         '
@@ -698,7 +698,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_Papel_3_Soporte.MaxLength = 50
         Me.txt_Papel_3_Soporte.Name = "txt_Papel_3_Soporte"
         Me.txt_Papel_3_Soporte.Size = New System.Drawing.Size(225, 20)
-        Me.txt_Papel_3_Soporte.TabIndex = 19
+        Me.txt_Papel_3_Soporte.TabIndex = 25
         '
         'txt_Gramaje_2_Soporte
         '
@@ -706,7 +706,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_Gramaje_2_Soporte.MaxLength = 10
         Me.txt_Gramaje_2_Soporte.Name = "txt_Gramaje_2_Soporte"
         Me.txt_Gramaje_2_Soporte.Size = New System.Drawing.Size(101, 20)
-        Me.txt_Gramaje_2_Soporte.TabIndex = 16
+        Me.txt_Gramaje_2_Soporte.TabIndex = 19
         '
         'txt_Papel_2_Soporte
         '
@@ -714,7 +714,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_Papel_2_Soporte.MaxLength = 50
         Me.txt_Papel_2_Soporte.Name = "txt_Papel_2_Soporte"
         Me.txt_Papel_2_Soporte.Size = New System.Drawing.Size(225, 20)
-        Me.txt_Papel_2_Soporte.TabIndex = 15
+        Me.txt_Papel_2_Soporte.TabIndex = 18
         '
         'Label24
         '
@@ -758,7 +758,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboDireccion_Entrega.MaxLength = 250
         Me.cboDireccion_Entrega.Name = "cboDireccion_Entrega"
         Me.cboDireccion_Entrega.Size = New System.Drawing.Size(212, 21)
-        Me.cboDireccion_Entrega.TabIndex = 128
+        Me.cboDireccion_Entrega.TabIndex = 6
         '
         'GroupBox4
         '
@@ -806,7 +806,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.btnBuscar_Vendedor.Location = New System.Drawing.Point(394, 71)
         Me.btnBuscar_Vendedor.Name = "btnBuscar_Vendedor"
         Me.btnBuscar_Vendedor.Size = New System.Drawing.Size(40, 23)
-        Me.btnBuscar_Vendedor.TabIndex = 129
+        Me.btnBuscar_Vendedor.TabIndex = 4
         Me.btnBuscar_Vendedor.Text = "..."
         Me.btnBuscar_Vendedor.UseVisualStyleBackColor = True
         '
@@ -854,7 +854,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboTipo_Impresion_Digital.Location = New System.Drawing.Point(118, 45)
         Me.cboTipo_Impresion_Digital.Name = "cboTipo_Impresion_Digital"
         Me.cboTipo_Impresion_Digital.Size = New System.Drawing.Size(85, 21)
-        Me.cboTipo_Impresion_Digital.TabIndex = 136
+        Me.cboTipo_Impresion_Digital.TabIndex = 36
         '
         'GroupBox7
         '
@@ -881,7 +881,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboFormato_3_Pliego_Maquina_Digital.Location = New System.Drawing.Point(82, 94)
         Me.cboFormato_3_Pliego_Maquina_Digital.Name = "cboFormato_3_Pliego_Maquina_Digital"
         Me.cboFormato_3_Pliego_Maquina_Digital.Size = New System.Drawing.Size(138, 21)
-        Me.cboFormato_3_Pliego_Maquina_Digital.TabIndex = 65
+        Me.cboFormato_3_Pliego_Maquina_Digital.TabIndex = 42
         '
         'txtCantidad_1_Pliego_Maquina_Digital
         '
@@ -889,7 +889,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txtCantidad_1_Pliego_Maquina_Digital.MaxLength = 7
         Me.txtCantidad_1_Pliego_Maquina_Digital.Name = "txtCantidad_1_Pliego_Maquina_Digital"
         Me.txtCantidad_1_Pliego_Maquina_Digital.Size = New System.Drawing.Size(69, 20)
-        Me.txtCantidad_1_Pliego_Maquina_Digital.TabIndex = 60
+        Me.txtCantidad_1_Pliego_Maquina_Digital.TabIndex = 37
         '
         'Label5
         '
@@ -908,7 +908,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboFormato_2_Pliego_Maquina_Digital.Location = New System.Drawing.Point(82, 69)
         Me.cboFormato_2_Pliego_Maquina_Digital.Name = "cboFormato_2_Pliego_Maquina_Digital"
         Me.cboFormato_2_Pliego_Maquina_Digital.Size = New System.Drawing.Size(138, 21)
-        Me.cboFormato_2_Pliego_Maquina_Digital.TabIndex = 63
+        Me.cboFormato_2_Pliego_Maquina_Digital.TabIndex = 40
         '
         'Label11
         '
@@ -925,7 +925,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txtCantidad_3_Pliego_Maquina_Digital.MaxLength = 7
         Me.txtCantidad_3_Pliego_Maquina_Digital.Name = "txtCantidad_3_Pliego_Maquina_Digital"
         Me.txtCantidad_3_Pliego_Maquina_Digital.Size = New System.Drawing.Size(69, 20)
-        Me.txtCantidad_3_Pliego_Maquina_Digital.TabIndex = 64
+        Me.txtCantidad_3_Pliego_Maquina_Digital.TabIndex = 41
         '
         'cboFormato_1_Pliego_Maquina_Digital
         '
@@ -935,7 +935,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboFormato_1_Pliego_Maquina_Digital.Location = New System.Drawing.Point(82, 43)
         Me.cboFormato_1_Pliego_Maquina_Digital.Name = "cboFormato_1_Pliego_Maquina_Digital"
         Me.cboFormato_1_Pliego_Maquina_Digital.Size = New System.Drawing.Size(138, 21)
-        Me.cboFormato_1_Pliego_Maquina_Digital.TabIndex = 61
+        Me.cboFormato_1_Pliego_Maquina_Digital.TabIndex = 38
         '
         'txtCantidad_2_Pliego_Maquina_Digital
         '
@@ -943,7 +943,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txtCantidad_2_Pliego_Maquina_Digital.MaxLength = 7
         Me.txtCantidad_2_Pliego_Maquina_Digital.Name = "txtCantidad_2_Pliego_Maquina_Digital"
         Me.txtCantidad_2_Pliego_Maquina_Digital.Size = New System.Drawing.Size(69, 20)
-        Me.txtCantidad_2_Pliego_Maquina_Digital.TabIndex = 62
+        Me.txtCantidad_2_Pliego_Maquina_Digital.TabIndex = 39
         '
         'Label34
         '
@@ -1003,7 +1003,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboPiezas_Producto_Gran_Formato.Location = New System.Drawing.Point(80, 36)
         Me.cboPiezas_Producto_Gran_Formato.Name = "cboPiezas_Producto_Gran_Formato"
         Me.cboPiezas_Producto_Gran_Formato.Size = New System.Drawing.Size(134, 21)
-        Me.cboPiezas_Producto_Gran_Formato.TabIndex = 133
+        Me.cboPiezas_Producto_Gran_Formato.TabIndex = 44
         '
         'cboCalidad_Gran_Formato
         '
@@ -1066,7 +1066,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_cantidad_producto_Gran_Formato.MaxLength = 7
         Me.txt_cantidad_producto_Gran_Formato.Name = "txt_cantidad_producto_Gran_Formato"
         Me.txt_cantidad_producto_Gran_Formato.Size = New System.Drawing.Size(59, 20)
-        Me.txt_cantidad_producto_Gran_Formato.TabIndex = 132
+        Me.txt_cantidad_producto_Gran_Formato.TabIndex = 43
         '
         'cboSistema_Gran_Formato
         '
@@ -1489,7 +1489,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_chapa_soporte_3.MaxLength = 2
         Me.txt_chapa_soporte_3.Name = "txt_chapa_soporte_3"
         Me.txt_chapa_soporte_3.Size = New System.Drawing.Size(75, 20)
-        Me.txt_chapa_soporte_3.TabIndex = 150
+        Me.txt_chapa_soporte_3.TabIndex = 31
         '
         'txt_chapa_soporte_2
         '
@@ -1497,7 +1497,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_chapa_soporte_2.MaxLength = 2
         Me.txt_chapa_soporte_2.Name = "txt_chapa_soporte_2"
         Me.txt_chapa_soporte_2.Size = New System.Drawing.Size(75, 20)
-        Me.txt_chapa_soporte_2.TabIndex = 150
+        Me.txt_chapa_soporte_2.TabIndex = 24
         '
         'txt_chapa_soporte_1
         '
@@ -1505,7 +1505,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txt_chapa_soporte_1.MaxLength = 2
         Me.txt_chapa_soporte_1.Name = "txt_chapa_soporte_1"
         Me.txt_chapa_soporte_1.Size = New System.Drawing.Size(75, 20)
-        Me.txt_chapa_soporte_1.TabIndex = 150
+        Me.txt_chapa_soporte_1.TabIndex = 17
         '
         'Label36
         '
@@ -1524,7 +1524,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboFormato_3_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 94)
         Me.cboFormato_3_Pliego_Maquina_Offset.Name = "cboFormato_3_Pliego_Maquina_Offset"
         Me.cboFormato_3_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
-        Me.cboFormato_3_Pliego_Maquina_Offset.TabIndex = 65
+        Me.cboFormato_3_Pliego_Maquina_Offset.TabIndex = 30
         '
         'txtCantidad_1_Pliego_Maquina_Offset
         '
@@ -1532,7 +1532,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txtCantidad_1_Pliego_Maquina_Offset.MaxLength = 7
         Me.txtCantidad_1_Pliego_Maquina_Offset.Name = "txtCantidad_1_Pliego_Maquina_Offset"
         Me.txtCantidad_1_Pliego_Maquina_Offset.Size = New System.Drawing.Size(69, 20)
-        Me.txtCantidad_1_Pliego_Maquina_Offset.TabIndex = 60
+        Me.txtCantidad_1_Pliego_Maquina_Offset.TabIndex = 15
         '
         'Label58
         '
@@ -1551,7 +1551,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboFormato_2_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 69)
         Me.cboFormato_2_Pliego_Maquina_Offset.Name = "cboFormato_2_Pliego_Maquina_Offset"
         Me.cboFormato_2_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
-        Me.cboFormato_2_Pliego_Maquina_Offset.TabIndex = 63
+        Me.cboFormato_2_Pliego_Maquina_Offset.TabIndex = 23
         '
         'Label57
         '
@@ -1568,7 +1568,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txtCantidad_3_Pliego_Maquina_Offset.MaxLength = 7
         Me.txtCantidad_3_Pliego_Maquina_Offset.Name = "txtCantidad_3_Pliego_Maquina_Offset"
         Me.txtCantidad_3_Pliego_Maquina_Offset.Size = New System.Drawing.Size(69, 20)
-        Me.txtCantidad_3_Pliego_Maquina_Offset.TabIndex = 64
+        Me.txtCantidad_3_Pliego_Maquina_Offset.TabIndex = 29
         '
         'cboFormato_1_Pliego_Maquina_Offset
         '
@@ -1578,7 +1578,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboFormato_1_Pliego_Maquina_Offset.Location = New System.Drawing.Point(88, 43)
         Me.cboFormato_1_Pliego_Maquina_Offset.Name = "cboFormato_1_Pliego_Maquina_Offset"
         Me.cboFormato_1_Pliego_Maquina_Offset.Size = New System.Drawing.Size(138, 21)
-        Me.cboFormato_1_Pliego_Maquina_Offset.TabIndex = 61
+        Me.cboFormato_1_Pliego_Maquina_Offset.TabIndex = 16
         '
         'txtCantidad_2_Pliego_Maquina_Offset
         '
@@ -1586,7 +1586,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.txtCantidad_2_Pliego_Maquina_Offset.MaxLength = 7
         Me.txtCantidad_2_Pliego_Maquina_Offset.Name = "txtCantidad_2_Pliego_Maquina_Offset"
         Me.txtCantidad_2_Pliego_Maquina_Offset.Size = New System.Drawing.Size(69, 20)
-        Me.txtCantidad_2_Pliego_Maquina_Offset.TabIndex = 62
+        Me.txtCantidad_2_Pliego_Maquina_Offset.TabIndex = 22
         '
         'cboMarca_Offset
         '
@@ -1596,7 +1596,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboMarca_Offset.Location = New System.Drawing.Point(202, 61)
         Me.cboMarca_Offset.Name = "cboMarca_Offset"
         Me.cboMarca_Offset.Size = New System.Drawing.Size(127, 21)
-        Me.cboMarca_Offset.TabIndex = 141
+        Me.cboMarca_Offset.TabIndex = 35
         '
         'Label61
         '
@@ -1615,7 +1615,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboModo_Impresion_Offset.Location = New System.Drawing.Point(202, 27)
         Me.cboModo_Impresion_Offset.Name = "cboModo_Impresion_Offset"
         Me.cboModo_Impresion_Offset.Size = New System.Drawing.Size(127, 21)
-        Me.cboModo_Impresion_Offset.TabIndex = 128
+        Me.cboModo_Impresion_Offset.TabIndex = 34
         '
         'Label13
         '
@@ -1643,7 +1643,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboImpresora_Offset.Location = New System.Drawing.Point(66, 61)
         Me.cboImpresora_Offset.Name = "cboImpresora_Offset"
         Me.cboImpresora_Offset.Size = New System.Drawing.Size(75, 21)
-        Me.cboImpresora_Offset.TabIndex = 135
+        Me.cboImpresora_Offset.TabIndex = 33
         '
         'cboTipo_Impresion_Offset
         '
@@ -1652,7 +1652,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboTipo_Impresion_Offset.Location = New System.Drawing.Point(66, 24)
         Me.cboTipo_Impresion_Offset.Name = "cboTipo_Impresion_Offset"
         Me.cboTipo_Impresion_Offset.Size = New System.Drawing.Size(75, 21)
-        Me.cboTipo_Impresion_Offset.TabIndex = 138
+        Me.cboTipo_Impresion_Offset.TabIndex = 32
         '
         'Label35
         '

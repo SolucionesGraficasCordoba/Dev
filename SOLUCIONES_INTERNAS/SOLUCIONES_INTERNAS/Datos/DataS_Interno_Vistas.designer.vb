@@ -22,7 +22,7 @@ Imports System.Linq.Expressions
 Imports System.Reflection
 
 
-<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="SOLUCIONES_INTERNAS")>  _
+<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="PREPRODUCCION")>  _
 Partial Public Class DataS_Interno_Vistas
 	Inherits System.Data.Linq.DataContext
 	
@@ -73,12 +73,6 @@ Partial Public Class DataS_Interno_Vistas
 	Public ReadOnly Property Listado_ReTrabajo() As System.Data.Linq.Table(Of Listado_ReTrabajo)
 		Get
 			Return Me.GetTable(Of Listado_ReTrabajo)
-		End Get
-	End Property
-	
-	Public ReadOnly Property Movimiento_Orden() As System.Data.Linq.Table(Of Movimiento_Orden)
-		Get
-			Return Me.GetTable(Of Movimiento_Orden)
 		End Get
 	End Property
 	
@@ -139,6 +133,12 @@ Partial Public Class DataS_Interno_Vistas
 	Public ReadOnly Property Vista_Detalle_Orden_Trabajo_1() As System.Data.Linq.Table(Of Vista_Detalle_Orden_Trabajo_1)
 		Get
 			Return Me.GetTable(Of Vista_Detalle_Orden_Trabajo_1)
+		End Get
+	End Property
+	
+	Public ReadOnly Property Movimiento_Orden() As System.Data.Linq.Table(Of Movimiento_Orden)
+		Get
+			Return Me.GetTable(Of Movimiento_Orden)
 		End Get
 	End Property
 End Class
@@ -758,157 +758,6 @@ Partial Public Class Listado_ReTrabajo
 		Set
 			If (Me._ORT_fecha_entrega.Equals(value) = false) Then
 				Me._ORT_fecha_entrega = value
-			End If
-		End Set
-	End Property
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Movimiento_Orden")>  _
-Partial Public Class Movimiento_Orden
-	
-	Private _ORT_numero_ot As String
-	
-	Private _TAR_id_tarea As Integer
-	
-	Private _TAR_detalle_tarea As String
-	
-	Private _TAR_tiempo_real As String
-	
-	Private _TAR_fecha As System.Nullable(Of Date)
-	
-	Private _COL_id_colaborador As Integer
-	
-	Private _COL_nombre_col As String
-	
-	Private _SEC_id_sector As System.Nullable(Of Integer)
-	
-	Private _SEC_nombre_sector As String
-	
-	Private _ORT_id_orden_trabajo As Integer
-	
-	Public Sub New()
-		MyBase.New
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_numero_ot", DbType:="VarChar(10) NOT NULL", CanBeNull:=false)>  _
-	Public Property ORT_numero_ot() As String
-		Get
-			Return Me._ORT_numero_ot
-		End Get
-		Set
-			If (String.Equals(Me._ORT_numero_ot, value) = false) Then
-				Me._ORT_numero_ot = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_id_tarea", DbType:="Int NOT NULL")>  _
-	Public Property TAR_id_tarea() As Integer
-		Get
-			Return Me._TAR_id_tarea
-		End Get
-		Set
-			If ((Me._TAR_id_tarea = value)  _
-						= false) Then
-				Me._TAR_id_tarea = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_detalle_tarea", DbType:="VarChar(100) NOT NULL", CanBeNull:=false)>  _
-	Public Property TAR_detalle_tarea() As String
-		Get
-			Return Me._TAR_detalle_tarea
-		End Get
-		Set
-			If (String.Equals(Me._TAR_detalle_tarea, value) = false) Then
-				Me._TAR_detalle_tarea = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_tiempo_real", DbType:="VarChar(10)")>  _
-	Public Property TAR_tiempo_real() As String
-		Get
-			Return Me._TAR_tiempo_real
-		End Get
-		Set
-			If (String.Equals(Me._TAR_tiempo_real, value) = false) Then
-				Me._TAR_tiempo_real = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_fecha", DbType:="Date")>  _
-	Public Property TAR_fecha() As System.Nullable(Of Date)
-		Get
-			Return Me._TAR_fecha
-		End Get
-		Set
-			If (Me._TAR_fecha.Equals(value) = false) Then
-				Me._TAR_fecha = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_id_colaborador", DbType:="Int NOT NULL")>  _
-	Public Property COL_id_colaborador() As Integer
-		Get
-			Return Me._COL_id_colaborador
-		End Get
-		Set
-			If ((Me._COL_id_colaborador = value)  _
-						= false) Then
-				Me._COL_id_colaborador = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_nombre_col", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property COL_nombre_col() As String
-		Get
-			Return Me._COL_nombre_col
-		End Get
-		Set
-			If (String.Equals(Me._COL_nombre_col, value) = false) Then
-				Me._COL_nombre_col = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_id_sector", DbType:="Int")>  _
-	Public Property SEC_id_sector() As System.Nullable(Of Integer)
-		Get
-			Return Me._SEC_id_sector
-		End Get
-		Set
-			If (Me._SEC_id_sector.Equals(value) = false) Then
-				Me._SEC_id_sector = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_nombre_sector", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property SEC_nombre_sector() As String
-		Get
-			Return Me._SEC_nombre_sector
-		End Get
-		Set
-			If (String.Equals(Me._SEC_nombre_sector, value) = false) Then
-				Me._SEC_nombre_sector = value
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int NOT NULL")>  _
-	Public Property ORT_id_orden_trabajo() As Integer
-		Get
-			Return Me._ORT_id_orden_trabajo
-		End Get
-		Set
-			If ((Me._ORT_id_orden_trabajo = value)  _
-						= false) Then
-				Me._ORT_id_orden_trabajo = value
 			End If
 		End Set
 	End Property
@@ -3679,6 +3528,171 @@ Partial Public Class Vista_Detalle_Orden_Trabajo_1
 		Set
 			If (String.Equals(Me._DOT_tamaño_producto, value) = false) Then
 				Me._DOT_tamaño_producto = value
+			End If
+		End Set
+	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Movimiento_Orden")>  _
+Partial Public Class Movimiento_Orden
+	
+	Private _ORT_numero_ot As String
+	
+	Private _TAR_id_tarea As Integer
+	
+	Private _TAR_detalle_tarea As String
+	
+	Private _TAR_tiempo_real As String
+	
+	Private _TAR_fecha As System.Nullable(Of Date)
+	
+	Private _COL_id_colaborador As Integer
+	
+	Private _COL_nombre_col As String
+	
+	Private _SEC_id_sector As System.Nullable(Of Integer)
+	
+	Private _SEC_nombre_sector As String
+	
+	Private _ORT_id_orden_trabajo As Integer
+	
+	Private _TAR_observaciones As String
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_numero_ot", DbType:="VarChar(10) NOT NULL", CanBeNull:=false)>  _
+	Public Property ORT_numero_ot() As String
+		Get
+			Return Me._ORT_numero_ot
+		End Get
+		Set
+			If (String.Equals(Me._ORT_numero_ot, value) = false) Then
+				Me._ORT_numero_ot = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_id_tarea", DbType:="Int NOT NULL")>  _
+	Public Property TAR_id_tarea() As Integer
+		Get
+			Return Me._TAR_id_tarea
+		End Get
+		Set
+			If ((Me._TAR_id_tarea = value)  _
+						= false) Then
+				Me._TAR_id_tarea = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_detalle_tarea", DbType:="VarChar(100) NOT NULL", CanBeNull:=false)>  _
+	Public Property TAR_detalle_tarea() As String
+		Get
+			Return Me._TAR_detalle_tarea
+		End Get
+		Set
+			If (String.Equals(Me._TAR_detalle_tarea, value) = false) Then
+				Me._TAR_detalle_tarea = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_tiempo_real", DbType:="VarChar(10)")>  _
+	Public Property TAR_tiempo_real() As String
+		Get
+			Return Me._TAR_tiempo_real
+		End Get
+		Set
+			If (String.Equals(Me._TAR_tiempo_real, value) = false) Then
+				Me._TAR_tiempo_real = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_fecha", DbType:="Date")>  _
+	Public Property TAR_fecha() As System.Nullable(Of Date)
+		Get
+			Return Me._TAR_fecha
+		End Get
+		Set
+			If (Me._TAR_fecha.Equals(value) = false) Then
+				Me._TAR_fecha = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_id_colaborador", DbType:="Int NOT NULL")>  _
+	Public Property COL_id_colaborador() As Integer
+		Get
+			Return Me._COL_id_colaborador
+		End Get
+		Set
+			If ((Me._COL_id_colaborador = value)  _
+						= false) Then
+				Me._COL_id_colaborador = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_COL_nombre_col", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property COL_nombre_col() As String
+		Get
+			Return Me._COL_nombre_col
+		End Get
+		Set
+			If (String.Equals(Me._COL_nombre_col, value) = false) Then
+				Me._COL_nombre_col = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_id_sector", DbType:="Int")>  _
+	Public Property SEC_id_sector() As System.Nullable(Of Integer)
+		Get
+			Return Me._SEC_id_sector
+		End Get
+		Set
+			If (Me._SEC_id_sector.Equals(value) = false) Then
+				Me._SEC_id_sector = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SEC_nombre_sector", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property SEC_nombre_sector() As String
+		Get
+			Return Me._SEC_nombre_sector
+		End Get
+		Set
+			If (String.Equals(Me._SEC_nombre_sector, value) = false) Then
+				Me._SEC_nombre_sector = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int NOT NULL")>  _
+	Public Property ORT_id_orden_trabajo() As Integer
+		Get
+			Return Me._ORT_id_orden_trabajo
+		End Get
+		Set
+			If ((Me._ORT_id_orden_trabajo = value)  _
+						= false) Then
+				Me._ORT_id_orden_trabajo = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TAR_observaciones", DbType:="VarChar(200)")>  _
+	Public Property TAR_observaciones() As String
+		Get
+			Return Me._TAR_observaciones
+		End Get
+		Set
+			If (String.Equals(Me._TAR_observaciones, value) = false) Then
+				Me._TAR_observaciones = value
 			End If
 		End Set
 	End Property

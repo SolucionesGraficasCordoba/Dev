@@ -3,7 +3,7 @@
     Dim datacontext As New DataS_Interno
     '  Public quienllamoordenampliada As Form
     Public quienllamo_listado_orden_ampliada As Form
-    Dim cargamasprod As String = "NO"
+    Public cargamasprod As String = "NO"
 
     Private Sub frm_Orden_Trabajo_Ampliada_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
@@ -212,8 +212,8 @@
             End If
         End If
 
-        Dim buscaorden = (From odt In datacontext.ORDEN_TRABAJO
-                      Select odt.ORT_fecha_ot, odt.ORT_tipo_ot, odt.ORT_numero_ot, odt.ORT_observaciones_ot, odt.VEN_id_vendedor, odt.CLI_id_cliente, odt.ORT_fecha_entrega
+        Dim buscaorden = (From odt1 In datacontext.ORDEN_TRABAJO
+                      Select odt1.ORT_fecha_ot, odt1.ORT_tipo_ot, odt1.ORT_numero_ot, odt1.ORT_observaciones_ot, odt1.VEN_id_vendedor, odt1.CLI_id_cliente, odt1.ORT_fecha_entrega
                       Where ORT_numero_ot = txtNumero_Orden_Trabajo.Text.ToUpper).Any
 
         If cargamasprod = "NO" Then
@@ -543,6 +543,9 @@
                 Case Else
                     MsgBox("la Orden se ha creado correctamente", vbInformation)
                     Me.Close()
+                    '  frm_listado_orden_trabajo_ampliada.frm_listado_orden_trabajo_ampliada_Load(0, Nothing)
+                    frm_listado_orden_trabajo_ampliada.CargarGrillaDetalle()
+
             End Select
         Catch ex As Exception
             MsgBox("Error al cargar la Orden")
