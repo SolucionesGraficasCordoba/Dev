@@ -130,7 +130,7 @@ Public Class frm_Movimiento_Orden
                 Exit Sub
             End If
             'intentar generar el documento
-            Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
+            Dim doc As New Document(PageSize.A4.Rotate, 5, 5, 1, 5)
             'path que guarda el reporte en el escritorio de windows (desktop)
             Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Movimiento de la Orden.pdf"
             Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
