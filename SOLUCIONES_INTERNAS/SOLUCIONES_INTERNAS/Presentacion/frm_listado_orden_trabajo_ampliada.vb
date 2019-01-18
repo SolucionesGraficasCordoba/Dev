@@ -1004,76 +1004,79 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     End Sub
 
     Private Sub btn_ODT_mostrar_listado_pdf_Click(sender As System.Object, e As System.EventArgs) Handles btn_ODT_mostrar_listado_pdf.Click
-        Try
-            'intentar generar el documento
-            Dim doc As New Document(PageSize.A4, 20, 20, 20, 20)
+        ' Try
+        'intentar generar el documento
+        Dim doc As New Document(PageSize.A4, 20, 20, 20, 20)
 
-            'path que guarda el reporte en el escritorio de windows (desktop)
-            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Orden_" _
-                                     + dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgv_detalle_orden.CurrentRow.Index).Value + "_" _
-                                     + dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                     + ".pdf"
-            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
-            ' PARA LAS LINEAS DE FONDO
-            Dim writer As PdfWriter = PdfWriter.GetInstance(doc, file)
-            doc.Open()
-            Dim cb As PdfContentByte = writer.DirectContent
-            Dibujar_Lineas(cb, doc)
-            Escribir_Pdf(cb)
+        'path que guarda el reporte en el escritorio de windows (desktop)
+        Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Orden_" _
+                                 + dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                 + ".pdf"
+        'no se usa xq ya no hay tipo de odt
+        '+ dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgv_detalle_orden.CurrentRow.Index).Value + "_" _
 
-            'Vbles formato
-            Dim medialinea As New Paragraph("                                       " _
-            & "--------------------------------------------------------------------------------------")
 
-            Dim linea As New Paragraph("---------------------------------------------------------------------" _
-                                      & "---------------------------------------------------------------------")
-            Dim orden As New Phrase("   " & dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                             & " " _
-                                             & dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                             & "                   " _
-                                            , New Font(fuente, 22, Font.Bold))
-            Dim ingreso_vendedor As New Paragraph("Fecha ingreso: " & dgvLista_Orden_Trabajo.SelectedRows(0).Cells("ORT_fecha_ot").Value _
-                                             & "  " _
-                                             & "                          " _
-                                             & "Vendedor: " & dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                             , New Font(fuente, 12, Font.Bold))
-            Dim cliente As New Paragraph("Cliente: " & dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                             , New Font(fuente, 12))
+        Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+        ' PARA LAS LINEAS DE FONDO
+        Dim writer As PdfWriter = PdfWriter.GetInstance(doc, file)
+        doc.Open()
+        Dim cb As PdfContentByte = writer.DirectContent
+        Dibujar_Lineas(cb, doc)
+        Escribir_Pdf(cb)
 
-            Dim entrega As New Paragraph("Entregar en: " & dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                             , New Font(fuente, 12))
+        'Vbles formato
+        Dim medialinea As New Paragraph("                                       " _
+        & "--------------------------------------------------------------------------------------")
 
-            Dim prod_desc As New Paragraph("Descripción: " _
-                                           & dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                           , New Font(fuente, 10, Font.Bold))
+        Dim linea As New Paragraph("---------------------------------------------------------------------" _
+                                  & "---------------------------------------------------------------------")
+        Dim orden As New Phrase("   " & dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                         & " " _
+                                         & dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                         & "                   " _
+                                        , New Font(fuente, 22, Font.Bold))
+        Dim ingreso_vendedor As New Paragraph("Fecha ingreso: " & dgvLista_Orden_Trabajo.SelectedRows(0).Cells("ORT_fecha_ot").Value _
+                                         & "  " _
+                                         & "                          " _
+                                         & "Vendedor: " & dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                         , New Font(fuente, 12, Font.Bold))
+        Dim cliente As New Paragraph("Cliente: " & dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                         , New Font(fuente, 12))
 
-            Dim encabezado As New Paragraph
-            encabezado.Add(orden)
-            'Encabezado
-            doc.Add(encabezado)
-            'Info
-            doc.Add(ingreso_vendedor)
-            doc.Add(cliente)
-            doc.Add(entrega)
-            'Descripción
-            doc.Add(prod_desc)
+        Dim entrega As New Paragraph("Entregar en: " & dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                         , New Font(fuente, 12))
+
+        Dim prod_desc As New Paragraph("Descripción: " _
+                                       & dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                       , New Font(fuente, 10, Font.Bold))
+
+        Dim encabezado As New Paragraph
+        encabezado.Add(orden)
+        'Encabezado
+        doc.Add(encabezado)
+        'Info
+        doc.Add(ingreso_vendedor)
+        doc.Add(cliente)
+        doc.Add(entrega)
+        'Descripción
+        doc.Add(prod_desc)
+        doc.Add(linea)
+        'Productos
+        For i = 0 To dgv_detalle_orden.RowCount - 1
+            dgv_detalle_orden.Rows(i).Selected = True
+            'dgv_detalle_orden_CellClick(0, Nothing)
+            pdf_informe_diario_sin_tablas(doc, i)
             doc.Add(linea)
-            'Productos
-            For i = 0 To dgv_detalle_orden.RowCount - 1
-                dgv_detalle_orden.Rows(i).Selected = True
-                '  dgv_detalle_orden_CellClick(0, Nothing)
-                ' pdf_informe_diario_sin_tablas(doc, i)
-                doc.Add(linea)
-            Next
-            doc.Close()
-            writer.Close()
-            Process.Start(filename)
+        Next
+        doc.Close()
+        writer.Close()
+        Process.Start(filename)
 
-            'Me.Close()
-        Catch ex As Exception
-            'si el mensaje es fallido mostrar msgbox
-            MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        'Me.Close()
+        'Catch ex As Exception
+        'si el mensaje es fallido mostrar msgbox
+        MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'End Try
     End Sub
 
     Sub Dibujar_Lineas(ByVal cb As PdfContentByte, ByVal doc As Document)
@@ -1104,53 +1107,53 @@ Where ORT_id_orden_trabajo = vble_id_orden)
         cb.EndText()
     End Sub
 
-    'Sub pdf_informe_diario_sin_tablas(ByVal doc As Document, ByVal fila_actual As Integer)
-    '    'Agregado de productos
-    '    Dim prod_tit As New Paragraph("ITEM " & (fila_actual + 1))
-    '    Dim prod_det As New Paragraph(dgv_detalle_orden.Item("DOT_cantidad_dot", dgv_detalle_orden.Rows(fila_actual).Index).Value _
-    '                                  & "  " _
-    '                                  & dgv_detalle_orden.Item("PIE_nombre_pie", dgv_detalle_orden.Rows(fila_actual).Index).Value _
-    '                                  & "   " _
-    '                                  & dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.Rows(fila_actual).Index).Value _
-    '                                  & "   " _
-    '                                  & dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.Rows(fila_actual).Index).Value _
-    '                                  , New Font(fuente, 16, Font.Bold))
+    Sub pdf_informe_diario_sin_tablas(ByVal doc As Document, ByVal fila_actual As Integer)
+        'Agregado de productos
+        Dim prod_tit As New Paragraph("ITEM " & (fila_actual + 1))
+        Dim prod_det As New Paragraph(dgv_detalle_orden.Item("DOT_cantidad_producto", dgv_detalle_orden.Rows(fila_actual).Index).Value _
+                                      & "  " _
+                                      & dgv_detalle_orden.Item("PIE_nombre_pie", dgv_detalle_orden.Rows(fila_actual).Index).Value _
+                                      & "   " _
+                                      & dgv_detalle_orden.Item("DOT_tamaño_producto", dgv_detalle_orden.Rows(fila_actual).Index).Value _
+                                      & "   " _
+                                      & dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.Rows(fila_actual).Index).Value _
+                                      , New Font(fuente, 16, Font.Bold))
 
-    '    doc.Add(prod_tit)
-    '    doc.Add(prod_det)
+        doc.Add(prod_tit)
+        doc.Add(prod_det)
 
-    '    'Agregado de soportes
-    '    Dim soporte As New Paragraph
-    '    Dim temp_cadena_cant, temp_cadena_papel, temp_cadena_gram, temp_cadena_formato As String
-    '    For j = 0 To 2 'dgv_detalle_orden.RowCount
-    '        temp_cadena_cant = "DOT_cantidad_soporte_" & j + 1
-    '        temp_cadena_papel = "DOT_papel_soporte_" & j + 1
-    '        temp_cadena_gram = "DOT_gramaje_soporte_" & j + 1
-    '        temp_cadena_formato = "DOT_formato_soporte_" & j + 1
-    '        If Len(dgv_detalle_orden.Item(temp_cadena_cant, dgv_detalle_orden.Rows(fila_actual).Index).Value) <> 0 Then
-    '            soporte = New Paragraph("           Soporte " & j + 1 & " : " _
-    '                                     & dgv_detalle_orden.Item(temp_cadena_cant, dgv_detalle_orden.Rows(fila_actual).Index).Value & "   " _
-    '                                     & dgv_detalle_orden.Item(temp_cadena_formato, dgv_detalle_orden.Rows(fila_actual).Index).Value & " " _
-    '                                     & dgv_detalle_orden.Item(temp_cadena_papel, dgv_detalle_orden.Rows(fila_actual).Index).Value & "   " _
-    '                                     & dgv_detalle_orden.Item(temp_cadena_gram, dgv_detalle_orden.Rows(fila_actual).Index).Value & "    " _
-    '                                     , New Font(fuente, 8))
-    '        Else
-    '            soporte = New Paragraph("")
-    '        End If
-    '        doc.Add(soporte)
-    '    Next
-    '    Dim pro_offset As New Paragraph("  Offset: " & dgvProcesos.Item("PROC_descrip_offset", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
-    '    Dim pro_digital As New Paragraph("  Digital: " & dgvProcesos.Item("PROC_descrip_digital", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
-    '    Dim pro_g_form As New Paragraph("  Gran formato: " & dgvProcesos.Item("PROC_descrip_gran_formato", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
-    '    Dim pro_term As New Paragraph("  Terminación: " & dgvProcesos.Item("PROC_descrip_terminacion", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
-    '    Dim pro_logi As New Paragraph("  Logística: " & dgvProcesos.Item("PROC_descrip_logistica", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
+        'Agregado de soportes
+        Dim soporte As New Paragraph
+        Dim temp_cadena_cant, temp_cadena_papel, temp_cadena_gram, temp_cadena_formato As String
+        For j = 0 To 2 'dgv_detalle_orden.RowCount
+            temp_cadena_cant = "DOT_cantidad_soporte_" & j + 1
+            temp_cadena_papel = "DOT_papel_soporte_" & j + 1
+            temp_cadena_gram = "DOT_gramaje_soporte_" & j + 1
+            temp_cadena_formato = "DOT_formato_soporte_" & j + 1
+            If Len(dgv_detalle_orden.Item(temp_cadena_cant, dgv_detalle_orden.Rows(fila_actual).Index).Value) <> 0 Then
+                soporte = New Paragraph("           Soporte " & j + 1 & " : " _
+                                         & dgv_detalle_orden.Item(temp_cadena_cant, dgv_detalle_orden.Rows(fila_actual).Index).Value & "   " _
+                                         & dgv_detalle_orden.Item(temp_cadena_formato, dgv_detalle_orden.Rows(fila_actual).Index).Value & " " _
+                                         & dgv_detalle_orden.Item(temp_cadena_papel, dgv_detalle_orden.Rows(fila_actual).Index).Value & "   " _
+                                         & dgv_detalle_orden.Item(temp_cadena_gram, dgv_detalle_orden.Rows(fila_actual).Index).Value & "    " _
+                                         , New Font(fuente, 8))
+            Else
+                soporte = New Paragraph("")
+            End If
+            doc.Add(soporte)
+        Next
+        'Dim pro_offset As New Paragraph("  Offset: " & dgvProcesos.Item("PROC_descrip_offset", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
+        'Dim pro_digital As New Paragraph("  Digital: " & dgvProcesos.Item("PROC_descrip_digital", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
+        'Dim pro_g_form As New Paragraph("  Gran formato: " & dgvProcesos.Item("PROC_descrip_gran_formato", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
+        'Dim pro_term As New Paragraph("  Terminación: " & dgvProcesos.Item("PROC_descrip_terminacion", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
+        'Dim pro_logi As New Paragraph("  Logística: " & dgvProcesos.Item("PROC_descrip_logistica", dgvProcesos.Rows(0).Index).Value, New Font(fuente, 10, Font.Bold))
 
-    '    doc.Add(pro_offset)
-    '    doc.Add(pro_digital)
-    '    doc.Add(pro_g_form)
-    '    doc.Add(pro_term)
-    '    doc.Add(pro_logi)
-    'End Sub
+        'doc.Add(pro_offset)
+        'doc.Add(pro_digital)
+        'doc.Add(pro_g_form)
+        'doc.Add(pro_term)
+        'doc.Add(pro_logi)
+    End Sub
 
     Private Sub btnAgregarProducto_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarProducto.Click
         Try
