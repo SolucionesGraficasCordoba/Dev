@@ -86,6 +86,7 @@ Partial Class frm_Principal
         Me.NuevoRetrabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RepeticiónDeChapasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EtiquetasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadisticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TareasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -102,7 +103,6 @@ Partial Class frm_Principal
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Timer_automatico = New System.Windows.Forms.Timer(Me.components)
-        Me.RepeticiónDeChapasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -497,6 +497,12 @@ Partial Class frm_Principal
         Me.ConsultarToolStripMenuItem1.Size = New System.Drawing.Size(188, 22)
         Me.ConsultarToolStripMenuItem1.Text = "Consultar"
         '
+        'RepeticiónDeChapasToolStripMenuItem
+        '
+        Me.RepeticiónDeChapasToolStripMenuItem.Name = "RepeticiónDeChapasToolStripMenuItem"
+        Me.RepeticiónDeChapasToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
+        Me.RepeticiónDeChapasToolStripMenuItem.Text = "Repetición de Chapas"
+        '
         'EtiquetasToolStripMenuItem
         '
         Me.EtiquetasToolStripMenuItem.Name = "EtiquetasToolStripMenuItem"
@@ -610,12 +616,6 @@ Partial Class frm_Principal
         'Timer_automatico
         '
         Me.Timer_automatico.Interval = 20000
-        '
-        'RepeticiónDeChapasToolStripMenuItem
-        '
-        Me.RepeticiónDeChapasToolStripMenuItem.Name = "RepeticiónDeChapasToolStripMenuItem"
-        Me.RepeticiónDeChapasToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
-        Me.RepeticiónDeChapasToolStripMenuItem.Text = "Repetición de Chapas"
         '
         'frm_Principal
         '
