@@ -130,7 +130,7 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns(18).DataPropertyName = "DOT_cantidad_producto"
         dgv_detalle_orden.Columns(19).DataPropertyName = "DOT_tamaño_producto"
         dgv_detalle_orden.Columns(20).DataPropertyName = "DOT_tipo_impresion_dot"
-        '   dgv_detalle_orden.Columns(20).Visible = False
+        'dgv_detalle_orden.Columns(20).Visible = False
         dgv_detalle_orden.Columns(21).DataPropertyName = "DOT_papel_soporte_1"
         dgv_detalle_orden.Columns(22).DataPropertyName = "DOT_papel_soporte_2"
         dgv_detalle_orden.Columns(23).DataPropertyName = "DOT_papel_soporte_3"
@@ -163,7 +163,7 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns(50).DataPropertyName = "formato_2_PM_digital"
         dgv_detalle_orden.Columns(51).DataPropertyName = "formato_3_PM_digital"
         dgv_detalle_orden.Columns(52).DataPropertyName = "modo_impresion_digital"
-        '    dgv_detalle_orden.Columns(52).Visible = False
+        'dgv_detalle_orden.Columns(52).Visible = False
         dgv_detalle_orden.Columns(53).DataPropertyName = "tipo_impresion_digital"
         dgv_detalle_orden.Columns(54).DataPropertyName = "dato_variable"
         dgv_detalle_orden.Columns(55).DataPropertyName = "cantidad_gran_formato"
@@ -207,19 +207,19 @@ Public Class frm_listado_orden_trabajo_ampliada
 
     Private Sub dgv_detalle_orden_CellDoubleClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellDoubleClick
         Try
-            '  If quien_llamo_listado_orden_ampliada.Name = frm_Actualizar_Offset.Name Then
-            frm_Actualizar_Offset.txt_id_orden_trabajo.Text = dgv_detalle_orden.SelectedCells(0).Value
-            frm_Actualizar_Offset.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.SelectedCells(17).Value
-            frm_Actualizar_Offset.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.SelectedCells(2).Value
-            frm_Actualizar_Offset.dtp_Fecha_Ingreso_Original.Text = dgv_detalle_orden.SelectedCells(8).Value
-            frm_Actualizar_Offset.txt_cantidad_original.Text = dgv_detalle_orden.SelectedCells(18).Value
-            frm_Actualizar_Offset.cboPiezas1_Detalle1.SelectedValue = dgv_detalle_orden.SelectedCells(13).Value
-            frm_Actualizar_Offset.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(19).Value
-            frm_Actualizar_Offset.txt_chapa_soporte_1.Text = dgv_detalle_orden.SelectedCells(41).Value
-            frm_Actualizar_Offset.cboImpresora_Original.Text = dgv_detalle_orden.SelectedCells(44).Value
-            frm_Actualizar_Offset.cboMarca_Offset.Text = dgv_detalle_orden.SelectedCells(45).Value
+            quienllamolistado_ot.Name = frm_retrabajo.Name
+
+                frm_retrabajo.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.SelectedCells(2).Value 'nro orden
+                frm_retrabajo.txt_id_orden_trabajo.Text = dgv_detalle_orden.SelectedCells(0).Value 'id orden
+                frm_retrabajo.txt_cantidad_original.Text = dgv_detalle_orden.SelectedCells(18).Value 'cantidad
+                frm_retrabajo.cboPiezas1_Detalle1.SelectedValue = dgv_detalle_orden.SelectedCells(15).Value 'pieza
+                frm_retrabajo.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(19).Value 'tamaño
+            frm_retrabajo.cboTipoImpresion = dgv_detalle_orden.SelectedCells(40).Value 'impresion
+                frm_retrabajo.dtp_Fecha_Ingreso_Original.Text = dgv_detalle_orden.SelectedCells(8).Value 'fecha ingreso
+                frm_retrabajo.dtpFecha_Entrega_Original = dgv_detalle_orden.SelectedCells(9).Value ' fecha entega
+            frm_retrabajo.txt_id_detalle.Text = dgv_detalle_orden.SelectedCells(0).Value 'id orden
             Me.Close()
-            '  End If
+
         Catch ex As Exception
         End Try
     End Sub

@@ -792,8 +792,8 @@ Public Class frm_Listado_Orden_Trabajo
             frm_retrabajo.txt_cantidad_original.Text = dgv_detalle_orden.SelectedCells(11).Value
             frm_retrabajo.cboPiezas1_Detalle1.Text = dgv_detalle_orden.SelectedCells(9).Value
             frm_retrabajo.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(12).Value
-            frm_retrabajo.cboTipoImpresion1_Detalle1.Text = dgv_detalle_orden.SelectedCells(13).Value
-            frm_retrabajo.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.SelectedCells(10).Value
+            frm_retrabajo.cboTipoImpresion.Text = dgv_detalle_orden.SelectedCells(13).Value
+            frm_retrabajo.txt_id_detalle.Text = dgv_detalle_orden.SelectedCells(10).Value
             frm_retrabajo.dtp_Fecha_Ingreso_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(3).Value
             frm_retrabajo.dtpFecha_Entrega_Original.Text = dgvLista_Orden_Trabajo.SelectedCells(10).Value
 

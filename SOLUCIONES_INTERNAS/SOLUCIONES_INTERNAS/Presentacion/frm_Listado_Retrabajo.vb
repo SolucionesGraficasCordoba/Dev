@@ -179,7 +179,7 @@ Public Class frm_Listado_Retrabajo
             frm_retrabajo.dtp_Nueva_Fecha_Entrega.Text = dgvLista_ReTrabajos.Item("RET_fecha_entrega", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             frm_retrabajo.txt_cantidad_original.Text = dgvLista_ReTrabajos.Item("DOT_cantidad_dot", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             frm_retrabajo.txtTamaño1_Detalle1.Text = dgvLista_ReTrabajos.Item("DOT_tamaño_dot", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
-            frm_retrabajo.cboTipoImpresion1_Detalle1.Text = dgvLista_ReTrabajos.Item("RET_tipo_impresion_dort", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
+            frm_retrabajo.cboTipoImpresion.Text = dgvLista_ReTrabajos.Item("RET_tipo_impresion_dort", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             frm_retrabajo.txt_Papel1_Soporte1.Text = dgvLista_ReTrabajos.Item("RET_papel_soporte_1", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             frm_retrabajo.txt_Gramaje1_Soporte1.Text = dgvLista_ReTrabajos("RET_gramaje_soporte_1", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             frm_retrabajo.txt_Cantidad1_Soporte1.Text = dgvLista_ReTrabajos("RET_cantidad_soporte_1", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
