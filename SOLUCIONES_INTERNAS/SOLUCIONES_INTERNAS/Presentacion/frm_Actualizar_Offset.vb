@@ -3,6 +3,7 @@
     Dim datacontext As New DataS_Interno
 
     Private Sub btnBuscar_Numero_Orden1_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden1.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
         frm_listado_orden_trabajo_ampliada.Show()
     End Sub
 

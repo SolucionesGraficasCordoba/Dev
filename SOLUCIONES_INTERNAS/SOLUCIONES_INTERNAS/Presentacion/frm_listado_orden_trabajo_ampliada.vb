@@ -206,10 +206,9 @@ Public Class frm_listado_orden_trabajo_ampliada
     End Sub
 
     Private Sub dgv_detalle_orden_CellDoubleClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellDoubleClick
-        Try
-            Me.quienllamolistado_ot.Name = frm_retrabajo.Name
+        '   Try
+        If quienllamolistado_ot.Name = frm_retrabajo.Name Then
             frm_retrabajo.txt_id_detalle.Text = dgv_detalle_orden.SelectedCells(17).Value
-
             frm_retrabajo.txt_id_orden_trabajo.Text = dgv_detalle_orden.SelectedCells(0).Value
             frm_retrabajo.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.SelectedCells(2).Value
 
@@ -220,10 +219,15 @@ Public Class frm_listado_orden_trabajo_ampliada
             frm_retrabajo.dtp_Fecha_Ingreso_Original.Text = dgv_detalle_orden.SelectedCells(8).Value
             frm_retrabajo.dtpFecha_Entrega_Original.Text = dgv_detalle_orden.SelectedCells(9).Value
 
-            Me.Close()
-        Catch ex As Exception
-            MsgBox("Error")
-        End Try
+            'COMPLETAR!!!!!
+        ElseIf quienllamolistado_ot.Name = frm_Actualizar_Offset.Name Then
+            frm_Actualizar_Offset.txt_id_orden_trabajo.Text = dgv_detalle_orden.SelectedCells(0).Value
+            frm_Actualizar_Offset.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.SelectedCells(2).Value
+        End If
+        Me.Close()
+        '  Catch ex As Exception
+        'MsgBox("Error")
+        '   End Try
     End Sub
 
     'CARGA GRILLA ORDEN TRABAJO
