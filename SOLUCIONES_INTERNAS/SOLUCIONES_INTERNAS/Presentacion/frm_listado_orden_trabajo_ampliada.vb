@@ -207,20 +207,22 @@ Public Class frm_listado_orden_trabajo_ampliada
 
     Private Sub dgv_detalle_orden_CellDoubleClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_detalle_orden.CellDoubleClick
         Try
-            quienllamolistado_ot.Name = frm_retrabajo.Name
+            Me.quienllamolistado_ot.Name = frm_retrabajo.Name
+            frm_retrabajo.txt_id_detalle.Text = dgv_detalle_orden.SelectedCells(17).Value
 
-                frm_retrabajo.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.SelectedCells(2).Value 'nro orden
-                frm_retrabajo.txt_id_orden_trabajo.Text = dgv_detalle_orden.SelectedCells(0).Value 'id orden
-                frm_retrabajo.txt_cantidad_original.Text = dgv_detalle_orden.SelectedCells(18).Value 'cantidad
-                frm_retrabajo.cboPiezas1_Detalle1.SelectedValue = dgv_detalle_orden.SelectedCells(15).Value 'pieza
-                frm_retrabajo.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(19).Value 'tamaño
-            frm_retrabajo.cboTipoImpresion = dgv_detalle_orden.SelectedCells(40).Value 'impresion
-                frm_retrabajo.dtp_Fecha_Ingreso_Original.Text = dgv_detalle_orden.SelectedCells(8).Value 'fecha ingreso
-                frm_retrabajo.dtpFecha_Entrega_Original = dgv_detalle_orden.SelectedCells(9).Value ' fecha entega
-            frm_retrabajo.txt_id_detalle.Text = dgv_detalle_orden.SelectedCells(0).Value 'id orden
+            frm_retrabajo.txt_id_orden_trabajo.Text = dgv_detalle_orden.SelectedCells(0).Value
+            frm_retrabajo.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.SelectedCells(2).Value
+
+            frm_retrabajo.txt_cantidad_original.Text = dgv_detalle_orden.SelectedCells(18).Value
+            frm_retrabajo.cboPiezas1_Detalle1.SelectedValue = dgv_detalle_orden.SelectedCells(15).Value
+            frm_retrabajo.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(19).Value
+            frm_retrabajo.cboTipoImpresion.Text = dgv_detalle_orden.SelectedCells(40).Value
+            frm_retrabajo.dtp_Fecha_Ingreso_Original.Text = dgv_detalle_orden.SelectedCells(8).Value
+            frm_retrabajo.dtpFecha_Entrega_Original.Text = dgv_detalle_orden.SelectedCells(9).Value
+
             Me.Close()
-
         Catch ex As Exception
+            MsgBox("Error")
         End Try
     End Sub
 
