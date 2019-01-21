@@ -36,7 +36,6 @@ Partial Class frm_retrabajo
         Me.txt_id_orden_trabajo = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.btnGuardar_ReTrabajo = New System.Windows.Forms.Button()
-        Me.GroupProducto1 = New System.Windows.Forms.GroupBox()
         Me.dtp_Nueva_Fecha_Entrega = New System.Windows.Forms.DateTimePicker()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -64,7 +63,6 @@ Partial Class frm_retrabajo
         Me.txt_Cantidad1_Soporte1 = New System.Windows.Forms.TextBox()
         Me.txt_Gramaje1_Soporte1 = New System.Windows.Forms.TextBox()
         Me.txt_Papel1_Soporte1 = New System.Windows.Forms.TextBox()
-        Me.txt_id_detalle_orden_trabajo1 = New System.Windows.Forms.TextBox()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.btnCancelar_ReTrabajo = New System.Windows.Forms.Button()
         Me.dtp_Fecha_Ingreso_Original = New System.Windows.Forms.DateTimePicker()
@@ -77,21 +75,22 @@ Partial Class frm_retrabajo
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.cboPiezas1_Detalle1 = New System.Windows.Forms.ComboBox()
-        Me.cboTipoImpresion1_Detalle1 = New System.Windows.Forms.ComboBox()
+        Me.cboTipoImpresion = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txtTamaño1_Detalle1 = New System.Windows.Forms.TextBox()
         Me.txt_cantidad_original = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.GroupProducto1.SuspendLayout()
+        Me.GroupProducto1 = New System.Windows.Forms.GroupBox()
+        Me.txt_id_detalle = New System.Windows.Forms.TextBox()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupProducto1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txt_id_re_trabajo
         '
-        Me.txt_id_re_trabajo.Location = New System.Drawing.Point(380, 401)
+        Me.txt_id_re_trabajo.Location = New System.Drawing.Point(390, 401)
         Me.txt_id_re_trabajo.Name = "txt_id_re_trabajo"
         Me.txt_id_re_trabajo.Size = New System.Drawing.Size(10, 20)
         Me.txt_id_re_trabajo.TabIndex = 60
@@ -99,7 +98,7 @@ Partial Class frm_retrabajo
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(307, 402)
+        Me.Label1.Location = New System.Drawing.Point(317, 402)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 59
@@ -177,7 +176,7 @@ Partial Class frm_retrabajo
         '
         Me.Label17.AutoSize = True
         Me.Label17.ForeColor = System.Drawing.Color.Red
-        Me.Label17.Location = New System.Drawing.Point(20, 404)
+        Me.Label17.Location = New System.Drawing.Point(30, 404)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(109, 13)
         Me.Label17.TabIndex = 81
@@ -185,29 +184,12 @@ Partial Class frm_retrabajo
         '
         'btnGuardar_ReTrabajo
         '
-        Me.btnGuardar_ReTrabajo.Location = New System.Drawing.Point(524, 399)
+        Me.btnGuardar_ReTrabajo.Location = New System.Drawing.Point(534, 399)
         Me.btnGuardar_ReTrabajo.Name = "btnGuardar_ReTrabajo"
-        Me.btnGuardar_ReTrabajo.Size = New System.Drawing.Size(75, 23)
+        Me.btnGuardar_ReTrabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnGuardar_ReTrabajo.TabIndex = 19
         Me.btnGuardar_ReTrabajo.Text = "Guardar"
         Me.btnGuardar_ReTrabajo.UseVisualStyleBackColor = True
-        '
-        'GroupProducto1
-        '
-        Me.GroupProducto1.Controls.Add(Me.dtp_Nueva_Fecha_Entrega)
-        Me.GroupProducto1.Controls.Add(Me.Label13)
-        Me.GroupProducto1.Controls.Add(Me.Label9)
-        Me.GroupProducto1.Controls.Add(Me.Label10)
-        Me.GroupProducto1.Controls.Add(Me.txt_cantidad_retrabajo)
-        Me.GroupProducto1.Controls.Add(Me.dtpFecha_Re_Trabajo)
-        Me.GroupProducto1.Controls.Add(Me.Label6)
-        Me.GroupProducto1.Controls.Add(Me.GroupBox5)
-        Me.GroupProducto1.Location = New System.Drawing.Point(15, 227)
-        Me.GroupProducto1.Name = "GroupProducto1"
-        Me.GroupProducto1.Size = New System.Drawing.Size(675, 166)
-        Me.GroupProducto1.TabIndex = 84
-        Me.GroupProducto1.TabStop = False
-        Me.GroupProducto1.Text = "Producto "
         '
         'dtp_Nueva_Fecha_Entrega
         '
@@ -251,7 +233,7 @@ Partial Class frm_retrabajo
         Me.txt_cantidad_retrabajo.Location = New System.Drawing.Point(80, 113)
         Me.txt_cantidad_retrabajo.Multiline = True
         Me.txt_cantidad_retrabajo.Name = "txt_cantidad_retrabajo"
-        Me.txt_cantidad_retrabajo.Size = New System.Drawing.Size(99, 47)
+        Me.txt_cantidad_retrabajo.Size = New System.Drawing.Size(99, 37)
         Me.txt_cantidad_retrabajo.TabIndex = 6
         Me.txt_cantidad_retrabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -293,7 +275,7 @@ Partial Class frm_retrabajo
         Me.GroupBox5.Controls.Add(Me.txt_Cantidad1_Soporte1)
         Me.GroupBox5.Controls.Add(Me.txt_Gramaje1_Soporte1)
         Me.GroupBox5.Controls.Add(Me.txt_Papel1_Soporte1)
-        Me.GroupBox5.Location = New System.Drawing.Point(230, 24)
+        Me.GroupBox5.Location = New System.Drawing.Point(220, 37)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(433, 123)
         Me.GroupBox5.TabIndex = 55
@@ -304,7 +286,7 @@ Partial Class frm_retrabajo
         '
         Me.cboFormato3_Soporte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato3_Soporte1.FormattingEnabled = True
-        Me.cboFormato3_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
+        Me.cboFormato3_Soporte1.Items.AddRange(New Object() {"", "630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato3_Soporte1.Location = New System.Drawing.Point(338, 92)
         Me.cboFormato3_Soporte1.MaxLength = 15
         Me.cboFormato3_Soporte1.Name = "cboFormato3_Soporte1"
@@ -315,7 +297,7 @@ Partial Class frm_retrabajo
         '
         Me.cboFormato2_Soporte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato2_Soporte1.FormattingEnabled = True
-        Me.cboFormato2_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
+        Me.cboFormato2_Soporte1.Items.AddRange(New Object() {"", "630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato2_Soporte1.Location = New System.Drawing.Point(338, 67)
         Me.cboFormato2_Soporte1.MaxLength = 15
         Me.cboFormato2_Soporte1.Name = "cboFormato2_Soporte1"
@@ -397,7 +379,7 @@ Partial Class frm_retrabajo
         '
         Me.cboFormato1_Soporte1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboFormato1_Soporte1.FormattingEnabled = True
-        Me.cboFormato1_Soporte1.Items.AddRange(New Object() {"Mts.", "Mts2", "Unidad"})
+        Me.cboFormato1_Soporte1.Items.AddRange(New Object() {"", "630 x 880", "650 x 500", "650 x 950", "700 x 500", "700 x 1000", "720 x 920", "720 x 1020", "740 x 1100", "760 x 1120", "820 x 1120", "820 x 1180", "860 x 610", "1000 x 660"})
         Me.cboFormato1_Soporte1.Location = New System.Drawing.Point(338, 41)
         Me.cboFormato1_Soporte1.MaxLength = 15
         Me.cboFormato1_Soporte1.Name = "cboFormato1_Soporte1"
@@ -462,17 +444,10 @@ Partial Class frm_retrabajo
         Me.txt_Papel1_Soporte1.Size = New System.Drawing.Size(163, 20)
         Me.txt_Papel1_Soporte1.TabIndex = 7
         '
-        'txt_id_detalle_orden_trabajo1
-        '
-        Me.txt_id_detalle_orden_trabajo1.Location = New System.Drawing.Point(271, 402)
-        Me.txt_id_detalle_orden_trabajo1.Name = "txt_id_detalle_orden_trabajo1"
-        Me.txt_id_detalle_orden_trabajo1.Size = New System.Drawing.Size(17, 20)
-        Me.txt_id_detalle_orden_trabajo1.TabIndex = 57
-        '
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(142, 405)
+        Me.Label45.Location = New System.Drawing.Point(152, 405)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(129, 13)
         Me.Label45.TabIndex = 56
@@ -480,9 +455,9 @@ Partial Class frm_retrabajo
         '
         'btnCancelar_ReTrabajo
         '
-        Me.btnCancelar_ReTrabajo.Location = New System.Drawing.Point(605, 399)
+        Me.btnCancelar_ReTrabajo.Location = New System.Drawing.Point(615, 399)
         Me.btnCancelar_ReTrabajo.Name = "btnCancelar_ReTrabajo"
-        Me.btnCancelar_ReTrabajo.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancelar_ReTrabajo.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar_ReTrabajo.TabIndex = 20
         Me.btnCancelar_ReTrabajo.Text = "Cancelar"
         Me.btnCancelar_ReTrabajo.UseVisualStyleBackColor = True
@@ -506,9 +481,9 @@ Partial Class frm_retrabajo
         '
         'btnImprimirFormulario
         '
-        Me.btnImprimirFormulario.Location = New System.Drawing.Point(399, 399)
+        Me.btnImprimirFormulario.Location = New System.Drawing.Point(409, 399)
         Me.btnImprimirFormulario.Name = "btnImprimirFormulario"
-        Me.btnImprimirFormulario.Size = New System.Drawing.Size(119, 23)
+        Me.btnImprimirFormulario.Size = New System.Drawing.Size(119, 33)
         Me.btnImprimirFormulario.TabIndex = 21
         Me.btnImprimirFormulario.Text = "Imprimir Formulario"
         Me.btnImprimirFormulario.UseVisualStyleBackColor = True
@@ -555,7 +530,7 @@ Partial Class frm_retrabajo
         Me.GroupBox1.Controls.Add(Me.dtpFecha_Entrega_Original)
         Me.GroupBox1.Controls.Add(Me.cboPiezas1_Detalle1)
         Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.cboTipoImpresion1_Detalle1)
+        Me.GroupBox1.Controls.Add(Me.cboTipoImpresion)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -593,15 +568,15 @@ Partial Class frm_retrabajo
         Me.cboPiezas1_Detalle1.Size = New System.Drawing.Size(162, 21)
         Me.cboPiezas1_Detalle1.TabIndex = 56
         '
-        'cboTipoImpresion1_Detalle1
+        'cboTipoImpresion
         '
-        Me.cboTipoImpresion1_Detalle1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple
-        Me.cboTipoImpresion1_Detalle1.FormattingEnabled = True
-        Me.cboTipoImpresion1_Detalle1.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
-        Me.cboTipoImpresion1_Detalle1.Location = New System.Drawing.Point(417, 116)
-        Me.cboTipoImpresion1_Detalle1.Name = "cboTipoImpresion1_Detalle1"
-        Me.cboTipoImpresion1_Detalle1.Size = New System.Drawing.Size(63, 21)
-        Me.cboTipoImpresion1_Detalle1.TabIndex = 37
+        Me.cboTipoImpresion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple
+        Me.cboTipoImpresion.FormattingEnabled = True
+        Me.cboTipoImpresion.Items.AddRange(New Object() {"1/0", "1/1", "1/4", "4/0", "4/1", "4/4"})
+        Me.cboTipoImpresion.Location = New System.Drawing.Point(417, 116)
+        Me.cboTipoImpresion.Name = "cboTipoImpresion"
+        Me.cboTipoImpresion.Size = New System.Drawing.Size(63, 21)
+        Me.cboTipoImpresion.TabIndex = 37
         '
         'Label8
         '
@@ -645,25 +620,39 @@ Partial Class frm_retrabajo
         Me.txt_cantidad_original.Size = New System.Drawing.Size(59, 20)
         Me.txt_cantidad_original.TabIndex = 33
         '
-        'Button1
+        'GroupProducto1
         '
-        Me.Button1.Location = New System.Drawing.Point(603, 437)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 33)
-        Me.Button1.TabIndex = 143
-        Me.Button1.Text = "Repetición"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.GroupProducto1.Controls.Add(Me.dtp_Nueva_Fecha_Entrega)
+        Me.GroupProducto1.Controls.Add(Me.Label13)
+        Me.GroupProducto1.Controls.Add(Me.Label9)
+        Me.GroupProducto1.Controls.Add(Me.Label10)
+        Me.GroupProducto1.Controls.Add(Me.txt_cantidad_retrabajo)
+        Me.GroupProducto1.Controls.Add(Me.dtpFecha_Re_Trabajo)
+        Me.GroupProducto1.Controls.Add(Me.Label6)
+        Me.GroupProducto1.Controls.Add(Me.GroupBox5)
+        Me.GroupProducto1.Location = New System.Drawing.Point(15, 227)
+        Me.GroupProducto1.Name = "GroupProducto1"
+        Me.GroupProducto1.Size = New System.Drawing.Size(675, 166)
+        Me.GroupProducto1.TabIndex = 84
+        Me.GroupProducto1.TabStop = False
+        Me.GroupProducto1.Text = "Producto "
+        '
+        'txt_id_detalle
+        '
+        Me.txt_id_detalle.Location = New System.Drawing.Point(281, 402)
+        Me.txt_id_detalle.Name = "txt_id_detalle"
+        Me.txt_id_detalle.Size = New System.Drawing.Size(30, 20)
+        Me.txt_id_detalle.TabIndex = 94
         '
         'frm_retrabajo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(700, 492)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(700, 444)
+        Me.Controls.Add(Me.txt_id_detalle)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnImprimirFormulario)
         Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.txt_id_detalle_orden_trabajo1)
         Me.Controls.Add(Me.Label45)
         Me.Controls.Add(Me.btnGuardar_ReTrabajo)
         Me.Controls.Add(Me.GroupProducto1)
@@ -677,12 +666,12 @@ Partial Class frm_retrabajo
         Me.Name = "frm_retrabajo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Orden  de Re-Trabajo"
-        Me.GroupProducto1.ResumeLayout(False)
-        Me.GroupProducto1.PerformLayout()
         Me.GroupBox5.ResumeLayout(False)
         Me.GroupBox5.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        Me.GroupProducto1.ResumeLayout(False)
+        Me.GroupProducto1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -699,8 +688,6 @@ Partial Class frm_retrabajo
     Friend WithEvents txt_id_orden_trabajo As System.Windows.Forms.TextBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents btnGuardar_ReTrabajo As System.Windows.Forms.Button
-    Friend WithEvents GroupProducto1 As System.Windows.Forms.GroupBox
-    Friend WithEvents txt_id_detalle_orden_trabajo1 As System.Windows.Forms.TextBox
     Friend WithEvents Label45 As System.Windows.Forms.Label
     Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
     Friend WithEvents cboFormato3_Soporte1 As System.Windows.Forms.ComboBox
@@ -740,11 +727,12 @@ Partial Class frm_retrabajo
     Friend WithEvents dtpFecha_Entrega_Original As System.Windows.Forms.DateTimePicker
     Friend WithEvents cboPiezas1_Detalle1 As System.Windows.Forms.ComboBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents cboTipoImpresion1_Detalle1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboTipoImpresion As System.Windows.Forms.ComboBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents txtTamaño1_Detalle1 As System.Windows.Forms.TextBox
     Friend WithEvents txt_cantidad_original As System.Windows.Forms.TextBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents GroupProducto1 As System.Windows.Forms.GroupBox
+    Friend WithEvents txt_id_detalle As System.Windows.Forms.TextBox
 End Class
