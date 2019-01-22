@@ -219,10 +219,17 @@ Public Class frm_listado_orden_trabajo_ampliada
             frm_retrabajo.dtp_Fecha_Ingreso_Original.Text = dgv_detalle_orden.SelectedCells(8).Value
             frm_retrabajo.dtpFecha_Entrega_Original.Text = dgv_detalle_orden.SelectedCells(9).Value
 
-            'COMPLETAR!!!!!
+
         ElseIf quienllamolistado_ot.Name = frm_Actualizar_Offset.Name Then
             frm_Actualizar_Offset.txt_id_orden_trabajo.Text = dgv_detalle_orden.SelectedCells(0).Value
             frm_Actualizar_Offset.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.SelectedCells(2).Value
+            frm_Actualizar_Offset.dtp_Fecha_Ingreso_Original.Text = dgv_detalle_orden.SelectedCells(8).Value
+            frm_Actualizar_Offset.txt_cantidad_original.Text = dgv_detalle_orden.SelectedCells(18).Value
+            frm_Actualizar_Offset.cboPiezas1_Detalle1.Text = dgv_detalle_orden.SelectedCells(15).Value
+            frm_Actualizar_Offset.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(19).Value
+            frm_Actualizar_Offset.txt_chapa_soporte_1.Text = dgv_detalle_orden.SelectedCells(41).Value
+            frm_Actualizar_Offset.cboImpresora_Offset.Text = dgv_detalle_orden.SelectedCells(44).Value
+            frm_Actualizar_Offset.cboMarca_Offset.Text = dgv_detalle_orden.SelectedCells(45).Value
         End If
         Me.Close()
         '  Catch ex As Exception

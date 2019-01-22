@@ -241,7 +241,6 @@
                 datacontext.ORDEN_TRABAJO.InsertOnSubmit(ODT)
                 datacontext.SubmitChanges()
             End If
-
             'GUARDA DETALLE DE LA ORDEN DE TRABAJO
             '--------------------------------------------------------------------------------------
 

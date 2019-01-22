@@ -74,9 +74,12 @@
         cboPiezas1_Detalle1.ValueMember = "PIE_id_pieza"
         cboPiezas1_Detalle1.SelectedIndex = -1
 
-        'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
-        cboPiezas1_Detalle1.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
-    End Sub
+        Try
+            'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
+            cboPiezas1_Detalle1.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
+        Catch ex As Exception
+        End Try
+        End Sub
 
     Private Sub ArmarGrillaRepeticion()
         dgvRepeticion.Enabled = True
