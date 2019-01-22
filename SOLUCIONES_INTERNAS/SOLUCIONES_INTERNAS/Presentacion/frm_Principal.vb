@@ -1564,6 +1564,7 @@ Public Class frm_Principal
         frm_Actualizar_Offset.Label45.Visible = False
 
         'DESHABILITA CAMPOS
+        frm_Actualizar_Offset.GroupBox3.Enabled = False
         frm_Actualizar_Offset.txtNumero_Orden_Trabajo.Enabled = False
         frm_Actualizar_Offset.txt_cantidad_original.Enabled = False
         frm_Actualizar_Offset.cboPiezas1_Detalle1.Enabled = False
@@ -1572,6 +1573,7 @@ Public Class frm_Principal
         frm_Actualizar_Offset.cboImpresora_Original.Enabled = False
         frm_Actualizar_Offset.cboMarca_Offset.Enabled = False
         frm_Actualizar_Offset.dtp_Fecha_Ingreso_Original.Enabled = False
+        frm_Actualizar_Offset.btnEliminar_Repeticion.Enabled = False
         frm_Actualizar_Offset.Show()
         frm_Actualizar_Offset.dgvRepeticion.ClearSelection()
     End Sub

@@ -34,6 +34,7 @@ Partial Class frm_Listado_Tareas
         Me.Btn_informe_diario = New System.Windows.Forms.Button()
         Me.btnEliminar_Tarea = New System.Windows.Forms.Button()
         Me.groupListadoDetalleTarea = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.Label35 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -44,6 +45,7 @@ Partial Class frm_Listado_Tareas
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnVer = New System.Windows.Forms.Button()
         Me.btnExportarListado = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupListadoTareas.SuspendLayout()
         CType(Me.dgvColaboradores, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.groupListadoDetalleTarea.SuspendLayout()
@@ -163,6 +165,8 @@ Partial Class frm_Listado_Tareas
         '
         'groupListadoDetalleTarea
         '
+        Me.groupListadoDetalleTarea.Controls.Add(Me.Label8)
+        Me.groupListadoDetalleTarea.Controls.Add(Me.Label3)
         Me.groupListadoDetalleTarea.Controls.Add(Me.Label35)
         Me.groupListadoDetalleTarea.Controls.Add(Me.Label7)
         Me.groupListadoDetalleTarea.Controls.Add(Me.Label1)
@@ -175,13 +179,24 @@ Partial Class frm_Listado_Tareas
         Me.groupListadoDetalleTarea.TabStop = False
         Me.groupListadoDetalleTarea.Text = "Detalle de Tareas"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.Black
+        Me.Label3.Location = New System.Drawing.Point(266, 244)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(99, 16)
+        Me.Label3.TabIndex = 52
+        Me.Label3.Text = "Total Estimado"
+        '
         'Label35
         '
         Me.Label35.AutoSize = True
         Me.Label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label35.ForeColor = System.Drawing.Color.Black
-        Me.Label35.Location = New System.Drawing.Point(402, 244)
+        Me.Label35.Location = New System.Drawing.Point(592, 244)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(2, 18)
         Me.Label35.TabIndex = 51
@@ -191,7 +206,7 @@ Partial Class frm_Listado_Tareas
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(328, 244)
+        Me.Label7.Location = New System.Drawing.Point(518, 244)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(71, 16)
         Me.Label7.TabIndex = 50
@@ -273,6 +288,16 @@ Partial Class frm_Listado_Tareas
         Me.btnExportarListado.Text = "Exportar Listado Individual"
         Me.btnExportarListado.UseVisualStyleBackColor = True
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(371, 244)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(2, 18)
+        Me.Label8.TabIndex = 53
+        '
         'frm_Listado_Tareas
         '
         Me.AcceptButton = Me.Btn_informe_diario
@@ -323,4 +348,6 @@ Partial Class frm_Listado_Tareas
     Friend WithEvents btnExportarListado As System.Windows.Forms.Button
     Friend WithEvents btnModificarTodas As System.Windows.Forms.Button
     Friend WithEvents Btn_informe_diario As System.Windows.Forms.Button
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class

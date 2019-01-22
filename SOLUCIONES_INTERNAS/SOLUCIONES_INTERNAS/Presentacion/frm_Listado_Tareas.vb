@@ -153,9 +153,15 @@ Public Class frm_Listado_Tareas
                 'Acumular valores
                 Sumatoria += Convert.ToInt32(row.Cells("TAR_tiempo_real").Value)
             Next
-
             Label35.Text = Sumatoria
             Label1.Text = dgvTarea_x_Colaborador.Rows.Count
+
+
+            Dim SumatoriaEstimado As Integer = 0
+            For Each estimado As DataGridViewRow In dgvTarea_x_Colaborador.Rows
+                SumatoriaEstimado += Convert.ToInt32(estimado.Cells("TAR_tiempo_estimado").Value)
+            Next
+            Label8.Text = SumatoriaEstimado
         Catch ex As Exception
 
         End Try
@@ -1159,12 +1165,17 @@ Public Class frm_Listado_Tareas
             Next
             datatable.CompleteRow()
         Next
+
+        Dim TotalTareasEstimadas As New Phrase("Total Estimado de Tareas: " + Label8.Text, New Font(fuente, 10, Font.Bold))
         Dim TotalTareas As New Phrase("Total Real de Tareas: " + Label35.Text, New Font(fuente, 10, Font.Bold))
+
         document.Add(encabezado)
         document.Add(entradasalida)
         document.Add(texto)
         document.Add(datatable)
+        document.Add(TotalTareasEstimadas)
         document.Add(TotalTareas)
+
     End Sub
 
     Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
@@ -2200,10 +2211,14 @@ Public Class frm_Listado_Tareas
             Dim entradasalida As New Paragraph("Sin tareas cargadas por el momento.", New Font(fuente, 10, Font.Bold))
             document.Add(entradasalida)
         End If
+
+        Dim TotalTareasEstimadas As New Paragraph("Total Estimado de Tareas: " + Label8.Text, New Font(fuente, 10, Font.Bold))
         Dim TotalTareas As New Paragraph("Total Real de Tareas: " + Label35.Text, New Font(fuente, 10, Font.Bold))
+
         document.Add(interlineado)
         document.Add(datatable)
+        document.Add(TotalTareasEstimadas)
         document.Add(TotalTareas)
-    End Sub
 
+    End Sub
 End Class

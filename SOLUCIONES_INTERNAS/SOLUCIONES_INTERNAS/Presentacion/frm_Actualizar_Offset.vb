@@ -79,7 +79,7 @@
             cboPiezas1_Detalle1.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
         Catch ex As Exception
         End Try
-        End Sub
+    End Sub
 
     Private Sub ArmarGrillaRepeticion()
         dgvRepeticion.Enabled = True
@@ -96,7 +96,6 @@
         dgvRepeticion.Columns.Add("RET_procedimiento_observaciones", "Observaciones")
         dgvRepeticion.Columns.Add("RET_fecha_comienzo_retrabajo", "Fecha Comienzo")
         dgvRepeticion.Columns.Add("RET_fecha_entrega_retrabajo", "Fecha Entrega")
-
 
         dgvRepeticion.Columns(0).DataPropertyName = "id_detalle_orden_trabajo"
         dgvRepeticion.Columns(0).Visible = False
