@@ -87,6 +87,13 @@ Partial Class frm_Principal
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RepeticiónDeChapasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevoToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultarToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DigitalOffsetToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultarToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EtiquetasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EstadisticasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TareasToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -474,7 +481,7 @@ Partial Class frm_Principal
         '
         'ReTrabajoToolStripMenuItem1
         '
-        Me.ReTrabajoToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoRetrabajoToolStripMenuItem, Me.EliminarToolStripMenuItem, Me.ConsultarToolStripMenuItem1, Me.RepeticiónDeChapasToolStripMenuItem})
+        Me.ReTrabajoToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoRetrabajoToolStripMenuItem, Me.EliminarToolStripMenuItem, Me.ConsultarToolStripMenuItem1, Me.RepeticiónDeChapasToolStripMenuItem, Me.DigitalOffsetToolStripMenuItem})
         Me.ReTrabajoToolStripMenuItem1.Name = "ReTrabajoToolStripMenuItem1"
         Me.ReTrabajoToolStripMenuItem1.Size = New System.Drawing.Size(77, 20)
         Me.ReTrabajoToolStripMenuItem1.Text = "Re-Trabajo"
@@ -499,9 +506,53 @@ Partial Class frm_Principal
         '
         'RepeticiónDeChapasToolStripMenuItem
         '
+        Me.RepeticiónDeChapasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem2, Me.EliminarToolStripMenuItem3, Me.ConsultarToolStripMenuItem3})
         Me.RepeticiónDeChapasToolStripMenuItem.Name = "RepeticiónDeChapasToolStripMenuItem"
         Me.RepeticiónDeChapasToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
         Me.RepeticiónDeChapasToolStripMenuItem.Text = "Repetición de Chapas"
+        '
+        'NuevoToolStripMenuItem2
+        '
+        Me.NuevoToolStripMenuItem2.Name = "NuevoToolStripMenuItem2"
+        Me.NuevoToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.NuevoToolStripMenuItem2.Text = "Nuevo"
+        '
+        'EliminarToolStripMenuItem3
+        '
+        Me.EliminarToolStripMenuItem3.Name = "EliminarToolStripMenuItem3"
+        Me.EliminarToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
+        Me.EliminarToolStripMenuItem3.Text = "Eliminar"
+        '
+        'ConsultarToolStripMenuItem3
+        '
+        Me.ConsultarToolStripMenuItem3.Name = "ConsultarToolStripMenuItem3"
+        Me.ConsultarToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
+        Me.ConsultarToolStripMenuItem3.Text = "Consultar"
+        '
+        'DigitalOffsetToolStripMenuItem
+        '
+        Me.DigitalOffsetToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem1, Me.EliminarToolStripMenuItem2, Me.ConsultarToolStripMenuItem2})
+        Me.DigitalOffsetToolStripMenuItem.Name = "DigitalOffsetToolStripMenuItem"
+        Me.DigitalOffsetToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
+        Me.DigitalOffsetToolStripMenuItem.Text = "Digital / Offset"
+        '
+        'NuevoToolStripMenuItem1
+        '
+        Me.NuevoToolStripMenuItem1.Name = "NuevoToolStripMenuItem1"
+        Me.NuevoToolStripMenuItem1.Size = New System.Drawing.Size(125, 22)
+        Me.NuevoToolStripMenuItem1.Text = "Nuevo"
+        '
+        'EliminarToolStripMenuItem2
+        '
+        Me.EliminarToolStripMenuItem2.Name = "EliminarToolStripMenuItem2"
+        Me.EliminarToolStripMenuItem2.Size = New System.Drawing.Size(125, 22)
+        Me.EliminarToolStripMenuItem2.Text = "Eliminar"
+        '
+        'ConsultarToolStripMenuItem2
+        '
+        Me.ConsultarToolStripMenuItem2.Name = "ConsultarToolStripMenuItem2"
+        Me.ConsultarToolStripMenuItem2.Size = New System.Drawing.Size(125, 22)
+        Me.ConsultarToolStripMenuItem2.Text = "Consultar"
         '
         'EtiquetasToolStripMenuItem
         '
@@ -718,6 +769,13 @@ Partial Class frm_Principal
     Friend WithEvents EliminarOrdenAmpliadaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultarOrdenAmpliadaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RepeticiónDeChapasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NuevoToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ConsultarToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents DigitalOffsetToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NuevoToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents EliminarToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ConsultarToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class

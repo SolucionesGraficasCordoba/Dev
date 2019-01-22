@@ -2355,6 +2355,71 @@
         End If
     End Sub
 
+    Private Sub CalcularEstimado()
+
+        Dim estimado1 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado1.Text, estimado1)
+
+        Dim estimado2 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado2.Text, estimado2)
+
+        Dim estimado3 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado3.Text, estimado3)
+
+        Dim estimado4 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado4.Text, estimado4)
+
+        Dim estimado5 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado5.Text, estimado5)
+
+        Dim estimado6 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado6.Text, estimado6)
+
+        Dim estimado7 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado7.Text, estimado7)
+
+        Dim estimado8 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado8.Text, estimado8)
+
+        Dim estimado9 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado9.Text, estimado9)
+
+        Dim estimado10 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado10.Text, estimado10)
+
+        Dim estimado11 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado11.Text, estimado11)
+
+        Dim estimado12 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado12.Text, estimado12)
+
+        Dim estimado13 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado13.Text, estimado13)
+
+        Dim estimado14 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado14.Text, estimado14)
+
+        Dim estimado15 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado15.Text, estimado15)
+
+        Dim estimado16 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado16.Text, estimado16)
+
+        Dim estimado17 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado17.Text, estimado17)
+
+        Dim estimado18 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado18.Text, estimado18)
+
+        Dim estimado19 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado19.Text, estimado19)
+
+        Dim estimado20 As Integer = 0
+        Int32.TryParse(txtTiempo_Estimado20.Text, estimado20)
+
+        Label61.Text = Convert.ToString(estimado1 + estimado2 + estimado3 + estimado4 + estimado5 + estimado6 + estimado7 + estimado8 + estimado9 + estimado10 + estimado11 + estimado12 + estimado13 + estimado14 + estimado15 + estimado16 + estimado17 + estimado18 + estimado19 + estimado20)
+    End Sub
+
     Private Sub Calcular()
 
         Dim val1 As Integer = 0
@@ -3414,5 +3479,85 @@
             totalmin = totalmin + 1440
         End If
         txt_Carga_Horaria1.Text = totalmin
+    End Sub
+
+    Private Sub txtTiempo_Estimado1_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado1.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado2_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado2.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado3_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado3.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado4_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado4.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado5_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado5.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado6_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado6.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado7_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado7.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado8_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado8.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado9_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado9.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado10_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado10.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado11_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado11.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado12_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado12.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado13_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado13.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado14_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado14.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado15_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado15.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado16_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado16.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado17_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado17.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado18_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado18.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado19_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado19.TextChanged
+        CalcularEstimado()
+    End Sub
+
+    Private Sub txtTiempo_Estimado20_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtTiempo_Estimado20.TextChanged
+        CalcularEstimado()
     End Sub
 End Class

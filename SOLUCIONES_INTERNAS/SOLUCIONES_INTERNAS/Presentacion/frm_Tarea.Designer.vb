@@ -318,6 +318,8 @@ Partial Class frm_Tarea
         Me.PrintForm1 = New Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(Me.components)
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.btnActualizar = New System.Windows.Forms.Button()
+        Me.Label31 = New System.Windows.Forms.Label()
+        Me.Label61 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -449,7 +451,7 @@ Partial Class frm_Tarea
         '
         'txt_id_tarea
         '
-        Me.txt_id_tarea.Location = New System.Drawing.Point(205, 637)
+        Me.txt_id_tarea.Location = New System.Drawing.Point(157, 652)
         Me.txt_id_tarea.Name = "txt_id_tarea"
         Me.txt_id_tarea.Size = New System.Drawing.Size(19, 20)
         Me.txt_id_tarea.TabIndex = 1
@@ -2993,11 +2995,11 @@ Partial Class frm_Tarea
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
-        Me.Label7.Location = New System.Drawing.Point(328, 645)
+        Me.Label7.Location = New System.Drawing.Point(360, 643)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(56, 13)
+        Me.Label7.Size = New System.Drawing.Size(81, 20)
         Me.Label7.TabIndex = 48
         Me.Label7.Text = "Total Real"
         '
@@ -3005,11 +3007,11 @@ Partial Class frm_Tarea
         '
         Me.Label35.AutoSize = True
         Me.Label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label35.ForeColor = System.Drawing.Color.Black
-        Me.Label35.Location = New System.Drawing.Point(390, 645)
+        Me.Label35.Location = New System.Drawing.Point(447, 643)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(2, 15)
+        Me.Label35.Size = New System.Drawing.Size(2, 22)
         Me.Label35.TabIndex = 49
         '
         'GroupBox2
@@ -3109,6 +3111,28 @@ Partial Class frm_Tarea
         Me.btnActualizar.Text = "Actualizar"
         Me.btnActualizar.UseVisualStyleBackColor = True
         '
+        'Label31
+        '
+        Me.Label31.AutoSize = True
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.ForeColor = System.Drawing.Color.Black
+        Me.Label31.Location = New System.Drawing.Point(205, 643)
+        Me.Label31.Name = "Label31"
+        Me.Label31.Size = New System.Drawing.Size(115, 20)
+        Me.Label31.TabIndex = 48
+        Me.Label31.Text = "Total Estimado"
+        '
+        'Label61
+        '
+        Me.Label61.AutoSize = True
+        Me.Label61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Label61.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label61.ForeColor = System.Drawing.Color.Black
+        Me.Label61.Location = New System.Drawing.Point(326, 643)
+        Me.Label61.Name = "Label61"
+        Me.Label61.Size = New System.Drawing.Size(2, 22)
+        Me.Label61.TabIndex = 49
+        '
         'frm_Tarea
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
@@ -3119,7 +3143,9 @@ Partial Class frm_Tarea
         Me.ClientSize = New System.Drawing.Size(998, 683)
         Me.Controls.Add(Me.btnActualizar)
         Me.Controls.Add(Me.GroupBox2)
+        Me.Controls.Add(Me.Label61)
         Me.Controls.Add(Me.Label35)
+        Me.Controls.Add(Me.Label31)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.btnImprimirFormulario)
         Me.Controls.Add(Me.GroupBox1)
@@ -3434,4 +3460,6 @@ Partial Class frm_Tarea
     Friend WithEvents btnLimpiarTarea3 As System.Windows.Forms.Button
     Friend WithEvents btnLimpiarTarea2 As System.Windows.Forms.Button
     Friend WithEvents btnLimpiarTarea1 As System.Windows.Forms.Button
+    Friend WithEvents Label61 As System.Windows.Forms.Label
+    Friend WithEvents Label31 As System.Windows.Forms.Label
 End Class

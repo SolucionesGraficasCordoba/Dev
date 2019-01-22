@@ -1555,7 +1555,7 @@ Public Class frm_Principal
         frm_listado_orden_trabajo_ampliada.dgvLista_Orden_Trabajo.ClearSelection()
     End Sub
 
-    Private Sub RepeticiónDeChapasToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles RepeticiónDeChapasToolStripMenuItem.Click
+    Private Sub NuevoToolStripMenuItem2_Click(sender As System.Object, e As System.EventArgs) Handles NuevoToolStripMenuItem2.Click
         'OCULTA CAMPOS
         frm_Actualizar_Offset.txt_id_orden_trabajo.Visible = False
         frm_Actualizar_Offset.txt_id_detalle_orden_trabajo1.Visible = False
@@ -1572,6 +1572,30 @@ Public Class frm_Principal
         frm_Actualizar_Offset.cboImpresora_Original.Enabled = False
         frm_Actualizar_Offset.cboMarca_Offset.Enabled = False
         frm_Actualizar_Offset.dtp_Fecha_Ingreso_Original.Enabled = False
+        frm_Actualizar_Offset.Show()
+        frm_Actualizar_Offset.dgvRepeticion.ClearSelection()
+    End Sub
+
+    Private Sub EliminarToolStripMenuItem3_Click(sender As System.Object, e As System.EventArgs) Handles EliminarToolStripMenuItem3.Click
+        'OCULTA CAMPOS
+        frm_Actualizar_Offset.txt_id_orden_trabajo.Visible = False
+        frm_Actualizar_Offset.txt_id_detalle_orden_trabajo1.Visible = False
+        frm_Actualizar_Offset.txt_id_re_trabajo.Visible = False
+        frm_Actualizar_Offset.Label1.Visible = False
+        frm_Actualizar_Offset.Label45.Visible = False
+
+        'DESHABILITA CAMPOS
+        frm_Actualizar_Offset.txtNumero_Orden_Trabajo.Enabled = False
+        frm_Actualizar_Offset.txt_cantidad_original.Enabled = False
+        frm_Actualizar_Offset.cboPiezas1_Detalle1.Enabled = False
+        frm_Actualizar_Offset.txtTamaño1_Detalle1.Enabled = False
+        frm_Actualizar_Offset.txt_chapa_soporte_1.Enabled = False
+        frm_Actualizar_Offset.cboImpresora_Original.Enabled = False
+        frm_Actualizar_Offset.cboMarca_Offset.Enabled = False
+        frm_Actualizar_Offset.dtp_Fecha_Ingreso_Original.Enabled = False
+        frm_Actualizar_Offset.btnGuardar_ReTrabajo.Enabled = False
+        frm_Actualizar_Offset.GroupBox1.Enabled = False
+        frm_Actualizar_Offset.GroupBox2.Enabled = False
         frm_Actualizar_Offset.Show()
         frm_Actualizar_Offset.dgvRepeticion.ClearSelection()
     End Sub
