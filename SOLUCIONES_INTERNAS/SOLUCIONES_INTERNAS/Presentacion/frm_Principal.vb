@@ -1107,20 +1107,20 @@ Public Class frm_Principal
 
     End Sub
 
-    Private Sub NuevoRetrabajoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NuevoRetrabajoToolStripMenuItem.Click
+    Private Sub NuevoRetrabajoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         frm_retrabajo.Text = "Nuevo Re-Trabajo"
         frm_retrabajo.btnImprimirFormulario.Enabled = False
         frm_retrabajo.ShowDialog()
     End Sub
 
-    Private Sub EliminarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarToolStripMenuItem.Click
+    Private Sub EliminarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         frm_Listado_Retrabajo.Text = "Eliminar Re-Trabajo"
         frm_Listado_Retrabajo.btnExportarPDF.Enabled = False
         frm_Listado_Retrabajo.btnVer.Enabled = False
         frm_Listado_Retrabajo.ShowDialog()
     End Sub
 
-    Private Sub ConsultarToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarToolStripMenuItem1.Click
+    Private Sub ConsultarToolStripMenuItem1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         frm_Listado_Retrabajo.Text = "Consultar Re-Trabajo"
         frm_Listado_Retrabajo.btnExportarPDF.Enabled = True
         frm_Listado_Retrabajo.btnEliminar_ReTrabajo.Enabled = False
@@ -1556,6 +1556,7 @@ Public Class frm_Principal
     End Sub
 
     Private Sub NuevoToolStripMenuItem2_Click(sender As System.Object, e As System.EventArgs) Handles NuevoToolStripMenuItem2.Click
+        frm_Actualizar_Offset.Text = "Nueva Repetición"
         'OCULTA CAMPOS
         frm_Actualizar_Offset.txt_id_orden_trabajo.Visible = False
         frm_Actualizar_Offset.txt_id_detalle_orden_trabajo1.Visible = False
@@ -1579,6 +1580,7 @@ Public Class frm_Principal
     End Sub
 
     Private Sub EliminarToolStripMenuItem3_Click(sender As System.Object, e As System.EventArgs) Handles EliminarToolStripMenuItem3.Click
+        frm_Actualizar_Offset.Text = "Eliminar Repetición"
         'OCULTA CAMPOS
         frm_Actualizar_Offset.txt_id_orden_trabajo.Visible = False
         frm_Actualizar_Offset.txt_id_detalle_orden_trabajo1.Visible = False
@@ -1598,6 +1600,36 @@ Public Class frm_Principal
         frm_Actualizar_Offset.btnGuardar_ReTrabajo.Enabled = False
         frm_Actualizar_Offset.GroupBox1.Enabled = False
         frm_Actualizar_Offset.GroupBox2.Enabled = False
+        frm_Actualizar_Offset.Show()
+        frm_Actualizar_Offset.dgvRepeticion.ClearSelection()
+    End Sub
+
+    Private Sub ConsultarToolStripMenuItem3_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem3.Click
+
+        frm_Actualizar_Offset.Text = "Consultar Repetición"
+        'OCULTA CAMPOS
+        frm_Actualizar_Offset.txt_id_orden_trabajo.Visible = False
+        frm_Actualizar_Offset.txt_id_detalle_orden_trabajo1.Visible = False
+        frm_Actualizar_Offset.txt_id_re_trabajo.Visible = False
+        frm_Actualizar_Offset.Label1.Visible = False
+        frm_Actualizar_Offset.Label45.Visible = False
+
+        'DESHABILITA CAMPOS
+        frm_Actualizar_Offset.txtNumero_Orden_Trabajo.Enabled = False
+        frm_Actualizar_Offset.txt_cantidad_original.Enabled = False
+        frm_Actualizar_Offset.cboPiezas1_Detalle1.Enabled = False
+        frm_Actualizar_Offset.txtTamaño1_Detalle1.Enabled = False
+        frm_Actualizar_Offset.txt_chapa_soporte_1.Enabled = False
+        frm_Actualizar_Offset.cboImpresora_Original.Enabled = False
+        frm_Actualizar_Offset.cboMarca_Offset.Enabled = False
+        frm_Actualizar_Offset.dtp_Fecha_Ingreso_Original.Enabled = False
+
+        ' frm_Actualizar_Offset.GroupBox1.Enabled = False
+        frm_Actualizar_Offset.GroupBox2.Enabled = False
+
+        frm_Actualizar_Offset.btnEliminar_Repeticion.Enabled = False
+        frm_Actualizar_Offset.btnGuardar_ReTrabajo.Enabled = False
+        frm_Actualizar_Offset.btnBuscar_Numero_Orden1.Enabled = False
         frm_Actualizar_Offset.Show()
         frm_Actualizar_Offset.dgvRepeticion.ClearSelection()
     End Sub

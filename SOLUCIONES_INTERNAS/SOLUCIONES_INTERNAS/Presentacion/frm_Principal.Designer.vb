@@ -83,9 +83,6 @@ Partial Class frm_Principal
         Me.EliminarOrdenAmpliadaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarOrdenAmpliadaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ReTrabajoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.NuevoRetrabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsultarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.RepeticiónDeChapasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevoToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EliminarToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
@@ -481,28 +478,10 @@ Partial Class frm_Principal
         '
         'ReTrabajoToolStripMenuItem1
         '
-        Me.ReTrabajoToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoRetrabajoToolStripMenuItem, Me.EliminarToolStripMenuItem, Me.ConsultarToolStripMenuItem1, Me.RepeticiónDeChapasToolStripMenuItem, Me.DigitalOffsetToolStripMenuItem})
+        Me.ReTrabajoToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RepeticiónDeChapasToolStripMenuItem, Me.DigitalOffsetToolStripMenuItem})
         Me.ReTrabajoToolStripMenuItem1.Name = "ReTrabajoToolStripMenuItem1"
         Me.ReTrabajoToolStripMenuItem1.Size = New System.Drawing.Size(77, 20)
         Me.ReTrabajoToolStripMenuItem1.Text = "Re-Trabajo"
-        '
-        'NuevoRetrabajoToolStripMenuItem
-        '
-        Me.NuevoRetrabajoToolStripMenuItem.Name = "NuevoRetrabajoToolStripMenuItem"
-        Me.NuevoRetrabajoToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
-        Me.NuevoRetrabajoToolStripMenuItem.Text = "Nuevo"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(188, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
-        '
-        'ConsultarToolStripMenuItem1
-        '
-        Me.ConsultarToolStripMenuItem1.Name = "ConsultarToolStripMenuItem1"
-        Me.ConsultarToolStripMenuItem1.Size = New System.Drawing.Size(188, 22)
-        Me.ConsultarToolStripMenuItem1.Text = "Consultar"
         '
         'RepeticiónDeChapasToolStripMenuItem
         '
@@ -539,19 +518,19 @@ Partial Class frm_Principal
         'NuevoToolStripMenuItem1
         '
         Me.NuevoToolStripMenuItem1.Name = "NuevoToolStripMenuItem1"
-        Me.NuevoToolStripMenuItem1.Size = New System.Drawing.Size(125, 22)
+        Me.NuevoToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
         Me.NuevoToolStripMenuItem1.Text = "Nuevo"
         '
         'EliminarToolStripMenuItem2
         '
         Me.EliminarToolStripMenuItem2.Name = "EliminarToolStripMenuItem2"
-        Me.EliminarToolStripMenuItem2.Size = New System.Drawing.Size(125, 22)
+        Me.EliminarToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.EliminarToolStripMenuItem2.Text = "Eliminar"
         '
         'ConsultarToolStripMenuItem2
         '
         Me.ConsultarToolStripMenuItem2.Name = "ConsultarToolStripMenuItem2"
-        Me.ConsultarToolStripMenuItem2.Size = New System.Drawing.Size(125, 22)
+        Me.ConsultarToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
         Me.ConsultarToolStripMenuItem2.Text = "Consultar"
         '
         'EtiquetasToolStripMenuItem
@@ -742,9 +721,6 @@ Partial Class frm_Principal
     Friend WithEvents ConsultarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EstadisticasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ReTrabajoToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents NuevoRetrabajoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents EliminarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ConsultarToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EtiquetasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ProductoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GestiónDeProductosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem

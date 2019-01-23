@@ -294,7 +294,7 @@
         frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Enabled = True 'consulta producto
         frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(3).Enabled = True 'consulta movimiento producto
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(6).Enabled = True 'consultar
-        frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(2).Enabled = True 'consultar
+        ' frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(2).Enabled = True 'consultar
 
         Acercade()
     End Sub

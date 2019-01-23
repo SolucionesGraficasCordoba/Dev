@@ -31,27 +31,27 @@
         End If
 
         'GUARDA ORDEN DE TRABAJO
-        Try
-            Dim rt = New RE_TRABAJO
+        '  Try
+        Dim rt = New RE_TRABAJO
 
-            rt.RET_fecha_comienzo_retrabajo = dtpFecha_Re_Trabajo.Text
-            rt.RET_fecha_entrega_retrabajo = dtp_Nueva_Fecha_Entrega.Text
-            rt.cantidad_chapas_retrabajo = txt_cantidad_chapas_retrabajo.Text
-            rt.RET_origen_area_motivo = cboMotivo.Text
-            rt.impresora_offset_retrabajo = cboImpresora_Offset.Text
-            rt.marca_offset_retrabajo = cboMarca_Offset.Text
-            rt.RET_procedimiento_observaciones = txt_procedimiento.Text
-            rt.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
+        rt.RET_fecha_comienzo_retrabajo = dtpFecha_Re_Trabajo.Text
+        rt.RET_fecha_entrega_retrabajo = dtp_Nueva_Fecha_Entrega.Text
+        rt.cantidad_chapas_retrabajo = txt_cantidad_chapas_retrabajo.Text
+        rt.RET_origen_area_motivo = cboMotivo.Text
+        rt.impresora_offset_retrabajo = cboImpresora_Offset.Text
+        rt.marca_offset_retrabajo = cboMarca_Offset.Text
+        rt.RET_procedimiento_observaciones = txt_procedimiento.Text
+        rt.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
 
-            datacontext.RE_TRABAJO.InsertOnSubmit(rt)
-            datacontext.SubmitChanges()
+        datacontext.RE_TRABAJO.InsertOnSubmit(rt)
+        datacontext.SubmitChanges()
 
-            MsgBox("La repetición se ha guardado correctamente", vbInformation)
-            CargarGrillaRepeticion()
-            Me.Close()
-        Catch ex As Exception
-            MsgBox("Error al intentar guardar")
-        End Try
+        MsgBox("La repetición se ha guardado correctamente", vbInformation)
+        CargarGrillaRepeticion()
+        Me.Close()
+        '  Catch ex As Exception
+        'MsgBox("Error al intentar guardar")
+        '  End Try
     End Sub
 
     Private Sub btnCancelar_ReTrabajo_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar_ReTrabajo.Click
@@ -175,7 +175,7 @@
                     CargarGrillaRepeticion()
             End Select
         Else
-            MsgBox("Debe seleccionar una Repetición")
+            MsgBox("Debe seleccionar una Repetición del listado")
         End If
     End Sub
 

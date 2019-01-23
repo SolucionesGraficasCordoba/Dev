@@ -26,6 +26,23 @@
         Label1.Visible = False
         'txt_id_re_trabajo.Visible = False
         'btnImprimir.Enabled = False
+
+        'CARGA COMBO
+        Dim combopieza1 = (From sec In datacontext.PIEZA
+                             Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
+                             Where PIE_ubicacion = "D"
+                             Order By PIE_nombre_pie Ascending)
+
+        cboPiezas1_Detalle1.DataSource = combopieza1
+        cboPiezas1_Detalle1.DisplayMember = "PIE_nombre_pie"
+        cboPiezas1_Detalle1.ValueMember = "PIE_id_pieza"
+        cboPiezas1_Detalle1.SelectedIndex = -1
+
+        Try
+            'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
+            cboPiezas1_Detalle1.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub btnCancelar_Orden_Trabajo_Click(sender As System.Object, e As System.EventArgs)
