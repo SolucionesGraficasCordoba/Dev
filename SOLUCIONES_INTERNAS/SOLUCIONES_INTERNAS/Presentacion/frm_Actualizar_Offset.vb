@@ -210,6 +210,7 @@
                     datacontext.SubmitChanges()
                     MsgBox("La Repetición ha sido eliminada")
                     CargarGrillaRepeticion()
+                    Me.Close()
             End Select
         Else
             MsgBox("Debe seleccionar una Repetición del listado")
