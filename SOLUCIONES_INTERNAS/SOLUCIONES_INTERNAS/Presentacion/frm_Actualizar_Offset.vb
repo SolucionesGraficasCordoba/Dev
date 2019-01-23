@@ -231,8 +231,8 @@
     Private Sub dgvRepeticion_Click(sender As System.Object, e As System.EventArgs) Handles dgvRepeticion.Click
         Try
             If dgvRepeticion.SelectedRows.Count > 0 Then
-                'CARGA GROUPBOX REPETICION
 
+                'CARGA GROUPBOX REPETICION
                 txt_cantidad_chapas_retrabajo.Text = dgvRepeticion.Item("cantidad_chapas_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
                 cboImpresora_Offset.Text = dgvRepeticion.Item("impresora_offset_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
                 cboNuevaMarca.Text = dgvRepeticion.Item("marca_offset_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
@@ -244,8 +244,6 @@
                 'CARGA GROUPBOX DATOS ORIGINALES
                 txtNumero_Orden_Trabajo.Text = dgvRepeticion.Item("ORT_numero_ot", dgvRepeticion.SelectedRows(0).Index).Value
                 dtp_Fecha_Ingreso_Original.Text = dgvRepeticion.Item("ORT_fecha_ot", dgvRepeticion.SelectedRows(0).Index).Value
-
-
                 txt_cantidad_original.Text = dgvRepeticion.Item("DOT_cantidad_producto", dgvRepeticion.SelectedRows(0).Index).Value
                 '  cboPiezas1_Detalle1.SelectedValue = dgvRepeticion.Item("PIE_id_pieza_offset", dgvRepeticion.SelectedRows(0).Index).Value
                 txtTamaño1_Detalle1.Text = dgvRepeticion.Item("DOT_tamaño_producto", dgvRepeticion.SelectedRows(0).Index).Value
@@ -256,7 +254,6 @@
                 MsgBox("Debe seleccionar un Re-Trabajo del listado")
             End If
         Catch ex As Exception
-
         End Try
     End Sub
 End Class
