@@ -1609,6 +1609,7 @@ Public Class frm_Principal
     Private Sub ConsultarToolStripMenuItem3_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem3.Click
 
         frm_Actualizar_Offset.Text = "Consultar Repetición"
+
         'OCULTA CAMPOS
         frm_Actualizar_Offset.txt_id_orden_trabajo.Visible = False
         frm_Actualizar_Offset.txt_id_detalle_orden_trabajo1.Visible = False
