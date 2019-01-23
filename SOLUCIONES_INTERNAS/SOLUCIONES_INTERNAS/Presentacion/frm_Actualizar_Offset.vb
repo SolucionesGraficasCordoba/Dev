@@ -40,7 +40,7 @@
         rt.RET_origen_area_motivo = cboMotivo.Text
         rt.impresora_offset_retrabajo = cboImpresora_Offset.Text
         rt.marca_offset_retrabajo = cboMarca_Offset.Text
-        rt.RET_procedimiento_observaciones = txt_procedimiento.Text
+        rt.RET_procedimiento_observaciones = txt_Observaciones.Text
         rt.id_detalle_orden_trabajo = txt_id_detalle_orden_trabajo1.Text
 
         datacontext.RE_TRABAJO.InsertOnSubmit(rt)
@@ -96,6 +96,15 @@
         dgvRepeticion.Columns.Add("RET_procedimiento_observaciones", "Observaciones")
         dgvRepeticion.Columns.Add("RET_fecha_comienzo_retrabajo", "Fecha Comienzo")
         dgvRepeticion.Columns.Add("RET_fecha_entrega_retrabajo", "Fecha Entrega")
+        dgvRepeticion.Columns.Add("DOT_cantidad_producto", "DOT_cantidad_producto")
+        dgvRepeticion.Columns.Add("PIE_id_pieza", "PIE_id_pieza")
+        dgvRepeticion.Columns.Add("DOT_tamaño_producto", "DOT_tamaño_producto")
+        dgvRepeticion.Columns.Add("chapas_soporte1_offset", "chapas_soporte1_offset")
+        dgvRepeticion.Columns.Add("chapas_soporte2_offset", "chapas_soporte2_offset")
+        dgvRepeticion.Columns.Add("chapas_soporte3_offset", "chapas_soporte3_offset")
+        dgvRepeticion.Columns.Add("impresora_offset", "impresora_offset")
+        dgvRepeticion.Columns.Add("marca_offset", "marca_offset")
+        dgvRepeticion.Columns.Add("ORT_fecha_ot", "ORT_fecha_ot")
 
         dgvRepeticion.Columns(0).DataPropertyName = "id_detalle_orden_trabajo"
         dgvRepeticion.Columns(0).Visible = False
@@ -110,6 +119,25 @@
         dgvRepeticion.Columns(7).DataPropertyName = "RET_procedimiento_observaciones"
         dgvRepeticion.Columns(8).DataPropertyName = "RET_fecha_comienzo_retrabajo"
         dgvRepeticion.Columns(9).DataPropertyName = "RET_fecha_entrega_retrabajo"
+        dgvRepeticion.Columns(10).DataPropertyName = "DOT_cantidad_producto"
+        dgvRepeticion.Columns(10).Visible = False
+        dgvRepeticion.Columns(11).DataPropertyName = "PIE_id_pieza"
+        dgvRepeticion.Columns(11).Visible = False
+        dgvRepeticion.Columns(12).DataPropertyName = "DOT_tamaño_producto"
+        dgvRepeticion.Columns(12).Visible = False
+        dgvRepeticion.Columns(13).DataPropertyName = "chapas_soporte1_offset"
+        dgvRepeticion.Columns(13).Visible = False
+        dgvRepeticion.Columns(14).DataPropertyName = "chapas_soporte2_offset"
+        dgvRepeticion.Columns(14).Visible = False
+        dgvRepeticion.Columns(15).DataPropertyName = "chapas_soporte3_offset"
+        dgvRepeticion.Columns(15).Visible = False
+        dgvRepeticion.Columns(16).DataPropertyName = "impresora_offset"
+        dgvRepeticion.Columns(16).Visible = False
+        dgvRepeticion.Columns(17).DataPropertyName = "marca_offset"
+        dgvRepeticion.Columns(17).Visible = False
+        dgvRepeticion.Columns(18).DataPropertyName = "ORT_fecha_ot"
+        dgvRepeticion.Columns(18).Visible = False
+
     End Sub
 
     Private Sub CargarGrillaRepeticion()
@@ -120,8 +148,17 @@
                                     On dot.id_detalle_orden_trabajo Equals ret.id_detalle_orden_trabajo
                                     Select
                                     dot.id_detalle_orden_trabajo,
+                                    dot.DOT_cantidad_producto,
+                                    dot.PIE_id_pieza,
+                                    dot.DOT_tamaño_producto,
+                                    dot.chapas_soporte1_offset,
+                                    dot.chapas_soporte2_offset,
+                                    dot.chapas_soporte3_offset,
+                                    dot.impresora_offset,
+                                    dot.marca_offset,
                                     ret.RET_id_retrabajo,
                                     ot.ORT_numero_ot,
+                                    ot.ORT_fecha_ot,
                                     ret.cantidad_chapas_retrabajo,
                                     ret.impresora_offset_retrabajo,
                                     ret.marca_offset_retrabajo,
@@ -189,5 +226,37 @@
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub dgvRepeticion_Click(sender As System.Object, e As System.EventArgs) Handles dgvRepeticion.Click
+        Try
+            If dgvRepeticion.SelectedRows.Count > 0 Then
+                'CARGA GROUPBOX REPETICION
+
+                txt_cantidad_chapas_retrabajo.Text = dgvRepeticion.Item("cantidad_chapas_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
+                cboImpresora_Offset.Text = dgvRepeticion.Item("impresora_offset_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
+                cboNuevaMarca.Text = dgvRepeticion.Item("marca_offset_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
+                cboMotivo.Text = dgvRepeticion.Item("RET_origen_area_motivo", dgvRepeticion.SelectedRows(0).Index).Value
+                txt_Observaciones.Text = dgvRepeticion.Item("RET_procedimiento_observaciones", dgvRepeticion.SelectedRows(0).Index).Value
+                dtpFecha_Re_Trabajo.Text = dgvRepeticion.Item("RET_fecha_comienzo_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
+                dtp_Nueva_Fecha_Entrega.Text = dgvRepeticion.Item("RET_fecha_entrega_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
+
+                'CARGA GROUPBOX DATOS ORIGINALES
+                txtNumero_Orden_Trabajo.Text = dgvRepeticion.Item("ORT_numero_ot", dgvRepeticion.SelectedRows(0).Index).Value
+                dtp_Fecha_Ingreso_Original.Text = dgvRepeticion.Item("ORT_fecha_ot", dgvRepeticion.SelectedRows(0).Index).Value
+
+
+                txt_cantidad_original.Text = dgvRepeticion.Item("DOT_cantidad_producto", dgvRepeticion.SelectedRows(0).Index).Value
+                '  cboPiezas1_Detalle1.SelectedValue = dgvRepeticion.Item("PIE_id_pieza_offset", dgvRepeticion.SelectedRows(0).Index).Value
+                txtTamaño1_Detalle1.Text = dgvRepeticion.Item("DOT_tamaño_producto", dgvRepeticion.SelectedRows(0).Index).Value
+                txt_chapa_soporte_1.Text = dgvRepeticion.Item("chapas_soporte1_offset", dgvRepeticion.SelectedRows(0).Index).Value
+                cboMarca_Offset.Text = dgvRepeticion.Item("marca_offset", dgvRepeticion.SelectedRows(0).Index).Value
+                cboImpresora_Original.Text = dgvRepeticion.Item("impresora_offset", dgvRepeticion.SelectedRows(0).Index).Value
+            Else
+                MsgBox("Debe seleccionar un Re-Trabajo del listado")
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 End Class
