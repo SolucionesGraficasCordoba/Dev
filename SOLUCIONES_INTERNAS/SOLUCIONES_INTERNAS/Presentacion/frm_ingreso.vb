@@ -219,6 +219,17 @@
                             flagbaja = 1
                         End If
                     End If
+                    '---------------------RETRABAJO-------------------'
+                    If permisos.Item(i).PER_permiso = "RETRABAJO" Then
+                        If permisos.Item(i).PER_abm = "A" Then
+                            Retrabajo(True, flagb)
+                            flaga = 1
+                        End If
+                        If permisos.Item(i).PER_abm = "B" Then
+                            Retrabajo(flaga, True)
+                            flagb = 1
+                        End If
+                    End If
                     ''----------------------ODT-----------------'
                     'If permisos.Item(i).PER_permiso = "ODT" Then
                     '    If permisos.Item(i).PER_abm = "A" Then
@@ -249,17 +260,7 @@
                             flagb = 1
                         End If
                     End If
-                    '---------------------RETRABAJO-------------------'
-                    If permisos.Item(i).PER_permiso = "RETRABAJO" Then
-                        If permisos.Item(i).PER_abm = "A" Then
-                            Retrabajo(True, flagb)
-                            flaga = 1
-                        End If
-                        If permisos.Item(i).PER_abm = "B" Then
-                            Retrabajo(flaga, True)
-                            flagb = 1
-                        End If
-                    End If
+                   
                     '------------------ETIQUETA---------------------'
                     If permisos.Item(i).PER_permiso = "ETIQUETA" Then
                         If permisos.Item(i).PER_abm = "A" Then
