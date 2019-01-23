@@ -1576,6 +1576,7 @@ Public Class frm_Principal
         frm_Actualizar_Offset.dtp_Fecha_Ingreso_Original.Enabled = False
         frm_Actualizar_Offset.btnEliminar_Repeticion.Enabled = False
         frm_Actualizar_Offset.Show()
+        frm_Actualizar_Offset.btnBuscar_Numero_Orden1.Focus()
         frm_Actualizar_Offset.dgvRepeticion.ClearSelection()
     End Sub
 
@@ -1601,6 +1602,7 @@ Public Class frm_Principal
         frm_Actualizar_Offset.GroupBox1.Enabled = False
         frm_Actualizar_Offset.GroupBox2.Enabled = False
         frm_Actualizar_Offset.Show()
+        frm_Actualizar_Offset.btnEliminar_Repeticion.Focus()
         frm_Actualizar_Offset.dgvRepeticion.ClearSelection()
     End Sub
 
@@ -1632,5 +1634,15 @@ Public Class frm_Principal
         frm_Actualizar_Offset.btnBuscar_Numero_Orden1.Enabled = False
         frm_Actualizar_Offset.Show()
         frm_Actualizar_Offset.dgvRepeticion.ClearSelection()
+    End Sub
+
+    Private Sub NuevoToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles NuevoToolStripMenuItem1.Click
+        frm_retrabajo.Text = "Nuevo Re-Trabajo"
+        frm_retrabajo.txt_id_detalle.Visible = False
+        frm_retrabajo.txt_id_orden_trabajo.Visible = False
+        frm_retrabajo.txt_id_re_trabajo.Visible = False
+
+        frm_retrabajo.btnImprimirFormulario.Enabled = False
+        frm_retrabajo.Show()
     End Sub
 End Class
