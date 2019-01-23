@@ -1625,8 +1625,6 @@ Public Class frm_Principal
         frm_Actualizar_Offset.cboImpresora_Original.Enabled = False
         frm_Actualizar_Offset.cboMarca_Offset.Enabled = False
         frm_Actualizar_Offset.dtp_Fecha_Ingreso_Original.Enabled = False
-
-        ' frm_Actualizar_Offset.GroupBox1.Enabled = False
         frm_Actualizar_Offset.GroupBox2.Enabled = False
 
         frm_Actualizar_Offset.btnEliminar_Repeticion.Enabled = False
@@ -1641,7 +1639,6 @@ Public Class frm_Principal
         frm_retrabajo.txt_id_detalle.Visible = False
         frm_retrabajo.txt_id_orden_trabajo.Visible = False
         frm_retrabajo.txt_id_re_trabajo.Visible = False
-
         frm_retrabajo.btnImprimirFormulario.Enabled = False
         frm_retrabajo.Show()
     End Sub
