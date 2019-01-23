@@ -1606,7 +1606,16 @@ Public Class frm_Principal
         frm_Actualizar_Offset.dgvRepeticion.ClearSelection()
     End Sub
 
-    Private Sub ConsultarToolStripMenuItem3_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem3.Click
+    Private Sub NuevoToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles NuevoToolStripMenuItem1.Click
+        frm_retrabajo.Text = "Nuevo Re-Trabajo"
+        frm_retrabajo.txt_id_detalle.Visible = False
+        frm_retrabajo.txt_id_orden_trabajo.Visible = False
+        frm_retrabajo.txt_id_re_trabajo.Visible = False
+        frm_retrabajo.btnImprimirFormulario.Enabled = False
+        frm_retrabajo.Show()
+    End Sub
+
+    Private Sub RepeticiónDeChapasToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles RepeticiónDeChapasToolStripMenuItem1.Click
 
         frm_Actualizar_Offset.Text = "Consultar Repetición"
 
@@ -1635,12 +1644,7 @@ Public Class frm_Principal
         frm_Actualizar_Offset.dgvRepeticion.ClearSelection()
     End Sub
 
-    Private Sub NuevoToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles NuevoToolStripMenuItem1.Click
-        frm_retrabajo.Text = "Nuevo Re-Trabajo"
-        frm_retrabajo.txt_id_detalle.Visible = False
-        frm_retrabajo.txt_id_orden_trabajo.Visible = False
-        frm_retrabajo.txt_id_re_trabajo.Visible = False
-        frm_retrabajo.btnImprimirFormulario.Enabled = False
-        frm_retrabajo.Show()
+    Private Sub DigitalOffsetToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles DigitalOffsetToolStripMenuItem1.Click
+
     End Sub
 End Class

@@ -230,6 +230,19 @@
     End Sub
 
     Private Sub dgvRepeticion_Click(sender As System.Object, e As System.EventArgs) Handles dgvRepeticion.Click
+        Dim combopieza1 = (From sec In datacontext.PIEZA
+                        Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
+                        Where PIE_ubicacion = "D"
+                        Order By PIE_nombre_pie Ascending)
+
+        cboPiezas1_Detalle1.DataSource = combopieza1
+        cboPiezas1_Detalle1.DisplayMember = "PIE_nombre_pie"
+        cboPiezas1_Detalle1.ValueMember = "PIE_id_pieza"
+        cboPiezas1_Detalle1.SelectedIndex = -1
+
+        'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
+        ' cboPiezas1_Detalle1.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
+        cboPiezas1_Detalle1.SelectedValue = dgvRepeticion.Item("PIE_id_pieza", dgvRepeticion.SelectedRows(0).Index).Value
         Try
             If dgvRepeticion.SelectedRows.Count > 0 Then
 
@@ -257,4 +270,5 @@
         Catch ex As Exception
         End Try
     End Sub
+
 End Class
