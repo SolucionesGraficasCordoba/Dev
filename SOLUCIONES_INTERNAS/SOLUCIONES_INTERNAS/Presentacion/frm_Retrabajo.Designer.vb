@@ -112,9 +112,12 @@ Partial Class frm_retrabajo
         Me.chkDigital = New System.Windows.Forms.CheckBox()
         Me.dgvListado_ReTrabajo = New System.Windows.Forms.DataGridView()
         Me.GroupListado = New System.Windows.Forms.GroupBox()
-        Me.txt_Buscar_Nro_Orden = New System.Windows.Forms.TextBox()
-        Me.Label20 = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.rbtMes = New System.Windows.Forms.RadioButton()
+        Me.rbtNumeroOrden = New System.Windows.Forms.RadioButton()
+        Me.cboBuscar_Mes = New System.Windows.Forms.ComboBox()
+        Me.txt_Buscar_ReTrabajo = New System.Windows.Forms.TextBox()
         Me.GroupDatosOriginales.SuspendLayout()
         Me.GroupProducto1.SuspendLayout()
         Me.GroupDigital.SuspendLayout()
@@ -124,6 +127,7 @@ Partial Class frm_retrabajo
         Me.GroupTipoOrden.SuspendLayout()
         CType(Me.dgvListado_ReTrabajo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupListado.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'txt_id_re_trabajo
@@ -145,7 +149,7 @@ Partial Class frm_retrabajo
         'txt_Procedimiento
         '
         Me.txt_Procedimiento.Location = New System.Drawing.Point(228, 87)
-        Me.txt_Procedimiento.MaxLength = 100
+        Me.txt_Procedimiento.MaxLength = 350
         Me.txt_Procedimiento.Multiline = True
         Me.txt_Procedimiento.Name = "txt_Procedimiento"
         Me.txt_Procedimiento.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -274,6 +278,7 @@ Partial Class frm_retrabajo
         '
         Me.txt_Cantidad_Retrabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_Cantidad_Retrabajo.Location = New System.Drawing.Point(26, 64)
+        Me.txt_Cantidad_Retrabajo.MaxLength = 7
         Me.txt_Cantidad_Retrabajo.Multiline = True
         Me.txt_Cantidad_Retrabajo.Name = "txt_Cantidad_Retrabajo"
         Me.txt_Cantidad_Retrabajo.Size = New System.Drawing.Size(99, 43)
@@ -978,15 +983,14 @@ Partial Class frm_retrabajo
         'dgvListado_ReTrabajo
         '
         Me.dgvListado_ReTrabajo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvListado_ReTrabajo.Location = New System.Drawing.Point(12, 47)
+        Me.dgvListado_ReTrabajo.Location = New System.Drawing.Point(12, 59)
         Me.dgvListado_ReTrabajo.Name = "dgvListado_ReTrabajo"
-        Me.dgvListado_ReTrabajo.Size = New System.Drawing.Size(1059, 170)
+        Me.dgvListado_ReTrabajo.Size = New System.Drawing.Size(1059, 158)
         Me.dgvListado_ReTrabajo.TabIndex = 135
         '
         'GroupListado
         '
-        Me.GroupListado.Controls.Add(Me.txt_Buscar_Nro_Orden)
-        Me.GroupListado.Controls.Add(Me.Label20)
+        Me.GroupListado.Controls.Add(Me.GroupBox1)
         Me.GroupListado.Controls.Add(Me.dgvListado_ReTrabajo)
         Me.GroupListado.Location = New System.Drawing.Point(15, 424)
         Me.GroupListado.Name = "GroupListado"
@@ -994,23 +998,6 @@ Partial Class frm_retrabajo
         Me.GroupListado.TabIndex = 136
         Me.GroupListado.TabStop = False
         Me.GroupListado.Text = "Listado de Re-Trabajos"
-        '
-        'txt_Buscar_Nro_Orden
-        '
-        Me.txt_Buscar_Nro_Orden.Location = New System.Drawing.Point(528, 19)
-        Me.txt_Buscar_Nro_Orden.MaxLength = 50
-        Me.txt_Buscar_Nro_Orden.Name = "txt_Buscar_Nro_Orden"
-        Me.txt_Buscar_Nro_Orden.Size = New System.Drawing.Size(155, 20)
-        Me.txt_Buscar_Nro_Orden.TabIndex = 137
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(412, 22)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(110, 13)
-        Me.Label20.TabIndex = 136
-        Me.Label20.Text = "Buscar por Nro Orden"
         '
         'btnEliminar
         '
@@ -1020,6 +1007,57 @@ Partial Class frm_retrabajo
         Me.btnEliminar.TabIndex = 137
         Me.btnEliminar.Text = "Eliminar"
         Me.btnEliminar.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.rbtMes)
+        Me.GroupBox1.Controls.Add(Me.rbtNumeroOrden)
+        Me.GroupBox1.Controls.Add(Me.cboBuscar_Mes)
+        Me.GroupBox1.Controls.Add(Me.txt_Buscar_ReTrabajo)
+        Me.GroupBox1.Location = New System.Drawing.Point(313, 9)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(475, 44)
+        Me.GroupBox1.TabIndex = 136
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Buscar"
+        '
+        'rbtMes
+        '
+        Me.rbtMes.AutoSize = True
+        Me.rbtMes.Location = New System.Drawing.Point(274, 16)
+        Me.rbtMes.Name = "rbtMes"
+        Me.rbtMes.Size = New System.Drawing.Size(45, 17)
+        Me.rbtMes.TabIndex = 11
+        Me.rbtMes.TabStop = True
+        Me.rbtMes.Text = "Mes"
+        Me.rbtMes.UseVisualStyleBackColor = True
+        '
+        'rbtNumeroOrden
+        '
+        Me.rbtNumeroOrden.AutoSize = True
+        Me.rbtNumeroOrden.Location = New System.Drawing.Point(12, 16)
+        Me.rbtNumeroOrden.Name = "rbtNumeroOrden"
+        Me.rbtNumeroOrden.Size = New System.Drawing.Size(94, 17)
+        Me.rbtNumeroOrden.TabIndex = 10
+        Me.rbtNumeroOrden.TabStop = True
+        Me.rbtNumeroOrden.Text = "Número Orden"
+        Me.rbtNumeroOrden.UseVisualStyleBackColor = True
+        '
+        'cboBuscar_Mes
+        '
+        Me.cboBuscar_Mes.FormattingEnabled = True
+        Me.cboBuscar_Mes.Items.AddRange(New Object() {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"})
+        Me.cboBuscar_Mes.Location = New System.Drawing.Point(325, 15)
+        Me.cboBuscar_Mes.Name = "cboBuscar_Mes"
+        Me.cboBuscar_Mes.Size = New System.Drawing.Size(139, 21)
+        Me.cboBuscar_Mes.TabIndex = 7
+        '
+        'txt_Buscar_ReTrabajo
+        '
+        Me.txt_Buscar_ReTrabajo.Location = New System.Drawing.Point(112, 15)
+        Me.txt_Buscar_ReTrabajo.Name = "txt_Buscar_ReTrabajo"
+        Me.txt_Buscar_ReTrabajo.Size = New System.Drawing.Size(139, 20)
+        Me.txt_Buscar_ReTrabajo.TabIndex = 2
         '
         'frm_retrabajo
         '
@@ -1054,7 +1092,8 @@ Partial Class frm_retrabajo
         Me.GroupTipoOrden.PerformLayout()
         CType(Me.dgvListado_ReTrabajo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupListado.ResumeLayout(False)
-        Me.GroupListado.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1146,7 +1185,10 @@ Partial Class frm_retrabajo
     Friend WithEvents cboFormato_1_PM_Offset As System.Windows.Forms.ComboBox
     Friend WithEvents txtCantidad_2_PM_Offset As System.Windows.Forms.TextBox
     Friend WithEvents GroupListado As System.Windows.Forms.GroupBox
-    Friend WithEvents txt_Buscar_Nro_Orden As System.Windows.Forms.TextBox
-    Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents btnEliminar As System.Windows.Forms.Button
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents rbtMes As System.Windows.Forms.RadioButton
+    Friend WithEvents rbtNumeroOrden As System.Windows.Forms.RadioButton
+    Friend WithEvents cboBuscar_Mes As System.Windows.Forms.ComboBox
+    Friend WithEvents txt_Buscar_ReTrabajo As System.Windows.Forms.TextBox
 End Class
