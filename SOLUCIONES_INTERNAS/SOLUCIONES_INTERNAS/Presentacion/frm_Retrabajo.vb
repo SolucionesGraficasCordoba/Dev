@@ -43,6 +43,9 @@
             cboPieza_Original.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
         Catch ex As Exception
         End Try
+
+        ArmaGrillaRetrabajo()
+        CargarGrillaRetrabajo()
     End Sub
 
     Private Sub btnCancelar_Orden_Trabajo_Click(sender As System.Object, e As System.EventArgs)
@@ -423,7 +426,7 @@
         dgvListado_ReTrabajo.Columns.Add("PIE_nombre_pie", "Pieza")
         dgvListado_ReTrabajo.Columns.Add("DOT_tamaño_dot", "Tamaño")
         '---------------------------------------------------------------------------------------------
-        dgvListado_ReTrabajo.Columns.Add("RET_cantidad_producto_retrabajo", "RET_cantidad_producto_retrabajo")
+        dgvListado_ReTrabajo.Columns.Add("RET_cantidad_retrabajo", "RET_cantidad_retrabajo")
         dgvListado_ReTrabajo.Columns.Add("RET_fecha_comienzo_retrabajo", "RET_fecha_comienzo_retrabajo")
         dgvListado_ReTrabajo.Columns.Add("RET_fecha_entrega_retrabajo", "RET_fecha_entrega_retrabajo")
         dgvListado_ReTrabajo.Columns.Add("RET_origen_area_motivo", "RET_origen_area_motivo")
@@ -464,48 +467,87 @@
         dgvListado_ReTrabajo.Columns.Add("dato_variable_retrabajo", "dato_variable_retrabajo")
 
         dgvListado_ReTrabajo.Columns(0).DataPropertyName = "RET_id_retrabajo"
+        ' dgvListado_ReTrabajo.Columns(0).Visible = False
         dgvListado_ReTrabajo.Columns(1).DataPropertyName = "ORT_id_orden_trabajo"
+        '  dgvListado_ReTrabajo.Columns(1).Visible = False
         dgvListado_ReTrabajo.Columns(2).DataPropertyName = "ORT_numero_ot"
+        '  dgvListado_ReTrabajo.Columns(2).Visible = False
         dgvListado_ReTrabajo.Columns(3).DataPropertyName = "ORT_fecha_ot"
+        '   dgvListado_ReTrabajo.Columns(3).Visible = False
         dgvListado_ReTrabajo.Columns(4).DataPropertyName = "ORT_fecha_entrega"
+        '  dgvListado_ReTrabajo.Columns(4).Visible = False
         dgvListado_ReTrabajo.Columns(5).DataPropertyName = "DOT_cantidad_dot"
+        '    dgvListado_ReTrabajo.Columns(5).Visible = False
         dgvListado_ReTrabajo.Columns(6).DataPropertyName = "PIE_id_pieza"
+        '  dgvListado_ReTrabajo.Columns(6).Visible = False
         dgvListado_ReTrabajo.Columns(7).DataPropertyName = "PIE_nombre_pie"
         dgvListado_ReTrabajo.Columns(8).DataPropertyName = "DOT_tamaño_dot"
-        dgvListado_ReTrabajo.Columns(9).DataPropertyName = "RET_cantidad_producto_retrabajo"
-        dgvListado_ReTrabajo.Columns(10).DataPropertyName = "RET_fecha_comienzo_retrabajo"
-        dgvListado_ReTrabajo.Columns(11).DataPropertyName = "RET_fecha_entrega_retrabajo"
-        dgvListado_ReTrabajo.Columns(12).DataPropertyName = "RET_origen_area_motivo"
-        dgvListado_ReTrabajo.Columns(13).DataPropertyName = "RET_procedimiento_observaciones"
+        ' dgvListado_ReTrabajo.Columns(8).Visible = False
+        dgvListado_ReTrabajo.Columns(9).DataPropertyName = "RET_cantidad_retrabajo"
+        dgvListado_ReTrabajo.Columns(10).DataPropertyName = "RET_origen_area_motivo"
+        dgvListado_ReTrabajo.Columns(11).DataPropertyName = "RET_procedimiento_observaciones"
+        dgvListado_ReTrabajo.Columns(12).DataPropertyName = "RET_fecha_comienzo_retrabajo"
+        ' dgvListado_ReTrabajo.Columns(12).Visible = False
+        dgvListado_ReTrabajo.Columns(13).DataPropertyName = "RET_fecha_entrega_retrabajo"
+        '   dgvListado_ReTrabajo.Columns(13).Visible = False
         dgvListado_ReTrabajo.Columns(14).DataPropertyName = "RET_papel_soporte_1_retrabajo"
+        dgvListado_ReTrabajo.Columns(14).Visible = False
         dgvListado_ReTrabajo.Columns(15).DataPropertyName = "RET_papel_soporte_2_retrabajo"
+        dgvListado_ReTrabajo.Columns(15).Visible = False
         dgvListado_ReTrabajo.Columns(16).DataPropertyName = "RET_papel_soporte_3_retrabajo"
+        dgvListado_ReTrabajo.Columns(16).Visible = False
         dgvListado_ReTrabajo.Columns(17).DataPropertyName = "RET_gramaje_soporte_1_retrabajo"
+        dgvListado_ReTrabajo.Columns(17).Visible = False
         dgvListado_ReTrabajo.Columns(18).DataPropertyName = "RET_gramaje_soporte_2_retrabajo"
+        dgvListado_ReTrabajo.Columns(18).Visible = False
         dgvListado_ReTrabajo.Columns(19).DataPropertyName = "RET_gramaje_soporte_3_retrabajo"
+        dgvListado_ReTrabajo.Columns(19).Visible = False
         dgvListado_ReTrabajo.Columns(20).DataPropertyName = "RET_cantidad_soporte_1_retrabajo"
+        dgvListado_ReTrabajo.Columns(20).Visible = False
         dgvListado_ReTrabajo.Columns(21).DataPropertyName = "RET_cantidad_soporte_2_retrabajo"
+        dgvListado_ReTrabajo.Columns(21).Visible = False
         dgvListado_ReTrabajo.Columns(22).DataPropertyName = "RET_cantidad_soporte_3_retrabajo"
+        dgvListado_ReTrabajo.Columns(22).Visible = False
         dgvListado_ReTrabajo.Columns(23).DataPropertyName = "RET_formato_soporte_1_retrabajo"
+        dgvListado_ReTrabajo.Columns(23).Visible = False
         dgvListado_ReTrabajo.Columns(24).DataPropertyName = "RET_formato_soporte_2_retrabajo"
+        dgvListado_ReTrabajo.Columns(24).Visible = False
         dgvListado_ReTrabajo.Columns(25).DataPropertyName = "RET_formato_soporte_3_retrabajo"
+        dgvListado_ReTrabajo.Columns(25).Visible = False
         dgvListado_ReTrabajo.Columns(26).DataPropertyName = "cantidad_1_PM_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(26).Visible = False
         dgvListado_ReTrabajo.Columns(27).DataPropertyName = "cantidad_2_PM_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(27).Visible = False
         dgvListado_ReTrabajo.Columns(28).DataPropertyName = "cantidad_3_PM_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(28).Visible = False
         dgvListado_ReTrabajo.Columns(29).DataPropertyName = "formato_1_PM_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(29).Visible = False
         dgvListado_ReTrabajo.Columns(30).DataPropertyName = "formato_2_PM_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(30).Visible = False
         dgvListado_ReTrabajo.Columns(31).DataPropertyName = "formato_3_PM_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(31).Visible = False
         dgvListado_ReTrabajo.Columns(32).DataPropertyName = "tipo_impresion_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(32).Visible = False
         dgvListado_ReTrabajo.Columns(33).DataPropertyName = "impresora_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(33).Visible = False
         dgvListado_ReTrabajo.Columns(34).DataPropertyName = "modo_impresion_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(34).Visible = False
         dgvListado_ReTrabajo.Columns(35).DataPropertyName = "cantidad_1_PM_digital_retrabajo"
+        dgvListado_ReTrabajo.Columns(35).Visible = False
         dgvListado_ReTrabajo.Columns(36).DataPropertyName = "cantidad_2_PM_digital_retrabajo"
+        dgvListado_ReTrabajo.Columns(36).Visible = False
         dgvListado_ReTrabajo.Columns(37).DataPropertyName = "cantidad_3_PM_digital_retrabajo"
+        dgvListado_ReTrabajo.Columns(37).Visible = False
         dgvListado_ReTrabajo.Columns(38).DataPropertyName = "formato_1_PM_digital_retrabajo"
+        dgvListado_ReTrabajo.Columns(38).Visible = False
         dgvListado_ReTrabajo.Columns(39).DataPropertyName = "formato_2_PM_digital_retrabajo"
+        dgvListado_ReTrabajo.Columns(39).Visible = False
         dgvListado_ReTrabajo.Columns(40).DataPropertyName = "formato_3_PM_digital_retrabajo"
+        dgvListado_ReTrabajo.Columns(40).Visible = False
         dgvListado_ReTrabajo.Columns(41).DataPropertyName = "tipo_impresion_digital_retrabajo"
+        dgvListado_ReTrabajo.Columns(41).Visible = False
         dgvListado_ReTrabajo.Columns(42).DataPropertyName = "dato_variable_retrabajo"
+        dgvListado_ReTrabajo.Columns(42).Visible = False
     End Sub
 
     Public Sub CargarGrillaRetrabajo()

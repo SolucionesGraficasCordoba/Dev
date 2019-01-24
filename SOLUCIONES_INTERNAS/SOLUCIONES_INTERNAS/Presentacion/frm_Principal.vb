@@ -1664,6 +1664,10 @@ Public Class frm_Principal
         frm_retrabajo.btnGuardar_ReTrabajo.Enabled = False
         frm_retrabajo.GroupTipoOrden.Enabled = False
         frm_retrabajo.Show()
-        frm_retrabajo.txt_Buscar_Nro_Orden.Focus()
+        '  frm_retrabajo.txt_Buscar_Nro_Orden.Focus()
+    End Sub
+
+    Private Sub DigitalOffsetToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles DigitalOffsetToolStripMenuItem1.Click
+        frm_retrabajo.Show()
     End Sub
 End Class

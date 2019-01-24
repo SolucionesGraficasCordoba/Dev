@@ -494,13 +494,13 @@ Partial Class frm_Principal
         'NuevoToolStripMenuItem2
         '
         Me.NuevoToolStripMenuItem2.Name = "NuevoToolStripMenuItem2"
-        Me.NuevoToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.NuevoToolStripMenuItem2.Size = New System.Drawing.Size(117, 22)
         Me.NuevoToolStripMenuItem2.Text = "Nuevo"
         '
         'EliminarToolStripMenuItem3
         '
         Me.EliminarToolStripMenuItem3.Name = "EliminarToolStripMenuItem3"
-        Me.EliminarToolStripMenuItem3.Size = New System.Drawing.Size(152, 22)
+        Me.EliminarToolStripMenuItem3.Size = New System.Drawing.Size(117, 22)
         Me.EliminarToolStripMenuItem3.Text = "Eliminar"
         '
         'DigitalOffsetToolStripMenuItem
@@ -513,13 +513,13 @@ Partial Class frm_Principal
         'NuevoToolStripMenuItem1
         '
         Me.NuevoToolStripMenuItem1.Name = "NuevoToolStripMenuItem1"
-        Me.NuevoToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.NuevoToolStripMenuItem1.Size = New System.Drawing.Size(117, 22)
         Me.NuevoToolStripMenuItem1.Text = "Nuevo"
         '
         'EliminarToolStripMenuItem2
         '
         Me.EliminarToolStripMenuItem2.Name = "EliminarToolStripMenuItem2"
-        Me.EliminarToolStripMenuItem2.Size = New System.Drawing.Size(152, 22)
+        Me.EliminarToolStripMenuItem2.Size = New System.Drawing.Size(117, 22)
         Me.EliminarToolStripMenuItem2.Text = "Eliminar"
         '
         'ConsultarToolStripMenuItem1

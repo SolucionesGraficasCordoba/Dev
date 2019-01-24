@@ -112,12 +112,12 @@ Partial Class frm_retrabajo
         Me.chkDigital = New System.Windows.Forms.CheckBox()
         Me.dgvListado_ReTrabajo = New System.Windows.Forms.DataGridView()
         Me.GroupListado = New System.Windows.Forms.GroupBox()
-        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.rbtMes = New System.Windows.Forms.RadioButton()
         Me.rbtNumeroOrden = New System.Windows.Forms.RadioButton()
         Me.cboBuscar_Mes = New System.Windows.Forms.ComboBox()
         Me.txt_Buscar_ReTrabajo = New System.Windows.Forms.TextBox()
+        Me.btnEliminar = New System.Windows.Forms.Button()
         Me.GroupDatosOriginales.SuspendLayout()
         Me.GroupProducto1.SuspendLayout()
         Me.GroupDigital.SuspendLayout()
@@ -982,9 +982,11 @@ Partial Class frm_retrabajo
         '
         'dgvListado_ReTrabajo
         '
+        Me.dgvListado_ReTrabajo.AllowUserToAddRows = False
         Me.dgvListado_ReTrabajo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvListado_ReTrabajo.Location = New System.Drawing.Point(12, 59)
         Me.dgvListado_ReTrabajo.Name = "dgvListado_ReTrabajo"
+        Me.dgvListado_ReTrabajo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvListado_ReTrabajo.Size = New System.Drawing.Size(1059, 158)
         Me.dgvListado_ReTrabajo.TabIndex = 135
         '
@@ -998,15 +1000,6 @@ Partial Class frm_retrabajo
         Me.GroupListado.TabIndex = 136
         Me.GroupListado.TabStop = False
         Me.GroupListado.Text = "Listado de Re-Trabajos"
-        '
-        'btnEliminar
-        '
-        Me.btnEliminar.Location = New System.Drawing.Point(859, 654)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(75, 33)
-        Me.btnEliminar.TabIndex = 137
-        Me.btnEliminar.Text = "Eliminar"
-        Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
@@ -1058,6 +1051,15 @@ Partial Class frm_retrabajo
         Me.txt_Buscar_ReTrabajo.Name = "txt_Buscar_ReTrabajo"
         Me.txt_Buscar_ReTrabajo.Size = New System.Drawing.Size(139, 20)
         Me.txt_Buscar_ReTrabajo.TabIndex = 2
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.Location = New System.Drawing.Point(859, 654)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(75, 33)
+        Me.btnEliminar.TabIndex = 137
+        Me.btnEliminar.Text = "Eliminar"
+        Me.btnEliminar.UseVisualStyleBackColor = True
         '
         'frm_retrabajo
         '
