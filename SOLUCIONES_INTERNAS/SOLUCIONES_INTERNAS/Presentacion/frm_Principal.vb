@@ -1612,7 +1612,13 @@ Public Class frm_Principal
         frm_retrabajo.txt_id_orden_trabajo.Visible = False
         frm_retrabajo.txt_id_re_trabajo.Visible = False
         frm_retrabajo.btnImprimirFormulario.Enabled = False
+        frm_retrabajo.groupOffset.Enabled = False
+        frm_retrabajo.GroupDigital.Enabled = False
+        frm_retrabajo.GroupProducto1.Enabled = False
+        frm_retrabajo.btnEliminar.Enabled = False
+        frm_retrabajo.GroupListado.Enabled = False
         frm_retrabajo.Show()
+        frm_retrabajo.btnBuscar_Numero_Orden1.Focus()
     End Sub
 
     Private Sub RepeticiónDeChapasToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles RepeticiónDeChapasToolStripMenuItem1.Click
@@ -1644,7 +1650,20 @@ Public Class frm_Principal
         frm_Actualizar_Offset.dgvRepeticion.ClearSelection()
     End Sub
 
-    Private Sub DigitalOffsetToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles DigitalOffsetToolStripMenuItem1.Click
-
+    Private Sub EliminarToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarToolStripMenuItem2.Click
+        frm_retrabajo.Text = "Nuevo Re-Trabajo"
+        frm_retrabajo.txt_id_detalle.Visible = False
+        frm_retrabajo.txt_id_orden_trabajo.Visible = False
+        frm_retrabajo.txt_id_re_trabajo.Visible = False
+        frm_retrabajo.btnImprimirFormulario.Enabled = False
+        frm_retrabajo.groupOffset.Enabled = False
+        frm_retrabajo.GroupDigital.Enabled = False
+        frm_retrabajo.GroupReTrabajo.Enabled = False
+        frm_retrabajo.GroupProducto1.Enabled = False
+        frm_retrabajo.GroupDatosOriginales.Enabled = False
+        frm_retrabajo.btnGuardar_ReTrabajo.Enabled = False
+        frm_retrabajo.GroupTipoOrden.Enabled = False
+        frm_retrabajo.Show()
+        frm_retrabajo.txt_Buscar_Nro_Orden.Focus()
     End Sub
 End Class

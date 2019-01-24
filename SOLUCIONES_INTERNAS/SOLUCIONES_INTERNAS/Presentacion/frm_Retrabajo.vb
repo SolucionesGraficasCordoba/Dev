@@ -17,7 +17,7 @@
         'txt_id_orden_trabajo.Visible = False
         cboPiezas1_Detalle1.Enabled = False
         txtTamaño1_Detalle1.Enabled = False
-        cboTipoImpresion.Enabled = False
+        ' cboTipoImpresion.Enabled = False
         'txt_id_detalle_orden_trabajo1.Visible = False
         txt_cantidad_original.Enabled = False
         dtp_Fecha_Ingreso_Original.Enabled = False
@@ -67,7 +67,7 @@
         End If
     End Sub
 
-    Private Sub txt_Gramaje1_Soporte1_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_Gramaje1_Soporte1.KeyPress
+    Private Sub txt_Gramaje1_Soporte1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -79,7 +79,7 @@
         End If
     End Sub
 
-    Private Sub txt_Gramaje2_Soporte1_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_Gramaje2_Soporte1.KeyPress
+    Private Sub txt_Gramaje2_Soporte1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -91,7 +91,7 @@
         End If
     End Sub
 
-    Private Sub txt_Gramaje3_Soporte1_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_Gramaje3_Soporte1.KeyPress
+    Private Sub txt_Gramaje3_Soporte1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -103,7 +103,7 @@
         End If
     End Sub
 
-    Private Sub txt_Cantidad1_Soporte1_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_Cantidad1_Soporte1.KeyPress
+    Private Sub txt_Cantidad1_Soporte1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -115,7 +115,7 @@
         End If
     End Sub
 
-    Private Sub txt_Cantidad2_Soporte1_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_Cantidad2_Soporte1.KeyPress
+    Private Sub txt_Cantidad2_Soporte1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -127,7 +127,7 @@
         End If
     End Sub
 
-    Private Sub txt_Cantidad3_Soporte1_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_Cantidad3_Soporte1.KeyPress
+    Private Sub txt_Cantidad3_Soporte1_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -188,29 +188,29 @@
         ret.RET_cantidad_producto_retrabajo = txt_cantidad_retrabajo.Text
         ret.RET_tamaño_producto_retrabajo = txtTamaño1_Detalle1.Text
 
-        ret.RET_tipo_impresion_retrabajo = cboTipoImpresion.Text
-        ret.RET_papel_soporte_1_retrabajo = StrConv(txt_Papel1_Soporte1.Text, VbStrConv.ProperCase)
-        ret.RET_papel_soporte_2_retrabajo = StrConv(txt_Papel2_Soporte1.Text, VbStrConv.ProperCase)
-        ret.RET_papel_soporte_3_retrabajo = StrConv(txt_Papel3_Soporte1.Text, VbStrConv.ProperCase)
+        ' ret.RET_tipo_impresion_retrabajo = cboTipoImpresion.Text
+        'ret.RET_papel_soporte_1_retrabajo = StrConv(txt_Papel1_Soporte1.Text, VbStrConv.ProperCase)
+        'ret.RET_papel_soporte_2_retrabajo = StrConv(txt_Papel2_Soporte1.Text, VbStrConv.ProperCase)
+        'ret.RET_papel_soporte_3_retrabajo = StrConv(txt_Papel3_Soporte1.Text, VbStrConv.ProperCase)
 
-        ret.RET_gramaje_soporte_1_retrabajo = StrConv(txt_Gramaje1_Soporte1.Text, VbStrConv.ProperCase)
-        ret.RET_gramaje_soporte_2_retrabajo = StrConv(txt_Gramaje2_Soporte1.Text, VbStrConv.ProperCase)
-        ret.RET_gramaje_soporte_3_retrabajo = StrConv(txt_Gramaje3_Soporte1.Text, VbStrConv.ProperCase)
+        'ret.RET_gramaje_soporte_1_retrabajo = StrConv(txt_Gramaje1_Soporte1.Text, VbStrConv.ProperCase)
+        'ret.RET_gramaje_soporte_2_retrabajo = StrConv(txt_Gramaje2_Soporte1.Text, VbStrConv.ProperCase)
+        'ret.RET_gramaje_soporte_3_retrabajo = StrConv(txt_Gramaje3_Soporte1.Text, VbStrConv.ProperCase)
 
-        If txt_Cantidad1_Soporte1.TextLength <> 0 Then
-            ret.RET_cantidad_soporte_1_retrabajo = txt_Cantidad1_Soporte1.Text
-        End If
+        'If txt_Cantidad1_Soporte1.TextLength <> 0 Then
+        '    ret.RET_cantidad_soporte_1_retrabajo = txt_Cantidad1_Soporte1.Text
+        'End If
 
-        If txt_Cantidad2_Soporte1.TextLength <> 0 Then
-            ret.RET_cantidad_soporte_2_retrabajo = txt_Cantidad2_Soporte1.Text
-        End If
-        If txt_Cantidad3_Soporte1.TextLength <> 0 Then
-            ret.RET_cantidad_soporte_3_retrabajo = txt_Cantidad3_Soporte1.Text
-        End If
+        'If txt_Cantidad2_Soporte1.TextLength <> 0 Then
+        '    ret.RET_cantidad_soporte_2_retrabajo = txt_Cantidad2_Soporte1.Text
+        'End If
+        'If txt_Cantidad3_Soporte1.TextLength <> 0 Then
+        '    ret.RET_cantidad_soporte_3_retrabajo = txt_Cantidad3_Soporte1.Text
+        'End If
 
-        ret.RET_formato_soporte_1_retrabajo = cboFormato1_Soporte1.Text
-        ret.RET_formato_soporte_2_retrabajo = cboFormato2_Soporte1.Text
-        ret.RET_formato_soporte_3_retrabajo = cboFormato3_Soporte1.Text
+        'ret.RET_formato_soporte_1_retrabajo = cboFormato1_Soporte1.Text
+        'ret.RET_formato_soporte_2_retrabajo = cboFormato2_Soporte1.Text
+        'ret.RET_formato_soporte_3_retrabajo = cboFormato3_Soporte1.Text
 
         datacontext.RE_TRABAJO.InsertOnSubmit(ret)
         datacontext.SubmitChanges()
@@ -220,5 +220,29 @@
         'Catch ex As Exception
         '    MsgBox("Error al cargar el Re-Trabajo")
         'End Try
+    End Sub
+
+    Private Sub chkOffset_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkOffset.CheckedChanged
+        If chkOffset.Checked = True Then
+            GroupProducto1.Enabled = True
+            groupOffset.Enabled = True
+        Else
+            groupOffset.Enabled = False
+            GroupProducto1.Enabled = False
+            'LimpiarProducto_Soportes()
+            'LimpiarOffset()
+        End If
+    End Sub
+
+    Private Sub chkDigital_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkDigital.CheckedChanged
+        If chkDigital.Checked = True Then
+            GroupDigital.Enabled = True
+            GroupProducto1.Enabled = True
+        Else
+            GroupDigital.Enabled = False
+            GroupProducto1.Enabled = False
+            'LimpiarProducto_Soportes()
+            'LimpiarDigital()
+        End If
     End Sub
 End Class

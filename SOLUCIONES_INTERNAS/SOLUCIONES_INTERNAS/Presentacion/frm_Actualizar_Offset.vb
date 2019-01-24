@@ -30,7 +30,7 @@
             Exit Sub
         End If
 
-        'GUARDA ORDEN DE TRABAJO
+        'GUARDA ORDEN DE RE-TRABAJO
         Try
             Dim rt = New RE_TRABAJO
 
@@ -134,7 +134,7 @@
         dgvRepeticion.Columns(16).DataPropertyName = "impresora_offset"
         dgvRepeticion.Columns(16).Visible = False
         dgvRepeticion.Columns(17).DataPropertyName = "marca_offset"
-        '  dgvRepeticion.Columns(17).Visible = False
+        dgvRepeticion.Columns(17).Visible = False
         dgvRepeticion.Columns(18).DataPropertyName = "ORT_fecha_ot"
         dgvRepeticion.Columns(18).Visible = False
 
@@ -241,32 +241,30 @@
         cboPiezas1_Detalle1.SelectedIndex = -1
 
         'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
-        ' cboPiezas1_Detalle1.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
         cboPiezas1_Detalle1.SelectedValue = dgvRepeticion.Item("PIE_id_pieza", dgvRepeticion.SelectedRows(0).Index).Value
-        ' Try
-        If dgvRepeticion.SelectedRows.Count > 0 Then
+        Try
+            If dgvRepeticion.SelectedRows.Count > 0 Then
 
-            'CARGA GROUPBOX REPETICION
-            txt_cantidad_chapas_retrabajo.Text = dgvRepeticion.Item("cantidad_chapas_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
-            cboImpresora_Offset.Text = dgvRepeticion.Item("impresora_offset_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
-            cboMotivo.Text = dgvRepeticion.Item("RET_origen_area_motivo", dgvRepeticion.SelectedRows(0).Index).Value
-            txt_Observaciones.Text = dgvRepeticion.Item("RET_procedimiento_observaciones", dgvRepeticion.SelectedRows(0).Index).Value
-            dtpFecha_Re_Trabajo.Text = dgvRepeticion.Item("RET_fecha_comienzo_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
-            dtp_Nueva_Fecha_Entrega.Text = dgvRepeticion.Item("RET_fecha_entrega_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
-            cboNuevaMarca.Text = dgvRepeticion.Item("marca_offset_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
-            'CARGA GROUPBOX DATOS ORIGINALES
-            txtNumero_Orden_Trabajo.Text = dgvRepeticion.Item("ORT_numero_ot", dgvRepeticion.SelectedRows(0).Index).Value
-            dtp_Fecha_Ingreso_Original.Text = dgvRepeticion.Item("ORT_fecha_ot", dgvRepeticion.SelectedRows(0).Index).Value
-            txt_cantidad_original.Text = dgvRepeticion.Item("DOT_cantidad_producto", dgvRepeticion.SelectedRows(0).Index).Value
-            txtTamaño1_Detalle1.Text = dgvRepeticion.Item("DOT_tamaño_producto", dgvRepeticion.SelectedRows(0).Index).Value
-            txt_chapa_soporte_1.Text = dgvRepeticion.Item("chapas_soporte1_offset", dgvRepeticion.SelectedRows(0).Index).Value
-            cboMarca_Offset.Text = dgvRepeticion.Item("marca_offset", dgvRepeticion.SelectedRows(0).Index).Value
-            cboImpresora_Original.Text = dgvRepeticion.Item("impresora_offset", dgvRepeticion.SelectedRows(0).Index).Value
-        Else
-            MsgBox("Debe seleccionar un Re-Trabajo del listado")
-        End If
-        '  Catch ex As Exception
-        '  End Try
+                'CARGA GROUPBOX REPETICION
+                txt_cantidad_chapas_retrabajo.Text = dgvRepeticion.Item("cantidad_chapas_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
+                cboImpresora_Offset.Text = dgvRepeticion.Item("impresora_offset_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
+                cboMotivo.Text = dgvRepeticion.Item("RET_origen_area_motivo", dgvRepeticion.SelectedRows(0).Index).Value
+                txt_Observaciones.Text = dgvRepeticion.Item("RET_procedimiento_observaciones", dgvRepeticion.SelectedRows(0).Index).Value
+                dtpFecha_Re_Trabajo.Text = dgvRepeticion.Item("RET_fecha_comienzo_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
+                dtp_Nueva_Fecha_Entrega.Text = dgvRepeticion.Item("RET_fecha_entrega_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
+                cboNuevaMarca.Text = dgvRepeticion.Item("marca_offset_retrabajo", dgvRepeticion.SelectedRows(0).Index).Value
+                'CARGA GROUPBOX DATOS ORIGINALES
+                txtNumero_Orden_Trabajo.Text = dgvRepeticion.Item("ORT_numero_ot", dgvRepeticion.SelectedRows(0).Index).Value
+                dtp_Fecha_Ingreso_Original.Text = dgvRepeticion.Item("ORT_fecha_ot", dgvRepeticion.SelectedRows(0).Index).Value
+                txt_cantidad_original.Text = dgvRepeticion.Item("DOT_cantidad_producto", dgvRepeticion.SelectedRows(0).Index).Value
+                txtTamaño1_Detalle1.Text = dgvRepeticion.Item("DOT_tamaño_producto", dgvRepeticion.SelectedRows(0).Index).Value
+                txt_chapa_soporte_1.Text = dgvRepeticion.Item("chapas_soporte1_offset", dgvRepeticion.SelectedRows(0).Index).Value
+                cboMarca_Offset.Text = dgvRepeticion.Item("marca_offset", dgvRepeticion.SelectedRows(0).Index).Value
+                cboImpresora_Original.Text = dgvRepeticion.Item("impresora_offset", dgvRepeticion.SelectedRows(0).Index).Value
+            Else
+                MsgBox("Debe seleccionar un Re-Trabajo del listado")
+            End If
+        Catch ex As Exception
+        End Try
     End Sub
-
 End Class

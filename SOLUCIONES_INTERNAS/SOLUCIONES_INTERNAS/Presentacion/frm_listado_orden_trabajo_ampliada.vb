@@ -217,7 +217,7 @@ Public Class frm_listado_orden_trabajo_ampliada
                 frm_retrabajo.txt_id_detalle.Text = dgv_detalle_orden.SelectedCells(17).Value
                 frm_retrabajo.txt_cantidad_original.Text = dgv_detalle_orden.SelectedCells(18).Value
                 frm_retrabajo.txtTamaño1_Detalle1.Text = dgv_detalle_orden.SelectedCells(19).Value
-                frm_retrabajo.cboTipoImpresion.Text = dgv_detalle_orden.SelectedCells(40).Value
+                '    frm_retrabajo.cboTipoImpresion.Text = dgv_detalle_orden.SelectedCells(40).Value
 
             ElseIf quienllamolistado_ot.Name = frm_Actualizar_Offset.Name Then
                 frm_Actualizar_Offset.txt_id_orden_trabajo.Text = dgv_detalle_orden.SelectedCells(0).Value
