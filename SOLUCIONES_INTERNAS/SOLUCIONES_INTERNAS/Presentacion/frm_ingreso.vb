@@ -221,11 +221,11 @@
                     End If
                     '---------------------RETRABAJO-------------------'
                     If permisos.Item(i).PER_permiso = "RETRABAJO" Then
-                        If permisos.Item(i).PER_abm = "A" Then
+                        If permisos.Item(i).PER_abm = "REPE" Then
                             Retrabajo(True, flagb)
                             flaga = 1
                         End If
-                        If permisos.Item(i).PER_abm = "B" Then
+                        If permisos.Item(i).PER_abm = "DIOF" Then
                             Retrabajo(flaga, True)
                             flagb = 1
                         End If
@@ -295,7 +295,7 @@
         frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(2).Enabled = True 'consulta producto
         frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(3).Enabled = True 'consulta movimiento producto
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(6).Enabled = True 'consultar
-        ' frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(2).Enabled = True 'consultar
+        frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(2).Enabled = True 'consultar
 
         Acercade()
     End Sub
@@ -402,10 +402,10 @@
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(6).Visible = elim 'eliminar
     End Sub
 
-    Sub Retrabajo(ByVal nuevo As Boolean, ByVal elim As Boolean)
+    Sub Retrabajo(ByVal repe As Boolean, ByVal diof As Boolean)
         frm_Principal.ReTrabajoToolStripMenuItem1.Enabled = True
-        frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(0).Visible = nuevo 'nuevo
-        frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(1).Visible = elim 'eliminar
+        frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(0).Visible = repe
+        frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(1).Visible = diof
 
     End Sub
 
