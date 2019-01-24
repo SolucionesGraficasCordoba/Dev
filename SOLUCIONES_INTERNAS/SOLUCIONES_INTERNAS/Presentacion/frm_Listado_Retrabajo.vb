@@ -172,13 +172,13 @@ Public Class frm_Listado_Retrabajo
             frm_retrabajo.txt_id_re_trabajo.Text = dgvLista_ReTrabajos.Item("RET_id_retrabajo", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             frm_retrabajo.txt_id_orden_trabajo.Text = dgvLista_ReTrabajos.Item("ORT_id_orden_trabajo", dgvLista_ReTrabajos.Rows(0).Index).Value
             frm_retrabajo.txtNumero_Orden_Trabajo.Text = dgvLista_ReTrabajos.Item("ORT_numero_ot", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
-            frm_retrabajo.txt_cantidad_retrabajo.Text = dgvLista_ReTrabajos.Item("RET_cantidad_dort", dgvLista_ReTrabajos.Rows(0).Index).Value
-            frm_retrabajo.txt_cantidad_retrabajo.Text = dgvLista_ReTrabajos.Item("RET_cantidad_dort", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
-            frm_retrabajo.cboPiezas1_Detalle1.SelectedText = dgvLista_ReTrabajos.Item("PIE_nombre_pie", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
+            frm_retrabajo.txt_Cantidad_Retrabajo.Text = dgvLista_ReTrabajos.Item("RET_cantidad_dort", dgvLista_ReTrabajos.Rows(0).Index).Value
+            frm_retrabajo.txt_Cantidad_Retrabajo.Text = dgvLista_ReTrabajos.Item("RET_cantidad_dort", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
+            frm_retrabajo.cboPieza_Original.SelectedText = dgvLista_ReTrabajos.Item("PIE_nombre_pie", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             frm_retrabajo.dtpFecha_Re_Trabajo.Text = dgvLista_ReTrabajos.Item("RET_fecha", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             frm_retrabajo.dtp_Nueva_Fecha_Entrega.Text = dgvLista_ReTrabajos.Item("RET_fecha_entrega", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
-            frm_retrabajo.txt_cantidad_original.Text = dgvLista_ReTrabajos.Item("DOT_cantidad_dot", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
-            frm_retrabajo.txtTamaño1_Detalle1.Text = dgvLista_ReTrabajos.Item("DOT_tamaño_dot", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
+            frm_retrabajo.txt_Cantidad_Original.Text = dgvLista_ReTrabajos.Item("DOT_cantidad_dot", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
+            frm_retrabajo.txtTamaño_Original.Text = dgvLista_ReTrabajos.Item("DOT_tamaño_dot", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             ' frm_retrabajo.cboTipoImpresion.Text = dgvLista_ReTrabajos.Item("RET_tipo_impresion_dort", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             'frm_retrabajo.txt_Papel1_Soporte1.Text = dgvLista_ReTrabajos.Item("RET_papel_soporte_1", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             'frm_retrabajo.txt_Gramaje1_Soporte1.Text = dgvLista_ReTrabajos("RET_gramaje_soporte_1", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
@@ -193,7 +193,7 @@ Public Class frm_Listado_Retrabajo
             'frm_retrabajo.txt_Cantidad3_Soporte1.Text = dgvLista_ReTrabajos("RET_cantidad_soporte_3", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             'frm_retrabajo.cboFormato3_Soporte1.Text = dgvLista_ReTrabajos("RET_formato_soporte_3", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             'frm_retrabajo.txt_origen.Text = dgvLista_ReTrabajos.Item("RET_origen_area", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
-            frm_retrabajo.txt_procedimiento.Text = dgvLista_ReTrabajos.Item("RET_procedimiento", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
+            frm_retrabajo.txt_Procedimiento.Text = dgvLista_ReTrabajos.Item("RET_procedimiento", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             frm_retrabajo.dtp_Fecha_Ingreso_Original.Text = dgvLista_ReTrabajos.Item("ORT_fecha_ot", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
             frm_retrabajo.dtpFecha_Entrega_Original.Text = dgvLista_ReTrabajos.Item("ORT_fecha_entrega", dgvLista_ReTrabajos.SelectedRows(0).Index).Value
 
@@ -204,10 +204,10 @@ Public Class frm_Listado_Retrabajo
         frm_retrabajo.btnGuardar_ReTrabajo.Enabled = False
         frm_retrabajo.btnImprimirFormulario.Enabled = True
         frm_retrabajo.btnBuscar_Numero_Orden1.Enabled = False
-        frm_retrabajo.txt_cantidad_original.Enabled = False
+        frm_retrabajo.txt_Cantidad_Original.Enabled = False
         frm_retrabajo.txtNumero_Orden_Trabajo.Enabled = False
-        frm_retrabajo.txt_origen.Enabled = False
-        frm_retrabajo.txt_procedimiento.Enabled = False
+        frm_retrabajo.txt_Origen_Causa.Enabled = False
+        frm_retrabajo.txt_Procedimiento.Enabled = False
         frm_retrabajo.dtp_Fecha_Ingreso_Original.Enabled = False
         frm_retrabajo.Label1.Visible = False
         frm_retrabajo.GroupProducto1.Enabled = False

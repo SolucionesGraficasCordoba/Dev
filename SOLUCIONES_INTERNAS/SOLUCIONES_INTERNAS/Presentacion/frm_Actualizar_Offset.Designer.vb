@@ -432,7 +432,7 @@ Partial Class frm_Actualizar_Offset
         '
         Me.cboMotivo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboMotivo.FormattingEnabled = True
-        Me.cboMotivo.Items.AddRange(New Object() {"EPR - ERROR PRENSA", "REI - REIMPRESION", "EFO - ERROR FOTOMECANICA", "DIS - CAMBIO DISEÑO", "TL - TIRAJE LARGO"})
+        Me.cboMotivo.Items.AddRange(New Object() {"EPR - ERROR PRENSA", "REI - REIMPRESION", "EFO - ERROR FOTOMECANICA", "DIS - CAMBIO DISEÑO", "TL - TIRAJE LARGO", "O - OTROS"})
         Me.cboMotivo.Location = New System.Drawing.Point(197, 80)
         Me.cboMotivo.Name = "cboMotivo"
         Me.cboMotivo.Size = New System.Drawing.Size(180, 21)
