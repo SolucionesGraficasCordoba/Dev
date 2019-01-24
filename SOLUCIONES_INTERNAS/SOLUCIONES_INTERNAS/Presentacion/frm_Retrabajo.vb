@@ -490,21 +490,70 @@
         dgvListado_ReTrabajo.Columns(24).DataPropertyName = "RET_formato_soporte_2_retrabajo"
         dgvListado_ReTrabajo.Columns(25).DataPropertyName = "RET_formato_soporte_3_retrabajo"
         dgvListado_ReTrabajo.Columns(26).DataPropertyName = "cantidad_1_PM_offset_retrabajo"
-        dgvListado_ReTrabajo.Columns(20).DataPropertyName = "cantidad_2_PM_offset_retrabajo"
-        dgvListado_ReTrabajo.Columns(21).DataPropertyName = "cantidad_3_PM_offset_retrabajo"
-        dgvListado_ReTrabajo.Columns(22).DataPropertyName = "formato_1_PM_offset_retrabajo"
-        dgvListado_ReTrabajo.Columns(23).DataPropertyName = "formato_2_PM_offset_retrabajo"
-        dgvListado_ReTrabajo.Columns(24).DataPropertyName = "formato_3_PM_offset_retrabajo"
-        dgvListado_ReTrabajo.Columns(25).DataPropertyName = "tipo_impresion_offset_retrabajo"
-        dgvListado_ReTrabajo.Columns(26).DataPropertyName = "impresora_offset_retrabajo"
-        dgvListado_ReTrabajo.Columns(20).DataPropertyName = "modo_impresion_offset_retrabajo"
-        dgvListado_ReTrabajo.Columns(21).DataPropertyName = "cantidad_1_PM_digital_retrabajo"
-        dgvListado_ReTrabajo.Columns(22).DataPropertyName = "cantidad_2_PM_digital_retrabajo"
-        dgvListado_ReTrabajo.Columns(23).DataPropertyName = "cantidad_3_PM_digital_retrabajo"
-        dgvListado_ReTrabajo.Columns(24).DataPropertyName = "formato_1_PM_digital_retrabajo"
-        dgvListado_ReTrabajo.Columns(25).DataPropertyName = "formato_2_PM_digital_retrabajo"
-        dgvListado_ReTrabajo.Columns(26).DataPropertyName = "formato_3_PM_digital_retrabajo"
-        dgvListado_ReTrabajo.Columns(25).DataPropertyName = "tipo_impresion_digital_retrabajo"
-        dgvListado_ReTrabajo.Columns(26).DataPropertyName = "dato_variable_retrabajo"
+        dgvListado_ReTrabajo.Columns(27).DataPropertyName = "cantidad_2_PM_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(28).DataPropertyName = "cantidad_3_PM_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(29).DataPropertyName = "formato_1_PM_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(30).DataPropertyName = "formato_2_PM_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(31).DataPropertyName = "formato_3_PM_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(32).DataPropertyName = "tipo_impresion_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(33).DataPropertyName = "impresora_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(34).DataPropertyName = "modo_impresion_offset_retrabajo"
+        dgvListado_ReTrabajo.Columns(35).DataPropertyName = "cantidad_1_PM_digital_retrabajo"
+        dgvListado_ReTrabajo.Columns(36).DataPropertyName = "cantidad_2_PM_digital_retrabajo"
+        dgvListado_ReTrabajo.Columns(37).DataPropertyName = "cantidad_3_PM_digital_retrabajo"
+        dgvListado_ReTrabajo.Columns(38).DataPropertyName = "formato_1_PM_digital_retrabajo"
+        dgvListado_ReTrabajo.Columns(39).DataPropertyName = "formato_2_PM_digital_retrabajo"
+        dgvListado_ReTrabajo.Columns(40).DataPropertyName = "formato_3_PM_digital_retrabajo"
+        dgvListado_ReTrabajo.Columns(41).DataPropertyName = "tipo_impresion_digital_retrabajo"
+        dgvListado_ReTrabajo.Columns(42).DataPropertyName = "dato_variable_retrabajo"
     End Sub
+
+    Public Sub CargarGrillaRetrabajo()
+        Dim carga = (From dot In datacontext.DETALLE_ORDEN_TRABAJO
+                                    Join ot In datacontext.ORDEN_TRABAJO
+                                    On ot.ORT_id_orden_trabajo Equals dot.ORT_id_orden_trabajo
+                                      Join pie In datacontext.PIEZA
+                                    On pie.PIE_id_pieza Equals dot.PIE_id_pieza
+                                    Join ret In datacontext.RE_TRABAJO
+                                    On dot.id_detalle_orden_trabajo Equals ret.id_detalle_orden_trabajo
+                                    Select dot.ORT_id_orden_trabajo,
+                                    ot.ORT_numero_ot, ot.ORT_fecha_ot,
+                                    ot.ORT_fecha_entrega,
+                                    dot.id_detalle_orden_trabajo,
+                                    dot.DOT_cantidad_producto,
+                                    dot.PIE_id_pieza,
+                                    pie.PIE_nombre_pie,
+                                    dot.DOT_tamaño_producto,
+                                    ret.RET_id_retrabajo,
+                                    ret.RET_papel_soporte_1_retrabajo,
+                                    ret.RET_papel_soporte_2_retrabajo,
+                                    ret.RET_papel_soporte_3_retrabajo,
+                                    ret.RET_gramaje_soporte_1_retrabajo,
+                                    ret.RET_gramaje_soporte_2_retrabajo,
+                                    ret.RET_gramaje_soporte_3_retrabajo,
+                                    ret.RET_cantidad_soporte_1_retrabajo,
+                                    ret.RET_cantidad_soporte_2_retrabajo,
+                                    ret.RET_cantidad_soporte_3_retrabajo,
+                                    ret.RET_formato_soporte_1_retrabajo,
+                                    ret.RET_formato_soporte_2_retrabajo,
+                                    ret.RET_formato_soporte_3_retrabajo,
+                                    ret.tipo_impresion_offset_retrabajo,
+                                    ret.impresora_offset_retrabajo,
+                                    ret.modo_impresion_offset_retrabajo,
+                                    ret.cantidad_1_PM_digital_retrabajo,
+                                    ret.cantidad_2_PM_digital_retrabajo,
+                                    ret.cantidad_3_PM_digital_retrabajo,
+                                    ret.formato_1_PM_digital_retrabajo,
+                                    ret.formato_2_PM_digital_retrabajo,
+                                    ret.formato_3_PM_digital_retrabajo,
+                                    ret.tipo_impresion_digital_retrabajo,
+                                    ret.dato_variable_retrabajo,
+                                    ret.cantidad_chapas_retrabajo,
+                                    ret.RET_fecha_comienzo_retrabajo,
+                                    ret.RET_fecha_entrega_retrabajo,
+                                    ret.RET_origen_area_motivo,
+                                    ret.RET_procedimiento_observaciones)
+        dgvListado_ReTrabajo.DataSource = carga
+    End Sub
+
 End Class
