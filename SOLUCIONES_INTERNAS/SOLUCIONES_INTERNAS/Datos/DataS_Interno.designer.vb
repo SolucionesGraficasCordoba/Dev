@@ -4051,7 +4051,7 @@ Partial Public Class RE_TRABAJO
 	
 	Private _RET_papel_soporte_3_retrabajo As String
 	
-	Private _RET_gramaje_soporte_1_retrabajo As System.Nullable(Of Integer)
+	Private _RET_gramaje_soporte_1_retrabajo As String
 	
 	Private _RET_gramaje_soporte_2_retrabajo As String
 	
@@ -4172,7 +4172,7 @@ Partial Public Class RE_TRABAJO
     End Sub
     Partial Private Sub OnRET_papel_soporte_3_retrabajoChanged()
     End Sub
-    Partial Private Sub OnRET_gramaje_soporte_1_retrabajoChanging(value As System.Nullable(Of Integer))
+    Partial Private Sub OnRET_gramaje_soporte_1_retrabajoChanging(value As String)
     End Sub
     Partial Private Sub OnRET_gramaje_soporte_1_retrabajoChanged()
     End Sub
@@ -4461,13 +4461,13 @@ Partial Public Class RE_TRABAJO
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_gramaje_soporte_1_retrabajo", DbType:="Int")>  _
-	Public Property RET_gramaje_soporte_1_retrabajo() As System.Nullable(Of Integer)
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_RET_gramaje_soporte_1_retrabajo", DbType:="VarChar(50)")>  _
+	Public Property RET_gramaje_soporte_1_retrabajo() As String
 		Get
 			Return Me._RET_gramaje_soporte_1_retrabajo
 		End Get
 		Set
-			If (Me._RET_gramaje_soporte_1_retrabajo.Equals(value) = false) Then
+			If (String.Equals(Me._RET_gramaje_soporte_1_retrabajo, value) = false) Then
 				Me.OnRET_gramaje_soporte_1_retrabajoChanging(value)
 				Me.SendPropertyChanging
 				Me._RET_gramaje_soporte_1_retrabajo = value

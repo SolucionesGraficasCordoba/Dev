@@ -204,7 +204,7 @@
       <Column Name="RET_papel_soporte_1_retrabajo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="RET_papel_soporte_2_retrabajo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="RET_papel_soporte_3_retrabajo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="RET_gramaje_soporte_1_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RET_gramaje_soporte_1_retrabajo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="RET_gramaje_soporte_2_retrabajo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="RET_gramaje_soporte_3_retrabajo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="RET_cantidad_soporte_1_retrabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
