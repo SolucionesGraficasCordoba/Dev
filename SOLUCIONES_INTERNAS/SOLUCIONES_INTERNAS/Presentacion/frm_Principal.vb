@@ -1668,6 +1668,21 @@ Public Class frm_Principal
     End Sub
 
     Private Sub DigitalOffsetToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles DigitalOffsetToolStripMenuItem1.Click
+        frm_retrabajo.Text = "Consultar Re-Trabajo"
+        frm_retrabajo.txt_id_detalle.Visible = False
+        frm_retrabajo.txt_id_orden_trabajo.Visible = False
+        frm_retrabajo.txt_id_re_trabajo.Visible = False
+        frm_retrabajo.btnImprimirFormulario.Enabled = False
+        frm_retrabajo.groupOffset.Enabled = False
+        frm_retrabajo.GroupDigital.Enabled = False
+        frm_retrabajo.GroupReTrabajo.Enabled = False
+        frm_retrabajo.GroupProducto1.Enabled = False
+        frm_retrabajo.GroupDatosOriginales.Enabled = False
+        frm_retrabajo.btnGuardar_ReTrabajo.Enabled = False
+        frm_retrabajo.btnEliminar.Enabled = False
+        frm_retrabajo.GroupTipoOrden.Enabled = False
+        frm_retrabajo.GroupPliegoEntero.Enabled = False
+
         frm_retrabajo.Show()
     End Sub
 End Class

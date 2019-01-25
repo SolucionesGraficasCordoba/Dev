@@ -427,46 +427,46 @@
         dgvListado_ReTrabajo.Columns.Add("DOT_tamaño_producto", "DOT_tamaño_producto")
 
         '---------------------------------------------------------------------------------------------
-        dgvListado_ReTrabajo.Columns.Add("RET_cantidad_producto_retrabajo", "RET_cantidad_producto_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("RET_fecha_comienzo_retrabajo", "RET_fecha_comienzo_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("RET_fecha_entrega_retrabajo", "RET_fecha_entrega_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("RET_origen_area_motivo", "RET_origen_area_motivo")
-        dgvListado_ReTrabajo.Columns.Add("RET_procedimiento_observaciones", "RET_procedimiento_observaciones")
+        dgvListado_ReTrabajo.Columns.Add("RET_cantidad_producto_retrabajo", "Cantidad")
+        dgvListado_ReTrabajo.Columns.Add("RET_fecha_comienzo_retrabajo", "Fecha Comienzo")
+        dgvListado_ReTrabajo.Columns.Add("RET_fecha_entrega_retrabajo", "Fecha Entrega")
+        dgvListado_ReTrabajo.Columns.Add("RET_origen_area_motivo", "Causa/Origen")
+        dgvListado_ReTrabajo.Columns.Add("RET_procedimiento_observaciones", "Procedimiento")
 
         '--------------------------------------------------------------------------------------------------------
-        dgvListado_ReTrabajo.Columns.Add("RET_papel_soporte_1_retrabajo", "RET_papel_soporte_1_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("RET_papel_soporte_2_retrabajo", "RET_papel_soporte_2_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("RET_papel_soporte_2_retrabajo", "RET_papel_soporte_3_retrabajo")
+        dgvListado_ReTrabajo.Columns.Add("RET_papel_soporte_1_retrabajo", "Papel Soporte 1")
+        dgvListado_ReTrabajo.Columns.Add("RET_papel_soporte_2_retrabajo", "Papel Soporte 2")
+        dgvListado_ReTrabajo.Columns.Add("RET_papel_soporte_3_retrabajo", "Papel Soporte 3")
 
-        dgvListado_ReTrabajo.Columns.Add("RET_gramaje_soporte_1_retrabajo", "RET_gramaje_soporte_1_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("RET_gramaje_soporte_2_retrabajo", "RET_gramaje_soporte_2_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("RET_gramaje_soporte_3_retrabajo", "RET_gramaje_soporte_3_retrabajo")
+        dgvListado_ReTrabajo.Columns.Add("RET_gramaje_soporte_1_retrabajo", "Gramaje Soporte 1")
+        dgvListado_ReTrabajo.Columns.Add("RET_gramaje_soporte_2_retrabajo", "Gramaje Soporte 2")
+        dgvListado_ReTrabajo.Columns.Add("RET_gramaje_soporte_3_retrabajo", "Gramaje Soporte 3")
         '----------------------------------------------------------------------------------------------------------
-        dgvListado_ReTrabajo.Columns.Add("RET_cantidad_soporte_1_retrabajo", "RET_cantidad_soporte_1_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("RET_cantidad_soporte_2_retrabajo", "RET_cantidad_soporte_2_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("RET_cantidad_soporte_3_retrabajo", "RET_cantidad_soporte_3_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("RET_formato_soporte_1_retrabajo", "RET_formato_soporte_1_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("RET_formato_soporte_2_retrabajo", "RET_formato_soporte_2_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("RET_formato_soporte_3_retrabajo", "RET_formato_soporte_3_retrabajo")
+        dgvListado_ReTrabajo.Columns.Add("RET_cantidad_soporte_1_retrabajo", "Cantidad Soporte 1")
+        dgvListado_ReTrabajo.Columns.Add("RET_cantidad_soporte_2_retrabajo", "Cantidad Soporte 2")
+        dgvListado_ReTrabajo.Columns.Add("RET_cantidad_soporte_3_retrabajo", "Cantidad Soporte 3")
+        dgvListado_ReTrabajo.Columns.Add("RET_formato_soporte_1_retrabajo", "Formato Soporte 1")
+        dgvListado_ReTrabajo.Columns.Add("RET_formato_soporte_2_retrabajo", "Formato Soporte 2")
+        dgvListado_ReTrabajo.Columns.Add("RET_formato_soporte_3_retrabajo", "Formato Soporte 3")
         '------------------------------------------------------------------------------------------------------------
-        dgvListado_ReTrabajo.Columns.Add("cantidad_1_PM_offset_retrabajo", "cantidad_1_PM_offset_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("cantidad_2_PM_offset_retrabajo", "cantidad_2_PM_offset_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("cantidad_3_PM_offset_retrabajo", "cantidad_3_PM_offset_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("formato_1_PM_offset_retrabajo", "formato_1_PM_offset_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("formato_2_PM_offset_retrabajo", "formato_2_PM_offset_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("formato_3_PM_offset_retrabajo", "formato_3_PM_offset_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("tipo_impresion_offset_retrabajo", "tipo_impresion_offset_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("impresora_offset_retrabajo", "impresora_offset_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("modo_impresion_offset_retrabajo", "modo_impresion_offset_retrabajo")
+        dgvListado_ReTrabajo.Columns.Add("cantidad_1_PM_offset_retrabajo", "Cantidad 1 PM Off")
+        dgvListado_ReTrabajo.Columns.Add("cantidad_2_PM_offset_retrabajo", "Cantidad 2 PM Off")
+        dgvListado_ReTrabajo.Columns.Add("cantidad_3_PM_offset_retrabajo", "Cantidad 3 PM Off")
+        dgvListado_ReTrabajo.Columns.Add("formato_1_PM_offset_retrabajo", "Formato 1 PM off")
+        dgvListado_ReTrabajo.Columns.Add("formato_2_PM_offset_retrabajo", "Formato 2 PM off")
+        dgvListado_ReTrabajo.Columns.Add("formato_3_PM_offset_retrabajo", "Formato 3 PM off")
+        dgvListado_ReTrabajo.Columns.Add("tipo_impresion_offset_retrabajo", "Tipo Impresión off")
+        dgvListado_ReTrabajo.Columns.Add("impresora_offset_retrabajo", "Impresora off")
+        dgvListado_ReTrabajo.Columns.Add("modo_impresion_offset_retrabajo", "Modo Impresión off")
         '-------------------------------------------------------------------------------------------------------------
-        dgvListado_ReTrabajo.Columns.Add("cantidad_1_PM_digital_retrabajo", "cantidad_1_PM_digital_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("cantidad_2_PM_digital_retrabajo", "cantidad_2_PM_digital_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("cantidad_3_PM_digital_retrabajo", "cantidad_3_PM_digital_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("formato_1_PM_digital_retrabajo", "formato_1_PM_digital_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("formato_2_PM_digital_retrabajo", "formato_2_PM_digital_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("formato_3_PM_digital_retrabajo", "formato_3_PM_digital_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("tipo_impresion_digital_retrabajo", "tipo_impresion_digital_retrabajo")
-        dgvListado_ReTrabajo.Columns.Add("dato_variable_retrabajo", "dato_variable_retrabajo")
+        dgvListado_ReTrabajo.Columns.Add("cantidad_1_PM_digital_retrabajo", "Cantidad 1 PM dig")
+        dgvListado_ReTrabajo.Columns.Add("cantidad_2_PM_digital_retrabajo", "Cantidad 2 PM dig")
+        dgvListado_ReTrabajo.Columns.Add("cantidad_3_PM_digital_retrabajo", "Cantidad 3 PM dig")
+        dgvListado_ReTrabajo.Columns.Add("formato_1_PM_digital_retrabajo", "Formato 1 PM dig")
+        dgvListado_ReTrabajo.Columns.Add("formato_2_PM_digital_retrabajo", "Formato 2 PM dig")
+        dgvListado_ReTrabajo.Columns.Add("formato_3_PM_digital_retrabajo", "Formato 3 PM dig")
+        dgvListado_ReTrabajo.Columns.Add("tipo_impresion_digital_retrabajo", "Tipo Impresión dig")
+        dgvListado_ReTrabajo.Columns.Add("dato_variable_retrabajo", "Dato Variable")
 
         dgvListado_ReTrabajo.Columns(0).DataPropertyName = "RET_id_retrabajo"
         dgvListado_ReTrabajo.Columns(0).Visible = False
@@ -606,4 +606,73 @@
         dgvListado_ReTrabajo.DataSource = carga
     End Sub
 
+    Private Sub dgvListado_ReTrabajo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvListado_ReTrabajo.Click
+
+        Dim combopieza1 = (From sec In datacontext.PIEZA
+                      Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
+                      Where PIE_ubicacion = "D"
+                      Order By PIE_nombre_pie Ascending)
+        cboPieza_Original.DataSource = combopieza1
+        cboPieza_Original.DisplayMember = "PIE_nombre_pie"
+        cboPieza_Original.ValueMember = "PIE_id_pieza"
+        cboPieza_Original.SelectedIndex = -1
+        'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
+        cboPieza_Original.SelectedValue = dgvListado_ReTrabajo.Item("PIE_id_pieza", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+
+        '  Try
+        If dgvListado_ReTrabajo.SelectedRows.Count > 0 Then
+            'CARGA GROUPBOX DATOS ORIGINALES
+            txtNumero_Orden_Trabajo.Text = dgvListado_ReTrabajo.Item("ORT_numero_ot", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            dtp_Fecha_Ingreso_Original.Text = dgvListado_ReTrabajo.Item("ORT_fecha_ot", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            dtp_Nueva_Fecha_Entrega.Text = dgvListado_ReTrabajo.Item("ORT_fecha_entrega", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txt_Cantidad_Original.Text = dgvListado_ReTrabajo.Item("DOT_cantidad_producto", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txtTamaño_Original.Text = dgvListado_ReTrabajo.Item("DOT_tamaño_producto", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+
+            'CARGA GROUPBOX RETRABAJO
+            txt_Cantidad_Retrabajo.Text = dgvListado_ReTrabajo.Item("RET_cantidad_producto_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            dtpFecha_Re_Trabajo.Text = dgvListado_ReTrabajo.Item("RET_fecha_comienzo_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            dtp_Nueva_Fecha_Entrega.Text = dgvListado_ReTrabajo.Item("RET_fecha_entrega_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txt_Origen_Causa.Text = dgvListado_ReTrabajo.Item("RET_origen_area_motivo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txt_Procedimiento.Text = dgvListado_ReTrabajo.Item("RET_procedimiento_observaciones", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+
+            'CARGA GROUPBOX PRODUCTO
+            txt_Papel_1_Soporte.Text = dgvListado_ReTrabajo.Item("RET_papel_soporte_1_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txt_Papel_2_Soporte.Text = dgvListado_ReTrabajo.Item("RET_papel_soporte_2_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txt_Papel_3_Soporte.Text = dgvListado_ReTrabajo.Item("RET_papel_soporte_3_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txt_Gramaje_1_Soporte.Text = dgvListado_ReTrabajo.Item("RET_gramaje_soporte_1_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txt_Gramaje_2_Soporte.Text = dgvListado_ReTrabajo.Item("RET_gramaje_soporte_2_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txt_Gramaje_3_Soporte.Text = dgvListado_ReTrabajo.Item("RET_gramaje_soporte_3_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txt_Cantidad_1_PE_DigitalOffset.Text = dgvListado_ReTrabajo.Item("RET_cantidad_soporte_1_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txt_Cantidad_2_PE_DigitalOffset.Text = dgvListado_ReTrabajo.Item("RET_cantidad_soporte_2_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txt_Cantidad_3_PE_DigitalOffset.Text = dgvListado_ReTrabajo.Item("RET_cantidad_soporte_3_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            cboFormato_1_PE_DigitalOffset.Text = dgvListado_ReTrabajo.Item("RET_formato_soporte_1_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            cboFormato_2_PE_DigitalOffset.Text = dgvListado_ReTrabajo.Item("RET_formato_soporte_2_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            cboFormato_3_PE_DigitalOffset.Text = dgvListado_ReTrabajo.Item("RET_formato_soporte_3_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+
+            'PLIEGO MAQUINA OFFSET
+            txtCantidad_1_PM_Offset.Text = dgvListado_ReTrabajo.Item("cantidad_1_PM_offset_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txtCantidad_2_PM_Offset.Text = dgvListado_ReTrabajo.Item("cantidad_2_PM_offset_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txtCantidad_3_PM_Offset.Text = dgvListado_ReTrabajo.Item("cantidad_3_PM_offset_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            cboFormato_1_PM_Offset.Text = dgvListado_ReTrabajo.Item("formato_1_PM_offset_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            cboFormato_2_PM_Offset.Text = dgvListado_ReTrabajo.Item("formato_2_PM_offset_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            cboFormato_3_PM_Offset.Text = dgvListado_ReTrabajo.Item("formato_3_PM_offset_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            cboTipo_Impresion_Offset.Text = dgvListado_ReTrabajo.Item("tipo_impresion_offset_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            cboImpresora_Offset.Text = dgvListado_ReTrabajo.Item("impresora_offset_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            cboModo_Impresion_Offset.Text = dgvListado_ReTrabajo.Item("modo_impresion_offset_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+
+            'PLIEGO MAQUINA DIGITAL
+            txtCantidad_1_PM_Digital.Text = dgvListado_ReTrabajo.Item("cantidad_1_PM_digital_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txtCantidad_2_PM_Digital.Text = dgvListado_ReTrabajo.Item("cantidad_2_PM_digital_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txtCantidad_3_PM_Digital.Text = dgvListado_ReTrabajo.Item("cantidad_3_PM_digital_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            cboFormato_1_PM_Digital.Text = dgvListado_ReTrabajo.Item("formato_1_PM_digital_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            cboFormato_2_PM_Digital.Text = dgvListado_ReTrabajo.Item("formato_2_PM_digital_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            cboFormato_3_PM_Digital.Text = dgvListado_ReTrabajo.Item("formato_3_PM_digital_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            cboTipo_Impresion_Digital.Text = dgvListado_ReTrabajo.Item("tipo_impresion_digital_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+            txtDato_Variable.Text = dgvListado_ReTrabajo.Item("dato_variable_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+        Else
+            MsgBox("Debe seleccionar un Re-Trabajo del listado")
+        End If
+        ' Catch ex As Exception
+        '  End Try
+    End Sub
 End Class

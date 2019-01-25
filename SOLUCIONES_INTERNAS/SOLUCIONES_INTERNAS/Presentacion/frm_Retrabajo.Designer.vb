@@ -88,7 +88,7 @@ Partial Class frm_retrabajo
         Me.cboImpresora_Offset = New System.Windows.Forms.ComboBox()
         Me.cboTipo_Impresion_Offset = New System.Windows.Forms.ComboBox()
         Me.Label35 = New System.Windows.Forms.Label()
-        Me.GroupBox8 = New System.Windows.Forms.GroupBox()
+        Me.GroupPliegoEntero = New System.Windows.Forms.GroupBox()
         Me.cboFormato_3_PE_DigitalOffset = New System.Windows.Forms.ComboBox()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
@@ -122,7 +122,7 @@ Partial Class frm_retrabajo
         Me.GroupProducto1.SuspendLayout()
         Me.GroupDigital.SuspendLayout()
         Me.groupOffset.SuspendLayout()
-        Me.GroupBox8.SuspendLayout()
+        Me.GroupPliegoEntero.SuspendLayout()
         Me.GroupReTrabajo.SuspendLayout()
         Me.GroupTipoOrden.SuspendLayout()
         CType(Me.dgvListado_ReTrabajo, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -462,7 +462,7 @@ Partial Class frm_retrabajo
         Me.GroupProducto1.Controls.Add(Me.GroupDigital)
         Me.GroupProducto1.Controls.Add(Me.groupOffset)
         Me.GroupProducto1.Controls.Add(Me.Label17)
-        Me.GroupProducto1.Controls.Add(Me.GroupBox8)
+        Me.GroupProducto1.Controls.Add(Me.GroupPliegoEntero)
         Me.GroupProducto1.Controls.Add(Me.txt_Gramaje_3_Soporte)
         Me.GroupProducto1.Controls.Add(Me.txt_Papel_3_Soporte)
         Me.GroupProducto1.Controls.Add(Me.txt_Gramaje_2_Soporte)
@@ -762,22 +762,22 @@ Partial Class frm_retrabajo
         Me.Label35.TabIndex = 147
         Me.Label35.Text = "Tipo Impresión"
         '
-        'GroupBox8
+        'GroupPliegoEntero
         '
-        Me.GroupBox8.Controls.Add(Me.cboFormato_3_PE_DigitalOffset)
-        Me.GroupBox8.Controls.Add(Me.Label27)
-        Me.GroupBox8.Controls.Add(Me.Label22)
-        Me.GroupBox8.Controls.Add(Me.txt_Cantidad_1_PE_DigitalOffset)
-        Me.GroupBox8.Controls.Add(Me.txt_Cantidad_2_PE_DigitalOffset)
-        Me.GroupBox8.Controls.Add(Me.txt_Cantidad_3_PE_DigitalOffset)
-        Me.GroupBox8.Controls.Add(Me.cboFormato_1_PE_DigitalOffset)
-        Me.GroupBox8.Controls.Add(Me.cboFormato_2_PE_DigitalOffset)
-        Me.GroupBox8.Location = New System.Drawing.Point(319, 11)
-        Me.GroupBox8.Name = "GroupBox8"
-        Me.GroupBox8.Size = New System.Drawing.Size(230, 202)
-        Me.GroupBox8.TabIndex = 142
-        Me.GroupBox8.TabStop = False
-        Me.GroupBox8.Text = "Pliego Entero Digital / Offset"
+        Me.GroupPliegoEntero.Controls.Add(Me.cboFormato_3_PE_DigitalOffset)
+        Me.GroupPliegoEntero.Controls.Add(Me.Label27)
+        Me.GroupPliegoEntero.Controls.Add(Me.Label22)
+        Me.GroupPliegoEntero.Controls.Add(Me.txt_Cantidad_1_PE_DigitalOffset)
+        Me.GroupPliegoEntero.Controls.Add(Me.txt_Cantidad_2_PE_DigitalOffset)
+        Me.GroupPliegoEntero.Controls.Add(Me.txt_Cantidad_3_PE_DigitalOffset)
+        Me.GroupPliegoEntero.Controls.Add(Me.cboFormato_1_PE_DigitalOffset)
+        Me.GroupPliegoEntero.Controls.Add(Me.cboFormato_2_PE_DigitalOffset)
+        Me.GroupPliegoEntero.Location = New System.Drawing.Point(319, 11)
+        Me.GroupPliegoEntero.Name = "GroupPliegoEntero"
+        Me.GroupPliegoEntero.Size = New System.Drawing.Size(230, 202)
+        Me.GroupPliegoEntero.TabIndex = 142
+        Me.GroupPliegoEntero.TabStop = False
+        Me.GroupPliegoEntero.Text = "Pliego Entero Digital / Offset"
         '
         'cboFormato_3_PE_DigitalOffset
         '
@@ -1086,8 +1086,8 @@ Partial Class frm_retrabajo
         Me.GroupDigital.PerformLayout()
         Me.groupOffset.ResumeLayout(False)
         Me.groupOffset.PerformLayout()
-        Me.GroupBox8.ResumeLayout(False)
-        Me.GroupBox8.PerformLayout()
+        Me.GroupPliegoEntero.ResumeLayout(False)
+        Me.GroupPliegoEntero.PerformLayout()
         Me.GroupReTrabajo.ResumeLayout(False)
         Me.GroupReTrabajo.PerformLayout()
         Me.GroupTipoOrden.ResumeLayout(False)
@@ -1136,7 +1136,7 @@ Partial Class frm_retrabajo
     Friend WithEvents txt_Cantidad_Original As System.Windows.Forms.TextBox
     Friend WithEvents GroupProducto1 As System.Windows.Forms.GroupBox
     Friend WithEvents txt_id_detalle As System.Windows.Forms.TextBox
-    Friend WithEvents GroupBox8 As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupPliegoEntero As System.Windows.Forms.GroupBox
     Friend WithEvents cboFormato_3_PE_DigitalOffset As System.Windows.Forms.ComboBox
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents Label22 As System.Windows.Forms.Label
