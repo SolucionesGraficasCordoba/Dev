@@ -7,31 +7,71 @@
 
     Private Sub frm_Orden_Trabajo_Ampliada_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
-        If quienllamo_listado_orden_ampliada.Name <> frm_listado_orden_trabajo_ampliada.Name Then
-            'CARGA COMBOBOX PIEZA PRODUCTO
-            Dim combopieza1 = (From sec In datacontext.PIEZA
-                               Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
-                               Where PIE_ubicacion = "D"
-                               Order By PIE_nombre_pie Ascending)
-            cboPiezas_Producto.DataSource = combopieza1
-            cboPiezas_Producto.DisplayMember = "PIE_nombre_pie"
-            cboPiezas_Producto.ValueMember = "PIE_id_pieza"
-            cboPiezas_Producto.SelectedIndex = -1
+        'If quienllamo_listado_orden_ampliada.Name <> frm_listado_orden_trabajo_ampliada.Name Then
+        '    'CARGA COMBOBOX PIEZA PRODUCTO
+        '    Dim combopieza1 = (From sec In datacontext.PIEZA
+        '                       Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
+        '                       Where PIE_ubicacion = "D"
+        '                       Order By PIE_nombre_pie Ascending)
+        '    cboPiezas_Producto.DataSource = combopieza1
+        '    cboPiezas_Producto.DisplayMember = "PIE_nombre_pie"
+        '    cboPiezas_Producto.ValueMember = "PIE_id_pieza"
+        '    cboPiezas_Producto.SelectedIndex = -1
 
-            'CARGA COMBOBOX PIEZA OFFSET
-            Dim combopieza2 = (From sec In datacontext.PIEZA
-                               Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
-                               Where PIE_ubicacion = "G"
-                               Order By PIE_nombre_pie Ascending)
-            cboPiezas_Producto_Gran_Formato.DataSource = combopieza2
-            cboPiezas_Producto_Gran_Formato.DisplayMember = "PIE_nombre_pie"
-            cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza"
+        '    'CARGA COMBOBOX PIEZA OFFSET
+        '    Dim combopieza2 = (From sec In datacontext.PIEZA
+        '                       Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
+        '                       Where PIE_ubicacion = "G"
+        '                       Order By PIE_nombre_pie Ascending)
+        '    cboPiezas_Producto_Gran_Formato.DataSource = combopieza2
+        '    cboPiezas_Producto_Gran_Formato.DisplayMember = "PIE_nombre_pie"
+        '    cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza"
+        '    cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
+
+        'Else
+        '    'ojo sacar..
+        '    Dim combopieza1 = (From sec In datacontext.PIEZA
+        '                       Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
+        '                       Where PIE_ubicacion = "D"
+        '                       Order By PIE_nombre_pie Ascending)
+        '    cboPiezas_Producto.DataSource = combopieza1
+        '    cboPiezas_Producto.DisplayMember = "PIE_nombre_pie"
+        '    cboPiezas_Producto.ValueMember = "PIE_id_pieza"
+        '    'hasta aca
+
+        '    cboPiezas_Producto.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
+        '    cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
+        'End If
+
+        'CARGA COMBOBOX PIEZA PRODUCTO
+        Dim combopieza1 = (From sec In datacontext.PIEZA
+                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
+                           Where PIE_ubicacion = "D"
+                           Order By PIE_nombre_pie Ascending)
+        cboPiezas_Producto.DataSource = combopieza1
+        cboPiezas_Producto.DisplayMember = "PIE_nombre_pie"
+        cboPiezas_Producto.ValueMember = "PIE_id_pieza"
+        
+        'CARGA COMBOBOX PIEZA OFFSET
+        Dim combopieza2 = (From sec In datacontext.PIEZA
+                           Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
+                           Where PIE_ubicacion = "G"
+                           Order By PIE_nombre_pie Ascending)
+        cboPiezas_Producto_Gran_Formato.DataSource = combopieza2
+        cboPiezas_Producto_Gran_Formato.DisplayMember = "PIE_nombre_pie"
+        cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza"
+
+
+        If quienllamo_listado_orden_ampliada.Name <> frm_listado_orden_trabajo_ampliada.Name Then
+            cboPiezas_Producto.SelectedIndex = -1
             cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
 
         Else
-            cboPiezas_Producto.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Rows(0).Index).Value
-            cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Rows(0).Index).Value
+            cboPiezas_Producto.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
+            cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
         End If
+
+
     End Sub
 
     Private Sub btnBuscar_cliente_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_cliente.Click
