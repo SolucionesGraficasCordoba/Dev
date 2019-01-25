@@ -23,11 +23,12 @@ Public Class frm_listado_orden_trabajo_ampliada
         CargarGrillaOrden()
         dgv_detalle_orden.Rows.Clear()
 
-        'para ver link label
-        Dim tempruta As String
-        tempruta = Configuration.ConfigurationManager.AppSettings("ruta_archivos")
-        LinkLabel1.Text = "Click here to get more info."
-        LinkLabel1.Links.Add(6, 4, tempruta & "\trabajos\TRABAJOS\DV\Op 30502\")
+        '***************Para ver con vale link label en este form****************
+        'Dim tempruta As String
+        'tempruta = Configuration.ConfigurationManager.AppSettings("ruta_archivos")
+        'LinkLabel1.Text = "Click here to get more info."
+        'LinkLabel1.Links.Add(6, 4, tempruta & "\trabajos\TRABAJOS\DV\Op 30502\")
+        '************************************************************************
     End Sub
     
     Private Sub ArmarGrillaDetalle(ByVal datasource As System.Linq.IQueryable)
@@ -965,6 +966,8 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             frm_Orden_Trabajo_Ampliada.txt_id_cliente.Visible = False
             frm_Orden_Trabajo_Ampliada.btnGuardar_Orden_Trabajo.Enabled = False
 
+            'frm_Orden_Trabajo_Ampliada.quienllamo_listado_orden_ampliada = Me
+            frm_Orden_Trabajo_Ampliada.quienllamo_listado_orden_ampliada = Me
             frm_Orden_Trabajo_Ampliada.Show()
         Catch ex As Exception
         End Try
@@ -1177,7 +1180,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
 
     Private Sub btnAgregarProducto_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregarProducto.Click
         Try
-            'se indica al form orden_ampliada q el que llama no es el listado de orden_ampliada sino cualq (se le miente!!!!!!!)
+            'como seguro,se indica al form orden_ampliada q el que llama no es el listado de orden_ampliada sino cualq (se le miente!!!!!!!)
 
             frm_Orden_Trabajo_Ampliada.quienllamo_listado_orden_ampliada = frm_Principal
             '------------------------------------------------------------------------------------------------------------------------------------
@@ -1224,12 +1227,13 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        'VER CON VALE!!!
-        Try
-            System.Diagnostics.Process.Start(e.Link.LinkData.ToString())
-        Catch ex As Exception
-            MsgBox("No se encuentra la ruta")
-        End Try
+        'VER CON VALE!!! hay mas codigo en el load de este form
+
+        'Try
+        '    System.Diagnostics.Process.Start(e.Link.LinkData.ToString())
+        'Catch ex As Exception
+        '    MsgBox("No se encuentra la ruta")
+        'End Try
 
     End Sub
 End Class
