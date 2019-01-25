@@ -22,6 +22,12 @@ Public Class frm_listado_orden_trabajo_ampliada
         ArmarGrillaOrden()
         CargarGrillaOrden()
         dgv_detalle_orden.Rows.Clear()
+
+        'para ver link label
+        Dim tempruta As String
+        tempruta = Configuration.ConfigurationManager.AppSettings("ruta_archivos")
+        LinkLabel1.Text = "Click here to get more info."
+        LinkLabel1.Links.Add(6, 4, tempruta & "\trabajos\TRABAJOS\DV\Op 30502\")
     End Sub
     
     Private Sub ArmarGrillaDetalle(ByVal datasource As System.Linq.IQueryable)
@@ -1147,9 +1153,9 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             If Len(dgv_detalle_orden.Item(temp_cadena_cant, dgv_detalle_orden.Rows(fila_actual).Index).Value) <> 0 Then
                 soporte = New Paragraph("           Soporte " & j + 1 & " : " _
                                          & dgv_detalle_orden.Item(temp_cadena_cant, dgv_detalle_orden.Rows(fila_actual).Index).Value & "   " _
-                                         & dgv_detalle_orden.Item(temp_cadena_formato, dgv_detalle_orden.Rows(fila_actual).Index).Value & " " _
-                                         & dgv_detalle_orden.Item(temp_cadena_papel, dgv_detalle_orden.Rows(fila_actual).Index).Value & "   " _
-                                         & dgv_detalle_orden.Item(temp_cadena_gram, dgv_detalle_orden.Rows(fila_actual).Index).Value & "    " _
+                                         & dgv_detalle_orden.Item(temp_cadena_papel, dgv_detalle_orden.Rows(fila_actual).Index).Value & " " _
+                                         & dgv_detalle_orden.Item(temp_cadena_gram, dgv_detalle_orden.Rows(fila_actual).Index).Value & "   " _
+                                         & dgv_detalle_orden.Item(temp_cadena_formato, dgv_detalle_orden.Rows(fila_actual).Index).Value & "    " _
                                          , New Font(fuente, 8))
             Else
                 soporte = New Paragraph("")
@@ -1215,6 +1221,16 @@ Where ORT_id_orden_trabajo = vble_id_orden)
 
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(ByVal sender As System.Object, ByVal e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        'VER CON VALE!!!
+        Try
+            System.Diagnostics.Process.Start(e.Link.LinkData.ToString())
+        Catch ex As Exception
+            MsgBox("No se encuentra la ruta")
+        End Try
+
     End Sub
 End Class
 
