@@ -168,6 +168,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboImpresora_Offset = New System.Windows.Forms.ComboBox()
         Me.cboTipo_Impresion_Offset = New System.Windows.Forms.ComboBox()
         Me.Label35 = New System.Windows.Forms.Label()
+        Me.Label17 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupProducto_Soportes.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1130,6 +1131,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'GroupTerminacion
         '
+        Me.GroupTerminacion.Controls.Add(Me.Label17)
         Me.GroupTerminacion.Controls.Add(Me.chkTermosellado)
         Me.GroupTerminacion.Controls.Add(Me.chkPegadoManual)
         Me.GroupTerminacion.Controls.Add(Me.chkEstampado)
@@ -1663,6 +1665,16 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Label35.TabIndex = 139
         Me.Label35.Text = "    Tipo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Impresión"
         '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.ForeColor = System.Drawing.Color.Red
+        Me.Label17.Location = New System.Drawing.Point(75, 126)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(11, 13)
+        Me.Label17.TabIndex = 188
+        Me.Label17.Text = "*"
+        '
         'frm_Orden_Trabajo_Ampliada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1849,4 +1861,5 @@ Partial Class frm_Orden_Trabajo_Ampliada
     Friend WithEvents chkTroquelado As System.Windows.Forms.CheckBox
     Friend WithEvents chkBarniz As System.Windows.Forms.CheckBox
     Friend WithEvents chkLaca_UV As System.Windows.Forms.CheckBox
+    Friend WithEvents Label17 As System.Windows.Forms.Label
 End Class

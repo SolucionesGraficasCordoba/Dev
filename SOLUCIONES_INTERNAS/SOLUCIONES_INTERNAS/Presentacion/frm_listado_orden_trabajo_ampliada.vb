@@ -91,6 +91,7 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns.Add("modo_impresion_digital", "Modo Impresión Digital")
         dgv_detalle_orden.Columns.Add("tipo_impresion_digital", "Tipo Impresión Digital")
         dgv_detalle_orden.Columns.Add("dato_variable", "Dato Variable")
+        dgv_detalle_orden.Columns.Add("Expr1", "Pieza Gran Formato")
         dgv_detalle_orden.Columns.Add("cantidad_gran_formato", "Cantidad Gran Formato")
         dgv_detalle_orden.Columns.Add("tamaño_gran_formato", "Tamaño Gran Formato")
         dgv_detalle_orden.Columns.Add("sustrato_gran_formato", "Sustrato Gran Formato")
@@ -99,88 +100,128 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns.Add("tipo_terminacion", "Tipo Terminación")
         dgv_detalle_orden.Columns.Add("descripcion_terminacion", "Descripcion Terminación")
 
+
         dgv_detalle_orden.Columns(0).DataPropertyName = "ORT_id_orden_trabajo"
-        '   dgv_detalle_orden.Columns(0).Visible = False
+        dgv_detalle_orden.Columns(0).Visible = False
         dgv_detalle_orden.Columns(1).DataPropertyName = "ORT_tipo_ot"
-        '   dgv_detalle_orden.Columns(1).Visible = False
+        dgv_detalle_orden.Columns(1).Visible = False
         dgv_detalle_orden.Columns(2).DataPropertyName = "ORT_numero_ot"
-        '  dgv_detalle_orden.Columns(2).Visible = False
+        dgv_detalle_orden.Columns(2).Visible = False
         dgv_detalle_orden.Columns(3).DataPropertyName = "ORT_observaciones_ot"
-        '  dgv_detalle_orden.Columns(3).Visible = False
+        dgv_detalle_orden.Columns(3).Visible = False
         dgv_detalle_orden.Columns(4).DataPropertyName = "ORT_mejoras_ot"
-        '   dgv_detalle_orden.Columns(4).Visible = False
+        dgv_detalle_orden.Columns(4).Visible = False
         dgv_detalle_orden.Columns(5).DataPropertyName = "VEN_id_vendedor"
-        '   dgv_detalle_orden.Columns(5).Visible = False
+        dgv_detalle_orden.Columns(5).Visible = False
         dgv_detalle_orden.Columns(6).DataPropertyName = "VEN_nombre_ven"
-        '   dgv_detalle_orden.Columns(6).Visible = False
+        dgv_detalle_orden.Columns(6).Visible = False
         dgv_detalle_orden.Columns(7).DataPropertyName = "VEN_apellido_ven"
-        '   dgv_detalle_orden.Columns(7).Visible = False
+        dgv_detalle_orden.Columns(7).Visible = False
         dgv_detalle_orden.Columns(8).DataPropertyName = "ORT_fecha_ot"
-        '  dgv_detalle_orden.Columns(8).Visible = False
+        dgv_detalle_orden.Columns(8).Visible = False
         dgv_detalle_orden.Columns(9).DataPropertyName = "ORT_fecha_entrega"
-        '  dgv_detalle_orden.Columns(9).Visible = False
+        dgv_detalle_orden.Columns(9).Visible = False
         dgv_detalle_orden.Columns(10).DataPropertyName = "CLI_id_cliente"
-        ' dgv_detalle_orden.Columns(10).Visible = False
+        dgv_detalle_orden.Columns(10).Visible = False
         dgv_detalle_orden.Columns(11).DataPropertyName = "CLI_razon_social"
-        ' dgv_detalle_orden.Columns(11).Visible = False
+        dgv_detalle_orden.Columns(11).Visible = False
         dgv_detalle_orden.Columns(12).DataPropertyName = "CLI_domicilio"
-        ' dgv_detalle_orden.Columns(12).Visible = False
+        dgv_detalle_orden.Columns(12).Visible = False
         dgv_detalle_orden.Columns(13).DataPropertyName = "PIE_id_pieza"
-        '  dgv_detalle_orden.Columns(13).Visible = False
+        dgv_detalle_orden.Columns(13).Visible = False
         dgv_detalle_orden.Columns(14).DataPropertyName = "PIE_id_pieza_offset"
-        '   dgv_detalle_orden.Columns(14).Visible = False
+        dgv_detalle_orden.Columns(14).Visible = False
         dgv_detalle_orden.Columns(15).DataPropertyName = "PIE_nombre_pie"
         dgv_detalle_orden.Columns(16).DataPropertyName = "PIE_ubicacion"
-        '  dgv_detalle_orden.Columns(16).Visible = False
+        dgv_detalle_orden.Columns(16).Visible = False
         dgv_detalle_orden.Columns(17).DataPropertyName = "id_detalle_orden_trabajo"
-        '  dgv_detalle_orden.Columns(17).Visible = False
+        dgv_detalle_orden.Columns(17).Visible = False
         dgv_detalle_orden.Columns(18).DataPropertyName = "DOT_cantidad_producto"
         dgv_detalle_orden.Columns(19).DataPropertyName = "DOT_tamaño_producto"
         dgv_detalle_orden.Columns(20).DataPropertyName = "DOT_tipo_impresion_dot"
-        'dgv_detalle_orden.Columns(20).Visible = False
+        dgv_detalle_orden.Columns(20).Visible = False
         dgv_detalle_orden.Columns(21).DataPropertyName = "DOT_papel_soporte_1"
+        dgv_detalle_orden.Columns(21).Visible = False
         dgv_detalle_orden.Columns(22).DataPropertyName = "DOT_papel_soporte_2"
+        dgv_detalle_orden.Columns(22).Visible = False
         dgv_detalle_orden.Columns(23).DataPropertyName = "DOT_papel_soporte_3"
+        dgv_detalle_orden.Columns(23).Visible = False
         dgv_detalle_orden.Columns(24).DataPropertyName = "DOT_gramaje_soporte_1"
+        dgv_detalle_orden.Columns(24).Visible = False
         dgv_detalle_orden.Columns(25).DataPropertyName = "DOT_gramaje_soporte_2"
+        dgv_detalle_orden.Columns(25).Visible = False
         dgv_detalle_orden.Columns(26).DataPropertyName = "DOT_gramaje_soporte_3"
+        dgv_detalle_orden.Columns(26).Visible = False
         dgv_detalle_orden.Columns(27).DataPropertyName = "DOT_cantidad_soporte_1"
+        dgv_detalle_orden.Columns(27).Visible = False
         dgv_detalle_orden.Columns(28).DataPropertyName = "DOT_cantidad_soporte_2"
+        dgv_detalle_orden.Columns(28).Visible = False
         dgv_detalle_orden.Columns(29).DataPropertyName = "DOT_cantidad_soporte_3"
+        dgv_detalle_orden.Columns(29).Visible = False
         dgv_detalle_orden.Columns(30).DataPropertyName = "DOT_formato_soporte_1"
+        dgv_detalle_orden.Columns(30).Visible = False
         dgv_detalle_orden.Columns(31).DataPropertyName = "DOT_formato_soporte_2"
+        dgv_detalle_orden.Columns(31).Visible = False
         dgv_detalle_orden.Columns(32).DataPropertyName = "DOT_formato_soporte_3"
+        dgv_detalle_orden.Columns(32).Visible = False
         dgv_detalle_orden.Columns(33).DataPropertyName = "cantidad_1_PM_offset"
+        dgv_detalle_orden.Columns(33).Visible = False
         dgv_detalle_orden.Columns(34).DataPropertyName = "cantidad_2_PM_offset"
+        dgv_detalle_orden.Columns(34).Visible = False
         dgv_detalle_orden.Columns(35).DataPropertyName = "cantidad_3_PM_offset"
+        dgv_detalle_orden.Columns(35).Visible = False
         dgv_detalle_orden.Columns(36).DataPropertyName = "formato_1_PM_offset"
+        dgv_detalle_orden.Columns(36).Visible = False
         dgv_detalle_orden.Columns(37).DataPropertyName = "formato_2_PM_offset"
+        dgv_detalle_orden.Columns(37).Visible = False
         dgv_detalle_orden.Columns(38).DataPropertyName = "formato_3_PM_offset"
+        dgv_detalle_orden.Columns(38).Visible = False
         dgv_detalle_orden.Columns(39).DataPropertyName = "modo_impresion_offset"
+        dgv_detalle_orden.Columns(39).Visible = False
         dgv_detalle_orden.Columns(40).DataPropertyName = "tipo_impresion_offset"
+        dgv_detalle_orden.Columns(40).Visible = False
         dgv_detalle_orden.Columns(41).DataPropertyName = "chapas_soporte1_offset"
+        dgv_detalle_orden.Columns(41).Visible = False
         dgv_detalle_orden.Columns(42).DataPropertyName = "chapas_soporte2_offset"
+        dgv_detalle_orden.Columns(42).Visible = False
         dgv_detalle_orden.Columns(43).DataPropertyName = "chapas_soporte3_offset"
+        dgv_detalle_orden.Columns(43).Visible = False
         dgv_detalle_orden.Columns(44).DataPropertyName = "impresora_offset"
+        dgv_detalle_orden.Columns(44).Visible = False
         dgv_detalle_orden.Columns(45).DataPropertyName = "marca_offset"
+        dgv_detalle_orden.Columns(45).Visible = False
         dgv_detalle_orden.Columns(46).DataPropertyName = "cantidad_1_PM_digital"
+        dgv_detalle_orden.Columns(46).Visible = False
         dgv_detalle_orden.Columns(47).DataPropertyName = "cantidad_2_PM_digital"
+        dgv_detalle_orden.Columns(47).Visible = False
         dgv_detalle_orden.Columns(48).DataPropertyName = "cantidad_3_PM_digital"
+        dgv_detalle_orden.Columns(48).Visible = False
         dgv_detalle_orden.Columns(49).DataPropertyName = "formato_1_PM_digital"
+        dgv_detalle_orden.Columns(49).Visible = False
         dgv_detalle_orden.Columns(50).DataPropertyName = "formato_2_PM_digital"
+        dgv_detalle_orden.Columns(50).Visible = False
         dgv_detalle_orden.Columns(51).DataPropertyName = "formato_3_PM_digital"
+        dgv_detalle_orden.Columns(51).Visible = False
         dgv_detalle_orden.Columns(52).DataPropertyName = "modo_impresion_digital"
-        'dgv_detalle_orden.Columns(52).Visible = False
+        dgv_detalle_orden.Columns(52).Visible = False
         dgv_detalle_orden.Columns(53).DataPropertyName = "tipo_impresion_digital"
+        dgv_detalle_orden.Columns(53).Visible = False
         dgv_detalle_orden.Columns(54).DataPropertyName = "dato_variable"
-        dgv_detalle_orden.Columns(55).DataPropertyName = "cantidad_gran_formato"
-        dgv_detalle_orden.Columns(56).DataPropertyName = "tamaño_gran_formato"
-        dgv_detalle_orden.Columns(57).DataPropertyName = "sustrato_gran_formato"
-        dgv_detalle_orden.Columns(58).DataPropertyName = "calidad_gran_formato"
-        dgv_detalle_orden.Columns(59).DataPropertyName = "sistema_gran_formato"
-        dgv_detalle_orden.Columns(60).DataPropertyName = "tipo_terminacion"
-        ' dgv_detalle_orden.Columns(60).Visible = False
-        dgv_detalle_orden.Columns(61).DataPropertyName = "descripcion_terminacion"
+        dgv_detalle_orden.Columns(54).Visible = False
+        dgv_detalle_orden.Columns(55).DataPropertyName = "Expr1"
+        dgv_detalle_orden.Columns(56).DataPropertyName = "cantidad_gran_formato"
+        dgv_detalle_orden.Columns(57).DataPropertyName = "tamaño_gran_formato"
+        dgv_detalle_orden.Columns(58).DataPropertyName = "sustrato_gran_formato"
+        dgv_detalle_orden.Columns(59).DataPropertyName = "calidad_gran_formato"
+        dgv_detalle_orden.Columns(59).Visible = False
+        dgv_detalle_orden.Columns(60).DataPropertyName = "sistema_gran_formato"
+        dgv_detalle_orden.Columns(60).Visible = False
+        dgv_detalle_orden.Columns(61).DataPropertyName = "tipo_terminacion"
+        dgv_detalle_orden.Columns(61).Visible = False
+        dgv_detalle_orden.Columns(62).DataPropertyName = "descripcion_terminacion"
+        ' dgv_detalle_orden.Columns(62).Visible = False
+
+
         dgv_detalle_orden.DataSource = datasource
 
         '    OcultarColumnas()
@@ -374,7 +415,8 @@ det_ord.sustrato_gran_formato,
 det_ord.calidad_gran_formato,
 det_ord.sistema_gran_formato,
 det_ord.tipo_terminacion,
-det_ord.descripcion_terminacion
+det_ord.descripcion_terminacion,
+det_ord.Expr1
 Where ORT_id_orden_trabajo = vble_id_orden)
         ArmarGrillaDetalle(dgDetalleOrden)
     End Sub
@@ -754,9 +796,6 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 frm_Orden_Trabajo_Ampliada.txt_observaciones.Text = dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
                 frm_Orden_Trabajo_Ampliada.cboDireccion_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
 
-
-                '  frm_Orden_Trabajo_Ampliada.txt_id_orden_trabajo.Text = dgv_detalle_orden.Item("ORT_id_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value 'id_orden_trabajo
-                '   frm_Orden_Trabajo_Ampliada.txtNumero_Orden_Trabajo.Text = dgv_detalle_orden.Item("ORT_numero_ot", dgv_detalle_orden.SelectedRows(0).Index).Value 'numero orden
                 frm_Orden_Trabajo_Ampliada.txt_cantidad_producto.Text = dgv_detalle_orden.Item("DOT_cantidad_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
                 frm_Orden_Trabajo_Ampliada.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
                 frm_Orden_Trabajo_Ampliada.txtTamaño_Producto.Text = dgv_detalle_orden.Item("DOT_tamaño_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
@@ -966,7 +1005,6 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             frm_Orden_Trabajo_Ampliada.txt_id_cliente.Visible = False
             frm_Orden_Trabajo_Ampliada.btnGuardar_Orden_Trabajo.Enabled = False
 
-            'frm_Orden_Trabajo_Ampliada.quienllamo_listado_orden_ampliada = Me
             frm_Orden_Trabajo_Ampliada.quienllamo_listado_orden_ampliada = Me
             frm_Orden_Trabajo_Ampliada.Show()
         Catch ex As Exception

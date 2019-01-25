@@ -6,43 +6,6 @@
     Public cargamasprod As String = "NO"
 
     Private Sub frm_Orden_Trabajo_Ampliada_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
-        'If quienllamo_listado_orden_ampliada.Name <> frm_listado_orden_trabajo_ampliada.Name Then
-        '    'CARGA COMBOBOX PIEZA PRODUCTO
-        '    Dim combopieza1 = (From sec In datacontext.PIEZA
-        '                       Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
-        '                       Where PIE_ubicacion = "D"
-        '                       Order By PIE_nombre_pie Ascending)
-        '    cboPiezas_Producto.DataSource = combopieza1
-        '    cboPiezas_Producto.DisplayMember = "PIE_nombre_pie"
-        '    cboPiezas_Producto.ValueMember = "PIE_id_pieza"
-        '    cboPiezas_Producto.SelectedIndex = -1
-
-        '    'CARGA COMBOBOX PIEZA OFFSET
-        '    Dim combopieza2 = (From sec In datacontext.PIEZA
-        '                       Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
-        '                       Where PIE_ubicacion = "G"
-        '                       Order By PIE_nombre_pie Ascending)
-        '    cboPiezas_Producto_Gran_Formato.DataSource = combopieza2
-        '    cboPiezas_Producto_Gran_Formato.DisplayMember = "PIE_nombre_pie"
-        '    cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza"
-        '    cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
-
-        'Else
-        '    'ojo sacar..
-        '    Dim combopieza1 = (From sec In datacontext.PIEZA
-        '                       Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
-        '                       Where PIE_ubicacion = "D"
-        '                       Order By PIE_nombre_pie Ascending)
-        '    cboPiezas_Producto.DataSource = combopieza1
-        '    cboPiezas_Producto.DisplayMember = "PIE_nombre_pie"
-        '    cboPiezas_Producto.ValueMember = "PIE_id_pieza"
-        '    'hasta aca
-
-        '    cboPiezas_Producto.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
-        '    cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
-        'End If
-
         'CARGA COMBOBOX PIEZA PRODUCTO
         Dim combopieza1 = (From sec In datacontext.PIEZA
                            Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
@@ -70,8 +33,6 @@
             cboPiezas_Producto.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
             cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
         End If
-
-
     End Sub
 
     Private Sub btnBuscar_cliente_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_cliente.Click
@@ -231,25 +192,44 @@
             MsgBox("Verifique la Fecha de Entrega")
             Exit Sub
         End If
-        If chkOffset.Checked = True Or chkDigital.Checked = True Then
-            If txt_cantidad_producto.Text.Length >= 1 Then
-                If cboPiezas_Producto.Text.Length = 0 Then
-                    MsgBox("Seleccione una pieza")
-                    cboPiezas_Producto.Focus()
+
+        If chkOffset.Checked = True Or chkDigital.Checked = True Or chkGranFormato.Checked = True Or chkTerminacion.Checked = True Then
+
+            If chkOffset.Checked = True Or chkDigital.Checked = True Then
+                If txt_cantidad_producto.Text.Length >= 1 Then
+                    If cboPiezas_Producto.Text.Length = 0 Then
+                        MsgBox("Seleccione una pieza")
+                        cboPiezas_Producto.Focus()
+                        Exit Sub
+                    End If
+                Else
+                    MsgBox("Ingrese Cantidad Producto")
+                    txt_cantidad_producto.Focus()
                     Exit Sub
                 End If
-            Else
-                MsgBox("Ingrese Cantidad")
-                txt_cantidad_producto.Focus()
-                Exit Sub
             End If
-        End If
-        If chkGranFormato.Checked = True Then
-            If txt_cantidad_producto_Gran_Formato.Text.Length >= 1 Then
-                If cboPiezas_Producto_Gran_Formato.Text.Length = 0 Then
-                    MsgBox("Seleccione una pieza")
+            If chkGranFormato.Checked = True Then
+                If txt_cantidad_producto_Gran_Formato.Text.Length >= 1 Then
+                    If cboPiezas_Producto_Gran_Formato.Text.Length = 0 Then
+                        MsgBox("Seleccione una pieza")
+                        Exit Sub
+                    End If
+                Else
+                    MsgBox("Ingrese Cantidad Producto")
+                    txt_cantidad_producto_Gran_Formato.Focus()
+                    Exit Sub
                 End If
             End If
+
+            If chkTerminacion.Checked = True Then
+                If txt_descripcion_terminacion.TextLength = 0 Then
+                    MsgBox("Describa la terminación seleccionada")
+                    Exit Sub
+                End If
+            End If
+        Else
+            MsgBox("Seleccione un tipo de Orden")
+            Exit Sub
         End If
 
         Dim buscaorden = (From odt1 In datacontext.ORDEN_TRABAJO

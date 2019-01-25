@@ -109,12 +109,8 @@
         cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza"
 
         'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
-
-        ' If cboPiezas_Producto_Gran_Formato.Text.Length <> 0 Then
-        ' cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
-        ' Else
         cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
-        '   End If
+
     End Sub
 
     Private Sub btnActualizar_Orden_Trabajo_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar_Orden_Trabajo.Click
@@ -175,12 +171,14 @@
             If cboPiezas_Producto.Text.Length <> 0 Then
                 ActualizaDetalle.PIE_id_pieza = cboPiezas_Producto.SelectedValue
             Else
+                'guarda id=54 (vacio) cuando alguno de los dos combos de pieza esta vacio
                 ActualizaDetalle.PIE_id_pieza = 54
             End If
 
             If cboPiezas_Producto_Gran_Formato.Text.Length <> 0 Then
                 ActualizaDetalle.PIE_id_pieza_offset = cboPiezas_Producto_Gran_Formato.SelectedValue
             Else
+                'guarda id=54 (vacio) cuando alguno de los dos combos de pieza esta vacio
                 ActualizaDetalle.PIE_id_pieza_offset = 54
             End If
 
