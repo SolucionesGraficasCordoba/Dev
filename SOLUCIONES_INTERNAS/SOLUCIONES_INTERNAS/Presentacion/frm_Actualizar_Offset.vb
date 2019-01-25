@@ -166,7 +166,8 @@
                                     ret.RET_procedimiento_observaciones,
                                     ret.RET_fecha_comienzo_retrabajo,
                                     ret.RET_fecha_entrega_retrabajo
-        Order By RET_fecha_comienzo_retrabajo Descending)
+                                    Where cantidad_chapas_retrabajo.ToString.Length <> 0
+                                    Order By RET_fecha_comienzo_retrabajo Descending)
         dgvRepeticion.DataSource = carga
     End Sub
 
