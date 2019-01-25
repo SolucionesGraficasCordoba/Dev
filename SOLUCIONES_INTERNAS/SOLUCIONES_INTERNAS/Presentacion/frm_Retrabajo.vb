@@ -213,9 +213,9 @@
                 ret.RET_cantidad_soporte_3_retrabajo = txt_Cantidad_3_PE_DigitalOffset.Text
             End If
 
-            ret.RET_formato_soporte_1_retrabajo = cboFormato_1_PE_DigitalOffset.Text
-            ret.RET_formato_soporte_2_retrabajo = cboFormato_2_PE_DigitalOffset.Text
-            ret.RET_formato_soporte_3_retrabajo = cboFormato_3_PE_DigitalOffset.Text
+            ret.RET_formato_soporte_1_retrabajo = cboFormato_1_PE_DigitalOffset.SelectedItem
+            ret.RET_formato_soporte_2_retrabajo = cboFormato_2_PE_DigitalOffset.SelectedItem
+            ret.RET_formato_soporte_3_retrabajo = cboFormato_3_PE_DigitalOffset.SelectedItem
             '----------------------------------------------------------------------------
 
             'PLIEGO MAQUINA OFFSET
@@ -228,13 +228,13 @@
             If txtCantidad_3_PM_Offset.TextLength <> 0 Then
                 ret.cantidad_3_PM_offset_retrabajo = txtCantidad_3_PM_Offset.Text
             End If
-            ret.formato_1_PM_offset_retrabajo = cboFormato_1_PM_Offset.Text
-            ret.formato_2_PM_offset_retrabajo = cboFormato_2_PM_Offset.Text
-            ret.formato_3_PM_offset_retrabajo = cboFormato_3_PM_Offset.Text
+            ret.formato_1_PM_offset_retrabajo = cboFormato_1_PM_Offset.SelectedItem
+            ret.formato_2_PM_offset_retrabajo = cboFormato_2_PM_Offset.SelectedItem
+            ret.formato_3_PM_offset_retrabajo = cboFormato_3_PM_Offset.SelectedItem
 
-            ret.tipo_impresion_offset_retrabajo = cboTipo_Impresion_Offset.Text
-            ret.impresora_offset_retrabajo = cboImpresora_Offset.Text
-            ret.modo_impresion_offset_retrabajo = cboModo_Impresion_Offset.Text
+            ret.tipo_impresion_offset_retrabajo = cboTipo_Impresion_Offset.SelectedItem
+            ret.impresora_offset_retrabajo = cboImpresora_Offset.SelectedItem
+            ret.modo_impresion_offset_retrabajo = cboModo_Impresion_Offset.SelectedItem
             '--------------------------------------------------------------------------------
             'PLIEGO MAQUINA DIGITAL
             If txtCantidad_1_PM_Digital.TextLength <> 0 Then
@@ -247,11 +247,11 @@
                 ret.cantidad_3_PM_digital_retrabajo = txtCantidad_3_PM_Digital.Text
             End If
 
-            ret.formato_1_PM_digital_retrabajo = cboFormato_1_PM_Digital.Text
-            ret.formato_2_PM_digital_retrabajo = cboFormato_2_PM_Digital.Text
-            ret.formato_3_PM_digital_retrabajo = cboFormato_3_PM_Digital.Text
+            ret.formato_1_PM_digital_retrabajo = cboFormato_1_PM_Digital.SelectedItem
+            ret.formato_2_PM_digital_retrabajo = cboFormato_2_PM_Digital.SelectedItem
+            ret.formato_3_PM_digital_retrabajo = cboFormato_3_PM_Digital.SelectedItem
 
-            ret.tipo_impresion_digital_retrabajo = cboTipo_Impresion_Digital.Text
+            ret.tipo_impresion_digital_retrabajo = cboTipo_Impresion_Digital.SelectedItem
 
             ret.dato_variable_retrabajo = txtDato_Variable.Text
 
@@ -421,16 +421,18 @@
         dgvListado_ReTrabajo.Columns.Add("ORT_numero_ot", "Número de Orden")
         dgvListado_ReTrabajo.Columns.Add("ORT_fecha_ot", "Fecha Original")
         dgvListado_ReTrabajo.Columns.Add("ORT_fecha_entrega", "Fecha Entrega Original")
-        dgvListado_ReTrabajo.Columns.Add("DOT_cantidad_dot", "DOT_cantidad_dot")
+        dgvListado_ReTrabajo.Columns.Add("DOT_cantidad_producto", "DOT_cantidad_producto")
         dgvListado_ReTrabajo.Columns.Add("PIE_id_pieza", "id_pieza")
-        dgvListado_ReTrabajo.Columns.Add("PIE_nombre_pie", "Pieza")
-        dgvListado_ReTrabajo.Columns.Add("DOT_tamaño_dot", "Tamaño")
+        dgvListado_ReTrabajo.Columns.Add("PIE_nombre_pie", "PIE_nombre_pie")
+        dgvListado_ReTrabajo.Columns.Add("DOT_tamaño_producto", "DOT_tamaño_producto")
+
         '---------------------------------------------------------------------------------------------
-        dgvListado_ReTrabajo.Columns.Add("RET_cantidad_retrabajo", "RET_cantidad_retrabajo")
+        dgvListado_ReTrabajo.Columns.Add("RET_cantidad_producto_retrabajo", "RET_cantidad_producto_retrabajo")
         dgvListado_ReTrabajo.Columns.Add("RET_fecha_comienzo_retrabajo", "RET_fecha_comienzo_retrabajo")
         dgvListado_ReTrabajo.Columns.Add("RET_fecha_entrega_retrabajo", "RET_fecha_entrega_retrabajo")
         dgvListado_ReTrabajo.Columns.Add("RET_origen_area_motivo", "RET_origen_area_motivo")
         dgvListado_ReTrabajo.Columns.Add("RET_procedimiento_observaciones", "RET_procedimiento_observaciones")
+
         '--------------------------------------------------------------------------------------------------------
         dgvListado_ReTrabajo.Columns.Add("RET_papel_soporte_1_retrabajo", "RET_papel_soporte_1_retrabajo")
         dgvListado_ReTrabajo.Columns.Add("RET_papel_soporte_2_retrabajo", "RET_papel_soporte_2_retrabajo")
@@ -467,29 +469,28 @@
         dgvListado_ReTrabajo.Columns.Add("dato_variable_retrabajo", "dato_variable_retrabajo")
 
         dgvListado_ReTrabajo.Columns(0).DataPropertyName = "RET_id_retrabajo"
-        ' dgvListado_ReTrabajo.Columns(0).Visible = False
+        dgvListado_ReTrabajo.Columns(0).Visible = False
         dgvListado_ReTrabajo.Columns(1).DataPropertyName = "ORT_id_orden_trabajo"
-        '  dgvListado_ReTrabajo.Columns(1).Visible = False
+        dgvListado_ReTrabajo.Columns(1).Visible = False
         dgvListado_ReTrabajo.Columns(2).DataPropertyName = "ORT_numero_ot"
-        '  dgvListado_ReTrabajo.Columns(2).Visible = False
         dgvListado_ReTrabajo.Columns(3).DataPropertyName = "ORT_fecha_ot"
-        '   dgvListado_ReTrabajo.Columns(3).Visible = False
+        dgvListado_ReTrabajo.Columns(3).Visible = False
         dgvListado_ReTrabajo.Columns(4).DataPropertyName = "ORT_fecha_entrega"
-        '  dgvListado_ReTrabajo.Columns(4).Visible = False
-        dgvListado_ReTrabajo.Columns(5).DataPropertyName = "DOT_cantidad_dot"
-        '    dgvListado_ReTrabajo.Columns(5).Visible = False
+        dgvListado_ReTrabajo.Columns(4).Visible = False
+        dgvListado_ReTrabajo.Columns(5).DataPropertyName = "DOT_cantidad_producto"
+        dgvListado_ReTrabajo.Columns(5).Visible = False
         dgvListado_ReTrabajo.Columns(6).DataPropertyName = "PIE_id_pieza"
-        '  dgvListado_ReTrabajo.Columns(6).Visible = False
+        dgvListado_ReTrabajo.Columns(6).Visible = False
         dgvListado_ReTrabajo.Columns(7).DataPropertyName = "PIE_nombre_pie"
-        dgvListado_ReTrabajo.Columns(8).DataPropertyName = "DOT_tamaño_dot"
-        ' dgvListado_ReTrabajo.Columns(8).Visible = False
-        dgvListado_ReTrabajo.Columns(9).DataPropertyName = "RET_cantidad_retrabajo"
-        dgvListado_ReTrabajo.Columns(10).DataPropertyName = "RET_origen_area_motivo"
-        dgvListado_ReTrabajo.Columns(11).DataPropertyName = "RET_procedimiento_observaciones"
-        dgvListado_ReTrabajo.Columns(12).DataPropertyName = "RET_fecha_comienzo_retrabajo"
-        ' dgvListado_ReTrabajo.Columns(12).Visible = False
-        dgvListado_ReTrabajo.Columns(13).DataPropertyName = "RET_fecha_entrega_retrabajo"
-        '   dgvListado_ReTrabajo.Columns(13).Visible = False
+        dgvListado_ReTrabajo.Columns(8).DataPropertyName = "DOT_tamaño_producto"
+        dgvListado_ReTrabajo.Columns(8).Visible = False
+        dgvListado_ReTrabajo.Columns(9).DataPropertyName = "RET_cantidad_producto_retrabajo"
+        dgvListado_ReTrabajo.Columns(10).DataPropertyName = "RET_fecha_comienzo_retrabajo"
+        dgvListado_ReTrabajo.Columns(11).DataPropertyName = "RET_fecha_entrega_retrabajo"
+        dgvListado_ReTrabajo.Columns(12).DataPropertyName = "RET_origen_area_motivo"
+        dgvListado_ReTrabajo.Columns(12).Width = 250
+        dgvListado_ReTrabajo.Columns(13).DataPropertyName = "RET_procedimiento_observaciones"
+        dgvListado_ReTrabajo.Columns(13).Width = 250
         dgvListado_ReTrabajo.Columns(14).DataPropertyName = "RET_papel_soporte_1_retrabajo"
         dgvListado_ReTrabajo.Columns(14).Visible = False
         dgvListado_ReTrabajo.Columns(15).DataPropertyName = "RET_papel_soporte_2_retrabajo"
@@ -563,6 +564,7 @@
                                     ot.ORT_fecha_entrega,
                                     dot.id_detalle_orden_trabajo,
                                     dot.DOT_cantidad_producto,
+                                    ret.RET_cantidad_producto_retrabajo,
                                     dot.PIE_id_pieza,
                                     pie.PIE_nombre_pie,
                                     dot.DOT_tamaño_producto,
@@ -579,6 +581,12 @@
                                     ret.RET_formato_soporte_1_retrabajo,
                                     ret.RET_formato_soporte_2_retrabajo,
                                     ret.RET_formato_soporte_3_retrabajo,
+                                    ret.cantidad_1_PM_offset_retrabajo,
+                                    ret.cantidad_2_PM_offset_retrabajo,
+                                    ret.cantidad_3_PM_offset_retrabajo,
+                                    ret.formato_1_PM_offset_retrabajo,
+                                    ret.formato_2_PM_offset_retrabajo,
+                                    ret.formato_3_PM_offset_retrabajo,
                                     ret.tipo_impresion_offset_retrabajo,
                                     ret.impresora_offset_retrabajo,
                                     ret.modo_impresion_offset_retrabajo,
