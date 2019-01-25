@@ -1624,14 +1624,12 @@ Public Class frm_Principal
     Private Sub RepeticiónDeChapasToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles RepeticiónDeChapasToolStripMenuItem1.Click
 
         frm_Actualizar_Offset.Text = "Consultar Repetición"
-
         'OCULTA CAMPOS
         frm_Actualizar_Offset.txt_id_orden_trabajo.Visible = False
         frm_Actualizar_Offset.txt_id_detalle_orden_trabajo1.Visible = False
         frm_Actualizar_Offset.txt_id_re_trabajo.Visible = False
         frm_Actualizar_Offset.Label1.Visible = False
         frm_Actualizar_Offset.Label45.Visible = False
-
         'DESHABILITA CAMPOS
         frm_Actualizar_Offset.txtNumero_Orden_Trabajo.Enabled = False
         frm_Actualizar_Offset.txt_cantidad_original.Enabled = False
@@ -1682,7 +1680,7 @@ Public Class frm_Principal
         frm_retrabajo.btnEliminar.Enabled = False
         frm_retrabajo.GroupTipoOrden.Enabled = False
         frm_retrabajo.GroupPliegoEntero.Enabled = False
-
         frm_retrabajo.Show()
+        frm_retrabajo.dgvListado_ReTrabajo.ClearSelection()
     End Sub
 End Class

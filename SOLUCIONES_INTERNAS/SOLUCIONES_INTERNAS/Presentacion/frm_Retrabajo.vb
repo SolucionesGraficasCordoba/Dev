@@ -425,15 +425,13 @@
         dgvListado_ReTrabajo.Columns.Add("PIE_id_pieza", "id_pieza")
         dgvListado_ReTrabajo.Columns.Add("PIE_nombre_pie", "PIE_nombre_pie")
         dgvListado_ReTrabajo.Columns.Add("DOT_tamaño_producto", "DOT_tamaño_producto")
-
-        '---------------------------------------------------------------------------------------------
+        '----------------------------------------------------------------------------------------
         dgvListado_ReTrabajo.Columns.Add("RET_cantidad_producto_retrabajo", "Cantidad")
         dgvListado_ReTrabajo.Columns.Add("RET_fecha_comienzo_retrabajo", "Fecha Comienzo")
         dgvListado_ReTrabajo.Columns.Add("RET_fecha_entrega_retrabajo", "Fecha Entrega")
         dgvListado_ReTrabajo.Columns.Add("RET_origen_area_motivo", "Causa/Origen")
         dgvListado_ReTrabajo.Columns.Add("RET_procedimiento_observaciones", "Procedimiento")
-
-        '--------------------------------------------------------------------------------------------------------
+        '----------------------------------------------------------------------------------------
         dgvListado_ReTrabajo.Columns.Add("RET_papel_soporte_1_retrabajo", "Papel Soporte 1")
         dgvListado_ReTrabajo.Columns.Add("RET_papel_soporte_2_retrabajo", "Papel Soporte 2")
         dgvListado_ReTrabajo.Columns.Add("RET_papel_soporte_3_retrabajo", "Papel Soporte 3")
@@ -441,14 +439,14 @@
         dgvListado_ReTrabajo.Columns.Add("RET_gramaje_soporte_1_retrabajo", "Gramaje Soporte 1")
         dgvListado_ReTrabajo.Columns.Add("RET_gramaje_soporte_2_retrabajo", "Gramaje Soporte 2")
         dgvListado_ReTrabajo.Columns.Add("RET_gramaje_soporte_3_retrabajo", "Gramaje Soporte 3")
-        '----------------------------------------------------------------------------------------------------------
+        '-----------------------------------------------------------------------------------------
         dgvListado_ReTrabajo.Columns.Add("RET_cantidad_soporte_1_retrabajo", "Cantidad Soporte 1")
         dgvListado_ReTrabajo.Columns.Add("RET_cantidad_soporte_2_retrabajo", "Cantidad Soporte 2")
         dgvListado_ReTrabajo.Columns.Add("RET_cantidad_soporte_3_retrabajo", "Cantidad Soporte 3")
         dgvListado_ReTrabajo.Columns.Add("RET_formato_soporte_1_retrabajo", "Formato Soporte 1")
         dgvListado_ReTrabajo.Columns.Add("RET_formato_soporte_2_retrabajo", "Formato Soporte 2")
         dgvListado_ReTrabajo.Columns.Add("RET_formato_soporte_3_retrabajo", "Formato Soporte 3")
-        '------------------------------------------------------------------------------------------------------------
+        '-----------------------------------------------------------------------------------------
         dgvListado_ReTrabajo.Columns.Add("cantidad_1_PM_offset_retrabajo", "Cantidad 1 PM Off")
         dgvListado_ReTrabajo.Columns.Add("cantidad_2_PM_offset_retrabajo", "Cantidad 2 PM Off")
         dgvListado_ReTrabajo.Columns.Add("cantidad_3_PM_offset_retrabajo", "Cantidad 3 PM Off")
@@ -458,7 +456,7 @@
         dgvListado_ReTrabajo.Columns.Add("tipo_impresion_offset_retrabajo", "Tipo Impresión off")
         dgvListado_ReTrabajo.Columns.Add("impresora_offset_retrabajo", "Impresora off")
         dgvListado_ReTrabajo.Columns.Add("modo_impresion_offset_retrabajo", "Modo Impresión off")
-        '-------------------------------------------------------------------------------------------------------------
+        '------------------------------------------------------------------------------------------
         dgvListado_ReTrabajo.Columns.Add("cantidad_1_PM_digital_retrabajo", "Cantidad 1 PM dig")
         dgvListado_ReTrabajo.Columns.Add("cantidad_2_PM_digital_retrabajo", "Cantidad 2 PM dig")
         dgvListado_ReTrabajo.Columns.Add("cantidad_3_PM_digital_retrabajo", "Cantidad 3 PM dig")
@@ -602,8 +600,11 @@
                                     ret.RET_fecha_comienzo_retrabajo,
                                     ret.RET_fecha_entrega_retrabajo,
                                     ret.RET_origen_area_motivo,
-                                    ret.RET_procedimiento_observaciones)
+                                    ret.RET_procedimiento_observaciones
+                                     Where RET_cantidad_producto_retrabajo.ToString.Length <> 0)
         dgvListado_ReTrabajo.DataSource = carga
+        ' Where RET_cantidad_producto_retrabajo = txt_Cantidad_Retrabajo.Text)
+
     End Sub
 
     Private Sub dgvListado_ReTrabajo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvListado_ReTrabajo.Click
