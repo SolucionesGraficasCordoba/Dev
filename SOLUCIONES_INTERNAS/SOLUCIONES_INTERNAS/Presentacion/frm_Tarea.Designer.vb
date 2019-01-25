@@ -2995,11 +2995,11 @@ Partial Class frm_Tarea
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Black
         Me.Label7.Location = New System.Drawing.Point(360, 643)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(81, 20)
+        Me.Label7.Size = New System.Drawing.Size(71, 16)
         Me.Label7.TabIndex = 48
         Me.Label7.Text = "Total Real"
         '
@@ -3007,11 +3007,11 @@ Partial Class frm_Tarea
         '
         Me.Label35.AutoSize = True
         Me.Label35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label35.ForeColor = System.Drawing.Color.Black
-        Me.Label35.Location = New System.Drawing.Point(447, 643)
+        Me.Label35.Location = New System.Drawing.Point(437, 643)
         Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(2, 22)
+        Me.Label35.Size = New System.Drawing.Size(2, 18)
         Me.Label35.TabIndex = 49
         '
         'GroupBox2
@@ -3114,11 +3114,11 @@ Partial Class frm_Tarea
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label31.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label31.ForeColor = System.Drawing.Color.Black
         Me.Label31.Location = New System.Drawing.Point(205, 643)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(115, 20)
+        Me.Label31.Size = New System.Drawing.Size(99, 16)
         Me.Label31.TabIndex = 48
         Me.Label31.Text = "Total Estimado"
         '
@@ -3126,11 +3126,11 @@ Partial Class frm_Tarea
         '
         Me.Label61.AutoSize = True
         Me.Label61.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label61.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label61.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label61.ForeColor = System.Drawing.Color.Black
-        Me.Label61.Location = New System.Drawing.Point(326, 643)
+        Me.Label61.Location = New System.Drawing.Point(310, 643)
         Me.Label61.Name = "Label61"
-        Me.Label61.Size = New System.Drawing.Size(2, 22)
+        Me.Label61.Size = New System.Drawing.Size(2, 18)
         Me.Label61.TabIndex = 49
         '
         'frm_Tarea
