@@ -106,7 +106,7 @@ Public Class frm_Movimiento_Orden
     Sub buscar()
         Dim buscar As String
         armargrilla()
-        buscar = CInt(Me.txt_Buscar_orden_trabajo.Text)
+        buscar = Me.txt_Buscar_orden_trabajo.Text
         Dim MovimientoOrden = (From mo In datavistas.Movimiento_Orden
                                Select
                                mo.ORT_id_orden_trabajo,
