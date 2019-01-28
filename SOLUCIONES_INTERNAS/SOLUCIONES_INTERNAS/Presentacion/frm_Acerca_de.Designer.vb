@@ -33,6 +33,7 @@ Partial Class frm_Acerca_de
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -122,7 +123,7 @@ Partial Class frm_Acerca_de
         '
         Me.Button1.Location = New System.Drawing.Point(415, 285)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.Size = New System.Drawing.Size(75, 33)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Aceptar"
         Me.Button1.UseVisualStyleBackColor = True
@@ -136,11 +137,22 @@ Partial Class frm_Acerca_de
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
         '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(12, 295)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(84, 13)
+        Me.LinkLabel1.TabIndex = 8
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "Ver más detalles"
+        '
         'frm_Acerca_de
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(500, 316)
+        Me.ClientSize = New System.Drawing.Size(500, 326)
+        Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.GroupBox1)
@@ -165,4 +177,5 @@ Partial Class frm_Acerca_de
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
 End Class

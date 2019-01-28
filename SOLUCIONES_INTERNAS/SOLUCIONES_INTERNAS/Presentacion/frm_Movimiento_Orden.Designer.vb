@@ -50,7 +50,7 @@ Partial Class frm_Movimiento_Orden
         Me.GroupListadoPiezas.Controls.Add(Me.dgvMovimiento_Orden)
         Me.GroupListadoPiezas.Location = New System.Drawing.Point(12, 12)
         Me.GroupListadoPiezas.Name = "GroupListadoPiezas"
-        Me.GroupListadoPiezas.Size = New System.Drawing.Size(959, 411)
+        Me.GroupListadoPiezas.Size = New System.Drawing.Size(959, 532)
         Me.GroupListadoPiezas.TabIndex = 30
         Me.GroupListadoPiezas.TabStop = False
         Me.GroupListadoPiezas.Text = "Movimiento de Ordenes"
@@ -59,7 +59,7 @@ Partial Class frm_Movimiento_Orden
         '
         Me.Label2.AutoSize = True
         Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label2.Location = New System.Drawing.Point(430, 376)
+        Me.Label2.Location = New System.Drawing.Point(430, 499)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(2, 15)
         Me.Label2.TabIndex = 41
@@ -67,7 +67,7 @@ Partial Class frm_Movimiento_Orden
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(339, 378)
+        Me.Label1.Location = New System.Drawing.Point(339, 501)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(85, 13)
         Me.Label1.TabIndex = 40
@@ -75,9 +75,9 @@ Partial Class frm_Movimiento_Orden
         '
         'btnBuscar
         '
-        Me.btnBuscar.Location = New System.Drawing.Point(611, 23)
+        Me.btnBuscar.Location = New System.Drawing.Point(611, 21)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(62, 25)
+        Me.btnBuscar.Size = New System.Drawing.Size(62, 26)
         Me.btnBuscar.TabIndex = 39
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = True
@@ -93,7 +93,7 @@ Partial Class frm_Movimiento_Orden
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(830, 366)
+        Me.btnCancelar.Location = New System.Drawing.Point(830, 489)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(113, 33)
         Me.btnCancelar.TabIndex = 28
@@ -102,7 +102,7 @@ Partial Class frm_Movimiento_Orden
         '
         'btnExportarPDF
         '
-        Me.btnExportarPDF.Location = New System.Drawing.Point(705, 366)
+        Me.btnExportarPDF.Location = New System.Drawing.Point(705, 489)
         Me.btnExportarPDF.Name = "btnExportarPDF"
         Me.btnExportarPDF.Size = New System.Drawing.Size(119, 33)
         Me.btnExportarPDF.TabIndex = 29
@@ -111,9 +111,10 @@ Partial Class frm_Movimiento_Orden
         '
         'txt_Buscar_orden_trabajo
         '
-        Me.txt_Buscar_orden_trabajo.Location = New System.Drawing.Point(430, 26)
+        Me.txt_Buscar_orden_trabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_Buscar_orden_trabajo.Location = New System.Drawing.Point(430, 21)
         Me.txt_Buscar_orden_trabajo.Name = "txt_Buscar_orden_trabajo"
-        Me.txt_Buscar_orden_trabajo.Size = New System.Drawing.Size(175, 20)
+        Me.txt_Buscar_orden_trabajo.Size = New System.Drawing.Size(175, 26)
         Me.txt_Buscar_orden_trabajo.TabIndex = 2
         '
         'dgvMovimiento_Orden
@@ -146,14 +147,14 @@ Partial Class frm_Movimiento_Orden
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvMovimiento_Orden.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvMovimiento_Orden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvMovimiento_Orden.Size = New System.Drawing.Size(925, 296)
+        Me.dgvMovimiento_Orden.Size = New System.Drawing.Size(925, 426)
         Me.dgvMovimiento_Orden.TabIndex = 0
         '
         'frm_Movimiento_Orden
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(983, 435)
+        Me.ClientSize = New System.Drawing.Size(983, 556)
         Me.Controls.Add(Me.GroupListadoPiezas)
         Me.Name = "frm_Movimiento_Orden"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

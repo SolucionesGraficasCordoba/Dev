@@ -47,7 +47,6 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label30 = New System.Windows.Forms.Label()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.Label28 = New System.Windows.Forms.Label()
-        Me.btnLimpiarEtiqueta = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.cboLogo = New System.Windows.Forms.ComboBox()
@@ -63,6 +62,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.btnLimpiarEtiqueta = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.txt_id_orden = New System.Windows.Forms.TextBox()
@@ -346,15 +346,6 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label28.TabIndex = 28
         Me.Label28.Text = "* "
         '
-        'btnLimpiarEtiqueta
-        '
-        Me.btnLimpiarEtiqueta.Location = New System.Drawing.Point(756, 551)
-        Me.btnLimpiarEtiqueta.Name = "btnLimpiarEtiqueta"
-        Me.btnLimpiarEtiqueta.Size = New System.Drawing.Size(108, 33)
-        Me.btnLimpiarEtiqueta.TabIndex = 25
-        Me.btnLimpiarEtiqueta.Text = "Limpiar Campos"
-        Me.btnLimpiarEtiqueta.UseVisualStyleBackColor = True
-        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -481,6 +472,15 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label10.TabIndex = 7
         Me.Label10.Text = "Despachado:"
         '
+        'btnLimpiarEtiqueta
+        '
+        Me.btnLimpiarEtiqueta.Location = New System.Drawing.Point(756, 551)
+        Me.btnLimpiarEtiqueta.Name = "btnLimpiarEtiqueta"
+        Me.btnLimpiarEtiqueta.Size = New System.Drawing.Size(108, 33)
+        Me.btnLimpiarEtiqueta.TabIndex = 25
+        Me.btnLimpiarEtiqueta.Text = "Limpiar Campos"
+        Me.btnLimpiarEtiqueta.UseVisualStyleBackColor = True
+        '
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label33)
@@ -510,7 +510,7 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         'txt_id_orden
         '
-        Me.txt_id_orden.Location = New System.Drawing.Point(602, 28)
+        Me.txt_id_orden.Location = New System.Drawing.Point(643, 28)
         Me.txt_id_orden.Name = "txt_id_orden"
         Me.txt_id_orden.Size = New System.Drawing.Size(28, 20)
         Me.txt_id_orden.TabIndex = 37
@@ -519,14 +519,14 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         Me.btnBuscar_Orden.Location = New System.Drawing.Point(543, 26)
         Me.btnBuscar_Orden.Name = "btnBuscar_Orden"
-        Me.btnBuscar_Orden.Size = New System.Drawing.Size(49, 23)
+        Me.btnBuscar_Orden.Size = New System.Drawing.Size(62, 34)
         Me.btnBuscar_Orden.TabIndex = 36
         Me.btnBuscar_Orden.Text = "..."
         Me.btnBuscar_Orden.UseVisualStyleBackColor = True
         '
         'txt_orden
         '
-        Me.txt_orden.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_orden.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_orden.Location = New System.Drawing.Point(407, 16)
         Me.txt_orden.Multiline = True
         Me.txt_orden.Name = "txt_orden"
