@@ -50,7 +50,7 @@ Partial Class frm_Movimiento_Orden
         Me.GroupListadoPiezas.Controls.Add(Me.dgvMovimiento_Orden)
         Me.GroupListadoPiezas.Location = New System.Drawing.Point(12, 12)
         Me.GroupListadoPiezas.Name = "GroupListadoPiezas"
-        Me.GroupListadoPiezas.Size = New System.Drawing.Size(864, 411)
+        Me.GroupListadoPiezas.Size = New System.Drawing.Size(959, 411)
         Me.GroupListadoPiezas.TabIndex = 30
         Me.GroupListadoPiezas.TabStop = False
         Me.GroupListadoPiezas.Text = "Movimiento de Ordenes"
@@ -93,7 +93,7 @@ Partial Class frm_Movimiento_Orden
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(736, 366)
+        Me.btnCancelar.Location = New System.Drawing.Point(830, 366)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(113, 33)
         Me.btnCancelar.TabIndex = 28
@@ -102,7 +102,7 @@ Partial Class frm_Movimiento_Orden
         '
         'btnExportarPDF
         '
-        Me.btnExportarPDF.Location = New System.Drawing.Point(611, 366)
+        Me.btnExportarPDF.Location = New System.Drawing.Point(705, 366)
         Me.btnExportarPDF.Name = "btnExportarPDF"
         Me.btnExportarPDF.Size = New System.Drawing.Size(119, 33)
         Me.btnExportarPDF.TabIndex = 29
@@ -118,7 +118,6 @@ Partial Class frm_Movimiento_Orden
         '
         'dgvMovimiento_Orden
         '
-        Me.dgvMovimiento_Orden.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -147,14 +146,14 @@ Partial Class frm_Movimiento_Orden
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvMovimiento_Orden.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgvMovimiento_Orden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvMovimiento_Orden.Size = New System.Drawing.Size(831, 296)
+        Me.dgvMovimiento_Orden.Size = New System.Drawing.Size(925, 296)
         Me.dgvMovimiento_Orden.TabIndex = 0
         '
         'frm_Movimiento_Orden
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(889, 435)
+        Me.ClientSize = New System.Drawing.Size(983, 435)
         Me.Controls.Add(Me.GroupListadoPiezas)
         Me.Name = "frm_Movimiento_Orden"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

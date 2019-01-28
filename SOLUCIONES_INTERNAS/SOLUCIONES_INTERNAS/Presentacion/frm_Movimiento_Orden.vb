@@ -63,9 +63,11 @@ Public Class frm_Movimiento_Orden
         dgvMovimiento_Orden.Columns(2).DataPropertyName = "TAR_id_tarea"
         dgvMovimiento_Orden.Columns(2).Visible = False
         dgvMovimiento_Orden.Columns(3).DataPropertyName = "TAR_detalle_tarea"
+        dgvMovimiento_Orden.Columns(3).Width = 250
         dgvMovimiento_Orden.Columns(4).DataPropertyName = "TAR_tiempo_real"
         dgvMovimiento_Orden.Columns(5).DataPropertyName = "TAR_fecha"
         dgvMovimiento_Orden.Columns(6).DataPropertyName = "TAR_observaciones"
+        dgvMovimiento_Orden.Columns(6).Width = 250
         dgvMovimiento_Orden.Columns(7).DataPropertyName = "PIE_id_pieza"
         dgvMovimiento_Orden.Columns(7).Visible = False
         dgvMovimiento_Orden.Columns(8).DataPropertyName = "PIE_nombre_pie"
