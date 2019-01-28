@@ -294,7 +294,7 @@ Public Class frm_listado_orden_trabajo_ampliada
                                On col.CLI_id_cliente Equals U.CLI_id_cliente
                               Select U.ORT_id_orden_trabajo, U.ORT_fecha_ot, U.ORT_fecha_entrega, U.ORT_tipo_ot, U.ORT_numero_ot,
                               U.ORT_observaciones_ot, U.ORT_mejoras_ot, U.VEN_id_vendedor, ort.VEN_nombre_ven, U.CLI_id_cliente, col.CLI_razon_social
-                              Order By ORT_id_orden_trabajo Descending)
+                              Order By ORT_id_orden_trabajo Descending.Take(100))
         dgvLista_Orden_Trabajo.DataSource = consultaOrden
         dgvLista_Orden_Trabajo.ClearSelection()
     End Sub
@@ -443,7 +443,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                              U.CLI_id_cliente,
                              col.CLI_razon_social
                               Where ORT_numero_ot Like buscar.ToString
-                             Order By ORT_numero_ot Ascending)
+                             Order By ORT_id_orden_trabajo Descending.Take(100))
         dgvLista_Orden_Trabajo.DataSource = consultaCliente
         dgvLista_Orden_Trabajo.ClearSelection()
         dgv_detalle_orden.DataSource = ""
