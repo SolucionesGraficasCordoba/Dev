@@ -2522,7 +2522,6 @@
             txtEntrada.Focus()
             Exit Sub
         End If
-
         'VALIDA CAMPO SALIDA
         If txtSalida.Text.Length = 0 Then
             MsgBox("Debe ingresar horario de salida")
@@ -2543,7 +2542,6 @@
             btnBuscar_Numero_Orden1.Focus()
             Exit Sub
         End If
-
         'VALIDA QUE EL CAMPO DE LA PRIMERA TAREA NO ESTE VACIO
         If txtNumero_Orden_Trabajo1.Text.Length <> 0 And txt_detalle_tarea1.Text.Length = 0 Then
             MsgBox("Complete el campo de la tarea 1")
@@ -2551,14 +2549,12 @@
             Exit Sub
         End If
         '--------------------------------------------------------------------------------------------------
-
         'VALIDA QUE EL NUMERO DE ORDEN DE LA SEGUNDA TAREA NO ESTE VACIO
         If txtNumero_Orden_Trabajo2.Text.Length = 0 And txt_detalle_tarea2.Text.Length <> 0 Then
             MsgBox("Seleccione una orden para la tarea 2")
             btnBuscar_Numero_Orden2.Focus()
             Exit Sub
         End If
-
         'VALIDA QUE EL CAMPO DE LA SEGUNDA TAREA NO ESTE VACIO
         If txtNumero_Orden_Trabajo2.Text.Length <> 0 And txt_detalle_tarea2.Text.Length = 0 Then
             MsgBox("Complete el campo de la tarea 2")
@@ -2566,14 +2562,12 @@
             Exit Sub
         End If
         '----------------------------------------------------------------------------------------------------
-
         'VALIDA QUE EL NUMERO DE ORDEN DE LA TERCER TAREA NO ESTE VACIO
         If txtNumero_Orden_Trabajo3.Text.Length = 0 And txt_detalle_tarea3.Text.Length <> 0 Then
             MsgBox("Seleccione una orden para la tarea 3")
             btnBuscar_Numero_Orden3.Focus()
             Exit Sub
         End If
-
         'VALIDA QUE EL CAMPO DE LA TERCER TAREA NO ESTE VACIO
         If txtNumero_Orden_Trabajo3.Text.Length <> 0 And txt_detalle_tarea3.Text.Length = 0 Then
             MsgBox("Complete el campo de la tarea 3")
@@ -2581,7 +2575,6 @@
             Exit Sub
         End If
         '------------------------------------------------------------------------------------------------
-
         'VALIDA QUE EL NUMERO DE ORDEN DE LA CUARTA TAREA NO ESTE VACIO
         If txtNumero_Orden_Trabajo4.Text.Length = 0 And txt_detalle_tarea4.Text.Length <> 0 Then
             MsgBox("Seleccione una orden para la tarea 4")
