@@ -164,7 +164,7 @@ Partial Class frm_VerMasDetalles
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.principal1
-        Me.PictureBox3.Location = New System.Drawing.Point(523, 174)
+        Me.PictureBox3.Location = New System.Drawing.Point(525, 174)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(340, 192)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
