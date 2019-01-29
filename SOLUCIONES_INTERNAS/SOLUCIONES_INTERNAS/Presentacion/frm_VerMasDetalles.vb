@@ -12,4 +12,9 @@
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs)
         frm_Tarea.Show()
     End Sub
+
+    Private Sub btnCerrar_Click_1(sender As System.Object, e As System.EventArgs) Handles btnCerrar.Click
+        Me.Close()
+        Me.Dispose()
+    End Sub
 End Class

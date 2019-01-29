@@ -117,6 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="TextBox3.Text" xml:space="preserve">
+    <value>El formulario PRINCIPAL contiene las siguientes pestañas:
+
+- USUARIO:  * nuevo: da de alta a un nuevo usuario.
+	   * modificar: actualiza los datos de un usuario existente.
+	   * eliminar: da de baja a un usuario.
+	   * consultar: muestra datos de los usuarios.
+
+- COLABORADOR: * nuevo: da de alta a un nuevo colaborador.
+	           * modificar: actualiza los datos de un colaborador existente.
+	           * eliminar: da de baja a un colaborador.
+	           * consultar: muestra datos de los colaboradores.
+
+- VENDEDOR: * nuevo: da de alta a un nuevo vendedor.
+	      * modificar: actualiza los datos de un vendedor existente.
+	      * eliminar: da de baja a un vendedor.
+	      * consultar: muestra datos de los vendedores.
+
+- CLIENTE:   * nuevo: da de alta a un nuevo cliente.
+	   * modificar: actualiza los datos de un cliente existente.
+	   * eliminar: da de baja a un cliente.
+	   * consultar: muestra datos de los clientes.
+
+- PIEZA:   * nuevo: da de alta a un nueva pieza.
+	 * modificar: actualiza los datos de una pieza existente.
+	 * eliminar: da de baja a una pieza.
+	 * consultar: muestra datos de las piezas.
+
+
+- SECTOR: * nuevo: da de alta a un nuevo sector.
+	  * modificar: actualiza los datos de un sector existente.
+	  * eliminar: da de baja a un sector.
+	  * consultar: muestra datos de los sectores.
+
+
+- TAREA:  * nuevo: da de alta a una nueva tarea.
+	 * modificar: actualiza los datos de una tarea existente.
+	 * eliminar: da de baja a una tarea.
+	 * consultar: muestra datos de las tareas.
+
+
+- PRODUCTO: * Gestión de Productos 
+		° nuevo: da de alta a un nuevo producto.
+		° modificar: actualiza los datos de un producto existente.
+		° eliminar: da de baja a un producto.
+	          * Stock de Productos
+		° alta: da de alta una nueva cantidad de un producto.
+		° baja: da de baja una cantidad de un producto.
+		° consultar productos: muestra datos de los productos.
+		° consultar movimientos: muestra altas y bajas de los productos.
+
+- ORDEN TRABAJO: * nuevo: da de alta a una nueva orden de trabajo.
+	                    * modificar: actualiza los datos de una orden de trabajo existente.
+	                    * eliminar: da de baja a una orden de trabajo.
+	                    * consultar: muestra datos de las orden de trabajo.
+
+- RE-TRABAJO: * Repetición de Chapas 
+		  ° nuevo: da de alta a un nueva repetición de chapas.
+		  ° eliminar: da de baja a una repetición de chapas.
+	        * Digital / Offset
+		  ° nuevo: da de alta a un nuevo re-trabajo de digital/offset.
+		  ° eliminar: da de baja a un nuevo re-trabajo de digital/offset.
+ 	        * consultar: 
+		  ° Repetición de Chapas: muestra datos de re-trabajo respecto a la repetición de chapas.
+		  ° Digital / Offset: muestra datos de re-trabajo de digital7offset.
+			
+- ETIQUETAS: genera etiquetas.
+
+- ESTADISTICAS: * Tareas
+		 °Diarias por Colaborador: muestra los tiempos estimado y real de cada colaborador dentro del mes.
+		 °Mensuales por Sector: muestra los tiempos estimados y reales de cada sector.
+
+- CORREO ELECTRONICO: área en construcción.
+
+- ACERCA DE: describe mas detalladamente las partes más importantes del sistema.</value>
+  </data>
   <data name="TextBox2.Text" xml:space="preserve">
     <value>El formulario de ORDEN DE TRABAJO se carga de la siguiente manera:
 

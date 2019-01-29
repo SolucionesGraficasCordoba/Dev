@@ -146,26 +146,22 @@ Public Class frm_Listado_Tareas
         End Try
         'CALCULA LA SUMA DEL TIEMPO REAL DE CADA TAREA POR COLABORADOR
 
-        Label35.Text = 0
-        Label8.Text = 0
+        'Label35.Text = 0
+        'Label8.Text = 0
         SumatoriaTiempos()
     End Sub
 
     Public Sub SumatoriaTiempos()
-       
         Try
             'Declarar variable que acumulará la sumatoria de las celdas
             Dim Sumatoria As Integer = 0
-          
             'Recorrer las filas del objeto de tipo DataGridView
             For Each row As DataGridViewRow In dgvTarea_x_Colaborador.Rows
-              
                 'Acumular valores
                 Sumatoria += Convert.ToInt32(row.Cells("TAR_tiempo_real").Value)
             Next
             Label35.Text = Sumatoria
             Label1.Text = dgvTarea_x_Colaborador.Rows.Count
-
 
             Dim SumatoriaEstimado As Integer = 0
             For Each estimado As DataGridViewRow In dgvTarea_x_Colaborador.Rows
@@ -173,10 +169,7 @@ Public Class frm_Listado_Tareas
             Next
             Label8.Text = SumatoriaEstimado
         Catch ex As Exception
-
         End Try
-
-      
     End Sub
 
     'ARMA GRILLA DE TAREAS SEGUN COLABORADOR
