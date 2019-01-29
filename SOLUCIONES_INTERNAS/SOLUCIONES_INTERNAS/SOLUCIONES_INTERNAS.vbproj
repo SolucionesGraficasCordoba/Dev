@@ -364,8 +364,17 @@
     <Compile Include="Presentacion\frm_Vendedor.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\frm_VerMasDetalles.Designer.vb">
+      <DependentUpon>frm_VerMasDetalles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_VerMasDetalles.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Presentacion\frm_VerMasDetalles.resx">
+      <DependentUpon>frm_VerMasDetalles.vb</DependentUpon>
+    </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Datos\DataS_Interno_Vistas.dbml.layout">
       <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
@@ -557,6 +566,11 @@
   <ItemGroup>
     <Content Include="Resources\Acceso_Usuarios.jpg" />
     <Content Include="Resources\LOGO SISTEMA INTERNO %281%29.ico" />
+    <None Include="Resources\principal1.jpg" />
+    <None Include="Resources\principal.jpg" />
+    <None Include="Resources\nuevaordenampliada.png" />
+    <None Include="Resources\nueva_tarea.jpg" />
+    <None Include="Resources\ver_tarea.jpg" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

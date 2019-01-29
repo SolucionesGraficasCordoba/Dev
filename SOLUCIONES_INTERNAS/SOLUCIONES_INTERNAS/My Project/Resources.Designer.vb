@@ -73,9 +73,59 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property nueva_tarea() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("nueva_tarea", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property nuevaordenampliada() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("nuevaordenampliada", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property principal() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("principal", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property principal1() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("principal1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property solucionesgraficas1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("solucionesgraficas1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property ver_tarea() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("ver_tarea", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
