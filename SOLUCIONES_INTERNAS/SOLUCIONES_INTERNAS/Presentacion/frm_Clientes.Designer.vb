@@ -98,7 +98,7 @@ Partial Class frm_Cliente
         Me.txt_Domicilio_Cliente.MaxLength = 50
         Me.txt_Domicilio_Cliente.Name = "txt_Domicilio_Cliente"
         Me.txt_Domicilio_Cliente.Size = New System.Drawing.Size(493, 20)
-        Me.txt_Domicilio_Cliente.TabIndex = 3
+        Me.txt_Domicilio_Cliente.TabIndex = 2
         '
         'Label9
         '
@@ -115,7 +115,7 @@ Partial Class frm_Cliente
         Me.txt_Localidad_Cliente.MaxLength = 50
         Me.txt_Localidad_Cliente.Name = "txt_Localidad_Cliente"
         Me.txt_Localidad_Cliente.Size = New System.Drawing.Size(303, 20)
-        Me.txt_Localidad_Cliente.TabIndex = 4
+        Me.txt_Localidad_Cliente.TabIndex = 3
         '
         'Label10
         '
@@ -132,7 +132,7 @@ Partial Class frm_Cliente
         Me.txtTelefono_Cliente.MaxLength = 15
         Me.txtTelefono_Cliente.Name = "txtTelefono_Cliente"
         Me.txtTelefono_Cliente.Size = New System.Drawing.Size(145, 20)
-        Me.txtTelefono_Cliente.TabIndex = 6
+        Me.txtTelefono_Cliente.TabIndex = 5
         '
         'Label8
         '
@@ -142,7 +142,7 @@ Partial Class frm_Cliente
         Me.Label8.Location = New System.Drawing.Point(87, 22)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(11, 13)
-        Me.Label8.TabIndex = 4
+        Me.Label8.TabIndex = 1
         Me.Label8.Text = "*"
         '
         'Label7
@@ -159,7 +159,7 @@ Partial Class frm_Cliente
         Me.btnCancelar_Cliente.Location = New System.Drawing.Point(522, 142)
         Me.btnCancelar_Cliente.Name = "btnCancelar_Cliente"
         Me.btnCancelar_Cliente.Size = New System.Drawing.Size(75, 33)
-        Me.btnCancelar_Cliente.TabIndex = 8
+        Me.btnCancelar_Cliente.TabIndex = 7
         Me.btnCancelar_Cliente.Text = "Cancelar"
         Me.btnCancelar_Cliente.UseVisualStyleBackColor = True
         '
@@ -177,7 +177,7 @@ Partial Class frm_Cliente
         Me.btnGuardar_Cliente.Location = New System.Drawing.Point(360, 142)
         Me.btnGuardar_Cliente.Name = "btnGuardar_Cliente"
         Me.btnGuardar_Cliente.Size = New System.Drawing.Size(75, 33)
-        Me.btnGuardar_Cliente.TabIndex = 7
+        Me.btnGuardar_Cliente.TabIndex = 6
         Me.btnGuardar_Cliente.Text = "Guardar"
         Me.btnGuardar_Cliente.UseVisualStyleBackColor = True
         '
@@ -196,7 +196,7 @@ Partial Class frm_Cliente
         Me.txt_Codigo_Postal_Cliente.MaxLength = 10
         Me.txt_Codigo_Postal_Cliente.Name = "txt_Codigo_Postal_Cliente"
         Me.txt_Codigo_Postal_Cliente.Size = New System.Drawing.Size(63, 20)
-        Me.txt_Codigo_Postal_Cliente.TabIndex = 5
+        Me.txt_Codigo_Postal_Cliente.TabIndex = 4
         '
         'txt_mail_cliente
         '
@@ -204,7 +204,7 @@ Partial Class frm_Cliente
         Me.txt_mail_cliente.MaxLength = 50
         Me.txt_mail_cliente.Name = "txt_mail_cliente"
         Me.txt_mail_cliente.Size = New System.Drawing.Size(493, 20)
-        Me.txt_mail_cliente.TabIndex = 2
+        Me.txt_mail_cliente.TabIndex = 1
         '
         'txt_razonsocial_cliente
         '
@@ -214,7 +214,7 @@ Partial Class frm_Cliente
         Me.txt_razonsocial_cliente.MaxLength = 50
         Me.txt_razonsocial_cliente.Name = "txt_razonsocial_cliente"
         Me.txt_razonsocial_cliente.Size = New System.Drawing.Size(493, 20)
-        Me.txt_razonsocial_cliente.TabIndex = 1
+        Me.txt_razonsocial_cliente.TabIndex = 0
         '
         'txt_id_cliente
         '

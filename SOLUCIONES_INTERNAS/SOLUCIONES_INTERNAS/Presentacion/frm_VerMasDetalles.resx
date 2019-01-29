@@ -117,28 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="txt_VerMasDetalles.Text" xml:space="preserve">
-    <value>
-El formulario de TAREA se carga de la siguiente manera:
-
--	BOTON COLABORADOR (está al lado del campo colaborador): abre el formulario de colaboradores, 
-                del listado se seleccionara (doble clic) su nombre. 
--	CAMPO FECHA: día que se guardará la o las  tareas realizadas.
--	CAMPO ENTRADA: horario de entrada a la planta.
--	CAMPO SALIDA: horario de salida de la planta.
--	CAMPO CARGA HORARIA: cantidad (en minutos) del tiempo transcurrido dentro de la planta. 
-                Este campo es automático. (no debe llenarse).
--	BOTON LIMPIAR: limpia o vacía cada uno de los campos de la fila (por ej. de la tarea 2). 
--	CAMPO TAREA: la tarea o trabajo que se les ha asignado.
--	CAMPO TIEMPO ESTIMADO: tiempo aproximado de trabajo asignado a esa tarea.
--	CAMPO TIEMPO REAL: tiempo que le llevo la realización de la tarea. (obligatorio).
--	CAMPO OBSERVACIONES: comentario o alguna información extra que sea importante con relación a esa tarea.
--	BOTON ODT (está al lado del campo ot): abre el formulario de las órdenes, del listado se seleccionara (doble clic) 
-                la orden relacionada a la tarea que se les asigno. 
--	BOTON GUARDAR: guarda la información cargada. 
--	BOTON CANCELAR: cierra el formulario sin guardar los cambios.
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-El formulario de ORDEN DE TRABAJO se carga de la siguiente manera:
+  <data name="TextBox2.Text" xml:space="preserve">
+    <value>El formulario de ORDEN DE TRABAJO se carga de la siguiente manera:
 
 -	BOTON BUSCAR VENDEDOR (está al lado del campo vendedor): abre el formulario de vendedores,
                 del listado se seleccionará (doble clic) su nombre. Éste se cargará en el campo asignado al vendedor.
@@ -176,9 +156,27 @@ El formulario de ORDEN DE TRABAJO se carga de la siguiente manera:
 -	COMBO CALIDAD GRAN FORMATO: calidad de impresión a realizar.
 -	COMBO SISTEMA GRAN FORMATO: sistema de impresión a realizar.
 -	CHECK’S TERMINACION: tipo de terminaciones.
--	CAMPO DESCRIPCION TERMINACION: comentarios que se creen importantes de destacar para terminación.
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-	CAMPO DESCRIPCION TERMINACION: comentarios que se creen importantes de destacar para terminación.</value>
+  </data>
+  <data name="TextBox1.Text" xml:space="preserve">
+    <value>
+El formulario de TAREA se carga de la siguiente manera:
 
-</value>
+-	BOTON COLABORADOR (está al lado del campo colaborador): abre el formulario de colaboradores, 
+                del listado se seleccionara (doble clic) su nombre. 
+-	CAMPO FECHA: día que se guardará la o las  tareas realizadas.
+-	CAMPO ENTRADA: horario de entrada a la planta.
+-	CAMPO SALIDA: horario de salida de la planta.
+-	CAMPO CARGA HORARIA: cantidad (en minutos) del tiempo transcurrido dentro de la planta. 
+                Este campo es automático. (no debe llenarse).
+-	BOTON LIMPIAR: limpia o vacía cada uno de los campos de la fila (por ej. de la tarea 2). 
+-	CAMPO TAREA: la tarea o trabajo que se les ha asignado.
+-	CAMPO TIEMPO ESTIMADO: tiempo aproximado de trabajo asignado a esa tarea.
+-	CAMPO TIEMPO REAL: tiempo que le llevo la realización de la tarea. (obligatorio).
+-	CAMPO OBSERVACIONES: comentario o alguna información extra que sea importante con relación a esa tarea.
+-	BOTON ODT (está al lado del campo ot): abre el formulario de las órdenes, del listado se seleccionara (doble clic) 
+                la orden relacionada a la tarea que se les asigno. 
+-	BOTON GUARDAR: guarda la información cargada. 
+-	BOTON CANCELAR: cierra el formulario sin guardar los cambios.</value>
   </data>
 </root>

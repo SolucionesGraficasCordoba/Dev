@@ -1385,11 +1385,13 @@ Public Class frm_Principal
 
         frm_Orden_Trabajo_Ampliada.MdiParent = Me
         frm_Orden_Trabajo_Ampliada.Show()
+        'FOCO
+        frm_Orden_Trabajo_Ampliada.txtNumero_Orden_Trabajo.Focus()
 
     End Sub
 
     Sub Campos_Orden_ampliada()
-
+      
         'FECHA DE ENTREGA ANTERIOR AL DIA DE LA FECHA 
         frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value = Today
         frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value = frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value.Add(TimeSpan.FromDays(-1))

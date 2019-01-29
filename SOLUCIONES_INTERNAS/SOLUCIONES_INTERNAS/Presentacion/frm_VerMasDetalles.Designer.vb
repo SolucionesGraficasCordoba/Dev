@@ -23,74 +23,160 @@ Partial Class frm_VerMasDetalles
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_VerMasDetalles))
-        Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.txt_VerMasDetalles = New System.Windows.Forms.TextBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.Tarea = New System.Windows.Forms.TabPage()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.btnCerrar = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.TabControl1.SuspendLayout()
+        Me.Tarea.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'btnCerrar
+        'TabControl1
         '
-        Me.btnCerrar.Location = New System.Drawing.Point(873, 690)
-        Me.btnCerrar.Name = "btnCerrar"
-        Me.btnCerrar.Size = New System.Drawing.Size(75, 33)
-        Me.btnCerrar.TabIndex = 3
-        Me.btnCerrar.Text = "Cerrar"
-        Me.btnCerrar.UseVisualStyleBackColor = True
+        Me.TabControl1.Controls.Add(Me.Tarea)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Location = New System.Drawing.Point(2, 1)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(897, 409)
+        Me.TabControl1.TabIndex = 0
         '
-        'txt_VerMasDetalles
+        'Tarea
         '
-        Me.txt_VerMasDetalles.Location = New System.Drawing.Point(12, 12)
-        Me.txt_VerMasDetalles.Multiline = True
-        Me.txt_VerMasDetalles.Name = "txt_VerMasDetalles"
-        Me.txt_VerMasDetalles.ReadOnly = True
-        Me.txt_VerMasDetalles.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txt_VerMasDetalles.Size = New System.Drawing.Size(936, 672)
-        Me.txt_VerMasDetalles.TabIndex = 4
-        Me.txt_VerMasDetalles.Text = resources.GetString("txt_VerMasDetalles.Text")
+        Me.Tarea.BackColor = System.Drawing.Color.DarkGray
+        Me.Tarea.Controls.Add(Me.Label1)
+        Me.Tarea.Controls.Add(Me.PictureBox1)
+        Me.Tarea.Controls.Add(Me.TextBox1)
+        Me.Tarea.Location = New System.Drawing.Point(4, 22)
+        Me.Tarea.Name = "Tarea"
+        Me.Tarea.Padding = New System.Windows.Forms.Padding(3)
+        Me.Tarea.Size = New System.Drawing.Size(889, 383)
+        Me.Tarea.TabIndex = 0
+        Me.Tarea.Text = "Tarea"
         '
-        'PictureBox2
+        'TabPage2
         '
-        Me.PictureBox2.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevaordenampliada
-        Me.PictureBox2.Location = New System.Drawing.Point(538, 355)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(385, 254)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 6
-        Me.PictureBox2.TabStop = False
+        Me.TabPage2.BackColor = System.Drawing.Color.DarkGray
+        Me.TabPage2.Controls.Add(Me.Label2)
+        Me.TabPage2.Controls.Add(Me.PictureBox2)
+        Me.TabPage2.Controls.Add(Me.TextBox2)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(889, 383)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Orden Trabajo"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(10, 13)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox1.Size = New System.Drawing.Size(485, 350)
+        Me.TextBox1.TabIndex = 0
+        Me.TextBox1.Text = resources.GetString("TextBox1.Text")
+        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nueva_tarea
-        Me.PictureBox1.Location = New System.Drawing.Point(601, 29)
+        Me.PictureBox1.Location = New System.Drawing.Point(521, 115)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(322, 220)
+        Me.PictureBox1.Size = New System.Drawing.Size(340, 248)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 5
+        Me.PictureBox1.TabIndex = 1
         Me.PictureBox1.TabStop = False
+        '
+        'btnCerrar
+        '
+        Me.btnCerrar.Location = New System.Drawing.Point(809, 416)
+        Me.btnCerrar.Name = "btnCerrar"
+        Me.btnCerrar.Size = New System.Drawing.Size(75, 33)
+        Me.btnCerrar.TabIndex = 1
+        Me.btnCerrar.Text = "Cerrar"
+        Me.btnCerrar.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(650, 99)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(102, 13)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Formulario Tarea"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevaordenampliada
+        Me.PictureBox2.Location = New System.Drawing.Point(530, 118)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(340, 248)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 3
+        Me.PictureBox2.TabStop = False
+        '
+        'TextBox2
+        '
+        Me.TextBox2.Location = New System.Drawing.Point(19, 16)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox2.Size = New System.Drawing.Size(485, 350)
+        Me.TextBox2.TabIndex = 2
+        Me.TextBox2.Text = resources.GetString("TextBox2.Text")
+        Me.TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(634, 102)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(150, 13)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Formulario Orden Trabajo"
         '
         'frm_VerMasDetalles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(960, 730)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.txt_VerMasDetalles)
+        Me.ClientSize = New System.Drawing.Size(896, 458)
         Me.Controls.Add(Me.btnCerrar)
+        Me.Controls.Add(Me.TabControl1)
         Me.Name = "frm_VerMasDetalles"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ver Más Detalles"
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl1.ResumeLayout(False)
+        Me.Tarea.ResumeLayout(False)
+        Me.Tarea.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btnCerrar As System.Windows.Forms.Button
-    Friend WithEvents txt_VerMasDetalles As System.Windows.Forms.TextBox
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents Tarea As System.Windows.Forms.TabPage
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents btnCerrar As System.Windows.Forms.Button
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

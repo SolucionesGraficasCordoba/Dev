@@ -20,6 +20,7 @@ Public Class frm_Listado_Tareas
     Public Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Label6.Text = dgvColaboradores.Rows.Count
 
+
         If frm_Principal.LBL_MENU_PERFIL.Text = "ADMINISTRADOR" Or frm_Principal.LBL_MENU_PERFIL.Text = "GERENCIA" Then
             'CARGA COMBOBOX SECTOR
             Dim combosector = (From sec In datacontext.SECTOR
@@ -144,12 +145,21 @@ Public Class frm_Listado_Tareas
         Catch
         End Try
         'CALCULA LA SUMA DEL TIEMPO REAL DE CADA TAREA POR COLABORADOR
+
+        Label35.Text = 0
+        Label8.Text = 0
+        SumatoriaTiempos()
+    End Sub
+
+    Public Sub SumatoriaTiempos()
+       
         Try
             'Declarar variable que acumulará la sumatoria de las celdas
             Dim Sumatoria As Integer = 0
-
+          
             'Recorrer las filas del objeto de tipo DataGridView
             For Each row As DataGridViewRow In dgvTarea_x_Colaborador.Rows
+              
                 'Acumular valores
                 Sumatoria += Convert.ToInt32(row.Cells("TAR_tiempo_real").Value)
             Next
@@ -165,6 +175,8 @@ Public Class frm_Listado_Tareas
         Catch ex As Exception
 
         End Try
+
+      
     End Sub
 
     'ARMA GRILLA DE TAREAS SEGUN COLABORADOR
@@ -2219,6 +2231,10 @@ Public Class frm_Listado_Tareas
         document.Add(datatable)
         document.Add(TotalTareasEstimadas)
         document.Add(TotalTareas)
+
+    End Sub
+
+    Private Sub dgvColaboradores_Click(sender As System.Object, e As System.EventArgs) Handles dgvColaboradores.Click
 
     End Sub
 End Class
