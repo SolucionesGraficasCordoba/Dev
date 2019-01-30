@@ -294,7 +294,7 @@ Public Class frm_listado_orden_trabajo_ampliada
                                On col.CLI_id_cliente Equals U.CLI_id_cliente
                               Select U.ORT_id_orden_trabajo, U.ORT_fecha_ot, U.ORT_fecha_entrega, U.ORT_tipo_ot, U.ORT_numero_ot,
                               U.ORT_observaciones_ot, U.ORT_mejoras_ot, U.VEN_id_vendedor, ort.VEN_nombre_ven, U.CLI_id_cliente, col.CLI_razon_social
-                              Order By ORT_id_orden_trabajo Descending.Take(100))
+                              Order By ORT_id_orden_trabajo Descending)
         dgvLista_Orden_Trabajo.DataSource = consultaOrden
         dgvLista_Orden_Trabajo.ClearSelection()
     End Sub
@@ -352,14 +352,11 @@ Public Class frm_listado_orden_trabajo_ampliada
 
                 Dim traerdetalle = (From c In datacontext.DETALLE_ORDEN_TRABAJO Select c.ORT_id_orden_trabajo, c.PIEZA, c.PIEZA1
                                   Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).ToList
-
                 Dim temdetalle As String = ""
-
                 For i = 0 To traerdetalle.Count - 1
                     If traerdetalle.Item(i).PIEZA.PIE_nombre_pie.Length > 1 Then
                         temdetalle = temdetalle & " - " & traerdetalle.Item(i).PIEZA.PIE_nombre_pie
                     End If
-
                     If traerdetalle.Item(i).PIEZA1.PIE_nombre_pie.Length > 1 Then
                         temdetalle = temdetalle & " - " & traerdetalle.Item(i).PIEZA1.PIE_nombre_pie
                     End If
@@ -568,8 +565,8 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                              ort.VEN_nombre_ven,
                              U.CLI_id_cliente,
                              col.CLI_razon_social
-                              Where ORT_numero_ot Like buscar.ToString
-                             Order By ORT_id_orden_trabajo Descending.Take(100))
+                             Where ORT_numero_ot Like buscar.ToString
+                             Order By ORT_numero_ot Ascending)
         dgvLista_Orden_Trabajo.DataSource = consultaCliente
         dgvLista_Orden_Trabajo.ClearSelection()
         dgv_detalle_orden.DataSource = ""
