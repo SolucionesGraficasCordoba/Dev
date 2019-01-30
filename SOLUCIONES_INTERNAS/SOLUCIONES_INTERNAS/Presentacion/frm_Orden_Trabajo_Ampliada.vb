@@ -542,6 +542,10 @@
                 temLacaUVSect & temOPPBrillante & temOPPMate & temarmadorevistas & temestampado & tempegadomanual & templastificado & temtermosellado
 
             detalle.descripcion_terminacion = txt_descripcion_terminacion.Text
+            '-----------------------------------------------------------------------
+            'GUARDA EL USUARIO REGISTRADO AL SISTEMA
+            detalle.modo_impresion_digital = frm_Principal.LBL_MENU_USU.Text
+            '-----------------------------------------------------------------------
 
             datacontext.DETALLE_ORDEN_TRABAJO.InsertOnSubmit(detalle)
             datacontext.SubmitChanges()
@@ -564,7 +568,6 @@
                     Me.Close()
                     '  frm_listado_orden_trabajo_ampliada.frm_listado_orden_trabajo_ampliada_Load(0, Nothing)
                     frm_listado_orden_trabajo_ampliada.CargarGrillaDetalle()
-
             End Select
         Catch ex As Exception
             MsgBox("Error al cargar la Orden")
