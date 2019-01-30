@@ -3304,7 +3304,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea1.Click
-        txt_Id_Tarea1.Clear()
         txt_detalle_tarea1.Clear()
         txtTiempo_Estimado1.Clear()
         txtTiempo_Real1.Clear()
@@ -3315,7 +3314,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea2.Click
-        txt_Id_Tarea2.Clear()
         txt_detalle_tarea2.Clear()
         txtTiempo_Estimado2.Clear()
         txtTiempo_Real2.Clear()
@@ -3326,7 +3324,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea3.Click
-        txt_Id_Tarea3.Clear()
         txt_detalle_tarea3.Clear()
         txtTiempo_Estimado3.Clear()
         txtTiempo_Real3.Clear()
@@ -3337,7 +3334,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea4.Click
-        txt_Id_Tarea4.Clear()
         txt_detalle_tarea4.Clear()
         txtTiempo_Estimado4.Clear()
         txtTiempo_Real4.Clear()
@@ -3348,7 +3344,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea5.Click
-        txt_Id_Tarea5.Clear()
         txt_detalle_tarea5.Clear()
         txtTiempo_Estimado5.Clear()
         txtTiempo_Real5.Clear()
@@ -3359,7 +3354,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea6.Click
-        txt_Id_Tarea6.Clear()
         txt_detalle_tarea6.Clear()
         txtTiempo_Estimado6.Clear()
         txtTiempo_Real6.Clear()
@@ -3370,7 +3364,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea7_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea7.Click
-        txt_Id_Tarea7.Clear()
         txt_detalle_tarea7.Clear()
         txtTiempo_Estimado7.Clear()
         txtTiempo_Real7.Clear()
@@ -3381,7 +3374,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea8_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea8.Click
-        txt_Id_Tarea8.Clear()
         txt_detalle_tarea8.Clear()
         txtTiempo_Estimado8.Clear()
         txtTiempo_Real8.Clear()
@@ -3392,7 +3384,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea9_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea9.Click
-        txt_Id_Tarea9.Clear()
         txt_detalle_tarea9.Clear()
         txtTiempo_Estimado9.Clear()
         txtTiempo_Real9.Clear()
@@ -3403,7 +3394,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea10_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea10.Click
-        txt_Id_Tarea10.Clear()
         txt_detalle_tarea10.Clear()
         txtTiempo_Estimado10.Clear()
         txtTiempo_Real10.Clear()
@@ -3414,7 +3404,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea11_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea11.Click
-        txt_Id_Tarea11.Clear()
         txt_detalle_tarea11.Clear()
         txtTiempo_Estimado11.Clear()
         txtTiempo_Real11.Clear()
@@ -3425,7 +3414,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea12_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea12.Click
-        txt_Id_Tarea12.Clear()
         txt_detalle_tarea12.Clear()
         txtTiempo_Estimado12.Clear()
         txtTiempo_Real12.Clear()
@@ -3436,7 +3424,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea13_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea13.Click
-        txt_Id_Tarea13.Clear()
         txt_detalle_tarea13.Clear()
         txtTiempo_Estimado13.Clear()
         txtTiempo_Real13.Clear()
@@ -3447,7 +3434,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea14_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea14.Click
-        txt_Id_Tarea14.Clear()
         txt_detalle_tarea14.Clear()
         txtTiempo_Estimado14.Clear()
         txtTiempo_Real14.Clear()
@@ -3458,7 +3444,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea15_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea15.Click
-        txt_Id_Tarea15.Clear()
         txt_detalle_tarea15.Clear()
         txtTiempo_Estimado15.Clear()
         txtTiempo_Real15.Clear()
@@ -3469,7 +3454,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea16_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea16.Click
-        txt_Id_Tarea16.Clear()
         txt_detalle_tarea16.Clear()
         txtTiempo_Estimado16.Clear()
         txtTiempo_Real16.Clear()
@@ -3480,7 +3464,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea17_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea17.Click
-        txt_Id_Tarea17.Clear()
         txt_detalle_tarea17.Clear()
         txtTiempo_Estimado17.Clear()
         txtTiempo_Real17.Clear()
@@ -3491,7 +3474,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea18_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea18.Click
-        txt_Id_Tarea18.Clear()
         txt_detalle_tarea18.Clear()
         txtTiempo_Estimado18.Clear()
         txtTiempo_Real18.Clear()
@@ -3502,7 +3484,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea19_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea19.Click
-        txt_Id_Tarea19.Clear()
         txt_detalle_tarea19.Clear()
         txtTiempo_Estimado19.Clear()
         txtTiempo_Real19.Clear()
@@ -3513,7 +3494,6 @@
     End Sub
 
     Private Sub btnLimpiarTarea20_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea20.Click
-        txt_Id_Tarea20.Clear()
         txt_detalle_tarea20.Clear()
         txtTiempo_Estimado20.Clear()
         txtTiempo_Real20.Clear()
