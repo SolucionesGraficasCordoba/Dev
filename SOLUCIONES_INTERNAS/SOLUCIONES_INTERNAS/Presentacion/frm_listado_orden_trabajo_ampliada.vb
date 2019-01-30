@@ -88,7 +88,7 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgv_detalle_orden.Columns.Add("formato_1_PM_digital", "Formato 1 PM Digital")
         dgv_detalle_orden.Columns.Add("formato_2_PM_digital", "Formato 2 PM Digital")
         dgv_detalle_orden.Columns.Add("formato_3_PM_digital", "Formato 3 PM Digital")
-        dgv_detalle_orden.Columns.Add("modo_impresion_digital", "Modo Impresión Digital")
+        dgv_detalle_orden.Columns.Add("modo_impresion_digital", "Usuario")
         dgv_detalle_orden.Columns.Add("tipo_impresion_digital", "Tipo Impresión Digital")
         dgv_detalle_orden.Columns.Add("dato_variable", "Dato Variable")
         dgv_detalle_orden.Columns.Add("Expr1", "Pieza Gran Formato")
