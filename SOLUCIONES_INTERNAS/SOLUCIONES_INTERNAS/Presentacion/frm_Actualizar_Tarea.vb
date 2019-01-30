@@ -147,15 +147,13 @@
     End Sub
 
     Private Sub btn_buscar_numero_orden_Click(sender As System.Object, e As System.EventArgs) Handles btn_buscar_numero_orden.Click
-        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
-        frm_Listado_Orden_Trabajo.Text = "Seleccionar Orden"
-        frm_Listado_Orden_Trabajo.GroupDetallesOrden.Enabled = False
-        frm_Listado_Orden_Trabajo.GroupProcesoOrden.Enabled = False
-        frm_Listado_Orden_Trabajo.btnEliminar_Orden.Enabled = False
-        frm_Listado_Orden_Trabajo.btnModificar_Orden.Enabled = False
-        frm_Listado_Orden_Trabajo.btnEliminarProceso.Enabled = False
-        frm_Listado_Orden_Trabajo.btnModificarProceso.Enabled = False
-        frm_Listado_Orden_Trabajo.Show()
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
     End Sub
 
     Private Sub btn_buscar_colaborador_Click(sender As System.Object, e As System.EventArgs) Handles btn_buscar_colaborador.Click

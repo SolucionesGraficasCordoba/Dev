@@ -187,9 +187,9 @@
     End Sub
    
     Private Sub btnBuscar_cliente_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_cliente.Click
-        frm_Listado_Orden_Trabajo.quienllamolistado_ot = Me
-        frm_Listado_Orden_Trabajo.Text = "Seleccionar Orden"
-        frm_Listado_Orden_Trabajo.Show()
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.Show()
     End Sub
 
     Private Sub frm_Movimiento_Producto_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed

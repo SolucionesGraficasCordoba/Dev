@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SOLUCIONES_INTERNAS" Class="DataS_Interno" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PREPRODUCCION" Class="DataS_Interno" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CLIENTE" Member="CLIENTE">
     <Type Name="CLIENTE">
@@ -193,6 +193,7 @@
       <Association Name="DETALLE_ORDEN_TRABAJO_RE_TRABAJO" Member="RE_TRABAJO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="RE_TRABAJO" />
       <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="PIEZA_DETALLE_ORDEN_TRABAJO" Member="PIEZA" ThisKey="PIE_id_pieza" OtherKey="PIE_id_pieza" Type="PIEZA" IsForeignKey="true" />
+      <Association Name="PIEZA1_DETALLE_ORDEN_TRABAJO" Member="PIEZA1" ThisKey="PIE_id_pieza_offset" OtherKey="PIE_id_pieza" Type="PIEZA1" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.[RE-TRABAJO]" Member="RE_TRABAJO">
@@ -247,6 +248,14 @@
       <Column Name="tipo_terminacion_retrabajo" Type="System.String" DbType="VarChar(120)" CanBeNull="true" />
       <Column Name="descripcion_terminacion_retrabajo" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
       <Association Name="DETALLE_ORDEN_TRABAJO_RE_TRABAJO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="id_detalle_orden_trabajo" OtherKey="id_detalle_orden_trabajo" Type="DETALLE_ORDEN_TRABAJO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PIEZA" Member="PIEZA1">
+    <Type Name="PIEZA1">
+      <Column Name="PIE_id_pieza" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PIE_nombre_pie" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PIE_ubicacion" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Association Name="PIEZA1_DETALLE_ORDEN_TRABAJO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="PIE_id_pieza" OtherKey="PIE_id_pieza_offset" Type="DETALLE_ORDEN_TRABAJO" />
     </Type>
   </Table>
 </Database>

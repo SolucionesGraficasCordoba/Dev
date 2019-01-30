@@ -369,7 +369,7 @@ Public Class frm_Listado_Orden_Trabajo
                 Case MsgBoxResult.Yes
                     datacontext.ORDEN_TRABAJO.DeleteOnSubmit(eliminar)
                     datacontext.SubmitChanges()
-                    MsgBox("La orden y su detalle han sido eliminados")
+                    MsgBox("La Orden y su Detalle han sido eliminados")
                     cargargrilla()
                     Me.Close()
             End Select
@@ -510,7 +510,6 @@ Public Class frm_Listado_Orden_Trabajo
             End If
             Me.Close()
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -579,18 +578,14 @@ Public Class frm_Listado_Orden_Trabajo
             frm_Orden_Trabajo.cboTipo_Orden.SelectedItem = dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.dtpFecha_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-
             frm_Orden_Trabajo.dtpFecha_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-
             frm_Orden_Trabajo.txt_id_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_id_cliente", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.txt_nombre_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.txtid_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_id_vendedor", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.txtNombre_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.txt_observaciones.Text = dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             frm_Orden_Trabajo.txt_mejoras.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-
             Dim flag1, flag2, flag3 As Integer
-
             If dgv_detalle_orden.RowCount = 1 Then
                 flag1 = 1
                 flag2 = 0
@@ -610,7 +605,6 @@ Public Class frm_Listado_Orden_Trabajo
                 btn_ODT_mostrar_listado_pdf.Focus()
                 Exit Sub
             End If
-
             If flag1 = 1 Then
                 frm_Orden_Trabajo.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgvLista_Orden_Trabajo.Rows(0).Index).Value
                 frm_Orden_Trabajo.txt_cantidad1_detalle1.Text = dgv_detalle_orden.Item("DOT_cantidad_dot", dgvLista_Orden_Trabajo.Rows(0).Index).Value

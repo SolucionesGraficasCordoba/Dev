@@ -22,7 +22,7 @@ Imports System.Linq.Expressions
 Imports System.Reflection
 
 
-<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="SOLUCIONES_INTERNAS")>  _
+<Global.System.Data.Linq.Mapping.DatabaseAttribute(Name:="PREPRODUCCION")>  _
 Partial Public Class DataS_Interno
 	Inherits System.Data.Linq.DataContext
 	
@@ -114,6 +114,12 @@ Partial Public Class DataS_Interno
   Partial Private Sub UpdateRE_TRABAJO(instance As RE_TRABAJO)
     End Sub
   Partial Private Sub DeleteRE_TRABAJO(instance As RE_TRABAJO)
+    End Sub
+  Partial Private Sub InsertPIEZA1(instance As PIEZA1)
+    End Sub
+  Partial Private Sub UpdatePIEZA1(instance As PIEZA1)
+    End Sub
+  Partial Private Sub DeletePIEZA1(instance As PIEZA1)
     End Sub
   #End Region
 	
@@ -223,6 +229,12 @@ Partial Public Class DataS_Interno
 	Public ReadOnly Property RE_TRABAJO() As System.Data.Linq.Table(Of RE_TRABAJO)
 		Get
 			Return Me.GetTable(Of RE_TRABAJO)
+		End Get
+	End Property
+	
+	Public ReadOnly Property PIEZA1() As System.Data.Linq.Table(Of PIEZA1)
+		Get
+			Return Me.GetTable(Of PIEZA1)
 		End Get
 	End Property
 End Class
@@ -2930,6 +2942,8 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 	
 	Private _PIEZA As EntityRef(Of PIEZA)
 	
+	Private _PIEZA1 As EntityRef(Of PIEZA1)
+	
     #Region "Definiciones de métodos de extensibilidad"
     Partial Private Sub OnLoaded()
     End Sub
@@ -3137,6 +3151,7 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 		Me._RE_TRABAJO = New EntitySet(Of RE_TRABAJO)(AddressOf Me.attach_RE_TRABAJO, AddressOf Me.detach_RE_TRABAJO)
 		Me._ORDEN_TRABAJO = CType(Nothing, EntityRef(Of ORDEN_TRABAJO))
 		Me._PIEZA = CType(Nothing, EntityRef(Of PIEZA))
+		Me._PIEZA1 = CType(Nothing, EntityRef(Of PIEZA1))
 		OnCreated
 	End Sub
 	
@@ -3539,6 +3554,9 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 		End Get
 		Set
 			If (Me._PIE_id_pieza_offset.Equals(value) = false) Then
+				If Me._PIEZA1.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
 				Me.OnPIE_id_pieza_offsetChanging(value)
 				Me.SendPropertyChanging
 				Me._PIE_id_pieza_offset = value
@@ -3988,6 +4006,34 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 					Me._PIE_id_pieza = CType(Nothing, Integer)
 				End If
 				Me.SendPropertyChanged("PIEZA")
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PIEZA1_DETALLE_ORDEN_TRABAJO", Storage:="_PIEZA1", ThisKey:="PIE_id_pieza_offset", OtherKey:="PIE_id_pieza", IsForeignKey:=true)>  _
+	Public Property PIEZA1() As PIEZA1
+		Get
+			Return Me._PIEZA1.Entity
+		End Get
+		Set
+			Dim previousValue As PIEZA1 = Me._PIEZA1.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._PIEZA1.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._PIEZA1.Entity = Nothing
+					previousValue.DETALLE_ORDEN_TRABAJO.Remove(Me)
+				End If
+				Me._PIEZA1.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.DETALLE_ORDEN_TRABAJO.Add(Me)
+					Me._PIE_id_pieza_offset = value.PIE_id_pieza
+				Else
+					Me._PIE_id_pieza_offset = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("PIEZA1")
 			End If
 		End Set
 	End Property
@@ -5180,5 +5226,134 @@ Partial Public Class RE_TRABAJO
 					= false) Then
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PIEZA")>  _
+Partial Public Class PIEZA1
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _PIE_id_pieza As Integer
+	
+	Private _PIE_nombre_pie As String
+	
+	Private _PIE_ubicacion As String
+	
+	Private _DETALLE_ORDEN_TRABAJO As EntitySet(Of DETALLE_ORDEN_TRABAJO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnPIE_id_piezaChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPIE_id_piezaChanged()
+    End Sub
+    Partial Private Sub OnPIE_nombre_pieChanging(value As String)
+    End Sub
+    Partial Private Sub OnPIE_nombre_pieChanged()
+    End Sub
+    Partial Private Sub OnPIE_ubicacionChanging(value As String)
+    End Sub
+    Partial Private Sub OnPIE_ubicacionChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._DETALLE_ORDEN_TRABAJO = New EntitySet(Of DETALLE_ORDEN_TRABAJO)(AddressOf Me.attach_DETALLE_ORDEN_TRABAJO, AddressOf Me.detach_DETALLE_ORDEN_TRABAJO)
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_id_pieza", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property PIE_id_pieza() As Integer
+		Get
+			Return Me._PIE_id_pieza
+		End Get
+		Set
+			If ((Me._PIE_id_pieza = value)  _
+						= false) Then
+				Me.OnPIE_id_piezaChanging(value)
+				Me.SendPropertyChanging
+				Me._PIE_id_pieza = value
+				Me.SendPropertyChanged("PIE_id_pieza")
+				Me.OnPIE_id_piezaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_nombre_pie", DbType:="VarChar(30) NOT NULL", CanBeNull:=false)>  _
+	Public Property PIE_nombre_pie() As String
+		Get
+			Return Me._PIE_nombre_pie
+		End Get
+		Set
+			If (String.Equals(Me._PIE_nombre_pie, value) = false) Then
+				Me.OnPIE_nombre_pieChanging(value)
+				Me.SendPropertyChanging
+				Me._PIE_nombre_pie = value
+				Me.SendPropertyChanged("PIE_nombre_pie")
+				Me.OnPIE_nombre_pieChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PIE_ubicacion", DbType:="VarChar(1)")>  _
+	Public Property PIE_ubicacion() As String
+		Get
+			Return Me._PIE_ubicacion
+		End Get
+		Set
+			If (String.Equals(Me._PIE_ubicacion, value) = false) Then
+				Me.OnPIE_ubicacionChanging(value)
+				Me.SendPropertyChanging
+				Me._PIE_ubicacion = value
+				Me.SendPropertyChanged("PIE_ubicacion")
+				Me.OnPIE_ubicacionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PIEZA1_DETALLE_ORDEN_TRABAJO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="PIE_id_pieza", OtherKey:="PIE_id_pieza_offset")>  _
+	Public Property DETALLE_ORDEN_TRABAJO() As EntitySet(Of DETALLE_ORDEN_TRABAJO)
+		Get
+			Return Me._DETALLE_ORDEN_TRABAJO
+		End Get
+		Set
+			Me._DETALLE_ORDEN_TRABAJO.Assign(value)
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
+		Me.SendPropertyChanging
+		entity.PIEZA1 = Me
+	End Sub
+	
+	Private Sub detach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
+		Me.SendPropertyChanging
+		entity.PIEZA1 = Nothing
 	End Sub
 End Class
