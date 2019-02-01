@@ -605,29 +605,33 @@ Where ORT_id_orden_trabajo = vble_id_orden)
         Dim buscar As String
         ArmarGrillaOrden()
         buscar = Me.dtp_Buscar_Fecha_Entrega.Text & "*"
+        Try
+            Dim BuscaFecha = (From U In datacontext.ORDEN_TRABAJO
+                                        Join ort In datacontext.VENDEDOR
+                                        On U.VEN_id_vendedor Equals ort.VEN_id_vendedor
+                                        Join col In datacontext.CLIENTE
+                                        On col.CLI_id_cliente Equals U.CLI_id_cliente
+                                       Select U.ORT_id_orden_trabajo,
+                                       U.ORT_fecha_ot,
+                                       U.ORT_fecha_entrega,
+                                       U.ORT_tipo_ot,
+                                       U.ORT_numero_ot,
+                                       U.ORT_observaciones_ot,
+                                       U.ORT_mejoras_ot,
+                                       U.VEN_id_vendedor,
+                                       ort.VEN_nombre_ven,
+                                       U.CLI_id_cliente,
+                                       col.CLI_razon_social
+                                        Where ORT_fecha_entrega.Value.Date = dtp_Buscar_Fecha_Entrega.Text)
+            ' Order By ORT_numero_ot Ascending)
+            dgvLista_Orden_Trabajo.DataSource = BuscaFecha
+            dgvLista_Orden_Trabajo.ClearSelection()
+            dgv_detalle_orden.DataSource = ""
+            Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
+        Catch ex As Exception
 
-        Dim BuscaFecha = (From U In datacontext.ORDEN_TRABAJO
-                              Join ort In datacontext.VENDEDOR
-                              On U.VEN_id_vendedor Equals ort.VEN_id_vendedor
-                              Join col In datacontext.CLIENTE
-                              On col.CLI_id_cliente Equals U.CLI_id_cliente
-                             Select U.ORT_id_orden_trabajo,
-                             U.ORT_fecha_ot,
-                             U.ORT_fecha_entrega,
-                             U.ORT_tipo_ot,
-                             U.ORT_numero_ot,
-                             U.ORT_observaciones_ot,
-                             U.ORT_mejoras_ot,
-                             U.VEN_id_vendedor,
-                             ort.VEN_nombre_ven,
-                             U.CLI_id_cliente,
-                             col.CLI_razon_social
-                              Where ORT_fecha_entrega.Value.Date = dtp_Buscar_Fecha_Entrega.Text)
-        ' Order By ORT_numero_ot Ascending)
-        dgvLista_Orden_Trabajo.DataSource = BuscaFecha
-        dgvLista_Orden_Trabajo.ClearSelection()
-        dgv_detalle_orden.DataSource = ""
-        Label3.Text = dgvLista_Orden_Trabajo.Rows.Count
+        End Try
+      
     End Sub
 
     Private Sub btnEliminar_Orden_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEliminar_Orden.Click
@@ -902,7 +906,6 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     End Sub
 
     Private Sub btnVer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVer.Click
-
         Try
             frm_Actualizar_Producto_Orden_Ampliada.Text = ".:. Ver Orden .:."
             If dgv_detalle_orden.SelectedRows.Count > 0 Then

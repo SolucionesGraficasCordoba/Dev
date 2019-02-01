@@ -1319,7 +1319,7 @@ Public Class frm_Principal
     End Sub
 
     Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-      
+        EstadisticasToolStripMenuItem.Visible = False
         Dim c As Control
         For Each c In Me.Controls
             If TypeOf c Is MdiClient Then
@@ -1340,26 +1340,8 @@ Public Class frm_Principal
         frm_Acerca_de.ShowDialog()
     End Sub
 
-    Private Sub DiariasPorColaboradorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DiariasPorColaboradorToolStripMenuItem.Click
-        frm_Generar_Informe.MdiParent = Me
-        frm_Generar_Informe.Show()
-        frm_Generar_Informe.btn_Totales_Mensuales_por_Colaborador.Enabled = False
-    End Sub
-
-    Private Sub MensualesPorSectorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MensualesPorSectorToolStripMenuItem.Click
-        frm_Generar_Informe.MdiParent = Me
-        frm_Generar_Informe.Show()
-        frm_Generar_Informe.btnTotales_por_Dia.Enabled = False
-    End Sub
-
     Private Sub CorreoElectrónicoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CorreoElectrónicoToolStripMenuItem.Click
         frm_Enviar_Correo.ShowDialog()
-    End Sub
-
-    Private Sub MovimientoDeÓrdenesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MovimientoDeÓrdenesToolStripMenuItem.Click
-        frm_Movimiento_Orden.txt_Buscar_orden_trabajo.Clear()
-        frm_Movimiento_Orden.ShowDialog()
-        frm_Movimiento_Orden.dgvMovimiento_Orden.ClearSelection()
     End Sub
 
     Dim hora As Integer
@@ -1521,6 +1503,16 @@ Public Class frm_Principal
         frm_listado_orden_trabajo_ampliada.btnVer.Visible = True
         frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = True
         frm_listado_orden_trabajo_ampliada.MdiParent = Me
+
+        'frm_listado_orden_trabajo_ampliada.rbtNroOrden.Checked = True
+        'frm_listado_orden_trabajo_ampliada.txt_Buscar_orden_trabajo.Enabled = True
+
+        'frm_listado_orden_trabajo_ampliada.rbtCliente.Enabled = False
+        'frm_listado_orden_trabajo_ampliada.txt_Buscar_Cliente.Enabled = False
+
+        'frm_listado_orden_trabajo_ampliada.rbtFechaEntrega.Enabled = False
+        'frm_listado_orden_trabajo_ampliada.dtp_Buscar_Fecha_Entrega.Enabled = False
+
         frm_listado_orden_trabajo_ampliada.Show()
         frm_listado_orden_trabajo_ampliada.dgvLista_Orden_Trabajo.ClearSelection()
     End Sub
@@ -1684,5 +1676,27 @@ Public Class frm_Principal
         frm_retrabajo.GroupPliegoEntero.Enabled = False
         frm_retrabajo.Show()
         frm_retrabajo.dgvListado_ReTrabajo.ClearSelection()
+    End Sub
+
+    Private Sub btnManualUsuario_Click(sender As System.Object, e As System.EventArgs) Handles btnManualUsuario.Click
+        frm_VerMasDetalles.Show()
+    End Sub
+
+    Private Sub MovimientoOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles MovimientoOrdenToolStripMenuItem.Click
+        frm_Movimiento_Orden.txt_Buscar_orden_trabajo.Clear()
+        frm_Movimiento_Orden.ShowDialog()
+        frm_Movimiento_Orden.dgvMovimiento_Orden.ClearSelection()
+    End Sub
+
+    Private Sub DiariasPorColaboradorToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles DiariasPorColaboradorToolStripMenuItem1.Click
+        frm_Generar_Informe.MdiParent = Me
+        frm_Generar_Informe.Show()
+        frm_Generar_Informe.btn_Totales_Mensuales_por_Colaborador.Enabled = False
+    End Sub
+
+    Private Sub MensualesPorSectorToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles MensualesPorSectorToolStripMenuItem1.Click
+        frm_Generar_Informe.MdiParent = Me
+        frm_Generar_Informe.Show()
+        frm_Generar_Informe.btnTotales_por_Dia.Enabled = False
     End Sub
 End Class
