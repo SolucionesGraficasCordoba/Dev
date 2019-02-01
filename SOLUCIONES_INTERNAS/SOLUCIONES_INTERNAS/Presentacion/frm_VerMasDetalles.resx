@@ -120,78 +120,87 @@
   <data name="TextBox3.Text" xml:space="preserve">
     <value>El formulario PRINCIPAL contiene las siguientes pestañas:
 
-- USUARIO:  * nuevo: da de alta a un nuevo usuario.
-	   * modificar: actualiza los datos de un usuario existente.
-	   * eliminar: da de baja a un usuario.
-	   * consultar: muestra datos de los usuarios.
+- USUARIO:  
+* nuevo: da de alta a un nuevo usuario.
+* modificar: actualiza los datos de un usuario existente.
+ * eliminar: da de baja a un usuario.
+ * consultar: muestra datos de los usuarios.
 
-- COLABORADOR: * nuevo: da de alta a un nuevo colaborador.
-	           * modificar: actualiza los datos de un colaborador existente.
-	           * eliminar: da de baja a un colaborador.
-	           * consultar: muestra datos de los colaboradores.
+- COLABORADOR: 
+* nuevo: da de alta a un nuevo colaborador.
+ * modificar: actualiza los datos de un colaborador existente.
+* eliminar: da de baja a un colaborador.
+* consultar: muestra datos de los colaboradores.
 
-- VENDEDOR: * nuevo: da de alta a un nuevo vendedor.
-	      * modificar: actualiza los datos de un vendedor existente.
-	      * eliminar: da de baja a un vendedor.
-	      * consultar: muestra datos de los vendedores.
+- VENDEDOR: 
+* nuevo: da de alta a un nuevo vendedor.
+* modificar: actualiza los datos de un vendedor existente.
+* eliminar: da de baja a un vendedor.
+* consultar: muestra datos de los vendedores.
 
-- CLIENTE:   * nuevo: da de alta a un nuevo cliente.
-	   * modificar: actualiza los datos de un cliente existente.
-	   * eliminar: da de baja a un cliente.
-	   * consultar: muestra datos de los clientes.
+- CLIENTE:   
+* nuevo: da de alta a un nuevo cliente.
+* modificar: actualiza los datos de un cliente existente.
+* eliminar: da de baja a un cliente.
+* consultar: muestra datos de los clientes.
 
-- PIEZA:   * nuevo: da de alta a un nueva pieza.
-	 * modificar: actualiza los datos de una pieza existente.
-	 * eliminar: da de baja a una pieza.
-	 * consultar: muestra datos de las piezas.
-
-
-- SECTOR: * nuevo: da de alta a un nuevo sector.
-	  * modificar: actualiza los datos de un sector existente.
-	  * eliminar: da de baja a un sector.
-	  * consultar: muestra datos de los sectores.
-
-
-- TAREA:  * nuevo: da de alta a una nueva tarea.
-	 * modificar: actualiza los datos de una tarea existente.
-	 * eliminar: da de baja a una tarea.
-	 * consultar: muestra datos de las tareas.
+- PIEZA:   
+* nuevo: da de alta a un nueva pieza.
+* modificar: actualiza los datos de una pieza existente.
+* eliminar: da de baja a una pieza.
+* consultar: muestra datos de las piezas.
 
 
-- PRODUCTO: * Gestión de Productos 
-		° nuevo: da de alta a un nuevo producto.
-		° modificar: actualiza los datos de un producto existente.
-		° eliminar: da de baja a un producto.
-	          * Stock de Productos
-		° alta: da de alta una nueva cantidad de un producto.
-		° baja: da de baja una cantidad de un producto.
-		° consultar productos: muestra datos de los productos.
-		° consultar movimientos: muestra altas y bajas de los productos.
+- SECTOR: 
+* nuevo: da de alta a un nuevo sector.
+* modificar: actualiza los datos de un sector existente.
+* eliminar: da de baja a un sector.
+* consultar: muestra datos de los sectores.
 
-- ORDEN TRABAJO: * nuevo: da de alta a una nueva orden de trabajo.
-	                    * modificar: actualiza los datos de una orden de trabajo existente.
-	                    * eliminar: da de baja a una orden de trabajo.
-	                    * consultar: muestra datos de las orden de trabajo.
+- TAREA:  
+* nuevo: da de alta a una nueva tarea.
+* modificar: actualiza los datos de una tarea existente.
+* eliminar: da de baja a una tarea.
+* consultar: muestra datos de las tareas.
 
-- RE-TRABAJO: * Repetición de Chapas 
-		  ° nuevo: da de alta a un nueva repetición de chapas.
-		  ° eliminar: da de baja a una repetición de chapas.
-	        * Digital / Offset
-		  ° nuevo: da de alta a un nuevo re-trabajo de digital/offset.
-		  ° eliminar: da de baja a un nuevo re-trabajo de digital/offset.
- 	        * consultar: 
-		  ° Repetición de Chapas: muestra datos de re-trabajo respecto a la repetición de chapas.
-		  ° Digital / Offset: muestra datos de re-trabajo de digital7offset.
+- PRODUCTO: 
+* Gestión de Productos 
+          ° nuevo: da de alta a un nuevo producto.
+          ° modificar: actualiza los datos de un producto existente.
+          ° eliminar: da de baja a un producto.
+* Stock de Productos
+           ° alta: da de alta una nueva cantidad de un producto.
+           ° baja: da de baja una cantidad de un producto.
+           ° consultar productos: muestra datos de los productos.
+           ° consultar movimientos: muestra altas y bajas de los productos.
+
+- ORDEN TRABAJO: 
+* nuevo: da de alta a una nueva orden de trabajo.
+* modificar: actualiza los datos de una orden de trabajo existente.
+* eliminar: da de baja a una orden de trabajo.
+* consultar: muestra datos de las orden de trabajo.
+
+- RE-TRABAJO: 
+* Repetición de Chapas 
+                ° nuevo: da de alta a un nueva repetición de chapas.
+	° eliminar: da de baja a una repetición de chapas.
+* Digital / Offset
+	° nuevo: da de alta a un nuevo re-trabajo de digital/offset.
+	 ° eliminar: da de baja a un nuevo re-trabajo de digital/offset.
+                 ° consultar: 
+	 ° Repetición de Chapas: muestra datos de re-trabajo respecto a la repetición de chapas.
+	 ° Digital / Offset: muestra datos de re-trabajo de digital7offset.
 			
 - ETIQUETAS: genera etiquetas.
 
-- ESTADISTICAS: * Tareas
-		 °Diarias por Colaborador: muestra los tiempos estimado y real de cada colaborador dentro del mes.
-		 °Mensuales por Sector: muestra los tiempos estimados y reales de cada sector.
+- ESTADISTICAS: 
+* Tareas
+	°Diarias por Colaborador: muestra los tiempos estimado y real de cada colaborador dentro del mes.
+	°Mensuales por Sector: muestra los tiempos estimados y reales de cada sector.
 
 - CORREO ELECTRONICO: área en construcción.
 
-- ACERCA DE: describe mas detalladamente las partes más importantes del sistema.</value>
+- ACERCA DE: hace referencia a las partes más importantes del sistema.</value>
   </data>
   <data name="TextBox2.Text" xml:space="preserve">
     <value>
@@ -267,5 +276,77 @@ El formulario de TAREA se carga de la siguiente manera:
                 la orden relacionada a la tarea que se les asigno. 
 -	BOTON GUARDAR: guarda la información cargada. 
 -	BOTON CANCELAR: cierra el formulario sin guardar los cambios.</value>
+  </data>
+  <data name="TextBox4.Text" xml:space="preserve">
+    <value>El formulario de PRODUCTO consta de los siguientes datos: 
+
+- CAMPO CODIGO: código del producto.
+- CAMPO DESCRIPCION: descripción del producto.
+- STOCK MINIMO: stock mínimo actual de un producto.
+- CANTIDAD EN STOCK: cantidad de stock de un producto.
+
+- BOTON GUARDAR: guardará el nuevo producto.
+- BOTON ACTUALIZAR: modificará los datos de un producto.
+- BOTON EXPORTAR A PDF: generará un pdf mostrando los datos de un producto.
+- BOTON ELIMINAR: borrará un producto seleccionado.
+- BOTON CANCELAR:cerrará el formulario sin realizar cambios.
+- CHECK PRODUCTO: se buscará por nombre de producto.
+- CHECK CODIGO: se buscará por código de producto.
+- GRILLA PRODUCTOS: muestra el listado de todos los productos.
+
+-----------------------------------------------------------------------------
+
+FUNCIONAMIENTO FORMULARIO PRODUCTO: 
+
+1 - NUEVO PRODUCTO: 
+- completar todos los campos necesarios(campos con asterisco).
+- el botón guardar, guardará el producto.
+- los botones ACTUALIZAR, ELIMINAR, EXPORTAR A PDF estarán deshabilitados.
+- la grilla estará deshabilitada.
+
+2 - ACTUALIZAR PRODUCTO: 
+- se seleccionará de la grilla un producto al que se desea modificar sus datos.
+- el botón ACTUALIZAR, modificará los datos.
+- los botones GUARDAR, ELIMINAR, EXPORTAR A PDF estarán deshabilitados.
+ - se podrán buscar los productos por su nombre o por su código, de acuerdo a lo que se seleccione.
+
+3 - ELIMINAR PRODUCTO: 
+- se seleccionará de la grilla un producto al que se desea eliminar.
+ - el botón ELIMINAR, borrará el producto.
+ - los botones GUARDAR, ACTUALIZAR, EXPORTAR A PDF estarán deshabilitados.
+- se podrán buscar los productos por su nombre o por su código, de acuerdo a lo que se seleccione.
+
+4 - CONSULTAR PRODUCTO: 
+- se seleccionará de la grilla un producto al que se desea consultar sus datos.
+- los datos seleccionados se mostrarán en su campo.
+- los botones GUARDAR, ACTUALIZAR, ELIMINAR, EXPORTAR A PDF estarán deshabilitados.
+- se podrán buscar los productos por su nombre o por su código, de acuerdo a lo que se seleccione.
+
+-------------------------------------------------------------------------------------------------------
+
+El formulario de ALTA/BAJA PRODUCTOS consta de los siguientes datos: 
+
+- CAMPO CODIGO: código del producto.
+- CAMPO DESCRIPCION: descripción del producto.
+- COMBO TIPO DE MOVIMIENTO: alta o baja del producto.
+- CAMPO ORDEN: número de orden de trabajo relacionada.
+- CAMPO CANTIDAD: nueva cantidad que se agregará al stock.
+- CAMPO INGRESE NOMBRE: búsqueda por nombre de producto.
+- BOTON BUSCAR ORDEN(...): abrirá el formulario de órdenes del gual se seleccionará mediante un doble click la orden seleccionada.
+- BOTON INGRESAR STOCK: guardará la cantidad del producto la cual se actualizará a la cantidad actual.
+- BOTON CANCELAR: cerrará el formulario sin hacer cambios.
+- GRILLA: muestra el listado de productos existentes.
+-----------------------------------------------------------------------------------------------------------------
+
+CAMPOS Y FUNCIONAMIENTO DE FORMULARIO MOVIMIENTO DE PRODUCTOS: 
+
+- COMBO MES: meses del año.
+- CAMPO PRODUCTO: búsqueda por nombre de producto.
+- GRILLA MOVIMIENTO DE PRODUCTOS: muestra el movimiento de un producto seleccionado.
+- BOTON EXPORTAR A PDF: genera un pdf con el movimiento(alta y baja) de un producto.
+- BOTON CANCELAR: cierra el formulario sin haber cambios.
+
+1 - se elegirá del combo el mes Y el producto a buscar
+2- la grilla mostrará las altas y bajas del producto en el mes seleccionado.</value>
   </data>
 </root>

@@ -38,10 +38,8 @@ Partial Class frm_Listado_Movimientos
         '
         Me.GroupDetallesOrden.Controls.Add(Me.cboMes)
         Me.GroupDetallesOrden.Controls.Add(Me.Label31)
-        Me.GroupDetallesOrden.Controls.Add(Me.btnExportaraPDF)
         Me.GroupDetallesOrden.Controls.Add(Me.txt_Buscar_Producto)
         Me.GroupDetallesOrden.Controls.Add(Me.Label8)
-        Me.GroupDetallesOrden.Controls.Add(Me.btn_Cancelar)
         Me.GroupDetallesOrden.Controls.Add(Me.dgv_movimientos)
         Me.GroupDetallesOrden.Location = New System.Drawing.Point(12, 8)
         Me.GroupDetallesOrden.Name = "GroupDetallesOrden"
@@ -70,9 +68,9 @@ Partial Class frm_Listado_Movimientos
         '
         'btnExportaraPDF
         '
-        Me.btnExportaraPDF.Location = New System.Drawing.Point(409, 383)
+        Me.btnExportaraPDF.Location = New System.Drawing.Point(421, 426)
         Me.btnExportaraPDF.Name = "btnExportaraPDF"
-        Me.btnExportaraPDF.Size = New System.Drawing.Size(90, 23)
+        Me.btnExportaraPDF.Size = New System.Drawing.Size(90, 33)
         Me.btnExportaraPDF.TabIndex = 40
         Me.btnExportaraPDF.Text = "Exportar a PDF"
         Me.btnExportaraPDF.UseVisualStyleBackColor = True
@@ -95,9 +93,9 @@ Partial Class frm_Listado_Movimientos
         '
         'btn_Cancelar
         '
-        Me.btn_Cancelar.Location = New System.Drawing.Point(505, 383)
+        Me.btn_Cancelar.Location = New System.Drawing.Point(517, 426)
         Me.btn_Cancelar.Name = "btn_Cancelar"
-        Me.btn_Cancelar.Size = New System.Drawing.Size(90, 23)
+        Me.btn_Cancelar.Size = New System.Drawing.Size(90, 33)
         Me.btn_Cancelar.TabIndex = 36
         Me.btn_Cancelar.Text = "Cancelar"
         Me.btn_Cancelar.UseVisualStyleBackColor = True
@@ -109,15 +107,17 @@ Partial Class frm_Listado_Movimientos
         Me.dgv_movimientos.Location = New System.Drawing.Point(8, 45)
         Me.dgv_movimientos.Name = "dgv_movimientos"
         Me.dgv_movimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_movimientos.Size = New System.Drawing.Size(587, 332)
+        Me.dgv_movimientos.Size = New System.Drawing.Size(587, 361)
         Me.dgv_movimientos.TabIndex = 32
         '
         'frm_Listado_Movimientos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(627, 432)
+        Me.ClientSize = New System.Drawing.Size(627, 468)
         Me.Controls.Add(Me.GroupDetallesOrden)
+        Me.Controls.Add(Me.btn_Cancelar)
+        Me.Controls.Add(Me.btnExportaraPDF)
         Me.Name = "frm_Listado_Movimientos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Listado de Movimientos"

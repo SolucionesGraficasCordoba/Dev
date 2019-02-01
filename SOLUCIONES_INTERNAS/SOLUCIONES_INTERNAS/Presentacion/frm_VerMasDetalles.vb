@@ -1,4 +1,6 @@
-﻿Public Class frm_VerMasDetalles
+﻿Imports System.Windows.Forms.Application
+
+Public Class frm_VerMasDetalles
 
     Private Sub frm_VerMasDetalles_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         ' txt_VerMasDetalles.SelectionStart = False
@@ -18,3 +20,4 @@
         Me.Dispose()
     End Sub
 End Class
+

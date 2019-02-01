@@ -44,7 +44,7 @@ Partial Class frm_Generar_Informe
         '
         Me.btnCancelar.Location = New System.Drawing.Point(681, 459)
         Me.btnCancelar.Name = "btnCancelar"
-        Me.btnCancelar.Size = New System.Drawing.Size(79, 23)
+        Me.btnCancelar.Size = New System.Drawing.Size(79, 33)
         Me.btnCancelar.TabIndex = 4
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
@@ -111,7 +111,7 @@ Partial Class frm_Generar_Informe
         '
         Me.btnGenerar_Informe.Location = New System.Drawing.Point(184, 459)
         Me.btnGenerar_Informe.Name = "btnGenerar_Informe"
-        Me.btnGenerar_Informe.Size = New System.Drawing.Size(108, 23)
+        Me.btnGenerar_Informe.Size = New System.Drawing.Size(108, 33)
         Me.btnGenerar_Informe.TabIndex = 35
         Me.btnGenerar_Informe.Text = "Generar Informe"
         Me.btnGenerar_Informe.UseVisualStyleBackColor = True
@@ -139,7 +139,7 @@ Partial Class frm_Generar_Informe
         '
         Me.btnTotales_por_Dia.Location = New System.Drawing.Point(496, 459)
         Me.btnTotales_por_Dia.Name = "btnTotales_por_Dia"
-        Me.btnTotales_por_Dia.Size = New System.Drawing.Size(179, 23)
+        Me.btnTotales_por_Dia.Size = New System.Drawing.Size(179, 33)
         Me.btnTotales_por_Dia.TabIndex = 3
         Me.btnTotales_por_Dia.Text = "Totales por Día por Colaborador"
         Me.btnTotales_por_Dia.UseVisualStyleBackColor = True
@@ -148,7 +148,7 @@ Partial Class frm_Generar_Informe
         '
         Me.btn_Totales_Mensuales_por_Colaborador.Location = New System.Drawing.Point(298, 459)
         Me.btn_Totales_Mensuales_por_Colaborador.Name = "btn_Totales_Mensuales_por_Colaborador"
-        Me.btn_Totales_Mensuales_por_Colaborador.Size = New System.Drawing.Size(192, 23)
+        Me.btn_Totales_Mensuales_por_Colaborador.Size = New System.Drawing.Size(192, 33)
         Me.btn_Totales_Mensuales_por_Colaborador.TabIndex = 41
         Me.btn_Totales_Mensuales_por_Colaborador.Text = "Totales Mensuales por Colaborador"
         Me.btn_Totales_Mensuales_por_Colaborador.UseVisualStyleBackColor = True
@@ -158,7 +158,7 @@ Partial Class frm_Generar_Informe
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
-        Me.ClientSize = New System.Drawing.Size(772, 490)
+        Me.ClientSize = New System.Drawing.Size(772, 504)
         Me.Controls.Add(Me.btn_Totales_Mensuales_por_Colaborador)
         Me.Controls.Add(Me.btnTotales_por_Dia)
         Me.Controls.Add(Me.GroupBox1)

@@ -261,7 +261,7 @@ Partial Class frm_Usuario
         '
         Me.cbo_perfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_perfil.FormattingEnabled = True
-        Me.cbo_perfil.Items.AddRange(New Object() {"ADMINISTRADOR", "COLABORADOR", "GERENCIA", "SUPERVISOR", "TAREA"})
+        Me.cbo_perfil.Items.AddRange(New Object() {"ADMINISTRADOR", "COLABORADOR", "GERENCIA", "SUPERVISOR"})
         Me.cbo_perfil.Location = New System.Drawing.Point(94, 93)
         Me.cbo_perfil.Name = "cbo_perfil"
         Me.cbo_perfil.Size = New System.Drawing.Size(272, 21)
