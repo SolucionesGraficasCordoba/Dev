@@ -156,7 +156,7 @@
         txt_cantidad_producto_Gran_Formato.Clear()
         cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
         txtTamaño_Producto_Gran_Formato.Clear()
-        txtSustrato_Gran_Formato.Clear()
+        cboMaterial.SelectedIndex = -1
         cboCalidad_Gran_Formato.SelectedIndex = -1
         cboSistema_Gran_Formato.SelectedIndex = -1
     End Sub
@@ -371,7 +371,7 @@
             End If
 
             detalle.tamaño_gran_formato = txtTamaño_Producto_Gran_Formato.Text
-            detalle.sustrato_gran_formato = txtSustrato_Gran_Formato.Text
+            detalle.sustrato_gran_formato = cboMaterial.Text
             detalle.calidad_gran_formato = cboCalidad_Gran_Formato.SelectedItem
             detalle.sistema_gran_formato = cboSistema_Gran_Formato.SelectedItem
             '------------------------------------------------------------------------------------

@@ -1455,7 +1455,7 @@ Public Class frm_Principal
         frm_Orden_Trabajo_Ampliada.txt_cantidad_producto_Gran_Formato.Clear()
         frm_Orden_Trabajo_Ampliada.cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
         frm_Orden_Trabajo_Ampliada.txtTamaño_Producto_Gran_Formato.Clear()
-        frm_Orden_Trabajo_Ampliada.txtSustrato_Gran_Formato.Clear()
+        frm_Orden_Trabajo_Ampliada.cboMaterial.SelectedIndex = -1
         frm_Orden_Trabajo_Ampliada.cboCalidad_Gran_Formato.SelectedIndex = -1
         frm_Orden_Trabajo_Ampliada.cboSistema_Gran_Formato.SelectedIndex = -1
         'TERMINACION

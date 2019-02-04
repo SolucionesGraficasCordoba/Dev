@@ -115,7 +115,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboSistema_Gran_Formato = New System.Windows.Forms.ComboBox()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label40 = New System.Windows.Forms.Label()
-        Me.txtSustrato_Gran_Formato = New System.Windows.Forms.TextBox()
         Me.GroupGranFormato = New System.Windows.Forms.GroupBox()
         Me.GroupTerminacion = New System.Windows.Forms.GroupBox()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -169,6 +168,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboImpresora_Offset = New System.Windows.Forms.ComboBox()
         Me.cboTipo_Impresion_Offset = New System.Windows.Forms.ComboBox()
         Me.Label35 = New System.Windows.Forms.Label()
+        Me.cboMaterial = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupProducto_Soportes.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -981,7 +981,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         Me.Label26.AutoSize = True
         Me.Label26.ForeColor = System.Drawing.Color.Red
-        Me.Label26.Location = New System.Drawing.Point(163, 23)
+        Me.Label26.Location = New System.Drawing.Point(177, 23)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(11, 13)
         Me.Label26.TabIndex = 141
@@ -1003,7 +1003,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboPiezas_Producto_Gran_Formato.FormattingEnabled = True
         Me.cboPiezas_Producto_Gran_Formato.Location = New System.Drawing.Point(80, 36)
         Me.cboPiezas_Producto_Gran_Formato.Name = "cboPiezas_Producto_Gran_Formato"
-        Me.cboPiezas_Producto_Gran_Formato.Size = New System.Drawing.Size(134, 21)
+        Me.cboPiezas_Producto_Gran_Formato.Size = New System.Drawing.Size(163, 21)
         Me.cboPiezas_Producto_Gran_Formato.TabIndex = 49
         '
         'cboCalidad_Gran_Formato
@@ -1014,13 +1014,13 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboCalidad_Gran_Formato.Location = New System.Drawing.Point(643, 36)
         Me.cboCalidad_Gran_Formato.MaxLength = 25
         Me.cboCalidad_Gran_Formato.Name = "cboCalidad_Gran_Formato"
-        Me.cboCalidad_Gran_Formato.Size = New System.Drawing.Size(123, 21)
+        Me.cboCalidad_Gran_Formato.Size = New System.Drawing.Size(147, 21)
         Me.cboCalidad_Gran_Formato.TabIndex = 52
         '
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(595, 39)
+        Me.Label29.Location = New System.Drawing.Point(692, 19)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(42, 13)
         Me.Label29.TabIndex = 139
@@ -1029,7 +1029,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(224, 19)
+        Me.Label30.Location = New System.Drawing.Point(269, 19)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(110, 13)
         Me.Label30.TabIndex = 136
@@ -1038,11 +1038,11 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(127, 19)
+        Me.Label31.Location = New System.Drawing.Point(141, 19)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(38, 13)
+        Me.Label31.Size = New System.Drawing.Size(50, 13)
         Me.Label31.TabIndex = 137
-        Me.Label31.Text = "Piezas"
+        Me.Label31.Text = "Producto"
         '
         'Label32
         '
@@ -1055,10 +1055,10 @@ Partial Class frm_Orden_Trabajo_Ampliada
         '
         'txtTamaño_Producto_Gran_Formato
         '
-        Me.txtTamaño_Producto_Gran_Formato.Location = New System.Drawing.Point(220, 36)
+        Me.txtTamaño_Producto_Gran_Formato.Location = New System.Drawing.Point(249, 36)
         Me.txtTamaño_Producto_Gran_Formato.MaxLength = 15
         Me.txtTamaño_Producto_Gran_Formato.Name = "txtTamaño_Producto_Gran_Formato"
-        Me.txtTamaño_Producto_Gran_Formato.Size = New System.Drawing.Size(123, 20)
+        Me.txtTamaño_Producto_Gran_Formato.Size = New System.Drawing.Size(147, 20)
         Me.txtTamaño_Producto_Gran_Formato.TabIndex = 50
         '
         'txt_cantidad_producto_Gran_Formato
@@ -1074,16 +1074,16 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboSistema_Gran_Formato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSistema_Gran_Formato.FormattingEnabled = True
         Me.cboSistema_Gran_Formato.Items.AddRange(New Object() {"SOLVENTE", "LATEX", "UV"})
-        Me.cboSistema_Gran_Formato.Location = New System.Drawing.Point(831, 36)
+        Me.cboSistema_Gran_Formato.Location = New System.Drawing.Point(796, 36)
         Me.cboSistema_Gran_Formato.MaxLength = 25
         Me.cboSistema_Gran_Formato.Name = "cboSistema_Gran_Formato"
-        Me.cboSistema_Gran_Formato.Size = New System.Drawing.Size(111, 21)
+        Me.cboSistema_Gran_Formato.Size = New System.Drawing.Size(146, 21)
         Me.cboSistema_Gran_Formato.TabIndex = 53
         '
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(779, 39)
+        Me.Label33.Location = New System.Drawing.Point(846, 19)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(44, 13)
         Me.Label33.TabIndex = 144
@@ -1092,23 +1092,15 @@ Partial Class frm_Orden_Trabajo_Ampliada
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(350, 39)
+        Me.Label40.Location = New System.Drawing.Point(497, 19)
         Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(46, 13)
+        Me.Label40.Size = New System.Drawing.Size(44, 13)
         Me.Label40.TabIndex = 146
-        Me.Label40.Text = "Sustrato"
-        '
-        'txtSustrato_Gran_Formato
-        '
-        Me.txtSustrato_Gran_Formato.Location = New System.Drawing.Point(402, 36)
-        Me.txtSustrato_Gran_Formato.MaxLength = 25
-        Me.txtSustrato_Gran_Formato.Name = "txtSustrato_Gran_Formato"
-        Me.txtSustrato_Gran_Formato.Size = New System.Drawing.Size(178, 20)
-        Me.txtSustrato_Gran_Formato.TabIndex = 51
+        Me.Label40.Text = "Material"
         '
         'GroupGranFormato
         '
-        Me.GroupGranFormato.Controls.Add(Me.txtSustrato_Gran_Formato)
+        Me.GroupGranFormato.Controls.Add(Me.cboMaterial)
         Me.GroupGranFormato.Controls.Add(Me.Label40)
         Me.GroupGranFormato.Controls.Add(Me.txt_cantidad_producto_Gran_Formato)
         Me.GroupGranFormato.Controls.Add(Me.txtTamaño_Producto_Gran_Formato)
@@ -1675,6 +1667,15 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Label35.TabIndex = 139
         Me.Label35.Text = "    Tipo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Impresión"
         '
+        'cboMaterial
+        '
+        Me.cboMaterial.FormattingEnabled = True
+        Me.cboMaterial.Items.AddRange(New Object() {"", "Acrílico 2mm.", "Acrílico 3mm.", "Acrílico 5mm.", "Acrílico 10mm.", "Cartón Estructural 10mm.", "Cartón Estructural 13mm.", "Cartón Estructural 16mm.", "Foam 3mm.", "Foam 5mm.", "Foam 10mm.", "Mdf 3mm.", "Mdf 5mm.", "Mdf 9mm.", "Mdf 12mm.", "Mdf 15mm.", "Mdf 18mm.", "Pai 3mm.", "Pai 5mm.", "Pai 10mm.", "Plástico Corrugado 1mm.", "Plástico Corrugado 2mm.", "Plástico Corrugado 3mm.", "Plástico Corrugado 4mm.", "Plástico Corrugado 7.2mm.", "Plástico Corrugado 8mm.", "Pvc 3mm.", "Pvc 5mm.", "Pvc 10mm."})
+        Me.cboMaterial.Location = New System.Drawing.Point(402, 36)
+        Me.cboMaterial.Name = "cboMaterial"
+        Me.cboMaterial.Size = New System.Drawing.Size(235, 21)
+        Me.cboMaterial.TabIndex = 147
+        '
         'frm_Orden_Trabajo_Ampliada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1781,7 +1782,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
     Friend WithEvents cboSistema_Gran_Formato As System.Windows.Forms.ComboBox
     Friend WithEvents Label33 As System.Windows.Forms.Label
     Friend WithEvents Label40 As System.Windows.Forms.Label
-    Friend WithEvents txtSustrato_Gran_Formato As System.Windows.Forms.TextBox
     Friend WithEvents GroupGranFormato As System.Windows.Forms.GroupBox
     Friend WithEvents GroupTerminacion As System.Windows.Forms.GroupBox
     Friend WithEvents txt_descripcion_terminacion As System.Windows.Forms.TextBox
@@ -1861,4 +1861,5 @@ Partial Class frm_Orden_Trabajo_Ampliada
     Friend WithEvents chkBarniz As System.Windows.Forms.CheckBox
     Friend WithEvents chkLaca_UV As System.Windows.Forms.CheckBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
+    Friend WithEvents cboMaterial As System.Windows.Forms.ComboBox
 End Class

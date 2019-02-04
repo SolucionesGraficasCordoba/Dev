@@ -121,6 +121,12 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeletePIEZA1(instance As PIEZA1)
     End Sub
+  Partial Private Sub InsertSOPORTE(instance As SOPORTE)
+    End Sub
+  Partial Private Sub UpdateSOPORTE(instance As SOPORTE)
+    End Sub
+  Partial Private Sub DeleteSOPORTE(instance As SOPORTE)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -235,6 +241,12 @@ Partial Public Class DataS_Interno
 	Public ReadOnly Property PIEZA1() As System.Data.Linq.Table(Of PIEZA1)
 		Get
 			Return Me.GetTable(Of PIEZA1)
+		End Get
+	End Property
+	
+	Public ReadOnly Property SOPORTE() As System.Data.Linq.Table(Of SOPORTE)
+		Get
+			Return Me.GetTable(Of SOPORTE)
 		End Get
 	End Property
 End Class
@@ -5355,5 +5367,155 @@ Partial Public Class PIEZA1
 	Private Sub detach_DETALLE_ORDEN_TRABAJO(ByVal entity As DETALLE_ORDEN_TRABAJO)
 		Me.SendPropertyChanging
 		entity.PIEZA1 = Nothing
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.SOPORTE")>  _
+Partial Public Class SOPORTE
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _SOP_id_soporte As Integer
+	
+	Private _SOP_nombre_soporte As String
+	
+	Private _SOP_ubicacion As String
+	
+	Private _SOP_campo1 As String
+	
+	Private _SOP_campo2 As String
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnSOP_id_soporteChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnSOP_id_soporteChanged()
+    End Sub
+    Partial Private Sub OnSOP_nombre_soporteChanging(value As String)
+    End Sub
+    Partial Private Sub OnSOP_nombre_soporteChanged()
+    End Sub
+    Partial Private Sub OnSOP_ubicacionChanging(value As String)
+    End Sub
+    Partial Private Sub OnSOP_ubicacionChanged()
+    End Sub
+    Partial Private Sub OnSOP_campo1Changing(value As String)
+    End Sub
+    Partial Private Sub OnSOP_campo1Changed()
+    End Sub
+    Partial Private Sub OnSOP_campo2Changing(value As String)
+    End Sub
+    Partial Private Sub OnSOP_campo2Changed()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SOP_id_soporte", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property SOP_id_soporte() As Integer
+		Get
+			Return Me._SOP_id_soporte
+		End Get
+		Set
+			If ((Me._SOP_id_soporte = value)  _
+						= false) Then
+				Me.OnSOP_id_soporteChanging(value)
+				Me.SendPropertyChanging
+				Me._SOP_id_soporte = value
+				Me.SendPropertyChanged("SOP_id_soporte")
+				Me.OnSOP_id_soporteChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SOP_nombre_soporte", DbType:="VarChar(30)")>  _
+	Public Property SOP_nombre_soporte() As String
+		Get
+			Return Me._SOP_nombre_soporte
+		End Get
+		Set
+			If (String.Equals(Me._SOP_nombre_soporte, value) = false) Then
+				Me.OnSOP_nombre_soporteChanging(value)
+				Me.SendPropertyChanging
+				Me._SOP_nombre_soporte = value
+				Me.SendPropertyChanged("SOP_nombre_soporte")
+				Me.OnSOP_nombre_soporteChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SOP_ubicacion", DbType:="VarChar(1)")>  _
+	Public Property SOP_ubicacion() As String
+		Get
+			Return Me._SOP_ubicacion
+		End Get
+		Set
+			If (String.Equals(Me._SOP_ubicacion, value) = false) Then
+				Me.OnSOP_ubicacionChanging(value)
+				Me.SendPropertyChanging
+				Me._SOP_ubicacion = value
+				Me.SendPropertyChanged("SOP_ubicacion")
+				Me.OnSOP_ubicacionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SOP_campo1", DbType:="VarChar(50)")>  _
+	Public Property SOP_campo1() As String
+		Get
+			Return Me._SOP_campo1
+		End Get
+		Set
+			If (String.Equals(Me._SOP_campo1, value) = false) Then
+				Me.OnSOP_campo1Changing(value)
+				Me.SendPropertyChanging
+				Me._SOP_campo1 = value
+				Me.SendPropertyChanged("SOP_campo1")
+				Me.OnSOP_campo1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SOP_campo2", DbType:="VarChar(50)")>  _
+	Public Property SOP_campo2() As String
+		Get
+			Return Me._SOP_campo2
+		End Get
+		Set
+			If (String.Equals(Me._SOP_campo2, value) = false) Then
+				Me.OnSOP_campo2Changing(value)
+				Me.SendPropertyChanging
+				Me._SOP_campo2 = value
+				Me.SendPropertyChanged("SOP_campo2")
+				Me.OnSOP_campo2Changed
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
 	End Sub
 End Class
