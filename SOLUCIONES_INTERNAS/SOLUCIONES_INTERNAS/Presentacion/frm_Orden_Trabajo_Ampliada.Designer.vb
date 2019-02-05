@@ -116,6 +116,7 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Label33 = New System.Windows.Forms.Label()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.GroupGranFormato = New System.Windows.Forms.GroupBox()
+        Me.cboMaterial = New System.Windows.Forms.ComboBox()
         Me.GroupTerminacion = New System.Windows.Forms.GroupBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.chkTermosellado = New System.Windows.Forms.CheckBox()
@@ -168,7 +169,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.cboImpresora_Offset = New System.Windows.Forms.ComboBox()
         Me.cboTipo_Impresion_Offset = New System.Windows.Forms.ComboBox()
         Me.Label35 = New System.Windows.Forms.Label()
-        Me.cboMaterial = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupProducto_Soportes.SuspendLayout()
         Me.GroupBox8.SuspendLayout()
@@ -1121,6 +1121,15 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.GroupGranFormato.TabStop = False
         Me.GroupGranFormato.Text = "Gran Formato"
         '
+        'cboMaterial
+        '
+        Me.cboMaterial.FormattingEnabled = True
+        Me.cboMaterial.Location = New System.Drawing.Point(402, 36)
+        Me.cboMaterial.MaxLength = 100
+        Me.cboMaterial.Name = "cboMaterial"
+        Me.cboMaterial.Size = New System.Drawing.Size(235, 21)
+        Me.cboMaterial.TabIndex = 147
+        '
         'GroupTerminacion
         '
         Me.GroupTerminacion.Controls.Add(Me.Label17)
@@ -1666,15 +1675,6 @@ Partial Class frm_Orden_Trabajo_Ampliada
         Me.Label35.Size = New System.Drawing.Size(52, 26)
         Me.Label35.TabIndex = 139
         Me.Label35.Text = "    Tipo" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Impresión"
-        '
-        'cboMaterial
-        '
-        Me.cboMaterial.FormattingEnabled = True
-        Me.cboMaterial.Items.AddRange(New Object() {"", "Acrílico 2mm.", "Acrílico 3mm.", "Acrílico 5mm.", "Acrílico 10mm.", "Cartón Estructural 10mm.", "Cartón Estructural 13mm.", "Cartón Estructural 16mm.", "Foam 3mm.", "Foam 5mm.", "Foam 10mm.", "Mdf 3mm.", "Mdf 5mm.", "Mdf 9mm.", "Mdf 12mm.", "Mdf 15mm.", "Mdf 18mm.", "Pai 3mm.", "Pai 5mm.", "Pai 10mm.", "Plástico Corrugado 1mm.", "Plástico Corrugado 2mm.", "Plástico Corrugado 3mm.", "Plástico Corrugado 4mm.", "Plástico Corrugado 7.2mm.", "Plástico Corrugado 8mm.", "Pvc 3mm.", "Pvc 5mm.", "Pvc 10mm."})
-        Me.cboMaterial.Location = New System.Drawing.Point(402, 36)
-        Me.cboMaterial.Name = "cboMaterial"
-        Me.cboMaterial.Size = New System.Drawing.Size(235, 21)
-        Me.cboMaterial.TabIndex = 147
         '
         'frm_Orden_Trabajo_Ampliada
         '

@@ -24,10 +24,19 @@
         cboPiezas_Producto_Gran_Formato.DisplayMember = "PIE_nombre_pie"
         cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza"
 
+        Dim combomaterial = (From sop In datacontext.SOPORTE
+                         Select sop.SOP_id_soporte, sop.SOP_nombre_soporte, sop.SOP_ubicacion
+                         Where SOP_ubicacion = "G"
+                         Order By SOP_nombre_soporte Ascending)
+        cboMaterial.DataSource = combomaterial
+        cboMaterial.DisplayMember = "SOP_nombre_soporte"
+        cboMaterial.ValueMember = "SOP_id_soporte"
+
 
         If quienllamo_listado_orden_ampliada.Name <> frm_listado_orden_trabajo_ampliada.Name Then
             cboPiezas_Producto.SelectedIndex = -1
             cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
+            cboMaterial.SelectedIndex = -1
 
         Else
             cboPiezas_Producto.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
