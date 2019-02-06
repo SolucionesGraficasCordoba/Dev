@@ -344,7 +344,7 @@ El botón “actualizar” guardara los cambios realizados cerrando ambos formul
 </value>
   </data>
   <data name="RichTextBox5.Text" xml:space="preserve">
-    <value>FUNCIONAMIENTO MODIFICAR ORDEN:
+    <value>FUNCIONAMIENTO ELIMINAR ORDEN:
 
 -	BOTON AGREGAR PRODUCTO: este botón estará deshabilitado.
 
@@ -358,6 +358,25 @@ BOTON MODIFICAR PRODUCTO: este botón estará deshabilitado.
 -	
 -	BOTON ELIMINAR PRODUCTO: este botón se utilizara en el caso de que se desee eliminar un producto previamente seleccionado. Se seleccionara primero la orden (primera grilla) y luego el producto que desea (segunda grilla).
 -	Al presionarlo se mostrara una advertencia solicitando su confirmación. En caso de aceptar se eliminara el producto no pudiendo recuperar sus datos, en caso de no aceptar el formulario se cerrara y haber realizado ningún cambio.  
+-	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
+</value>
+  </data>
+  <data name="RichTextBox6.Text" xml:space="preserve">
+    <value>FUNCIONAMIENTO CONSULTAR ORDEN:
+
+-	BOTON AGREGAR PRODUCTO: este botón estara deshabilitado.
+
+-	BOTON ELIMINAR ORDEN: este botón estara deshabilitado.
+
+-	BOTON EXPORTAR A PDF: estará generará un pdf en el escritorio de la pc con la información de la orden y sus productos.
+
+-	BOTON VER: este botón se utilizara en el caso de que se desee consultar un producto previamente seleccionado. Se seleccionara primero la orden (primera grilla) y luego el producto que desea (segunda grilla). Todos los campos estarán deshabilitados.
+El botón “cancelar” cerrará el formulario volviendo al formulario principal.
+
+BOTON MODIFICAR PRODUCTO: este botón estara deshabilitado.
+
+-	BOTON ELIMINAR PRODUCTO: este botón estara deshabilitado.
+ 
 -	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
 </value>
   </data>
