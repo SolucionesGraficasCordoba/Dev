@@ -26,17 +26,35 @@ Partial Class frm_VerMasDetalles
         Me.Principal = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
         Me.Orden_Trabajo = New System.Windows.Forms.TabPage()
         Me.TabControl5 = New System.Windows.Forms.TabControl()
+        Me.TabPage15 = New System.Windows.Forms.TabPage()
+        Me.TabControl6 = New System.Windows.Forms.TabControl()
+        Me.TabPage16 = New System.Windows.Forms.TabPage()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
+        Me.TabPage17 = New System.Windows.Forms.TabPage()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
         Me.TabPage11 = New System.Windows.Forms.TabPage()
+        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabPage12 = New System.Windows.Forms.TabPage()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
         Me.TabPage13 = New System.Windows.Forms.TabPage()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.RichTextBox5 = New System.Windows.Forms.RichTextBox()
         Me.TabPage14 = New System.Windows.Forms.TabPage()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.RichTextBox6 = New System.Windows.Forms.RichTextBox()
         Me.Tarea = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TabControl7 = New System.Windows.Forms.TabControl()
+        Me.TabPage18 = New System.Windows.Forms.TabPage()
+        Me.TabPage19 = New System.Windows.Forms.TabPage()
         Me.Producto = New System.Windows.Forms.TabPage()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -57,24 +75,13 @@ Partial Class frm_VerMasDetalles
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.btnCerrar = New System.Windows.Forms.Button()
-        Me.TabPage15 = New System.Windows.Forms.TabPage()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
-        Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
-        Me.TabControl6 = New System.Windows.Forms.TabControl()
-        Me.TabPage16 = New System.Windows.Forms.TabPage()
-        Me.TabPage17 = New System.Windows.Forms.TabPage()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.RichTextBox5 = New System.Windows.Forms.RichTextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.RichTextBox6 = New System.Windows.Forms.RichTextBox()
+        Me.TabControl8 = New System.Windows.Forms.TabControl()
+        Me.TabPage20 = New System.Windows.Forms.TabPage()
+        Me.TabPage21 = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
@@ -90,18 +97,29 @@ Partial Class frm_VerMasDetalles
         Me.PictureBox13 = New System.Windows.Forms.PictureBox()
         Me.PictureBox15 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox19 = New System.Windows.Forms.PictureBox()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.TabPage22 = New System.Windows.Forms.TabPage()
+        Me.TabPage23 = New System.Windows.Forms.TabPage()
+        Me.TabPage24 = New System.Windows.Forms.TabPage()
+        Me.RichTextBox7 = New System.Windows.Forms.RichTextBox()
         Me.Principal.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Orden_Trabajo.SuspendLayout()
         Me.TabControl5.SuspendLayout()
+        Me.TabPage15.SuspendLayout()
+        Me.TabControl6.SuspendLayout()
+        Me.TabPage16.SuspendLayout()
+        Me.TabPage17.SuspendLayout()
         Me.TabPage11.SuspendLayout()
         Me.TabPage12.SuspendLayout()
         Me.TabPage13.SuspendLayout()
         Me.TabPage14.SuspendLayout()
         Me.Tarea.SuspendLayout()
+        Me.TabControl7.SuspendLayout()
+        Me.TabPage18.SuspendLayout()
         Me.Producto.SuspendLayout()
         Me.ReTrabajo.SuspendLayout()
         Me.TabControl2.SuspendLayout()
@@ -112,10 +130,9 @@ Partial Class frm_VerMasDetalles
         Me.TabPage2.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage3.SuspendLayout()
-        Me.TabPage15.SuspendLayout()
-        Me.TabControl6.SuspendLayout()
-        Me.TabPage16.SuspendLayout()
-        Me.TabPage17.SuspendLayout()
+        Me.TabControl8.SuspendLayout()
+        Me.TabPage20.SuspendLayout()
+        Me.TabPage21.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -131,6 +148,7 @@ Partial Class frm_VerMasDetalles
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -153,9 +171,9 @@ Partial Class frm_VerMasDetalles
         'TabPage1
         '
         Me.TabPage1.BackColor = System.Drawing.Color.DarkGray
+        Me.TabPage1.Controls.Add(Me.RichTextBox7)
         Me.TabPage1.Controls.Add(Me.Label3)
         Me.TabPage1.Controls.Add(Me.PictureBox3)
-        Me.TabPage1.Controls.Add(Me.TextBox3)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -172,18 +190,6 @@ Partial Class frm_VerMasDetalles
         Me.Label3.Size = New System.Drawing.Size(118, 13)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Formulario Principal"
-        '
-        'TextBox3
-        '
-        Me.TextBox3.Location = New System.Drawing.Point(16, 16)
-        Me.TextBox3.Multiline = True
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox3.Size = New System.Drawing.Size(485, 588)
-        Me.TextBox3.TabIndex = 0
-        Me.TextBox3.Text = resources.GetString("TextBox3.Text")
-        Me.TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Orden_Trabajo
         '
@@ -209,6 +215,93 @@ Partial Class frm_VerMasDetalles
         Me.TabControl5.Size = New System.Drawing.Size(927, 621)
         Me.TabControl5.TabIndex = 0
         '
+        'TabPage15
+        '
+        Me.TabPage15.Controls.Add(Me.TabControl6)
+        Me.TabPage15.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage15.Name = "TabPage15"
+        Me.TabPage15.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage15.Size = New System.Drawing.Size(919, 595)
+        Me.TabPage15.TabIndex = 4
+        Me.TabPage15.Text = "Componentes"
+        Me.TabPage15.UseVisualStyleBackColor = True
+        '
+        'TabControl6
+        '
+        Me.TabControl6.Controls.Add(Me.TabPage16)
+        Me.TabControl6.Controls.Add(Me.TabPage17)
+        Me.TabControl6.Location = New System.Drawing.Point(-2, 1)
+        Me.TabControl6.Name = "TabControl6"
+        Me.TabControl6.SelectedIndex = 0
+        Me.TabControl6.Size = New System.Drawing.Size(902, 602)
+        Me.TabControl6.TabIndex = 0
+        '
+        'TabPage16
+        '
+        Me.TabPage16.Controls.Add(Me.Label6)
+        Me.TabPage16.Controls.Add(Me.PictureBox6)
+        Me.TabPage16.Controls.Add(Me.RichTextBox2)
+        Me.TabPage16.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage16.Name = "TabPage16"
+        Me.TabPage16.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage16.Size = New System.Drawing.Size(894, 576)
+        Me.TabPage16.TabIndex = 0
+        Me.TabPage16.Text = "Formulario Orden Trabajo"
+        Me.TabPage16.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(585, 239)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(150, 13)
+        Me.Label6.TabIndex = 11
+        Me.Label6.Text = "Formulario Orden Trabajo"
+        '
+        'RichTextBox2
+        '
+        Me.RichTextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox2.Location = New System.Drawing.Point(14, 16)
+        Me.RichTextBox2.Name = "RichTextBox2"
+        Me.RichTextBox2.ReadOnly = True
+        Me.RichTextBox2.Size = New System.Drawing.Size(404, 545)
+        Me.RichTextBox2.TabIndex = 9
+        Me.RichTextBox2.Text = resources.GetString("RichTextBox2.Text")
+        '
+        'TabPage17
+        '
+        Me.TabPage17.Controls.Add(Me.Label8)
+        Me.TabPage17.Controls.Add(Me.RichTextBox4)
+        Me.TabPage17.Controls.Add(Me.PictureBox8)
+        Me.TabPage17.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage17.Name = "TabPage17"
+        Me.TabPage17.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage17.Size = New System.Drawing.Size(894, 576)
+        Me.TabPage17.TabIndex = 1
+        Me.TabPage17.Text = "Formulario Listado Ordenes"
+        Me.TabPage17.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(576, 239)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(195, 13)
+        Me.Label8.TabIndex = 11
+        Me.Label8.Text = "Formulario Listado Orden Trabajo"
+        '
+        'RichTextBox4
+        '
+        Me.RichTextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox4.Location = New System.Drawing.Point(14, 16)
+        Me.RichTextBox4.Name = "RichTextBox4"
+        Me.RichTextBox4.ReadOnly = True
+        Me.RichTextBox4.Size = New System.Drawing.Size(404, 545)
+        Me.RichTextBox4.TabIndex = 9
+        Me.RichTextBox4.Text = resources.GetString("RichTextBox4.Text")
+        '
         'TabPage11
         '
         Me.TabPage11.Controls.Add(Me.RichTextBox1)
@@ -221,6 +314,16 @@ Partial Class frm_VerMasDetalles
         Me.TabPage11.TabIndex = 0
         Me.TabPage11.Text = "Nuevo"
         Me.TabPage11.UseVisualStyleBackColor = True
+        '
+        'RichTextBox1
+        '
+        Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox1.Location = New System.Drawing.Point(18, 17)
+        Me.RichTextBox1.Name = "RichTextBox1"
+        Me.RichTextBox1.ReadOnly = True
+        Me.RichTextBox1.Size = New System.Drawing.Size(481, 558)
+        Me.RichTextBox1.TabIndex = 9
+        Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
         '
         'Label2
         '
@@ -249,6 +352,36 @@ Partial Class frm_VerMasDetalles
         Me.TabPage12.Text = "Agregar / Modificar"
         Me.TabPage12.UseVisualStyleBackColor = True
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(599, 119)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(101, 13)
+        Me.Label10.TabIndex = 16
+        Me.Label10.Text = "Actualizar Orden"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(599, 399)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(118, 13)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "Actualizar Producto"
+        '
+        'RichTextBox3
+        '
+        Me.RichTextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox3.Location = New System.Drawing.Point(20, 19)
+        Me.RichTextBox3.Name = "RichTextBox3"
+        Me.RichTextBox3.ReadOnly = True
+        Me.RichTextBox3.Size = New System.Drawing.Size(393, 549)
+        Me.RichTextBox3.TabIndex = 0
+        Me.RichTextBox3.Text = resources.GetString("RichTextBox3.Text")
+        '
         'TabPage13
         '
         Me.TabPage13.Controls.Add(Me.Label11)
@@ -264,15 +397,45 @@ Partial Class frm_VerMasDetalles
         Me.TabPage13.Text = "Eliminar"
         Me.TabPage13.UseVisualStyleBackColor = True
         '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(617, 26)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(89, 13)
+        Me.Label11.TabIndex = 23
+        Me.Label11.Text = "Eliminar Orden"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(617, 301)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(106, 13)
+        Me.Label12.TabIndex = 20
+        Me.Label12.Text = "Eliminar Producto"
+        '
+        'RichTextBox5
+        '
+        Me.RichTextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox5.Location = New System.Drawing.Point(23, 23)
+        Me.RichTextBox5.Name = "RichTextBox5"
+        Me.RichTextBox5.ReadOnly = True
+        Me.RichTextBox5.Size = New System.Drawing.Size(393, 549)
+        Me.RichTextBox5.TabIndex = 17
+        Me.RichTextBox5.Text = resources.GetString("RichTextBox5.Text")
+        '
         'TabPage14
         '
         Me.TabPage14.Controls.Add(Me.PictureBox17)
         Me.TabPage14.Controls.Add(Me.PictureBox18)
         Me.TabPage14.Controls.Add(Me.Label13)
-        Me.TabPage14.Controls.Add(Me.PictureBox13)
         Me.TabPage14.Controls.Add(Me.Label14)
-        Me.TabPage14.Controls.Add(Me.PictureBox15)
         Me.TabPage14.Controls.Add(Me.RichTextBox6)
+        Me.TabPage14.Controls.Add(Me.PictureBox13)
+        Me.TabPage14.Controls.Add(Me.PictureBox15)
         Me.TabPage14.Location = New System.Drawing.Point(4, 22)
         Me.TabPage14.Name = "TabPage14"
         Me.TabPage14.Padding = New System.Windows.Forms.Padding(3)
@@ -281,12 +444,40 @@ Partial Class frm_VerMasDetalles
         Me.TabPage14.Text = "Consultar"
         Me.TabPage14.UseVisualStyleBackColor = True
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(620, 26)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(98, 13)
+        Me.Label13.TabIndex = 28
+        Me.Label13.Text = "Consultar Orden"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.Location = New System.Drawing.Point(620, 310)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(93, 13)
+        Me.Label14.TabIndex = 26
+        Me.Label14.Text = "Exportar a PDF"
+        '
+        'RichTextBox6
+        '
+        Me.RichTextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox6.Location = New System.Drawing.Point(20, 19)
+        Me.RichTextBox6.Name = "RichTextBox6"
+        Me.RichTextBox6.ReadOnly = True
+        Me.RichTextBox6.Size = New System.Drawing.Size(393, 549)
+        Me.RichTextBox6.TabIndex = 24
+        Me.RichTextBox6.Text = resources.GetString("RichTextBox6.Text")
+        '
         'Tarea
         '
         Me.Tarea.BackColor = System.Drawing.Color.DarkGray
-        Me.Tarea.Controls.Add(Me.Label1)
-        Me.Tarea.Controls.Add(Me.TextBox1)
-        Me.Tarea.Controls.Add(Me.PictureBox1)
+        Me.Tarea.Controls.Add(Me.TabControl7)
         Me.Tarea.Location = New System.Drawing.Point(4, 22)
         Me.Tarea.Name = "Tarea"
         Me.Tarea.Padding = New System.Windows.Forms.Padding(3)
@@ -294,28 +485,39 @@ Partial Class frm_VerMasDetalles
         Me.Tarea.TabIndex = 0
         Me.Tarea.Text = "Tarea"
         '
-        'Label1
+        'TabControl7
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(659, 319)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(102, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Formulario Tarea"
+        Me.TabControl7.Controls.Add(Me.TabPage18)
+        Me.TabControl7.Controls.Add(Me.TabPage19)
+        Me.TabControl7.Controls.Add(Me.TabPage22)
+        Me.TabControl7.Controls.Add(Me.TabPage23)
+        Me.TabControl7.Controls.Add(Me.TabPage24)
+        Me.TabControl7.Location = New System.Drawing.Point(0, 2)
+        Me.TabControl7.Name = "TabControl7"
+        Me.TabControl7.SelectedIndex = 0
+        Me.TabControl7.Size = New System.Drawing.Size(931, 619)
+        Me.TabControl7.TabIndex = 0
         '
-        'TextBox1
+        'TabPage18
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.White
-        Me.TextBox1.Location = New System.Drawing.Point(16, 16)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox1.Size = New System.Drawing.Size(485, 588)
-        Me.TextBox1.TabIndex = 0
-        Me.TextBox1.Text = resources.GetString("TextBox1.Text")
-        Me.TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.TabPage18.Controls.Add(Me.TabControl8)
+        Me.TabPage18.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage18.Name = "TabPage18"
+        Me.TabPage18.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage18.Size = New System.Drawing.Size(923, 593)
+        Me.TabPage18.TabIndex = 0
+        Me.TabPage18.Text = "Componentes"
+        Me.TabPage18.UseVisualStyleBackColor = True
+        '
+        'TabPage19
+        '
+        Me.TabPage19.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage19.Name = "TabPage19"
+        Me.TabPage19.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage19.Size = New System.Drawing.Size(923, 593)
+        Me.TabPage19.TabIndex = 1
+        Me.TabPage19.Text = "Nuevo"
+        Me.TabPage19.UseVisualStyleBackColor = True
         '
         'Producto
         '
@@ -530,186 +732,87 @@ Partial Class frm_VerMasDetalles
         Me.btnCerrar.Text = "Cerrar"
         Me.btnCerrar.UseVisualStyleBackColor = True
         '
-        'TabPage15
+        'TabControl8
         '
-        Me.TabPage15.Controls.Add(Me.TabControl6)
-        Me.TabPage15.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage15.Name = "TabPage15"
-        Me.TabPage15.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage15.Size = New System.Drawing.Size(919, 595)
-        Me.TabPage15.TabIndex = 4
-        Me.TabPage15.Text = "Componentes"
-        Me.TabPage15.UseVisualStyleBackColor = True
+        Me.TabControl8.Controls.Add(Me.TabPage20)
+        Me.TabControl8.Controls.Add(Me.TabPage21)
+        Me.TabControl8.Location = New System.Drawing.Point(0, 2)
+        Me.TabControl8.Name = "TabControl8"
+        Me.TabControl8.SelectedIndex = 0
+        Me.TabControl8.Size = New System.Drawing.Size(927, 592)
+        Me.TabControl8.TabIndex = 0
         '
-        'RichTextBox1
+        'TabPage20
         '
-        Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox1.Location = New System.Drawing.Point(18, 17)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(481, 558)
-        Me.RichTextBox1.TabIndex = 9
-        Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
+        Me.TabPage20.Controls.Add(Me.Label1)
+        Me.TabPage20.Controls.Add(Me.TextBox1)
+        Me.TabPage20.Controls.Add(Me.PictureBox1)
+        Me.TabPage20.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage20.Name = "TabPage20"
+        Me.TabPage20.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage20.Size = New System.Drawing.Size(919, 566)
+        Me.TabPage20.TabIndex = 0
+        Me.TabPage20.Text = "Formulario Tarea"
+        Me.TabPage20.UseVisualStyleBackColor = True
         '
-        'RichTextBox3
+        'TabPage21
         '
-        Me.RichTextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox3.Location = New System.Drawing.Point(20, 19)
-        Me.RichTextBox3.Name = "RichTextBox3"
-        Me.RichTextBox3.Size = New System.Drawing.Size(393, 549)
-        Me.RichTextBox3.TabIndex = 0
-        Me.RichTextBox3.Text = resources.GetString("RichTextBox3.Text")
+        Me.TabPage21.Controls.Add(Me.Label15)
+        Me.TabPage21.Controls.Add(Me.TextBox2)
+        Me.TabPage21.Controls.Add(Me.PictureBox19)
+        Me.TabPage21.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage21.Name = "TabPage21"
+        Me.TabPage21.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage21.Size = New System.Drawing.Size(919, 566)
+        Me.TabPage21.TabIndex = 1
+        Me.TabPage21.Text = "Formulario Listado Tareas"
+        Me.TabPage21.UseVisualStyleBackColor = True
         '
-        'TabControl6
+        'Label1
         '
-        Me.TabControl6.Controls.Add(Me.TabPage16)
-        Me.TabControl6.Controls.Add(Me.TabPage17)
-        Me.TabControl6.Location = New System.Drawing.Point(-2, 1)
-        Me.TabControl6.Name = "TabControl6"
-        Me.TabControl6.SelectedIndex = 0
-        Me.TabControl6.Size = New System.Drawing.Size(902, 602)
-        Me.TabControl6.TabIndex = 0
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(652, 5)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(102, 13)
+        Me.Label1.TabIndex = 8
+        Me.Label1.Text = "Formulario Tarea"
         '
-        'TabPage16
+        'TextBox1
         '
-        Me.TabPage16.Controls.Add(Me.Label6)
-        Me.TabPage16.Controls.Add(Me.PictureBox6)
-        Me.TabPage16.Controls.Add(Me.RichTextBox2)
-        Me.TabPage16.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage16.Name = "TabPage16"
-        Me.TabPage16.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage16.Size = New System.Drawing.Size(894, 576)
-        Me.TabPage16.TabIndex = 0
-        Me.TabPage16.Text = "Formulario Orden Trabajo"
-        Me.TabPage16.UseVisualStyleBackColor = True
+        Me.TextBox1.BackColor = System.Drawing.Color.White
+        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(48, 8)
+        Me.TextBox1.Multiline = True
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox1.Size = New System.Drawing.Size(404, 553)
+        Me.TextBox1.TabIndex = 6
+        Me.TextBox1.Text = resources.GetString("TextBox1.Text")
         '
-        'TabPage17
+        'Label15
         '
-        Me.TabPage17.Controls.Add(Me.Label8)
-        Me.TabPage17.Controls.Add(Me.RichTextBox4)
-        Me.TabPage17.Controls.Add(Me.PictureBox8)
-        Me.TabPage17.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage17.Name = "TabPage17"
-        Me.TabPage17.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage17.Size = New System.Drawing.Size(894, 576)
-        Me.TabPage17.TabIndex = 1
-        Me.TabPage17.Text = "Formulario Listado Ordenes"
-        Me.TabPage17.UseVisualStyleBackColor = True
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.Location = New System.Drawing.Point(609, 5)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(171, 13)
+        Me.Label15.TabIndex = 11
+        Me.Label15.Text = "Formulario Listado de Tareas"
         '
-        'Label6
+        'TextBox2
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(585, 239)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(150, 13)
-        Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Formulario Orden Trabajo"
-        '
-        'RichTextBox2
-        '
-        Me.RichTextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox2.Location = New System.Drawing.Point(14, 16)
-        Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(404, 545)
-        Me.RichTextBox2.TabIndex = 9
-        Me.RichTextBox2.Text = resources.GetString("RichTextBox2.Text")
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(576, 239)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(195, 13)
-        Me.Label8.TabIndex = 11
-        Me.Label8.Text = "Formulario Listado Orden Trabajo"
-        '
-        'RichTextBox4
-        '
-        Me.RichTextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox4.Location = New System.Drawing.Point(14, 16)
-        Me.RichTextBox4.Name = "RichTextBox4"
-        Me.RichTextBox4.Size = New System.Drawing.Size(404, 545)
-        Me.RichTextBox4.TabIndex = 9
-        Me.RichTextBox4.Text = resources.GetString("RichTextBox4.Text")
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(599, 399)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(118, 13)
-        Me.Label9.TabIndex = 13
-        Me.Label9.Text = "Actualizar Producto"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(599, 119)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(101, 13)
-        Me.Label10.TabIndex = 16
-        Me.Label10.Text = "Actualizar Orden"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(617, 26)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(89, 13)
-        Me.Label11.TabIndex = 23
-        Me.Label11.Text = "Eliminar Orden"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(617, 301)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(106, 13)
-        Me.Label12.TabIndex = 20
-        Me.Label12.Text = "Eliminar Producto"
-        '
-        'RichTextBox5
-        '
-        Me.RichTextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox5.Location = New System.Drawing.Point(23, 23)
-        Me.RichTextBox5.Name = "RichTextBox5"
-        Me.RichTextBox5.Size = New System.Drawing.Size(393, 549)
-        Me.RichTextBox5.TabIndex = 17
-        Me.RichTextBox5.Text = resources.GetString("RichTextBox5.Text")
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(620, 26)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(98, 13)
-        Me.Label13.TabIndex = 28
-        Me.Label13.Text = "Consultar Orden"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(620, 310)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(93, 13)
-        Me.Label14.TabIndex = 26
-        Me.Label14.Text = "Exportar a PDF"
-        '
-        'RichTextBox6
-        '
-        Me.RichTextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox6.Location = New System.Drawing.Point(20, 19)
-        Me.RichTextBox6.Name = "RichTextBox6"
-        Me.RichTextBox6.Size = New System.Drawing.Size(393, 549)
-        Me.RichTextBox6.TabIndex = 24
-        Me.RichTextBox6.Text = resources.GetString("RichTextBox6.Text")
+        Me.TextBox2.BackColor = System.Drawing.Color.White
+        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox2.Location = New System.Drawing.Point(48, 8)
+        Me.TextBox2.Multiline = True
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox2.Size = New System.Drawing.Size(391, 543)
+        Me.TextBox2.TabIndex = 9
+        Me.TextBox2.Text = resources.GetString("TextBox2.Text")
         '
         'PictureBox3
         '
@@ -854,12 +957,22 @@ Partial Class frm_VerMasDetalles
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nueva_tarea
-        Me.PictureBox1.Location = New System.Drawing.Point(527, 335)
+        Me.PictureBox1.Location = New System.Drawing.Point(520, 21)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(351, 263)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
+        '
+        'PictureBox19
+        '
+        Me.PictureBox19.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.listadotareas
+        Me.PictureBox19.Location = New System.Drawing.Point(520, 21)
+        Me.PictureBox19.Name = "PictureBox19"
+        Me.PictureBox19.Size = New System.Drawing.Size(338, 253)
+        Me.PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox19.TabIndex = 10
+        Me.PictureBox19.TabStop = False
         '
         'PictureBox5
         '
@@ -891,6 +1004,46 @@ Partial Class frm_VerMasDetalles
         Me.PictureBox7.TabIndex = 7
         Me.PictureBox7.TabStop = False
         '
+        'TabPage22
+        '
+        Me.TabPage22.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage22.Name = "TabPage22"
+        Me.TabPage22.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage22.Size = New System.Drawing.Size(923, 593)
+        Me.TabPage22.TabIndex = 2
+        Me.TabPage22.Text = "Agregar / Modificar"
+        Me.TabPage22.UseVisualStyleBackColor = True
+        '
+        'TabPage23
+        '
+        Me.TabPage23.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage23.Name = "TabPage23"
+        Me.TabPage23.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage23.Size = New System.Drawing.Size(923, 593)
+        Me.TabPage23.TabIndex = 3
+        Me.TabPage23.Text = "Eliminar"
+        Me.TabPage23.UseVisualStyleBackColor = True
+        '
+        'TabPage24
+        '
+        Me.TabPage24.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage24.Name = "TabPage24"
+        Me.TabPage24.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage24.Size = New System.Drawing.Size(923, 593)
+        Me.TabPage24.TabIndex = 4
+        Me.TabPage24.Text = "Consultar"
+        Me.TabPage24.UseVisualStyleBackColor = True
+        '
+        'RichTextBox7
+        '
+        Me.RichTextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox7.Location = New System.Drawing.Point(39, 29)
+        Me.RichTextBox7.Name = "RichTextBox7"
+        Me.RichTextBox7.ReadOnly = True
+        Me.RichTextBox7.Size = New System.Drawing.Size(471, 575)
+        Me.RichTextBox7.TabIndex = 6
+        Me.RichTextBox7.Text = resources.GetString("RichTextBox7.Text")
+        '
         'frm_VerMasDetalles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -906,6 +1059,12 @@ Partial Class frm_VerMasDetalles
         Me.TabPage1.PerformLayout()
         Me.Orden_Trabajo.ResumeLayout(False)
         Me.TabControl5.ResumeLayout(False)
+        Me.TabPage15.ResumeLayout(False)
+        Me.TabControl6.ResumeLayout(False)
+        Me.TabPage16.ResumeLayout(False)
+        Me.TabPage16.PerformLayout()
+        Me.TabPage17.ResumeLayout(False)
+        Me.TabPage17.PerformLayout()
         Me.TabPage11.ResumeLayout(False)
         Me.TabPage11.PerformLayout()
         Me.TabPage12.ResumeLayout(False)
@@ -915,7 +1074,8 @@ Partial Class frm_VerMasDetalles
         Me.TabPage14.ResumeLayout(False)
         Me.TabPage14.PerformLayout()
         Me.Tarea.ResumeLayout(False)
-        Me.Tarea.PerformLayout()
+        Me.TabControl7.ResumeLayout(False)
+        Me.TabPage18.ResumeLayout(False)
         Me.Producto.ResumeLayout(False)
         Me.Producto.PerformLayout()
         Me.ReTrabajo.ResumeLayout(False)
@@ -928,12 +1088,11 @@ Partial Class frm_VerMasDetalles
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
-        Me.TabPage15.ResumeLayout(False)
-        Me.TabControl6.ResumeLayout(False)
-        Me.TabPage16.ResumeLayout(False)
-        Me.TabPage16.PerformLayout()
-        Me.TabPage17.ResumeLayout(False)
-        Me.TabPage17.PerformLayout()
+        Me.TabControl8.ResumeLayout(False)
+        Me.TabPage20.ResumeLayout(False)
+        Me.TabPage20.PerformLayout()
+        Me.TabPage21.ResumeLayout(False)
+        Me.TabPage21.PerformLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
@@ -949,6 +1108,7 @@ Partial Class frm_VerMasDetalles
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
@@ -957,14 +1117,10 @@ Partial Class frm_VerMasDetalles
     End Sub
     Friend WithEvents Principal As System.Windows.Forms.TabControl
     Friend WithEvents Tarea As System.Windows.Forms.TabPage
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Orden_Trabajo As System.Windows.Forms.TabPage
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnCerrar As System.Windows.Forms.Button
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Producto As System.Windows.Forms.TabPage
     Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
@@ -1025,4 +1181,20 @@ Partial Class frm_VerMasDetalles
     Friend WithEvents RichTextBox6 As System.Windows.Forms.RichTextBox
     Friend WithEvents PictureBox17 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox18 As System.Windows.Forms.PictureBox
+    Friend WithEvents TabControl7 As System.Windows.Forms.TabControl
+    Friend WithEvents TabPage18 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage19 As System.Windows.Forms.TabPage
+    Friend WithEvents TabControl8 As System.Windows.Forms.TabControl
+    Friend WithEvents TabPage20 As System.Windows.Forms.TabPage
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents TabPage21 As System.Windows.Forms.TabPage
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
+    Friend WithEvents PictureBox19 As System.Windows.Forms.PictureBox
+    Friend WithEvents TabPage22 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage23 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage24 As System.Windows.Forms.TabPage
+    Friend WithEvents RichTextBox7 As System.Windows.Forms.RichTextBox
 End Class

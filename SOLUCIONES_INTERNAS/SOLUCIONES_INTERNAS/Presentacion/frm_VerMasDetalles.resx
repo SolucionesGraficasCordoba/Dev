@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TextBox3.Text" xml:space="preserve">
+  <data name="RichTextBox7.Text" xml:space="preserve">
     <value>El formulario PRINCIPAL contiene las siguientes pestañas:
 
 - USUARIO:  
@@ -200,7 +200,8 @@
 
 - CORREO ELECTRONICO: área en construcción.
 
-- ACERCA DE: hace referencia a las partes más importantes del sistema.</value>
+- ACERCA DE: hace referencia a las partes más importantes del sistema.
+</value>
   </data>
   <data name="RichTextBox2.Text" xml:space="preserve">
     <value>-	BOTON BUSCAR VENDEDOR (...): abre el formulario de vendedores.
@@ -381,25 +382,68 @@ BOTON MODIFICAR PRODUCTO: este botón estara deshabilitado.
 </value>
   </data>
   <data name="TextBox1.Text" xml:space="preserve">
-    <value>
-El formulario de TAREA se carga de la siguiente manera:
+    <value>El formulario de TAREA consta de los siguientes elementos:
 
--	BOTON COLABORADOR (está al lado del campo colaborador): abre el formulario de colaboradores, 
-                del listado se seleccionara (doble clic) su nombre. 
--	CAMPO FECHA: día que se guardará la o las  tareas realizadas.
+-	CAMPO COLABORADOR: carga el nombre del colaborador.
+
+-	BOTON COLABORADOR: abre el formulario de colaboradores, del listado se seleccionara (doble clic) su nombre. 
+
+-	CAMPO FECHA: día que se guardará la o las tareas realizadas.
+
 -	CAMPO ENTRADA: horario de entrada a la planta.
+
 -	CAMPO SALIDA: horario de salida de la planta.
--	CAMPO CARGA HORARIA: cantidad (en minutos) del tiempo transcurrido dentro de la planta. 
-                Este campo es automático. (no debe llenarse).
--	BOTON LIMPIAR: limpia o vacía cada uno de los campos de la fila (por ej. de la tarea 2). 
--	CAMPO TAREA: la tarea o trabajo que se les ha asignado.
--	CAMPO TIEMPO ESTIMADO: tiempo aproximado de trabajo asignado a esa tarea.
--	CAMPO TIEMPO REAL: tiempo que le llevo la realización de la tarea. (obligatorio).
--	CAMPO OBSERVACIONES: comentario o alguna información extra que sea importante con relación a esa tarea.
--	BOTON ODT (está al lado del campo ot): abre el formulario de las órdenes, del listado se seleccionara (doble clic) 
-                la orden relacionada a la tarea que se les asigno. 
+
+-	CAMPO CARGA HORARIA: cantidad (en minutos) del tiempo transcurrido dentro de la planta. Este campo es automático. (No debe llenarse).
+
+-	BOTON LIMPIAR (1….20): limpia o vacía cada uno de los campos de la fila (por ej. de la tarea 2). 
+
+-	CAMPO TAREA (1…20): la tarea o trabajo que se les ha asignado a cada colaborador.
+
+-	CAMPO TIEMPO ESTIMADO (1…20): tiempo aproximado de trabajo asignado a esa tarea. (obligatorio).
+
+-	CAMPO TIEMPO REAL (1…20): tiempo que le llevo la realización de la tarea. (obligatorio).
+
+-	CAMPO OBSERVACIONES (1…20): comentario o alguna información extra que sea importante con relación a esa tarea.
+
+-	CAMPO NRO ORDEN: carga el nro. de orden.
+
+-	BOTON ODT (1…20): abre el formulario de las órdenes, del listado se seleccionara (doble clic) la orden relacionada a la tarea que se les asigno.
+ 
 -	BOTON GUARDAR: guarda la información cargada. 
--	BOTON CANCELAR: cierra el formulario sin guardar los cambios.</value>
+
+-	BOTON ACTUALIZAR: modificara los datos.
+
+-	BOTON CANCELAR: cierra el formulario sin guardar los cambios.
+</value>
+  </data>
+  <data name="TextBox2.Text" xml:space="preserve">
+    <value>El formulario de LISTADO DE TAREAS consta de los siguientes elementos:
+
+-	GRILLA DE COLABORADORES: muestra el listado de los colaboradores por sector.
+
+-	GRILLA LISTADO DE TAREAS: muestra las tareas de los colaboradores filtrado por día y sector al que pertenece.
+
+-	BOTON MODIFICAR TODAS: abre el formulario “Modificar Todas las Tareas” del colaborador seleccionado.
+
+-	BOTON EXPORTAR LISTADO GENERAL: Genera un PDF con las tareas de cada colaborador en un día especificado ordenado por sector.
+
+-	BOTON EXPORTAR LISTADO INDIVIDUAL: Genera un PDF con las tareas de cada colaborador en un día especificado.
+
+-	BOTON VER: muestra el listado de tareas de un colaborador filtrado por día y sector.
+
+-	BOTON AGREGAR TAREA: agrega una nueva tarea a un colaborador previamente seleccionado.
+
+-	BOTON MODIFICAR UNA: abre el formulario “Modificar una Tarea” del colaborador seleccionado.
+
+-	BOTON ELIMINAR: elimina una tarea previamente seleccionada.
+
+-	BOTON CANCELAR: cierra el formulario sin realizar cambios.
+
+-	CAMPO FECHA”: campo de búsqueda por fecha.
+
+-	COMBO SECTOR: campo de búsqueda por sector.
+</value>
   </data>
   <data name="TextBox4.Text" xml:space="preserve">
     <value>El formulario de PRODUCTO consta de los siguientes datos: 
