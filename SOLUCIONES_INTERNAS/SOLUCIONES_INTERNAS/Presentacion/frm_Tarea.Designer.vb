@@ -3079,20 +3079,20 @@ Partial Class frm_Tarea
         'Label58
         '
         Me.Label58.AutoSize = True
-        Me.Label58.Location = New System.Drawing.Point(628, 24)
+        Me.Label58.Location = New System.Drawing.Point(628, 17)
         Me.Label58.Name = "Label58"
-        Me.Label58.Size = New System.Drawing.Size(39, 13)
+        Me.Label58.Size = New System.Drawing.Size(36, 26)
         Me.Label58.TabIndex = 46
-        Me.Label58.Text = "Salida:"
+        Me.Label58.Text = " Hora" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Salida"
         '
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(496, 22)
+        Me.Label33.Location = New System.Drawing.Point(503, 17)
         Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(47, 13)
+        Me.Label33.Size = New System.Drawing.Size(44, 26)
         Me.Label33.TabIndex = 46
-        Me.Label33.Text = "Entrada:"
+        Me.Label33.Text = "  Hora  " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Entrada"
         '
         'PrintForm1
         '

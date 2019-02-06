@@ -105,6 +105,9 @@ Partial Class frm_VerMasDetalles
         Me.TabPage23 = New System.Windows.Forms.TabPage()
         Me.TabPage24 = New System.Windows.Forms.TabPage()
         Me.RichTextBox7 = New System.Windows.Forms.RichTextBox()
+        Me.RichTextBox8 = New System.Windows.Forms.RichTextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.PictureBox20 = New System.Windows.Forms.PictureBox()
         Me.Principal.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Orden_Trabajo.SuspendLayout()
@@ -120,6 +123,7 @@ Partial Class frm_VerMasDetalles
         Me.Tarea.SuspendLayout()
         Me.TabControl7.SuspendLayout()
         Me.TabPage18.SuspendLayout()
+        Me.TabPage19.SuspendLayout()
         Me.Producto.SuspendLayout()
         Me.ReTrabajo.SuspendLayout()
         Me.TabControl2.SuspendLayout()
@@ -152,6 +156,7 @@ Partial Class frm_VerMasDetalles
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Principal
@@ -511,6 +516,9 @@ Partial Class frm_VerMasDetalles
         '
         'TabPage19
         '
+        Me.TabPage19.Controls.Add(Me.Label16)
+        Me.TabPage19.Controls.Add(Me.PictureBox20)
+        Me.TabPage19.Controls.Add(Me.RichTextBox8)
         Me.TabPage19.Location = New System.Drawing.Point(4, 22)
         Me.TabPage19.Name = "TabPage19"
         Me.TabPage19.Padding = New System.Windows.Forms.Padding(3)
@@ -1044,6 +1052,35 @@ Partial Class frm_VerMasDetalles
         Me.RichTextBox7.TabIndex = 6
         Me.RichTextBox7.Text = resources.GetString("RichTextBox7.Text")
         '
+        'RichTextBox8
+        '
+        Me.RichTextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox8.Location = New System.Drawing.Point(26, 19)
+        Me.RichTextBox8.Name = "RichTextBox8"
+        Me.RichTextBox8.Size = New System.Drawing.Size(443, 556)
+        Me.RichTextBox8.TabIndex = 0
+        Me.RichTextBox8.Text = resources.GetString("RichTextBox8.Text")
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.Location = New System.Drawing.Point(642, 16)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(102, 13)
+        Me.Label16.TabIndex = 10
+        Me.Label16.Text = "Formulario Tarea"
+        '
+        'PictureBox20
+        '
+        Me.PictureBox20.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nueva_tarea
+        Me.PictureBox20.Location = New System.Drawing.Point(510, 32)
+        Me.PictureBox20.Name = "PictureBox20"
+        Me.PictureBox20.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox20.TabIndex = 9
+        Me.PictureBox20.TabStop = False
+        '
         'frm_VerMasDetalles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1076,6 +1113,8 @@ Partial Class frm_VerMasDetalles
         Me.Tarea.ResumeLayout(False)
         Me.TabControl7.ResumeLayout(False)
         Me.TabPage18.ResumeLayout(False)
+        Me.TabPage19.ResumeLayout(False)
+        Me.TabPage19.PerformLayout()
         Me.Producto.ResumeLayout(False)
         Me.Producto.PerformLayout()
         Me.ReTrabajo.ResumeLayout(False)
@@ -1112,6 +1151,7 @@ Partial Class frm_VerMasDetalles
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1197,4 +1237,7 @@ Partial Class frm_VerMasDetalles
     Friend WithEvents TabPage23 As System.Windows.Forms.TabPage
     Friend WithEvents TabPage24 As System.Windows.Forms.TabPage
     Friend WithEvents RichTextBox7 As System.Windows.Forms.RichTextBox
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents PictureBox20 As System.Windows.Forms.PictureBox
+    Friend WithEvents RichTextBox8 As System.Windows.Forms.RichTextBox
 End Class

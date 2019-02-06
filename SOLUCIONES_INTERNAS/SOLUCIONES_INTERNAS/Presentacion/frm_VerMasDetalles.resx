@@ -117,90 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="RichTextBox7.Text" xml:space="preserve">
-    <value>El formulario PRINCIPAL contiene las siguientes pestañas:
+  <data name="RichTextBox8.Text" xml:space="preserve">
+    <value>FUNCIONAMIENTO NUEVA TAREA
 
-- USUARIO:  
-* nuevo: da de alta a un nuevo usuario.
-* modificar: actualiza los datos de un usuario existente.
- * eliminar: da de baja a un usuario.
- * consultar: muestra datos de los usuarios.
+Este formulario se utilizará en el caso de que se desee agregar una nueva tarea. 
+Se completaran todos los campos necesarios relacionados al encabezado de la tarea. (Hora de entrada, hora de salida) El botón "buscar colaborador" abrirá el formulario del 'listado de colaboradores' y mediante un 'doble click' sobre el mismo, 
+se cargará el nombre del colaborador en el campo previamente establecido.
 
-- COLABORADOR: 
-* nuevo: da de alta a un nuevo colaborador.
- * modificar: actualiza los datos de un colaborador existente.
-* eliminar: da de baja a un colaborador.
-* consultar: muestra datos de los colaboradores.
+Una vez completos todos los campos necesarios, el botón GUARDAR cargara la nueva o nuevas tareas al sistema volviendo al formulario principal.
+Si se carga más de una tarea ésta debe ir acompañada del número de orden correspondiente, es decir, si carga 4 tareas debe haber cargado las 4 órdenes relacionadas a estas, de lo contrario la aplicación mostrara un mensaje de advertencia.
 
-- VENDEDOR: 
-* nuevo: da de alta a un nuevo vendedor.
-* modificar: actualiza los datos de un vendedor existente.
-* eliminar: da de baja a un vendedor.
-* consultar: muestra datos de los vendedores.
-
-- CLIENTE:   
-* nuevo: da de alta a un nuevo cliente.
-* modificar: actualiza los datos de un cliente existente.
-* eliminar: da de baja a un cliente.
-* consultar: muestra datos de los clientes.
-
-- PIEZA:   
-* nuevo: da de alta a un nueva pieza.
-* modificar: actualiza los datos de una pieza existente.
-* eliminar: da de baja a una pieza.
-* consultar: muestra datos de las piezas.
-
-
-- SECTOR: 
-* nuevo: da de alta a un nuevo sector.
-* modificar: actualiza los datos de un sector existente.
-* eliminar: da de baja a un sector.
-* consultar: muestra datos de los sectores.
-
-- TAREA:  
-* nuevo: da de alta a una nueva tarea.
-* modificar: actualiza los datos de una tarea existente.
-* eliminar: da de baja a una tarea.
-* consultar: muestra datos de las tareas.
-
-- PRODUCTO: 
-* Gestión de Productos 
-          ° nuevo: da de alta a un nuevo producto.
-          ° modificar: actualiza los datos de un producto existente.
-          ° eliminar: da de baja a un producto.
-* Stock de Productos
-           ° alta: da de alta una nueva cantidad de un producto.
-           ° baja: da de baja una cantidad de un producto.
-           ° consultar productos: muestra datos de los productos.
-           ° consultar movimientos: muestra altas y bajas de los productos.
-
-- ORDEN TRABAJO: 
-* nuevo: da de alta a una nueva orden de trabajo.
-* modificar: actualiza los datos de una orden de trabajo existente.
-* eliminar: da de baja a una orden de trabajo.
-* consultar: muestra datos de las orden de trabajo.
-
-- RE-TRABAJO: 
-* Repetición de Chapas 
-                ° nuevo: da de alta a un nueva repetición de chapas.
-	° eliminar: da de baja a una repetición de chapas.
-* Digital / Offset
-	° nuevo: da de alta a un nuevo re-trabajo de digital/offset.
-	 ° eliminar: da de baja a un nuevo re-trabajo de digital/offset.
-                 ° consultar: 
-	 ° Repetición de Chapas: muestra datos de re-trabajo respecto a la repetición de chapas.
-	 ° Digital / Offset: muestra datos de re-trabajo de digital7offset.
-			
-- ETIQUETAS: genera etiquetas.
-
-- ESTADISTICAS: 
-* Tareas
-	°Diarias por Colaborador: muestra los tiempos estimado y real de cada colaborador dentro del mes.
-	°Mensuales por Sector: muestra los tiempos estimados y reales de cada sector.
-
-- CORREO ELECTRONICO: área en construcción.
-
-- ACERCA DE: hace referencia a las partes más importantes del sistema.
+Nota 1: Es necesario al menos guardar una tarea.
+Nota 2: los campos tildados en rojo son OBLIGATORIOS, lo que significa que no se podrá guardar las tareas si alguno de ellos está vacío. 
 </value>
   </data>
   <data name="RichTextBox2.Text" xml:space="preserve">
@@ -381,70 +309,6 @@ BOTON MODIFICAR PRODUCTO: este botón estara deshabilitado.
 -	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
 </value>
   </data>
-  <data name="TextBox1.Text" xml:space="preserve">
-    <value>El formulario de TAREA consta de los siguientes elementos:
-
--	CAMPO COLABORADOR: carga el nombre del colaborador.
-
--	BOTON COLABORADOR: abre el formulario de colaboradores, del listado se seleccionara (doble clic) su nombre. 
-
--	CAMPO FECHA: día que se guardará la o las tareas realizadas.
-
--	CAMPO ENTRADA: horario de entrada a la planta.
-
--	CAMPO SALIDA: horario de salida de la planta.
-
--	CAMPO CARGA HORARIA: cantidad (en minutos) del tiempo transcurrido dentro de la planta. Este campo es automático. (No debe llenarse).
-
--	BOTON LIMPIAR (1….20): limpia o vacía cada uno de los campos de la fila (por ej. de la tarea 2). 
-
--	CAMPO TAREA (1…20): la tarea o trabajo que se les ha asignado a cada colaborador.
-
--	CAMPO TIEMPO ESTIMADO (1…20): tiempo aproximado de trabajo asignado a esa tarea. (obligatorio).
-
--	CAMPO TIEMPO REAL (1…20): tiempo que le llevo la realización de la tarea. (obligatorio).
-
--	CAMPO OBSERVACIONES (1…20): comentario o alguna información extra que sea importante con relación a esa tarea.
-
--	CAMPO NRO ORDEN: carga el nro. de orden.
-
--	BOTON ODT (1…20): abre el formulario de las órdenes, del listado se seleccionara (doble clic) la orden relacionada a la tarea que se les asigno.
- 
--	BOTON GUARDAR: guarda la información cargada. 
-
--	BOTON ACTUALIZAR: modificara los datos.
-
--	BOTON CANCELAR: cierra el formulario sin guardar los cambios.
-</value>
-  </data>
-  <data name="TextBox2.Text" xml:space="preserve">
-    <value>El formulario de LISTADO DE TAREAS consta de los siguientes elementos:
-
--	GRILLA DE COLABORADORES: muestra el listado de los colaboradores por sector.
-
--	GRILLA LISTADO DE TAREAS: muestra las tareas de los colaboradores filtrado por día y sector al que pertenece.
-
--	BOTON MODIFICAR TODAS: abre el formulario “Modificar Todas las Tareas” del colaborador seleccionado.
-
--	BOTON EXPORTAR LISTADO GENERAL: Genera un PDF con las tareas de cada colaborador en un día especificado ordenado por sector.
-
--	BOTON EXPORTAR LISTADO INDIVIDUAL: Genera un PDF con las tareas de cada colaborador en un día especificado.
-
--	BOTON VER: muestra el listado de tareas de un colaborador filtrado por día y sector.
-
--	BOTON AGREGAR TAREA: agrega una nueva tarea a un colaborador previamente seleccionado.
-
--	BOTON MODIFICAR UNA: abre el formulario “Modificar una Tarea” del colaborador seleccionado.
-
--	BOTON ELIMINAR: elimina una tarea previamente seleccionada.
-
--	BOTON CANCELAR: cierra el formulario sin realizar cambios.
-
--	CAMPO FECHA”: campo de búsqueda por fecha.
-
--	COMBO SECTOR: campo de búsqueda por sector.
-</value>
-  </data>
   <data name="TextBox4.Text" xml:space="preserve">
     <value>El formulario de PRODUCTO consta de los siguientes datos: 
 
@@ -516,5 +380,155 @@ CAMPOS Y FUNCIONAMIENTO DE FORMULARIO MOVIMIENTO DE PRODUCTOS:
 
 1 - se elegirá del combo el mes Y el producto a buscar
 2- la grilla mostrará las altas y bajas del producto en el mes seleccionado.</value>
+  </data>
+  <data name="TextBox1.Text" xml:space="preserve">
+    <value>El formulario de TAREA consta de los siguientes elementos:
+
+-	CAMPO COLABORADOR: carga el nombre del colaborador.
+
+-	BOTON COLABORADOR: abre el formulario de colaboradores, del listado se seleccionara (doble clic) su nombre. 
+
+-	CAMPO FECHA: día que se guardará la o las tareas realizadas.
+
+-	CAMPO ENTRADA: horario de entrada a la planta.
+
+-	CAMPO SALIDA: horario de salida de la planta.
+
+-	CAMPO CARGA HORARIA: cantidad (en minutos) del tiempo transcurrido dentro de la planta. Este campo es automático. (No debe llenarse).
+
+-	BOTON LIMPIAR (1….20): limpia o vacía cada uno de los campos de la fila (por ej. de la tarea 2). 
+
+-	CAMPO TAREA (1…20): la tarea o trabajo que se les ha asignado a cada colaborador.
+
+-	CAMPO TIEMPO ESTIMADO (1…20): tiempo aproximado de trabajo asignado a esa tarea. (obligatorio).
+
+-	CAMPO TIEMPO REAL (1…20): tiempo que le llevo la realización de la tarea. (obligatorio).
+
+-	CAMPO OBSERVACIONES (1…20): comentario o alguna información extra que sea importante con relación a esa tarea.
+
+-	CAMPO NRO ORDEN: carga el nro. de orden.
+
+-	BOTON ODT (1…20): abre el formulario de las órdenes, del listado se seleccionara (doble clic) la orden relacionada a la tarea que se les asigno.
+ 
+-	BOTON GUARDAR: guarda la información cargada. 
+
+-	BOTON ACTUALIZAR: modificara los datos.
+
+-	BOTON CANCELAR: cierra el formulario sin guardar los cambios.
+</value>
+  </data>
+  <data name="TextBox2.Text" xml:space="preserve">
+    <value>El formulario de LISTADO DE TAREAS consta de los siguientes elementos:
+
+-	GRILLA DE COLABORADORES: muestra el listado de los colaboradores por sector.
+
+-	GRILLA LISTADO DE TAREAS: muestra las tareas de los colaboradores filtrado por día y sector al que pertenece.
+
+-	BOTON MODIFICAR TODAS: abre el formulario “Modificar Todas las Tareas” del colaborador seleccionado.
+
+-	BOTON EXPORTAR LISTADO GENERAL: Genera un PDF con las tareas de cada colaborador en un día especificado ordenado por sector.
+
+-	BOTON EXPORTAR LISTADO INDIVIDUAL: Genera un PDF con las tareas de cada colaborador en un día especificado.
+
+-	BOTON VER: muestra el listado de tareas de un colaborador filtrado por día y sector.
+
+-	BOTON AGREGAR TAREA: agrega una nueva tarea a un colaborador previamente seleccionado.
+
+-	BOTON MODIFICAR UNA: abre el formulario “Modificar una Tarea” del colaborador seleccionado.
+
+-	BOTON ELIMINAR: elimina una tarea previamente seleccionada.
+
+-	BOTON CANCELAR: cierra el formulario sin realizar cambios.
+
+-	CAMPO FECHA”: campo de búsqueda por fecha.
+
+-	COMBO SECTOR: campo de búsqueda por sector.
+</value>
+  </data>
+  <data name="RichTextBox7.Text" xml:space="preserve">
+    <value>El formulario PRINCIPAL contiene las siguientes pestañas:
+
+- USUARIO:  
+* nuevo: da de alta a un nuevo usuario.
+* modificar: actualiza los datos de un usuario existente.
+ * eliminar: da de baja a un usuario.
+ * consultar: muestra datos de los usuarios.
+
+- COLABORADOR: 
+* nuevo: da de alta a un nuevo colaborador.
+ * modificar: actualiza los datos de un colaborador existente.
+* eliminar: da de baja a un colaborador.
+* consultar: muestra datos de los colaboradores.
+
+- VENDEDOR: 
+* nuevo: da de alta a un nuevo vendedor.
+* modificar: actualiza los datos de un vendedor existente.
+* eliminar: da de baja a un vendedor.
+* consultar: muestra datos de los vendedores.
+
+- CLIENTE:   
+* nuevo: da de alta a un nuevo cliente.
+* modificar: actualiza los datos de un cliente existente.
+* eliminar: da de baja a un cliente.
+* consultar: muestra datos de los clientes.
+
+- PIEZA:   
+* nuevo: da de alta a un nueva pieza.
+* modificar: actualiza los datos de una pieza existente.
+* eliminar: da de baja a una pieza.
+* consultar: muestra datos de las piezas.
+
+
+- SECTOR: 
+* nuevo: da de alta a un nuevo sector.
+* modificar: actualiza los datos de un sector existente.
+* eliminar: da de baja a un sector.
+* consultar: muestra datos de los sectores.
+
+- TAREA:  
+* nuevo: da de alta a una nueva tarea.
+* modificar: actualiza los datos de una tarea existente.
+* eliminar: da de baja a una tarea.
+* consultar: muestra datos de las tareas.
+
+- PRODUCTO: 
+* Gestión de Productos 
+          ° nuevo: da de alta a un nuevo producto.
+          ° modificar: actualiza los datos de un producto existente.
+          ° eliminar: da de baja a un producto.
+* Stock de Productos
+           ° alta: da de alta una nueva cantidad de un producto.
+           ° baja: da de baja una cantidad de un producto.
+           ° consultar productos: muestra datos de los productos.
+           ° consultar movimientos: muestra altas y bajas de los productos.
+
+- ORDEN TRABAJO: 
+* nuevo: da de alta a una nueva orden de trabajo.
+* modificar: actualiza los datos de una orden de trabajo existente.
+* eliminar: da de baja a una orden de trabajo.
+* consultar: muestra datos de las orden de trabajo.
+
+- RE-TRABAJO: 
+* Repetición de Chapas 
+                ° nuevo: da de alta a un nueva repetición de chapas.
+	° eliminar: da de baja a una repetición de chapas.
+* Digital / Offset
+	° nuevo: da de alta a un nuevo re-trabajo de digital/offset.
+	 ° eliminar: da de baja a un nuevo re-trabajo de digital/offset.
+                 ° consultar: 
+	 ° Repetición de Chapas: muestra datos de re-trabajo respecto a la repetición de chapas.
+	 ° Digital / Offset: muestra datos de re-trabajo de digital7offset.
+			
+- ETIQUETAS: genera etiquetas.
+
+- ESTADISTICAS: 
+* Tareas
+	°Diarias por Colaborador: muestra los tiempos estimado y real de cada colaborador dentro del mes.
+	°Mensuales por Sector: muestra los tiempos estimados y reales de cada sector.
+
+- CORREO ELECTRONICO: área en construcción.
+
+- ACERCA DE: hace referencia a las partes más importantes del sistema.
+</value>
   </data>
 </root>
