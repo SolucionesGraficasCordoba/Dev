@@ -343,6 +343,24 @@ El botón “actualizar” guardara los cambios realizados cerrando ambos formul
 -	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
 </value>
   </data>
+  <data name="RichTextBox5.Text" xml:space="preserve">
+    <value>FUNCIONAMIENTO MODIFICAR ORDEN:
+
+-	BOTON AGREGAR PRODUCTO: este botón estará deshabilitado.
+
+-	BOTON ELIMINAR ORDEN: este botón se utilizara en el caso de que se desee eliminar una orden previamente seleccionada. Al presionarlo se mostrara una advertencia solicitando su confirmación. En caso de aceptar se eliminara la orden y sus productos no pudiendo recuperar sus datos, en caso de no aceptar el formulario se cerrara y haber realizado ningún cambio.  
+
+-	BOTON EXPORTAR A PDF: estará generará un pdf en el escritorio de la pc con la información de la orden y sus productos.
+
+-	BOTON VER: este botón estará deshabilitado.
+
+BOTON MODIFICAR PRODUCTO: este botón estará deshabilitado.
+-	
+-	BOTON ELIMINAR PRODUCTO: este botón se utilizara en el caso de que se desee eliminar un producto previamente seleccionado. Se seleccionara primero la orden (primera grilla) y luego el producto que desea (segunda grilla).
+-	Al presionarlo se mostrara una advertencia solicitando su confirmación. En caso de aceptar se eliminara el producto no pudiendo recuperar sus datos, en caso de no aceptar el formulario se cerrara y haber realizado ningún cambio.  
+-	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
+</value>
+  </data>
   <data name="TextBox1.Text" xml:space="preserve">
     <value>
 El formulario de TAREA se carga de la siguiente manera:
