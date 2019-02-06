@@ -202,21 +202,8 @@
 
 - ACERCA DE: hace referencia a las partes más importantes del sistema.</value>
   </data>
-  <data name="TextBox2.Text" xml:space="preserve">
-    <value>
-FUNCIONAMIENTO ORDEN TRABAJO:
-
-1 - completar todos los campos necesarios de acuerdo al tipo de orden a cargar.
-2 - el botón "buscar cliente" abrira el formulario del 'listado de clientes' y mediante un 'doble click' sobre el mismo, éste se cargará en el campo del cliente previamente establecido.
-3 - el mismo prodecimiento se hará al buscar al vendedor, en su lugar se abrirá el 'listado de vendedores' previamente cargados al sistema.
-4 - se seleccionará un tipo de orden a cargar mediante los check's, según el que se tilde se habilitarán los campos necesarios a cargar. (puede haber más de un tipo de orden)
-5 - una vez completos todos los campos de la orden, el botón 'Guardar' cargara la nueva orden al sistema. 
-
-Nota1: los campos tildados en rojo son OBLIGATORIOS, lo que significa que no se podrá guardar la orden si alguno de ellos este vacio.
-Nota2: completar el campo observaciones SI Y SOLO SI es necesario, o si cree que es necesaria agregar alguna información extra. 
-
------------------------------------------------------------------------------------------------------------------------------------------------
-El formulario de ORDEN DE TRABAJO consta de los siguientes datos:
+  <data name="RichTextBox1.Text" xml:space="preserve">
+    <value>COMPONENTES: 
 
 -	BOTON BUSCAR VENDEDOR (está al lado del campo vendedor): abre el formulario de vendedores,
                 del listado se seleccionará (doble clic) su nombre. Éste se cargará en el campo asignado al vendedor.
