@@ -81,7 +81,7 @@
         txt_cantidad_producto_Gran_Formato.Clear()
         cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
         txtTamaño_Producto_Gran_Formato.Clear()
-        txtSustrato_Gran_Formato.Clear()
+        cboMaterial.SelectedIndex = -1
         cboCalidad_Gran_Formato.SelectedIndex = -1
         cboSistema_Gran_Formato.SelectedIndex = -1
     End Sub
@@ -110,6 +110,16 @@
 
         'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
         cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
+
+        Dim combomaterial = (From sop In datacontext.SOPORTE
+                        Select sop.SOP_id_soporte, sop.SOP_nombre_soporte, sop.SOP_ubicacion
+                        Where SOP_ubicacion = "G"
+                        Order By SOP_nombre_soporte Ascending)
+        cboMaterial.DataSource = combomaterial
+        cboMaterial.DisplayMember = "SOP_nombre_soporte"
+        cboMaterial.ValueMember = "SOP_id_soporte"
+
+        cboMaterial.Text = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("sustrato_gran_formato", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.SelectedRows(0).Index).Value 'sustrato gran formato
 
     End Sub
 
@@ -227,7 +237,7 @@
                 ActualizaDetalle.cantidad_gran_formato = txt_cantidad_producto_Gran_Formato.Text
             End If
             ActualizaDetalle.tamaño_gran_formato = txtTamaño_Producto_Gran_Formato.Text
-            ActualizaDetalle.sustrato_gran_formato = txtSustrato_Gran_Formato.Text
+            ActualizaDetalle.sustrato_gran_formato = cboMaterial.Text
             ActualizaDetalle.calidad_gran_formato = cboCalidad_Gran_Formato.Text
             ActualizaDetalle.sistema_gran_formato = cboSistema_Gran_Formato.Text
 

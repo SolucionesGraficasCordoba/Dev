@@ -78,7 +78,6 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.txt_descripcion_terminacion = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupGranFormato = New System.Windows.Forms.GroupBox()
-        Me.txtSustrato_Gran_Formato = New System.Windows.Forms.TextBox()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.txt_cantidad_producto_Gran_Formato = New System.Windows.Forms.TextBox()
         Me.txtTamaño_Producto_Gran_Formato = New System.Windows.Forms.TextBox()
@@ -146,6 +145,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.txt_id_detalle_orden_trabajo1 = New System.Windows.Forms.TextBox()
         Me.btnCancelar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.btnActualizar_Orden_Trabajo = New System.Windows.Forms.Button()
+        Me.cboMaterial = New System.Windows.Forms.ComboBox()
         Me.groupOffset.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupTerminacion.SuspendLayout()
@@ -724,7 +724,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         'GroupGranFormato
         '
-        Me.GroupGranFormato.Controls.Add(Me.txtSustrato_Gran_Formato)
+        Me.GroupGranFormato.Controls.Add(Me.cboMaterial)
         Me.GroupGranFormato.Controls.Add(Me.Label40)
         Me.GroupGranFormato.Controls.Add(Me.txt_cantidad_producto_Gran_Formato)
         Me.GroupGranFormato.Controls.Add(Me.txtTamaño_Producto_Gran_Formato)
@@ -745,18 +745,10 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.GroupGranFormato.TabStop = False
         Me.GroupGranFormato.Text = "Gran Formato"
         '
-        'txtSustrato_Gran_Formato
-        '
-        Me.txtSustrato_Gran_Formato.Location = New System.Drawing.Point(419, 34)
-        Me.txtSustrato_Gran_Formato.MaxLength = 50
-        Me.txtSustrato_Gran_Formato.Name = "txtSustrato_Gran_Formato"
-        Me.txtSustrato_Gran_Formato.Size = New System.Drawing.Size(166, 20)
-        Me.txtSustrato_Gran_Formato.TabIndex = 145
-        '
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(367, 37)
+        Me.Label40.Location = New System.Drawing.Point(481, 17)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(46, 13)
         Me.Label40.TabIndex = 146
@@ -782,9 +774,9 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.cboSistema_Gran_Formato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboSistema_Gran_Formato.FormattingEnabled = True
         Me.cboSistema_Gran_Formato.Items.AddRange(New Object() {"SOLVENTE", "LATEX", "UV"})
-        Me.cboSistema_Gran_Formato.Location = New System.Drawing.Point(833, 35)
+        Me.cboSistema_Gran_Formato.Location = New System.Drawing.Point(808, 35)
         Me.cboSistema_Gran_Formato.Name = "cboSistema_Gran_Formato"
-        Me.cboSistema_Gran_Formato.Size = New System.Drawing.Size(115, 21)
+        Me.cboSistema_Gran_Formato.Size = New System.Drawing.Size(140, 21)
         Me.cboSistema_Gran_Formato.TabIndex = 143
         '
         'Label32
@@ -799,7 +791,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(781, 38)
+        Me.Label33.Location = New System.Drawing.Point(870, 17)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(44, 13)
         Me.Label33.TabIndex = 144
@@ -808,11 +800,11 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(145, 17)
+        Me.Label31.Location = New System.Drawing.Point(127, 18)
         Me.Label31.Name = "Label31"
-        Me.Label31.Size = New System.Drawing.Size(38, 13)
+        Me.Label31.Size = New System.Drawing.Size(50, 13)
         Me.Label31.TabIndex = 137
-        Me.Label31.Text = "Piezas"
+        Me.Label31.Text = "Producto"
         '
         'Label30
         '
@@ -827,7 +819,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         Me.Label26.AutoSize = True
         Me.Label26.ForeColor = System.Drawing.Color.Red
-        Me.Label26.Location = New System.Drawing.Point(181, 21)
+        Me.Label26.Location = New System.Drawing.Point(176, 21)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(11, 13)
         Me.Label26.TabIndex = 141
@@ -836,7 +828,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(597, 37)
+        Me.Label29.Location = New System.Drawing.Point(685, 17)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(42, 13)
         Me.Label29.TabIndex = 139
@@ -859,7 +851,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.cboCalidad_Gran_Formato.Items.AddRange(New Object() {"CARTELERIA", "ALTA", "PREMIUM"})
         Me.cboCalidad_Gran_Formato.Location = New System.Drawing.Point(645, 34)
         Me.cboCalidad_Gran_Formato.Name = "cboCalidad_Gran_Formato"
-        Me.cboCalidad_Gran_Formato.Size = New System.Drawing.Size(123, 21)
+        Me.cboCalidad_Gran_Formato.Size = New System.Drawing.Size(153, 21)
         Me.cboCalidad_Gran_Formato.TabIndex = 135
         '
         'cboPiezas_Producto_Gran_Formato
@@ -1402,6 +1394,15 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.btnActualizar_Orden_Trabajo.Text = "Actualizar"
         Me.btnActualizar_Orden_Trabajo.UseVisualStyleBackColor = True
         '
+        'cboMaterial
+        '
+        Me.cboMaterial.FormattingEnabled = True
+        Me.cboMaterial.Location = New System.Drawing.Point(364, 33)
+        Me.cboMaterial.MaxLength = 100
+        Me.cboMaterial.Name = "cboMaterial"
+        Me.cboMaterial.Size = New System.Drawing.Size(275, 21)
+        Me.cboMaterial.TabIndex = 148
+        '
         'frm_Actualizar_Producto_Orden_Ampliada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1498,7 +1499,6 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
     Friend WithEvents txt_descripcion_terminacion As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents GroupGranFormato As System.Windows.Forms.GroupBox
-    Friend WithEvents txtSustrato_Gran_Formato As System.Windows.Forms.TextBox
     Friend WithEvents Label40 As System.Windows.Forms.Label
     Friend WithEvents txt_cantidad_producto_Gran_Formato As System.Windows.Forms.TextBox
     Friend WithEvents txtTamaño_Producto_Gran_Formato As System.Windows.Forms.TextBox
@@ -1570,4 +1570,5 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
     Friend WithEvents chkPegadoManual As System.Windows.Forms.CheckBox
     Friend WithEvents chkEstampado As System.Windows.Forms.CheckBox
     Friend WithEvents chkArmadoRevistas As System.Windows.Forms.CheckBox
+    Friend WithEvents cboMaterial As System.Windows.Forms.ComboBox
 End Class
