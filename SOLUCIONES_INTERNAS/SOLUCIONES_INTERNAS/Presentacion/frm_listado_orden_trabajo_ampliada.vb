@@ -721,7 +721,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 frm_Actualizar_Producto_Orden_Ampliada.txtDato_Variable.Text = dgv_detalle_orden.Item("dato_variable", dgv_detalle_orden.SelectedRows(0).Index).Value 'dato variable
                 frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto_Gran_Formato.Text = dgv_detalle_orden.Item("cantidad_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value 'cantidad gran formato
                 frm_Actualizar_Producto_Orden_Ampliada.txtTamaño_Producto_Gran_Formato.Text = dgv_detalle_orden.Item("tamaño_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value 'tamaño gran formato
-                frm_Actualizar_Producto_Orden_Ampliada.txtSustrato_Gran_Formato.Text = dgv_detalle_orden.Item("sustrato_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value 'sustrato gran formato
+                frm_Actualizar_Producto_Orden_Ampliada.cboMaterial.Text = dgv_detalle_orden.Item("sustrato_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value 'sustrato gran formato
                 frm_Actualizar_Producto_Orden_Ampliada.cboCalidad_Gran_Formato.Text = dgv_detalle_orden.Item("calidad_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value 'calidad gran formato
                 frm_Actualizar_Producto_Orden_Ampliada.cboSistema_Gran_Formato.Text = dgv_detalle_orden.Item("sistema_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value ' sistema gran formato
                 frm_Actualizar_Producto_Orden_Ampliada.txt_descripcion_terminacion.Text = dgv_detalle_orden.Item("descripcion_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value 'descripcion terminacion
@@ -825,7 +825,6 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                     frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = False
                 End If
             End If
-
             If frm_Actualizar_Producto_Orden_Ampliada.txtCantidad_1_Pliego_Maquina_Digital.TextLength <> 0 Then
                 frm_Actualizar_Producto_Orden_Ampliada.chkDigital.Checked = True
                 frm_Actualizar_Producto_Orden_Ampliada.GroupDigital.Enabled = True
@@ -838,7 +837,6 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                     frm_Actualizar_Producto_Orden_Ampliada.GroupProducto_Soportes.Enabled = False
                 End If
             End If
-
             If frm_Actualizar_Producto_Orden_Ampliada.txt_cantidad_producto_Gran_Formato.TextLength <> 0 Then
                 frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = True
                 frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = True
@@ -846,7 +844,6 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 frm_Actualizar_Producto_Orden_Ampliada.chkGranFormato.Checked = False
                 frm_Actualizar_Producto_Orden_Ampliada.GroupGranFormato.Enabled = False
             End If
-
             If dgv_detalle_orden.Item("tipo_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value.ToString.Length <> 0 Then
                 frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = True
                 frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = True
@@ -854,7 +851,6 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 frm_Actualizar_Producto_Orden_Ampliada.chkTerminacion.Checked = False
                 frm_Actualizar_Producto_Orden_Ampliada.GroupTerminacion.Enabled = False
             End If
-
             frm_Actualizar_Producto_Orden_Ampliada.txtNumero_Orden_Trabajo.Enabled = False
             frm_Actualizar_Producto_Orden_Ampliada.Label1.Visible = False
             frm_Actualizar_Producto_Orden_Ampliada.txt_id_orden_trabajo.Visible = False
@@ -862,7 +858,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             frm_Actualizar_Producto_Orden_Ampliada.Label5.Visible = False
             frm_Actualizar_Producto_Orden_Ampliada.Label45.Visible = False
             frm_Actualizar_Producto_Orden_Ampliada.txt_id_detalle_orden_trabajo1.Visible = False
-
+            frm_Actualizar_Producto_Orden_Ampliada.Label8.Visible = False
             frm_Actualizar_Producto_Orden_Ampliada.ShowDialog()
             'Try
             '    frm_Actualizar_Producto_Orden_Ampliada.cboPiezas_Producto.SelectedValue = dgv_detalle_orden.Item("PIE_id_pieza", dgv_detalle_orden.SelectedRows(0).Index).Value
@@ -879,10 +875,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 frm_Actualizar_Orden.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
                 frm_Actualizar_Orden.dtpFecha_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
                 frm_Actualizar_Orden.cboTipo_Orden.Text = dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-
-
                 frm_Actualizar_Orden.dtpFecha_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
-
                 frm_Actualizar_Orden.txt_id_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_id_cliente", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
                 frm_Actualizar_Orden.txt_nombre_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
                 frm_Actualizar_Orden.txtid_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_id_vendedor", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
@@ -899,15 +892,15 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             frm_Actualizar_Orden.txt_nombre_cliente.Enabled = False
             frm_Actualizar_Orden.cboTipo_Orden.Visible = False
             frm_Actualizar_Orden.Label5.Visible = False
+
             frm_Actualizar_Orden.ShowDialog()
         Catch ex As Exception
-
         End Try
     End Sub
 
     Private Sub btnVer_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVer.Click
         Try
-            frm_Actualizar_Producto_Orden_Ampliada.Text = ".:. Ver Orden .:."
+            frm_Orden_Trabajo_Ampliada.Text = ".:. Ver Orden .:."
             If dgv_detalle_orden.SelectedRows.Count > 0 Then
 
                 frm_Orden_Trabajo_Ampliada.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
@@ -964,7 +957,6 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 frm_Orden_Trabajo_Ampliada.cboCalidad_Gran_Formato.Text = dgv_detalle_orden.Item("calidad_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
                 frm_Orden_Trabajo_Ampliada.cboSistema_Gran_Formato.Text = dgv_detalle_orden.Item("sistema_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
                 frm_Orden_Trabajo_Ampliada.txt_descripcion_terminacion.Text = dgv_detalle_orden.Item("descripcion_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value
-
 
                 Dim tempterminacion As String
                 tempterminacion = dgv_detalle_orden.Item("tipo_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value
@@ -1130,6 +1122,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
             frm_Orden_Trabajo_Ampliada.txtid_vendedor.Visible = False
             frm_Orden_Trabajo_Ampliada.txt_id_cliente.Visible = False
             frm_Orden_Trabajo_Ampliada.btnGuardar_Orden_Trabajo.Enabled = False
+            frm_Orden_Trabajo_Ampliada.Label8.Visible = False
 
             frm_Orden_Trabajo_Ampliada.quienllamo_listado_orden_ampliada = Me
             frm_Orden_Trabajo_Ampliada.Show()

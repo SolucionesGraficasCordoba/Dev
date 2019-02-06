@@ -41,6 +41,8 @@
         Else
             cboPiezas_Producto.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
             cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
+            cboMaterial.Text = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("sustrato_gran_formato", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.SelectedRows(0).Index).Value 'sustrato gran formato
+
         End If
     End Sub
 
