@@ -565,7 +565,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Acceso_Usuarios.jpg" />
+    <None Include="Resources\PDF.jpg" />
+    <None Include="Resources\ver_orden.jpg" />
+    <None Include="Resources\modificar_orden.jpg" />
     <None Include="Resources\alta_productos.jpg" />
+    <None Include="Resources\consultar_orden.jpg" />
+    <None Include="Resources\listadoordenes.jpg" />
+    <None Include="Resources\actualizarproducto.jpg" />
+    <None Include="Resources\actualizar_orden.jpg" />
+    <None Include="Resources\eliminar_orden.jpg" />
+    <None Include="Resources\eliminar_orden1.jpg" />
+    <None Include="Resources\eliminar_detalle.jpg" />
+    <None Include="Resources\consultar_orden1.jpg" />
+    <None Include="Resources\exportarPDF.jpg" />
+    <None Include="Resources\listadotareas.jpg" />
     <Content Include="Resources\LOGO SISTEMA INTERNO %281%29.ico" />
     <None Include="Resources\nuevo_producto.jpg" />
     <None Include="Resources\principal1.jpg" />
