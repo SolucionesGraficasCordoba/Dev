@@ -565,6 +565,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\Acceso_Usuarios.jpg" />
+    <None Include="Resources\pdftareasindividual1.jpg" />
+    <None Include="Resources\pdftareasindividual.jpg" />
+    <None Include="Resources\pdftareasgeneral.jpg" />
+    <None Include="Resources\ver_tarea1.jpg" />
+    <None Include="Resources\modificaruna.jpg" />
+    <None Include="Resources\modificartodas.jpg" />
+    <None Include="Resources\modificar_tarea.jpg" />
     <None Include="Resources\PDF.jpg" />
     <None Include="Resources\ver_orden.jpg" />
     <None Include="Resources\modificar_orden.jpg" />
@@ -579,6 +586,12 @@
     <None Include="Resources\consultar_orden1.jpg" />
     <None Include="Resources\exportarPDF.jpg" />
     <None Include="Resources\listadotareas.jpg" />
+    <None Include="Resources\agregarunatarea.jpg" />
+    <None Include="Resources\agregaruna.jpg" />
+    <None Include="Resources\actualizaruna.jpg" />
+    <None Include="Resources\eliminar_tarea.jpg" />
+    <None Include="Resources\consultar_tarea.jpg" />
+    <None Include="Resources\exportartareasgeneral.jpg" />
     <Content Include="Resources\LOGO SISTEMA INTERNO %281%29.ico" />
     <None Include="Resources\nuevo_producto.jpg" />
     <None Include="Resources\principal1.jpg" />
