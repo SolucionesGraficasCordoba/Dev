@@ -19,6 +19,5 @@ Public Class frm_VerMasDetalles
         Me.Close()
         Me.Dispose()
     End Sub
-
 End Class
 
