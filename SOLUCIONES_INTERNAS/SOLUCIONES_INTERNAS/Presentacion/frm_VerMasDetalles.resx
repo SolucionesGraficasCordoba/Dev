@@ -117,6 +117,35 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="RichTextBox4.Text" xml:space="preserve">
+    <value>
+-	GRILLA DE ORDENES (muestra el listado de las ordenes cargadas)
+
+-	GRILLA DE PRODUCTOS (muestra los productos de la orden seleccionada)
+
+-	botón “AGREGAR PRODUCTO”: agrega un nuevo producto a una orden seleccionada.
+
+-	botón “MODIFICAR ORDEN”: actualiza los datos de la orden.
+
+-	botón “ELIMINAR ORDEN”: elimina una orden y sus productos.
+
+-	botón “EXPORTAR LISTADO A PDF”: genera un pdf con los datos de la orden y sus productos.
+
+-	botón “VER”: muestra los datos de la orden y de un producto seleccionado.
+
+-	botón “MODIFICAR PRODUCTO”: actualiza los datos del producto.
+
+-	botón “ELIMINAR PRODUCTO”: elimina un producto de una orden previamente seleccionada.
+
+-	botón “CANCELAR”: cierra el formulario sin realizar cambios.
+
+-	campo “NRO ORDEN”: campo de búsqueda por número de orden.
+
+-	campo “CLIENTE/RAZON SOCIAL”: campo de búsqueda por cliente/razón social.
+
+-	campo “FECHA DE ENTREGA”: campo de búsqueda por fecha de entrega.
+</value>
+  </data>
   <data name="RichTextBox7.Text" xml:space="preserve">
     <value>El formulario PRINCIPAL contiene las siguientes pestañas:
 
@@ -273,35 +302,6 @@
 -	CHECK’S TERMINACION: tipo de terminaciones.
 
 -	CAMPO DESCRIPCION TERMINACION: comentarios que se creen importantes de destacar para terminación.
-</value>
-  </data>
-  <data name="RichTextBox4.Text" xml:space="preserve">
-    <value>
--	GRILLA DE ORDENES (muestra el listado de las ordenes cargadas)
-
--	GRILLA DE PRODUCTOS (muestra los productos de la orden seleccionada)
-
--	botón “AGREGAR PRODUCTO”: agrega un nuevo producto a una orden seleccionada.
-
--	botón “MODIFICAR ORDEN”: actualiza los datos de la orden.
-
--	botón “ELIMINAR ORDEN”: elimina una orden y sus productos.
-
--	botón “EXPORTAR LISTADO A PDF”: genera un pdf con los datos de la orden y sus productos.
-
--	botón “VER”: muestra los datos de la orden y de un producto seleccionado.
-
--	botón “MODIFICAR PRODUCTO”: actualiza los datos del producto.
-
--	botón “ELIMINAR PRODUCTO”: elimina un producto de una orden previamente seleccionada.
-
--	botón “CANCELAR”: cierra el formulario sin realizar cambios.
-
--	campo “NRO ORDEN”: campo de búsqueda por número de orden.
-
--	campo “CLIENTE/RAZON SOCIAL”: campo de búsqueda por cliente/razón social.
-
--	campo “FECHA DE ENTREGA”: campo de búsqueda por fecha de entrega.
 </value>
   </data>
   <data name="RichTextBox1.Text" xml:space="preserve">
@@ -479,47 +479,6 @@ BOTON MODIFICAR UNA: este botón se utilizara en el caso de que se desee modific
 -	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
 </value>
   </data>
-  <data name="RichTextBox10.Text" xml:space="preserve">
-    <value>FUNCIONAMIENTO ELIMINAR TAREA
-
--	BOTON MODIFICAR TODAS: este botón permanecerá deshabilitado.
-
--	BOTON EXPORTAR LISTADO GENERAL: este botón permanecerá deshabilitado. 
-
--	BOTON EXPORTAR LISTADO INDIVIDUAL: este botón permanecerá deshabilitado. 
-
--	VER: este botón permanecerá deshabilitado.
-
--	BOTON AGREGAR TAREA: este botón permanecerá deshabilitado.
-
-BOTON MODIFICAR UNA: este botón permanecerá deshabilitado.
-
--	BOTON ELIMINAR: este botón se utilizara en el caso de que se desee eliminar una tarea previamente seleccionada. Se seleccionara primero el colaborador (primera grilla) y luego la tarea que desea (segunda grilla). Al presionarlo se mostrara una advertencia solicitando su confirmación. En caso de aceptar se eliminara la tarea no pudiendo recuperar sus datos, en caso de no aceptar el formulario se cerrara y haber realizado ningún cambio. 
- 
--	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
-</value>
-  </data>
-  <data name="RichTextBox11.Text" xml:space="preserve">
-    <value>
-FUNCIONAMIENTO CONSULTAR TAREAS
-
--	BOTON MODIFICAR TODAS: éste botón permanecerá deshabilitado.
-
--	BOTON EXPORTAR LISTADO GENERAL: si se seleccionó el día y el sector, este automáticamente generara un PDF con todas las tareas de todos los colaboradores en ese día. Si el algún colaborador no ha cargado sus tareas se mostrara que no tiene tareas cargadas al momento de ejecutar la acción. 
-
--	BOTON EXPORTAR LISTADO INDIVIDUAL: si se seleccionó el día y el colaborador de un sector, este automáticamente generara un PDF con todas las tareas de de ese colaborador en ese día. Si el colaborador no ha cargado sus tareas se mostrara que no tiene tareas cargadas al momento de ejecutar la acción. 
-
--	VER: para mostrar todas las tareas de un colaborador debe seleccionarse éste de la primera grilla, previamente haber filtrado por día y sector. Al presionar el botón “ver” se abrirá el formulario “Consultar tareas” que mostrará todas las tareas del colaborador en un día especifico.
-
--	BOTON AGREGAR TAREA: éste botón permanecerá deshabilitado.
-
-BOTON MODIFICAR UNA: éste botón permanecerá deshabilitado.
--	
--	BOTON ELIMINAR: éste botón permanecerá deshabilitado.
-  
--	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
-</value>
-  </data>
   <data name="TextBox4.Text" xml:space="preserve">
     <value>El formulario de PRODUCTO consta de los siguientes datos: 
 
@@ -591,5 +550,46 @@ CAMPOS Y FUNCIONAMIENTO DE FORMULARIO MOVIMIENTO DE PRODUCTOS:
 
 1 - se elegirá del combo el mes Y el producto a buscar
 2- la grilla mostrará las altas y bajas del producto en el mes seleccionado.</value>
+  </data>
+  <data name="RichTextBox10.Text" xml:space="preserve">
+    <value>FUNCIONAMIENTO ELIMINAR TAREA
+
+-	BOTON MODIFICAR TODAS: este botón permanecerá deshabilitado.
+
+-	BOTON EXPORTAR LISTADO GENERAL: este botón permanecerá deshabilitado. 
+
+-	BOTON EXPORTAR LISTADO INDIVIDUAL: este botón permanecerá deshabilitado. 
+
+-	VER: este botón permanecerá deshabilitado.
+
+-	BOTON AGREGAR TAREA: este botón permanecerá deshabilitado.
+
+BOTON MODIFICAR UNA: este botón permanecerá deshabilitado.
+
+-	BOTON ELIMINAR: este botón se utilizara en el caso de que se desee eliminar una tarea previamente seleccionada. Se seleccionara primero el colaborador (primera grilla) y luego la tarea que desea (segunda grilla). Al presionarlo se mostrara una advertencia solicitando su confirmación. En caso de aceptar se eliminara la tarea no pudiendo recuperar sus datos, en caso de no aceptar el formulario se cerrara y haber realizado ningún cambio. 
+ 
+-	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
+</value>
+  </data>
+  <data name="RichTextBox11.Text" xml:space="preserve">
+    <value>
+FUNCIONAMIENTO CONSULTAR TAREAS
+
+-	BOTON MODIFICAR TODAS: éste botón permanecerá deshabilitado.
+
+-	BOTON EXPORTAR LISTADO GENERAL: si se seleccionó el día y el sector, este automáticamente generara un PDF con todas las tareas de todos los colaboradores en ese día. Si el algún colaborador no ha cargado sus tareas se mostrara que no tiene tareas cargadas al momento de ejecutar la acción. 
+
+-	BOTON EXPORTAR LISTADO INDIVIDUAL: si se seleccionó el día y el colaborador de un sector, este automáticamente generara un PDF con todas las tareas de de ese colaborador en ese día. Si el colaborador no ha cargado sus tareas se mostrara que no tiene tareas cargadas al momento de ejecutar la acción. 
+
+-	VER: para mostrar todas las tareas de un colaborador debe seleccionarse éste de la primera grilla, previamente haber filtrado por día y sector. Al presionar el botón “ver” se abrirá el formulario “Consultar tareas” que mostrará todas las tareas del colaborador en un día especifico.
+
+-	BOTON AGREGAR TAREA: éste botón permanecerá deshabilitado.
+
+BOTON MODIFICAR UNA: éste botón permanecerá deshabilitado.
+-	
+-	BOTON ELIMINAR: éste botón permanecerá deshabilitado.
+  
+-	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
+</value>
   </data>
 </root>
