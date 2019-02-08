@@ -203,6 +203,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property eliminarrepeticion() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("eliminarrepeticion", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property exportarPDF() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("exportarPDF", resourceCulture)
@@ -303,6 +313,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property nuevarepeticion() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("nuevarepeticion", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property nuevo_producto() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("nuevo_producto", resourceCulture)
@@ -366,6 +386,26 @@ Namespace My.Resources
         Friend ReadOnly Property principal1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("principal1", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property repeticionchapas() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("repeticionchapas", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Sin_título() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Sin título", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

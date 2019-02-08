@@ -124,6 +124,9 @@
   <data name="consultar_orden" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\consultar_orden.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pdftareasindividual1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pdftareasindividual1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="nuevaordenampliada" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nuevaordenampliada.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -141,6 +144,9 @@
   </data>
   <data name="pdftareasindividual" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pdftareasindividual.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eliminarrepeticion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eliminarrepeticion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="modificar_tarea" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modificar_tarea.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,6 +178,9 @@
   <data name="consultar_orden1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\consultar_orden1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Sin título" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Sin título.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\principal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -186,6 +195,9 @@
   </data>
   <data name="exportartareasgeneral" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exportartareasgeneral.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="repeticionchapas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\repeticionchapas.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eliminar_orden1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eliminar_orden1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,7 +232,7 @@
   <data name="PDF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PDF.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pdftareasindividual1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pdftareasindividual1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nuevarepeticion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nuevarepeticion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

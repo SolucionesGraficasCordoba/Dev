@@ -145,6 +145,7 @@ Partial Class frm_VerMasDetalles
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.PictureBox37 = New System.Windows.Forms.PictureBox()
         Me.PictureBox38 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox39 = New System.Windows.Forms.PictureBox()
         Me.ReTrabajo.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage5.SuspendLayout()
@@ -218,6 +219,7 @@ Partial Class frm_VerMasDetalles
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCerrar
@@ -311,6 +313,7 @@ Partial Class frm_VerMasDetalles
         'TabPage7
         '
         Me.TabPage7.BackColor = System.Drawing.Color.DarkGray
+        Me.TabPage7.Controls.Add(Me.PictureBox39)
         Me.TabPage7.Controls.Add(Me.Label25)
         Me.TabPage7.Controls.Add(Me.TextBox5)
         Me.TabPage7.Controls.Add(Me.PictureBox35)
@@ -325,17 +328,17 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(629, 7)
+        Me.Label25.Location = New System.Drawing.Point(551, 36)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(102, 13)
+        Me.Label25.Size = New System.Drawing.Size(235, 13)
         Me.Label25.TabIndex = 11
-        Me.Label25.Text = "Formulario Tarea"
+        Me.Label25.Text = "Formulario Nuevo Repetición de Chapas"
         '
         'TextBox5
         '
         Me.TextBox5.BackColor = System.Drawing.Color.White
         Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(34, 10)
+        Me.TextBox5.Location = New System.Drawing.Point(6, 6)
         Me.TextBox5.Multiline = True
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.ReadOnly = True
@@ -1516,9 +1519,10 @@ Partial Class frm_VerMasDetalles
         '
         'PictureBox35
         '
-        Me.PictureBox35.Location = New System.Drawing.Point(506, 23)
+        Me.PictureBox35.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevarepeticion
+        Me.PictureBox35.Location = New System.Drawing.Point(651, 52)
         Me.PictureBox35.Name = "PictureBox35"
-        Me.PictureBox35.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox35.Size = New System.Drawing.Size(234, 150)
         Me.PictureBox35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox35.TabIndex = 10
         Me.PictureBox35.TabStop = False
@@ -1561,6 +1565,15 @@ Partial Class frm_VerMasDetalles
         Me.PictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox38.TabIndex = 13
         Me.PictureBox38.TabStop = False
+        '
+        'PictureBox39
+        '
+        Me.PictureBox39.Location = New System.Drawing.Point(414, 52)
+        Me.PictureBox39.Name = "PictureBox39"
+        Me.PictureBox39.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox39.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox39.TabIndex = 12
+        Me.PictureBox39.TabStop = False
         '
         'frm_VerMasDetalles
         '
@@ -1665,6 +1678,7 @@ Partial Class frm_VerMasDetalles
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1790,4 +1804,5 @@ Partial Class frm_VerMasDetalles
     Friend WithEvents Label28 As System.Windows.Forms.Label
     Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
     Friend WithEvents PictureBox38 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureBox39 As System.Windows.Forms.PictureBox
 End Class
