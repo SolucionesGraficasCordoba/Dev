@@ -10,6 +10,13 @@ Public Class frm_Etiqueta_Modelo_1
         btnBuscar_Orden.Focus()
         dgv_Etiquetas.ClearSelection()
         cboLogo.SelectedIndex = 1
+
+        '***************Para ver con vale link label a el out de etiquetas****************
+        Dim tempruta As String
+        tempruta = Configuration.ConfigurationManager.AppSettings("ruta_salida_etiquetas")
+        LinkLabel1.Text = "VER ETIQUETAS GENERADAS"
+        LinkLabel1.Links.Add(0, 23, tempruta)
+        '************************************************************************
     End Sub
 
     Private Sub btnBuscarCliente_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscarCliente.Click
@@ -164,7 +171,7 @@ Public Class frm_Etiqueta_Modelo_1
         If dgv_Etiquetas.RowCount > 0 Then
             Dim consulta As String = "ETIQUETA_GENERICA_DIARIA_" + Date.Now.Millisecond.ToString + ".csv"
 
-            Dim tempruta As String = Configuration.ConfigurationManager.AppSettings("ruta_etiquetas")
+            Dim tempruta As String = Configuration.ConfigurationManager.AppSettings("ruta_entrada_etiquetas")
             Dim filePath As String = tempruta + consulta
 
             ' Dim filePath As String = "C:\Users\pbaldo\Downloads\Baldo-Compartida\" + consulta
@@ -247,6 +254,16 @@ Public Class frm_Etiqueta_Modelo_1
         If txtCantidadBultos.TextLength <> 0 And txtUnidadxBulto.TextLength <> 0 Then
             txtTotalBultos.Text = Math.Ceiling(CInt(txtCantidadBultos.Text) / CInt(txtUnidadxBulto.Text))
         End If
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As System.Object, e As System.Windows.Forms.LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        'VER CON VALE!!! hay mas codigo en el load de este form
+
+        Try
+            System.Diagnostics.Process.Start(e.Link.LinkData.ToString())
+        Catch ex As Exception
+            MsgBox("No se encuentra la ruta")
+        End Try
     End Sub
 End Class
 
