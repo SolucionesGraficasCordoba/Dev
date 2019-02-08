@@ -117,149 +117,86 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="RichTextBox4.Text" xml:space="preserve">
-    <value>
--	GRILLA DE ORDENES (muestra el listado de las ordenes cargadas)
-
--	GRILLA DE PRODUCTOS (muestra los productos de la orden seleccionada)
-
--	botón “AGREGAR PRODUCTO”: agrega un nuevo producto a una orden seleccionada.
-
--	botón “MODIFICAR ORDEN”: actualiza los datos de la orden.
-
--	botón “ELIMINAR ORDEN”: elimina una orden y sus productos.
-
--	botón “EXPORTAR LISTADO A PDF”: genera un pdf con los datos de la orden y sus productos.
-
--	botón “VER”: muestra los datos de la orden y de un producto seleccionado.
-
--	botón “MODIFICAR PRODUCTO”: actualiza los datos del producto.
-
--	botón “ELIMINAR PRODUCTO”: elimina un producto de una orden previamente seleccionada.
-
--	botón “CANCELAR”: cierra el formulario sin realizar cambios.
-
--	campo “NRO ORDEN”: campo de búsqueda por número de orden.
-
--	campo “CLIENTE/RAZON SOCIAL”: campo de búsqueda por cliente/razón social.
-
--	campo “FECHA DE ENTREGA”: campo de búsqueda por fecha de entrega.
-</value>
-  </data>
-  <data name="RichTextBox7.Text" xml:space="preserve">
-    <value>El formulario PRINCIPAL contiene las siguientes pestañas:
-
-- USUARIO:  
-* nuevo: da de alta a un nuevo usuario.
-* modificar: actualiza los datos de un usuario existente.
- * eliminar: da de baja a un usuario.
- * consultar: muestra datos de los usuarios.
-
-- COLABORADOR: 
-* nuevo: da de alta a un nuevo colaborador.
- * modificar: actualiza los datos de un colaborador existente.
-* eliminar: da de baja a un colaborador.
-* consultar: muestra datos de los colaboradores.
-
-- VENDEDOR: 
-* nuevo: da de alta a un nuevo vendedor.
-* modificar: actualiza los datos de un vendedor existente.
-* eliminar: da de baja a un vendedor.
-* consultar: muestra datos de los vendedores.
-
-- CLIENTE:   
-* nuevo: da de alta a un nuevo cliente.
-* modificar: actualiza los datos de un cliente existente.
-* eliminar: da de baja a un cliente.
-* consultar: muestra datos de los clientes.
-
-- PIEZA:   
-* nuevo: da de alta a un nueva pieza.
-* modificar: actualiza los datos de una pieza existente.
-* eliminar: da de baja a una pieza.
-* consultar: muestra datos de las piezas.
+  <data name="TextBox3.Text" xml:space="preserve">
+    <value>COMPONENTES DEL FORMULARIO REPETICION DE CHAPAS
 
 
-- SECTOR: 
-* nuevo: da de alta a un nuevo sector.
-* modificar: actualiza los datos de un sector existente.
-* eliminar: da de baja a un sector.
-* consultar: muestra datos de los sectores.
+-	CAMPO NRO. ORDEN: muestra el nro. de la orden.
 
-- TAREA:  
-* nuevo: da de alta a una nueva tarea.
-* modificar: actualiza los datos de una tarea existente.
-* eliminar: da de baja a una tarea.
-* consultar: muestra datos de las tareas.
+-	BOTON BUSCAR ORDEN: abre el formulario "listado de ordenes".
 
-- PRODUCTO: 
-* Gestión de Productos 
-          ° nuevo: da de alta a un nuevo producto.
-          ° modificar: actualiza los datos de un producto existente.
-          ° eliminar: da de baja a un producto.
-* Stock de Productos
-           ° alta: da de alta una nueva cantidad de un producto.
-           ° baja: da de baja una cantidad de un producto.
-           ° consultar productos: muestra datos de los productos.
-           ° consultar movimientos: muestra altas y bajas de los productos.
+-	CAMPO FECHA DE INGRESO: fecha original de la orden. 
 
-- ORDEN TRABAJO: 
-* nuevo: da de alta a una nueva orden de trabajo.
-* modificar: actualiza los datos de una orden de trabajo existente.
-* eliminar: da de baja a una orden de trabajo.
-* consultar: muestra datos de las orden de trabajo.
+-	CAMPO CANTIDAD: cantidad original de la orden.  
 
-- RE-TRABAJO: 
-* Repetición de Chapas 
-                ° nuevo: da de alta a un nueva repetición de chapas.
-	° eliminar: da de baja a una repetición de chapas.
-* Digital / Offset
-	° nuevo: da de alta a un nuevo re-trabajo de digital/offset.
-	 ° eliminar: da de baja a un nuevo re-trabajo de digital/offset.
-                 ° consultar: 
-	 ° Repetición de Chapas: muestra datos de re-trabajo respecto a la repetición de chapas.
-	 ° Digital / Offset: muestra datos de re-trabajo de digital7offset.
-			
-- ETIQUETAS: genera etiquetas.
+-	COMBO PIEZA: pieza original de la orden. 
 
-- ESTADISTICAS: 
-* Tareas
-	°Diarias por Colaborador: muestra los tiempos estimado y real de cada colaborador dentro del mes.
-	°Mensuales por Sector: muestra los tiempos estimados y reales de cada sector.
+-	CAMPO TAMAÑO: tamaño original del producto de la orden.
 
-- CORREO ELECTRONICO: área en construcción.
+-	CAMPO CHAPAS: cantidad de chapas original de la orden.
 
-- ACERCA DE: hace referencia a las partes más importantes del sistema.
-</value>
-  </data>
-  <data name="RichTextBox2.Text" xml:space="preserve">
-    <value>-	BOTON BUSCAR VENDEDOR (...): abre el formulario de vendedores.
+-	COMBO IMPRESORA: impresora original de la orden.
 
--	BOTON BUSCAR CLIENTE (...): abre el formulario de clientes.
+-	COMBO MARCA: marca original de la impresora de la orden.
 
--	BOTON GUARDAR: guarda la información cargada. 
+-	CAMPO FECHA RETRABAJO: fecha de realizacion del retrabajo.
 
--	BOTON CANCELAR: cierra el formulario sin guardar los cambios.  
+-	CAMPO FECHA ENTREGA RETRABAJO: nueva fecha de entrega del retrabajo.
 
--	CAMPO NRO ORDEN: ingresa el Nro. de Orden. 
+-	CAMPO CANTIDAD DE CHAPAS: nueva cantidad de chapas a utilizar.
 
--	COMBO DIRECCION DE ENTREGA: la Dirección a la que será entregado el trabajo.
+-	COMBO MOTIVO: motivo por el que se realizo el retrabajo.
 
--	CAMPO FECHA INGRESO: fecha de ingreso de la odt.
+-	COMBO IMPRESORA: impresora a utilizar.
 
--	CAMPO FECHA ENTREGA: fecha de entrega de la odt.
+-	COMBO MARCA: marca de la impresora a utilizar.
 
--	CAMPO OBSERVACIONES: comentarios que se creen importantes de destacar.
+-	CAMPO OBSERVACIONES: datos extras importantes a tener en cuenta.
 
--	CHECK’S TIPO ORDEN: tipo de orden disponible para seleccionar.
+-	BOTON GUARDAR: guarda el retrabajo.
 
--	CAMPO CANTIDAD PRODUCTO: cantidad del producto a realizar.
+-	BOTON CANCELAR: cierra el formulario.
 
--	COMBO PIEZA PRODUCTO: desplegable que muestra todos los productos del cual se seleccionará el deseado.
+-	BOTON ELIMINAR: elimina un retrabajo seleccionado.
 
--	CAMPO TAMAÑO PRODUCTO: tamaño del producto a realizar.
+-       CAMPO BUSCAR ORDEN: busqueda de la orden por su nro.
 
--	CAMPO PAPEL 1, 2, 3: Tipo de papel a utilizar.
+-	GRILLA RETRABAJO: listado de retrabajos.
+
+-------------------------------------------------------------------------------------------------------------
+
+COMPONENTES DEL FORMULARIO DE RETRABAJO OFFSET / DIGITAL:
+
+
+-	BOTON BUSCAR ORDEN (...): abre el formulario de ordenes.
+
+-	CAMPO NRO DE ORDEN: muestra el nro. de la orden.
+
+-	CAMPO FECHA DE INGRESO: fecha de ingreso original.
+
+-	CAMPO FECHA DE ENTREGA: fecha de entrega original.
+
+-	CAMPO CANTIDAD: muestra la cantidad original del producto.
+ 
+-	COMBO PIEZAS: muestra el producto original.
+
+-	CAMPO TAMAÑO: tamaño original del producto.
+
+-	CAMPO FECHA RETRABAJO: fecha de retrabajo.
+
+-	CAMPO FECHA ENTREGA RETRABAJO: fecha de entrega del retrabajo.
+
+-	CAMPO CANTIDAD: nueva cantidad del producto.
+
+-	CAMPO CAUSA / ORIGEN: motivo por el que se realiza el retrabajo.
+
+-	CAMPO PROCEDIMIENTO: trabajo a realizar.
+
+-	CHECK'S OFFSET: campo de seleccion.
+
+-	CHECK'S DIGITAL: campo de seleccion.
+
+-       CAMPO PAPEL 1,2,3: papel en que se realizara el retrabajo.
 
 -	CAMPO GRAMAJE 1, 2,3: grosor del papel.
 
@@ -267,21 +204,17 @@
 
 -	COMBO 1, 2, 3 FORMATO PLIEGO ENTERO PRODUCTO: desplegable que muestra todos los formatos de pliegos enteros.
 
--	COMBO TIPO IMPRESIÓN OFFSET: desplegable que muestra los tipos de impresión estándar disponibles. (Se pueden agregar otros).
+-	COMBO TIPO IMPRESIÓN OFFSET: desplegable que muestra los tipos de impresión estandar disponibles.(Se pueden agregar otros).
 
 -	COMBO MODO IMPRESIÓN OFFSET: desplegable que muestra los modos de impresión disponibles.
 
 -	COMBO IMPRESORA OFFSET: desplegable que muestra las impresoras disponibles.
 
--	COMBO MARCA OFFSET: desplegable que muestra las marcas disponibles.
-
 -	CAMPO CANTIDAD 1, 2, 3 PLIEGO MAQUINA OFFSET: cantidad de pliegos máquina de offset.
 
--	COMBO FORMATO 1, 2, 3 PLIEGO MAQUINA OFFSET: desplegable que muestra los formato de pliegos máquina de offset.
+-	COMBO FORMATO 1, 2, 3 PLIEGO MAQUINA OFFSET:  desplegable que muestra los formato de pliegos máquina de offset.
 
--	CAMPO CHAPAS 1, 2, 3: cantidad de chapas.
-
--	COMBO TIPO IMPRESIÓN DIGITAL: desplegable que muestra los tipos de impresión digital disponibles.
+-	COMBO TIPO IMPRESIÓN DIGITAL:  desplegable que muestra los tipos de impresión digital disponibles.
 
 -	CAMPO CANTIDAD 1, 2, 3 PLIEGO MAQUINA DIGITAL: cantidad pliego maquina digital.
 
@@ -289,97 +222,92 @@
 
 -	CAMPO DATO VARIABLE: comentarios que se creen importantes de destacar sobre un dato variable realizado.
 
--	CAMPO CANTIDAD GRAN FORMATO: cantidad de trabajo a realizar en gran formato.
+-	CAMPO BUSQUEDA DE LA ORDEN: filtro de busqueda por nro. de orden.
 
--	COMBO PIEZA GRAN FORMATO: desplegable que muestra los productos de gran formato.
+-	CAMPO BUSQUEDA MES:  filtro de busqueda por mes.
 
--	CAMPO TAMAÑO GRAN FORMATO: tamaño a realizar en gran formato.
+-	GRILLA OFFSET / DIGITAL: listado de todos los retrabajos realizados.
 
--	COMBO CALIDAD GRAN FORMATO: desplegable que muestra la calidad de impresión disponible.
+-	BOTON IMPRIMIR FORMULARIO:  imprime el formulario.
 
--	COMBO SISTEMA GRAN FORMATO: desplegable que muestra el sistema de impresión disponible.
+-	BOTON ELIMINAR:  elimina un retrabajo del listado.
 
--	CHECK’S TERMINACION: tipo de terminaciones.
+-	BOTON GUARDAR: guarda un nuevo retrabajo.
 
--	CAMPO DESCRIPCION TERMINACION: comentarios que se creen importantes de destacar para terminación.
+-	BOTON CANCELAR: cierra el formulario.
 </value>
   </data>
-  <data name="RichTextBox1.Text" xml:space="preserve">
-    <value>
-FUNCIONAMIENTO NUEVA ORDEN:
+  <data name="TextBox4.Text" xml:space="preserve">
+    <value>El formulario de PRODUCTO consta de los siguientes datos: 
 
-Este formulario se utilizará en el caso de que se desee agregar una nueva orden. 
-Se completaran todos los campos necesarios relacionados al encabezado de la orden. El botón "buscar cliente" abrirá el formulario del 'listado de clientes' y mediante un 'doble click' sobre el mismo, 
-Éste se cargará en el campo del cliente previamente establecido.
-El mismo procedimiento se hará al buscar al vendedor, en su lugar se abrirá el “listado de vendedores” previamente cargados al sistema.
-Se tildara el tipo de orden de acuerdo al producto que se desea cargar (puede haber más de un tipo de orden), habilitándose los campos relacionados. 
-Una vez completos todos los campos necesarios, el botón GUARDAR cargara la nueva orden al sistema volviendo al formulario principal.
+- CAMPO CODIGO: código del producto.
+- CAMPO DESCRIPCION: descripción del producto.
+- STOCK MINIMO: stock mínimo actual de un producto.
+- CANTIDAD EN STOCK: cantidad de stock de un producto.
 
-Nota 1: los campos tildados en rojo son OBLIGATORIOS, lo que significa que no se podrá guardar la orden si alguno de ellos está vacío.
-Nota 2: completar el campo observaciones SI Y SOLO SI es necesario, o si cree que es necesaria agregar alguna información extra.
+- BOTON GUARDAR: guardará el nuevo producto.
+- BOTON ACTUALIZAR: modificará los datos de un producto.
+- BOTON EXPORTAR A PDF: generará un pdf mostrando los datos de un producto.
+- BOTON ELIMINAR: borrará un producto seleccionado.
+- BOTON CANCELAR:cerrará el formulario sin realizar cambios.
+- CHECK PRODUCTO: se buscará por nombre de producto.
+- CHECK CODIGO: se buscará por código de producto.
+- GRILLA PRODUCTOS: muestra el listado de todos los productos.
 
-</value>
-  </data>
-  <data name="RichTextBox3.Text" xml:space="preserve">
-    <value>FUNCIONAMIENTO MODIFICAR ORDEN:
+-----------------------------------------------------------------------------
 
--	BOTON AGREGAR PRODUCTO: este botón se utilizara en el caso de que se desee agregar un nuevo producto a una orden ya existente. 
-Al presionarlo se abrirá el formulario “Agregar nuevo producto”, los campos de la orden se mostraran y estarán deshabilitados, se tildará el tipo de producto que desea cargar, al habilitarse los campos se completaran los datos necesarios y con el botón guardar se agregara el nuevo producto.
+FUNCIONAMIENTO FORMULARIO PRODUCTO: 
 
--	BOTON MODIFICAR ORDEN: este botón se utilizara en el caso de que se desee modificar los datos exclusivos de la orden. (cliente, vendedor, fecha de ingreso, fecha de entrega, dirección de entrega, observaciones). Al presionarlo abrirá el formulario “Actualizar datos de la Orden”. A modo de información mostrara el nro. de orden (este no puede modificarse). El botón (…) referido al vendedor abrirá el formulario de “Vendedores”, se seleccionara mediante doble click al vendedor elegido y el formulario se cerrara trayendo al campo designado, su nombre. El mismo procedimiento se hará con el botón de clientes.
- 
-El botón “actualizar” guardara los cambios realizados cerrando ambos formularios (“actualizar datos de la orden” y “listado de órdenes”) volviendo al formulario principal.
+1 - NUEVO PRODUCTO: 
+- completar todos los campos necesarios(campos con asterisco).
+- el botón guardar, guardará el producto.
+- los botones ACTUALIZAR, ELIMINAR, EXPORTAR A PDF estarán deshabilitados.
+- la grilla estará deshabilitada.
 
--	BOTON ELIMINAR ORDEN: este boton estara deshabilitado.
+2 - ACTUALIZAR PRODUCTO: 
+- se seleccionará de la grilla un producto al que se desea modificar sus datos.
+- el botón ACTUALIZAR, modificará los datos.
+- los botones GUARDAR, ELIMINAR, EXPORTAR A PDF estarán deshabilitados.
+ - se podrán buscar los productos por su nombre o por su código, de acuerdo a lo que se seleccione.
 
--	BOTON EXPORTAR A PDF: este boton estara deshabilitado.
+3 - ELIMINAR PRODUCTO: 
+- se seleccionará de la grilla un producto al que se desea eliminar.
+ - el botón ELIMINAR, borrará el producto.
+ - los botones GUARDAR, ACTUALIZAR, EXPORTAR A PDF estarán deshabilitados.
+- se podrán buscar los productos por su nombre o por su código, de acuerdo a lo que se seleccione.
 
--	BOTON VER: este boton estara deshabilitado.
+4 - CONSULTAR PRODUCTO: 
+- se seleccionará de la grilla un producto al que se desea consultar sus datos.
+- los datos seleccionados se mostrarán en su campo.
+- los botones GUARDAR, ACTUALIZAR, ELIMINAR, EXPORTAR A PDF estarán deshabilitados.
+- se podrán buscar los productos por su nombre o por su código, de acuerdo a lo que se seleccione.
 
-BOTON MODIFICAR PRODUCTO: este botón se utilizara en el caso de que se desee modificar los datos de un producto previamente seleccionado de la segunda grilla. Al presionarlo abrirá el formulario “Actualizar productos de la Orden”. A modo de información mostrara el nro. de orden (este no puede modificarse). Al presionarlo se abrirá el formulario “Actualizar Producto”, se modificaran los datos necesarios.
-El botón “actualizar” guardara los cambios realizados cerrando ambos formularios volviendo al formulario principal.
--	
--	BOTON ELIMINAR PRODUCTO: este botón estará deshabilitado.
- 
--	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
-</value>
-  </data>
-  <data name="RichTextBox5.Text" xml:space="preserve">
-    <value>FUNCIONAMIENTO ELIMINAR ORDEN:
+-------------------------------------------------------------------------------------------------------
 
--	BOTON AGREGAR PRODUCTO: este botón estará deshabilitado.
+El formulario de ALTA/BAJA PRODUCTOS consta de los siguientes datos: 
 
--	BOTON ELIMINAR ORDEN: este botón se utilizara en el caso de que se desee eliminar una orden previamente seleccionada. Al presionarlo se mostrara una advertencia solicitando su confirmación. En caso de aceptar se eliminara la orden y sus productos no pudiendo recuperar sus datos, en caso de no aceptar el formulario se cerrara y haber realizado ningún cambio.  
+- CAMPO CODIGO: código del producto.
+- CAMPO DESCRIPCION: descripción del producto.
+- COMBO TIPO DE MOVIMIENTO: alta o baja del producto.
+- CAMPO ORDEN: número de orden de trabajo relacionada.
+- CAMPO CANTIDAD: nueva cantidad que se agregará al stock.
+- CAMPO INGRESE NOMBRE: búsqueda por nombre de producto.
+- BOTON BUSCAR ORDEN(...): abrirá el formulario de órdenes del gual se seleccionará mediante un doble click la orden seleccionada.
+- BOTON INGRESAR STOCK: guardará la cantidad del producto la cual se actualizará a la cantidad actual.
+- BOTON CANCELAR: cerrará el formulario sin hacer cambios.
+- GRILLA: muestra el listado de productos existentes.
+-----------------------------------------------------------------------------------------------------------------
 
--	BOTON EXPORTAR A PDF: estará generará un pdf en el escritorio de la pc con la información de la orden y sus productos.
+CAMPOS Y FUNCIONAMIENTO DE FORMULARIO MOVIMIENTO DE PRODUCTOS: 
 
--	BOTON VER: este botón estará deshabilitado.
+- COMBO MES: meses del año.
+- CAMPO PRODUCTO: búsqueda por nombre de producto.
+- GRILLA MOVIMIENTO DE PRODUCTOS: muestra el movimiento de un producto seleccionado.
+- BOTON EXPORTAR A PDF: genera un pdf con el movimiento(alta y baja) de un producto.
+- BOTON CANCELAR: cierra el formulario sin haber cambios.
 
-BOTON MODIFICAR PRODUCTO: este botón estará deshabilitado.
--	
--	BOTON ELIMINAR PRODUCTO: este botón se utilizara en el caso de que se desee eliminar un producto previamente seleccionado. Se seleccionara primero la orden (primera grilla) y luego el producto que desea (segunda grilla).
--	Al presionarlo se mostrara una advertencia solicitando su confirmación. En caso de aceptar se eliminara el producto no pudiendo recuperar sus datos, en caso de no aceptar el formulario se cerrara y haber realizado ningún cambio.  
--	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
-</value>
-  </data>
-  <data name="RichTextBox6.Text" xml:space="preserve">
-    <value>FUNCIONAMIENTO CONSULTAR ORDEN:
-
--	BOTON AGREGAR PRODUCTO: este botón estara deshabilitado.
-
--	BOTON ELIMINAR ORDEN: este botón estara deshabilitado.
-
--	BOTON EXPORTAR A PDF: estará generará un pdf en el escritorio de la pc con la información de la orden y sus productos.
-
--	BOTON VER: este botón se utilizara en el caso de que se desee consultar un producto previamente seleccionado. Se seleccionara primero la orden (primera grilla) y luego el producto que desea (segunda grilla). Todos los campos estarán deshabilitados.
-El botón “cancelar” cerrará el formulario volviendo al formulario principal.
-
-BOTON MODIFICAR PRODUCTO: este botón estara deshabilitado.
-
--	BOTON ELIMINAR PRODUCTO: este botón estara deshabilitado.
- 
--	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
-</value>
+1 - se elegirá del combo el mes Y el producto a buscar
+2- la grilla mostrará las altas y bajas del producto en el mes seleccionado.</value>
   </data>
   <data name="TextBox1.Text" xml:space="preserve">
     <value>El formulario de TAREA consta de los siguientes elementos:
@@ -479,78 +407,6 @@ BOTON MODIFICAR UNA: este botón se utilizara en el caso de que se desee modific
 -	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
 </value>
   </data>
-  <data name="TextBox4.Text" xml:space="preserve">
-    <value>El formulario de PRODUCTO consta de los siguientes datos: 
-
-- CAMPO CODIGO: código del producto.
-- CAMPO DESCRIPCION: descripción del producto.
-- STOCK MINIMO: stock mínimo actual de un producto.
-- CANTIDAD EN STOCK: cantidad de stock de un producto.
-
-- BOTON GUARDAR: guardará el nuevo producto.
-- BOTON ACTUALIZAR: modificará los datos de un producto.
-- BOTON EXPORTAR A PDF: generará un pdf mostrando los datos de un producto.
-- BOTON ELIMINAR: borrará un producto seleccionado.
-- BOTON CANCELAR:cerrará el formulario sin realizar cambios.
-- CHECK PRODUCTO: se buscará por nombre de producto.
-- CHECK CODIGO: se buscará por código de producto.
-- GRILLA PRODUCTOS: muestra el listado de todos los productos.
-
------------------------------------------------------------------------------
-
-FUNCIONAMIENTO FORMULARIO PRODUCTO: 
-
-1 - NUEVO PRODUCTO: 
-- completar todos los campos necesarios(campos con asterisco).
-- el botón guardar, guardará el producto.
-- los botones ACTUALIZAR, ELIMINAR, EXPORTAR A PDF estarán deshabilitados.
-- la grilla estará deshabilitada.
-
-2 - ACTUALIZAR PRODUCTO: 
-- se seleccionará de la grilla un producto al que se desea modificar sus datos.
-- el botón ACTUALIZAR, modificará los datos.
-- los botones GUARDAR, ELIMINAR, EXPORTAR A PDF estarán deshabilitados.
- - se podrán buscar los productos por su nombre o por su código, de acuerdo a lo que se seleccione.
-
-3 - ELIMINAR PRODUCTO: 
-- se seleccionará de la grilla un producto al que se desea eliminar.
- - el botón ELIMINAR, borrará el producto.
- - los botones GUARDAR, ACTUALIZAR, EXPORTAR A PDF estarán deshabilitados.
-- se podrán buscar los productos por su nombre o por su código, de acuerdo a lo que se seleccione.
-
-4 - CONSULTAR PRODUCTO: 
-- se seleccionará de la grilla un producto al que se desea consultar sus datos.
-- los datos seleccionados se mostrarán en su campo.
-- los botones GUARDAR, ACTUALIZAR, ELIMINAR, EXPORTAR A PDF estarán deshabilitados.
-- se podrán buscar los productos por su nombre o por su código, de acuerdo a lo que se seleccione.
-
--------------------------------------------------------------------------------------------------------
-
-El formulario de ALTA/BAJA PRODUCTOS consta de los siguientes datos: 
-
-- CAMPO CODIGO: código del producto.
-- CAMPO DESCRIPCION: descripción del producto.
-- COMBO TIPO DE MOVIMIENTO: alta o baja del producto.
-- CAMPO ORDEN: número de orden de trabajo relacionada.
-- CAMPO CANTIDAD: nueva cantidad que se agregará al stock.
-- CAMPO INGRESE NOMBRE: búsqueda por nombre de producto.
-- BOTON BUSCAR ORDEN(...): abrirá el formulario de órdenes del gual se seleccionará mediante un doble click la orden seleccionada.
-- BOTON INGRESAR STOCK: guardará la cantidad del producto la cual se actualizará a la cantidad actual.
-- BOTON CANCELAR: cerrará el formulario sin hacer cambios.
-- GRILLA: muestra el listado de productos existentes.
------------------------------------------------------------------------------------------------------------------
-
-CAMPOS Y FUNCIONAMIENTO DE FORMULARIO MOVIMIENTO DE PRODUCTOS: 
-
-- COMBO MES: meses del año.
-- CAMPO PRODUCTO: búsqueda por nombre de producto.
-- GRILLA MOVIMIENTO DE PRODUCTOS: muestra el movimiento de un producto seleccionado.
-- BOTON EXPORTAR A PDF: genera un pdf con el movimiento(alta y baja) de un producto.
-- BOTON CANCELAR: cierra el formulario sin haber cambios.
-
-1 - se elegirá del combo el mes Y el producto a buscar
-2- la grilla mostrará las altas y bajas del producto en el mes seleccionado.</value>
-  </data>
   <data name="RichTextBox10.Text" xml:space="preserve">
     <value>FUNCIONAMIENTO ELIMINAR TAREA
 
@@ -590,6 +446,270 @@ BOTON MODIFICAR UNA: éste botón permanecerá deshabilitado.
 -	BOTON ELIMINAR: éste botón permanecerá deshabilitado.
   
 -	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
+</value>
+  </data>
+  <data name="RichTextBox2.Text" xml:space="preserve">
+    <value>-	BOTON BUSCAR VENDEDOR (...): abre el formulario de vendedores.
+
+-	BOTON BUSCAR CLIENTE (...): abre el formulario de clientes.
+
+-	BOTON GUARDAR: guarda la información cargada. 
+
+-	BOTON CANCELAR: cierra el formulario sin guardar los cambios.  
+
+-	CAMPO NRO ORDEN: ingresa el Nro. de Orden. 
+
+-	COMBO DIRECCION DE ENTREGA: la Dirección a la que será entregado el trabajo.
+
+-	CAMPO FECHA INGRESO: fecha de ingreso de la odt.
+
+-	CAMPO FECHA ENTREGA: fecha de entrega de la odt.
+
+-	CAMPO OBSERVACIONES: comentarios que se creen importantes de destacar.
+
+-	CHECK’S TIPO ORDEN: tipo de orden disponible para seleccionar.
+
+-	CAMPO CANTIDAD PRODUCTO: cantidad del producto a realizar.
+
+-	COMBO PIEZA PRODUCTO: desplegable que muestra todos los productos del cual se seleccionará el deseado.
+
+-	CAMPO TAMAÑO PRODUCTO: tamaño del producto a realizar.
+
+-	CAMPO PAPEL 1, 2, 3: Tipo de papel a utilizar.
+
+-	CAMPO GRAMAJE 1, 2,3: grosor del papel.
+
+-	CAMPO CANTIDAD 1, 2 ,3 PLIEGO ENTERO PRODUCTO: cantidad de pliego entero a utilizar.
+
+-	COMBO 1, 2, 3 FORMATO PLIEGO ENTERO PRODUCTO: desplegable que muestra todos los formatos de pliegos enteros.
+
+-	COMBO TIPO IMPRESIÓN OFFSET: desplegable que muestra los tipos de impresión estándar disponibles. (Se pueden agregar otros).
+
+-	COMBO MODO IMPRESIÓN OFFSET: desplegable que muestra los modos de impresión disponibles.
+
+-	COMBO IMPRESORA OFFSET: desplegable que muestra las impresoras disponibles.
+
+-	COMBO MARCA OFFSET: desplegable que muestra las marcas disponibles.
+
+-	CAMPO CANTIDAD 1, 2, 3 PLIEGO MAQUINA OFFSET: cantidad de pliegos máquina de offset.
+
+-	COMBO FORMATO 1, 2, 3 PLIEGO MAQUINA OFFSET: desplegable que muestra los formato de pliegos máquina de offset.
+
+-	CAMPO CHAPAS 1, 2, 3: cantidad de chapas.
+
+-	COMBO TIPO IMPRESIÓN DIGITAL: desplegable que muestra los tipos de impresión digital disponibles.
+
+-	CAMPO CANTIDAD 1, 2, 3 PLIEGO MAQUINA DIGITAL: cantidad pliego maquina digital.
+
+-	COMBO FORMATO 1, 2, 3 PLIEGO MAQUINA DIGITAL: desplegable que muestra los formatos de pliego maquina digital.
+
+-	CAMPO DATO VARIABLE: comentarios que se creen importantes de destacar sobre un dato variable realizado.
+
+-	CAMPO CANTIDAD GRAN FORMATO: cantidad de trabajo a realizar en gran formato.
+
+-	COMBO PIEZA GRAN FORMATO: desplegable que muestra los productos de gran formato.
+
+-	CAMPO TAMAÑO GRAN FORMATO: tamaño a realizar en gran formato.
+
+-	COMBO CALIDAD GRAN FORMATO: desplegable que muestra la calidad de impresión disponible.
+
+-	COMBO SISTEMA GRAN FORMATO: desplegable que muestra el sistema de impresión disponible.
+
+-	CHECK’S TERMINACION: tipo de terminaciones.
+
+-	CAMPO DESCRIPCION TERMINACION: comentarios que se creen importantes de destacar para terminación.
+</value>
+  </data>
+  <data name="RichTextBox4.Text" xml:space="preserve">
+    <value>
+-	GRILLA DE ORDENES (muestra el listado de las ordenes cargadas)
+
+-	GRILLA DE PRODUCTOS (muestra los productos de la orden seleccionada)
+
+-	botón “AGREGAR PRODUCTO”: agrega un nuevo producto a una orden seleccionada.
+
+-	botón “MODIFICAR ORDEN”: actualiza los datos de la orden.
+
+-	botón “ELIMINAR ORDEN”: elimina una orden y sus productos.
+
+-	botón “EXPORTAR LISTADO A PDF”: genera un pdf con los datos de la orden y sus productos.
+
+-	botón “VER”: muestra los datos de la orden y de un producto seleccionado.
+
+-	botón “MODIFICAR PRODUCTO”: actualiza los datos del producto.
+
+-	botón “ELIMINAR PRODUCTO”: elimina un producto de una orden previamente seleccionada.
+
+-	botón “CANCELAR”: cierra el formulario sin realizar cambios.
+
+-	campo “NRO ORDEN”: campo de búsqueda por número de orden.
+
+-	campo “CLIENTE/RAZON SOCIAL”: campo de búsqueda por cliente/razón social.
+
+-	campo “FECHA DE ENTREGA”: campo de búsqueda por fecha de entrega.
+</value>
+  </data>
+  <data name="RichTextBox1.Text" xml:space="preserve">
+    <value>
+FUNCIONAMIENTO NUEVA ORDEN:
+
+Este formulario se utilizará en el caso de que se desee agregar una nueva orden. 
+Se completaran todos los campos necesarios relacionados al encabezado de la orden. El botón "buscar cliente" abrirá el formulario del 'listado de clientes' y mediante un 'doble click' sobre el mismo, 
+Éste se cargará en el campo del cliente previamente establecido.
+El mismo procedimiento se hará al buscar al vendedor, en su lugar se abrirá el “listado de vendedores” previamente cargados al sistema.
+Se tildara el tipo de orden de acuerdo al producto que se desea cargar (puede haber más de un tipo de orden), habilitándose los campos relacionados. 
+Una vez completos todos los campos necesarios, el botón GUARDAR cargara la nueva orden al sistema volviendo al formulario principal.
+
+Nota 1: los campos tildados en rojo son OBLIGATORIOS, lo que significa que no se podrá guardar la orden si alguno de ellos está vacío.
+Nota 2: completar el campo observaciones SI Y SOLO SI es necesario, o si cree que es necesaria agregar alguna información extra.
+
+</value>
+  </data>
+  <data name="RichTextBox3.Text" xml:space="preserve">
+    <value>FUNCIONAMIENTO MODIFICAR ORDEN:
+
+-	BOTON AGREGAR PRODUCTO: este botón se utilizara en el caso de que se desee agregar un nuevo producto a una orden ya existente. 
+Al presionarlo se abrirá el formulario “Agregar nuevo producto”, los campos de la orden se mostraran y estarán deshabilitados, se tildará el tipo de producto que desea cargar, al habilitarse los campos se completaran los datos necesarios y con el botón guardar se agregara el nuevo producto.
+
+-	BOTON MODIFICAR ORDEN: este botón se utilizara en el caso de que se desee modificar los datos exclusivos de la orden. (cliente, vendedor, fecha de ingreso, fecha de entrega, dirección de entrega, observaciones). Al presionarlo abrirá el formulario “Actualizar datos de la Orden”. A modo de información mostrara el nro. de orden (este no puede modificarse). El botón (…) referido al vendedor abrirá el formulario de “Vendedores”, se seleccionara mediante doble click al vendedor elegido y el formulario se cerrara trayendo al campo designado, su nombre. El mismo procedimiento se hará con el botón de clientes.
+ 
+El botón “actualizar” guardara los cambios realizados cerrando ambos formularios (“actualizar datos de la orden” y “listado de órdenes”) volviendo al formulario principal.
+
+-	BOTON ELIMINAR ORDEN: este boton estara deshabilitado.
+
+-	BOTON EXPORTAR A PDF: este boton estara deshabilitado.
+
+-	BOTON VER: este boton estara deshabilitado.
+
+BOTON MODIFICAR PRODUCTO: este botón se utilizara en el caso de que se desee modificar los datos de un producto previamente seleccionado de la segunda grilla. Al presionarlo abrirá el formulario “Actualizar productos de la Orden”. A modo de información mostrara el nro. de orden (este no puede modificarse). Al presionarlo se abrirá el formulario “Actualizar Producto”, se modificaran los datos necesarios.
+El botón “actualizar” guardara los cambios realizados cerrando ambos formularios volviendo al formulario principal.
+-	
+-	BOTON ELIMINAR PRODUCTO: este botón estará deshabilitado.
+ 
+-	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
+</value>
+  </data>
+  <data name="RichTextBox5.Text" xml:space="preserve">
+    <value>FUNCIONAMIENTO ELIMINAR ORDEN:
+
+-	BOTON AGREGAR PRODUCTO: este botón estará deshabilitado.
+
+-	BOTON ELIMINAR ORDEN: este botón se utilizara en el caso de que se desee eliminar una orden previamente seleccionada. Al presionarlo se mostrara una advertencia solicitando su confirmación. En caso de aceptar se eliminara la orden y sus productos no pudiendo recuperar sus datos, en caso de no aceptar el formulario se cerrara y haber realizado ningún cambio.  
+
+-	BOTON EXPORTAR A PDF: estará generará un pdf en el escritorio de la pc con la información de la orden y sus productos.
+
+-	BOTON VER: este botón estará deshabilitado.
+
+BOTON MODIFICAR PRODUCTO: este botón estará deshabilitado.
+-	
+-	BOTON ELIMINAR PRODUCTO: este botón se utilizara en el caso de que se desee eliminar un producto previamente seleccionado. Se seleccionara primero la orden (primera grilla) y luego el producto que desea (segunda grilla).
+-	Al presionarlo se mostrara una advertencia solicitando su confirmación. En caso de aceptar se eliminara el producto no pudiendo recuperar sus datos, en caso de no aceptar el formulario se cerrara y haber realizado ningún cambio.  
+-	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
+</value>
+  </data>
+  <data name="RichTextBox6.Text" xml:space="preserve">
+    <value>FUNCIONAMIENTO CONSULTAR ORDEN:
+
+-	BOTON AGREGAR PRODUCTO: este botón estara deshabilitado.
+
+-	BOTON ELIMINAR ORDEN: este botón estara deshabilitado.
+
+-	BOTON EXPORTAR A PDF: estará generará un pdf en el escritorio de la pc con la información de la orden y sus productos.
+
+-	BOTON VER: este botón se utilizara en el caso de que se desee consultar un producto previamente seleccionado. Se seleccionara primero la orden (primera grilla) y luego el producto que desea (segunda grilla). Todos los campos estarán deshabilitados.
+El botón “cancelar” cerrará el formulario volviendo al formulario principal.
+
+BOTON MODIFICAR PRODUCTO: este botón estara deshabilitado.
+
+-	BOTON ELIMINAR PRODUCTO: este botón estara deshabilitado.
+ 
+-	BOTON CANCELAR: cierra el formulario sin haber realizado ningún cambio.
+</value>
+  </data>
+  <data name="RichTextBox7.Text" xml:space="preserve">
+    <value>El formulario PRINCIPAL contiene las siguientes pestañas:
+
+- USUARIO:  
+* nuevo: da de alta a un nuevo usuario.
+* modificar: actualiza los datos de un usuario existente.
+ * eliminar: da de baja a un usuario.
+ * consultar: muestra datos de los usuarios.
+
+- COLABORADOR: 
+* nuevo: da de alta a un nuevo colaborador.
+ * modificar: actualiza los datos de un colaborador existente.
+* eliminar: da de baja a un colaborador.
+* consultar: muestra datos de los colaboradores.
+
+- VENDEDOR: 
+* nuevo: da de alta a un nuevo vendedor.
+* modificar: actualiza los datos de un vendedor existente.
+* eliminar: da de baja a un vendedor.
+* consultar: muestra datos de los vendedores.
+
+- CLIENTE:   
+* nuevo: da de alta a un nuevo cliente.
+* modificar: actualiza los datos de un cliente existente.
+* eliminar: da de baja a un cliente.
+* consultar: muestra datos de los clientes.
+
+- PIEZA:   
+* nuevo: da de alta a un nueva pieza.
+* modificar: actualiza los datos de una pieza existente.
+* eliminar: da de baja a una pieza.
+* consultar: muestra datos de las piezas.
+
+
+- SECTOR: 
+* nuevo: da de alta a un nuevo sector.
+* modificar: actualiza los datos de un sector existente.
+* eliminar: da de baja a un sector.
+* consultar: muestra datos de los sectores.
+
+- TAREA:  
+* nuevo: da de alta a una nueva tarea.
+* modificar: actualiza los datos de una tarea existente.
+* eliminar: da de baja a una tarea.
+* consultar: muestra datos de las tareas.
+
+- PRODUCTO: 
+* Gestión de Productos 
+          ° nuevo: da de alta a un nuevo producto.
+          ° modificar: actualiza los datos de un producto existente.
+          ° eliminar: da de baja a un producto.
+* Stock de Productos
+           ° alta: da de alta una nueva cantidad de un producto.
+           ° baja: da de baja una cantidad de un producto.
+           ° consultar productos: muestra datos de los productos.
+           ° consultar movimientos: muestra altas y bajas de los productos.
+
+- ORDEN TRABAJO: 
+* nuevo: da de alta a una nueva orden de trabajo.
+* modificar: actualiza los datos de una orden de trabajo existente.
+* eliminar: da de baja a una orden de trabajo.
+* consultar: muestra datos de las orden de trabajo.
+
+- RE-TRABAJO: 
+* Repetición de Chapas 
+                ° nuevo: da de alta a un nueva repetición de chapas.
+	° eliminar: da de baja a una repetición de chapas.
+* Digital / Offset
+	° nuevo: da de alta a un nuevo re-trabajo de digital/offset.
+	 ° eliminar: da de baja a un nuevo re-trabajo de digital/offset.
+                 ° consultar: 
+	 ° Repetición de Chapas: muestra datos de re-trabajo respecto a la repetición de chapas.
+	 ° Digital / Offset: muestra datos de re-trabajo de digital7offset.
+			
+- ETIQUETAS: genera etiquetas.
+
+- ESTADISTICAS: 
+* Tareas
+	°Diarias por Colaborador: muestra los tiempos estimado y real de cada colaborador dentro del mes.
+	°Mensuales por Sector: muestra los tiempos estimados y reales de cada sector.
+
+- CORREO ELECTRONICO: área en construcción.
+
+- ACERCA DE: hace referencia a las partes más importantes del sistema.
 </value>
   </data>
 </root>
