@@ -163,9 +163,10 @@
 
 -	GRILLA RETRABAJO: listado de retrabajos.
 
--------------------------------------------------------------------------------------------------------------
-
-COMPONENTES DEL FORMULARIO DE RETRABAJO OFFSET / DIGITAL:
+</value>
+  </data>
+  <data name="RichTextBox12.Text" xml:space="preserve">
+    <value>COMPONENTES DEL FORMULARIO DE RETRABAJO OFFSET / DIGITAL:
 
 
 -	BOTON BUSCAR ORDEN (...): abre el formulario de ordenes.
