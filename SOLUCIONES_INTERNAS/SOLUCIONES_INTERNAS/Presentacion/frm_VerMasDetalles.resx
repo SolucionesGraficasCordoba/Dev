@@ -238,6 +238,26 @@
 -	BOTON CANCELAR: cierra el formulario.
 </value>
   </data>
+  <data name="TextBox7.Text" xml:space="preserve">
+    <value>
+FUNCIONAMIENTO  NUEVO RETRABAJO DIGITAL / OFFSET
+
+Este formulario se utilizará en el caso de que se desee agregar un nuevo re-trabajo de digital y/o offset. 
+El botón "buscar orden" abrirá el formulario del 'listado de órdenes' y mediante un 'doble click' sobre la orden seleccionada, se completarán todos los campos relacionados al encabezado. Estos campos se mostrarán a modo de información y no podrán ser modificados. 
+Se tildará el tipo de orden de acuerdo al producto que se desea realizar el re-trabajo (puede ser de digital y offset), habilitándose los campos relacionados. 
+Una vez completos todos los campos necesarios, el botón GUARDAR cargara el nuevo re-trabajo para luego volver al formulario principal.
+</value>
+  </data>
+  <data name="TextBox8.Text" xml:space="preserve">
+    <value>
+FUNCIONAMIENTO  ELIMINAR  RETRABAJO DIGITAL / OFFSET
+
+Este formulario se utilizará en el caso de que se desee eliminar re-trabajo de digital y/o offset. 
+Del listado de re-trabajos se seleccionará el que se eliminará, previo mensaje de confirmación.
+A modo de información, se cargarán los campos en la parte superior de acuerdo a lo que se seleccione.
+Una vez confirmada la acción los datos no se podrán recuperar.
+</value>
+  </data>
   <data name="TextBox4.Text" xml:space="preserve">
     <value>El formulario de PRODUCTO consta de los siguientes datos: 
 

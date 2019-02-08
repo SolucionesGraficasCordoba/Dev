@@ -101,6 +101,12 @@ Partial Class frm_VerMasDetalles
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.RichTextBox12 = New System.Windows.Forms.RichTextBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.TextBox6 = New System.Windows.Forms.TextBox()
+        Me.Label27 = New System.Windows.Forms.Label()
+        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.Label28 = New System.Windows.Forms.Label()
+        Me.TextBox8 = New System.Windows.Forms.TextBox()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
@@ -135,15 +141,21 @@ Partial Class frm_VerMasDetalles
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.PictureBox34 = New System.Windows.Forms.PictureBox()
         Me.PictureBox35 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox36 = New System.Windows.Forms.PictureBox()
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox37 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox38 = New System.Windows.Forms.PictureBox()
         Me.ReTrabajo.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.TabControl3.SuspendLayout()
         Me.TabPage25.SuspendLayout()
         Me.TabPage7.SuspendLayout()
+        Me.TabPage8.SuspendLayout()
         Me.TabPage6.SuspendLayout()
         Me.TabControl4.SuspendLayout()
+        Me.TabPage9.SuspendLayout()
+        Me.TabPage10.SuspendLayout()
         Me.Producto.SuspendLayout()
         Me.Tarea.SuspendLayout()
         Me.TabControl7.SuspendLayout()
@@ -202,7 +214,10 @@ Partial Class frm_VerMasDetalles
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox34, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox35, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCerrar
@@ -310,7 +325,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(638, 7)
+        Me.Label25.Location = New System.Drawing.Point(629, 7)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(102, 13)
         Me.Label25.TabIndex = 11
@@ -331,6 +346,9 @@ Partial Class frm_VerMasDetalles
         'TabPage8
         '
         Me.TabPage8.BackColor = System.Drawing.Color.DarkGray
+        Me.TabPage8.Controls.Add(Me.Label26)
+        Me.TabPage8.Controls.Add(Me.TextBox6)
+        Me.TabPage8.Controls.Add(Me.PictureBox36)
         Me.TabPage8.Location = New System.Drawing.Point(4, 22)
         Me.TabPage8.Name = "TabPage8"
         Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
@@ -362,23 +380,29 @@ Partial Class frm_VerMasDetalles
         '
         'TabPage9
         '
+        Me.TabPage9.BackColor = System.Drawing.Color.DarkGray
+        Me.TabPage9.Controls.Add(Me.Label27)
+        Me.TabPage9.Controls.Add(Me.TextBox7)
+        Me.TabPage9.Controls.Add(Me.PictureBox37)
         Me.TabPage9.Location = New System.Drawing.Point(4, 22)
         Me.TabPage9.Name = "TabPage9"
         Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage9.Size = New System.Drawing.Size(888, 566)
         Me.TabPage9.TabIndex = 0
         Me.TabPage9.Text = "Nuevo"
-        Me.TabPage9.UseVisualStyleBackColor = True
         '
         'TabPage10
         '
+        Me.TabPage10.BackColor = System.Drawing.Color.DarkGray
+        Me.TabPage10.Controls.Add(Me.Label28)
+        Me.TabPage10.Controls.Add(Me.TextBox8)
+        Me.TabPage10.Controls.Add(Me.PictureBox38)
         Me.TabPage10.Location = New System.Drawing.Point(4, 22)
         Me.TabPage10.Name = "TabPage10"
         Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage10.Size = New System.Drawing.Size(888, 566)
         Me.TabPage10.TabIndex = 1
         Me.TabPage10.Text = "Eliminar"
-        Me.TabPage10.UseVisualStyleBackColor = True
         '
         'Producto
         '
@@ -1092,6 +1116,74 @@ Partial Class frm_VerMasDetalles
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Formulario Digital / Offset"
         '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Location = New System.Drawing.Point(589, 7)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(194, 13)
+        Me.Label26.TabIndex = 14
+        Me.Label26.Text = "Formulario Repetición de Chapas"
+        '
+        'TextBox6
+        '
+        Me.TextBox6.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox6.Location = New System.Drawing.Point(34, 10)
+        Me.TextBox6.Multiline = True
+        Me.TextBox6.Name = "TextBox6"
+        Me.TextBox6.ReadOnly = True
+        Me.TextBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox6.Size = New System.Drawing.Size(404, 553)
+        Me.TextBox6.TabIndex = 12
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Location = New System.Drawing.Point(573, 5)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(194, 13)
+        Me.Label27.TabIndex = 14
+        Me.Label27.Text = "Formulario Repetición de Chapas"
+        '
+        'TextBox7
+        '
+        Me.TextBox7.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox7.Location = New System.Drawing.Point(33, 8)
+        Me.TextBox7.Multiline = True
+        Me.TextBox7.Name = "TextBox7"
+        Me.TextBox7.ReadOnly = True
+        Me.TextBox7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox7.Size = New System.Drawing.Size(404, 537)
+        Me.TextBox7.TabIndex = 12
+        Me.TextBox7.Text = resources.GetString("TextBox7.Text")
+        '
+        'Label28
+        '
+        Me.Label28.AutoSize = True
+        Me.Label28.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label28.Location = New System.Drawing.Point(565, 5)
+        Me.Label28.Name = "Label28"
+        Me.Label28.Size = New System.Drawing.Size(242, 13)
+        Me.Label28.TabIndex = 14
+        Me.Label28.Text = "Formulario Eliminar Repetición de Chapas"
+        '
+        'TextBox8
+        '
+        Me.TextBox8.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox8.Location = New System.Drawing.Point(33, 8)
+        Me.TextBox8.Multiline = True
+        Me.TextBox8.Name = "TextBox8"
+        Me.TextBox8.ReadOnly = True
+        Me.TextBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox8.Size = New System.Drawing.Size(404, 534)
+        Me.TextBox8.TabIndex = 12
+        Me.TextBox8.Text = resources.GetString("TextBox8.Text")
+        '
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.principal1
@@ -1431,6 +1523,15 @@ Partial Class frm_VerMasDetalles
         Me.PictureBox35.TabIndex = 10
         Me.PictureBox35.TabStop = False
         '
+        'PictureBox36
+        '
+        Me.PictureBox36.Location = New System.Drawing.Point(506, 23)
+        Me.PictureBox36.Name = "PictureBox36"
+        Me.PictureBox36.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox36.TabIndex = 13
+        Me.PictureBox36.TabStop = False
+        '
         'PictureBox7
         '
         Me.PictureBox7.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.Sin_título
@@ -1440,6 +1541,26 @@ Partial Class frm_VerMasDetalles
         Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox7.TabIndex = 12
         Me.PictureBox7.TabStop = False
+        '
+        'PictureBox37
+        '
+        Me.PictureBox37.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.repeticionchapas
+        Me.PictureBox37.Location = New System.Drawing.Point(489, 21)
+        Me.PictureBox37.Name = "PictureBox37"
+        Me.PictureBox37.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox37.TabIndex = 13
+        Me.PictureBox37.TabStop = False
+        '
+        'PictureBox38
+        '
+        Me.PictureBox38.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminarrepeticion
+        Me.PictureBox38.Location = New System.Drawing.Point(505, 21)
+        Me.PictureBox38.Name = "PictureBox38"
+        Me.PictureBox38.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox38.TabIndex = 13
+        Me.PictureBox38.TabStop = False
         '
         'frm_VerMasDetalles
         '
@@ -1459,8 +1580,14 @@ Partial Class frm_VerMasDetalles
         Me.TabPage25.PerformLayout()
         Me.TabPage7.ResumeLayout(False)
         Me.TabPage7.PerformLayout()
+        Me.TabPage8.ResumeLayout(False)
+        Me.TabPage8.PerformLayout()
         Me.TabPage6.ResumeLayout(False)
         Me.TabControl4.ResumeLayout(False)
+        Me.TabPage9.ResumeLayout(False)
+        Me.TabPage9.PerformLayout()
+        Me.TabPage10.ResumeLayout(False)
+        Me.TabPage10.PerformLayout()
         Me.Producto.ResumeLayout(False)
         Me.Producto.PerformLayout()
         Me.Tarea.ResumeLayout(False)
@@ -1534,7 +1661,10 @@ Partial Class frm_VerMasDetalles
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox34, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox35, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1651,4 +1781,13 @@ Partial Class frm_VerMasDetalles
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
     Friend WithEvents RichTextBox12 As System.Windows.Forms.RichTextBox
+    Friend WithEvents Label26 As System.Windows.Forms.Label
+    Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
+    Friend WithEvents PictureBox36 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label27 As System.Windows.Forms.Label
+    Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
+    Friend WithEvents PictureBox37 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label28 As System.Windows.Forms.Label
+    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents PictureBox38 As System.Windows.Forms.PictureBox
 End Class
