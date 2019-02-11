@@ -78,6 +78,7 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.txt_descripcion_terminacion = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupGranFormato = New System.Windows.Forms.GroupBox()
+        Me.cboMaterial = New System.Windows.Forms.ComboBox()
         Me.Label40 = New System.Windows.Forms.Label()
         Me.txt_cantidad_producto_Gran_Formato = New System.Windows.Forms.TextBox()
         Me.txtTamaño_Producto_Gran_Formato = New System.Windows.Forms.TextBox()
@@ -126,14 +127,8 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.txt_Gramaje_3_Soporte = New System.Windows.Forms.TextBox()
-        Me.txt_Papel_3_Soporte = New System.Windows.Forms.TextBox()
-        Me.txt_Gramaje_2_Soporte = New System.Windows.Forms.TextBox()
-        Me.txt_Papel_2_Soporte = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.txt_Gramaje_1_Soporte = New System.Windows.Forms.TextBox()
-        Me.txt_Papel_1_Soporte = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.chkTerminacion = New System.Windows.Forms.CheckBox()
         Me.cboTipo_Orden = New System.Windows.Forms.ComboBox()
@@ -145,7 +140,12 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.txt_id_detalle_orden_trabajo1 = New System.Windows.Forms.TextBox()
         Me.btnCancelar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.btnActualizar_Orden_Trabajo = New System.Windows.Forms.Button()
-        Me.cboMaterial = New System.Windows.Forms.ComboBox()
+        Me.cboPapel1 = New System.Windows.Forms.ComboBox()
+        Me.cboPapel2 = New System.Windows.Forms.ComboBox()
+        Me.cboPapel3 = New System.Windows.Forms.ComboBox()
+        Me.cboGramaje1 = New System.Windows.Forms.ComboBox()
+        Me.cboGramaje2 = New System.Windows.Forms.ComboBox()
+        Me.cboGramaje3 = New System.Windows.Forms.ComboBox()
         Me.groupOffset.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupTerminacion.SuspendLayout()
@@ -745,6 +745,15 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.GroupGranFormato.TabStop = False
         Me.GroupGranFormato.Text = "Gran Formato"
         '
+        'cboMaterial
+        '
+        Me.cboMaterial.FormattingEnabled = True
+        Me.cboMaterial.Location = New System.Drawing.Point(364, 33)
+        Me.cboMaterial.MaxLength = 100
+        Me.cboMaterial.Name = "cboMaterial"
+        Me.cboMaterial.Size = New System.Drawing.Size(275, 21)
+        Me.cboMaterial.TabIndex = 148
+        '
         'Label40
         '
         Me.Label40.AutoSize = True
@@ -1005,6 +1014,12 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         '
         'GroupProducto_Soportes
         '
+        Me.GroupProducto_Soportes.Controls.Add(Me.cboGramaje3)
+        Me.GroupProducto_Soportes.Controls.Add(Me.cboGramaje2)
+        Me.GroupProducto_Soportes.Controls.Add(Me.cboGramaje1)
+        Me.GroupProducto_Soportes.Controls.Add(Me.cboPapel3)
+        Me.GroupProducto_Soportes.Controls.Add(Me.cboPapel2)
+        Me.GroupProducto_Soportes.Controls.Add(Me.cboPapel1)
         Me.GroupProducto_Soportes.Controls.Add(Me.Label49)
         Me.GroupProducto_Soportes.Controls.Add(Me.Label48)
         Me.GroupProducto_Soportes.Controls.Add(Me.cboPiezas_Producto)
@@ -1017,14 +1032,8 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.GroupProducto_Soportes.Controls.Add(Me.Label21)
         Me.GroupProducto_Soportes.Controls.Add(Me.Label20)
         Me.GroupProducto_Soportes.Controls.Add(Me.Label14)
-        Me.GroupProducto_Soportes.Controls.Add(Me.txt_Gramaje_3_Soporte)
-        Me.GroupProducto_Soportes.Controls.Add(Me.txt_Papel_3_Soporte)
-        Me.GroupProducto_Soportes.Controls.Add(Me.txt_Gramaje_2_Soporte)
-        Me.GroupProducto_Soportes.Controls.Add(Me.txt_Papel_2_Soporte)
         Me.GroupProducto_Soportes.Controls.Add(Me.Label24)
         Me.GroupProducto_Soportes.Controls.Add(Me.Label25)
-        Me.GroupProducto_Soportes.Controls.Add(Me.txt_Gramaje_1_Soporte)
-        Me.GroupProducto_Soportes.Controls.Add(Me.txt_Papel_1_Soporte)
         Me.GroupProducto_Soportes.Location = New System.Drawing.Point(12, 141)
         Me.GroupProducto_Soportes.Name = "GroupProducto_Soportes"
         Me.GroupProducto_Soportes.Size = New System.Drawing.Size(613, 229)
@@ -1216,38 +1225,6 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.Label14.TabIndex = 56
         Me.Label14.Text = "1"
         '
-        'txt_Gramaje_3_Soporte
-        '
-        Me.txt_Gramaje_3_Soporte.Location = New System.Drawing.Point(265, 182)
-        Me.txt_Gramaje_3_Soporte.MaxLength = 10
-        Me.txt_Gramaje_3_Soporte.Name = "txt_Gramaje_3_Soporte"
-        Me.txt_Gramaje_3_Soporte.Size = New System.Drawing.Size(101, 20)
-        Me.txt_Gramaje_3_Soporte.TabIndex = 20
-        '
-        'txt_Papel_3_Soporte
-        '
-        Me.txt_Papel_3_Soporte.Location = New System.Drawing.Point(34, 182)
-        Me.txt_Papel_3_Soporte.MaxLength = 50
-        Me.txt_Papel_3_Soporte.Name = "txt_Papel_3_Soporte"
-        Me.txt_Papel_3_Soporte.Size = New System.Drawing.Size(225, 20)
-        Me.txt_Papel_3_Soporte.TabIndex = 19
-        '
-        'txt_Gramaje_2_Soporte
-        '
-        Me.txt_Gramaje_2_Soporte.Location = New System.Drawing.Point(265, 156)
-        Me.txt_Gramaje_2_Soporte.MaxLength = 10
-        Me.txt_Gramaje_2_Soporte.Name = "txt_Gramaje_2_Soporte"
-        Me.txt_Gramaje_2_Soporte.Size = New System.Drawing.Size(101, 20)
-        Me.txt_Gramaje_2_Soporte.TabIndex = 16
-        '
-        'txt_Papel_2_Soporte
-        '
-        Me.txt_Papel_2_Soporte.Location = New System.Drawing.Point(34, 156)
-        Me.txt_Papel_2_Soporte.MaxLength = 50
-        Me.txt_Papel_2_Soporte.Name = "txt_Papel_2_Soporte"
-        Me.txt_Papel_2_Soporte.Size = New System.Drawing.Size(225, 20)
-        Me.txt_Papel_2_Soporte.TabIndex = 15
-        '
         'Label24
         '
         Me.Label24.AutoSize = True
@@ -1265,22 +1242,6 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.Label25.Size = New System.Drawing.Size(78, 13)
         Me.Label25.TabIndex = 41
         Me.Label25.Text = "Papel/Sustrato"
-        '
-        'txt_Gramaje_1_Soporte
-        '
-        Me.txt_Gramaje_1_Soporte.Location = New System.Drawing.Point(265, 131)
-        Me.txt_Gramaje_1_Soporte.MaxLength = 10
-        Me.txt_Gramaje_1_Soporte.Name = "txt_Gramaje_1_Soporte"
-        Me.txt_Gramaje_1_Soporte.Size = New System.Drawing.Size(101, 20)
-        Me.txt_Gramaje_1_Soporte.TabIndex = 12
-        '
-        'txt_Papel_1_Soporte
-        '
-        Me.txt_Papel_1_Soporte.Location = New System.Drawing.Point(34, 131)
-        Me.txt_Papel_1_Soporte.MaxLength = 50
-        Me.txt_Papel_1_Soporte.Name = "txt_Papel_1_Soporte"
-        Me.txt_Papel_1_Soporte.Size = New System.Drawing.Size(225, 20)
-        Me.txt_Papel_1_Soporte.TabIndex = 11
         '
         'GroupBox1
         '
@@ -1394,14 +1355,53 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.btnActualizar_Orden_Trabajo.Text = "Actualizar"
         Me.btnActualizar_Orden_Trabajo.UseVisualStyleBackColor = True
         '
-        'cboMaterial
+        'cboPapel1
         '
-        Me.cboMaterial.FormattingEnabled = True
-        Me.cboMaterial.Location = New System.Drawing.Point(364, 33)
-        Me.cboMaterial.MaxLength = 100
-        Me.cboMaterial.Name = "cboMaterial"
-        Me.cboMaterial.Size = New System.Drawing.Size(275, 21)
-        Me.cboMaterial.TabIndex = 148
+        Me.cboPapel1.FormattingEnabled = True
+        Me.cboPapel1.Location = New System.Drawing.Point(28, 130)
+        Me.cboPapel1.Name = "cboPapel1"
+        Me.cboPapel1.Size = New System.Drawing.Size(231, 21)
+        Me.cboPapel1.TabIndex = 165
+        '
+        'cboPapel2
+        '
+        Me.cboPapel2.FormattingEnabled = True
+        Me.cboPapel2.Location = New System.Drawing.Point(28, 156)
+        Me.cboPapel2.Name = "cboPapel2"
+        Me.cboPapel2.Size = New System.Drawing.Size(231, 21)
+        Me.cboPapel2.TabIndex = 165
+        '
+        'cboPapel3
+        '
+        Me.cboPapel3.FormattingEnabled = True
+        Me.cboPapel3.Location = New System.Drawing.Point(28, 182)
+        Me.cboPapel3.Name = "cboPapel3"
+        Me.cboPapel3.Size = New System.Drawing.Size(231, 21)
+        Me.cboPapel3.TabIndex = 165
+        '
+        'cboGramaje1
+        '
+        Me.cboGramaje1.FormattingEnabled = True
+        Me.cboGramaje1.Location = New System.Drawing.Point(266, 130)
+        Me.cboGramaje1.Name = "cboGramaje1"
+        Me.cboGramaje1.Size = New System.Drawing.Size(97, 21)
+        Me.cboGramaje1.TabIndex = 166
+        '
+        'cboGramaje2
+        '
+        Me.cboGramaje2.FormattingEnabled = True
+        Me.cboGramaje2.Location = New System.Drawing.Point(266, 157)
+        Me.cboGramaje2.Name = "cboGramaje2"
+        Me.cboGramaje2.Size = New System.Drawing.Size(97, 21)
+        Me.cboGramaje2.TabIndex = 166
+        '
+        'cboGramaje3
+        '
+        Me.cboGramaje3.FormattingEnabled = True
+        Me.cboGramaje3.Location = New System.Drawing.Point(266, 182)
+        Me.cboGramaje3.Name = "cboGramaje3"
+        Me.cboGramaje3.Size = New System.Drawing.Size(97, 21)
+        Me.cboGramaje3.TabIndex = 166
         '
         'frm_Actualizar_Producto_Orden_Ampliada
         '
@@ -1547,14 +1547,8 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents txt_Gramaje_3_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Papel_3_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Gramaje_2_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Papel_2_Soporte As System.Windows.Forms.TextBox
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents txt_Gramaje_1_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Papel_1_Soporte As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents chkTerminacion As System.Windows.Forms.CheckBox
     Friend WithEvents cboTipo_Orden As System.Windows.Forms.ComboBox
@@ -1571,4 +1565,10 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
     Friend WithEvents chkEstampado As System.Windows.Forms.CheckBox
     Friend WithEvents chkArmadoRevistas As System.Windows.Forms.CheckBox
     Friend WithEvents cboMaterial As System.Windows.Forms.ComboBox
+    Friend WithEvents cboGramaje3 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboGramaje2 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboGramaje1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboPapel3 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboPapel2 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboPapel1 As System.Windows.Forms.ComboBox
 End Class

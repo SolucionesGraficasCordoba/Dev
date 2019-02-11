@@ -1416,12 +1416,12 @@ Public Class frm_Principal
         frm_Orden_Trabajo_Ampliada.txt_cantidad_producto.Clear()
         frm_Orden_Trabajo_Ampliada.cboPiezas_Producto.SelectedIndex = -1
         frm_Orden_Trabajo_Ampliada.txtTamaño_Producto.Clear()
-        frm_Orden_Trabajo_Ampliada.txt_Papel_1_Soporte.Clear()
-        frm_Orden_Trabajo_Ampliada.txt_Papel_2_Soporte.Clear()
-        frm_Orden_Trabajo_Ampliada.txt_Papel_3_Soporte.Clear()
-        frm_Orden_Trabajo_Ampliada.txt_Gramaje_1_Soporte.Clear()
-        frm_Orden_Trabajo_Ampliada.txt_Gramaje_2_Soporte.Clear()
-        frm_Orden_Trabajo_Ampliada.txt_Gramaje_3_Soporte.Clear()
+        frm_Orden_Trabajo_Ampliada.cboPapel1.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboPapel2.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboPapel3.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboGramaje1.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboGramaje2.SelectedIndex = -1
+        frm_Orden_Trabajo_Ampliada.cboGramaje3.SelectedIndex = -1
         frm_Orden_Trabajo_Ampliada.txt_Cantidad_1_Pliego_Entero.Clear()
         frm_Orden_Trabajo_Ampliada.txt_Cantidad_2_Pliego_Entero.Clear()
         frm_Orden_Trabajo_Ampliada.txt_Cantidad_3_Pliego_Entero.Clear()

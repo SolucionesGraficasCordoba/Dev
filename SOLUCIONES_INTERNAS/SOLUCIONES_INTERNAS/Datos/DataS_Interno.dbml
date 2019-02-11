@@ -261,7 +261,7 @@
   <Table Name="dbo.SOPORTE" Member="SOPORTE">
     <Type Name="SOPORTE">
       <Column Name="SOP_id_soporte" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="SOP_nombre_soporte" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="SOP_nombre_soporte" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="SOP_ubicacion" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
       <Column Name="SOP_campo1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="SOP_campo2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />

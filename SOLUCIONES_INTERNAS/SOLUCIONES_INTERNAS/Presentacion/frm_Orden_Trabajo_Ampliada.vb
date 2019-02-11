@@ -6,6 +6,7 @@
     Public cargamasprod As String = "NO"
 
     Private Sub frm_Orden_Trabajo_Ampliada_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
         'CARGA COMBOBOX PIEZA PRODUCTO
         Dim combopieza1 = (From sec In datacontext.PIEZA
                            Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
@@ -14,7 +15,7 @@
         cboPiezas_Producto.DataSource = combopieza1
         cboPiezas_Producto.DisplayMember = "PIE_nombre_pie"
         cboPiezas_Producto.ValueMember = "PIE_id_pieza"
-        
+
         'CARGA COMBOBOX PIEZA OFFSET
         Dim combopieza2 = (From sec In datacontext.PIEZA
                            Select sec.PIE_id_pieza, sec.PIE_nombre_pie, sec.PIE_ubicacion
@@ -24,6 +25,7 @@
         cboPiezas_Producto_Gran_Formato.DisplayMember = "PIE_nombre_pie"
         cboPiezas_Producto_Gran_Formato.ValueMember = "PIE_id_pieza"
 
+        'CARGA COMBOBOX MATERIAL GRAN FORMATO
         Dim combomaterial = (From sop In datacontext.SOPORTE
                          Select sop.SOP_id_soporte, sop.SOP_nombre_soporte, sop.SOP_ubicacion
                          Where SOP_ubicacion = "G"
@@ -32,16 +34,47 @@
         cboMaterial.DisplayMember = "SOP_nombre_soporte"
         cboMaterial.ValueMember = "SOP_id_soporte"
 
+        'CARGA COMBOBOX PAPEL 1
+        Dim combopapel1 = (From papelsop1 In datacontext.SOPORTE
+                 Select papelsop1.SOP_id_soporte, papelsop1.SOP_nombre_soporte, papelsop1.SOP_ubicacion
+                 Where SOP_ubicacion = "D"
+                 Order By SOP_nombre_soporte Ascending)
+        cboPapel1.DataSource = combopapel1
+        cboPapel1.DisplayMember = "SOP_nombre_soporte"
+        cboPapel1.ValueMember = "SOP_id_soporte"
+
+        'CARGA COMBOBOX PAPEL 2
+        Dim combopapel2 = (From papelsop2 In datacontext.SOPORTE
+                 Select papelsop2.SOP_id_soporte, papelsop2.SOP_nombre_soporte, papelsop2.SOP_ubicacion
+                 Where SOP_ubicacion = "D"
+                 Order By SOP_nombre_soporte Ascending)
+        cboPapel2.DataSource = combopapel2
+        cboPapel2.DisplayMember = "SOP_nombre_soporte"
+        cboPapel2.ValueMember = "SOP_id_soporte"
+
+        'CARGA COMBOBOX PAPEL 3
+        Dim combopapel3 = (From papelsop2 In datacontext.SOPORTE
+                 Select papelsop2.SOP_id_soporte, papelsop2.SOP_nombre_soporte, papelsop2.SOP_ubicacion
+                 Where SOP_ubicacion = "D"
+                 Order By SOP_nombre_soporte Ascending)
+        cboPapel3.DataSource = combopapel3
+        cboPapel3.DisplayMember = "SOP_nombre_soporte"
+        cboPapel3.ValueMember = "SOP_id_soporte"
 
         If quienllamo_listado_orden_ampliada.Name <> frm_listado_orden_trabajo_ampliada.Name Then
             cboPiezas_Producto.SelectedIndex = -1
             cboPiezas_Producto_Gran_Formato.SelectedIndex = -1
             cboMaterial.SelectedIndex = -1
-
+            cboPapel1.SelectedIndex = -1
+            cboPapel2.SelectedIndex = -1
+            cboPapel3.SelectedIndex = -1
         Else
             cboPiezas_Producto.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
             cboPiezas_Producto_Gran_Formato.SelectedValue = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("PIE_id_pieza_offset", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.CurrentRow.Index).Value
             cboMaterial.Text = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("sustrato_gran_formato", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.SelectedRows(0).Index).Value 'sustrato gran formato
+            cboPapel1.Text = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("DOT_papel_soporte_1", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.SelectedRows(0).Index).Value 'sustrato gran formato
+            cboPapel2.Text = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("DOT_papel_soporte_2", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.SelectedRows(0).Index).Value 'sustrato gran formato
+            cboPapel3.Text = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("DOT_papel_soporte_3", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.SelectedRows(0).Index).Value 'sustrato gran formato
 
         End If
     End Sub
@@ -132,17 +165,17 @@
         txt_cantidad_producto.Clear()
         cboPiezas_Producto.SelectedIndex = -1
         txtTamaño_Producto.Clear()
-        txt_Papel_1_Soporte.Clear()
-        txt_Gramaje_1_Soporte.Clear()
+        cboPapel1.SelectedIndex = -1
+        cboGramaje1.SelectedIndex = -1
         txt_Cantidad_1_Pliego_Entero.Clear()
         cboFormato_1_Pliego_Entero.SelectedIndex = -1
-        txt_Papel_2_Soporte.Clear()
+        cboPapel2.SelectedIndex = -1
         txt_Cantidad_2_Pliego_Entero.Clear()
-        txt_Gramaje_2_Soporte.Clear()
+        cboGramaje2.SelectedIndex = -1
         txt_Cantidad_2_Pliego_Entero.Clear()
         cboFormato_2_Pliego_Entero.SelectedIndex = -1
-        txt_Papel_3_Soporte.Clear()
-        txt_Gramaje_3_Soporte.Clear()
+        cboPapel3.SelectedIndex = -1
+        cboGramaje3.SelectedIndex = -1
         txt_Cantidad_3_Pliego_Entero.Clear()
         cboFormato_3_Pliego_Entero.SelectedIndex = -1
     End Sub
@@ -298,14 +331,14 @@
             detalle.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text 'ID ORDEN TRABAJO
 
             'PAPEL PRODUCTO 1
-            detalle.DOT_papel_soporte_1 = StrConv(txt_Papel_1_Soporte.Text, VbStrConv.ProperCase)
-            detalle.DOT_papel_soporte_2 = StrConv(txt_Papel_2_Soporte.Text, VbStrConv.ProperCase)
-            detalle.DOT_papel_soporte_3 = StrConv(txt_Papel_3_Soporte.Text, VbStrConv.ProperCase)
+            detalle.DOT_papel_soporte_1 = StrConv(cboPapel1.Text, VbStrConv.ProperCase)
+            detalle.DOT_papel_soporte_2 = StrConv(cboPapel2.Text, VbStrConv.ProperCase)
+            detalle.DOT_papel_soporte_3 = StrConv(cboPapel3.Text, VbStrConv.ProperCase)
 
             'GRAMAJE PRODUCTO 1
-            detalle.DOT_gramaje_soporte_1 = txt_Gramaje_1_Soporte.Text
-            detalle.DOT_gramaje_soporte_2 = txt_Gramaje_2_Soporte.Text
-            detalle.DOT_gramaje_soporte_3 = txt_Gramaje_3_Soporte.Text
+            detalle.DOT_gramaje_soporte_1 = cboGramaje1.Text
+            detalle.DOT_gramaje_soporte_2 = cboGramaje2.Text
+            detalle.DOT_gramaje_soporte_3 = cboGramaje3.Text
 
             'CANTIDAD PRODUCTO 1
             If txt_Cantidad_1_Pliego_Entero.TextLength <> 0 Then
@@ -610,7 +643,7 @@
         End If
     End Sub
 
-    Private Sub txt_Gramaje_1_Soporte_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_Gramaje_1_Soporte.KeyPress
+    Private Sub txt_Gramaje_1_Soporte_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -622,7 +655,7 @@
         End If
     End Sub
 
-    Private Sub txt_Gramaje_2_Soporte_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_Gramaje_2_Soporte.KeyPress
+    Private Sub txt_Gramaje_2_Soporte_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -634,7 +667,7 @@
         End If
     End Sub
 
-    Private Sub txt_Gramaje_3_Soporte_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_Gramaje_3_Soporte.KeyPress
+    Private Sub txt_Gramaje_3_Soporte_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsNumber(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then

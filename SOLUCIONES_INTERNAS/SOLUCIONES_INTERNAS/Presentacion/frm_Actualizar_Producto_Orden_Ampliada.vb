@@ -46,17 +46,17 @@
         txt_cantidad_producto.Clear()
         cboPiezas_Producto.SelectedIndex = -1
         txtTamaño_Producto.Clear()
-        txt_Papel_1_Soporte.Clear()
-        txt_Gramaje_1_Soporte.Clear()
+        cboPapel1.SelectedIndex = -1
+        cboGramaje1.SelectedIndex = -1
         txt_Cantidad_1_Pliego_Entero.Clear()
         cboFormato_1_Pliego_Entero.SelectedIndex = -1
-        txt_Papel_2_Soporte.Clear()
+        cboPapel2.SelectedIndex = -1
         txt_Cantidad_2_Pliego_Entero.Clear()
-        txt_Gramaje_2_Soporte.Clear()
+        cboGramaje2.SelectedIndex = -1
         txt_Cantidad_2_Pliego_Entero.Clear()
         cboFormato_2_Pliego_Entero.SelectedIndex = -1
-        txt_Papel_3_Soporte.Clear()
-        txt_Gramaje_3_Soporte.Clear()
+        cboPapel3.SelectedIndex = -1
+        cboGramaje3.SelectedIndex = -1
         txt_Cantidad_3_Pliego_Entero.Clear()
         cboFormato_3_Pliego_Entero.SelectedIndex = -1
     End Sub
@@ -121,6 +121,42 @@
 
         cboMaterial.Text = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("sustrato_gran_formato", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.SelectedRows(0).Index).Value 'sustrato gran formato
 
+
+        'CARGA COMBOBOX PAPEL 1
+        Dim combopapel1 = (From papelsop1 In datacontext.SOPORTE
+                 Select papelsop1.SOP_id_soporte, papelsop1.SOP_nombre_soporte, papelsop1.SOP_ubicacion
+                 Where SOP_ubicacion = "D"
+                 Order By SOP_nombre_soporte Ascending)
+        cboPapel1.DataSource = combopapel1
+        cboPapel1.DisplayMember = "SOP_nombre_soporte"
+        cboPapel1.ValueMember = "SOP_id_soporte"
+
+        cboPapel1.Text = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("DOT_papel_soporte_1", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.SelectedRows(0).Index).Value 'sustrato gran formato
+
+
+        'CARGA COMBOBOX PAPEL 2
+        Dim combopapel2 = (From papelsop2 In datacontext.SOPORTE
+                 Select papelsop2.SOP_id_soporte, papelsop2.SOP_nombre_soporte, papelsop2.SOP_ubicacion
+                 Where SOP_ubicacion = "D"
+                 Order By SOP_nombre_soporte Ascending)
+        cboPapel2.DataSource = combopapel2
+        cboPapel2.DisplayMember = "SOP_nombre_soporte"
+        cboPapel2.ValueMember = "SOP_id_soporte"
+
+        cboPapel2.Text = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("DOT_papel_soporte_2", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.SelectedRows(0).Index).Value 'sustrato gran formato
+
+
+        'CARGA COMBOBOX PAPEL 3
+        Dim combopapel3 = (From papelsop2 In datacontext.SOPORTE
+                 Select papelsop2.SOP_id_soporte, papelsop2.SOP_nombre_soporte, papelsop2.SOP_ubicacion
+                 Where SOP_ubicacion = "D"
+                 Order By SOP_nombre_soporte Ascending)
+        cboPapel3.DataSource = combopapel3
+        cboPapel3.DisplayMember = "SOP_nombre_soporte"
+        cboPapel3.ValueMember = "SOP_id_soporte"
+
+        cboPapel3.Text = frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.Item("DOT_papel_soporte_3", frm_listado_orden_trabajo_ampliada.dgv_detalle_orden.SelectedRows(0).Index).Value 'sustrato gran formato
+
     End Sub
 
     Private Sub btnActualizar_Orden_Trabajo_Click(sender As System.Object, e As System.EventArgs) Handles btnActualizar_Orden_Trabajo.Click
@@ -159,12 +195,12 @@
             End If
             ActualizaDetalle.DOT_tamaño_producto = txtTamaño_Producto.Text
             ActualizaDetalle.DOT_tipo_impresion_dot = cboTipo_Orden.Text
-            ActualizaDetalle.DOT_papel_soporte_1 = txt_Papel_1_Soporte.Text
-            ActualizaDetalle.DOT_papel_soporte_2 = txt_Papel_2_Soporte.Text
-            ActualizaDetalle.DOT_papel_soporte_3 = txt_Papel_3_Soporte.Text
-            ActualizaDetalle.DOT_gramaje_soporte_1 = txt_Gramaje_1_Soporte.Text
-            ActualizaDetalle.DOT_gramaje_soporte_2 = txt_Gramaje_2_Soporte.Text
-            ActualizaDetalle.DOT_gramaje_soporte_3 = txt_Gramaje_3_Soporte.Text
+            ActualizaDetalle.DOT_papel_soporte_1 = cboPapel1.Text
+            ActualizaDetalle.DOT_papel_soporte_2 = cboPapel2.Text
+            ActualizaDetalle.DOT_papel_soporte_3 = cboPapel3.Text
+            ActualizaDetalle.DOT_gramaje_soporte_1 = cboGramaje1.Text
+            ActualizaDetalle.DOT_gramaje_soporte_2 = cboGramaje2.Text
+            ActualizaDetalle.DOT_gramaje_soporte_3 = cboGramaje3.Text
             If txt_Cantidad_1_Pliego_Entero.TextLength <> 0 Then
                 ActualizaDetalle.DOT_cantidad_soporte_1 = txt_Cantidad_1_Pliego_Entero.Text
             End If

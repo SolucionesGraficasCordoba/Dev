@@ -5437,7 +5437,7 @@ Partial Public Class SOPORTE
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SOP_nombre_soporte", DbType:="VarChar(30)")>  _
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SOP_nombre_soporte", DbType:="VarChar(50)")>  _
 	Public Property SOP_nombre_soporte() As String
 		Get
 			Return Me._SOP_nombre_soporte
