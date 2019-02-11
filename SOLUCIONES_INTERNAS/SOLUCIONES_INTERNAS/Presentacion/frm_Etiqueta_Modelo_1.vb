@@ -9,7 +9,7 @@ Public Class frm_Etiqueta_Modelo_1
         btnBuscarCliente.Visible = False
         btnBuscar_Orden.Focus()
         dgv_Etiquetas.ClearSelection()
-        cboLogo.SelectedIndex = 1
+        cboLogo.SelectedIndex = 2
 
         '***************Para ver con vale link label a el out de etiquetas****************
         Dim tempruta As String
@@ -162,7 +162,7 @@ Public Class frm_Etiqueta_Modelo_1
         txtUnidadxBulto.Clear()
         txtTotalBultos.Clear()
         txtPeso.Clear()
-        cboLogo.SelectedIndex = 1
+        cboLogo.SelectedIndex = 2
 
         dgv_Etiquetas.ClearSelection()
     End Sub
@@ -179,35 +179,35 @@ Public Class frm_Etiqueta_Modelo_1
 
             Dim delimeter As String = ","
             Dim sb As New StringBuilder
-            '   Try
-            For i As Integer = 0 To dgv_Etiquetas.Rows.Count - 1
-                Dim array As String() = New String(dgv_Etiquetas.Columns.Count - 1) {}
-                If i.Equals(0) Then
+            Try
+                For i As Integer = 0 To dgv_Etiquetas.Rows.Count - 1
+                    Dim array As String() = New String(dgv_Etiquetas.Columns.Count - 1) {}
+                    If i.Equals(0) Then
+                        For j As Integer = 0 To dgv_Etiquetas.Columns.Count - 1
+                            array(j) = dgv_Etiquetas.Columns(j).HeaderText
+                        Next
+                        sb.AppendLine(String.Join(delimeter, array))
+                    End If
                     For j As Integer = 0 To dgv_Etiquetas.Columns.Count - 1
-                        array(j) = dgv_Etiquetas.Columns(j).HeaderText
+                        array(j) = dgv_Etiquetas(j, i).Value.ToString
                     Next
-                    sb.AppendLine(String.Join(delimeter, array))
-                End If
-                For j As Integer = 0 To dgv_Etiquetas.Columns.Count - 1
-                    array(j) = dgv_Etiquetas(j, i).Value.ToString
+                    If Not dgv_Etiquetas.Rows(i).IsNewRow Then
+                        sb.AppendLine(String.Join(delimeter, array))
+                    End If
                 Next
-                If Not dgv_Etiquetas.Rows(i).IsNewRow Then
-                    sb.AppendLine(String.Join(delimeter, array))
-                End If
-            Next
-            File.WriteAllText(filePath, sb.ToString)
-            MsgBox("La consulta se ha generado correctamente")
-            '  Process.Start(filePath)
-            txtCantidadBultos.Clear()
-            'txtNumeroBultos.Clear()
-            txtUnidadxBulto.Clear()
-            txtTotalBultos.Clear()
-            txtPeso.Clear()
-            cboLogo.SelectedIndex = 1
-            dgv_Etiquetas.Rows.Clear()
-            ' Catch ex As Exception
-            '  MsgBox("Hubo un error al generar la consulta")
-            '  End Try
+                File.WriteAllText(filePath, sb.ToString)
+                MsgBox("La consulta se ha generado correctamente")
+                '  Process.Start(filePath)
+                txtCantidadBultos.Clear()
+                'txtNumeroBultos.Clear()
+                txtUnidadxBulto.Clear()
+                txtTotalBultos.Clear()
+                txtPeso.Clear()
+                cboLogo.SelectedIndex = 2
+                dgv_Etiquetas.Rows.Clear()
+            Catch ex As Exception
+                MsgBox("Hubo un error al generar la consulta")
+            End Try
         Else
             MsgBox("Debe cargar al menos una etiqueta", MsgBoxStyle.Information, "Etiquetas")
         End If
