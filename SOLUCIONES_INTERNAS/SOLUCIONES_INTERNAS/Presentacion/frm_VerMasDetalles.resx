@@ -165,6 +165,15 @@
 
 </value>
   </data>
+  <data name="TextBox5.Text" xml:space="preserve">
+    <value>FUNCIONAMIENTO  NUEVO REPETICION CHAPAS
+
+Este formulario se utilizará en el caso de que se desee agregar una nueva repetición de chapas. 
+El botón "buscar orden" abrirá el formulario del 'listado de órdenes'. Se deberá seleccionar un producto de esa orden (segundo listado) a la cual se le hará la nueva repetición y mediante un 'doble click' sobre el producto, se completarán todos los campos relacionados al encabezado. Estos campos se mostrarán a modo de información y no podrán ser modificados. 
+Una vez completos todos los campos necesarios, el botón GUARDAR cargará la nueva repetición para luego volver al formulario principal.
+El botón cancelar cierra el formulario sin haber realizado cambios.
+</value>
+  </data>
   <data name="RichTextBox12.Text" xml:space="preserve">
     <value>COMPONENTES DEL FORMULARIO DE RETRABAJO OFFSET / DIGITAL:
 

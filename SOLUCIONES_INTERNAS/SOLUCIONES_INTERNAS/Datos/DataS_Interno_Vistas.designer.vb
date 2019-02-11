@@ -141,12 +141,6 @@ Partial Public Class DataS_Interno_Vistas
 			Return Me.GetTable(Of Movimiento_Orden)
 		End Get
 	End Property
-	
-	<Global.System.Data.Linq.Mapping.FunctionAttribute(Name:="dbo.backup_preproduccion")>  _
-	Public Function backup_preproduccion() As Integer
-		Dim result As IExecuteResult = Me.ExecuteMethodCall(Me, CType(MethodInfo.GetCurrentMethod,MethodInfo))
-		Return CType(result.ReturnValue,Integer)
-	End Function
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Colaborador_por_Sector")>  _

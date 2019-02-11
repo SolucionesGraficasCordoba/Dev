@@ -299,7 +299,4 @@
       <Column Name="TAR_observaciones" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
     </Type>
   </Table>
-  <Function Name="dbo.backup_preproduccion" Method="backup_preproduccion">
-    <Return Type="System.Int32" />
-  </Function>
 </Database>
