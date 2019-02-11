@@ -222,23 +222,28 @@
 
     Private Sub txt_hora_fin_TextChanged_1(sender As System.Object, e As System.EventArgs) Handles txt_hora_fin.TextChanged
         'VALIDA LA HORA INGRESADA
-        Select Case Len(txt_hora_fin.Text)
-            Case 5
-                If Microsoft.VisualBasic.Right(txt_hora_fin.Text, 2) > 59 Then
-                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
-                    txt_hora_fin.Text = Microsoft.VisualBasic.Right(txt_hora_fin.Text, Len(txt_hora_fin.Text) - 2)
-                Else
-                    txt_hora_fin.Text = txt_hora_fin.Text & ""
-                End If
-            Case 2
-                If Microsoft.VisualBasic.Left(txt_hora_fin.Text, 2) > 23 Then
-                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
-                    txt_hora_fin.Text = Microsoft.VisualBasic.Left(txt_hora_fin.Text, Len(txt_hora_fin.Text) - 2)
-                Else
-                    txt_hora_fin.Text = txt_hora_fin.Text & ":"
-                    Me.txt_hora_fin.SelectionStart = 3
-                End If
-        End Select
+        Try
+            Select Case Len(txt_hora_fin.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txt_hora_fin.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txt_hora_fin.Text = Microsoft.VisualBasic.Right(txt_hora_fin.Text, Len(txt_hora_fin.Text) - 2)
+                    Else
+                        txt_hora_fin.Text = txt_hora_fin.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txt_hora_fin.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txt_hora_fin.Text = Microsoft.VisualBasic.Left(txt_hora_fin.Text, Len(txt_hora_fin.Text) - 2)
+                    Else
+                        txt_hora_fin.Text = txt_hora_fin.Text & ":"
+                        Me.txt_hora_fin.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+       
     End Sub
 
     Private Sub txt_tiempo_estimado_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_tiempo_estimado.KeyPress

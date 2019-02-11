@@ -40,19 +40,13 @@ Partial Class frm_Actualizar_Producto_Orden
         Me.Label20 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txt_Cantidad3_Soporte = New System.Windows.Forms.TextBox()
-        Me.txt_Gramaje3_Soporte = New System.Windows.Forms.TextBox()
-        Me.txt_Papel3_Soporte = New System.Windows.Forms.TextBox()
         Me.txt_Cantidad2_Soporte = New System.Windows.Forms.TextBox()
-        Me.txt_Gramaje2_Soporte = New System.Windows.Forms.TextBox()
-        Me.txt_Papel2_Soporte = New System.Windows.Forms.TextBox()
         Me.cboFormato1_Soporte = New System.Windows.Forms.ComboBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.txt_Cantidad1_Soporte = New System.Windows.Forms.TextBox()
-        Me.txt_Gramaje1_Soporte = New System.Windows.Forms.TextBox()
-        Me.txt_Papel1_Soporte = New System.Windows.Forms.TextBox()
         Me.cboTipoImpresion = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -63,6 +57,12 @@ Partial Class frm_Actualizar_Producto_Orden
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txt_id_orden_trabajo = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.cboPapel1 = New System.Windows.Forms.ComboBox()
+        Me.cboPapel2 = New System.Windows.Forms.ComboBox()
+        Me.cboPapel3 = New System.Windows.Forms.ComboBox()
+        Me.cboGramaje1 = New System.Windows.Forms.ComboBox()
+        Me.cboGramaje2 = New System.Windows.Forms.ComboBox()
+        Me.cboGramaje3 = New System.Windows.Forms.ComboBox()
         Me.GroupProducto1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.SuspendLayout()
@@ -187,25 +187,25 @@ Partial Class frm_Actualizar_Producto_Orden
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.cboGramaje3)
+        Me.GroupBox5.Controls.Add(Me.cboGramaje2)
+        Me.GroupBox5.Controls.Add(Me.cboGramaje1)
+        Me.GroupBox5.Controls.Add(Me.cboPapel3)
+        Me.GroupBox5.Controls.Add(Me.cboPapel2)
+        Me.GroupBox5.Controls.Add(Me.cboPapel1)
         Me.GroupBox5.Controls.Add(Me.cboFormato3_Soporte)
         Me.GroupBox5.Controls.Add(Me.cboFormato2_Soporte)
         Me.GroupBox5.Controls.Add(Me.Label21)
         Me.GroupBox5.Controls.Add(Me.Label20)
         Me.GroupBox5.Controls.Add(Me.Label14)
         Me.GroupBox5.Controls.Add(Me.txt_Cantidad3_Soporte)
-        Me.GroupBox5.Controls.Add(Me.txt_Gramaje3_Soporte)
-        Me.GroupBox5.Controls.Add(Me.txt_Papel3_Soporte)
         Me.GroupBox5.Controls.Add(Me.txt_Cantidad2_Soporte)
-        Me.GroupBox5.Controls.Add(Me.txt_Gramaje2_Soporte)
-        Me.GroupBox5.Controls.Add(Me.txt_Papel2_Soporte)
         Me.GroupBox5.Controls.Add(Me.cboFormato1_Soporte)
         Me.GroupBox5.Controls.Add(Me.Label26)
         Me.GroupBox5.Controls.Add(Me.Label23)
         Me.GroupBox5.Controls.Add(Me.Label24)
         Me.GroupBox5.Controls.Add(Me.Label25)
         Me.GroupBox5.Controls.Add(Me.txt_Cantidad1_Soporte)
-        Me.GroupBox5.Controls.Add(Me.txt_Gramaje1_Soporte)
-        Me.GroupBox5.Controls.Add(Me.txt_Papel1_Soporte)
         Me.GroupBox5.Location = New System.Drawing.Point(10, 84)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(433, 124)
@@ -267,40 +267,12 @@ Partial Class frm_Actualizar_Producto_Orden
         Me.txt_Cantidad3_Soporte.Size = New System.Drawing.Size(69, 20)
         Me.txt_Cantidad3_Soporte.TabIndex = 21
         '
-        'txt_Gramaje3_Soporte
-        '
-        Me.txt_Gramaje3_Soporte.Location = New System.Drawing.Point(193, 89)
-        Me.txt_Gramaje3_Soporte.Name = "txt_Gramaje3_Soporte"
-        Me.txt_Gramaje3_Soporte.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje3_Soporte.TabIndex = 20
-        '
-        'txt_Papel3_Soporte
-        '
-        Me.txt_Papel3_Soporte.Location = New System.Drawing.Point(24, 90)
-        Me.txt_Papel3_Soporte.Name = "txt_Papel3_Soporte"
-        Me.txt_Papel3_Soporte.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel3_Soporte.TabIndex = 19
-        '
         'txt_Cantidad2_Soporte
         '
         Me.txt_Cantidad2_Soporte.Location = New System.Drawing.Point(263, 63)
         Me.txt_Cantidad2_Soporte.Name = "txt_Cantidad2_Soporte"
         Me.txt_Cantidad2_Soporte.Size = New System.Drawing.Size(69, 20)
         Me.txt_Cantidad2_Soporte.TabIndex = 17
-        '
-        'txt_Gramaje2_Soporte
-        '
-        Me.txt_Gramaje2_Soporte.Location = New System.Drawing.Point(193, 63)
-        Me.txt_Gramaje2_Soporte.Name = "txt_Gramaje2_Soporte"
-        Me.txt_Gramaje2_Soporte.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje2_Soporte.TabIndex = 16
-        '
-        'txt_Papel2_Soporte
-        '
-        Me.txt_Papel2_Soporte.Location = New System.Drawing.Point(24, 64)
-        Me.txt_Papel2_Soporte.Name = "txt_Papel2_Soporte"
-        Me.txt_Papel2_Soporte.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel2_Soporte.TabIndex = 15
         '
         'cboFormato1_Soporte
         '
@@ -354,20 +326,6 @@ Partial Class frm_Actualizar_Producto_Orden
         Me.txt_Cantidad1_Soporte.Name = "txt_Cantidad1_Soporte"
         Me.txt_Cantidad1_Soporte.Size = New System.Drawing.Size(69, 20)
         Me.txt_Cantidad1_Soporte.TabIndex = 13
-        '
-        'txt_Gramaje1_Soporte
-        '
-        Me.txt_Gramaje1_Soporte.Location = New System.Drawing.Point(193, 38)
-        Me.txt_Gramaje1_Soporte.Name = "txt_Gramaje1_Soporte"
-        Me.txt_Gramaje1_Soporte.Size = New System.Drawing.Size(64, 20)
-        Me.txt_Gramaje1_Soporte.TabIndex = 12
-        '
-        'txt_Papel1_Soporte
-        '
-        Me.txt_Papel1_Soporte.Location = New System.Drawing.Point(24, 39)
-        Me.txt_Papel1_Soporte.Name = "txt_Papel1_Soporte"
-        Me.txt_Papel1_Soporte.Size = New System.Drawing.Size(163, 20)
-        Me.txt_Papel1_Soporte.TabIndex = 11
         '
         'cboTipoImpresion
         '
@@ -455,6 +413,57 @@ Partial Class frm_Actualizar_Producto_Orden
         Me.Label1.TabIndex = 65
         Me.Label1.Text = "id_orden"
         '
+        'cboPapel1
+        '
+        Me.cboPapel1.FormattingEnabled = True
+        Me.cboPapel1.Location = New System.Drawing.Point(24, 38)
+        Me.cboPapel1.Name = "cboPapel1"
+        Me.cboPapel1.Size = New System.Drawing.Size(163, 21)
+        Me.cboPapel1.TabIndex = 59
+        '
+        'cboPapel2
+        '
+        Me.cboPapel2.FormattingEnabled = True
+        Me.cboPapel2.Location = New System.Drawing.Point(24, 63)
+        Me.cboPapel2.Name = "cboPapel2"
+        Me.cboPapel2.Size = New System.Drawing.Size(163, 21)
+        Me.cboPapel2.TabIndex = 59
+        '
+        'cboPapel3
+        '
+        Me.cboPapel3.FormattingEnabled = True
+        Me.cboPapel3.Location = New System.Drawing.Point(24, 89)
+        Me.cboPapel3.Name = "cboPapel3"
+        Me.cboPapel3.Size = New System.Drawing.Size(163, 21)
+        Me.cboPapel3.TabIndex = 59
+        '
+        'cboGramaje1
+        '
+        Me.cboGramaje1.FormattingEnabled = True
+        Me.cboGramaje1.Items.AddRange(New Object() {"70", "75", "80", "90", "115", "120", "130", "150", "170", "180", "200", "210", "220", "225", "240", "250", "300", "310", "350"})
+        Me.cboGramaje1.Location = New System.Drawing.Point(193, 38)
+        Me.cboGramaje1.Name = "cboGramaje1"
+        Me.cboGramaje1.Size = New System.Drawing.Size(63, 21)
+        Me.cboGramaje1.TabIndex = 60
+        '
+        'cboGramaje2
+        '
+        Me.cboGramaje2.FormattingEnabled = True
+        Me.cboGramaje2.Items.AddRange(New Object() {"70", "75", "80", "90", "115", "120", "130", "150", "170", "180", "200", "210", "220", "225", "240", "250", "300", "310", "350"})
+        Me.cboGramaje2.Location = New System.Drawing.Point(193, 64)
+        Me.cboGramaje2.Name = "cboGramaje2"
+        Me.cboGramaje2.Size = New System.Drawing.Size(63, 21)
+        Me.cboGramaje2.TabIndex = 60
+        '
+        'cboGramaje3
+        '
+        Me.cboGramaje3.FormattingEnabled = True
+        Me.cboGramaje3.Items.AddRange(New Object() {"70", "75", "80", "90", "115", "120", "130", "150", "170", "180", "200", "210", "220", "225", "240", "250", "300", "310", "350"})
+        Me.cboGramaje3.Location = New System.Drawing.Point(193, 89)
+        Me.cboGramaje3.Name = "cboGramaje3"
+        Me.cboGramaje3.Size = New System.Drawing.Size(63, 21)
+        Me.cboGramaje3.TabIndex = 60
+        '
         'frm_Actualizar_Producto_Orden
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -491,19 +500,13 @@ Partial Class frm_Actualizar_Producto_Orden
     Friend WithEvents Label20 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents txt_Cantidad3_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Gramaje3_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Papel3_Soporte As System.Windows.Forms.TextBox
     Friend WithEvents txt_Cantidad2_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Gramaje2_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Papel2_Soporte As System.Windows.Forms.TextBox
     Friend WithEvents cboFormato1_Soporte As System.Windows.Forms.ComboBox
     Friend WithEvents Label26 As System.Windows.Forms.Label
     Friend WithEvents Label23 As System.Windows.Forms.Label
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents Label25 As System.Windows.Forms.Label
     Friend WithEvents txt_Cantidad1_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Gramaje1_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Papel1_Soporte As System.Windows.Forms.TextBox
     Friend WithEvents cboTipoImpresion As System.Windows.Forms.ComboBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
@@ -517,4 +520,10 @@ Partial Class frm_Actualizar_Producto_Orden
     Friend WithEvents txt_id_orden_trabajo As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents cboPapel3 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboPapel2 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboPapel1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboGramaje3 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboGramaje2 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboGramaje1 As System.Windows.Forms.ComboBox
 End Class

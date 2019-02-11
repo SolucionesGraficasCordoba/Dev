@@ -813,13 +813,13 @@ Public Class frm_Listado_Orden_Trabajo
             frm_Actualizar_Producto_Orden.txtTamaño.Text = dgv_detalle_orden.Item("DOT_tamaño_dot", dgv_detalle_orden.CurrentRow.Index).Value
             frm_Actualizar_Producto_Orden.cboTipoImpresion.Text = dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.CurrentRow.Index).Value
 
-            frm_Actualizar_Producto_Orden.txt_Papel1_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.CurrentRow.Index).Value
-            frm_Actualizar_Producto_Orden.txt_Papel2_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.CurrentRow.Index).Value
-            frm_Actualizar_Producto_Orden.txt_Papel3_Soporte.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.cboPapel1.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.cboPapel2.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.cboPapel3.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.CurrentRow.Index).Value
 
-            frm_Actualizar_Producto_Orden.txt_Gramaje1_Soporte.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.CurrentRow.Index).Value
-            frm_Actualizar_Producto_Orden.txt_Gramaje2_Soporte.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.CurrentRow.Index).Value
-            frm_Actualizar_Producto_Orden.txt_Gramaje3_Soporte.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.cboGramaje1.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.cboGramaje2.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.CurrentRow.Index).Value
+            frm_Actualizar_Producto_Orden.cboGramaje3.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.CurrentRow.Index).Value
 
             frm_Actualizar_Producto_Orden.txt_Cantidad1_Soporte.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_1", dgv_detalle_orden.CurrentRow.Index).Value
             frm_Actualizar_Producto_Orden.txt_Cantidad2_Soporte.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_2", dgv_detalle_orden.CurrentRow.Index).Value

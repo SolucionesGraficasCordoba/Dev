@@ -40,13 +40,13 @@
             ActualizarDetalle.DOT_tamaño_producto = txtTamaño.Text
             ActualizarDetalle.DOT_tipo_impresion_dot = cboTipoImpresion.Text
 
-            ActualizarDetalle.DOT_papel_soporte_1 = StrConv(txt_Papel1_Soporte.Text, VbStrConv.ProperCase)
-            ActualizarDetalle.DOT_papel_soporte_2 = StrConv(txt_Papel2_Soporte.Text, VbStrConv.ProperCase)
-            ActualizarDetalle.DOT_papel_soporte_3 = StrConv(txt_Papel3_Soporte.Text, VbStrConv.ProperCase)
+            ActualizarDetalle.DOT_papel_soporte_1 = StrConv(cboPapel1.Text, VbStrConv.ProperCase)
+            ActualizarDetalle.DOT_papel_soporte_2 = StrConv(cboPapel2.Text, VbStrConv.ProperCase)
+            ActualizarDetalle.DOT_papel_soporte_3 = StrConv(cboPapel3.Text, VbStrConv.ProperCase)
 
-            ActualizarDetalle.DOT_gramaje_soporte_1 = txt_Gramaje1_Soporte.Text
-            ActualizarDetalle.DOT_gramaje_soporte_2 = txt_Gramaje2_Soporte.Text
-            ActualizarDetalle.DOT_gramaje_soporte_3 = txt_Gramaje3_Soporte.Text
+            ActualizarDetalle.DOT_gramaje_soporte_1 = cboGramaje1.Text
+            ActualizarDetalle.DOT_gramaje_soporte_2 = cboGramaje2.Text
+            ActualizarDetalle.DOT_gramaje_soporte_3 = cboGramaje3.Text
 
             If txt_Cantidad1_Soporte.TextLength <> 0 Then
                 ActualizarDetalle.DOT_cantidad_soporte_1 = CInt(txt_Cantidad1_Soporte.Text)

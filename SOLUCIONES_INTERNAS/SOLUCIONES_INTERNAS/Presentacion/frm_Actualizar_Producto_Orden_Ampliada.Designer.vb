@@ -107,6 +107,12 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.txtDato_Variable = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.GroupProducto_Soportes = New System.Windows.Forms.GroupBox()
+        Me.cboGramaje3 = New System.Windows.Forms.ComboBox()
+        Me.cboGramaje2 = New System.Windows.Forms.ComboBox()
+        Me.cboGramaje1 = New System.Windows.Forms.ComboBox()
+        Me.cboPapel3 = New System.Windows.Forms.ComboBox()
+        Me.cboPapel2 = New System.Windows.Forms.ComboBox()
+        Me.cboPapel1 = New System.Windows.Forms.ComboBox()
         Me.Label49 = New System.Windows.Forms.Label()
         Me.Label48 = New System.Windows.Forms.Label()
         Me.cboPiezas_Producto = New System.Windows.Forms.ComboBox()
@@ -140,12 +146,6 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.txt_id_detalle_orden_trabajo1 = New System.Windows.Forms.TextBox()
         Me.btnCancelar_Orden_Trabajo = New System.Windows.Forms.Button()
         Me.btnActualizar_Orden_Trabajo = New System.Windows.Forms.Button()
-        Me.cboPapel1 = New System.Windows.Forms.ComboBox()
-        Me.cboPapel2 = New System.Windows.Forms.ComboBox()
-        Me.cboPapel3 = New System.Windows.Forms.ComboBox()
-        Me.cboGramaje1 = New System.Windows.Forms.ComboBox()
-        Me.cboGramaje2 = New System.Windows.Forms.ComboBox()
-        Me.cboGramaje3 = New System.Windows.Forms.ComboBox()
         Me.groupOffset.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupTerminacion.SuspendLayout()
@@ -1041,6 +1041,57 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.GroupProducto_Soportes.TabStop = False
         Me.GroupProducto_Soportes.Text = "Producto con sus Soportes"
         '
+        'cboGramaje3
+        '
+        Me.cboGramaje3.FormattingEnabled = True
+        Me.cboGramaje3.Items.AddRange(New Object() {"70", "75", "80", "90", "115", "120", "130", "150", "170", "180", "200", "210", "220", "225", "240", "250", "300", "310", "350"})
+        Me.cboGramaje3.Location = New System.Drawing.Point(266, 182)
+        Me.cboGramaje3.Name = "cboGramaje3"
+        Me.cboGramaje3.Size = New System.Drawing.Size(97, 21)
+        Me.cboGramaje3.TabIndex = 166
+        '
+        'cboGramaje2
+        '
+        Me.cboGramaje2.FormattingEnabled = True
+        Me.cboGramaje2.Items.AddRange(New Object() {"70", "75", "80", "90", "115", "120", "130", "150", "170", "180", "200", "210", "220", "225", "240", "250", "300", "310", "350"})
+        Me.cboGramaje2.Location = New System.Drawing.Point(266, 157)
+        Me.cboGramaje2.Name = "cboGramaje2"
+        Me.cboGramaje2.Size = New System.Drawing.Size(97, 21)
+        Me.cboGramaje2.TabIndex = 166
+        '
+        'cboGramaje1
+        '
+        Me.cboGramaje1.FormattingEnabled = True
+        Me.cboGramaje1.Items.AddRange(New Object() {"70", "75", "80", "90", "115", "120", "130", "150", "170", "180", "200", "210", "220", "225", "240", "250", "300", "310", "350"})
+        Me.cboGramaje1.Location = New System.Drawing.Point(266, 130)
+        Me.cboGramaje1.Name = "cboGramaje1"
+        Me.cboGramaje1.Size = New System.Drawing.Size(97, 21)
+        Me.cboGramaje1.TabIndex = 166
+        '
+        'cboPapel3
+        '
+        Me.cboPapel3.FormattingEnabled = True
+        Me.cboPapel3.Location = New System.Drawing.Point(28, 182)
+        Me.cboPapel3.Name = "cboPapel3"
+        Me.cboPapel3.Size = New System.Drawing.Size(231, 21)
+        Me.cboPapel3.TabIndex = 165
+        '
+        'cboPapel2
+        '
+        Me.cboPapel2.FormattingEnabled = True
+        Me.cboPapel2.Location = New System.Drawing.Point(28, 156)
+        Me.cboPapel2.Name = "cboPapel2"
+        Me.cboPapel2.Size = New System.Drawing.Size(231, 21)
+        Me.cboPapel2.TabIndex = 165
+        '
+        'cboPapel1
+        '
+        Me.cboPapel1.FormattingEnabled = True
+        Me.cboPapel1.Location = New System.Drawing.Point(28, 130)
+        Me.cboPapel1.Name = "cboPapel1"
+        Me.cboPapel1.Size = New System.Drawing.Size(231, 21)
+        Me.cboPapel1.TabIndex = 165
+        '
         'Label49
         '
         Me.Label49.AutoSize = True
@@ -1354,54 +1405,6 @@ Partial Class frm_Actualizar_Producto_Orden_Ampliada
         Me.btnActualizar_Orden_Trabajo.TabIndex = 158
         Me.btnActualizar_Orden_Trabajo.Text = "Actualizar"
         Me.btnActualizar_Orden_Trabajo.UseVisualStyleBackColor = True
-        '
-        'cboPapel1
-        '
-        Me.cboPapel1.FormattingEnabled = True
-        Me.cboPapel1.Location = New System.Drawing.Point(28, 130)
-        Me.cboPapel1.Name = "cboPapel1"
-        Me.cboPapel1.Size = New System.Drawing.Size(231, 21)
-        Me.cboPapel1.TabIndex = 165
-        '
-        'cboPapel2
-        '
-        Me.cboPapel2.FormattingEnabled = True
-        Me.cboPapel2.Location = New System.Drawing.Point(28, 156)
-        Me.cboPapel2.Name = "cboPapel2"
-        Me.cboPapel2.Size = New System.Drawing.Size(231, 21)
-        Me.cboPapel2.TabIndex = 165
-        '
-        'cboPapel3
-        '
-        Me.cboPapel3.FormattingEnabled = True
-        Me.cboPapel3.Location = New System.Drawing.Point(28, 182)
-        Me.cboPapel3.Name = "cboPapel3"
-        Me.cboPapel3.Size = New System.Drawing.Size(231, 21)
-        Me.cboPapel3.TabIndex = 165
-        '
-        'cboGramaje1
-        '
-        Me.cboGramaje1.FormattingEnabled = True
-        Me.cboGramaje1.Location = New System.Drawing.Point(266, 130)
-        Me.cboGramaje1.Name = "cboGramaje1"
-        Me.cboGramaje1.Size = New System.Drawing.Size(97, 21)
-        Me.cboGramaje1.TabIndex = 166
-        '
-        'cboGramaje2
-        '
-        Me.cboGramaje2.FormattingEnabled = True
-        Me.cboGramaje2.Location = New System.Drawing.Point(266, 157)
-        Me.cboGramaje2.Name = "cboGramaje2"
-        Me.cboGramaje2.Size = New System.Drawing.Size(97, 21)
-        Me.cboGramaje2.TabIndex = 166
-        '
-        'cboGramaje3
-        '
-        Me.cboGramaje3.FormattingEnabled = True
-        Me.cboGramaje3.Location = New System.Drawing.Point(266, 182)
-        Me.cboGramaje3.Name = "cboGramaje3"
-        Me.cboGramaje3.Size = New System.Drawing.Size(97, 21)
-        Me.cboGramaje3.TabIndex = 166
         '
         'frm_Actualizar_Producto_Orden_Ampliada
         '
