@@ -249,7 +249,7 @@ Partial Class frm_VerMasDetalles
         Me.TabControl2.Location = New System.Drawing.Point(1, 3)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(903, 618)
+        Me.TabControl2.Size = New System.Drawing.Size(926, 618)
         Me.TabControl2.TabIndex = 0
         '
         'TabPage5
@@ -258,7 +258,7 @@ Partial Class frm_VerMasDetalles
         Me.TabPage5.Location = New System.Drawing.Point(4, 22)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(895, 592)
+        Me.TabPage5.Size = New System.Drawing.Size(918, 592)
         Me.TabPage5.TabIndex = 0
         Me.TabPage5.Text = "Repetición de Chapas"
         Me.TabPage5.UseVisualStyleBackColor = True
@@ -271,7 +271,7 @@ Partial Class frm_VerMasDetalles
         Me.TabControl3.Location = New System.Drawing.Point(0, 0)
         Me.TabControl3.Name = "TabControl3"
         Me.TabControl3.SelectedIndex = 0
-        Me.TabControl3.Size = New System.Drawing.Size(899, 596)
+        Me.TabControl3.Size = New System.Drawing.Size(922, 596)
         Me.TabControl3.TabIndex = 0
         '
         'TabPage25
@@ -301,12 +301,12 @@ Partial Class frm_VerMasDetalles
         '
         Me.TextBox3.BackColor = System.Drawing.SystemColors.Control
         Me.TextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox3.Location = New System.Drawing.Point(34, 10)
+        Me.TextBox3.Location = New System.Drawing.Point(22, 17)
         Me.TextBox3.Multiline = True
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.ReadOnly = True
         Me.TextBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox3.Size = New System.Drawing.Size(404, 553)
+        Me.TextBox3.Size = New System.Drawing.Size(393, 532)
         Me.TextBox3.TabIndex = 9
         Me.TextBox3.Text = resources.GetString("TextBox3.Text")
         '
@@ -320,7 +320,7 @@ Partial Class frm_VerMasDetalles
         Me.TabPage7.Location = New System.Drawing.Point(4, 22)
         Me.TabPage7.Name = "TabPage7"
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(891, 570)
+        Me.TabPage7.Size = New System.Drawing.Size(914, 570)
         Me.TabPage7.TabIndex = 0
         Me.TabPage7.Text = "Nuevo"
         '
@@ -328,7 +328,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label25.AutoSize = True
         Me.Label25.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(537, 36)
+        Me.Label25.Location = New System.Drawing.Point(553, 17)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(235, 13)
         Me.Label25.TabIndex = 11
@@ -336,14 +336,14 @@ Partial Class frm_VerMasDetalles
         '
         'TextBox5
         '
-        Me.TextBox5.BackColor = System.Drawing.Color.White
+        Me.TextBox5.BackColor = System.Drawing.SystemColors.Control
         Me.TextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox5.Location = New System.Drawing.Point(6, 6)
+        Me.TextBox5.Location = New System.Drawing.Point(22, 17)
         Me.TextBox5.Multiline = True
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.ReadOnly = True
         Me.TextBox5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox5.Size = New System.Drawing.Size(404, 553)
+        Me.TextBox5.Size = New System.Drawing.Size(393, 532)
         Me.TextBox5.TabIndex = 9
         Me.TextBox5.Text = resources.GetString("TextBox5.Text")
         '
@@ -356,7 +356,7 @@ Partial Class frm_VerMasDetalles
         Me.TabPage8.Location = New System.Drawing.Point(4, 22)
         Me.TabPage8.Name = "TabPage8"
         Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(891, 570)
+        Me.TabPage8.Size = New System.Drawing.Size(914, 570)
         Me.TabPage8.TabIndex = 1
         Me.TabPage8.Text = "Eliminar"
         '
@@ -364,23 +364,24 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(589, 7)
+        Me.Label26.Location = New System.Drawing.Point(567, 7)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(194, 13)
+        Me.Label26.Size = New System.Drawing.Size(242, 13)
         Me.Label26.TabIndex = 14
-        Me.Label26.Text = "Formulario Repetición de Chapas"
+        Me.Label26.Text = "Formulario Eliminar Repetición de Chapas"
         '
         'TextBox6
         '
         Me.TextBox6.BackColor = System.Drawing.SystemColors.Control
         Me.TextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox6.Location = New System.Drawing.Point(34, 10)
+        Me.TextBox6.Location = New System.Drawing.Point(22, 17)
         Me.TextBox6.Multiline = True
         Me.TextBox6.Name = "TextBox6"
         Me.TextBox6.ReadOnly = True
         Me.TextBox6.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox6.Size = New System.Drawing.Size(404, 553)
+        Me.TextBox6.Size = New System.Drawing.Size(393, 532)
         Me.TextBox6.TabIndex = 12
+        Me.TextBox6.Text = resources.GetString("TextBox6.Text")
         '
         'TabPage6
         '
@@ -430,9 +431,10 @@ Partial Class frm_VerMasDetalles
         'RichTextBox12
         '
         Me.RichTextBox12.BackColor = System.Drawing.SystemColors.Control
-        Me.RichTextBox12.Location = New System.Drawing.Point(17, 18)
+        Me.RichTextBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RichTextBox12.Location = New System.Drawing.Point(22, 17)
         Me.RichTextBox12.Name = "RichTextBox12"
-        Me.RichTextBox12.Size = New System.Drawing.Size(383, 532)
+        Me.RichTextBox12.Size = New System.Drawing.Size(393, 532)
         Me.RichTextBox12.TabIndex = 2
         Me.RichTextBox12.Text = resources.GetString("RichTextBox12.Text")
         '
@@ -463,12 +465,12 @@ Partial Class frm_VerMasDetalles
         '
         Me.TextBox7.BackColor = System.Drawing.SystemColors.Control
         Me.TextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox7.Location = New System.Drawing.Point(33, 8)
+        Me.TextBox7.Location = New System.Drawing.Point(22, 17)
         Me.TextBox7.Multiline = True
         Me.TextBox7.Name = "TextBox7"
         Me.TextBox7.ReadOnly = True
         Me.TextBox7.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox7.Size = New System.Drawing.Size(404, 537)
+        Me.TextBox7.Size = New System.Drawing.Size(393, 532)
         Me.TextBox7.TabIndex = 12
         Me.TextBox7.Text = resources.GetString("TextBox7.Text")
         '
@@ -499,12 +501,12 @@ Partial Class frm_VerMasDetalles
         '
         Me.TextBox8.BackColor = System.Drawing.SystemColors.Control
         Me.TextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox8.Location = New System.Drawing.Point(33, 8)
+        Me.TextBox8.Location = New System.Drawing.Point(22, 17)
         Me.TextBox8.Multiline = True
         Me.TextBox8.Name = "TextBox8"
         Me.TextBox8.ReadOnly = True
         Me.TextBox8.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox8.Size = New System.Drawing.Size(404, 534)
+        Me.TextBox8.Size = New System.Drawing.Size(393, 532)
         Me.TextBox8.TabIndex = 12
         Me.TextBox8.Text = resources.GetString("TextBox8.Text")
         '
@@ -527,7 +529,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(621, 323)
+        Me.Label5.Location = New System.Drawing.Point(621, 285)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(194, 13)
         Me.Label5.TabIndex = 6
@@ -537,7 +539,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(649, 16)
+        Me.Label4.Location = New System.Drawing.Point(649, 3)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(126, 13)
         Me.Label4.TabIndex = 5
@@ -546,12 +548,13 @@ Partial Class frm_VerMasDetalles
         'TextBox4
         '
         Me.TextBox4.BackColor = System.Drawing.SystemColors.Control
-        Me.TextBox4.Location = New System.Drawing.Point(16, 16)
+        Me.TextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox4.Location = New System.Drawing.Point(22, 17)
         Me.TextBox4.Multiline = True
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.ReadOnly = True
         Me.TextBox4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox4.Size = New System.Drawing.Size(485, 588)
+        Me.TextBox4.Size = New System.Drawing.Size(393, 549)
         Me.TextBox4.TabIndex = 2
         Me.TextBox4.Text = resources.GetString("TextBox4.Text")
         Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -618,7 +621,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(652, 5)
+        Me.Label1.Location = New System.Drawing.Point(615, 214)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(102, 13)
         Me.Label1.TabIndex = 8
@@ -628,12 +631,12 @@ Partial Class frm_VerMasDetalles
         '
         Me.TextBox1.BackColor = System.Drawing.SystemColors.Control
         Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(48, 8)
+        Me.TextBox1.Location = New System.Drawing.Point(22, 17)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
         Me.TextBox1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox1.Size = New System.Drawing.Size(404, 553)
+        Me.TextBox1.Size = New System.Drawing.Size(393, 532)
         Me.TextBox1.TabIndex = 6
         Me.TextBox1.Text = resources.GetString("TextBox1.Text")
         '
@@ -654,7 +657,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(609, 5)
+        Me.Label15.Location = New System.Drawing.Point(569, 212)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(171, 13)
         Me.Label15.TabIndex = 11
@@ -662,14 +665,14 @@ Partial Class frm_VerMasDetalles
         '
         'TextBox2
         '
-        Me.TextBox2.BackColor = System.Drawing.Color.White
+        Me.TextBox2.BackColor = System.Drawing.SystemColors.Control
         Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(48, 8)
+        Me.TextBox2.Location = New System.Drawing.Point(22, 17)
         Me.TextBox2.Multiline = True
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.ReadOnly = True
         Me.TextBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TextBox2.Size = New System.Drawing.Size(391, 543)
+        Me.TextBox2.Size = New System.Drawing.Size(393, 532)
         Me.TextBox2.TabIndex = 9
         Me.TextBox2.Text = resources.GetString("TextBox2.Text")
         '
@@ -690,7 +693,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(642, 16)
+        Me.Label16.Location = New System.Drawing.Point(618, 229)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(102, 13)
         Me.Label16.TabIndex = 10
@@ -699,10 +702,10 @@ Partial Class frm_VerMasDetalles
         'RichTextBox8
         '
         Me.RichTextBox8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox8.Location = New System.Drawing.Point(26, 19)
+        Me.RichTextBox8.Location = New System.Drawing.Point(22, 17)
         Me.RichTextBox8.Name = "RichTextBox8"
         Me.RichTextBox8.ReadOnly = True
-        Me.RichTextBox8.Size = New System.Drawing.Size(443, 556)
+        Me.RichTextBox8.Size = New System.Drawing.Size(393, 549)
         Me.RichTextBox8.TabIndex = 0
         Me.RichTextBox8.Text = resources.GetString("RichTextBox8.Text")
         '
@@ -730,7 +733,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(608, 211)
+        Me.Label19.Location = New System.Drawing.Point(609, 188)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(121, 13)
         Me.Label19.TabIndex = 22
@@ -740,7 +743,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(608, 404)
+        Me.Label18.Location = New System.Drawing.Point(609, 381)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(113, 13)
         Me.Label18.TabIndex = 19
@@ -750,7 +753,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(591, 22)
+        Me.Label17.Location = New System.Drawing.Point(595, -1)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(161, 13)
         Me.Label17.TabIndex = 12
@@ -762,7 +765,7 @@ Partial Class frm_VerMasDetalles
         Me.RichTextBox9.Location = New System.Drawing.Point(22, 17)
         Me.RichTextBox9.Name = "RichTextBox9"
         Me.RichTextBox9.ReadOnly = True
-        Me.RichTextBox9.Size = New System.Drawing.Size(395, 556)
+        Me.RichTextBox9.Size = New System.Drawing.Size(393, 549)
         Me.RichTextBox9.TabIndex = 1
         Me.RichTextBox9.Text = resources.GetString("RichTextBox9.Text")
         '
@@ -792,10 +795,10 @@ Partial Class frm_VerMasDetalles
         'RichTextBox10
         '
         Me.RichTextBox10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox10.Location = New System.Drawing.Point(20, 18)
+        Me.RichTextBox10.Location = New System.Drawing.Point(22, 17)
         Me.RichTextBox10.Name = "RichTextBox10"
         Me.RichTextBox10.ReadOnly = True
-        Me.RichTextBox10.Size = New System.Drawing.Size(395, 556)
+        Me.RichTextBox10.Size = New System.Drawing.Size(393, 549)
         Me.RichTextBox10.TabIndex = 25
         Me.RichTextBox10.Text = resources.GetString("RichTextBox10.Text")
         '
@@ -852,10 +855,10 @@ Partial Class frm_VerMasDetalles
         'RichTextBox11
         '
         Me.RichTextBox11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox11.Location = New System.Drawing.Point(28, 18)
+        Me.RichTextBox11.Location = New System.Drawing.Point(22, 17)
         Me.RichTextBox11.Name = "RichTextBox11"
         Me.RichTextBox11.ReadOnly = True
-        Me.RichTextBox11.Size = New System.Drawing.Size(395, 556)
+        Me.RichTextBox11.Size = New System.Drawing.Size(393, 549)
         Me.RichTextBox11.TabIndex = 28
         Me.RichTextBox11.Text = resources.GetString("RichTextBox11.Text")
         '
@@ -901,7 +904,7 @@ Partial Class frm_VerMasDetalles
         Me.TabControl6.Location = New System.Drawing.Point(-2, 1)
         Me.TabControl6.Name = "TabControl6"
         Me.TabControl6.SelectedIndex = 0
-        Me.TabControl6.Size = New System.Drawing.Size(902, 602)
+        Me.TabControl6.Size = New System.Drawing.Size(925, 602)
         Me.TabControl6.TabIndex = 0
         '
         'TabPage16
@@ -913,7 +916,7 @@ Partial Class frm_VerMasDetalles
         Me.TabPage16.Location = New System.Drawing.Point(4, 22)
         Me.TabPage16.Name = "TabPage16"
         Me.TabPage16.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage16.Size = New System.Drawing.Size(894, 576)
+        Me.TabPage16.Size = New System.Drawing.Size(917, 576)
         Me.TabPage16.TabIndex = 0
         Me.TabPage16.Text = "Formulario Orden Trabajo"
         '
@@ -921,7 +924,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(585, 239)
+        Me.Label6.Location = New System.Drawing.Point(581, 156)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(150, 13)
         Me.Label6.TabIndex = 11
@@ -930,10 +933,10 @@ Partial Class frm_VerMasDetalles
         'RichTextBox2
         '
         Me.RichTextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox2.Location = New System.Drawing.Point(14, 16)
+        Me.RichTextBox2.Location = New System.Drawing.Point(22, 17)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.ReadOnly = True
-        Me.RichTextBox2.Size = New System.Drawing.Size(404, 545)
+        Me.RichTextBox2.Size = New System.Drawing.Size(393, 532)
         Me.RichTextBox2.TabIndex = 9
         Me.RichTextBox2.Text = resources.GetString("RichTextBox2.Text")
         '
@@ -946,7 +949,7 @@ Partial Class frm_VerMasDetalles
         Me.TabPage17.Location = New System.Drawing.Point(4, 22)
         Me.TabPage17.Name = "TabPage17"
         Me.TabPage17.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage17.Size = New System.Drawing.Size(894, 576)
+        Me.TabPage17.Size = New System.Drawing.Size(917, 576)
         Me.TabPage17.TabIndex = 1
         Me.TabPage17.Text = "Formulario Listado Ordenes"
         '
@@ -954,7 +957,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(576, 239)
+        Me.Label8.Location = New System.Drawing.Point(557, 216)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(195, 13)
         Me.Label8.TabIndex = 11
@@ -963,10 +966,10 @@ Partial Class frm_VerMasDetalles
         'RichTextBox4
         '
         Me.RichTextBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox4.Location = New System.Drawing.Point(14, 16)
+        Me.RichTextBox4.Location = New System.Drawing.Point(22, 17)
         Me.RichTextBox4.Name = "RichTextBox4"
         Me.RichTextBox4.ReadOnly = True
-        Me.RichTextBox4.Size = New System.Drawing.Size(404, 545)
+        Me.RichTextBox4.Size = New System.Drawing.Size(393, 532)
         Me.RichTextBox4.TabIndex = 9
         Me.RichTextBox4.Text = resources.GetString("RichTextBox4.Text")
         '
@@ -986,10 +989,10 @@ Partial Class frm_VerMasDetalles
         'RichTextBox1
         '
         Me.RichTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox1.Location = New System.Drawing.Point(18, 17)
+        Me.RichTextBox1.Location = New System.Drawing.Point(22, 17)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ReadOnly = True
-        Me.RichTextBox1.Size = New System.Drawing.Size(481, 558)
+        Me.RichTextBox1.Size = New System.Drawing.Size(393, 549)
         Me.RichTextBox1.TabIndex = 9
         Me.RichTextBox1.Text = resources.GetString("RichTextBox1.Text")
         '
@@ -997,7 +1000,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(611, 296)
+        Me.Label2.Location = New System.Drawing.Point(591, 223)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(191, 13)
         Me.Label2.TabIndex = 8
@@ -1024,7 +1027,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(599, 119)
+        Me.Label10.Location = New System.Drawing.Point(616, 103)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(101, 13)
         Me.Label10.TabIndex = 16
@@ -1034,7 +1037,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(599, 399)
+        Me.Label9.Location = New System.Drawing.Point(599, 380)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(118, 13)
         Me.Label9.TabIndex = 13
@@ -1043,7 +1046,7 @@ Partial Class frm_VerMasDetalles
         'RichTextBox3
         '
         Me.RichTextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox3.Location = New System.Drawing.Point(20, 19)
+        Me.RichTextBox3.Location = New System.Drawing.Point(22, 17)
         Me.RichTextBox3.Name = "RichTextBox3"
         Me.RichTextBox3.ReadOnly = True
         Me.RichTextBox3.Size = New System.Drawing.Size(393, 549)
@@ -1053,9 +1056,9 @@ Partial Class frm_VerMasDetalles
         'TabPage13
         '
         Me.TabPage13.BackColor = System.Drawing.Color.DarkGray
-        Me.TabPage13.Controls.Add(Me.Label11)
         Me.TabPage13.Controls.Add(Me.Label12)
         Me.TabPage13.Controls.Add(Me.RichTextBox5)
+        Me.TabPage13.Controls.Add(Me.Label11)
         Me.TabPage13.Controls.Add(Me.PictureBox14)
         Me.TabPage13.Controls.Add(Me.PictureBox16)
         Me.TabPage13.Location = New System.Drawing.Point(4, 22)
@@ -1069,26 +1072,26 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(617, 26)
+        Me.Label11.Location = New System.Drawing.Point(446, 101)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(89, 13)
+        Me.Label11.Size = New System.Drawing.Size(55, 26)
         Me.Label11.TabIndex = 23
-        Me.Label11.Text = "Eliminar Orden"
+        Me.Label11.Text = "Eliminar " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Orden"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(617, 301)
+        Me.Label12.Location = New System.Drawing.Point(442, 398)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(106, 13)
+        Me.Label12.Size = New System.Drawing.Size(59, 26)
         Me.Label12.TabIndex = 20
-        Me.Label12.Text = "Eliminar Producto"
+        Me.Label12.Text = " Eliminar " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Producto"
         '
         'RichTextBox5
         '
         Me.RichTextBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox5.Location = New System.Drawing.Point(23, 23)
+        Me.RichTextBox5.Location = New System.Drawing.Point(22, 17)
         Me.RichTextBox5.Name = "RichTextBox5"
         Me.RichTextBox5.ReadOnly = True
         Me.RichTextBox5.Size = New System.Drawing.Size(393, 549)
@@ -1116,7 +1119,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(620, 26)
+        Me.Label13.Location = New System.Drawing.Point(615, 103)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(98, 13)
         Me.Label13.TabIndex = 28
@@ -1126,7 +1129,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(620, 310)
+        Me.Label14.Location = New System.Drawing.Point(620, 381)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(93, 13)
         Me.Label14.TabIndex = 26
@@ -1135,7 +1138,7 @@ Partial Class frm_VerMasDetalles
         'RichTextBox6
         '
         Me.RichTextBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox6.Location = New System.Drawing.Point(20, 19)
+        Me.RichTextBox6.Location = New System.Drawing.Point(22, 17)
         Me.RichTextBox6.Name = "RichTextBox6"
         Me.RichTextBox6.ReadOnly = True
         Me.RichTextBox6.Size = New System.Drawing.Size(393, 549)
@@ -1158,10 +1161,10 @@ Partial Class frm_VerMasDetalles
         'RichTextBox7
         '
         Me.RichTextBox7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox7.Location = New System.Drawing.Point(39, 29)
+        Me.RichTextBox7.Location = New System.Drawing.Point(22, 17)
         Me.RichTextBox7.Name = "RichTextBox7"
         Me.RichTextBox7.ReadOnly = True
-        Me.RichTextBox7.Size = New System.Drawing.Size(471, 575)
+        Me.RichTextBox7.Size = New System.Drawing.Size(393, 549)
         Me.RichTextBox7.TabIndex = 6
         Me.RichTextBox7.Text = resources.GetString("RichTextBox7.Text")
         '
@@ -1169,7 +1172,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(649, 363)
+        Me.Label3.Location = New System.Drawing.Point(614, 273)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(118, 13)
         Me.Label3.TabIndex = 5
@@ -1191,9 +1194,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.principal1
-        Me.PictureBox3.Location = New System.Drawing.Point(527, 379)
+        Me.PictureBox3.Location = New System.Drawing.Point(423, 289)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(351, 225)
+        Me.PictureBox3.Size = New System.Drawing.Size(498, 277)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 4
         Me.PictureBox3.TabStop = False
@@ -1201,9 +1204,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox6
         '
         Me.PictureBox6.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevaordenampliada
-        Me.PictureBox6.Location = New System.Drawing.Point(433, 255)
+        Me.PictureBox6.Location = New System.Drawing.Point(421, 229)
         Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(447, 306)
+        Me.PictureBox6.Size = New System.Drawing.Size(490, 320)
         Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox6.TabIndex = 10
         Me.PictureBox6.TabStop = False
@@ -1211,9 +1214,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox8
         '
         Me.PictureBox8.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.listadoordenes
-        Me.PictureBox8.Location = New System.Drawing.Point(433, 255)
+        Me.PictureBox8.Location = New System.Drawing.Point(421, 232)
         Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(447, 306)
+        Me.PictureBox8.Size = New System.Drawing.Size(490, 320)
         Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox8.TabIndex = 10
         Me.PictureBox8.TabStop = False
@@ -1221,9 +1224,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevaordenampliada
-        Me.PictureBox2.Location = New System.Drawing.Point(523, 312)
+        Me.PictureBox2.Location = New System.Drawing.Point(423, 239)
         Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox2.Size = New System.Drawing.Size(490, 327)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox2.TabIndex = 7
         Me.PictureBox2.TabStop = False
@@ -1231,9 +1234,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox11
         '
         Me.PictureBox11.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.actualizar_orden
-        Me.PictureBox11.Location = New System.Drawing.Point(659, 138)
+        Me.PictureBox11.Location = New System.Drawing.Point(670, 119)
         Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox11.Size = New System.Drawing.Size(243, 169)
         Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox11.TabIndex = 15
         Me.PictureBox11.TabStop = False
@@ -1241,9 +1244,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox12
         '
         Me.PictureBox12.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificar_orden
-        Me.PictureBox12.Location = New System.Drawing.Point(419, 138)
+        Me.PictureBox12.Location = New System.Drawing.Point(419, 119)
         Me.PictureBox12.Name = "PictureBox12"
-        Me.PictureBox12.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox12.Size = New System.Drawing.Size(243, 169)
         Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox12.TabIndex = 14
         Me.PictureBox12.TabStop = False
@@ -1251,9 +1254,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox10
         '
         Me.PictureBox10.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.actualizarproducto
-        Me.PictureBox10.Location = New System.Drawing.Point(659, 418)
+        Me.PictureBox10.Location = New System.Drawing.Point(670, 396)
         Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox10.Size = New System.Drawing.Size(243, 169)
         Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox10.TabIndex = 12
         Me.PictureBox10.TabStop = False
@@ -1261,9 +1264,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox9
         '
         Me.PictureBox9.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificar_orden
-        Me.PictureBox9.Location = New System.Drawing.Point(419, 418)
+        Me.PictureBox9.Location = New System.Drawing.Point(419, 396)
         Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox9.Size = New System.Drawing.Size(243, 169)
         Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox9.TabIndex = 11
         Me.PictureBox9.TabStop = False
@@ -1271,9 +1274,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox14
         '
         Me.PictureBox14.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminar_orden1
-        Me.PictureBox14.Location = New System.Drawing.Point(470, 42)
+        Me.PictureBox14.Location = New System.Drawing.Point(507, 16)
         Me.PictureBox14.Name = "PictureBox14"
-        Me.PictureBox14.Size = New System.Drawing.Size(371, 247)
+        Me.PictureBox14.Size = New System.Drawing.Size(406, 272)
         Me.PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox14.TabIndex = 21
         Me.PictureBox14.TabStop = False
@@ -1281,9 +1284,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox16
         '
         Me.PictureBox16.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminar_detalle
-        Me.PictureBox16.Location = New System.Drawing.Point(470, 317)
+        Me.PictureBox16.Location = New System.Drawing.Point(507, 294)
         Me.PictureBox16.Name = "PictureBox16"
-        Me.PictureBox16.Size = New System.Drawing.Size(371, 247)
+        Me.PictureBox16.Size = New System.Drawing.Size(406, 272)
         Me.PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox16.TabIndex = 18
         Me.PictureBox16.TabStop = False
@@ -1291,9 +1294,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox17
         '
         Me.PictureBox17.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.exportarPDF
-        Me.PictureBox17.Location = New System.Drawing.Point(430, 326)
+        Me.PictureBox17.Location = New System.Drawing.Point(419, 397)
         Me.PictureBox17.Name = "PictureBox17"
-        Me.PictureBox17.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox17.Size = New System.Drawing.Size(243, 169)
         Me.PictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox17.TabIndex = 30
         Me.PictureBox17.TabStop = False
@@ -1301,9 +1304,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox18
         '
         Me.PictureBox18.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.PDF
-        Me.PictureBox18.Location = New System.Drawing.Point(670, 326)
+        Me.PictureBox18.Location = New System.Drawing.Point(670, 397)
         Me.PictureBox18.Name = "PictureBox18"
-        Me.PictureBox18.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox18.Size = New System.Drawing.Size(243, 169)
         Me.PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox18.TabIndex = 29
         Me.PictureBox18.TabStop = False
@@ -1311,9 +1314,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox13
         '
         Me.PictureBox13.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.consultar_orden1
-        Me.PictureBox13.Location = New System.Drawing.Point(430, 42)
+        Me.PictureBox13.Location = New System.Drawing.Point(419, 119)
         Me.PictureBox13.Name = "PictureBox13"
-        Me.PictureBox13.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox13.Size = New System.Drawing.Size(243, 169)
         Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox13.TabIndex = 27
         Me.PictureBox13.TabStop = False
@@ -1321,9 +1324,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox15
         '
         Me.PictureBox15.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.ver_orden
-        Me.PictureBox15.Location = New System.Drawing.Point(670, 42)
+        Me.PictureBox15.Location = New System.Drawing.Point(670, 119)
         Me.PictureBox15.Name = "PictureBox15"
-        Me.PictureBox15.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox15.Size = New System.Drawing.Size(243, 169)
         Me.PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox15.TabIndex = 25
         Me.PictureBox15.TabStop = False
@@ -1331,9 +1334,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nueva_tarea
-        Me.PictureBox1.Location = New System.Drawing.Point(520, 21)
+        Me.PictureBox1.Location = New System.Drawing.Point(421, 230)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox1.Size = New System.Drawing.Size(490, 321)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
@@ -1341,9 +1344,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox19
         '
         Me.PictureBox19.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.listadotareas
-        Me.PictureBox19.Location = New System.Drawing.Point(520, 21)
+        Me.PictureBox19.Location = New System.Drawing.Point(421, 228)
         Me.PictureBox19.Name = "PictureBox19"
-        Me.PictureBox19.Size = New System.Drawing.Size(338, 253)
+        Me.PictureBox19.Size = New System.Drawing.Size(490, 321)
         Me.PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox19.TabIndex = 10
         Me.PictureBox19.TabStop = False
@@ -1351,9 +1354,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox20
         '
         Me.PictureBox20.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nueva_tarea
-        Me.PictureBox20.Location = New System.Drawing.Point(510, 32)
+        Me.PictureBox20.Location = New System.Drawing.Point(421, 245)
         Me.PictureBox20.Name = "PictureBox20"
-        Me.PictureBox20.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox20.Size = New System.Drawing.Size(490, 321)
         Me.PictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox20.TabIndex = 9
         Me.PictureBox20.TabStop = False
@@ -1361,9 +1364,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox25
         '
         Me.PictureBox25.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.agregaruna
-        Me.PictureBox25.Location = New System.Drawing.Point(671, 230)
+        Me.PictureBox25.Location = New System.Drawing.Point(672, 204)
         Me.PictureBox25.Name = "PictureBox25"
-        Me.PictureBox25.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox25.Size = New System.Drawing.Size(243, 169)
         Me.PictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox25.TabIndex = 24
         Me.PictureBox25.TabStop = False
@@ -1371,9 +1374,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox26
         '
         Me.PictureBox26.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.agregarunatarea
-        Me.PictureBox26.Location = New System.Drawing.Point(431, 230)
+        Me.PictureBox26.Location = New System.Drawing.Point(423, 204)
         Me.PictureBox26.Name = "PictureBox26"
-        Me.PictureBox26.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox26.Size = New System.Drawing.Size(243, 169)
         Me.PictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox26.TabIndex = 23
         Me.PictureBox26.TabStop = False
@@ -1381,9 +1384,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox21
         '
         Me.PictureBox21.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.actualizaruna
-        Me.PictureBox21.Location = New System.Drawing.Point(671, 423)
+        Me.PictureBox21.Location = New System.Drawing.Point(672, 397)
         Me.PictureBox21.Name = "PictureBox21"
-        Me.PictureBox21.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox21.Size = New System.Drawing.Size(243, 169)
         Me.PictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox21.TabIndex = 21
         Me.PictureBox21.TabStop = False
@@ -1391,9 +1394,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox24
         '
         Me.PictureBox24.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificaruna
-        Me.PictureBox24.Location = New System.Drawing.Point(431, 423)
+        Me.PictureBox24.Location = New System.Drawing.Point(423, 397)
         Me.PictureBox24.Name = "PictureBox24"
-        Me.PictureBox24.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox24.Size = New System.Drawing.Size(243, 169)
         Me.PictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox24.TabIndex = 20
         Me.PictureBox24.TabStop = False
@@ -1401,9 +1404,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox22
         '
         Me.PictureBox22.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificartodas
-        Me.PictureBox22.Location = New System.Drawing.Point(671, 41)
+        Me.PictureBox22.Location = New System.Drawing.Point(672, 15)
         Me.PictureBox22.Name = "PictureBox22"
-        Me.PictureBox22.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox22.Size = New System.Drawing.Size(243, 169)
         Me.PictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox22.TabIndex = 18
         Me.PictureBox22.TabStop = False
@@ -1411,9 +1414,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox23
         '
         Me.PictureBox23.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificar_tarea
-        Me.PictureBox23.Location = New System.Drawing.Point(431, 41)
+        Me.PictureBox23.Location = New System.Drawing.Point(423, 15)
         Me.PictureBox23.Name = "PictureBox23"
-        Me.PictureBox23.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox23.Size = New System.Drawing.Size(243, 169)
         Me.PictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox23.TabIndex = 17
         Me.PictureBox23.TabStop = False
@@ -1491,7 +1494,7 @@ Partial Class frm_VerMasDetalles
         'PictureBox5
         '
         Me.PictureBox5.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevo_producto
-        Me.PictureBox5.Location = New System.Drawing.Point(527, 32)
+        Me.PictureBox5.Location = New System.Drawing.Point(527, 19)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(351, 263)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1501,7 +1504,7 @@ Partial Class frm_VerMasDetalles
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.alta_productos
-        Me.PictureBox4.Location = New System.Drawing.Point(527, 341)
+        Me.PictureBox4.Location = New System.Drawing.Point(527, 303)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(351, 263)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1521,7 +1524,7 @@ Partial Class frm_VerMasDetalles
         'PictureBox39
         '
         Me.PictureBox39.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.listado_repeticion
-        Me.PictureBox39.Location = New System.Drawing.Point(411, 52)
+        Me.PictureBox39.Location = New System.Drawing.Point(427, 33)
         Me.PictureBox39.Name = "PictureBox39"
         Me.PictureBox39.Size = New System.Drawing.Size(234, 150)
         Me.PictureBox39.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1531,7 +1534,7 @@ Partial Class frm_VerMasDetalles
         'PictureBox35
         '
         Me.PictureBox35.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevarepeticion
-        Me.PictureBox35.Location = New System.Drawing.Point(651, 52)
+        Me.PictureBox35.Location = New System.Drawing.Point(667, 33)
         Me.PictureBox35.Name = "PictureBox35"
         Me.PictureBox35.Size = New System.Drawing.Size(234, 150)
         Me.PictureBox35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -1540,6 +1543,7 @@ Partial Class frm_VerMasDetalles
         '
         'PictureBox36
         '
+        Me.PictureBox36.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminarrepeticion1
         Me.PictureBox36.Location = New System.Drawing.Point(506, 23)
         Me.PictureBox36.Name = "PictureBox36"
         Me.PictureBox36.Size = New System.Drawing.Size(351, 263)
@@ -1581,7 +1585,7 @@ Partial Class frm_VerMasDetalles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(937, 699)
+        Me.ClientSize = New System.Drawing.Size(937, 694)
         Me.Controls.Add(Me.btnCerrar)
         Me.Controls.Add(Me.Principal)
         Me.Name = "frm_VerMasDetalles"
