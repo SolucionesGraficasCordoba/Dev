@@ -529,21 +529,21 @@ Partial Class frm_VerMasDetalles
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(621, 285)
+        Me.Label5.Location = New System.Drawing.Point(421, 408)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(194, 13)
+        Me.Label5.Size = New System.Drawing.Size(75, 39)
         Me.Label5.TabIndex = 6
-        Me.Label5.Text = "Formulario Movimiento Productos"
+        Me.Label5.Text = " Formulario " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Movimiento " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Productos"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(649, 3)
+        Me.Label4.Location = New System.Drawing.Point(421, 142)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(126, 13)
+        Me.Label4.Size = New System.Drawing.Size(69, 26)
         Me.Label4.TabIndex = 5
-        Me.Label4.Text = "Formulario Productos"
+        Me.Label4.Text = "Formulario " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Productos"
         '
         'TextBox4
         '
@@ -1496,7 +1496,7 @@ Partial Class frm_VerMasDetalles
         Me.PictureBox5.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevo_producto
         Me.PictureBox5.Location = New System.Drawing.Point(527, 19)
         Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox5.Size = New System.Drawing.Size(382, 264)
         Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox5.TabIndex = 4
         Me.PictureBox5.TabStop = False
@@ -1504,9 +1504,9 @@ Partial Class frm_VerMasDetalles
         'PictureBox4
         '
         Me.PictureBox4.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.alta_productos
-        Me.PictureBox4.Location = New System.Drawing.Point(527, 303)
+        Me.PictureBox4.Location = New System.Drawing.Point(527, 302)
         Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox4.Size = New System.Drawing.Size(382, 264)
         Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox4.TabIndex = 3
         Me.PictureBox4.TabStop = False
