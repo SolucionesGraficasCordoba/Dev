@@ -144,13 +144,12 @@ Public Class frm_Listado_Tareas
             End If
         Catch
         End Try
-        'CALCULA LA SUMA DEL TIEMPO REAL DE CADA TAREA POR COLABORADOR
 
-        'Label35.Text = 0
-        'Label8.Text = 0
         SumatoriaTiempos()
     End Sub
 
+
+    'CALCULA LA SUMA DEL TIEMPO REAL DE CADA TAREA POR COLABORADOR
     Public Sub SumatoriaTiempos()
         Try
             'Declarar variable que acumulará la sumatoria de las celdas
@@ -2227,7 +2226,4 @@ Public Class frm_Listado_Tareas
 
     End Sub
 
-    Private Sub dgvColaboradores_Click(sender As System.Object, e As System.EventArgs) Handles dgvColaboradores.Click
-
-    End Sub
 End Class
