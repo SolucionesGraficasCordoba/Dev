@@ -1184,79 +1184,81 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     End Sub
 
     Private Sub btn_ODT_mostrar_listado_pdf_Click(sender As System.Object, e As System.EventArgs) Handles btn_ODT_mostrar_listado_pdf.Click
-        ' Try
-        'intentar generar el documento
-        Dim doc As New Document(PageSize.A4, 20, 20, 20, 20)
+        Try
+            'intentar generar el documento
+            Dim doc As New Document(PageSize.A4, 20, 20, 20, 20)
 
-        'path que guarda el reporte en el escritorio de windows (desktop)
-        Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Orden_" _
-                                 + dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                 + ".pdf"
-        'no se usa xq ya no hay tipo de odt
-        '+ dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgv_detalle_orden.CurrentRow.Index).Value + "_" _
+            'path que guarda el reporte en el escritorio de windows (desktop)
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Orden_" _
+                                     + dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                     + ".pdf"
+            'no se usa xq ya no hay tipo de odt
+            '+ dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgv_detalle_orden.CurrentRow.Index).Value + "_" _
 
 
-        Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
-        ' PARA LAS LINEAS DE FONDO
-        Dim writer As PdfWriter = PdfWriter.GetInstance(doc, file)
-        doc.Open()
-        Dim cb As PdfContentByte = writer.DirectContent
-        Dibujar_Lineas(cb, doc)
-        Escribir_Pdf(cb)
+            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+            ' PARA LAS LINEAS DE FONDO
+            Dim writer As PdfWriter = PdfWriter.GetInstance(doc, file)
+            doc.Open()
+            Dim cb As PdfContentByte = writer.DirectContent
+            Dibujar_Lineas(cb, doc)
+            Escribir_Pdf(cb)
 
-        'Vbles formato
-        Dim medialinea As New Paragraph("                                       " _
-        & "--------------------------------------------------------------------------------------")
+            'Vbles formato
+            Dim medialinea As New Paragraph("                                       " _
+            & "--------------------------------------------------------------------------------------")
 
-        Dim linea As New Paragraph("---------------------------------------------------------------------" _
-                                  & "---------------------------------------------------------------------")
-        Dim orden As New Phrase("   " & dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                         & " " _
-                                         & dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                         & "                   " _
-                                        , New Font(fuente, 22, Font.Bold))
-        Dim ingreso_vendedor As New Paragraph("Fecha ingreso: " & dgvLista_Orden_Trabajo.SelectedRows(0).Cells("ORT_fecha_ot").Value _
-                                         & "  " _
-                                         & "                          " _
-                                         & "Vendedor: " & dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                         , New Font(fuente, 12, Font.Bold))
-        Dim cliente As New Paragraph("Cliente: " & dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                         , New Font(fuente, 12))
+            Dim linea As New Paragraph("---------------------------------------------------------------------" _
+                                      & "---------------------------------------------------------------------")
+            Dim orden As New Phrase("   " & dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                             & " " _
+                                             & dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                             & "                   " _
+                                            , New Font(fuente, 22, Font.Bold))
 
-        Dim entrega As New Paragraph("Entregar en: " & dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                         , New Font(fuente, 12))
+            Dim ingreso_vendedor As New Paragraph("Fecha ingreso: " & dgvLista_Orden_Trabajo.SelectedRows(0).Cells("ORT_fecha_ot").Value _
+                                             & "  " _
+                                             & "                          " _
+                                             & "Vendedor: " & dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                             , New Font(fuente, 12, Font.Bold))
 
-        Dim prod_desc As New Paragraph("Descripción: " _
-                                       & dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
-                                       , New Font(fuente, 10, Font.Bold))
+            Dim cliente As New Paragraph("Cliente: " & dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                             , New Font(fuente, 12))
 
-        Dim encabezado As New Paragraph
-        encabezado.Add(orden)
-        'Encabezado
-        doc.Add(encabezado)
-        'Info
-        doc.Add(ingreso_vendedor)
-        doc.Add(cliente)
-        doc.Add(entrega)
-        'Descripción
-        doc.Add(prod_desc)
-        doc.Add(linea)
-        'Productos
-        For i = 0 To dgv_detalle_orden.RowCount - 1
-            dgv_detalle_orden.Rows(i).Selected = True
-            'dgv_detalle_orden_CellClick(0, Nothing)
-            pdf_informe_diario_sin_tablas(doc, i)
+            Dim entrega As New Paragraph("Entregar en: " & dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                             , New Font(fuente, 12))
+
+            Dim prod_desc As New Paragraph("Descripción: " _
+                                           & dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.CurrentRow.Index).Value _
+                                           , New Font(fuente, 10, Font.Bold))
+
+            Dim encabezado As New Paragraph
+            encabezado.Add(orden)
+            'Encabezado
+            doc.Add(encabezado)
+            'Info
+            doc.Add(ingreso_vendedor)
+            doc.Add(cliente)
+            doc.Add(entrega)
+            'Descripción
+            doc.Add(prod_desc)
             doc.Add(linea)
-        Next
-        doc.Close()
-        writer.Close()
-        Process.Start(filename)
+            'Productos
+            For i = 0 To dgv_detalle_orden.RowCount - 1
+                dgv_detalle_orden.Rows(i).Selected = True
+                'dgv_detalle_orden_CellClick(0, Nothing)
+                pdf_informe_diario_sin_tablas(doc, i)
+                doc.Add(linea)
+            Next
+            doc.Close()
+            writer.Close()
+            Process.Start(filename)
 
-        'Me.Close()
-        'Catch ex As Exception
-        'si el mensaje es fallido mostrar msgbox
-        MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        'End Try
+            'Me.Close()
+        Catch ex As Exception
+            'si el mensaje es fallido mostrar msgbox
+            MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Sub Dibujar_Lineas(ByVal cb As PdfContentByte, ByVal doc As Document)
@@ -1288,7 +1290,8 @@ Where ORT_id_orden_trabajo = vble_id_orden)
     End Sub
 
     Sub pdf_informe_diario_sin_tablas(ByVal doc As Document, ByVal fila_actual As Integer)
-        'Agregado de productos
+
+        'Agregado de item 1
         Dim prod_tit As New Paragraph("ITEM " & (fila_actual + 1))
         Dim prod_det As New Paragraph(dgv_detalle_orden.Item("DOT_cantidad_producto", dgv_detalle_orden.Rows(fila_actual).Index).Value _
                                       & "  " _
@@ -1298,7 +1301,6 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                                       & "   " _
                                       & dgv_detalle_orden.Item("DOT_tipo_impresion_dot", dgv_detalle_orden.Rows(fila_actual).Index).Value _
                                       , New Font(fuente, 16, Font.Bold))
-
         doc.Add(prod_tit)
         doc.Add(prod_det)
 
