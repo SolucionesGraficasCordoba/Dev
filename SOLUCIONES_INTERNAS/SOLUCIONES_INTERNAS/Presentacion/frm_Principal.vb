@@ -1602,7 +1602,7 @@ Public Class frm_Principal
 
     Private Sub NuevoToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles NuevoToolStripMenuItem1.Click
         frm_retrabajo.Text = "Nuevo Re-Trabajo"
-        frm_retrabajo.txt_id_detalle.Visible = False
+        '  frm_retrabajo.txt_id_detalle.Visible = False
         frm_retrabajo.txt_id_orden_trabajo.Visible = False
         frm_retrabajo.txt_id_re_trabajo.Visible = False
         frm_retrabajo.btnImprimirFormulario.Enabled = False
@@ -1644,7 +1644,7 @@ Public Class frm_Principal
 
     Private Sub EliminarToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarToolStripMenuItem2.Click
         frm_retrabajo.Text = "Nuevo Re-Trabajo"
-        frm_retrabajo.txt_id_detalle.Visible = False
+        '  frm_retrabajo.txt_id_detalle.Visible = False
         frm_retrabajo.txt_id_orden_trabajo.Visible = False
         frm_retrabajo.txt_id_re_trabajo.Visible = False
         frm_retrabajo.btnImprimirFormulario.Enabled = False
@@ -1661,7 +1661,7 @@ Public Class frm_Principal
 
     Private Sub DigitalOffsetToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles DigitalOffsetToolStripMenuItem1.Click
         frm_retrabajo.Text = "Consultar Re-Trabajo"
-        frm_retrabajo.txt_id_detalle.Visible = False
+        '  frm_retrabajo.txt_id_detalle.Visible = False
         frm_retrabajo.txt_id_orden_trabajo.Visible = False
         frm_retrabajo.txt_id_re_trabajo.Visible = False
         frm_retrabajo.btnImprimirFormulario.Enabled = False
