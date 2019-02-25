@@ -1602,9 +1602,9 @@ Public Class frm_Principal
 
     Private Sub NuevoToolStripMenuItem1_Click(sender As System.Object, e As System.EventArgs) Handles NuevoToolStripMenuItem1.Click
         frm_retrabajo.Text = "Nuevo Re-Trabajo"
-        '  frm_retrabajo.txt_id_detalle.Visible = False
-        '  frm_retrabajo.txt_id_orden_trabajo.Visible = False
-        '  frm_retrabajo.txt_id_re_trabajo.Visible = False
+        frm_retrabajo.txt_id_detalle.Visible = False
+        frm_retrabajo.txt_id_orden_trabajo.Visible = False
+        frm_retrabajo.txt_id_re_trabajo.Visible = False
         frm_retrabajo.btnImprimirFormulario.Enabled = False
         frm_retrabajo.groupOffset.Enabled = False
         frm_retrabajo.GroupDigital.Enabled = False
