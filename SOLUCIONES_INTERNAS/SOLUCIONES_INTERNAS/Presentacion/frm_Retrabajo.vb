@@ -44,6 +44,35 @@
         Catch ex As Exception
         End Try
 
+        'CARGA COMBOBOX PAPEL 1
+        Dim combopapel1 = (From papelsop1 In datacontext.SOPORTE
+                 Select papelsop1.SOP_id_soporte, papelsop1.SOP_nombre_soporte, papelsop1.SOP_ubicacion
+                 Where SOP_ubicacion = "D"
+                 Order By SOP_nombre_soporte Ascending)
+        cboPapel1.DataSource = combopapel1
+        cboPapel1.DisplayMember = "SOP_nombre_soporte"
+        cboPapel1.ValueMember = "SOP_id_soporte"
+        cboPapel1.SelectedIndex = -1
+
+        'CARGA COMBOBOX PAPEL 2
+        Dim combopapel2 = (From papelsop2 In datacontext.SOPORTE
+                 Select papelsop2.SOP_id_soporte, papelsop2.SOP_nombre_soporte, papelsop2.SOP_ubicacion
+                 Where SOP_ubicacion = "D"
+                 Order By SOP_nombre_soporte Ascending)
+        cboPapel2.DataSource = combopapel2
+        cboPapel2.DisplayMember = "SOP_nombre_soporte"
+        cboPapel2.ValueMember = "SOP_id_soporte"
+        cboPapel2.SelectedIndex = -1
+        'CARGA COMBOBOX PAPEL 3
+        Dim combopapel3 = (From papelsop2 In datacontext.SOPORTE
+                 Select papelsop2.SOP_id_soporte, papelsop2.SOP_nombre_soporte, papelsop2.SOP_ubicacion
+                 Where SOP_ubicacion = "D"
+                 Order By SOP_nombre_soporte Ascending)
+        cboPapel3.DataSource = combopapel3
+        cboPapel3.DisplayMember = "SOP_nombre_soporte"
+        cboPapel3.ValueMember = "SOP_id_soporte"
+        cboPapel3.SelectedIndex = -1
+
         ArmaGrillaRetrabajo()
         CargarGrillaRetrabajo()
     End Sub
@@ -177,92 +206,94 @@
             txt_Cantidad_Retrabajo.Focus()
             Exit Sub
         End If
-        Try
-            'GUARDA RETRABAJO
-            Dim ret = New RE_TRABAJO
+        '   Try
+        'GUARDA RETRABAJO
+        Dim ret = New RE_TRABAJO
 
-            ' GUARDA GroupReTrabajo
-            If txt_Cantidad_Retrabajo.TextLength <> 0 Then
-                ret.RET_cantidad_producto_retrabajo = txt_Cantidad_Retrabajo.Text
-            End If
-            ret.RET_origen_area_motivo = StrConv(txt_Origen_Causa.Text, VbStrConv.ProperCase)
-            ret.RET_procedimiento_observaciones = StrConv(txt_Procedimiento.Text, VbStrConv.ProperCase)
-            ret.RET_fecha_comienzo_retrabajo = StrConv(dtpFecha_Re_Trabajo.Text, VbStrConv.ProperCase)
-            ret.RET_fecha_entrega_retrabajo = StrConv(dtp_Nueva_Fecha_Entrega.Text, VbStrConv.ProperCase)
-            '-----------------------------------------------------------------------------------------------------------
-            ret.id_detalle_orden_trabajo = txt_id_detalle.Text
-            '-----------------------------------------------------------------------------------------------------------
-            'PRODUCTO
-            ret.RET_papel_soporte_1_retrabajo = txt_Papel_1_Soporte.Text
-            ret.RET_papel_soporte_2_retrabajo = txt_Papel_2_Soporte.Text
-            ret.RET_papel_soporte_3_retrabajo = txt_Papel_3_Soporte.Text
+        ' GUARDA GroupReTrabajo
+        If txt_Cantidad_Retrabajo.TextLength <> 0 Then
+            ret.RET_cantidad_producto_retrabajo = txt_Cantidad_Retrabajo.Text
+        End If
+        ret.RET_origen_area_motivo = StrConv(txt_Origen_Causa.Text, VbStrConv.ProperCase)
+        ret.RET_procedimiento_observaciones = StrConv(txt_Procedimiento.Text, VbStrConv.ProperCase)
+        ret.RET_fecha_comienzo_retrabajo = StrConv(dtpFecha_Re_Trabajo.Text, VbStrConv.ProperCase)
+        ret.RET_fecha_entrega_retrabajo = StrConv(dtp_Nueva_Fecha_Entrega.Text, VbStrConv.ProperCase)
+        '-----------------------------------------------------------------------------------------------------------
+        ret.id_detalle_orden_trabajo = txt_id_detalle.Text
+        '-----------------------------------------------------------------------------------------------------------
 
-            ret.RET_gramaje_soporte_1_retrabajo = txt_Gramaje_1_Soporte.Text
-            ret.RET_gramaje_soporte_2_retrabajo = txt_Gramaje_2_Soporte.Text
-            ret.RET_gramaje_soporte_3_retrabajo = txt_Gramaje_3_Soporte.Text
-            '-----------------------------------------------------------------------
-            'PLIEGO ENTERO DIGITAL/OFFSET
+        'PRODUCTO
+        ret.RET_papel_soporte_1_retrabajo = cboPapel1.SelectedValue
+        ret.RET_papel_soporte_2_retrabajo = cboPapel2.SelectedValue
+        ret.RET_papel_soporte_3_retrabajo = cboPapel3.SelectedValue
 
-            If txt_Cantidad_1_PE_DigitalOffset.TextLength <> 0 Then
-                ret.RET_cantidad_soporte_1_retrabajo = txt_Cantidad_1_PE_DigitalOffset.Text
-            End If
-            If txt_Cantidad_2_PE_DigitalOffset.TextLength <> 0 Then
-                ret.RET_cantidad_soporte_2_retrabajo = txt_Cantidad_2_PE_DigitalOffset.Text
-            End If
-            If txt_Cantidad_3_PE_DigitalOffset.TextLength <> 0 Then
-                ret.RET_cantidad_soporte_3_retrabajo = txt_Cantidad_3_PE_DigitalOffset.Text
-            End If
+        ret.RET_gramaje_soporte_1_retrabajo = cboGramaje1.SelectedItem
+        ret.RET_gramaje_soporte_2_retrabajo = cboGramaje2.SelectedItem
+        ret.RET_gramaje_soporte_3_retrabajo = cboGramaje3.SelectedItem
+        '-----------------------------------------------------------------------
 
-            ret.RET_formato_soporte_1_retrabajo = cboFormato_1_PE_DigitalOffset.SelectedItem
-            ret.RET_formato_soporte_2_retrabajo = cboFormato_2_PE_DigitalOffset.SelectedItem
-            ret.RET_formato_soporte_3_retrabajo = cboFormato_3_PE_DigitalOffset.SelectedItem
-            '----------------------------------------------------------------------------
+        'PLIEGO ENTERO DIGITAL/OFFSET
+        If txt_Cantidad_1_PE_DigitalOffset.TextLength <> 0 Then
+            ret.RET_cantidad_soporte_1_retrabajo = txt_Cantidad_1_PE_DigitalOffset.Text
+        End If
+        If txt_Cantidad_2_PE_DigitalOffset.TextLength <> 0 Then
+            ret.RET_cantidad_soporte_2_retrabajo = txt_Cantidad_2_PE_DigitalOffset.Text
+        End If
+        If txt_Cantidad_3_PE_DigitalOffset.TextLength <> 0 Then
+            ret.RET_cantidad_soporte_3_retrabajo = txt_Cantidad_3_PE_DigitalOffset.Text
+        End If
 
-            'PLIEGO MAQUINA OFFSET
-            If txtCantidad_1_PM_Offset.TextLength <> 0 Then
-                ret.cantidad_1_PM_offset_retrabajo = txtCantidad_1_PM_Offset.Text
-            End If
-            If txtCantidad_2_PM_Offset.TextLength <> 0 Then
-                ret.cantidad_2_PM_offset_retrabajo = txtCantidad_2_PM_Offset.Text
-            End If
-            If txtCantidad_3_PM_Offset.TextLength <> 0 Then
-                ret.cantidad_3_PM_offset_retrabajo = txtCantidad_3_PM_Offset.Text
-            End If
-            ret.formato_1_PM_offset_retrabajo = cboFormato_1_PM_Offset.SelectedItem
-            ret.formato_2_PM_offset_retrabajo = cboFormato_2_PM_Offset.SelectedItem
-            ret.formato_3_PM_offset_retrabajo = cboFormato_3_PM_Offset.SelectedItem
+        ret.RET_formato_soporte_1_retrabajo = cboFormato_1_PE_DigitalOffset.SelectedItem
+        ret.RET_formato_soporte_2_retrabajo = cboFormato_2_PE_DigitalOffset.SelectedItem
+        ret.RET_formato_soporte_3_retrabajo = cboFormato_3_PE_DigitalOffset.SelectedItem
+        '----------------------------------------------------------------------------
 
-            ret.tipo_impresion_offset_retrabajo = cboTipo_Impresion_Offset.SelectedItem
-            ret.impresora_offset_retrabajo = cboImpresora_Offset.SelectedItem
-            ret.modo_impresion_offset_retrabajo = cboModo_Impresion_Offset.SelectedItem
-            '--------------------------------------------------------------------------------
-            'PLIEGO MAQUINA DIGITAL
-            If txtCantidad_1_PM_Digital.TextLength <> 0 Then
-                ret.cantidad_1_PM_digital_retrabajo = txtCantidad_1_PM_Digital.Text
-            End If
-            If txtCantidad_2_PM_Digital.TextLength <> 0 Then
-                ret.cantidad_2_PM_digital_retrabajo = txtCantidad_2_PM_Digital.Text
-            End If
-            If txtCantidad_3_PM_Digital.TextLength <> 0 Then
-                ret.cantidad_3_PM_digital_retrabajo = txtCantidad_3_PM_Digital.Text
-            End If
+        'PLIEGO MAQUINA OFFSET
+        If txtCantidad_1_PM_Offset.TextLength <> 0 Then
+            ret.cantidad_1_PM_offset_retrabajo = txtCantidad_1_PM_Offset.Text
+        End If
+        If txtCantidad_2_PM_Offset.TextLength <> 0 Then
+            ret.cantidad_2_PM_offset_retrabajo = txtCantidad_2_PM_Offset.Text
+        End If
+        If txtCantidad_3_PM_Offset.TextLength <> 0 Then
+            ret.cantidad_3_PM_offset_retrabajo = txtCantidad_3_PM_Offset.Text
+        End If
+        ret.formato_1_PM_offset_retrabajo = cboFormato_1_PM_Offset.SelectedItem
+        ret.formato_2_PM_offset_retrabajo = cboFormato_2_PM_Offset.SelectedItem
+        ret.formato_3_PM_offset_retrabajo = cboFormato_3_PM_Offset.SelectedItem
 
-            ret.formato_1_PM_digital_retrabajo = cboFormato_1_PM_Digital.SelectedItem
-            ret.formato_2_PM_digital_retrabajo = cboFormato_2_PM_Digital.SelectedItem
-            ret.formato_3_PM_digital_retrabajo = cboFormato_3_PM_Digital.SelectedItem
+        ret.tipo_impresion_offset_retrabajo = cboTipo_Impresion_Offset.SelectedItem
+        ret.impresora_offset_retrabajo = cboImpresora_Offset.SelectedItem
+        ret.modo_impresion_offset_retrabajo = cboModo_Impresion_Offset.SelectedItem
+        '--------------------------------------------------------------------------------
 
-            ret.tipo_impresion_digital_retrabajo = cboTipo_Impresion_Digital.SelectedItem
+        'PLIEGO MAQUINA DIGITAL
+        If txtCantidad_1_PM_Digital.TextLength <> 0 Then
+            ret.cantidad_1_PM_digital_retrabajo = txtCantidad_1_PM_Digital.Text
+        End If
+        If txtCantidad_2_PM_Digital.TextLength <> 0 Then
+            ret.cantidad_2_PM_digital_retrabajo = txtCantidad_2_PM_Digital.Text
+        End If
+        If txtCantidad_3_PM_Digital.TextLength <> 0 Then
+            ret.cantidad_3_PM_digital_retrabajo = txtCantidad_3_PM_Digital.Text
+        End If
 
-            ret.dato_variable_retrabajo = txtDato_Variable.Text
+        ret.formato_1_PM_digital_retrabajo = cboFormato_1_PM_Digital.SelectedItem
+        ret.formato_2_PM_digital_retrabajo = cboFormato_2_PM_Digital.SelectedItem
+        ret.formato_3_PM_digital_retrabajo = cboFormato_3_PM_Digital.SelectedItem
 
-            datacontext.RE_TRABAJO.InsertOnSubmit(ret)
-            datacontext.SubmitChanges()
+        ret.tipo_impresion_digital_retrabajo = cboTipo_Impresion_Digital.SelectedItem
 
-            MsgBox("El re_trabajo se ha guardado correctamente", vbInformation)
-            Me.Close()
-        Catch ex As Exception
-            MsgBox("Error al cargar el Re-Trabajo")
-        End Try
+        ret.dato_variable_retrabajo = txtDato_Variable.Text
+
+        datacontext.RE_TRABAJO.InsertOnSubmit(ret)
+        datacontext.SubmitChanges()
+
+        MsgBox("El re_trabajo se ha guardado correctamente", vbInformation)
+        Me.Close()
+        ' Catch ex As Exception
+        '   MsgBox("Error al cargar el Re-Trabajo")
+        ' End Try
     End Sub
 
     Private Sub chkOffset_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles chkOffset.CheckedChanged
@@ -637,12 +668,12 @@
                 txt_Procedimiento.Text = dgvListado_ReTrabajo.Item("RET_procedimiento_observaciones", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
 
                 'CARGA GROUPBOX PRODUCTO
-                txt_Papel_1_Soporte.Text = dgvListado_ReTrabajo.Item("RET_papel_soporte_1_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
-                txt_Papel_2_Soporte.Text = dgvListado_ReTrabajo.Item("RET_papel_soporte_2_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
-                txt_Papel_3_Soporte.Text = dgvListado_ReTrabajo.Item("RET_papel_soporte_3_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
-                txt_Gramaje_1_Soporte.Text = dgvListado_ReTrabajo.Item("RET_gramaje_soporte_1_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
-                txt_Gramaje_2_Soporte.Text = dgvListado_ReTrabajo.Item("RET_gramaje_soporte_2_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
-                txt_Gramaje_3_Soporte.Text = dgvListado_ReTrabajo.Item("RET_gramaje_soporte_3_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+                cboPapel1.Text = dgvListado_ReTrabajo.Item("RET_papel_soporte_1_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+                cboPapel2.Text = dgvListado_ReTrabajo.Item("RET_papel_soporte_2_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+                cboPapel3.Text = dgvListado_ReTrabajo.Item("RET_papel_soporte_3_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+                cboGramaje1.Text = dgvListado_ReTrabajo.Item("RET_gramaje_soporte_1_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+                cboGramaje2.Text = dgvListado_ReTrabajo.Item("RET_gramaje_soporte_2_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+                cboGramaje3.Text = dgvListado_ReTrabajo.Item("RET_gramaje_soporte_3_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
                 txt_Cantidad_1_PE_DigitalOffset.Text = dgvListado_ReTrabajo.Item("RET_cantidad_soporte_1_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
                 txt_Cantidad_2_PE_DigitalOffset.Text = dgvListado_ReTrabajo.Item("RET_cantidad_soporte_2_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
                 txt_Cantidad_3_PE_DigitalOffset.Text = dgvListado_ReTrabajo.Item("RET_cantidad_soporte_3_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value

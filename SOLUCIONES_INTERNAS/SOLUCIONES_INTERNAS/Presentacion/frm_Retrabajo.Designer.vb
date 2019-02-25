@@ -60,6 +60,12 @@ Partial Class frm_retrabajo
         Me.txtTamaño_Original = New System.Windows.Forms.TextBox()
         Me.txt_Cantidad_Original = New System.Windows.Forms.TextBox()
         Me.GroupProducto1 = New System.Windows.Forms.GroupBox()
+        Me.cboGramaje3 = New System.Windows.Forms.ComboBox()
+        Me.cboGramaje2 = New System.Windows.Forms.ComboBox()
+        Me.cboGramaje1 = New System.Windows.Forms.ComboBox()
+        Me.cboPapel3 = New System.Windows.Forms.ComboBox()
+        Me.cboPapel2 = New System.Windows.Forms.ComboBox()
+        Me.cboPapel1 = New System.Windows.Forms.ComboBox()
         Me.GroupDigital = New System.Windows.Forms.GroupBox()
         Me.cboFormato_3_PM_Digital = New System.Windows.Forms.ComboBox()
         Me.txtCantidad_1_PM_Digital = New System.Windows.Forms.TextBox()
@@ -97,14 +103,8 @@ Partial Class frm_retrabajo
         Me.txt_Cantidad_3_PE_DigitalOffset = New System.Windows.Forms.TextBox()
         Me.cboFormato_1_PE_DigitalOffset = New System.Windows.Forms.ComboBox()
         Me.cboFormato_2_PE_DigitalOffset = New System.Windows.Forms.ComboBox()
-        Me.txt_Gramaje_3_Soporte = New System.Windows.Forms.TextBox()
-        Me.txt_Papel_3_Soporte = New System.Windows.Forms.TextBox()
-        Me.txt_Gramaje_2_Soporte = New System.Windows.Forms.TextBox()
-        Me.txt_Papel_2_Soporte = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
-        Me.txt_Gramaje_1_Soporte = New System.Windows.Forms.TextBox()
-        Me.txt_Papel_1_Soporte = New System.Windows.Forms.TextBox()
         Me.txt_id_detalle = New System.Windows.Forms.TextBox()
         Me.GroupReTrabajo = New System.Windows.Forms.GroupBox()
         Me.GroupTipoOrden = New System.Windows.Forms.GroupBox()
@@ -132,15 +132,15 @@ Partial Class frm_retrabajo
         '
         'txt_id_re_trabajo
         '
-        Me.txt_id_re_trabajo.Location = New System.Drawing.Point(304, 14)
+        Me.txt_id_re_trabajo.Location = New System.Drawing.Point(337, 15)
         Me.txt_id_re_trabajo.Name = "txt_id_re_trabajo"
-        Me.txt_id_re_trabajo.Size = New System.Drawing.Size(10, 20)
+        Me.txt_id_re_trabajo.Size = New System.Drawing.Size(61, 20)
         Me.txt_id_re_trabajo.TabIndex = 60
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(231, 15)
+        Me.Label1.Location = New System.Drawing.Point(264, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 59
@@ -214,9 +214,9 @@ Partial Class frm_retrabajo
         '
         'txt_id_orden_trabajo
         '
-        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(297, 46)
+        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(228, 18)
         Me.txt_id_orden_trabajo.Name = "txt_id_orden_trabajo"
-        Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(16, 20)
+        Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(63, 20)
         Me.txt_id_orden_trabajo.TabIndex = 77
         '
         'Label17
@@ -459,24 +459,81 @@ Partial Class frm_retrabajo
         '
         'GroupProducto1
         '
+        Me.GroupProducto1.Controls.Add(Me.cboGramaje3)
+        Me.GroupProducto1.Controls.Add(Me.cboGramaje2)
+        Me.GroupProducto1.Controls.Add(Me.cboGramaje1)
+        Me.GroupProducto1.Controls.Add(Me.cboPapel3)
+        Me.GroupProducto1.Controls.Add(Me.cboPapel2)
+        Me.GroupProducto1.Controls.Add(Me.cboPapel1)
         Me.GroupProducto1.Controls.Add(Me.GroupDigital)
         Me.GroupProducto1.Controls.Add(Me.groupOffset)
         Me.GroupProducto1.Controls.Add(Me.Label17)
         Me.GroupProducto1.Controls.Add(Me.GroupPliegoEntero)
-        Me.GroupProducto1.Controls.Add(Me.txt_Gramaje_3_Soporte)
-        Me.GroupProducto1.Controls.Add(Me.txt_Papel_3_Soporte)
-        Me.GroupProducto1.Controls.Add(Me.txt_Gramaje_2_Soporte)
-        Me.GroupProducto1.Controls.Add(Me.txt_Papel_2_Soporte)
         Me.GroupProducto1.Controls.Add(Me.Label24)
         Me.GroupProducto1.Controls.Add(Me.Label25)
-        Me.GroupProducto1.Controls.Add(Me.txt_Gramaje_1_Soporte)
-        Me.GroupProducto1.Controls.Add(Me.txt_Papel_1_Soporte)
         Me.GroupProducto1.Location = New System.Drawing.Point(15, 194)
         Me.GroupProducto1.Name = "GroupProducto1"
         Me.GroupProducto1.Size = New System.Drawing.Size(1081, 224)
         Me.GroupProducto1.TabIndex = 84
         Me.GroupProducto1.TabStop = False
         Me.GroupProducto1.Text = "Producto "
+        '
+        'cboGramaje3
+        '
+        Me.cboGramaje3.FormattingEnabled = True
+        Me.cboGramaje3.Items.AddRange(New Object() {"70", "75", "80", "90", "115", "120", "130", "150", "170", "180", "200", "210", "220", "225", "240", "250", "300", "310", "350"})
+        Me.cboGramaje3.Location = New System.Drawing.Point(222, 103)
+        Me.cboGramaje3.MaxLength = 100
+        Me.cboGramaje3.Name = "cboGramaje3"
+        Me.cboGramaje3.Size = New System.Drawing.Size(84, 21)
+        Me.cboGramaje3.TabIndex = 171
+        '
+        'cboGramaje2
+        '
+        Me.cboGramaje2.FormattingEnabled = True
+        Me.cboGramaje2.Items.AddRange(New Object() {"70", "75", "80", "90", "115", "120", "130", "150", "170", "180", "200", "210", "220", "225", "240", "250", "300", "310", "350"})
+        Me.cboGramaje2.Location = New System.Drawing.Point(222, 79)
+        Me.cboGramaje2.MaxLength = 100
+        Me.cboGramaje2.Name = "cboGramaje2"
+        Me.cboGramaje2.Size = New System.Drawing.Size(84, 21)
+        Me.cboGramaje2.TabIndex = 170
+        '
+        'cboGramaje1
+        '
+        Me.cboGramaje1.FormattingEnabled = True
+        Me.cboGramaje1.Items.AddRange(New Object() {"70", "75", "80", "90", "115", "120", "130", "150", "170", "180", "200", "210", "220", "225", "240", "250", "300", "310", "350"})
+        Me.cboGramaje1.Location = New System.Drawing.Point(222, 53)
+        Me.cboGramaje1.MaxLength = 100
+        Me.cboGramaje1.Name = "cboGramaje1"
+        Me.cboGramaje1.Size = New System.Drawing.Size(84, 21)
+        Me.cboGramaje1.TabIndex = 169
+        '
+        'cboPapel3
+        '
+        Me.cboPapel3.FormattingEnabled = True
+        Me.cboPapel3.Location = New System.Drawing.Point(6, 103)
+        Me.cboPapel3.MaxLength = 100
+        Me.cboPapel3.Name = "cboPapel3"
+        Me.cboPapel3.Size = New System.Drawing.Size(210, 21)
+        Me.cboPapel3.TabIndex = 168
+        '
+        'cboPapel2
+        '
+        Me.cboPapel2.FormattingEnabled = True
+        Me.cboPapel2.Location = New System.Drawing.Point(6, 78)
+        Me.cboPapel2.MaxLength = 100
+        Me.cboPapel2.Name = "cboPapel2"
+        Me.cboPapel2.Size = New System.Drawing.Size(210, 21)
+        Me.cboPapel2.TabIndex = 167
+        '
+        'cboPapel1
+        '
+        Me.cboPapel1.FormattingEnabled = True
+        Me.cboPapel1.Location = New System.Drawing.Point(6, 51)
+        Me.cboPapel1.MaxLength = 100
+        Me.cboPapel1.Name = "cboPapel1"
+        Me.cboPapel1.Size = New System.Drawing.Size(210, 21)
+        Me.cboPapel1.TabIndex = 166
         '
         'GroupDigital
         '
@@ -851,38 +908,6 @@ Partial Class frm_retrabajo
         Me.cboFormato_2_PE_DigitalOffset.Size = New System.Drawing.Size(134, 21)
         Me.cboFormato_2_PE_DigitalOffset.TabIndex = 21
         '
-        'txt_Gramaje_3_Soporte
-        '
-        Me.txt_Gramaje_3_Soporte.Location = New System.Drawing.Point(222, 103)
-        Me.txt_Gramaje_3_Soporte.MaxLength = 10
-        Me.txt_Gramaje_3_Soporte.Name = "txt_Gramaje_3_Soporte"
-        Me.txt_Gramaje_3_Soporte.Size = New System.Drawing.Size(85, 20)
-        Me.txt_Gramaje_3_Soporte.TabIndex = 139
-        '
-        'txt_Papel_3_Soporte
-        '
-        Me.txt_Papel_3_Soporte.Location = New System.Drawing.Point(14, 103)
-        Me.txt_Papel_3_Soporte.MaxLength = 50
-        Me.txt_Papel_3_Soporte.Name = "txt_Papel_3_Soporte"
-        Me.txt_Papel_3_Soporte.Size = New System.Drawing.Size(202, 20)
-        Me.txt_Papel_3_Soporte.TabIndex = 138
-        '
-        'txt_Gramaje_2_Soporte
-        '
-        Me.txt_Gramaje_2_Soporte.Location = New System.Drawing.Point(222, 77)
-        Me.txt_Gramaje_2_Soporte.MaxLength = 10
-        Me.txt_Gramaje_2_Soporte.Name = "txt_Gramaje_2_Soporte"
-        Me.txt_Gramaje_2_Soporte.Size = New System.Drawing.Size(85, 20)
-        Me.txt_Gramaje_2_Soporte.TabIndex = 137
-        '
-        'txt_Papel_2_Soporte
-        '
-        Me.txt_Papel_2_Soporte.Location = New System.Drawing.Point(14, 77)
-        Me.txt_Papel_2_Soporte.MaxLength = 50
-        Me.txt_Papel_2_Soporte.Name = "txt_Papel_2_Soporte"
-        Me.txt_Papel_2_Soporte.Size = New System.Drawing.Size(202, 20)
-        Me.txt_Papel_2_Soporte.TabIndex = 136
-        '
         'Label24
         '
         Me.Label24.AutoSize = True
@@ -901,27 +926,11 @@ Partial Class frm_retrabajo
         Me.Label25.TabIndex = 141
         Me.Label25.Text = "Papel/Sustrato"
         '
-        'txt_Gramaje_1_Soporte
-        '
-        Me.txt_Gramaje_1_Soporte.Location = New System.Drawing.Point(222, 52)
-        Me.txt_Gramaje_1_Soporte.MaxLength = 10
-        Me.txt_Gramaje_1_Soporte.Name = "txt_Gramaje_1_Soporte"
-        Me.txt_Gramaje_1_Soporte.Size = New System.Drawing.Size(85, 20)
-        Me.txt_Gramaje_1_Soporte.TabIndex = 135
-        '
-        'txt_Papel_1_Soporte
-        '
-        Me.txt_Papel_1_Soporte.Location = New System.Drawing.Point(14, 52)
-        Me.txt_Papel_1_Soporte.MaxLength = 50
-        Me.txt_Papel_1_Soporte.Name = "txt_Papel_1_Soporte"
-        Me.txt_Papel_1_Soporte.Size = New System.Drawing.Size(202, 20)
-        Me.txt_Papel_1_Soporte.TabIndex = 134
-        '
         'txt_id_detalle
         '
         Me.txt_id_detalle.Location = New System.Drawing.Point(195, 15)
         Me.txt_id_detalle.Name = "txt_id_detalle"
-        Me.txt_id_detalle.Size = New System.Drawing.Size(30, 20)
+        Me.txt_id_detalle.Size = New System.Drawing.Size(63, 20)
         Me.txt_id_detalle.TabIndex = 94
         '
         'GroupReTrabajo
@@ -1145,14 +1154,8 @@ Partial Class frm_retrabajo
     Friend WithEvents txt_Cantidad_3_PE_DigitalOffset As System.Windows.Forms.TextBox
     Friend WithEvents cboFormato_1_PE_DigitalOffset As System.Windows.Forms.ComboBox
     Friend WithEvents cboFormato_2_PE_DigitalOffset As System.Windows.Forms.ComboBox
-    Friend WithEvents txt_Gramaje_3_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Papel_3_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Gramaje_2_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Papel_2_Soporte As System.Windows.Forms.TextBox
     Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents Label25 As System.Windows.Forms.Label
-    Friend WithEvents txt_Gramaje_1_Soporte As System.Windows.Forms.TextBox
-    Friend WithEvents txt_Papel_1_Soporte As System.Windows.Forms.TextBox
     Friend WithEvents groupOffset As System.Windows.Forms.GroupBox
     Friend WithEvents Label61 As System.Windows.Forms.Label
     Friend WithEvents cboModo_Impresion_Offset As System.Windows.Forms.ComboBox
@@ -1193,4 +1196,10 @@ Partial Class frm_retrabajo
     Friend WithEvents rbtNumeroOrden As System.Windows.Forms.RadioButton
     Friend WithEvents cboBuscar_Mes As System.Windows.Forms.ComboBox
     Friend WithEvents txt_Buscar_ReTrabajo As System.Windows.Forms.TextBox
+    Friend WithEvents cboPapel3 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboPapel2 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboPapel1 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboGramaje3 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboGramaje2 As System.Windows.Forms.ComboBox
+    Friend WithEvents cboGramaje1 As System.Windows.Forms.ComboBox
 End Class
