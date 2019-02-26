@@ -517,7 +517,7 @@ Partial Class frm_Actualizar_Offset
         Me.dgvRepeticion.Location = New System.Drawing.Point(14, 50)
         Me.dgvRepeticion.Name = "dgvRepeticion"
         Me.dgvRepeticion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvRepeticion.Size = New System.Drawing.Size(667, 135)
+        Me.dgvRepeticion.Size = New System.Drawing.Size(667, 256)
         Me.dgvRepeticion.TabIndex = 161
         '
         'btnEliminar_Repeticion
@@ -553,7 +553,7 @@ Partial Class frm_Actualizar_Offset
         Me.GroupBox3.Controls.Add(Me.dgvRepeticion)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 396)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(696, 198)
+        Me.GroupBox3.Size = New System.Drawing.Size(696, 312)
         Me.GroupBox3.TabIndex = 165
         Me.GroupBox3.TabStop = False
         '
@@ -561,7 +561,7 @@ Partial Class frm_Actualizar_Offset
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(720, 610)
+        Me.ClientSize = New System.Drawing.Size(720, 720)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)

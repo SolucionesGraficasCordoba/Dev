@@ -193,11 +193,11 @@
                                     ret.RET_fecha_comienzo_retrabajo,
                                     ret.RET_fecha_entrega_retrabajo
                                     Where ORT_numero_ot Like buscar.ToString
-                                    Order By ORT_numero_ot Ascending)
+                                            Order By ORT_numero_ot Ascending)
         dgvRepeticion.DataSource = ConsultaRepeticion
         dgvRepeticion.ClearSelection()
-        dgvRepeticion.DataSource = ""
-        Label3.Text = dgvRepeticion.Rows.Count
+        ' dgvRepeticion.DataSource = ""
+        ' Label3.Text = dgvRepeticion.Rows.Count
     End Sub
 
     Private Sub btnEliminar_Repeticion_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar_Repeticion.Click
@@ -242,7 +242,11 @@
         cboPiezas1_Detalle1.SelectedIndex = -1
 
         'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
-        cboPiezas1_Detalle1.SelectedValue = dgvRepeticion.Item("PIE_id_pieza", dgvRepeticion.SelectedRows(0).Index).Value
+        Try
+            cboPiezas1_Detalle1.SelectedValue = dgvRepeticion.Item("PIE_id_pieza", dgvRepeticion.SelectedRows(0).Index).Value
+        Catch ex As Exception
+        End Try
+
         Try
             If dgvRepeticion.SelectedRows.Count > 0 Then
 
