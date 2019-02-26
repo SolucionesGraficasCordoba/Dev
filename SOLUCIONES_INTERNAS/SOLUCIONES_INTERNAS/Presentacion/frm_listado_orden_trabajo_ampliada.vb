@@ -21,6 +21,8 @@ Public Class frm_listado_orden_trabajo_ampliada
     Public Sub frm_listado_orden_trabajo_ampliada_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         ArmarGrillaOrden()
         CargarGrillaOrden()
+
+        Label3.Text = dgvLista_Orden_Trabajo.RowCount
         dgv_detalle_orden.Rows.Clear()
 
         '***************Para ver con vale link label en este form****************
@@ -473,6 +475,8 @@ Public Class frm_listado_orden_trabajo_ampliada
             CargarGrillaDetalle()
         Catch ex As Exception
         End Try
+
+        Label1.Text = dgv_detalle_orden.RowCount
     End Sub
 
     Public Sub CargarGrillaDetalle()

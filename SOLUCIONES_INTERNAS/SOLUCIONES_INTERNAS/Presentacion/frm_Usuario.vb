@@ -39,7 +39,6 @@
         dgvLista_Usuarios.Columns(0).DataPropertyName = "USU_id_usuario"
         dgvLista_Usuarios.Columns(0).Visible = False
         dgvLista_Usuarios.Columns(1).DataPropertyName = "USU_usuario"
-        dgvLista_Usuarios.Columns(1).Width = 150
         dgvLista_Usuarios.Columns(2).DataPropertyName = "USU_perfil"
         dgvLista_Usuarios.Columns(3).DataPropertyName = "COL_id_colaborador"
         dgvLista_Usuarios.Columns(3).Visible = False

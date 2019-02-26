@@ -131,12 +131,14 @@ Public Class frm_Listado_Tareas
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
                     Exit Sub
+
                 ElseIf Me.Text = "Eliminar Tarea" Then
                     MsgBox("No tiene tareas asignadas para eliminar", MsgBoxStyle.Information, "Listado de tareas")
                     Label6.Text = dgvTarea_x_Colaborador.Rows.Count
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
                     Exit Sub
+
                 ElseIf frm_Tarea.Text = "Ver Tarea" Then
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
@@ -144,7 +146,6 @@ Public Class frm_Listado_Tareas
             End If
         Catch
         End Try
-
         SumatoriaTiempos()
     End Sub
 

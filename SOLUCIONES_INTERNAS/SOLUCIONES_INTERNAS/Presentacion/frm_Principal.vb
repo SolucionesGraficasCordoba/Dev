@@ -1539,6 +1539,7 @@ Public Class frm_Principal
         frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = True
         frm_listado_orden_trabajo_ampliada.btnEliminar_Producto.Enabled = True
         frm_listado_orden_trabajo_ampliada.btnVer.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnVer.Visible = True
         frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
         frm_listado_orden_trabajo_ampliada.btnModificarProducto.Enabled = False
         frm_listado_orden_trabajo_ampliada.btn_ODT_mostrar_listado_pdf.Enabled = False

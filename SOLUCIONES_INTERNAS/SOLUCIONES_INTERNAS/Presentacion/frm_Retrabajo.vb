@@ -686,9 +686,9 @@
                 txt_Procedimiento.Text = dgvListado_ReTrabajo.Item("RET_procedimiento_observaciones", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
 
                 'CARGA GROUPBOX PRODUCTO
-                cboPapel1.Text = dgvListado_ReTrabajo.Item("RET_papel_soporte_1_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
-                cboPapel2.Text = dgvListado_ReTrabajo.Item("RET_papel_soporte_2_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
-                cboPapel3.Text = dgvListado_ReTrabajo.Item("RET_papel_soporte_3_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+                cboPapel1.Text = dgvListado_ReTrabajo.Item("PIE_nombre_pie", dgvListado_ReTrabajo.SelectedRows(0).Index).Value 'RET_papel_soporte_1_retrabajo
+                cboPapel2.Text = dgvListado_ReTrabajo.Item("PIE_nombre_pie", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
+                cboPapel3.Text = dgvListado_ReTrabajo.Item("PIE_nombre_pie", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
                 cboGramaje1.Text = dgvListado_ReTrabajo.Item("RET_gramaje_soporte_1_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
                 cboGramaje2.Text = dgvListado_ReTrabajo.Item("RET_gramaje_soporte_2_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value
                 cboGramaje3.Text = dgvListado_ReTrabajo.Item("RET_gramaje_soporte_3_retrabajo", dgvListado_ReTrabajo.SelectedRows(0).Index).Value

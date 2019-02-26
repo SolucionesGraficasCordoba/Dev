@@ -125,6 +125,8 @@ Public Class frm_Movimiento_Orden
         dgvMovimiento_Orden.ClearSelection()
     End Sub
 
+
+
     Private Sub btnExportarPDF_Click(sender As System.Object, e As System.EventArgs) Handles btnExportarPDF.Click
         Try
             If txt_Buscar_orden_trabajo.TextLength = 0 Then
