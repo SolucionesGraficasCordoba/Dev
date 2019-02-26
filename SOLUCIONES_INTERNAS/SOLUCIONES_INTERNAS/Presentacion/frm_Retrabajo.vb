@@ -54,6 +54,12 @@
         cboPapel1.ValueMember = "SOP_id_soporte"
         cboPapel1.SelectedIndex = -1
 
+        Try
+            'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
+            cboPapel1.SelectedValue = Me.dgvListado_ReTrabajo.Item("SOP_nombre_soporte", Me.dgvListado_ReTrabajo.CurrentRow.Index).Value
+        Catch ex As Exception
+        End Try
+
         'CARGA COMBOBOX PAPEL 2
         Dim combopapel2 = (From papelsop2 In datacontext.SOPORTE
                  Select papelsop2.SOP_id_soporte, papelsop2.SOP_nombre_soporte, papelsop2.SOP_ubicacion
@@ -63,6 +69,12 @@
         cboPapel2.DisplayMember = "SOP_nombre_soporte"
         cboPapel2.ValueMember = "SOP_id_soporte"
         cboPapel2.SelectedIndex = -1
+
+        Try
+            'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
+            cboPapel2.SelectedValue = Me.dgvListado_ReTrabajo.Item("SOP_nombre_soporte", Me.dgvListado_ReTrabajo.CurrentRow.Index).Value
+        Catch ex As Exception
+        End Try
         'CARGA COMBOBOX PAPEL 3
         Dim combopapel3 = (From papelsop2 In datacontext.SOPORTE
                  Select papelsop2.SOP_id_soporte, papelsop2.SOP_nombre_soporte, papelsop2.SOP_ubicacion
@@ -72,6 +84,12 @@
         cboPapel3.DisplayMember = "SOP_nombre_soporte"
         cboPapel3.ValueMember = "SOP_id_soporte"
         cboPapel3.SelectedIndex = -1
+
+        Try
+            'ASIGNA PIEZA SEGUN LO QUE CONTIENE EL GRID
+            cboPapel3.SelectedValue = Me.dgvListado_ReTrabajo.Item("SOP_nombre_soporte", Me.dgvListado_ReTrabajo.CurrentRow.Index).Value
+        Catch ex As Exception
+        End Try
 
         ArmaGrillaRetrabajo()
         CargarGrillaRetrabajo()
@@ -521,7 +539,7 @@
         dgvListado_ReTrabajo.Columns(13).DataPropertyName = "RET_procedimiento_observaciones"
         dgvListado_ReTrabajo.Columns(13).Width = 250
         dgvListado_ReTrabajo.Columns(14).DataPropertyName = "RET_papel_soporte_1_retrabajo"
-        dgvListado_ReTrabajo.Columns(14).Visible = False
+        'dgvListado_ReTrabajo.Columns(14).Visible = False
         dgvListado_ReTrabajo.Columns(15).DataPropertyName = "RET_papel_soporte_2_retrabajo"
         dgvListado_ReTrabajo.Columns(15).Visible = False
         dgvListado_ReTrabajo.Columns(16).DataPropertyName = "RET_papel_soporte_3_retrabajo"

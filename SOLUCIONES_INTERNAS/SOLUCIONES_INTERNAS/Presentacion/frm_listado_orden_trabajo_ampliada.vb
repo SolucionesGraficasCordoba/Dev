@@ -331,6 +331,7 @@ Public Class frm_listado_orden_trabajo_ampliada
         dgvLista_Orden_Trabajo.Columns(6).Visible = False
         dgvLista_Orden_Trabajo.Columns(7).DataPropertyName = "VEN_nombre_ven"
         dgvLista_Orden_Trabajo.Columns(8).DataPropertyName = "ORT_observaciones_ot"
+        dgvLista_Orden_Trabajo.Columns(8).Width = 450
         dgvLista_Orden_Trabajo.Columns(9).DataPropertyName = "ORT_mejoras_ot"
         dgvLista_Orden_Trabajo.Columns(9).Visible = False
         dgvLista_Orden_Trabajo.Columns(10).DataPropertyName = "ORT_fecha_entrega"
@@ -1111,8 +1112,18 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 frm_Orden_Trabajo_Ampliada.GroupTerminacion.Enabled = False
             End If
 
-            frm_Orden_Trabajo_Ampliada.GroupBox4.Enabled = False
+            ' frm_Orden_Trabajo_Ampliada.GroupBox4.Enabled = False
             frm_Orden_Trabajo_Ampliada.txtNumero_Orden_Trabajo.Enabled = False
+            frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Enabled = False
+            frm_Orden_Trabajo_Ampliada.dtpFecha_Ingreso_ODT.Enabled = False
+            frm_Orden_Trabajo_Ampliada.txtNombre_vendedor.Enabled = False
+            frm_Orden_Trabajo_Ampliada.btnBuscar_Vendedor.Enabled = False
+            frm_Orden_Trabajo_Ampliada.txt_nombre_cliente.Enabled = False
+            frm_Orden_Trabajo_Ampliada.btnBuscar_cliente.Enabled = False
+            frm_Orden_Trabajo_Ampliada.cboDireccion_Entrega.Enabled = False
+            'frm_Orden_Trabajo_Ampliada.txt_observaciones.ReadOnly = True
+            'frm_Orden_Trabajo_Ampliada.txt_observaciones.ScrollBars = True
+
             frm_Orden_Trabajo_Ampliada.Label1.Visible = False
             frm_Orden_Trabajo_Ampliada.txt_id_orden_trabajo.Visible = False
             frm_Orden_Trabajo_Ampliada.cboTipo_Orden.Visible = False
