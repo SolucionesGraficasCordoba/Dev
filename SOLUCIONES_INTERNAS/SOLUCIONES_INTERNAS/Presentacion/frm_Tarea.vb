@@ -3530,9 +3530,9 @@
                           Select ta.TAR_entrada, ta.TAR_salida, ta.TAR_carga_horaria, ta.COL_id_colaborador, ta.TAR_fecha
                                           Where COL_id_colaborador = CInt(txt_id_colaborador.Text) And TAR_fecha = dtpFecha.Text).ToList(0)
                 txtEntrada.Text = traetarea.TAR_entrada
-                ' txtEntrada.Enabled = False
+                txtEntrada.Enabled = False
                 txtSalida.Text = traetarea.TAR_salida
-                ' txtSalida.Enabled = False
+                txtSalida.Enabled = False
                 txt_Carga_Horaria1.Text = traetarea.TAR_carga_horaria
                 txt_Carga_Horaria1.Enabled = False
             Else
