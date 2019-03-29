@@ -356,6 +356,7 @@
             detalle.DOT_formato_soporte_3 = cboFormato_3_Pliego_Entero.SelectedItem
 
             '--------------------------------DIGITAL---------------------------------------------
+
             detalle.tipo_impresion_digital = cboTipo_Impresion_Digital.Text
 
             If txtCantidad_1_Pliego_Maquina_Digital.TextLength <> 0 Then
