@@ -100,7 +100,7 @@ Partial Class frm_Listado_Tareas
         Me.cbo_sector.FormattingEnabled = True
         Me.cbo_sector.Location = New System.Drawing.Point(301, 19)
         Me.cbo_sector.Name = "cbo_sector"
-        Me.cbo_sector.Size = New System.Drawing.Size(114, 21)
+        Me.cbo_sector.Size = New System.Drawing.Size(156, 21)
         Me.cbo_sector.TabIndex = 2
         '
         'Label6
