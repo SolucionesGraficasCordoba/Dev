@@ -3185,24 +3185,29 @@
     End Sub
 
     Private Sub txtEntrada_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtEntrada.TextChanged
-        'VALIDA LA HORA INGRESADA
-        Select Case Len(txtEntrada.Text)
-            Case 5
-                If Microsoft.VisualBasic.Right(txtEntrada.Text, 2) > 59 Then
-                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
-                    txtEntrada.Text = Microsoft.VisualBasic.Right(txtEntrada.Text, Len(txtEntrada.Text) - 2)
-                Else
-                    txtEntrada.Text = txtEntrada.Text & ""
-                End If
-            Case 2
-                If Microsoft.VisualBasic.Left(txtEntrada.Text, 2) > 23 Then
-                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
-                    txtEntrada.Text = Microsoft.VisualBasic.Left(txtEntrada.Text, Len(txtEntrada.Text) - 2)
-                Else
-                    txtEntrada.Text = txtEntrada.Text & ":"
-                    Me.txtEntrada.SelectionStart = 3
-                End If
-        End Select
+        Try
+            'VALIDA LA HORA INGRESADA
+            Select Case Len(txtEntrada.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtEntrada.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtEntrada.Text = Microsoft.VisualBasic.Right(txtEntrada.Text, Len(txtEntrada.Text) - 2)
+                    Else
+                        txtEntrada.Text = txtEntrada.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtEntrada.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtEntrada.Text = Microsoft.VisualBasic.Left(txtEntrada.Text, Len(txtEntrada.Text) - 2)
+                    Else
+                        txtEntrada.Text = txtEntrada.Text & ":"
+                        Me.txtEntrada.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+            MsgBox("El formato de la hora de entrada es: '00:00'")
+        End Try
+       
     End Sub
 
     Private Sub txtSalida_LostFocus(sender As Object, e As System.EventArgs) Handles txtSalida.LostFocus
@@ -3212,25 +3217,29 @@
     End Sub
 
     Private Sub txtSalida_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtSalida.TextChanged
-        'VALIDA LA HORA INGRESADA
-        Select Case Len(txtSalida.Text)
-            Case 5
-                If Microsoft.VisualBasic.Right(txtSalida.Text, 2) > 59 Then
-                    MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
-                    txtSalida.Text = Microsoft.VisualBasic.Right(txtSalida.Text, Len(txtSalida.Text) - 2)
-                Else
-                    txtSalida.Text = txtSalida.Text & ""
-                End If
-            Case 2
-                If Microsoft.VisualBasic.Left(txtSalida.Text, 2) > 23 Then
-                    MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
-                    txtSalida.Text = Microsoft.VisualBasic.Left(txtSalida.Text, Len(txtSalida.Text) - 2)
-                Else
-                    txtSalida.Text = txtSalida.Text & ":"
-                    Me.txtSalida.SelectionStart = 3
-                End If
+        Try
+            'VALIDA LA HORA INGRESADA
+            Select Case Len(txtSalida.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtSalida.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtSalida.Text = Microsoft.VisualBasic.Right(txtSalida.Text, Len(txtSalida.Text) - 2)
+                    Else
+                        txtSalida.Text = txtSalida.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtSalida.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtSalida.Text = Microsoft.VisualBasic.Left(txtSalida.Text, Len(txtSalida.Text) - 2)
+                    Else
+                        txtSalida.Text = txtSalida.Text & ":"
+                        Me.txtSalida.SelectionStart = 3
+                    End If
 
-        End Select
+            End Select
+        Catch ex As Exception
+            MsgBox("El formato de la hora de salida es: '00:00'")
+        End Try
     End Sub
 
     Private Sub txtTiempo_Real1_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtTiempo_Real1.TextChanged
