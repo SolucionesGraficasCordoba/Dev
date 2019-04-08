@@ -43,6 +43,7 @@
                     Etiquetas(True)
                     Estadistica(True, True, True, True, True)
                     CorreoElectronico(True)
+                    Despacho(True, True, True)
 
                 Case "GERENCIA"
                     Usuario(False, False, False)
@@ -59,6 +60,7 @@
                     Etiquetas(False)
                     Estadistica(True, True, True, True, True)
                     CorreoElectronico(False)
+                    Despacho(True, True, True)
 
                 Case "SUPERVISOR"
                     Tarea(True, True, True)
@@ -68,6 +70,7 @@
                     Retrabajo(True, True)
                     Etiquetas(False)
                     Estadistica(True, True, True, True, True)
+                    Despacho(True, True, True)
 
                 Case "COLABORADOR"
                     'HabilitarGeneral()
@@ -267,6 +270,22 @@
                             Etiquetas(True)
                         End If
                     End If
+
+                    '--------------------DESPACHO---------------------'
+                    If permisos.Item(i).PER_permiso = "DESPACHO" Then
+                        If permisos.Item(i).PER_abm = "A" Then
+                            Despacho(True, flagm, flagb)
+                            flaga = 1
+                        End If
+                        If permisos.Item(i).PER_abm = "M" Then
+                            Despacho(flaga, True, flagb)
+                            flagm = 1
+                        End If
+                        If permisos.Item(i).PER_abm = "B" Then
+                            Despacho(flaga, flagm, True)
+                            flagb = 1
+                        End If
+                    End If
                 Next
             End If
 
@@ -296,6 +315,7 @@
         frm_Principal.StockDeProductosToolStripMenuItem.DropDownItems(3).Enabled = True 'consulta movimiento producto
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(6).Enabled = True 'consultar
         frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(2).Enabled = True 'consultar
+        frm_Principal.LogísticaToolStripMenuItem.DropDownItems(3).Enabled = True 'consultar
 
         Acercade()
     End Sub
@@ -316,6 +336,7 @@
         Etiquetas(False)
         Estadistica(False, False, False, False, False)
         CorreoElectronico(False)
+        Despacho(False, False, False)
         Acercade()
     End Sub
 
@@ -430,6 +451,12 @@
 
     Sub Acercade()
         frm_Principal.AcercadeToolStripMenuItem.Visible = True
+    End Sub
+    Sub Despacho(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+        frm_Principal.DespachoToolStripMenuItem1.Enabled = True
+        frm_Principal.LogísticaToolStripMenuItem.DropDownItems(0).Visible = nuevo 'nueva
+        frm_Principal.LogísticaToolStripMenuItem.DropDownItems(1).Visible = modif 'modificar
+        frm_Principal.LogísticaToolStripMenuItem.DropDownItems(2).Visible = elim 'eliminar
     End Sub
 
     Public Sub limpiarcontroles()
