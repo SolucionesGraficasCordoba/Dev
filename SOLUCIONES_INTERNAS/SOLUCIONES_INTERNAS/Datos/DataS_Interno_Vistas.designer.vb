@@ -141,6 +141,12 @@ Partial Public Class DataS_Interno_Vistas
 			Return Me.GetTable(Of Movimiento_Orden)
 		End Get
 	End Property
+	
+	Public ReadOnly Property Vista_Despacho_Orden_Trabajo() As System.Data.Linq.Table(Of Vista_Despacho_Orden_Trabajo)
+		Get
+			Return Me.GetTable(Of Vista_Despacho_Orden_Trabajo)
+		End Get
+	End Property
 End Class
 
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Colaborador_por_Sector")>  _
@@ -3693,6 +3699,155 @@ Partial Public Class Movimiento_Orden
 		Set
 			If (String.Equals(Me._TAR_observaciones, value) = false) Then
 				Me._TAR_observaciones = value
+			End If
+		End Set
+	End Property
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.Vista_Despacho_Orden_Trabajo")>  _
+Partial Public Class Vista_Despacho_Orden_Trabajo
+	
+	Private _ORT_id_orden_trabajo As System.Nullable(Of Integer)
+	
+	Private _DES_fecha_entrega As System.Nullable(Of Date)
+	
+	Private _DES_observaciones As String
+	
+	Private _ORT_numero_ot As String
+	
+	Private _ORT_observaciones_ot As String
+	
+	Private _ORT_fecha_entrega As System.Nullable(Of Date)
+	
+	Private _CLI_razon_social As String
+	
+	Private _DES_nro_remito As String
+	
+	Private _DES_id As Integer
+	
+	Private _DES_campo_1 As String
+	
+	Public Sub New()
+		MyBase.New
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int")>  _
+	Public Property ORT_id_orden_trabajo() As System.Nullable(Of Integer)
+		Get
+			Return Me._ORT_id_orden_trabajo
+		End Get
+		Set
+			If (Me._ORT_id_orden_trabajo.Equals(value) = false) Then
+				Me._ORT_id_orden_trabajo = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_fecha_entrega", DbType:="DateTime")>  _
+	Public Property DES_fecha_entrega() As System.Nullable(Of Date)
+		Get
+			Return Me._DES_fecha_entrega
+		End Get
+		Set
+			If (Me._DES_fecha_entrega.Equals(value) = false) Then
+				Me._DES_fecha_entrega = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_observaciones", DbType:="NVarChar(150)")>  _
+	Public Property DES_observaciones() As String
+		Get
+			Return Me._DES_observaciones
+		End Get
+		Set
+			If (String.Equals(Me._DES_observaciones, value) = false) Then
+				Me._DES_observaciones = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_numero_ot", DbType:="VarChar(10) NOT NULL", CanBeNull:=false)>  _
+	Public Property ORT_numero_ot() As String
+		Get
+			Return Me._ORT_numero_ot
+		End Get
+		Set
+			If (String.Equals(Me._ORT_numero_ot, value) = false) Then
+				Me._ORT_numero_ot = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_observaciones_ot", DbType:="VarChar(350)")>  _
+	Public Property ORT_observaciones_ot() As String
+		Get
+			Return Me._ORT_observaciones_ot
+		End Get
+		Set
+			If (String.Equals(Me._ORT_observaciones_ot, value) = false) Then
+				Me._ORT_observaciones_ot = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_fecha_entrega", DbType:="Date")>  _
+	Public Property ORT_fecha_entrega() As System.Nullable(Of Date)
+		Get
+			Return Me._ORT_fecha_entrega
+		End Get
+		Set
+			If (Me._ORT_fecha_entrega.Equals(value) = false) Then
+				Me._ORT_fecha_entrega = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CLI_razon_social", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property CLI_razon_social() As String
+		Get
+			Return Me._CLI_razon_social
+		End Get
+		Set
+			If (String.Equals(Me._CLI_razon_social, value) = false) Then
+				Me._CLI_razon_social = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_nro_remito", DbType:="NVarChar(20)")>  _
+	Public Property DES_nro_remito() As String
+		Get
+			Return Me._DES_nro_remito
+		End Get
+		Set
+			If (String.Equals(Me._DES_nro_remito, value) = false) Then
+				Me._DES_nro_remito = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_id", DbType:="Int NOT NULL")>  _
+	Public Property DES_id() As Integer
+		Get
+			Return Me._DES_id
+		End Get
+		Set
+			If ((Me._DES_id = value)  _
+						= false) Then
+				Me._DES_id = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_campo_1", DbType:="NVarChar(50)")>  _
+	Public Property DES_campo_1() As String
+		Get
+			Return Me._DES_campo_1
+		End Get
+		Set
+			If (String.Equals(Me._DES_campo_1, value) = false) Then
+				Me._DES_campo_1 = value
 			End If
 		End Set
 	End Property

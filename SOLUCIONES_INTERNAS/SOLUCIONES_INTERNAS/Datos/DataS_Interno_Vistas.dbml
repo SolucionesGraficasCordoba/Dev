@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PREPRODUCCION" Class="DataS_Interno_Vistas" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SV-PLANET-01;Initial Catalog=SOLUCIONES_INTERNAS;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.30.61;Initial Catalog=PREPRODUCCION;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Colaborador_por_Sector" Member="Colaborador_por_Sector">
     <Type Name="Colaborador_por_Sector">
       <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
@@ -297,6 +297,20 @@
       <Column Name="SEC_nombre_sector" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TAR_observaciones" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Vista_Despacho_Orden_Trabajo" Member="Vista_Despacho_Orden_Trabajo">
+    <Type Name="Vista_Despacho_Orden_Trabajo">
+      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DES_fecha_entrega" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DES_observaciones" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="ORT_numero_ot" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ORT_observaciones_ot" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="ORT_fecha_entrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="CLI_razon_social" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="DES_nro_remito" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DES_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DES_campo_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
