@@ -19,7 +19,7 @@ Public Class frm_Listado_Tareas
 
     Public Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Label6.Text = dgvColaboradores.Rows.Count
-
+        btnAgregar.Visible = False
 
         If frm_Principal.LBL_MENU_PERFIL.Text = "ADMINISTRADOR" Or frm_Principal.LBL_MENU_PERFIL.Text = "GERENCIA" Then
             'CARGA COMBOBOX SECTOR
@@ -110,10 +110,13 @@ Public Class frm_Listado_Tareas
                 If Me.Text = "Consultar Tarea" Then
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
+                    btnAgregar.Enabled = False
                     Label1.Text = dgvTarea_x_Colaborador.Rows.Count
+
                 ElseIf Me.Text = "Eliminar Tarea" Then
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
+                    btnAgregar.Enabled = False
                 End If
             End If
             'vble_colaborador = dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
@@ -130,6 +133,7 @@ Public Class frm_Listado_Tareas
                     MsgBox("No se le ha asignado ninguna tarea", MsgBoxStyle.Information, "Sin tarea")
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
+                    btnAgregar.Enabled = False
                     Exit Sub
 
                 ElseIf Me.Text = "Eliminar Tarea" Then
@@ -137,11 +141,13 @@ Public Class frm_Listado_Tareas
                     Label6.Text = dgvTarea_x_Colaborador.Rows.Count
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
+                    btnAgregar.Enabled = False
                     Exit Sub
 
                 ElseIf frm_Tarea.Text = "Ver Tarea" Then
                     btnModificar_Una.Enabled = False
                     btnModificarTodas.Enabled = False
+                    btnAgregar.Enabled = False
                 End If
             End If
         Catch
@@ -244,10 +250,15 @@ Public Class frm_Listado_Tareas
             frm_Actualizar_Tarea.txt_hora_fin.Text = Me.dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
             frm_Actualizar_Tarea.txt_id_colaborador.Text = Me.dgvTarea_x_Colaborador.Item("Expr1", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
             frm_Actualizar_Tarea.txt_nombre_colaborador.Text = Me.dgvTarea_x_Colaborador.Item("COL_nombre_col", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
-            frm_Actualizar_Tarea.txtSalida.Text = Me.dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
-            frm_Actualizar_Tarea.txtEntrada.Text = Me.dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+
+            'TRAE DEL GRID LA HORA DE ENTRADA Y LA HORA DE SALIDA DE LA PRIMERA FILA!!!! (SI SELECCIONABA LA SEGUNDA, TERCERA..... LA HORA DE ENTRADA Y DE SALIDA SE MOSTRABAN VACIAS)       
+
+            '   frm_Actualizar_Tarea.txtSalida.Text = Me.dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+            frm_Actualizar_Tarea.txtSalida.Text = Me.dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            frm_Actualizar_Tarea.txtEntrada.Text = Me.dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            ' frm_Actualizar_Tarea.txtEntrada.Text = Me.dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
         Else
-            MsgBox("Debe seleccionar una tarea")
+            MsgBox("Debe seleccionar una tarea del segundo listado")
             Exit Sub
         End If
         frm_Actualizar_Tarea.Show()
@@ -256,6 +267,7 @@ Public Class frm_Listado_Tareas
         frm_Actualizar_Tarea.btn_buscar_numero_orden.Enabled = False
         frm_Actualizar_Tarea.btn_buscar_numero_orden.Enabled = True
         frm_Actualizar_Tarea.dtpFecha.Enabled = False
+        frm_Actualizar_Tarea.btnGuardar.Visible = False
     End Sub
 
     'BOTON CANCELAR CIERRA EL FORMULARIO ACTUAL

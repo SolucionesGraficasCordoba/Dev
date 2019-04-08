@@ -147,7 +147,7 @@ Partial Class frm_Listado_Tareas
         '
         'Btn_informe_diario
         '
-        Me.Btn_informe_diario.Location = New System.Drawing.Point(22, 680)
+        Me.Btn_informe_diario.Location = New System.Drawing.Point(116, 680)
         Me.Btn_informe_diario.Name = "Btn_informe_diario"
         Me.Btn_informe_diario.Size = New System.Drawing.Size(138, 33)
         Me.Btn_informe_diario.TabIndex = 3
@@ -273,7 +273,7 @@ Partial Class frm_Listado_Tareas
         '
         'btnAgregar
         '
-        Me.btnAgregar.Location = New System.Drawing.Point(381, 680)
+        Me.btnAgregar.Location = New System.Drawing.Point(22, 680)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(88, 33)
         Me.btnAgregar.TabIndex = 7
@@ -282,7 +282,7 @@ Partial Class frm_Listado_Tareas
         '
         'btnVer
         '
-        Me.btnVer.Location = New System.Drawing.Point(320, 680)
+        Me.btnVer.Location = New System.Drawing.Point(414, 680)
         Me.btnVer.Name = "btnVer"
         Me.btnVer.Size = New System.Drawing.Size(55, 33)
         Me.btnVer.TabIndex = 6
@@ -291,7 +291,7 @@ Partial Class frm_Listado_Tareas
         '
         'btnExportarListado
         '
-        Me.btnExportarListado.Location = New System.Drawing.Point(166, 680)
+        Me.btnExportarListado.Location = New System.Drawing.Point(260, 680)
         Me.btnExportarListado.Name = "btnExportarListado"
         Me.btnExportarListado.Size = New System.Drawing.Size(148, 33)
         Me.btnExportarListado.TabIndex = 5
