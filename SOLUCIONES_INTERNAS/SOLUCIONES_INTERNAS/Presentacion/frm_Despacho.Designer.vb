@@ -23,6 +23,8 @@ Partial Class frm_Despacho
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.txt_numero_despacho = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cmb_chofer = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -31,13 +33,11 @@ Partial Class frm_Despacho
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txt_numero_remito = New System.Windows.Forms.TextBox()
         Me.btnBuscar_orden = New System.Windows.Forms.Button()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.dgv_lista_ordenes = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Btn_guardar = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.txt_numero_despacho = New System.Windows.Forms.TextBox()
+        Me.btn_quitar_orden = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_lista_ordenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -60,6 +60,23 @@ Partial Class frm_Despacho
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos del remito"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(53, 16)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(71, 13)
+        Me.Label1.TabIndex = 24
+        Me.Label1.Text = "Despacho Nº"
+        '
+        'txt_numero_despacho
+        '
+        Me.txt_numero_despacho.Enabled = False
+        Me.txt_numero_despacho.Location = New System.Drawing.Point(130, 13)
+        Me.txt_numero_despacho.Name = "txt_numero_despacho"
+        Me.txt_numero_despacho.Size = New System.Drawing.Size(177, 20)
+        Me.txt_numero_despacho.TabIndex = 23
         '
         'Label4
         '
@@ -125,21 +142,12 @@ Partial Class frm_Despacho
         '
         'btnBuscar_orden
         '
-        Me.btnBuscar_orden.Location = New System.Drawing.Point(85, 18)
+        Me.btnBuscar_orden.Location = New System.Drawing.Point(6, 19)
         Me.btnBuscar_orden.Name = "btnBuscar_orden"
-        Me.btnBuscar_orden.Size = New System.Drawing.Size(52, 21)
+        Me.btnBuscar_orden.Size = New System.Drawing.Size(87, 21)
         Me.btnBuscar_orden.TabIndex = 10
-        Me.btnBuscar_orden.Text = "..."
+        Me.btnBuscar_orden.Text = "Agregar orden"
         Me.btnBuscar_orden.UseVisualStyleBackColor = True
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(5, 22)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(74, 13)
-        Me.Label3.TabIndex = 20
-        Me.Label3.Text = "Agregar orden"
         '
         'dgv_lista_ordenes
         '
@@ -151,8 +159,8 @@ Partial Class frm_Despacho
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.btn_quitar_orden)
         Me.GroupBox2.Controls.Add(Me.dgv_lista_ordenes)
-        Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Controls.Add(Me.btnBuscar_orden)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 96)
         Me.GroupBox2.Name = "GroupBox2"
@@ -179,22 +187,14 @@ Partial Class frm_Despacho
         Me.Button1.Text = "Cancelar"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'Label1
+        'btn_quitar_orden
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(53, 16)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(71, 13)
-        Me.Label1.TabIndex = 24
-        Me.Label1.Text = "Despacho Nº"
-        '
-        'txt_numero_despacho
-        '
-        Me.txt_numero_despacho.Enabled = False
-        Me.txt_numero_despacho.Location = New System.Drawing.Point(130, 13)
-        Me.txt_numero_despacho.Name = "txt_numero_despacho"
-        Me.txt_numero_despacho.Size = New System.Drawing.Size(177, 20)
-        Me.txt_numero_despacho.TabIndex = 23
+        Me.btn_quitar_orden.Location = New System.Drawing.Point(99, 19)
+        Me.btn_quitar_orden.Name = "btn_quitar_orden"
+        Me.btn_quitar_orden.Size = New System.Drawing.Size(87, 21)
+        Me.btn_quitar_orden.TabIndex = 21
+        Me.btn_quitar_orden.Text = "Quitar orden"
+        Me.btn_quitar_orden.UseVisualStyleBackColor = True
         '
         'frm_Despacho
         '
@@ -211,7 +211,6 @@ Partial Class frm_Despacho
         Me.GroupBox1.PerformLayout()
         CType(Me.dgv_lista_ordenes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -221,7 +220,6 @@ Partial Class frm_Despacho
     Friend WithEvents dtp_Fecha_salida As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents dtp_Hora_salida As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents cmb_chofer As System.Windows.Forms.ComboBox
@@ -231,4 +229,5 @@ Partial Class frm_Despacho
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txt_numero_despacho As System.Windows.Forms.TextBox
+    Friend WithEvents btn_quitar_orden As System.Windows.Forms.Button
 End Class

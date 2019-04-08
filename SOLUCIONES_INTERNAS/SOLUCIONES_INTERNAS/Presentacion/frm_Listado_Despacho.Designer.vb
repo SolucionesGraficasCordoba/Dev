@@ -25,7 +25,6 @@ Partial Class frm_Listado_Despacho
         Me.dgv_remitos = New System.Windows.Forms.DataGridView()
         Me.dgv_orden_x_remito = New System.Windows.Forms.DataGridView()
         Me.txt_buscar = New System.Windows.Forms.TextBox()
-        Me.btn_buscar = New System.Windows.Forms.Button()
         Me.btn_modificar = New System.Windows.Forms.Button()
         Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.btn_cancelar = New System.Windows.Forms.Button()
@@ -66,18 +65,9 @@ Partial Class frm_Listado_Despacho
         Me.txt_buscar.Size = New System.Drawing.Size(168, 20)
         Me.txt_buscar.TabIndex = 2
         '
-        'btn_buscar
-        '
-        Me.btn_buscar.Location = New System.Drawing.Point(293, 26)
-        Me.btn_buscar.Name = "btn_buscar"
-        Me.btn_buscar.Size = New System.Drawing.Size(101, 21)
-        Me.btn_buscar.TabIndex = 4
-        Me.btn_buscar.Text = "Buscar"
-        Me.btn_buscar.UseVisualStyleBackColor = True
-        '
         'btn_modificar
         '
-        Me.btn_modificar.Location = New System.Drawing.Point(334, 486)
+        Me.btn_modificar.Location = New System.Drawing.Point(441, 486)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(101, 21)
         Me.btn_modificar.TabIndex = 5
@@ -86,7 +76,7 @@ Partial Class frm_Listado_Despacho
         '
         'btn_eliminar
         '
-        Me.btn_eliminar.Location = New System.Drawing.Point(441, 486)
+        Me.btn_eliminar.Location = New System.Drawing.Point(227, 486)
         Me.btn_eliminar.Name = "btn_eliminar"
         Me.btn_eliminar.Size = New System.Drawing.Size(101, 21)
         Me.btn_eliminar.TabIndex = 6
@@ -157,7 +147,7 @@ Partial Class frm_Listado_Despacho
         '
         'btn_agregarodt
         '
-        Me.btn_agregarodt.Location = New System.Drawing.Point(227, 486)
+        Me.btn_agregarodt.Location = New System.Drawing.Point(334, 486)
         Me.btn_agregarodt.Name = "btn_agregarodt"
         Me.btn_agregarodt.Size = New System.Drawing.Size(101, 21)
         Me.btn_agregarodt.TabIndex = 13
@@ -175,7 +165,6 @@ Partial Class frm_Listado_Despacho
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_eliminar)
         Me.Controls.Add(Me.btn_modificar)
-        Me.Controls.Add(Me.btn_buscar)
         Me.Controls.Add(Me.txt_buscar)
         Me.Controls.Add(Me.dgv_orden_x_remito)
         Me.Controls.Add(Me.dgv_remitos)
@@ -192,7 +181,6 @@ Partial Class frm_Listado_Despacho
     Friend WithEvents dgv_remitos As System.Windows.Forms.DataGridView
     Friend WithEvents dgv_orden_x_remito As System.Windows.Forms.DataGridView
     Friend WithEvents txt_buscar As System.Windows.Forms.TextBox
-    Friend WithEvents btn_buscar As System.Windows.Forms.Button
     Friend WithEvents btn_modificar As System.Windows.Forms.Button
     Friend WithEvents btn_eliminar As System.Windows.Forms.Button
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button

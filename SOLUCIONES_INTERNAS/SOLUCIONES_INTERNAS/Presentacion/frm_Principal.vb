@@ -1717,6 +1717,7 @@ Public Class frm_Principal
 
         frm_Listado_Despacho.btn_eliminar.Visible = False
         frm_Listado_Despacho.btn_modificar.Visible = True
+        frm_Listado_Despacho.btn_agregarodt.Visible = True
         frm_Listado_Despacho.Text = "Modificar ordenes por remito"
         frm_Listado_Despacho.Show()
 
@@ -1728,6 +1729,7 @@ Public Class frm_Principal
 
         frm_Listado_Despacho.btn_eliminar.Visible = True
         frm_Listado_Despacho.btn_modificar.Visible = False
+        frm_Listado_Despacho.btn_agregarodt.Visible = False
         frm_Listado_Despacho.Text = "Eliminar ordenes por remito"
         frm_Listado_Despacho.Show()
     End Sub
@@ -1738,6 +1740,7 @@ Public Class frm_Principal
 
         frm_Listado_Despacho.btn_eliminar.Visible = False
         frm_Listado_Despacho.btn_modificar.Visible = False
+        frm_Listado_Despacho.btn_agregarodt.Visible = False
         frm_Listado_Despacho.Text = "Consultar ordenes por remito"
         frm_Listado_Despacho.Show()
     End Sub

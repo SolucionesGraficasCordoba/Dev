@@ -10,7 +10,6 @@
         frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
 
         frm_listado_orden_trabajo_ampliada.Show()
-        'frm_listado_orden_trabajo_ampliada.dgvLista_Orden_Trabajo.Sort(dgv_lista_ordenes.Columns("ORT_fecha_entrega"), SortOrder.Ascending)
     End Sub
 
     Private Sub frm_despacho_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -97,7 +96,6 @@
                 buscar_ultimo_despacho()
             Else
                 Close()
-                'frm_Listado_Despacho.frm_Listado_Despacho_Load(0, e)
                 frm_Listado_Despacho.cargargrilla_odtxrem()
             End If
         Catch ex As Exception
@@ -111,5 +109,13 @@
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Me.Close()
+    End Sub
+
+    Private Sub btn_quitar_orden_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_quitar_orden.Click
+        Try
+            dgv_lista_ordenes.Rows.RemoveAt(dgv_lista_ordenes.CurrentRow.Index)
+        Catch ex As Exception
+            MsgBox("Seleccionar fila para borrar")
+        End Try
     End Sub
 End Class

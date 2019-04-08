@@ -7,7 +7,8 @@
     Public Sub frm_Listado_Despacho_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         cargargrillaremitos()
         armargrilla_odtxrem()
-        rbt_despacho.Checked = True
+        rbt_entrega.Checked = True
+        txt_buscar.Enabled = False
     End Sub
     Sub cargargrillaremitos()
         dgv_remitos.Columns.Clear()
@@ -35,31 +36,25 @@
         dgv_remitos.Columns.Add("DES_fecha_salida", "Fecha de Salida")
         dgv_remitos.Columns.Add(chofer)
 
-
-
         dgv_remitos.Columns("DES_campo_1").DataPropertyName = "DES_campo_1"
         dgv_remitos.Columns("DES_nro_remito").DataPropertyName = "DES_nro_remito"
         dgv_remitos.Columns("DES_fecha_salida").DataPropertyName = "DES_fecha_salida"
         dgv_remitos.Columns("DES_chofer").DataPropertyName = "DES_chofer"
 
         Dim cargarremitos = (From c In datacontext.DESPACHO
+                             Where c.DES_fecha_salida.Value.Date = dtp_fecha_salida.Text
+                             Order By c.DES_campo_1
                              Select New clase_remitos(c.DES_nro_remito, c.DES_fecha_salida, c.DES_chofer, c.DES_campo_1)).Distinct
 
         dgv_remitos.DataSource = cargarremitos
         dgv_remitos.Sort(dgv_remitos.Columns("DES_fecha_salida"), SortOrder.Ascending)
-        dgv_remitos.ClearSelection()
 
-        dgv_remitos.Columns("DES_campo_1").ReadOnly = True
+        dgv_remitos.Columns("DES_campo_1").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgv_remitos.Columns("DES_nro_remito").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgv_remitos.Columns("DES_fecha_salida").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgv_remitos.Columns("DES_chofer").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
 
-        If btn_modificar.Visible = True Then
-            dgv_remitos.Columns("DES_nro_remito").ReadOnly = False
-            dgv_remitos.Columns("DES_fecha_salida").ReadOnly = False
-            dgv_remitos.Columns("DES_chofer").ReadOnly = False
-        Else
-            dgv_remitos.Columns("DES_nro_remito").ReadOnly = True
-            dgv_remitos.Columns("DES_fecha_salida").ReadOnly = True
-            dgv_remitos.Columns("DES_chofer").ReadOnly = True
-        End If
+        habilitar_edicion()
     End Sub
 
     Private Sub dgv_remitos_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_remitos.CellClick
@@ -119,47 +114,7 @@
         End Try
 
     End Sub
-   
 
-    Private Sub btn_buscar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_buscar.Click
-        If rbt_remito.Checked = True Or rbt_despacho.Checked = True Then
-            Dim buscar As String
-            buscar = "*" & txt_buscar.Text & "*"
-
-            If rbt_remito.Checked = True Then
-                Dim buscaremito = (From br In datacontext.DESPACHO
-                                   Where br.DES_nro_remito Like buscar.ToString
-                                   Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, br.DES_campo_1)).Distinct
-                dgv_remitos.DataSource = buscaremito
-            Else
-                Dim buscaremito = (From br In datacontext.DESPACHO
-                                   Where br.DES_campo_1 Like buscar.ToString
-                                   Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, br.DES_campo_1)).Distinct
-                dgv_remitos.DataSource = buscaremito
-            End If
-            
-            dgv_orden_x_remito.Rows.Clear()
-        ElseIf rbt_entrega.Checked = True Then
-            Dim buscaremito = (From br In datacontext.DESPACHO
-                               Where br.DES_fecha_salida.Value.Date = dtp_fecha_salida.Text
-                               Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, br.DES_campo_1)).Distinct
-            dgv_remitos.DataSource = buscaremito
-        End If
-
-        dgv_remitos.ClearSelection()
-        dgv_remitos.Columns("DES_campo_1").ReadOnly = True
-
-        If btn_modificar.Visible = True Then
-            dgv_remitos.Columns("DES_nro_remito").ReadOnly = False
-            dgv_remitos.Columns("DES_fecha_salida").ReadOnly = False
-            dgv_remitos.Columns("DES_chofer").ReadOnly = False
-        Else
-            dgv_remitos.Columns("DES_nro_remito").ReadOnly = True
-            dgv_remitos.Columns("DES_fecha_salida").ReadOnly = True
-            dgv_remitos.Columns("DES_chofer").ReadOnly = True
-        End If
-
-    End Sub
 
     Private Sub btn_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancelar.Click
         Me.Close()
@@ -223,6 +178,76 @@
 
 
 
+        End If
+    End Sub
+
+    Private Sub txt_buscar_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_buscar.TextChanged
+        If rbt_remito.Checked = True Or rbt_despacho.Checked = True Then
+            Dim buscar As String
+            buscar = "*" & txt_buscar.Text & "*"
+
+            If rbt_remito.Checked = True Then
+                Dim buscaremito = (From br In datacontext.DESPACHO
+                                   Where br.DES_nro_remito Like buscar.ToString
+                                   Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, br.DES_campo_1)).Distinct
+                dgv_remitos.DataSource = buscaremito
+            Else
+                Dim buscaremito = (From br In datacontext.DESPACHO
+                                   Where br.DES_campo_1 Like buscar.ToString
+                                   Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, br.DES_campo_1)).Distinct
+                dgv_remitos.DataSource = buscaremito
+            End If
+
+            dgv_orden_x_remito.Rows.Clear()
+            habilitar_edicion()
+        End If
+    End Sub
+
+    Private Sub dtp_fecha_salida_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtp_fecha_salida.ValueChanged
+        If rbt_entrega.Checked = True Then
+            Dim buscaremito = (From br In datacontext.DESPACHO
+                               Where br.DES_fecha_salida.Value.Date = dtp_fecha_salida.Text
+                               Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, br.DES_campo_1)).Distinct
+            dgv_remitos.DataSource = buscaremito
+            habilitar_edicion()
+        End If
+    End Sub
+    Sub habilitar_edicion()
+        dgv_remitos.ClearSelection()
+        dgv_remitos.Columns("DES_campo_1").ReadOnly = True
+
+        If btn_modificar.Visible = True Then
+            dgv_remitos.Columns("DES_nro_remito").ReadOnly = False
+            dgv_remitos.Columns("DES_fecha_salida").ReadOnly = False
+            dgv_remitos.Columns("DES_chofer").ReadOnly = False
+        Else
+            dgv_remitos.Columns("DES_nro_remito").ReadOnly = True
+            dgv_remitos.Columns("DES_fecha_salida").ReadOnly = True
+            dgv_remitos.Columns("DES_chofer").ReadOnly = True
+        End If
+    End Sub
+
+    Private Sub rbt_remito_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbt_remito.CheckedChanged
+        If rbt_remito.Checked = True Then
+            txt_buscar.Enabled = True
+        Else
+            txt_buscar.Enabled = False
+        End If
+    End Sub
+
+    Private Sub rbt_despacho_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbt_despacho.CheckedChanged
+        If rbt_despacho.Checked = True Then
+            txt_buscar.Enabled = True
+        Else
+            txt_buscar.Enabled = False
+        End If
+    End Sub
+
+    Private Sub rbt_entrega_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbt_entrega.CheckedChanged
+        If rbt_entrega.Checked = True Then
+            dtp_fecha_salida.Enabled = True
+        Else
+            dtp_fecha_salida.Enabled = False
         End If
     End Sub
 End Class
