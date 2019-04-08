@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SOLUCIONES_INTERNAS" Class="DataS_Interno" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SV-PLANET-01;Initial Catalog=SOLUCIONES_INTERNAS;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PREPRODUCCION" Class="DataS_Interno" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.30.61;Initial Catalog=PREPRODUCCION;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CLIENTE" Member="CLIENTE">
     <Type Name="CLIENTE">
       <Column Name="CLI_id_cliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -46,6 +46,7 @@
       <Column Name="ORT_fecha_entrega" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Association Name="ORDEN_TRABAJO_TAREA" Member="TAREA" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="TAREA" />
       <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="DETALLE_ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="DETALLE_ORDEN_TRABAJO" />
+      <Association Name="ORDEN_TRABAJO_DESPACHO" Member="DESPACHO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="DESPACHO" />
       <Association Name="CLIENTE_ORDEN_TRABAJO" Member="CLIENTE" ThisKey="CLI_id_cliente" OtherKey="CLI_id_cliente" Type="CLIENTE" IsForeignKey="true" />
       <Association Name="VENDEDOR_ORDEN_TRABAJO" Member="VENDEDOR" ThisKey="VEN_id_vendedor" OtherKey="VEN_id_vendedor" Type="VENDEDOR" IsForeignKey="true" />
     </Type>
@@ -265,6 +266,23 @@
       <Association Name="ORDEN_TRABAJO_DETALLE_ORDEN_TRABAJO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" DeleteRule="CASCADE" />
       <Association Name="PIEZA_DETALLE_ORDEN_TRABAJO" Member="PIEZA" ThisKey="PIE_id_pieza" OtherKey="PIE_id_pieza" Type="PIEZA" IsForeignKey="true" />
       <Association Name="PIEZA1_DETALLE_ORDEN_TRABAJO" Member="PIEZA1" ThisKey="PIE_id_pieza" OtherKey="PIE_id_pieza" Type="PIEZA1" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DESPACHO" Member="DESPACHO">
+    <Type Name="DESPACHO">
+      <Column Name="DES_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DES_chofer" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_fecha_salida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DES_fecha_entrega" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DES_nro_remito" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DES_observaciones" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DES_campo_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_campo_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_campo_3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_campo_4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_campo_5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ORDEN_TRABAJO_DESPACHO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
