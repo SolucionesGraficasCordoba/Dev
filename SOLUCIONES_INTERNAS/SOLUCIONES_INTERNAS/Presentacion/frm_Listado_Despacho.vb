@@ -1,8 +1,12 @@
-﻿Public Class frm_Listado_Despacho
+﻿Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+Imports System.IO
+
+Public Class frm_Listado_Despacho
     Dim datacontext As New DataS_Interno
     Dim datacontextvistas As New DataS_Interno_Vistas
 
-   
+    Dim fuente As iTextSharp.text.pdf.BaseFont = FontFactory.GetFont(FontFactory.HELVETICA).BaseFont
 
     Public Sub frm_Listado_Despacho_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         cargargrillaremitos()
@@ -47,7 +51,7 @@
                              Select New clase_remitos(c.DES_nro_remito, c.DES_fecha_salida, c.DES_chofer, c.DES_campo_1)).Distinct
 
         dgv_remitos.DataSource = cargarremitos
-        dgv_remitos.Sort(dgv_remitos.Columns("DES_fecha_salida"), SortOrder.Ascending)
+        dgv_remitos.Sort(dgv_remitos.Columns("DES_campo_1"), SortOrder.Ascending)
 
         dgv_remitos.Columns("DES_campo_1").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         dgv_remitos.Columns("DES_nro_remito").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
@@ -249,6 +253,40 @@
         Else
             dtp_fecha_salida.Enabled = False
         End If
+    End Sub
+
+    Private Sub btn_generar_informe_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_generar_informe.Click
+        'Try
+
+        'intentar generar el documento
+        Dim doc As New Document(PageSize.A4, 5, 5, 5, 5)
+        'path que guarda el reporte en el escritorio de windows (desktop)
+        Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Remitos_diarios.pdf"
+        Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+        PdfWriter.GetInstance(doc, file)
+        doc.Open()
+        For i = 0 To dgv_remitos.Rows.Count - 1
+            dgv_remitos.Rows(i).Selected = True
+            dgv_remitos_CellClick(0, Nothing)
+
+            Dim pdf_encabezado As New Paragraph("Despacho N°: " + CStr(dgv_remitos.Item("DES_campo_1", i).Value) _
+                                            + "         Remito N°: " + CStr(dgv_remitos.Item("DES_nro_remito", i).Value) _
+                                            + "         Salida " + CStr(dgv_remitos.Item("DES_fecha_salida", i).Value))
+            doc.Add(pdf_encabezado)
+
+            For j = 0 To dgv_orden_x_remito.RowCount - 1
+                Dim pdf_ordenes As New Paragraph(CStr(dgv_orden_x_remito.Item("ORT_numero_ot", j).Value))
+                doc.Add(pdf_ordenes)
+                'pdf_informe_diario(doc, i)
+            Next
+        Next
+        doc.Close()
+        Process.Start(filename)
+        ' Me.Close()
+        'Catch ex As Exception
+        '    'si el mensaje es fallido mostrar msgbox
+        '    MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'End Try
     End Sub
 End Class
 

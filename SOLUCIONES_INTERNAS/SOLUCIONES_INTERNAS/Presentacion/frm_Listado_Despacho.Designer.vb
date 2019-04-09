@@ -34,6 +34,7 @@ Partial Class frm_Listado_Despacho
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtp_fecha_salida = New System.Windows.Forms.DateTimePicker()
         Me.btn_agregarodt = New System.Windows.Forms.Button()
+        Me.btn_generar_informe = New System.Windows.Forms.Button()
         CType(Me.dgv_remitos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_orden_x_remito, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -76,7 +77,7 @@ Partial Class frm_Listado_Despacho
         '
         'btn_eliminar
         '
-        Me.btn_eliminar.Location = New System.Drawing.Point(227, 486)
+        Me.btn_eliminar.Location = New System.Drawing.Point(441, 486)
         Me.btn_eliminar.Name = "btn_eliminar"
         Me.btn_eliminar.Size = New System.Drawing.Size(101, 21)
         Me.btn_eliminar.TabIndex = 6
@@ -154,11 +155,21 @@ Partial Class frm_Listado_Despacho
         Me.btn_agregarodt.Text = "Agregar odt"
         Me.btn_agregarodt.UseVisualStyleBackColor = True
         '
+        'btn_generar_informe
+        '
+        Me.btn_generar_informe.Location = New System.Drawing.Point(12, 486)
+        Me.btn_generar_informe.Name = "btn_generar_informe"
+        Me.btn_generar_informe.Size = New System.Drawing.Size(101, 21)
+        Me.btn_generar_informe.TabIndex = 14
+        Me.btn_generar_informe.Text = "Generar informe"
+        Me.btn_generar_informe.UseVisualStyleBackColor = True
+        '
         'frm_Listado_Despacho
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(663, 515)
+        Me.Controls.Add(Me.btn_generar_informe)
         Me.Controls.Add(Me.btn_agregarodt)
         Me.Controls.Add(Me.dtp_fecha_salida)
         Me.Controls.Add(Me.GroupBox1)
@@ -190,4 +201,5 @@ Partial Class frm_Listado_Despacho
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents dtp_fecha_salida As System.Windows.Forms.DateTimePicker
     Friend WithEvents btn_agregarodt As System.Windows.Forms.Button
+    Friend WithEvents btn_generar_informe As System.Windows.Forms.Button
 End Class
