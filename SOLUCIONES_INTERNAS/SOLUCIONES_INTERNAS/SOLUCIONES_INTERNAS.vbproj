@@ -105,6 +105,7 @@
       <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
     </Compile>
     <Compile Include="Modulo\Autocompletar_Textbox.vb" />
+    <Compile Include="Modulo\Automatico.vb" />
     <Compile Include="Modulo\Mail_Modulo.vb" />
     <Compile Include="Presentacion\frm_Acerca_de.Designer.vb">
       <DependentUpon>frm_Acerca_de.vb</DependentUpon>
@@ -122,6 +123,12 @@
       <DependentUpon>frm_Actualizar_Producto_Orden_Ampliada.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frm_Actualizar_Producto_Orden_Ampliada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_Despacho.Designer.vb">
+      <DependentUpon>frm_Despacho.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Despacho.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frm_Enviar_Correo.Designer.vb">
@@ -152,6 +159,12 @@
       <DependentUpon>frm_Grafico_Totales_Mensuales.vb</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\frm_Grafico_Totales_Mensuales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\frm_Listado_Despacho.Designer.vb">
+      <DependentUpon>frm_Listado_Despacho.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Listado_Despacho.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frm_Listado_Movimientos.Designer.vb">
@@ -375,6 +388,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Presentacion\frm_despacho.resx">
+      <DependentUpon>frm_Despacho.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Listado_Despacho.resx">
+      <DependentUpon>frm_Listado_Despacho.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_VerMasDetalles.resx">
       <DependentUpon>frm_VerMasDetalles.vb</DependentUpon>
     </EmbeddedResource>
