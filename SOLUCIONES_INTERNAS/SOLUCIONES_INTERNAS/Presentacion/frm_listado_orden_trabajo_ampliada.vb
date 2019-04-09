@@ -375,29 +375,29 @@ Public Class frm_listado_orden_trabajo_ampliada
                 frm_Actualizar_Tarea.txt_numero_orden.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
 
                 'FORM DESPACHO
-            ElseIf quienllamolistado_ot.Name = frm_Despacho.Name Then
-                Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_campo_1, bo.DES_nro_remito
-                                  Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).Any
-                If buscarorden = True Then
-                    Dim buscardespacho = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_campo_1, bo.DES_nro_remito
-                                  Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).ToList()(0)
-                    Select Case MsgBox("Atención, la orden seleccionada ya está asociada a un despacho:" & Chr(13) &
-                           "Despacho N°: " & buscardespacho.DES_campo_1 & Chr(13) &
-                           "Remito N°: " & buscardespacho.DES_nro_remito & Chr(13) &
-                           "CONTINUAR?",
-                           MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Advertencia")
-                        Case MsgBoxResult.No
-                            Exit Sub
-                    End Select
-                End If
+                'ElseIf quienllamolistado_ot.Name = frm_Despacho.Name Then
+                '    Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_campo_1, bo.DES_nro_remito
+                '                      Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).Any
+                '    If buscarorden = True Then
+                '        Dim buscardespacho = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_campo_1, bo.DES_nro_remito
+                '                      Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).ToList()(0)
+                '        Select Case MsgBox("Atención, la orden seleccionada ya está asociada a un despacho:" & Chr(13) &
+                '               "Despacho N°: " & buscardespacho.DES_campo_1 & Chr(13) &
+                '               "Remito N°: " & buscardespacho.DES_nro_remito & Chr(13) &
+                '               "CONTINUAR?",
+                '               MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Advertencia")
+                '            Case MsgBoxResult.No
+                '                Exit Sub
+                '        End Select
+                '    End If
 
-                frm_Despacho.dgv_lista_ordenes.Rows.Add()
-                frm_Despacho.dgv_lista_ordenes.Item("Id_Odt", frm_Despacho.Nro_linea_grid).Value = dgvLista_Orden_Trabajo.SelectedCells(0).Value
-                frm_Despacho.dgv_lista_ordenes.Item("Orden", frm_Despacho.Nro_linea_grid).Value = dgvLista_Orden_Trabajo.SelectedCells(2).Value
-                frm_Despacho.dgv_lista_ordenes.Item("Fecha", frm_Despacho.Nro_linea_grid).Value = DateTime.Now.ToShortDateString
-                frm_Despacho.dgv_lista_ordenes.Item("Hora", frm_Despacho.Nro_linea_grid).Value = "00:01"
+                '    frm_Despacho.dgv_lista_ordenes.Rows.Add()
+                '    frm_Despacho.dgv_lista_ordenes.Item("Id_Odt", frm_Despacho.Nro_linea_grid).Value = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                '    frm_Despacho.dgv_lista_ordenes.Item("Orden", frm_Despacho.Nro_linea_grid).Value = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+                '    frm_Despacho.dgv_lista_ordenes.Item("Fecha", frm_Despacho.Nro_linea_grid).Value = DateTime.Now.ToShortDateString
+                '    frm_Despacho.dgv_lista_ordenes.Item("Hora", frm_Despacho.Nro_linea_grid).Value = "00:01"
 
-                frm_Despacho.Nro_linea_grid = frm_Despacho.Nro_linea_grid + 1
+                '    frm_Despacho.Nro_linea_grid = frm_Despacho.Nro_linea_grid + 1
 
             ElseIf quienllamolistado_ot.Name = frm_Tarea.Name Then
                 Select Case quienllamobotonorden.Name
