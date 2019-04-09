@@ -69,50 +69,7 @@ Public Class frm_Colaborador
                                         Where SEC_nombre_sector <> "De baja"
                                         Order By SEC_nombre_sector Ascending)
             dgvLista_Colaboradores.DataSource = carga
-
         End If
-
-
-
-        '----------------------------------------------------------------------------------------------------------------------------------------
-        'If frm_Principal.LBL_MENU_PERFIL.Text = "ADMINISTRADOR" Or frm_Principal.LBL_MENU_PERFIL.Text = "GERENCIA" Then
-        '    'CARGA COMBOBOX SECTOR
-        '    Dim combosector = (From sec In datacontext.SECTOR
-        '       Select sec.SEC_id_sector, sec.SEC_nombre_sector)
-        '    cbo_sector.DataSource = combosector
-        '    cbo_sector.SelectedIndex = 0
-        '    cbo_sector.DisplayMember = "SEC_nombre_sector"
-        '    cbo_sector.ValueMember = "SEC_id_sector"
-
-        '    ' Btn_informe_diario.Visible = True
-        '    Btn_informe_diario.Focus()
-        'Else
-        '    Dim combosector = (From sec In datacontext.SECTOR
-        '                      Join col In datacontext.COLABORADOR
-        '                      On col.SEC_id_sector Equals sec.SEC_id_sector
-        '                      Join usu In datacontext.USUARIO
-        '                      On usu.COL_id_colaborador Equals col.COL_id_colaborador
-        '                      Select usu.USU_usuario, sec.SEC_id_sector, sec.SEC_nombre_sector, col.COL_id_colaborador, col.COL_nombre_col
-        '                      Where USU_usuario = frm_Principal.LBL_MENU_USU.Text)
-
-        '    cbo_sector.DataSource = combosector
-        '    ' cbo_sector.SelectedIndex = 0
-        '    cbo_sector.DisplayMember = "SEC_nombre_sector"
-        '    cbo_sector.ValueMember = "SEC_id_sector"
-
-        '    ' Btn_informe_diario.Visible = False
-        'End If
-        '------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
     End Sub
 
     Private Sub btnGuardar_Colaborador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Colaborador.Click

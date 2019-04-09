@@ -21,7 +21,7 @@
         End If
 
         If txt_nombre_colaborador.Text.Length = 0 Then
-            MsgBox("Seleccione una Colaborador del listado")
+            MsgBox("Seleccione un Colaborador del listado")
             btn_buscar_colaborador.Focus()
             Exit Sub
         End If
