@@ -1221,6 +1221,18 @@
 
         quienllamoatarea = 0
 
+
+
+
+
+
+
+
+
+
+
+     
+
     End Sub
 
     Private Sub txtHora_Finalizacion1_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion1.TextChanged
