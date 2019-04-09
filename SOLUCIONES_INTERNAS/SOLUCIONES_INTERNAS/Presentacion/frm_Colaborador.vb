@@ -36,6 +36,7 @@ Public Class frm_Colaborador
                                     col.COL_apellido_col,
                                     col.SEC_id_sector,
                                     sec.SEC_nombre_sector
+                                    Where SEC_nombre_sector <> "De Baja"
                                     Order By SEC_nombre_sector Ascending)
         dgvLista_Colaboradores.DataSource = carga
     End Sub
@@ -139,6 +140,7 @@ Public Class frm_Colaborador
         dgvLista_Colaboradores.Columns(3).DataPropertyName = "SEC_id_sector"
         dgvLista_Colaboradores.Columns(3).Visible = False
         dgvLista_Colaboradores.Columns(4).DataPropertyName = "SEC_nombre_sector"
+        dgvLista_Colaboradores.Columns(4).Width = 150
     End Sub
 
     Private Sub dgvLista_Colaboradores_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvLista_Colaboradores.Click
@@ -313,7 +315,6 @@ Public Class frm_Colaborador
 
 
         Dim i As Integer = 0
-
 
         Dim printFont As New Font("Arial", 8)
         Dim topMargin As Single = 500 'e.MarginBounds.Top

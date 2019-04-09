@@ -44,6 +44,8 @@ Partial Class frm_Actualizar_Tarea
         Me.txt_tarea = New System.Windows.Forms.TextBox()
         Me.Label61 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.txtSalida = New System.Windows.Forms.TextBox()
         Me.txtEntrada = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -266,6 +268,8 @@ Partial Class frm_Actualizar_Tarea
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Label10)
+        Me.GroupBox2.Controls.Add(Me.Label9)
         Me.GroupBox2.Controls.Add(Me.txtSalida)
         Me.GroupBox2.Controls.Add(Me.txtEntrada)
         Me.GroupBox2.Controls.Add(Me.Label8)
@@ -287,9 +291,31 @@ Partial Class frm_Actualizar_Tarea
         Me.GroupBox2.TabIndex = 188
         Me.GroupBox2.TabStop = False
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.ForeColor = System.Drawing.Color.Red
+        Me.Label10.Location = New System.Drawing.Point(282, 66)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(11, 13)
+        Me.Label10.TabIndex = 205
+        Me.Label10.Text = "*"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.ForeColor = System.Drawing.Color.Red
+        Me.Label9.Location = New System.Drawing.Point(82, 66)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(11, 13)
+        Me.Label9.TabIndex = 204
+        Me.Label9.Text = "*"
+        '
         'txtSalida
         '
-        Me.txtSalida.Location = New System.Drawing.Point(313, 60)
+        Me.txtSalida.Location = New System.Drawing.Point(299, 60)
         Me.txtSalida.Name = "txtSalida"
         Me.txtSalida.Size = New System.Drawing.Size(51, 20)
         Me.txtSalida.TabIndex = 202
@@ -304,7 +330,7 @@ Partial Class frm_Actualizar_Tarea
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(242, 63)
+        Me.Label8.Location = New System.Drawing.Point(219, 63)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(65, 13)
         Me.Label8.TabIndex = 200
@@ -312,15 +338,15 @@ Partial Class frm_Actualizar_Tarea
         '
         'txt_Carga_Horaria
         '
-        Me.txt_Carga_Horaria.Location = New System.Drawing.Point(518, 60)
+        Me.txt_Carga_Horaria.Location = New System.Drawing.Point(504, 60)
         Me.txt_Carga_Horaria.Name = "txt_Carga_Horaria"
-        Me.txt_Carga_Horaria.Size = New System.Drawing.Size(35, 20)
+        Me.txt_Carga_Horaria.Size = New System.Drawing.Size(49, 20)
         Me.txt_Carga_Horaria.TabIndex = 191
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(443, 63)
+        Me.Label13.Location = New System.Drawing.Point(433, 63)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(70, 13)
         Me.Label13.TabIndex = 196
@@ -329,7 +355,7 @@ Partial Class frm_Actualizar_Tarea
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(20, 63)
+        Me.Label33.Location = New System.Drawing.Point(11, 63)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(73, 13)
         Me.Label33.TabIndex = 201
@@ -415,7 +441,7 @@ Partial Class frm_Actualizar_Tarea
         '
         'txt_id_tarea
         '
-        Me.txt_id_tarea.Location = New System.Drawing.Point(273, 310)
+        Me.txt_id_tarea.Location = New System.Drawing.Point(297, 310)
         Me.txt_id_tarea.Name = "txt_id_tarea"
         Me.txt_id_tarea.Size = New System.Drawing.Size(27, 20)
         Me.txt_id_tarea.TabIndex = 192
@@ -423,7 +449,7 @@ Partial Class frm_Actualizar_Tarea
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(222, 313)
+        Me.Label1.Location = New System.Drawing.Point(246, 313)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(45, 13)
         Me.Label1.TabIndex = 193
@@ -491,4 +517,6 @@ Partial Class frm_Actualizar_Tarea
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents txt_id_tarea As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
 End Class

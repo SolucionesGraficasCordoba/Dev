@@ -1702,46 +1702,49 @@ Public Class frm_Principal
     End Sub
 
     'Private Sub RemitoXOrdenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RemitoXOrdenToolStripMenuItem.Click
-    '    frm_Despacho.Text = "Nuevo remito por orden"
-    '    frm_Despacho.Show()
-
+   
     'End Sub
 
 
-    'Private Sub ModificarToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarToolStripMenuItem2.Click
-    '    frm_Listado_Despacho.dgv_remitos.SelectionMode = DataGridViewSelectionMode.CellSelect
-    '    frm_Listado_Despacho.dgv_orden_x_remito.SelectionMode = DataGridViewSelectionMode.CellSelect
+    Private Sub ModificarToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarToolStripMenuItem2.Click
+        frm_Listado_Despacho.dgv_remitos.SelectionMode = DataGridViewSelectionMode.CellSelect
+        frm_Listado_Despacho.dgv_orden_x_remito.SelectionMode = DataGridViewSelectionMode.CellSelect
 
-    '    frm_Listado_Despacho.dgv_remitos.ReadOnly = False
-    '    frm_Listado_Despacho.dgv_orden_x_remito.ReadOnly = False
+        frm_Listado_Despacho.dgv_remitos.ReadOnly = False
+        frm_Listado_Despacho.dgv_orden_x_remito.ReadOnly = False
 
-    '    frm_Listado_Despacho.btn_eliminar.Visible = False
-    '    frm_Listado_Despacho.btn_modificar.Visible = True
-    '    frm_Listado_Despacho.btn_agregarodt.Visible = True
-    '    frm_Listado_Despacho.Text = "Modificar ordenes por remito"
-    '    frm_Listado_Despacho.Show()
+        frm_Listado_Despacho.btn_eliminar.Visible = False
+        frm_Listado_Despacho.btn_modificar.Visible = True
+        frm_Listado_Despacho.btn_agregarodt.Visible = True
+        frm_Listado_Despacho.Text = "Modificar ordenes por remito"
+        frm_Listado_Despacho.Show()
 
-    'End Sub
+    End Sub
 
-    'Private Sub EliminarToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarToolStripMenuItem.Click
-    '    frm_Listado_Despacho.dgv_remitos.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-    '    frm_Listado_Despacho.dgv_orden_x_remito.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+    Private Sub EliminarToolStripMenuItem_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarToolStripMenuItem.Click
+        frm_Listado_Despacho.dgv_remitos.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        frm_Listado_Despacho.dgv_orden_x_remito.SelectionMode = DataGridViewSelectionMode.FullRowSelect
 
-    '    frm_Listado_Despacho.btn_eliminar.Visible = True
-    '    frm_Listado_Despacho.btn_modificar.Visible = False
-    '    frm_Listado_Despacho.btn_agregarodt.Visible = False
-    '    frm_Listado_Despacho.Text = "Eliminar ordenes por remito"
-    '    frm_Listado_Despacho.Show()
-    'End Sub
+        frm_Listado_Despacho.btn_eliminar.Visible = True
+        frm_Listado_Despacho.btn_modificar.Visible = False
+        frm_Listado_Despacho.btn_agregarodt.Visible = False
+        frm_Listado_Despacho.Text = "Eliminar ordenes por remito"
+        frm_Listado_Despacho.Show()
+    End Sub
 
-    'Private Sub ConsultarToolStripMenuItem3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarToolStripMenuItem3.Click
-    '    frm_Listado_Despacho.dgv_remitos.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-    '    frm_Listado_Despacho.dgv_orden_x_remito.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+    Private Sub ConsultarToolStripMenuItem3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarToolStripMenuItem3.Click
+        frm_Listado_Despacho.dgv_remitos.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        frm_Listado_Despacho.dgv_orden_x_remito.SelectionMode = DataGridViewSelectionMode.FullRowSelect
 
-    '    frm_Listado_Despacho.btn_eliminar.Visible = False
-    '    frm_Listado_Despacho.btn_modificar.Visible = False
-    '    frm_Listado_Despacho.btn_agregarodt.Visible = False
-    '    frm_Listado_Despacho.Text = "Consultar ordenes por remito"
-    '    frm_Listado_Despacho.Show()
-    'End Sub
+        frm_Listado_Despacho.btn_eliminar.Visible = False
+        frm_Listado_Despacho.btn_modificar.Visible = False
+        frm_Listado_Despacho.btn_agregarodt.Visible = False
+        frm_Listado_Despacho.Text = "Consultar ordenes por remito"
+        frm_Listado_Despacho.Show()
+    End Sub
+
+    Private Sub RemitoXOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles RemitoXOrdenToolStripMenuItem.Click
+        frm_Despacho.Text = "Nuevo remito por orden"
+        frm_Despacho.Show()
+    End Sub
 End Class

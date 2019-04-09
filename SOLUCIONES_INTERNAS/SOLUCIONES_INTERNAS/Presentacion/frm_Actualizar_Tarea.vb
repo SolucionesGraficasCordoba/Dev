@@ -92,13 +92,17 @@
         txt_id_colaborador.Visible = False
         txt_id_orden_trabajo.Visible = False
         txt_id_tarea.Visible = False
-        Label1.Visible = False
+    
         txt_numero_orden.Enabled = False
         txt_nombre_colaborador.Enabled = False
         txt_tarea.Focus()
         txt_Carga_Horaria.Visible = False
-        Label13.Visible = False
 
+        txtEntrada.Enabled = False
+        txtSalida.Enabled = False
+
+        Label1.Visible = False
+        Label13.Visible = False
     End Sub
 
     Private Sub txt_tarea_KeyDown(sender As System.Object, e As System.Windows.Forms.KeyEventArgs)
@@ -192,18 +196,16 @@
             If txt_tarea.Text.Length <> 0 Then
                 'REGISTRO 1 DE TAREA
                 Dim tar1 = New TAREA
+
+                tar1.COL_id_colaborador = txt_id_colaborador.Text
+
                 tar1.TAR_tiempo_estimado = StrConv(txt_tiempo_estimado.Text, VbStrConv.ProperCase)
                 tar1.TAR_tiempo_real = StrConv(txt_tiempo_real.Text, VbStrConv.ProperCase)
-                tar1.COL_id_colaborador = txt_id_colaborador.Text
-                tar1.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
-                tar1.TAR_hora_fin = StrConv(txt_hora_fin.Text, VbStrConv.ProperCase)
-
-                '  tar1.TAR_carga_horaria = StrConv(txt_Carga_Horaria.Text, VbStrConv.ProperCase)
-                'tar1.TAR_carga_horaria = "0"
 
                 tar1.TAR_detalle_tarea = StrConv(txt_tarea.Text, VbStrConv.ProperCase)
+                tar1.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
                 tar1.TAR_observaciones = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
-                ' tar1.TAR_fecha = dtpFecha.Text
+
                 datacontext.TAREA.InsertOnSubmit(tar1)
                 datacontext.SubmitChanges()
             End If
@@ -221,30 +223,6 @@
             MsgBox("Error al guardar la Tarea" + MsgBoxStyle.Critical, "Guardando Tareas")
         End Try
 
-    End Sub
-
-    Private Sub txt_tiempo_estimado_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs)
-        If Char.IsNumber(e.KeyChar) Then
-            e.Handled = False
-        ElseIf Char.IsControl(e.KeyChar) Then
-            e.Handled = False
-        ElseIf Char.IsSeparator(e.KeyChar) Then
-            e.Handled = False
-        Else
-            e.Handled = True
-        End If
-    End Sub
-
-    Private Sub txt_tiempo_real_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs)
-        If Char.IsNumber(e.KeyChar) Then
-            e.Handled = False
-        ElseIf Char.IsControl(e.KeyChar) Then
-            e.Handled = False
-        ElseIf Char.IsSeparator(e.KeyChar) Then
-            e.Handled = False
-        Else
-            e.Handled = True
-        End If
     End Sub
 
     Private Sub frm_Actualizar_Tarea_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
@@ -323,4 +301,27 @@
         End Try
     End Sub
 
+    Private Sub txt_tiempo_estimado_KeyPress_1(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_tiempo_estimado.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txt_tiempo_real_KeyPress_1(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txt_tiempo_real.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
 End Class
