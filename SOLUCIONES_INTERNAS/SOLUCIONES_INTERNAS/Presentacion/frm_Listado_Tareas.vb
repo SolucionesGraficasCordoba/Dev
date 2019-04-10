@@ -87,14 +87,28 @@ Public Class frm_Listado_Tareas
     'CARGA COLABORADOR DATAGRIDVIEW SEGUN LO QUE SELECCIONO EN EL COMBOBOX
     Private Sub cbo_sector_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbo_sector.SelectedIndexChanged
         armargrillacolaborador()
-        Dim consultaporsector = (From A In datavistas.Colaborador_por_Sector
-                                Select A.COL_id_colaborador,
-                                A.COL_nombre_col,
-                                A.SEC_id_sector,
-                                A.SEC_nombre_sector
-                                Where SEC_nombre_sector = cbo_sector.Text)
-        '  Where (SEC_id_sector = CInt(cbo_sector.SelectedIndex + 1)))
-        dgvColaboradores.DataSource = consultaporsector
+
+        If frm_Principal.LBL_MENU_PERFIL.Text = "COLABORADOR" Then
+
+            Dim cargasupervisor = (From sec In datacontext.SECTOR
+                        Join col In datacontext.COLABORADOR
+                        On col.SEC_id_sector Equals sec.SEC_id_sector
+                        Join usu In datacontext.USUARIO
+                        On usu.COL_id_colaborador Equals col.COL_id_colaborador
+                        Select usu.USU_usuario, sec.SEC_id_sector, sec.SEC_nombre_sector, col.COL_id_colaborador, col.COL_nombre_col, col.COL_apellido_col
+                        Where USU_usuario = frm_Principal.LBL_MENU_USU.Text)
+            dgvColaboradores.DataSource = cargasupervisor
+        Else
+
+            Dim consultaporsector = (From A In datavistas.Colaborador_por_Sector
+                                    Select A.COL_id_colaborador,
+                                    A.COL_nombre_col,
+                                    A.SEC_id_sector,
+                                    A.SEC_nombre_sector
+                                    Where SEC_nombre_sector = cbo_sector.Text)
+          dgvColaboradores.DataSource = consultaporsector
+        End If
+
         Label6.Text = dgvColaboradores.Rows.Count
         dgvColaboradores.ClearSelection()
     End Sub

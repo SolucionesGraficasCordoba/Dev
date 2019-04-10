@@ -39,6 +39,7 @@ Public Class frm_Colaborador
                           Where USU_usuario = frm_Principal.LBL_MENU_USU.Text)
             dgvLista_Colaboradores.DataSource = cargasupervisor
 
+
         ElseIf frm_Principal.LBL_MENU_PERFIL.Text = "SUPERVISOR" Then
             Dim cualq = (From c In datacontext.USUARIO
                         Join col In datacontext.COLABORADOR
@@ -56,6 +57,8 @@ Public Class frm_Colaborador
                          Select usu.USU_usuario, sec.SEC_id_sector, sec.SEC_nombre_sector, col.COL_id_colaborador, col.COL_nombre_col, col.COL_apellido_col
                          Where SEC_id_sector = cualq.SEC_id_sector)
             dgvLista_Colaboradores.DataSource = cargasupervisor
+
+
         Else
             Dim carga = (From col In datacontext.COLABORADOR
                                         Join sec In datacontext.SECTOR
