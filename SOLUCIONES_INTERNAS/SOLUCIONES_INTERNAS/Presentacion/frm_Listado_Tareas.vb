@@ -87,7 +87,7 @@ Public Class frm_Listado_Tareas
     'CARGA COLABORADOR DATAGRIDVIEW SEGUN LO QUE SELECCIONO EN EL COMBOBOX
     Private Sub cbo_sector_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cbo_sector.SelectedIndexChanged
         armargrillacolaborador()
-
+        'SI EL PERFIL ES COLABORADOR SOLO MUESTRA EL COLABORADOR LOGUEADO
         If frm_Principal.LBL_MENU_PERFIL.Text = "COLABORADOR" Then
 
             Dim cargasupervisor = (From sec In datacontext.SECTOR
