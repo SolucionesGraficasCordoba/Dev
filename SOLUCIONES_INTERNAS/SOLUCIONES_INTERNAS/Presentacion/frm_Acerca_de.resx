@@ -125,4 +125,25 @@ Además de cargar, se podrá actualizar y eliminar registros. También se podrá
 
 </value>
   </data>
+  <data name="TextBox2.Text" xml:space="preserve">
+    <value>1-	Pestaña nueva tarea:  el botón buscar colaborador trae el listado de colaboradores según el perfil
+-	Administrador: muestra todos los colaboradores registrados.
+-	Supervisor: muestra todos los colaboradores del sector al que pertenece el supervisor.
+-	Colaborador: muestra al colaborador logueado como usuario.
+
+2-	Pestaña consultar tareas: se habilitaron todos los campos de tareas y de observaciones para una mejor lectura del trabajo realizado.
+ 
+3-	Pestaña modificar tareas: 
+-	Administrador: puede modificar tareas de todos los colaboradores registrados.
+-	Supervisor: puede modificar las tareas de todos los colaboradores del sector al que pertenece el supervisor.
+-	Colaborador: puede modificar solamente sus tareas.
+
+4-	Pestaña eliminar tareas: 
+-	Administrador: puede eliminar tareas de todos los colaboradores registrados.
+-	Supervisor: puede eliminar las tareas de todos los colaboradores del sector al que pertenece el supervisor.
+-	Colaborador: puede eliminar solamente sus tareas (si es que se le dio el permiso al ingresar al sistema).
+
+5-	Pestaña despachos: asigna el número de remito de manager al número de orden de metrics.
+</value>
+  </data>
 </root>

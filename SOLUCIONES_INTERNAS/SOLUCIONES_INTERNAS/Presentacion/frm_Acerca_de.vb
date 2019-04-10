@@ -6,6 +6,7 @@
 
     Private Sub frm_Acerca_de_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         TextBox1.Enabled = False
+        TextBox2.ReadOnly = True
     End Sub
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
