@@ -767,27 +767,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txt_nombre_colaborador.Enabled = False
         'DeshabilitarText()
         OcultarId()
-        hab_tarea_observ_1()
-        hab_tarea_observ_2()
-        hab_tarea_observ_3()
-        hab_tarea_observ_4()
-        hab_tarea_observ_5()
-        hab_tarea_observ_6()
-        hab_tarea_observ_7()
-        hab_tarea_observ_8()
-        hab_tarea_observ_9()
-        hab_tarea_observ_10()
-        hab_tarea_observ_11()
-        hab_tarea_observ_12()
-        hab_tarea_observ_13()
-        hab_tarea_observ_14()
-        hab_tarea_observ_15()
-        hab_tarea_observ_16()
-        hab_tarea_observ_17()
-        hab_tarea_observ_18()
-        hab_tarea_observ_19()
-        hab_tarea_observ_20()
-
+        hab_consulta()
         frm_Tarea.ShowDialog()
     End Sub
 
@@ -2257,6 +2237,46 @@ Public Class frm_Listado_Tareas
         document.Add(TotalTareas)
     End Sub
 
+    Sub hab_consulta()
+        hab_tarea_observ_1()
+        hab_tarea_observ_2()
+        hab_tarea_observ_3()
+        hab_tarea_observ_4()
+        hab_tarea_observ_5()
+        hab_tarea_observ_6()
+        hab_tarea_observ_7()
+        hab_tarea_observ_8()
+        hab_tarea_observ_9()
+        hab_tarea_observ_10()
+        hab_tarea_observ_11()
+        hab_tarea_observ_12()
+        hab_tarea_observ_13()
+        hab_tarea_observ_14()
+        hab_tarea_observ_15()
+        hab_tarea_observ_16()
+        hab_tarea_observ_17()
+        hab_tarea_observ_18()
+        hab_tarea_observ_19()
+        hab_tarea_observ_20()
+
+        frm_Tarea.btnImprimirFormulario.Visible = False
+        frm_Tarea.btnBuscar_Colaborador.Enabled = False
+        frm_Tarea.dtpFecha.Enabled = False
+        frm_Tarea.txt_Carga_Horaria1.Enabled = False
+        frm_Tarea.btnNueva_Tarea.Enabled = False
+        frm_Tarea.btnGuardar_Tarea.Enabled = False
+        frm_Tarea.Label1.Visible = False
+        frm_Tarea.txt_id_colaborador.Visible = False
+        frm_Tarea.txt_id_tarea.Visible = False
+        frm_Tarea.btnActualizar.Enabled = False
+        frm_Tarea.txtEntrada.Enabled = False
+        frm_Tarea.txtSalida.Enabled = False
+
+
+
+
+    End Sub
+
     Sub hab_tarea_observ_1()
         frm_Tarea.txt_detalle_tarea1.Enabled = True
         frm_Tarea.txt_detalle_tarea1.ReadOnly = True
@@ -2272,18 +2292,7 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txt_id_orden_trabajo1.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden1.Enabled = False
 
-        frm_Tarea.btnImprimirFormulario.Visible = False
-        frm_Tarea.btnBuscar_Colaborador.Enabled = False
-        frm_Tarea.dtpFecha.Enabled = False
-        frm_Tarea.txt_Carga_Horaria1.Enabled = False
-        frm_Tarea.btnNueva_Tarea.Enabled = False
-        frm_Tarea.btnGuardar_Tarea.Enabled = False
-        frm_Tarea.Label1.Visible = False
-        frm_Tarea.txt_id_colaborador.Visible = False
-        frm_Tarea.txt_id_tarea.Visible = False
-        frm_Tarea.btnActualizar.Enabled = False
-        frm_Tarea.txtEntrada.Enabled = False
-        frm_Tarea.txtSalida.Enabled = False
+    
     End Sub
 
     Sub hab_tarea_observ_2()
