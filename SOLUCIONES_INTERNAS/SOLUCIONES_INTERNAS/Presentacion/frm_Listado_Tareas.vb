@@ -16,7 +16,6 @@ Public Class frm_Listado_Tareas
     Dim linea As New Phrase("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ")
     Dim fuente As iTextSharp.text.pdf.BaseFont = FontFactory.GetFont(FontFactory.HELVETICA).BaseFont
 
-
     Public Sub frm_Listado_Tareas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Label6.Text = dgvColaboradores.Rows.Count
         btnAgregar.Visible = False
@@ -154,7 +153,6 @@ Public Class frm_Listado_Tareas
         End Try
         SumatoriaTiempos()
     End Sub
-
 
     'CALCULA LA SUMA DEL TIEMPO REAL DE CADA TAREA POR COLABORADOR
     Public Sub SumatoriaTiempos()
@@ -767,446 +765,31 @@ Public Class frm_Listado_Tareas
         '  frm_Tarea.Text = "Consultar Tarea"
         frm_Tarea.btnImprimirFormulario.Visible = True
         frm_Tarea.txt_nombre_colaborador.Enabled = False
-        DeshabilitarText()
+        'DeshabilitarText()
         OcultarId()
+        hab_tarea_observ_1()
+        hab_tarea_observ_2()
+        hab_tarea_observ_3()
+        hab_tarea_observ_4()
+        hab_tarea_observ_5()
+        hab_tarea_observ_6()
+        hab_tarea_observ_7()
+        hab_tarea_observ_8()
+        hab_tarea_observ_9()
+        hab_tarea_observ_10()
+        hab_tarea_observ_11()
+        hab_tarea_observ_12()
+        hab_tarea_observ_13()
+        hab_tarea_observ_14()
+        hab_tarea_observ_15()
+        hab_tarea_observ_16()
+        hab_tarea_observ_17()
+        hab_tarea_observ_18()
+        hab_tarea_observ_19()
+        hab_tarea_observ_20()
 
         frm_Tarea.ShowDialog()
     End Sub
-
-    Sub desab_tarea_1()
-        frm_Tarea.txt_detalle_tarea1.Enabled = False
-        frm_Tarea.txtTiempo_Estimado1.Enabled = False
-        frm_Tarea.txtTiempo_Real1.Enabled = False
-        frm_Tarea.txtHora_Finalizacion1.Enabled = False
-        frm_Tarea.txtObservaciones1.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo1.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden1.Enabled = False
-
-    End Sub
-
-    Sub desab_tarea_2()
-        frm_Tarea.txt_detalle_tarea2.Enabled = False
-        frm_Tarea.txtTiempo_Estimado2.Enabled = False
-        frm_Tarea.txtTiempo_Real2.Enabled = False
-        frm_Tarea.txtHora_Finalizacion2.Enabled = False
-        frm_Tarea.txtObservaciones2.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo2.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden2.Enabled = False
-
-
-    End Sub
-
-    Sub desab_tarea_3()
-        frm_Tarea.txt_detalle_tarea3.Enabled = False
-        frm_Tarea.txtTiempo_Estimado3.Enabled = False
-        frm_Tarea.txtTiempo_Real3.Enabled = False
-        frm_Tarea.txtHora_Finalizacion3.Enabled = False
-        frm_Tarea.txtObservaciones3.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo3.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden3.Enabled = False
-
-
-    End Sub
-
-    Sub desab_tarea_4()
-        frm_Tarea.txt_detalle_tarea4.Enabled = False
-        frm_Tarea.txtTiempo_Estimado4.Enabled = False
-        frm_Tarea.txtTiempo_Real4.Enabled = False
-        frm_Tarea.txtHora_Finalizacion4.Enabled = False
-        frm_Tarea.txtObservaciones4.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo4.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden4.Enabled = False
-
-
-    End Sub
-
-    Sub desab_tarea_5()
-        frm_Tarea.txt_detalle_tarea5.Enabled = False
-        frm_Tarea.txtTiempo_Estimado5.Enabled = False
-        frm_Tarea.txtTiempo_Real5.Enabled = False
-        frm_Tarea.txtHora_Finalizacion5.Enabled = False
-        frm_Tarea.txtObservaciones5.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo5.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden5.Enabled = False
-
-    End Sub
-
-    Sub desab_tarea_6()
-        frm_Tarea.txt_detalle_tarea6.Enabled = False
-        frm_Tarea.txtTiempo_Estimado6.Enabled = False
-        frm_Tarea.txtTiempo_Real6.Enabled = False
-        frm_Tarea.txtHora_Finalizacion6.Enabled = False
-        frm_Tarea.txtObservaciones6.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo6.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden6.Enabled = False
-
-    End Sub
-
-    Sub desab_tarea_7()
-        frm_Tarea.txt_detalle_tarea7.Enabled = False
-        frm_Tarea.txtTiempo_Estimado7.Enabled = False
-        frm_Tarea.txtTiempo_Real7.Enabled = False
-        frm_Tarea.txtHora_Finalizacion7.Enabled = False
-        frm_Tarea.txtObservaciones7.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo7.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden7.Enabled = False
-    End Sub
-
-    Sub desab_tarea_8()
-        frm_Tarea.txt_detalle_tarea8.Enabled = False
-        frm_Tarea.txtTiempo_Estimado8.Enabled = False
-        frm_Tarea.txtTiempo_Real8.Enabled = False
-        frm_Tarea.txtHora_Finalizacion8.Enabled = False
-        frm_Tarea.txtObservaciones8.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo8.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden8.Enabled = False
-
-
-    End Sub
-
-    Sub desab_tarea_9()
-        frm_Tarea.txt_detalle_tarea9.Enabled = False
-        frm_Tarea.txtTiempo_Estimado9.Enabled = False
-        frm_Tarea.txtTiempo_Real9.Enabled = False
-        frm_Tarea.txtHora_Finalizacion9.Enabled = False
-        frm_Tarea.txtObservaciones9.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo9.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden9.Enabled = False
-
-    End Sub
-
-    Sub desab_tarea_10()
-        frm_Tarea.txt_detalle_tarea10.Enabled = False
-        frm_Tarea.txtTiempo_Estimado10.Enabled = False
-        frm_Tarea.txtTiempo_Real10.Enabled = False
-        frm_Tarea.txtHora_Finalizacion10.Enabled = False
-        frm_Tarea.txtObservaciones10.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo10.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden10.Enabled = False
-
-    End Sub
-
-    Sub desab_tarea_11()
-        frm_Tarea.txt_detalle_tarea11.Enabled = False
-        frm_Tarea.txtTiempo_Estimado11.Enabled = False
-        frm_Tarea.txtTiempo_Real11.Enabled = False
-        frm_Tarea.txtHora_Finalizacion11.Enabled = False
-        frm_Tarea.txtObservaciones11.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo11.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden11.Enabled = False
-
-    End Sub
-
-    Sub desab_tarea_12()
-        frm_Tarea.txt_detalle_tarea12.Enabled = False
-        frm_Tarea.txtTiempo_Estimado12.Enabled = False
-        frm_Tarea.txtTiempo_Real12.Enabled = False
-        frm_Tarea.txtHora_Finalizacion12.Enabled = False
-        frm_Tarea.txtObservaciones12.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo12.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden12.Enabled = False
-
-    End Sub
-
-    Sub desab_tarea_13()
-        frm_Tarea.txt_detalle_tarea13.Enabled = False
-        frm_Tarea.txtTiempo_Estimado13.Enabled = False
-        frm_Tarea.txtTiempo_Real13.Enabled = False
-        frm_Tarea.txtHora_Finalizacion13.Enabled = False
-        frm_Tarea.txtObservaciones13.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo13.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden13.Enabled = False
-
-    End Sub
-
-    Sub desab_tarea_14()
-        frm_Tarea.txt_detalle_tarea14.Enabled = False
-        frm_Tarea.txtTiempo_Estimado14.Enabled = False
-        frm_Tarea.txtTiempo_Real14.Enabled = False
-        frm_Tarea.txtHora_Finalizacion14.Enabled = False
-        frm_Tarea.txtObservaciones14.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo14.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo14.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden14.Enabled = False
-
-    End Sub
-
-    Sub desab_tarea_15()
-        frm_Tarea.txt_detalle_tarea15.Enabled = False
-        frm_Tarea.txtTiempo_Estimado15.Enabled = False
-        frm_Tarea.txtTiempo_Real15.Enabled = False
-        frm_Tarea.txtHora_Finalizacion15.Enabled = False
-        frm_Tarea.txtObservaciones15.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo15.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo15.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden15.Enabled = False
-
-    End Sub
-
-    Sub desab_tarea_16()
-        frm_Tarea.txt_detalle_tarea16.Enabled = False
-        frm_Tarea.txtTiempo_Estimado16.Enabled = False
-        frm_Tarea.txtTiempo_Real16.Enabled = False
-        frm_Tarea.txtHora_Finalizacion16.Enabled = False
-        frm_Tarea.txtObservaciones16.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo16.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo16.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden16.Enabled = False
-
-    End Sub
-
-    Sub desab_tarea_17()
-        frm_Tarea.txt_detalle_tarea17.Enabled = False
-        frm_Tarea.txtTiempo_Estimado17.Enabled = False
-        frm_Tarea.txtTiempo_Real17.Enabled = False
-        frm_Tarea.txtHora_Finalizacion17.Enabled = False
-        frm_Tarea.txtObservaciones17.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo17.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo17.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden17.Enabled = False
-
-    End Sub
-
-    Sub desab_tarea_18()
-        frm_Tarea.txt_detalle_tarea18.Enabled = False
-        frm_Tarea.txtTiempo_Estimado18.Enabled = False
-        frm_Tarea.txtTiempo_Real18.Enabled = False
-        frm_Tarea.txtHora_Finalizacion18.Enabled = False
-        frm_Tarea.txtObservaciones18.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo18.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo18.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden18.Enabled = False
-
-    End Sub
-
-    Sub desab_tarea_19()
-        frm_Tarea.txt_detalle_tarea19.Enabled = False
-        frm_Tarea.txtTiempo_Estimado19.Enabled = False
-        frm_Tarea.txtTiempo_Real19.Enabled = False
-        frm_Tarea.txtHora_Finalizacion19.Enabled = False
-        frm_Tarea.txtObservaciones19.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo19.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo19.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden19.Enabled = False
-
-    End Sub
-
-    Sub desab_tarea_20()
-        frm_Tarea.txt_detalle_tarea20.Enabled = False
-        frm_Tarea.txtTiempo_Estimado20.Enabled = False
-        frm_Tarea.txtTiempo_Real20.Enabled = False
-        frm_Tarea.txtHora_Finalizacion20.Enabled = False
-        frm_Tarea.txtObservaciones20.Enabled = False
-        frm_Tarea.txtNumero_Orden_Trabajo20.Enabled = False
-        frm_Tarea.txt_id_orden_trabajo20.Visible = False
-        frm_Tarea.btnBuscar_Numero_Orden20.Enabled = False
-    End Sub
-
-    Public Sub DeshabilitarText()
-
-        desab_tarea_1()
-        desab_tarea_2()
-        desab_tarea_3()
-        desab_tarea_4()
-        desab_tarea_5()
-        desab_tarea_6()
-        desab_tarea_7()
-        desab_tarea_8()
-        desab_tarea_9()
-        desab_tarea_10()
-        desab_tarea_11()
-        desab_tarea_12()
-        desab_tarea_13()
-        desab_tarea_14()
-        desab_tarea_15()
-        desab_tarea_16()
-        desab_tarea_17()
-        desab_tarea_18()
-        desab_tarea_19()
-        desab_tarea_20()
-
-        frm_Tarea.btnImprimirFormulario.Enabled = True
-        frm_Tarea.btnBuscar_Colaborador.Enabled = False
-        frm_Tarea.dtpFecha.Enabled = False
-        frm_Tarea.txt_Carga_Horaria1.Enabled = False
-        frm_Tarea.btnNueva_Tarea.Enabled = False
-        frm_Tarea.btnGuardar_Tarea.Enabled = False
-        frm_Tarea.Label1.Visible = False
-        frm_Tarea.txt_id_colaborador.Visible = False
-        frm_Tarea.txt_id_tarea.Visible = False
-        frm_Tarea.btnActualizar.Enabled = False
-        frm_Tarea.txtEntrada.Enabled = False
-        frm_Tarea.txtSalida.Enabled = False
-    End Sub
-
-    Sub OcultarId()
-        frm_Tarea.txt_id_orden_trabajo1.Visible = False
-        frm_Tarea.txt_id_orden_trabajo2.Visible = False
-        frm_Tarea.txt_id_orden_trabajo3.Visible = False
-        frm_Tarea.txt_id_orden_trabajo4.Visible = False
-        frm_Tarea.txt_id_orden_trabajo5.Visible = False
-        frm_Tarea.txt_id_orden_trabajo6.Visible = False
-        frm_Tarea.txt_id_orden_trabajo7.Visible = False
-        frm_Tarea.txt_id_orden_trabajo8.Visible = False
-        frm_Tarea.txt_id_orden_trabajo9.Visible = False
-        frm_Tarea.txt_id_orden_trabajo10.Visible = False
-        frm_Tarea.txt_id_orden_trabajo11.Visible = False
-        frm_Tarea.txt_id_orden_trabajo12.Visible = False
-        frm_Tarea.txt_id_orden_trabajo13.Visible = False
-        frm_Tarea.txt_id_orden_trabajo14.Visible = False
-        frm_Tarea.txt_id_orden_trabajo15.Visible = False
-        frm_Tarea.txt_id_orden_trabajo16.Visible = False
-        frm_Tarea.txt_id_orden_trabajo17.Visible = False
-        frm_Tarea.txt_id_orden_trabajo18.Visible = False
-        frm_Tarea.txt_id_orden_trabajo19.Visible = False
-        frm_Tarea.txt_id_orden_trabajo20.Visible = False
-
-        frm_Tarea.txt_Id_Tarea1.Visible = False
-        frm_Tarea.txt_Id_Tarea2.Visible = False
-        frm_Tarea.txt_Id_Tarea3.Visible = False
-        frm_Tarea.txt_Id_Tarea4.Visible = False
-        frm_Tarea.txt_Id_Tarea5.Visible = False
-        frm_Tarea.txt_Id_Tarea6.Visible = False
-        frm_Tarea.txt_Id_Tarea7.Visible = False
-        frm_Tarea.txt_Id_Tarea8.Visible = False
-        frm_Tarea.txt_Id_Tarea9.Visible = False
-        frm_Tarea.txt_Id_Tarea10.Visible = False
-        frm_Tarea.txt_Id_Tarea11.Visible = False
-        frm_Tarea.txt_Id_Tarea12.Visible = False
-        frm_Tarea.txt_Id_Tarea13.Visible = False
-        frm_Tarea.txt_Id_Tarea14.Visible = False
-        frm_Tarea.txt_Id_Tarea15.Visible = False
-        frm_Tarea.txt_Id_Tarea16.Visible = False
-        frm_Tarea.txt_Id_Tarea17.Visible = False
-        frm_Tarea.txt_Id_Tarea18.Visible = False
-        frm_Tarea.txt_Id_Tarea19.Visible = False
-        frm_Tarea.txt_Id_Tarea20.Visible = False
-
-        frm_Tarea.txt_id_colaborador.Visible = False
-        frm_Tarea.txt_id_tarea.Visible = False
-        frm_Tarea.Label1.Visible = False
-
-        frm_Tarea.btnNueva_Tarea.Enabled = False
-        frm_Tarea.btnGuardar_Tarea.Enabled = False
-    End Sub
-
-    Private Sub frm_Listado_Tareas_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
-        Me.Dispose()
-    End Sub
-
-    Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExportarListado.Click
-        Try
-            If dgvColaboradores.SelectedRows.Count < 1 Then
-                MsgBox("Debe seleccionar un colaborador", MsgBoxStyle.Information, "Imprimir tareas")
-                Exit Sub
-            End If
-            'intentar generar el documento
-            Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
-            'path que guarda el reporte en el escritorio de windows (desktop)
-            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Tareas diarias.pdf"
-            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
-            PdfWriter.GetInstance(doc, file)
-            doc.Open()
-            ExportarDatosPDF(doc)
-            doc.Close()
-            Process.Start(filename)
-            Me.Close()
-        Catch ex As Exception
-            'si el mensaje es fallido mostrar msgbox
-            MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
-    End Sub
-
-    Public Sub ExportarDatosPDF(ByVal document As Document)
-
-        For c = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
-            If dgvTarea_x_Colaborador.Columns(c).Visible = True Then
-                contadorcolumnasvisibles = contadorcolumnasvisibles + 1
-            End If
-        Next
-        'se crea un objeto PDFTable con el numero de columnas  del datagridview
-        Dim datatable As New PdfPTable(contadorcolumnasvisibles)
-
-        'se asignan algunas propiedades para el diseño del PDF
-        datatable.DefaultCell.Padding = 3
-
-        Dim headerwidths As Single() = GetColumnsSize(dgvTarea_x_Colaborador)
-        datatable.SetWidths(headerwidths)
-
-        datatable.WidthPercentage = 100
-        datatable.DefaultCell.BorderWidth = 2
-        'datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
-
-        'se crea el encabezado en el PDF
-        Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value, New Font(fuente, 16, Font.Bold))
-
-        'se crea el texto abajo de los horarios
-        Dim entradasalida As New Paragraph("Entrada: " + dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(0).Index).Value + " Salida: " + _
-                                           dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(0).Index).Value, New Font(fuente, 14, Font.Bold))
-
-        Dim texto As New Phrase("Fecha: " + dtpFecha.Text, New Font(fuente, 12, Font.Bold))
-
-        'se capturan los nombres de las columnas del datagridview
-        For i As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
-            If dgvTarea_x_Colaborador.Columns(i).Visible = True Then
-                datatable.AddCell(dgvTarea_x_Colaborador.Columns(i).HeaderText)
-            End If
-        Next
-        datatable.HeaderRows = 1
-        datatable.DefaultCell.BorderWidth = 1
-
-        'se generan las columnas del datagridview
-
-        For i As Integer = 0 To dgvTarea_x_Colaborador.RowCount - 1
-            For j As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
-                If dgvTarea_x_Colaborador.Columns(j).Visible = True Then
-                    Try
-                        datatable.AddCell(dgvTarea_x_Colaborador(j, i).Value.ToString())
-                    Catch ex As Exception
-                        datatable.AddCell(" ")
-                    End Try
-                End If
-            Next
-            datatable.CompleteRow()
-        Next
-
-        Dim TotalTareasEstimadas As New Phrase("Total Estimado de Tareas: " + Label8.Text, New Font(fuente, 10, Font.Bold))
-        Dim TotalTareas As New Phrase("Total Real de Tareas: " + Label35.Text, New Font(fuente, 10, Font.Bold))
-
-        document.Add(encabezado)
-        document.Add(entradasalida)
-        document.Add(texto)
-        document.Add(datatable)
-        document.Add(TotalTareasEstimadas)
-        document.Add(TotalTareas)
-
-    End Sub
-
-    Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
-        'funcion para obtener el tamaño de las columnas del datagridview
-        Dim indice_array As Integer = 0
-        Dim values As Single() = New Single(contadorcolumnasvisibles - 1) {}
-        For i As Integer = 0 To dg.ColumnCount - 1
-            If dgvTarea_x_Colaborador.Columns(i).Visible = True Then
-                values(indice_array) = CSng(dg.Columns(i).Width)
-                indice_array = indice_array + 1
-            End If
-        Next
-        Return values
-    End Function
 
     Private Sub btnModificarTodas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnModificarTodas.Click
 
@@ -2134,6 +1717,442 @@ Public Class frm_Listado_Tareas
         frm_Tarea.ShowDialog()
     End Sub
 
+
+    Sub desab_tarea_1()
+        frm_Tarea.txt_detalle_tarea1.Enabled = False
+        frm_Tarea.txtTiempo_Estimado1.Enabled = False
+        frm_Tarea.txtTiempo_Real1.Enabled = False
+        frm_Tarea.txtHora_Finalizacion1.Enabled = False
+        frm_Tarea.txtObservaciones1.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo1.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden1.Enabled = False
+
+    End Sub
+
+    Sub desab_tarea_2()
+        frm_Tarea.txt_detalle_tarea2.Enabled = False
+        frm_Tarea.txtTiempo_Estimado2.Enabled = False
+        frm_Tarea.txtTiempo_Real2.Enabled = False
+        frm_Tarea.txtHora_Finalizacion2.Enabled = False
+        frm_Tarea.txtObservaciones2.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo2.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden2.Enabled = False
+
+
+    End Sub
+
+    Sub desab_tarea_3()
+        frm_Tarea.txt_detalle_tarea3.Enabled = False
+        frm_Tarea.txtTiempo_Estimado3.Enabled = False
+        frm_Tarea.txtTiempo_Real3.Enabled = False
+        frm_Tarea.txtHora_Finalizacion3.Enabled = False
+        frm_Tarea.txtObservaciones3.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo3.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden3.Enabled = False
+
+
+    End Sub
+
+    Sub desab_tarea_4()
+        frm_Tarea.txt_detalle_tarea4.Enabled = False
+        frm_Tarea.txtTiempo_Estimado4.Enabled = False
+        frm_Tarea.txtTiempo_Real4.Enabled = False
+        frm_Tarea.txtHora_Finalizacion4.Enabled = False
+        frm_Tarea.txtObservaciones4.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo4.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden4.Enabled = False
+
+
+    End Sub
+
+    Sub desab_tarea_5()
+        frm_Tarea.txt_detalle_tarea5.Enabled = False
+        frm_Tarea.txtTiempo_Estimado5.Enabled = False
+        frm_Tarea.txtTiempo_Real5.Enabled = False
+        frm_Tarea.txtHora_Finalizacion5.Enabled = False
+        frm_Tarea.txtObservaciones5.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo5.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden5.Enabled = False
+
+    End Sub
+
+    Sub desab_tarea_6()
+        frm_Tarea.txt_detalle_tarea6.Enabled = False
+        frm_Tarea.txtTiempo_Estimado6.Enabled = False
+        frm_Tarea.txtTiempo_Real6.Enabled = False
+        frm_Tarea.txtHora_Finalizacion6.Enabled = False
+        frm_Tarea.txtObservaciones6.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo6.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden6.Enabled = False
+
+    End Sub
+
+    Sub desab_tarea_7()
+        frm_Tarea.txt_detalle_tarea7.Enabled = False
+        frm_Tarea.txtTiempo_Estimado7.Enabled = False
+        frm_Tarea.txtTiempo_Real7.Enabled = False
+        frm_Tarea.txtHora_Finalizacion7.Enabled = False
+        frm_Tarea.txtObservaciones7.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo7.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden7.Enabled = False
+    End Sub
+
+    Sub desab_tarea_8()
+        frm_Tarea.txt_detalle_tarea8.Enabled = False
+        frm_Tarea.txtTiempo_Estimado8.Enabled = False
+        frm_Tarea.txtTiempo_Real8.Enabled = False
+        frm_Tarea.txtHora_Finalizacion8.Enabled = False
+        frm_Tarea.txtObservaciones8.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo8.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden8.Enabled = False
+
+
+    End Sub
+
+    Sub desab_tarea_9()
+        frm_Tarea.txt_detalle_tarea9.Enabled = False
+        frm_Tarea.txtTiempo_Estimado9.Enabled = False
+        frm_Tarea.txtTiempo_Real9.Enabled = False
+        frm_Tarea.txtHora_Finalizacion9.Enabled = False
+        frm_Tarea.txtObservaciones9.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo9.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden9.Enabled = False
+
+    End Sub
+
+    Sub desab_tarea_10()
+        frm_Tarea.txt_detalle_tarea10.Enabled = False
+        frm_Tarea.txtTiempo_Estimado10.Enabled = False
+        frm_Tarea.txtTiempo_Real10.Enabled = False
+        frm_Tarea.txtHora_Finalizacion10.Enabled = False
+        frm_Tarea.txtObservaciones10.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo10.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden10.Enabled = False
+
+    End Sub
+
+    Sub desab_tarea_11()
+        frm_Tarea.txt_detalle_tarea11.Enabled = False
+        frm_Tarea.txtTiempo_Estimado11.Enabled = False
+        frm_Tarea.txtTiempo_Real11.Enabled = False
+        frm_Tarea.txtHora_Finalizacion11.Enabled = False
+        frm_Tarea.txtObservaciones11.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo11.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden11.Enabled = False
+
+    End Sub
+
+    Sub desab_tarea_12()
+        frm_Tarea.txt_detalle_tarea12.Enabled = False
+        frm_Tarea.txtTiempo_Estimado12.Enabled = False
+        frm_Tarea.txtTiempo_Real12.Enabled = False
+        frm_Tarea.txtHora_Finalizacion12.Enabled = False
+        frm_Tarea.txtObservaciones12.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo12.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden12.Enabled = False
+
+    End Sub
+
+    Sub desab_tarea_13()
+        frm_Tarea.txt_detalle_tarea13.Enabled = False
+        frm_Tarea.txtTiempo_Estimado13.Enabled = False
+        frm_Tarea.txtTiempo_Real13.Enabled = False
+        frm_Tarea.txtHora_Finalizacion13.Enabled = False
+        frm_Tarea.txtObservaciones13.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo13.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden13.Enabled = False
+
+    End Sub
+
+    Sub desab_tarea_14()
+        frm_Tarea.txt_detalle_tarea14.Enabled = False
+        frm_Tarea.txtTiempo_Estimado14.Enabled = False
+        frm_Tarea.txtTiempo_Real14.Enabled = False
+        frm_Tarea.txtHora_Finalizacion14.Enabled = False
+        frm_Tarea.txtObservaciones14.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo14.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo14.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden14.Enabled = False
+
+    End Sub
+
+    Sub desab_tarea_15()
+        frm_Tarea.txt_detalle_tarea15.Enabled = False
+        frm_Tarea.txtTiempo_Estimado15.Enabled = False
+        frm_Tarea.txtTiempo_Real15.Enabled = False
+        frm_Tarea.txtHora_Finalizacion15.Enabled = False
+        frm_Tarea.txtObservaciones15.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo15.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo15.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden15.Enabled = False
+
+    End Sub
+
+    Sub desab_tarea_16()
+        frm_Tarea.txt_detalle_tarea16.Enabled = False
+        frm_Tarea.txtTiempo_Estimado16.Enabled = False
+        frm_Tarea.txtTiempo_Real16.Enabled = False
+        frm_Tarea.txtHora_Finalizacion16.Enabled = False
+        frm_Tarea.txtObservaciones16.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo16.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo16.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden16.Enabled = False
+
+    End Sub
+
+    Sub desab_tarea_17()
+        frm_Tarea.txt_detalle_tarea17.Enabled = False
+        frm_Tarea.txtTiempo_Estimado17.Enabled = False
+        frm_Tarea.txtTiempo_Real17.Enabled = False
+        frm_Tarea.txtHora_Finalizacion17.Enabled = False
+        frm_Tarea.txtObservaciones17.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo17.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo17.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden17.Enabled = False
+
+    End Sub
+
+    Sub desab_tarea_18()
+        frm_Tarea.txt_detalle_tarea18.Enabled = False
+        frm_Tarea.txtTiempo_Estimado18.Enabled = False
+        frm_Tarea.txtTiempo_Real18.Enabled = False
+        frm_Tarea.txtHora_Finalizacion18.Enabled = False
+        frm_Tarea.txtObservaciones18.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo18.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo18.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden18.Enabled = False
+
+    End Sub
+
+    Sub desab_tarea_19()
+        frm_Tarea.txt_detalle_tarea19.Enabled = False
+        frm_Tarea.txtTiempo_Estimado19.Enabled = False
+        frm_Tarea.txtTiempo_Real19.Enabled = False
+        frm_Tarea.txtHora_Finalizacion19.Enabled = False
+        frm_Tarea.txtObservaciones19.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo19.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo19.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden19.Enabled = False
+
+    End Sub
+
+    Sub desab_tarea_20()
+        frm_Tarea.txt_detalle_tarea20.Enabled = False
+        frm_Tarea.txtTiempo_Estimado20.Enabled = False
+        frm_Tarea.txtTiempo_Real20.Enabled = False
+        frm_Tarea.txtHora_Finalizacion20.Enabled = False
+        frm_Tarea.txtObservaciones20.Enabled = False
+        frm_Tarea.txtNumero_Orden_Trabajo20.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo20.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden20.Enabled = False
+    End Sub
+
+    Public Sub DeshabilitarText()
+
+        desab_tarea_1()
+        desab_tarea_2()
+        desab_tarea_3()
+        desab_tarea_4()
+        desab_tarea_5()
+        desab_tarea_6()
+        desab_tarea_7()
+        desab_tarea_8()
+        desab_tarea_9()
+        desab_tarea_10()
+        desab_tarea_11()
+        desab_tarea_12()
+        desab_tarea_13()
+        desab_tarea_14()
+        desab_tarea_15()
+        desab_tarea_16()
+        desab_tarea_17()
+        desab_tarea_18()
+        desab_tarea_19()
+        desab_tarea_20()
+
+        frm_Tarea.btnImprimirFormulario.Enabled = True
+        frm_Tarea.btnBuscar_Colaborador.Enabled = False
+        frm_Tarea.dtpFecha.Enabled = False
+        frm_Tarea.txt_Carga_Horaria1.Enabled = False
+        frm_Tarea.btnNueva_Tarea.Enabled = False
+        frm_Tarea.btnGuardar_Tarea.Enabled = False
+        frm_Tarea.Label1.Visible = False
+        frm_Tarea.txt_id_colaborador.Visible = False
+        frm_Tarea.txt_id_tarea.Visible = False
+        frm_Tarea.btnActualizar.Enabled = False
+        frm_Tarea.txtEntrada.Enabled = False
+        frm_Tarea.txtSalida.Enabled = False
+    End Sub
+
+    Sub OcultarId()
+        frm_Tarea.txt_id_orden_trabajo1.Visible = False
+        frm_Tarea.txt_id_orden_trabajo2.Visible = False
+        frm_Tarea.txt_id_orden_trabajo3.Visible = False
+        frm_Tarea.txt_id_orden_trabajo4.Visible = False
+        frm_Tarea.txt_id_orden_trabajo5.Visible = False
+        frm_Tarea.txt_id_orden_trabajo6.Visible = False
+        frm_Tarea.txt_id_orden_trabajo7.Visible = False
+        frm_Tarea.txt_id_orden_trabajo8.Visible = False
+        frm_Tarea.txt_id_orden_trabajo9.Visible = False
+        frm_Tarea.txt_id_orden_trabajo10.Visible = False
+        frm_Tarea.txt_id_orden_trabajo11.Visible = False
+        frm_Tarea.txt_id_orden_trabajo12.Visible = False
+        frm_Tarea.txt_id_orden_trabajo13.Visible = False
+        frm_Tarea.txt_id_orden_trabajo14.Visible = False
+        frm_Tarea.txt_id_orden_trabajo15.Visible = False
+        frm_Tarea.txt_id_orden_trabajo16.Visible = False
+        frm_Tarea.txt_id_orden_trabajo17.Visible = False
+        frm_Tarea.txt_id_orden_trabajo18.Visible = False
+        frm_Tarea.txt_id_orden_trabajo19.Visible = False
+        frm_Tarea.txt_id_orden_trabajo20.Visible = False
+
+        frm_Tarea.txt_Id_Tarea1.Visible = False
+        frm_Tarea.txt_Id_Tarea2.Visible = False
+        frm_Tarea.txt_Id_Tarea3.Visible = False
+        frm_Tarea.txt_Id_Tarea4.Visible = False
+        frm_Tarea.txt_Id_Tarea5.Visible = False
+        frm_Tarea.txt_Id_Tarea6.Visible = False
+        frm_Tarea.txt_Id_Tarea7.Visible = False
+        frm_Tarea.txt_Id_Tarea8.Visible = False
+        frm_Tarea.txt_Id_Tarea9.Visible = False
+        frm_Tarea.txt_Id_Tarea10.Visible = False
+        frm_Tarea.txt_Id_Tarea11.Visible = False
+        frm_Tarea.txt_Id_Tarea12.Visible = False
+        frm_Tarea.txt_Id_Tarea13.Visible = False
+        frm_Tarea.txt_Id_Tarea14.Visible = False
+        frm_Tarea.txt_Id_Tarea15.Visible = False
+        frm_Tarea.txt_Id_Tarea16.Visible = False
+        frm_Tarea.txt_Id_Tarea17.Visible = False
+        frm_Tarea.txt_Id_Tarea18.Visible = False
+        frm_Tarea.txt_Id_Tarea19.Visible = False
+        frm_Tarea.txt_Id_Tarea20.Visible = False
+
+        frm_Tarea.txt_id_colaborador.Visible = False
+        frm_Tarea.txt_id_tarea.Visible = False
+        frm_Tarea.Label1.Visible = False
+
+        frm_Tarea.btnNueva_Tarea.Enabled = False
+        frm_Tarea.btnGuardar_Tarea.Enabled = False
+    End Sub
+
+    Private Sub frm_Listado_Tareas_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
+
+    Private Sub btnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnExportarListado.Click
+        Try
+            If dgvColaboradores.SelectedRows.Count < 1 Then
+                MsgBox("Debe seleccionar un colaborador", MsgBoxStyle.Information, "Imprimir tareas")
+                Exit Sub
+            End If
+            'intentar generar el documento
+            Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
+            'path que guarda el reporte en el escritorio de windows (desktop)
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Tareas diarias.pdf"
+            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+            PdfWriter.GetInstance(doc, file)
+            doc.Open()
+            ExportarDatosPDF(doc)
+            doc.Close()
+            Process.Start(filename)
+            Me.Close()
+        Catch ex As Exception
+            'si el mensaje es fallido mostrar msgbox
+            MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Public Sub ExportarDatosPDF(ByVal document As Document)
+
+        For c = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+            If dgvTarea_x_Colaborador.Columns(c).Visible = True Then
+                contadorcolumnasvisibles = contadorcolumnasvisibles + 1
+            End If
+        Next
+        'se crea un objeto PDFTable con el numero de columnas  del datagridview
+        Dim datatable As New PdfPTable(contadorcolumnasvisibles)
+
+        'se asignan algunas propiedades para el diseño del PDF
+        datatable.DefaultCell.Padding = 3
+
+        Dim headerwidths As Single() = GetColumnsSize(dgvTarea_x_Colaborador)
+        datatable.SetWidths(headerwidths)
+
+        datatable.WidthPercentage = 100
+        datatable.DefaultCell.BorderWidth = 2
+        'datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+
+        'se crea el encabezado en el PDF
+        Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value, New Font(fuente, 16, Font.Bold))
+
+        'se crea el texto abajo de los horarios
+        Dim entradasalida As New Paragraph("Entrada: " + dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(0).Index).Value + " Salida: " + _
+                                           dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(0).Index).Value, New Font(fuente, 14, Font.Bold))
+
+        Dim texto As New Phrase("Fecha: " + dtpFecha.Text, New Font(fuente, 12, Font.Bold))
+
+        'se capturan los nombres de las columnas del datagridview
+        For i As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+            If dgvTarea_x_Colaborador.Columns(i).Visible = True Then
+                datatable.AddCell(dgvTarea_x_Colaborador.Columns(i).HeaderText)
+            End If
+        Next
+        datatable.HeaderRows = 1
+        datatable.DefaultCell.BorderWidth = 1
+
+        'se generan las columnas del datagridview
+
+        For i As Integer = 0 To dgvTarea_x_Colaborador.RowCount - 1
+            For j As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+                If dgvTarea_x_Colaborador.Columns(j).Visible = True Then
+                    Try
+                        datatable.AddCell(dgvTarea_x_Colaborador(j, i).Value.ToString())
+                    Catch ex As Exception
+                        datatable.AddCell(" ")
+                    End Try
+                End If
+            Next
+            datatable.CompleteRow()
+        Next
+
+        Dim TotalTareasEstimadas As New Phrase("Total Estimado de Tareas: " + Label8.Text, New Font(fuente, 10, Font.Bold))
+        Dim TotalTareas As New Phrase("Total Real de Tareas: " + Label35.Text, New Font(fuente, 10, Font.Bold))
+
+        document.Add(encabezado)
+        document.Add(entradasalida)
+        document.Add(texto)
+        document.Add(datatable)
+        document.Add(TotalTareasEstimadas)
+        document.Add(TotalTareas)
+
+    End Sub
+
+    Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
+        'funcion para obtener el tamaño de las columnas del datagridview
+        Dim indice_array As Integer = 0
+        Dim values As Single() = New Single(contadorcolumnasvisibles - 1) {}
+        For i As Integer = 0 To dg.ColumnCount - 1
+            If dgvTarea_x_Colaborador.Columns(i).Visible = True Then
+                values(indice_array) = CSng(dg.Columns(i).Width)
+                indice_array = indice_array + 1
+            End If
+        Next
+        Return values
+    End Function
+
     ' boton para generar informe diario--lo tengo que terminar
     Public Sub Btn_informe_diario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_informe_diario.Click
         Try
@@ -2236,7 +2255,338 @@ Public Class frm_Listado_Tareas
         document.Add(datatable)
         document.Add(TotalTareasEstimadas)
         document.Add(TotalTareas)
-
     End Sub
 
+    Sub hab_tarea_observ_1()
+        frm_Tarea.txt_detalle_tarea1.Enabled = True
+        frm_Tarea.txt_detalle_tarea1.ReadOnly = True
+
+        frm_Tarea.txtObservaciones1.Enabled = True
+        frm_Tarea.txtObservaciones1.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado1.Enabled = False
+        frm_Tarea.txtTiempo_Real1.Enabled = False
+        frm_Tarea.txtHora_Finalizacion1.Enabled = False
+    
+        frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo1.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden1.Enabled = False
+
+        frm_Tarea.btnImprimirFormulario.Visible = False
+        frm_Tarea.btnBuscar_Colaborador.Enabled = False
+        frm_Tarea.dtpFecha.Enabled = False
+        frm_Tarea.txt_Carga_Horaria1.Enabled = False
+        frm_Tarea.btnNueva_Tarea.Enabled = False
+        frm_Tarea.btnGuardar_Tarea.Enabled = False
+        frm_Tarea.Label1.Visible = False
+        frm_Tarea.txt_id_colaborador.Visible = False
+        frm_Tarea.txt_id_tarea.Visible = False
+        frm_Tarea.btnActualizar.Enabled = False
+        frm_Tarea.txtEntrada.Enabled = False
+        frm_Tarea.txtSalida.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_2()
+        frm_Tarea.txt_detalle_tarea2.Enabled = True
+        frm_Tarea.txt_detalle_tarea2.ReadOnly = True
+
+        frm_Tarea.txtObservaciones2.Enabled = True
+        frm_Tarea.txtObservaciones2.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado2.Enabled = False
+        frm_Tarea.txtTiempo_Real2.Enabled = False
+        frm_Tarea.txtHora_Finalizacion2.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo2.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden2.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_3()
+        frm_Tarea.txt_detalle_tarea3.Enabled = True
+        frm_Tarea.txt_detalle_tarea3.ReadOnly = True
+
+        frm_Tarea.txtObservaciones3.Enabled = True
+        frm_Tarea.txtObservaciones3.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado3.Enabled = False
+        frm_Tarea.txtTiempo_Real3.Enabled = False
+        frm_Tarea.txtHora_Finalizacion3.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo3.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden3.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_4()
+        frm_Tarea.txt_detalle_tarea4.Enabled = True
+        frm_Tarea.txt_detalle_tarea4.ReadOnly = True
+
+        frm_Tarea.txtObservaciones4.Enabled = True
+        frm_Tarea.txtObservaciones4.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado4.Enabled = False
+        frm_Tarea.txtTiempo_Real4.Enabled = False
+        frm_Tarea.txtHora_Finalizacion4.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo4.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden4.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_5()
+        frm_Tarea.txt_detalle_tarea5.Enabled = True
+        frm_Tarea.txt_detalle_tarea5.ReadOnly = True
+
+        frm_Tarea.txtObservaciones5.Enabled = True
+        frm_Tarea.txtObservaciones5.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado5.Enabled = False
+        frm_Tarea.txtTiempo_Real5.Enabled = False
+        frm_Tarea.txtHora_Finalizacion5.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo5.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden5.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_6()
+        frm_Tarea.txt_detalle_tarea6.Enabled = True
+        frm_Tarea.txt_detalle_tarea6.ReadOnly = True
+
+        frm_Tarea.txtObservaciones6.Enabled = True
+        frm_Tarea.txtObservaciones6.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado6.Enabled = False
+        frm_Tarea.txtTiempo_Real6.Enabled = False
+        frm_Tarea.txtHora_Finalizacion6.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo6.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden6.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_7()
+        frm_Tarea.txt_detalle_tarea7.Enabled = True
+        frm_Tarea.txt_detalle_tarea7.ReadOnly = True
+
+        frm_Tarea.txtObservaciones7.Enabled = True
+        frm_Tarea.txtObservaciones7.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado7.Enabled = False
+        frm_Tarea.txtTiempo_Real7.Enabled = False
+        frm_Tarea.txtHora_Finalizacion7.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo7.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden7.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_8()
+        frm_Tarea.txt_detalle_tarea8.Enabled = True
+        frm_Tarea.txt_detalle_tarea8.ReadOnly = True
+
+        frm_Tarea.txtObservaciones8.Enabled = True
+        frm_Tarea.txtObservaciones8.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado8.Enabled = False
+        frm_Tarea.txtTiempo_Real8.Enabled = False
+        frm_Tarea.txtHora_Finalizacion8.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo8.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden8.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_9()
+        frm_Tarea.txt_detalle_tarea9.Enabled = True
+        frm_Tarea.txt_detalle_tarea9.ReadOnly = True
+
+        frm_Tarea.txtObservaciones9.Enabled = True
+        frm_Tarea.txtObservaciones9.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado9.Enabled = False
+        frm_Tarea.txtTiempo_Real9.Enabled = False
+        frm_Tarea.txtHora_Finalizacion9.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo9.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden9.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_10()
+        frm_Tarea.txt_detalle_tarea10.Enabled = True
+        frm_Tarea.txt_detalle_tarea10.ReadOnly = True
+
+        frm_Tarea.txtObservaciones10.Enabled = True
+        frm_Tarea.txtObservaciones10.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado10.Enabled = False
+        frm_Tarea.txtTiempo_Real10.Enabled = False
+        frm_Tarea.txtHora_Finalizacion10.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo10.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden10.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_11()
+        frm_Tarea.txt_detalle_tarea11.Enabled = True
+        frm_Tarea.txt_detalle_tarea11.ReadOnly = True
+
+        frm_Tarea.txtObservaciones11.Enabled = True
+        frm_Tarea.txtObservaciones11.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado11.Enabled = False
+        frm_Tarea.txtTiempo_Real11.Enabled = False
+        frm_Tarea.txtHora_Finalizacion11.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo11.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden11.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_12()
+        frm_Tarea.txt_detalle_tarea12.Enabled = True
+        frm_Tarea.txt_detalle_tarea12.ReadOnly = True
+
+        frm_Tarea.txtObservaciones12.Enabled = True
+        frm_Tarea.txtObservaciones12.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado12.Enabled = False
+        frm_Tarea.txtTiempo_Real12.Enabled = False
+        frm_Tarea.txtHora_Finalizacion12.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo12.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden12.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_13()
+        frm_Tarea.txt_detalle_tarea13.Enabled = True
+        frm_Tarea.txt_detalle_tarea13.ReadOnly = True
+
+        frm_Tarea.txtObservaciones13.Enabled = True
+        frm_Tarea.txtObservaciones13.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado13.Enabled = False
+        frm_Tarea.txtTiempo_Real13.Enabled = False
+        frm_Tarea.txtHora_Finalizacion13.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo13.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden13.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_14()
+        frm_Tarea.txt_detalle_tarea14.Enabled = True
+        frm_Tarea.txt_detalle_tarea14.ReadOnly = True
+
+        frm_Tarea.txtObservaciones14.Enabled = True
+        frm_Tarea.txtObservaciones14.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado14.Enabled = False
+        frm_Tarea.txtTiempo_Real14.Enabled = False
+        frm_Tarea.txtHora_Finalizacion14.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo14.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo14.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden14.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_15()
+        frm_Tarea.txt_detalle_tarea15.Enabled = True
+        frm_Tarea.txt_detalle_tarea15.ReadOnly = True
+
+        frm_Tarea.txtObservaciones15.Enabled = True
+        frm_Tarea.txtObservaciones15.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado15.Enabled = False
+        frm_Tarea.txtTiempo_Real15.Enabled = False
+        frm_Tarea.txtHora_Finalizacion15.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo15.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo15.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden15.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_16()
+        frm_Tarea.txt_detalle_tarea16.Enabled = True
+        frm_Tarea.txt_detalle_tarea16.ReadOnly = True
+
+        frm_Tarea.txtObservaciones16.Enabled = True
+        frm_Tarea.txtObservaciones16.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado16.Enabled = False
+        frm_Tarea.txtTiempo_Real16.Enabled = False
+        frm_Tarea.txtHora_Finalizacion16.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo16.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo16.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden16.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_17()
+        frm_Tarea.txt_detalle_tarea17.Enabled = True
+        frm_Tarea.txt_detalle_tarea17.ReadOnly = True
+
+        frm_Tarea.txtObservaciones17.Enabled = True
+        frm_Tarea.txtObservaciones17.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado17.Enabled = False
+        frm_Tarea.txtTiempo_Real17.Enabled = False
+        frm_Tarea.txtHora_Finalizacion17.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo17.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo17.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden17.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_18()
+        frm_Tarea.txt_detalle_tarea18.Enabled = True
+        frm_Tarea.txt_detalle_tarea18.ReadOnly = True
+
+        frm_Tarea.txtObservaciones18.Enabled = True
+        frm_Tarea.txtObservaciones18.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado18.Enabled = False
+        frm_Tarea.txtTiempo_Real18.Enabled = False
+        frm_Tarea.txtHora_Finalizacion18.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo18.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo18.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden18.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_19()
+        frm_Tarea.txt_detalle_tarea19.Enabled = True
+        frm_Tarea.txt_detalle_tarea19.ReadOnly = True
+
+        frm_Tarea.txtObservaciones19.Enabled = True
+        frm_Tarea.txtObservaciones19.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado19.Enabled = False
+        frm_Tarea.txtTiempo_Real19.Enabled = False
+        frm_Tarea.txtHora_Finalizacion19.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo19.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo19.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden19.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_20()
+        frm_Tarea.txt_detalle_tarea20.Enabled = True
+        frm_Tarea.txt_detalle_tarea20.ReadOnly = True
+
+        frm_Tarea.txtObservaciones20.Enabled = True
+        frm_Tarea.txtObservaciones20.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado20.Enabled = False
+        frm_Tarea.txtTiempo_Real20.Enabled = False
+        frm_Tarea.txtHora_Finalizacion20.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo20.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo20.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden20.Enabled = False
+    End Sub
 End Class

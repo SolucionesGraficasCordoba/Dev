@@ -350,32 +350,32 @@ Partial Class frm_Principal
         'AltaTareaToolStripMenuItem
         '
         Me.AltaTareaToolStripMenuItem.Name = "AltaTareaToolStripMenuItem"
-        Me.AltaTareaToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
+        Me.AltaTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AltaTareaToolStripMenuItem.Text = "Nueva"
         '
         'ListaTareaToolStripMenuItem
         '
         Me.ListaTareaToolStripMenuItem.Name = "ListaTareaToolStripMenuItem"
-        Me.ListaTareaToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
-        Me.ListaTareaToolStripMenuItem.Text = "Agregar / Modificar"
+        Me.ListaTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListaTareaToolStripMenuItem.Text = "Modificar"
         '
         'EliminarTareaToolStripMenuItem
         '
         Me.EliminarTareaToolStripMenuItem.Name = "EliminarTareaToolStripMenuItem"
-        Me.EliminarTareaToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
+        Me.EliminarTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EliminarTareaToolStripMenuItem.Text = "Eliminar"
         '
         'ConsultarTareaToolStripMenuItem
         '
         Me.ConsultarTareaToolStripMenuItem.Name = "ConsultarTareaToolStripMenuItem"
-        Me.ConsultarTareaToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
+        Me.ConsultarTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ConsultarTareaToolStripMenuItem.Text = "Consultar"
         '
         'GráficosToolStripMenuItem
         '
         Me.GráficosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DiariasPorColaboradorToolStripMenuItem1, Me.MensualesPorSectorToolStripMenuItem1})
         Me.GráficosToolStripMenuItem.Name = "GráficosToolStripMenuItem"
-        Me.GráficosToolStripMenuItem.Size = New System.Drawing.Size(178, 22)
+        Me.GráficosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.GráficosToolStripMenuItem.Text = "Gráficos"
         '
         'DiariasPorColaboradorToolStripMenuItem1
@@ -634,7 +634,7 @@ Partial Class frm_Principal
         '
         Me.LogísticaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RemitoXOrdenToolStripMenuItem, Me.ModificarToolStripMenuItem2, Me.EliminarToolStripMenuItem, Me.ConsultarToolStripMenuItem3})
         Me.LogísticaToolStripMenuItem.Name = "LogísticaToolStripMenuItem"
-        Me.LogísticaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LogísticaToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.LogísticaToolStripMenuItem.Text = "Logística"
         '
         'RemitoXOrdenToolStripMenuItem
@@ -664,7 +664,7 @@ Partial Class frm_Principal
         'EmpaqueToolStripMenuItem
         '
         Me.EmpaqueToolStripMenuItem.Name = "EmpaqueToolStripMenuItem"
-        Me.EmpaqueToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EmpaqueToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.EmpaqueToolStripMenuItem.Text = "Empaque"
         '
         'CorreoElectrónicoToolStripMenuItem
