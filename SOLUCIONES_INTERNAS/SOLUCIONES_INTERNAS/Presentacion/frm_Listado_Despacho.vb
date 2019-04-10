@@ -35,9 +35,9 @@ Public Class frm_Listado_Despacho
         chofer.Items.Add("Retira de central")
         chofer.Items.Add("Instalaciones")
 
-        dgv_remitos.Columns.Add("DES_campo_1", "Despacho número")
-        dgv_remitos.Columns.Add("DES_nro_remito", "Remito")
-        dgv_remitos.Columns.Add("DES_fecha_salida", "Fecha de Salida")
+        dgv_remitos.Columns.Add("DES_campo_1", "Despacho N°")
+        dgv_remitos.Columns.Add("DES_nro_remito", "Remito N°")
+        dgv_remitos.Columns.Add("DES_fecha_salida", "Salida")
         dgv_remitos.Columns.Add(chofer)
 
         dgv_remitos.Columns("DES_campo_1").DataPropertyName = "DES_campo_1"
@@ -103,7 +103,11 @@ Public Class frm_Listado_Despacho
         Dim buscar As String
 
         Try
-            buscar = dgv_remitos.Item("DES_campo_1", dgv_remitos.CurrentRow.Index).Value
+            If btn_modificar.Visible = True Then
+                buscar = dgv_remitos.Item("DES_campo_1", dgv_remitos.CurrentRow.Index).Value
+            Else
+                buscar = dgv_remitos.Item("DES_campo_1", dgv_remitos.SelectedRows(0).Index).Value
+            End If
 
             'SE LLAMA A UNA CLASE YA QUE USANDO EL DATASOURCE NORMAL NO SE PUEDEN EDITAR LAS FILAS DEL DATAGRID.
             'POR LO QUE SE CREA UNA CLASE CON LAS PROPIEDADES Y SE USA LA CLASE COMO DATASOURCE, LO QEU SI PERMITE EDITAR LAS FILAS.
@@ -256,29 +260,101 @@ Public Class frm_Listado_Despacho
     End Sub
 
     Private Sub btn_generar_informe_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_generar_informe.Click
+        'Dim temp_ort As String
+        'Dim temp_cliente As String
+        'Dim temp_entrega As String
+        'Dim temp_obs As String
+
         'Try
 
         'intentar generar el documento
-        Dim doc As New Document(PageSize.A4, 5, 5, 5, 5)
+        Dim doc As New Document(PageSize.A3.Rotate, 5, 5, 5, 5)
         'path que guarda el reporte en el escritorio de windows (desktop)
         Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Remitos_diarios.pdf"
         Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
         PdfWriter.GetInstance(doc, file)
         doc.Open()
+
+        'se crea un objeto PDFTable con el numero de columnas  del datagridview
+        Dim datatableencabezado As New PdfPTable(4)
+        Dim datatablecuerpo As New PdfPTable(4)
+
+        datatableencabezado.WidthPercentage = 100
+        datatableencabezado.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT
+        datatableencabezado.HeaderRows = 0
+        datatableencabezado.DefaultCell.BorderWidth = 1
+
+        datatablecuerpo.WidthPercentage = 100
+        datatablecuerpo.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT
+        datatablecuerpo.HeaderRows = 1
+        datatablecuerpo.DefaultCell.BorderWidth = 0
+
+        'se capturan los nombres de las columnas del datagridview de las ordenes por remito
+        For Y As Integer = 0 To dgv_orden_x_remito.ColumnCount - 1
+            If dgv_orden_x_remito.Columns(Y).Visible = True And dgv_orden_x_remito.Columns(Y).DataPropertyName <> "ORT_observaciones_ot" Then
+                datatablecuerpo.AddCell(dgv_orden_x_remito.Columns(Y).HeaderText)
+            End If
+        Next
+
+
+
+        'SE ARMA EL ENCABEZADO COMO TABLA
         For i = 0 To dgv_remitos.Rows.Count - 1
             dgv_remitos.Rows(i).Selected = True
             dgv_remitos_CellClick(0, Nothing)
 
-            Dim pdf_encabezado As New Paragraph("Despacho N°: " + CStr(dgv_remitos.Item("DES_campo_1", i).Value) _
-                                            + "         Remito N°: " + CStr(dgv_remitos.Item("DES_nro_remito", i).Value) _
-                                            + "         Salida " + CStr(dgv_remitos.Item("DES_fecha_salida", i).Value))
-            doc.Add(pdf_encabezado)
-
-            For j = 0 To dgv_orden_x_remito.RowCount - 1
-                Dim pdf_ordenes As New Paragraph(CStr(dgv_orden_x_remito.Item("ORT_numero_ot", j).Value))
-                doc.Add(pdf_ordenes)
-                'pdf_informe_diario(doc, i)
+            For Z As Integer = 0 To dgv_remitos.ColumnCount - 1
+                If dgv_remitos.Columns(Z).Visible = True Then
+                    Try
+                        datatableencabezado.AddCell(dgv_remitos.Columns(Z).HeaderText + ": " + dgv_remitos(Z, i).Value.ToString())
+                    Catch ex As Exception
+                        datatableencabezado.AddCell(" ")
+                    End Try
+                End If
             Next
+            datatableencabezado.CompleteRow()
+            doc.Add(datatableencabezado)
+            datatableencabezado.DeleteBodyRows()
+
+            '*****OPCION 1******
+            'Dim pdf_encabezado As New Paragraph("Despacho N°: " + CStr(dgv_remitos.Item("DES_campo_1", i).Value) _
+            '                                + "         Remito N°: " + CStr(dgv_remitos.Item("DES_nro_remito", i).Value) _
+            '                                + "         Chofer: " + CStr(dgv_remitos.Item("DES_chofer", i).Value) _
+            '                                + "         Salida " + CStr(dgv_remitos.Item("DES_fecha_salida", i).Value) _
+            '                                )
+            'doc.Add(pdf_encabezado)
+
+
+            'se generan las columnas del datagridview de las ordenes por remito
+
+            For Y As Integer = 0 To dgv_orden_x_remito.RowCount - 1
+                For Z As Integer = 0 To dgv_orden_x_remito.ColumnCount - 1
+                    If dgv_orden_x_remito.Columns(Z).Visible = True And dgv_orden_x_remito.Columns(Z).DataPropertyName <> "ORT_observaciones_ot" Then
+                        Try
+                            datatablecuerpo.AddCell(dgv_orden_x_remito(Z, Y).Value.ToString())
+                        Catch ex As Exception
+                            datatablecuerpo.AddCell(" ")
+                        End Try
+                    End If
+                Next
+                datatablecuerpo.CompleteRow()
+            Next
+
+            doc.Add(datatablecuerpo)
+            datatablecuerpo.DeleteBodyRows()
+
+            '************OPCION 1**************
+            'For j = 0 To dgv_orden_x_remito.RowCount - 1
+
+            '    temp_ort = (CStr(dgv_orden_x_remito.Item("ORT_numero_ot", j).Value) + StrDup(10, " ")).Substring(0, 10)
+            '    temp_cliente = (CStr(dgv_orden_x_remito.Item("CLI_razon_social", j).Value) + StrDup(50, " ")).Substring(0, 50)
+            '    temp_entrega = (CStr(dgv_orden_x_remito.Item("DES_fecha_entrega", j).Value) + StrDup(16, " ")).Substring(0, 16)
+            '    temp_obs = (CStr(dgv_orden_x_remito.Item("DES_observaciones", j).Value) + StrDup(100, " ")).Substring(0, 100)
+
+            '    Dim pdf_ordenes As New Paragraph(temp_ort + temp_cliente + temp_entrega + temp_obs)
+            '    doc.Add(pdf_ordenes)
+            '    'pdf_informe_diario(doc, i)
+            'Next
         Next
         doc.Close()
         Process.Start(filename)
@@ -288,6 +364,70 @@ Public Class frm_Listado_Despacho
         '    MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         'End Try
     End Sub
+    'Public Sub ExportarDatosPDF(ByVal document As Document)
+
+    '    For c = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+    '        If dgvTarea_x_Colaborador.Columns(c).Visible = True Then
+    '            contadorcolumnasvisibles = contadorcolumnasvisibles + 1
+    '        End If
+    '    Next
+    '    'se crea un objeto PDFTable con el numero de columnas  del datagridview
+    '    Dim datatable As New PdfPTable(contadorcolumnasvisibles)
+
+    '    'se asignan algunas propiedades para el diseño del PDF
+    '    datatable.DefaultCell.Padding = 3
+
+    '    Dim headerwidths As Single() = GetColumnsSize(dgvTarea_x_Colaborador)
+    '    datatable.SetWidths(headerwidths)
+
+    '    datatable.WidthPercentage = 100
+    '    datatable.DefaultCell.BorderWidth = 2
+    '    'datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+
+    '    'se crea el encabezado en el PDF
+    '    Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value, New Font(fuente, 16, Font.Bold))
+
+    '    'se crea el texto abajo de los horarios
+    '    Dim entradasalida As New Paragraph("Entrada: " + dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(0).Index).Value + " Salida: " + _
+    '                                       dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(0).Index).Value, New Font(fuente, 14, Font.Bold))
+
+    '    Dim texto As New Phrase("Fecha: " + dtpFecha.Text, New Font(fuente, 12, Font.Bold))
+
+    '    'se capturan los nombres de las columnas del datagridview
+    '    For i As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+    '        If dgvTarea_x_Colaborador.Columns(i).Visible = True Then
+    '            datatable.AddCell(dgvTarea_x_Colaborador.Columns(i).HeaderText)
+    '        End If
+    '    Next
+    '    datatable.HeaderRows = 1
+    '    datatable.DefaultCell.BorderWidth = 1
+
+    '    'se generan las columnas del datagridview
+
+    '    For i As Integer = 0 To dgvTarea_x_Colaborador.RowCount - 1
+    '        For j As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+    '            If dgvTarea_x_Colaborador.Columns(j).Visible = True Then
+    '                Try
+    '                    datatable.AddCell(dgvTarea_x_Colaborador(j, i).Value.ToString())
+    '                Catch ex As Exception
+    '                    datatable.AddCell(" ")
+    '                End Try
+    '            End If
+    '        Next
+    '        datatable.CompleteRow()
+    '    Next
+
+    '    Dim TotalTareasEstimadas As New Phrase("Total Estimado de Tareas: " + Label8.Text, New Font(fuente, 10, Font.Bold))
+    '    Dim TotalTareas As New Phrase("Total Real de Tareas: " + Label35.Text, New Font(fuente, 10, Font.Bold))
+
+    '    document.Add(encabezado)
+    '    document.Add(entradasalida)
+    '    document.Add(texto)
+    '    document.Add(datatable)
+    '    document.Add(TotalTareasEstimadas)
+    '    document.Add(TotalTareas)
+
+    'End Sub
 End Class
 
 'CLASE PARA PODER MODIFICAR DATOS DESDE LA GRILLA CARGADA CON LINQ
