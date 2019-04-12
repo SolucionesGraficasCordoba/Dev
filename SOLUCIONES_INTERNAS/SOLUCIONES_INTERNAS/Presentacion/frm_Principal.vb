@@ -1747,4 +1747,8 @@ Public Class frm_Principal
         frm_Despacho.Text = "Nuevo remito por orden"
         frm_Despacho.Show()
     End Sub
+
+    Private Sub btn_ticket_Click(sender As System.Object, e As System.EventArgs) Handles btn_ticket.Click
+        frm_Ticket.Show()
+    End Sub
 End Class

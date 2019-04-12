@@ -120,6 +120,7 @@ Partial Class frm_Principal
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Timer_automatico = New System.Windows.Forms.Timer(Me.components)
         Me.btnManualUsuario = New System.Windows.Forms.Button()
+        Me.btn_ticket = New System.Windows.Forms.Button()
         Me.MenuStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -350,32 +351,32 @@ Partial Class frm_Principal
         'AltaTareaToolStripMenuItem
         '
         Me.AltaTareaToolStripMenuItem.Name = "AltaTareaToolStripMenuItem"
-        Me.AltaTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AltaTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.AltaTareaToolStripMenuItem.Text = "Nueva"
         '
         'ListaTareaToolStripMenuItem
         '
         Me.ListaTareaToolStripMenuItem.Name = "ListaTareaToolStripMenuItem"
-        Me.ListaTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListaTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.ListaTareaToolStripMenuItem.Text = "Modificar"
         '
         'EliminarTareaToolStripMenuItem
         '
         Me.EliminarTareaToolStripMenuItem.Name = "EliminarTareaToolStripMenuItem"
-        Me.EliminarTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EliminarTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.EliminarTareaToolStripMenuItem.Text = "Eliminar"
         '
         'ConsultarTareaToolStripMenuItem
         '
         Me.ConsultarTareaToolStripMenuItem.Name = "ConsultarTareaToolStripMenuItem"
-        Me.ConsultarTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ConsultarTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.ConsultarTareaToolStripMenuItem.Text = "Consultar"
         '
         'GráficosToolStripMenuItem
         '
         Me.GráficosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DiariasPorColaboradorToolStripMenuItem1, Me.MensualesPorSectorToolStripMenuItem1})
         Me.GráficosToolStripMenuItem.Name = "GráficosToolStripMenuItem"
-        Me.GráficosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.GráficosToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
         Me.GráficosToolStripMenuItem.Text = "Gráficos"
         '
         'DiariasPorColaboradorToolStripMenuItem1
@@ -721,6 +722,7 @@ Partial Class frm_Principal
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.btn_ticket)
         Me.GroupBox1.Controls.Add(Me.LBL_MENU_PERFIL)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.LBL_MENU_USU)
@@ -741,12 +743,24 @@ Partial Class frm_Principal
         Me.btnManualUsuario.BackColor = System.Drawing.Color.LightCoral
         Me.btnManualUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnManualUsuario.ForeColor = System.Drawing.Color.White
-        Me.btnManualUsuario.Location = New System.Drawing.Point(1175, 0)
+        Me.btnManualUsuario.Location = New System.Drawing.Point(1203, 0)
         Me.btnManualUsuario.Name = "btnManualUsuario"
         Me.btnManualUsuario.Size = New System.Drawing.Size(157, 24)
         Me.btnManualUsuario.TabIndex = 15
         Me.btnManualUsuario.Text = "Manual de Usuario"
         Me.btnManualUsuario.UseVisualStyleBackColor = False
+        '
+        'btn_ticket
+        '
+        Me.btn_ticket.BackColor = System.Drawing.Color.LightCoral
+        Me.btn_ticket.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_ticket.ForeColor = System.Drawing.Color.White
+        Me.btn_ticket.Location = New System.Drawing.Point(100, 12)
+        Me.btn_ticket.Name = "btn_ticket"
+        Me.btn_ticket.Size = New System.Drawing.Size(75, 24)
+        Me.btn_ticket.TabIndex = 17
+        Me.btn_ticket.Text = "Ticket"
+        Me.btn_ticket.UseVisualStyleBackColor = False
         '
         'frm_Principal
         '
@@ -867,6 +881,7 @@ Partial Class frm_Principal
     Friend WithEvents EliminarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ConsultarToolStripMenuItem3 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents EmpaqueToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents btn_ticket As System.Windows.Forms.Button
 
 
 End Class

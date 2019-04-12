@@ -41,7 +41,7 @@ Partial Class frm_Ticket
         Me.GroupNuevoCliente = New System.Windows.Forms.GroupBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
+        Me.dtp_fecha_pedido = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -50,7 +50,7 @@ Partial Class frm_Ticket
         Me.txt_plazo = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_descripcion = New System.Windows.Forms.TextBox()
-        Me.txt_usuario = New System.Windows.Forms.TextBox()
+        Me.txt_id_usuario = New System.Windows.Forms.TextBox()
         Me.txt_recurso = New System.Windows.Forms.TextBox()
         Me.txt_nombre_usuario = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -63,10 +63,10 @@ Partial Class frm_Ticket
         '
         'txt_id_ticket
         '
-        Me.txt_id_ticket.Location = New System.Drawing.Point(233, 286)
+        Me.txt_id_ticket.Location = New System.Drawing.Point(149, 286)
         Me.txt_id_ticket.MaxLength = 10
         Me.txt_id_ticket.Name = "txt_id_ticket"
-        Me.txt_id_ticket.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_ticket.Size = New System.Drawing.Size(97, 20)
         Me.txt_id_ticket.TabIndex = 17
         '
         'Label7
@@ -119,8 +119,8 @@ Partial Class frm_Ticket
         '
         'txt_comentarios
         '
-        Me.txt_comentarios.Location = New System.Drawing.Point(87, 140)
-        Me.txt_comentarios.MaxLength = 15
+        Me.txt_comentarios.Location = New System.Drawing.Point(86, 140)
+        Me.txt_comentarios.MaxLength = 350
         Me.txt_comentarios.Multiline = True
         Me.txt_comentarios.Name = "txt_comentarios"
         Me.txt_comentarios.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
@@ -130,7 +130,7 @@ Partial Class frm_Ticket
         'dtp_fecha_estimada
         '
         Me.dtp_fecha_estimada.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fecha_estimada.Location = New System.Drawing.Point(391, 67)
+        Me.dtp_fecha_estimada.Location = New System.Drawing.Point(146, 67)
         Me.dtp_fecha_estimada.Name = "dtp_fecha_estimada"
         Me.dtp_fecha_estimada.Size = New System.Drawing.Size(95, 20)
         Me.dtp_fecha_estimada.TabIndex = 30
@@ -138,7 +138,7 @@ Partial Class frm_Ticket
         'dtp_fecha_real
         '
         Me.dtp_fecha_real.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fecha_real.Location = New System.Drawing.Point(128, 67)
+        Me.dtp_fecha_real.Location = New System.Drawing.Point(391, 67)
         Me.dtp_fecha_real.Name = "dtp_fecha_real"
         Me.dtp_fecha_real.Size = New System.Drawing.Size(95, 20)
         Me.dtp_fecha_real.TabIndex = 30
@@ -146,7 +146,7 @@ Partial Class frm_Ticket
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(259, 73)
+        Me.Label14.Location = New System.Drawing.Point(14, 73)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(126, 13)
         Me.Label14.TabIndex = 29
@@ -173,7 +173,7 @@ Partial Class frm_Ticket
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(21, 73)
+        Me.Label6.Location = New System.Drawing.Point(284, 73)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(101, 13)
         Me.Label6.TabIndex = 25
@@ -218,7 +218,7 @@ Partial Class frm_Ticket
         '
         Me.GroupNuevoCliente.Controls.Add(Me.Label16)
         Me.GroupNuevoCliente.Controls.Add(Me.Label15)
-        Me.GroupNuevoCliente.Controls.Add(Me.DateTimePicker3)
+        Me.GroupNuevoCliente.Controls.Add(Me.dtp_fecha_pedido)
         Me.GroupNuevoCliente.Controls.Add(Me.Label5)
         Me.GroupNuevoCliente.Controls.Add(Me.Label1)
         Me.GroupNuevoCliente.Controls.Add(Me.Label11)
@@ -227,7 +227,7 @@ Partial Class frm_Ticket
         Me.GroupNuevoCliente.Controls.Add(Me.txt_plazo)
         Me.GroupNuevoCliente.Controls.Add(Me.Label10)
         Me.GroupNuevoCliente.Controls.Add(Me.txt_descripcion)
-        Me.GroupNuevoCliente.Controls.Add(Me.txt_usuario)
+        Me.GroupNuevoCliente.Controls.Add(Me.txt_id_usuario)
         Me.GroupNuevoCliente.Controls.Add(Me.txt_recurso)
         Me.GroupNuevoCliente.Controls.Add(Me.txt_nombre_usuario)
         Me.GroupNuevoCliente.Controls.Add(Me.Label3)
@@ -261,13 +261,13 @@ Partial Class frm_Ticket
         Me.Label15.TabIndex = 35
         Me.Label15.Text = "*"
         '
-        'DateTimePicker3
+        'dtp_fecha_pedido
         '
-        Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker3.Location = New System.Drawing.Point(236, 19)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(95, 20)
-        Me.DateTimePicker3.TabIndex = 34
+        Me.dtp_fecha_pedido.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp_fecha_pedido.Location = New System.Drawing.Point(236, 19)
+        Me.dtp_fecha_pedido.Name = "dtp_fecha_pedido"
+        Me.dtp_fecha_pedido.Size = New System.Drawing.Size(95, 20)
+        Me.dtp_fecha_pedido.TabIndex = 34
         '
         'Label5
         '
@@ -316,7 +316,7 @@ Partial Class frm_Ticket
         'txt_plazo
         '
         Me.txt_plazo.Location = New System.Drawing.Point(169, 148)
-        Me.txt_plazo.MaxLength = 50
+        Me.txt_plazo.MaxLength = 5
         Me.txt_plazo.Name = "txt_plazo"
         Me.txt_plazo.Size = New System.Drawing.Size(58, 20)
         Me.txt_plazo.TabIndex = 3
@@ -333,20 +333,20 @@ Partial Class frm_Ticket
         'txt_descripcion
         '
         Me.txt_descripcion.Location = New System.Drawing.Point(94, 176)
-        Me.txt_descripcion.MaxLength = 15
+        Me.txt_descripcion.MaxLength = 350
         Me.txt_descripcion.Multiline = True
         Me.txt_descripcion.Name = "txt_descripcion"
         Me.txt_descripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txt_descripcion.Size = New System.Drawing.Size(392, 71)
         Me.txt_descripcion.TabIndex = 5
         '
-        'txt_usuario
+        'txt_id_usuario
         '
-        Me.txt_usuario.Location = New System.Drawing.Point(27, 57)
-        Me.txt_usuario.MaxLength = 10
-        Me.txt_usuario.Name = "txt_usuario"
-        Me.txt_usuario.Size = New System.Drawing.Size(13, 20)
-        Me.txt_usuario.TabIndex = 4
+        Me.txt_id_usuario.Location = New System.Drawing.Point(27, 57)
+        Me.txt_id_usuario.MaxLength = 10
+        Me.txt_id_usuario.Name = "txt_id_usuario"
+        Me.txt_id_usuario.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_usuario.TabIndex = 4
         '
         'txt_recurso
         '
@@ -386,7 +386,7 @@ Partial Class frm_Ticket
         '
         'btnCancelar_Cliente
         '
-        Me.btnCancelar_Cliente.Location = New System.Drawing.Point(438, 279)
+        Me.btnCancelar_Cliente.Location = New System.Drawing.Point(438, 281)
         Me.btnCancelar_Cliente.Name = "btnCancelar_Cliente"
         Me.btnCancelar_Cliente.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar_Cliente.TabIndex = 14
@@ -395,7 +395,7 @@ Partial Class frm_Ticket
         '
         'btn_Solicitud
         '
-        Me.btn_Solicitud.Location = New System.Drawing.Point(357, 279)
+        Me.btn_Solicitud.Location = New System.Drawing.Point(357, 281)
         Me.btn_Solicitud.Name = "btn_Solicitud"
         Me.btn_Solicitud.Size = New System.Drawing.Size(75, 33)
         Me.btn_Solicitud.TabIndex = 13
@@ -415,7 +415,8 @@ Partial Class frm_Ticket
         Me.Controls.Add(Me.btnCancelar_Cliente)
         Me.Controls.Add(Me.btn_Solicitud)
         Me.Name = "frm_Ticket"
-        Me.Text = "frm_Ticket"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Ticket"
         Me.GroupListadoClientes.ResumeLayout(False)
         Me.GroupListadoClientes.PerformLayout()
         Me.GroupNuevoCliente.ResumeLayout(False)
@@ -443,7 +444,7 @@ Partial Class frm_Ticket
     Friend WithEvents GroupNuevoCliente As System.Windows.Forms.GroupBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtp_fecha_pedido As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
@@ -452,7 +453,7 @@ Partial Class frm_Ticket
     Friend WithEvents txt_plazo As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents txt_descripcion As System.Windows.Forms.TextBox
-    Friend WithEvents txt_usuario As System.Windows.Forms.TextBox
+    Friend WithEvents txt_id_usuario As System.Windows.Forms.TextBox
     Friend WithEvents txt_recurso As System.Windows.Forms.TextBox
     Friend WithEvents txt_nombre_usuario As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
