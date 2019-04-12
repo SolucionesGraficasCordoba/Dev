@@ -342,10 +342,10 @@ Partial Class frm_Ticket
         '
         'txt_id_usuario
         '
-        Me.txt_id_usuario.Location = New System.Drawing.Point(27, 57)
+        Me.txt_id_usuario.Location = New System.Drawing.Point(9, 57)
         Me.txt_id_usuario.MaxLength = 10
         Me.txt_id_usuario.Name = "txt_id_usuario"
-        Me.txt_id_usuario.Size = New System.Drawing.Size(13, 20)
+        Me.txt_id_usuario.Size = New System.Drawing.Size(31, 20)
         Me.txt_id_usuario.TabIndex = 4
         '
         'txt_recurso

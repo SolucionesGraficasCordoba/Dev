@@ -19,7 +19,9 @@
                           On usu.COL_id_colaborador Equals col.COL_id_colaborador
                           Select usu.USU_usuario, usu.USU_id_usuario
                           Where USU_usuario = frm_Principal.LBL_MENU_USU.Text).ToList()(0)
+
             txt_nombre_usuario.Text = carganombreusuario.USU_usuario
+            txt_id_usuario.Text = carganombreusuario.USU_id_usuario
 
             'ElseIf frm_Principal.LBL_MENU_PERFIL.Text = "SUPERVISOR" Then
             '    Dim cualq = (From c In datacontext.USUARIO
