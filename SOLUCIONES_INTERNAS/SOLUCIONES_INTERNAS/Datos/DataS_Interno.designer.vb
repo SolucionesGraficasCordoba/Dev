@@ -133,6 +133,12 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeleteDESPACHO(instance As DESPACHO)
     End Sub
+  Partial Private Sub InsertTICKET(instance As TICKET)
+    End Sub
+  Partial Private Sub UpdateTICKET(instance As TICKET)
+    End Sub
+  Partial Private Sub DeleteTICKET(instance As TICKET)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -259,6 +265,12 @@ Partial Public Class DataS_Interno
 	Public ReadOnly Property DESPACHO() As System.Data.Linq.Table(Of DESPACHO)
 		Get
 			Return Me.GetTable(Of DESPACHO)
+		End Get
+	End Property
+	
+	Public ReadOnly Property TICKET() As System.Data.Linq.Table(Of TICKET)
+		Get
+			Return Me.GetTable(Of TICKET)
 		End Get
 	End Property
 End Class
@@ -2711,6 +2723,8 @@ Partial Public Class USUARIO
 	
 	Private _COL_id_colaborador As System.Nullable(Of Integer)
 	
+	Private _TICKET As EntitySet(Of TICKET)
+	
 	Private _COLABORADOR As EntityRef(Of COLABORADOR)
 	
     #Region "Definiciones de métodos de extensibilidad"
@@ -2744,6 +2758,7 @@ Partial Public Class USUARIO
 	
 	Public Sub New()
 		MyBase.New
+		Me._TICKET = New EntitySet(Of TICKET)(AddressOf Me.attach_TICKET, AddressOf Me.detach_TICKET)
 		Me._COLABORADOR = CType(Nothing, EntityRef(Of COLABORADOR))
 		OnCreated
 	End Sub
@@ -2832,6 +2847,16 @@ Partial Public Class USUARIO
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USUARIO_TICKET", Storage:="_TICKET", ThisKey:="USU_id_usuario", OtherKey:="TIC_id_usuario")>  _
+	Public Property TICKET() As EntitySet(Of TICKET)
+		Get
+			Return Me._TICKET
+		End Get
+		Set
+			Me._TICKET.Assign(value)
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="COLABORADOR_USUARIO", Storage:="_COLABORADOR", ThisKey:="COL_id_colaborador", OtherKey:="COL_id_colaborador", IsForeignKey:=true)>  _
 	Public Property COLABORADOR() As COLABORADOR
 		Get
@@ -2876,6 +2901,16 @@ Partial Public Class USUARIO
 					= false) Then
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
+	End Sub
+	
+	Private Sub attach_TICKET(ByVal entity As TICKET)
+		Me.SendPropertyChanging
+		entity.USUARIO = Me
+	End Sub
+	
+	Private Sub detach_TICKET(ByVal entity As TICKET)
+		Me.SendPropertyChanging
+		entity.USUARIO = Nothing
 	End Sub
 End Class
 
@@ -5867,6 +5902,476 @@ Partial Public Class DESPACHO
 					Me._ORT_id_orden_trabajo = CType(Nothing, Integer)
 				End If
 				Me.SendPropertyChanged("ORDEN_TRABAJO")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.TICKET")>  _
+Partial Public Class TICKET
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _TIC_id_ticket As Integer
+	
+	Private _TIC_id_usuario As System.Nullable(Of Integer)
+	
+	Private _TIC_fecha_pedido As System.Nullable(Of Date)
+	
+	Private _TIC_recurso As String
+	
+	Private _TIC_herramienta As String
+	
+	Private _TIC_plazo_resolucion As String
+	
+	Private _TIC_descripcion As String
+	
+	Private _TIC_prioridad As String
+	
+	Private _TIC_estado As String
+	
+	Private _TIC_fecha_real_cierre As System.Nullable(Of Date)
+	
+	Private _TIC_fecha_estimado_cierre As System.Nullable(Of Date)
+	
+	Private _TIC_sector As String
+	
+	Private _TIC_comentarios As String
+	
+	Private _TIC_campo_1 As String
+	
+	Private _TIC_campo_2 As String
+	
+	Private _TIC_campo_3 As String
+	
+	Private _TIC_campo_4 As String
+	
+	Private _TIC_campo_5 As String
+	
+	Private _USUARIO As EntityRef(Of USUARIO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnTIC_id_ticketChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnTIC_id_ticketChanged()
+    End Sub
+    Partial Private Sub OnTIC_id_usuarioChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnTIC_id_usuarioChanged()
+    End Sub
+    Partial Private Sub OnTIC_fecha_pedidoChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnTIC_fecha_pedidoChanged()
+    End Sub
+    Partial Private Sub OnTIC_recursoChanging(value As String)
+    End Sub
+    Partial Private Sub OnTIC_recursoChanged()
+    End Sub
+    Partial Private Sub OnTIC_herramientaChanging(value As String)
+    End Sub
+    Partial Private Sub OnTIC_herramientaChanged()
+    End Sub
+    Partial Private Sub OnTIC_plazo_resolucionChanging(value As String)
+    End Sub
+    Partial Private Sub OnTIC_plazo_resolucionChanged()
+    End Sub
+    Partial Private Sub OnTIC_descripcionChanging(value As String)
+    End Sub
+    Partial Private Sub OnTIC_descripcionChanged()
+    End Sub
+    Partial Private Sub OnTIC_prioridadChanging(value As String)
+    End Sub
+    Partial Private Sub OnTIC_prioridadChanged()
+    End Sub
+    Partial Private Sub OnTIC_estadoChanging(value As String)
+    End Sub
+    Partial Private Sub OnTIC_estadoChanged()
+    End Sub
+    Partial Private Sub OnTIC_fecha_real_cierreChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnTIC_fecha_real_cierreChanged()
+    End Sub
+    Partial Private Sub OnTIC_fecha_estimado_cierreChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnTIC_fecha_estimado_cierreChanged()
+    End Sub
+    Partial Private Sub OnTIC_sectorChanging(value As String)
+    End Sub
+    Partial Private Sub OnTIC_sectorChanged()
+    End Sub
+    Partial Private Sub OnTIC_comentariosChanging(value As String)
+    End Sub
+    Partial Private Sub OnTIC_comentariosChanged()
+    End Sub
+    Partial Private Sub OnTIC_campo_1Changing(value As String)
+    End Sub
+    Partial Private Sub OnTIC_campo_1Changed()
+    End Sub
+    Partial Private Sub OnTIC_campo_2Changing(value As String)
+    End Sub
+    Partial Private Sub OnTIC_campo_2Changed()
+    End Sub
+    Partial Private Sub OnTIC_campo_3Changing(value As String)
+    End Sub
+    Partial Private Sub OnTIC_campo_3Changed()
+    End Sub
+    Partial Private Sub OnTIC_campo_4Changing(value As String)
+    End Sub
+    Partial Private Sub OnTIC_campo_4Changed()
+    End Sub
+    Partial Private Sub OnTIC_campo_5Changing(value As String)
+    End Sub
+    Partial Private Sub OnTIC_campo_5Changed()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._USUARIO = CType(Nothing, EntityRef(Of USUARIO))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_id_ticket", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property TIC_id_ticket() As Integer
+		Get
+			Return Me._TIC_id_ticket
+		End Get
+		Set
+			If ((Me._TIC_id_ticket = value)  _
+						= false) Then
+				Me.OnTIC_id_ticketChanging(value)
+				Me.SendPropertyChanging
+				Me._TIC_id_ticket = value
+				Me.SendPropertyChanged("TIC_id_ticket")
+				Me.OnTIC_id_ticketChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_id_usuario", DbType:="Int")>  _
+	Public Property TIC_id_usuario() As System.Nullable(Of Integer)
+		Get
+			Return Me._TIC_id_usuario
+		End Get
+		Set
+			If (Me._TIC_id_usuario.Equals(value) = false) Then
+				If Me._USUARIO.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnTIC_id_usuarioChanging(value)
+				Me.SendPropertyChanging
+				Me._TIC_id_usuario = value
+				Me.SendPropertyChanged("TIC_id_usuario")
+				Me.OnTIC_id_usuarioChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_fecha_pedido", DbType:="Date")>  _
+	Public Property TIC_fecha_pedido() As System.Nullable(Of Date)
+		Get
+			Return Me._TIC_fecha_pedido
+		End Get
+		Set
+			If (Me._TIC_fecha_pedido.Equals(value) = false) Then
+				Me.OnTIC_fecha_pedidoChanging(value)
+				Me.SendPropertyChanging
+				Me._TIC_fecha_pedido = value
+				Me.SendPropertyChanged("TIC_fecha_pedido")
+				Me.OnTIC_fecha_pedidoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_recurso", DbType:="VarChar(50)")>  _
+	Public Property TIC_recurso() As String
+		Get
+			Return Me._TIC_recurso
+		End Get
+		Set
+			If (String.Equals(Me._TIC_recurso, value) = false) Then
+				Me.OnTIC_recursoChanging(value)
+				Me.SendPropertyChanging
+				Me._TIC_recurso = value
+				Me.SendPropertyChanged("TIC_recurso")
+				Me.OnTIC_recursoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_herramienta", DbType:="VarChar(50)")>  _
+	Public Property TIC_herramienta() As String
+		Get
+			Return Me._TIC_herramienta
+		End Get
+		Set
+			If (String.Equals(Me._TIC_herramienta, value) = false) Then
+				Me.OnTIC_herramientaChanging(value)
+				Me.SendPropertyChanging
+				Me._TIC_herramienta = value
+				Me.SendPropertyChanged("TIC_herramienta")
+				Me.OnTIC_herramientaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_plazo_resolucion", DbType:="VarChar(5)")>  _
+	Public Property TIC_plazo_resolucion() As String
+		Get
+			Return Me._TIC_plazo_resolucion
+		End Get
+		Set
+			If (String.Equals(Me._TIC_plazo_resolucion, value) = false) Then
+				Me.OnTIC_plazo_resolucionChanging(value)
+				Me.SendPropertyChanging
+				Me._TIC_plazo_resolucion = value
+				Me.SendPropertyChanged("TIC_plazo_resolucion")
+				Me.OnTIC_plazo_resolucionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_descripcion", DbType:="VarChar(350)")>  _
+	Public Property TIC_descripcion() As String
+		Get
+			Return Me._TIC_descripcion
+		End Get
+		Set
+			If (String.Equals(Me._TIC_descripcion, value) = false) Then
+				Me.OnTIC_descripcionChanging(value)
+				Me.SendPropertyChanging
+				Me._TIC_descripcion = value
+				Me.SendPropertyChanged("TIC_descripcion")
+				Me.OnTIC_descripcionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_prioridad", DbType:="VarChar(20)")>  _
+	Public Property TIC_prioridad() As String
+		Get
+			Return Me._TIC_prioridad
+		End Get
+		Set
+			If (String.Equals(Me._TIC_prioridad, value) = false) Then
+				Me.OnTIC_prioridadChanging(value)
+				Me.SendPropertyChanging
+				Me._TIC_prioridad = value
+				Me.SendPropertyChanged("TIC_prioridad")
+				Me.OnTIC_prioridadChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_estado", DbType:="VarChar(20)")>  _
+	Public Property TIC_estado() As String
+		Get
+			Return Me._TIC_estado
+		End Get
+		Set
+			If (String.Equals(Me._TIC_estado, value) = false) Then
+				Me.OnTIC_estadoChanging(value)
+				Me.SendPropertyChanging
+				Me._TIC_estado = value
+				Me.SendPropertyChanged("TIC_estado")
+				Me.OnTIC_estadoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_fecha_real_cierre", DbType:="Date")>  _
+	Public Property TIC_fecha_real_cierre() As System.Nullable(Of Date)
+		Get
+			Return Me._TIC_fecha_real_cierre
+		End Get
+		Set
+			If (Me._TIC_fecha_real_cierre.Equals(value) = false) Then
+				Me.OnTIC_fecha_real_cierreChanging(value)
+				Me.SendPropertyChanging
+				Me._TIC_fecha_real_cierre = value
+				Me.SendPropertyChanged("TIC_fecha_real_cierre")
+				Me.OnTIC_fecha_real_cierreChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_fecha_estimado_cierre", DbType:="Date")>  _
+	Public Property TIC_fecha_estimado_cierre() As System.Nullable(Of Date)
+		Get
+			Return Me._TIC_fecha_estimado_cierre
+		End Get
+		Set
+			If (Me._TIC_fecha_estimado_cierre.Equals(value) = false) Then
+				Me.OnTIC_fecha_estimado_cierreChanging(value)
+				Me.SendPropertyChanging
+				Me._TIC_fecha_estimado_cierre = value
+				Me.SendPropertyChanged("TIC_fecha_estimado_cierre")
+				Me.OnTIC_fecha_estimado_cierreChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_sector", DbType:="VarChar(50)")>  _
+	Public Property TIC_sector() As String
+		Get
+			Return Me._TIC_sector
+		End Get
+		Set
+			If (String.Equals(Me._TIC_sector, value) = false) Then
+				Me.OnTIC_sectorChanging(value)
+				Me.SendPropertyChanging
+				Me._TIC_sector = value
+				Me.SendPropertyChanged("TIC_sector")
+				Me.OnTIC_sectorChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_comentarios", DbType:="VarChar(350)")>  _
+	Public Property TIC_comentarios() As String
+		Get
+			Return Me._TIC_comentarios
+		End Get
+		Set
+			If (String.Equals(Me._TIC_comentarios, value) = false) Then
+				Me.OnTIC_comentariosChanging(value)
+				Me.SendPropertyChanging
+				Me._TIC_comentarios = value
+				Me.SendPropertyChanged("TIC_comentarios")
+				Me.OnTIC_comentariosChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_campo_1", DbType:="VarChar(50)")>  _
+	Public Property TIC_campo_1() As String
+		Get
+			Return Me._TIC_campo_1
+		End Get
+		Set
+			If (String.Equals(Me._TIC_campo_1, value) = false) Then
+				Me.OnTIC_campo_1Changing(value)
+				Me.SendPropertyChanging
+				Me._TIC_campo_1 = value
+				Me.SendPropertyChanged("TIC_campo_1")
+				Me.OnTIC_campo_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_campo_2", DbType:="VarChar(50)")>  _
+	Public Property TIC_campo_2() As String
+		Get
+			Return Me._TIC_campo_2
+		End Get
+		Set
+			If (String.Equals(Me._TIC_campo_2, value) = false) Then
+				Me.OnTIC_campo_2Changing(value)
+				Me.SendPropertyChanging
+				Me._TIC_campo_2 = value
+				Me.SendPropertyChanged("TIC_campo_2")
+				Me.OnTIC_campo_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_campo_3", DbType:="VarChar(50)")>  _
+	Public Property TIC_campo_3() As String
+		Get
+			Return Me._TIC_campo_3
+		End Get
+		Set
+			If (String.Equals(Me._TIC_campo_3, value) = false) Then
+				Me.OnTIC_campo_3Changing(value)
+				Me.SendPropertyChanging
+				Me._TIC_campo_3 = value
+				Me.SendPropertyChanged("TIC_campo_3")
+				Me.OnTIC_campo_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_campo_4", DbType:="VarChar(50)")>  _
+	Public Property TIC_campo_4() As String
+		Get
+			Return Me._TIC_campo_4
+		End Get
+		Set
+			If (String.Equals(Me._TIC_campo_4, value) = false) Then
+				Me.OnTIC_campo_4Changing(value)
+				Me.SendPropertyChanging
+				Me._TIC_campo_4 = value
+				Me.SendPropertyChanged("TIC_campo_4")
+				Me.OnTIC_campo_4Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_TIC_campo_5", DbType:="VarChar(50)")>  _
+	Public Property TIC_campo_5() As String
+		Get
+			Return Me._TIC_campo_5
+		End Get
+		Set
+			If (String.Equals(Me._TIC_campo_5, value) = false) Then
+				Me.OnTIC_campo_5Changing(value)
+				Me.SendPropertyChanging
+				Me._TIC_campo_5 = value
+				Me.SendPropertyChanged("TIC_campo_5")
+				Me.OnTIC_campo_5Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USUARIO_TICKET", Storage:="_USUARIO", ThisKey:="TIC_id_usuario", OtherKey:="USU_id_usuario", IsForeignKey:=true)>  _
+	Public Property USUARIO() As USUARIO
+		Get
+			Return Me._USUARIO.Entity
+		End Get
+		Set
+			Dim previousValue As USUARIO = Me._USUARIO.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._USUARIO.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._USUARIO.Entity = Nothing
+					previousValue.TICKET.Remove(Me)
+				End If
+				Me._USUARIO.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.TICKET.Add(Me)
+					Me._TIC_id_usuario = value.USU_id_usuario
+				Else
+					Me._TIC_id_usuario = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("USUARIO")
 			End If
 		End Set
 	End Property

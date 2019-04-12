@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PREPRODUCCION" Class="DataS_Interno" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.30.61;Initial Catalog=PREPRODUCCION;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CLIENTE" Member="CLIENTE">
     <Type Name="CLIENTE">
       <Column Name="CLI_id_cliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -137,6 +137,7 @@
       <Column Name="USU_contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="USU_perfil" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
       <Column Name="COL_id_colaborador" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="USUARIO_TICKET" Member="TICKET" ThisKey="USU_id_usuario" OtherKey="TIC_id_usuario" Type="TICKET" />
       <Association Name="COLABORADOR_USUARIO" Member="COLABORADOR" ThisKey="COL_id_colaborador" OtherKey="COL_id_colaborador" Type="COLABORADOR" IsForeignKey="true" />
     </Type>
   </Table>
@@ -283,6 +284,29 @@
       <Column Name="DES_campo_4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DES_campo_5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="ORDEN_TRABAJO_DESPACHO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TICKET" Member="TICKET">
+    <Type Name="TICKET">
+      <Column Name="TIC_id_ticket" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TIC_id_usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TIC_fecha_pedido" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TIC_recurso" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIC_herramienta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIC_plazo_resolucion" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="TIC_descripcion" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="TIC_prioridad" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TIC_estado" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="TIC_fecha_real_cierre" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TIC_fecha_estimado_cierre" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TIC_sector" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIC_comentarios" Type="System.String" DbType="VarChar(350)" CanBeNull="true" />
+      <Column Name="TIC_campo_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIC_campo_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIC_campo_3" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIC_campo_4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="TIC_campo_5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="USUARIO_TICKET" Member="USUARIO" ThisKey="TIC_id_usuario" OtherKey="USU_id_usuario" Type="USUARIO" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

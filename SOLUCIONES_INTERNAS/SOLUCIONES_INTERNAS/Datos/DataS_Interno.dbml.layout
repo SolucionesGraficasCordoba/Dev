@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.75, 18.125" name="DataClasses1">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 16.75, 18.875" name="DataClasses1">
   <DataContextMoniker Name="/DataS_Interno" />
   <nestedChildShapes>
     <classShape Id="867c08b7-f3ba-404d-a9be-55dcc64c7204" absoluteBounds="0.75, 4.375, 2, 2.1554996744791666">
@@ -188,11 +188,24 @@
         <elementListCompartment Id="4ebff40f-a775-485a-995d-cc5f5678c099" absoluteBounds="4.515, 3.46, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.07057410545515 : 7.25); (4.07057410545515 : 4.55850341796875); (4.5 : 4.55850341796875)]" fixedFrom="Caller" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.07057410545515 : 7.25); (4.07057410545515 : 4.55850341796875); (4.5 : 4.55850341796875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/DataS_Interno/ORDEN_TRABAJO/ORDEN_TRABAJO_DESPACHO" />
       <nodes>
         <classShapeMoniker Id="c7e00ef9-f791-4ce4-a13a-ae64eaa4cf87" />
         <classShapeMoniker Id="1625c881-cda7-48c2-85e4-b63dd96bb9a3" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="bc789d65-9edf-4aac-8ec2-22f57d309a2a" absoluteBounds="8.875, 14.375, 2, 4.2708154296875">
+      <DataClassMoniker Name="/DataS_Interno/TICKET" />
+      <nestedChildShapes>
+        <elementListCompartment Id="18650b18-b650-4790-8e96-de6b8ecd7487" absoluteBounds="8.89, 14.835, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.25 : 13.3958968098958); (7.25 : 16.5104077148438); (8.875 : 16.5104077148438)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataS_Interno/USUARIO/USUARIO_TICKET" />
+      <nodes>
+        <classShapeMoniker Id="3330e8fb-0798-4683-af0a-80ecad9933fa" />
+        <classShapeMoniker Id="bc789d65-9edf-4aac-8ec2-22f57d309a2a" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
