@@ -144,6 +144,15 @@ Además de cargar, se podrá actualizar y eliminar registros. También se podrá
 -	Colaborador: puede eliminar solamente sus tareas (si es que se le dio el permiso al ingresar al sistema).
 
 5-	Pestaña despachos: asigna el número de remito de manager al número de orden de metrics.
-</value>
+
+FUNCIONAMIENTO:
+
+PARA LA CARGA DE TAREAS SOLO SE UTILIZARA EL FORMULARIO PRINCIPAL.
+
+1- DEL FORMULARIO PRINCIPAL SE SELECCIONARA NUEVA TAREA.
+2- SE COMPLETARAN LOS CAMPOS NECESARIOS (COMO SE VENIA HACIENDO HASTA EL DIA DE HOY) Y SE GUARDARAN LOS DATOS.
+
+EN CASO DE QUE SE DESEE AGREGAR UNA NUEVA TAREA SE SEGUIRAN LOS PASOS 1 Y 2 (AUNQUE NO SE MUESTREN LAS TAREAS ANTERIORMENTE CARGADAS ESTAS ESTAN GUARDADAS)
+PARA VER EL LISTADO COMPLETO DE TAREAS SE IRA A CONSULTAR DE LA PESTAÑA DE TAREAS DEL FORMULARIO PRINCIPAL.</value>
   </data>
 </root>
