@@ -1749,6 +1749,13 @@ Public Class frm_Principal
     End Sub
 
     Private Sub btn_ticket_Click(sender As System.Object, e As System.EventArgs) Handles btn_ticket.Click
-        frm_Ticket.Show()
+        If LBL_MENU_PERFIL.Text = "ADMINISTRADOR" Or LBL_MENU_PERFIL.Text = "GERENCIA" Then
+            frm_Ticket.Show()
+            frm_Ticket.TabControl1.SelectedIndex = 1
+        Else
+            frm_Ticket.Show()
+            frm_Ticket.TabControl1.SelectedIndex = 0
+            frm_Ticket.btn_eliminar.Enabled = False
+        End If
     End Sub
 End Class
