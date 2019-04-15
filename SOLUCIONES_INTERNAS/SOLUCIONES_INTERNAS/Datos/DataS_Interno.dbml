@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PREPRODUCCION" Class="DataS_Interno" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=192.168.30.61;Initial Catalog=PREPRODUCCION;Persist Security Info=True;User ID=vheredia" SettingsObjectName="SOLUCIONES_INTERNAS.My.MySettings" SettingsPropertyName="SOLUCIONES_INTERNASConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.CLIENTE" Member="CLIENTE">
     <Type Name="CLIENTE">
       <Column Name="CLI_id_cliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -269,23 +269,6 @@
       <Association Name="PIEZA1_DETALLE_ORDEN_TRABAJO" Member="PIEZA1" ThisKey="PIE_id_pieza" OtherKey="PIE_id_pieza" Type="PIEZA1" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.DESPACHO" Member="DESPACHO">
-    <Type Name="DESPACHO">
-      <Column Name="DES_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DES_chofer" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DES_fecha_salida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DES_fecha_entrega" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="DES_nro_remito" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
-      <Column Name="DES_observaciones" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="DES_campo_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DES_campo_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DES_campo_3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DES_campo_4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DES_campo_5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="ORDEN_TRABAJO_DESPACHO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.TICKET" Member="TICKET">
     <Type Name="TICKET">
       <Column Name="TIC_id_ticket" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -307,6 +290,23 @@
       <Column Name="TIC_campo_4" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="TIC_campo_5" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="USUARIO_TICKET" Member="USUARIO" ThisKey="TIC_id_usuario" OtherKey="USU_id_usuario" Type="USUARIO" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DESPACHO" Member="DESPACHO">
+    <Type Name="DESPACHO">
+      <Column Name="DES_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ORT_id_orden_trabajo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DES_chofer" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_fecha_salida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DES_fecha_entrega" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DES_nro_remito" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="DES_observaciones" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DES_campo_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_EMB_bultos" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_EMB_estado" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_EMB_observaciones" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_campo_8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="ORDEN_TRABAJO_DESPACHO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

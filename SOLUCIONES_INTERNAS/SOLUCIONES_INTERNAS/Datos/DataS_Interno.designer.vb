@@ -127,17 +127,17 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeleteDETALLE_ORDEN_TRABAJO(instance As DETALLE_ORDEN_TRABAJO)
     End Sub
-  Partial Private Sub InsertDESPACHO(instance As DESPACHO)
-    End Sub
-  Partial Private Sub UpdateDESPACHO(instance As DESPACHO)
-    End Sub
-  Partial Private Sub DeleteDESPACHO(instance As DESPACHO)
-    End Sub
   Partial Private Sub InsertTICKET(instance As TICKET)
     End Sub
   Partial Private Sub UpdateTICKET(instance As TICKET)
     End Sub
   Partial Private Sub DeleteTICKET(instance As TICKET)
+    End Sub
+  Partial Private Sub InsertDESPACHO(instance As DESPACHO)
+    End Sub
+  Partial Private Sub UpdateDESPACHO(instance As DESPACHO)
+    End Sub
+  Partial Private Sub DeleteDESPACHO(instance As DESPACHO)
     End Sub
   #End Region
 	
@@ -262,15 +262,15 @@ Partial Public Class DataS_Interno
 		End Get
 	End Property
 	
-	Public ReadOnly Property DESPACHO() As System.Data.Linq.Table(Of DESPACHO)
-		Get
-			Return Me.GetTable(Of DESPACHO)
-		End Get
-	End Property
-	
 	Public ReadOnly Property TICKET() As System.Data.Linq.Table(Of TICKET)
 		Get
 			Return Me.GetTable(Of TICKET)
+		End Get
+	End Property
+	
+	Public ReadOnly Property DESPACHO() As System.Data.Linq.Table(Of DESPACHO)
+		Get
+			Return Me.GetTable(Of DESPACHO)
 		End Get
 	End Property
 End Class
@@ -5586,345 +5586,6 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 	End Sub
 End Class
 
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DESPACHO")>  _
-Partial Public Class DESPACHO
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _DES_id As Integer
-	
-	Private _ORT_id_orden_trabajo As Integer
-	
-	Private _DES_chofer As String
-	
-	Private _DES_fecha_salida As System.Nullable(Of Date)
-	
-	Private _DES_fecha_entrega As System.Nullable(Of Date)
-	
-	Private _DES_nro_remito As String
-	
-	Private _DES_observaciones As String
-	
-	Private _DES_campo_1 As String
-	
-	Private _DES_campo_2 As String
-	
-	Private _DES_campo_3 As String
-	
-	Private _DES_campo_4 As String
-	
-	Private _DES_campo_5 As String
-	
-	Private _ORDEN_TRABAJO As EntityRef(Of ORDEN_TRABAJO)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnDES_idChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnDES_idChanged()
-    End Sub
-    Partial Private Sub OnORT_id_orden_trabajoChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnORT_id_orden_trabajoChanged()
-    End Sub
-    Partial Private Sub OnDES_choferChanging(value As String)
-    End Sub
-    Partial Private Sub OnDES_choferChanged()
-    End Sub
-    Partial Private Sub OnDES_fecha_salidaChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDES_fecha_salidaChanged()
-    End Sub
-    Partial Private Sub OnDES_fecha_entregaChanging(value As System.Nullable(Of Date))
-    End Sub
-    Partial Private Sub OnDES_fecha_entregaChanged()
-    End Sub
-    Partial Private Sub OnDES_nro_remitoChanging(value As String)
-    End Sub
-    Partial Private Sub OnDES_nro_remitoChanged()
-    End Sub
-    Partial Private Sub OnDES_observacionesChanging(value As String)
-    End Sub
-    Partial Private Sub OnDES_observacionesChanged()
-    End Sub
-    Partial Private Sub OnDES_campo_1Changing(value As String)
-    End Sub
-    Partial Private Sub OnDES_campo_1Changed()
-    End Sub
-    Partial Private Sub OnDES_campo_2Changing(value As String)
-    End Sub
-    Partial Private Sub OnDES_campo_2Changed()
-    End Sub
-    Partial Private Sub OnDES_campo_3Changing(value As String)
-    End Sub
-    Partial Private Sub OnDES_campo_3Changed()
-    End Sub
-    Partial Private Sub OnDES_campo_4Changing(value As String)
-    End Sub
-    Partial Private Sub OnDES_campo_4Changed()
-    End Sub
-    Partial Private Sub OnDES_campo_5Changing(value As String)
-    End Sub
-    Partial Private Sub OnDES_campo_5Changed()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._ORDEN_TRABAJO = CType(Nothing, EntityRef(Of ORDEN_TRABAJO))
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property DES_id() As Integer
-		Get
-			Return Me._DES_id
-		End Get
-		Set
-			If ((Me._DES_id = value)  _
-						= false) Then
-				Me.OnDES_idChanging(value)
-				Me.SendPropertyChanging
-				Me._DES_id = value
-				Me.SendPropertyChanged("DES_id")
-				Me.OnDES_idChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int NOT NULL")>  _
-	Public Property ORT_id_orden_trabajo() As Integer
-		Get
-			Return Me._ORT_id_orden_trabajo
-		End Get
-		Set
-			If ((Me._ORT_id_orden_trabajo = value)  _
-						= false) Then
-				If Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
-					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
-				End If
-				Me.OnORT_id_orden_trabajoChanging(value)
-				Me.SendPropertyChanging
-				Me._ORT_id_orden_trabajo = value
-				Me.SendPropertyChanged("ORT_id_orden_trabajo")
-				Me.OnORT_id_orden_trabajoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_chofer", DbType:="NVarChar(50)")>  _
-	Public Property DES_chofer() As String
-		Get
-			Return Me._DES_chofer
-		End Get
-		Set
-			If (String.Equals(Me._DES_chofer, value) = false) Then
-				Me.OnDES_choferChanging(value)
-				Me.SendPropertyChanging
-				Me._DES_chofer = value
-				Me.SendPropertyChanged("DES_chofer")
-				Me.OnDES_choferChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_fecha_salida", DbType:="DateTime")>  _
-	Public Property DES_fecha_salida() As System.Nullable(Of Date)
-		Get
-			Return Me._DES_fecha_salida
-		End Get
-		Set
-			If (Me._DES_fecha_salida.Equals(value) = false) Then
-				Me.OnDES_fecha_salidaChanging(value)
-				Me.SendPropertyChanging
-				Me._DES_fecha_salida = value
-				Me.SendPropertyChanged("DES_fecha_salida")
-				Me.OnDES_fecha_salidaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_fecha_entrega", DbType:="DateTime")>  _
-	Public Property DES_fecha_entrega() As System.Nullable(Of Date)
-		Get
-			Return Me._DES_fecha_entrega
-		End Get
-		Set
-			If (Me._DES_fecha_entrega.Equals(value) = false) Then
-				Me.OnDES_fecha_entregaChanging(value)
-				Me.SendPropertyChanging
-				Me._DES_fecha_entrega = value
-				Me.SendPropertyChanged("DES_fecha_entrega")
-				Me.OnDES_fecha_entregaChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_nro_remito", DbType:="NVarChar(20)")>  _
-	Public Property DES_nro_remito() As String
-		Get
-			Return Me._DES_nro_remito
-		End Get
-		Set
-			If (String.Equals(Me._DES_nro_remito, value) = false) Then
-				Me.OnDES_nro_remitoChanging(value)
-				Me.SendPropertyChanging
-				Me._DES_nro_remito = value
-				Me.SendPropertyChanged("DES_nro_remito")
-				Me.OnDES_nro_remitoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_observaciones", DbType:="NVarChar(150)")>  _
-	Public Property DES_observaciones() As String
-		Get
-			Return Me._DES_observaciones
-		End Get
-		Set
-			If (String.Equals(Me._DES_observaciones, value) = false) Then
-				Me.OnDES_observacionesChanging(value)
-				Me.SendPropertyChanging
-				Me._DES_observaciones = value
-				Me.SendPropertyChanged("DES_observaciones")
-				Me.OnDES_observacionesChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_campo_1", DbType:="NVarChar(50)")>  _
-	Public Property DES_campo_1() As String
-		Get
-			Return Me._DES_campo_1
-		End Get
-		Set
-			If (String.Equals(Me._DES_campo_1, value) = false) Then
-				Me.OnDES_campo_1Changing(value)
-				Me.SendPropertyChanging
-				Me._DES_campo_1 = value
-				Me.SendPropertyChanged("DES_campo_1")
-				Me.OnDES_campo_1Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_campo_2", DbType:="NVarChar(50)")>  _
-	Public Property DES_campo_2() As String
-		Get
-			Return Me._DES_campo_2
-		End Get
-		Set
-			If (String.Equals(Me._DES_campo_2, value) = false) Then
-				Me.OnDES_campo_2Changing(value)
-				Me.SendPropertyChanging
-				Me._DES_campo_2 = value
-				Me.SendPropertyChanged("DES_campo_2")
-				Me.OnDES_campo_2Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_campo_3", DbType:="NVarChar(50)")>  _
-	Public Property DES_campo_3() As String
-		Get
-			Return Me._DES_campo_3
-		End Get
-		Set
-			If (String.Equals(Me._DES_campo_3, value) = false) Then
-				Me.OnDES_campo_3Changing(value)
-				Me.SendPropertyChanging
-				Me._DES_campo_3 = value
-				Me.SendPropertyChanged("DES_campo_3")
-				Me.OnDES_campo_3Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_campo_4", DbType:="NVarChar(50)")>  _
-	Public Property DES_campo_4() As String
-		Get
-			Return Me._DES_campo_4
-		End Get
-		Set
-			If (String.Equals(Me._DES_campo_4, value) = false) Then
-				Me.OnDES_campo_4Changing(value)
-				Me.SendPropertyChanging
-				Me._DES_campo_4 = value
-				Me.SendPropertyChanged("DES_campo_4")
-				Me.OnDES_campo_4Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_campo_5", DbType:="NVarChar(50)")>  _
-	Public Property DES_campo_5() As String
-		Get
-			Return Me._DES_campo_5
-		End Get
-		Set
-			If (String.Equals(Me._DES_campo_5, value) = false) Then
-				Me.OnDES_campo_5Changing(value)
-				Me.SendPropertyChanging
-				Me._DES_campo_5 = value
-				Me.SendPropertyChanged("DES_campo_5")
-				Me.OnDES_campo_5Changed
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_DESPACHO", Storage:="_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo", IsForeignKey:=true)>  _
-	Public Property ORDEN_TRABAJO() As ORDEN_TRABAJO
-		Get
-			Return Me._ORDEN_TRABAJO.Entity
-		End Get
-		Set
-			Dim previousValue As ORDEN_TRABAJO = Me._ORDEN_TRABAJO.Entity
-			If ((Object.Equals(previousValue, value) = false)  _
-						OrElse (Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
-				Me.SendPropertyChanging
-				If ((previousValue Is Nothing)  _
-							= false) Then
-					Me._ORDEN_TRABAJO.Entity = Nothing
-					previousValue.DESPACHO.Remove(Me)
-				End If
-				Me._ORDEN_TRABAJO.Entity = value
-				If ((value Is Nothing)  _
-							= false) Then
-					value.DESPACHO.Add(Me)
-					Me._ORT_id_orden_trabajo = value.ORT_id_orden_trabajo
-				Else
-					Me._ORT_id_orden_trabajo = CType(Nothing, Integer)
-				End If
-				Me.SendPropertyChanged("ORDEN_TRABAJO")
-			End If
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-End Class
-
 <Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.TICKET")>  _
 Partial Public Class TICKET
 	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
@@ -6372,6 +6033,344 @@ Partial Public Class TICKET
 					Me._TIC_id_usuario = CType(Nothing, Nullable(Of Integer))
 				End If
 				Me.SendPropertyChanged("USUARIO")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.DESPACHO")>  _
+Partial Public Class DESPACHO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _DES_id As Integer
+	
+	Private _ORT_id_orden_trabajo As System.Nullable(Of Integer)
+	
+	Private _DES_chofer As String
+	
+	Private _DES_fecha_salida As System.Nullable(Of Date)
+	
+	Private _DES_fecha_entrega As System.Nullable(Of Date)
+	
+	Private _DES_nro_remito As String
+	
+	Private _DES_observaciones As String
+	
+	Private _DES_campo_1 As String
+	
+	Private _DES_EMB_bultos As String
+	
+	Private _DES_EMB_estado As String
+	
+	Private _DES_EMB_observaciones As String
+	
+	Private _DES_campo_8 As String
+	
+	Private _ORDEN_TRABAJO As EntityRef(Of ORDEN_TRABAJO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnDES_idChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnDES_idChanged()
+    End Sub
+    Partial Private Sub OnORT_id_orden_trabajoChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnORT_id_orden_trabajoChanged()
+    End Sub
+    Partial Private Sub OnDES_choferChanging(value As String)
+    End Sub
+    Partial Private Sub OnDES_choferChanged()
+    End Sub
+    Partial Private Sub OnDES_fecha_salidaChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDES_fecha_salidaChanged()
+    End Sub
+    Partial Private Sub OnDES_fecha_entregaChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnDES_fecha_entregaChanged()
+    End Sub
+    Partial Private Sub OnDES_nro_remitoChanging(value As String)
+    End Sub
+    Partial Private Sub OnDES_nro_remitoChanged()
+    End Sub
+    Partial Private Sub OnDES_observacionesChanging(value As String)
+    End Sub
+    Partial Private Sub OnDES_observacionesChanged()
+    End Sub
+    Partial Private Sub OnDES_campo_1Changing(value As String)
+    End Sub
+    Partial Private Sub OnDES_campo_1Changed()
+    End Sub
+    Partial Private Sub OnDES_EMB_bultosChanging(value As String)
+    End Sub
+    Partial Private Sub OnDES_EMB_bultosChanged()
+    End Sub
+    Partial Private Sub OnDES_EMB_estadoChanging(value As String)
+    End Sub
+    Partial Private Sub OnDES_EMB_estadoChanged()
+    End Sub
+    Partial Private Sub OnDES_EMB_observacionesChanging(value As String)
+    End Sub
+    Partial Private Sub OnDES_EMB_observacionesChanged()
+    End Sub
+    Partial Private Sub OnDES_campo_8Changing(value As String)
+    End Sub
+    Partial Private Sub OnDES_campo_8Changed()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._ORDEN_TRABAJO = CType(Nothing, EntityRef(Of ORDEN_TRABAJO))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property DES_id() As Integer
+		Get
+			Return Me._DES_id
+		End Get
+		Set
+			If ((Me._DES_id = value)  _
+						= false) Then
+				Me.OnDES_idChanging(value)
+				Me.SendPropertyChanging
+				Me._DES_id = value
+				Me.SendPropertyChanged("DES_id")
+				Me.OnDES_idChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_ORT_id_orden_trabajo", DbType:="Int")>  _
+	Public Property ORT_id_orden_trabajo() As System.Nullable(Of Integer)
+		Get
+			Return Me._ORT_id_orden_trabajo
+		End Get
+		Set
+			If (Me._ORT_id_orden_trabajo.Equals(value) = false) Then
+				If Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnORT_id_orden_trabajoChanging(value)
+				Me.SendPropertyChanging
+				Me._ORT_id_orden_trabajo = value
+				Me.SendPropertyChanged("ORT_id_orden_trabajo")
+				Me.OnORT_id_orden_trabajoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_chofer", DbType:="NVarChar(50)")>  _
+	Public Property DES_chofer() As String
+		Get
+			Return Me._DES_chofer
+		End Get
+		Set
+			If (String.Equals(Me._DES_chofer, value) = false) Then
+				Me.OnDES_choferChanging(value)
+				Me.SendPropertyChanging
+				Me._DES_chofer = value
+				Me.SendPropertyChanged("DES_chofer")
+				Me.OnDES_choferChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_fecha_salida", DbType:="DateTime")>  _
+	Public Property DES_fecha_salida() As System.Nullable(Of Date)
+		Get
+			Return Me._DES_fecha_salida
+		End Get
+		Set
+			If (Me._DES_fecha_salida.Equals(value) = false) Then
+				Me.OnDES_fecha_salidaChanging(value)
+				Me.SendPropertyChanging
+				Me._DES_fecha_salida = value
+				Me.SendPropertyChanged("DES_fecha_salida")
+				Me.OnDES_fecha_salidaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_fecha_entrega", DbType:="DateTime")>  _
+	Public Property DES_fecha_entrega() As System.Nullable(Of Date)
+		Get
+			Return Me._DES_fecha_entrega
+		End Get
+		Set
+			If (Me._DES_fecha_entrega.Equals(value) = false) Then
+				Me.OnDES_fecha_entregaChanging(value)
+				Me.SendPropertyChanging
+				Me._DES_fecha_entrega = value
+				Me.SendPropertyChanged("DES_fecha_entrega")
+				Me.OnDES_fecha_entregaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_nro_remito", DbType:="NVarChar(20)")>  _
+	Public Property DES_nro_remito() As String
+		Get
+			Return Me._DES_nro_remito
+		End Get
+		Set
+			If (String.Equals(Me._DES_nro_remito, value) = false) Then
+				Me.OnDES_nro_remitoChanging(value)
+				Me.SendPropertyChanging
+				Me._DES_nro_remito = value
+				Me.SendPropertyChanged("DES_nro_remito")
+				Me.OnDES_nro_remitoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_observaciones", DbType:="NVarChar(150)")>  _
+	Public Property DES_observaciones() As String
+		Get
+			Return Me._DES_observaciones
+		End Get
+		Set
+			If (String.Equals(Me._DES_observaciones, value) = false) Then
+				Me.OnDES_observacionesChanging(value)
+				Me.SendPropertyChanging
+				Me._DES_observaciones = value
+				Me.SendPropertyChanged("DES_observaciones")
+				Me.OnDES_observacionesChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_campo_1", DbType:="NVarChar(50)")>  _
+	Public Property DES_campo_1() As String
+		Get
+			Return Me._DES_campo_1
+		End Get
+		Set
+			If (String.Equals(Me._DES_campo_1, value) = false) Then
+				Me.OnDES_campo_1Changing(value)
+				Me.SendPropertyChanging
+				Me._DES_campo_1 = value
+				Me.SendPropertyChanged("DES_campo_1")
+				Me.OnDES_campo_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_EMB_bultos", DbType:="NVarChar(50)")>  _
+	Public Property DES_EMB_bultos() As String
+		Get
+			Return Me._DES_EMB_bultos
+		End Get
+		Set
+			If (String.Equals(Me._DES_EMB_bultos, value) = false) Then
+				Me.OnDES_EMB_bultosChanging(value)
+				Me.SendPropertyChanging
+				Me._DES_EMB_bultos = value
+				Me.SendPropertyChanged("DES_EMB_bultos")
+				Me.OnDES_EMB_bultosChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_EMB_estado", DbType:="NVarChar(50)")>  _
+	Public Property DES_EMB_estado() As String
+		Get
+			Return Me._DES_EMB_estado
+		End Get
+		Set
+			If (String.Equals(Me._DES_EMB_estado, value) = false) Then
+				Me.OnDES_EMB_estadoChanging(value)
+				Me.SendPropertyChanging
+				Me._DES_EMB_estado = value
+				Me.SendPropertyChanged("DES_EMB_estado")
+				Me.OnDES_EMB_estadoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_EMB_observaciones", DbType:="NVarChar(50)")>  _
+	Public Property DES_EMB_observaciones() As String
+		Get
+			Return Me._DES_EMB_observaciones
+		End Get
+		Set
+			If (String.Equals(Me._DES_EMB_observaciones, value) = false) Then
+				Me.OnDES_EMB_observacionesChanging(value)
+				Me.SendPropertyChanging
+				Me._DES_EMB_observaciones = value
+				Me.SendPropertyChanged("DES_EMB_observaciones")
+				Me.OnDES_EMB_observacionesChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_campo_8", DbType:="NVarChar(50)")>  _
+	Public Property DES_campo_8() As String
+		Get
+			Return Me._DES_campo_8
+		End Get
+		Set
+			If (String.Equals(Me._DES_campo_8, value) = false) Then
+				Me.OnDES_campo_8Changing(value)
+				Me.SendPropertyChanging
+				Me._DES_campo_8 = value
+				Me.SendPropertyChanged("DES_campo_8")
+				Me.OnDES_campo_8Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="ORDEN_TRABAJO_DESPACHO", Storage:="_ORDEN_TRABAJO", ThisKey:="ORT_id_orden_trabajo", OtherKey:="ORT_id_orden_trabajo", IsForeignKey:=true)>  _
+	Public Property ORDEN_TRABAJO() As ORDEN_TRABAJO
+		Get
+			Return Me._ORDEN_TRABAJO.Entity
+		End Get
+		Set
+			Dim previousValue As ORDEN_TRABAJO = Me._ORDEN_TRABAJO.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._ORDEN_TRABAJO.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._ORDEN_TRABAJO.Entity = Nothing
+					previousValue.DESPACHO.Remove(Me)
+				End If
+				Me._ORDEN_TRABAJO.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.DESPACHO.Add(Me)
+					Me._ORT_id_orden_trabajo = value.ORT_id_orden_trabajo
+				Else
+					Me._ORT_id_orden_trabajo = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("ORDEN_TRABAJO")
 			End If
 		End Set
 	End Property
