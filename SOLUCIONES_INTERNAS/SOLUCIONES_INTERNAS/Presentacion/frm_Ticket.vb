@@ -170,26 +170,7 @@
 
     Private Sub btn_Solicitud_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_Solicitud.Click
         Try
-            Dim cargaticket = (From tic In datacontext.TICKET
-                               Select tic.TIC_id_ticket,
-                               tic.TIC_id_usuario,
-                               tic.TIC_fecha_pedido,
-                               tic.TIC_recurso,
-                               tic.TIC_herramienta,
-                               tic.TIC_plazo_resolucion,
-                               tic.TIC_descripcion,
-                               tic.TIC_prioridad,
-                               tic.TIC_estado,
-                               tic.TIC_fecha_real_cierre,
-                               tic.TIC_fecha_estimado_cierre,
-                               tic.TIC_sector,
-                               tic.TIC_comentarios
-                                Where TIC_recurso = StrConv(txt_recurso.Text, VbStrConv.ProperCase)).Any
-            If cargaticket = True Then
-                MsgBox("El ticket ingresado ya existe")
-                'limpiarcontroles()
-                Exit Sub
-            End If
+           
             If txt_recurso.Text.Length = 0 Then
                 MsgBox("Debe completar el campo 'Recurso'")
                 txt_recurso.Focus()
@@ -205,22 +186,14 @@
             ticket.TIC_plazo_resolucion = StrConv(txt_plazo.Text, VbStrConv.ProperCase)
             ticket.TIC_descripcion = StrConv(txt_descripcion.Text, VbStrConv.ProperCase)
 
-            ''GUARDA RECEPTOR
-            'ticket.TIC_prioridad = StrConv(cbo_prioridad.Text, VbStrConv.ProperCase)
             ticket.TIC_estado = StrConv(cbo_estado.Text, VbStrConv.ProperCase)
-            'ticket.TIC_fecha_estimado_cierre = StrConv(dtp_fecha_estimada.Text, VbStrConv.ProperCase)
-            'ticket.TIC_fecha_real_cierre = StrConv(dtp_fecha_real.Text, VbStrConv.ProperCase)
-            'ticket.TIC_sector = StrConv(txt_sector_dirigido.Text, VbStrConv.ProperCase)
-            'ticket.TIC_comentarios = StrConv(txt_comentarios.Text, VbStrConv.ProperCase)
-
+    
             datacontext.TICKET.InsertOnSubmit(ticket)
             datacontext.SubmitChanges()
             Dim ultimoticket = (From ut In datacontext.TICKET
                                 Select ut.TIC_id_ticket
                                 Order By TIC_id_ticket Descending).ToList()(0)
-
             MsgBox("El Ticket fue cargado exitosamente, N° " & ultimoticket)
-
             Me.Close()
             '  cargargrilla()
             ' limpiarcontroles()
@@ -293,5 +266,23 @@
 
     Private Sub cbo_busqueda_estado_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbo_busqueda_estado.SelectedIndexChanged
         cargargrillaticket()
+    End Sub
+
+    Private Sub btn_eliminar_Click(sender As System.Object, e As System.EventArgs) Handles btn_eliminar.Click
+        If dgv_lista_ticket.SelectedRows.Count > 0 Then
+            Dim eliminar = (From t In datacontext.TICKET
+                            Where t.TIC_id_ticket = CInt(dgv_lista_ticket.Item("TIC_id_ticket", dgv_lista_ticket.SelectedRows(0).Index).Value)).ToList()(0)
+            Select Case MsgBox("Se eliminará el Ticket seleccionado, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar Ticket")
+                Case MsgBoxResult.Yes
+                    datacontext.TICKET.DeleteOnSubmit(eliminar)
+                    datacontext.SubmitChanges()
+                    MsgBox("El Ticket ha sido eliminado")
+                    cargargrillaticket()
+                    Me.Close()
+            End Select
+            Me.Close()
+        Else
+            MsgBox("Debe seleccionar un Ticket")
+        End If
     End Sub
 End Class
