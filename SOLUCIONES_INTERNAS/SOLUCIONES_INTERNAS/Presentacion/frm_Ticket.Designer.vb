@@ -22,10 +22,13 @@ Partial Class frm_Ticket
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.btn_Cancelar_Receptor = New System.Windows.Forms.Button()
         Me.txt_id_ticket = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btn_respuesta = New System.Windows.Forms.Button()
-        Me.GroupListadoClientes = New System.Windows.Forms.GroupBox()
+        Me.GroupReceptor = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txt_comentarios = New System.Windows.Forms.TextBox()
         Me.dtp_fecha_estimada = New System.Windows.Forms.DateTimePicker()
@@ -38,7 +41,7 @@ Partial Class frm_Ticket
         Me.txt_sector_dirigido = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.GroupNuevoCliente = New System.Windows.Forms.GroupBox()
+        Me.GroupSolicitante = New System.Windows.Forms.GroupBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.dtp_fecha_pedido = New System.Windows.Forms.DateTimePicker()
@@ -55,58 +58,105 @@ Partial Class frm_Ticket
         Me.txt_nombre_usuario = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnCancelar_Cliente = New System.Windows.Forms.Button()
+        Me.btnCancelar_Solicitante = New System.Windows.Forms.Button()
         Me.btn_Solicitud = New System.Windows.Forms.Button()
-        Me.GroupListadoClientes.SuspendLayout()
-        Me.GroupNuevoCliente.SuspendLayout()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.cbo_busqueda_estado = New System.Windows.Forms.ComboBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
+        Me.btn_eliminar = New System.Windows.Forms.Button()
+        Me.dgv_lista_ticket = New System.Windows.Forms.DataGridView()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.GroupReceptor.SuspendLayout()
+        Me.GroupSolicitante.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.dgv_lista_ticket, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Location = New System.Drawing.Point(1, 2)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(525, 607)
+        Me.TabControl1.TabIndex = 0
+        '
+        'TabPage1
+        '
+        Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage1.Controls.Add(Me.btn_Cancelar_Receptor)
+        Me.TabPage1.Controls.Add(Me.txt_id_ticket)
+        Me.TabPage1.Controls.Add(Me.Label7)
+        Me.TabPage1.Controls.Add(Me.btn_respuesta)
+        Me.TabPage1.Controls.Add(Me.GroupReceptor)
+        Me.TabPage1.Controls.Add(Me.GroupSolicitante)
+        Me.TabPage1.Controls.Add(Me.btnCancelar_Solicitante)
+        Me.TabPage1.Controls.Add(Me.btn_Solicitud)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(517, 581)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Solicitud"
+        '
+        'btn_Cancelar_Receptor
+        '
+        Me.btn_Cancelar_Receptor.Location = New System.Drawing.Point(432, 542)
+        Me.btn_Cancelar_Receptor.Name = "btn_Cancelar_Receptor"
+        Me.btn_Cancelar_Receptor.Size = New System.Drawing.Size(75, 33)
+        Me.btn_Cancelar_Receptor.TabIndex = 25
+        Me.btn_Cancelar_Receptor.Text = "Cancelar"
+        Me.btn_Cancelar_Receptor.UseVisualStyleBackColor = True
         '
         'txt_id_ticket
         '
-        Me.txt_id_ticket.Location = New System.Drawing.Point(149, 286)
+        Me.txt_id_ticket.Location = New System.Drawing.Point(143, 280)
         Me.txt_id_ticket.MaxLength = 10
         Me.txt_id_ticket.Name = "txt_id_ticket"
         Me.txt_id_ticket.Size = New System.Drawing.Size(97, 20)
-        Me.txt_id_ticket.TabIndex = 17
+        Me.txt_id_ticket.TabIndex = 24
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(251, 289)
+        Me.Label7.Location = New System.Drawing.Point(245, 283)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(47, 13)
-        Me.Label7.TabIndex = 16
+        Me.Label7.TabIndex = 23
         Me.Label7.Text = "id_ticket"
         '
         'btn_respuesta
         '
-        Me.btn_respuesta.Location = New System.Drawing.Point(240, 550)
+        Me.btn_respuesta.Location = New System.Drawing.Point(351, 542)
         Me.btn_respuesta.Name = "btn_respuesta"
         Me.btn_respuesta.Size = New System.Drawing.Size(75, 33)
-        Me.btn_respuesta.TabIndex = 15
+        Me.btn_respuesta.TabIndex = 22
         Me.btn_respuesta.Text = "Respuesta"
         Me.btn_respuesta.UseVisualStyleBackColor = True
         '
-        'GroupListadoClientes
+        'GroupReceptor
         '
-        Me.GroupListadoClientes.Controls.Add(Me.Label4)
-        Me.GroupListadoClientes.Controls.Add(Me.txt_comentarios)
-        Me.GroupListadoClientes.Controls.Add(Me.dtp_fecha_estimada)
-        Me.GroupListadoClientes.Controls.Add(Me.dtp_fecha_real)
-        Me.GroupListadoClientes.Controls.Add(Me.Label14)
-        Me.GroupListadoClientes.Controls.Add(Me.cbo_estado)
-        Me.GroupListadoClientes.Controls.Add(Me.cbo_prioridad)
-        Me.GroupListadoClientes.Controls.Add(Me.Label6)
-        Me.GroupListadoClientes.Controls.Add(Me.Label8)
-        Me.GroupListadoClientes.Controls.Add(Me.txt_sector_dirigido)
-        Me.GroupListadoClientes.Controls.Add(Me.Label12)
-        Me.GroupListadoClientes.Controls.Add(Me.Label13)
-        Me.GroupListadoClientes.Location = New System.Drawing.Point(12, 318)
-        Me.GroupListadoClientes.Name = "GroupListadoClientes"
-        Me.GroupListadoClientes.Size = New System.Drawing.Size(501, 226)
-        Me.GroupListadoClientes.TabIndex = 12
-        Me.GroupListadoClientes.TabStop = False
-        Me.GroupListadoClientes.Text = "Receptor"
+        Me.GroupReceptor.Controls.Add(Me.Label4)
+        Me.GroupReceptor.Controls.Add(Me.txt_comentarios)
+        Me.GroupReceptor.Controls.Add(Me.dtp_fecha_estimada)
+        Me.GroupReceptor.Controls.Add(Me.dtp_fecha_real)
+        Me.GroupReceptor.Controls.Add(Me.Label14)
+        Me.GroupReceptor.Controls.Add(Me.cbo_estado)
+        Me.GroupReceptor.Controls.Add(Me.cbo_prioridad)
+        Me.GroupReceptor.Controls.Add(Me.Label6)
+        Me.GroupReceptor.Controls.Add(Me.Label8)
+        Me.GroupReceptor.Controls.Add(Me.txt_sector_dirigido)
+        Me.GroupReceptor.Controls.Add(Me.Label12)
+        Me.GroupReceptor.Controls.Add(Me.Label13)
+        Me.GroupReceptor.Location = New System.Drawing.Point(6, 312)
+        Me.GroupReceptor.Name = "GroupReceptor"
+        Me.GroupReceptor.Size = New System.Drawing.Size(501, 226)
+        Me.GroupReceptor.TabIndex = 19
+        Me.GroupReceptor.TabStop = False
+        Me.GroupReceptor.Text = "Receptor"
         '
         'Label4
         '
@@ -155,7 +205,7 @@ Partial Class frm_Ticket
         'cbo_estado
         '
         Me.cbo_estado.FormattingEnabled = True
-        Me.cbo_estado.Items.AddRange(New Object() {"Seleccionar", "Nuevo", "Atendido", "Frenado"})
+        Me.cbo_estado.Items.AddRange(New Object() {"Abierto", "Atendido", "Frenado", "Resuelto"})
         Me.cbo_estado.Location = New System.Drawing.Point(330, 28)
         Me.cbo_estado.Name = "cbo_estado"
         Me.cbo_estado.Size = New System.Drawing.Size(156, 21)
@@ -164,7 +214,7 @@ Partial Class frm_Ticket
         'cbo_prioridad
         '
         Me.cbo_prioridad.FormattingEnabled = True
-        Me.cbo_prioridad.Items.AddRange(New Object() {"Seleccionar", "Baja", "Media", "Alta"})
+        Me.cbo_prioridad.Items.AddRange(New Object() {"Baja", "Media", "Alta"})
         Me.cbo_prioridad.Location = New System.Drawing.Point(69, 28)
         Me.cbo_prioridad.Name = "cbo_prioridad"
         Me.cbo_prioridad.Size = New System.Drawing.Size(156, 21)
@@ -214,30 +264,30 @@ Partial Class frm_Ticket
         Me.Label13.TabIndex = 20
         Me.Label13.Text = "Prioridad"
         '
-        'GroupNuevoCliente
+        'GroupSolicitante
         '
-        Me.GroupNuevoCliente.Controls.Add(Me.Label16)
-        Me.GroupNuevoCliente.Controls.Add(Me.Label15)
-        Me.GroupNuevoCliente.Controls.Add(Me.dtp_fecha_pedido)
-        Me.GroupNuevoCliente.Controls.Add(Me.Label5)
-        Me.GroupNuevoCliente.Controls.Add(Me.Label1)
-        Me.GroupNuevoCliente.Controls.Add(Me.Label11)
-        Me.GroupNuevoCliente.Controls.Add(Me.txt_herramienta)
-        Me.GroupNuevoCliente.Controls.Add(Me.Label9)
-        Me.GroupNuevoCliente.Controls.Add(Me.txt_plazo)
-        Me.GroupNuevoCliente.Controls.Add(Me.Label10)
-        Me.GroupNuevoCliente.Controls.Add(Me.txt_descripcion)
-        Me.GroupNuevoCliente.Controls.Add(Me.txt_id_usuario)
-        Me.GroupNuevoCliente.Controls.Add(Me.txt_recurso)
-        Me.GroupNuevoCliente.Controls.Add(Me.txt_nombre_usuario)
-        Me.GroupNuevoCliente.Controls.Add(Me.Label3)
-        Me.GroupNuevoCliente.Controls.Add(Me.Label2)
-        Me.GroupNuevoCliente.Location = New System.Drawing.Point(12, 12)
-        Me.GroupNuevoCliente.Name = "GroupNuevoCliente"
-        Me.GroupNuevoCliente.Size = New System.Drawing.Size(501, 261)
-        Me.GroupNuevoCliente.TabIndex = 11
-        Me.GroupNuevoCliente.TabStop = False
-        Me.GroupNuevoCliente.Text = "Solicitante"
+        Me.GroupSolicitante.Controls.Add(Me.Label16)
+        Me.GroupSolicitante.Controls.Add(Me.Label15)
+        Me.GroupSolicitante.Controls.Add(Me.dtp_fecha_pedido)
+        Me.GroupSolicitante.Controls.Add(Me.Label5)
+        Me.GroupSolicitante.Controls.Add(Me.Label1)
+        Me.GroupSolicitante.Controls.Add(Me.Label11)
+        Me.GroupSolicitante.Controls.Add(Me.txt_herramienta)
+        Me.GroupSolicitante.Controls.Add(Me.Label9)
+        Me.GroupSolicitante.Controls.Add(Me.txt_plazo)
+        Me.GroupSolicitante.Controls.Add(Me.Label10)
+        Me.GroupSolicitante.Controls.Add(Me.txt_descripcion)
+        Me.GroupSolicitante.Controls.Add(Me.txt_id_usuario)
+        Me.GroupSolicitante.Controls.Add(Me.txt_recurso)
+        Me.GroupSolicitante.Controls.Add(Me.txt_nombre_usuario)
+        Me.GroupSolicitante.Controls.Add(Me.Label3)
+        Me.GroupSolicitante.Controls.Add(Me.Label2)
+        Me.GroupSolicitante.Location = New System.Drawing.Point(6, 6)
+        Me.GroupSolicitante.Name = "GroupSolicitante"
+        Me.GroupSolicitante.Size = New System.Drawing.Size(501, 261)
+        Me.GroupSolicitante.TabIndex = 18
+        Me.GroupSolicitante.TabStop = False
+        Me.GroupSolicitante.Text = "Solicitante"
         '
         'Label16
         '
@@ -264,7 +314,7 @@ Partial Class frm_Ticket
         'dtp_fecha_pedido
         '
         Me.dtp_fecha_pedido.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fecha_pedido.Location = New System.Drawing.Point(236, 19)
+        Me.dtp_fecha_pedido.Location = New System.Drawing.Point(391, 19)
         Me.dtp_fecha_pedido.Name = "dtp_fecha_pedido"
         Me.dtp_fecha_pedido.Size = New System.Drawing.Size(95, 20)
         Me.dtp_fecha_pedido.TabIndex = 34
@@ -272,7 +322,7 @@ Partial Class frm_Ticket
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(143, 22)
+        Me.Label5.Location = New System.Drawing.Point(298, 22)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(87, 13)
         Me.Label5.TabIndex = 33
@@ -281,7 +331,7 @@ Partial Class frm_Ticket
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(233, 151)
+        Me.Label1.Location = New System.Drawing.Point(211, 151)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(28, 13)
         Me.Label1.TabIndex = 17
@@ -318,7 +368,7 @@ Partial Class frm_Ticket
         Me.txt_plazo.Location = New System.Drawing.Point(169, 148)
         Me.txt_plazo.MaxLength = 5
         Me.txt_plazo.Name = "txt_plazo"
-        Me.txt_plazo.Size = New System.Drawing.Size(58, 20)
+        Me.txt_plazo.Size = New System.Drawing.Size(36, 20)
         Me.txt_plazo.TabIndex = 3
         '
         'Label10
@@ -342,10 +392,10 @@ Partial Class frm_Ticket
         '
         'txt_id_usuario
         '
-        Me.txt_id_usuario.Location = New System.Drawing.Point(9, 57)
+        Me.txt_id_usuario.Location = New System.Drawing.Point(94, 22)
         Me.txt_id_usuario.MaxLength = 10
         Me.txt_id_usuario.Name = "txt_id_usuario"
-        Me.txt_id_usuario.Size = New System.Drawing.Size(31, 20)
+        Me.txt_id_usuario.Size = New System.Drawing.Size(73, 20)
         Me.txt_id_usuario.TabIndex = 4
         '
         'txt_recurso
@@ -384,51 +434,112 @@ Partial Class frm_Ticket
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Usuario"
         '
-        'btnCancelar_Cliente
+        'btnCancelar_Solicitante
         '
-        Me.btnCancelar_Cliente.Location = New System.Drawing.Point(438, 281)
-        Me.btnCancelar_Cliente.Name = "btnCancelar_Cliente"
-        Me.btnCancelar_Cliente.Size = New System.Drawing.Size(75, 33)
-        Me.btnCancelar_Cliente.TabIndex = 14
-        Me.btnCancelar_Cliente.Text = "Cancelar"
-        Me.btnCancelar_Cliente.UseVisualStyleBackColor = True
+        Me.btnCancelar_Solicitante.Location = New System.Drawing.Point(432, 275)
+        Me.btnCancelar_Solicitante.Name = "btnCancelar_Solicitante"
+        Me.btnCancelar_Solicitante.Size = New System.Drawing.Size(75, 33)
+        Me.btnCancelar_Solicitante.TabIndex = 21
+        Me.btnCancelar_Solicitante.Text = "Cancelar"
+        Me.btnCancelar_Solicitante.UseVisualStyleBackColor = True
         '
         'btn_Solicitud
         '
-        Me.btn_Solicitud.Location = New System.Drawing.Point(357, 281)
+        Me.btn_Solicitud.Location = New System.Drawing.Point(351, 275)
         Me.btn_Solicitud.Name = "btn_Solicitud"
         Me.btn_Solicitud.Size = New System.Drawing.Size(75, 33)
-        Me.btn_Solicitud.TabIndex = 13
+        Me.btn_Solicitud.TabIndex = 20
         Me.btn_Solicitud.Text = "Solicitud"
         Me.btn_Solicitud.UseVisualStyleBackColor = True
+        '
+        'TabPage2
+        '
+        Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage2.Controls.Add(Me.cbo_busqueda_estado)
+        Me.TabPage2.Controls.Add(Me.Label17)
+        Me.TabPage2.Controls.Add(Me.btn_cancelar)
+        Me.TabPage2.Controls.Add(Me.btn_eliminar)
+        Me.TabPage2.Controls.Add(Me.dgv_lista_ticket)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(517, 581)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Búsqueda"
+        '
+        'cbo_busqueda_estado
+        '
+        Me.cbo_busqueda_estado.FormattingEnabled = True
+        Me.cbo_busqueda_estado.Items.AddRange(New Object() {"Todos", "Abierto", "Atendido", "Frenado", "Resuelto"})
+        Me.cbo_busqueda_estado.Location = New System.Drawing.Point(202, 14)
+        Me.cbo_busqueda_estado.Name = "cbo_busqueda_estado"
+        Me.cbo_busqueda_estado.Size = New System.Drawing.Size(116, 21)
+        Me.cbo_busqueda_estado.TabIndex = 30
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(156, 17)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(40, 13)
+        Me.Label17.TabIndex = 29
+        Me.Label17.Text = "Estado"
+        '
+        'btn_cancelar
+        '
+        Me.btn_cancelar.Location = New System.Drawing.Point(433, 537)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(75, 33)
+        Me.btn_cancelar.TabIndex = 21
+        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.UseVisualStyleBackColor = True
+        '
+        'btn_eliminar
+        '
+        Me.btn_eliminar.Location = New System.Drawing.Point(352, 537)
+        Me.btn_eliminar.Name = "btn_eliminar"
+        Me.btn_eliminar.Size = New System.Drawing.Size(75, 33)
+        Me.btn_eliminar.TabIndex = 21
+        Me.btn_eliminar.Text = "Eliminar"
+        Me.btn_eliminar.UseVisualStyleBackColor = True
+        '
+        'dgv_lista_ticket
+        '
+        Me.dgv_lista_ticket.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_lista_ticket.Location = New System.Drawing.Point(8, 49)
+        Me.dgv_lista_ticket.Name = "dgv_lista_ticket"
+        Me.dgv_lista_ticket.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgv_lista_ticket.Size = New System.Drawing.Size(501, 482)
+        Me.dgv_lista_ticket.TabIndex = 0
         '
         'frm_Ticket
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(528, 598)
-        Me.Controls.Add(Me.txt_id_ticket)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.btn_respuesta)
-        Me.Controls.Add(Me.GroupListadoClientes)
-        Me.Controls.Add(Me.GroupNuevoCliente)
-        Me.Controls.Add(Me.btnCancelar_Cliente)
-        Me.Controls.Add(Me.btn_Solicitud)
+        Me.ClientSize = New System.Drawing.Size(525, 606)
+        Me.Controls.Add(Me.TabControl1)
         Me.Name = "frm_Ticket"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ticket"
-        Me.GroupListadoClientes.ResumeLayout(False)
-        Me.GroupListadoClientes.PerformLayout()
-        Me.GroupNuevoCliente.ResumeLayout(False)
-        Me.GroupNuevoCliente.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
+        Me.GroupReceptor.ResumeLayout(False)
+        Me.GroupReceptor.PerformLayout()
+        Me.GroupSolicitante.ResumeLayout(False)
+        Me.GroupSolicitante.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
+        CType(Me.dgv_lista_ticket, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
+    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents txt_id_ticket As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents btn_respuesta As System.Windows.Forms.Button
-    Friend WithEvents GroupListadoClientes As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupReceptor As System.Windows.Forms.GroupBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents txt_comentarios As System.Windows.Forms.TextBox
     Friend WithEvents dtp_fecha_estimada As System.Windows.Forms.DateTimePicker
@@ -441,7 +552,7 @@ Partial Class frm_Ticket
     Friend WithEvents txt_sector_dirigido As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
-    Friend WithEvents GroupNuevoCliente As System.Windows.Forms.GroupBox
+    Friend WithEvents GroupSolicitante As System.Windows.Forms.GroupBox
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents dtp_fecha_pedido As System.Windows.Forms.DateTimePicker
@@ -458,6 +569,13 @@ Partial Class frm_Ticket
     Friend WithEvents txt_nombre_usuario As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents btnCancelar_Cliente As System.Windows.Forms.Button
+    Friend WithEvents btnCancelar_Solicitante As System.Windows.Forms.Button
     Friend WithEvents btn_Solicitud As System.Windows.Forms.Button
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents dgv_lista_ticket As System.Windows.Forms.DataGridView
+    Friend WithEvents btn_cancelar As System.Windows.Forms.Button
+    Friend WithEvents btn_eliminar As System.Windows.Forms.Button
+    Friend WithEvents btn_Cancelar_Receptor As System.Windows.Forms.Button
+    Friend WithEvents cbo_busqueda_estado As System.Windows.Forms.ComboBox
+    Friend WithEvents Label17 As System.Windows.Forms.Label
 End Class
