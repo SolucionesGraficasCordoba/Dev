@@ -377,6 +377,7 @@ Public Class frm_listado_orden_trabajo_ampliada
             ' Form(DESPACHO)
         ElseIf quienllamolistado_ot.Name = frm_Despacho.Name Then
 
+            'PESTAÑA LOGISTICA
             If frm_Despacho.tbp_logistica.Enabled = True Then
                 Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_campo_1, bo.DES_nro_remito
                                   Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).Any
@@ -401,6 +402,7 @@ Public Class frm_listado_orden_trabajo_ampliada
 
                 frm_Despacho.Nro_linea_grid = frm_Despacho.Nro_linea_grid + 1
 
+                'PESTAÑA EMPAQUE
             ElseIf frm_Despacho.tbp_empaque.Enabled = True Then
 
                 Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_campo_1, bo.DES_nro_remito
