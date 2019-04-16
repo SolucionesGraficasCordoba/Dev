@@ -57,17 +57,6 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SV-PLANET-01;Initial Catalog=SOLUCIONES_INTERNAS;Persist Security Inf"& _ 
-            "o=True;User ID=vheredia;Password=heredia")>  _
-        Public ReadOnly Property SOLUCIONES_INTERNASConnectionString() As String
-            Get
-                Return CType(Me("SOLUCIONES_INTERNASConnectionString"),String)
-            End Get
-        End Property
-        
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;Persist Security Info=True"& _ 
             ";User ID=vheredia;Password=heredia")>  _
         Public ReadOnly Property PREPRODUCCIONConnectionString() As String
@@ -84,6 +73,27 @@ Namespace My
         Public ReadOnly Property SOLUCIONES_INTERNAS1ConnectionString() As String
             Get
                 Return CType(Me("SOLUCIONES_INTERNAS1ConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;Persist Security Info=True"& _ 
+            ";User ID=vheredia;Password=heredia")>  _
+        Public ReadOnly Property SOLUCIONES_INTERNASConnectionString() As String
+            Get
+                Return CType(Me("SOLUCIONES_INTERNASConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=SV-PLANET-01;Initial Catalog=PREPRODUCCION;User ID=vheredia")>  _
+        Public ReadOnly Property PREPRODUCCIONConnectionString1() As String
+            Get
+                Return CType(Me("PREPRODUCCIONConnectionString1"),String)
             End Get
         End Property
     End Class
