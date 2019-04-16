@@ -1,5 +1,11 @@
-﻿Public Class frm_Ticket
+﻿Imports iTextSharp.text
+Imports iTextSharp.text.pdf
+Imports System.IO
+Public Class frm_Ticket
     Dim datacontext As New DataS_Interno
+    Dim fuente As iTextSharp.text.pdf.BaseFont = FontFactory.GetFont(FontFactory.HELVETICA).BaseFont
+    Dim linea As New Phrase("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ")
+    Dim interlineado As New Phrase(" ")
 
     Private Sub frm_Ticket_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
 
@@ -78,6 +84,7 @@
         dgv_lista_ticket.Columns(7).DataPropertyName = "TIC_descripcion"
         dgv_lista_ticket.Columns(8).DataPropertyName = "TIC_prioridad"
         dgv_lista_ticket.Columns(9).DataPropertyName = "TIC_estado"
+        dgv_lista_ticket.Columns(9).Visible = False
         dgv_lista_ticket.Columns(10).DataPropertyName = "TIC_fecha_real_cierre"
         dgv_lista_ticket.Columns(11).DataPropertyName = "TIC_fecha_estimado_cierre"
         dgv_lista_ticket.Columns(12).DataPropertyName = "TIC_sector"
@@ -170,7 +177,7 @@
 
     Private Sub btn_Solicitud_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_Solicitud.Click
         Try
-           
+
             If txt_recurso.Text.Length = 0 Then
                 MsgBox("Debe completar el campo 'Recurso'")
                 txt_recurso.Focus()
@@ -187,7 +194,7 @@
             ticket.TIC_descripcion = StrConv(txt_descripcion.Text, VbStrConv.ProperCase)
 
             ticket.TIC_estado = StrConv(cbo_estado.Text, VbStrConv.ProperCase)
-    
+
             datacontext.TICKET.InsertOnSubmit(ticket)
             datacontext.SubmitChanges()
             Dim ultimoticket = (From ut In datacontext.TICKET
@@ -221,9 +228,16 @@
 
             datacontext.SubmitChanges()
             MsgBox("Los datos se han modificado correctamente")
+            LimpiarReceptor()
+            LimpiarSolicitante()
+            cargargrillaticket()
+            TabControl1.SelectedIndex = 1
             '  cargargrilla()
             '  Me.limpiarcontroles()
-            Me.Close()
+            If frm_Principal.LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
+                Me.Close()
+            End If
+
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar Ticket")
             '  Me.limpiarcontroles()
@@ -237,11 +251,12 @@
     End Sub
 
     Private Sub dgv_lista_ticket_CellDoubleClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_lista_ticket.CellDoubleClick
-        If Me.dgv_lista_ticket.SelectedRows.Count > 0 Then
 
+        If Me.dgv_lista_ticket.SelectedRows.Count > 0 Then
             Me.txt_id_ticket.Text = Me.dgv_lista_ticket.Item("TIC_id_ticket", dgv_lista_ticket.SelectedRows(0).Index).Value
             Me.dtp_fecha_pedido.Text = Me.dgv_lista_ticket.Item("TIC_fecha_pedido", dgv_lista_ticket.SelectedRows(0).Index).Value
             Me.txt_id_usuario.Text = Me.dgv_lista_ticket.Item("TIC_id_usuario", dgv_lista_ticket.SelectedRows(0).Index).Value
+            Me.txt_nombre_usuario.Text = Me.dgv_lista_ticket.Item("USU_usuario", dgv_lista_ticket.SelectedRows(0).Index).Value
             Me.txt_recurso.Text = Me.dgv_lista_ticket.Item("TIC_recurso", dgv_lista_ticket.SelectedRows(0).Index).Value
             Me.txt_herramienta.Text = Me.dgv_lista_ticket.Item("TIC_herramienta", dgv_lista_ticket.SelectedRows(0).Index).Value
             Me.txt_plazo.Text = Me.dgv_lista_ticket.Item("TIC_plazo_resolucion", dgv_lista_ticket.SelectedRows(0).Index).Value
@@ -254,14 +269,28 @@
             Me.txt_comentarios.Text = Me.dgv_lista_ticket.Item("TIC_comentarios", dgv_lista_ticket.SelectedRows(0).Index).Value
 
             TabControl1.SelectedIndex = 0
-            GroupSolicitante.Enabled = False
-            btn_Solicitud.Enabled = False
-            btnCancelar_Solicitante.Enabled = False
-            Else
+
+        Else
             MsgBox("Debe seleccionar una ticket del listado")
             Exit Sub
         End If
-      
+
+        If frm_Principal.LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
+            GroupSolicitante.Enabled = False
+            btn_Solicitud.Enabled = False
+            btnCancelar_Solicitante.Enabled = False
+            chk_Nuevo.Enabled = True
+            chk_Nuevo.Checked = False
+            GroupSolicitante.Enabled = True
+        Else
+            btn_Solicitud.Enabled = False
+            btnCancelar_Solicitante.Enabled = False
+            chk_Nuevo.Enabled = False
+            GroupSolicitante.Enabled = False
+            GroupReceptor.Enabled = True
+            btn_respuesta.Enabled = True
+            btn_Cancelar_Receptor.Enabled = True
+        End If
     End Sub
 
     Private Sub cbo_busqueda_estado_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbo_busqueda_estado.SelectedIndexChanged
@@ -284,5 +313,149 @@
         Else
             MsgBox("Debe seleccionar un Ticket")
         End If
+    End Sub
+
+    Private Sub btn_cancelar_Click(sender As System.Object, e As System.EventArgs) Handles btn_cancelar.Click
+        Me.Close()
+        Me.Dispose()
+    End Sub
+
+    Sub LimpiarReceptor()
+        txt_id_ticket.Clear()
+        cbo_prioridad.SelectedIndex = -1
+        cbo_estado.SelectedIndex = 0
+        dtp_fecha_estimada.Text = Now
+        dtp_fecha_real.Text = Now
+        txt_sector_dirigido.Clear()
+        txt_comentarios.Clear()
+        btn_respuesta.Enabled = True
+        btn_Cancelar_Receptor.Enabled = True
+    End Sub
+
+    Sub CargarReceptor()
+        txt_id_ticket.Clear()
+        cbo_prioridad.SelectedIndex = -1
+        cbo_estado.SelectedIndex = 0
+        dtp_fecha_estimada.Text = Now
+        dtp_fecha_real.Text = Now
+        txt_sector_dirigido.Clear()
+        txt_comentarios.Clear()
+        btn_respuesta.Enabled = False
+        btn_Cancelar_Receptor.Enabled = False
+    End Sub
+
+    Sub LimpiarSolicitante()
+        txt_recurso.Clear()
+        txt_herramienta.Clear()
+        txt_plazo.Clear()
+        txt_descripcion.Clear()
+        dtp_fecha_pedido.Text = Now
+        btn_Solicitud.Enabled = True
+        btnCancelar_Solicitante.Enabled = True
+        GroupReceptor.Enabled = False
+        btn_respuesta.Enabled = False
+        btn_Cancelar_Receptor.Enabled = False
+    End Sub
+
+    Sub CargarSolicitante()
+        txt_recurso.Clear()
+        txt_herramienta.Clear()
+        txt_plazo.Clear()
+        txt_descripcion.Clear()
+        dtp_fecha_pedido.Text = Now
+        btn_Solicitud.Enabled = False
+        btnCancelar_Solicitante.Enabled = False
+        GroupReceptor.Enabled = True
+        GroupSolicitante.Enabled = True
+        btn_respuesta.Enabled = True
+        btn_Cancelar_Receptor.Enabled = True
+    End Sub
+
+    Private Sub chk_Nuevo_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chk_Nuevo.CheckedChanged
+        If frm_Principal.LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
+            If chk_Nuevo.Checked = True Then
+                LimpiarSolicitante()
+                GroupSolicitante.Enabled = True
+            Else
+                '   CargarSolicitante()
+            End If
+        Else
+            LimpiarReceptor()
+            CargarReceptor()
+        End If
+    End Sub
+
+    Private Sub dgv_lista_ticket_CellClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_lista_ticket.CellClick
+        cargargrillaticket()
+    End Sub
+
+    Private Sub btn_Exportar_PDF_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_Exportar_PDF.Click
+        Try
+            'intentar generar el documento
+            Dim doc As New Document(PageSize.A3.Rotate, 5, 5, 5, 5)
+            'path que guarda el reporte en el escritorio de windows (desktop)
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Ticket_" + cbo_busqueda_estado.Text + ".pdf"
+            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+            PdfWriter.GetInstance(doc, file)
+            doc.Open()
+
+            Dim encabezado As New Paragraph("Estado: " + cbo_busqueda_estado.Text)
+            doc.Add(encabezado)
+            doc.Add(interlineado)
+            doc.Add(interlineado)
+
+            'se crea un objeto PDFTable con el numero de columnas  del datagridview
+            Dim datatableencabezado As New PdfPTable(11)
+            Dim datatablecuerpo As New PdfPTable(11)
+
+            datatableencabezado.WidthPercentage = 100
+            datatableencabezado.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT
+            datatableencabezado.HeaderRows = 0
+            datatableencabezado.DefaultCell.BorderWidth = 1
+
+            datatablecuerpo.WidthPercentage = 100
+            datatablecuerpo.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT
+            datatablecuerpo.HeaderRows = 1
+            datatablecuerpo.DefaultCell.BorderWidth = 0
+
+            'se capturan los nombres de las columnas del datagridview de las ordenes por remito
+
+            For Z As Integer = 0 To dgv_lista_ticket.ColumnCount - 1
+                If dgv_lista_ticket.Columns(Z).Visible = True Then
+                    Try
+                        datatableencabezado.AddCell(dgv_lista_ticket.Columns(Z).HeaderText)
+                    Catch ex As Exception
+                        datatableencabezado.AddCell(" ")
+                    End Try
+                End If
+            Next
+            datatableencabezado.CompleteRow()
+            doc.Add(datatableencabezado)
+            datatableencabezado.DeleteBodyRows()
+
+            'se generan las columnas del datagridview de las ordenes por remito
+            For Y As Integer = 0 To dgv_lista_ticket.RowCount - 1
+                For Z As Integer = 0 To dgv_lista_ticket.ColumnCount - 1
+                    If dgv_lista_ticket.Columns(Z).Visible = True Then
+                        Try
+                            datatablecuerpo.AddCell(dgv_lista_ticket(Z, Y).Value.ToString())
+                        Catch ex As Exception
+                            datatablecuerpo.AddCell(" ")
+                        End Try
+                    End If
+                Next
+                datatablecuerpo.CompleteRow()
+            Next
+
+            doc.Add(datatablecuerpo)
+            datatablecuerpo.DeleteBodyRows()
+            'Next
+            doc.Close()
+            Process.Start(filename)
+            ' Me.Close()
+        Catch ex As Exception
+            'si el mensaje es fallido mostrar msgbox
+            MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class
