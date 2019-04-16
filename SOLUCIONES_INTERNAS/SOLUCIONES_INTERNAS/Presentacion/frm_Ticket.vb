@@ -357,27 +357,12 @@ Public Class frm_Ticket
         btn_Cancelar_Receptor.Enabled = False
     End Sub
 
-    Sub CargarSolicitante()
-        txt_recurso.Clear()
-        txt_herramienta.Clear()
-        txt_plazo.Clear()
-        txt_descripcion.Clear()
-        dtp_fecha_pedido.Text = Now
-        btn_Solicitud.Enabled = False
-        btnCancelar_Solicitante.Enabled = False
-        GroupReceptor.Enabled = True
-        GroupSolicitante.Enabled = True
-        btn_respuesta.Enabled = True
-        btn_Cancelar_Receptor.Enabled = True
-    End Sub
-
     Private Sub chk_Nuevo_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chk_Nuevo.CheckedChanged
         If frm_Principal.LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
             If chk_Nuevo.Checked = True Then
                 LimpiarSolicitante()
                 GroupSolicitante.Enabled = True
             Else
-                '   CargarSolicitante()
             End If
         Else
             LimpiarReceptor()
@@ -402,7 +387,7 @@ Public Class frm_Ticket
             Dim encabezado As New Paragraph("Estado: " + cbo_busqueda_estado.Text)
             doc.Add(encabezado)
             doc.Add(interlineado)
-            doc.Add(interlineado)
+            '  doc.Add(interlineado)
 
             'se crea un objeto PDFTable con el numero de columnas  del datagridview
             Dim datatableencabezado As New PdfPTable(11)
@@ -429,11 +414,12 @@ Public Class frm_Ticket
                     End Try
                 End If
             Next
+
             datatableencabezado.CompleteRow()
             doc.Add(datatableencabezado)
             datatableencabezado.DeleteBodyRows()
-
-            'se generan las columnas del datagridview de las ordenes por remito
+            doc.Add(interlineado)
+            'se generan las columnas del datagridview 
             For Y As Integer = 0 To dgv_lista_ticket.RowCount - 1
                 For Z As Integer = 0 To dgv_lista_ticket.ColumnCount - 1
                     If dgv_lista_ticket.Columns(Z).Visible = True Then
@@ -446,7 +432,6 @@ Public Class frm_Ticket
                 Next
                 datatablecuerpo.CompleteRow()
             Next
-
             doc.Add(datatablecuerpo)
             datatablecuerpo.DeleteBodyRows()
             'Next
