@@ -1745,6 +1745,9 @@ Public Class frm_Principal
 
     Private Sub RemitoXOrdenToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles RemitoXOrdenToolStripMenuItem.Click
         frm_Despacho.Text = "Nuevo remito por orden"
+        frm_Despacho.tbp_logistica.Enabled = True
+        frm_Despacho.tbp_empaque.Enabled = False
+        frm_Despacho.tbc_despacho.SelectedIndex = 1
         frm_Despacho.Show()
     End Sub
 
@@ -1758,5 +1761,13 @@ Public Class frm_Principal
             frm_Ticket.btn_eliminar.Enabled = False
             frm_Ticket.chk_Nuevo.Checked = True
         End If
+    End Sub
+
+    Private Sub PlanificarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlanificarToolStripMenuItem.Click
+        frm_Despacho.Text = "Nueva planificación diaria"
+        frm_Despacho.tbp_logistica.Enabled = False
+        frm_Despacho.tbp_empaque.Enabled = True
+        frm_Despacho.tbc_despacho.SelectedIndex = 0
+        frm_Despacho.Show()
     End Sub
 End Class
