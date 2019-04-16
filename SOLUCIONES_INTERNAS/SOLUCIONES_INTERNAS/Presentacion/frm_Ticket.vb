@@ -11,7 +11,8 @@ Public Class frm_Ticket
 
         txt_id_usuario.Visible = False
         txt_nombre_usuario.Enabled = False
-        txt_id_ticket.Visible = False
+        txt_id_ticket.Visible = True
+        txt_id_ticket.Enabled = False
         Label7.Visible = False
 
         dgv_lista_ticket.ClearSelection()

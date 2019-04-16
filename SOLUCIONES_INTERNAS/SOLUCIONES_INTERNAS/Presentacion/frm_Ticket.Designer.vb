@@ -24,6 +24,7 @@ Partial Class frm_Ticket
     Private Sub InitializeComponent()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.chk_Nuevo = New System.Windows.Forms.CheckBox()
         Me.btn_Cancelar_Receptor = New System.Windows.Forms.Button()
         Me.txt_id_ticket = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -42,6 +43,7 @@ Partial Class frm_Ticket
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupSolicitante = New System.Windows.Forms.GroupBox()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.dtp_fecha_pedido = New System.Windows.Forms.DateTimePicker()
@@ -61,13 +63,12 @@ Partial Class frm_Ticket
         Me.btnCancelar_Solicitante = New System.Windows.Forms.Button()
         Me.btn_Solicitud = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.btn_Exportar_PDF = New System.Windows.Forms.Button()
         Me.cbo_busqueda_estado = New System.Windows.Forms.ComboBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.dgv_lista_ticket = New System.Windows.Forms.DataGridView()
-        Me.chk_Nuevo = New System.Windows.Forms.CheckBox()
-        Me.btn_Exportar_PDF = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupReceptor.SuspendLayout()
@@ -91,7 +92,6 @@ Partial Class frm_Ticket
         Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
         Me.TabPage1.Controls.Add(Me.chk_Nuevo)
         Me.TabPage1.Controls.Add(Me.btn_Cancelar_Receptor)
-        Me.TabPage1.Controls.Add(Me.txt_id_ticket)
         Me.TabPage1.Controls.Add(Me.Label7)
         Me.TabPage1.Controls.Add(Me.btn_respuesta)
         Me.TabPage1.Controls.Add(Me.GroupReceptor)
@@ -105,6 +105,17 @@ Partial Class frm_Ticket
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Solicitud"
         '
+        'chk_Nuevo
+        '
+        Me.chk_Nuevo.AutoSize = True
+        Me.chk_Nuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chk_Nuevo.Location = New System.Drawing.Point(221, 6)
+        Me.chk_Nuevo.Name = "chk_Nuevo"
+        Me.chk_Nuevo.Size = New System.Drawing.Size(73, 24)
+        Me.chk_Nuevo.TabIndex = 26
+        Me.chk_Nuevo.Text = "Nuevo"
+        Me.chk_Nuevo.UseVisualStyleBackColor = True
+        '
         'btn_Cancelar_Receptor
         '
         Me.btn_Cancelar_Receptor.Location = New System.Drawing.Point(433, 568)
@@ -116,10 +127,10 @@ Partial Class frm_Ticket
         '
         'txt_id_ticket
         '
-        Me.txt_id_ticket.Location = New System.Drawing.Point(5, 292)
+        Me.txt_id_ticket.Location = New System.Drawing.Point(94, 19)
         Me.txt_id_ticket.MaxLength = 10
         Me.txt_id_ticket.Name = "txt_id_ticket"
-        Me.txt_id_ticket.Size = New System.Drawing.Size(20, 20)
+        Me.txt_id_ticket.Size = New System.Drawing.Size(73, 20)
         Me.txt_id_ticket.TabIndex = 24
         '
         'Label7
@@ -269,7 +280,9 @@ Partial Class frm_Ticket
         '
         'GroupSolicitante
         '
+        Me.GroupSolicitante.Controls.Add(Me.Label18)
         Me.GroupSolicitante.Controls.Add(Me.Label16)
+        Me.GroupSolicitante.Controls.Add(Me.txt_id_ticket)
         Me.GroupSolicitante.Controls.Add(Me.Label15)
         Me.GroupSolicitante.Controls.Add(Me.dtp_fecha_pedido)
         Me.GroupSolicitante.Controls.Add(Me.Label5)
@@ -291,6 +304,15 @@ Partial Class frm_Ticket
         Me.GroupSolicitante.TabIndex = 18
         Me.GroupSolicitante.TabStop = False
         Me.GroupSolicitante.Text = "Solicitante"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(20, 22)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(67, 13)
+        Me.Label18.TabIndex = 36
+        Me.Label18.Text = "N° de Ticket"
         '
         'Label16
         '
@@ -471,6 +493,15 @@ Partial Class frm_Ticket
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Búsqueda"
         '
+        'btn_Exportar_PDF
+        '
+        Me.btn_Exportar_PDF.Location = New System.Drawing.Point(254, 540)
+        Me.btn_Exportar_PDF.Name = "btn_Exportar_PDF"
+        Me.btn_Exportar_PDF.Size = New System.Drawing.Size(92, 33)
+        Me.btn_Exportar_PDF.TabIndex = 31
+        Me.btn_Exportar_PDF.Text = "Exportar a PDF"
+        Me.btn_Exportar_PDF.UseVisualStyleBackColor = True
+        '
         'cbo_busqueda_estado
         '
         Me.cbo_busqueda_estado.FormattingEnabled = True
@@ -515,26 +546,6 @@ Partial Class frm_Ticket
         Me.dgv_lista_ticket.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_lista_ticket.Size = New System.Drawing.Size(501, 482)
         Me.dgv_lista_ticket.TabIndex = 0
-        '
-        'chk_Nuevo
-        '
-        Me.chk_Nuevo.AutoSize = True
-        Me.chk_Nuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chk_Nuevo.Location = New System.Drawing.Point(221, 6)
-        Me.chk_Nuevo.Name = "chk_Nuevo"
-        Me.chk_Nuevo.Size = New System.Drawing.Size(73, 24)
-        Me.chk_Nuevo.TabIndex = 26
-        Me.chk_Nuevo.Text = "Nuevo"
-        Me.chk_Nuevo.UseVisualStyleBackColor = True
-        '
-        'btn_Exportar_PDF
-        '
-        Me.btn_Exportar_PDF.Location = New System.Drawing.Point(254, 540)
-        Me.btn_Exportar_PDF.Name = "btn_Exportar_PDF"
-        Me.btn_Exportar_PDF.Size = New System.Drawing.Size(92, 33)
-        Me.btn_Exportar_PDF.TabIndex = 31
-        Me.btn_Exportar_PDF.Text = "Exportar a PDF"
-        Me.btn_Exportar_PDF.UseVisualStyleBackColor = True
         '
         'frm_Ticket
         '
@@ -604,4 +615,5 @@ Partial Class frm_Ticket
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents chk_Nuevo As System.Windows.Forms.CheckBox
     Friend WithEvents btn_Exportar_PDF As System.Windows.Forms.Button
+    Friend WithEvents Label18 As System.Windows.Forms.Label
 End Class
