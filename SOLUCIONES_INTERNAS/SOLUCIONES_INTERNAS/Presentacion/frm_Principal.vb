@@ -1756,6 +1756,7 @@ Public Class frm_Principal
             frm_Ticket.Show()
             frm_Ticket.TabControl1.SelectedIndex = 0
             frm_Ticket.btn_eliminar.Enabled = False
+            frm_Ticket.chk_Nuevo.Checked = True
         End If
     End Sub
 End Class

@@ -118,9 +118,9 @@ Partial Class frm_Principal
         Me.LBL_MENU_USU = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btn_ticket = New System.Windows.Forms.Button()
         Me.Timer_automatico = New System.Windows.Forms.Timer(Me.components)
         Me.btnManualUsuario = New System.Windows.Forms.Button()
-        Me.btn_ticket = New System.Windows.Forms.Button()
         Me.MenuStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -734,6 +734,18 @@ Partial Class frm_Principal
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         '
+        'btn_ticket
+        '
+        Me.btn_ticket.BackColor = System.Drawing.Color.LightCoral
+        Me.btn_ticket.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_ticket.ForeColor = System.Drawing.Color.White
+        Me.btn_ticket.Location = New System.Drawing.Point(1203, 6)
+        Me.btn_ticket.Name = "btn_ticket"
+        Me.btn_ticket.Size = New System.Drawing.Size(75, 32)
+        Me.btn_ticket.TabIndex = 17
+        Me.btn_ticket.Text = "Ticket"
+        Me.btn_ticket.UseVisualStyleBackColor = False
+        '
         'Timer_automatico
         '
         Me.Timer_automatico.Interval = 20000
@@ -749,18 +761,6 @@ Partial Class frm_Principal
         Me.btnManualUsuario.TabIndex = 15
         Me.btnManualUsuario.Text = "Manual de Usuario"
         Me.btnManualUsuario.UseVisualStyleBackColor = False
-        '
-        'btn_ticket
-        '
-        Me.btn_ticket.BackColor = System.Drawing.Color.LightCoral
-        Me.btn_ticket.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_ticket.ForeColor = System.Drawing.Color.White
-        Me.btn_ticket.Location = New System.Drawing.Point(100, 12)
-        Me.btn_ticket.Name = "btn_ticket"
-        Me.btn_ticket.Size = New System.Drawing.Size(75, 24)
-        Me.btn_ticket.TabIndex = 17
-        Me.btn_ticket.Text = "Ticket"
-        Me.btn_ticket.UseVisualStyleBackColor = False
         '
         'frm_Principal
         '
