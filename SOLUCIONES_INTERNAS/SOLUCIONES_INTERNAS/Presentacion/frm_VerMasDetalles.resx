@@ -753,4 +753,84 @@ BOTON MODIFICAR PRODUCTO: este botón estara deshabilitado.
 - ACERCA DE: hace referencia a las partes más importantes del sistema.
 </value>
   </data>
+  <data name="TextBox10.Text" xml:space="preserve">
+    <value>FUNCIONAMIENTO  NUEVO TICKET
+
+Este formulario se utilizará en el caso de que se desee agregar un nuevo ticket o solicitud de atención sobre alguna maquina o recurso. 
+El botón “TICKET” del formulario principal abre el formulario de solicitud de tickets.
+De acuerdo al perfil de usuario que se registre se podrá solicitar un nuevo ticket o responder un ticket ya solicitado.
+-	Si el perfil de usuario es ADMINISTRADOR se abrirá el formulario en la pestaña de búsqueda, donde se mostraran todos los tickets en condición de abierto (sin respuesta). El usuario ira respondiendo uno a uno las solicitudes cambiando el estado según corresponda.
+-	Si el usuario es COLABORADOR o SUPERVISOR  se abrirá el formulario en la pestaña de solicitud con los campos habilitados para realizar el pedido. Una vez realizada, se cerrara el formulario volviendo al “principal”. 
+Haciendo doble click sobre un ticket en particular del listado, se cambiara de solapa a “solicitud” donde se podrá ver, a modo de consulta, lo solicitado por el usuario registrado y la respuesta correspondiente. (Esto es si el administrador vio la solicitud).
+El check “nuevo” limpia los campos permitiendo cargar otra solicitud.
+NOTA: el usuario no podrá modificar la solicitud, en caso de ser necesario tendrá que crear un nuevo ticket.
+El botón cancelar cierra el formulario sin haber realizado cambios.
+</value>
+  </data>
+  <data name="TextBox9.Text" xml:space="preserve">
+    <value>COMPONENTES DEL FORMULARIO TICKET
+
+En la pestaña solicitud:
+
+ -	CHECK NUEVO: limpia los campos para cargar un nuevo ticket.
+	
+-	CAMPO NRO. TICKET: muestra el nro. De ticket.
+
+-	CAMPO FECHA DE PEDIDO: fecha de pedido en el que fue solicitado el ticket. 
+
+-	CAMPO USUARIO: muestra el usuario registrado y el que va a realizar el pedido.  
+
+-	CAMPO RECURSO: muestra la necesidad de atención del recurso. 
+
+-	CAMPO HERRAMIENTA: muestra la máquina o elemento de trabajo.
+
+-	CAMPO PLAZO DE RESOLUCION: muestra el plazo o tiempo en que se necesita que el inconveniente sea solucionado.
+
+-	COMBO DESCRIPCION: muestra una descripción en relación al pedido de ticket.
+
+-	BOTON SOLICITUD: guarda la solicitud creada por el usuario.
+
+-	BOTON CANCELAR: cierra el formulario.
+
+-	COMBO PRIORIDAD: muestra la prioridad de la solicitud.
+
+-	COMBO ESTADO: muestra el estado en que se encuentra el pedido de ticket.
+
+-	CAMPO FECHA ESTIMADA: muestra la fecha estimada de solucion.
+
+-	CAMPO FECHA REAL: muestra la fecha real de solución.
+
+-	CAMPO SECTOR: muestra el sector al que se dirige el pedido de ticket.
+
+-	CAMPO COMENTARIOS: muestra comentarios en respuesta a la solicitud.
+
+-	BOTON RESPUESTA: da respuesta a una solicitud.
+
+-	BOTON CANCELAR: cierra el formulario.
+
+-	BOTON ELIMINAR: elimina un ticket seleccionado.
+
+En la pestaña Búsqueda:
+-	COMBO ESTADO: muestra los tickets de acuerdo al estado seleccionado.
+
+-	GRILLA: muestra el listado de tickets.
+
+-	BOTON EXPORTAR A PDF: genera un pdf con los tickets según el estado seleccionado.
+
+-	BOTON ELIMINAR: elimina un ticket seleccionado.
+
+-	BOTON CANCELAR: cierra el formulario.
+</value>
+  </data>
+  <data name="TextBox11.Text" xml:space="preserve">
+    <value>
+FUNCIONAMIENTO  ELIMINAR  REPETICION DE CHAPAS
+
+Este formulario se utilizará en el caso de que se desee eliminar una repetición de chapas. 
+Del listado se seleccionará la repetición que se eliminará, previo mensaje de confirmación.
+A modo de información, se cargarán los campos en la parte superior de acuerdo a lo que se seleccione.
+Una vez confirmada la acción los datos no se podrán recuperar.
+El botón cancelar cerrará el formulario sin realizar cambios.
+</value>
+  </data>
 </root>

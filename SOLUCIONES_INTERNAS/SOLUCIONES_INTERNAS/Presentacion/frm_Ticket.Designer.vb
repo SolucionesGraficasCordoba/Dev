@@ -44,7 +44,6 @@ Partial Class frm_Ticket
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupSolicitante = New System.Windows.Forms.GroupBox()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.dtp_fecha_pedido = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -281,7 +280,6 @@ Partial Class frm_Ticket
         'GroupSolicitante
         '
         Me.GroupSolicitante.Controls.Add(Me.Label18)
-        Me.GroupSolicitante.Controls.Add(Me.Label16)
         Me.GroupSolicitante.Controls.Add(Me.txt_id_ticket)
         Me.GroupSolicitante.Controls.Add(Me.Label15)
         Me.GroupSolicitante.Controls.Add(Me.dtp_fecha_pedido)
@@ -313,17 +311,6 @@ Partial Class frm_Ticket
         Me.Label18.Size = New System.Drawing.Size(67, 13)
         Me.Label18.TabIndex = 36
         Me.Label18.Text = "N° de Ticket"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.Red
-        Me.Label16.Location = New System.Drawing.Point(81, 126)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(11, 13)
-        Me.Label16.TabIndex = 35
-        Me.Label16.Text = "*"
         '
         'Label15
         '
@@ -365,7 +352,7 @@ Partial Class frm_Ticket
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(16, 122)
+        Me.Label11.Location = New System.Drawing.Point(24, 122)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(64, 13)
         Me.Label11.TabIndex = 15
@@ -588,7 +575,6 @@ Partial Class frm_Ticket
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents GroupSolicitante As System.Windows.Forms.GroupBox
-    Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents dtp_fecha_pedido As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label5 As System.Windows.Forms.Label
