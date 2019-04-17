@@ -1,6 +1,7 @@
 ﻿Imports iTextSharp.text
 Imports iTextSharp.text.pdf
 Imports System.IO
+
 Public Class frm_Ticket
     Dim datacontext As New DataS_Interno
     Dim fuente As iTextSharp.text.pdf.BaseFont = FontFactory.GetFont(FontFactory.HELVETICA).BaseFont
@@ -178,7 +179,6 @@ Public Class frm_Ticket
 
     Private Sub btn_Solicitud_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_Solicitud.Click
         Try
-
             If txt_recurso.Text.Length = 0 Then
                 MsgBox("Debe completar el campo 'Recurso'")
                 txt_recurso.Focus()
