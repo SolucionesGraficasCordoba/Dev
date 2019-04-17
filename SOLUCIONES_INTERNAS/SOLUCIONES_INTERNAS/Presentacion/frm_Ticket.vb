@@ -9,15 +9,14 @@ Public Class frm_Ticket
     Dim interlineado As New Phrase(" ")
 
     Private Sub frm_Ticket_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
+        'DESHABILITA Y OCULTA CAMPOS
         txt_id_usuario.Visible = False
         txt_nombre_usuario.Enabled = False
         txt_id_ticket.Visible = True
         txt_id_ticket.Enabled = False
         Label7.Visible = False
-
         dgv_lista_ticket.ClearSelection()
-
+        '
         If frm_Principal.LBL_MENU_PERFIL.Text = "COLABORADOR" Or frm_Principal.LBL_MENU_PERFIL.Text = "SUPERVISOR" Then
 
             Dim CargaUsuarioColSup = (From sec In datacontext.SECTOR

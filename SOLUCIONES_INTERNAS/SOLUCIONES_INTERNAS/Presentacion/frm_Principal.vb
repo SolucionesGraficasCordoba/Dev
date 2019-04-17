@@ -13,6 +13,7 @@ Public Class frm_Principal
     End Sub
 
     Private Sub CerrarSesiónToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CerrarSesiónToolStripMenuItem.Click
+
         For Each aform As Form In Me.MdiChildren
             aform.Close()
         Next
@@ -1319,6 +1320,8 @@ Public Class frm_Principal
     End Sub
 
     Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+
+       
         EstadisticasToolStripMenuItem.Visible = False
         Dim c As Control
         For Each c In Me.Controls
@@ -1329,6 +1332,18 @@ Public Class frm_Principal
             End If
         Next
 
+        If LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
+            frm_Mensaje.MdiParent = Me
+            frm_Mensaje.Show()
+
+            frm_Mensaje.GroupComentario.Enabled = False
+            frm_Mensaje.txt_id_usuario.Visible = False
+            frm_Mensaje.txt_id_mensaje.Visible = False
+            frm_Mensaje.Label1.Visible = False
+            frm_Mensaje.Label18.Visible = False
+        Else
+
+        End If
     End Sub
 
     Private Sub TareasMensulesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -1772,6 +1787,6 @@ Public Class frm_Principal
     End Sub
 
     Private Sub ActualizarEstadoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ActualizarEstadoToolStripMenuItem.Click
-        frm_Listado_Empaque.Show()
+        ' frm_Listado_Empaque.Show()
     End Sub
 End Class

@@ -27,6 +27,7 @@
         End If
 
     End Sub
+
     Sub buscar_ultimo_despacho()
         Try
             Dim buscaultimo = (From u In datacontext.DESPACHO Order By u.DES_campo_1 Descending Select u.DES_campo_1).ToList()(0)

@@ -24,6 +24,9 @@ Public Class frm_Colaborador
         cbo_sector.DisplayMember = "SEC_nombre_sector"
         cbo_sector.ValueMember = "SEC_id_sector"
         cbo_sector.SelectedIndex = -1
+
+
+        dgvLista_Colaboradores.ClearSelection()
     End Sub
 
     Public Sub cargargrilla()
@@ -210,7 +213,7 @@ Public Class frm_Colaborador
         End If
     End Sub
 
-    Private Sub btnNuevo_Colaborador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnNuevo_Colaborador.Click
+    Private Sub btnNuevo_Colaborador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Select Case MsgBox("Se limpiarán todos los campos, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Limpiar campos")
             Case MsgBoxResult.Yes
                 limpiarcontroles()
@@ -375,12 +378,34 @@ Public Class frm_Colaborador
             e.HasMorePages = False
             i = 0
         End If
-
-
     End Sub
 
     Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs)
         Me.PrintDocument1.Print()
     End Sub
 
+    Private Sub btn_enviar_mensaje_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_enviar_mensaje.Click
+
+        Dim CargaUsuarioAdm = (From sec In datacontext.SECTOR
+                    Join col In datacontext.COLABORADOR
+                    On col.SEC_id_sector Equals sec.SEC_id_sector
+                    Join usu In datacontext.USUARIO
+                    On usu.COL_id_colaborador Equals col.COL_id_colaborador
+                    Select usu.USU_usuario, usu.USU_id_usuario
+                   Where USU_usuario = frm_Principal.LBL_MENU_USU.Text).ToList()(0)
+
+        frm_Mensaje.txt_nombre_usuario.Text = CargaUsuarioAdm.USU_usuario
+        frm_Mensaje.txt_id_usuario.Text = CargaUsuarioAdm.USU_id_usuario
+
+        frm_Mensaje.Show()
+        'If dgvLista_Colaboradores.Rows.Count <> 0 Then
+        '    MsgBox("Debe seleccionar a un colaborador del listado")
+        '    Exit Sub
+        'Else
+        '    frm_Mensaje.Show()
+        '    frm_Mensaje.GroupRespuesta.Enabled = False
+        '    '   frm_Mensaje.txt_nombre_usuario.Text = txt_nombre_colaborador.Text
+        'End If
+
+    End Sub
 End Class
