@@ -410,7 +410,7 @@ Public Class frm_listado_orden_trabajo_ampliada
                 If buscarorden = True Then
                     Dim buscardespacho = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_campo_1, bo.DES_nro_remito
                                   Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).ToList()(0)
-                    Select Case MsgBox("Atención, la orden seleccionada ya está planificada:" & Chr(13),
+                    Select Case MsgBox("Atención, la orden seleccionada ya está planificada: CONTINUAR?" & Chr(13),
                            MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Advertencia")
                         Case MsgBoxResult.No
                             Exit Sub
