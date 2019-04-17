@@ -1770,4 +1770,8 @@ Public Class frm_Principal
         frm_Despacho.tbc_despacho.SelectedIndex = 0
         frm_Despacho.Show()
     End Sub
+
+    Private Sub ActualizarEstadoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ActualizarEstadoToolStripMenuItem.Click
+        frm_Listado_Empaque.Show()
+    End Sub
 End Class

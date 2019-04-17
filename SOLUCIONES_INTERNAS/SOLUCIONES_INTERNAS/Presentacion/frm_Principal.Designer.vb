@@ -110,6 +110,7 @@ Partial Class frm_Principal
         Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpaqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PlanificarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CorreoElectrónicoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
@@ -121,7 +122,7 @@ Partial Class frm_Principal
         Me.btn_ticket = New System.Windows.Forms.Button()
         Me.Timer_automatico = New System.Windows.Forms.Timer(Me.components)
         Me.btnManualUsuario = New System.Windows.Forms.Button()
-        Me.PlanificarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ActualizarEstadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -665,10 +666,16 @@ Partial Class frm_Principal
         '
         'EmpaqueToolStripMenuItem
         '
-        Me.EmpaqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlanificarToolStripMenuItem})
+        Me.EmpaqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlanificarToolStripMenuItem, Me.ActualizarEstadoToolStripMenuItem})
         Me.EmpaqueToolStripMenuItem.Name = "EmpaqueToolStripMenuItem"
         Me.EmpaqueToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EmpaqueToolStripMenuItem.Text = "Empaque"
+        '
+        'PlanificarToolStripMenuItem
+        '
+        Me.PlanificarToolStripMenuItem.Name = "PlanificarToolStripMenuItem"
+        Me.PlanificarToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.PlanificarToolStripMenuItem.Text = "Planificar"
         '
         'CorreoElectrónicoToolStripMenuItem
         '
@@ -764,11 +771,11 @@ Partial Class frm_Principal
         Me.btnManualUsuario.Text = "Manual de Usuario"
         Me.btnManualUsuario.UseVisualStyleBackColor = False
         '
-        'PlanificarToolStripMenuItem
+        'ActualizarEstadoToolStripMenuItem
         '
-        Me.PlanificarToolStripMenuItem.Name = "PlanificarToolStripMenuItem"
-        Me.PlanificarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.PlanificarToolStripMenuItem.Text = "Planificar"
+        Me.ActualizarEstadoToolStripMenuItem.Name = "ActualizarEstadoToolStripMenuItem"
+        Me.ActualizarEstadoToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.ActualizarEstadoToolStripMenuItem.Text = "Actualizar estado"
         '
         'frm_Principal
         '
@@ -891,6 +898,7 @@ Partial Class frm_Principal
     Friend WithEvents EmpaqueToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btn_ticket As System.Windows.Forms.Button
     Friend WithEvents PlanificarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ActualizarEstadoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class
