@@ -96,7 +96,7 @@ Partial Class frm_Listado_Despacho
         'rbt_remito
         '
         Me.rbt_remito.AutoSize = True
-        Me.rbt_remito.Location = New System.Drawing.Point(6, 19)
+        Me.rbt_remito.Location = New System.Drawing.Point(95, 19)
         Me.rbt_remito.Name = "rbt_remito"
         Me.rbt_remito.Size = New System.Drawing.Size(68, 17)
         Me.rbt_remito.TabIndex = 8
@@ -107,7 +107,7 @@ Partial Class frm_Listado_Despacho
         'rbt_despacho
         '
         Me.rbt_despacho.AutoSize = True
-        Me.rbt_despacho.Location = New System.Drawing.Point(80, 19)
+        Me.rbt_despacho.Location = New System.Drawing.Point(6, 19)
         Me.rbt_despacho.Name = "rbt_despacho"
         Me.rbt_despacho.Size = New System.Drawing.Size(87, 17)
         Me.rbt_despacho.TabIndex = 9

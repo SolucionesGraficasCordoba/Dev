@@ -138,7 +138,11 @@ Public Class frm_Listado_Despacho
                         datacontext.SubmitChanges()
                         MsgBox("La orden ha sido desvinculada")
                         cargargrilla_odtxrem()
-                        cargargrillaremitos()
+
+                        If rbt_entrega.Checked = True Then
+                            cargargrillaremitos()
+                        End If
+
                 End Select
             Else
                 MsgBox("Debe seleccionar una orden")
@@ -165,8 +169,9 @@ Public Class frm_Listado_Despacho
 
             MsgBox("Los datos se han modificado correctamente")
             cargargrilla_odtxrem()
-            cargargrillaremitos()
-
+            If rbt_entrega.Checked = True Then
+                cargargrillaremitos()
+            End If
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar Colaborador")
             cargargrilla_odtxrem()
@@ -175,6 +180,9 @@ Public Class frm_Listado_Despacho
 
     Private Sub btn_agregarodt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_agregarodt.Click
         If dgv_remitos.SelectedCells.Count = 1 Then
+            frm_Despacho.tbp_empaque.Enabled = False
+            frm_Despacho.tbc_despacho.SelectedIndex = 1
+
             frm_Despacho.txt_numero_remito.Enabled = False
             frm_Despacho.Show()
 
@@ -197,13 +205,16 @@ Public Class frm_Listado_Despacho
             If rbt_remito.Checked = True Then
                 Dim buscaremito = (From br In datacontext.DESPACHO
                                    Where br.DES_nro_remito Like buscar.ToString
-                                   Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, br.DES_campo_1)).Distinct
+                                   Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, Convert.ToInt32(br.DES_campo_1))).Distinct
                 dgv_remitos.DataSource = buscaremito
+                dgv_remitos.Sort(dgv_remitos.Columns("DES_fecha_salida"), SortOrder.Ascending)
             Else
                 Dim buscaremito = (From br In datacontext.DESPACHO
                                    Where br.DES_campo_1 Like buscar.ToString
-                                   Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, br.DES_campo_1)).Distinct
+                                   Order By br.DES_campo_1 Descending
+                                   Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, Convert.ToInt32(br.DES_campo_1))).Distinct
                 dgv_remitos.DataSource = buscaremito
+                dgv_remitos.Sort(dgv_remitos.Columns("DES_fecha_salida"), SortOrder.Ascending)
             End If
 
             dgv_orden_x_remito.Rows.Clear()
@@ -217,6 +228,7 @@ Public Class frm_Listado_Despacho
                                Where br.DES_fecha_salida.Value.Date = dtp_fecha_salida.Text
                                Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, br.DES_campo_1)).Distinct
             dgv_remitos.DataSource = buscaremito
+            dgv_orden_x_remito.Rows.Clear()
             habilitar_edicion()
         End If
     End Sub
