@@ -379,13 +379,13 @@ Public Class frm_listado_orden_trabajo_ampliada
 
             'PESTAÑA LOGISTICA
             If frm_Despacho.tbp_logistica.Enabled = True Then
-                Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_campo_1, bo.DES_nro_remito
+                Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
                                   Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).Any
                 If buscarorden = True Then
-                    Dim buscardespacho = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_campo_1, bo.DES_nro_remito
+                    Dim buscardespacho = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
                                   Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).ToList()(0)
                     Select Case MsgBox("Atención, la orden seleccionada ya está asociada a un despacho:" & Chr(13) &
-                           "Despacho N°: " & buscardespacho.DES_campo_1 & Chr(13) &
+                           "Despacho N°: " & buscardespacho.DES_nro_despacho & Chr(13) &
                            "Remito N°: " & buscardespacho.DES_nro_remito & Chr(13) &
                            "CONTINUAR?",
                            MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Advertencia")
@@ -405,10 +405,10 @@ Public Class frm_listado_orden_trabajo_ampliada
                 'PESTAÑA EMPAQUE
             ElseIf frm_Despacho.tbp_empaque.Enabled = True Then
 
-                Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_campo_1, bo.DES_nro_remito
+                Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
               Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).Any
                 If buscarorden = True Then
-                    Dim buscardespacho = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_campo_1, bo.DES_nro_remito
+                    Dim buscardespacho = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
                                   Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).ToList()(0)
                     Select Case MsgBox("Atención, la orden seleccionada ya está planificada: CONTINUAR?" & Chr(13),
                            MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Advertencia")
