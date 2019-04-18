@@ -133,6 +133,16 @@ Namespace My.Resources
         '''<summary>
         '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Busqueda_Ticket() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Busqueda_Ticket", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property consultar_orden() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("consultar_orden", resourceCulture)
@@ -426,6 +436,16 @@ Namespace My.Resources
         Friend ReadOnly Property Sin_título() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Sin título", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property Solicitud_Ticket() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Solicitud_Ticket", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
