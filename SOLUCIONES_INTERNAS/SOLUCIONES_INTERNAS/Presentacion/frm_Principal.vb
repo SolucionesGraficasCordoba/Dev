@@ -1333,6 +1333,23 @@ Public Class frm_Principal
         Next
 
         If LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
+
+            Dim TraeMensaje = (From m In datacontext.MENSAJE
+                         Join u In datacontext.USUARIO
+                         On m.USU_id_usuario Equals u.USU_id_usuario
+                         Select m.MEN_id_mensaje,
+                         m.USU_id_usuario,
+                         u.USU_usuario,
+                         m.MEN_fecha_mensaje,
+                         m.MEN_titulo,
+                         m.MEN_comentario
+                         Where USU_usuario = LBL_MENU_USU.Text).ToList()(0)
+
+            frm_Mensaje.txt_Titulo.Text = TraeMensaje.MEN_titulo
+            frm_Mensaje.dtp_fecha_pedido.Text = TraeMensaje.MEN_fecha_mensaje
+            frm_Mensaje.txt_comentario.Text = TraeMensaje.MEN_comentario
+            frm_Mensaje.txt_id_mensaje.Text = TraeMensaje.MEN_id_mensaje
+
             frm_Mensaje.MdiParent = Me
             frm_Mensaje.Show()
 
@@ -1341,6 +1358,7 @@ Public Class frm_Principal
             frm_Mensaje.txt_id_mensaje.Visible = False
             frm_Mensaje.Label1.Visible = False
             frm_Mensaje.Label18.Visible = False
+
         Else
 
         End If
