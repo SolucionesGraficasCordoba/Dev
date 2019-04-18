@@ -30,7 +30,7 @@
 
     Sub buscar_ultimo_despacho()
         Try
-            Dim buscaultimo = (From u In datacontext.DESPACHO Order By u.DES_campo_1 Descending Select u.DES_campo_1).ToList()(0)
+            Dim buscaultimo = (From u In datacontext.DESPACHO Order By Convert.ToInt32(u.DES_nro_despacho) Descending Select u.DES_nro_despacho).ToList()(0)
 
             If IsNothing(buscaultimo) Then
                 txt_numero_despacho.Text = 1
@@ -38,7 +38,7 @@
                 txt_numero_despacho.Text = CInt(buscaultimo.ToString) + 1
             End If
         Catch ex As Exception
-            txt_numero_despacho.Text = 1        
+            txt_numero_despacho.Text = 1
         End Try
     End Sub
     Sub armar_grilla_ordenes()
@@ -82,7 +82,7 @@
 
         '        temp_fecha_entrega = dgv_lista_ordenes.Item("Fecha", i).Value & " " & dgv_lista_ordenes.Item("Hora", i).Value
 
-        '        des.DES_campo_1 = txt_numero_despacho.Text
+        '        des.DES_nro_despacho = txt_numero_despacho.Text
         '        des.DES_nro_remito = txt_numero_remito.Text
         '        des.DES_chofer = cmb_chofer.Text
         '        des.DES_fecha_salida = CDate(temp_fecha_salida)
@@ -160,7 +160,7 @@
 
                 temp_fecha_entrega = dgv_lista_ordenes.Item("Fecha", i).Value & " " & dgv_lista_ordenes.Item("Hora", i).Value
 
-                des.DES_campo_1 = txt_numero_despacho.Text
+                des.DES_nro_despacho = txt_numero_despacho.Text
                 des.DES_nro_remito = txt_numero_remito.Text
                 des.DES_chofer = cmb_chofer.Text
                 des.DES_fecha_salida = CDate(temp_fecha_salida)
@@ -220,20 +220,20 @@
     End Sub
 
     Private Sub Btn_emp_guardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_emp_guardar.Click
-        Try
-            For i = 0 To dgv_emp_lista_ordenes.RowCount - 2
-                Dim emp As New DESPACHO
-                emp.ORT_id_orden_trabajo = CInt(dgv_emp_lista_ordenes.Item("ORT_id_orden_trabajo", i).Value)
-                datacontext.DESPACHO.InsertOnSubmit(emp)
-            Next
-            datacontext.SubmitChanges()
-            MsgBox("La planificación fue guardada")
-            dgv_emp_lista_ordenes.Rows.Clear()
-            Close()
-        Catch ex As Exception
-            MsgBox("Error al guardar el remito")
-            Exit Sub
-        End Try
+        'Try
+        For i = 0 To dgv_emp_lista_ordenes.RowCount - 2
+            Dim emp As New DESPACHO
+            emp.ORT_id_orden_trabajo = CInt(dgv_emp_lista_ordenes.Item("ORT_id_orden_trabajo", i).Value)
+            datacontext.DESPACHO.InsertOnSubmit(emp)
+        Next
+        datacontext.SubmitChanges()
+        MsgBox("La planificación fue guardada")
+        ' dgv_emp_lista_ordenes.Rows.Clear()
+        Close()
+        'Catch ex As Exception
+        '    MsgBox("Error al guardar el remito")
+        '    Exit Sub
+        'End Try
     End Sub
 
     Sub armar_grilla_empaque()
