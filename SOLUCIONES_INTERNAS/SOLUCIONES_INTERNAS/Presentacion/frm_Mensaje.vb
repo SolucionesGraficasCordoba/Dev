@@ -35,17 +35,13 @@
             MsgBox("Debe completar el campo 'Respuesta'")
             Exit Sub
         End If
-
         Try
             Dim ActualizarMensaje = (From P In datacontext.MENSAJE Where P.MEN_id_mensaje = (txt_id_mensaje.Text.ToUpper)).ToList()(0)
             ActualizarMensaje.MEN_respuesta = StrConv(txt_respuesta.Text, VbStrConv.ProperCase)
 
             datacontext.SubmitChanges()
             MsgBox("La Respuesta ha sido enviada correctamente")
-
-            'If frm_Principal.LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
-            '    Me.Close()
-            'End If
+            Me.Close()
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Enviar Respuesta")
             '  Me.limpiarcontroles()
