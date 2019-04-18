@@ -194,6 +194,7 @@
     Private Sub btn_quitar_orden_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_quitar_orden.Click
         Try
             dgv_lista_ordenes.Rows.RemoveAt(dgv_lista_ordenes.CurrentRow.Index)
+            Nro_linea_grid = Nro_linea_grid - 1
         Catch ex As Exception
             MsgBox("Seleccionar fila para borrar")
         End Try
