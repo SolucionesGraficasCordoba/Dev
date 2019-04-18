@@ -3,6 +3,14 @@
     Dim datacontext As New DataS_Interno
 
     Private Sub btn_Envio_Click(sender As System.Object, e As System.EventArgs) Handles btn_Envio.Click
+        If txt_Titulo.Text.Length = 0 Then
+            MsgBox("Debe completar el campo 'Título'")
+            Exit Sub
+        End If
+        If txt_comentario.Text.Length = 0 Then
+            MsgBox("Debe completar el campo 'Comentario'")
+            Exit Sub
+        End If
         Try
             'GUARDA SOLICITANTE
             Dim men = New MENSAJE
@@ -19,12 +27,8 @@
             '                    Order By TIC_id_ticket Descending).ToList()(0)
             MsgBox("El Mensaje fue enviado exitosamente")
             Me.Close()
-            '  cargargrilla()
-            ' limpiarcontroles()
         Catch ex As Exception
             MsgBox("El Mensaje no puedo ser enviado")
-            ' limpiarcontroles()
-            ' cargargrilla()
         End Try
     End Sub
 
@@ -43,8 +47,7 @@
             Me.Close()
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Enviar Respuesta")
-            '  Me.limpiarcontroles()
-            '  Me.cargargrilla()
         End Try
     End Sub
+
 End Class

@@ -585,6 +585,7 @@ Public Class frm_Principal
         frm_Colaborador.btnGuardar_Colaborador.Enabled = True
         frm_Colaborador.btnActualizar_Colaborador.Enabled = False
         frm_Colaborador.btnCancelar_Colaborador.Enabled = True
+        frm_Colaborador.btn_enviar_mensaje.Enabled = False
         ' frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.txt_Buscar_Colaborador.Enabled = False
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
@@ -608,6 +609,7 @@ Public Class frm_Principal
         frm_Colaborador.btnCancelar_Colaborador.Enabled = True
         frm_Colaborador.txt_Buscar_Colaborador.Enabled = True
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
+        frm_Colaborador.btn_enviar_mensaje.Enabled = False
         '   frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.dgvLista_Colaboradores.Enabled = False
         '   frm_Colaborador.btnImprimir.Visible = False
@@ -628,6 +630,7 @@ Public Class frm_Principal
         frm_Colaborador.txt_Buscar_Colaborador.Enabled = True
         frm_Colaborador.btnEliminar_Colaborador.Enabled = True
         frm_Colaborador.dgvLista_Colaboradores.Enabled = True
+        frm_Colaborador.btn_enviar_mensaje.Enabled = False
         '   frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
         frm_Colaborador.ShowDialog()
@@ -1321,7 +1324,6 @@ Public Class frm_Principal
 
     Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-       
         EstadisticasToolStripMenuItem.Visible = False
         Dim c As Control
         For Each c In Me.Controls
@@ -1338,11 +1340,12 @@ Public Class frm_Principal
 
         If LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
             'and ultimoMensaje.MEN_comentario.Length = 0
+
+            'CARGA EN EL FORMULARIO MENSAJE LOS CAMPOS
             Dim TraeMensaje = (From m In datacontext.MENSAJE
                          Join u In datacontext.USUARIO
                          On m.USU_id_usuario Equals u.USU_id_usuario
                          Select m.MEN_id_mensaje,
-                         m.USU_id_usuario,
                          u.USU_usuario,
                          m.MEN_fecha_mensaje,
                          m.MEN_titulo,
@@ -1362,7 +1365,6 @@ Public Class frm_Principal
             frm_Mensaje.txt_id_mensaje.Visible = False
             frm_Mensaje.Label1.Visible = False
             frm_Mensaje.Label18.Visible = False
-            frm_Mensaje.ShowDialog()
         Else
 
         End If

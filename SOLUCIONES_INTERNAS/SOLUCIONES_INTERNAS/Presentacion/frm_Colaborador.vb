@@ -333,7 +333,7 @@ Public Class frm_Colaborador
 
     Private Sub btn_enviar_mensaje_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_enviar_mensaje.Click
 
-        'CARGA EN EL FORMULARIO MENSAJE EL USUARIO Y SU ID QUE LO SACA DEL GRID DE COLABORADORES
+        'CARGA EN EL FORMULARIO MENSAJE, EL USUARIO Y SU ID QUE LO SACA DEL GRID DE COLABORADORES
         Try
             If dgvLista_Colaboradores.Rows.Count > 0 Then
                 Dim consulta = (From c In datacontext.COLABORADOR
@@ -343,6 +343,14 @@ Public Class frm_Colaborador
                 frm_Mensaje.txt_id_usuario.Text = (dgvLista_Colaboradores.SelectedCells(5).Value)
                 frm_Mensaje.txt_nombre_usuario.Text = (dgvLista_Colaboradores.SelectedCells(6).Value)
                 frm_Mensaje.Show()
+                frm_Mensaje.txt_Titulo.Focus()
+                frm_Mensaje.Label1.Visible = False
+                frm_Mensaje.Label18.Visible = False
+                frm_Mensaje.txt_id_mensaje.Visible = False
+                frm_Mensaje.txt_id_usuario.Visible = False
+                frm_Mensaje.txt_nombre_usuario.Enabled = False
+                frm_Mensaje.txt_respuesta.Enabled = False
+                frm_Mensaje.btn_respuesta.Enabled = False
             End If
         Catch ex As Exception
             MsgBox("Seleccione un Colaborador del listado")

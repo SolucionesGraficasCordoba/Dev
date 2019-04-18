@@ -41,12 +41,16 @@ Partial Class frm_Mensaje
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txt_respuesta = New System.Windows.Forms.TextBox()
         Me.btn_respuesta = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupComentario.SuspendLayout()
         Me.GroupRespuesta.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupComentario
         '
+        Me.GroupComentario.Controls.Add(Me.Label7)
+        Me.GroupComentario.Controls.Add(Me.Label6)
         Me.GroupComentario.Controls.Add(Me.txt_Titulo)
         Me.GroupComentario.Controls.Add(Me.Label3)
         Me.GroupComentario.Controls.Add(Me.btn_Envio)
@@ -80,7 +84,7 @@ Partial Class frm_Mensaje
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(53, 96)
+        Me.Label3.Location = New System.Drawing.Point(48, 96)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(35, 13)
         Me.Label3.TabIndex = 42
@@ -149,7 +153,7 @@ Partial Class frm_Mensaje
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(18, 135)
+        Me.Label10.Location = New System.Drawing.Point(13, 135)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(70, 26)
         Me.Label10.TabIndex = 12
@@ -235,6 +239,28 @@ Partial Class frm_Mensaje
         Me.btn_respuesta.Text = "Respuesta"
         Me.btn_respuesta.UseVisualStyleBackColor = True
         '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.Red
+        Me.Label6.Location = New System.Drawing.Point(82, 98)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(11, 13)
+        Me.Label6.TabIndex = 45
+        Me.Label6.Text = "*"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.Red
+        Me.Label7.Location = New System.Drawing.Point(80, 138)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(11, 13)
+        Me.Label7.TabIndex = 46
+        Me.Label7.Text = "*"
+        '
         'frm_Mensaje
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -271,4 +297,6 @@ Partial Class frm_Mensaje
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents txt_respuesta As System.Windows.Forms.TextBox
     Friend WithEvents btn_respuesta As System.Windows.Forms.Button
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 End Class
