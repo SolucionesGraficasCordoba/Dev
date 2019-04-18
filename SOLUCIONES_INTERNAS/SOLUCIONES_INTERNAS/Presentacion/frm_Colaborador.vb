@@ -25,13 +25,13 @@ Public Class frm_Colaborador
         cbo_sector.ValueMember = "SEC_id_sector"
         cbo_sector.SelectedIndex = -1
 
-
         dgvLista_Colaboradores.ClearSelection()
     End Sub
 
     Public Sub cargargrilla()
 
         If frm_Principal.LBL_MENU_PERFIL.Text = "COLABORADOR" Then
+
 
             Dim cargasupervisor = (From sec In datacontext.SECTOR
                           Join col In datacontext.COLABORADOR
@@ -44,6 +44,8 @@ Public Class frm_Colaborador
 
 
         ElseIf frm_Principal.LBL_MENU_PERFIL.Text = "SUPERVISOR" Then
+
+            'TRAE SECTOR DEL USUARIO REGISTRADO
             Dim cualq = (From c In datacontext.USUARIO
                         Join col In datacontext.COLABORADOR
                         On c.COL_id_colaborador Equals col.COL_id_colaborador
@@ -60,18 +62,20 @@ Public Class frm_Colaborador
                          Select usu.USU_usuario, sec.SEC_id_sector, sec.SEC_nombre_sector, col.COL_id_colaborador, col.COL_nombre_col, col.COL_apellido_col
                          Where SEC_id_sector = cualq.SEC_id_sector)
             dgvLista_Colaboradores.DataSource = cargasupervisor
-
-
         Else
             Dim carga = (From col In datacontext.COLABORADOR
                                         Join sec In datacontext.SECTOR
                                         On col.SEC_id_sector Equals sec.SEC_id_sector
+                                        Join usu In datacontext.USUARIO
+                                        On col.COL_id_colaborador Equals usu.COL_id_colaborador
                                         Select
                                         col.COL_id_colaborador,
                                         col.COL_nombre_col,
                                         col.COL_apellido_col,
                                         col.SEC_id_sector,
-                                        sec.SEC_nombre_sector
+                                        sec.SEC_nombre_sector,
+                                        usu.USU_id_usuario,
+                                        usu.USU_usuario
                                         Where SEC_nombre_sector <> "De baja"
                                         Order By SEC_nombre_sector Ascending)
             dgvLista_Colaboradores.DataSource = carga
@@ -169,6 +173,9 @@ Public Class frm_Colaborador
         dgvLista_Colaboradores.Columns.Add("COL_apellido_col", "Apellido")
         dgvLista_Colaboradores.Columns.Add("SEC_id_sector", "id_sector")
         dgvLista_Colaboradores.Columns.Add("SEC_nombre_sector", "Sector")
+        dgvLista_Colaboradores.Columns.Add("USU_id_usuario", "id_usuario")
+        dgvLista_Colaboradores.Columns.Add("USU_usuario", "Usuario")
+
 
         dgvLista_Colaboradores.Columns(0).DataPropertyName = "COL_id_colaborador"
         dgvLista_Colaboradores.Columns(0).Visible = False
@@ -177,7 +184,10 @@ Public Class frm_Colaborador
         dgvLista_Colaboradores.Columns(3).DataPropertyName = "SEC_id_sector"
         dgvLista_Colaboradores.Columns(3).Visible = False
         dgvLista_Colaboradores.Columns(4).DataPropertyName = "SEC_nombre_sector"
-        dgvLista_Colaboradores.Columns(4).Width = 150
+        dgvLista_Colaboradores.Columns(5).DataPropertyName = "USU_id_usuario"
+        dgvLista_Colaboradores.Columns(5).Visible = False
+        dgvLista_Colaboradores.Columns(6).DataPropertyName = "USU_usuario"
+        dgvLista_Colaboradores.Columns(6).Width = 150
     End Sub
 
     Private Sub dgvLista_Colaboradores_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dgvLista_Colaboradores.Click
@@ -203,13 +213,13 @@ Public Class frm_Colaborador
                 Case MsgBoxResult.Yes
                     datacontext.COLABORADOR.DeleteOnSubmit(eliminar)
                     datacontext.SubmitChanges()
-                    MsgBox("El colaborador ha sido eliminado")
+                    MsgBox("El Colaborador ha sido eliminado")
                     cargargrilla()
                     Me.Close()
             End Select
             Me.Close()
         Else
-            MsgBox("Debe seleccionar un colaborador")
+            MsgBox("Debe seleccionar un Colaborador")
         End If
     End Sub
 
@@ -287,70 +297,7 @@ Public Class frm_Colaborador
     Dim i As Integer = 0
 
     Private Sub printDocument1_PrintPage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
-        '' Definimos la fuente que vamos a usar para imprimir
-        '' en este caso Arial de 10
-        'Dim printFont As System.Drawing.Font = New Font("Arial", 10)
-        'Dim topMargin As Double = e.MarginBounds.Top
-        'Dim yPos As Double = 0
-        'Dim linesPerPage As Double = 0
-        'Dim count As Integer = 0
-        'Dim texto As String = ""
-        'Dim row As System.Windows.Forms.DataGridViewRow
-
-        '' Calculamos el número de líneas que caben en cada página
-        'linesPerPage = e.MarginBounds.Height / printFont.GetHeight(e.Graphics)
-
-        '' Imprimimos las cabeceras
-        'Dim header As DataGridViewHeaderCell
-        'For Each column As DataGridViewColumn In dgvLista_Colaboradores.Columns
-        '    header = column.HeaderCell
-        '    texto += vbTab + header.FormattedValue.ToString()
-        'Next
-
-        'yPos = topMargin + (count * printFont.GetHeight(e.Graphics))
-        'e.Graphics.DrawString(texto, printFont, System.Drawing.Brushes.Black, 10, yPos)
-        '' Dejamos una línea de separación
-        'count += 2
-
-        '' Recorremos las filas del DataGridView hasta que llegemos
-        '' a las líneas que nos caben en cada página o al final del grid.
-        'While count < linesPerPage AndAlso i < dgvLista_Colaboradores.Rows.Count
-        '    row = dgvLista_Colaboradores.Rows(i)
-        '    texto = ""
-        '    For Each celda As System.Windows.Forms.DataGridViewCell In row.Cells
-        '        'Comprobamos que la celda tenga algún valor, en caso de 
-        '        'permitir añadir filas esto es muy importante
-        '        If celda.Value IsNot Nothing Then
-        '            texto += vbTab + celda.Value.ToString()
-        '        End If
-        '    Next
-
-        '    ' Calculamos la posición en la que se escribe la línea
-        '    yPos = topMargin + (count * printFont.GetHeight(e.Graphics))
-
-        '    ' Escribimos la línea con el objeto Graphics
-        '    e.Graphics.DrawString(texto, printFont, System.Drawing.Brushes.Black, 10, yPos)
-        '    ' Incrementamos los contadores
-        '    count += 1
-        '    i += 1
-        'End While
-
-        '' Una vez fuera del bucle comprobamos si nos quedan más filas
-        '' por imprimir, si quedan saldrán en la siguente página
-        'If i < dgvLista_Colaboradores.Rows.Count Then
-        '    e.HasMorePages = True
-        'Else
-        '    ' si llegamos al final, se establece HasMorePages a
-        '    ' false para que se acabe la impresión
-        '    e.HasMorePages = False
-        '    ' Es necesario poner el contador a 0 porque, por ejemplo si se hace
-        '    ' una impresión desde PrintPreviewDialog, se vuelve disparar este
-        '    ' evento como si fuese la primera vez, y si i está con el valor de la
-        '    ' última fila del grid no se imprime nada
-        '    i = 0
-        'End If
-
-
+      
         Dim i As Integer = 0
 
         Dim printFont As New Font("Arial", 8)
@@ -386,26 +333,20 @@ Public Class frm_Colaborador
 
     Private Sub btn_enviar_mensaje_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_enviar_mensaje.Click
 
-        Dim CargaUsuarioAdm = (From sec In datacontext.SECTOR
-                    Join col In datacontext.COLABORADOR
-                    On col.SEC_id_sector Equals sec.SEC_id_sector
-                    Join usu In datacontext.USUARIO
-                    On usu.COL_id_colaborador Equals col.COL_id_colaborador
-                    Select usu.USU_usuario, usu.USU_id_usuario
-                   Where USU_usuario = frm_Principal.LBL_MENU_USU.Text).ToList()(0)
-
-        frm_Mensaje.txt_nombre_usuario.Text = CargaUsuarioAdm.USU_usuario
-        frm_Mensaje.txt_id_usuario.Text = CargaUsuarioAdm.USU_id_usuario
-
-        frm_Mensaje.Show()
-        'If dgvLista_Colaboradores.Rows.Count <> 0 Then
-        '    MsgBox("Debe seleccionar a un colaborador del listado")
-        '    Exit Sub
-        'Else
-        '    frm_Mensaje.Show()
-        '    frm_Mensaje.GroupRespuesta.Enabled = False
-        '    '   frm_Mensaje.txt_nombre_usuario.Text = txt_nombre_colaborador.Text
-        'End If
-
+        'CARGA EN EL FORMULARIO MENSAJE EL USUARIO Y SU ID QUE LO SACA DEL GRID DE COLABORADORES
+        Try
+            If dgvLista_Colaboradores.Rows.Count > 0 Then
+                Dim consulta = (From c In datacontext.COLABORADOR
+                               Join u In datacontext.USUARIO
+                               On c.COL_id_colaborador Equals u.COL_id_colaborador
+                               Select u.USU_id_usuario, u.USU_usuario, u.USU_perfil, c.COL_id_colaborador, c.COL_apellido_col).ToList()(0)
+                frm_Mensaje.txt_id_usuario.Text = (dgvLista_Colaboradores.SelectedCells(5).Value)
+                frm_Mensaje.txt_nombre_usuario.Text = (dgvLista_Colaboradores.SelectedCells(6).Value)
+                frm_Mensaje.Show()
+            End If
+        Catch ex As Exception
+            MsgBox("Seleccione un Colaborador del listado")
+        End Try
     End Sub
 End Class
+
