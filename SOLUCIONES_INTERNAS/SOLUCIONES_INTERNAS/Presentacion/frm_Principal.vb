@@ -1322,6 +1322,23 @@ Public Class frm_Principal
         frm_Listado_Movimientos.dgv_movimientos.ClearSelection()
     End Sub
 
+    Sub buscar_ultimo_id_usuario()
+        Try
+            Dim buscaultimo = (From u In datacontext.MENSAJE
+                               Order By u.MEN_respuesta
+                               Descending
+                               Select u.MEN_respuesta).ToList()(0)
+
+            If IsNothing(buscaultimo) Then
+                frm_Mensaje.txt_respuesta.Text = 1
+            Else
+                frm_Mensaje.txt_respuesta.Text = CInt(buscaultimo.ToString) + 1
+            End If
+        Catch ex As Exception
+            frm_Mensaje.txt_respuesta.Text = 1
+        End Try
+    End Sub
+
     Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         EstadisticasToolStripMenuItem.Visible = False
@@ -1356,6 +1373,7 @@ Public Class frm_Principal
             frm_Mensaje.dtp_fecha_pedido.Text = TraeMensaje.MEN_fecha_mensaje
             frm_Mensaje.txt_comentario.Text = TraeMensaje.MEN_comentario
             frm_Mensaje.txt_id_mensaje.Text = TraeMensaje.MEN_id_mensaje
+            frm_Mensaje.txt_nombre_usuario.Text = TraeMensaje.USU_usuario
 
             'QUITA LOS BOTONES DEL FORMULARIO
             frm_Mensaje.FormBorderStyle = Windows.Forms.FormBorderStyle.None
@@ -1365,8 +1383,9 @@ Public Class frm_Principal
             frm_Mensaje.txt_id_mensaje.Visible = False
             frm_Mensaje.Label1.Visible = False
             frm_Mensaje.Label18.Visible = False
-        Else
 
+            frm_Mensaje.ShowDialog()
+        Else
         End If
     End Sub
 
