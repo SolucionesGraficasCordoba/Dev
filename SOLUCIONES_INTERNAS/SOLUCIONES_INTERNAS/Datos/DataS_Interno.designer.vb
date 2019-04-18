@@ -139,6 +139,12 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeleteDESPACHO(instance As DESPACHO)
     End Sub
+  Partial Private Sub InsertMENSAJE(instance As MENSAJE)
+    End Sub
+  Partial Private Sub UpdateMENSAJE(instance As MENSAJE)
+    End Sub
+  Partial Private Sub DeleteMENSAJE(instance As MENSAJE)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -271,6 +277,12 @@ Partial Public Class DataS_Interno
 	Public ReadOnly Property DESPACHO() As System.Data.Linq.Table(Of DESPACHO)
 		Get
 			Return Me.GetTable(Of DESPACHO)
+		End Get
+	End Property
+	
+	Public ReadOnly Property MENSAJE() As System.Data.Linq.Table(Of MENSAJE)
+		Get
+			Return Me.GetTable(Of MENSAJE)
 		End Get
 	End Property
 End Class
@@ -2725,6 +2737,8 @@ Partial Public Class USUARIO
 	
 	Private _TICKET As EntitySet(Of TICKET)
 	
+	Private _MENSAJE As EntitySet(Of MENSAJE)
+	
 	Private _COLABORADOR As EntityRef(Of COLABORADOR)
 	
     #Region "Definiciones de métodos de extensibilidad"
@@ -2759,6 +2773,7 @@ Partial Public Class USUARIO
 	Public Sub New()
 		MyBase.New
 		Me._TICKET = New EntitySet(Of TICKET)(AddressOf Me.attach_TICKET, AddressOf Me.detach_TICKET)
+		Me._MENSAJE = New EntitySet(Of MENSAJE)(AddressOf Me.attach_MENSAJE, AddressOf Me.detach_MENSAJE)
 		Me._COLABORADOR = CType(Nothing, EntityRef(Of COLABORADOR))
 		OnCreated
 	End Sub
@@ -2857,6 +2872,16 @@ Partial Public Class USUARIO
 		End Set
 	End Property
 	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USUARIO_MENSAJE", Storage:="_MENSAJE", ThisKey:="USU_id_usuario", OtherKey:="USU_id_usuario")>  _
+	Public Property MENSAJE() As EntitySet(Of MENSAJE)
+		Get
+			Return Me._MENSAJE
+		End Get
+		Set
+			Me._MENSAJE.Assign(value)
+		End Set
+	End Property
+	
 	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="COLABORADOR_USUARIO", Storage:="_COLABORADOR", ThisKey:="COL_id_colaborador", OtherKey:="COL_id_colaborador", IsForeignKey:=true)>  _
 	Public Property COLABORADOR() As COLABORADOR
 		Get
@@ -2909,6 +2934,16 @@ Partial Public Class USUARIO
 	End Sub
 	
 	Private Sub detach_TICKET(ByVal entity As TICKET)
+		Me.SendPropertyChanging
+		entity.USUARIO = Nothing
+	End Sub
+	
+	Private Sub attach_MENSAJE(ByVal entity As MENSAJE)
+		Me.SendPropertyChanging
+		entity.USUARIO = Me
+	End Sub
+	
+	Private Sub detach_MENSAJE(ByVal entity As MENSAJE)
 		Me.SendPropertyChanging
 		entity.USUARIO = Nothing
 	End Sub
@@ -6481,6 +6516,278 @@ Partial Public Class DESPACHO
 					Me._ORT_id_orden_trabajo = CType(Nothing, Nullable(Of Integer))
 				End If
 				Me.SendPropertyChanged("ORDEN_TRABAJO")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.MENSAJE")>  _
+Partial Public Class MENSAJE
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _MEN_id_mensaje As Integer
+	
+	Private _USU_id_usuario As System.Nullable(Of Integer)
+	
+	Private _MEN_fecha_mensaje As System.Nullable(Of Date)
+	
+	Private _MEN_titulo As String
+	
+	Private _MEN_comentario As String
+	
+	Private _MEN_respuesta As String
+	
+	Private _MEN_campo_1 As String
+	
+	Private _MEN_campo_2 As String
+	
+	Private _MEN_campo_3 As String
+	
+	Private _USUARIO As EntityRef(Of USUARIO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnMEN_id_mensajeChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnMEN_id_mensajeChanged()
+    End Sub
+    Partial Private Sub OnUSU_id_usuarioChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnUSU_id_usuarioChanged()
+    End Sub
+    Partial Private Sub OnMEN_fecha_mensajeChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnMEN_fecha_mensajeChanged()
+    End Sub
+    Partial Private Sub OnMEN_tituloChanging(value As String)
+    End Sub
+    Partial Private Sub OnMEN_tituloChanged()
+    End Sub
+    Partial Private Sub OnMEN_comentarioChanging(value As String)
+    End Sub
+    Partial Private Sub OnMEN_comentarioChanged()
+    End Sub
+    Partial Private Sub OnMEN_respuestaChanging(value As String)
+    End Sub
+    Partial Private Sub OnMEN_respuestaChanged()
+    End Sub
+    Partial Private Sub OnMEN_campo_1Changing(value As String)
+    End Sub
+    Partial Private Sub OnMEN_campo_1Changed()
+    End Sub
+    Partial Private Sub OnMEN_campo_2Changing(value As String)
+    End Sub
+    Partial Private Sub OnMEN_campo_2Changed()
+    End Sub
+    Partial Private Sub OnMEN_campo_3Changing(value As String)
+    End Sub
+    Partial Private Sub OnMEN_campo_3Changed()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._USUARIO = CType(Nothing, EntityRef(Of USUARIO))
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_MEN_id_mensaje", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property MEN_id_mensaje() As Integer
+		Get
+			Return Me._MEN_id_mensaje
+		End Get
+		Set
+			If ((Me._MEN_id_mensaje = value)  _
+						= false) Then
+				Me.OnMEN_id_mensajeChanging(value)
+				Me.SendPropertyChanging
+				Me._MEN_id_mensaje = value
+				Me.SendPropertyChanged("MEN_id_mensaje")
+				Me.OnMEN_id_mensajeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_USU_id_usuario", DbType:="Int")>  _
+	Public Property USU_id_usuario() As System.Nullable(Of Integer)
+		Get
+			Return Me._USU_id_usuario
+		End Get
+		Set
+			If (Me._USU_id_usuario.Equals(value) = false) Then
+				If Me._USUARIO.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
+				Me.OnUSU_id_usuarioChanging(value)
+				Me.SendPropertyChanging
+				Me._USU_id_usuario = value
+				Me.SendPropertyChanged("USU_id_usuario")
+				Me.OnUSU_id_usuarioChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_MEN_fecha_mensaje", DbType:="Date")>  _
+	Public Property MEN_fecha_mensaje() As System.Nullable(Of Date)
+		Get
+			Return Me._MEN_fecha_mensaje
+		End Get
+		Set
+			If (Me._MEN_fecha_mensaje.Equals(value) = false) Then
+				Me.OnMEN_fecha_mensajeChanging(value)
+				Me.SendPropertyChanging
+				Me._MEN_fecha_mensaje = value
+				Me.SendPropertyChanged("MEN_fecha_mensaje")
+				Me.OnMEN_fecha_mensajeChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_MEN_titulo", DbType:="VarChar(50)")>  _
+	Public Property MEN_titulo() As String
+		Get
+			Return Me._MEN_titulo
+		End Get
+		Set
+			If (String.Equals(Me._MEN_titulo, value) = false) Then
+				Me.OnMEN_tituloChanging(value)
+				Me.SendPropertyChanging
+				Me._MEN_titulo = value
+				Me.SendPropertyChanged("MEN_titulo")
+				Me.OnMEN_tituloChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_MEN_comentario", DbType:="VarChar(350)")>  _
+	Public Property MEN_comentario() As String
+		Get
+			Return Me._MEN_comentario
+		End Get
+		Set
+			If (String.Equals(Me._MEN_comentario, value) = false) Then
+				Me.OnMEN_comentarioChanging(value)
+				Me.SendPropertyChanging
+				Me._MEN_comentario = value
+				Me.SendPropertyChanged("MEN_comentario")
+				Me.OnMEN_comentarioChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_MEN_respuesta", DbType:="VarChar(350)")>  _
+	Public Property MEN_respuesta() As String
+		Get
+			Return Me._MEN_respuesta
+		End Get
+		Set
+			If (String.Equals(Me._MEN_respuesta, value) = false) Then
+				Me.OnMEN_respuestaChanging(value)
+				Me.SendPropertyChanging
+				Me._MEN_respuesta = value
+				Me.SendPropertyChanged("MEN_respuesta")
+				Me.OnMEN_respuestaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_MEN_campo_1", DbType:="VarChar(50)")>  _
+	Public Property MEN_campo_1() As String
+		Get
+			Return Me._MEN_campo_1
+		End Get
+		Set
+			If (String.Equals(Me._MEN_campo_1, value) = false) Then
+				Me.OnMEN_campo_1Changing(value)
+				Me.SendPropertyChanging
+				Me._MEN_campo_1 = value
+				Me.SendPropertyChanged("MEN_campo_1")
+				Me.OnMEN_campo_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_MEN_campo_2", DbType:="VarChar(50)")>  _
+	Public Property MEN_campo_2() As String
+		Get
+			Return Me._MEN_campo_2
+		End Get
+		Set
+			If (String.Equals(Me._MEN_campo_2, value) = false) Then
+				Me.OnMEN_campo_2Changing(value)
+				Me.SendPropertyChanging
+				Me._MEN_campo_2 = value
+				Me.SendPropertyChanged("MEN_campo_2")
+				Me.OnMEN_campo_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_MEN_campo_3", DbType:="VarChar(50)")>  _
+	Public Property MEN_campo_3() As String
+		Get
+			Return Me._MEN_campo_3
+		End Get
+		Set
+			If (String.Equals(Me._MEN_campo_3, value) = false) Then
+				Me.OnMEN_campo_3Changing(value)
+				Me.SendPropertyChanging
+				Me._MEN_campo_3 = value
+				Me.SendPropertyChanged("MEN_campo_3")
+				Me.OnMEN_campo_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="USUARIO_MENSAJE", Storage:="_USUARIO", ThisKey:="USU_id_usuario", OtherKey:="USU_id_usuario", IsForeignKey:=true)>  _
+	Public Property USUARIO() As USUARIO
+		Get
+			Return Me._USUARIO.Entity
+		End Get
+		Set
+			Dim previousValue As USUARIO = Me._USUARIO.Entity
+			If ((Object.Equals(previousValue, value) = false)  _
+						OrElse (Me._USUARIO.HasLoadedOrAssignedValue = false)) Then
+				Me.SendPropertyChanging
+				If ((previousValue Is Nothing)  _
+							= false) Then
+					Me._USUARIO.Entity = Nothing
+					previousValue.MENSAJE.Remove(Me)
+				End If
+				Me._USUARIO.Entity = value
+				If ((value Is Nothing)  _
+							= false) Then
+					value.MENSAJE.Add(Me)
+					Me._USU_id_usuario = value.USU_id_usuario
+				Else
+					Me._USU_id_usuario = CType(Nothing, Nullable(Of Integer))
+				End If
+				Me.SendPropertyChanged("USUARIO")
 			End If
 		End Set
 	End Property
