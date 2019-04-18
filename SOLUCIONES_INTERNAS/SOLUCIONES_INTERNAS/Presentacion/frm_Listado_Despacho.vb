@@ -35,25 +35,25 @@ Public Class frm_Listado_Despacho
         chofer.Items.Add("Retira de central")
         chofer.Items.Add("Instalaciones")
 
-        dgv_remitos.Columns.Add("DES_campo_1", "Despacho N°")
+        dgv_remitos.Columns.Add("DES_nro_despacho", "Despacho N°")
         dgv_remitos.Columns.Add("DES_nro_remito", "Remito N°")
         dgv_remitos.Columns.Add("DES_fecha_salida", "Salida")
         dgv_remitos.Columns.Add(chofer)
 
-        dgv_remitos.Columns("DES_campo_1").DataPropertyName = "DES_campo_1"
+        dgv_remitos.Columns("DES_nro_despacho").DataPropertyName = "DES_nro_despacho"
         dgv_remitos.Columns("DES_nro_remito").DataPropertyName = "DES_nro_remito"
         dgv_remitos.Columns("DES_fecha_salida").DataPropertyName = "DES_fecha_salida"
         dgv_remitos.Columns("DES_chofer").DataPropertyName = "DES_chofer"
 
         Dim cargarremitos = (From c In datacontext.DESPACHO
                              Where c.DES_fecha_salida.Value.Date = dtp_fecha_salida.Text
-                             Order By c.DES_campo_1
-                             Select New clase_remitos(c.DES_nro_remito, c.DES_fecha_salida, c.DES_chofer, c.DES_campo_1)).Distinct
+                             Order By c.DES_nro_despacho
+                             Select New clase_remitos(c.DES_nro_remito, c.DES_fecha_salida, c.DES_chofer, c.DES_nro_despacho)).Distinct
 
         dgv_remitos.DataSource = cargarremitos
-        dgv_remitos.Sort(dgv_remitos.Columns("DES_campo_1"), SortOrder.Ascending)
+        dgv_remitos.Sort(dgv_remitos.Columns("DES_nro_despacho"), SortOrder.Ascending)
 
-        dgv_remitos.Columns("DES_campo_1").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
+        dgv_remitos.Columns("DES_nro_despacho").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         dgv_remitos.Columns("DES_nro_remito").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         dgv_remitos.Columns("DES_fecha_salida").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
         dgv_remitos.Columns("DES_chofer").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
@@ -104,17 +104,17 @@ Public Class frm_Listado_Despacho
 
         Try
             If btn_modificar.Visible = True Then
-                buscar = dgv_remitos.Item("DES_campo_1", dgv_remitos.CurrentRow.Index).Value
+                buscar = dgv_remitos.Item("DES_nro_despacho", dgv_remitos.CurrentRow.Index).Value
             Else
-                buscar = dgv_remitos.Item("DES_campo_1", dgv_remitos.SelectedRows(0).Index).Value
+                buscar = dgv_remitos.Item("DES_nro_despacho", dgv_remitos.SelectedRows(0).Index).Value
             End If
 
             'SE LLAMA A UNA CLASE YA QUE USANDO EL DATASOURCE NORMAL NO SE PUEDEN EDITAR LAS FILAS DEL DATAGRID.
             'POR LO QUE SE CREA UNA CLASE CON LAS PROPIEDADES Y SE USA LA CLASE COMO DATASOURCE, LO QEU SI PERMITE EDITAR LAS FILAS.
             Dim odtxremito = (From o In datacontextvistas.Vista_Despacho_Orden_Trabajo
-                              Where o.DES_campo_1 = buscar
+                              Where o.DES_nro_despacho = buscar
                               Select New clase_odtxrem(o.ORT_id_orden_trabajo, o.DES_nro_remito, o.DES_fecha_entrega, o.DES_observaciones,
-                              o.ORT_numero_ot, o.ORT_observaciones_ot, o.CLI_razon_social, o.DES_id, o.DES_campo_1))
+                              o.ORT_numero_ot, o.ORT_observaciones_ot, o.CLI_razon_social, o.DES_id, o.DES_nro_despacho))
 
             dgv_orden_x_remito.DataSource = odtxremito
             dgv_orden_x_remito.ClearSelection()
@@ -154,9 +154,9 @@ Public Class frm_Listado_Despacho
 
     Private Sub btn_modificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_modificar.Click
         Try
-            Dim Actualizarremitocount = (From P In datacontext.DESPACHO Where P.DES_campo_1 = CInt(dgv_remitos.Item("DES_campo_1", dgv_remitos.CurrentRow.Index).Value)).Count
+            Dim Actualizarremitocount = (From P In datacontext.DESPACHO Where P.DES_nro_despacho = CInt(dgv_remitos.Item("DES_nro_despacho", dgv_remitos.CurrentRow.Index).Value)).Count
             For i = 0 To Actualizarremitocount - 1
-                Dim actualizarremito = (From P In datacontext.DESPACHO Where P.DES_campo_1 = CInt(dgv_remitos.Item("DES_campo_1", dgv_remitos.CurrentRow.Index).Value)).ToList()(i)
+                Dim actualizarremito = (From P In datacontext.DESPACHO Where P.DES_nro_despacho = CInt(dgv_remitos.Item("DES_nro_despacho", dgv_remitos.CurrentRow.Index).Value)).ToList()(i)
                 actualizarremito.DES_nro_remito = dgv_remitos.Item("DES_nro_remito", dgv_remitos.CurrentRow.Index).Value
                 actualizarremito.DES_fecha_salida = CDate(dgv_remitos.Item("DES_fecha_salida", dgv_remitos.CurrentRow.Index).Value)
                 actualizarremito.DES_chofer = dgv_remitos.Item("DES_chofer", dgv_remitos.CurrentRow.Index).Value
@@ -186,7 +186,7 @@ Public Class frm_Listado_Despacho
             frm_Despacho.txt_numero_remito.Enabled = False
             frm_Despacho.Show()
 
-            frm_Despacho.txt_numero_despacho.Text = dgv_remitos.Item("DES_campo_1", dgv_remitos.CurrentRow.Index).Value
+            frm_Despacho.txt_numero_despacho.Text = dgv_remitos.Item("DES_nro_despacho", dgv_remitos.CurrentRow.Index).Value
             frm_Despacho.txt_numero_remito.Text = dgv_remitos.Item("DES_nro_remito", dgv_remitos.CurrentRow.Index).Value
             frm_Despacho.dtp_Fecha_salida.Value = CDate(dgv_remitos.Item("DES_fecha_salida", dgv_remitos.CurrentRow.Index).Value)
             frm_Despacho.dtp_Hora_salida.Value = CDate(dgv_remitos.Item("DES_fecha_salida", dgv_remitos.CurrentRow.Index).Value)
@@ -205,14 +205,14 @@ Public Class frm_Listado_Despacho
             If rbt_remito.Checked = True Then
                 Dim buscaremito = (From br In datacontext.DESPACHO
                                    Where br.DES_nro_remito Like buscar.ToString
-                                   Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, Convert.ToInt32(br.DES_campo_1))).Distinct
+                                   Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, Convert.ToInt32(br.DES_nro_despacho))).Distinct
                 dgv_remitos.DataSource = buscaremito
                 dgv_remitos.Sort(dgv_remitos.Columns("DES_fecha_salida"), SortOrder.Ascending)
             Else
                 Dim buscaremito = (From br In datacontext.DESPACHO
-                                   Where br.DES_campo_1 Like buscar.ToString
-                                   Order By br.DES_campo_1 Descending
-                                   Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, Convert.ToInt32(br.DES_campo_1))).Distinct
+                                   Where br.DES_nro_despacho Like buscar.ToString
+                                   Order By br.DES_nro_despacho Descending
+                                   Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, Convert.ToInt32(br.DES_nro_despacho))).Distinct
                 dgv_remitos.DataSource = buscaremito
                 dgv_remitos.Sort(dgv_remitos.Columns("DES_fecha_salida"), SortOrder.Ascending)
             End If
@@ -226,7 +226,7 @@ Public Class frm_Listado_Despacho
         If rbt_entrega.Checked = True Then
             Dim buscaremito = (From br In datacontext.DESPACHO
                                Where br.DES_fecha_salida.Value.Date = dtp_fecha_salida.Text
-                               Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, br.DES_campo_1)).Distinct
+                               Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, br.DES_nro_despacho)).Distinct
             dgv_remitos.DataSource = buscaremito
             dgv_orden_x_remito.Rows.Clear()
             habilitar_edicion()
@@ -234,7 +234,7 @@ Public Class frm_Listado_Despacho
     End Sub
     Sub habilitar_edicion()
         dgv_remitos.ClearSelection()
-        dgv_remitos.Columns("DES_campo_1").ReadOnly = True
+        dgv_remitos.Columns("DES_nro_despacho").ReadOnly = True
 
         If btn_modificar.Visible = True Then
             dgv_remitos.Columns("DES_nro_remito").ReadOnly = False
@@ -359,10 +359,10 @@ Public Class clase_odtxrem
     Public _ORT_observaciones_ot
     Public _CLI_razon_social
     Public _DES_id
-    Public _DES_campo_1
+    Public _DES_nro_despacho
 
     Sub New(ByVal ot_id As Integer, ByVal remito As String, ByVal entrega As Date, ByVal obs As String, ByVal ot_nro As String,
-            ByVal ot_obs As String, ByVal cliente As String, ByVal des_id As Integer, ByVal des_campo_1 As Integer)
+            ByVal ot_obs As String, ByVal cliente As String, ByVal des_id As Integer, ByVal DES_nro_despacho As Integer)
 
         _ORT_id_orden_trabajo = ot_id
         _DES_nro_remito = remito
@@ -372,7 +372,7 @@ Public Class clase_odtxrem
         _ORT_observaciones_ot = ot_obs
         _CLI_razon_social = cliente
         _DES_id = des_id
-        _DES_campo_1 = des_campo_1
+        _DES_nro_despacho = DES_nro_despacho
     End Sub
 
     Property ORT_id_orden_trabajo() As String
@@ -439,12 +439,12 @@ Public Class clase_odtxrem
             Me._DES_id = value
         End Set
     End Property
-    Property des_campo_1() As String
+    Property DES_nro_despacho() As String
         Get
-            Return _DES_campo_1
+            Return _DES_nro_despacho
         End Get
         Set(ByVal value As String)
-            Me._DES_campo_1 = value
+            Me._DES_nro_despacho = value
         End Set
     End Property
 End Class
@@ -454,13 +454,13 @@ Public Class clase_remitos
     Public _DES_nro_remito
     Public _DES_fecha_salida
     Public _DES_chofer
-    Public _DES_campo_1
+    Public _DES_nro_despacho
 
     Sub New(ByVal nro_remito As String, ByVal fecha_salida As Date, ByVal chofer As String, ByVal nro_despacho As String)
         _DES_nro_remito = nro_remito
         _DES_fecha_salida = fecha_salida
         _DES_chofer = chofer
-        _DES_campo_1 = nro_despacho
+        _DES_nro_despacho = nro_despacho
     End Sub
 
 
@@ -491,12 +491,12 @@ Public Class clase_remitos
         End Set
     End Property
 
-    Property DES_campo_1() As String
+    Property DES_nro_despacho() As String
         Get
-            Return _DES_campo_1
+            Return _DES_nro_despacho
         End Get
         Set(ByVal value As String)
-            Me._DES_campo_1 = value
+            Me._DES_nro_despacho = value
         End Set
     End Property
 End Class
