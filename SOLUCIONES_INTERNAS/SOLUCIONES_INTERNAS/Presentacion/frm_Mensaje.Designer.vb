@@ -23,6 +23,9 @@ Partial Class frm_Mensaje
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupComentario = New System.Windows.Forms.GroupBox()
+        Me.txt_Titulo = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.btn_Envio = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.txt_id_mensaje = New System.Windows.Forms.TextBox()
@@ -33,9 +36,6 @@ Partial Class frm_Mensaje
         Me.txt_comentario = New System.Windows.Forms.TextBox()
         Me.txt_nombre_usuario = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btn_Envio = New System.Windows.Forms.Button()
-        Me.txt_Titulo = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupRespuesta = New System.Windows.Forms.GroupBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -66,6 +66,34 @@ Partial Class frm_Mensaje
         Me.GroupComentario.TabIndex = 27
         Me.GroupComentario.TabStop = False
         Me.GroupComentario.Text = "Comentario"
+        '
+        'txt_Titulo
+        '
+        Me.txt_Titulo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.txt_Titulo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
+        Me.txt_Titulo.Location = New System.Drawing.Point(94, 93)
+        Me.txt_Titulo.MaxLength = 50
+        Me.txt_Titulo.Name = "txt_Titulo"
+        Me.txt_Titulo.Size = New System.Drawing.Size(392, 20)
+        Me.txt_Titulo.TabIndex = 43
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(53, 96)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(35, 13)
+        Me.Label3.TabIndex = 42
+        Me.Label3.Text = "Título"
+        '
+        'btn_Envio
+        '
+        Me.btn_Envio.Location = New System.Drawing.Point(411, 269)
+        Me.btn_Envio.Name = "btn_Envio"
+        Me.btn_Envio.Size = New System.Drawing.Size(75, 33)
+        Me.btn_Envio.TabIndex = 41
+        Me.btn_Envio.Text = "Envío"
+        Me.btn_Envio.UseVisualStyleBackColor = True
         '
         'Label1
         '
@@ -155,34 +183,6 @@ Partial Class frm_Mensaje
         Me.Label2.Size = New System.Drawing.Size(43, 13)
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Usuario"
-        '
-        'btn_Envio
-        '
-        Me.btn_Envio.Location = New System.Drawing.Point(411, 269)
-        Me.btn_Envio.Name = "btn_Envio"
-        Me.btn_Envio.Size = New System.Drawing.Size(75, 33)
-        Me.btn_Envio.TabIndex = 41
-        Me.btn_Envio.Text = "Envío"
-        Me.btn_Envio.UseVisualStyleBackColor = True
-        '
-        'txt_Titulo
-        '
-        Me.txt_Titulo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.txt_Titulo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource
-        Me.txt_Titulo.Location = New System.Drawing.Point(94, 93)
-        Me.txt_Titulo.MaxLength = 50
-        Me.txt_Titulo.Name = "txt_Titulo"
-        Me.txt_Titulo.Size = New System.Drawing.Size(392, 20)
-        Me.txt_Titulo.TabIndex = 43
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(53, 96)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(35, 13)
-        Me.Label3.TabIndex = 42
-        Me.Label3.Text = "Título"
         '
         'GroupRespuesta
         '

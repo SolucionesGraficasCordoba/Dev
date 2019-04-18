@@ -1332,8 +1332,12 @@ Public Class frm_Principal
             End If
         Next
 
-        If LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
+        'Dim ultimoMensaje = (From um In datacontext.MENSAJE
+        '                    Select um.MEN_id_mensaje, um.MEN_comentario
+        '                    Order By MEN_id_mensaje Descending).ToList()(0)
 
+        If LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
+            'and ultimoMensaje.MEN_comentario.Length = 0
             Dim TraeMensaje = (From m In datacontext.MENSAJE
                          Join u In datacontext.USUARIO
                          On m.USU_id_usuario Equals u.USU_id_usuario
@@ -1350,15 +1354,15 @@ Public Class frm_Principal
             frm_Mensaje.txt_comentario.Text = TraeMensaje.MEN_comentario
             frm_Mensaje.txt_id_mensaje.Text = TraeMensaje.MEN_id_mensaje
 
-            frm_Mensaje.MdiParent = Me
-            frm_Mensaje.Show()
+            'QUITA LOS BOTONES DEL FORMULARIO
+            frm_Mensaje.FormBorderStyle = Windows.Forms.FormBorderStyle.None
 
             frm_Mensaje.GroupComentario.Enabled = False
             frm_Mensaje.txt_id_usuario.Visible = False
             frm_Mensaje.txt_id_mensaje.Visible = False
             frm_Mensaje.Label1.Visible = False
             frm_Mensaje.Label18.Visible = False
-
+            frm_Mensaje.ShowDialog()
         Else
 
         End If

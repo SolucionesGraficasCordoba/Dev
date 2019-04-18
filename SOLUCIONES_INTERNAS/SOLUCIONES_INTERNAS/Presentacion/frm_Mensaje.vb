@@ -1,6 +1,5 @@
 ﻿Public Class frm_Mensaje
 
-
     Dim datacontext As New DataS_Interno
 
     Private Sub btn_Envio_Click(sender As System.Object, e As System.EventArgs) Handles btn_Envio.Click
@@ -47,33 +46,5 @@
             '  Me.limpiarcontroles()
             '  Me.cargargrilla()
         End Try
-    End Sub
-
-    Private Sub frm_Mensaje_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
-        If frm_Principal.LBL_MENU_PERFIL.Text = "COLABORADOR" Or frm_Principal.LBL_MENU_PERFIL.Text = "SUPERVISOR" Then
-            Dim CargaUsuarioColSup = (From sec In datacontext.SECTOR
-                          Join col In datacontext.COLABORADOR
-                          On col.SEC_id_sector Equals sec.SEC_id_sector
-                          Join usu In datacontext.USUARIO
-                          On usu.COL_id_colaborador Equals col.COL_id_colaborador
-                          Select usu.USU_usuario, usu.USU_id_usuario
-                          Where USU_usuario = frm_Principal.LBL_MENU_USU.Text).ToList()(0)
-
-            txt_nombre_usuario.Text = CargaUsuarioColSup.USU_usuario
-            txt_id_usuario.Text = CargaUsuarioColSup.USU_id_usuario
-
-        Else
-            'Dim CargaUsuarioAdm = (From sec In datacontext.SECTOR
-            '            Join col In datacontext.COLABORADOR
-            '            On col.SEC_id_sector Equals sec.SEC_id_sector
-            '            Join usu In datacontext.USUARIO
-            '            On usu.COL_id_colaborador Equals col.COL_id_colaborador
-            '            Select usu.USU_usuario, usu.USU_id_usuario
-            '            Where USU_usuario = frm_Principal.LBL_MENU_USU.Text).ToList()(0)
-
-            'txt_nombre_usuario.Text = CargaUsuarioAdm.USU_usuario
-            'txt_id_usuario.Text = CargaUsuarioAdm.USU_id_usuario
-        End If
     End Sub
 End Class
