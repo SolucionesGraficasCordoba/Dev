@@ -74,7 +74,7 @@
         <elementListCompartment Id="8a4281d8-90f8-4227-a159-b9e9936c9e0b" absoluteBounds="6.265, 12.085, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 5.91750325520833); (3.65625 : 5.91750325520833); (3.65625 : 7.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 6.53049967447917); (3.125 : 6.90549967447917); (3.125 : 8.52005126953125); (3.5 : 8.52005126953125)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataS_Interno/CLIENTE/CLIENTE_ORDEN_TRABAJO" />
       <nodes>
         <classShapeMoniker Id="867c08b7-f3ba-404d-a9be-55dcc64c7204" />
@@ -195,17 +195,17 @@
         <classShapeMoniker Id="bc789d65-9edf-4aac-8ec2-22f57d309a2a" />
       </nodes>
     </associationConnector>
-    <classShape Id="8df83aba-81b5-4627-ac3f-5ff717b920f7" absoluteBounds="3.875, 2.125, 2, 3.1170068359375">
+    <classShape Id="2eef9fb5-9bc1-4bf8-998f-05fe12a27116" absoluteBounds="3.875, 0.875, 2, 4.0785139973958326">
       <DataClassMoniker Name="/DataS_Interno/DESPACHO" />
       <nestedChildShapes>
-        <elementListCompartment Id="6c2ba7d4-5e19-466e-8c40-7b9549b50894" absoluteBounds="3.8899999999999997, 2.585, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="cb02107a-e766-4bcf-b23c-637c944ec1b4" absoluteBounds="3.8899999999999997, 1.335, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(4.1018243270055 : 7.25); (4.1018243270055 : 5.2420068359375)]" fixedFrom="Caller" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(4.1589523782804 : 7.25); (4.1589523782804 : 4.95351399739583)]" fixedFrom="Caller" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataS_Interno/ORDEN_TRABAJO/ORDEN_TRABAJO_DESPACHO" />
       <nodes>
         <classShapeMoniker Id="c7e00ef9-f791-4ce4-a13a-ae64eaa4cf87" />
-        <classShapeMoniker Id="8df83aba-81b5-4627-ac3f-5ff717b920f7" />
+        <classShapeMoniker Id="2eef9fb5-9bc1-4bf8-998f-05fe12a27116" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

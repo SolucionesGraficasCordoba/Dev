@@ -310,7 +310,7 @@
       <Column Name="CLI_razon_social" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="DES_nro_remito" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="DES_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="DES_campo_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_nro_despacho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

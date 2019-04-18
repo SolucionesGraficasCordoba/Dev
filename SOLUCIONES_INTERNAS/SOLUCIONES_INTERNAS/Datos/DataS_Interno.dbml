@@ -301,11 +301,16 @@
       <Column Name="DES_fecha_entrega" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="DES_nro_remito" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="DES_observaciones" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="DES_campo_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_nro_despacho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DES_EMB_bultos" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="DES_EMB_estado" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DES_EMB_observaciones" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="DES_campo_8" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_EMB_observaciones" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DES_EMB_fecha_estado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DES_campo_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_campo_2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_campo_3" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_campo_4" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_campo_5" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="ORDEN_TRABAJO_DESPACHO" Member="ORDEN_TRABAJO" ThisKey="ORT_id_orden_trabajo" OtherKey="ORT_id_orden_trabajo" Type="ORDEN_TRABAJO" IsForeignKey="true" />
     </Type>
   </Table>

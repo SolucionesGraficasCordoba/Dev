@@ -3725,7 +3725,7 @@ Partial Public Class Vista_Despacho_Orden_Trabajo
 	
 	Private _DES_id As Integer
 	
-	Private _DES_campo_1 As String
+	Private _DES_nro_despacho As String
 	
 	Public Sub New()
 		MyBase.New
@@ -3840,14 +3840,14 @@ Partial Public Class Vista_Despacho_Orden_Trabajo
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_campo_1", DbType:="NVarChar(50)")>  _
-	Public Property DES_campo_1() As String
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_nro_despacho", DbType:="NVarChar(50)")>  _
+	Public Property DES_nro_despacho() As String
 		Get
-			Return Me._DES_campo_1
+			Return Me._DES_nro_despacho
 		End Get
 		Set
-			If (String.Equals(Me._DES_campo_1, value) = false) Then
-				Me._DES_campo_1 = value
+			If (String.Equals(Me._DES_nro_despacho, value) = false) Then
+				Me._DES_nro_despacho = value
 			End If
 		End Set
 	End Property
