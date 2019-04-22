@@ -485,9 +485,9 @@ Partial Class frm_Tarea
         '
         'btnBuscar_Colaborador
         '
-        Me.btnBuscar_Colaborador.Location = New System.Drawing.Point(263, 20)
+        Me.btnBuscar_Colaborador.Location = New System.Drawing.Point(342, 20)
         Me.btnBuscar_Colaborador.Name = "btnBuscar_Colaborador"
-        Me.btnBuscar_Colaborador.Size = New System.Drawing.Size(54, 23)
+        Me.btnBuscar_Colaborador.Size = New System.Drawing.Size(15, 23)
         Me.btnBuscar_Colaborador.TabIndex = 0
         Me.btnBuscar_Colaborador.Text = "..."
         Me.btnBuscar_Colaborador.UseVisualStyleBackColor = True
@@ -496,12 +496,12 @@ Partial Class frm_Tarea
         '
         Me.txt_nombre_colaborador.Location = New System.Drawing.Point(110, 21)
         Me.txt_nombre_colaborador.Name = "txt_nombre_colaborador"
-        Me.txt_nombre_colaborador.Size = New System.Drawing.Size(147, 20)
+        Me.txt_nombre_colaborador.Size = New System.Drawing.Size(226, 20)
         Me.txt_nombre_colaborador.TabIndex = 0
         '
         'txt_id_colaborador
         '
-        Me.txt_id_colaborador.Location = New System.Drawing.Point(323, 22)
+        Me.txt_id_colaborador.Location = New System.Drawing.Point(17, 21)
         Me.txt_id_colaborador.Name = "txt_id_colaborador"
         Me.txt_id_colaborador.Size = New System.Drawing.Size(13, 20)
         Me.txt_id_colaborador.TabIndex = 35
