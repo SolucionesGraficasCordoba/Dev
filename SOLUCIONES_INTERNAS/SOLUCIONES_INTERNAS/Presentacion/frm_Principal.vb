@@ -64,9 +64,6 @@ Public Class frm_Principal
     Private Sub AltaTareaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaTareaToolStripMenuItem.Click
         frm_Tarea.Text = "Nueva Tarea"
 
-      
-
-
         frm_Tarea.txt_Carga_Horaria1.Enabled = False
         frm_Tarea.txt_id_colaborador.Visible = False
         frm_Tarea.Label1.Visible = False
@@ -75,6 +72,7 @@ Public Class frm_Principal
         Label1.Visible = False
         frm_Tarea.dtpFecha.Text = Now
         frm_Tarea.btnBuscar_Colaborador.Focus()
+        frm_Tarea.btnBuscar_Colaborador.Visible = False
 
         frm_Tarea.txt_detalle_tarea1.Clear()
         frm_Tarea.txt_detalle_tarea2.Clear()
