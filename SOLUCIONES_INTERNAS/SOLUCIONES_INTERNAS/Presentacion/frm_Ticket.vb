@@ -138,7 +138,6 @@ Public Class frm_Ticket
                                                           Order By TIC_fecha_pedido Descending)
                 dgv_lista_ticket.DataSource = consulta
             End If
-
         Else
             dgv_lista_ticket.Columns("USU_usuario").Visible = False
             Dim consultaTicket = (From ti In datacontext.TICKET
@@ -269,7 +268,6 @@ Public Class frm_Ticket
             Me.txt_comentarios.Text = Me.dgv_lista_ticket.Item("TIC_comentarios", dgv_lista_ticket.SelectedRows(0).Index).Value
 
             TabControl1.SelectedIndex = 0
-
         Else
             MsgBox("Debe seleccionar una ticket del listado")
             Exit Sub

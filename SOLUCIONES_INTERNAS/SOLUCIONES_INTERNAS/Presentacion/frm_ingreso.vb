@@ -263,7 +263,7 @@
                             flagb = 1
                         End If
                     End If
-                   
+
                     '------------------ETIQUETA---------------------'
                     If permisos.Item(i).PER_permiso = "ETIQUETA" Then
                         If permisos.Item(i).PER_abm = "A" Then

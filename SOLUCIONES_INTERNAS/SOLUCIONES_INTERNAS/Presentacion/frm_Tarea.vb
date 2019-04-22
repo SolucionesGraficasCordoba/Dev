@@ -1493,10 +1493,7 @@
                         Me.txtHora_Finalizacion10.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -1520,10 +1517,7 @@
                         Me.txtHora_Finalizacion11.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -1547,10 +1541,7 @@
                         Me.txtHora_Finalizacion12.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -1574,10 +1565,7 @@
                         Me.txtHora_Finalizacion13.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -1601,10 +1589,7 @@
                         Me.txtHora_Finalizacion14.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -1628,10 +1613,7 @@
                         Me.txtHora_Finalizacion15.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -1655,10 +1637,7 @@
                         Me.txtHora_Finalizacion16.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -1682,10 +1661,7 @@
                         Me.txtHora_Finalizacion17.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -1709,10 +1685,7 @@
                         Me.txtHora_Finalizacion18.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -3556,11 +3529,11 @@
 
             buscartarea = (From ta In datacontext.TAREA
                            Select ta.COL_id_colaborador, ta.TAR_fecha
-                               Where COL_id_colaborador = CInt(txt_id_colaborador.Text) And TAR_fecha = dtpFecha.Text).Any
+                           Where COL_id_colaborador = CInt(txt_id_colaborador.Text) And TAR_fecha = dtpFecha.Text).Any
             If buscartarea = True Then
                 Dim traetarea = (From ta In datacontext.TAREA
-                          Select ta.TAR_entrada, ta.TAR_salida, ta.TAR_carga_horaria, ta.COL_id_colaborador, ta.TAR_fecha
-                                          Where COL_id_colaborador = CInt(txt_id_colaborador.Text) And TAR_fecha = dtpFecha.Text).ToList(0)
+                           Select ta.TAR_entrada, ta.TAR_salida, ta.TAR_carga_horaria, ta.COL_id_colaborador, ta.TAR_fecha
+                           Where COL_id_colaborador = CInt(txt_id_colaborador.Text) And TAR_fecha = dtpFecha.Text).ToList(0)
                 txtEntrada.Text = traetarea.TAR_entrada
                 txtEntrada.Enabled = False
                 txtSalida.Text = traetarea.TAR_salida

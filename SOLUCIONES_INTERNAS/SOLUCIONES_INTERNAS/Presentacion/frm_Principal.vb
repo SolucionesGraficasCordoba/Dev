@@ -2,9 +2,10 @@
 'Imports automatico
 
 Public Class frm_Principal
-
+    Dim buscartarea
     Dim datacontext As New DataS_Interno
     Dim datavistas As New DataS_Interno_Vistas
+    Public quienllamoatarea As Integer
 
     Private Sub ExitToolsStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
@@ -62,6 +63,9 @@ Public Class frm_Principal
 
     Private Sub AltaTareaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaTareaToolStripMenuItem.Click
         frm_Tarea.Text = "Nueva Tarea"
+
+      
+
 
         frm_Tarea.txt_Carga_Horaria1.Enabled = False
         frm_Tarea.txt_id_colaborador.Visible = False
@@ -395,6 +399,17 @@ Public Class frm_Principal
         frm_Tarea.btnBuscar_Numero_Orden20.Enabled = True
         frm_Tarea.MdiParent = Me
         frm_Tarea.Show()
+
+        Dim CargaColaborador = (From sec In datacontext.SECTOR
+                     Join col In datacontext.COLABORADOR
+                     On col.SEC_id_sector Equals sec.SEC_id_sector
+                     Join usu In datacontext.USUARIO
+                     On usu.COL_id_colaborador Equals col.COL_id_colaborador
+                     Select usu.USU_usuario, usu.USU_id_usuario, col.COL_nombre_col, col.COL_id_colaborador
+                     Where USU_usuario = Me.LBL_MENU_USU.Text).ToList()(0)
+
+        frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
+        frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
     End Sub
 
     Private Sub ListaTareaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaTareaToolStripMenuItem.Click
@@ -1322,23 +1337,6 @@ Public Class frm_Principal
         frm_Listado_Movimientos.dgv_movimientos.ClearSelection()
     End Sub
 
-    Sub buscar_ultimo_id_usuario()
-        Try
-            Dim buscaultimo = (From u In datacontext.MENSAJE
-                               Order By u.MEN_respuesta
-                               Descending
-                               Select u.MEN_respuesta).ToList()(0)
-
-            If IsNothing(buscaultimo) Then
-                frm_Mensaje.txt_respuesta.Text = 1
-            Else
-                frm_Mensaje.txt_respuesta.Text = CInt(buscaultimo.ToString) + 1
-            End If
-        Catch ex As Exception
-            frm_Mensaje.txt_respuesta.Text = 1
-        End Try
-    End Sub
-
     Private Sub frm_Principal_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         EstadisticasToolStripMenuItem.Visible = False
@@ -1351,29 +1349,29 @@ Public Class frm_Principal
             End If
         Next
 
-        'Dim ultimoMensaje = (From um In datacontext.MENSAJE
-        '                    Select um.MEN_id_mensaje, um.MEN_comentario
-        '                    Order By MEN_id_mensaje Descending).ToList()(0)
+        'CARGA EN EL FORMULARIO MENSAJE LOS CAMPOS
+        Try
 
-        If LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
-            'and ultimoMensaje.MEN_comentario.Length = 0
+       
+        Dim UltimoMensaje = (From m In datacontext.MENSAJE
+        Join u In datacontext.USUARIO
+        On m.USU_id_usuario Equals u.USU_id_usuario
+        Select m.MEN_id_mensaje,
+        u.USU_usuario,
+        u.USU_id_usuario,
+        m.MEN_fecha_mensaje,
+        m.MEN_titulo,
+        m.MEN_comentario,
+        m.MEN_respuesta
+        Where USU_usuario = LBL_MENU_USU.Text And MEN_respuesta.Length = 0
+        Order By MEN_id_mensaje Descending).ToList()(0)
 
-            'CARGA EN EL FORMULARIO MENSAJE LOS CAMPOS
-            Dim TraeMensaje = (From m In datacontext.MENSAJE
-                         Join u In datacontext.USUARIO
-                         On m.USU_id_usuario Equals u.USU_id_usuario
-                         Select m.MEN_id_mensaje,
-                         u.USU_usuario,
-                         m.MEN_fecha_mensaje,
-                         m.MEN_titulo,
-                         m.MEN_comentario
-                         Where USU_usuario = LBL_MENU_USU.Text).ToList()(0)
-
-            frm_Mensaje.txt_Titulo.Text = TraeMensaje.MEN_titulo
-            frm_Mensaje.dtp_fecha_pedido.Text = TraeMensaje.MEN_fecha_mensaje
-            frm_Mensaje.txt_comentario.Text = TraeMensaje.MEN_comentario
-            frm_Mensaje.txt_id_mensaje.Text = TraeMensaje.MEN_id_mensaje
-            frm_Mensaje.txt_nombre_usuario.Text = TraeMensaje.USU_usuario
+        If UltimoMensaje.MEN_respuesta.Length = 0 Then
+            frm_Mensaje.txt_Titulo.Text = UltimoMensaje.MEN_titulo
+            frm_Mensaje.dtp_fecha_pedido.Text = UltimoMensaje.MEN_fecha_mensaje
+            frm_Mensaje.txt_comentario.Text = UltimoMensaje.MEN_comentario
+            frm_Mensaje.txt_id_mensaje.Text = UltimoMensaje.MEN_id_mensaje
+            frm_Mensaje.txt_nombre_usuario.Text = UltimoMensaje.USU_usuario
 
             'QUITA LOS BOTONES DEL FORMULARIO
             frm_Mensaje.FormBorderStyle = Windows.Forms.FormBorderStyle.None
@@ -1385,8 +1383,10 @@ Public Class frm_Principal
             frm_Mensaje.Label18.Visible = False
 
             frm_Mensaje.ShowDialog()
-        Else
         End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub TareasMensulesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -1416,13 +1416,11 @@ Public Class frm_Principal
         'End If
     End Sub
 
-
     Private Sub OrdenAmpliadaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles OrdenAmpliadaToolStripMenuItem.Click
 
         frm_Orden_Trabajo_Ampliada.quienllamo_listado_orden_ampliada = Me
         frm_Orden_Trabajo_Ampliada.Text = ".:. Nueva Orden .:."
         Campos_Orden_ampliada()
-
         frm_Orden_Trabajo_Ampliada.MdiParent = Me
         frm_Orden_Trabajo_Ampliada.Show()
         'FOCO
@@ -1431,7 +1429,7 @@ Public Class frm_Principal
     End Sub
 
     Sub Campos_Orden_ampliada()
-      
+
         'FECHA DE ENTREGA ANTERIOR AL DIA DE LA FECHA 
         frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value = Today
         frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value = frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Value.Add(TimeSpan.FromDays(-1))
@@ -1760,7 +1758,7 @@ Public Class frm_Principal
     End Sub
 
     'Private Sub RemitoXOrdenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RemitoXOrdenToolStripMenuItem.Click
-   
+
     'End Sub
 
 
