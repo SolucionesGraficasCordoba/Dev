@@ -121,8 +121,8 @@
   <data name="exportarPDF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exportarPDF.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="consultar_orden" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\consultar_orden.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\principal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pdftareasindividual1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pdftareasindividual1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -136,8 +136,14 @@
   <data name="actualizaruna" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actualizaruna.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="consultar_orden" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\consultar_orden.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="listadoordenes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\listadoordenes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Busqueda_Ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Busqueda_Ticket.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="alta_productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\alta_productos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,17 +184,14 @@
   <data name="nuevo_producto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nuevo_producto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="actualizar_orden" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\actualizar_orden.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="consultar_orden1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\consultar_orden1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="modificar_orden" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\modificar_orden.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Sin título" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sin título.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\principal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="listado_repeticion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\listado_repeticion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -214,8 +217,8 @@
   <data name="eliminar_orden1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eliminar_orden1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="modificar_orden" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\modificar_orden.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="actualizar_orden" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\actualizar_orden.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ver_orden" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ver_orden.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,7 +247,7 @@
   <data name="PDF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PDF.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Busqueda_Ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Busqueda_Ticket.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eliminar_ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eliminar_ticket.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
