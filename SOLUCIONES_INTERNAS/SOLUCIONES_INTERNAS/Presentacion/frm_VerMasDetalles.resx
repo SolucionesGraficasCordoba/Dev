@@ -753,19 +753,15 @@ BOTON MODIFICAR PRODUCTO: este botón estara deshabilitado.
 - ACERCA DE: hace referencia a las partes más importantes del sistema.
 </value>
   </data>
-  <data name="TextBox10.Text" xml:space="preserve">
-    <value>FUNCIONAMIENTO  NUEVO TICKET
+  <data name="TextBox11.Text" xml:space="preserve">
+    <value>FUNCIONAMIENTO ELIMINAR TICKET
 
-Este formulario se utilizará en el caso de que se desee agregar un nuevo ticket o solicitud de atención sobre alguna maquina o recurso. 
+Este formulario se utilizará en el caso de que se desee eliminar un ticket. 
 El botón “TICKET” del formulario principal abre el formulario de solicitud de tickets.
-De acuerdo al perfil de usuario que se registre se podrá solicitar un nuevo ticket o responder un ticket ya solicitado.
--	Si el perfil de usuario es ADMINISTRADOR se abrirá el formulario en la pestaña de búsqueda, donde se mostraran todos los tickets en condición de abierto (sin respuesta). El usuario ira respondiendo uno a uno las solicitudes cambiando el estado según corresponda.
--	Si el usuario es COLABORADOR o SUPERVISOR  se abrirá el formulario en la pestaña de solicitud con los campos habilitados para realizar el pedido. Una vez realizada, se cerrara el formulario volviendo al “principal”. 
-Haciendo doble click sobre un ticket en particular del listado, se cambiara de solapa a “solicitud” donde se podrá ver, a modo de consulta, lo solicitado por el usuario registrado y la respuesta correspondiente. (Esto es si el administrador vio la solicitud).
-El check “nuevo” limpia los campos permitiendo cargar otra solicitud.
-NOTA: el usuario no podrá modificar la solicitud, en caso de ser necesario tendrá que crear un nuevo ticket.
-El botón cancelar cierra el formulario sin haber realizado cambios.
-</value>
+-       Si el perfil de usuario es ADMINISTRADOR se abrirá el formulario en la pestaña de búsqueda, donde aparecera habilitado el botón "Eliminar" .
+-       Si el usuario es COLABORADOR o SUPERVISOR no podrá eliminar ticket. 
+Haciendo click sobre un ticket en particular del listado, se eliminará previa confirmación.
+El botón cancelar cierra el formulario sin haber realizado cambios.</value>
   </data>
   <data name="TextBox9.Text" xml:space="preserve">
     <value>COMPONENTES DEL FORMULARIO TICKET
@@ -822,15 +818,18 @@ En la pestaña Búsqueda:
 -	BOTON CANCELAR: cierra el formulario.
 </value>
   </data>
-  <data name="TextBox11.Text" xml:space="preserve">
-    <value>
-FUNCIONAMIENTO  ELIMINAR  REPETICION DE CHAPAS
+  <data name="TextBox10.Text" xml:space="preserve">
+    <value>FUNCIONAMIENTO  NUEVO TICKET
 
-Este formulario se utilizará en el caso de que se desee eliminar una repetición de chapas. 
-Del listado se seleccionará la repetición que se eliminará, previo mensaje de confirmación.
-A modo de información, se cargarán los campos en la parte superior de acuerdo a lo que se seleccione.
-Una vez confirmada la acción los datos no se podrán recuperar.
-El botón cancelar cerrará el formulario sin realizar cambios.
+Este formulario se utilizará en el caso de que se desee agregar un nuevo ticket o solicitud de atención sobre alguna maquina o recurso. 
+El botón “TICKET” del formulario principal abre el formulario de solicitud de tickets.
+De acuerdo al perfil de usuario que se registre se podrá solicitar un nuevo ticket o responder un ticket ya solicitado.
+-	Si el perfil de usuario es ADMINISTRADOR se abrirá el formulario en la pestaña de búsqueda, donde se mostraran todos los tickets en condición de abierto (sin respuesta). El usuario ira respondiendo uno a uno las solicitudes cambiando el estado según corresponda.
+-	Si el usuario es COLABORADOR o SUPERVISOR  se abrirá el formulario en la pestaña de solicitud con los campos habilitados para realizar el pedido. Una vez realizada, se cerrara el formulario volviendo al “principal”. 
+Haciendo doble click sobre un ticket en particular del listado, se cambiara de solapa a “solicitud” donde se podrá ver, a modo de consulta, lo solicitado por el usuario registrado y la respuesta correspondiente. (Esto es si el administrador vio la solicitud).
+El check “nuevo” limpia los campos permitiendo cargar otra solicitud.
+NOTA: el usuario no podrá modificar la solicitud, en caso de ser necesario tendrá que crear un nuevo ticket.
+El botón cancelar cierra el formulario sin haber realizado cambios.
 </value>
   </data>
 </root>
