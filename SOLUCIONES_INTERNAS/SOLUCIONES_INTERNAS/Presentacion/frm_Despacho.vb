@@ -41,6 +41,7 @@
             txt_numero_despacho.Text = 1
         End Try
     End Sub
+
     Sub armar_grilla_ordenes()
         dgv_lista_ordenes.AutoGenerateColumns = False
         dgv_lista_ordenes.Rows.Clear()
