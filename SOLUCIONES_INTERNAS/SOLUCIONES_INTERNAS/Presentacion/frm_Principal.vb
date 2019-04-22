@@ -1351,9 +1351,7 @@ Public Class frm_Principal
 
         'CARGA EN EL FORMULARIO MENSAJE LOS CAMPOS
         Try
-
-       
-        Dim UltimoMensaje = (From m In datacontext.MENSAJE
+            Dim UltimoMensaje = (From m In datacontext.MENSAJE
         Join u In datacontext.USUARIO
         On m.USU_id_usuario Equals u.USU_id_usuario
         Select m.MEN_id_mensaje,
@@ -1385,7 +1383,6 @@ Public Class frm_Principal
             frm_Mensaje.ShowDialog()
         End If
         Catch ex As Exception
-
         End Try
     End Sub
 
