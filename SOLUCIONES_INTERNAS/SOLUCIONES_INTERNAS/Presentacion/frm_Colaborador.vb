@@ -201,7 +201,6 @@ Public Class frm_Colaborador
                 MsgBox("Debe seleccionar un colaborador")
             End If
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -332,7 +331,6 @@ Public Class frm_Colaborador
     End Sub
 
     Private Sub btn_enviar_mensaje_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_enviar_mensaje.Click
-
         'CARGA EN EL FORMULARIO MENSAJE, EL USUARIO Y SU ID QUE LO SACA DEL GRID DE COLABORADORES
         Try
             If dgvLista_Colaboradores.Rows.Count > 0 Then
