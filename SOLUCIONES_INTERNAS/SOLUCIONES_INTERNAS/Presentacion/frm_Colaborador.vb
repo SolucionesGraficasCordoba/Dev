@@ -32,7 +32,6 @@ Public Class frm_Colaborador
 
         If frm_Principal.LBL_MENU_PERFIL.Text = "COLABORADOR" Then
 
-
             Dim cargasupervisor = (From sec In datacontext.SECTOR
                           Join col In datacontext.COLABORADOR
                           On col.SEC_id_sector Equals sec.SEC_id_sector
