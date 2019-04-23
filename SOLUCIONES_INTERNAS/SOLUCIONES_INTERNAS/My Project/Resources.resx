@@ -121,8 +121,8 @@
   <data name="exportarPDF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exportarPDF.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\principal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="consultar_orden" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\consultar_orden.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pdftareasindividual1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pdftareasindividual1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -135,9 +135,6 @@
   </data>
   <data name="actualizaruna" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\actualizaruna.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="consultar_orden" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\consultar_orden.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="listadoordenes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\listadoordenes.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,20 +154,29 @@
   <data name="modificar_tarea" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modificar_tarea.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="enviar_mensaje" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enviar_mensaje.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="modificaruna" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modificaruna.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pdftareasgeneral" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pdftareasgeneral.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="agregarunatarea" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\agregarunatarea.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Acceso_Usuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Acceso_Usuarios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eliminarrepeticion1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eliminarrepeticion1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="nuevarepeticion" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\nuevarepeticion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="agregarunatarea" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\agregarunatarea.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enviar_mensaje2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enviar_mensaje2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eliminar_orden" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eliminar_orden.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eliminar_detalle" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eliminar_detalle.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,8 +184,8 @@
   <data name="ver_tarea1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ver_tarea1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Acceso_Usuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Acceso_Usuarios.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nuevarepeticion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nuevarepeticion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="nuevo_producto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nuevo_producto.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -192,6 +198,9 @@
   </data>
   <data name="Sin título" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Sin título.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="principal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\principal.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="listado_repeticion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\listado_repeticion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,6 +217,9 @@
   <data name="exportartareasgeneral" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\exportartareasgeneral.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="enviar_mensaje1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enviar_mensaje1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Solicitud_Ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Solicitud_Ticket.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,8 +235,8 @@
   <data name="ver_orden" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ver_orden.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eliminar_orden" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eliminar_orden.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="eliminar_ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eliminar_ticket.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="consultar_tarea" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\consultar_tarea.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,7 +259,10 @@
   <data name="PDF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PDF.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eliminar_ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eliminar_ticket.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="respuesta_mensaje" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\respuesta_mensaje.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="respuesta_mensaje1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\respuesta_mensaje1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
