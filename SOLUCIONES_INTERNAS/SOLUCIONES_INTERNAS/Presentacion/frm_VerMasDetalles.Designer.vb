@@ -31,36 +31,27 @@ Partial Class frm_VerMasDetalles
         Me.TabPage25 = New System.Windows.Forms.TabPage()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
-        Me.PictureBox34 = New System.Windows.Forms.PictureBox()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
-        Me.PictureBox39 = New System.Windows.Forms.PictureBox()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.TextBox5 = New System.Windows.Forms.TextBox()
-        Me.PictureBox35 = New System.Windows.Forms.PictureBox()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.TextBox6 = New System.Windows.Forms.TextBox()
-        Me.PictureBox36 = New System.Windows.Forms.PictureBox()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
         Me.TabControl4 = New System.Windows.Forms.TabControl()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.RichTextBox12 = New System.Windows.Forms.RichTextBox()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.TextBox7 = New System.Windows.Forms.TextBox()
-        Me.PictureBox37 = New System.Windows.Forms.PictureBox()
         Me.TabPage10 = New System.Windows.Forms.TabPage()
         Me.Label28 = New System.Windows.Forms.Label()
         Me.TextBox8 = New System.Windows.Forms.TextBox()
-        Me.PictureBox38 = New System.Windows.Forms.PictureBox()
         Me.Producto = New System.Windows.Forms.TabPage()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.Tarea = New System.Windows.Forms.TabPage()
         Me.TabControl7 = New System.Windows.Forms.TabControl()
         Me.TabPage18 = New System.Windows.Forms.TabPage()
@@ -68,83 +59,53 @@ Partial Class frm_VerMasDetalles
         Me.TabPage20 = New System.Windows.Forms.TabPage()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.TabPage21 = New System.Windows.Forms.TabPage()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.PictureBox19 = New System.Windows.Forms.PictureBox()
         Me.TabPage19 = New System.Windows.Forms.TabPage()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.RichTextBox8 = New System.Windows.Forms.RichTextBox()
-        Me.PictureBox20 = New System.Windows.Forms.PictureBox()
         Me.TabPage22 = New System.Windows.Forms.TabPage()
-        Me.PictureBox25 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox26 = New System.Windows.Forms.PictureBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.RichTextBox9 = New System.Windows.Forms.RichTextBox()
-        Me.PictureBox21 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox24 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox22 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox23 = New System.Windows.Forms.PictureBox()
         Me.TabPage23 = New System.Windows.Forms.TabPage()
-        Me.PictureBox32 = New System.Windows.Forms.PictureBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.RichTextBox10 = New System.Windows.Forms.RichTextBox()
         Me.TabPage24 = New System.Windows.Forms.TabPage()
-        Me.PictureBox31 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox33 = New System.Windows.Forms.PictureBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.RichTextBox11 = New System.Windows.Forms.RichTextBox()
-        Me.PictureBox29 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox30 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox28 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox27 = New System.Windows.Forms.PictureBox()
         Me.Orden_Trabajo = New System.Windows.Forms.TabPage()
         Me.TabControl5 = New System.Windows.Forms.TabControl()
         Me.TabPage15 = New System.Windows.Forms.TabPage()
         Me.TabControl6 = New System.Windows.Forms.TabControl()
         Me.TabPage16 = New System.Windows.Forms.TabPage()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
         Me.TabPage17 = New System.Windows.Forms.TabPage()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.RichTextBox4 = New System.Windows.Forms.RichTextBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.TabPage11 = New System.Windows.Forms.TabPage()
         Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.TabPage12 = New System.Windows.Forms.TabPage()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
-        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.TabPage13 = New System.Windows.Forms.TabPage()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.RichTextBox5 = New System.Windows.Forms.RichTextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox16 = New System.Windows.Forms.PictureBox()
         Me.TabPage14 = New System.Windows.Forms.TabPage()
-        Me.PictureBox17 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox18 = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.RichTextBox6 = New System.Windows.Forms.RichTextBox()
-        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox15 = New System.Windows.Forms.PictureBox()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.RichTextBox7 = New System.Windows.Forms.RichTextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Principal = New System.Windows.Forms.TabControl()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
@@ -153,102 +114,150 @@ Partial Class frm_VerMasDetalles
         Me.TabPage27 = New System.Windows.Forms.TabPage()
         Me.Label29 = New System.Windows.Forms.Label()
         Me.TextBox9 = New System.Windows.Forms.TextBox()
-        Me.PictureBox40 = New System.Windows.Forms.PictureBox()
         Me.TabPage28 = New System.Windows.Forms.TabPage()
-        Me.PictureBox41 = New System.Windows.Forms.PictureBox()
         Me.Label30 = New System.Windows.Forms.Label()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
-        Me.PictureBox42 = New System.Windows.Forms.PictureBox()
         Me.TabPage29 = New System.Windows.Forms.TabPage()
         Me.Label31 = New System.Windows.Forms.Label()
         Me.TextBox11 = New System.Windows.Forms.TextBox()
-        Me.PictureBox43 = New System.Windows.Forms.PictureBox()
         Me.TabPage26 = New System.Windows.Forms.TabPage()
+        Me.TabPage30 = New System.Windows.Forms.TabPage()
+        Me.TextBox12 = New System.Windows.Forms.TextBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox11 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox12 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox14 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox16 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox17 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox18 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox13 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox15 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox19 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox20 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox25 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox26 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox21 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox24 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox22 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox23 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox32 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox31 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox33 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox29 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox30 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox28 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox27 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox34 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox39 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox35 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox36 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox37 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox38 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox40 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox41 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox42 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox43 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox44 = New System.Windows.Forms.PictureBox()
+        Me.Label32 = New System.Windows.Forms.Label()
+        Me.Label33 = New System.Windows.Forms.Label()
+        Me.PictureBox45 = New System.Windows.Forms.PictureBox()
         Me.ReTrabajo.SuspendLayout()
         Me.TabControl2.SuspendLayout()
         Me.TabPage5.SuspendLayout()
         Me.TabControl3.SuspendLayout()
         Me.TabPage25.SuspendLayout()
-        CType(Me.PictureBox34, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage7.SuspendLayout()
-        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox35, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage8.SuspendLayout()
-        CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage6.SuspendLayout()
         Me.TabControl4.SuspendLayout()
         Me.TabPage2.SuspendLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage9.SuspendLayout()
-        CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage10.SuspendLayout()
-        CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Producto.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tarea.SuspendLayout()
         Me.TabControl7.SuspendLayout()
         Me.TabPage18.SuspendLayout()
         Me.TabControl8.SuspendLayout()
         Me.TabPage20.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage21.SuspendLayout()
-        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage19.SuspendLayout()
-        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage22.SuspendLayout()
-        CType(Me.PictureBox25, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox26, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox24, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox22, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox23, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage23.SuspendLayout()
-        CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage24.SuspendLayout()
-        CType(Me.PictureBox31, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox33, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox29, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox30, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox28, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox27, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Orden_Trabajo.SuspendLayout()
         Me.TabControl5.SuspendLayout()
         Me.TabPage15.SuspendLayout()
         Me.TabControl6.SuspendLayout()
         Me.TabPage16.SuspendLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage17.SuspendLayout()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage11.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage12.SuspendLayout()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage13.SuspendLayout()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage14.SuspendLayout()
-        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage1.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Principal.SuspendLayout()
         Me.TabPage3.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.TabControl9.SuspendLayout()
         Me.TabPage27.SuspendLayout()
-        CType(Me.PictureBox40, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage28.SuspendLayout()
+        Me.TabPage29.SuspendLayout()
+        Me.TabPage30.SuspendLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox25, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox26, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox24, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox22, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox23, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox31, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox33, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox29, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox30, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox28, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox27, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox34, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox35, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox40, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox41, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox42, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabPage29.SuspendLayout()
         CType(Me.PictureBox43, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox44, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox45, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCerrar
@@ -339,16 +348,6 @@ Partial Class frm_VerMasDetalles
         Me.TextBox3.TabIndex = 9
         Me.TextBox3.Text = resources.GetString("TextBox3.Text")
         '
-        'PictureBox34
-        '
-        Me.PictureBox34.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.repeticionchapas
-        Me.PictureBox34.Location = New System.Drawing.Point(506, 23)
-        Me.PictureBox34.Name = "PictureBox34"
-        Me.PictureBox34.Size = New System.Drawing.Size(351, 263)
-        Me.PictureBox34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox34.TabIndex = 10
-        Me.PictureBox34.TabStop = False
-        '
         'TabPage7
         '
         Me.TabPage7.BackColor = System.Drawing.Color.DarkGray
@@ -362,16 +361,6 @@ Partial Class frm_VerMasDetalles
         Me.TabPage7.Size = New System.Drawing.Size(914, 570)
         Me.TabPage7.TabIndex = 0
         Me.TabPage7.Text = "Nuevo"
-        '
-        'PictureBox39
-        '
-        Me.PictureBox39.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.listado_repeticion
-        Me.PictureBox39.Location = New System.Drawing.Point(427, 33)
-        Me.PictureBox39.Name = "PictureBox39"
-        Me.PictureBox39.Size = New System.Drawing.Size(234, 150)
-        Me.PictureBox39.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox39.TabIndex = 12
-        Me.PictureBox39.TabStop = False
         '
         'Label25
         '
@@ -395,16 +384,6 @@ Partial Class frm_VerMasDetalles
         Me.TextBox5.Size = New System.Drawing.Size(393, 532)
         Me.TextBox5.TabIndex = 9
         Me.TextBox5.Text = resources.GetString("TextBox5.Text")
-        '
-        'PictureBox35
-        '
-        Me.PictureBox35.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevarepeticion
-        Me.PictureBox35.Location = New System.Drawing.Point(667, 33)
-        Me.PictureBox35.Name = "PictureBox35"
-        Me.PictureBox35.Size = New System.Drawing.Size(234, 150)
-        Me.PictureBox35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox35.TabIndex = 10
-        Me.PictureBox35.TabStop = False
         '
         'TabPage8
         '
@@ -441,16 +420,6 @@ Partial Class frm_VerMasDetalles
         Me.TextBox6.Size = New System.Drawing.Size(393, 532)
         Me.TextBox6.TabIndex = 12
         Me.TextBox6.Text = resources.GetString("TextBox6.Text")
-        '
-        'PictureBox36
-        '
-        Me.PictureBox36.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminarrepeticion1
-        Me.PictureBox36.Location = New System.Drawing.Point(506, 23)
-        Me.PictureBox36.Name = "PictureBox36"
-        Me.PictureBox36.Size = New System.Drawing.Size(351, 263)
-        Me.PictureBox36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox36.TabIndex = 13
-        Me.PictureBox36.TabStop = False
         '
         'TabPage6
         '
@@ -496,16 +465,6 @@ Partial Class frm_VerMasDetalles
         Me.Label7.Size = New System.Drawing.Size(153, 13)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Formulario Digital / Offset"
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.Sin_título
-        Me.PictureBox7.Location = New System.Drawing.Point(454, 32)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(351, 263)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 12
-        Me.PictureBox7.TabStop = False
         '
         'RichTextBox12
         '
@@ -553,16 +512,6 @@ Partial Class frm_VerMasDetalles
         Me.TextBox7.TabIndex = 12
         Me.TextBox7.Text = resources.GetString("TextBox7.Text")
         '
-        'PictureBox37
-        '
-        Me.PictureBox37.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.repeticionchapas
-        Me.PictureBox37.Location = New System.Drawing.Point(489, 21)
-        Me.PictureBox37.Name = "PictureBox37"
-        Me.PictureBox37.Size = New System.Drawing.Size(351, 263)
-        Me.PictureBox37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox37.TabIndex = 13
-        Me.PictureBox37.TabStop = False
-        '
         'TabPage10
         '
         Me.TabPage10.BackColor = System.Drawing.Color.DarkGray
@@ -598,16 +547,6 @@ Partial Class frm_VerMasDetalles
         Me.TextBox8.Size = New System.Drawing.Size(393, 532)
         Me.TextBox8.TabIndex = 12
         Me.TextBox8.Text = resources.GetString("TextBox8.Text")
-        '
-        'PictureBox38
-        '
-        Me.PictureBox38.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminarrepeticion
-        Me.PictureBox38.Location = New System.Drawing.Point(505, 21)
-        Me.PictureBox38.Name = "PictureBox38"
-        Me.PictureBox38.Size = New System.Drawing.Size(351, 263)
-        Me.PictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox38.TabIndex = 13
-        Me.PictureBox38.TabStop = False
         '
         'Producto
         '
@@ -657,26 +596,6 @@ Partial Class frm_VerMasDetalles
         Me.TextBox4.TabIndex = 2
         Me.TextBox4.Text = resources.GetString("TextBox4.Text")
         Me.TextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevo_producto
-        Me.PictureBox5.Location = New System.Drawing.Point(527, 19)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(382, 264)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 4
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.alta_productos
-        Me.PictureBox4.Location = New System.Drawing.Point(527, 302)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(382, 264)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 3
-        Me.PictureBox4.TabStop = False
         '
         'Tarea
         '
@@ -759,16 +678,6 @@ Partial Class frm_VerMasDetalles
         Me.TextBox1.TabIndex = 6
         Me.TextBox1.Text = resources.GetString("TextBox1.Text")
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nueva_tarea
-        Me.PictureBox1.Location = New System.Drawing.Point(421, 230)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(490, 321)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 7
-        Me.PictureBox1.TabStop = False
-        '
         'TabPage21
         '
         Me.TabPage21.BackColor = System.Drawing.Color.DarkGray
@@ -805,16 +714,6 @@ Partial Class frm_VerMasDetalles
         Me.TextBox2.TabIndex = 9
         Me.TextBox2.Text = resources.GetString("TextBox2.Text")
         '
-        'PictureBox19
-        '
-        Me.PictureBox19.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.listadotareas
-        Me.PictureBox19.Location = New System.Drawing.Point(421, 228)
-        Me.PictureBox19.Name = "PictureBox19"
-        Me.PictureBox19.Size = New System.Drawing.Size(490, 321)
-        Me.PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox19.TabIndex = 10
-        Me.PictureBox19.TabStop = False
-        '
         'TabPage19
         '
         Me.TabPage19.BackColor = System.Drawing.Color.DarkGray
@@ -848,16 +747,6 @@ Partial Class frm_VerMasDetalles
         Me.RichTextBox8.TabIndex = 0
         Me.RichTextBox8.Text = resources.GetString("RichTextBox8.Text")
         '
-        'PictureBox20
-        '
-        Me.PictureBox20.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nueva_tarea
-        Me.PictureBox20.Location = New System.Drawing.Point(421, 245)
-        Me.PictureBox20.Name = "PictureBox20"
-        Me.PictureBox20.Size = New System.Drawing.Size(490, 321)
-        Me.PictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox20.TabIndex = 9
-        Me.PictureBox20.TabStop = False
-        '
         'TabPage22
         '
         Me.TabPage22.BackColor = System.Drawing.Color.DarkGray
@@ -877,26 +766,6 @@ Partial Class frm_VerMasDetalles
         Me.TabPage22.Size = New System.Drawing.Size(923, 593)
         Me.TabPage22.TabIndex = 2
         Me.TabPage22.Text = "Agregar / Modificar"
-        '
-        'PictureBox25
-        '
-        Me.PictureBox25.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.agregaruna
-        Me.PictureBox25.Location = New System.Drawing.Point(672, 204)
-        Me.PictureBox25.Name = "PictureBox25"
-        Me.PictureBox25.Size = New System.Drawing.Size(243, 169)
-        Me.PictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox25.TabIndex = 24
-        Me.PictureBox25.TabStop = False
-        '
-        'PictureBox26
-        '
-        Me.PictureBox26.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.agregarunatarea
-        Me.PictureBox26.Location = New System.Drawing.Point(423, 204)
-        Me.PictureBox26.Name = "PictureBox26"
-        Me.PictureBox26.Size = New System.Drawing.Size(243, 169)
-        Me.PictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox26.TabIndex = 23
-        Me.PictureBox26.TabStop = False
         '
         'Label19
         '
@@ -938,46 +807,6 @@ Partial Class frm_VerMasDetalles
         Me.RichTextBox9.TabIndex = 1
         Me.RichTextBox9.Text = resources.GetString("RichTextBox9.Text")
         '
-        'PictureBox21
-        '
-        Me.PictureBox21.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.actualizaruna
-        Me.PictureBox21.Location = New System.Drawing.Point(672, 397)
-        Me.PictureBox21.Name = "PictureBox21"
-        Me.PictureBox21.Size = New System.Drawing.Size(243, 169)
-        Me.PictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox21.TabIndex = 21
-        Me.PictureBox21.TabStop = False
-        '
-        'PictureBox24
-        '
-        Me.PictureBox24.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificaruna
-        Me.PictureBox24.Location = New System.Drawing.Point(423, 397)
-        Me.PictureBox24.Name = "PictureBox24"
-        Me.PictureBox24.Size = New System.Drawing.Size(243, 169)
-        Me.PictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox24.TabIndex = 20
-        Me.PictureBox24.TabStop = False
-        '
-        'PictureBox22
-        '
-        Me.PictureBox22.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificartodas
-        Me.PictureBox22.Location = New System.Drawing.Point(672, 15)
-        Me.PictureBox22.Name = "PictureBox22"
-        Me.PictureBox22.Size = New System.Drawing.Size(243, 169)
-        Me.PictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox22.TabIndex = 18
-        Me.PictureBox22.TabStop = False
-        '
-        'PictureBox23
-        '
-        Me.PictureBox23.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificar_tarea
-        Me.PictureBox23.Location = New System.Drawing.Point(423, 15)
-        Me.PictureBox23.Name = "PictureBox23"
-        Me.PictureBox23.Size = New System.Drawing.Size(243, 169)
-        Me.PictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox23.TabIndex = 17
-        Me.PictureBox23.TabStop = False
-        '
         'TabPage23
         '
         Me.TabPage23.BackColor = System.Drawing.Color.DarkGray
@@ -990,16 +819,6 @@ Partial Class frm_VerMasDetalles
         Me.TabPage23.Size = New System.Drawing.Size(923, 593)
         Me.TabPage23.TabIndex = 3
         Me.TabPage23.Text = "Eliminar"
-        '
-        'PictureBox32
-        '
-        Me.PictureBox32.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminar_tarea
-        Me.PictureBox32.Location = New System.Drawing.Point(482, 304)
-        Me.PictureBox32.Name = "PictureBox32"
-        Me.PictureBox32.Size = New System.Drawing.Size(365, 270)
-        Me.PictureBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox32.TabIndex = 27
-        Me.PictureBox32.TabStop = False
         '
         'Label22
         '
@@ -1041,26 +860,6 @@ Partial Class frm_VerMasDetalles
         Me.TabPage24.TabIndex = 4
         Me.TabPage24.Text = "Consultar"
         '
-        'PictureBox31
-        '
-        Me.PictureBox31.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.pdftareasindividual1
-        Me.PictureBox31.Location = New System.Drawing.Point(673, 424)
-        Me.PictureBox31.Name = "PictureBox31"
-        Me.PictureBox31.Size = New System.Drawing.Size(234, 150)
-        Me.PictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox31.TabIndex = 37
-        Me.PictureBox31.TabStop = False
-        '
-        'PictureBox33
-        '
-        Me.PictureBox33.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.pdftareasindividual
-        Me.PictureBox33.Location = New System.Drawing.Point(429, 424)
-        Me.PictureBox33.Name = "PictureBox33"
-        Me.PictureBox33.Size = New System.Drawing.Size(234, 150)
-        Me.PictureBox33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox33.TabIndex = 36
-        Me.PictureBox33.TabStop = False
-        '
         'Label23
         '
         Me.Label23.AutoSize = True
@@ -1100,46 +899,6 @@ Partial Class frm_VerMasDetalles
         Me.RichTextBox11.Size = New System.Drawing.Size(393, 549)
         Me.RichTextBox11.TabIndex = 28
         Me.RichTextBox11.Text = resources.GetString("RichTextBox11.Text")
-        '
-        'PictureBox29
-        '
-        Me.PictureBox29.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.pdftareasgeneral
-        Me.PictureBox29.Location = New System.Drawing.Point(673, 237)
-        Me.PictureBox29.Name = "PictureBox29"
-        Me.PictureBox29.Size = New System.Drawing.Size(234, 150)
-        Me.PictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox29.TabIndex = 34
-        Me.PictureBox29.TabStop = False
-        '
-        'PictureBox30
-        '
-        Me.PictureBox30.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.exportartareasgeneral
-        Me.PictureBox30.Location = New System.Drawing.Point(429, 237)
-        Me.PictureBox30.Name = "PictureBox30"
-        Me.PictureBox30.Size = New System.Drawing.Size(234, 150)
-        Me.PictureBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox30.TabIndex = 33
-        Me.PictureBox30.TabStop = False
-        '
-        'PictureBox28
-        '
-        Me.PictureBox28.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.ver_tarea1
-        Me.PictureBox28.Location = New System.Drawing.Point(673, 39)
-        Me.PictureBox28.Name = "PictureBox28"
-        Me.PictureBox28.Size = New System.Drawing.Size(234, 150)
-        Me.PictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox28.TabIndex = 31
-        Me.PictureBox28.TabStop = False
-        '
-        'PictureBox27
-        '
-        Me.PictureBox27.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.consultar_tarea
-        Me.PictureBox27.Location = New System.Drawing.Point(429, 39)
-        Me.PictureBox27.Name = "PictureBox27"
-        Me.PictureBox27.Size = New System.Drawing.Size(234, 150)
-        Me.PictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox27.TabIndex = 30
-        Me.PictureBox27.TabStop = False
         '
         'Orden_Trabajo
         '
@@ -1209,16 +968,6 @@ Partial Class frm_VerMasDetalles
         Me.Label6.TabIndex = 11
         Me.Label6.Text = "Formulario Orden Trabajo"
         '
-        'PictureBox6
-        '
-        Me.PictureBox6.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevaordenampliada
-        Me.PictureBox6.Location = New System.Drawing.Point(421, 229)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(490, 320)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 10
-        Me.PictureBox6.TabStop = False
-        '
         'RichTextBox2
         '
         Me.RichTextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1262,16 +1011,6 @@ Partial Class frm_VerMasDetalles
         Me.RichTextBox4.TabIndex = 9
         Me.RichTextBox4.Text = resources.GetString("RichTextBox4.Text")
         '
-        'PictureBox8
-        '
-        Me.PictureBox8.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.listadoordenes
-        Me.PictureBox8.Location = New System.Drawing.Point(421, 232)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(490, 320)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox8.TabIndex = 10
-        Me.PictureBox8.TabStop = False
-        '
         'TabPage11
         '
         Me.TabPage11.BackColor = System.Drawing.Color.DarkGray
@@ -1304,16 +1043,6 @@ Partial Class frm_VerMasDetalles
         Me.Label2.Size = New System.Drawing.Size(191, 13)
         Me.Label2.TabIndex = 8
         Me.Label2.Text = "Formulario Nueva Orden Trabajo"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevaordenampliada
-        Me.PictureBox2.Location = New System.Drawing.Point(423, 239)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(490, 327)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 7
-        Me.PictureBox2.TabStop = False
         '
         'TabPage12
         '
@@ -1362,46 +1091,6 @@ Partial Class frm_VerMasDetalles
         Me.RichTextBox3.TabIndex = 0
         Me.RichTextBox3.Text = resources.GetString("RichTextBox3.Text")
         '
-        'PictureBox11
-        '
-        Me.PictureBox11.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.actualizar_orden
-        Me.PictureBox11.Location = New System.Drawing.Point(670, 119)
-        Me.PictureBox11.Name = "PictureBox11"
-        Me.PictureBox11.Size = New System.Drawing.Size(243, 169)
-        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox11.TabIndex = 15
-        Me.PictureBox11.TabStop = False
-        '
-        'PictureBox12
-        '
-        Me.PictureBox12.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificar_orden
-        Me.PictureBox12.Location = New System.Drawing.Point(419, 119)
-        Me.PictureBox12.Name = "PictureBox12"
-        Me.PictureBox12.Size = New System.Drawing.Size(243, 169)
-        Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox12.TabIndex = 14
-        Me.PictureBox12.TabStop = False
-        '
-        'PictureBox10
-        '
-        Me.PictureBox10.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.actualizarproducto
-        Me.PictureBox10.Location = New System.Drawing.Point(670, 396)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(243, 169)
-        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox10.TabIndex = 12
-        Me.PictureBox10.TabStop = False
-        '
-        'PictureBox9
-        '
-        Me.PictureBox9.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificar_orden
-        Me.PictureBox9.Location = New System.Drawing.Point(419, 396)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(243, 169)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox9.TabIndex = 11
-        Me.PictureBox9.TabStop = False
-        '
         'TabPage13
         '
         Me.TabPage13.BackColor = System.Drawing.Color.DarkGray
@@ -1447,26 +1136,6 @@ Partial Class frm_VerMasDetalles
         Me.Label11.TabIndex = 23
         Me.Label11.Text = "Eliminar " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & " Orden"
         '
-        'PictureBox14
-        '
-        Me.PictureBox14.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminar_orden1
-        Me.PictureBox14.Location = New System.Drawing.Point(507, 16)
-        Me.PictureBox14.Name = "PictureBox14"
-        Me.PictureBox14.Size = New System.Drawing.Size(406, 272)
-        Me.PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox14.TabIndex = 21
-        Me.PictureBox14.TabStop = False
-        '
-        'PictureBox16
-        '
-        Me.PictureBox16.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminar_detalle
-        Me.PictureBox16.Location = New System.Drawing.Point(507, 294)
-        Me.PictureBox16.Name = "PictureBox16"
-        Me.PictureBox16.Size = New System.Drawing.Size(406, 272)
-        Me.PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox16.TabIndex = 18
-        Me.PictureBox16.TabStop = False
-        '
         'TabPage14
         '
         Me.TabPage14.BackColor = System.Drawing.Color.DarkGray
@@ -1483,26 +1152,6 @@ Partial Class frm_VerMasDetalles
         Me.TabPage14.Size = New System.Drawing.Size(919, 595)
         Me.TabPage14.TabIndex = 3
         Me.TabPage14.Text = "Consultar"
-        '
-        'PictureBox17
-        '
-        Me.PictureBox17.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.exportarPDF
-        Me.PictureBox17.Location = New System.Drawing.Point(419, 397)
-        Me.PictureBox17.Name = "PictureBox17"
-        Me.PictureBox17.Size = New System.Drawing.Size(243, 169)
-        Me.PictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox17.TabIndex = 30
-        Me.PictureBox17.TabStop = False
-        '
-        'PictureBox18
-        '
-        Me.PictureBox18.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.PDF
-        Me.PictureBox18.Location = New System.Drawing.Point(670, 397)
-        Me.PictureBox18.Name = "PictureBox18"
-        Me.PictureBox18.Size = New System.Drawing.Size(243, 169)
-        Me.PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox18.TabIndex = 29
-        Me.PictureBox18.TabStop = False
         '
         'Label13
         '
@@ -1533,26 +1182,6 @@ Partial Class frm_VerMasDetalles
         Me.RichTextBox6.Size = New System.Drawing.Size(393, 549)
         Me.RichTextBox6.TabIndex = 24
         Me.RichTextBox6.Text = resources.GetString("RichTextBox6.Text")
-        '
-        'PictureBox13
-        '
-        Me.PictureBox13.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.consultar_orden1
-        Me.PictureBox13.Location = New System.Drawing.Point(419, 119)
-        Me.PictureBox13.Name = "PictureBox13"
-        Me.PictureBox13.Size = New System.Drawing.Size(243, 169)
-        Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox13.TabIndex = 27
-        Me.PictureBox13.TabStop = False
-        '
-        'PictureBox15
-        '
-        Me.PictureBox15.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.ver_orden
-        Me.PictureBox15.Location = New System.Drawing.Point(670, 119)
-        Me.PictureBox15.Name = "PictureBox15"
-        Me.PictureBox15.Size = New System.Drawing.Size(243, 169)
-        Me.PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox15.TabIndex = 25
-        Me.PictureBox15.TabStop = False
         '
         'TabPage1
         '
@@ -1587,16 +1216,6 @@ Partial Class frm_VerMasDetalles
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Formulario Principal"
         '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.principal1
-        Me.PictureBox3.Location = New System.Drawing.Point(423, 289)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(498, 277)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 4
-        Me.PictureBox3.TabStop = False
-        '
         'Principal
         '
         Me.Principal.Controls.Add(Me.TabPage1)
@@ -1605,6 +1224,7 @@ Partial Class frm_VerMasDetalles
         Me.Principal.Controls.Add(Me.Producto)
         Me.Principal.Controls.Add(Me.ReTrabajo)
         Me.Principal.Controls.Add(Me.TabPage3)
+        Me.Principal.Controls.Add(Me.TabPage30)
         Me.Principal.Location = New System.Drawing.Point(2, 1)
         Me.Principal.Name = "Principal"
         Me.Principal.SelectedIndex = 0
@@ -1690,16 +1310,6 @@ Partial Class frm_VerMasDetalles
         Me.TextBox9.TabIndex = 9
         Me.TextBox9.Text = resources.GetString("TextBox9.Text")
         '
-        'PictureBox40
-        '
-        Me.PictureBox40.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.repeticionchapas
-        Me.PictureBox40.Location = New System.Drawing.Point(506, 23)
-        Me.PictureBox40.Name = "PictureBox40"
-        Me.PictureBox40.Size = New System.Drawing.Size(351, 263)
-        Me.PictureBox40.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox40.TabIndex = 10
-        Me.PictureBox40.TabStop = False
-        '
         'TabPage28
         '
         Me.TabPage28.BackColor = System.Drawing.Color.DarkGray
@@ -1713,16 +1323,6 @@ Partial Class frm_VerMasDetalles
         Me.TabPage28.Size = New System.Drawing.Size(914, 530)
         Me.TabPage28.TabIndex = 0
         Me.TabPage28.Text = "Nuevo"
-        '
-        'PictureBox41
-        '
-        Me.PictureBox41.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.listado_repeticion
-        Me.PictureBox41.Location = New System.Drawing.Point(427, 33)
-        Me.PictureBox41.Name = "PictureBox41"
-        Me.PictureBox41.Size = New System.Drawing.Size(234, 150)
-        Me.PictureBox41.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox41.TabIndex = 12
-        Me.PictureBox41.TabStop = False
         '
         'Label30
         '
@@ -1746,16 +1346,6 @@ Partial Class frm_VerMasDetalles
         Me.TextBox10.Size = New System.Drawing.Size(393, 532)
         Me.TextBox10.TabIndex = 9
         Me.TextBox10.Text = resources.GetString("TextBox10.Text")
-        '
-        'PictureBox42
-        '
-        Me.PictureBox42.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevarepeticion
-        Me.PictureBox42.Location = New System.Drawing.Point(667, 33)
-        Me.PictureBox42.Name = "PictureBox42"
-        Me.PictureBox42.Size = New System.Drawing.Size(234, 150)
-        Me.PictureBox42.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox42.TabIndex = 10
-        Me.PictureBox42.TabStop = False
         '
         'TabPage29
         '
@@ -1793,6 +1383,464 @@ Partial Class frm_VerMasDetalles
         Me.TextBox11.TabIndex = 12
         Me.TextBox11.Text = resources.GetString("TextBox11.Text")
         '
+        'TabPage26
+        '
+        Me.TabPage26.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage26.Name = "TabPage26"
+        Me.TabPage26.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage26.Size = New System.Drawing.Size(918, 592)
+        Me.TabPage26.TabIndex = 1
+        Me.TabPage26.Text = "Búsqueda"
+        Me.TabPage26.UseVisualStyleBackColor = True
+        '
+        'TabPage30
+        '
+        Me.TabPage30.BackColor = System.Drawing.Color.DarkGray
+        Me.TabPage30.Controls.Add(Me.Label33)
+        Me.TabPage30.Controls.Add(Me.PictureBox45)
+        Me.TabPage30.Controls.Add(Me.Label32)
+        Me.TabPage30.Controls.Add(Me.TextBox12)
+        Me.TabPage30.Controls.Add(Me.PictureBox44)
+        Me.TabPage30.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage30.Name = "TabPage30"
+        Me.TabPage30.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage30.Size = New System.Drawing.Size(927, 621)
+        Me.TabPage30.TabIndex = 6
+        Me.TabPage30.Text = "Mensaje Inicio"
+        '
+        'TextBox12
+        '
+        Me.TextBox12.BackColor = System.Drawing.SystemColors.Control
+        Me.TextBox12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox12.Location = New System.Drawing.Point(46, 44)
+        Me.TextBox12.Multiline = True
+        Me.TextBox12.Name = "TextBox12"
+        Me.TextBox12.ReadOnly = True
+        Me.TextBox12.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox12.Size = New System.Drawing.Size(393, 532)
+        Me.TextBox12.TabIndex = 11
+        Me.TextBox12.Text = resources.GetString("TextBox12.Text")
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.principal1
+        Me.PictureBox3.Location = New System.Drawing.Point(423, 289)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(498, 277)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox3.TabIndex = 4
+        Me.PictureBox3.TabStop = False
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevaordenampliada
+        Me.PictureBox6.Location = New System.Drawing.Point(421, 229)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(490, 320)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 10
+        Me.PictureBox6.TabStop = False
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.listadoordenes
+        Me.PictureBox8.Location = New System.Drawing.Point(421, 232)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(490, 320)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 10
+        Me.PictureBox8.TabStop = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevaordenampliada
+        Me.PictureBox2.Location = New System.Drawing.Point(423, 239)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(490, 327)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 7
+        Me.PictureBox2.TabStop = False
+        '
+        'PictureBox11
+        '
+        Me.PictureBox11.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.actualizar_orden
+        Me.PictureBox11.Location = New System.Drawing.Point(670, 119)
+        Me.PictureBox11.Name = "PictureBox11"
+        Me.PictureBox11.Size = New System.Drawing.Size(243, 169)
+        Me.PictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox11.TabIndex = 15
+        Me.PictureBox11.TabStop = False
+        '
+        'PictureBox12
+        '
+        Me.PictureBox12.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificar_orden
+        Me.PictureBox12.Location = New System.Drawing.Point(419, 119)
+        Me.PictureBox12.Name = "PictureBox12"
+        Me.PictureBox12.Size = New System.Drawing.Size(243, 169)
+        Me.PictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox12.TabIndex = 14
+        Me.PictureBox12.TabStop = False
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.actualizarproducto
+        Me.PictureBox10.Location = New System.Drawing.Point(670, 396)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(243, 169)
+        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox10.TabIndex = 12
+        Me.PictureBox10.TabStop = False
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificar_orden
+        Me.PictureBox9.Location = New System.Drawing.Point(419, 396)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(243, 169)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 11
+        Me.PictureBox9.TabStop = False
+        '
+        'PictureBox14
+        '
+        Me.PictureBox14.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminar_orden1
+        Me.PictureBox14.Location = New System.Drawing.Point(507, 16)
+        Me.PictureBox14.Name = "PictureBox14"
+        Me.PictureBox14.Size = New System.Drawing.Size(406, 272)
+        Me.PictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox14.TabIndex = 21
+        Me.PictureBox14.TabStop = False
+        '
+        'PictureBox16
+        '
+        Me.PictureBox16.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminar_detalle
+        Me.PictureBox16.Location = New System.Drawing.Point(507, 294)
+        Me.PictureBox16.Name = "PictureBox16"
+        Me.PictureBox16.Size = New System.Drawing.Size(406, 272)
+        Me.PictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox16.TabIndex = 18
+        Me.PictureBox16.TabStop = False
+        '
+        'PictureBox17
+        '
+        Me.PictureBox17.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.exportarPDF
+        Me.PictureBox17.Location = New System.Drawing.Point(419, 397)
+        Me.PictureBox17.Name = "PictureBox17"
+        Me.PictureBox17.Size = New System.Drawing.Size(243, 169)
+        Me.PictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox17.TabIndex = 30
+        Me.PictureBox17.TabStop = False
+        '
+        'PictureBox18
+        '
+        Me.PictureBox18.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.PDF
+        Me.PictureBox18.Location = New System.Drawing.Point(670, 397)
+        Me.PictureBox18.Name = "PictureBox18"
+        Me.PictureBox18.Size = New System.Drawing.Size(243, 169)
+        Me.PictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox18.TabIndex = 29
+        Me.PictureBox18.TabStop = False
+        '
+        'PictureBox13
+        '
+        Me.PictureBox13.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.consultar_orden1
+        Me.PictureBox13.Location = New System.Drawing.Point(419, 119)
+        Me.PictureBox13.Name = "PictureBox13"
+        Me.PictureBox13.Size = New System.Drawing.Size(243, 169)
+        Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox13.TabIndex = 27
+        Me.PictureBox13.TabStop = False
+        '
+        'PictureBox15
+        '
+        Me.PictureBox15.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.ver_orden
+        Me.PictureBox15.Location = New System.Drawing.Point(670, 119)
+        Me.PictureBox15.Name = "PictureBox15"
+        Me.PictureBox15.Size = New System.Drawing.Size(243, 169)
+        Me.PictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox15.TabIndex = 25
+        Me.PictureBox15.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nueva_tarea
+        Me.PictureBox1.Location = New System.Drawing.Point(421, 230)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(490, 321)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 7
+        Me.PictureBox1.TabStop = False
+        '
+        'PictureBox19
+        '
+        Me.PictureBox19.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.listadotareas
+        Me.PictureBox19.Location = New System.Drawing.Point(421, 228)
+        Me.PictureBox19.Name = "PictureBox19"
+        Me.PictureBox19.Size = New System.Drawing.Size(490, 321)
+        Me.PictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox19.TabIndex = 10
+        Me.PictureBox19.TabStop = False
+        '
+        'PictureBox20
+        '
+        Me.PictureBox20.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nueva_tarea
+        Me.PictureBox20.Location = New System.Drawing.Point(421, 245)
+        Me.PictureBox20.Name = "PictureBox20"
+        Me.PictureBox20.Size = New System.Drawing.Size(490, 321)
+        Me.PictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox20.TabIndex = 9
+        Me.PictureBox20.TabStop = False
+        '
+        'PictureBox25
+        '
+        Me.PictureBox25.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.agregaruna
+        Me.PictureBox25.Location = New System.Drawing.Point(672, 204)
+        Me.PictureBox25.Name = "PictureBox25"
+        Me.PictureBox25.Size = New System.Drawing.Size(243, 169)
+        Me.PictureBox25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox25.TabIndex = 24
+        Me.PictureBox25.TabStop = False
+        '
+        'PictureBox26
+        '
+        Me.PictureBox26.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.agregarunatarea
+        Me.PictureBox26.Location = New System.Drawing.Point(423, 204)
+        Me.PictureBox26.Name = "PictureBox26"
+        Me.PictureBox26.Size = New System.Drawing.Size(243, 169)
+        Me.PictureBox26.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox26.TabIndex = 23
+        Me.PictureBox26.TabStop = False
+        '
+        'PictureBox21
+        '
+        Me.PictureBox21.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.actualizaruna
+        Me.PictureBox21.Location = New System.Drawing.Point(672, 397)
+        Me.PictureBox21.Name = "PictureBox21"
+        Me.PictureBox21.Size = New System.Drawing.Size(243, 169)
+        Me.PictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox21.TabIndex = 21
+        Me.PictureBox21.TabStop = False
+        '
+        'PictureBox24
+        '
+        Me.PictureBox24.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificaruna
+        Me.PictureBox24.Location = New System.Drawing.Point(423, 397)
+        Me.PictureBox24.Name = "PictureBox24"
+        Me.PictureBox24.Size = New System.Drawing.Size(243, 169)
+        Me.PictureBox24.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox24.TabIndex = 20
+        Me.PictureBox24.TabStop = False
+        '
+        'PictureBox22
+        '
+        Me.PictureBox22.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificartodas
+        Me.PictureBox22.Location = New System.Drawing.Point(672, 15)
+        Me.PictureBox22.Name = "PictureBox22"
+        Me.PictureBox22.Size = New System.Drawing.Size(243, 169)
+        Me.PictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox22.TabIndex = 18
+        Me.PictureBox22.TabStop = False
+        '
+        'PictureBox23
+        '
+        Me.PictureBox23.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.modificar_tarea
+        Me.PictureBox23.Location = New System.Drawing.Point(423, 15)
+        Me.PictureBox23.Name = "PictureBox23"
+        Me.PictureBox23.Size = New System.Drawing.Size(243, 169)
+        Me.PictureBox23.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox23.TabIndex = 17
+        Me.PictureBox23.TabStop = False
+        '
+        'PictureBox32
+        '
+        Me.PictureBox32.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminar_tarea
+        Me.PictureBox32.Location = New System.Drawing.Point(482, 304)
+        Me.PictureBox32.Name = "PictureBox32"
+        Me.PictureBox32.Size = New System.Drawing.Size(365, 270)
+        Me.PictureBox32.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox32.TabIndex = 27
+        Me.PictureBox32.TabStop = False
+        '
+        'PictureBox31
+        '
+        Me.PictureBox31.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.pdftareasindividual1
+        Me.PictureBox31.Location = New System.Drawing.Point(673, 424)
+        Me.PictureBox31.Name = "PictureBox31"
+        Me.PictureBox31.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox31.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox31.TabIndex = 37
+        Me.PictureBox31.TabStop = False
+        '
+        'PictureBox33
+        '
+        Me.PictureBox33.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.pdftareasindividual
+        Me.PictureBox33.Location = New System.Drawing.Point(429, 424)
+        Me.PictureBox33.Name = "PictureBox33"
+        Me.PictureBox33.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox33.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox33.TabIndex = 36
+        Me.PictureBox33.TabStop = False
+        '
+        'PictureBox29
+        '
+        Me.PictureBox29.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.pdftareasgeneral
+        Me.PictureBox29.Location = New System.Drawing.Point(673, 237)
+        Me.PictureBox29.Name = "PictureBox29"
+        Me.PictureBox29.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox29.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox29.TabIndex = 34
+        Me.PictureBox29.TabStop = False
+        '
+        'PictureBox30
+        '
+        Me.PictureBox30.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.exportartareasgeneral
+        Me.PictureBox30.Location = New System.Drawing.Point(429, 237)
+        Me.PictureBox30.Name = "PictureBox30"
+        Me.PictureBox30.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox30.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox30.TabIndex = 33
+        Me.PictureBox30.TabStop = False
+        '
+        'PictureBox28
+        '
+        Me.PictureBox28.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.ver_tarea1
+        Me.PictureBox28.Location = New System.Drawing.Point(673, 39)
+        Me.PictureBox28.Name = "PictureBox28"
+        Me.PictureBox28.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox28.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox28.TabIndex = 31
+        Me.PictureBox28.TabStop = False
+        '
+        'PictureBox27
+        '
+        Me.PictureBox27.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.consultar_tarea
+        Me.PictureBox27.Location = New System.Drawing.Point(429, 39)
+        Me.PictureBox27.Name = "PictureBox27"
+        Me.PictureBox27.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox27.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox27.TabIndex = 30
+        Me.PictureBox27.TabStop = False
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevo_producto
+        Me.PictureBox5.Location = New System.Drawing.Point(527, 19)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(382, 264)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 4
+        Me.PictureBox5.TabStop = False
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.alta_productos
+        Me.PictureBox4.Location = New System.Drawing.Point(527, 302)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(382, 264)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 3
+        Me.PictureBox4.TabStop = False
+        '
+        'PictureBox34
+        '
+        Me.PictureBox34.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.repeticionchapas
+        Me.PictureBox34.Location = New System.Drawing.Point(506, 23)
+        Me.PictureBox34.Name = "PictureBox34"
+        Me.PictureBox34.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox34.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox34.TabIndex = 10
+        Me.PictureBox34.TabStop = False
+        '
+        'PictureBox39
+        '
+        Me.PictureBox39.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.listado_repeticion
+        Me.PictureBox39.Location = New System.Drawing.Point(427, 33)
+        Me.PictureBox39.Name = "PictureBox39"
+        Me.PictureBox39.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox39.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox39.TabIndex = 12
+        Me.PictureBox39.TabStop = False
+        '
+        'PictureBox35
+        '
+        Me.PictureBox35.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevarepeticion
+        Me.PictureBox35.Location = New System.Drawing.Point(667, 33)
+        Me.PictureBox35.Name = "PictureBox35"
+        Me.PictureBox35.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox35.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox35.TabIndex = 10
+        Me.PictureBox35.TabStop = False
+        '
+        'PictureBox36
+        '
+        Me.PictureBox36.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminarrepeticion1
+        Me.PictureBox36.Location = New System.Drawing.Point(506, 23)
+        Me.PictureBox36.Name = "PictureBox36"
+        Me.PictureBox36.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox36.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox36.TabIndex = 13
+        Me.PictureBox36.TabStop = False
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.Sin_título
+        Me.PictureBox7.Location = New System.Drawing.Point(454, 32)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 12
+        Me.PictureBox7.TabStop = False
+        '
+        'PictureBox37
+        '
+        Me.PictureBox37.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.repeticionchapas
+        Me.PictureBox37.Location = New System.Drawing.Point(489, 21)
+        Me.PictureBox37.Name = "PictureBox37"
+        Me.PictureBox37.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox37.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox37.TabIndex = 13
+        Me.PictureBox37.TabStop = False
+        '
+        'PictureBox38
+        '
+        Me.PictureBox38.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminarrepeticion
+        Me.PictureBox38.Location = New System.Drawing.Point(505, 21)
+        Me.PictureBox38.Name = "PictureBox38"
+        Me.PictureBox38.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox38.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox38.TabIndex = 13
+        Me.PictureBox38.TabStop = False
+        '
+        'PictureBox40
+        '
+        Me.PictureBox40.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.repeticionchapas
+        Me.PictureBox40.Location = New System.Drawing.Point(506, 23)
+        Me.PictureBox40.Name = "PictureBox40"
+        Me.PictureBox40.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox40.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox40.TabIndex = 10
+        Me.PictureBox40.TabStop = False
+        '
+        'PictureBox41
+        '
+        Me.PictureBox41.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.listado_repeticion
+        Me.PictureBox41.Location = New System.Drawing.Point(427, 33)
+        Me.PictureBox41.Name = "PictureBox41"
+        Me.PictureBox41.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox41.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox41.TabIndex = 12
+        Me.PictureBox41.TabStop = False
+        '
+        'PictureBox42
+        '
+        Me.PictureBox42.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.nuevarepeticion
+        Me.PictureBox42.Location = New System.Drawing.Point(667, 33)
+        Me.PictureBox42.Name = "PictureBox42"
+        Me.PictureBox42.Size = New System.Drawing.Size(234, 150)
+        Me.PictureBox42.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox42.TabIndex = 10
+        Me.PictureBox42.TabStop = False
+        '
         'PictureBox43
         '
         Me.PictureBox43.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminar_ticket
@@ -1803,15 +1851,45 @@ Partial Class frm_VerMasDetalles
         Me.PictureBox43.TabIndex = 13
         Me.PictureBox43.TabStop = False
         '
-        'TabPage26
+        'PictureBox44
         '
-        Me.TabPage26.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage26.Name = "TabPage26"
-        Me.TabPage26.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage26.Size = New System.Drawing.Size(918, 592)
-        Me.TabPage26.TabIndex = 1
-        Me.TabPage26.Text = "Búsqueda"
-        Me.TabPage26.UseVisualStyleBackColor = True
+        Me.PictureBox44.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.enviar_mensaje
+        Me.PictureBox44.Location = New System.Drawing.Point(533, 39)
+        Me.PictureBox44.Name = "PictureBox44"
+        Me.PictureBox44.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox44.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox44.TabIndex = 12
+        Me.PictureBox44.TabStop = False
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label32.Location = New System.Drawing.Point(651, 23)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(110, 13)
+        Me.Label32.TabIndex = 13
+        Me.Label32.Text = "Envío de Mensaje"
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label33.Location = New System.Drawing.Point(651, 305)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(136, 13)
+        Me.Label33.TabIndex = 15
+        Me.Label33.Text = "Respuesta de Mensaje"
+        '
+        'PictureBox45
+        '
+        Me.PictureBox45.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.respuesta_mensaje1
+        Me.PictureBox45.Location = New System.Drawing.Point(533, 321)
+        Me.PictureBox45.Name = "PictureBox45"
+        Me.PictureBox45.Size = New System.Drawing.Size(351, 263)
+        Me.PictureBox45.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox45.TabIndex = 14
+        Me.PictureBox45.TabStop = False
         '
         'frm_VerMasDetalles
         '
@@ -1829,93 +1907,54 @@ Partial Class frm_VerMasDetalles
         Me.TabControl3.ResumeLayout(False)
         Me.TabPage25.ResumeLayout(False)
         Me.TabPage25.PerformLayout()
-        CType(Me.PictureBox34, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage7.ResumeLayout(False)
         Me.TabPage7.PerformLayout()
-        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox35, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage8.ResumeLayout(False)
         Me.TabPage8.PerformLayout()
-        CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage6.ResumeLayout(False)
         Me.TabControl4.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage9.ResumeLayout(False)
         Me.TabPage9.PerformLayout()
-        CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage10.ResumeLayout(False)
         Me.TabPage10.PerformLayout()
-        CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Producto.ResumeLayout(False)
         Me.Producto.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tarea.ResumeLayout(False)
         Me.TabControl7.ResumeLayout(False)
         Me.TabPage18.ResumeLayout(False)
         Me.TabControl8.ResumeLayout(False)
         Me.TabPage20.ResumeLayout(False)
         Me.TabPage20.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage21.ResumeLayout(False)
         Me.TabPage21.PerformLayout()
-        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage19.ResumeLayout(False)
         Me.TabPage19.PerformLayout()
-        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage22.ResumeLayout(False)
         Me.TabPage22.PerformLayout()
-        CType(Me.PictureBox25, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox26, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox24, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox22, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox23, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage23.ResumeLayout(False)
         Me.TabPage23.PerformLayout()
-        CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage24.ResumeLayout(False)
         Me.TabPage24.PerformLayout()
-        CType(Me.PictureBox31, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox33, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox29, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox30, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox28, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox27, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Orden_Trabajo.ResumeLayout(False)
         Me.TabControl5.ResumeLayout(False)
         Me.TabPage15.ResumeLayout(False)
         Me.TabControl6.ResumeLayout(False)
         Me.TabPage16.ResumeLayout(False)
         Me.TabPage16.PerformLayout()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage17.ResumeLayout(False)
         Me.TabPage17.PerformLayout()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage11.ResumeLayout(False)
         Me.TabPage11.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage12.ResumeLayout(False)
         Me.TabPage12.PerformLayout()
-        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage13.ResumeLayout(False)
         Me.TabPage13.PerformLayout()
-        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage14.ResumeLayout(False)
         Me.TabPage14.PerformLayout()
-        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Principal.ResumeLayout(False)
         Me.TabPage3.ResumeLayout(False)
         Me.TabControl1.ResumeLayout(False)
@@ -1923,14 +1962,57 @@ Partial Class frm_VerMasDetalles
         Me.TabControl9.ResumeLayout(False)
         Me.TabPage27.ResumeLayout(False)
         Me.TabPage27.PerformLayout()
-        CType(Me.PictureBox40, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage28.ResumeLayout(False)
         Me.TabPage28.PerformLayout()
-        CType(Me.PictureBox41, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox42, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage29.ResumeLayout(False)
         Me.TabPage29.PerformLayout()
+        Me.TabPage30.ResumeLayout(False)
+        Me.TabPage30.PerformLayout()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox16, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox18, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox19, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox20, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox25, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox26, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox21, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox24, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox22, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox23, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox32, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox31, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox33, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox29, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox30, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox28, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox27, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox34, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox39, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox35, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox36, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox37, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox38, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox40, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox41, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox42, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox43, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox44, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox45, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2075,4 +2157,10 @@ Partial Class frm_VerMasDetalles
     Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
     Friend WithEvents PictureBox43 As System.Windows.Forms.PictureBox
     Friend WithEvents TabPage26 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage30 As System.Windows.Forms.TabPage
+    Friend WithEvents TextBox12 As System.Windows.Forms.TextBox
+    Friend WithEvents PictureBox44 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label33 As System.Windows.Forms.Label
+    Friend WithEvents PictureBox45 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label32 As System.Windows.Forms.Label
 End Class
