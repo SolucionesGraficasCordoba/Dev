@@ -45,7 +45,7 @@ Partial Class frm_Acerca_de
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(8, 23)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(67, 16)
+        Me.Label1.Size = New System.Drawing.Size(69, 16)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Nombre:"
         '
@@ -55,7 +55,7 @@ Partial Class frm_Acerca_de
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(10, 49)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(65, 16)
+        Me.Label2.Size = New System.Drawing.Size(67, 16)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Versión:"
         '
@@ -65,7 +65,7 @@ Partial Class frm_Acerca_de
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(6, 75)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(130, 16)
+        Me.Label3.Size = New System.Drawing.Size(133, 16)
         Me.Label3.TabIndex = 1
         Me.Label3.Text = "Desarrollado por:"
         '
@@ -154,7 +154,7 @@ Partial Class frm_Acerca_de
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.Location = New System.Drawing.Point(155, 307)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(167, 16)
+        Me.Label7.Size = New System.Drawing.Size(173, 16)
         Me.Label7.TabIndex = 9
         Me.Label7.Text = "Cambios de la versión:"
         '

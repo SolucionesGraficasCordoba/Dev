@@ -126,7 +126,10 @@ Además de cargar, se podrá actualizar y eliminar registros. También se podrá
 </value>
   </data>
   <data name="TextBox2.Text" xml:space="preserve">
-    <value>1-	Pestaña nueva tarea:  el botón buscar colaborador trae el listado de colaboradores según el perfil
+    <value>FORMULARIO DE TAREA
+
+1-	Pestaña nueva tarea:  el botón buscar colaborador trae el listado de colaboradores según el perfil. 
+	Al abrir el formulario de TAREA se cargará automáticamente en el campo del colaborador el nombre del usuario logueado.
 -	Administrador: muestra todos los colaboradores registrados.
 -	Supervisor: muestra todos los colaboradores del sector al que pertenece el supervisor.
 -	Colaborador: muestra al colaborador logueado como usuario.
@@ -153,6 +156,28 @@ PARA LA CARGA DE TAREAS SOLO SE UTILIZARA EL FORMULARIO PRINCIPAL.
 2- SE COMPLETARAN LOS CAMPOS NECESARIOS (COMO SE VENIA HACIENDO HASTA EL DIA DE HOY) Y SE GUARDARAN LOS DATOS.
 
 EN CASO DE QUE SE DESEE AGREGAR UNA NUEVA TAREA SE SEGUIRAN LOS PASOS 1 Y 2 (AUNQUE NO SE MUESTREN LAS TAREAS ANTERIORMENTE CARGADAS ESTAS ESTAN GUARDADAS)
-PARA VER EL LISTADO COMPLETO DE TAREAS SE IRA A CONSULTAR DE LA PESTAÑA DE TAREAS DEL FORMULARIO PRINCIPAL.</value>
+PARA VER EL LISTADO COMPLETO DE TAREAS SE IRA A CONSULTAR, DE LA PESTAÑA DE TAREAS DEL FORMULARIO PRINCIPAL.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+FORMULARIO DE TICKET
+
+Este formulario al que se accede desde el menú principal, por medio del botón "Ticket", se creó con el fin de solicitar un pedido de solución respecto a una máquina o a cualquier recurso con el cual se está trabajando.
+El usuario registrado creará un "Ticket" solicitando respuesta a su pedido, el administrador del sistema derivará el pedido al sector según corresponda y dará respuesta al usuario.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+FORMULARIO DE MENSAJE
+
+Este formulario aparecerá después de que se haya ingresado usuario y contraseña y en el caso de que el administrador del sistema haya enviado un mensaje y observación respecto a la carga de tareas.
+Se explicará brevemente cual es el motivo. El usuario registrado deberá responderlo fundamentando su respuesta, una vez respondido el formulario se cerrará permitiendo interactuar con el menú principal.
+NOTA: en el caso de que se considere que la respuesta no fue bien fundamentada, se enviará nuevamente el mensaje.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+FORMULARIO DE SUGERENCIA
+
+Este formulario al que se accede desde el menú principal, por medio del botón "Sugerencia", tiene como objetivo garantizar la participación de todos los colaboradores con el fin contribuir a un mejor funcionamiento general.
+NOTA: los mensajes serán de carácter Anónimo.</value>
   </data>
 </root>
