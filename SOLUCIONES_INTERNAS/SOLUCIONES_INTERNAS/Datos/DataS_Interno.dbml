@@ -329,4 +329,14 @@
       <Association Name="USUARIO_MENSAJE" Member="USUARIO" ThisKey="USU_id_usuario" OtherKey="USU_id_usuario" Type="USUARIO" IsForeignKey="true" />
     </Type>
   </Table>
+  <Table Name="dbo.SUGERENCIA" Member="SUGERENCIA">
+    <Type Name="SUGERENCIA">
+      <Column Name="SUG_id_sugerencia" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SUG_fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="SUG_titulo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SUG_sugerencia" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="SUG_campo_1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SUG_campo_2" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

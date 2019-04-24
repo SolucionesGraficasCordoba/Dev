@@ -43,6 +43,7 @@ Partial Class frm_Mensaje
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txt_respuesta = New System.Windows.Forms.TextBox()
         Me.btn_respuesta = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupComentario.SuspendLayout()
         Me.GroupRespuesta.SuspendLayout()
         Me.SuspendLayout()
@@ -212,6 +213,7 @@ Partial Class frm_Mensaje
         '
         'GroupRespuesta
         '
+        Me.GroupRespuesta.Controls.Add(Me.Label8)
         Me.GroupRespuesta.Controls.Add(Me.Label15)
         Me.GroupRespuesta.Controls.Add(Me.Label4)
         Me.GroupRespuesta.Controls.Add(Me.txt_respuesta)
@@ -261,6 +263,16 @@ Partial Class frm_Mensaje
         Me.btn_respuesta.Text = "Respuesta"
         Me.btn_respuesta.UseVisualStyleBackColor = True
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(91, 153)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(134, 13)
+        Me.Label8.TabIndex = 45
+        Me.Label8.Text = "Fundamente su Respuesta"
+        '
         'frm_Mensaje
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -299,4 +311,5 @@ Partial Class frm_Mensaje
     Friend WithEvents btn_respuesta As System.Windows.Forms.Button
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class

@@ -145,6 +145,12 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeleteMENSAJE(instance As MENSAJE)
     End Sub
+  Partial Private Sub InsertSUGERENCIA(instance As SUGERENCIA)
+    End Sub
+  Partial Private Sub UpdateSUGERENCIA(instance As SUGERENCIA)
+    End Sub
+  Partial Private Sub DeleteSUGERENCIA(instance As SUGERENCIA)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -283,6 +289,12 @@ Partial Public Class DataS_Interno
 	Public ReadOnly Property MENSAJE() As System.Data.Linq.Table(Of MENSAJE)
 		Get
 			Return Me.GetTable(Of MENSAJE)
+		End Get
+	End Property
+	
+	Public ReadOnly Property SUGERENCIA() As System.Data.Linq.Table(Of SUGERENCIA)
+		Get
+			Return Me.GetTable(Of SUGERENCIA)
 		End Get
 	End Property
 End Class
@@ -6788,6 +6800,178 @@ Partial Public Class MENSAJE
 					Me._USU_id_usuario = CType(Nothing, Nullable(Of Integer))
 				End If
 				Me.SendPropertyChanged("USUARIO")
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.SUGERENCIA")>  _
+Partial Public Class SUGERENCIA
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _SUG_id_sugerencia As Integer
+	
+	Private _SUG_fecha As System.Nullable(Of Date)
+	
+	Private _SUG_titulo As String
+	
+	Private _SUG_sugerencia As String
+	
+	Private _SUG_campo_1 As String
+	
+	Private _SUG_campo_2 As String
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnSUG_id_sugerenciaChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnSUG_id_sugerenciaChanged()
+    End Sub
+    Partial Private Sub OnSUG_fechaChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnSUG_fechaChanged()
+    End Sub
+    Partial Private Sub OnSUG_tituloChanging(value As String)
+    End Sub
+    Partial Private Sub OnSUG_tituloChanged()
+    End Sub
+    Partial Private Sub OnSUG_sugerenciaChanging(value As String)
+    End Sub
+    Partial Private Sub OnSUG_sugerenciaChanged()
+    End Sub
+    Partial Private Sub OnSUG_campo_1Changing(value As String)
+    End Sub
+    Partial Private Sub OnSUG_campo_1Changed()
+    End Sub
+    Partial Private Sub OnSUG_campo_2Changing(value As String)
+    End Sub
+    Partial Private Sub OnSUG_campo_2Changed()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SUG_id_sugerencia", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property SUG_id_sugerencia() As Integer
+		Get
+			Return Me._SUG_id_sugerencia
+		End Get
+		Set
+			If ((Me._SUG_id_sugerencia = value)  _
+						= false) Then
+				Me.OnSUG_id_sugerenciaChanging(value)
+				Me.SendPropertyChanging
+				Me._SUG_id_sugerencia = value
+				Me.SendPropertyChanged("SUG_id_sugerencia")
+				Me.OnSUG_id_sugerenciaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SUG_fecha", DbType:="Date")>  _
+	Public Property SUG_fecha() As System.Nullable(Of Date)
+		Get
+			Return Me._SUG_fecha
+		End Get
+		Set
+			If (Me._SUG_fecha.Equals(value) = false) Then
+				Me.OnSUG_fechaChanging(value)
+				Me.SendPropertyChanging
+				Me._SUG_fecha = value
+				Me.SendPropertyChanged("SUG_fecha")
+				Me.OnSUG_fechaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SUG_titulo", DbType:="VarChar(50)")>  _
+	Public Property SUG_titulo() As String
+		Get
+			Return Me._SUG_titulo
+		End Get
+		Set
+			If (String.Equals(Me._SUG_titulo, value) = false) Then
+				Me.OnSUG_tituloChanging(value)
+				Me.SendPropertyChanging
+				Me._SUG_titulo = value
+				Me.SendPropertyChanged("SUG_titulo")
+				Me.OnSUG_tituloChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SUG_sugerencia", DbType:="VarChar(500)")>  _
+	Public Property SUG_sugerencia() As String
+		Get
+			Return Me._SUG_sugerencia
+		End Get
+		Set
+			If (String.Equals(Me._SUG_sugerencia, value) = false) Then
+				Me.OnSUG_sugerenciaChanging(value)
+				Me.SendPropertyChanging
+				Me._SUG_sugerencia = value
+				Me.SendPropertyChanged("SUG_sugerencia")
+				Me.OnSUG_sugerenciaChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SUG_campo_1", DbType:="VarChar(50)")>  _
+	Public Property SUG_campo_1() As String
+		Get
+			Return Me._SUG_campo_1
+		End Get
+		Set
+			If (String.Equals(Me._SUG_campo_1, value) = false) Then
+				Me.OnSUG_campo_1Changing(value)
+				Me.SendPropertyChanging
+				Me._SUG_campo_1 = value
+				Me.SendPropertyChanged("SUG_campo_1")
+				Me.OnSUG_campo_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_SUG_campo_2", DbType:="VarChar(50)")>  _
+	Public Property SUG_campo_2() As String
+		Get
+			Return Me._SUG_campo_2
+		End Get
+		Set
+			If (String.Equals(Me._SUG_campo_2, value) = false) Then
+				Me.OnSUG_campo_2Changing(value)
+				Me.SendPropertyChanging
+				Me._SUG_campo_2 = value
+				Me.SendPropertyChanged("SUG_campo_2")
+				Me.OnSUG_campo_2Changed
 			End If
 		End Set
 	End Property

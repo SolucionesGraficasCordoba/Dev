@@ -1825,4 +1825,8 @@ Public Class frm_Principal
     Private Sub ActualizarEstadoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ActualizarEstadoToolStripMenuItem.Click
         ' frm_Listado_Empaque.Show()
     End Sub
+
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+        frm_Sugerencia.Show()
+    End Sub
 End Class
