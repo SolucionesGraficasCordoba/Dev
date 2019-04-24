@@ -368,6 +368,12 @@
     <Compile Include="Presentacion\frm_Sector.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\frm_Sugerencia.Designer.vb">
+      <DependentUpon>frm_Sugerencia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Sugerencia.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_Tarea.Designer.vb">
       <DependentUpon>frm_Tarea.vb</DependentUpon>
     </Compile>
@@ -408,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Mensaje.resx">
       <DependentUpon>frm_Mensaje.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Sugerencia.resx">
+      <DependentUpon>frm_Sugerencia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Ticket.resx">
       <DependentUpon>frm_Ticket.vb</DependentUpon>
