@@ -38,6 +38,7 @@ Public Class frm_Principal
         frm_Usuario.txt_contraseña.Enabled = True
         frm_Usuario.cbo_perfil.Enabled = True
         frm_Usuario.btnBuscar_Colaborador.Enabled = True
+        frm_Usuario.btnBuscar_Colaborador.Visible = True
         frm_Usuario.GroupListadoUsuarios.Enabled = False
         frm_Usuario.dgvLista_Usuarios.ClearSelection()
 
@@ -53,7 +54,7 @@ Public Class frm_Principal
         frm_Usuario.btnActualizar_Usuario.Enabled = True
         frm_Usuario.btnEliminar_Usuario.Enabled = False
         frm_Usuario.btnNuevo_Usuario.Enabled = False
-        frm_Usuario.btnBuscar_Colaborador.Enabled = False
+        frm_Usuario.btnBuscar_Colaborador.Enabled = True
         frm_Usuario.txt_usuario.Enabled = True
         frm_Usuario.txt_contraseña.Enabled = True
         frm_Usuario.cbo_perfil.Enabled = True
@@ -72,7 +73,7 @@ Public Class frm_Principal
         Label1.Visible = False
         frm_Tarea.dtpFecha.Text = Now
         frm_Tarea.btnBuscar_Colaborador.Focus()
-        frm_Tarea.btnBuscar_Colaborador.Visible = False
+        frm_Tarea.btnBuscar_Colaborador.Visible = True
 
         frm_Tarea.txt_detalle_tarea1.Clear()
         frm_Tarea.txt_detalle_tarea2.Clear()
