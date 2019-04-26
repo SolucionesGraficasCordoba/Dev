@@ -177,7 +177,7 @@ Public Class frm_Etiqueta_Modelo_1
             ' Dim filePath As String = "C:\Users\pbaldo\Downloads\Baldo-Compartida\" + consulta
             ' Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
 
-            Dim delimeter As String = ","
+            Dim delimeter As String = ";"
             Dim sb As New StringBuilder
             Try
                 For i As Integer = 0 To dgv_Etiquetas.Rows.Count - 1
@@ -264,6 +264,30 @@ Public Class frm_Etiqueta_Modelo_1
         Catch ex As Exception
             MsgBox("No se encuentra la ruta")
         End Try
+    End Sub
+
+    Private Sub txtCantidadBultos_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtCantidadBultos.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtUnidadxBulto_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtUnidadxBulto.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
     End Sub
 End Class
 

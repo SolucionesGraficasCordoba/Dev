@@ -64,6 +64,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnLimpiarEtiqueta = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label33 = New System.Windows.Forms.Label()
         Me.txt_id_orden = New System.Windows.Forms.TextBox()
         Me.btnBuscar_Orden = New System.Windows.Forms.Button()
@@ -77,7 +78,6 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -499,6 +499,16 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.GroupBox3.TabIndex = 15
         Me.GroupBox3.TabStop = False
         '
+        'LinkLabel1
+        '
+        Me.LinkLabel1.AutoSize = True
+        Me.LinkLabel1.Location = New System.Drawing.Point(40, 18)
+        Me.LinkLabel1.Name = "LinkLabel1"
+        Me.LinkLabel1.Size = New System.Drawing.Size(59, 13)
+        Me.LinkLabel1.TabIndex = 39
+        Me.LinkLabel1.TabStop = True
+        Me.LinkLabel1.Text = "LinkLabel1"
+        '
         'Label33
         '
         Me.Label33.AutoSize = True
@@ -624,16 +634,6 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label14.Size = New System.Drawing.Size(105, 13)
         Me.Label14.TabIndex = 30
         Me.Label14.Text = "* (Campo Requerido)"
-        '
-        'LinkLabel1
-        '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.Location = New System.Drawing.Point(40, 18)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(59, 13)
-        Me.LinkLabel1.TabIndex = 39
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "LinkLabel1"
         '
         'frm_Etiqueta_Modelo_1
         '
