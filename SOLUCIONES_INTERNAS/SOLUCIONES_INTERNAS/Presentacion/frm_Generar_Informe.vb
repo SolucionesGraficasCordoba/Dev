@@ -53,17 +53,41 @@ Public Class frm_Generar_Informe
 
     Private Sub Filtrar_Mes_Sector()
         armargrillacolaborador()
-        Dim consultaporsector = (From A In datavistas.Tiempos_Totales
-                                Select A.COL_id_colaborador,
-                                A.COL_nombre_col,
-                                A.TAR_fecha,
-                               A.Total_estimado,
-                                A.Total_real,
-                                A.SEC_id_sector,
-                                A.SEC_nombre_sector,
-                                A.Asignacion
-        Where (SEC_id_sector = cbo_sector.SelectedIndex + 1 And TAR_fecha.Value.Month = cboMes.SelectedIndex + 1))
-        dgvColaboradores.DataSource = consultaporsector
+        Try
+            Dim consultaporsector = (From A In datavistas.Tiempos_Totales
+                               Select A.COL_id_colaborador,
+                               A.COL_nombre_col,
+                               A.TAR_fecha,
+                              A.Total_estimado,
+                               A.Total_real,
+                               A.SEC_id_sector,
+                               A.SEC_nombre_sector,
+                               A.Asignacion
+       Where (SEC_id_sector = CInt(cbo_sector.SelectedValue) And TAR_fecha.Value.Month = cboMes.SelectedIndex + 1))
+            dgvColaboradores.DataSource = consultaporsector
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub Totales_Mensuales()
+        armargrillamensual()
+        Try
+            Dim totales_mensuales = (From t In datavistas.Totales_mensuales
+                               Select t.COL_id_colaborador,
+                               t.COL_nombre_col,
+                               t.Mes,
+                               t.SEC_id_sector,
+                               t.SEC_nombre_sector,
+                               t.Total_estimado_mensual,
+                               t.Total_real_mensual,
+                               t.Asignacion
+         Where (SEC_id_sector = CInt(cbo_sector.SelectedValue) And Mes = cboMes.SelectedIndex + 1))
+            dgvTotalesMensuales.DataSource = totales_mensuales
+            dgvTotalesMensuales.ClearSelection()
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     'ARMA LA GRILLA MENSUAL
@@ -92,22 +116,6 @@ Public Class frm_Generar_Informe
         dgvTotalesMensuales.Columns(6).DataPropertyName = "Total_real_mensual"
         dgvTotalesMensuales.Columns(7).DataPropertyName = "Asignacion"
 
-    End Sub
-
-    Private Sub Totales_Mensuales()
-        armargrillamensual()
-        Dim totales_mensuales = (From t In datavistas.Totales_mensuales
-                                Select t.COL_id_colaborador,
-                                t.COL_nombre_col,
-                                t.Mes,
-                                t.SEC_id_sector,
-                                t.SEC_nombre_sector,
-                                t.Total_estimado_mensual,
-                                t.Total_real_mensual,
-                                t.Asignacion
-          Where (SEC_id_sector = cbo_sector.SelectedIndex + 1 And Mes = cboMes.SelectedIndex + 1))
-        dgvTotalesMensuales.DataSource = totales_mensuales
-        dgvTotalesMensuales.ClearSelection()
     End Sub
 
     Private Sub cboMes_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cboMes.SelectedIndexChanged
