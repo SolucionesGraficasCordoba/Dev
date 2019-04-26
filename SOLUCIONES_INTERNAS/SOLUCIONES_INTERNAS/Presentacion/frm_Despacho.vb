@@ -225,6 +225,8 @@
         For i = 0 To dgv_emp_lista_ordenes.RowCount - 2
             Dim emp As New DESPACHO
             emp.ORT_id_orden_trabajo = CInt(dgv_emp_lista_ordenes.Item("ORT_id_orden_trabajo", i).Value)
+            emp.DES_EMB_fecha_estado = CDate(dtp_fecha_estado.Text)
+            emp.DES_EMB_estado = "PLANIFICADO"
             datacontext.DESPACHO.InsertOnSubmit(emp)
         Next
         datacontext.SubmitChanges()

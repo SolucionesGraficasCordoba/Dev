@@ -31,7 +31,7 @@ Partial Class frm_Despacho
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
+        Me.dtp_fecha_estado = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.btn_emp_cancelar = New System.Windows.Forms.Button()
@@ -100,8 +100,6 @@ Partial Class frm_Despacho
         Me.GroupBox3.Controls.Add(Me.ComboBox1)
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox3.Controls.Add(Me.DateTimePicker2)
-        Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.TextBox2)
         Me.GroupBox3.Location = New System.Drawing.Point(6, 6)
         Me.GroupBox3.Name = "GroupBox3"
@@ -165,23 +163,23 @@ Partial Class frm_Despacho
         Me.DateTimePicker1.Size = New System.Drawing.Size(85, 20)
         Me.DateTimePicker1.TabIndex = 17
         '
-        'DateTimePicker2
+        'dtp_fecha_estado
         '
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTimePicker2.Location = New System.Drawing.Point(473, 46)
-        Me.DateTimePicker2.MinDate = New Date(2017, 1, 1, 0, 0, 0, 0)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(85, 20)
-        Me.DateTimePicker2.TabIndex = 14
+        Me.dtp_fecha_estado.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp_fecha_estado.Location = New System.Drawing.Point(642, 20)
+        Me.dtp_fecha_estado.MinDate = New Date(2017, 1, 1, 0, 0, 0, 0)
+        Me.dtp_fecha_estado.Name = "dtp_fecha_estado"
+        Me.dtp_fecha_estado.Size = New System.Drawing.Size(85, 20)
+        Me.dtp_fecha_estado.TabIndex = 14
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(350, 47)
+        Me.Label7.Location = New System.Drawing.Point(519, 23)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(117, 13)
         Me.Label7.TabIndex = 13
-        Me.Label7.Text = "Fecha  y hora de salida"
+        Me.Label7.Text = "Fecha  de planificacion"
         '
         'TextBox2
         '
@@ -204,6 +202,8 @@ Partial Class frm_Despacho
         Me.GroupBox4.Controls.Add(Me.btn_emp_quitar_orden)
         Me.GroupBox4.Controls.Add(Me.dgv_emp_lista_ordenes)
         Me.GroupBox4.Controls.Add(Me.btn_emp_buscar_orden)
+        Me.GroupBox4.Controls.Add(Me.dtp_fecha_estado)
+        Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Location = New System.Drawing.Point(6, 90)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(731, 360)
@@ -426,6 +426,7 @@ Partial Class frm_Despacho
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         CType(Me.dgv_emp_lista_ordenes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tbp_logistica.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
@@ -461,7 +462,7 @@ Partial Class frm_Despacho
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtp_fecha_estado As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents btn_emp_cancelar As System.Windows.Forms.Button
