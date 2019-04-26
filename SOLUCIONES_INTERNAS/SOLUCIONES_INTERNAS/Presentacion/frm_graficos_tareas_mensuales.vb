@@ -30,10 +30,13 @@ Public Class frm_graficos_tareas_mensuales
                                  A.SEC_nombre_sector,
                                  A.Asignacion,
                                  A.CADENA
-         Where (SEC_id_sector = frm_Generar_Informe.cbo_sector.SelectedIndex + 1 _
-                And TAR_fecha.Value.Month = frm_Generar_Informe.cboMes.SelectedIndex + 1 _
-                And COL_id_colaborador = CStr(frm_Generar_Informe.dgvTotalesMensuales.Rows(indexfila).Cells(0).Value))) 'PABLO
+         Where (SEC_id_sector = CInt(frm_Generar_Informe.cbo_sector.SelectedValue) And TAR_fecha.Value.Month = frm_Generar_Informe.cboMes.SelectedIndex + 1 And COL_id_colaborador = CStr(frm_Generar_Informe.dgvTotalesMensuales.Rows(indexfila).Cells(0).Value))) 'PABLO
         Return consultaporsector
+
+
+         '  Where (SEC_id_sector = CInt(cbo_sector.SelectedValue) And TAR_fecha.Value.Month = cboMes.SelectedIndex + 1))
+
+
     End Function
 
     Sub TipoGrafico()

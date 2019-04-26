@@ -40,8 +40,7 @@ Public Class frm_Grafico_Totales_Mensuales
                                  A.Total_estimado_mensual,
                                  A.Total_real_mensual,
                                  A.Asignacion
-         Where (SEC_id_sector = frm_Generar_Informe.cbo_sector.SelectedIndex + 1 _
-                And Mes.Value = frm_Generar_Informe.cboMes.SelectedIndex + 1))
+         Where (SEC_id_sector = CInt(frm_Generar_Informe.cbo_sector.SelectedValue) And Mes.Value = frm_Generar_Informe.cboMes.SelectedIndex + 1))
 
         Return total_x_colaborador
     End Function
