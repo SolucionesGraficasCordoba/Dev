@@ -811,7 +811,7 @@ En la pestaña Búsqueda:
   <data name="TextBox10.Text" xml:space="preserve">
     <value>FUNCIONAMIENTO  NUEVO TICKET
 
-Este formulario se utilizará en el caso de que se desee agregar un nuevo ticket o solicitud de atención sobre alguna maquina o recurso. 
+Este formulario se utilizará en el caso de que se desee atención sobre alguna MAQUINA/RECURSO o sobre algún SISTEMA/APLICACION. 
 El botón “TICKET” del formulario principal abre el formulario de solicitud de tickets.
 De acuerdo al perfil de usuario que se registre se podrá solicitar un nuevo ticket(COLABORADOR o SUPERVISOR) o responder un ticket ya solicitado (ADMINISTRADOR).
 
@@ -859,5 +859,24 @@ El usuario dará respuesta según sea el caso y el formulario se cerrará permit
 Cabe destacar que si no hubo observación con respecto a su carga de tareas, éste formulario no aparecerá.
 
 IMPORTANTE: SI LA RESPUESTA DEL USUARIO ES CONSIDERADA SIN FUNDAMENTO SE LE VOLVERA A ENVIAR EL MENSAJE.</value>
+  </data>
+  <data name="TextBox13.Text" xml:space="preserve">
+    <value>COMPONENTES DEL FORMULARIO SUGERENCIA:
+
+-	CAMPO FECHA: fecha en que se envia la sugerencia. 
+
+-	CAMPO TITULO: motivo de la sugerencia. 
+
+-	CAMPO SUGERENCIA: observación que se desea enviar.
+
+-	BOTON ENVIO: envia la sugerencia.
+
+-	BOTON CANCELAR: cierra el formulario.
+
+FUNCIONAMIENTO: 
+
+Se completan los campos de título y Sugerencia y se envia el mensaje.
+
+NOTA:  es ANONIMO (no se guardan nombres ni usuarios que envian la sugerencia).</value>
   </data>
 </root>

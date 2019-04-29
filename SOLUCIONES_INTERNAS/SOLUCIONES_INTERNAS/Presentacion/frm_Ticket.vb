@@ -178,7 +178,7 @@ Public Class frm_Ticket
     Private Sub btn_Solicitud_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_Solicitud.Click
         Try
             If txt_recurso.Text.Length = 0 Then
-                MsgBox("Debe completar el campo 'Recurso'")
+                MsgBox("Debe completar el campo 'Recurso o Máquina'")
                 txt_recurso.Focus()
                 Exit Sub
             End If
