@@ -101,12 +101,23 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\DataS_Interno.designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataS_Interno.dbml</DependentUpon>
+    </Compile>
     <Compile Include="Datos\DataS_Interno_Vistas.vb">
       <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
     </Compile>
     <Compile Include="Modulo\Autocompletar_Textbox.vb" />
     <Compile Include="Modulo\Automatico.vb" />
     <Compile Include="Modulo\Mail_Modulo.vb" />
+    <Compile Include="Presentacion\frm_Listado_Empaque.Designer.vb">
+      <DependentUpon>frm_Listado_Empaque.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Listado_Empaque.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_Acerca_de.Designer.vb">
       <DependentUpon>frm_Acerca_de.vb</DependentUpon>
     </Compile>
@@ -202,11 +213,6 @@
     </Compile>
     <Compile Include="Installer1.vb">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Datos\DataS_Interno.designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataS_Interno.dbml</DependentUpon>
     </Compile>
     <Compile Include="Datos\DataS_Interno_Vistas.designer.vb">
       <AutoGen>True</AutoGen>
@@ -406,6 +412,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Presentacion\frm_Listado_Empaque.resx">
+      <DependentUpon>frm_Listado_Empaque.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_despacho.resx">
       <DependentUpon>frm_Despacho.vb</DependentUpon>
     </EmbeddedResource>
@@ -561,8 +570,8 @@
   <ItemGroup>
     <None Include="Datos\DataS_Interno.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DataS_Interno.designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>DataS_Interno.designer.vb</LastGenOutput>
     </None>
     <None Include="Datos\DataS_Interno_Vistas.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
