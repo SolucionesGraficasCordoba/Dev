@@ -3727,6 +3727,14 @@ Partial Public Class Vista_Despacho_Orden_Trabajo
 	
 	Private _DES_nro_despacho As String
 	
+	Private _DES_EMB_bultos As String
+	
+	Private _DES_EMB_estado As String
+	
+	Private _DES_EMB_observaciones As String
+	
+	Private _DES_EMB_fecha_estado As System.Nullable(Of Date)
+	
 	Public Sub New()
 		MyBase.New
 	End Sub
@@ -3848,6 +3856,54 @@ Partial Public Class Vista_Despacho_Orden_Trabajo
 		Set
 			If (String.Equals(Me._DES_nro_despacho, value) = false) Then
 				Me._DES_nro_despacho = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_EMB_bultos", DbType:="NVarChar(50)")>  _
+	Public Property DES_EMB_bultos() As String
+		Get
+			Return Me._DES_EMB_bultos
+		End Get
+		Set
+			If (String.Equals(Me._DES_EMB_bultos, value) = false) Then
+				Me._DES_EMB_bultos = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_EMB_estado", DbType:="NVarChar(50)")>  _
+	Public Property DES_EMB_estado() As String
+		Get
+			Return Me._DES_EMB_estado
+		End Get
+		Set
+			If (String.Equals(Me._DES_EMB_estado, value) = false) Then
+				Me._DES_EMB_estado = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_EMB_observaciones", DbType:="NVarChar(150)")>  _
+	Public Property DES_EMB_observaciones() As String
+		Get
+			Return Me._DES_EMB_observaciones
+		End Get
+		Set
+			If (String.Equals(Me._DES_EMB_observaciones, value) = false) Then
+				Me._DES_EMB_observaciones = value
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_DES_EMB_fecha_estado", DbType:="DateTime")>  _
+	Public Property DES_EMB_fecha_estado() As System.Nullable(Of Date)
+		Get
+			Return Me._DES_EMB_fecha_estado
+		End Get
+		Set
+			If (Me._DES_EMB_fecha_estado.Equals(value) = false) Then
+				Me._DES_EMB_fecha_estado = value
 			End If
 		End Set
 	End Property

@@ -86,10 +86,10 @@
         <elementListCompartment Id="9dffcb8d-2130-40da-971a-065ce1cd70ba" absoluteBounds="3.8899999999999997, 5.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="14ba0e7a-1f38-4d5d-8345-c58f56233962" absoluteBounds="15.125, 0.75, 2, 2.7324039713541666">
+    <classShape Id="1d9504e0-28b1-45be-b6d3-11fcd4c89534" absoluteBounds="15.125, 2.625, 2, 3.5016097005208326">
       <DataClassMoniker Name="/DataS_Interno_Vistas/Vista_Despacho_Orden_Trabajo" />
       <nestedChildShapes>
-        <elementListCompartment Id="e5691cce-8b91-4e37-9098-162bf7238d67" absoluteBounds="15.14, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="698d2c73-b48e-4f87-994a-aa329a1d743b" absoluteBounds="15.14, 3.085, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

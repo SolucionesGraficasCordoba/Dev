@@ -311,6 +311,10 @@
       <Column Name="DES_nro_remito" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
       <Column Name="DES_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="DES_nro_despacho" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_EMB_bultos" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_EMB_estado" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DES_EMB_observaciones" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="DES_EMB_fecha_estado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
 </Database>
