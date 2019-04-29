@@ -753,32 +753,6 @@ BOTON MODIFICAR PRODUCTO: este botón estara deshabilitado.
 - ACERCA DE: hace referencia a las partes más importantes del sistema.
 </value>
   </data>
-  <data name="TextBox12.Text" xml:space="preserve">
-    <value>COMPONENTES DEL FORMULARIO TICKET:
-
--	CAMPO FECHA: fecha en que fue enviado el mensaje. 
-
--	CAMPO USUARIO: muestra el usuario logueado y al que va dirigido el mensaje.  
-
--	CAMPO TITULO: motivo del mensaje. 
-
--	CAMPO OBSERVACION DE CARGA: observación que se encontro con respecto a la carga de tareas.
-
--	BOTON ENVIO: envia el mensaje al usuario.
-
--	CAMPO RESPUESTA: respuesta del usuario a la observacion o solicitud.
-
--	BOTON RESPUESTA: envia la respuesta del usuario.
-
-FUNCIONAMIENTO: 
-
-El ADMINISTRADOR del sistema enviará un mensaje a cada usuario de la aplicación con las observaciones realizadas con respecto a la carga de tareas.
-Cada usuario (SUPERVISOR Y COLABORADOR), al ingresar al sistema se le abrirá el formulario MENSAJE con el comentario realizado por el administrador. 
-El usuario dará respuesta según sea el caso y el formulario se cerrará permitiendo interactuar con el formulario principal. 
-Cabe destacar que si no hubo observación éste formulario no aparecerá.
-
-IMPORTANTE: SI LA RESPUESTA DEL USUARIO ES CONSIDERADA SIN FUNDAMENTO SE LE VOLVERA A ENVIAR EL MENSAJE.</value>
-  </data>
   <data name="TextBox9.Text" xml:space="preserve">
     <value>COMPONENTES DEL FORMULARIO TICKET
 
@@ -839,14 +813,16 @@ En la pestaña Búsqueda:
 
 Este formulario se utilizará en el caso de que se desee agregar un nuevo ticket o solicitud de atención sobre alguna maquina o recurso. 
 El botón “TICKET” del formulario principal abre el formulario de solicitud de tickets.
-De acuerdo al perfil de usuario que se registre se podrá solicitar un nuevo ticket o responder un ticket ya solicitado.
--	Si el perfil de usuario es ADMINISTRADOR se abrirá el formulario en la pestaña de búsqueda, donde se mostraran todos los tickets en condición de abierto (sin respuesta). El usuario ira respondiendo uno a uno las solicitudes cambiando el estado según corresponda.
--	Si el usuario es COLABORADOR o SUPERVISOR  se abrirá el formulario en la pestaña de solicitud con los campos habilitados para realizar el pedido. Una vez realizada, se cerrara el formulario volviendo al “principal”. 
-Haciendo doble click sobre un ticket en particular del listado, se cambiara de solapa a “solicitud” donde se podrá ver, a modo de consulta, lo solicitado por el usuario registrado y la respuesta correspondiente. (Esto es si el administrador vio la solicitud).
+De acuerdo al perfil de usuario que se registre se podrá solicitar un nuevo ticket(COLABORADOR o SUPERVISOR) o responder un ticket ya solicitado (ADMINISTRADOR).
+
+-	Si el perfil de usuario es ADMINISTRADOR se abrirá el formulario en la pestaña de búsqueda, donde se mostrarán todos los tickets en condición de abierto (sin respuesta). El usuario ira respondiendo uno a uno las solicitudes cambiando el estado según corresponda.
+
+-	Si el usuario es COLABORADOR o SUPERVISOR  se abrirá el formulario en la pestaña de solicitud con los campos habilitados para realizar el pedido. Una vez realizado, se cerrará el formulario volviendo al “principal”. 
+Haciendo doble click sobre un ticket en particular del listado, se cambiara de solapa a “solicitud” donde se podrá ver, a modo de consulta, lo solicitado por el usuario registrado y la respuesta correspondiente. (Esto es si el administrador respondió a la solicitud).
 El check “nuevo” limpia los campos permitiendo cargar otra solicitud.
-NOTA: el usuario no podrá modificar la solicitud, en caso de ser necesario tendrá que crear un nuevo ticket.
 El botón cancelar cierra el formulario sin haber realizado cambios.
-</value>
+
+NOTA: el usuario no podrá modificar la solicitud, en caso de ser necesario tendrá que crear un nuevo ticket.</value>
   </data>
   <data name="TextBox11.Text" xml:space="preserve">
     <value>FUNCIONAMIENTO ELIMINAR TICKET
@@ -857,5 +833,31 @@ El botón “TICKET” del formulario principal abre el formulario de solicitud 
 -       Si el usuario es COLABORADOR o SUPERVISOR no podrá eliminar ticket. 
 Haciendo click sobre un ticket en particular del listado, se eliminará previa confirmación.
 El botón cancelar cierra el formulario sin haber realizado cambios.</value>
+  </data>
+  <data name="TextBox12.Text" xml:space="preserve">
+    <value>COMPONENTES DEL FORMULARIO TICKET:
+
+-	CAMPO FECHA: fecha en que fue enviado el mensaje. 
+
+-	CAMPO USUARIO: muestra el usuario logueado y al que va dirigido el mensaje.  
+
+-	CAMPO TITULO: motivo del mensaje. 
+
+-	CAMPO OBSERVACION DE CARGA: observación que se encontro con respecto a la carga de tareas.
+
+-	BOTON ENVIO: envia el mensaje al usuario.
+
+-	CAMPO RESPUESTA: respuesta del usuario a la observacion o solicitud.
+
+-	BOTON RESPUESTA: envia la respuesta del usuario.
+
+FUNCIONAMIENTO: 
+
+El ADMINISTRADOR del sistema enviará un mensaje a cada usuario de la aplicación con las observaciones realizadas con respecto a la carga de tareas.
+Cada usuario (SUPERVISOR Y COLABORADOR), al ingresar al sistema se le abrirá el formulario MENSAJE con el comentario realizado por el administrador. 
+El usuario dará respuesta según sea el caso y el formulario se cerrará permitiendo interactuar con el formulario principal. 
+Cabe destacar que si no hubo observación con respecto a su carga de tareas, éste formulario no aparecerá.
+
+IMPORTANTE: SI LA RESPUESTA DEL USUARIO ES CONSIDERADA SIN FUNDAMENTO SE LE VOLVERA A ENVIAR EL MENSAJE.</value>
   </data>
 </root>
