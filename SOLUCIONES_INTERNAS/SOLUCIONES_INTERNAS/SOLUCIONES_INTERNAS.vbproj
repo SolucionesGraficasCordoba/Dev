@@ -669,6 +669,7 @@
     <None Include="Resources\enviar_mensaje1.jpg" />
     <None Include="Resources\enviar_mensaje2.jpg" />
     <None Include="Resources\enviar_ticket.jpg" />
+    <None Include="Resources\enviar_sugerencia.jpg" />
     <Content Include="Resources\LOGO SISTEMA INTERNO %281%29.ico" />
     <None Include="Resources\nuevo_producto.jpg" />
     <None Include="Resources\principal1.jpg" />
