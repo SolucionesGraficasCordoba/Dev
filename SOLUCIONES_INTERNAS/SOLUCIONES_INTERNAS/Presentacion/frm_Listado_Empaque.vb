@@ -178,28 +178,31 @@ Public Class frm_Listado_Empaque
     End Sub
 
     Private Sub btn_modificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_modificar.Click
-        'Try
-        '    Dim Actualizarremitocount = (From P In datacontext.DESPACHO Where P.DES_nro_despacho = CInt(dgv_remitos.Item("DES_nro_despacho", dgv_remitos.CurrentRow.Index).Value)).Count
-        '    For i = 0 To Actualizarremitocount - 1
-        '        Dim actualizarremito = (From P In datacontext.DESPACHO Where P.DES_nro_despacho = CInt(dgv_remitos.Item("DES_nro_despacho", dgv_remitos.CurrentRow.Index).Value)).ToList()(i)
-        '        'actualizarremito.DES_nro_remito = dgv_remitos.Item("DES_nro_remito", dgv_remitos.CurrentRow.Index).Value
-        '        'actualizarremito.DES_fecha_salida = CDate(dgv_remitos.Item("DES_fecha_salida", dgv_remitos.CurrentRow.Index).Value)
-        '        'actualizarremito.DES_chofer = dgv_remitos.Item("DES_chofer", dgv_remitos.CurrentRow.Index).Value
+        Try
+            Dim Actualizarestado = (From P In datacontext.DESPACHO
+                                    Where P.DES_nro_despacho = CInt(dgv_planificacion.Item("DES_nro_despacho", dgv_planificacion.CurrentRow.Index).Value)).Count
 
-        '        actualizarremito.DES_fecha_entrega = CDate(dgv_orden_x_remito.Item("DES_fecha_entrega", i).Value)
-        '        actualizarremito.DES_observaciones = dgv_orden_x_remito.Item("DES_observaciones", i).Value
+            For i = 0 To Actualizarestado - 1
+                Dim actualizarremito = (From P In datacontext.DESPACHO
+                                        Where P.DES_nro_despacho = CInt(dgv_planificacion.Item("DES_nro_despacho", dgv_planificacion.CurrentRow.Index).Value)).ToList()(i)
+                'actualizarremito.DES_nro_remito = dgv_remitos.Item("DES_nro_remito", dgv_remitos.CurrentRow.Index).Value
+                'actualizarremito.DES_fecha_salida = CDate(dgv_remitos.Item("DES_fecha_salida", dgv_remitos.CurrentRow.Index).Value)
+                'actualizarremito.DES_chofer = dgv_remitos.Item("DES_chofer", dgv_remitos.CurrentRow.Index).Value
 
-        '        datacontext.SubmitChanges()
-        '    Next
+                actualizarremito.DES_fecha_entrega = CDate(dgv_planificacion.Item("DES_fecha_entrega", i).Value)
+                actualizarremito.DES_observaciones = dgv_planificacion.Item("DES_observaciones", i).Value
 
-        '    MsgBox("Los datos se han modificado correctamente")
-        '    cargargrilla_odtxrem()
-        '    cargargrillaremitos()
+                datacontext.SubmitChanges()
+            Next
 
-        'Catch ex As Exception
-        '    MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar Colaborador")
-        '    cargargrilla_odtxrem()
-        'End Try
+            MsgBox("Los datos se han modificado correctamente")
+            cargargrilla_odtxrem()
+            cargargrillaremitos()
+
+        Catch ex As Exception
+            MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar Colaborador")
+            cargargrilla_odtxrem()
+        End Try
     End Sub
 
     Private Sub btn_agregarodt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_agregarodt.Click
