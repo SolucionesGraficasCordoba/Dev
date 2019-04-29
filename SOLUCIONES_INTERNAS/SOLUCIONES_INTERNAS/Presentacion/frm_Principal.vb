@@ -22,7 +22,10 @@ Public Class frm_Principal
         frm_ingreso.txt_usuario.Clear()
         frm_ingreso.txt_usuario.Select()
         frm_ingreso.Show()
-        Me.Hide()
+
+        'CAMBIE EL HIDE POR EL CLOSE..AHORA APARECEN LOS MENSAJES ENVIADOS, (NO ME GUSTA MUCHO COMO QUEDO, PORQUE CERRAR SESION Y SALIR CUMPLEN CASI LA MISMA FUNCION).
+        ' Me.Hide()
+        Me.Close()
     End Sub
 
     Private Sub AltaUsuariosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaUsuariosToolStripMenuItem.Click
