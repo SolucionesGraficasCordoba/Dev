@@ -289,5 +289,22 @@ Public Class frm_Etiqueta_Modelo_1
             e.Handled = True
         End If
     End Sub
+
+    '--------------------------------------------------------------------------------------------
+    'Función para quitar acentos de una cadena de texto
+    '--------------------------------------------------------------------------------------------
+    Public Function fncQuitarAcentos(ByVal strNombre As String) As String
+        Const conAcentos = "áàäâÁÀÄÂéèëêÉÈËÊíìïîÍÌÏÎóòöôÓÒÖÔúùüûÚÙÜÛýÿÝ"
+        Const sinAcentos = "aaaaAAAAeeeeEEEEiiiiIIIIooooOOOOuuuuUUUUyyY"
+        Dim i As Integer
+        For i = Len(conAcentos) To 1 Step -1
+            strNombre = Replace(strNombre, Mid(conAcentos, i, 1), Mid(sinAcentos, i, 1))
+        Next
+        fncQuitarAcentos = strNombre
+    End Function
+
+    Private Sub txtDescripcionEntrega_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtDescripcionEntrega.TextChanged
+        '      fncQuitarAcentos(txtDescripcionEntrega.Text)
+    End Sub
 End Class
 
