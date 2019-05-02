@@ -422,6 +422,8 @@ Public Class frm_listado_orden_trabajo_ampliada
                     nueva_fila = frm_Despacho.dt_empaque.NewRow
                     nueva_fila("ORT_id_orden_trabajo") = dgvLista_Orden_Trabajo.SelectedCells(0).Value
                     nueva_fila("ORT_numero_ot") = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+                    nueva_fila("CLI_razon_social") = dgvLista_Orden_Trabajo.SelectedCells(5).Value
+                    nueva_fila("ORT_observaciones_ot") = dgvLista_Orden_Trabajo.SelectedCells(8).Value
                     .Rows.Add(nueva_fila)
                 End With
             End If

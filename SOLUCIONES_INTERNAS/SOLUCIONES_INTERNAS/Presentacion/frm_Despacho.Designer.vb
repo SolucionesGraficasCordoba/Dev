@@ -24,21 +24,13 @@ Partial Class frm_Despacho
     Private Sub InitializeComponent()
         Me.tbc_despacho = New System.Windows.Forms.TabControl()
         Me.tbp_empaque = New System.Windows.Forms.TabPage()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.dtp_fecha_estado = New System.Windows.Forms.DateTimePicker()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.btn_emp_cancelar = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btn_emp_quitar_orden = New System.Windows.Forms.Button()
         Me.dgv_emp_lista_ordenes = New System.Windows.Forms.DataGridView()
         Me.btn_emp_buscar_orden = New System.Windows.Forms.Button()
+        Me.dtp_fecha_estado = New System.Windows.Forms.DateTimePicker()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Btn_emp_guardar = New System.Windows.Forms.Button()
         Me.tbp_logistica = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -59,7 +51,6 @@ Partial Class frm_Despacho
         Me.Btn_guardar = New System.Windows.Forms.Button()
         Me.tbc_despacho.SuspendLayout()
         Me.tbp_empaque.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.dgv_emp_lista_ordenes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tbp_logistica.SuspendLayout()
@@ -80,7 +71,6 @@ Partial Class frm_Despacho
         '
         'tbp_empaque
         '
-        Me.tbp_empaque.Controls.Add(Me.GroupBox3)
         Me.tbp_empaque.Controls.Add(Me.btn_emp_cancelar)
         Me.tbp_empaque.Controls.Add(Me.GroupBox4)
         Me.tbp_empaque.Controls.Add(Me.Btn_emp_guardar)
@@ -92,107 +82,11 @@ Partial Class frm_Despacho
         Me.tbp_empaque.Text = "Empaque"
         Me.tbp_empaque.UseVisualStyleBackColor = True
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.Label3)
-        Me.GroupBox3.Controls.Add(Me.TextBox1)
-        Me.GroupBox3.Controls.Add(Me.Label5)
-        Me.GroupBox3.Controls.Add(Me.ComboBox1)
-        Me.GroupBox3.Controls.Add(Me.Label6)
-        Me.GroupBox3.Controls.Add(Me.DateTimePicker1)
-        Me.GroupBox3.Controls.Add(Me.TextBox2)
-        Me.GroupBox3.Location = New System.Drawing.Point(6, 6)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(730, 74)
-        Me.GroupBox3.TabIndex = 9
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Datos del remito"
-        Me.GroupBox3.Visible = False
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(53, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(71, 13)
-        Me.Label3.TabIndex = 24
-        Me.Label3.Text = "Despacho Nº"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Location = New System.Drawing.Point(130, 13)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox1.TabIndex = 23
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(350, 16)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(38, 13)
-        Me.Label5.TabIndex = 22
-        Me.Label5.Text = "Chofer"
-        '
-        'ComboBox1
-        '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Seleccionar", "Javier Perea", "Walter Farías", "Laureano", "Guillermo Akerman", "Sebastián Agote", "Marcelo Domínguez", "Tercero", "Retira de planta", "Retira de central", "Instalaciones"})
-        Me.ComboBox1.Location = New System.Drawing.Point(394, 13)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(255, 21)
-        Me.ComboBox1.TabIndex = 21
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(69, 47)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(55, 13)
-        Me.Label6.TabIndex = 19
-        Me.Label6.Text = "Remito N°"
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(564, 46)
-        Me.DateTimePicker1.MinDate = New Date(2017, 1, 1, 0, 0, 0, 0)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(85, 20)
-        Me.DateTimePicker1.TabIndex = 17
-        '
-        'dtp_fecha_estado
-        '
-        Me.dtp_fecha_estado.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fecha_estado.Location = New System.Drawing.Point(642, 20)
-        Me.dtp_fecha_estado.MinDate = New Date(2017, 1, 1, 0, 0, 0, 0)
-        Me.dtp_fecha_estado.Name = "dtp_fecha_estado"
-        Me.dtp_fecha_estado.Size = New System.Drawing.Size(85, 20)
-        Me.dtp_fecha_estado.TabIndex = 14
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(519, 23)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(117, 13)
-        Me.Label7.TabIndex = 13
-        Me.Label7.Text = "Fecha  de planificacion"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(130, 44)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(177, 20)
-        Me.TextBox2.TabIndex = 12
-        '
         'btn_emp_cancelar
         '
-        Me.btn_emp_cancelar.Location = New System.Drawing.Point(630, 456)
+        Me.btn_emp_cancelar.Location = New System.Drawing.Point(636, 377)
         Me.btn_emp_cancelar.Name = "btn_emp_cancelar"
-        Me.btn_emp_cancelar.Size = New System.Drawing.Size(107, 30)
+        Me.btn_emp_cancelar.Size = New System.Drawing.Size(97, 21)
         Me.btn_emp_cancelar.TabIndex = 12
         Me.btn_emp_cancelar.Text = "Cancelar"
         Me.btn_emp_cancelar.UseVisualStyleBackColor = True
@@ -204,7 +98,7 @@ Partial Class frm_Despacho
         Me.GroupBox4.Controls.Add(Me.btn_emp_buscar_orden)
         Me.GroupBox4.Controls.Add(Me.dtp_fecha_estado)
         Me.GroupBox4.Controls.Add(Me.Label7)
-        Me.GroupBox4.Location = New System.Drawing.Point(6, 90)
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 11)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(731, 360)
         Me.GroupBox4.TabIndex = 10
@@ -237,11 +131,29 @@ Partial Class frm_Despacho
         Me.btn_emp_buscar_orden.Text = "Agregar orden"
         Me.btn_emp_buscar_orden.UseVisualStyleBackColor = True
         '
+        'dtp_fecha_estado
+        '
+        Me.dtp_fecha_estado.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp_fecha_estado.Location = New System.Drawing.Point(642, 20)
+        Me.dtp_fecha_estado.MinDate = New Date(2017, 1, 1, 0, 0, 0, 0)
+        Me.dtp_fecha_estado.Name = "dtp_fecha_estado"
+        Me.dtp_fecha_estado.Size = New System.Drawing.Size(85, 20)
+        Me.dtp_fecha_estado.TabIndex = 14
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(519, 23)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(117, 13)
+        Me.Label7.TabIndex = 13
+        Me.Label7.Text = "Fecha  de planificacion"
+        '
         'Btn_emp_guardar
         '
-        Me.Btn_emp_guardar.Location = New System.Drawing.Point(504, 456)
+        Me.Btn_emp_guardar.Location = New System.Drawing.Point(533, 377)
         Me.Btn_emp_guardar.Name = "Btn_emp_guardar"
-        Me.Btn_emp_guardar.Size = New System.Drawing.Size(107, 30)
+        Me.Btn_emp_guardar.Size = New System.Drawing.Size(97, 21)
         Me.Btn_emp_guardar.TabIndex = 11
         Me.Btn_emp_guardar.Text = "Guardar"
         Me.Btn_emp_guardar.UseVisualStyleBackColor = True
@@ -423,8 +335,6 @@ Partial Class frm_Despacho
         Me.Text = "Despacho"
         Me.tbc_despacho.ResumeLayout(False)
         Me.tbp_empaque.ResumeLayout(False)
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         CType(Me.dgv_emp_lista_ordenes, System.ComponentModel.ISupportInitialize).EndInit()
@@ -455,16 +365,8 @@ Partial Class frm_Despacho
     Friend WithEvents dgv_lista_ordenes As System.Windows.Forms.DataGridView
     Friend WithEvents btnBuscar_orden As System.Windows.Forms.Button
     Friend WithEvents Btn_guardar As System.Windows.Forms.Button
-    Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents dtp_fecha_estado As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents btn_emp_cancelar As System.Windows.Forms.Button
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
     Friend WithEvents btn_emp_quitar_orden As System.Windows.Forms.Button

@@ -9,60 +9,9 @@ Public Class frm_Listado_Empaque
     Dim fuente As iTextSharp.text.pdf.BaseFont = FontFactory.GetFont(FontFactory.HELVETICA).BaseFont
 
     Public Sub frm_Listado_Despacho_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'cargargrillaremitos()
+
         armargrilla_planificacion()
         rbt_entrega.Checked = True
-        txt_buscar.Enabled = False
-    End Sub
-    Sub cargargrillaremitos()
-        'dgv_remitos.Columns.Clear()
-        'dgv_remitos.AutoGenerateColumns = False
-
-        'Dim chofer As New DataGridViewComboBoxColumn
-        'chofer.HeaderText = "Chofer"
-        'chofer.Name = "DES_chofer"
-
-        ''LISTA DE CHOFERES. OJO! TIENE QUE COINCIDIR CON LA LISTA DEL COMBOBOX DEL FRM_DESPACHO
-        'chofer.Items.Add("Seleccionar")
-        'chofer.Items.Add("Javier Perea")
-        'chofer.Items.Add("Walter Farías")
-        'chofer.Items.Add("Laureano")
-        'chofer.Items.Add("Guillermo Akerman")
-        'chofer.Items.Add("Sebastián Agote")
-        'chofer.Items.Add("Marcelo Domínguez")
-        'chofer.Items.Add("Tercero")
-        'chofer.Items.Add("Retira de planta")
-        'chofer.Items.Add("Retira de central")
-        'chofer.Items.Add("Instalaciones")
-
-        'dgv_remitos.Columns.Add("DES_nro_despacho", "Despacho N°")
-        'dgv_remitos.Columns.Add("DES_nro_remito", "Remito N°")
-        'dgv_remitos.Columns.Add("DES_fecha_salida", "Salida")
-        'dgv_remitos.Columns.Add(chofer)
-
-        'dgv_remitos.Columns("DES_nro_despacho").DataPropertyName = "DES_nro_despacho"
-        'dgv_remitos.Columns("DES_nro_remito").DataPropertyName = "DES_nro_remito"
-        'dgv_remitos.Columns("DES_fecha_salida").DataPropertyName = "DES_fecha_salida"
-        'dgv_remitos.Columns("DES_chofer").DataPropertyName = "DES_chofer"
-
-        'Dim cargarremitos = (From c In datacontext.DESPACHO
-        '                     Where c.DES_fecha_salida.Value.Date = dtp_fecha_salida.Text
-        '                     Order By c.DES_nro_despacho
-        '                     Select New clase_remitos(c.DES_nro_remito, c.DES_fecha_salida, c.DES_chofer, c.DES_nro_despacho)).Distinct
-
-        'dgv_remitos.DataSource = cargarremitos
-        'dgv_remitos.Sort(dgv_remitos.Columns("DES_nro_despacho"), SortOrder.Ascending)
-
-        'dgv_remitos.Columns("DES_nro_despacho").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        'dgv_remitos.Columns("DES_nro_remito").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        'dgv_remitos.Columns("DES_fecha_salida").AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells
-        'dgv_remitos.Columns("DES_chofer").AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-
-        'habilitar_edicion()
-    End Sub
-
-    Private Sub dgv_remitos_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs)
-        'cargargrilla_odtxrem()
     End Sub
 
     Sub armargrilla_planificacion()
@@ -74,12 +23,13 @@ Public Class frm_Listado_Empaque
         estados.Name = "DES_EMB_estado"
 
         ''LISTA DE CHOFERES. OJO! TIENE QUE COINCIDIR CON LA LISTA DEL COMBOBOX DEL FRM_DESPACHO
+        ''Y CON EL COMBOBOX DE BUSQUEDA DEL FORM LISTADO EMPAQUE
         estados.Items.Add("PLANIFICADO")
         estados.Items.Add("IMPRESION")
         estados.Items.Add("TERMINACION")
         estados.Items.Add("TERCERO")
         estados.Items.Add("ENTREGADO")
-        
+
 
         dgv_planificacion.Columns.Add("DES_Id", "DES_Id")
         dgv_planificacion.Columns("DES_Id").Visible = False
@@ -120,38 +70,18 @@ Public Class frm_Listado_Empaque
 
         dgv_planificacion.DataSource = cargar_planificacion
 
-        'If btn_modificar.Visible = True Then
-        '    dgv_planificacion.Columns("DES_fecha_entrega").ReadOnly = False
-        '    dgv_planificacion.Columns("DES_observaciones").ReadOnly = False
-        'Else
-        '    dgv_planificacion.Columns("DES_fecha_entrega").ReadOnly = True
-        '    dgv_planificacion.Columns("DES_observaciones").ReadOnly = True
-        'End If
+        If btn_modificar.Visible = True Then
+            dgv_planificacion.Columns("DES_EMB_bultos").ReadOnly = False
+            dgv_planificacion.Columns("DES_EMB_estado").ReadOnly = False
+            dgv_planificacion.Columns("DES_EMB_fecha_estado").ReadOnly = False
+            dgv_planificacion.Columns("DES_EMB_observaciones").ReadOnly = False
+        Else
+            dgv_planificacion.Columns("DES_EMB_bultos").ReadOnly = True
+            dgv_planificacion.Columns("DES_EMB_estado").ReadOnly = True
+            dgv_planificacion.Columns("DES_EMB_fecha_estado").ReadOnly = True
+            dgv_planificacion.Columns("DES_EMB_observaciones").ReadOnly = True
+        End If
     End Sub
-    Sub cargargrilla_odtxrem()
-        'Dim buscar As String
-
-        'Try
-        '    If btn_modificar.Visible = True Then
-        '        buscar = dgv_remitos.Item("DES_nro_despacho", dgv_remitos.CurrentRow.Index).Value
-        '    Else
-        '        buscar = dgv_remitos.Item("DES_nro_despacho", dgv_remitos.SelectedRows(0).Index).Value
-        '    End If
-
-        '    'SE LLAMA A UNA CLASE YA QUE USANDO EL DATASOURCE NORMAL NO SE PUEDEN EDITAR LAS FILAS DEL DATAGRID.
-        '    'POR LO QUE SE CREA UNA CLASE CON LAS PROPIEDADES Y SE USA LA CLASE COMO DATASOURCE, LO QEU SI PERMITE EDITAR LAS FILAS.
-        '    Dim odtxremito = (From o In datacontextvistas.Vista_Despacho_Orden_Trabajo
-        '                      Where o.DES_nro_despacho = buscar
-        '                      Select New clase_odtxrem(o.ORT_id_orden_trabajo, o.DES_nro_remito, o.DES_fecha_entrega, o.DES_observaciones,
-        '                      o.ORT_numero_ot, o.ORT_observaciones_ot, o.CLI_razon_social, o.DES_id, o.DES_nro_despacho))
-
-        '    dgv_orden_x_remito.DataSource = odtxremito
-        '    dgv_orden_x_remito.ClearSelection()
-        'Catch ex As Exception
-        'End Try
-
-    End Sub
-
 
     Private Sub btn_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancelar.Click
         Me.Close()
@@ -161,96 +91,73 @@ Public Class frm_Listado_Empaque
         Try
             If dgv_planificacion.SelectedRows.Count > 0 Then
                 Dim eliminar = (From C In datacontext.DESPACHO Where C.DES_id = CInt(dgv_planificacion.Item("DES_id", dgv_planificacion.SelectedRows(0).Index).Value)).ToList()(0)
-                Select Case MsgBox("Se desviculará la orden del remito, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar colaborador")
+                Select Case MsgBox("Se quitará la órden de la planificación, continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Desplanificar órden")
                     Case MsgBoxResult.Yes
                         datacontext.DESPACHO.DeleteOnSubmit(eliminar)
                         datacontext.SubmitChanges()
-                        MsgBox("La orden ha sido desvinculada")
-                        cargargrilla_odtxrem()
-                        cargargrillaremitos()
+                        MsgBox("La orden ha sido desplanificada")
+                        armargrilla_planificacion()
                 End Select
             Else
                 MsgBox("Debe seleccionar una orden")
             End If
         Catch ex As Exception
-            MsgBox("La orden no fue desvinculada")
+            MsgBox("La orden no fue desplanificada")
         End Try
     End Sub
 
     Private Sub btn_modificar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_modificar.Click
         Try
-            Dim Actualizarestado = (From P In datacontext.DESPACHO
-                                    Where P.DES_nro_despacho = CInt(dgv_planificacion.Item("DES_nro_despacho", dgv_planificacion.CurrentRow.Index).Value)).Count
+            Dim cont_filas = dgv_planificacion.RowCount
+            For i = 0 To cont_filas - 1
+                Dim fila As Integer = i
+                Dim actualizarplanif = (From P In datacontext.DESPACHO
+                                        Where P.DES_id = CInt(dgv_planificacion.Item("DES_Id", fila).Value)).ToList()(0)
 
-            For i = 0 To Actualizarestado - 1
-                Dim actualizarremito = (From P In datacontext.DESPACHO
-                                        Where P.DES_nro_despacho = CInt(dgv_planificacion.Item("DES_nro_despacho", dgv_planificacion.CurrentRow.Index).Value)).ToList()(i)
-                'actualizarremito.DES_nro_remito = dgv_remitos.Item("DES_nro_remito", dgv_remitos.CurrentRow.Index).Value
-                'actualizarremito.DES_fecha_salida = CDate(dgv_remitos.Item("DES_fecha_salida", dgv_remitos.CurrentRow.Index).Value)
-                'actualizarremito.DES_chofer = dgv_remitos.Item("DES_chofer", dgv_remitos.CurrentRow.Index).Value
-
-                actualizarremito.DES_fecha_entrega = CDate(dgv_planificacion.Item("DES_fecha_entrega", i).Value)
-                actualizarremito.DES_observaciones = dgv_planificacion.Item("DES_observaciones", i).Value
+                actualizarplanif.DES_EMB_bultos = dgv_planificacion.Item("DES_EMB_bultos", i).Value
+                actualizarplanif.DES_EMB_estado = dgv_planificacion.Item("DES_EMB_estado", i).Value
+                actualizarplanif.DES_EMB_fecha_estado = CDate(dgv_planificacion.Item("DES_EMB_fecha_estado", i).Value)
+                actualizarplanif.DES_EMB_observaciones = dgv_planificacion.Item("DES_EMB_observaciones", i).Value
 
                 datacontext.SubmitChanges()
             Next
 
             MsgBox("Los datos se han modificado correctamente")
-            cargargrilla_odtxrem()
-            cargargrillaremitos()
+            armargrilla_planificacion()
 
         Catch ex As Exception
-            MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar Colaborador")
-            cargargrilla_odtxrem()
+            MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar Empaque")
         End Try
     End Sub
 
-    Private Sub btn_agregarodt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_agregarodt.Click
-        'If dgv_remitos.SelectedCells.Count = 1 Then
-        '    frm_Despacho.txt_numero_remito.Enabled = False
-        '    frm_Despacho.Show()
-
-        '    frm_Despacho.txt_numero_despacho.Text = dgv_remitos.Item("DES_nro_despacho", dgv_remitos.CurrentRow.Index).Value
-        '    frm_Despacho.txt_numero_remito.Text = dgv_remitos.Item("DES_nro_remito", dgv_remitos.CurrentRow.Index).Value
-        '    frm_Despacho.dtp_Fecha_salida.Value = CDate(dgv_remitos.Item("DES_fecha_salida", dgv_remitos.CurrentRow.Index).Value)
-        '    frm_Despacho.dtp_Hora_salida.Value = CDate(dgv_remitos.Item("DES_fecha_salida", dgv_remitos.CurrentRow.Index).Value)
-        '    frm_Despacho.cmb_chofer.Text = dgv_remitos.Item("DES_chofer", dgv_remitos.CurrentRow.Index).Value
-
-
-
-        'End If
-    End Sub
-
     Private Sub txt_buscar_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_buscar.TextChanged
-        'If rbt_orden.Checked = True Or rbt_despacho.Checked = True Then
-        '    Dim buscar As String
-        '    buscar = "*" & txt_buscar.Text & "*"
+        If rbt_orden.Checked = True Then
+            Dim buscar As String
+            buscar = "*" & txt_buscar.Text & "*"
+            Dim cargar_planificacion = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+                         Where p.ORT_numero_ot Like buscar.ToString
+                         Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+                         p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+                         p.DES_EMB_observaciones, CStr(p.DES_EMB_fecha_estado),
+                         p.CLI_razon_social, p.ORT_observaciones_ot))
+            dgv_planificacion.DataSource = cargar_planificacion
+        End If
 
-        '    If rbt_orden.Checked = True Then
-        '        Dim buscaremito = (From br In datacontext.DESPACHO
-        '                           Where br.DES_nro_remito Like buscar.ToString
-        '                           Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, br.DES_nro_despacho)).Distinct
-        '        dgv_remitos.DataSource = buscaremito
-        '    Else
-        '        Dim buscaremito = (From br In datacontext.DESPACHO
-        '                           Where br.DES_nro_despacho Like buscar.ToString
-        '                           Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, br.DES_nro_despacho)).Distinct
-        '        dgv_remitos.DataSource = buscaremito
-        '    End If
-
-        '    dgv_orden_x_remito.Rows.Clear()
-        '    habilitar_edicion()
+        ' habilitar_edicion()
         'End If
     End Sub
 
     Private Sub dtp_fecha_salida_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtp_fecha_estado.ValueChanged
-        'If rbt_entrega.Checked = True Then
-        '    Dim buscaremito = (From br In datacontext.DESPACHO
-        '                       Where br.DES_fecha_salida.Value.Date = dtp_fecha_salida.Text
-        '                       Select New clase_remitos(br.DES_nro_remito, br.DES_fecha_salida, br.DES_chofer, br.DES_nro_despacho)).Distinct
-        '    dgv_remitos.DataSource = buscaremito
-        '    habilitar_edicion()
-        'End If
+        If rbt_entrega.Checked = True Then
+            Dim cargar_planificacion = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+                                    Where p.DES_EMB_fecha_estado.Value.Date = dtp_fecha_estado.Text
+                                    Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+                                    p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+                                    p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
+                                    p.CLI_razon_social, p.ORT_observaciones_ot))
+            dgv_planificacion.DataSource = cargar_planificacion
+            ' habilitar_edicion()
+        End If
     End Sub
     Sub habilitar_edicion()
         'dgv_remitos.ClearSelection()
@@ -269,26 +176,36 @@ Public Class frm_Listado_Empaque
 
     Private Sub rbt_remito_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbt_orden.CheckedChanged
         If rbt_orden.Checked = True Then
-            txt_buscar.Enabled = True
+            radiobutton(True, False, False)
         Else
-            txt_buscar.Enabled = False
+            radiobutton(False, False, False)
         End If
     End Sub
 
-    Private Sub rbt_despacho_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbt_despacho.CheckedChanged
-        If rbt_despacho.Checked = True Then
-            txt_buscar.Enabled = True
+    Private Sub rbt_despacho_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbt_estado.CheckedChanged
+        If rbt_estado.Checked = True Then
+            radiobutton(False, True, False)
         Else
-            txt_buscar.Enabled = False
+            radiobutton(False, False, False)
         End If
     End Sub
 
     Private Sub rbt_entrega_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbt_entrega.CheckedChanged
         If rbt_entrega.Checked = True Then
-            dtp_fecha_estado.Enabled = True
+            radiobutton(False, False, True)
+            armargrilla_planificacion()
         Else
-            dtp_fecha_estado.Enabled = False
+            radiobutton(False, False, False)
         End If
+    End Sub
+
+    Sub radiobutton(ByVal buscar As Boolean, ByVal estado As Boolean, ByVal fecha As Boolean)
+        txt_buscar.Enabled = buscar
+        cmb_estado.Enabled = estado
+        dtp_fecha_estado.Enabled = fecha
+
+        txt_buscar.Clear()
+        cmb_estado.Text = ""
     End Sub
 
     Private Sub btn_generar_informe_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_generar_informe.Click
@@ -366,6 +283,16 @@ Public Class frm_Listado_Empaque
         '    'si el mensaje es fallido mostrar msgbox
         '    MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         'End Try
+    End Sub
+
+    Private Sub cmb_estado_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmb_estado.SelectedIndexChanged
+        Dim cargar_planificacion = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+                        Where p.DES_EMB_estado = cmb_estado.Text
+                        Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+                        p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+                        p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
+                        p.CLI_razon_social, p.ORT_observaciones_ot))
+        dgv_planificacion.DataSource = cargar_planificacion
     End Sub
 End Class
 

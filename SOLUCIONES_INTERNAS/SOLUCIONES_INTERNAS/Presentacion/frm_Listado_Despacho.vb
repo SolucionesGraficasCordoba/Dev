@@ -132,7 +132,7 @@ Public Class frm_Listado_Despacho
         Try
             If dgv_orden_x_remito.SelectedRows.Count > 0 Then
                 Dim eliminar = (From C In datacontext.DESPACHO Where C.DES_id = CInt(dgv_orden_x_remito.Item("DES_id", dgv_orden_x_remito.SelectedRows(0).Index).Value)).ToList()(0)
-                Select Case MsgBox("Se desviculará la orden del remito, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar colaborador")
+                Select Case MsgBox("Se desviculará la orden del remito, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Desvincular órden")
                     Case MsgBoxResult.Yes
                         datacontext.DESPACHO.DeleteOnSubmit(eliminar)
                         datacontext.SubmitChanges()
@@ -173,7 +173,7 @@ Public Class frm_Listado_Despacho
                 cargargrillaremitos()
             End If
         Catch ex As Exception
-            MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar Colaborador")
+            MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar despacho")
             cargargrilla_odtxrem()
         End Try
     End Sub

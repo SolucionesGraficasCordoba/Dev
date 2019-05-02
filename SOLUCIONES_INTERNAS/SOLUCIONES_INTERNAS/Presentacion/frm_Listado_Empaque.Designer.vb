@@ -27,27 +27,27 @@ Partial Class frm_Listado_Empaque
         Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.rbt_orden = New System.Windows.Forms.RadioButton()
-        Me.rbt_despacho = New System.Windows.Forms.RadioButton()
+        Me.rbt_estado = New System.Windows.Forms.RadioButton()
         Me.rbt_entrega = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dtp_fecha_estado = New System.Windows.Forms.DateTimePicker()
-        Me.btn_agregarodt = New System.Windows.Forms.Button()
         Me.btn_generar_informe = New System.Windows.Forms.Button()
         Me.dgv_planificacion = New System.Windows.Forms.DataGridView()
+        Me.cmb_estado = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_planificacion, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txt_buscar
         '
-        Me.txt_buscar.Location = New System.Drawing.Point(12, 53)
+        Me.txt_buscar.Location = New System.Drawing.Point(19, 53)
         Me.txt_buscar.Name = "txt_buscar"
-        Me.txt_buscar.Size = New System.Drawing.Size(168, 20)
+        Me.txt_buscar.Size = New System.Drawing.Size(113, 20)
         Me.txt_buscar.TabIndex = 2
         '
         'btn_modificar
         '
-        Me.btn_modificar.Location = New System.Drawing.Point(441, 486)
+        Me.btn_modificar.Location = New System.Drawing.Point(480, 486)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(101, 21)
         Me.btn_modificar.TabIndex = 5
@@ -56,7 +56,7 @@ Partial Class frm_Listado_Empaque
         '
         'btn_eliminar
         '
-        Me.btn_eliminar.Location = New System.Drawing.Point(441, 486)
+        Me.btn_eliminar.Location = New System.Drawing.Point(480, 486)
         Me.btn_eliminar.Name = "btn_eliminar"
         Me.btn_eliminar.Size = New System.Drawing.Size(101, 21)
         Me.btn_eliminar.TabIndex = 6
@@ -65,7 +65,7 @@ Partial Class frm_Listado_Empaque
         '
         'btn_cancelar
         '
-        Me.btn_cancelar.Location = New System.Drawing.Point(548, 486)
+        Me.btn_cancelar.Location = New System.Drawing.Point(587, 486)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(101, 21)
         Me.btn_cancelar.TabIndex = 7
@@ -83,36 +83,36 @@ Partial Class frm_Listado_Empaque
         Me.rbt_orden.Text = "N° orden"
         Me.rbt_orden.UseVisualStyleBackColor = True
         '
-        'rbt_despacho
+        'rbt_estado
         '
-        Me.rbt_despacho.AutoSize = True
-        Me.rbt_despacho.Location = New System.Drawing.Point(80, 19)
-        Me.rbt_despacho.Name = "rbt_despacho"
-        Me.rbt_despacho.Size = New System.Drawing.Size(87, 17)
-        Me.rbt_despacho.TabIndex = 9
-        Me.rbt_despacho.TabStop = True
-        Me.rbt_despacho.Text = "N° despacho"
-        Me.rbt_despacho.UseVisualStyleBackColor = True
+        Me.rbt_estado.AutoSize = True
+        Me.rbt_estado.Location = New System.Drawing.Point(125, 19)
+        Me.rbt_estado.Name = "rbt_estado"
+        Me.rbt_estado.Size = New System.Drawing.Size(58, 17)
+        Me.rbt_estado.TabIndex = 9
+        Me.rbt_estado.TabStop = True
+        Me.rbt_estado.Text = "Estado"
+        Me.rbt_estado.UseVisualStyleBackColor = True
         '
         'rbt_entrega
         '
         Me.rbt_entrega.AutoSize = True
-        Me.rbt_entrega.Location = New System.Drawing.Point(169, 19)
+        Me.rbt_entrega.Location = New System.Drawing.Point(243, 19)
         Me.rbt_entrega.Name = "rbt_entrega"
-        Me.rbt_entrega.Size = New System.Drawing.Size(85, 17)
+        Me.rbt_entrega.Size = New System.Drawing.Size(117, 17)
         Me.rbt_entrega.TabIndex = 10
         Me.rbt_entrega.TabStop = True
-        Me.rbt_entrega.Text = "Fecha salida"
+        Me.rbt_entrega.Text = "Fecha planificación"
         Me.rbt_entrega.UseVisualStyleBackColor = True
         '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.rbt_orden)
         Me.GroupBox1.Controls.Add(Me.rbt_entrega)
-        Me.GroupBox1.Controls.Add(Me.rbt_despacho)
+        Me.GroupBox1.Controls.Add(Me.rbt_estado)
         Me.GroupBox1.Location = New System.Drawing.Point(13, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(265, 45)
+        Me.GroupBox1.Size = New System.Drawing.Size(372, 45)
         Me.GroupBox1.TabIndex = 11
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Filtrar por"
@@ -120,19 +120,10 @@ Partial Class frm_Listado_Empaque
         'dtp_fecha_estado
         '
         Me.dtp_fecha_estado.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fecha_estado.Location = New System.Drawing.Point(186, 53)
+        Me.dtp_fecha_estado.Location = New System.Drawing.Point(256, 53)
         Me.dtp_fecha_estado.Name = "dtp_fecha_estado"
-        Me.dtp_fecha_estado.Size = New System.Drawing.Size(92, 20)
+        Me.dtp_fecha_estado.Size = New System.Drawing.Size(117, 20)
         Me.dtp_fecha_estado.TabIndex = 12
-        '
-        'btn_agregarodt
-        '
-        Me.btn_agregarodt.Location = New System.Drawing.Point(334, 486)
-        Me.btn_agregarodt.Name = "btn_agregarodt"
-        Me.btn_agregarodt.Size = New System.Drawing.Size(101, 21)
-        Me.btn_agregarodt.TabIndex = 13
-        Me.btn_agregarodt.Text = "Agregar odt"
-        Me.btn_agregarodt.UseVisualStyleBackColor = True
         '
         'btn_generar_informe
         '
@@ -149,16 +140,25 @@ Partial Class frm_Listado_Empaque
         Me.dgv_planificacion.Location = New System.Drawing.Point(13, 79)
         Me.dgv_planificacion.MultiSelect = False
         Me.dgv_planificacion.Name = "dgv_planificacion"
-        Me.dgv_planificacion.Size = New System.Drawing.Size(636, 401)
+        Me.dgv_planificacion.Size = New System.Drawing.Size(675, 401)
         Me.dgv_planificacion.TabIndex = 1
+        '
+        'cmb_estado
+        '
+        Me.cmb_estado.FormattingEnabled = True
+        Me.cmb_estado.Items.AddRange(New Object() {"PLANIFICADO", "IMPRESION", "TERMINACION", "TERCERO", "ENTREGADO"})
+        Me.cmb_estado.Location = New System.Drawing.Point(138, 52)
+        Me.cmb_estado.Name = "cmb_estado"
+        Me.cmb_estado.Size = New System.Drawing.Size(112, 21)
+        Me.cmb_estado.TabIndex = 15
         '
         'frm_Listado_Empaque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(663, 515)
+        Me.ClientSize = New System.Drawing.Size(700, 515)
+        Me.Controls.Add(Me.cmb_estado)
         Me.Controls.Add(Me.btn_generar_informe)
-        Me.Controls.Add(Me.btn_agregarodt)
         Me.Controls.Add(Me.dtp_fecha_estado)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btn_cancelar)
@@ -180,11 +180,11 @@ Partial Class frm_Listado_Empaque
     Friend WithEvents btn_eliminar As System.Windows.Forms.Button
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button
     Friend WithEvents rbt_orden As System.Windows.Forms.RadioButton
-    Friend WithEvents rbt_despacho As System.Windows.Forms.RadioButton
+    Friend WithEvents rbt_estado As System.Windows.Forms.RadioButton
     Friend WithEvents rbt_entrega As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents dtp_fecha_estado As System.Windows.Forms.DateTimePicker
-    Friend WithEvents btn_agregarodt As System.Windows.Forms.Button
     Friend WithEvents btn_generar_informe As System.Windows.Forms.Button
     Friend WithEvents dgv_planificacion As System.Windows.Forms.DataGridView
+    Friend WithEvents cmb_estado As System.Windows.Forms.ComboBox
 End Class

@@ -1828,12 +1828,9 @@ Public Class frm_Principal
 
     Private Sub ActualizarEstadoToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ActualizarEstadoToolStripMenuItem.Click
         frm_Listado_Empaque.dgv_planificacion.SelectionMode = DataGridViewSelectionMode.CellSelect
-
         frm_Listado_Empaque.dgv_planificacion.ReadOnly = False
-
         frm_Listado_Empaque.btn_eliminar.Visible = False
         frm_Listado_Empaque.btn_modificar.Visible = True
-        frm_Listado_Empaque.btn_agregarodt.Visible = True
         frm_Listado_Empaque.Text = "Modificar ordenes por remito"
 
         frm_Listado_Empaque.Show()
@@ -1845,20 +1842,16 @@ Public Class frm_Principal
 
     Private Sub DesplanificarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DesplanificarToolStripMenuItem.Click
         frm_Listado_Empaque.dgv_planificacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-
         frm_Listado_Empaque.btn_eliminar.Visible = True
         frm_Listado_Empaque.btn_modificar.Visible = False
-        frm_Listado_Empaque.btn_agregarodt.Visible = False
         frm_Listado_Empaque.Text = "Eliminar planificación"
         frm_Listado_Empaque.Show()
     End Sub
 
     Private Sub ConsultarToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarToolStripMenuItem2.Click
         frm_Listado_Empaque.dgv_planificacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-
         frm_Listado_Empaque.btn_eliminar.Visible = False
         frm_Listado_Empaque.btn_modificar.Visible = False
-        frm_Listado_Empaque.btn_agregarodt.Visible = False
         frm_Listado_Empaque.Text = "Consultar planificacion"
         frm_Listado_Empaque.Show()
     End Sub

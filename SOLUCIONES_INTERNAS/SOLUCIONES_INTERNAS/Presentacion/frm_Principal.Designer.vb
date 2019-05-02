@@ -112,6 +112,8 @@ Partial Class frm_Principal
         Me.EmpaqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlanificarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ActualizarEstadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.DesplanificarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultarToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CorreoElectrónicoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
@@ -124,8 +126,6 @@ Partial Class frm_Principal
         Me.btn_ticket = New System.Windows.Forms.Button()
         Me.Timer_automatico = New System.Windows.Forms.Timer(Me.components)
         Me.btnManualUsuario = New System.Windows.Forms.Button()
-        Me.DesplanificarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsultarToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -631,7 +631,7 @@ Partial Class frm_Principal
         '
         'DespachoToolStripMenuItem1
         '
-        Me.DespachoToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LogísticaToolStripMenuItem, Me.EmpaqueToolStripMenuItem})
+        Me.DespachoToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EmpaqueToolStripMenuItem, Me.LogísticaToolStripMenuItem})
         Me.DespachoToolStripMenuItem1.Name = "DespachoToolStripMenuItem1"
         Me.DespachoToolStripMenuItem1.Size = New System.Drawing.Size(71, 20)
         Me.DespachoToolStripMenuItem1.Text = "Despacho"
@@ -685,6 +685,18 @@ Partial Class frm_Principal
         Me.ActualizarEstadoToolStripMenuItem.Name = "ActualizarEstadoToolStripMenuItem"
         Me.ActualizarEstadoToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
         Me.ActualizarEstadoToolStripMenuItem.Text = "Actualizar estado"
+        '
+        'DesplanificarToolStripMenuItem
+        '
+        Me.DesplanificarToolStripMenuItem.Name = "DesplanificarToolStripMenuItem"
+        Me.DesplanificarToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
+        Me.DesplanificarToolStripMenuItem.Text = "Desplanificar"
+        '
+        'ConsultarToolStripMenuItem2
+        '
+        Me.ConsultarToolStripMenuItem2.Name = "ConsultarToolStripMenuItem2"
+        Me.ConsultarToolStripMenuItem2.Size = New System.Drawing.Size(164, 22)
+        Me.ConsultarToolStripMenuItem2.Text = "Consultar"
         '
         'CorreoElectrónicoToolStripMenuItem
         '
@@ -792,18 +804,6 @@ Partial Class frm_Principal
         Me.btnManualUsuario.TabIndex = 15
         Me.btnManualUsuario.Text = "Manual de Usuario"
         Me.btnManualUsuario.UseVisualStyleBackColor = False
-        '
-        'DesplanificarToolStripMenuItem
-        '
-        Me.DesplanificarToolStripMenuItem.Name = "DesplanificarToolStripMenuItem"
-        Me.DesplanificarToolStripMenuItem.Size = New System.Drawing.Size(164, 22)
-        Me.DesplanificarToolStripMenuItem.Text = "Desplanificar"
-        '
-        'ConsultarToolStripMenuItem2
-        '
-        Me.ConsultarToolStripMenuItem2.Name = "ConsultarToolStripMenuItem2"
-        Me.ConsultarToolStripMenuItem2.Size = New System.Drawing.Size(164, 22)
-        Me.ConsultarToolStripMenuItem2.Text = "Consultar"
         '
         'frm_Principal
         '
