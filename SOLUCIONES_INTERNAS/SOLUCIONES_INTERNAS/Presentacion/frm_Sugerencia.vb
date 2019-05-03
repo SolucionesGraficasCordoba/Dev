@@ -49,31 +49,36 @@ Public Class frm_Sugerencia
     '    Next
     '    fncQuitarAcentos = strNombre
     'End Function
-    '--------------------------------------------------------------------------------------------
+    '----------------------------------------------------------------------------------------------
+
+
     'LEANDRO TUTINI
-    Private Shared Function RemoveDiacritics(stIn As String) As String
-        Dim stFormD As String = stIn.Normalize(NormalizationForm.FormD)
-        Dim sb As New StringBuilder()
+    'Private Shared Function RemoveDiacritics(stIn As String) As String
+    '    Dim stFormD As String = stIn.Normalize(NormalizationForm.FormD)
+    '    Dim sb As New StringBuilder()
 
-        For ich As Integer = 0 To stFormD.Length - 1
-            Dim uc As UnicodeCategory = CharUnicodeInfo.GetUnicodeCategory(stFormD(ich))
-            If uc <> UnicodeCategory.NonSpacingMark Then
-                sb.Append(stFormD(ich))
-            End If
-        Next
-        Return (sb.ToString().Normalize(NormalizationForm.FormC))
-    End Function
-    '----------------------------------------------------------------------------------------------------
+    '    For ich As Integer = 0 To stFormD.Length - 1
+    '        Dim uc As UnicodeCategory = CharUnicodeInfo.GetUnicodeCategory(stFormD(ich))
+    '        If uc <> UnicodeCategory.NonSpacingMark Then
+    '            sb.Append(stFormD(ich))
+    '        End If
+    '    Next
+    '    Return (sb.ToString().Normalize(NormalizationForm.FormC))
+    'End Function
+    '----------------------------------------------------------------------------------------------
 
-    Public Function remplaceCharacter(ByVal _text As String) As String
 
-        Dim ConAcento() As String = {"á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú"}
-        Dim SinAcento() As String = {"a", "e", "i", "o", "u", "A", "E", "I", "O", "U"}
-        Dim text As String = _text
 
-        For i As Integer = 0 To ConAcento.Length - 1
-            text = Replace(text, ConAcento(i), SinAcento(i))
-        Next
-        Return text
-    End Function
+    'Public Function remplaceCharacter(ByVal _text As String) As String
+
+    '    Dim ConAcento() As String = {"á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú"}
+    '    Dim SinAcento() As String = {"a", "e", "i", "o", "u", "A", "E", "I", "O", "U"}
+    '    Dim text As String = _text
+
+    '    For i As Integer = 0 To ConAcento.Length - 1
+    '        text = Replace(text, ConAcento(i), SinAcento(i))
+    '    Next
+    '    Return text
+    'End Function
+    '---------------------------------------------------------------------------------------------
 End Class
