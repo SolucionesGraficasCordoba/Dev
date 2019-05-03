@@ -84,7 +84,7 @@ Partial Class frm_Despacho
         '
         'btn_emp_cancelar
         '
-        Me.btn_emp_cancelar.Location = New System.Drawing.Point(636, 377)
+        Me.btn_emp_cancelar.Location = New System.Drawing.Point(636, 470)
         Me.btn_emp_cancelar.Name = "btn_emp_cancelar"
         Me.btn_emp_cancelar.Size = New System.Drawing.Size(97, 21)
         Me.btn_emp_cancelar.TabIndex = 12
@@ -100,7 +100,7 @@ Partial Class frm_Despacho
         Me.GroupBox4.Controls.Add(Me.Label7)
         Me.GroupBox4.Location = New System.Drawing.Point(6, 11)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(731, 360)
+        Me.GroupBox4.Size = New System.Drawing.Size(731, 460)
         Me.GroupBox4.TabIndex = 10
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Detalle de órdenes"
@@ -119,7 +119,7 @@ Partial Class frm_Despacho
         Me.dgv_emp_lista_ordenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_emp_lista_ordenes.Location = New System.Drawing.Point(5, 45)
         Me.dgv_emp_lista_ordenes.Name = "dgv_emp_lista_ordenes"
-        Me.dgv_emp_lista_ordenes.Size = New System.Drawing.Size(722, 309)
+        Me.dgv_emp_lista_ordenes.Size = New System.Drawing.Size(722, 408)
         Me.dgv_emp_lista_ordenes.TabIndex = 1
         '
         'btn_emp_buscar_orden
@@ -151,7 +151,7 @@ Partial Class frm_Despacho
         '
         'Btn_emp_guardar
         '
-        Me.Btn_emp_guardar.Location = New System.Drawing.Point(533, 377)
+        Me.Btn_emp_guardar.Location = New System.Drawing.Point(533, 470)
         Me.Btn_emp_guardar.Name = "Btn_emp_guardar"
         Me.Btn_emp_guardar.Size = New System.Drawing.Size(97, 21)
         Me.Btn_emp_guardar.TabIndex = 11
