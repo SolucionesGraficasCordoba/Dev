@@ -377,35 +377,7 @@ Public Class frm_listado_orden_trabajo_ampliada
             ' Form(DESPACHO)
         ElseIf quienllamolistado_ot.Name = frm_Despacho.Name Then
 
-            'PESTAÑA LOGISTICA
-            If frm_Despacho.tbp_logistica.Enabled = True Then
-                'Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
-                '                  Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).Any
-                'If buscarorden = True Then
-                '    Dim buscardespacho = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
-                '                  Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).ToList()(0)
-                '    Select Case MsgBox("Atención, la orden seleccionada ya está asociada a un despacho:" & Chr(13) &
-                '           "Despacho N°: " & buscardespacho.DES_nro_despacho & Chr(13) &
-                '           "Remito N°: " & buscardespacho.DES_nro_remito & Chr(13) &
-                '           "CONTINUAR?",
-                '           MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Advertencia")
-                '        Case MsgBoxResult.No
-                '            Exit Sub
-                '    End Select
-                'End If
-
-                'frm_Despacho.dgv_lista_ordenes.Rows.Add()
-                'frm_Despacho.dgv_lista_ordenes.Item("Id_Odt", frm_Despacho.Nro_linea_grid).Value = dgvLista_Orden_Trabajo.SelectedCells(0).Value
-                'frm_Despacho.dgv_lista_ordenes.Item("Orden", frm_Despacho.Nro_linea_grid).Value = dgvLista_Orden_Trabajo.SelectedCells(2).Value
-                'frm_Despacho.dgv_lista_ordenes.Item("Fecha", frm_Despacho.Nro_linea_grid).Value = DateTime.Now.ToShortDateString
-                'frm_Despacho.dgv_lista_ordenes.Item("Hora", frm_Despacho.Nro_linea_grid).Value = "00:01"
-
-                'frm_Despacho.Nro_linea_grid = frm_Despacho.Nro_linea_grid + 1
-
-                'PESTAÑA EMPAQUE
-            ElseIf frm_Despacho.tbp_empaque.Enabled = True Then
-
-                Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
+            Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
               Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).Any
                 If buscarorden = True Then
                     Dim buscardespacho = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
@@ -426,7 +398,7 @@ Public Class frm_listado_orden_trabajo_ampliada
                     nueva_fila("ORT_observaciones_ot") = dgvLista_Orden_Trabajo.SelectedCells(8).Value
                     .Rows.Add(nueva_fila)
                 End With
-            End If
+
             '**FIN FORM DESPACHO
 
         ElseIf quienllamolistado_ot.Name = frm_Tarea.Name Then
