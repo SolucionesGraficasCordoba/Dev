@@ -153,16 +153,6 @@
         End If
     End Sub
 
-    Private Sub btn_buscar_numero_orden_Click(sender As System.Object, e As System.EventArgs)
-        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
-        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
-        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
-        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
-        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
-        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
-        frm_listado_orden_trabajo_ampliada.Show()
-    End Sub
-
     Private Sub btn_buscar_colaborador_Click(sender As System.Object, e As System.EventArgs)
         frm_Colaborador.quienllamo_col = Me
         frm_Colaborador.Text = "Seleccionar Colaborador"
@@ -323,5 +313,15 @@
         Else
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub btn_buscar_numero_orden_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_buscar_numero_orden.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
     End Sub
 End Class
