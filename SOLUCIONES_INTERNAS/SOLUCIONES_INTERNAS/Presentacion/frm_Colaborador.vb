@@ -244,6 +244,7 @@ Public Class frm_Colaborador
                           Where COL_nombre_col Like buscar.ToString
         dgvLista_Colaboradores.DataSource = consultaalu
         dgvLista_Colaboradores.ClearSelection()
+
     End Sub
 
     Private Sub txt_nombre_colaborador_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txt_nombre_colaborador.KeyDown
@@ -355,3 +356,5 @@ Public Class frm_Colaborador
     End Sub
 End Class
 
+'frm_Usuario.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
+'          frm_Usuario.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
