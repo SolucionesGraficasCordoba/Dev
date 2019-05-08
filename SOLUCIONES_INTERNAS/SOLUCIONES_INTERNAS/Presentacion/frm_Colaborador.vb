@@ -240,7 +240,9 @@ Public Class frm_Colaborador
         Dim consultaalu = From U In datacontext.COLABORADOR
                           Join S In datacontext.SECTOR
                           On S.SEC_id_sector Equals U.SEC_id_sector
-                          Select U.COL_id_colaborador, U.COL_nombre_col, U.COL_apellido_col, U.SEC_id_sector, S.SEC_nombre_sector
+                          Join C In datacontext.USUARIO
+                          On C.COL_id_colaborador Equals U.COL_id_colaborador
+                          Select U.COL_id_colaborador, U.COL_nombre_col, U.COL_apellido_col, U.SEC_id_sector, S.SEC_nombre_sector, C.USU_usuario, C.USU_id_usuario
                           Where COL_nombre_col Like buscar.ToString
         dgvLista_Colaboradores.DataSource = consultaalu
         dgvLista_Colaboradores.ClearSelection()
@@ -290,7 +292,6 @@ Public Class frm_Colaborador
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.PrintDocument1.Print()
-
     End Sub
 
     Dim i As Integer = 0
@@ -355,6 +356,3 @@ Public Class frm_Colaborador
         End Try
     End Sub
 End Class
-
-'frm_Usuario.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
-'          frm_Usuario.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
