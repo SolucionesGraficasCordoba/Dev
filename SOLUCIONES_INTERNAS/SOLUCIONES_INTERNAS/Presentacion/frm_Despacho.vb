@@ -55,15 +55,6 @@
     End Sub
 
     Private Sub btnBuscar_orden_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_orden.Click
-        ''BUSCA ORDENES DESDE EL LISTADO DE ODT CARGADAS
-        'frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
-        'frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
-        'frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
-        'frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
-        'frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
-        'frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
-
-        'frm_listado_orden_trabajo_ampliada.Show()
 
         'BUSCA ORDENES DESDE EL LISTADO DE ODT PLANIFICADAS EN EMPAQUE
         frm_Listado_Empaque.dgv_planificacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect
@@ -75,57 +66,57 @@
     End Sub
 
     Private Sub Btn_guardar_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btn_guardar.Click
-        'Try
-        If txt_numero_remito.TextLength <> 0 And txt_numero_remito.Enabled = True Then
-            Dim buscaremito = (From d In datacontext.DESPACHO Select d.DES_nro_remito
-                               Where DES_nro_remito = txt_numero_remito.Text).Any
-            If buscaremito = True Then
-                MsgBox("El remito ingresado ya existe.")
-                Exit Sub
+        Try
+            If txt_numero_remito.TextLength <> 0 And txt_numero_remito.Enabled = True Then
+                Dim buscaremito = (From d In datacontext.DESPACHO Select d.DES_nro_remito
+                                   Where DES_nro_remito = txt_numero_remito.Text).Any
+                If buscaremito = True Then
+                    MsgBox("El remito ingresado ya existe.")
+                    Exit Sub
+                End If
             End If
-        End If
 
-        For i = 0 To dgv_lista_ordenes.RowCount - 2
-            If dgv_lista_ordenes.Item("Fecha", i).Value = "" Or dgv_lista_ordenes.Item("Hora", i).Value = "" Then
-                MsgBox("Completar todas las fechas y horas de entrega de la grilla")
-                Exit Sub
+            For i = 0 To dgv_lista_ordenes.RowCount - 2
+                If dgv_lista_ordenes.Item("Fecha", i).Value = "" Or dgv_lista_ordenes.Item("Hora", i).Value = "" Then
+                    MsgBox("Completar todas las fechas y horas de entrega de la grilla")
+                    Exit Sub
+                End If
+            Next
+
+            Dim temp_fecha_salida, temp_fecha_entrega As String
+
+            temp_fecha_salida = dtp_Fecha_salida.Text & " " & dtp_Hora_salida.Text
+            For i = 0 To dgv_lista_ordenes.RowCount - 2
+
+                temp_fecha_entrega = dgv_lista_ordenes.Item("Fecha", i).Value & " " & dgv_lista_ordenes.Item("Hora", i).Value
+
+                Dim fila As Integer = i
+                Dim des = (From P In datacontext.DESPACHO
+                                        Where P.DES_id = CInt(dgv_lista_ordenes.Item("DES_Id", fila).Value)).ToList()(0)
+
+                des.DES_nro_despacho = txt_numero_despacho.Text
+                des.DES_nro_remito = txt_numero_remito.Text
+                des.DES_chofer = cmb_chofer.Text
+                des.DES_fecha_salida = CDate(temp_fecha_salida)
+
+                des.DES_fecha_entrega = CDate(temp_fecha_entrega)
+                des.DES_observaciones = dgv_lista_ordenes.Item("Observaciones", i).Value
+
+                datacontext.SubmitChanges()
+            Next
+
+
+            MsgBox("El remito fue guardado")
+            limpiarcampos()
+            If txt_numero_remito.Enabled = True Then
+                buscar_ultimo_despacho()
+            Else
+                Close()
+                frm_Listado_Despacho.cargargrilla_odtxrem()
             End If
-        Next
-
-        Dim temp_fecha_salida, temp_fecha_entrega As String
-
-        temp_fecha_salida = dtp_Fecha_salida.Text & " " & dtp_Hora_salida.Text
-        For i = 0 To dgv_lista_ordenes.RowCount - 2
-
-            temp_fecha_entrega = dgv_lista_ordenes.Item("Fecha", i).Value & " " & dgv_lista_ordenes.Item("Hora", i).Value
-
-            Dim fila As Integer = i
-            Dim des = (From P In datacontext.DESPACHO
-                                    Where P.DES_id = CInt(dgv_lista_ordenes.Item("DES_Id", fila).Value)).ToList()(0)
-
-            des.DES_nro_despacho = txt_numero_despacho.Text
-            des.DES_nro_remito = txt_numero_remito.Text
-            des.DES_chofer = cmb_chofer.Text
-            des.DES_fecha_salida = CDate(temp_fecha_salida)
-
-            des.DES_fecha_entrega = CDate(temp_fecha_entrega)
-            des.DES_observaciones = dgv_lista_ordenes.Item("Observaciones", i).Value
-
-            datacontext.SubmitChanges()
-        Next
-
-
-        MsgBox("El remito fue guardado")
-        limpiarcampos()
-        If txt_numero_remito.Enabled = True Then
-            buscar_ultimo_despacho()
-        Else
-            Close()
-            frm_Listado_Despacho.cargargrilla_odtxrem()
-        End If
-        'Catch ex As Exception
-        '    MsgBox("Error al guardar el remito")
-        'End Try
+        Catch ex As Exception
+            MsgBox("Error al guardar el remito")
+        End Try
     End Sub
 
 
@@ -172,7 +163,6 @@
             Next
             datacontext.SubmitChanges()
             MsgBox("La planificación fue guardada")
-            ' dgv_emp_lista_ordenes.Rows.Clear()
             Close()
         Catch ex As Exception
             MsgBox("Error al guardar el remito")

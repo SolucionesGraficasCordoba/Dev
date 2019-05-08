@@ -7,7 +7,7 @@ Public Class frm_Listado_Empaque
     Dim datacontextvistas As New DataS_Interno_Vistas
 
     Dim fuente As iTextSharp.text.pdf.BaseFont = FontFactory.GetFont(FontFactory.HELVETICA).BaseFont
-    Public quien_llamo_listado_empaque As Form
+    Public quien_llamo_listado_empaque As Form = Me
 
     Public Sub frm_Listado_Despacho_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -144,9 +144,6 @@ Public Class frm_Listado_Empaque
                          p.CLI_razon_social, p.ORT_observaciones_ot))
             dgv_planificacion.DataSource = cargar_planificacion
         End If
-
-        ' habilitar_edicion()
-        'End If
     End Sub
 
     Private Sub dtp_fecha_salida_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtp_fecha_estado.ValueChanged
@@ -158,22 +155,7 @@ Public Class frm_Listado_Empaque
                                     p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
                                     p.CLI_razon_social, p.ORT_observaciones_ot))
             dgv_planificacion.DataSource = cargar_planificacion
-            ' habilitar_edicion()
         End If
-    End Sub
-    Sub habilitar_edicion()
-        'dgv_remitos.ClearSelection()
-        'dgv_remitos.Columns("DES_nro_despacho").ReadOnly = True
-
-        'If btn_modificar.Visible = True Then
-        '    dgv_remitos.Columns("DES_nro_remito").ReadOnly = False
-        '    dgv_remitos.Columns("DES_fecha_salida").ReadOnly = False
-        '    dgv_remitos.Columns("DES_chofer").ReadOnly = False
-        'Else
-        '    dgv_remitos.Columns("DES_nro_remito").ReadOnly = True
-        '    dgv_remitos.Columns("DES_fecha_salida").ReadOnly = True
-        '    dgv_remitos.Columns("DES_chofer").ReadOnly = True
-        'End If
     End Sub
 
     Private Sub rbt_remito_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbt_orden.CheckedChanged
@@ -298,29 +280,31 @@ Public Class frm_Listado_Empaque
     End Sub
 
     Private Sub dgv_planificacion_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_planificacion.CellDoubleClick
-        'Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
-        '                        Where ORT_id_orden_trabajo = CInt(dgv_planificacion.SelectedCells(0).Value)).Any
-        'If buscarorden = True Then
-        'Dim buscardespacho = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
-        '              Where ORT_id_orden_trabajo = CInt(dgv_planificacion.SelectedCells(0).Value)).ToList()(0)
-        'Select Case MsgBox("Atención, la orden seleccionada ya está asociada a un despacho:" & Chr(13) &
-        '       "Despacho N°: " & buscardespacho.DES_nro_despacho & Chr(13) &
-        '       "Remito N°: " & buscardespacho.DES_nro_remito & Chr(13) &
-        '       "CONTINUAR?",
-        '       MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Advertencia")
-        '    Case MsgBoxResult.No
-        '        Exit Sub
-        'End Select
-        'End If
+        If quien_llamo_listado_empaque.Name = frm_Despacho.Name Then
+            Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
+                                    Where ORT_id_orden_trabajo = CInt(dgv_planificacion.SelectedCells(1).Value)).Any
+            If buscarorden = True Then
+                Dim buscardespacho = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
+                              Where ORT_id_orden_trabajo = CInt(dgv_planificacion.SelectedCells(1).Value)).ToList()(0)
+                Select Case MsgBox("Atención, la orden seleccionada ya está asociada a un despacho:" & Chr(13) &
+                       "Despacho N°: " & buscardespacho.DES_nro_despacho & Chr(13) &
+                       "Remito N°: " & buscardespacho.DES_nro_remito & Chr(13) &
+                       "CONTINUAR?",
+                       MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Advertencia")
+                    Case MsgBoxResult.No
+                        Exit Sub
+                End Select
+            End If
 
-        frm_Despacho.dgv_lista_ordenes.Rows.Add()
-        frm_Despacho.dgv_lista_ordenes.Item("DES_Id", frm_Despacho.Nro_linea_grid).Value = dgv_planificacion.SelectedCells(0).Value
-        frm_Despacho.dgv_lista_ordenes.Item("Id_Odt", frm_Despacho.Nro_linea_grid).Value = dgv_planificacion.SelectedCells(1).Value
-        frm_Despacho.dgv_lista_ordenes.Item("Orden", frm_Despacho.Nro_linea_grid).Value = dgv_planificacion.SelectedCells(2).Value
-        frm_Despacho.dgv_lista_ordenes.Item("Fecha", frm_Despacho.Nro_linea_grid).Value = DateTime.Now.ToShortDateString
-        frm_Despacho.dgv_lista_ordenes.Item("Hora", frm_Despacho.Nro_linea_grid).Value = "00:01"
+            frm_Despacho.dgv_lista_ordenes.Rows.Add()
+            frm_Despacho.dgv_lista_ordenes.Item("DES_Id", frm_Despacho.Nro_linea_grid).Value = dgv_planificacion.SelectedCells(0).Value
+            frm_Despacho.dgv_lista_ordenes.Item("Id_Odt", frm_Despacho.Nro_linea_grid).Value = dgv_planificacion.SelectedCells(1).Value
+            frm_Despacho.dgv_lista_ordenes.Item("Orden", frm_Despacho.Nro_linea_grid).Value = dgv_planificacion.SelectedCells(2).Value
+            frm_Despacho.dgv_lista_ordenes.Item("Fecha", frm_Despacho.Nro_linea_grid).Value = DateTime.Now.ToShortDateString
+            frm_Despacho.dgv_lista_ordenes.Item("Hora", frm_Despacho.Nro_linea_grid).Value = "00:01"
 
-        frm_Despacho.Nro_linea_grid = frm_Despacho.Nro_linea_grid + 1
+            frm_Despacho.Nro_linea_grid = frm_Despacho.Nro_linea_grid + 1
+        End If
     End Sub
 End Class
 
@@ -427,55 +411,3 @@ Public Class clase_emb_planif
         End Set
     End Property
 End Class
-
-'Public Class clase_remitos
-
-'    Public _DES_nro_remito
-'    Public _DES_fecha_salida
-'    Public _DES_chofer
-'    Public _DES_nro_despacho
-
-'    Sub New(ByVal nro_remito As String, ByVal fecha_salida As Date, ByVal chofer As String, ByVal nro_despacho As String)
-'        _DES_nro_remito = nro_remito
-'        _DES_fecha_salida = fecha_salida
-'        _DES_chofer = chofer
-'        _DES_nro_despacho = nro_despacho
-'    End Sub
-
-
-'    Property DES_nro_remito() As String
-'        Get
-'            Return _DES_nro_remito
-'        End Get
-'        Set(ByVal value As String)
-'            Me._DES_nro_remito = value
-'        End Set
-'    End Property
-
-'    Property DES_fecha_salida() As String
-'        Get
-'            Return _DES_fecha_salida
-'        End Get
-'        Set(ByVal value As String)
-'            Me._DES_fecha_salida = value
-'        End Set
-'    End Property
-
-'    Property DES_chofer() As String
-'        Get
-'            Return _DES_chofer
-'        End Get
-'        Set(ByVal value As String)
-'            Me._DES_chofer = value
-'        End Set
-'    End Property
-
-'    Property DES_nro_despacho() As String
-'        Get
-'            Return _DES_nro_despacho
-'        End Get
-'        Set(ByVal value As String)
-'            Me._DES_nro_despacho = value
-'        End Set
-'    End Property
-'End Class
