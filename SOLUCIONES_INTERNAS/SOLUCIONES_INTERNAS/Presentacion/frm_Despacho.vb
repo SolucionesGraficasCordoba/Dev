@@ -220,6 +220,10 @@
     Private Sub btn_emp_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_emp_cancelar.Click
         Close()
     End Sub
+
+    Private Sub dtp_fecha_estado_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtp_fecha_estado.ValueChanged
+
+    End Sub
 End Class
 Public Class clase_empaque
     Public _ORT_id_orden_trabajo
