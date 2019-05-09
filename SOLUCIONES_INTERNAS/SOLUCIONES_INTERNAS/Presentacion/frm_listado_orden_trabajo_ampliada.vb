@@ -377,6 +377,13 @@ Public Class frm_listado_orden_trabajo_ampliada
             ' Form(DESPACHO)
         ElseIf quienllamolistado_ot.Name = frm_Despacho.Name Then
 
+            For i = 0 To frm_Despacho.dgv_emp_lista_ordenes.RowCount - 2
+                If dgvLista_Orden_Trabajo.SelectedCells(0).Value = frm_Despacho.dgv_emp_lista_ordenes.Item("ORT_id_orden_trabajo", i).Value Then
+                    MsgBox("La orden seleccionada ya está agregada")
+                    Exit Sub
+                End If
+            Next
+
             Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
               Where ORT_id_orden_trabajo = CInt(dgvLista_Orden_Trabajo.SelectedCells(0).Value)).Any
                 If buscarorden = True Then

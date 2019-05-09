@@ -76,43 +76,47 @@
                 End If
             End If
 
-            For i = 0 To dgv_lista_ordenes.RowCount - 2
-                If dgv_lista_ordenes.Item("Fecha", i).Value = "" Or dgv_lista_ordenes.Item("Hora", i).Value = "" Then
-                    MsgBox("Completar todas las fechas y horas de entrega de la grilla")
-                    Exit Sub
+            If dgv_lista_ordenes.RowCount > 1 Then
+                For i = 0 To dgv_lista_ordenes.RowCount - 2
+                    If dgv_lista_ordenes.Item("Fecha", i).Value = "" Or dgv_lista_ordenes.Item("Hora", i).Value = "" Then
+                        MsgBox("Completar todas las fechas y horas de entrega de la grilla")
+                        Exit Sub
+                    End If
+                Next
+
+                Dim temp_fecha_salida, temp_fecha_entrega As String
+
+                temp_fecha_salida = dtp_Fecha_salida.Text & " " & dtp_Hora_salida.Text
+                For i = 0 To dgv_lista_ordenes.RowCount - 2
+
+                    temp_fecha_entrega = dgv_lista_ordenes.Item("Fecha", i).Value & " " & dgv_lista_ordenes.Item("Hora", i).Value
+
+                    Dim fila As Integer = i
+                    Dim des = (From P In datacontext.DESPACHO
+                                            Where P.DES_id = CInt(dgv_lista_ordenes.Item("DES_Id", fila).Value)).ToList()(0)
+
+                    des.DES_nro_despacho = txt_numero_despacho.Text
+                    des.DES_nro_remito = txt_numero_remito.Text
+                    des.DES_chofer = cmb_chofer.Text
+                    des.DES_fecha_salida = CDate(temp_fecha_salida)
+
+                    des.DES_fecha_entrega = CDate(temp_fecha_entrega)
+                    des.DES_observaciones = dgv_lista_ordenes.Item("Observaciones", i).Value
+
+                    datacontext.SubmitChanges()
+                Next
+
+
+                MsgBox("El remito fue guardado")
+                limpiarcampos()
+                If txt_numero_remito.Enabled = True Then
+                    buscar_ultimo_despacho()
+                Else
+                    Close()
+                    frm_Listado_Despacho.cargargrilla_odtxrem()
                 End If
-            Next
-
-            Dim temp_fecha_salida, temp_fecha_entrega As String
-
-            temp_fecha_salida = dtp_Fecha_salida.Text & " " & dtp_Hora_salida.Text
-            For i = 0 To dgv_lista_ordenes.RowCount - 2
-
-                temp_fecha_entrega = dgv_lista_ordenes.Item("Fecha", i).Value & " " & dgv_lista_ordenes.Item("Hora", i).Value
-
-                Dim fila As Integer = i
-                Dim des = (From P In datacontext.DESPACHO
-                                        Where P.DES_id = CInt(dgv_lista_ordenes.Item("DES_Id", fila).Value)).ToList()(0)
-
-                des.DES_nro_despacho = txt_numero_despacho.Text
-                des.DES_nro_remito = txt_numero_remito.Text
-                des.DES_chofer = cmb_chofer.Text
-                des.DES_fecha_salida = CDate(temp_fecha_salida)
-
-                des.DES_fecha_entrega = CDate(temp_fecha_entrega)
-                des.DES_observaciones = dgv_lista_ordenes.Item("Observaciones", i).Value
-
-                datacontext.SubmitChanges()
-            Next
-
-
-            MsgBox("El remito fue guardado")
-            limpiarcampos()
-            If txt_numero_remito.Enabled = True Then
-                buscar_ultimo_despacho()
             Else
-                Close()
-                frm_Listado_Despacho.cargargrilla_odtxrem()
+                MsgBox("Debe agregar al menos una orden")
             End If
         Catch ex As Exception
             MsgBox("Error al guardar el remito")
@@ -221,9 +225,6 @@
         Close()
     End Sub
 
-    Private Sub dtp_fecha_estado_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtp_fecha_estado.ValueChanged
-
-    End Sub
 End Class
 Public Class clase_empaque
     Public _ORT_id_orden_trabajo

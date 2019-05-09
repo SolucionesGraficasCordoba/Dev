@@ -281,6 +281,14 @@ Public Class frm_Listado_Empaque
 
     Private Sub dgv_planificacion_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_planificacion.CellDoubleClick
         If quien_llamo_listado_empaque.Name = frm_Despacho.Name Then
+
+            For i = 0 To frm_Despacho.dgv_lista_ordenes.RowCount - 2
+                If dgv_planificacion.SelectedCells(1).Value = frm_Despacho.dgv_lista_ordenes.Item("Id_Odt", i).Value Then
+                    MsgBox("La orden seleccionada ya está agregada")
+                    Exit Sub
+                End If
+            Next
+
             Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
                                     Where ORT_id_orden_trabajo = CInt(dgv_planificacion.SelectedCells(1).Value)).Any
             If buscarorden = True Then
@@ -306,6 +314,7 @@ Public Class frm_Listado_Empaque
             frm_Despacho.Nro_linea_grid = frm_Despacho.Nro_linea_grid + 1
         End If
     End Sub
+
 End Class
 
 'CLASE PARA PODER MODIFICAR DATOS DESDE LA GRILLA CARGADA CON LINQ
