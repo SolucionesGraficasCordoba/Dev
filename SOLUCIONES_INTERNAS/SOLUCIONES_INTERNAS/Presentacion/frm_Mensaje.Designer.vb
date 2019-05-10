@@ -22,6 +22,14 @@ Partial Class frm_Mensaje
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GroupRespuesta = New System.Windows.Forms.GroupBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.txt_respuesta = New System.Windows.Forms.TextBox()
+        Me.btn_respuesta = New System.Windows.Forms.Button()
         Me.GroupComentario = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -38,15 +46,108 @@ Partial Class frm_Mensaje
         Me.txt_comentario = New System.Windows.Forms.TextBox()
         Me.txt_nombre_usuario = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.GroupRespuesta = New System.Windows.Forms.GroupBox()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.txt_respuesta = New System.Windows.Forms.TextBox()
-        Me.btn_respuesta = New System.Windows.Forms.Button()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.GroupComentario.SuspendLayout()
+        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.btn_Exportar_PDF = New System.Windows.Forms.Button()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
+        Me.btn_eliminar = New System.Windows.Forms.Button()
+        Me.cbo_busqueda_estado = New System.Windows.Forms.ComboBox()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.rbtColaborador = New System.Windows.Forms.RadioButton()
+        Me.rbtFecha = New System.Windows.Forms.RadioButton()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         Me.GroupRespuesta.SuspendLayout()
+        Me.GroupComentario.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
+        '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Controls.Add(Me.TabPage2)
+        Me.TabControl1.Location = New System.Drawing.Point(-1, 2)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(526, 540)
+        Me.TabControl1.TabIndex = 0
+        '
+        'TabPage1
+        '
+        Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage1.Controls.Add(Me.GroupRespuesta)
+        Me.TabPage1.Controls.Add(Me.GroupComentario)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(518, 514)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "Mensaje"
+        '
+        'GroupRespuesta
+        '
+        Me.GroupRespuesta.Controls.Add(Me.Label8)
+        Me.GroupRespuesta.Controls.Add(Me.Label15)
+        Me.GroupRespuesta.Controls.Add(Me.Label4)
+        Me.GroupRespuesta.Controls.Add(Me.txt_respuesta)
+        Me.GroupRespuesta.Controls.Add(Me.btn_respuesta)
+        Me.GroupRespuesta.Location = New System.Drawing.Point(9, 310)
+        Me.GroupRespuesta.Name = "GroupRespuesta"
+        Me.GroupRespuesta.Size = New System.Drawing.Size(501, 198)
+        Me.GroupRespuesta.TabIndex = 30
+        Me.GroupRespuesta.TabStop = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.ForeColor = System.Drawing.Color.Red
+        Me.Label8.Location = New System.Drawing.Point(91, 153)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(134, 13)
+        Me.Label8.TabIndex = 45
+        Me.Label8.Text = "Fundamente su Respuesta"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.Red
+        Me.Label15.Location = New System.Drawing.Point(82, 25)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(11, 13)
+        Me.Label15.TabIndex = 44
+        Me.Label15.Text = "*"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(24, 22)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(58, 13)
+        Me.Label4.TabIndex = 43
+        Me.Label4.Text = "Respuesta"
+        '
+        'txt_respuesta
+        '
+        Me.txt_respuesta.Location = New System.Drawing.Point(94, 19)
+        Me.txt_respuesta.MaxLength = 350
+        Me.txt_respuesta.Multiline = True
+        Me.txt_respuesta.Name = "txt_respuesta"
+        Me.txt_respuesta.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.txt_respuesta.Size = New System.Drawing.Size(392, 131)
+        Me.txt_respuesta.TabIndex = 42
+        '
+        'btn_respuesta
+        '
+        Me.btn_respuesta.Location = New System.Drawing.Point(411, 156)
+        Me.btn_respuesta.Name = "btn_respuesta"
+        Me.btn_respuesta.Size = New System.Drawing.Size(75, 33)
+        Me.btn_respuesta.TabIndex = 41
+        Me.btn_respuesta.Text = "Respuesta"
+        Me.btn_respuesta.UseVisualStyleBackColor = True
         '
         'GroupComentario
         '
@@ -65,10 +166,10 @@ Partial Class frm_Mensaje
         Me.GroupComentario.Controls.Add(Me.txt_comentario)
         Me.GroupComentario.Controls.Add(Me.txt_nombre_usuario)
         Me.GroupComentario.Controls.Add(Me.Label2)
-        Me.GroupComentario.Location = New System.Drawing.Point(12, 12)
+        Me.GroupComentario.Location = New System.Drawing.Point(9, 6)
         Me.GroupComentario.Name = "GroupComentario"
-        Me.GroupComentario.Size = New System.Drawing.Size(501, 312)
-        Me.GroupComentario.TabIndex = 27
+        Me.GroupComentario.Size = New System.Drawing.Size(501, 298)
+        Me.GroupComentario.TabIndex = 29
         Me.GroupComentario.TabStop = False
         Me.GroupComentario.Text = "Comentario"
         '
@@ -115,7 +216,7 @@ Partial Class frm_Mensaje
         '
         'btn_Envio
         '
-        Me.btn_Envio.Location = New System.Drawing.Point(411, 269)
+        Me.btn_Envio.Location = New System.Drawing.Point(411, 257)
         Me.btn_Envio.Name = "btn_Envio"
         Me.btn_Envio.Size = New System.Drawing.Size(75, 33)
         Me.btn_Envio.TabIndex = 41
@@ -189,7 +290,7 @@ Partial Class frm_Mensaje
         Me.txt_comentario.Multiline = True
         Me.txt_comentario.Name = "txt_comentario"
         Me.txt_comentario.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txt_comentario.Size = New System.Drawing.Size(392, 131)
+        Me.txt_comentario.Size = New System.Drawing.Size(392, 119)
         Me.txt_comentario.TabIndex = 5
         '
         'txt_nombre_usuario
@@ -211,105 +312,160 @@ Partial Class frm_Mensaje
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Usuario"
         '
-        'GroupRespuesta
+        'TabPage2
         '
-        Me.GroupRespuesta.Controls.Add(Me.Label8)
-        Me.GroupRespuesta.Controls.Add(Me.Label15)
-        Me.GroupRespuesta.Controls.Add(Me.Label4)
-        Me.GroupRespuesta.Controls.Add(Me.txt_respuesta)
-        Me.GroupRespuesta.Controls.Add(Me.btn_respuesta)
-        Me.GroupRespuesta.Location = New System.Drawing.Point(12, 330)
-        Me.GroupRespuesta.Name = "GroupRespuesta"
-        Me.GroupRespuesta.Size = New System.Drawing.Size(501, 198)
-        Me.GroupRespuesta.TabIndex = 28
-        Me.GroupRespuesta.TabStop = False
+        Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
+        Me.TabPage2.Controls.Add(Me.GroupBox1)
+        Me.TabPage2.Controls.Add(Me.DataGridView1)
+        Me.TabPage2.Controls.Add(Me.btn_Exportar_PDF)
+        Me.TabPage2.Controls.Add(Me.btn_cancelar)
+        Me.TabPage2.Controls.Add(Me.btn_eliminar)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
+        Me.TabPage2.Name = "TabPage2"
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage2.Size = New System.Drawing.Size(518, 514)
+        Me.TabPage2.TabIndex = 1
+        Me.TabPage2.Text = "Informes"
         '
-        'Label15
+        'DataGridView1
         '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.ForeColor = System.Drawing.Color.Red
-        Me.Label15.Location = New System.Drawing.Point(82, 25)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(11, 13)
-        Me.Label15.TabIndex = 44
-        Me.Label15.Text = "*"
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(10, 68)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.Size = New System.Drawing.Size(499, 395)
+        Me.DataGridView1.TabIndex = 36
         '
-        'Label4
+        'btn_Exportar_PDF
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(24, 22)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(58, 13)
-        Me.Label4.TabIndex = 43
-        Me.Label4.Text = "Respuesta"
+        Me.btn_Exportar_PDF.Location = New System.Drawing.Point(257, 469)
+        Me.btn_Exportar_PDF.Name = "btn_Exportar_PDF"
+        Me.btn_Exportar_PDF.Size = New System.Drawing.Size(92, 33)
+        Me.btn_Exportar_PDF.TabIndex = 35
+        Me.btn_Exportar_PDF.Text = "Exportar a PDF"
+        Me.btn_Exportar_PDF.UseVisualStyleBackColor = True
         '
-        'txt_respuesta
+        'btn_cancelar
         '
-        Me.txt_respuesta.Location = New System.Drawing.Point(94, 19)
-        Me.txt_respuesta.MaxLength = 350
-        Me.txt_respuesta.Multiline = True
-        Me.txt_respuesta.Name = "txt_respuesta"
-        Me.txt_respuesta.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txt_respuesta.Size = New System.Drawing.Size(392, 131)
-        Me.txt_respuesta.TabIndex = 42
+        Me.btn_cancelar.Location = New System.Drawing.Point(436, 469)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(75, 33)
+        Me.btn_cancelar.TabIndex = 34
+        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.UseVisualStyleBackColor = True
         '
-        'btn_respuesta
+        'btn_eliminar
         '
-        Me.btn_respuesta.Location = New System.Drawing.Point(411, 156)
-        Me.btn_respuesta.Name = "btn_respuesta"
-        Me.btn_respuesta.Size = New System.Drawing.Size(75, 33)
-        Me.btn_respuesta.TabIndex = 41
-        Me.btn_respuesta.Text = "Respuesta"
-        Me.btn_respuesta.UseVisualStyleBackColor = True
+        Me.btn_eliminar.Location = New System.Drawing.Point(355, 469)
+        Me.btn_eliminar.Name = "btn_eliminar"
+        Me.btn_eliminar.Size = New System.Drawing.Size(75, 33)
+        Me.btn_eliminar.TabIndex = 33
+        Me.btn_eliminar.Text = "Eliminar"
+        Me.btn_eliminar.UseVisualStyleBackColor = True
         '
-        'Label8
+        'cbo_busqueda_estado
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(91, 153)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(134, 13)
-        Me.Label8.TabIndex = 45
-        Me.Label8.Text = "Fundamente su Respuesta"
+        Me.cbo_busqueda_estado.FormattingEnabled = True
+        Me.cbo_busqueda_estado.Location = New System.Drawing.Point(109, 22)
+        Me.cbo_busqueda_estado.Name = "cbo_busqueda_estado"
+        Me.cbo_busqueda_estado.Size = New System.Drawing.Size(116, 21)
+        Me.cbo_busqueda_estado.TabIndex = 32
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker1.Location = New System.Drawing.Point(366, 23)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.Size = New System.Drawing.Size(95, 20)
+        Me.DateTimePicker1.TabIndex = 38
+        '
+        'rbtColaborador
+        '
+        Me.rbtColaborador.AutoSize = True
+        Me.rbtColaborador.Location = New System.Drawing.Point(21, 23)
+        Me.rbtColaborador.Name = "rbtColaborador"
+        Me.rbtColaborador.Size = New System.Drawing.Size(82, 17)
+        Me.rbtColaborador.TabIndex = 39
+        Me.rbtColaborador.TabStop = True
+        Me.rbtColaborador.Text = "Colaborador"
+        Me.rbtColaborador.UseVisualStyleBackColor = True
+        '
+        'rbtFecha
+        '
+        Me.rbtFecha.AutoSize = True
+        Me.rbtFecha.Location = New System.Drawing.Point(305, 23)
+        Me.rbtFecha.Name = "rbtFecha"
+        Me.rbtFecha.Size = New System.Drawing.Size(55, 17)
+        Me.rbtFecha.TabIndex = 39
+        Me.rbtFecha.TabStop = True
+        Me.rbtFecha.Text = "Fecha"
+        Me.rbtFecha.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.rbtFecha)
+        Me.GroupBox1.Controls.Add(Me.rbtColaborador)
+        Me.GroupBox1.Controls.Add(Me.DateTimePicker1)
+        Me.GroupBox1.Controls.Add(Me.cbo_busqueda_estado)
+        Me.GroupBox1.Location = New System.Drawing.Point(10, 4)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(499, 58)
+        Me.GroupBox1.TabIndex = 40
+        Me.GroupBox1.TabStop = False
         '
         'frm_Mensaje
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(524, 539)
-        Me.Controls.Add(Me.GroupRespuesta)
-        Me.Controls.Add(Me.GroupComentario)
+        Me.ClientSize = New System.Drawing.Size(524, 538)
+        Me.Controls.Add(Me.TabControl1)
         Me.Name = "frm_Mensaje"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mensaje"
-        Me.GroupComentario.ResumeLayout(False)
-        Me.GroupComentario.PerformLayout()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
         Me.GroupRespuesta.ResumeLayout(False)
         Me.GroupRespuesta.PerformLayout()
+        Me.GroupComentario.ResumeLayout(False)
+        Me.GroupComentario.PerformLayout()
+        Me.TabPage2.ResumeLayout(False)
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupComentario As System.Windows.Forms.GroupBox
-    Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents txt_id_mensaje As System.Windows.Forms.TextBox
-    Friend WithEvents dtp_fecha_pedido As System.Windows.Forms.DateTimePicker
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents txt_comentario As System.Windows.Forms.TextBox
-    Friend WithEvents txt_id_usuario As System.Windows.Forms.TextBox
-    Friend WithEvents txt_nombre_usuario As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents txt_Titulo As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents btn_Envio As System.Windows.Forms.Button
+    Friend WithEvents TabControl1 As System.Windows.Forms.TabControl
+    Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents GroupRespuesta As System.Windows.Forms.GroupBox
+    Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents txt_respuesta As System.Windows.Forms.TextBox
     Friend WithEvents btn_respuesta As System.Windows.Forms.Button
+    Friend WithEvents GroupComentario As System.Windows.Forms.GroupBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents txt_Titulo As System.Windows.Forms.TextBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents btn_Envio As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents txt_id_mensaje As System.Windows.Forms.TextBox
+    Friend WithEvents dtp_fecha_pedido As System.Windows.Forms.DateTimePicker
+    Friend WithEvents txt_id_usuario As System.Windows.Forms.TextBox
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents txt_comentario As System.Windows.Forms.TextBox
+    Friend WithEvents txt_nombre_usuario As System.Windows.Forms.TextBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
+    Friend WithEvents cbo_busqueda_estado As System.Windows.Forms.ComboBox
+    Friend WithEvents btn_Exportar_PDF As System.Windows.Forms.Button
+    Friend WithEvents btn_cancelar As System.Windows.Forms.Button
+    Friend WithEvents btn_eliminar As System.Windows.Forms.Button
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents rbtFecha As System.Windows.Forms.RadioButton
+    Friend WithEvents rbtColaborador As System.Windows.Forms.RadioButton
 End Class

@@ -2,7 +2,8 @@
 
     Dim datacontext As New DataS_Interno
 
-    Private Sub btn_Envio_Click(sender As System.Object, e As System.EventArgs) Handles btn_Envio.Click
+
+    Private Sub btn_Envio_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_Envio.Click
         If txt_Titulo.Text.Length = 0 Then
             MsgBox("Debe completar el campo 'Título'")
             Exit Sub
@@ -32,8 +33,7 @@
         End Try
     End Sub
 
-    Private Sub btn_respuesta_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_respuesta.Click
-
+    Private Sub btn_respuesta_Click(sender As System.Object, e As System.EventArgs) Handles btn_respuesta.Click
         If txt_respuesta.Text.Length = 0 Then
             MsgBox("Debe completar el campo 'Respuesta'")
             Exit Sub
@@ -48,9 +48,5 @@
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Enviar Respuesta")
         End Try
-    End Sub
-
-    Private Sub frm_Mensaje_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
     End Sub
 End Class
