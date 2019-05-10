@@ -8,7 +8,6 @@ Public Class frm_Colaborador
     Dim datacontext As New DataS_Interno
     Public quienllamo_col As Form
 
-
     Private Sub frm_Colaborador_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         txt_id_colaborador.Visible = False
@@ -276,6 +275,10 @@ Public Class frm_Colaborador
             ElseIf quienllamo_col.Name = frm_Tarea.Name Then
                 frm_Tarea.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
                 frm_Tarea.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
+
+            ElseIf quienllamo_col.Name = frm_Tarea_1.Name Then
+                frm_Tarea_1.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
+                frm_Tarea_1.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
 
             ElseIf quienllamo_col.Name = frm_Usuario.Name Then
                 frm_Usuario.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
