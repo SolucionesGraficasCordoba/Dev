@@ -26,7 +26,6 @@ Partial Class frm_Ticket
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.chk_Nuevo = New System.Windows.Forms.CheckBox()
         Me.btn_Cancelar_Receptor = New System.Windows.Forms.Button()
-        Me.txt_id_ticket = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.btn_respuesta = New System.Windows.Forms.Button()
         Me.GroupReceptor = New System.Windows.Forms.GroupBox()
@@ -44,6 +43,7 @@ Partial Class frm_Ticket
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupSolicitante = New System.Windows.Forms.GroupBox()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.txt_id_ticket = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.dtp_fecha_pedido = New System.Windows.Forms.DateTimePicker()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -123,14 +123,6 @@ Partial Class frm_Ticket
         Me.btn_Cancelar_Receptor.TabIndex = 25
         Me.btn_Cancelar_Receptor.Text = "Cancelar"
         Me.btn_Cancelar_Receptor.UseVisualStyleBackColor = True
-        '
-        'txt_id_ticket
-        '
-        Me.txt_id_ticket.Location = New System.Drawing.Point(94, 19)
-        Me.txt_id_ticket.MaxLength = 10
-        Me.txt_id_ticket.Name = "txt_id_ticket"
-        Me.txt_id_ticket.Size = New System.Drawing.Size(73, 20)
-        Me.txt_id_ticket.TabIndex = 24
         '
         'Label7
         '
@@ -312,6 +304,14 @@ Partial Class frm_Ticket
         Me.Label18.TabIndex = 36
         Me.Label18.Text = "N° de Ticket"
         '
+        'txt_id_ticket
+        '
+        Me.txt_id_ticket.Location = New System.Drawing.Point(94, 19)
+        Me.txt_id_ticket.MaxLength = 10
+        Me.txt_id_ticket.Name = "txt_id_ticket"
+        Me.txt_id_ticket.Size = New System.Drawing.Size(73, 20)
+        Me.txt_id_ticket.TabIndex = 24
+        '
         'Label15
         '
         Me.Label15.AutoSize = True
@@ -482,7 +482,7 @@ Partial Class frm_Ticket
         '
         'btn_Exportar_PDF
         '
-        Me.btn_Exportar_PDF.Location = New System.Drawing.Point(254, 540)
+        Me.btn_Exportar_PDF.Location = New System.Drawing.Point(254, 563)
         Me.btn_Exportar_PDF.Name = "btn_Exportar_PDF"
         Me.btn_Exportar_PDF.Size = New System.Drawing.Size(92, 33)
         Me.btn_Exportar_PDF.TabIndex = 31
@@ -509,7 +509,7 @@ Partial Class frm_Ticket
         '
         'btn_cancelar
         '
-        Me.btn_cancelar.Location = New System.Drawing.Point(433, 540)
+        Me.btn_cancelar.Location = New System.Drawing.Point(433, 563)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 33)
         Me.btn_cancelar.TabIndex = 21
@@ -518,7 +518,7 @@ Partial Class frm_Ticket
         '
         'btn_eliminar
         '
-        Me.btn_eliminar.Location = New System.Drawing.Point(352, 540)
+        Me.btn_eliminar.Location = New System.Drawing.Point(352, 563)
         Me.btn_eliminar.Name = "btn_eliminar"
         Me.btn_eliminar.Size = New System.Drawing.Size(75, 33)
         Me.btn_eliminar.TabIndex = 21
@@ -531,7 +531,7 @@ Partial Class frm_Ticket
         Me.dgv_lista_ticket.Location = New System.Drawing.Point(8, 49)
         Me.dgv_lista_ticket.Name = "dgv_lista_ticket"
         Me.dgv_lista_ticket.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_lista_ticket.Size = New System.Drawing.Size(501, 482)
+        Me.dgv_lista_ticket.Size = New System.Drawing.Size(501, 508)
         Me.dgv_lista_ticket.TabIndex = 0
         '
         'frm_Ticket
