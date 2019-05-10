@@ -490,6 +490,89 @@ Public Class frm_listado_orden_trabajo_ampliada
                     frm_Tarea.txt_id_orden_trabajo20.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
                     frm_Tarea.txtNumero_Orden_Trabajo20.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
             End Select
+
+        ElseIf quienllamolistado_ot.Name = frm_Tarea_1.Name Then
+            Select Case quienllamobotonorden.Name
+                Case frm_Tarea_1.btnBuscar_Numero_Orden1.Name
+                    frm_Tarea_1.txt_id_orden_trabajo1.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo1.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden2.Name
+                    frm_Tarea_1.txt_id_orden_trabajo2.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo2.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden3.Name
+                    frm_Tarea_1.txt_id_orden_trabajo3.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo3.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden4.Name
+                    frm_Tarea_1.txt_id_orden_trabajo4.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo4.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden5.Name
+                    frm_Tarea_1.txt_id_orden_trabajo5.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo5.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden6.Name
+                    frm_Tarea_1.txt_id_orden_trabajo6.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo6.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden7.Name
+                    frm_Tarea_1.txt_id_orden_trabajo7.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo7.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden8.Name
+                    frm_Tarea_1.txt_id_orden_trabajo8.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo8.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden9.Name
+                    frm_Tarea_1.txt_id_orden_trabajo9.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo9.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden10.Name
+                    frm_Tarea_1.txt_id_orden_trabajo10.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo10.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden11.Name
+                    frm_Tarea_1.txt_id_orden_trabajo11.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo11.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden12.Name
+                    frm_Tarea_1.txt_id_orden_trabajo12.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo12.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden13.Name
+                    frm_Tarea_1.txt_id_orden_trabajo13.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo13.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden14.Name
+                    frm_Tarea_1.txt_id_orden_trabajo14.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo14.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden15.Name
+                    frm_Tarea_1.txt_id_orden_trabajo15.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo15.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden16.Name
+                    frm_Tarea_1.txt_id_orden_trabajo16.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo16.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden17.Name
+                    frm_Tarea_1.txt_id_orden_trabajo17.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo17.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden18.Name
+                    frm_Tarea_1.txt_id_orden_trabajo18.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo18.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden19.Name
+                    frm_Tarea_1.txt_id_orden_trabajo19.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo19.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+
+                Case frm_Tarea_1.btnBuscar_Numero_Orden20.Name
+                    frm_Tarea_1.txt_id_orden_trabajo20.Text = dgvLista_Orden_Trabajo.SelectedCells(0).Value
+                    frm_Tarea_1.txtNumero_Orden_Trabajo20.Text = dgvLista_Orden_Trabajo.SelectedCells(2).Value
+            End Select
         End If
         'Catch ex As Exception
         'End Try
