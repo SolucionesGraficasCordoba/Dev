@@ -386,6 +386,12 @@
     <Compile Include="Presentacion\frm_Tarea.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Presentacion\frm_Tarea_1.Designer.vb">
+      <DependentUpon>frm_Tarea_1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Tarea_1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_Ticket.Designer.vb">
       <DependentUpon>frm_Ticket.vb</DependentUpon>
     </Compile>
@@ -426,6 +432,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Sugerencia.resx">
       <DependentUpon>frm_Sugerencia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Tarea.resx">
+      <DependentUpon>frm_Tarea.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\frm_Tarea_1.resx">
+      <DependentUpon>frm_Tarea_1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Ticket.resx">
       <DependentUpon>frm_Ticket.vb</DependentUpon>
@@ -541,9 +553,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Sector.resx">
       <DependentUpon>frm_Sector.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\frm_Tarea.resx">
-      <DependentUpon>frm_Tarea.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_Usuario.resx">
       <DependentUpon>frm_Usuario.vb</DependentUpon>
