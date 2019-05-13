@@ -45,6 +45,7 @@
             datacontext.SubmitChanges()
             MsgBox("La Respuesta ha sido enviada correctamente")
             Me.Close()
+            Me.Dispose()
         Catch ex As Exception
             MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Enviar Respuesta")
         End Try

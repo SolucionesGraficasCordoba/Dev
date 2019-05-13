@@ -24,8 +24,8 @@ Public Class frm_Principal
         frm_ingreso.Show()
 
         'CAMBIE EL HIDE POR EL CLOSE..AHORA APARECEN LOS MENSAJES ENVIADOS, (NO ME GUSTA MUCHO COMO QUEDO, PORQUE CERRAR SESION Y SALIR CUMPLEN CASI LA MISMA FUNCION).
-        ' Me.Hide()
-        Me.Close()
+        Me.Hide()
+        'Me.Close()
     End Sub
 
     Private Sub AltaUsuariosToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaUsuariosToolStripMenuItem.Click
@@ -1801,6 +1801,12 @@ Public Class frm_Principal
             End If
         Next
 
+
+    End Sub
+
+    Public Sub mostrar_mensaje()
+        'Se ejecuta al final de todo del boton ingresar del frm_ingreso
+
         'CARGA EN EL FORMULARIO MENSAJE LOS CAMPOS
         Try
             Dim UltimoMensaje = (From m In datacontext.MENSAJE
@@ -1837,6 +1843,7 @@ Public Class frm_Principal
         Catch ex As Exception
         End Try
     End Sub
+
 
     Private Sub TareasMensulesToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         frm_Generar_Informe.MdiParent = Me

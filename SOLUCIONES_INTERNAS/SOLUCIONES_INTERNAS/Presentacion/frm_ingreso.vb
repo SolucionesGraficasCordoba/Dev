@@ -44,6 +44,7 @@
                     Estadistica(True, True, True, True, True)
                     CorreoElectronico(True)
                     Despacho(True, True, True)
+                    Empaque(True, True, True)
 
                 Case "GERENCIA"
                     Usuario(False, False, False)
@@ -61,6 +62,7 @@
                     Estadistica(True, True, True, True, True)
                     CorreoElectronico(False)
                     Despacho(True, True, True)
+                    Empaque(True, True, True)
 
                 Case "SUPERVISOR"
                     Tarea(True, True, True)
@@ -71,6 +73,7 @@
                     Etiquetas(False)
                     Estadistica(True, True, True, True, True)
                     Despacho(True, True, True)
+                    Empaque(True, True, True)
 
                 Case "COLABORADOR"
                     'HabilitarGeneral()
@@ -286,6 +289,22 @@
                             flagb = 1
                         End If
                     End If
+
+                    '--------------------EMPAQUE---------------------'
+                    If permisos.Item(i).PER_permiso = "EMPAQUE" Then
+                        If permisos.Item(i).PER_abm = "A" Then
+                            Empaque(True, flagm, flagb)
+                            flaga = 1
+                        End If
+                        If permisos.Item(i).PER_abm = "M" Then
+                            Empaque(flaga, True, flagb)
+                            flagm = 1
+                        End If
+                        If permisos.Item(i).PER_abm = "B" Then
+                            Empaque(flaga, flagm, True)
+                            flagb = 1
+                        End If
+                    End If
                 Next
             End If
 
@@ -295,6 +314,8 @@
             frm_Principal.LBL_MENU_USU.Text = Buscausuario.USU_usuario.ToString
 
             frm_Principal.Show()
+
+            frm_Principal.mostrar_mensaje()
             Me.Hide()
         Catch ex As Exception
             MsgBox("Verifique Usuario y contraseña!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Inicio de sesión")
@@ -316,6 +337,7 @@
         frm_Principal.OrdenTrabajoToolStripMenuItem.DropDownItems(6).Enabled = True 'consultar
         frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(2).Enabled = True 'consultar
         frm_Principal.LogísticaToolStripMenuItem.DropDownItems(3).Enabled = True 'consultar
+        frm_Principal.EmpaqueToolStripMenuItem.DropDownItems(3).Enabled = True
 
         Acercade()
     End Sub
@@ -337,6 +359,7 @@
         Estadistica(False, False, False, False, False)
         CorreoElectronico(False)
         Despacho(False, False, False)
+        Empaque(False, False, False)
         Acercade()
     End Sub
 
@@ -457,6 +480,12 @@
         frm_Principal.LogísticaToolStripMenuItem.DropDownItems(0).Visible = nuevo 'nueva
         frm_Principal.LogísticaToolStripMenuItem.DropDownItems(1).Visible = modif 'modificar
         frm_Principal.LogísticaToolStripMenuItem.DropDownItems(2).Visible = elim 'eliminar
+    End Sub
+    Sub Empaque(ByVal nuevo As Boolean, ByVal modif As Boolean, ByVal elim As Boolean)
+        frm_Principal.DespachoToolStripMenuItem1.Enabled = True
+        frm_Principal.EmpaqueToolStripMenuItem.DropDownItems(0).Visible = nuevo 'nueva
+        frm_Principal.EmpaqueToolStripMenuItem.DropDownItems(1).Visible = modif 'modificar
+        frm_Principal.EmpaqueToolStripMenuItem.DropDownItems(2).Visible = elim 'eliminar
     End Sub
 
     Public Sub limpiarcontroles()
