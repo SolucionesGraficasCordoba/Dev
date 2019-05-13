@@ -111,6 +111,25 @@
         Me.Close()
         Me.Dispose()
     End Sub
+
+    Private Sub DateTimePicker1_ValueChanged(sender As System.Object, e As System.EventArgs) Handles DateTimePicker1.ValueChanged
+        armargrilla()
+        Try
+            If frm_Colaborador.dgvLista_Colaboradores.Rows.Count > 0 Then
+                Dim consulta = (From c In datacontext.COLABORADOR
+                               Join u In datacontext.USUARIO
+                               On c.COL_id_colaborador Equals u.COL_id_colaborador
+                               Join m In datacontext.MENSAJE
+                               On m.USU_id_usuario Equals u.USU_id_usuario
+                               Select m.USU_id_usuario, m.MEN_fecha_mensaje, m.MEN_titulo, m.MEN_comentario, m.MEN_respuesta
+                               Where MEN_fecha_mensaje = DateTimePicker1.Text
+                               Order By MEN_fecha_mensaje Descending)
+                dgv_Listado_Mensajes.DataSource = consulta
+            End If
+        Catch ex As Exception
+            MsgBox("Seleccione un Colaborador del listado")
+        End Try
+    End Sub
 End Class
 
 
