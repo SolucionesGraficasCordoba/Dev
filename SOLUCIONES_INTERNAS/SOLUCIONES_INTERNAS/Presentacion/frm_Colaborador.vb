@@ -344,7 +344,9 @@ Public Class frm_Colaborador
                                Select u.USU_id_usuario, u.USU_usuario, u.USU_perfil, c.COL_id_colaborador, c.COL_apellido_col).ToList()(0)
                 frm_Mensaje.txt_id_usuario.Text = (dgvLista_Colaboradores.SelectedCells(5).Value)
                 frm_Mensaje.txt_nombre_usuario.Text = (dgvLista_Colaboradores.SelectedCells(6).Value)
+
                 frm_Mensaje.Show()
+                frm_Mensaje.TabPage2.Parent = Nothing
                 frm_Mensaje.txt_Titulo.Focus()
                 frm_Mensaje.Label1.Visible = False
                 frm_Mensaje.Label18.Visible = False
@@ -357,5 +359,13 @@ Public Class frm_Colaborador
         Catch ex As Exception
             MsgBox("Seleccione un Colaborador del listado")
         End Try
+    End Sub
+
+    Private Sub btn_Ver_Mensaje_Click(sender As System.Object, e As System.EventArgs) Handles btn_Ver_Respuesta.Click
+        frm_Mensaje.rbtFecha.Enabled = False
+        frm_Mensaje.DateTimePicker1.Enabled = False
+        frm_Mensaje.Show()
+        frm_Mensaje.TabControl1.SelectedIndex = 1
+        frm_Mensaje.TabPage1.Parent = Nothing
     End Sub
 End Class

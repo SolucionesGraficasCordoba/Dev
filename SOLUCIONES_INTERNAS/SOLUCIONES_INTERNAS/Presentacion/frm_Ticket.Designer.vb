@@ -83,7 +83,7 @@ Partial Class frm_Ticket
         Me.TabControl1.Location = New System.Drawing.Point(1, 2)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(525, 630)
+        Me.TabControl1.Size = New System.Drawing.Size(835, 630)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -100,7 +100,7 @@ Partial Class frm_Ticket
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(517, 604)
+        Me.TabPage1.Size = New System.Drawing.Size(827, 604)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Solicitud"
         '
@@ -108,7 +108,7 @@ Partial Class frm_Ticket
         '
         Me.chk_Nuevo.AutoSize = True
         Me.chk_Nuevo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chk_Nuevo.Location = New System.Drawing.Point(221, 6)
+        Me.chk_Nuevo.Location = New System.Drawing.Point(384, 6)
         Me.chk_Nuevo.Name = "chk_Nuevo"
         Me.chk_Nuevo.Size = New System.Drawing.Size(73, 24)
         Me.chk_Nuevo.TabIndex = 26
@@ -117,7 +117,7 @@ Partial Class frm_Ticket
         '
         'btn_Cancelar_Receptor
         '
-        Me.btn_Cancelar_Receptor.Location = New System.Drawing.Point(433, 568)
+        Me.btn_Cancelar_Receptor.Location = New System.Drawing.Point(744, 566)
         Me.btn_Cancelar_Receptor.Name = "btn_Cancelar_Receptor"
         Me.btn_Cancelar_Receptor.Size = New System.Drawing.Size(75, 33)
         Me.btn_Cancelar_Receptor.TabIndex = 25
@@ -135,7 +135,7 @@ Partial Class frm_Ticket
         '
         'btn_respuesta
         '
-        Me.btn_respuesta.Location = New System.Drawing.Point(352, 568)
+        Me.btn_respuesta.Location = New System.Drawing.Point(663, 566)
         Me.btn_respuesta.Name = "btn_respuesta"
         Me.btn_respuesta.Size = New System.Drawing.Size(75, 33)
         Me.btn_respuesta.TabIndex = 22
@@ -158,7 +158,7 @@ Partial Class frm_Ticket
         Me.GroupReceptor.Controls.Add(Me.Label13)
         Me.GroupReceptor.Location = New System.Drawing.Point(7, 338)
         Me.GroupReceptor.Name = "GroupReceptor"
-        Me.GroupReceptor.Size = New System.Drawing.Size(501, 226)
+        Me.GroupReceptor.Size = New System.Drawing.Size(812, 226)
         Me.GroupReceptor.TabIndex = 19
         Me.GroupReceptor.TabStop = False
         Me.GroupReceptor.Text = "Receptor"
@@ -179,7 +179,7 @@ Partial Class frm_Ticket
         Me.txt_comentarios.Multiline = True
         Me.txt_comentarios.Name = "txt_comentarios"
         Me.txt_comentarios.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txt_comentarios.Size = New System.Drawing.Size(400, 71)
+        Me.txt_comentarios.Size = New System.Drawing.Size(720, 71)
         Me.txt_comentarios.TabIndex = 31
         '
         'dtp_fecha_estimada
@@ -193,7 +193,7 @@ Partial Class frm_Ticket
         'dtp_fecha_real
         '
         Me.dtp_fecha_real.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fecha_real.Location = New System.Drawing.Point(391, 67)
+        Me.dtp_fecha_real.Location = New System.Drawing.Point(553, 67)
         Me.dtp_fecha_real.Name = "dtp_fecha_real"
         Me.dtp_fecha_real.Size = New System.Drawing.Size(95, 20)
         Me.dtp_fecha_real.TabIndex = 30
@@ -201,7 +201,7 @@ Partial Class frm_Ticket
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(14, 73)
+        Me.Label14.Location = New System.Drawing.Point(14, 70)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(126, 13)
         Me.Label14.TabIndex = 29
@@ -211,7 +211,7 @@ Partial Class frm_Ticket
         '
         Me.cbo_estado.FormattingEnabled = True
         Me.cbo_estado.Items.AddRange(New Object() {"Abierto", "Atendido", "Frenado", "Resuelto"})
-        Me.cbo_estado.Location = New System.Drawing.Point(330, 28)
+        Me.cbo_estado.Location = New System.Drawing.Point(553, 28)
         Me.cbo_estado.Name = "cbo_estado"
         Me.cbo_estado.Size = New System.Drawing.Size(156, 21)
         Me.cbo_estado.TabIndex = 28
@@ -220,7 +220,7 @@ Partial Class frm_Ticket
         '
         Me.cbo_prioridad.FormattingEnabled = True
         Me.cbo_prioridad.Items.AddRange(New Object() {"Baja", "Media", "Alta"})
-        Me.cbo_prioridad.Location = New System.Drawing.Point(69, 28)
+        Me.cbo_prioridad.Location = New System.Drawing.Point(94, 28)
         Me.cbo_prioridad.Name = "cbo_prioridad"
         Me.cbo_prioridad.Size = New System.Drawing.Size(156, 21)
         Me.cbo_prioridad.TabIndex = 27
@@ -228,7 +228,7 @@ Partial Class frm_Ticket
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(284, 73)
+        Me.Label6.Location = New System.Drawing.Point(446, 70)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(101, 13)
         Me.Label6.TabIndex = 25
@@ -248,13 +248,13 @@ Partial Class frm_Ticket
         Me.txt_sector_dirigido.Location = New System.Drawing.Point(86, 109)
         Me.txt_sector_dirigido.MaxLength = 50
         Me.txt_sector_dirigido.Name = "txt_sector_dirigido"
-        Me.txt_sector_dirigido.Size = New System.Drawing.Size(400, 20)
+        Me.txt_sector_dirigido.Size = New System.Drawing.Size(720, 20)
         Me.txt_sector_dirigido.TabIndex = 23
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(284, 31)
+        Me.Label12.Location = New System.Drawing.Point(507, 31)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(40, 13)
         Me.Label12.TabIndex = 19
@@ -263,7 +263,7 @@ Partial Class frm_Ticket
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(15, 31)
+        Me.Label13.Location = New System.Drawing.Point(40, 31)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(48, 13)
         Me.Label13.TabIndex = 20
@@ -290,7 +290,7 @@ Partial Class frm_Ticket
         Me.GroupSolicitante.Controls.Add(Me.Label2)
         Me.GroupSolicitante.Location = New System.Drawing.Point(7, 32)
         Me.GroupSolicitante.Name = "GroupSolicitante"
-        Me.GroupSolicitante.Size = New System.Drawing.Size(501, 261)
+        Me.GroupSolicitante.Size = New System.Drawing.Size(812, 261)
         Me.GroupSolicitante.TabIndex = 18
         Me.GroupSolicitante.TabStop = False
         Me.GroupSolicitante.Text = "Solicitante"
@@ -363,7 +363,7 @@ Partial Class frm_Ticket
         Me.txt_herramienta.Location = New System.Drawing.Point(94, 119)
         Me.txt_herramienta.MaxLength = 50
         Me.txt_herramienta.Name = "txt_herramienta"
-        Me.txt_herramienta.Size = New System.Drawing.Size(392, 20)
+        Me.txt_herramienta.Size = New System.Drawing.Size(712, 20)
         Me.txt_herramienta.TabIndex = 2
         '
         'Label9
@@ -399,7 +399,7 @@ Partial Class frm_Ticket
         Me.txt_descripcion.Multiline = True
         Me.txt_descripcion.Name = "txt_descripcion"
         Me.txt_descripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txt_descripcion.Size = New System.Drawing.Size(392, 71)
+        Me.txt_descripcion.Size = New System.Drawing.Size(712, 71)
         Me.txt_descripcion.TabIndex = 5
         '
         'txt_id_usuario
@@ -415,7 +415,7 @@ Partial Class frm_Ticket
         Me.txt_recurso.Location = New System.Drawing.Point(94, 89)
         Me.txt_recurso.MaxLength = 50
         Me.txt_recurso.Name = "txt_recurso"
-        Me.txt_recurso.Size = New System.Drawing.Size(392, 20)
+        Me.txt_recurso.Size = New System.Drawing.Size(712, 20)
         Me.txt_recurso.TabIndex = 1
         '
         'txt_nombre_usuario
@@ -425,7 +425,7 @@ Partial Class frm_Ticket
         Me.txt_nombre_usuario.Location = New System.Drawing.Point(94, 57)
         Me.txt_nombre_usuario.MaxLength = 50
         Me.txt_nombre_usuario.Name = "txt_nombre_usuario"
-        Me.txt_nombre_usuario.Size = New System.Drawing.Size(392, 20)
+        Me.txt_nombre_usuario.Size = New System.Drawing.Size(712, 20)
         Me.txt_nombre_usuario.TabIndex = 0
         '
         'Label3
@@ -448,7 +448,7 @@ Partial Class frm_Ticket
         '
         'btnCancelar_Solicitante
         '
-        Me.btnCancelar_Solicitante.Location = New System.Drawing.Point(433, 301)
+        Me.btnCancelar_Solicitante.Location = New System.Drawing.Point(744, 302)
         Me.btnCancelar_Solicitante.Name = "btnCancelar_Solicitante"
         Me.btnCancelar_Solicitante.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar_Solicitante.TabIndex = 21
@@ -457,7 +457,7 @@ Partial Class frm_Ticket
         '
         'btn_Solicitud
         '
-        Me.btn_Solicitud.Location = New System.Drawing.Point(352, 301)
+        Me.btn_Solicitud.Location = New System.Drawing.Point(663, 302)
         Me.btn_Solicitud.Name = "btn_Solicitud"
         Me.btn_Solicitud.Size = New System.Drawing.Size(75, 33)
         Me.btn_Solicitud.TabIndex = 20
@@ -476,13 +476,13 @@ Partial Class frm_Ticket
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(517, 604)
+        Me.TabPage2.Size = New System.Drawing.Size(827, 604)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Búsqueda"
         '
         'btn_Exportar_PDF
         '
-        Me.btn_Exportar_PDF.Location = New System.Drawing.Point(254, 563)
+        Me.btn_Exportar_PDF.Location = New System.Drawing.Point(565, 564)
         Me.btn_Exportar_PDF.Name = "btn_Exportar_PDF"
         Me.btn_Exportar_PDF.Size = New System.Drawing.Size(92, 33)
         Me.btn_Exportar_PDF.TabIndex = 31
@@ -493,7 +493,7 @@ Partial Class frm_Ticket
         '
         Me.cbo_busqueda_estado.FormattingEnabled = True
         Me.cbo_busqueda_estado.Items.AddRange(New Object() {"Todos", "Abierto", "Atendido", "Frenado", "Resuelto"})
-        Me.cbo_busqueda_estado.Location = New System.Drawing.Point(202, 14)
+        Me.cbo_busqueda_estado.Location = New System.Drawing.Point(703, 15)
         Me.cbo_busqueda_estado.Name = "cbo_busqueda_estado"
         Me.cbo_busqueda_estado.Size = New System.Drawing.Size(116, 21)
         Me.cbo_busqueda_estado.TabIndex = 30
@@ -501,7 +501,7 @@ Partial Class frm_Ticket
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(156, 17)
+        Me.Label17.Location = New System.Drawing.Point(657, 18)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(40, 13)
         Me.Label17.TabIndex = 29
@@ -509,7 +509,7 @@ Partial Class frm_Ticket
         '
         'btn_cancelar
         '
-        Me.btn_cancelar.Location = New System.Drawing.Point(433, 563)
+        Me.btn_cancelar.Location = New System.Drawing.Point(744, 564)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(75, 33)
         Me.btn_cancelar.TabIndex = 21
@@ -518,7 +518,7 @@ Partial Class frm_Ticket
         '
         'btn_eliminar
         '
-        Me.btn_eliminar.Location = New System.Drawing.Point(352, 563)
+        Me.btn_eliminar.Location = New System.Drawing.Point(663, 564)
         Me.btn_eliminar.Name = "btn_eliminar"
         Me.btn_eliminar.Size = New System.Drawing.Size(75, 33)
         Me.btn_eliminar.TabIndex = 21
@@ -531,14 +531,14 @@ Partial Class frm_Ticket
         Me.dgv_lista_ticket.Location = New System.Drawing.Point(8, 49)
         Me.dgv_lista_ticket.Name = "dgv_lista_ticket"
         Me.dgv_lista_ticket.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_lista_ticket.Size = New System.Drawing.Size(501, 508)
+        Me.dgv_lista_ticket.Size = New System.Drawing.Size(811, 508)
         Me.dgv_lista_ticket.TabIndex = 0
         '
         'frm_Ticket
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(526, 632)
+        Me.ClientSize = New System.Drawing.Size(836, 632)
         Me.Controls.Add(Me.TabControl1)
         Me.Name = "frm_Ticket"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

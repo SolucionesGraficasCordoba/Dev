@@ -78,11 +78,17 @@ Public Class frm_Ticket
         dgv_lista_ticket.Columns(1).DataPropertyName = "TIC_id_usuario"
         dgv_lista_ticket.Columns(1).Visible = False
         dgv_lista_ticket.Columns(2).DataPropertyName = "USU_usuario"
+        dgv_lista_ticket.Columns(2).Width = 80
         dgv_lista_ticket.Columns(3).DataPropertyName = "TIC_fecha_pedido"
+        dgv_lista_ticket.Columns(3).Width = 80
         dgv_lista_ticket.Columns(4).DataPropertyName = "TIC_recurso"
+        dgv_lista_ticket.Columns(4).Width = 120
         dgv_lista_ticket.Columns(5).DataPropertyName = "TIC_herramienta"
+        dgv_lista_ticket.Columns(5).Width = 120
         dgv_lista_ticket.Columns(6).DataPropertyName = "TIC_plazo_resolucion"
+        dgv_lista_ticket.Columns(6).Width = 60
         dgv_lista_ticket.Columns(7).DataPropertyName = "TIC_descripcion"
+        dgv_lista_ticket.Columns(7).Width = 300
         dgv_lista_ticket.Columns(8).DataPropertyName = "TIC_prioridad"
         dgv_lista_ticket.Columns(9).DataPropertyName = "TIC_estado"
         dgv_lista_ticket.Columns(9).Visible = False
@@ -90,11 +96,9 @@ Public Class frm_Ticket
         dgv_lista_ticket.Columns(11).DataPropertyName = "TIC_fecha_estimado_cierre"
         dgv_lista_ticket.Columns(12).DataPropertyName = "TIC_sector"
         dgv_lista_ticket.Columns(13).DataPropertyName = "TIC_comentarios"
-
     End Sub
 
     Public Sub cargargrillaticket()
-
         If frm_Principal.LBL_MENU_PERFIL.Text = "ADMINISTRADOR" Then
             If cbo_busqueda_estado.Text <> "Todos" Then
                 Dim consulta = (From ti In datacontext.TICKET
