@@ -47,29 +47,29 @@ Partial Class frm_Listado_Empaque
         '
         'btn_modificar
         '
-        Me.btn_modificar.Location = New System.Drawing.Point(480, 486)
+        Me.btn_modificar.Location = New System.Drawing.Point(664, 486)
         Me.btn_modificar.Name = "btn_modificar"
-        Me.btn_modificar.Size = New System.Drawing.Size(101, 21)
+        Me.btn_modificar.Size = New System.Drawing.Size(101, 30)
         Me.btn_modificar.TabIndex = 5
         Me.btn_modificar.Text = "Modificar"
         Me.btn_modificar.UseVisualStyleBackColor = True
         '
         'btn_eliminar
         '
-        Me.btn_eliminar.Location = New System.Drawing.Point(480, 486)
+        Me.btn_eliminar.Location = New System.Drawing.Point(664, 486)
         Me.btn_eliminar.Name = "btn_eliminar"
-        Me.btn_eliminar.Size = New System.Drawing.Size(101, 21)
+        Me.btn_eliminar.Size = New System.Drawing.Size(101, 30)
         Me.btn_eliminar.TabIndex = 6
         Me.btn_eliminar.Text = "Eliminar"
         Me.btn_eliminar.UseVisualStyleBackColor = True
         '
         'btn_cancelar
         '
-        Me.btn_cancelar.Location = New System.Drawing.Point(587, 486)
+        Me.btn_cancelar.Location = New System.Drawing.Point(771, 486)
         Me.btn_cancelar.Name = "btn_cancelar"
-        Me.btn_cancelar.Size = New System.Drawing.Size(101, 21)
+        Me.btn_cancelar.Size = New System.Drawing.Size(101, 30)
         Me.btn_cancelar.TabIndex = 7
-        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.Text = "Cerrar"
         Me.btn_cancelar.UseVisualStyleBackColor = True
         '
         'rbt_orden
@@ -129,18 +129,19 @@ Partial Class frm_Listado_Empaque
         '
         Me.btn_generar_informe.Location = New System.Drawing.Point(12, 486)
         Me.btn_generar_informe.Name = "btn_generar_informe"
-        Me.btn_generar_informe.Size = New System.Drawing.Size(101, 21)
+        Me.btn_generar_informe.Size = New System.Drawing.Size(101, 30)
         Me.btn_generar_informe.TabIndex = 14
         Me.btn_generar_informe.Text = "Generar informe"
         Me.btn_generar_informe.UseVisualStyleBackColor = True
         '
         'dgv_planificacion
         '
+        Me.dgv_planificacion.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_planificacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_planificacion.Location = New System.Drawing.Point(13, 79)
         Me.dgv_planificacion.MultiSelect = False
         Me.dgv_planificacion.Name = "dgv_planificacion"
-        Me.dgv_planificacion.Size = New System.Drawing.Size(675, 401)
+        Me.dgv_planificacion.Size = New System.Drawing.Size(859, 401)
         Me.dgv_planificacion.TabIndex = 1
         '
         'cmb_estado
@@ -156,7 +157,7 @@ Partial Class frm_Listado_Empaque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(700, 515)
+        Me.ClientSize = New System.Drawing.Size(884, 519)
         Me.Controls.Add(Me.cmb_estado)
         Me.Controls.Add(Me.btn_generar_informe)
         Me.Controls.Add(Me.dtp_fecha_estado)

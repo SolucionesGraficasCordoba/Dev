@@ -42,21 +42,23 @@ Partial Class frm_Listado_Despacho
         '
         'dgv_remitos
         '
+        Me.dgv_remitos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_remitos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_remitos.Location = New System.Drawing.Point(13, 93)
         Me.dgv_remitos.MultiSelect = False
         Me.dgv_remitos.Name = "dgv_remitos"
         Me.dgv_remitos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_remitos.Size = New System.Drawing.Size(636, 193)
+        Me.dgv_remitos.Size = New System.Drawing.Size(859, 193)
         Me.dgv_remitos.TabIndex = 0
         '
         'dgv_orden_x_remito
         '
+        Me.dgv_orden_x_remito.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgv_orden_x_remito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_orden_x_remito.Location = New System.Drawing.Point(13, 292)
         Me.dgv_orden_x_remito.MultiSelect = False
         Me.dgv_orden_x_remito.Name = "dgv_orden_x_remito"
-        Me.dgv_orden_x_remito.Size = New System.Drawing.Size(636, 188)
+        Me.dgv_orden_x_remito.Size = New System.Drawing.Size(859, 188)
         Me.dgv_orden_x_remito.TabIndex = 1
         '
         'txt_buscar
@@ -68,27 +70,27 @@ Partial Class frm_Listado_Despacho
         '
         'btn_modificar
         '
-        Me.btn_modificar.Location = New System.Drawing.Point(441, 486)
+        Me.btn_modificar.Location = New System.Drawing.Point(664, 486)
         Me.btn_modificar.Name = "btn_modificar"
-        Me.btn_modificar.Size = New System.Drawing.Size(101, 21)
+        Me.btn_modificar.Size = New System.Drawing.Size(101, 33)
         Me.btn_modificar.TabIndex = 5
         Me.btn_modificar.Text = "Modificar"
         Me.btn_modificar.UseVisualStyleBackColor = True
         '
         'btn_eliminar
         '
-        Me.btn_eliminar.Location = New System.Drawing.Point(441, 486)
+        Me.btn_eliminar.Location = New System.Drawing.Point(664, 486)
         Me.btn_eliminar.Name = "btn_eliminar"
-        Me.btn_eliminar.Size = New System.Drawing.Size(101, 21)
+        Me.btn_eliminar.Size = New System.Drawing.Size(101, 33)
         Me.btn_eliminar.TabIndex = 6
         Me.btn_eliminar.Text = "Eliminar"
         Me.btn_eliminar.UseVisualStyleBackColor = True
         '
         'btn_cancelar
         '
-        Me.btn_cancelar.Location = New System.Drawing.Point(548, 486)
+        Me.btn_cancelar.Location = New System.Drawing.Point(771, 486)
         Me.btn_cancelar.Name = "btn_cancelar"
-        Me.btn_cancelar.Size = New System.Drawing.Size(101, 21)
+        Me.btn_cancelar.Size = New System.Drawing.Size(101, 33)
         Me.btn_cancelar.TabIndex = 7
         Me.btn_cancelar.Text = "Cancelar"
         Me.btn_cancelar.UseVisualStyleBackColor = True
@@ -148,9 +150,9 @@ Partial Class frm_Listado_Despacho
         '
         'btn_agregarodt
         '
-        Me.btn_agregarodt.Location = New System.Drawing.Point(334, 486)
+        Me.btn_agregarodt.Location = New System.Drawing.Point(557, 486)
         Me.btn_agregarodt.Name = "btn_agregarodt"
-        Me.btn_agregarodt.Size = New System.Drawing.Size(101, 21)
+        Me.btn_agregarodt.Size = New System.Drawing.Size(101, 33)
         Me.btn_agregarodt.TabIndex = 13
         Me.btn_agregarodt.Text = "Agregar odt"
         Me.btn_agregarodt.UseVisualStyleBackColor = True
@@ -159,7 +161,7 @@ Partial Class frm_Listado_Despacho
         '
         Me.btn_generar_informe.Location = New System.Drawing.Point(12, 486)
         Me.btn_generar_informe.Name = "btn_generar_informe"
-        Me.btn_generar_informe.Size = New System.Drawing.Size(101, 21)
+        Me.btn_generar_informe.Size = New System.Drawing.Size(101, 33)
         Me.btn_generar_informe.TabIndex = 14
         Me.btn_generar_informe.Text = "Generar informe"
         Me.btn_generar_informe.UseVisualStyleBackColor = True
@@ -168,7 +170,7 @@ Partial Class frm_Listado_Despacho
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(663, 515)
+        Me.ClientSize = New System.Drawing.Size(884, 521)
         Me.Controls.Add(Me.btn_generar_informe)
         Me.Controls.Add(Me.btn_agregarodt)
         Me.Controls.Add(Me.dtp_fecha_salida)

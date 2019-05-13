@@ -193,80 +193,80 @@ Public Class frm_Listado_Empaque
     End Sub
 
     Private Sub btn_generar_informe_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_generar_informe.Click
-        'Try
-        '    'intentar generar el documento
-        '    Dim doc As New Document(PageSize.A3.Rotate, 5, 5, 5, 5)
-        '    'path que guarda el reporte en el escritorio de windows (desktop)
-        '    Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Remitos_diarios.pdf"
-        '    Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
-        '    PdfWriter.GetInstance(doc, file)
-        '    doc.Open()
+        Try
+            'intentar generar el documento
+            Dim doc As New Document(PageSize.A4.Rotate, 5, 5, 5, 5)
+            'path que guarda el reporte en el escritorio de windows (desktop)
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Planificacion_diaria.pdf"
+            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+            PdfWriter.GetInstance(doc, file)
+            doc.Open()
 
-        '    'se crea un objeto PDFTable con el numero de columnas  del datagridview
-        '    Dim datatableencabezado As New PdfPTable(4)
-        '    Dim datatablecuerpo As New PdfPTable(4)
+            'se crea un objeto PDFTable con el numero de columnas  del datagridview
+            Dim datatableencabezado As New PdfPTable(6)
+            Dim datatablecuerpo As New PdfPTable(6)
 
-        '    datatableencabezado.WidthPercentage = 100
-        '    datatableencabezado.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT
-        '    datatableencabezado.HeaderRows = 0
-        '    datatableencabezado.DefaultCell.BorderWidth = 1
+            datatableencabezado.WidthPercentage = 100
+            datatableencabezado.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT
+            datatableencabezado.HeaderRows = 0
+            datatableencabezado.DefaultCell.BorderWidth = 1
 
-        '    datatablecuerpo.WidthPercentage = 100
-        '    datatablecuerpo.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT
-        '    datatablecuerpo.HeaderRows = 1
-        '    datatablecuerpo.DefaultCell.BorderWidth = 0
+            datatablecuerpo.WidthPercentage = 100
+            datatablecuerpo.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT
+            datatablecuerpo.HeaderRows = 1
+            datatablecuerpo.DefaultCell.BorderWidth = 1
 
-        '    'se capturan los nombres de las columnas del datagridview de las ordenes por remito
-        '    For Y As Integer = 0 To dgv_planificacion.ColumnCount - 1
-        '        If dgv_planificacion.Columns(Y).Visible = True And dgv_planificacion.Columns(Y).DataPropertyName <> "ORT_observaciones_ot" Then
-        '            datatablecuerpo.AddCell(dgv_planificacion.Columns(Y).HeaderText)
-        '        End If
-        '    Next
+            'se capturan los nombres de las columnas del datagridview de las ordenes por remito
+            For Y As Integer = 0 To dgv_planificacion.ColumnCount - 1
+                If dgv_planificacion.Columns(Y).Visible = True And dgv_planificacion.Columns(Y).DataPropertyName <> "ORT_observaciones_ot" Then
+                    datatableencabezado.AddCell(dgv_planificacion.Columns(Y).HeaderText)
+                End If
+            Next
 
-        '    'SE ARMA EL ENCABEZADO COMO TABLA
-        '    For i = 0 To dgv_remitos.Rows.Count - 1
-        '        dgv_remitos.Rows(i).Selected = True
-        '        dgv_remitos_CellClick(0, Nothing)
+            'SE ARMA EL ENCABEZADO COMO TABLA
+            'For i = 0 To dgv_planificacion.Rows.Count - 1
+            'dgv_planificacion.Rows(i).Selected = True
+            'dgv_remitos_CellClick(0, Nothing)
 
-        '        For Z As Integer = 0 To dgv_remitos.ColumnCount - 1
-        '            If dgv_remitos.Columns(Z).Visible = True Then
-        '                Try
-        '                    datatableencabezado.AddCell(dgv_remitos.Columns(Z).HeaderText + ": " + dgv_remitos(Z, i).Value.ToString())
-        '                Catch ex As Exception
-        '                    datatableencabezado.AddCell(" ")
-        '                End Try
-        '            End If
-        '        Next
-        '        datatableencabezado.CompleteRow()
-        '        doc.Add(datatableencabezado)
-        '        datatableencabezado.DeleteBodyRows()
+            'For Z As Integer = 0 To dgv_planificacion.ColumnCount - 1
+            '    If dgv_planificacion.Columns(Z).Visible = True Then
+            '        Try
+            '            datatableencabezado.AddCell(dgv_planificacion.Columns(Z).HeaderText + ": " + dgv_planificacion(Z, 0).Value.ToString())
+            '        Catch ex As Exception
+            '            datatableencabezado.AddCell(" ")
+            '        End Try
+            '    End If
+            'Next
+            datatableencabezado.CompleteRow()
+            doc.Add(datatableencabezado)
+            'datatableencabezado.DeleteBodyRows()
 
-        '        'se generan las columnas del datagridview de las ordenes por remito
+            'se generan las columnas del datagridview de las ordenes por remito
 
-        '        For Y As Integer = 0 To dgv_planificacion.RowCount - 1
-        '            For Z As Integer = 0 To dgv_planificacion.ColumnCount - 1
-        '                If dgv_planificacion.Columns(Z).Visible = True And dgv_planificacion.Columns(Z).DataPropertyName <> "ORT_observaciones_ot" Then
-        '                    Try
-        '                        datatablecuerpo.AddCell(dgv_planificacion(Z, Y).Value.ToString())
-        '                    Catch ex As Exception
-        '                        datatablecuerpo.AddCell(" ")
-        '                    End Try
-        '                End If
-        '            Next
-        '            datatablecuerpo.CompleteRow()
-        '        Next
+            For Y As Integer = 0 To dgv_planificacion.RowCount - 1
+                For Z As Integer = 0 To dgv_planificacion.ColumnCount - 1
+                    If dgv_planificacion.Columns(Z).Visible = True And dgv_planificacion.Columns(Z).DataPropertyName <> "ORT_observaciones_ot" Then
+                        Try
+                            datatablecuerpo.AddCell(dgv_planificacion(Z, Y).Value.ToString())
+                        Catch ex As Exception
+                            datatablecuerpo.AddCell(" ")
+                        End Try
+                    End If
+                Next
+                datatablecuerpo.CompleteRow()
+            Next
 
-        '        doc.Add(datatablecuerpo)
-        '        datatablecuerpo.DeleteBodyRows()
+            doc.Add(datatablecuerpo)
+            datatablecuerpo.DeleteBodyRows()
 
-        '    Next
-        '    doc.Close()
-        '    Process.Start(filename)
+            'Next
+            doc.Close()
+            Process.Start(filename)
 
-        'Catch ex As Exception
-        '    'si el mensaje es fallido mostrar msgbox
-        '    MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        'End Try
+        Catch ex As Exception
+            'si el mensaje es fallido mostrar msgbox
+            MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub cmb_estado_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmb_estado.SelectedIndexChanged
@@ -290,7 +290,8 @@ Public Class frm_Listado_Empaque
             Next
 
             Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
-                                    Where ORT_id_orden_trabajo = CInt(dgv_planificacion.SelectedCells(1).Value)).Any
+                                    Where ORT_id_orden_trabajo = CInt(dgv_planificacion.SelectedCells(1).Value) And
+                                    DES_nro_despacho.Length <> 0).Any
             If buscarorden = True Then
                 Dim buscardespacho = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
                               Where ORT_id_orden_trabajo = CInt(dgv_planificacion.SelectedCells(1).Value)).ToList()(0)
