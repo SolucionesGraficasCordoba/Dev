@@ -812,56 +812,49 @@ Public Class frm_Principal
         OcultarIdTarea()
         HabilitarBotonNumeroOrden()
         DemasCampos()
-        frm_Tarea.MdiParent = Me
-        frm_Tarea.Show()
+        '    frm_Tarea.MdiParent = Me
+        '  frm_Tarea.Show()
 
         Dim CargaColaborador = (From sec In datacontext.SECTOR
                      Join col In datacontext.COLABORADOR
                      On col.SEC_id_sector Equals sec.SEC_id_sector
                      Join usu In datacontext.USUARIO
                      On usu.COL_id_colaborador Equals col.COL_id_colaborador
-                     Select usu.USU_usuario, usu.USU_id_usuario, col.COL_nombre_col, col.COL_id_colaborador
+                     Select usu.USU_usuario, usu.USU_id_usuario, col.COL_nombre_col, col.COL_id_colaborador, sec.SEC_id_sector, sec.SEC_nombre_sector
                      Where USU_usuario = Me.LBL_MENU_USU.Text).ToList()(0)
 
-        frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
-        frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
+       
 
-        '-------------------------------------------------------------------------------------------------------
+        If CargaColaborador.SEC_nombre_sector <> "Offset" Then
+            frm_Tarea.MdiParent = Me
+            frm_Tarea.Show()
+            frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
+            frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
+        Else
+            frm_Tarea.MdiParent = Me
+            frm_Tarea.Show()
+            frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
+            frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
 
-        'Dim Abre_Form_Tarea = (From sec In datacontext.SECTOR
-        '             Join col In datacontext.COLABORADOR
-        '             On col.SEC_id_sector Equals sec.SEC_id_sector
-        '             Join usu In datacontext.USUARIO
-        '             On usu.COL_id_colaborador Equals col.COL_id_colaborador
-        '             Select usu.USU_usuario, usu.USU_id_usuario, col.COL_nombre_col, col.COL_id_colaborador, sec.SEC_id_sector, sec.SEC_nombre_sector
-        '  Where USU_usuario = Me.LBL_MENU_USU.Text).ToList()(0)
 
-
-        'If Abre_Form_Tarea.SEC_nombre_sector = "Offset" Then
-
-        frm_Tarea_1.Text = "Nueva Tarea 1"
-
-        LimpiarDetalleTarea1()
-        HabilitarDetalleTarea1()
-        LimpiarTiempoEstimado1()
-        LimpiarTiempoReal1()
-        HabilitarTiempoReal1()
-        LimpiarHoraFinalizacion1()
-        HabilitarHoraFinalizacion1()
-        LimipiarObservaciones1()
-        HabilitarObservaciones1()
-        LimpiarNumeroOrden1()
-        DeshabilitarNumeroOrden1()
-        OcultarIdOrden1()
-        OcultarIdTarea1()
-        HabilitarBotonNumeroOrden1()
-        DemasCampos1()
-
-        frm_Tarea_1.MdiParent = Me
-        frm_Tarea_1.Show()
-
-        '  End If
-
+            frm_Tarea_1.MdiParent = Me
+            frm_Tarea_1.Show()
+            LimpiarDetalleTarea1()
+            HabilitarDetalleTarea1()
+            LimpiarTiempoEstimado1()
+            LimpiarTiempoReal1()
+            HabilitarTiempoReal1()
+            LimpiarHoraFinalizacion1()
+            HabilitarHoraFinalizacion1()
+            LimipiarObservaciones1()
+            HabilitarObservaciones1()
+            LimpiarNumeroOrden1()
+            DeshabilitarNumeroOrden1()
+            OcultarIdOrden1()
+            OcultarIdTarea1()
+            HabilitarBotonNumeroOrden1()
+            DemasCampos1()
+        End If
     End Sub
 
     Private Sub ListaTareaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaTareaToolStripMenuItem.Click
@@ -1104,20 +1097,42 @@ Public Class frm_Principal
     End Sub
 
     Private Sub ConsultarColaboradorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarColaboradorToolStripMenuItem.Click
-        frm_Colaborador.Text = "Consultar Colaborador"
-        frm_Colaborador.txt_nombre_colaborador.Clear()
-        frm_Colaborador.txt_apellido_colaborador.Clear()
-        frm_Colaborador.cbo_sector.SelectedIndex = -1
-        frm_Colaborador.btnActualizar_Colaborador.Enabled = False
-        frm_Colaborador.btnEliminar_Colaborador.Enabled = False
-        frm_Colaborador.btnGuardar_Colaborador.Enabled = False
-        frm_Colaborador.btnNuevo_Colaborador.Visible = False
-        '  frm_Colaborador.btnImprimir.Visible = False
-        frm_Colaborador.txt_nombre_colaborador.Enabled = False
-        frm_Colaborador.txt_apellido_colaborador.Enabled = False
-        frm_Colaborador.cbo_sector.Enabled = False
-        frm_Colaborador.txt_nombre_colaborador.Enabled = False
-        ' frm_Colaborador.btnImprimir.Visible = True
+        If LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
+            frm_Colaborador.btn_enviar_mensaje.Enabled = False
+            frm_Colaborador.btn_Respuesta_Fecha.Enabled = False
+            frm_Colaborador.btn_Ver_Respuesta.Enabled = False
+
+            frm_Colaborador.Text = "Consultar Colaborador"
+            frm_Colaborador.txt_nombre_colaborador.Clear()
+            frm_Colaborador.txt_apellido_colaborador.Clear()
+            frm_Colaborador.cbo_sector.SelectedIndex = -1
+            frm_Colaborador.btnActualizar_Colaborador.Enabled = False
+            frm_Colaborador.btnEliminar_Colaborador.Enabled = False
+            frm_Colaborador.btnGuardar_Colaborador.Enabled = False
+            frm_Colaborador.btnNuevo_Colaborador.Visible = False
+            '  frm_Colaborador.btnImprimir.Visible = False
+            frm_Colaborador.txt_nombre_colaborador.Enabled = False
+            frm_Colaborador.txt_apellido_colaborador.Enabled = False
+            frm_Colaborador.cbo_sector.Enabled = False
+            frm_Colaborador.txt_nombre_colaborador.Enabled = False
+        Else
+            frm_Colaborador.Text = "Consultar Colaborador"
+            frm_Colaborador.txt_nombre_colaborador.Clear()
+            frm_Colaborador.txt_apellido_colaborador.Clear()
+            frm_Colaborador.cbo_sector.SelectedIndex = -1
+            frm_Colaborador.btnActualizar_Colaborador.Enabled = False
+            frm_Colaborador.btnEliminar_Colaborador.Enabled = False
+            frm_Colaborador.btnGuardar_Colaborador.Enabled = False
+            frm_Colaborador.btnNuevo_Colaborador.Visible = False
+            '  frm_Colaborador.btnImprimir.Visible = False
+            frm_Colaborador.txt_nombre_colaborador.Enabled = False
+            frm_Colaborador.txt_apellido_colaborador.Enabled = False
+            frm_Colaborador.cbo_sector.Enabled = False
+            frm_Colaborador.txt_nombre_colaborador.Enabled = False
+            ' frm_Colaborador.btnImprimir.Visible = True
+        End If
+
+
         frm_Colaborador.ShowDialog()
     End Sub
 
