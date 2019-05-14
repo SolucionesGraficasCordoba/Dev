@@ -40,7 +40,6 @@ Public Class frm_Colaborador
                           Where USU_usuario = frm_Principal.LBL_MENU_USU.Text)
             dgvLista_Colaboradores.DataSource = cargasupervisor
 
-
         ElseIf frm_Principal.LBL_MENU_PERFIL.Text = "SUPERVISOR" Then
 
             'TRAE SECTOR DEL USUARIO REGISTRADO
@@ -60,6 +59,7 @@ Public Class frm_Colaborador
                          Select usu.USU_usuario, sec.SEC_id_sector, sec.SEC_nombre_sector, col.COL_id_colaborador, col.COL_nombre_col, col.COL_apellido_col
                          Where SEC_id_sector = cualq.SEC_id_sector)
             dgvLista_Colaboradores.DataSource = cargasupervisor
+
         Else
             Dim carga = (From col In datacontext.COLABORADOR
                                         Join sec In datacontext.SECTOR
@@ -79,6 +79,7 @@ Public Class frm_Colaborador
             dgvLista_Colaboradores.DataSource = carga
         End If
     End Sub
+
 
     Private Sub btnGuardar_Colaborador_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Colaborador.Click
         Try
@@ -277,6 +278,7 @@ Public Class frm_Colaborador
                 frm_Tarea.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
 
             ElseIf quienllamo_col.Name = frm_Tarea_1.Name Then
+
                 frm_Tarea_1.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
                 frm_Tarea_1.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
 
