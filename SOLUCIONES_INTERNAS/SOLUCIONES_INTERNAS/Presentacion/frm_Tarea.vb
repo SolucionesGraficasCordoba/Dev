@@ -1197,8 +1197,14 @@
     End Sub
 
     Private Sub btnCancelar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCancelar_Tarea.Click
-        Me.Close()
-        Me.Dispose()
+
+        Select Case MsgBox("Realmente desea cerrar el formulario?, Se perderán los cambios realizados", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Cerrando Formulario")
+            Case MsgBoxResult.No
+                Exit Sub
+            Case MsgBoxResult.Yes
+                Me.Close()
+                Me.Dispose()
+        End Select
     End Sub
 
     Private Sub txt_detalle_tarea_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs)

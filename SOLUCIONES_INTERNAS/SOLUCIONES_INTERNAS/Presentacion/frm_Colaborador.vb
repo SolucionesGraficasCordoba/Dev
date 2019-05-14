@@ -298,7 +298,6 @@ Public Class frm_Colaborador
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Me.PrintDocument1.Print()
     End Sub
-
     Dim i As Integer = 0
 
     Private Sub printDocument1_PrintPage(ByVal sender As Object, ByVal e As System.Drawing.Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
@@ -369,5 +368,22 @@ Public Class frm_Colaborador
         frm_Mensaje.Show()
         frm_Mensaje.TabControl1.SelectedIndex = 1
         frm_Mensaje.TabPage1.Parent = Nothing
+    End Sub
+
+    Private Sub btn_Respuesta_Fecha_Click(sender As System.Object, e As System.EventArgs) Handles btn_Respuesta_Fecha.Click
+        Try
+            frm_Mensaje.TabPage1.Parent = Nothing
+            frm_Mensaje.Show()
+            Dim consulta = (From c In datacontext.COLABORADOR
+                                 Join u In datacontext.USUARIO
+                                 On c.COL_id_colaborador Equals u.COL_id_colaborador
+                                 Join m In datacontext.MENSAJE
+                                 On m.USU_id_usuario Equals u.USU_id_usuario
+           Select m.MEN_fecha_mensaje, m.MEN_titulo, m.MEN_comentario, m.MEN_respuesta, u.USU_usuario
+             Where MEN_fecha_mensaje = frm_Mensaje.DateTimePicker1.Text
+                                 Order By MEN_fecha_mensaje Descending)
+            frm_Mensaje.dgv_Listado_Mensajes.DataSource = consulta
+        Catch ex As Exception
+        End Try
     End Sub
 End Class

@@ -1067,8 +1067,13 @@
     End Sub
 
     Private Sub btnCancelar_Tarea_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar_Tarea.Click
-        Me.Close()
-        Me.Dispose()
+        Select Case MsgBox("Realmente desea cerrar el formulario?, Se perderán los cambios realizados", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Cerrando Formulario")
+            Case MsgBoxResult.No
+                Exit Sub
+            Case MsgBoxResult.Yes
+                Me.Close()
+                Me.Dispose()
+        End Select
     End Sub
 
     Private Sub btnBuscar_Colaborador_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Colaborador.Click
@@ -1079,7 +1084,6 @@
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
 
         quienllamoatarea = 0
-
     End Sub
 
     Private Sub txtHora_Finalizacion1_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion1.TextChanged

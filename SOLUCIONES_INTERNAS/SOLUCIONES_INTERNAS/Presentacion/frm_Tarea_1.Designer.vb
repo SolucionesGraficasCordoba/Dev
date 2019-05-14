@@ -3187,7 +3187,9 @@ Partial Class frm_Tarea_1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnCancelar_Tarea)
         Me.Name = "frm_Tarea_1"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_Tarea_1"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Minimized
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
