@@ -99,14 +99,10 @@ Public Class frm_Etiqueta_Modelo_1
                 temp_unidad_x_bulto = CInt(txtUnidadxBulto.Text)
             End If
 
-
-
-            ' Dim cultura As System.Globalization.CultureInfo = New CultureInfo("ja-JP", False)
-            'txtLocalidad.Text.ToUpper
             Dim row As String() = New String() {sacar_tildes(txt_orden.Text),
                                                  sacar_tildes(txtDescripcionEntrega.Text),
-                                                 sacar_tildes(txtId_Cliente.Text),
-                                                sacar_tildes(txtDirigidoA.Text),
+                                                sacar_tildes(txtId_Cliente.Text),
+                                                           sacar_tildes(txtDirigidoA.Text),
                                                 sacar_tildes(txtSolicitante.Text), _
                                                 sacar_tildes(txtSector.Text),
                                                 sacar_tildes(txtDomicilio.Text),
@@ -182,7 +178,7 @@ Public Class frm_Etiqueta_Modelo_1
             Dim consulta As String = "ETIQUETA_GENERICA_DIARIA_" + Date.Now.Millisecond.ToString + ".csv"
 
             Dim tempruta As String = Configuration.ConfigurationManager.AppSettings("ruta_entrada_etiquetas")
-            '  Dim filePath As String = tempruta + consulta
+            'Dim filePath As String = tempruta + consulta
 
             Dim filePath As String = "C:\Users\pbaldo\Downloads\Baldo-Compartida\" + consulta
             'Dim filePath As String = "E:\trabajos\Trabajo Vale\Modelo de etiquetas\" + consulta
@@ -304,18 +300,17 @@ Public Class frm_Etiqueta_Modelo_1
     'Función para quitar acentos de una cadena de texto
     '--------------------------------------------------------------------------------------------
     Public Function sacar_tildes(ByVal strNombre As String) As String
-        Const conAcentos = "ÁÉÍÓÚ"  '"áàäâÁÀÄÂéèëêÉÈËÊíìïîÍÌÏÎóòöôÓÒÖÔúùüûÚÙÜÛýÿÝ"
-        Const sinAcentos = "AEIOU"  '"aaaaAAAAeeeeEEEEiiiiIIIIooooOOOOuuuuUUUUyyY"
+        Const conAcentos = "ÁÀÉÈÍÌÓÒÚÙ"  '"áàäâÁÀÄÂéèëêÉÈËÊíìïîÍÌÏÎóòöôÓÒÖÔúùüûÚÙÜÛýÿÝ"
+        Const sinAcentos = "AAEEIIOOUU"  '"aaaaAAAAeeeeEEEEiiiiIIIIooooOOOOuuuuUUUUyyY"
         Dim i As Integer
         strNombre = strNombre.ToUpper()
         For i = Len(conAcentos) To 1 Step -1
             strNombre = Replace(strNombre, Mid(conAcentos, i, 1), Mid(sinAcentos, i, 1))
         Next
+        If strNombre = Nothing Then
+            strNombre = " "
+        End If
         sacar_tildes = strNombre
     End Function
-
-    'Private Sub txtDescripcionEntrega_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtDescripcionEntrega.TextChanged
-    '    '      fncQuitarAcentos(txtDescripcionEntrega.Text)
-    'End Sub
 End Class
 
