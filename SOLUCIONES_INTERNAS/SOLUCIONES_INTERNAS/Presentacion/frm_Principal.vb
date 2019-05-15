@@ -1053,6 +1053,12 @@ Public Class frm_Principal
         frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
         frm_Colaborador.dgvLista_Colaboradores.Enabled = False
         frm_Colaborador.GroupListadoColaboradores.Enabled = False
+
+        frm_Colaborador.btn_enviar_mensaje.Visible = False
+        frm_Colaborador.btn_Respuesta_Fecha.Visible = False
+        frm_Colaborador.btn_Ver_Respuesta.Visible = False
+
+        frm_Colaborador.quienllamo_col = Me
         frm_Colaborador.ShowDialog()
     End Sub
 
@@ -1074,10 +1080,17 @@ Public Class frm_Principal
         frm_Colaborador.dgvLista_Colaboradores.Enabled = False
         '   frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
+
+        frm_Colaborador.btn_enviar_mensaje.Visible = False
+        frm_Colaborador.btn_Respuesta_Fecha.Visible = False
+        frm_Colaborador.btn_Ver_Respuesta.Visible = False
+
+        frm_Colaborador.quienllamo_col = Me
         frm_Colaborador.ShowDialog()
     End Sub
 
     Private Sub EliminarColaboradorToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarColaboradorToolStripMenuItem.Click
+
         frm_Colaborador.Text = "Eliminar Colaborador"
         frm_Colaborador.txt_nombre_colaborador.Enabled = False
         frm_Colaborador.txt_nombre_colaborador.Enabled = False
@@ -1093,6 +1106,11 @@ Public Class frm_Principal
         frm_Colaborador.btn_enviar_mensaje.Enabled = False
         '   frm_Colaborador.btnImprimir.Visible = False
         frm_Colaborador.dgvLista_Colaboradores.ClearSelection()
+
+        frm_Colaborador.btn_enviar_mensaje.Visible = False
+        frm_Colaborador.btn_Respuesta_Fecha.Visible = False
+        frm_Colaborador.btn_Ver_Respuesta.Visible = False
+        frm_Colaborador.quienllamo_col = Me
         frm_Colaborador.ShowDialog()
     End Sub
 
@@ -1132,7 +1150,7 @@ Public Class frm_Principal
             ' frm_Colaborador.btnImprimir.Visible = True
         End If
 
-
+        frm_Colaborador.quienllamo_col = Me
         frm_Colaborador.ShowDialog()
     End Sub
 
