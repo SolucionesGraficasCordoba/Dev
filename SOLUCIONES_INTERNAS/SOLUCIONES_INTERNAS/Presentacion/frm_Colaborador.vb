@@ -28,28 +28,24 @@ Public Class frm_Colaborador
     End Sub
 
     Public Sub cargargrilla()
+        If quienllamo_col.Name = frm_Usuario.Name Then
+            Dim carga = (From col In datacontext.COLABORADOR
+                                         Select
+                                           col.COL_id_colaborador,
+                                           col.COL_nombre_col,
+                                           col.COL_apellido_col,
+                                           col.SEC_id_sector
+                                           Order By COL_nombre_col Ascending)
+            dgvLista_Colaboradores.DataSource = carga
 
-        If frm_Principal.LBL_MENU_PERFIL.Text = "COLABORADOR" Then
-            'TRAE SECTOR DEL USUARIO REGISTRADO
-            Dim cargasupervisor = (From sec In datacontext.SECTOR
-                          Join col In datacontext.COLABORADOR
-                          On col.SEC_id_sector Equals sec.SEC_id_sector
-                          Join usu In datacontext.USUARIO
-                          On usu.COL_id_colaborador Equals col.COL_id_colaborador
-                          Select usu.USU_usuario, sec.SEC_id_sector, sec.SEC_nombre_sector, col.COL_id_colaborador, col.COL_nombre_col, col.COL_apellido_col
-                          Where USU_usuario = frm_Principal.LBL_MENU_USU.Text)
-            dgvLista_Colaboradores.DataSource = cargasupervisor
-
-        ElseIf frm_Principal.LBL_MENU_PERFIL.Text = "SUPERVISOR" Or quienllamo_col.Name = frm_Tarea_1.Name Then
-
-            'TRAE SECTOR DEL USUARIO REGISTRADO
+        ElseIf quienllamo_col.Name = frm_Tarea_1.Name Then
             Dim cualq = (From c In datacontext.USUARIO
-                        Join col In datacontext.COLABORADOR
-                        On c.COL_id_colaborador Equals col.COL_id_colaborador
-                        Join sec In datacontext.SECTOR
-                        On col.SEC_id_sector Equals sec.SEC_id_sector
-                        Select sec.SEC_id_sector, sec.SEC_nombre_sector, c.USU_usuario
-                        Where USU_usuario = frm_Principal.LBL_MENU_USU.Text).ToList()(0)
+                           Join col In datacontext.COLABORADOR
+                           On c.COL_id_colaborador Equals col.COL_id_colaborador
+                           Join sec In datacontext.SECTOR
+                           On col.SEC_id_sector Equals sec.SEC_id_sector
+                           Select sec.SEC_id_sector, sec.SEC_nombre_sector, c.USU_usuario
+                           Where USU_usuario = frm_Principal.LBL_MENU_USU.Text).ToList()(0)
 
             Dim cargasupervisor = (From sec In datacontext.SECTOR
                          Join col In datacontext.COLABORADOR
@@ -57,28 +53,61 @@ Public Class frm_Colaborador
                          Join usu In datacontext.USUARIO
                          On usu.COL_id_colaborador Equals col.COL_id_colaborador
                          Select usu.USU_usuario, sec.SEC_id_sector, sec.SEC_nombre_sector, col.COL_id_colaborador, col.COL_nombre_col, col.COL_apellido_col
-                         Where SEC_id_sector = cualq.SEC_id_sector)
+                         Where SEC_id_sector = cualq.SEC_id_sector And COL_id_colaborador <> CInt(frm_Tarea.txt_id_colaborador.Text))
             dgvLista_Colaboradores.DataSource = cargasupervisor
-
         Else
-            Dim carga = (From col In datacontext.COLABORADOR
-                                        Join sec In datacontext.SECTOR
-                                        On col.SEC_id_sector Equals sec.SEC_id_sector
-                                        Join usu In datacontext.USUARIO
-                                        On col.COL_id_colaborador Equals usu.COL_id_colaborador
-                                        Select
-                                        col.COL_id_colaborador,
-                                        col.COL_nombre_col,
-                                        col.COL_apellido_col,
-                                        col.SEC_id_sector,
-                                        sec.SEC_nombre_sector,
-                                        usu.USU_id_usuario,
-                                        usu.USU_usuario
-                                        Where SEC_nombre_sector <> "De baja"
-                                        Order By SEC_nombre_sector Ascending)
-            dgvLista_Colaboradores.DataSource = carga
-        End If
 
+
+            If frm_Principal.LBL_MENU_PERFIL.Text = "COLABORADOR" Then
+                'TRAE SECTOR DEL USUARIO REGISTRADO
+                Dim cargasupervisor = (From sec In datacontext.SECTOR
+                              Join col In datacontext.COLABORADOR
+                              On col.SEC_id_sector Equals sec.SEC_id_sector
+                              Join usu In datacontext.USUARIO
+                              On usu.COL_id_colaborador Equals col.COL_id_colaborador
+                              Select usu.USU_usuario, sec.SEC_id_sector, sec.SEC_nombre_sector, col.COL_id_colaborador, col.COL_nombre_col, col.COL_apellido_col
+                              Where USU_usuario = frm_Principal.LBL_MENU_USU.Text)
+                dgvLista_Colaboradores.DataSource = cargasupervisor
+
+            ElseIf frm_Principal.LBL_MENU_PERFIL.Text = "SUPERVISOR" Then
+
+                'TRAE SECTOR DEL USUARIO REGISTRADO
+                Dim cualq = (From c In datacontext.USUARIO
+                            Join col In datacontext.COLABORADOR
+                            On c.COL_id_colaborador Equals col.COL_id_colaborador
+                            Join sec In datacontext.SECTOR
+                            On col.SEC_id_sector Equals sec.SEC_id_sector
+                            Select sec.SEC_id_sector, sec.SEC_nombre_sector, c.USU_usuario
+                            Where USU_usuario = frm_Principal.LBL_MENU_USU.Text).ToList()(0)
+
+                Dim cargasupervisor = (From sec In datacontext.SECTOR
+                             Join col In datacontext.COLABORADOR
+                             On col.SEC_id_sector Equals sec.SEC_id_sector
+                             Join usu In datacontext.USUARIO
+                             On usu.COL_id_colaborador Equals col.COL_id_colaborador
+                             Select usu.USU_usuario, sec.SEC_id_sector, sec.SEC_nombre_sector, col.COL_id_colaborador, col.COL_nombre_col, col.COL_apellido_col
+                             Where SEC_id_sector = cualq.SEC_id_sector)
+                dgvLista_Colaboradores.DataSource = cargasupervisor
+
+            Else
+                Dim carga = (From col In datacontext.COLABORADOR
+                                            Join sec In datacontext.SECTOR
+                                            On col.SEC_id_sector Equals sec.SEC_id_sector
+                                            Join usu In datacontext.USUARIO
+                                            On col.COL_id_colaborador Equals usu.COL_id_colaborador
+                                            Select
+                                            col.COL_id_colaborador,
+                                            col.COL_nombre_col,
+                                            col.COL_apellido_col,
+                                            col.SEC_id_sector,
+                                            sec.SEC_nombre_sector,
+                                            usu.USU_id_usuario,
+                                            usu.USU_usuario
+                                            Where SEC_nombre_sector <> "De baja"
+                                            Order By SEC_nombre_sector Ascending)
+                dgvLista_Colaboradores.DataSource = carga
+            End If
+        End If
     End Sub
 
 
