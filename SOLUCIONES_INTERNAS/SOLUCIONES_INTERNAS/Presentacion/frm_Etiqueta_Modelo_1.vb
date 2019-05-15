@@ -300,8 +300,8 @@ Public Class frm_Etiqueta_Modelo_1
     'Función para quitar acentos de una cadena de texto
     '--------------------------------------------------------------------------------------------
     Public Function sacar_tildes(ByVal strNombre As String) As String
-        Const conAcentos = "ÁÀÉÈÍÌÓÒÚÙ"  '"áàäâÁÀÄÂéèëêÉÈËÊíìïîÍÌÏÎóòöôÓÒÖÔúùüûÚÙÜÛýÿÝ"
-        Const sinAcentos = "AAEEIIOOUU"  '"aaaaAAAAeeeeEEEEiiiiIIIIooooOOOOuuuuUUUUyyY"
+        Const conAcentos = "ÁÀÉÈÍÌÓÒÚÙÑ"  '"áàäâÁÀÄÂéèëêÉÈËÊíìïîÍÌÏÎóòöôÓÒÖÔúùüûÚÙÜÛýÿÝ"
+        Const sinAcentos = "AAEEIIOOUUN"  '"aaaaAAAAeeeeEEEEiiiiIIIIooooOOOOuuuuUUUUyyY"
         Dim i As Integer
         strNombre = strNombre.ToUpper()
         For i = Len(conAcentos) To 1 Step -1
