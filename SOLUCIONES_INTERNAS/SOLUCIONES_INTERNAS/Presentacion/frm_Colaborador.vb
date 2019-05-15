@@ -30,7 +30,7 @@ Public Class frm_Colaborador
     Public Sub cargargrilla()
 
         If frm_Principal.LBL_MENU_PERFIL.Text = "COLABORADOR" Then
-
+            'TRAE SECTOR DEL USUARIO REGISTRADO
             Dim cargasupervisor = (From sec In datacontext.SECTOR
                           Join col In datacontext.COLABORADOR
                           On col.SEC_id_sector Equals sec.SEC_id_sector
@@ -40,7 +40,7 @@ Public Class frm_Colaborador
                           Where USU_usuario = frm_Principal.LBL_MENU_USU.Text)
             dgvLista_Colaboradores.DataSource = cargasupervisor
 
-        ElseIf frm_Principal.LBL_MENU_PERFIL.Text = "SUPERVISOR" Then
+        ElseIf frm_Principal.LBL_MENU_PERFIL.Text = "SUPERVISOR" Or quienllamo_col.Name = frm_Tarea_1.Name Then
 
             'TRAE SECTOR DEL USUARIO REGISTRADO
             Dim cualq = (From c In datacontext.USUARIO
@@ -78,6 +78,7 @@ Public Class frm_Colaborador
                                         Order By SEC_nombre_sector Ascending)
             dgvLista_Colaboradores.DataSource = carga
         End If
+
     End Sub
 
 
@@ -278,7 +279,6 @@ Public Class frm_Colaborador
                 frm_Tarea.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
 
             ElseIf quienllamo_col.Name = frm_Tarea_1.Name Then
-
                 frm_Tarea_1.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
                 frm_Tarea_1.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
 
