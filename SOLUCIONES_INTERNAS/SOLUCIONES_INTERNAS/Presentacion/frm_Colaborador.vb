@@ -392,11 +392,20 @@ Public Class frm_Colaborador
     End Sub
 
     Private Sub btn_Ver_Mensaje_Click(sender As System.Object, e As System.EventArgs) Handles btn_Ver_Respuesta.Click
-        frm_Mensaje.rbtFecha.Enabled = False
-        frm_Mensaje.DateTimePicker1.Enabled = False
-        frm_Mensaje.Show()
-        frm_Mensaje.TabControl1.SelectedIndex = 1
-        frm_Mensaje.TabPage1.Parent = Nothing
+        Try
+            If dgvLista_Colaboradores.Rows.Count = 0 Then
+                frm_Mensaje.rbtFecha.Enabled = False
+                frm_Mensaje.DateTimePicker1.Enabled = False
+                frm_Mensaje.Show()
+                frm_Mensaje.TabControl1.SelectedIndex = 1
+                frm_Mensaje.TabPage1.Parent = Nothing
+            End If
+            MsgBox("Seleccione un colaborador del listado")
+            Exit Sub
+        Catch ex As Exception
+
+        End Try
+        
     End Sub
 
     Private Sub btn_Respuesta_Fecha_Click(sender As System.Object, e As System.EventArgs) Handles btn_Respuesta_Fecha.Click

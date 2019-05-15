@@ -330,7 +330,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label29.AutoSize = True
         Me.Label29.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label29.ForeColor = System.Drawing.Color.Red
-        Me.Label29.Location = New System.Drawing.Point(347, 83)
+        Me.Label29.Location = New System.Drawing.Point(400, 83)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(14, 13)
         Me.Label29.TabIndex = 29
@@ -350,7 +350,7 @@ Partial Class frm_Etiqueta_Modelo_1
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(312, 83)
+        Me.Label1.Location = New System.Drawing.Point(365, 83)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(34, 13)
         Me.Label1.TabIndex = 25
@@ -370,9 +370,9 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.cboLogo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboLogo.FormattingEnabled = True
         Me.cboLogo.Items.AddRange(New Object() {"Aguas Cordobesas", "Fsc", "Soluciones Graficas", "Tarjeta Naranja", "Ninguno"})
-        Me.cboLogo.Location = New System.Drawing.Point(365, 78)
+        Me.cboLogo.Location = New System.Drawing.Point(418, 78)
         Me.cboLogo.Name = "cboLogo"
-        Me.cboLogo.Size = New System.Drawing.Size(151, 21)
+        Me.cboLogo.Size = New System.Drawing.Size(231, 21)
         Me.cboLogo.TabIndex = 16
         '
         'txtSeccion
@@ -514,7 +514,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label33.AutoSize = True
         Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label33.ForeColor = System.Drawing.Color.Red
-        Me.Label33.Location = New System.Drawing.Point(391, 31)
+        Me.Label33.Location = New System.Drawing.Point(391, 37)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(14, 13)
         Me.Label33.TabIndex = 38
@@ -529,27 +529,27 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         'btnBuscar_Orden
         '
-        Me.btnBuscar_Orden.Location = New System.Drawing.Point(543, 26)
+        Me.btnBuscar_Orden.Location = New System.Drawing.Point(524, 29)
         Me.btnBuscar_Orden.Name = "btnBuscar_Orden"
-        Me.btnBuscar_Orden.Size = New System.Drawing.Size(62, 34)
+        Me.btnBuscar_Orden.Size = New System.Drawing.Size(51, 29)
         Me.btnBuscar_Orden.TabIndex = 36
         Me.btnBuscar_Orden.Text = "..."
         Me.btnBuscar_Orden.UseVisualStyleBackColor = True
         '
         'txt_orden
         '
-        Me.txt_orden.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_orden.Location = New System.Drawing.Point(407, 16)
+        Me.txt_orden.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_orden.Location = New System.Drawing.Point(407, 22)
         Me.txt_orden.Multiline = True
         Me.txt_orden.Name = "txt_orden"
-        Me.txt_orden.Size = New System.Drawing.Size(130, 44)
+        Me.txt_orden.Size = New System.Drawing.Size(111, 36)
         Me.txt_orden.TabIndex = 1
         Me.txt_orden.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(336, 26)
+        Me.Label34.Location = New System.Drawing.Point(336, 32)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(57, 26)
         Me.Label34.TabIndex = 34
