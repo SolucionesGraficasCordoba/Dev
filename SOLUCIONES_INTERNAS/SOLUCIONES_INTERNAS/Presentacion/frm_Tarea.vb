@@ -1225,6 +1225,11 @@
         frm_Colaborador.GroupNuevoColaborador.Enabled = False
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
 
+        frm_Colaborador.txt_Buscar_Colaborador.Enabled = False
+
+        frm_Colaborador.btn_enviar_mensaje.Visible = False
+        frm_Colaborador.btn_Respuesta_Fecha.Visible = False
+        frm_Colaborador.btn_Ver_Respuesta.Visible = False
         quienllamoatarea = 0
 
     End Sub

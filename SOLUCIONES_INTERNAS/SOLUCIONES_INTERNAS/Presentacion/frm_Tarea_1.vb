@@ -1067,7 +1067,7 @@
     End Sub
 
     Private Sub btnCancelar_Tarea_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar_Tarea.Click
-        Select Case MsgBox("Realmente desea cerrar el formulario?, Se perderán los cambios realizados", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Cerrando Formulario")
+        Select Case MsgBox("Realmente desea cerrar el formulario, Se perderán los cambios realizados", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Cerrando Formulario")
             Case MsgBoxResult.No
                 Exit Sub
             Case MsgBoxResult.Yes
@@ -1077,11 +1077,17 @@
     End Sub
 
     Private Sub btnBuscar_Colaborador_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Colaborador.Click
+
         frm_Colaborador.quienllamo_col = Me
         frm_Colaborador.Text = "Seleccionar colaborador"
         frm_Colaborador.Show()
         frm_Colaborador.GroupNuevoColaborador.Enabled = False
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
+
+        frm_Colaborador.txt_Buscar_Colaborador.Enabled = False
+        frm_Colaborador.btn_enviar_mensaje.Visible = False
+        frm_Colaborador.btn_Respuesta_Fecha.Visible = False
+        frm_Colaborador.btn_Ver_Respuesta.Visible = False
 
         quienllamoatarea = 0
     End Sub
