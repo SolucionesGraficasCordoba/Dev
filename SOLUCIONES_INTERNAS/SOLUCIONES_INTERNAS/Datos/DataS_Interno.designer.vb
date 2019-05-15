@@ -4203,7 +4203,7 @@ Partial Public Class PIEZA1
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PIEZA1_DETALLE_ORDEN_TRABAJO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="PIE_id_pieza", OtherKey:="PIE_id_pieza")>  _
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PIEZA1_DETALLE_ORDEN_TRABAJO", Storage:="_DETALLE_ORDEN_TRABAJO", ThisKey:="PIE_id_pieza", OtherKey:="PIE_id_pieza_offset")>  _
 	Public Property DETALLE_ORDEN_TRABAJO() As EntitySet(Of DETALLE_ORDEN_TRABAJO)
 		Get
 			Return Me._DETALLE_ORDEN_TRABAJO
@@ -4979,7 +4979,7 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 		End Get
 		Set
 			If (Me._PIE_id_pieza.Equals(value) = false) Then
-				If (Me._PIEZA.HasLoadedOrAssignedValue OrElse Me._PIEZA1.HasLoadedOrAssignedValue) Then
+				If Me._PIEZA.HasLoadedOrAssignedValue Then
 					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
 				End If
 				Me.OnPIE_id_piezaChanging(value)
@@ -5113,6 +5113,9 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 		End Get
 		Set
 			If (Me._PIE_id_pieza_offset.Equals(value) = false) Then
+				If Me._PIEZA1.HasLoadedOrAssignedValue Then
+					Throw New System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException()
+				End If
 				Me.OnPIE_id_pieza_offsetChanging(value)
 				Me.SendPropertyChanging
 				Me._PIE_id_pieza_offset = value
@@ -5566,7 +5569,7 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 		End Set
 	End Property
 	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PIEZA1_DETALLE_ORDEN_TRABAJO", Storage:="_PIEZA1", ThisKey:="PIE_id_pieza", OtherKey:="PIE_id_pieza", IsForeignKey:=true)>  _
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PIEZA1_DETALLE_ORDEN_TRABAJO", Storage:="_PIEZA1", ThisKey:="PIE_id_pieza_offset", OtherKey:="PIE_id_pieza", IsForeignKey:=true)>  _
 	Public Property PIEZA1() As PIEZA1
 		Get
 			Return Me._PIEZA1.Entity
@@ -5585,9 +5588,9 @@ Partial Public Class DETALLE_ORDEN_TRABAJO
 				If ((value Is Nothing)  _
 							= false) Then
 					value.DETALLE_ORDEN_TRABAJO.Add(Me)
-					Me._PIE_id_pieza = value.PIE_id_pieza
+					Me._PIE_id_pieza_offset = value.PIE_id_pieza
 				Else
-					Me._PIE_id_pieza = CType(Nothing, Nullable(Of Integer))
+					Me._PIE_id_pieza_offset = CType(Nothing, Nullable(Of Integer))
 				End If
 				Me.SendPropertyChanged("PIEZA1")
 			End If
