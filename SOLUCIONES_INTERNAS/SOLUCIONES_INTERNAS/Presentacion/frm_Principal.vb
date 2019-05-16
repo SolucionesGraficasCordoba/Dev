@@ -2309,6 +2309,7 @@ Public Class frm_Principal
     End Sub
 
     Private Sub PlanificarToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PlanificarToolStripMenuItem.Click
+        frm_Despacho.dgv_emp_lista_ordenes.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         frm_Despacho.Text = "Nueva planificación diaria"
         frm_Despacho.tbp_logistica.Enabled = False
         frm_Despacho.tbp_empaque.Enabled = True

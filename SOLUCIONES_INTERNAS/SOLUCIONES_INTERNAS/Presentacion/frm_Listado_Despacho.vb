@@ -132,9 +132,13 @@ Public Class frm_Listado_Despacho
         Try
             If dgv_orden_x_remito.SelectedRows.Count > 0 Then
                 Dim eliminar = (From C In datacontext.DESPACHO Where C.DES_id = CInt(dgv_orden_x_remito.Item("DES_id", dgv_orden_x_remito.SelectedRows(0).Index).Value)).ToList()(0)
+                eliminar.DES_nro_despacho = ""
+                eliminar.DES_nro_remito = ""
+                eliminar.DES_chofer = "Seleccionar"
+                eliminar.DES_observaciones = ""
+
                 Select Case MsgBox("Se desviculará la orden del remito, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Desvincular órden")
                     Case MsgBoxResult.Yes
-                        datacontext.DESPACHO.DeleteOnSubmit(eliminar)
                         datacontext.SubmitChanges()
                         MsgBox("La orden ha sido desvinculada")
                         cargargrilla_odtxrem()

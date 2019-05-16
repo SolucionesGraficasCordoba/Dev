@@ -219,6 +219,11 @@
 
         'SE USA EL DATATABLE COMO DATASOURCE
         dgv_emp_lista_ordenes.DataSource = dt_empaque
+
+        dgv_emp_lista_ordenes.Columns("ORT_id_orden_trabajo").ReadOnly = True
+        dgv_emp_lista_ordenes.Columns("ORT_numero_ot").ReadOnly = True
+        dgv_emp_lista_ordenes.Columns("CLI_razon_social").ReadOnly = True
+        dgv_emp_lista_ordenes.Columns("ORT_observaciones_ot").ReadOnly = True
     End Sub
 
     Private Sub btn_emp_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_emp_cancelar.Click
