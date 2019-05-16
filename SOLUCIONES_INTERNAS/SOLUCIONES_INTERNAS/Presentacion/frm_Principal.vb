@@ -1655,6 +1655,7 @@ Public Class frm_Principal
         frm_Productos.btn_prod_cancelar.Enabled = True
         frm_Productos.btn_prod_eliminar.Enabled = False
         frm_Productos.btnExportarPDF.Enabled = False
+        frm_Productos.btn_Exportar_Excel.Enabled = False
         frm_Productos.ShowDialog()
         frm_Productos.rbtProducto.Checked = False
 
@@ -1680,6 +1681,7 @@ Public Class frm_Principal
         frm_Productos.btn_prod_cancelar.Enabled = True
         frm_Productos.btn_prod_eliminar.Enabled = False
         frm_Productos.btnExportarPDF.Enabled = False
+        frm_Productos.btn_Exportar_Excel.Enabled = False
 
         frm_Productos.dgvLista_Productos.ClearSelection()
         frm_Productos.dgvLista_Productos.Enabled = True
@@ -1711,6 +1713,7 @@ Public Class frm_Principal
         frm_Productos.btn_prod_cancelar.Enabled = True
         frm_Productos.btn_prod_eliminar.Enabled = True
         frm_Productos.btnExportarPDF.Enabled = False
+        frm_Productos.btn_Exportar_Excel.Enabled = False
 
         frm_Productos.dgvLista_Productos.Enabled = True
         frm_Productos.ShowDialog()

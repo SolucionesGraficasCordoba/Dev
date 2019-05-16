@@ -52,6 +52,7 @@ Partial Class frm_Productos
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btn_prod_eliminar = New System.Windows.Forms.Button()
         Me.btn_prod_cancelar = New System.Windows.Forms.Button()
+        Me.btn_Exportar_Excel = New System.Windows.Forms.Button()
         CType(Me.dgvLista_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -318,7 +319,7 @@ Partial Class frm_Productos
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(32, 485)
+        Me.Label8.Location = New System.Drawing.Point(23, 501)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(105, 13)
         Me.Label8.TabIndex = 22
@@ -328,7 +329,7 @@ Partial Class frm_Productos
         '
         Me.Label9.AutoSize = True
         Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label9.Location = New System.Drawing.Point(262, 483)
+        Me.Label9.Location = New System.Drawing.Point(120, 478)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(2, 15)
         Me.Label9.TabIndex = 23
@@ -336,7 +337,7 @@ Partial Class frm_Productos
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(154, 485)
+        Me.Label10.Location = New System.Drawing.Point(12, 480)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(97, 13)
         Me.Label10.TabIndex = 21
@@ -360,11 +361,21 @@ Partial Class frm_Productos
         Me.btn_prod_cancelar.Text = "Cancelar"
         Me.btn_prod_cancelar.UseVisualStyleBackColor = True
         '
+        'btn_Exportar_Excel
+        '
+        Me.btn_Exportar_Excel.Location = New System.Drawing.Point(189, 480)
+        Me.btn_Exportar_Excel.Name = "btn_Exportar_Excel"
+        Me.btn_Exportar_Excel.Size = New System.Drawing.Size(131, 33)
+        Me.btn_Exportar_Excel.TabIndex = 25
+        Me.btn_Exportar_Excel.Text = "Exportar a EXCEL"
+        Me.btn_Exportar_Excel.UseVisualStyleBackColor = True
+        '
         'frm_Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(614, 523)
+        Me.Controls.Add(Me.btn_Exportar_Excel)
         Me.Controls.Add(Me.btnExportarPDF)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label9)
@@ -417,4 +428,5 @@ Partial Class frm_Productos
     Friend WithEvents rbtProducto As System.Windows.Forms.RadioButton
     Friend WithEvents tb_cod_busqueda As System.Windows.Forms.TextBox
     Friend WithEvents tb_prod_busqueda As System.Windows.Forms.TextBox
+    Friend WithEvents btn_Exportar_Excel As System.Windows.Forms.Button
 End Class

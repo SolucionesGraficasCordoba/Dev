@@ -51,7 +51,6 @@ Partial Class frm_Mensaje
         Me.rbtFecha = New System.Windows.Forms.RadioButton()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.dgv_Listado_Mensajes = New System.Windows.Forms.DataGridView()
-        Me.btn_Exportar_PDF = New System.Windows.Forms.Button()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -314,7 +313,6 @@ Partial Class frm_Mensaje
         Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
         Me.TabPage2.Controls.Add(Me.GroupBox1)
         Me.TabPage2.Controls.Add(Me.dgv_Listado_Mensajes)
-        Me.TabPage2.Controls.Add(Me.btn_Exportar_PDF)
         Me.TabPage2.Controls.Add(Me.btn_cancelar)
         Me.TabPage2.Location = New System.Drawing.Point(4, 22)
         Me.TabPage2.Name = "TabPage2"
@@ -360,15 +358,6 @@ Partial Class frm_Mensaje
         Me.dgv_Listado_Mensajes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_Listado_Mensajes.Size = New System.Drawing.Size(687, 395)
         Me.dgv_Listado_Mensajes.TabIndex = 36
-        '
-        'btn_Exportar_PDF
-        '
-        Me.btn_Exportar_PDF.Location = New System.Drawing.Point(524, 472)
-        Me.btn_Exportar_PDF.Name = "btn_Exportar_PDF"
-        Me.btn_Exportar_PDF.Size = New System.Drawing.Size(92, 33)
-        Me.btn_Exportar_PDF.TabIndex = 35
-        Me.btn_Exportar_PDF.Text = "Exportar a PDF"
-        Me.btn_Exportar_PDF.UseVisualStyleBackColor = True
         '
         'btn_cancelar
         '
@@ -426,7 +415,6 @@ Partial Class frm_Mensaje
     Friend WithEvents txt_nombre_usuario As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
-    Friend WithEvents btn_Exportar_PDF As System.Windows.Forms.Button
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button
     Friend WithEvents dgv_Listado_Mensajes As System.Windows.Forms.DataGridView
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
