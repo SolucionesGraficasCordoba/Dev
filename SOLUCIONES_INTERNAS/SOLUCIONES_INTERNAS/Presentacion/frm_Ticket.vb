@@ -31,22 +31,8 @@ Public Class frm_Ticket
             txt_id_usuario.Text = CargaUsuarioColSup.USU_id_usuario
 
             cbo_estado.SelectedIndex = 0
-            ' cbo_prioridad.SelectedIndex = 0
-            GroupReceptor.Enabled = False
-            btn_respuesta.Enabled = False
-            btn_Cancelar_Receptor.Enabled = False
-        Else
-            Dim CargaUsuarioAdm = (From sec In datacontext.SECTOR
-                        Join col In datacontext.COLABORADOR
-                        On col.SEC_id_sector Equals sec.SEC_id_sector
-                        Join usu In datacontext.USUARIO
-                        On usu.COL_id_colaborador Equals col.COL_id_colaborador
-                        Select usu.USU_usuario, usu.USU_id_usuario
-                        Where USU_usuario = frm_Principal.LBL_MENU_USU.Text).ToList()(0)
-
-            txt_nombre_usuario.Text = CargaUsuarioAdm.USU_usuario
-            txt_id_usuario.Text = CargaUsuarioAdm.USU_id_usuario
-            cbo_busqueda_estado.SelectedIndex = 1
+            '' cbo_prioridad.SelectedIndex = 0
+            cbo_busqueda_estado.SelectedIndex = 0
         End If
         armargrillaticket()
         cargargrillaticket()
@@ -99,7 +85,7 @@ Public Class frm_Ticket
     End Sub
 
     Public Sub cargargrillaticket()
-        If frm_Principal.LBL_MENU_PERFIL.Text = "ADMINISTRADOR" Then
+        If frm_Principal.LBL_MENU_PERFIL.Text = "ADMINISTRADOR" Or GroupReceptor.Enabled = True Then
             If cbo_busqueda_estado.Text <> "Todos" Then
                 Dim consulta = (From ti In datacontext.TICKET
                                  Join us In datacontext.USUARIO
@@ -143,27 +129,51 @@ Public Class frm_Ticket
                 dgv_lista_ticket.DataSource = consulta
             End If
         Else
-            dgv_lista_ticket.Columns("USU_usuario").Visible = False
-            Dim consultaTicket = (From ti In datacontext.TICKET
-                                  Join us In datacontext.USUARIO
-                                  On ti.TIC_id_usuario Equals us.USU_id_usuario
-                                  Select ti.TIC_id_ticket,
-                                  ti.TIC_id_usuario,
-                                  us.USU_usuario,
-                                  ti.TIC_fecha_pedido,
-                                  ti.TIC_recurso,
-                                  ti.TIC_herramienta,
-                                  ti.TIC_plazo_resolucion,
-                                  ti.TIC_descripcion,
-                                  ti.TIC_prioridad,
-                                  ti.TIC_estado,
-                                  ti.TIC_fecha_real_cierre,
-                                  ti.TIC_fecha_estimado_cierre,
-                                  ti.TIC_sector,
-                                  ti.TIC_comentarios
-                        Where (USU_usuario = txt_nombre_usuario.Text)
-                                  Order By TIC_fecha_pedido Descending)
-            dgv_lista_ticket.DataSource = consultaTicket
+            If cbo_busqueda_estado.Text <> "Todos" Then
+                Dim consultaTicket = (From ti In datacontext.TICKET
+                                      Join us In datacontext.USUARIO
+                                      On ti.TIC_id_usuario Equals us.USU_id_usuario
+                                      Select ti.TIC_id_ticket,
+                                      ti.TIC_id_usuario,
+                                      us.USU_usuario,
+                                      ti.TIC_fecha_pedido,
+                                      ti.TIC_recurso,
+                                      ti.TIC_herramienta,
+                                      ti.TIC_plazo_resolucion,
+                                      ti.TIC_descripcion,
+                                      ti.TIC_prioridad,
+                                      ti.TIC_estado,
+                                      ti.TIC_fecha_real_cierre,
+                                      ti.TIC_fecha_estimado_cierre,
+                                      ti.TIC_sector,
+                                      ti.TIC_comentarios
+                            Where (USU_usuario = txt_nombre_usuario.Text And TIC_estado = cbo_busqueda_estado.Text)
+                                      Order By TIC_fecha_pedido Descending)
+                dgv_lista_ticket.DataSource = consultaTicket
+                dgv_lista_ticket.Columns("USU_usuario").Visible = False
+            Else
+                Dim consultaTicket = (From ti In datacontext.TICKET
+                                     Join us In datacontext.USUARIO
+                                     On ti.TIC_id_usuario Equals us.USU_id_usuario
+                                     Select ti.TIC_id_ticket,
+                                     ti.TIC_id_usuario,
+                                     us.USU_usuario,
+                                     ti.TIC_fecha_pedido,
+                                     ti.TIC_recurso,
+                                     ti.TIC_herramienta,
+                                     ti.TIC_plazo_resolucion,
+                                     ti.TIC_descripcion,
+                                     ti.TIC_prioridad,
+                                     ti.TIC_estado,
+                                     ti.TIC_fecha_real_cierre,
+                                     ti.TIC_fecha_estimado_cierre,
+                                     ti.TIC_sector,
+                                     ti.TIC_comentarios
+                           Where (USU_usuario = txt_nombre_usuario.Text)
+                                     Order By TIC_fecha_pedido Descending)
+                dgv_lista_ticket.DataSource = consultaTicket
+                dgv_lista_ticket.Columns("USU_usuario").Visible = False
+            End If
         End If
     End Sub
 
@@ -177,80 +187,6 @@ Public Class frm_Ticket
         Else
             e.Handled = True
         End If
-    End Sub
-
-    Private Sub btn_Solicitud_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_Solicitud.Click
-        Try
-            If txt_recurso.Text.Length = 0 Then
-                MsgBox("Debe completar el campo 'Recurso o Máquina'")
-                txt_recurso.Focus()
-                Exit Sub
-            End If
-
-            'GUARDA SOLICITANTE
-            Dim ticket = New TICKET
-            ticket.TIC_id_usuario = txt_id_usuario.Text
-            ticket.TIC_fecha_pedido = StrConv(dtp_fecha_pedido.Text, VbStrConv.ProperCase)
-            ticket.TIC_recurso = txt_recurso.Text
-            ticket.TIC_herramienta = StrConv(txt_herramienta.Text, VbStrConv.ProperCase)
-            ticket.TIC_plazo_resolucion = StrConv(txt_plazo.Text, VbStrConv.ProperCase)
-            ticket.TIC_descripcion = StrConv(txt_descripcion.Text, VbStrConv.ProperCase)
-
-            ticket.TIC_estado = StrConv(cbo_estado.Text, VbStrConv.ProperCase)
-
-            datacontext.TICKET.InsertOnSubmit(ticket)
-            datacontext.SubmitChanges()
-            Dim ultimoticket = (From ut In datacontext.TICKET
-                                Select ut.TIC_id_ticket
-                                Order By TIC_id_ticket Descending).ToList()(0)
-            MsgBox("El Ticket fue cargado exitosamente, N° " & ultimoticket)
-            Me.Close()
-            '  cargargrilla()
-            ' limpiarcontroles()
-        Catch ex As Exception
-            MsgBox("El Ticket no puedo ser cargado")
-            ' limpiarcontroles()
-            ' cargargrilla()
-        End Try
-    End Sub
-
-    Private Sub btnCancelar_Cliente_Click_1(sender As System.Object, e As System.EventArgs) Handles btnCancelar_Solicitante.Click
-        Me.Close()
-        Me.Dispose()
-    End Sub
-
-    Private Sub btn_respuesta_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_respuesta.Click
-        Try
-            Dim ActualizarTicket = (From P In datacontext.TICKET Where P.TIC_id_ticket = (txt_id_ticket.Text.ToUpper)).ToList()(0)
-            ActualizarTicket.TIC_prioridad = StrConv(cbo_prioridad.Text, VbStrConv.ProperCase)
-            ActualizarTicket.TIC_estado = cbo_estado.Text
-            ActualizarTicket.TIC_fecha_estimado_cierre = StrConv(dtp_fecha_estimada.Text, VbStrConv.ProperCase)
-            ActualizarTicket.TIC_fecha_real_cierre = StrConv(dtp_fecha_real.Text, VbStrConv.ProperCase)
-            ActualizarTicket.TIC_sector = StrConv(txt_sector_dirigido.Text, VbStrConv.ProperCase)
-            ActualizarTicket.TIC_comentarios = StrConv(txt_comentarios.Text, VbStrConv.ProperCase)
-
-            datacontext.SubmitChanges()
-            MsgBox("Los datos se han modificado correctamente")
-            LimpiarReceptor()
-            LimpiarSolicitante()
-            cargargrillaticket()
-            TabControl1.SelectedIndex = 1
-            '  cargargrilla()
-            '  Me.limpiarcontroles()
-            If frm_Principal.LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
-                Me.Close()
-            End If
-
-        Catch ex As Exception
-            MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar Ticket")
-            '  Me.limpiarcontroles()
-            '  Me.cargargrilla()
-        End Try
-    End Sub
-
-    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles btn_Cancelar_Receptor.Click
-        Me.Close()
-        Me.Dispose()
     End Sub
 
     Private Sub dgv_lista_ticket_CellDoubleClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_lista_ticket.CellDoubleClick
@@ -275,23 +211,6 @@ Public Class frm_Ticket
         Else
             MsgBox("Debe seleccionar una ticket del listado")
             Exit Sub
-        End If
-
-        If frm_Principal.LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
-            GroupSolicitante.Enabled = False
-            btn_Solicitud.Enabled = False
-            btnCancelar_Solicitante.Enabled = False
-            chk_Nuevo.Enabled = True
-            chk_Nuevo.Checked = False
-            GroupSolicitante.Enabled = True
-        Else
-            btn_Solicitud.Enabled = False
-            btnCancelar_Solicitante.Enabled = False
-            chk_Nuevo.Enabled = False
-            GroupSolicitante.Enabled = False
-            GroupReceptor.Enabled = True
-            btn_respuesta.Enabled = True
-            btn_Cancelar_Receptor.Enabled = True
         End If
     End Sub
 
@@ -352,11 +271,6 @@ Public Class frm_Ticket
         txt_plazo.Clear()
         txt_descripcion.Clear()
         dtp_fecha_pedido.Text = Now
-        btn_Solicitud.Enabled = True
-        btnCancelar_Solicitante.Enabled = True
-        GroupReceptor.Enabled = False
-        btn_respuesta.Enabled = False
-        btn_Cancelar_Receptor.Enabled = False
     End Sub
 
     Private Sub chk_Nuevo_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles chk_Nuevo.CheckedChanged
@@ -444,5 +358,79 @@ Public Class frm_Ticket
             'si el mensaje es fallido mostrar msgbox
             MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub btn_Solicitud_Click(sender As System.Object, e As System.EventArgs) Handles btn_Solicitud.Click
+        Try
+            If txt_recurso.Text.Length = 0 Then
+                MsgBox("Debe completar el campo 'Recurso o Máquina'")
+                txt_recurso.Focus()
+                Exit Sub
+            End If
+
+            'GUARDA SOLICITANTE
+            Dim ticket = New TICKET
+            ticket.TIC_id_usuario = txt_id_usuario.Text
+            ticket.TIC_fecha_pedido = StrConv(dtp_fecha_pedido.Text, VbStrConv.ProperCase)
+            ticket.TIC_recurso = txt_recurso.Text
+            ticket.TIC_herramienta = StrConv(txt_herramienta.Text, VbStrConv.ProperCase)
+            ticket.TIC_plazo_resolucion = StrConv(txt_plazo.Text, VbStrConv.ProperCase)
+            ticket.TIC_descripcion = StrConv(txt_descripcion.Text, VbStrConv.ProperCase)
+
+            ticket.TIC_estado = StrConv(cbo_estado.Text, VbStrConv.ProperCase)
+
+            datacontext.TICKET.InsertOnSubmit(ticket)
+            datacontext.SubmitChanges()
+            Dim ultimoticket = (From ut In datacontext.TICKET
+                                Select ut.TIC_id_ticket
+                                Order By TIC_id_ticket Descending).ToList()(0)
+            MsgBox("El Ticket fue cargado exitosamente, N° " & ultimoticket)
+            Me.Close()
+            '  cargargrilla()
+            ' limpiarcontroles()
+        Catch ex As Exception
+            MsgBox("El Ticket no puedo ser cargado")
+            ' limpiarcontroles()
+            ' cargargrilla()
+        End Try
+    End Sub
+
+    Private Sub btn_respuesta_Click(sender As System.Object, e As System.EventArgs) Handles btn_respuesta.Click
+        Try
+            Dim ActualizarTicket = (From P In datacontext.TICKET Where P.TIC_id_ticket = (txt_id_ticket.Text.ToUpper)).ToList()(0)
+            ActualizarTicket.TIC_prioridad = StrConv(cbo_prioridad.Text, VbStrConv.ProperCase)
+            ActualizarTicket.TIC_estado = cbo_estado.Text
+            ActualizarTicket.TIC_fecha_estimado_cierre = StrConv(dtp_fecha_estimada.Text, VbStrConv.ProperCase)
+            ActualizarTicket.TIC_fecha_real_cierre = StrConv(dtp_fecha_real.Text, VbStrConv.ProperCase)
+            ActualizarTicket.TIC_sector = StrConv(txt_sector_dirigido.Text, VbStrConv.ProperCase)
+            ActualizarTicket.TIC_comentarios = StrConv(txt_comentarios.Text, VbStrConv.ProperCase)
+
+            datacontext.SubmitChanges()
+            MsgBox("Los datos se han modificado correctamente")
+            LimpiarReceptor()
+            LimpiarSolicitante()
+            cargargrillaticket()
+            TabControl1.SelectedIndex = 1
+            '  cargargrilla()
+            '  Me.limpiarcontroles()
+            If frm_Principal.LBL_MENU_PERFIL.Text <> "ADMINISTRADOR" Then
+                Me.Close()
+            End If
+
+        Catch ex As Exception
+            MsgBox("Los datos no se han modificado! intente nuevamente", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar Ticket")
+            '  Me.limpiarcontroles()
+            '  Me.cargargrilla()
+        End Try
+    End Sub
+
+    Private Sub btnCancelar_Solicitante_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar_Solicitante.Click
+        Me.Close()
+        Me.Dispose()
+    End Sub
+
+    Private Sub btn_Cancelar_Receptor_Click(sender As System.Object, e As System.EventArgs) Handles btn_Cancelar_Receptor.Click
+        Me.Close()
+        Me.Dispose()
     End Sub
 End Class

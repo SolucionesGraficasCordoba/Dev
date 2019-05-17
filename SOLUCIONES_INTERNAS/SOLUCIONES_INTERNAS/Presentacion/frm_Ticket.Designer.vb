@@ -25,9 +25,7 @@ Partial Class frm_Ticket
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.chk_Nuevo = New System.Windows.Forms.CheckBox()
-        Me.btn_Cancelar_Receptor = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.btn_respuesta = New System.Windows.Forms.Button()
         Me.GroupReceptor = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txt_comentarios = New System.Windows.Forms.TextBox()
@@ -59,8 +57,6 @@ Partial Class frm_Ticket
         Me.txt_nombre_usuario = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnCancelar_Solicitante = New System.Windows.Forms.Button()
-        Me.btn_Solicitud = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.btn_Exportar_PDF = New System.Windows.Forms.Button()
         Me.cbo_busqueda_estado = New System.Windows.Forms.ComboBox()
@@ -68,6 +64,10 @@ Partial Class frm_Ticket
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.dgv_lista_ticket = New System.Windows.Forms.DataGridView()
+        Me.btn_Cancelar_Receptor = New System.Windows.Forms.Button()
+        Me.btn_respuesta = New System.Windows.Forms.Button()
+        Me.btnCancelar_Solicitante = New System.Windows.Forms.Button()
+        Me.btn_Solicitud = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupReceptor.SuspendLayout()
@@ -90,13 +90,9 @@ Partial Class frm_Ticket
         '
         Me.TabPage1.BackColor = System.Drawing.SystemColors.Control
         Me.TabPage1.Controls.Add(Me.chk_Nuevo)
-        Me.TabPage1.Controls.Add(Me.btn_Cancelar_Receptor)
         Me.TabPage1.Controls.Add(Me.Label7)
-        Me.TabPage1.Controls.Add(Me.btn_respuesta)
         Me.TabPage1.Controls.Add(Me.GroupReceptor)
         Me.TabPage1.Controls.Add(Me.GroupSolicitante)
-        Me.TabPage1.Controls.Add(Me.btnCancelar_Solicitante)
-        Me.TabPage1.Controls.Add(Me.btn_Solicitud)
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -115,35 +111,19 @@ Partial Class frm_Ticket
         Me.chk_Nuevo.Text = "Nuevo"
         Me.chk_Nuevo.UseVisualStyleBackColor = True
         '
-        'btn_Cancelar_Receptor
-        '
-        Me.btn_Cancelar_Receptor.Location = New System.Drawing.Point(744, 566)
-        Me.btn_Cancelar_Receptor.Name = "btn_Cancelar_Receptor"
-        Me.btn_Cancelar_Receptor.Size = New System.Drawing.Size(75, 33)
-        Me.btn_Cancelar_Receptor.TabIndex = 25
-        Me.btn_Cancelar_Receptor.Text = "Cancelar"
-        Me.btn_Cancelar_Receptor.UseVisualStyleBackColor = True
-        '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(31, 321)
+        Me.Label7.Location = New System.Drawing.Point(199, 12)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(47, 13)
         Me.Label7.TabIndex = 23
         Me.Label7.Text = "id_ticket"
         '
-        'btn_respuesta
-        '
-        Me.btn_respuesta.Location = New System.Drawing.Point(663, 566)
-        Me.btn_respuesta.Name = "btn_respuesta"
-        Me.btn_respuesta.Size = New System.Drawing.Size(75, 33)
-        Me.btn_respuesta.TabIndex = 22
-        Me.btn_respuesta.Text = "Respuesta"
-        Me.btn_respuesta.UseVisualStyleBackColor = True
-        '
         'GroupReceptor
         '
+        Me.GroupReceptor.Controls.Add(Me.btn_Cancelar_Receptor)
+        Me.GroupReceptor.Controls.Add(Me.btn_respuesta)
         Me.GroupReceptor.Controls.Add(Me.Label4)
         Me.GroupReceptor.Controls.Add(Me.txt_comentarios)
         Me.GroupReceptor.Controls.Add(Me.dtp_fecha_estimada)
@@ -158,7 +138,7 @@ Partial Class frm_Ticket
         Me.GroupReceptor.Controls.Add(Me.Label13)
         Me.GroupReceptor.Location = New System.Drawing.Point(7, 338)
         Me.GroupReceptor.Name = "GroupReceptor"
-        Me.GroupReceptor.Size = New System.Drawing.Size(812, 226)
+        Me.GroupReceptor.Size = New System.Drawing.Size(812, 260)
         Me.GroupReceptor.TabIndex = 19
         Me.GroupReceptor.TabStop = False
         Me.GroupReceptor.Text = "Receptor"
@@ -271,6 +251,8 @@ Partial Class frm_Ticket
         '
         'GroupSolicitante
         '
+        Me.GroupSolicitante.Controls.Add(Me.btnCancelar_Solicitante)
+        Me.GroupSolicitante.Controls.Add(Me.btn_Solicitud)
         Me.GroupSolicitante.Controls.Add(Me.Label18)
         Me.GroupSolicitante.Controls.Add(Me.txt_id_ticket)
         Me.GroupSolicitante.Controls.Add(Me.Label15)
@@ -290,7 +272,7 @@ Partial Class frm_Ticket
         Me.GroupSolicitante.Controls.Add(Me.Label2)
         Me.GroupSolicitante.Location = New System.Drawing.Point(7, 32)
         Me.GroupSolicitante.Name = "GroupSolicitante"
-        Me.GroupSolicitante.Size = New System.Drawing.Size(812, 261)
+        Me.GroupSolicitante.Size = New System.Drawing.Size(812, 300)
         Me.GroupSolicitante.TabIndex = 18
         Me.GroupSolicitante.TabStop = False
         Me.GroupSolicitante.Text = "Solicitante"
@@ -446,24 +428,6 @@ Partial Class frm_Ticket
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "Usuario"
         '
-        'btnCancelar_Solicitante
-        '
-        Me.btnCancelar_Solicitante.Location = New System.Drawing.Point(744, 302)
-        Me.btnCancelar_Solicitante.Name = "btnCancelar_Solicitante"
-        Me.btnCancelar_Solicitante.Size = New System.Drawing.Size(75, 33)
-        Me.btnCancelar_Solicitante.TabIndex = 21
-        Me.btnCancelar_Solicitante.Text = "Cancelar"
-        Me.btnCancelar_Solicitante.UseVisualStyleBackColor = True
-        '
-        'btn_Solicitud
-        '
-        Me.btn_Solicitud.Location = New System.Drawing.Point(663, 302)
-        Me.btn_Solicitud.Name = "btn_Solicitud"
-        Me.btn_Solicitud.Size = New System.Drawing.Size(75, 33)
-        Me.btn_Solicitud.TabIndex = 20
-        Me.btn_Solicitud.Text = "Solicitud"
-        Me.btn_Solicitud.UseVisualStyleBackColor = True
-        '
         'TabPage2
         '
         Me.TabPage2.BackColor = System.Drawing.SystemColors.Control
@@ -534,6 +498,42 @@ Partial Class frm_Ticket
         Me.dgv_lista_ticket.Size = New System.Drawing.Size(811, 508)
         Me.dgv_lista_ticket.TabIndex = 0
         '
+        'btn_Cancelar_Receptor
+        '
+        Me.btn_Cancelar_Receptor.Location = New System.Drawing.Point(731, 219)
+        Me.btn_Cancelar_Receptor.Name = "btn_Cancelar_Receptor"
+        Me.btn_Cancelar_Receptor.Size = New System.Drawing.Size(75, 33)
+        Me.btn_Cancelar_Receptor.TabIndex = 34
+        Me.btn_Cancelar_Receptor.Text = "Cancelar"
+        Me.btn_Cancelar_Receptor.UseVisualStyleBackColor = True
+        '
+        'btn_respuesta
+        '
+        Me.btn_respuesta.Location = New System.Drawing.Point(650, 219)
+        Me.btn_respuesta.Name = "btn_respuesta"
+        Me.btn_respuesta.Size = New System.Drawing.Size(75, 33)
+        Me.btn_respuesta.TabIndex = 33
+        Me.btn_respuesta.Text = "Respuesta"
+        Me.btn_respuesta.UseVisualStyleBackColor = True
+        '
+        'btnCancelar_Solicitante
+        '
+        Me.btnCancelar_Solicitante.Location = New System.Drawing.Point(731, 258)
+        Me.btnCancelar_Solicitante.Name = "btnCancelar_Solicitante"
+        Me.btnCancelar_Solicitante.Size = New System.Drawing.Size(75, 33)
+        Me.btnCancelar_Solicitante.TabIndex = 38
+        Me.btnCancelar_Solicitante.Text = "Cancelar"
+        Me.btnCancelar_Solicitante.UseVisualStyleBackColor = True
+        '
+        'btn_Solicitud
+        '
+        Me.btn_Solicitud.Location = New System.Drawing.Point(650, 258)
+        Me.btn_Solicitud.Name = "btn_Solicitud"
+        Me.btn_Solicitud.Size = New System.Drawing.Size(75, 33)
+        Me.btn_Solicitud.TabIndex = 37
+        Me.btn_Solicitud.Text = "Solicitud"
+        Me.btn_Solicitud.UseVisualStyleBackColor = True
+        '
         'frm_Ticket
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -560,7 +560,6 @@ Partial Class frm_Ticket
     Friend WithEvents TabPage1 As System.Windows.Forms.TabPage
     Friend WithEvents txt_id_ticket As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents btn_respuesta As System.Windows.Forms.Button
     Friend WithEvents GroupReceptor As System.Windows.Forms.GroupBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents txt_comentarios As System.Windows.Forms.TextBox
@@ -590,16 +589,17 @@ Partial Class frm_Ticket
     Friend WithEvents txt_nombre_usuario As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents btnCancelar_Solicitante As System.Windows.Forms.Button
-    Friend WithEvents btn_Solicitud As System.Windows.Forms.Button
     Friend WithEvents TabPage2 As System.Windows.Forms.TabPage
     Friend WithEvents dgv_lista_ticket As System.Windows.Forms.DataGridView
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button
     Friend WithEvents btn_eliminar As System.Windows.Forms.Button
-    Friend WithEvents btn_Cancelar_Receptor As System.Windows.Forms.Button
     Friend WithEvents cbo_busqueda_estado As System.Windows.Forms.ComboBox
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents chk_Nuevo As System.Windows.Forms.CheckBox
     Friend WithEvents btn_Exportar_PDF As System.Windows.Forms.Button
     Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents btn_Cancelar_Receptor As System.Windows.Forms.Button
+    Friend WithEvents btn_respuesta As System.Windows.Forms.Button
+    Friend WithEvents btnCancelar_Solicitante As System.Windows.Forms.Button
+    Friend WithEvents btn_Solicitud As System.Windows.Forms.Button
 End Class

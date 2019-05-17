@@ -45,6 +45,7 @@
                     CorreoElectronico(True)
                     Despacho(True, True, True)
                     Empaque(True, True, True)
+                    Ticket(True, True, True)
 
                 Case "GERENCIA"
                     Usuario(False, False, False)
@@ -63,6 +64,7 @@
                     CorreoElectronico(False)
                     Despacho(True, True, True)
                     Empaque(True, True, True)
+                    Ticket(True, False, False)
 
                 Case "SUPERVISOR"
                     Tarea(True, True, True)
@@ -74,6 +76,7 @@
                     Estadistica(True, True, True, True, True)
                     Despacho(True, True, True)
                     Empaque(True, True, True)
+                    Ticket(True, False, False)
 
                 Case "COLABORADOR"
                     'HabilitarGeneral()
@@ -305,6 +308,21 @@
                             flagb = 1
                         End If
                     End If
+                    '--------------------TICKET---------------------'
+                    If permisos.Item(i).PER_permiso = "TICKET" Then
+                        If permisos.Item(i).PER_abm = "S" Then
+                            Ticket(True, flagm, flagb)
+                            flaga = 1
+                        End If
+                        If permisos.Item(i).PER_abm = "R" Then
+                            Ticket(flaga, True, flagb)
+                            flagm = 1
+                        End If
+                        If permisos.Item(i).PER_abm = "O" Then
+                            Ticket(flaga, flagm, True)
+                            flagb = 1
+                        End If
+                    End If
                 Next
             End If
 
@@ -338,7 +356,7 @@
         frm_Principal.ReTrabajoToolStripMenuItem1.DropDownItems(2).Enabled = True 'consultar
         frm_Principal.LogísticaToolStripMenuItem.DropDownItems(3).Enabled = True 'consultar
         frm_Principal.EmpaqueToolStripMenuItem.DropDownItems(3).Enabled = True
-
+        Ticket(True, False, False)
         Acercade()
     End Sub
 
@@ -360,6 +378,7 @@
         CorreoElectronico(False)
         Despacho(False, False, False)
         Empaque(False, False, False)
+        Ticket(False, False, False)
         Acercade()
     End Sub
 
@@ -486,6 +505,11 @@
         frm_Principal.EmpaqueToolStripMenuItem.DropDownItems(0).Visible = nuevo 'nueva
         frm_Principal.EmpaqueToolStripMenuItem.DropDownItems(1).Visible = modif 'modificar
         frm_Principal.EmpaqueToolStripMenuItem.DropDownItems(2).Visible = elim 'eliminar
+    End Sub
+
+    Sub Ticket(ByVal solicitante As Boolean, ByVal receptor As Boolean, ByVal otro As Boolean)
+        frm_Ticket.GroupSolicitante.Enabled = solicitante
+        frm_Ticket.GroupReceptor.Enabled = receptor
     End Sub
 
     Public Sub limpiarcontroles()
