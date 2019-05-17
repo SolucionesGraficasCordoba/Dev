@@ -1854,7 +1854,8 @@ Public Class frm_Principal
         m.MEN_fecha_mensaje,
         m.MEN_titulo,
         m.MEN_comentario,
-        m.MEN_respuesta
+        m.MEN_respuesta,
+        m.MEN_campo_1
         Where USU_usuario = LBL_MENU_USU.Text And MEN_respuesta.Length = 0
         Order By MEN_id_mensaje Descending).ToList()(0)
 
@@ -1864,6 +1865,10 @@ Public Class frm_Principal
                 frm_Mensaje.txt_comentario.Text = UltimoMensaje.MEN_comentario
                 frm_Mensaje.txt_id_mensaje.Text = UltimoMensaje.MEN_id_mensaje
                 frm_Mensaje.txt_nombre_usuario.Text = UltimoMensaje.USU_usuario
+                Select Case UltimoMensaje.MEN_campo_1
+                    Case "Cumple"
+                        'frm_Mensaje.PictureBox1.Image = My.re
+                End Select
 
                 'QUITA LOS BOTONES DEL FORMULARIO
                 frm_Mensaje.FormBorderStyle = Windows.Forms.FormBorderStyle.None

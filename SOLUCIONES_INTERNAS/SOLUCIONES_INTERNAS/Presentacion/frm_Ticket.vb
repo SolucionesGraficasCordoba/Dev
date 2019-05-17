@@ -31,9 +31,9 @@ Public Class frm_Ticket
             txt_id_usuario.Text = CargaUsuarioColSup.USU_id_usuario
 
             cbo_estado.SelectedIndex = 0
-            '' cbo_prioridad.SelectedIndex = 0
-            cbo_busqueda_estado.SelectedIndex = 0
+            ' cbo_prioridad.SelectedIndex = 0
         End If
+        cbo_busqueda_estado.SelectedIndex = 0
         armargrillaticket()
         cargargrillaticket()
     End Sub

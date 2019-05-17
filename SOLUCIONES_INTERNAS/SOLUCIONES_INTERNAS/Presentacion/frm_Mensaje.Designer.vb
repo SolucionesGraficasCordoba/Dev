@@ -31,6 +31,7 @@ Partial Class frm_Mensaje
         Me.txt_respuesta = New System.Windows.Forms.TextBox()
         Me.btn_respuesta = New System.Windows.Forms.Button()
         Me.GroupComentario = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.txt_Titulo = New System.Windows.Forms.TextBox()
@@ -56,6 +57,7 @@ Partial Class frm_Mensaje
         Me.TabPage1.SuspendLayout()
         Me.GroupRespuesta.SuspendLayout()
         Me.GroupComentario.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_Listado_Mensajes, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -147,6 +149,7 @@ Partial Class frm_Mensaje
         '
         'GroupComentario
         '
+        Me.GroupComentario.Controls.Add(Me.PictureBox1)
         Me.GroupComentario.Controls.Add(Me.Label7)
         Me.GroupComentario.Controls.Add(Me.Label6)
         Me.GroupComentario.Controls.Add(Me.txt_Titulo)
@@ -168,6 +171,15 @@ Partial Class frm_Mensaje
         Me.GroupComentario.TabIndex = 29
         Me.GroupComentario.TabStop = False
         Me.GroupComentario.Text = "Comentario"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(551, 131)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(119, 119)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 47
+        Me.PictureBox1.TabStop = False
         '
         'Label7
         '
@@ -286,7 +298,7 @@ Partial Class frm_Mensaje
         Me.txt_comentario.Multiline = True
         Me.txt_comentario.Name = "txt_comentario"
         Me.txt_comentario.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txt_comentario.Size = New System.Drawing.Size(576, 119)
+        Me.txt_comentario.Size = New System.Drawing.Size(451, 119)
         Me.txt_comentario.TabIndex = 5
         '
         'txt_nombre_usuario
@@ -383,6 +395,7 @@ Partial Class frm_Mensaje
         Me.GroupRespuesta.PerformLayout()
         Me.GroupComentario.ResumeLayout(False)
         Me.GroupComentario.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -420,4 +433,5 @@ Partial Class frm_Mensaje
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents rbtFecha As System.Windows.Forms.RadioButton
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class
