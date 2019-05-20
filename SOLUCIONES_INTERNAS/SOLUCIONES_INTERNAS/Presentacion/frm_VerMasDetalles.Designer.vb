@@ -515,7 +515,7 @@ Partial Class frm_VerMasDetalles
         '
         'PictureBox7
         '
-        Me.PictureBox7.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.Sin_título
+        Me.PictureBox7.Image = Global.SOLUCIONES_INTERNAS.My.Resources.Resources.eliminarrepeticion1
         Me.PictureBox7.Location = New System.Drawing.Point(454, 32)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(351, 263)
