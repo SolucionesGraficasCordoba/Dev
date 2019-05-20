@@ -3,6 +3,7 @@
     Dim datacontext As New DataS_Interno
     Dim datacontextvistas As New DataS_Interno_Vistas
     Public dt_empaque As New Data.DataTable
+
     Private Sub frm_despacho_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         If tbp_logistica.Enabled = True Then
             dtp_Hora_salida.CustomFormat = "HH:mm"
