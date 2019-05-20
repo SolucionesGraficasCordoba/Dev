@@ -812,8 +812,6 @@ Public Class frm_Principal
         OcultarIdTarea()
         HabilitarBotonNumeroOrden()
         DemasCampos()
-        '    frm_Tarea.MdiParent = Me
-        '  frm_Tarea.Show()
 
         Dim CargaColaborador = (From sec In datacontext.SECTOR
                      Join col In datacontext.COLABORADOR
@@ -822,8 +820,6 @@ Public Class frm_Principal
                      On usu.COL_id_colaborador Equals col.COL_id_colaborador
                      Select usu.USU_usuario, usu.USU_id_usuario, col.COL_nombre_col, col.COL_id_colaborador, sec.SEC_id_sector, sec.SEC_nombre_sector
                      Where USU_usuario = Me.LBL_MENU_USU.Text).ToList()(0)
-
-       
 
         If CargaColaborador.SEC_nombre_sector <> "Offset" Then
             frm_Tarea.MdiParent = Me
@@ -835,7 +831,6 @@ Public Class frm_Principal
             frm_Tarea.Show()
             frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
             frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
-
 
             frm_Tarea_1.MdiParent = Me
             frm_Tarea_1.Show()
@@ -854,6 +849,7 @@ Public Class frm_Principal
             OcultarIdTarea1()
             HabilitarBotonNumeroOrden1()
             DemasCampos1()
+
         End If
     End Sub
 
@@ -1833,6 +1829,7 @@ Public Class frm_Principal
             If TypeOf c Is MdiClient Then
                 c.BackColor = Color.White
                 c.BackgroundImage = My.Resources.solucionesgraficas1
+
                 c.BackgroundImageLayout = ImageLayout.Zoom
             End If
         Next
