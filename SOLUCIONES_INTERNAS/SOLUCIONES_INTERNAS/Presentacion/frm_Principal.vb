@@ -826,14 +826,19 @@ Public Class frm_Principal
             frm_Tarea.Show()
             frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
             frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
+
+
         Else
             frm_Tarea.MdiParent = Me
             frm_Tarea.Show()
             frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
             frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
+            frm_Tarea.MaximizeBox = False
 
             frm_Tarea_1.MdiParent = Me
             frm_Tarea_1.Show()
+            frm_Tarea_1.MaximizeBox = False
+
             LimpiarDetalleTarea1()
             HabilitarDetalleTarea1()
             LimpiarTiempoEstimado1()
