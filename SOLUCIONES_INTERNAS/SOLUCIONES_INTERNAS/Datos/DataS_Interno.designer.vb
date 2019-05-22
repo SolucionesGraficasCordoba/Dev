@@ -73,12 +73,6 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeletePROCESO(instance As PROCESO)
     End Sub
-  Partial Private Sub InsertPRODUCTO(instance As PRODUCTO)
-    End Sub
-  Partial Private Sub UpdatePRODUCTO(instance As PRODUCTO)
-    End Sub
-  Partial Private Sub DeletePRODUCTO(instance As PRODUCTO)
-    End Sub
   Partial Private Sub InsertPRODUCTO_MOVIMIENTO(instance As PRODUCTO_MOVIMIENTO)
     End Sub
   Partial Private Sub UpdatePRODUCTO_MOVIMIENTO(instance As PRODUCTO_MOVIMIENTO)
@@ -151,6 +145,12 @@ Partial Public Class DataS_Interno
     End Sub
   Partial Private Sub DeleteSUGERENCIA(instance As SUGERENCIA)
     End Sub
+  Partial Private Sub InsertPRODUCTO(instance As PRODUCTO)
+    End Sub
+  Partial Private Sub UpdatePRODUCTO(instance As PRODUCTO)
+    End Sub
+  Partial Private Sub DeletePRODUCTO(instance As PRODUCTO)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -217,12 +217,6 @@ Partial Public Class DataS_Interno
 	Public ReadOnly Property PROCESO() As System.Data.Linq.Table(Of PROCESO)
 		Get
 			Return Me.GetTable(Of PROCESO)
-		End Get
-	End Property
-	
-	Public ReadOnly Property PRODUCTO() As System.Data.Linq.Table(Of PRODUCTO)
-		Get
-			Return Me.GetTable(Of PRODUCTO)
 		End Get
 	End Property
 	
@@ -295,6 +289,12 @@ Partial Public Class DataS_Interno
 	Public ReadOnly Property SUGERENCIA() As System.Data.Linq.Table(Of SUGERENCIA)
 		Get
 			Return Me.GetTable(Of SUGERENCIA)
+		End Get
+	End Property
+	
+	Public ReadOnly Property PRODUCTO() As System.Data.Linq.Table(Of PRODUCTO)
+		Get
+			Return Me.GetTable(Of PRODUCTO)
 		End Get
 	End Property
 End Class
@@ -1867,180 +1867,6 @@ Partial Public Class PROCESO
 					= false) Then
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
-	End Sub
-End Class
-
-<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PRODUCTO")>  _
-Partial Public Class PRODUCTO
-	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
-	
-	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
-	
-	Private _PROD_id As Integer
-	
-	Private _PROD_codigo As String
-	
-	Private _PROD_descripcion As String
-	
-	Private _PROD_stock As Integer
-	
-	Private _PROD_stock_minimo As System.Nullable(Of Integer)
-	
-	Private _PRODUCTO_MOVIMIENTO As EntitySet(Of PRODUCTO_MOVIMIENTO)
-	
-    #Region "Definiciones de métodos de extensibilidad"
-    Partial Private Sub OnLoaded()
-    End Sub
-    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
-    End Sub
-    Partial Private Sub OnCreated()
-    End Sub
-    Partial Private Sub OnPROD_idChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnPROD_idChanged()
-    End Sub
-    Partial Private Sub OnPROD_codigoChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROD_codigoChanged()
-    End Sub
-    Partial Private Sub OnPROD_descripcionChanging(value As String)
-    End Sub
-    Partial Private Sub OnPROD_descripcionChanged()
-    End Sub
-    Partial Private Sub OnPROD_stockChanging(value As Integer)
-    End Sub
-    Partial Private Sub OnPROD_stockChanged()
-    End Sub
-    Partial Private Sub OnPROD_stock_minimoChanging(value As System.Nullable(Of Integer))
-    End Sub
-    Partial Private Sub OnPROD_stock_minimoChanged()
-    End Sub
-    #End Region
-	
-	Public Sub New()
-		MyBase.New
-		Me._PRODUCTO_MOVIMIENTO = New EntitySet(Of PRODUCTO_MOVIMIENTO)(AddressOf Me.attach_PRODUCTO_MOVIMIENTO, AddressOf Me.detach_PRODUCTO_MOVIMIENTO)
-		OnCreated
-	End Sub
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
-	Public Property PROD_id() As Integer
-		Get
-			Return Me._PROD_id
-		End Get
-		Set
-			If ((Me._PROD_id = value)  _
-						= false) Then
-				Me.OnPROD_idChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_id = value
-				Me.SendPropertyChanged("PROD_id")
-				Me.OnPROD_idChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_codigo", DbType:="VarChar(15)")>  _
-	Public Property PROD_codigo() As String
-		Get
-			Return Me._PROD_codigo
-		End Get
-		Set
-			If (String.Equals(Me._PROD_codigo, value) = false) Then
-				Me.OnPROD_codigoChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_codigo = value
-				Me.SendPropertyChanged("PROD_codigo")
-				Me.OnPROD_codigoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_descripcion", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
-	Public Property PROD_descripcion() As String
-		Get
-			Return Me._PROD_descripcion
-		End Get
-		Set
-			If (String.Equals(Me._PROD_descripcion, value) = false) Then
-				Me.OnPROD_descripcionChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_descripcion = value
-				Me.SendPropertyChanged("PROD_descripcion")
-				Me.OnPROD_descripcionChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_stock", DbType:="Int NOT NULL")>  _
-	Public Property PROD_stock() As Integer
-		Get
-			Return Me._PROD_stock
-		End Get
-		Set
-			If ((Me._PROD_stock = value)  _
-						= false) Then
-				Me.OnPROD_stockChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_stock = value
-				Me.SendPropertyChanged("PROD_stock")
-				Me.OnPROD_stockChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_stock_minimo", DbType:="Int")>  _
-	Public Property PROD_stock_minimo() As System.Nullable(Of Integer)
-		Get
-			Return Me._PROD_stock_minimo
-		End Get
-		Set
-			If (Me._PROD_stock_minimo.Equals(value) = false) Then
-				Me.OnPROD_stock_minimoChanging(value)
-				Me.SendPropertyChanging
-				Me._PROD_stock_minimo = value
-				Me.SendPropertyChanged("PROD_stock_minimo")
-				Me.OnPROD_stock_minimoChanged
-			End If
-		End Set
-	End Property
-	
-	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PRODUCTO_PRODUCTO_MOVIMIENTO", Storage:="_PRODUCTO_MOVIMIENTO", ThisKey:="PROD_id", OtherKey:="PROD_id")>  _
-	Public Property PRODUCTO_MOVIMIENTO() As EntitySet(Of PRODUCTO_MOVIMIENTO)
-		Get
-			Return Me._PRODUCTO_MOVIMIENTO
-		End Get
-		Set
-			Me._PRODUCTO_MOVIMIENTO.Assign(value)
-		End Set
-	End Property
-	
-	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
-	
-	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
-	
-	Protected Overridable Sub SendPropertyChanging()
-		If ((Me.PropertyChangingEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
-		End If
-	End Sub
-	
-	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
-		If ((Me.PropertyChangedEvent Is Nothing)  _
-					= false) Then
-			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
-		End If
-	End Sub
-	
-	Private Sub attach_PRODUCTO_MOVIMIENTO(ByVal entity As PRODUCTO_MOVIMIENTO)
-		Me.SendPropertyChanging
-		entity.PRODUCTO = Me
-	End Sub
-	
-	Private Sub detach_PRODUCTO_MOVIMIENTO(ByVal entity As PRODUCTO_MOVIMIENTO)
-		Me.SendPropertyChanging
-		entity.PRODUCTO = Nothing
 	End Sub
 End Class
 
@@ -6995,5 +6821,267 @@ Partial Public Class SUGERENCIA
 					= false) Then
 			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
 		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.PRODUCTO")>  _
+Partial Public Class PRODUCTO
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _PROD_id As Integer
+	
+	Private _PROD_codigo As String
+	
+	Private _PROD_descripcion As String
+	
+	Private _PROD_stock As Integer
+	
+	Private _PROD_stock_minimo As System.Nullable(Of Integer)
+	
+	Private _PROD_deposito As String
+	
+	Private _PROD_campo_1 As String
+	
+	Private _PROD_campo_2 As String
+	
+	Private _PROD_campo_3 As String
+	
+	Private _PRODUCTO_MOVIMIENTO As EntitySet(Of PRODUCTO_MOVIMIENTO)
+	
+    #Region "Definiciones de métodos de extensibilidad"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnPROD_idChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPROD_idChanged()
+    End Sub
+    Partial Private Sub OnPROD_codigoChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROD_codigoChanged()
+    End Sub
+    Partial Private Sub OnPROD_descripcionChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROD_descripcionChanged()
+    End Sub
+    Partial Private Sub OnPROD_stockChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnPROD_stockChanged()
+    End Sub
+    Partial Private Sub OnPROD_stock_minimoChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnPROD_stock_minimoChanged()
+    End Sub
+    Partial Private Sub OnPROD_depositoChanging(value As String)
+    End Sub
+    Partial Private Sub OnPROD_depositoChanged()
+    End Sub
+    Partial Private Sub OnPROD_campo_1Changing(value As String)
+    End Sub
+    Partial Private Sub OnPROD_campo_1Changed()
+    End Sub
+    Partial Private Sub OnPROD_campo_2Changing(value As String)
+    End Sub
+    Partial Private Sub OnPROD_campo_2Changed()
+    End Sub
+    Partial Private Sub OnPROD_campo_3Changing(value As String)
+    End Sub
+    Partial Private Sub OnPROD_campo_3Changed()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		Me._PRODUCTO_MOVIMIENTO = New EntitySet(Of PRODUCTO_MOVIMIENTO)(AddressOf Me.attach_PRODUCTO_MOVIMIENTO, AddressOf Me.detach_PRODUCTO_MOVIMIENTO)
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_id", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property PROD_id() As Integer
+		Get
+			Return Me._PROD_id
+		End Get
+		Set
+			If ((Me._PROD_id = value)  _
+						= false) Then
+				Me.OnPROD_idChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_id = value
+				Me.SendPropertyChanged("PROD_id")
+				Me.OnPROD_idChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_codigo", DbType:="VarChar(15)")>  _
+	Public Property PROD_codigo() As String
+		Get
+			Return Me._PROD_codigo
+		End Get
+		Set
+			If (String.Equals(Me._PROD_codigo, value) = false) Then
+				Me.OnPROD_codigoChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_codigo = value
+				Me.SendPropertyChanged("PROD_codigo")
+				Me.OnPROD_codigoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_descripcion", DbType:="VarChar(50) NOT NULL", CanBeNull:=false)>  _
+	Public Property PROD_descripcion() As String
+		Get
+			Return Me._PROD_descripcion
+		End Get
+		Set
+			If (String.Equals(Me._PROD_descripcion, value) = false) Then
+				Me.OnPROD_descripcionChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_descripcion = value
+				Me.SendPropertyChanged("PROD_descripcion")
+				Me.OnPROD_descripcionChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_stock", DbType:="Int NOT NULL")>  _
+	Public Property PROD_stock() As Integer
+		Get
+			Return Me._PROD_stock
+		End Get
+		Set
+			If ((Me._PROD_stock = value)  _
+						= false) Then
+				Me.OnPROD_stockChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_stock = value
+				Me.SendPropertyChanged("PROD_stock")
+				Me.OnPROD_stockChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_stock_minimo", DbType:="Int")>  _
+	Public Property PROD_stock_minimo() As System.Nullable(Of Integer)
+		Get
+			Return Me._PROD_stock_minimo
+		End Get
+		Set
+			If (Me._PROD_stock_minimo.Equals(value) = false) Then
+				Me.OnPROD_stock_minimoChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_stock_minimo = value
+				Me.SendPropertyChanged("PROD_stock_minimo")
+				Me.OnPROD_stock_minimoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_deposito", DbType:="VarChar(25)")>  _
+	Public Property PROD_deposito() As String
+		Get
+			Return Me._PROD_deposito
+		End Get
+		Set
+			If (String.Equals(Me._PROD_deposito, value) = false) Then
+				Me.OnPROD_depositoChanging(value)
+				Me.SendPropertyChanging
+				Me._PROD_deposito = value
+				Me.SendPropertyChanged("PROD_deposito")
+				Me.OnPROD_depositoChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_campo_1", DbType:="VarChar(50)")>  _
+	Public Property PROD_campo_1() As String
+		Get
+			Return Me._PROD_campo_1
+		End Get
+		Set
+			If (String.Equals(Me._PROD_campo_1, value) = false) Then
+				Me.OnPROD_campo_1Changing(value)
+				Me.SendPropertyChanging
+				Me._PROD_campo_1 = value
+				Me.SendPropertyChanged("PROD_campo_1")
+				Me.OnPROD_campo_1Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_campo_2", DbType:="VarChar(50)")>  _
+	Public Property PROD_campo_2() As String
+		Get
+			Return Me._PROD_campo_2
+		End Get
+		Set
+			If (String.Equals(Me._PROD_campo_2, value) = false) Then
+				Me.OnPROD_campo_2Changing(value)
+				Me.SendPropertyChanging
+				Me._PROD_campo_2 = value
+				Me.SendPropertyChanged("PROD_campo_2")
+				Me.OnPROD_campo_2Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_PROD_campo_3", DbType:="VarChar(50)")>  _
+	Public Property PROD_campo_3() As String
+		Get
+			Return Me._PROD_campo_3
+		End Get
+		Set
+			If (String.Equals(Me._PROD_campo_3, value) = false) Then
+				Me.OnPROD_campo_3Changing(value)
+				Me.SendPropertyChanging
+				Me._PROD_campo_3 = value
+				Me.SendPropertyChanged("PROD_campo_3")
+				Me.OnPROD_campo_3Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.AssociationAttribute(Name:="PRODUCTO_PRODUCTO_MOVIMIENTO", Storage:="_PRODUCTO_MOVIMIENTO", ThisKey:="PROD_id", OtherKey:="PROD_id")>  _
+	Public Property PRODUCTO_MOVIMIENTO() As EntitySet(Of PRODUCTO_MOVIMIENTO)
+		Get
+			Return Me._PRODUCTO_MOVIMIENTO
+		End Get
+		Set
+			Me._PRODUCTO_MOVIMIENTO.Assign(value)
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+	
+	Private Sub attach_PRODUCTO_MOVIMIENTO(ByVal entity As PRODUCTO_MOVIMIENTO)
+		Me.SendPropertyChanging
+		entity.PRODUCTO = Me
+	End Sub
+	
+	Private Sub detach_PRODUCTO_MOVIMIENTO(ByVal entity As PRODUCTO_MOVIMIENTO)
+		Me.SendPropertyChanging
+		entity.PRODUCTO = Nothing
 	End Sub
 End Class

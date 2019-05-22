@@ -417,9 +417,13 @@ Public Class frm_Colaborador
                                  On c.COL_id_colaborador Equals u.COL_id_colaborador
                                  Join m In datacontext.MENSAJE
                                  On m.USU_id_usuario Equals u.USU_id_usuario
-           Select m.MEN_fecha_mensaje, m.MEN_titulo, m.MEN_comentario, m.MEN_respuesta, u.USU_usuario
+           Select m.MEN_fecha_mensaje,
+           m.MEN_titulo,
+           m.MEN_comentario,
+           m.MEN_respuesta,
+           u.USU_usuario
              Where MEN_fecha_mensaje = frm_Mensaje.DateTimePicker1.Text
-                                 Order By MEN_fecha_mensaje Descending)
+             Order By MEN_fecha_mensaje Descending)
             frm_Mensaje.dgv_Listado_Mensajes.DataSource = consulta
         Catch ex As Exception
         End Try

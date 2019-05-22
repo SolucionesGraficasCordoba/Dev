@@ -12,7 +12,7 @@ Public Class frm_Productos
         Try
             'consulta si el codigo de prod ya existe
             Dim buscaproducto = (From P In datacontext.PRODUCTO
-                                 Select P.PROD_codigo, P.PROD_descripcion, P.PROD_id, P.PROD_stock, P.PROD_stock_minimo
+                                 Select P.PROD_codigo, P.PROD_descripcion, P.PROD_id, P.PROD_stock, P.PROD_stock_minimo, P.PROD_deposito
                                  Where PROD_codigo = tb_prod_codigo.Text).Any
             If buscaproducto = True Then
                 MsgBox("El código de producto ya existe")
@@ -46,6 +46,12 @@ Public Class frm_Productos
                 tb_prod_stock.Focus()
                 Exit Sub
             End If
+
+            If cboDeposito.Text = "Seleccionar" Then
+                MsgBox("Seleccione un depósito para el producto")
+                cboDeposito.Focus()
+                Exit Sub
+            End If
          
             'instancia y guarda en nuevo producto
             Dim prod = New PRODUCTO
@@ -53,6 +59,7 @@ Public Class frm_Productos
             prod.PROD_descripcion = StrConv(tb_prod_descripcion.Text, VbStrConv.ProperCase)
             prod.PROD_stock = tb_prod_stock.Text
             prod.PROD_stock_minimo = tb_prod_stock_minimo.Text
+            prod.PROD_deposito = cboDeposito.Text
 
             datacontext.PRODUCTO.InsertOnSubmit(prod)
             datacontext.SubmitChanges()
@@ -81,6 +88,7 @@ Public Class frm_Productos
         tb_prod_stock_minimo.Clear()
         tb_prod_id.Visible = False
         Label1.Visible = False
+        cboDeposito.Text = "Seleccionar"
     End Sub
 
     'arma el datagrid
@@ -94,6 +102,7 @@ Public Class frm_Productos
         dgvLista_Productos.Columns.Add("PROD_descripcion", "Descripción")
         dgvLista_Productos.Columns.Add("PROD_stock", "Stock")
         dgvLista_Productos.Columns.Add("PROD_stock_minimo", "Mínimo")
+        dgvLista_Productos.Columns.Add("PROD_deposito", "Depósito")
 
         dgvLista_Productos.Columns(0).DataPropertyName = "PROD_id"
         dgvLista_Productos.Columns(0).Visible = False
@@ -102,12 +111,13 @@ Public Class frm_Productos
         ' dgvLista_Productos.Columns(2).Width = 200
         dgvLista_Productos.Columns(3).DataPropertyName = "PROD_stock"
         dgvLista_Productos.Columns(4).DataPropertyName = "PROD_stock_minimo"
+        dgvLista_Productos.Columns(5).DataPropertyName = "PROD_deposito"
     End Sub
 
     Sub cargargrilla()
         'carga el datagrid
         Dim consultaprod = From p In datacontext.PRODUCTO
-                           Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo
+                           Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo, p.PROD_deposito
                            Order By PROD_descripcion Ascending
         dgvLista_Productos.DataSource = consultaprod
         Label9.Text = dgvLista_Productos.Rows.Count
@@ -126,7 +136,8 @@ Public Class frm_Productos
         dgvLista_Productos.ClearSelection()
         Label9.Text = dgvLista_Productos.Rows.Count
         rbtProducto.Checked = True
-        dgvLista_Productos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
+        cboDeposito.SelectedIndex = 0
+        ' dgvLista_Productos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
     End Sub
 
     Private Sub dgvLista_Productos_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles dgvLista_Productos.Click
@@ -136,6 +147,7 @@ Public Class frm_Productos
             tb_prod_descripcion.Text = dgvLista_Productos.Item("PROD_descripcion", dgvLista_Productos.SelectedRows(0).Index).Value
             tb_prod_stock.Text = dgvLista_Productos.Item("PROD_stock", dgvLista_Productos.SelectedRows(0).Index).Value
             tb_prod_stock_minimo.Text = dgvLista_Productos.Item("PROD_stock_minimo", dgvLista_Productos.SelectedRows(0).Index).Value
+            cboDeposito.Text = dgvLista_Productos.Item("PROD_deposito", dgvLista_Productos.SelectedRows(0).Index).Value
         Else
             MsgBox("Debe seleccionar un producto")
         End If
@@ -169,12 +181,19 @@ Public Class frm_Productos
             tb_prod_stock.Focus()
             Exit Sub
         End If
+
+        If cboDeposito.Text = "Seleccionar" Then
+            MsgBox("Seleccione un depósito para el producto")
+            cboDeposito.Focus()
+            Exit Sub
+        End If
         Try
             Dim ActualizarProducto = (From p In datacontext.PRODUCTO Where p.PROD_id = tb_prod_id.Text).ToList()(0)
             ActualizarProducto.PROD_codigo = StrConv(tb_prod_codigo.Text, VbStrConv.ProperCase)
             ActualizarProducto.PROD_descripcion = StrConv(tb_prod_descripcion.Text, VbStrConv.ProperCase)
             ActualizarProducto.PROD_stock = tb_prod_stock.Text
             ActualizarProducto.PROD_stock_minimo = tb_prod_stock_minimo.Text
+            ActualizarProducto.PROD_deposito = cboDeposito.Text
 
             datacontext.SubmitChanges()
             MsgBox("Los datos han sido actualizados")
@@ -190,10 +209,6 @@ Public Class frm_Productos
 
     Private Sub frm_Productos_FormClosed(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
         Me.Dispose()
-    End Sub
-
-    Private Sub btnExportarPDF_Click(sender As System.Object, e As System.EventArgs)
-      
     End Sub
 
     Public Sub ExportarDatosPDF(ByVal document As Document)
@@ -286,7 +301,7 @@ Public Class frm_Productos
         armargrilla()
         buscarprod = "*" & Me.tb_prod_busqueda.Text & "*"
         Dim consultaprod = From p In datacontext.PRODUCTO
-                           Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo Where PROD_descripcion Like buscarprod.ToString
+                           Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo, p.PROD_deposito Where PROD_descripcion Like buscarprod.ToString
         dgvLista_Productos.DataSource = consultaprod
         dgvLista_Productos.ClearSelection()
         ColorStock()
@@ -297,7 +312,7 @@ Public Class frm_Productos
         armargrilla()
         buscarcod = "*" & Me.tb_cod_busqueda.Text & "*"
         Dim consultacod = From p In datacontext.PRODUCTO
-                           Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo Where PROD_codigo Like buscarcod.ToString
+                           Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo, p.PROD_deposito Where PROD_codigo Like buscarcod.ToString
         dgvLista_Productos.DataSource = consultacod
         dgvLista_Productos.ClearSelection()
         ColorStock()
@@ -361,14 +376,6 @@ Public Class frm_Productos
         Next
     End Sub
 
-    Private Sub tb_prod_descripcion_TextChanged(sender As System.Object, e As System.EventArgs) Handles tb_prod_descripcion.TextChanged
-
-    End Sub
-
-    Private Sub tb_prod_stock_minimo_TextChanged(sender As System.Object, e As System.EventArgs) Handles tb_prod_stock_minimo.TextChanged
-
-    End Sub
-
     Private Sub btn_Exportar_Excel_Click(sender As System.Object, e As System.EventArgs) Handles btn_Exportar_Excel.Click
         llenarExcel(dgvLista_Productos)
     End Sub
@@ -411,8 +418,4 @@ Public Class frm_Productos
         End Try
         Return True
     End Function
-
-    Private Sub GroupBox1_Enter(sender As System.Object, e As System.EventArgs) Handles GroupBox1.Enter
-
-    End Sub
 End Class

@@ -15,8 +15,8 @@ Public Class frm_Cliente
         cargargrilla()
         Label6.Text = dgvLista_Clientes.Rows.Count
         btnNuevo_Cliente.Visible = False
-        abrir()
-        autoCompletarTexbox(txt_razonsocial_cliente)
+        ' abrir()
+        ' autoCompletarTexbox(txt_razonsocial_cliente)
     End Sub
 
     Private Sub btnGuardar_Cliente_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnGuardar_Cliente.Click
@@ -99,7 +99,7 @@ Public Class frm_Cliente
     Public Sub cargargrilla()
         Dim consultaCliente = From U In datacontext.CLIENTE
                               Select U.CLI_id_cliente, U.CLI_razon_social, U.CLI_mail_cli, U.CLI_telefono_cli, U.CLI_domicilio, U.CLI_localidad, U.CLI_codigo_postal
-                              Order By CLI_razon_social Ascending
+        'Order By CLI_razon_social Ascending
         dgvLista_Clientes.DataSource = consultaCliente
     End Sub
 
@@ -269,4 +269,12 @@ Public Class frm_Cliente
     '    End Try
     'End Sub
 
+    Private Sub txt_razonsocial_cliente_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_razonsocial_cliente.TextChanged
+        Dim tempstring As String
+        tempstring = txt_razonsocial_cliente.Text & "*"
+        Dim autocompletar = (From auto In datacontext.CLIENTE
+                                            Select auto.CLI_id_cliente, auto.CLI_razon_social, auto.CLI_mail_cli, auto.CLI_telefono_cli, auto.CLI_domicilio, auto.CLI_localidad, auto.CLI_codigo_postal
+                                            Where CLI_razon_social Like tempstring)
+        dgvLista_Clientes.DataSource = autocompletar
+    End Sub
 End Class

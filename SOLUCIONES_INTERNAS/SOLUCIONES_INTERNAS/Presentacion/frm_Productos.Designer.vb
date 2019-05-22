@@ -32,6 +32,9 @@ Partial Class frm_Productos
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.cboDeposito = New System.Windows.Forms.ComboBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.tb_prod_stock_minimo = New System.Windows.Forms.TextBox()
@@ -53,9 +56,6 @@ Partial Class frm_Productos
         Me.btn_prod_eliminar = New System.Windows.Forms.Button()
         Me.btn_prod_cancelar = New System.Windows.Forms.Button()
         Me.btn_Exportar_Excel = New System.Windows.Forms.Button()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.cboDeposito = New System.Windows.Forms.ComboBox()
-        Me.Label14 = New System.Windows.Forms.Label()
         CType(Me.dgvLista_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -81,7 +81,7 @@ Partial Class frm_Productos
         '
         'tb_prod_stock
         '
-        Me.tb_prod_stock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_prod_stock.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tb_prod_stock.Location = New System.Drawing.Point(301, 101)
         Me.tb_prod_stock.Multiline = True
         Me.tb_prod_stock.Name = "tb_prod_stock"
@@ -169,6 +169,35 @@ Partial Class frm_Productos
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Gestión de productos"
         '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Red
+        Me.Label14.Location = New System.Drawing.Point(78, 149)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(11, 13)
+        Me.Label14.TabIndex = 23
+        Me.Label14.Text = "*"
+        '
+        'cboDeposito
+        '
+        Me.cboDeposito.FormattingEnabled = True
+        Me.cboDeposito.Items.AddRange(New Object() {"Seleccionar", "Central", "Planta"})
+        Me.cboDeposito.Location = New System.Drawing.Point(96, 141)
+        Me.cboDeposito.Name = "cboDeposito"
+        Me.cboDeposito.Size = New System.Drawing.Size(199, 21)
+        Me.cboDeposito.TabIndex = 22
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(29, 146)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(49, 13)
+        Me.Label13.TabIndex = 21
+        Me.Label13.Text = "Depósito"
+        '
         'Label12
         '
         Me.Label12.AutoSize = True
@@ -191,7 +220,7 @@ Partial Class frm_Productos
         '
         'tb_prod_stock_minimo
         '
-        Me.tb_prod_stock_minimo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tb_prod_stock_minimo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tb_prod_stock_minimo.Location = New System.Drawing.Point(96, 104)
         Me.tb_prod_stock_minimo.Multiline = True
         Me.tb_prod_stock_minimo.Name = "tb_prod_stock_minimo"
@@ -375,34 +404,6 @@ Partial Class frm_Productos
         Me.btn_Exportar_Excel.TabIndex = 25
         Me.btn_Exportar_Excel.Text = "Exportar a EXCEL"
         Me.btn_Exportar_Excel.UseVisualStyleBackColor = True
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(29, 146)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(49, 13)
-        Me.Label13.TabIndex = 21
-        Me.Label13.Text = "Depósito"
-        '
-        'cboDeposito
-        '
-        Me.cboDeposito.FormattingEnabled = True
-        Me.cboDeposito.Location = New System.Drawing.Point(96, 141)
-        Me.cboDeposito.Name = "cboDeposito"
-        Me.cboDeposito.Size = New System.Drawing.Size(199, 21)
-        Me.cboDeposito.TabIndex = 22
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.Red
-        Me.Label14.Location = New System.Drawing.Point(78, 149)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(11, 13)
-        Me.Label14.TabIndex = 23
-        Me.Label14.Text = "*"
         '
         'frm_Productos
         '

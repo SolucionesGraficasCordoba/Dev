@@ -296,7 +296,8 @@ Public Class frm_listado_orden_trabajo_ampliada
                                On col.CLI_id_cliente Equals U.CLI_id_cliente
                               Select U.ORT_id_orden_trabajo, U.ORT_fecha_ot, U.ORT_fecha_entrega, U.ORT_tipo_ot, U.ORT_numero_ot,
                               U.ORT_observaciones_ot, U.ORT_mejoras_ot, U.VEN_id_vendedor, ort.VEN_nombre_ven, U.CLI_id_cliente, col.CLI_razon_social
-                              Order By ORT_id_orden_trabajo Descending)
+Where ORT_fecha_entrega >= System.DateTime.Now.ToShortDateString
+Order By ORT_id_orden_trabajo Descending)
         dgvLista_Orden_Trabajo.DataSource = consultaOrden
         dgvLista_Orden_Trabajo.ClearSelection()
     End Sub

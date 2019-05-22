@@ -78,19 +78,21 @@
         dgv_Listado_Mensajes.Columns.Clear()
 
         dgv_Listado_Mensajes.Columns.Add("USU_id_usuario", "USU_id_usuario")
-        dgv_Listado_Mensajes.Columns.Add("MEN_fecha_mensaje", "Fecha")
+        ' dgv_Listado_Mensajes.Columns.Add("MEN_fecha_mensaje", "Fecha")
         dgv_Listado_Mensajes.Columns.Add("MEN_titulo", "Título")
         dgv_Listado_Mensajes.Columns.Add("MEN_comentario", "Comentario")
         dgv_Listado_Mensajes.Columns.Add("MEN_respuesta", "Respuesta")
+        dgv_Listado_Mensajes.Columns.Add("USU_usuario", "Usuario")
      
         dgv_Listado_Mensajes.Columns(0).DataPropertyName = "USU_id_usuario"
         dgv_Listado_Mensajes.Columns(0).Visible = False
-        dgv_Listado_Mensajes.Columns(1).DataPropertyName = "MEN_fecha_mensaje"
-        dgv_Listado_Mensajes.Columns(2).DataPropertyName = "MEN_titulo"
-        dgv_Listado_Mensajes.Columns(3).DataPropertyName = "MEN_comentario"
-        dgv_Listado_Mensajes.Columns(3).Width = 150
-        dgv_Listado_Mensajes.Columns(4).DataPropertyName = "MEN_respuesta"
-        dgv_Listado_Mensajes.Columns(4).Width = 300
+        '  dgv_Listado_Mensajes.Columns(1).DataPropertyName = "MEN_fecha_mensaje"
+        dgv_Listado_Mensajes.Columns(1).DataPropertyName = "MEN_titulo"
+        dgv_Listado_Mensajes.Columns(2).DataPropertyName = "MEN_comentario"
+        dgv_Listado_Mensajes.Columns(2).Width = 150
+        dgv_Listado_Mensajes.Columns(3).DataPropertyName = "MEN_respuesta"
+        dgv_Listado_Mensajes.Columns(3).Width = 300
+        dgv_Listado_Mensajes.Columns(4).DataPropertyName = "USU_usuario"
     End Sub
 
     Public Sub cargargrilla()

@@ -1,11 +1,14 @@
 Imports System.Data.Sql
 Imports System.Data.SqlClient
 
+
 Module Autocompletar_Textbox
     Public conexiones As SqlConnection
     Public enunciado As SqlCommand
     Public respuesta As SqlDataReader
     Public adaptador As SqlDataAdapter
+
+    Dim datacontext As New DataS_Interno
 
     Sub abrir()
         Try
@@ -24,6 +27,8 @@ Module Autocompletar_Textbox
     Sub autoCompletarTexbox(ByVal campoTexto As TextBox)
         Try
             enunciado = New SqlCommand("select CLI_razon_social from cliente", conexiones)
+            'Dim enunciado = From c In datacontext.CLIENTE Select c.CLI_razon_social
+
             respuesta = enunciado.ExecuteReader()
             While respuesta.Read
                 campoTexto.AutoCompleteCustomSource.Add(respuesta.Item("CLI_razon_social"))
