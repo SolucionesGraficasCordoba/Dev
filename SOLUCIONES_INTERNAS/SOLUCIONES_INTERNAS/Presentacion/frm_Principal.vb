@@ -1832,10 +1832,12 @@ Public Class frm_Principal
         Dim c As Control
         For Each c In Me.Controls
             If TypeOf c Is MdiClient Then
-                c.BackColor = Color.White
-                c.BackgroundImage = My.Resources.solucionesgraficas1
+                'c.BackColor = Color.White
+                'c.BackgroundImage = My.Resources.solucionesgraficas1
+                c.BackgroundImage = My.Resources.Fondo_aplicacion
+                '                c.BackgroundImageLayout = ImageLayout.Tile
 
-                c.BackgroundImageLayout = ImageLayout.Zoom
+                'c.BackgroundImageLayout = ImageLayout.Zoom
             End If
         Next
 

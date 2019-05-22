@@ -104,16 +104,16 @@ Partial Class frm_Principal
         Me.OrdenDeTrabajoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MovimientoDeÓrdenesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DespachoToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LogísticaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RemitoXOrdenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ModificarToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConsultarToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.EmpaqueToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PlanificarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ActualizarEstadoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DesplanificarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConsultarToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LogísticaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RemitoXOrdenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ModificarToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EliminarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultarToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CorreoElectrónicoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AcercadeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolTip = New System.Windows.Forms.ToolTip(Me.components)
@@ -636,42 +636,11 @@ Partial Class frm_Principal
         Me.DespachoToolStripMenuItem1.Size = New System.Drawing.Size(71, 20)
         Me.DespachoToolStripMenuItem1.Text = "Despacho"
         '
-        'LogísticaToolStripMenuItem
-        '
-        Me.LogísticaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RemitoXOrdenToolStripMenuItem, Me.ModificarToolStripMenuItem2, Me.EliminarToolStripMenuItem, Me.ConsultarToolStripMenuItem3})
-        Me.LogísticaToolStripMenuItem.Name = "LogísticaToolStripMenuItem"
-        Me.LogísticaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
-        Me.LogísticaToolStripMenuItem.Text = "Logística"
-        '
-        'RemitoXOrdenToolStripMenuItem
-        '
-        Me.RemitoXOrdenToolStripMenuItem.Name = "RemitoXOrdenToolStripMenuItem"
-        Me.RemitoXOrdenToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
-        Me.RemitoXOrdenToolStripMenuItem.Text = "Remito x orden"
-        '
-        'ModificarToolStripMenuItem2
-        '
-        Me.ModificarToolStripMenuItem2.Name = "ModificarToolStripMenuItem2"
-        Me.ModificarToolStripMenuItem2.Size = New System.Drawing.Size(154, 22)
-        Me.ModificarToolStripMenuItem2.Text = "Modificar"
-        '
-        'EliminarToolStripMenuItem
-        '
-        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
-        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
-        Me.EliminarToolStripMenuItem.Text = "Eliminar"
-        '
-        'ConsultarToolStripMenuItem3
-        '
-        Me.ConsultarToolStripMenuItem3.Name = "ConsultarToolStripMenuItem3"
-        Me.ConsultarToolStripMenuItem3.Size = New System.Drawing.Size(154, 22)
-        Me.ConsultarToolStripMenuItem3.Text = "Consultar"
-        '
         'EmpaqueToolStripMenuItem
         '
         Me.EmpaqueToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PlanificarToolStripMenuItem, Me.ActualizarEstadoToolStripMenuItem, Me.DesplanificarToolStripMenuItem, Me.ConsultarToolStripMenuItem2})
         Me.EmpaqueToolStripMenuItem.Name = "EmpaqueToolStripMenuItem"
-        Me.EmpaqueToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.EmpaqueToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
         Me.EmpaqueToolStripMenuItem.Text = "Empaque"
         '
         'PlanificarToolStripMenuItem
@@ -697,6 +666,37 @@ Partial Class frm_Principal
         Me.ConsultarToolStripMenuItem2.Name = "ConsultarToolStripMenuItem2"
         Me.ConsultarToolStripMenuItem2.Size = New System.Drawing.Size(164, 22)
         Me.ConsultarToolStripMenuItem2.Text = "Consultar"
+        '
+        'LogísticaToolStripMenuItem
+        '
+        Me.LogísticaToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RemitoXOrdenToolStripMenuItem, Me.ModificarToolStripMenuItem2, Me.EliminarToolStripMenuItem, Me.ConsultarToolStripMenuItem3})
+        Me.LogísticaToolStripMenuItem.Name = "LogísticaToolStripMenuItem"
+        Me.LogísticaToolStripMenuItem.Size = New System.Drawing.Size(124, 22)
+        Me.LogísticaToolStripMenuItem.Text = "Logística"
+        '
+        'RemitoXOrdenToolStripMenuItem
+        '
+        Me.RemitoXOrdenToolStripMenuItem.Name = "RemitoXOrdenToolStripMenuItem"
+        Me.RemitoXOrdenToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.RemitoXOrdenToolStripMenuItem.Text = "Remito x orden"
+        '
+        'ModificarToolStripMenuItem2
+        '
+        Me.ModificarToolStripMenuItem2.Name = "ModificarToolStripMenuItem2"
+        Me.ModificarToolStripMenuItem2.Size = New System.Drawing.Size(154, 22)
+        Me.ModificarToolStripMenuItem2.Text = "Modificar"
+        '
+        'EliminarToolStripMenuItem
+        '
+        Me.EliminarToolStripMenuItem.Name = "EliminarToolStripMenuItem"
+        Me.EliminarToolStripMenuItem.Size = New System.Drawing.Size(154, 22)
+        Me.EliminarToolStripMenuItem.Text = "Eliminar"
+        '
+        'ConsultarToolStripMenuItem3
+        '
+        Me.ConsultarToolStripMenuItem3.Name = "ConsultarToolStripMenuItem3"
+        Me.ConsultarToolStripMenuItem3.Size = New System.Drawing.Size(154, 22)
+        Me.ConsultarToolStripMenuItem3.Text = "Consultar"
         '
         'CorreoElectrónicoToolStripMenuItem
         '
@@ -807,10 +807,10 @@ Partial Class frm_Principal
         '
         'frm_Principal
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1360, 749)
         Me.Controls.Add(Me.btnManualUsuario)
         Me.Controls.Add(Me.GroupBox1)
