@@ -53,6 +53,9 @@ Partial Class frm_Productos
         Me.btn_prod_eliminar = New System.Windows.Forms.Button()
         Me.btn_prod_cancelar = New System.Windows.Forms.Button()
         Me.btn_Exportar_Excel = New System.Windows.Forms.Button()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.cboDeposito = New System.Windows.Forms.ComboBox()
+        Me.Label14 = New System.Windows.Forms.Label()
         CType(Me.dgvLista_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -61,7 +64,7 @@ Partial Class frm_Productos
         '
         'btn_prod_guardar
         '
-        Me.btn_prod_guardar.Location = New System.Drawing.Point(387, 80)
+        Me.btn_prod_guardar.Location = New System.Drawing.Point(395, 149)
         Me.btn_prod_guardar.Name = "btn_prod_guardar"
         Me.btn_prod_guardar.Size = New System.Drawing.Size(90, 33)
         Me.btn_prod_guardar.TabIndex = 5
@@ -70,19 +73,19 @@ Partial Class frm_Productos
         '
         'tb_prod_descripcion
         '
-        Me.tb_prod_descripcion.Location = New System.Drawing.Point(163, 31)
+        Me.tb_prod_descripcion.Location = New System.Drawing.Point(96, 64)
         Me.tb_prod_descripcion.MaxLength = 50
         Me.tb_prod_descripcion.Name = "tb_prod_descripcion"
-        Me.tb_prod_descripcion.Size = New System.Drawing.Size(410, 20)
+        Me.tb_prod_descripcion.Size = New System.Drawing.Size(474, 20)
         Me.tb_prod_descripcion.TabIndex = 2
         '
         'tb_prod_stock
         '
         Me.tb_prod_stock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_prod_stock.Location = New System.Drawing.Point(163, 79)
+        Me.tb_prod_stock.Location = New System.Drawing.Point(301, 101)
         Me.tb_prod_stock.Multiline = True
         Me.tb_prod_stock.Name = "tb_prod_stock"
-        Me.tb_prod_stock.Size = New System.Drawing.Size(108, 33)
+        Me.tb_prod_stock.Size = New System.Drawing.Size(91, 20)
         Me.tb_prod_stock.TabIndex = 4
         Me.tb_prod_stock.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -99,7 +102,7 @@ Partial Class frm_Productos
         '
         'btn_prod_actualizar
         '
-        Me.btn_prod_actualizar.Location = New System.Drawing.Point(483, 80)
+        Me.btn_prod_actualizar.Location = New System.Drawing.Point(491, 149)
         Me.btn_prod_actualizar.Name = "btn_prod_actualizar"
         Me.btn_prod_actualizar.Size = New System.Drawing.Size(90, 33)
         Me.btn_prod_actualizar.TabIndex = 7
@@ -125,7 +128,7 @@ Partial Class frm_Productos
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(334, 15)
+        Me.Label3.Location = New System.Drawing.Point(15, 68)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(63, 13)
         Me.Label3.TabIndex = 11
@@ -134,14 +137,17 @@ Partial Class frm_Productos
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(166, 63)
+        Me.Label4.Location = New System.Drawing.Point(210, 108)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(93, 13)
+        Me.Label4.Size = New System.Drawing.Size(76, 13)
         Me.Label4.TabIndex = 12
-        Me.Label4.Text = "Cantidad en stock"
+        Me.Label4.Text = "Cant. en stock"
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label14)
+        Me.GroupBox1.Controls.Add(Me.cboDeposito)
+        Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.tb_prod_stock_minimo)
@@ -158,7 +164,7 @@ Partial Class frm_Productos
         Me.GroupBox1.Controls.Add(Me.tb_prod_descripcion)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(587, 125)
+        Me.GroupBox1.Size = New System.Drawing.Size(587, 188)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Gestión de productos"
@@ -168,7 +174,7 @@ Partial Class frm_Productos
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label12.ForeColor = System.Drawing.Color.Red
-        Me.Label12.Location = New System.Drawing.Point(259, 65)
+        Me.Label12.Location = New System.Drawing.Point(284, 111)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(11, 13)
         Me.Label12.TabIndex = 20
@@ -177,7 +183,7 @@ Partial Class frm_Productos
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(51, 63)
+        Me.Label11.Location = New System.Drawing.Point(7, 108)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(72, 13)
         Me.Label11.TabIndex = 18
@@ -186,17 +192,17 @@ Partial Class frm_Productos
         'tb_prod_stock_minimo
         '
         Me.tb_prod_stock_minimo.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tb_prod_stock_minimo.Location = New System.Drawing.Point(32, 79)
+        Me.tb_prod_stock_minimo.Location = New System.Drawing.Point(96, 104)
         Me.tb_prod_stock_minimo.Multiline = True
         Me.tb_prod_stock_minimo.Name = "tb_prod_stock_minimo"
-        Me.tb_prod_stock_minimo.Size = New System.Drawing.Size(112, 33)
+        Me.tb_prod_stock_minimo.Size = New System.Drawing.Size(91, 20)
         Me.tb_prod_stock_minimo.TabIndex = 3
         Me.tb_prod_stock_minimo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(64, 15)
+        Me.Label2.Location = New System.Drawing.Point(38, 31)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(40, 13)
         Me.Label2.TabIndex = 16
@@ -204,10 +210,10 @@ Partial Class frm_Productos
         '
         'tb_prod_codigo
         '
-        Me.tb_prod_codigo.Location = New System.Drawing.Point(32, 31)
+        Me.tb_prod_codigo.Location = New System.Drawing.Point(96, 27)
         Me.tb_prod_codigo.MaxLength = 15
         Me.tb_prod_codigo.Name = "tb_prod_codigo"
-        Me.tb_prod_codigo.Size = New System.Drawing.Size(112, 20)
+        Me.tb_prod_codigo.Size = New System.Drawing.Size(91, 20)
         Me.tb_prod_codigo.TabIndex = 1
         '
         'Label5
@@ -215,7 +221,7 @@ Partial Class frm_Productos
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.Red
-        Me.Label5.Location = New System.Drawing.Point(122, 66)
+        Me.Label5.Location = New System.Drawing.Point(78, 111)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(11, 13)
         Me.Label5.TabIndex = 14
@@ -226,7 +232,7 @@ Partial Class frm_Productos
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.Red
-        Me.Label7.Location = New System.Drawing.Point(105, 18)
+        Me.Label7.Location = New System.Drawing.Point(79, 34)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(11, 13)
         Me.Label7.TabIndex = 14
@@ -237,7 +243,7 @@ Partial Class frm_Productos
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.Red
-        Me.Label6.Location = New System.Drawing.Point(397, 18)
+        Me.Label6.Location = New System.Drawing.Point(78, 71)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(11, 13)
         Me.Label6.TabIndex = 13
@@ -249,7 +255,7 @@ Partial Class frm_Productos
         Me.GroupBox2.Controls.Add(Me.dgvLista_Productos)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.tb_prod_id)
-        Me.GroupBox2.Location = New System.Drawing.Point(13, 156)
+        Me.GroupBox2.Location = New System.Drawing.Point(11, 206)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(586, 318)
         Me.GroupBox2.TabIndex = 14
@@ -307,7 +313,7 @@ Partial Class frm_Productos
         '
         'btnExportarPDF
         '
-        Me.btnExportarPDF.Location = New System.Drawing.Point(326, 480)
+        Me.btnExportarPDF.Location = New System.Drawing.Point(327, 530)
         Me.btnExportarPDF.Name = "btnExportarPDF"
         Me.btnExportarPDF.Size = New System.Drawing.Size(112, 33)
         Me.btnExportarPDF.TabIndex = 24
@@ -319,7 +325,7 @@ Partial Class frm_Productos
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Red
-        Me.Label8.Location = New System.Drawing.Point(23, 501)
+        Me.Label8.Location = New System.Drawing.Point(24, 551)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(105, 13)
         Me.Label8.TabIndex = 22
@@ -329,7 +335,7 @@ Partial Class frm_Productos
         '
         Me.Label9.AutoSize = True
         Me.Label9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label9.Location = New System.Drawing.Point(120, 478)
+        Me.Label9.Location = New System.Drawing.Point(121, 528)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(2, 15)
         Me.Label9.TabIndex = 23
@@ -337,7 +343,7 @@ Partial Class frm_Productos
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(12, 480)
+        Me.Label10.Location = New System.Drawing.Point(13, 530)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(97, 13)
         Me.Label10.TabIndex = 21
@@ -345,7 +351,7 @@ Partial Class frm_Productos
         '
         'btn_prod_eliminar
         '
-        Me.btn_prod_eliminar.Location = New System.Drawing.Point(444, 480)
+        Me.btn_prod_eliminar.Location = New System.Drawing.Point(445, 530)
         Me.btn_prod_eliminar.Name = "btn_prod_eliminar"
         Me.btn_prod_eliminar.Size = New System.Drawing.Size(74, 33)
         Me.btn_prod_eliminar.TabIndex = 20
@@ -354,7 +360,7 @@ Partial Class frm_Productos
         '
         'btn_prod_cancelar
         '
-        Me.btn_prod_cancelar.Location = New System.Drawing.Point(524, 480)
+        Me.btn_prod_cancelar.Location = New System.Drawing.Point(525, 530)
         Me.btn_prod_cancelar.Name = "btn_prod_cancelar"
         Me.btn_prod_cancelar.Size = New System.Drawing.Size(74, 33)
         Me.btn_prod_cancelar.TabIndex = 19
@@ -363,18 +369,46 @@ Partial Class frm_Productos
         '
         'btn_Exportar_Excel
         '
-        Me.btn_Exportar_Excel.Location = New System.Drawing.Point(189, 480)
+        Me.btn_Exportar_Excel.Location = New System.Drawing.Point(190, 530)
         Me.btn_Exportar_Excel.Name = "btn_Exportar_Excel"
         Me.btn_Exportar_Excel.Size = New System.Drawing.Size(131, 33)
         Me.btn_Exportar_Excel.TabIndex = 25
         Me.btn_Exportar_Excel.Text = "Exportar a EXCEL"
         Me.btn_Exportar_Excel.UseVisualStyleBackColor = True
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(29, 146)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(49, 13)
+        Me.Label13.TabIndex = 21
+        Me.Label13.Text = "Depósito"
+        '
+        'cboDeposito
+        '
+        Me.cboDeposito.FormattingEnabled = True
+        Me.cboDeposito.Location = New System.Drawing.Point(96, 141)
+        Me.cboDeposito.Name = "cboDeposito"
+        Me.cboDeposito.Size = New System.Drawing.Size(199, 21)
+        Me.cboDeposito.TabIndex = 22
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.Red
+        Me.Label14.Location = New System.Drawing.Point(78, 149)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(11, 13)
+        Me.Label14.TabIndex = 23
+        Me.Label14.Text = "*"
+        '
         'frm_Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(614, 523)
+        Me.ClientSize = New System.Drawing.Size(614, 573)
         Me.Controls.Add(Me.btn_Exportar_Excel)
         Me.Controls.Add(Me.btnExportarPDF)
         Me.Controls.Add(Me.Label8)
@@ -429,4 +463,7 @@ Partial Class frm_Productos
     Friend WithEvents tb_cod_busqueda As System.Windows.Forms.TextBox
     Friend WithEvents tb_prod_busqueda As System.Windows.Forms.TextBox
     Friend WithEvents btn_Exportar_Excel As System.Windows.Forms.Button
+    Friend WithEvents Label14 As System.Windows.Forms.Label
+    Friend WithEvents cboDeposito As System.Windows.Forms.ComboBox
+    Friend WithEvents Label13 As System.Windows.Forms.Label
 End Class

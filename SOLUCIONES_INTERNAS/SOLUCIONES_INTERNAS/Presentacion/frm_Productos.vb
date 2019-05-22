@@ -99,11 +99,9 @@ Public Class frm_Productos
         dgvLista_Productos.Columns(0).Visible = False
         dgvLista_Productos.Columns(1).DataPropertyName = "PROD_codigo"
         dgvLista_Productos.Columns(2).DataPropertyName = "PROD_descripcion"
-        dgvLista_Productos.Columns(2).Width = 180
+        ' dgvLista_Productos.Columns(2).Width = 200
         dgvLista_Productos.Columns(3).DataPropertyName = "PROD_stock"
-        dgvLista_Productos.Columns(3).Width = 80
         dgvLista_Productos.Columns(4).DataPropertyName = "PROD_stock_minimo"
-        dgvLista_Productos.Columns(4).Width = 80
     End Sub
 
     Sub cargargrilla()
@@ -413,4 +411,8 @@ Public Class frm_Productos
         End Try
         Return True
     End Function
+
+    Private Sub GroupBox1_Enter(sender As System.Object, e As System.EventArgs) Handles GroupBox1.Enter
+
+    End Sub
 End Class
