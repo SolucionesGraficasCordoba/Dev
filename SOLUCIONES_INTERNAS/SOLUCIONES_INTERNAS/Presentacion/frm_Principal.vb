@@ -1717,6 +1717,7 @@ Public Class frm_Principal
         frm_Productos.btn_Exportar_Excel.Enabled = False
 
         frm_Productos.dgvLista_Productos.Enabled = True
+        frm_Productos.cboDeposito.Enabled = False
         frm_Productos.ShowDialog()
     End Sub
 
@@ -1801,6 +1802,8 @@ Public Class frm_Principal
 
         frm_Productos.dgvLista_Productos.Enabled = True
 
+        frm_Productos.cboDeposito.Enabled = False
+
         frm_Productos.MdiParent = Me
         frm_Productos.Show()
         For Each row As DataGridViewRow In frm_Productos.dgvLista_Productos.Rows
@@ -1840,8 +1843,6 @@ Public Class frm_Principal
                 'c.BackgroundImageLayout = ImageLayout.Zoom
             End If
         Next
-
-
     End Sub
 
     Public Sub mostrar_mensaje()

@@ -287,6 +287,8 @@ Public Class frm_Productos
         tb_cod_busqueda.Clear()
         tb_prod_busqueda.Enabled = True
         tb_prod_busqueda.Focus()
+        cbo_busqueda_deposito.SelectedIndex = 0
+        cbo_busqueda_deposito.Enabled = False
     End Sub
 
     Private Sub rbtCodigo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtCodigo.CheckedChanged
@@ -294,6 +296,8 @@ Public Class frm_Productos
         tb_prod_busqueda.Clear()
         tb_cod_busqueda.Enabled = True
         tb_cod_busqueda.Focus()
+        cbo_busqueda_deposito.SelectedIndex = 0
+        cbo_busqueda_deposito.Enabled = False
     End Sub
 
     Private Sub tb_prod_busqueda_TextChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tb_prod_busqueda.TextChanged

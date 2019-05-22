@@ -45,6 +45,7 @@ Partial Class frm_Productos
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.rbtDeposito = New System.Windows.Forms.RadioButton()
         Me.rbtCodigo = New System.Windows.Forms.RadioButton()
         Me.rbtProducto = New System.Windows.Forms.RadioButton()
         Me.tb_cod_busqueda = New System.Windows.Forms.TextBox()
@@ -56,6 +57,7 @@ Partial Class frm_Productos
         Me.btn_prod_eliminar = New System.Windows.Forms.Button()
         Me.btn_prod_cancelar = New System.Windows.Forms.Button()
         Me.btn_Exportar_Excel = New System.Windows.Forms.Button()
+        Me.cbo_busqueda_deposito = New System.Windows.Forms.ComboBox()
         CType(Me.dgvLista_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -94,10 +96,10 @@ Partial Class frm_Productos
         Me.dgvLista_Productos.AllowUserToAddRows = False
         Me.dgvLista_Productos.AllowUserToDeleteRows = False
         Me.dgvLista_Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLista_Productos.Location = New System.Drawing.Point(7, 66)
+        Me.dgvLista_Productos.Location = New System.Drawing.Point(6, 75)
         Me.dgvLista_Productos.Name = "dgvLista_Productos"
         Me.dgvLista_Productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_Productos.Size = New System.Drawing.Size(565, 241)
+        Me.dgvLista_Productos.Size = New System.Drawing.Size(565, 237)
         Me.dgvLista_Productos.TabIndex = 10
         '
         'btn_prod_actualizar
@@ -111,7 +113,7 @@ Partial Class frm_Productos
         '
         'tb_prod_id
         '
-        Me.tb_prod_id.Location = New System.Drawing.Point(42, 32)
+        Me.tb_prod_id.Location = New System.Drawing.Point(494, 117)
         Me.tb_prod_id.Name = "tb_prod_id"
         Me.tb_prod_id.Size = New System.Drawing.Size(14, 20)
         Me.tb_prod_id.TabIndex = 7
@@ -119,7 +121,7 @@ Partial Class frm_Productos
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(18, 16)
+        Me.Label1.Location = New System.Drawing.Point(470, 101)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(64, 13)
         Me.Label1.TabIndex = 9
@@ -147,6 +149,8 @@ Partial Class frm_Productos
         '
         Me.GroupBox1.Controls.Add(Me.Label14)
         Me.GroupBox1.Controls.Add(Me.cboDeposito)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.tb_prod_id)
         Me.GroupBox1.Controls.Add(Me.Label13)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.Label11)
@@ -282,8 +286,6 @@ Partial Class frm_Productos
         '
         Me.GroupBox2.Controls.Add(Me.GroupBox3)
         Me.GroupBox2.Controls.Add(Me.dgvLista_Productos)
-        Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Controls.Add(Me.tb_prod_id)
         Me.GroupBox2.Location = New System.Drawing.Point(11, 206)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(586, 318)
@@ -293,21 +295,34 @@ Partial Class frm_Productos
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.cbo_busqueda_deposito)
+        Me.GroupBox3.Controls.Add(Me.rbtDeposito)
         Me.GroupBox3.Controls.Add(Me.rbtCodigo)
         Me.GroupBox3.Controls.Add(Me.rbtProducto)
         Me.GroupBox3.Controls.Add(Me.tb_cod_busqueda)
         Me.GroupBox3.Controls.Add(Me.tb_prod_busqueda)
-        Me.GroupBox3.Location = New System.Drawing.Point(98, 10)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 19)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(474, 50)
+        Me.GroupBox3.Size = New System.Drawing.Size(565, 50)
         Me.GroupBox3.TabIndex = 19
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Búsqueda"
         '
+        'rbtDeposito
+        '
+        Me.rbtDeposito.AutoSize = True
+        Me.rbtDeposito.Location = New System.Drawing.Point(374, 19)
+        Me.rbtDeposito.Name = "rbtDeposito"
+        Me.rbtDeposito.Size = New System.Drawing.Size(67, 17)
+        Me.rbtDeposito.TabIndex = 26
+        Me.rbtDeposito.TabStop = True
+        Me.rbtDeposito.Text = "Depósito"
+        Me.rbtDeposito.UseVisualStyleBackColor = True
+        '
         'rbtCodigo
         '
         Me.rbtCodigo.AutoSize = True
-        Me.rbtCodigo.Location = New System.Drawing.Point(249, 19)
+        Me.rbtCodigo.Location = New System.Drawing.Point(197, 19)
         Me.rbtCodigo.Name = "rbtCodigo"
         Me.rbtCodigo.Size = New System.Drawing.Size(58, 17)
         Me.rbtCodigo.TabIndex = 24
@@ -328,16 +343,16 @@ Partial Class frm_Productos
         '
         'tb_cod_busqueda
         '
-        Me.tb_cod_busqueda.Location = New System.Drawing.Point(314, 18)
+        Me.tb_cod_busqueda.Location = New System.Drawing.Point(261, 18)
         Me.tb_cod_busqueda.Name = "tb_cod_busqueda"
-        Me.tb_cod_busqueda.Size = New System.Drawing.Size(135, 20)
+        Me.tb_cod_busqueda.Size = New System.Drawing.Size(99, 20)
         Me.tb_cod_busqueda.TabIndex = 23
         '
         'tb_prod_busqueda
         '
         Me.tb_prod_busqueda.Location = New System.Drawing.Point(83, 18)
         Me.tb_prod_busqueda.Name = "tb_prod_busqueda"
-        Me.tb_prod_busqueda.Size = New System.Drawing.Size(135, 20)
+        Me.tb_prod_busqueda.Size = New System.Drawing.Size(99, 20)
         Me.tb_prod_busqueda.TabIndex = 21
         '
         'btnExportarPDF
@@ -405,6 +420,15 @@ Partial Class frm_Productos
         Me.btn_Exportar_Excel.Text = "Exportar a EXCEL"
         Me.btn_Exportar_Excel.UseVisualStyleBackColor = True
         '
+        'cbo_busqueda_deposito
+        '
+        Me.cbo_busqueda_deposito.FormattingEnabled = True
+        Me.cbo_busqueda_deposito.Items.AddRange(New Object() {"", "Central", "Planta"})
+        Me.cbo_busqueda_deposito.Location = New System.Drawing.Point(448, 18)
+        Me.cbo_busqueda_deposito.Name = "cbo_busqueda_deposito"
+        Me.cbo_busqueda_deposito.Size = New System.Drawing.Size(111, 21)
+        Me.cbo_busqueda_deposito.TabIndex = 27
+        '
         'frm_Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -426,7 +450,6 @@ Partial Class frm_Productos
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
@@ -467,4 +490,6 @@ Partial Class frm_Productos
     Friend WithEvents Label14 As System.Windows.Forms.Label
     Friend WithEvents cboDeposito As System.Windows.Forms.ComboBox
     Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents rbtDeposito As System.Windows.Forms.RadioButton
+    Friend WithEvents cbo_busqueda_deposito As System.Windows.Forms.ComboBox
 End Class
