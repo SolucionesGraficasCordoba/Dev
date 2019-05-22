@@ -538,7 +538,7 @@ Partial Class frm_Etiqueta_Modelo_1
         '
         'txt_orden
         '
-        Me.txt_orden.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_orden.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_orden.Location = New System.Drawing.Point(407, 22)
         Me.txt_orden.Multiline = True
         Me.txt_orden.Name = "txt_orden"
