@@ -283,4 +283,7 @@
   <data name="cumple" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cumple.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Fondo_aplicacion" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fondo aplicacion.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
