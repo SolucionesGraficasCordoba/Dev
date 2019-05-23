@@ -226,7 +226,7 @@ Partial Class frm_Principal
         '
         Me.VendedorToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoVendedorToolStripMenuItem, Me.ModificarVendedorToolStripMenuItem, Me.EliminarVendedorToolStripMenuItem, Me.ConsultarVendedorToolStripMenuItem})
         Me.VendedorToolStripMenuItem.Name = "VendedorToolStripMenuItem"
-        Me.VendedorToolStripMenuItem.Size = New System.Drawing.Size(69, 20)
+        Me.VendedorToolStripMenuItem.Size = New System.Drawing.Size(70, 20)
         Me.VendedorToolStripMenuItem.Text = "Vendedor"
         '
         'NuevoVendedorToolStripMenuItem
@@ -350,38 +350,38 @@ Partial Class frm_Principal
         '
         Me.TareasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaTareaToolStripMenuItem, Me.ListaTareaToolStripMenuItem, Me.EliminarTareaToolStripMenuItem, Me.ConsultarTareaToolStripMenuItem, Me.GráficosToolStripMenuItem})
         Me.TareasToolStripMenuItem.Name = "TareasToolStripMenuItem"
-        Me.TareasToolStripMenuItem.Size = New System.Drawing.Size(47, 20)
+        Me.TareasToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.TareasToolStripMenuItem.Text = "Tarea"
         '
         'AltaTareaToolStripMenuItem
         '
         Me.AltaTareaToolStripMenuItem.Name = "AltaTareaToolStripMenuItem"
-        Me.AltaTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.AltaTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AltaTareaToolStripMenuItem.Text = "Nueva"
         '
         'ListaTareaToolStripMenuItem
         '
         Me.ListaTareaToolStripMenuItem.Name = "ListaTareaToolStripMenuItem"
-        Me.ListaTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.ListaTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ListaTareaToolStripMenuItem.Text = "Modificar"
         '
         'EliminarTareaToolStripMenuItem
         '
         Me.EliminarTareaToolStripMenuItem.Name = "EliminarTareaToolStripMenuItem"
-        Me.EliminarTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.EliminarTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EliminarTareaToolStripMenuItem.Text = "Eliminar"
         '
         'ConsultarTareaToolStripMenuItem
         '
         Me.ConsultarTareaToolStripMenuItem.Name = "ConsultarTareaToolStripMenuItem"
-        Me.ConsultarTareaToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.ConsultarTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ConsultarTareaToolStripMenuItem.Text = "Consultar"
         '
         'GráficosToolStripMenuItem
         '
         Me.GráficosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DiariasPorColaboradorToolStripMenuItem1, Me.MensualesPorSectorToolStripMenuItem1})
         Me.GráficosToolStripMenuItem.Name = "GráficosToolStripMenuItem"
-        Me.GráficosToolStripMenuItem.Size = New System.Drawing.Size(125, 22)
+        Me.GráficosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.GráficosToolStripMenuItem.Text = "Gráficos"
         '
         'DiariasPorColaboradorToolStripMenuItem1
@@ -463,7 +463,7 @@ Partial Class frm_Principal
         '
         Me.OrdenTrabajoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevaOrdenToolStripMenuItem, Me.ModificarOrdenToolStripMenuItem, Me.EliminarOrdenToolStripMenuItem, Me.ConsultarToolStripMenuItem, Me.OrdenAmpliadaToolStripMenuItem, Me.ListaOrdenAmpliadaToolStripMenuItem, Me.EliminarOrdenAmpliadaToolStripMenuItem, Me.ConsultarOrdenAmpliadaToolStripMenuItem, Me.MovimientoOrdenToolStripMenuItem})
         Me.OrdenTrabajoToolStripMenuItem.Name = "OrdenTrabajoToolStripMenuItem"
-        Me.OrdenTrabajoToolStripMenuItem.Size = New System.Drawing.Size(94, 20)
+        Me.OrdenTrabajoToolStripMenuItem.Size = New System.Drawing.Size(95, 20)
         Me.OrdenTrabajoToolStripMenuItem.Text = "Orden Trabajo"
         '
         'NuevaOrdenToolStripMenuItem
@@ -524,7 +524,7 @@ Partial Class frm_Principal
         '
         Me.ReTrabajoToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RepeticiónDeChapasToolStripMenuItem, Me.DigitalOffsetToolStripMenuItem, Me.ConsultarToolStripMenuItem1})
         Me.ReTrabajoToolStripMenuItem1.Name = "ReTrabajoToolStripMenuItem1"
-        Me.ReTrabajoToolStripMenuItem1.Size = New System.Drawing.Size(76, 20)
+        Me.ReTrabajoToolStripMenuItem1.Size = New System.Drawing.Size(77, 20)
         Me.ReTrabajoToolStripMenuItem1.Text = "Re-Trabajo"
         '
         'RepeticiónDeChapasToolStripMenuItem
@@ -601,7 +601,7 @@ Partial Class frm_Principal
         '
         Me.TareasToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DiariasPorColaboradorToolStripMenuItem, Me.MensualesPorSectorToolStripMenuItem})
         Me.TareasToolStripMenuItem1.Name = "TareasToolStripMenuItem1"
-        Me.TareasToolStripMenuItem1.Size = New System.Drawing.Size(165, 22)
+        Me.TareasToolStripMenuItem1.Size = New System.Drawing.Size(166, 22)
         Me.TareasToolStripMenuItem1.Text = "Tareas"
         '
         'DiariasPorColaboradorToolStripMenuItem
@@ -620,7 +620,7 @@ Partial Class frm_Principal
         '
         Me.OrdenDeTrabajoToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MovimientoDeÓrdenesToolStripMenuItem})
         Me.OrdenDeTrabajoToolStripMenuItem.Name = "OrdenDeTrabajoToolStripMenuItem"
-        Me.OrdenDeTrabajoToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.OrdenDeTrabajoToolStripMenuItem.Size = New System.Drawing.Size(166, 22)
         Me.OrdenDeTrabajoToolStripMenuItem.Text = "Órden de Trabajo"
         '
         'MovimientoDeÓrdenesToolStripMenuItem

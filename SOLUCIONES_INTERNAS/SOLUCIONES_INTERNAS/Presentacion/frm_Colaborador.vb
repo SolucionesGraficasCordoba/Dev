@@ -60,14 +60,14 @@ Public Class frm_Colaborador
 
             If frm_Principal.LBL_MENU_PERFIL.Text = "COLABORADOR" Then
                 'TRAE SECTOR DEL USUARIO REGISTRADO
-                Dim cargasupervisor = (From sec In datacontext.SECTOR
+                Dim cargacolaborador = (From sec In datacontext.SECTOR
                               Join col In datacontext.COLABORADOR
                               On col.SEC_id_sector Equals sec.SEC_id_sector
                               Join usu In datacontext.USUARIO
                               On usu.COL_id_colaborador Equals col.COL_id_colaborador
                               Select usu.USU_usuario, sec.SEC_id_sector, sec.SEC_nombre_sector, col.COL_id_colaborador, col.COL_nombre_col, col.COL_apellido_col
                               Where USU_usuario = frm_Principal.LBL_MENU_USU.Text)
-                dgvLista_Colaboradores.DataSource = cargasupervisor
+                dgvLista_Colaboradores.DataSource = cargacolaborador
 
             ElseIf frm_Principal.LBL_MENU_PERFIL.Text = "SUPERVISOR" Then
 

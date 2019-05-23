@@ -1640,7 +1640,7 @@ Public Class frm_Principal
 
         frm_Productos.Text = "Nuevo Producto"
         frm_Productos.dgvLista_Productos.ClearSelection()
-        '  frm_Productos.GroupBox2.Enabled = False
+        frm_Productos.GroupBox2.Enabled = False
 
         frm_Productos.tb_prod_id.Visible = False
         frm_Productos.Label1.Visible = False
@@ -1658,6 +1658,8 @@ Public Class frm_Principal
         frm_Productos.btnExportarPDF.Enabled = False
         frm_Productos.btn_Exportar_Excel.Enabled = False
         frm_Productos.ShowDialog()
+
+
         frm_Productos.rbtProducto.Checked = False
 
     End Sub
@@ -1803,6 +1805,7 @@ Public Class frm_Principal
         frm_Productos.dgvLista_Productos.Enabled = True
 
         frm_Productos.cboDeposito.Enabled = False
+        'frm_Productos.rbtCodigo.Enabled = True
 
         frm_Productos.MdiParent = Me
         frm_Productos.Show()

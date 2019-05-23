@@ -3651,7 +3651,4 @@
         CalcularExtra()
     End Sub
 
-    Private Sub frm_Tarea_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
 End Class
