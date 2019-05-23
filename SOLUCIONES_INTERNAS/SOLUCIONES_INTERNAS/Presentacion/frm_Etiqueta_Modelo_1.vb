@@ -40,7 +40,6 @@ Public Class frm_Etiqueta_Modelo_1
         txt_id_orden.Clear()
         txt_orden.Clear()
         txtSolicitante.Clear()
-        txtSector.Clear()
         txtDomicilio.Clear()
         txtLocalidad.Clear()
         txtCodigoPostal.Clear()
@@ -64,13 +63,11 @@ Public Class frm_Etiqueta_Modelo_1
         dgv_Etiquetas.Columns(2).Visible = False
         dgv_Etiquetas.Columns.Add("CLI_razon_social", "Dirigido a")
         dgv_Etiquetas.Columns.Add(txtSolicitante.Text, "Solicitante")
-        dgv_Etiquetas.Columns.Add(txtSector.Text, "Sector")
         dgv_Etiquetas.Columns.Add("CLI_domicilio", "Domicilio")
         dgv_Etiquetas.Columns.Add("CLI_localidad", "Localidad")
         dgv_Etiquetas.Columns.Add("CLI_codigo_postal", "CP")
         'dgv_Etiquetas.Columns(8).Width = 50
         dgv_Etiquetas.Columns.Add(txtDespachado.Text, "Despachado")
-        dgv_Etiquetas.Columns.Add(txtSeccion.Text, "Sección")
         dgv_Etiquetas.Columns.Add(txtCantidadBultos.Text, "Cantidad")
         'dgv_Etiquetas.Columns(11).Width = 50
         dgv_Etiquetas.Columns.Add("", "Nro Bultos")
@@ -104,7 +101,6 @@ Public Class frm_Etiqueta_Modelo_1
                                                 sacar_tildes(txtId_Cliente.Text),
                                                            sacar_tildes(txtDirigidoA.Text),
                                                 sacar_tildes(txtSolicitante.Text), _
-                                                sacar_tildes(txtSector.Text),
                                                 sacar_tildes(txtDomicilio.Text),
                                                sacar_tildes(txtLocalidad.Text),
                                                 sacar_tildes(txtCodigoPostal.Text),

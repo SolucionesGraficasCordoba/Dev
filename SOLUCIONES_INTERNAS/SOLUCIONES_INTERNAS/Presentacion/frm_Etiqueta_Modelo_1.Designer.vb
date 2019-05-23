@@ -31,8 +31,6 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label27 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.txtSector = New System.Windows.Forms.TextBox()
-        Me.Label24 = New System.Windows.Forms.Label()
         Me.txtCodigoPostal = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.txtLocalidad = New System.Windows.Forms.TextBox()
@@ -143,8 +141,6 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.GroupBox1.Controls.Add(Me.Label27)
         Me.GroupBox1.Controls.Add(Me.Label26)
         Me.GroupBox1.Controls.Add(Me.txtDescripcionEntrega)
-        Me.GroupBox1.Controls.Add(Me.txtSector)
-        Me.GroupBox1.Controls.Add(Me.Label24)
         Me.GroupBox1.Controls.Add(Me.txtCodigoPostal)
         Me.GroupBox1.Controls.Add(Me.Label21)
         Me.GroupBox1.Controls.Add(Me.txtLocalidad)
@@ -187,22 +183,6 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label26.Size = New System.Drawing.Size(14, 13)
         Me.Label26.TabIndex = 27
         Me.Label26.Text = "* "
-        '
-        'txtSector
-        '
-        Me.txtSector.Location = New System.Drawing.Point(827, 19)
-        Me.txtSector.Name = "txtSector"
-        Me.txtSector.Size = New System.Drawing.Size(118, 20)
-        Me.txtSector.TabIndex = 5
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(777, 22)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(44, 13)
-        Me.Label24.TabIndex = 22
-        Me.Label24.Text = "Sector: "
         '
         'txtCodigoPostal
         '
@@ -694,8 +674,6 @@ Partial Class frm_Etiqueta_Modelo_1
     Friend WithEvents Label21 As System.Windows.Forms.Label
     Friend WithEvents txtSeccion As System.Windows.Forms.TextBox
     Friend WithEvents Label23 As System.Windows.Forms.Label
-    Friend WithEvents txtSector As System.Windows.Forms.TextBox
-    Friend WithEvents Label24 As System.Windows.Forms.Label
     Friend WithEvents dgv_Etiquetas As System.Windows.Forms.DataGridView
     Friend WithEvents btnGenerarEtiquetas As System.Windows.Forms.Button
     Friend WithEvents btnLimpiarEtiqueta As System.Windows.Forms.Button
