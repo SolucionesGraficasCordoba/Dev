@@ -45,6 +45,7 @@ Partial Class frm_Productos
         Me.Label6 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.cbo_busqueda_deposito = New System.Windows.Forms.ComboBox()
         Me.rbtDeposito = New System.Windows.Forms.RadioButton()
         Me.rbtCodigo = New System.Windows.Forms.RadioButton()
         Me.rbtProducto = New System.Windows.Forms.RadioButton()
@@ -57,7 +58,6 @@ Partial Class frm_Productos
         Me.btn_prod_eliminar = New System.Windows.Forms.Button()
         Me.btn_prod_cancelar = New System.Windows.Forms.Button()
         Me.btn_Exportar_Excel = New System.Windows.Forms.Button()
-        Me.cbo_busqueda_deposito = New System.Windows.Forms.ComboBox()
         CType(Me.dgvLista_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -190,7 +190,7 @@ Partial Class frm_Productos
         Me.cboDeposito.Items.AddRange(New Object() {"Seleccionar", "Central", "Planta"})
         Me.cboDeposito.Location = New System.Drawing.Point(96, 141)
         Me.cboDeposito.Name = "cboDeposito"
-        Me.cboDeposito.Size = New System.Drawing.Size(199, 21)
+        Me.cboDeposito.Size = New System.Drawing.Size(190, 21)
         Me.cboDeposito.TabIndex = 22
         '
         'Label13
@@ -308,6 +308,15 @@ Partial Class frm_Productos
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Búsqueda"
         '
+        'cbo_busqueda_deposito
+        '
+        Me.cbo_busqueda_deposito.FormattingEnabled = True
+        Me.cbo_busqueda_deposito.Items.AddRange(New Object() {"Todos", "Central", "Planta"})
+        Me.cbo_busqueda_deposito.Location = New System.Drawing.Point(448, 18)
+        Me.cbo_busqueda_deposito.Name = "cbo_busqueda_deposito"
+        Me.cbo_busqueda_deposito.Size = New System.Drawing.Size(111, 21)
+        Me.cbo_busqueda_deposito.TabIndex = 27
+        '
         'rbtDeposito
         '
         Me.rbtDeposito.AutoSize = True
@@ -419,15 +428,6 @@ Partial Class frm_Productos
         Me.btn_Exportar_Excel.TabIndex = 25
         Me.btn_Exportar_Excel.Text = "Exportar a EXCEL"
         Me.btn_Exportar_Excel.UseVisualStyleBackColor = True
-        '
-        'cbo_busqueda_deposito
-        '
-        Me.cbo_busqueda_deposito.FormattingEnabled = True
-        Me.cbo_busqueda_deposito.Items.AddRange(New Object() {"", "Central", "Planta"})
-        Me.cbo_busqueda_deposito.Location = New System.Drawing.Point(448, 18)
-        Me.cbo_busqueda_deposito.Name = "cbo_busqueda_deposito"
-        Me.cbo_busqueda_deposito.Size = New System.Drawing.Size(111, 21)
-        Me.cbo_busqueda_deposito.TabIndex = 27
         '
         'frm_Productos
         '

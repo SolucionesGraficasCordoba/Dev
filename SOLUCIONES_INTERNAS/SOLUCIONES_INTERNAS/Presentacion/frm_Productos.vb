@@ -108,7 +108,7 @@ Public Class frm_Productos
         dgvLista_Productos.Columns(0).Visible = False
         dgvLista_Productos.Columns(1).DataPropertyName = "PROD_codigo"
         dgvLista_Productos.Columns(2).DataPropertyName = "PROD_descripcion"
-        ' dgvLista_Productos.Columns(2).Width = 200
+        dgvLista_Productos.Columns(2).Width = 200
         dgvLista_Productos.Columns(3).DataPropertyName = "PROD_stock"
         dgvLista_Productos.Columns(4).DataPropertyName = "PROD_stock_minimo"
         dgvLista_Productos.Columns(5).DataPropertyName = "PROD_deposito"
@@ -136,6 +136,7 @@ Public Class frm_Productos
         dgvLista_Productos.ClearSelection()
         Label9.Text = dgvLista_Productos.Rows.Count
         rbtProducto.Checked = True
+        rbtCodigo.Enabled = True
         cboDeposito.SelectedIndex = 0
         ' dgvLista_Productos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
     End Sub
@@ -283,21 +284,32 @@ Public Class frm_Productos
     End Function
 
     Private Sub rbtProducto_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtProducto.CheckedChanged
-        tb_cod_busqueda.Enabled = False
-        tb_cod_busqueda.Clear()
-        tb_prod_busqueda.Enabled = True
-        tb_prod_busqueda.Focus()
-        cbo_busqueda_deposito.SelectedIndex = 0
-        cbo_busqueda_deposito.Enabled = False
+
+        If rbtProducto.Checked = True Then
+            tb_prod_busqueda.Enabled = True
+            tb_prod_busqueda.Focus()
+
+            rbtCodigo.Checked = False
+            tb_cod_busqueda.Enabled = False
+            tb_cod_busqueda.Clear()
+
+            rbtDeposito.Checked = False
+            cbo_busqueda_deposito.Enabled = False
+            cbo_busqueda_deposito.SelectedIndex = 0
+        End If
     End Sub
 
     Private Sub rbtCodigo_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbtCodigo.CheckedChanged
-        tb_prod_busqueda.Enabled = False
-        tb_prod_busqueda.Clear()
-        tb_cod_busqueda.Enabled = True
-        tb_cod_busqueda.Focus()
-        cbo_busqueda_deposito.SelectedIndex = 0
-        cbo_busqueda_deposito.Enabled = False
+        If rbtCodigo.Checked = True Then
+            tb_prod_busqueda.Enabled = False
+            tb_prod_busqueda.Clear()
+            tb_cod_busqueda.Enabled = True
+            tb_cod_busqueda.Clear()
+
+            rbtDeposito.Checked = False
+            cbo_busqueda_deposito.Enabled = False
+            cbo_busqueda_deposito.SelectedIndex = 0
+        End If
     End Sub
 
     Private Sub tb_prod_busqueda_TextChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tb_prod_busqueda.TextChanged
@@ -422,4 +434,31 @@ Public Class frm_Productos
         End Try
         Return True
     End Function
+
+    Private Sub rbtDeposito_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbtDeposito.CheckedChanged
+        If rbtDeposito.Checked = True Then
+            tb_prod_busqueda.Enabled = False
+            rbtCodigo.Checked = False
+            tb_cod_busqueda.Enabled = False
+            tb_cod_busqueda.Clear()
+            tb_prod_busqueda.Clear()
+            cbo_busqueda_deposito.Enabled = True
+            cbo_busqueda_deposito.SelectedIndex = 0
+        End If
+    End Sub
+
+    Private Sub cbo_busqueda_deposito_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbo_busqueda_deposito.SelectedIndexChanged
+        If cbo_busqueda_deposito.Text <> "Todos" Then
+            Dim consultaprod = From p In datacontext.PRODUCTO
+                      Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo, p.PROD_deposito
+                      Where PROD_deposito = cbo_busqueda_deposito.Text
+                      Order By PROD_descripcion Ascending
+            dgvLista_Productos.DataSource = consultaprod
+            Label9.Text = dgvLista_Productos.Rows.Count
+            ColorStock()
+        Else
+            cargargrilla()
+            ColorStock()
+        End If
+    End Sub
 End Class
