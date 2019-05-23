@@ -191,10 +191,13 @@
 
         dgv_emp_lista_ordenes.Columns("ORT_id_orden_trabajo").Visible = False
 
+        Dim tempfecha As Date = Now
+        tempfecha = tempfecha.AddDays(1)
+
         'SE UTILIZA UNA CLASE PARA PODER MODIFICAR LOS ELEMENTOS DE UN DATAGRID ENLAZADO A UN ORIGEN DE DATOS
         Dim empaque = (From c In datacontext.ORDEN_TRABAJO Join f In datacontext.CLIENTE On c.CLI_id_cliente Equals f.CLI_id_cliente
         Where (Not (From e In datacontext.DESPACHO
-                    Select e.ORT_id_orden_trabajo).Contains(c.ORT_id_orden_trabajo)) And c.ORT_fecha_entrega = System.DateTime.Now.ToShortDateString
+                    Select e.ORT_id_orden_trabajo).Contains(c.ORT_id_orden_trabajo)) And c.ORT_fecha_entrega = tempfecha
         Select New clase_empaque(c.ORT_id_orden_trabajo, c.ORT_numero_ot, f.CLI_razon_social, c.ORT_observaciones_ot))
 
         ' SE CREA UN DATA TABLE YA QUE NO SE PUEDEN AGREGAR FILAS A UN DATAGRID ENLAZADO A UN ORIGEN DE DATOS.. POR LO QUE.. EL DATATABLE SE ENLAZA AL 
