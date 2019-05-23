@@ -582,7 +582,9 @@ Order By ORT_id_orden_trabajo Descending)
                 End If
         Catch ex As Exception
         End Try
-        Me.Close()
+        If quienllamolistado_ot.Name <> frm_Despacho.Name Then
+            Me.Close()
+        End If
     End Sub
 
     Private Sub dgvLista_Orden_Trabajo_CellClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Orden_Trabajo.CellClick
