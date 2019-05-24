@@ -2262,9 +2262,6 @@ Public Class frm_Principal
         frm_Generar_Informe.btnTotales_por_Dia.Enabled = False
     End Sub
 
-    'Private Sub RemitoXOrdenToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RemitoXOrdenToolStripMenuItem.Click
-
-    'End Sub
 
 
     Private Sub ModificarToolStripMenuItem2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ModificarToolStripMenuItem2.Click
@@ -2309,6 +2306,7 @@ Public Class frm_Principal
         frm_Despacho.tbp_logistica.Enabled = True
         frm_Despacho.tbp_empaque.Enabled = False
         frm_Despacho.tbc_despacho.SelectedIndex = 1
+        frm_Despacho.quien_llamo_despacho = Me
         frm_Despacho.Show()
     End Sub
 
