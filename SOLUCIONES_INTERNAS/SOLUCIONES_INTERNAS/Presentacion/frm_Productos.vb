@@ -155,6 +155,7 @@ Public Class frm_Productos
         Label9.Text = dgvLista_Productos.Rows.Count
         rbtProducto.Checked = True
         rbtCodigo.Enabled = True
+
         ' dgvLista_Productos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells
     End Sub
 

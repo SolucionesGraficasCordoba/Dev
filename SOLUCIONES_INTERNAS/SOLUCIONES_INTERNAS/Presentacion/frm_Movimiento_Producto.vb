@@ -93,7 +93,7 @@
         dgvLista_Productos.Columns(0).Visible = False
         dgvLista_Productos.Columns(1).DataPropertyName = "PROD_codigo"
         dgvLista_Productos.Columns(2).DataPropertyName = "PROD_descripcion"
-        dgvLista_Productos.Columns(2).Width = 200
+        dgvLista_Productos.Columns(2).Width = 340
         dgvLista_Productos.Columns(3).DataPropertyName = "PROD_stock"
     End Sub
 

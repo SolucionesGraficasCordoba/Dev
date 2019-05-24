@@ -1657,8 +1657,8 @@ Public Class frm_Principal
         frm_Productos.btn_prod_eliminar.Enabled = False
         frm_Productos.btnExportarPDF.Enabled = False
         frm_Productos.btn_Exportar_Excel.Enabled = False
+        frm_Productos.cboDeposito.SelectedIndex = 0
         frm_Productos.ShowDialog()
-
 
         frm_Productos.rbtProducto.Checked = False
 

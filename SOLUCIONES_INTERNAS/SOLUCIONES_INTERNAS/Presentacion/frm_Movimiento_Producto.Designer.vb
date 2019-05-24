@@ -62,7 +62,7 @@ Partial Class frm_Movimiento_Producto
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(273, 28)
+        Me.Label1.Location = New System.Drawing.Point(447, 30)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(63, 13)
         Me.Label1.TabIndex = 0
@@ -89,7 +89,7 @@ Partial Class frm_Movimiento_Producto
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(344, 23)
+        Me.Label5.Location = New System.Drawing.Point(447, 23)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(28, 13)
         Me.Label5.TabIndex = 3
@@ -98,7 +98,7 @@ Partial Class frm_Movimiento_Producto
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(144, 239)
+        Me.Label7.Location = New System.Drawing.Point(121, 383)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(122, 13)
         Me.Label7.TabIndex = 1
@@ -107,7 +107,7 @@ Partial Class frm_Movimiento_Producto
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(187, 23)
+        Me.Label8.Location = New System.Drawing.Point(242, 23)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(37, 13)
         Me.Label8.TabIndex = 2
@@ -123,28 +123,28 @@ Partial Class frm_Movimiento_Producto
         'dtpFecha
         '
         Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpFecha.Location = New System.Drawing.Point(230, 20)
+        Me.dtpFecha.Location = New System.Drawing.Point(285, 20)
         Me.dtpFecha.Name = "dtpFecha"
         Me.dtpFecha.Size = New System.Drawing.Size(89, 20)
         Me.dtpFecha.TabIndex = 6
         '
         'txt_id_producto_movimiento
         '
-        Me.txt_id_producto_movimiento.Location = New System.Drawing.Point(272, 236)
+        Me.txt_id_producto_movimiento.Location = New System.Drawing.Point(249, 380)
         Me.txt_id_producto_movimiento.Name = "txt_id_producto_movimiento"
         Me.txt_id_producto_movimiento.Size = New System.Drawing.Size(24, 20)
         Me.txt_id_producto_movimiento.TabIndex = 8
         '
         'txt_id_orden_trabajo
         '
-        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(423, 85)
+        Me.txt_id_orden_trabajo.Location = New System.Drawing.Point(602, 81)
         Me.txt_id_orden_trabajo.Name = "txt_id_orden_trabajo"
-        Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(19, 20)
+        Me.txt_id_orden_trabajo.Size = New System.Drawing.Size(15, 20)
         Me.txt_id_orden_trabajo.TabIndex = 9
         '
         'txt_id_producto
         '
-        Me.txt_id_producto.Location = New System.Drawing.Point(243, 25)
+        Me.txt_id_producto.Location = New System.Drawing.Point(417, 27)
         Me.txt_id_producto.Name = "txt_id_producto"
         Me.txt_id_producto.Size = New System.Drawing.Size(24, 20)
         Me.txt_id_producto.TabIndex = 10
@@ -189,7 +189,7 @@ Partial Class frm_Movimiento_Producto
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(448, 162)
+        Me.GroupBox1.Size = New System.Drawing.Size(620, 162)
         Me.GroupBox1.TabIndex = 13
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nuevo Producto"
@@ -198,7 +198,7 @@ Partial Class frm_Movimiento_Producto
         '
         Me.txt_numero_orden.Location = New System.Drawing.Point(76, 85)
         Me.txt_numero_orden.Name = "txt_numero_orden"
-        Me.txt_numero_orden.Size = New System.Drawing.Size(283, 20)
+        Me.txt_numero_orden.Size = New System.Drawing.Size(466, 20)
         Me.txt_numero_orden.TabIndex = 1
         '
         'Label16
@@ -222,7 +222,7 @@ Partial Class frm_Movimiento_Producto
         '
         'btnBuscar_cliente
         '
-        Me.btnBuscar_cliente.Location = New System.Drawing.Point(365, 83)
+        Me.btnBuscar_cliente.Location = New System.Drawing.Point(548, 83)
         Me.btnBuscar_cliente.Name = "btnBuscar_cliente"
         Me.btnBuscar_cliente.Size = New System.Drawing.Size(52, 23)
         Me.btnBuscar_cliente.TabIndex = 2
@@ -255,9 +255,9 @@ Partial Class frm_Movimiento_Producto
         '
         Me.cbo_Tipo_Producto.FormattingEnabled = True
         Me.cbo_Tipo_Producto.Items.AddRange(New Object() {"Alta", "Baja"})
-        Me.cbo_Tipo_Producto.Location = New System.Drawing.Point(378, 20)
+        Me.cbo_Tipo_Producto.Location = New System.Drawing.Point(481, 20)
         Me.cbo_Tipo_Producto.Name = "cbo_Tipo_Producto"
-        Me.cbo_Tipo_Producto.Size = New System.Drawing.Size(64, 21)
+        Me.cbo_Tipo_Producto.Size = New System.Drawing.Size(119, 21)
         Me.cbo_Tipo_Producto.TabIndex = 73
         '
         'txt_descripcion
@@ -265,12 +265,12 @@ Partial Class frm_Movimiento_Producto
         Me.txt_descripcion.Location = New System.Drawing.Point(76, 52)
         Me.txt_descripcion.Multiline = True
         Me.txt_descripcion.Name = "txt_descripcion"
-        Me.txt_descripcion.Size = New System.Drawing.Size(366, 20)
+        Me.txt_descripcion.Size = New System.Drawing.Size(524, 20)
         Me.txt_descripcion.TabIndex = 72
         '
         'btnCancelar
         '
-        Me.btnCancelar.Location = New System.Drawing.Point(367, 117)
+        Me.btnCancelar.Location = New System.Drawing.Point(525, 117)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(75, 33)
         Me.btnCancelar.TabIndex = 5
@@ -279,7 +279,7 @@ Partial Class frm_Movimiento_Producto
         '
         'btnIngresar_Stock
         '
-        Me.btnIngresar_Stock.Location = New System.Drawing.Point(261, 117)
+        Me.btnIngresar_Stock.Location = New System.Drawing.Point(419, 117)
         Me.btnIngresar_Stock.Name = "btnIngresar_Stock"
         Me.btnIngresar_Stock.Size = New System.Drawing.Size(100, 33)
         Me.btnIngresar_Stock.TabIndex = 4
@@ -291,7 +291,7 @@ Partial Class frm_Movimiento_Producto
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.Red
-        Me.Label13.Location = New System.Drawing.Point(28, 236)
+        Me.Label13.Location = New System.Drawing.Point(5, 380)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(105, 13)
         Me.Label13.TabIndex = 76
@@ -312,7 +312,7 @@ Partial Class frm_Movimiento_Producto
         Me.GroupListadoProductos.Controls.Add(Me.Label1)
         Me.GroupListadoProductos.Location = New System.Drawing.Point(12, 180)
         Me.GroupListadoProductos.Name = "GroupListadoProductos"
-        Me.GroupListadoProductos.Size = New System.Drawing.Size(448, 265)
+        Me.GroupListadoProductos.Size = New System.Drawing.Size(620, 408)
         Me.GroupListadoProductos.TabIndex = 68
         Me.GroupListadoProductos.TabStop = False
         Me.GroupListadoProductos.Text = "Listado de Productos"
@@ -321,7 +321,7 @@ Partial Class frm_Movimiento_Producto
         '
         Me.lblTotal_Productos.AutoSize = True
         Me.lblTotal_Productos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.lblTotal_Productos.Location = New System.Drawing.Point(408, 239)
+        Me.lblTotal_Productos.Location = New System.Drawing.Point(385, 383)
         Me.lblTotal_Productos.Name = "lblTotal_Productos"
         Me.lblTotal_Productos.Size = New System.Drawing.Size(2, 15)
         Me.lblTotal_Productos.TabIndex = 5
@@ -329,7 +329,7 @@ Partial Class frm_Movimiento_Producto
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(305, 239)
+        Me.Label10.Location = New System.Drawing.Point(282, 383)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(97, 13)
         Me.Label10.TabIndex = 4
@@ -337,7 +337,7 @@ Partial Class frm_Movimiento_Producto
         '
         'btnEliminar
         '
-        Me.btnEliminar.Location = New System.Drawing.Point(363, 18)
+        Me.btnEliminar.Location = New System.Drawing.Point(536, 20)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(75, 33)
         Me.btnEliminar.TabIndex = 7
@@ -348,16 +348,16 @@ Partial Class frm_Movimiento_Producto
         '
         Me.txt_Buscar_Producto.Location = New System.Drawing.Point(102, 25)
         Me.txt_Buscar_Producto.Name = "txt_Buscar_Producto"
-        Me.txt_Buscar_Producto.Size = New System.Drawing.Size(135, 20)
+        Me.txt_Buscar_Producto.Size = New System.Drawing.Size(272, 20)
         Me.txt_Buscar_Producto.TabIndex = 6
         '
         'dgvLista_Productos
         '
         Me.dgvLista_Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvLista_Productos.Location = New System.Drawing.Point(11, 59)
+        Me.dgvLista_Productos.Location = New System.Drawing.Point(8, 59)
         Me.dgvLista_Productos.Name = "dgvLista_Productos"
         Me.dgvLista_Productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_Productos.Size = New System.Drawing.Size(427, 174)
+        Me.dgvLista_Productos.Size = New System.Drawing.Size(603, 315)
         Me.dgvLista_Productos.TabIndex = 0
         '
         'Label11
@@ -373,7 +373,7 @@ Partial Class frm_Movimiento_Producto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(471, 454)
+        Me.ClientSize = New System.Drawing.Size(644, 600)
         Me.Controls.Add(Me.GroupListadoProductos)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "frm_Movimiento_Producto"

@@ -186,6 +186,7 @@ Partial Class frm_Productos
         '
         'cboDeposito
         '
+        Me.cboDeposito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cboDeposito.FormattingEnabled = True
         Me.cboDeposito.Items.AddRange(New Object() {"Seleccionar", "Central", "Planta"})
         Me.cboDeposito.Location = New System.Drawing.Point(93, 107)
@@ -310,6 +311,7 @@ Partial Class frm_Productos
         '
         'cbo_busqueda_deposito
         '
+        Me.cbo_busqueda_deposito.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_busqueda_deposito.FormattingEnabled = True
         Me.cbo_busqueda_deposito.Items.AddRange(New Object() {"Todos", "Central", "Planta"})
         Me.cbo_busqueda_deposito.Location = New System.Drawing.Point(507, 18)
