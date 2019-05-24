@@ -696,7 +696,7 @@ Partial Class frm_Principal
         '
         Me.ConsultarToolStripMenuItem3.Name = "ConsultarToolStripMenuItem3"
         Me.ConsultarToolStripMenuItem3.Size = New System.Drawing.Size(187, 22)
-        Me.ConsultarToolStripMenuItem3.Text = " despachos"
+        Me.ConsultarToolStripMenuItem3.Text = " Consultar despachos"
         '
         'CorreoElectrónicoToolStripMenuItem
         '
