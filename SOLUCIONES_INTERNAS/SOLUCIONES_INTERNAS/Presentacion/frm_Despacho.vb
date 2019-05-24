@@ -1,18 +1,22 @@
 ﻿Public Class frm_Despacho
     Public Nro_linea_grid As Integer
+    Public temp_cant_filas_despacho As Integer
     Dim datacontext As New DataS_Interno
     Dim datacontextvistas As New DataS_Interno_Vistas
     Public dt_empaque As New Data.DataTable
+    Public quien_llamo_despacho As Form = Me
 
     Private Sub frm_despacho_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         If tbp_logistica.Enabled = True Then
+
             dtp_Hora_salida.CustomFormat = "HH:mm"
-
             Nro_linea_grid = 0
-
             armar_grilla_ordenes()
-            buscar_ultimo_despacho()
-            cmb_chofer.SelectedIndex = 0
+
+            If quien_llamo_despacho.Name = frm_Principal.Name Then
+                buscar_ultimo_despacho()
+                cmb_chofer.SelectedIndex = 0
+            End If
         Else
             armar_grilla_empaque()
         End If
@@ -55,7 +59,7 @@
         dgv_lista_ordenes.Rows.Clear()
     End Sub
 
-    Private Sub btnBuscar_orden_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_orden.Click
+    Public Sub btnBuscar_orden_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBuscar_orden.Click
 
         'BUSCA ORDENES DESDE EL LISTADO DE ODT PLANIFICADAS EN EMPAQUE
         frm_Listado_Empaque.dgv_planificacion.SelectionMode = DataGridViewSelectionMode.FullRowSelect
@@ -63,6 +67,9 @@
         frm_Listado_Empaque.btn_modificar.Visible = False
         frm_Listado_Empaque.Text = "Consultar planificacion"
         frm_Listado_Empaque.quien_llamo_listado_empaque = Me
+
+        'Cuenta las filas que hay en el grid de despachos
+        temp_cant_filas_despacho = dgv_lista_ordenes.RowCount
         frm_Listado_Empaque.Show()
     End Sub
 
@@ -107,15 +114,25 @@
                     datacontext.SubmitChanges()
                 Next
 
-
                 MsgBox("El remito fue guardado")
                 limpiarcampos()
-                If txt_numero_remito.Enabled = True Then
+
+                If quien_llamo_despacho.Name = frm_Principal.Name Then
                     buscar_ultimo_despacho()
                 Else
                     Close()
-                    frm_Listado_Despacho.cargargrilla_odtxrem()
+                    frm_Listado_Despacho.Show()
+                    frm_Listado_Despacho.cargargrilla_odtxrem
                 End If
+
+                'original
+                'If txt_numero_remito.Enabled = True Then
+                '    buscar_ultimo_despacho()
+                'Else
+                '    Close()
+                '    frm_Listado_Despacho.cargargrilla_odtxrem()
+                'End If
+                'fin original
             Else
                 MsgBox("Debe agregar al menos una orden")
             End If
@@ -127,12 +144,25 @@
 
     Private Sub btn_cancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_cancelar.Click
         Me.Close()
+        If quien_llamo_despacho.Name = frm_Listado_Despacho.Name Then
+            frm_Listado_Despacho.Show()
+        End If
     End Sub
 
     Private Sub btn_quitar_orden_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_quitar_orden.Click
         Try
-            dgv_lista_ordenes.Rows.RemoveAt(dgv_lista_ordenes.CurrentRow.Index)
-            Nro_linea_grid = Nro_linea_grid - 1
+            Dim temp_index_fila_a_borrar As Integer = dgv_lista_ordenes.CurrentRow.Index
+            If temp_index_fila_a_borrar < temp_cant_filas_despacho - 1 Then
+                MsgBox("No se puede quitar una orden que ya esta " & Chr(13) &
+                       "asociada a un despacho, usar la opcion desplanificar")
+            Else
+                dgv_lista_ordenes.Rows.RemoveAt(temp_index_fila_a_borrar)
+            End If
+
+            'original
+            'dgv_lista_ordenes.Rows.RemoveAt(dgv_lista_ordenes.CurrentRow.Index)
+            'Nro_linea_grid = Nro_linea_grid - 1
+            ''fin original
         Catch ex As Exception
             MsgBox("Seleccionar fila para borrar")
         End Try

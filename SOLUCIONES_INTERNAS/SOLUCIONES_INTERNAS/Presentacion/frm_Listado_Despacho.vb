@@ -5,7 +5,7 @@ Imports System.IO
 Public Class frm_Listado_Despacho
     Dim datacontext As New DataS_Interno
     Dim datacontextvistas As New DataS_Interno_Vistas
-
+    
     Dim fuente As iTextSharp.text.pdf.BaseFont = FontFactory.GetFont(FontFactory.HELVETICA).BaseFont
 
     Public Sub frm_Listado_Despacho_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -183,22 +183,40 @@ Public Class frm_Listado_Despacho
     End Sub
 
     Private Sub btn_agregarodt_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_agregarodt.Click
-        If dgv_remitos.SelectedCells.Count = 1 Then
-            frm_Despacho.tbp_empaque.Enabled = False
-            frm_Despacho.tbc_despacho.SelectedIndex = 1
+        Try
+            If dgv_remitos.SelectedCells.Count = 1 Then
 
-            frm_Despacho.txt_numero_remito.Enabled = False
-            frm_Despacho.Show()
+                frm_Despacho.tbp_empaque.Enabled = False
+                frm_Despacho.tbc_despacho.SelectedIndex = 1
 
-            frm_Despacho.txt_numero_despacho.Text = dgv_remitos.Item("DES_nro_despacho", dgv_remitos.CurrentRow.Index).Value
-            frm_Despacho.txt_numero_remito.Text = dgv_remitos.Item("DES_nro_remito", dgv_remitos.CurrentRow.Index).Value
-            frm_Despacho.dtp_Fecha_salida.Value = CDate(dgv_remitos.Item("DES_fecha_salida", dgv_remitos.CurrentRow.Index).Value)
-            frm_Despacho.dtp_Hora_salida.Value = CDate(dgv_remitos.Item("DES_fecha_salida", dgv_remitos.CurrentRow.Index).Value)
-            frm_Despacho.cmb_chofer.Text = dgv_remitos.Item("DES_chofer", dgv_remitos.CurrentRow.Index).Value
+                frm_Despacho.txt_numero_remito.Enabled = False
+
+                frm_Despacho.txt_numero_despacho.Text = dgv_remitos.Item("DES_nro_despacho", dgv_remitos.CurrentRow.Index).Value
+                frm_Despacho.txt_numero_remito.Text = dgv_remitos.Item("DES_nro_remito", dgv_remitos.CurrentRow.Index).Value
+                frm_Despacho.dtp_Fecha_salida.Value = CDate(dgv_remitos.Item("DES_fecha_salida", dgv_remitos.CurrentRow.Index).Value)
+                frm_Despacho.dtp_Hora_salida.Value = CDate(dgv_remitos.Item("DES_fecha_salida", dgv_remitos.CurrentRow.Index).Value)
+                frm_Despacho.cmb_chofer.Text = dgv_remitos.Item("DES_chofer", dgv_remitos.CurrentRow.Index).Value
+
+                Me.Hide()
+                frm_Despacho.quien_llamo_despacho = Me
+                frm_Despacho.Show()
 
 
+                'se copian las filas del grid listado_despacho al grid de despacho
+                For i = 0 To dgv_orden_x_remito.Rows.Count - 1
+                    frm_Despacho.dgv_lista_ordenes.Rows.Add()
+                    frm_Despacho.dgv_lista_ordenes.Item("DES_Id", i).Value = dgv_orden_x_remito.Item("DES_Id", i).Value
+                    frm_Despacho.dgv_lista_ordenes.Item("Id_Odt", i).Value = dgv_orden_x_remito.Item("ORT_id_orden_trabajo", i).Value
+                    frm_Despacho.dgv_lista_ordenes.Item("Orden", i).Value = dgv_orden_x_remito.Item("ORT_numero_ot", i).Value
+                    frm_Despacho.dgv_lista_ordenes.Item("Fecha", i).Value = CDate(dgv_orden_x_remito.Item("DES_fecha_entrega", i).Value).ToShortDateString
+                    frm_Despacho.dgv_lista_ordenes.Item("Hora", i).Value = CDate(dgv_orden_x_remito.Item("DES_fecha_entrega", i).Value).ToLongTimeString
+                    frm_Despacho.dgv_lista_ordenes.Item("Observaciones", i).Value = dgv_orden_x_remito.Item("DES_observaciones", i).Value
+                Next
 
-        End If
+                frm_Despacho.btnBuscar_orden_Click_1(Nothing, Nothing)
+            End If
+        Catch ex As Exception
+        End Try
     End Sub
 
     Private Sub txt_buscar_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_buscar.TextChanged

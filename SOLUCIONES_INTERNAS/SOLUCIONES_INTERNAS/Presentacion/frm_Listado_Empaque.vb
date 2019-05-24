@@ -8,6 +8,7 @@ Public Class frm_Listado_Empaque
 
     Dim fuente As iTextSharp.text.pdf.BaseFont = FontFactory.GetFont(FontFactory.HELVETICA).BaseFont
     Public quien_llamo_listado_empaque As Form = Me
+    Dim flag_controlar_filas As Integer = 0
 
     Public Sub frm_Listado_Despacho_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
@@ -305,17 +306,39 @@ Public Class frm_Listado_Empaque
                 End Select
             End If
 
+            If frm_Despacho.temp_cant_filas_despacho > 1 And flag_controlar_filas = 0 Then ' el flag es para que valide el if solo la primera vez
+                frm_Despacho.Nro_linea_grid = frm_Despacho.temp_cant_filas_despacho - 1 ' se le resta 1 xq hay una fila vacia
+                flag_controlar_filas = 1
+            End If
+
             frm_Despacho.dgv_lista_ordenes.Rows.Add()
             frm_Despacho.dgv_lista_ordenes.Item("DES_Id", frm_Despacho.Nro_linea_grid).Value = dgv_planificacion.SelectedCells(0).Value
             frm_Despacho.dgv_lista_ordenes.Item("Id_Odt", frm_Despacho.Nro_linea_grid).Value = dgv_planificacion.SelectedCells(1).Value
             frm_Despacho.dgv_lista_ordenes.Item("Orden", frm_Despacho.Nro_linea_grid).Value = dgv_planificacion.SelectedCells(2).Value
             frm_Despacho.dgv_lista_ordenes.Item("Fecha", frm_Despacho.Nro_linea_grid).Value = DateTime.Now.ToShortDateString
-            frm_Despacho.dgv_lista_ordenes.Item("Hora", frm_Despacho.Nro_linea_grid).Value = "00:01"
+            frm_Despacho.dgv_lista_ordenes.Item("Hora", frm_Despacho.Nro_linea_grid).Value = CDate("00:01").ToLongTimeString
 
             frm_Despacho.Nro_linea_grid = frm_Despacho.Nro_linea_grid + 1
-        End If
+           End If
     End Sub
-
+    Function comprobar_despacho()
+        'Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
+        '                            Where ORT_id_orden_trabajo = CInt(dgv_planificacion.SelectedCells(1).Value) And
+        '                            DES_nro_despacho.Length <> 0).Any
+        'If buscarorden = True Then
+        '    Dim buscardespacho = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
+        '                  Where ORT_id_orden_trabajo = CInt(dgv_planificacion.SelectedCells(1).Value)).ToList()(0)
+        '    Select Case MsgBox("Atención, la orden seleccionada ya está asociada a un despacho:" & Chr(13) &
+        '           "Despacho N°: " & buscardespacho.DES_nro_despacho & Chr(13) &
+        '           "Remito N°: " & buscardespacho.DES_nro_remito & Chr(13) &
+        '           "CONTINUAR?",
+        '           MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Advertencia")
+        '        Case MsgBoxResult.No
+        '            Return "KO"
+        '    End Select
+        'End If
+        'Return "OK"
+    End Function
 End Class
 
 'CLASE PARA PODER MODIFICAR DATOS DESDE LA GRILLA CARGADA CON LINQ
