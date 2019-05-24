@@ -108,7 +108,7 @@ Public Class frm_Productos
         dgvLista_Productos.Columns(0).Visible = False
         dgvLista_Productos.Columns(1).DataPropertyName = "PROD_codigo"
         dgvLista_Productos.Columns(2).DataPropertyName = "PROD_descripcion"
-        dgvLista_Productos.Columns(2).Width = 200
+        dgvLista_Productos.Columns(2).Width = 250
         dgvLista_Productos.Columns(3).DataPropertyName = "PROD_stock"
         dgvLista_Productos.Columns(4).DataPropertyName = "PROD_stock_minimo"
         dgvLista_Productos.Columns(5).DataPropertyName = "PROD_deposito"
@@ -131,6 +131,8 @@ Public Class frm_Productos
 
     Private Sub frm_Productos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         armargrilla()
+
+        'CARGA SECTOR DEL USUARIO REGISTRADO
         Dim sector = (From c In datacontext.USUARIO
                        Join col In datacontext.COLABORADOR
                        On c.COL_id_colaborador Equals col.COL_id_colaborador
@@ -139,13 +141,16 @@ Public Class frm_Productos
                        Select sec.SEC_id_sector, sec.SEC_nombre_sector, c.USU_usuario
                        Where USU_usuario = frm_Principal.LBL_MENU_USU.Text).ToList()(0)
 
+        'SECTOR = LIBRERIA
         If sector.SEC_nombre_sector = "Librería" Then
             cbo_busqueda_deposito.SelectedIndex = 1
             rbtDeposito.Enabled = False
         Else
+            'SECTOR <> LIBRERIA
             cbo_busqueda_deposito.SelectedIndex = 0
             rbtDeposito.Enabled = True
         End If
+
         dgvLista_Productos.ClearSelection()
         Label9.Text = dgvLista_Productos.Rows.Count
         rbtProducto.Checked = True
@@ -216,7 +221,7 @@ Public Class frm_Productos
         Catch ex As Exception
             MsgBox("Los datos no se modificaron", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Modificar producto")
             limpiarcampos()
-            cargargrilla()
+
         End Try
     End Sub
 
@@ -321,14 +326,32 @@ Public Class frm_Productos
     End Sub
 
     Private Sub tb_prod_busqueda_TextChanged_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tb_prod_busqueda.TextChanged
+
         Dim buscarprod As String
         armargrilla()
         buscarprod = "*" & Me.tb_prod_busqueda.Text & "*"
-        Dim consultaprod = From p In datacontext.PRODUCTO
-                           Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo, p.PROD_deposito
-                           Where PROD_descripcion Like buscarprod.ToString
-        dgvLista_Productos.DataSource = consultaprod
 
+        If cbo_busqueda_deposito.Text = "Todos" Then
+            Dim consultaprod = From p In datacontext.PRODUCTO
+                              Select p.PROD_id,
+                              p.PROD_codigo,
+                              p.PROD_descripcion,
+                              p.PROD_stock,
+                              p.PROD_stock_minimo,
+                              p.PROD_deposito
+                              Where PROD_descripcion Like buscarprod.ToString
+            dgvLista_Productos.DataSource = consultaprod
+        Else
+            Dim consultaprod = From p In datacontext.PRODUCTO
+                               Select p.PROD_id,
+                               p.PROD_codigo,
+                               p.PROD_descripcion,
+                               p.PROD_stock,
+                               p.PROD_stock_minimo,
+                               p.PROD_deposito
+                               Where PROD_descripcion Like buscarprod.ToString And PROD_deposito = cbo_busqueda_deposito.Text
+            dgvLista_Productos.DataSource = consultaprod
+        End If
         dgvLista_Productos.ClearSelection()
         ColorStock()
     End Sub
@@ -337,28 +360,40 @@ Public Class frm_Productos
         Dim buscarcod As String
         armargrilla()
         buscarcod = "*" & Me.tb_cod_busqueda.Text & "*"
-        Dim consultacod = From p In datacontext.PRODUCTO
-                           Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo, p.PROD_deposito
-                           Where PROD_codigo Like buscarcod.ToString
-        'And PROD_deposito = cbo_busqueda_deposito.Text
-        dgvLista_Productos.DataSource = consultacod
-        dgvLista_Productos.ClearSelection()
-        ColorStock()
+        If cbo_busqueda_deposito.Text = "Todos" Then
+            Dim consultacod = From p In datacontext.PRODUCTO
+                              Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo, p.PROD_deposito
+                              Where PROD_codigo Like buscarcod.ToString
+            dgvLista_Productos.DataSource = consultacod
+        Else
+
+            Dim consultacod = From p In datacontext.PRODUCTO
+                               Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo, p.PROD_deposito
+                               Where PROD_codigo Like buscarcod.ToString And PROD_deposito = cbo_busqueda_deposito.Text
+            dgvLista_Productos.DataSource = consultacod
+        End If
+
+            dgvLista_Productos.ClearSelection()
+            ColorStock()
     End Sub
 
     Private Sub cbo_busqueda_deposito_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbo_busqueda_deposito.SelectedIndexChanged
-        If cbo_busqueda_deposito.Text <> "Todos" Then
+        If cbo_busqueda_deposito.Text = "Todos" Then
             Dim consultaprod = From p In datacontext.PRODUCTO
-                      Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo, p.PROD_deposito
-                      Where PROD_deposito = cbo_busqueda_deposito.Text
-                      Order By PROD_descripcion Ascending
+                         Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo, p.PROD_deposito
+                         Order By PROD_descripcion Ascending
             dgvLista_Productos.DataSource = consultaprod
-            Label9.Text = dgvLista_Productos.Rows.Count
-            ColorStock()
+            
         Else
-            cargargrilla()
-            ColorStock()
+            Dim consultaprod = From p In datacontext.PRODUCTO
+                                  Select p.PROD_id, p.PROD_codigo, p.PROD_descripcion, p.PROD_stock, p.PROD_stock_minimo, p.PROD_deposito
+                                  Where PROD_deposito = cbo_busqueda_deposito.Text
+                                  Order By PROD_descripcion Ascending
+            dgvLista_Productos.DataSource = consultaprod
+            
         End If
+        Label9.Text = dgvLista_Productos.Rows.Count
+        ColorStock()
     End Sub
 
     Private Sub dgvLista_Productos_CellClick(sender As System.Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgvLista_Productos.CellClick

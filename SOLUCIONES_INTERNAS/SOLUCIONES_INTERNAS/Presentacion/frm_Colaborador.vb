@@ -80,6 +80,7 @@ Public Class frm_Colaborador
                             Select sec.SEC_id_sector, sec.SEC_nombre_sector, c.USU_usuario
                             Where USU_usuario = frm_Principal.LBL_MENU_USU.Text).ToList()(0)
 
+                'TODOS LOS USUARIOS DEL SECTOR DEL USUARIO REGISTRADO
                 Dim cargasupervisor = (From sec In datacontext.SECTOR
                              Join col In datacontext.COLABORADOR
                              On col.SEC_id_sector Equals sec.SEC_id_sector
