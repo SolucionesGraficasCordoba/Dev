@@ -34,8 +34,13 @@ Partial Class frm_Listado_Empaque
         Me.btn_generar_informe = New System.Windows.Forms.Button()
         Me.dgv_planificacion = New System.Windows.Forms.DataGridView()
         Me.cmb_estado = New System.Windows.Forms.ComboBox()
+        Me.Gbx_rango = New System.Windows.Forms.GroupBox()
+        Me.rbt_rango_sinenviar = New System.Windows.Forms.RadioButton()
+        Me.rbt_rango_enviadas = New System.Windows.Forms.RadioButton()
+        Me.rbt_rango_todas = New System.Windows.Forms.RadioButton()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgv_planificacion, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Gbx_rango.SuspendLayout()
         Me.SuspendLayout()
         '
         'txt_buscar
@@ -153,11 +158,57 @@ Partial Class frm_Listado_Empaque
         Me.cmb_estado.Size = New System.Drawing.Size(112, 21)
         Me.cmb_estado.TabIndex = 15
         '
+        'Gbx_rango
+        '
+        Me.Gbx_rango.Controls.Add(Me.rbt_rango_sinenviar)
+        Me.Gbx_rango.Controls.Add(Me.rbt_rango_enviadas)
+        Me.Gbx_rango.Controls.Add(Me.rbt_rango_todas)
+        Me.Gbx_rango.Location = New System.Drawing.Point(396, 2)
+        Me.Gbx_rango.Name = "Gbx_rango"
+        Me.Gbx_rango.Size = New System.Drawing.Size(221, 45)
+        Me.Gbx_rango.TabIndex = 16
+        Me.Gbx_rango.TabStop = False
+        Me.Gbx_rango.Text = "Rango de búsqueda"
+        '
+        'rbt_rango_sinenviar
+        '
+        Me.rbt_rango_sinenviar.AutoSize = True
+        Me.rbt_rango_sinenviar.Location = New System.Drawing.Point(81, 19)
+        Me.rbt_rango_sinenviar.Name = "rbt_rango_sinenviar"
+        Me.rbt_rango_sinenviar.Size = New System.Drawing.Size(72, 17)
+        Me.rbt_rango_sinenviar.TabIndex = 2
+        Me.rbt_rango_sinenviar.TabStop = True
+        Me.rbt_rango_sinenviar.Text = "Sin enviar"
+        Me.rbt_rango_sinenviar.UseVisualStyleBackColor = True
+        '
+        'rbt_rango_enviadas
+        '
+        Me.rbt_rango_enviadas.AutoSize = True
+        Me.rbt_rango_enviadas.Location = New System.Drawing.Point(6, 19)
+        Me.rbt_rango_enviadas.Name = "rbt_rango_enviadas"
+        Me.rbt_rango_enviadas.Size = New System.Drawing.Size(69, 17)
+        Me.rbt_rango_enviadas.TabIndex = 1
+        Me.rbt_rango_enviadas.TabStop = True
+        Me.rbt_rango_enviadas.Text = "Enviadas"
+        Me.rbt_rango_enviadas.UseVisualStyleBackColor = True
+        '
+        'rbt_rango_todas
+        '
+        Me.rbt_rango_todas.AutoSize = True
+        Me.rbt_rango_todas.Location = New System.Drawing.Point(159, 19)
+        Me.rbt_rango_todas.Name = "rbt_rango_todas"
+        Me.rbt_rango_todas.Size = New System.Drawing.Size(55, 17)
+        Me.rbt_rango_todas.TabIndex = 0
+        Me.rbt_rango_todas.TabStop = True
+        Me.rbt_rango_todas.Text = "Todas"
+        Me.rbt_rango_todas.UseVisualStyleBackColor = True
+        '
         'frm_Listado_Empaque
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(884, 519)
+        Me.Controls.Add(Me.Gbx_rango)
         Me.Controls.Add(Me.cmb_estado)
         Me.Controls.Add(Me.btn_generar_informe)
         Me.Controls.Add(Me.dtp_fecha_estado)
@@ -172,6 +223,8 @@ Partial Class frm_Listado_Empaque
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.dgv_planificacion, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Gbx_rango.ResumeLayout(False)
+        Me.Gbx_rango.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -188,4 +241,8 @@ Partial Class frm_Listado_Empaque
     Friend WithEvents btn_generar_informe As System.Windows.Forms.Button
     Friend WithEvents dgv_planificacion As System.Windows.Forms.DataGridView
     Friend WithEvents cmb_estado As System.Windows.Forms.ComboBox
+    Friend WithEvents Gbx_rango As System.Windows.Forms.GroupBox
+    Friend WithEvents rbt_rango_sinenviar As System.Windows.Forms.RadioButton
+    Friend WithEvents rbt_rango_enviadas As System.Windows.Forms.RadioButton
+    Friend WithEvents rbt_rango_todas As System.Windows.Forms.RadioButton
 End Class

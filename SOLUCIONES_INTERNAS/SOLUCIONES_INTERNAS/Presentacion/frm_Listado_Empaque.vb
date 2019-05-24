@@ -12,9 +12,18 @@ Public Class frm_Listado_Empaque
 
     Public Sub frm_Listado_Despacho_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        armargrilla_planificacion()
-        rbt_entrega.Checked = True
+        If quien_llamo_listado_empaque.Name = frm_Despacho.Name Then
+            rbt_rango_sinenviar.Checked = True
+        End If
 
+        armargrilla_planificacion()
+
+        If quien_llamo_listado_empaque.Name = frm_Despacho.Name Then
+            rbt_rango_sinenviar.Checked = True
+        Else
+            rbt_rango_sinenviar.Checked = True
+        End If
+        rbt_entrega.Checked = True
     End Sub
 
     Sub armargrilla_planificacion()
@@ -62,16 +71,22 @@ Public Class frm_Listado_Empaque
         dgv_planificacion.Columns("CLI_razon_social").ReadOnly = True
         dgv_planificacion.Columns("ORT_observaciones_ot").ReadOnly = True
 
-        Dim cargar_planificacion = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
-                                    Where p.DES_EMB_fecha_estado.Value.Date = dtp_fecha_estado.Text
-                                    Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
-                                    p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
-                                    p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
-                                    p.CLI_razon_social, p.ORT_observaciones_ot))
+        'original
+        'Dim cargar_planificacion = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+        '                            Where p.DES_EMB_fecha_estado.Value.Date = dtp_fecha_estado.Text
+        '                            Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+        '                            p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+        '                            p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
+        '                            p.CLI_razon_social, p.ORT_observaciones_ot))
 
 
+        'dgv_planificacion.DataSource = cargar_planificacion
+        'fin original
 
-        dgv_planificacion.DataSource = cargar_planificacion
+        ''SE LLAMA A LA FUNCION QUERY Y SE LE PASA EL FILTRO Y EL RANGO
+        'If quien_llamo_listado_empaque.Name = frm_Despacho.Name Then
+        '    dgv_planificacion.DataSource = query("fecha", "todas")
+        'End If
 
         If btn_modificar.Visible = True Then
             dgv_planificacion.Columns("DES_EMB_bultos").ReadOnly = False
@@ -135,15 +150,22 @@ Public Class frm_Listado_Empaque
 
     Private Sub txt_buscar_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_buscar.TextChanged
         If rbt_orden.Checked = True Then
-            Dim buscar As String
-            buscar = "*" & txt_buscar.Text & "*"
-            Dim cargar_planificacion = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
-                         Where p.ORT_numero_ot Like buscar.ToString
-                         Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
-                         p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
-                         p.DES_EMB_observaciones, CStr(p.DES_EMB_fecha_estado),
-                         p.CLI_razon_social, p.ORT_observaciones_ot))
-            dgv_planificacion.DataSource = cargar_planificacion
+            'Dim buscar As String
+            'buscar = "*" & txt_buscar.Text & "*"
+            'Dim cargar_planificacion = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+            '             Where p.ORT_numero_ot Like buscar.ToString
+            '             Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+            '             p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+            '             p.DES_EMB_observaciones, CStr(p.DES_EMB_fecha_estado),
+            '             p.CLI_razon_social, p.ORT_observaciones_ot))
+            'dgv_planificacion.DataSource = cargar_planificacion
+            If rbt_rango_enviadas.Checked = True Then
+                dgv_planificacion.DataSource = query("orden", "enviadas")
+            ElseIf rbt_rango_sinenviar.Checked = True Then
+                dgv_planificacion.DataSource = query("orden", "sinenviar")
+            Else
+                dgv_planificacion.DataSource = query("orden", "todas")
+            End If
         End If
     End Sub
 
@@ -178,10 +200,18 @@ Public Class frm_Listado_Empaque
     Private Sub rbt_entrega_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbt_entrega.CheckedChanged
         If rbt_entrega.Checked = True Then
             radiobutton(False, False, True)
-            armargrilla_planificacion()
+            'armargrilla_planificacion()
+            If rbt_rango_enviadas.Checked = True Then
+                dgv_planificacion.DataSource = query("fecha", "enviadas")
+            ElseIf rbt_rango_sinenviar.Checked = True Then
+                dgv_planificacion.DataSource = query("fecha", "sinenviar")
+            Else
+                dgv_planificacion.DataSource = query("fecha", "todas")
+            End If
         Else
             radiobutton(False, False, False)
         End If
+
     End Sub
 
     Sub radiobutton(ByVal buscar As Boolean, ByVal estado As Boolean, ByVal fecha As Boolean)
@@ -271,13 +301,20 @@ Public Class frm_Listado_Empaque
     End Sub
 
     Private Sub cmb_estado_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmb_estado.SelectedIndexChanged
-        Dim cargar_planificacion = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
-                        Where p.DES_EMB_estado = cmb_estado.Text
-                        Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
-                        p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
-                        p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
-                        p.CLI_razon_social, p.ORT_observaciones_ot))
-        dgv_planificacion.DataSource = cargar_planificacion
+        'Dim cargar_planificacion = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+        '                Where p.DES_EMB_estado = cmb_estado.Text
+        '                Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+        '                p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+        '                p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
+        '                p.CLI_razon_social, p.ORT_observaciones_ot))
+        'dgv_planificacion.DataSource = cargar_planificacion
+        If rbt_rango_enviadas.Checked = True Then
+            dgv_planificacion.DataSource = query("estado", "enviadas")
+        ElseIf rbt_rango_sinenviar.Checked = True Then
+            dgv_planificacion.DataSource = query("estado", "sinenviar")
+        Else
+            dgv_planificacion.DataSource = query("estado", "todas")
+        End If
     End Sub
 
     Private Sub dgv_planificacion_CellDoubleClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_planificacion.CellDoubleClick
@@ -321,24 +358,127 @@ Public Class frm_Listado_Empaque
             frm_Despacho.Nro_linea_grid = frm_Despacho.Nro_linea_grid + 1
            End If
     End Sub
-    Function comprobar_despacho()
-        'Dim buscarorden = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
-        '                            Where ORT_id_orden_trabajo = CInt(dgv_planificacion.SelectedCells(1).Value) And
-        '                            DES_nro_despacho.Length <> 0).Any
-        'If buscarorden = True Then
-        '    Dim buscardespacho = (From bo In datacontext.DESPACHO Select bo.ORT_id_orden_trabajo, bo.DES_nro_despacho, bo.DES_nro_remito
-        '                  Where ORT_id_orden_trabajo = CInt(dgv_planificacion.SelectedCells(1).Value)).ToList()(0)
-        '    Select Case MsgBox("Atención, la orden seleccionada ya está asociada a un despacho:" & Chr(13) &
-        '           "Despacho N°: " & buscardespacho.DES_nro_despacho & Chr(13) &
-        '           "Remito N°: " & buscardespacho.DES_nro_remito & Chr(13) &
-        '           "CONTINUAR?",
-        '           MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Advertencia")
-        '        Case MsgBoxResult.No
-        '            Return "KO"
-        '    End Select
-        'End If
-        'Return "OK"
+
+    Function query(ByVal filtro As String, ByVal rango As String)
+        Dim consulta
+        Select Case filtro 'And rango
+            Case "fecha" 'And "todas"
+                If rango = "sinenviar" Then
+                    consulta = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+                                Where p.DES_EMB_fecha_estado.Value.Date = dtp_fecha_estado.Text And p.DES_nro_despacho Is Nothing
+                                Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+                                p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+                                p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
+                                p.CLI_razon_social, p.ORT_observaciones_ot))
+                ElseIf rango = "enviadas" Then
+                    consulta = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+                                Where p.DES_EMB_fecha_estado.Value.Date = dtp_fecha_estado.Text And p.DES_nro_despacho <> ""
+                                Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+                                p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+                                p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
+                                p.CLI_razon_social, p.ORT_observaciones_ot))
+                Else
+                    consulta = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+                                Where p.DES_EMB_fecha_estado.Value.Date = dtp_fecha_estado.Text
+                                Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+                                p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+                                p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
+                                p.CLI_razon_social, p.ORT_observaciones_ot))
+                End If
+            Case "estado"
+                If rango = "sinenviar" Then
+                    consulta = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+                                Where p.DES_EMB_estado = cmb_estado.Text And p.DES_nro_despacho Is Nothing
+                                Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+                                p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+                                p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
+                                p.CLI_razon_social, p.ORT_observaciones_ot))
+                ElseIf rango = "enviadas" Then
+                    consulta = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+                                Where p.DES_EMB_estado = cmb_estado.Text And p.DES_nro_despacho <> ""
+                                Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+                                p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+                                p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
+                                p.CLI_razon_social, p.ORT_observaciones_ot))
+                Else
+                    consulta = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+                                Where p.DES_EMB_estado = cmb_estado.Text
+                                Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+                                p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+                                p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
+                                p.CLI_razon_social, p.ORT_observaciones_ot))
+                End If
+            Case "orden"
+                If rango = "sinenviar" Then
+                    Dim buscar As String
+                    buscar = "*" & txt_buscar.Text & "*"
+                    consulta = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+                                 Where p.ORT_numero_ot Like buscar.ToString And p.DES_nro_despacho Is Nothing
+                                 Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+                                 p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+                                 p.DES_EMB_observaciones, CStr(p.DES_EMB_fecha_estado),
+                                 p.CLI_razon_social, p.ORT_observaciones_ot))
+                ElseIf rango = "enviadas" Then
+                    Dim buscar As String
+                    buscar = "*" & txt_buscar.Text & "*"
+                    consulta = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+                                 Where p.ORT_numero_ot Like buscar.ToString And p.DES_nro_despacho <> ""
+                                 Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+                                 p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+                                 p.DES_EMB_observaciones, CStr(p.DES_EMB_fecha_estado),
+                                 p.CLI_razon_social, p.ORT_observaciones_ot))
+                Else
+                    Dim buscar As String
+                    buscar = "*" & txt_buscar.Text & "*"
+                    consulta = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
+                                 Where p.ORT_numero_ot Like buscar.ToString
+                                 Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
+                                 p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
+                                 p.DES_EMB_observaciones, CStr(p.DES_EMB_fecha_estado),
+                                 p.CLI_razon_social, p.ORT_observaciones_ot))
+                End If
+            Case Else
+                consulta = ""
+        End Select
+
+        Return consulta
     End Function
+
+    Private Sub rbt_rango_enviadas_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbt_rango_enviadas.CheckedChanged
+        If rbt_rango_enviadas.Checked = True Then
+            If rbt_orden.Checked = True Then
+                dgv_planificacion.DataSource = query("orden", "enviadas")
+            ElseIf rbt_estado.Checked = True Then
+                dgv_planificacion.DataSource = query("estado", "enviadas")
+            Else
+                dgv_planificacion.DataSource = query("fecha", "enviadas")
+            End If
+        End If
+    End Sub
+
+    Private Sub rbt_rango_sinenviar_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbt_rango_sinenviar.CheckedChanged
+        If rbt_rango_sinenviar.Checked = True Then
+            If rbt_orden.Checked = True Then
+                dgv_planificacion.DataSource = query("orden", "sinenviar")
+            ElseIf rbt_estado.Checked = True Then
+                dgv_planificacion.DataSource = query("estado", "sinenviar")
+            Else
+                dgv_planificacion.DataSource = query("fecha", "sinenviar")
+            End If
+        End If
+    End Sub
+
+    Private Sub rbt_rango_todas_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbt_rango_todas.CheckedChanged
+        If rbt_rango_todas.Checked = True Then
+            If rbt_orden.Checked = True Then
+                dgv_planificacion.DataSource = query("orden", "todas")
+            ElseIf rbt_estado.Checked = True Then
+                dgv_planificacion.DataSource = query("estado", "todas")
+            Else
+                dgv_planificacion.DataSource = query("fecha", "todas")
+            End If
+        End If
+    End Sub
 End Class
 
 'CLASE PARA PODER MODIFICAR DATOS DESDE LA GRILLA CARGADA CON LINQ
