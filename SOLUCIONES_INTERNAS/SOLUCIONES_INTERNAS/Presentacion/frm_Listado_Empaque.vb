@@ -9,21 +9,20 @@ Public Class frm_Listado_Empaque
     Dim fuente As iTextSharp.text.pdf.BaseFont = FontFactory.GetFont(FontFactory.HELVETICA).BaseFont
     Public quien_llamo_listado_empaque As Form = Me
     Dim flag_controlar_filas As Integer = 0
+    Dim flag_load As Integer = 0
 
     Public Sub frm_Listado_Despacho_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
-        If quien_llamo_listado_empaque.Name = frm_Despacho.Name Then
-            rbt_rango_sinenviar.Checked = True
-        End If
 
         armargrilla_planificacion()
 
         If quien_llamo_listado_empaque.Name = frm_Despacho.Name Then
             rbt_rango_sinenviar.Checked = True
         Else
-            rbt_rango_sinenviar.Checked = True
+            rbt_rango_todas.Checked = True
         End If
+
         rbt_entrega.Checked = True
+        dtp_fecha_salida_ValueChanged(Nothing, Nothing)
     End Sub
 
     Sub armargrilla_planificacion()
@@ -72,21 +71,6 @@ Public Class frm_Listado_Empaque
         dgv_planificacion.Columns("ORT_observaciones_ot").ReadOnly = True
 
         'original
-        'Dim cargar_planificacion = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
-        '                            Where p.DES_EMB_fecha_estado.Value.Date = dtp_fecha_estado.Text
-        '                            Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
-        '                            p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
-        '                            p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
-        '                            p.CLI_razon_social, p.ORT_observaciones_ot))
-
-
-        'dgv_planificacion.DataSource = cargar_planificacion
-        'fin original
-
-        ''SE LLAMA A LA FUNCION QUERY Y SE LE PASA EL FILTRO Y EL RANGO
-        'If quien_llamo_listado_empaque.Name = frm_Despacho.Name Then
-        '    dgv_planificacion.DataSource = query("fecha", "todas")
-        'End If
 
         If btn_modificar.Visible = True Then
             dgv_planificacion.Columns("DES_EMB_bultos").ReadOnly = False
@@ -150,15 +134,6 @@ Public Class frm_Listado_Empaque
 
     Private Sub txt_buscar_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_buscar.TextChanged
         If rbt_orden.Checked = True Then
-            'Dim buscar As String
-            'buscar = "*" & txt_buscar.Text & "*"
-            'Dim cargar_planificacion = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
-            '             Where p.ORT_numero_ot Like buscar.ToString
-            '             Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
-            '             p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
-            '             p.DES_EMB_observaciones, CStr(p.DES_EMB_fecha_estado),
-            '             p.CLI_razon_social, p.ORT_observaciones_ot))
-            'dgv_planificacion.DataSource = cargar_planificacion
             If rbt_rango_enviadas.Checked = True Then
                 dgv_planificacion.DataSource = query("orden", "enviadas")
             ElseIf rbt_rango_sinenviar.Checked = True Then
@@ -170,14 +145,12 @@ Public Class frm_Listado_Empaque
     End Sub
 
     Private Sub dtp_fecha_salida_ValueChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles dtp_fecha_estado.ValueChanged
-        If rbt_entrega.Checked = True Then
-            Dim cargar_planificacion = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
-                                    Where p.DES_EMB_fecha_estado.Value.Date = dtp_fecha_estado.Text
-                                    Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
-                                    p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
-                                    p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
-                                    p.CLI_razon_social, p.ORT_observaciones_ot))
-            dgv_planificacion.DataSource = cargar_planificacion
+        If rbt_rango_enviadas.Checked = True Then
+            dgv_planificacion.DataSource = query("fecha", "enviadas")
+        ElseIf rbt_rango_sinenviar.Checked = True Then
+            dgv_planificacion.DataSource = query("fecha", "sinenviar")
+        Else
+            dgv_planificacion.DataSource = query("fecha", "todas")
         End If
     End Sub
 
@@ -200,7 +173,7 @@ Public Class frm_Listado_Empaque
     Private Sub rbt_entrega_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rbt_entrega.CheckedChanged
         If rbt_entrega.Checked = True Then
             radiobutton(False, False, True)
-            'armargrilla_planificacion()
+
             If rbt_rango_enviadas.Checked = True Then
                 dgv_planificacion.DataSource = query("fecha", "enviadas")
             ElseIf rbt_rango_sinenviar.Checked = True Then
@@ -221,6 +194,13 @@ Public Class frm_Listado_Empaque
 
         txt_buscar.Clear()
         cmb_estado.Text = ""
+
+        If rbt_entrega.Checked <> True Then
+            dgv_planificacion.Rows.Clear()
+            dtp_fecha_estado.Visible = False
+        Else
+            dtp_fecha_estado.Visible = True
+        End If
     End Sub
 
     Private Sub btn_generar_informe_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_generar_informe.Click
@@ -301,13 +281,6 @@ Public Class frm_Listado_Empaque
     End Sub
 
     Private Sub cmb_estado_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmb_estado.SelectedIndexChanged
-        'Dim cargar_planificacion = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
-        '                Where p.DES_EMB_estado = cmb_estado.Text
-        '                Select New clase_emb_planif(p.DES_id, p.ORT_id_orden_trabajo,
-        '                p.ORT_numero_ot, p.DES_EMB_bultos, p.DES_EMB_estado,
-        '                p.DES_EMB_observaciones, p.DES_EMB_fecha_estado,
-        '                p.CLI_razon_social, p.ORT_observaciones_ot))
-        'dgv_planificacion.DataSource = cargar_planificacion
         If rbt_rango_enviadas.Checked = True Then
             dgv_planificacion.DataSource = query("estado", "enviadas")
         ElseIf rbt_rango_sinenviar.Checked = True Then
@@ -361,8 +334,8 @@ Public Class frm_Listado_Empaque
 
     Function query(ByVal filtro As String, ByVal rango As String)
         Dim consulta
-        Select Case filtro 'And rango
-            Case "fecha" 'And "todas"
+        Select Case filtro
+            Case "fecha"
                 If rango = "sinenviar" Then
                     consulta = (From p In datacontextvistas.Vista_Despacho_Orden_Trabajo
                                 Where p.DES_EMB_fecha_estado.Value.Date = dtp_fecha_estado.Text And p.DES_nro_despacho Is Nothing
@@ -445,38 +418,50 @@ Public Class frm_Listado_Empaque
     End Function
 
     Private Sub rbt_rango_enviadas_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbt_rango_enviadas.CheckedChanged
-        If rbt_rango_enviadas.Checked = True Then
-            If rbt_orden.Checked = True Then
-                dgv_planificacion.DataSource = query("orden", "enviadas")
-            ElseIf rbt_estado.Checked = True Then
-                dgv_planificacion.DataSource = query("estado", "enviadas")
-            Else
-                dgv_planificacion.DataSource = query("fecha", "enviadas")
+        If flag_load <> 0 Then
+            If rbt_rango_enviadas.Checked = True Then
+                If rbt_orden.Checked = True Then
+                    dgv_planificacion.DataSource = query("orden", "enviadas")
+                ElseIf rbt_estado.Checked = True Then
+                    dgv_planificacion.DataSource = query("estado", "enviadas")
+                Else
+                    dgv_planificacion.DataSource = query("fecha", "enviadas")
+                End If
             End If
+        Else
+            flag_load = 1
         End If
     End Sub
 
     Private Sub rbt_rango_sinenviar_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbt_rango_sinenviar.CheckedChanged
-        If rbt_rango_sinenviar.Checked = True Then
-            If rbt_orden.Checked = True Then
-                dgv_planificacion.DataSource = query("orden", "sinenviar")
-            ElseIf rbt_estado.Checked = True Then
-                dgv_planificacion.DataSource = query("estado", "sinenviar")
-            Else
-                dgv_planificacion.DataSource = query("fecha", "sinenviar")
+        If flag_load <> 0 Then
+            If rbt_rango_sinenviar.Checked = True Then
+                If rbt_orden.Checked = True Then
+                    dgv_planificacion.DataSource = query("orden", "sinenviar")
+                ElseIf rbt_estado.Checked = True Then
+                    dgv_planificacion.DataSource = query("estado", "sinenviar")
+                Else
+                    dgv_planificacion.DataSource = query("fecha", "sinenviar")
+                End If
             End If
+        Else
+            flag_load = 1
         End If
     End Sub
 
     Private Sub rbt_rango_todas_CheckedChanged(sender As System.Object, e As System.EventArgs) Handles rbt_rango_todas.CheckedChanged
-        If rbt_rango_todas.Checked = True Then
-            If rbt_orden.Checked = True Then
-                dgv_planificacion.DataSource = query("orden", "todas")
-            ElseIf rbt_estado.Checked = True Then
-                dgv_planificacion.DataSource = query("estado", "todas")
-            Else
-                dgv_planificacion.DataSource = query("fecha", "todas")
+        If flag_load <> 0 Then
+            If rbt_rango_todas.Checked = True Then
+                If rbt_orden.Checked = True Then
+                    dgv_planificacion.DataSource = query("orden", "todas")
+                ElseIf rbt_estado.Checked = True Then
+                    dgv_planificacion.DataSource = query("estado", "todas")
+                Else
+                    dgv_planificacion.DataSource = query("fecha", "todas")
+                End If
             End If
+        Else
+            flag_load = 1
         End If
     End Sub
 End Class

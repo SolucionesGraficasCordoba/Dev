@@ -125,14 +125,6 @@
                     frm_Listado_Despacho.cargargrilla_odtxrem
                 End If
 
-                'original
-                'If txt_numero_remito.Enabled = True Then
-                '    buscar_ultimo_despacho()
-                'Else
-                '    Close()
-                '    frm_Listado_Despacho.cargargrilla_odtxrem()
-                'End If
-                'fin original
             Else
                 MsgBox("Debe agregar al menos una orden")
             End If
@@ -159,10 +151,6 @@
                 dgv_lista_ordenes.Rows.RemoveAt(temp_index_fila_a_borrar)
             End If
 
-            'original
-            'dgv_lista_ordenes.Rows.RemoveAt(dgv_lista_ordenes.CurrentRow.Index)
-            'Nro_linea_grid = Nro_linea_grid - 1
-            ''fin original
         Catch ex As Exception
             MsgBox("Seleccionar fila para borrar")
         End Try
