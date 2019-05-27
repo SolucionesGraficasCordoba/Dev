@@ -361,6 +361,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.txtSeccion.Name = "txtSeccion"
         Me.txtSeccion.Size = New System.Drawing.Size(151, 20)
         Me.txtSeccion.TabIndex = 10
+        Me.txtSeccion.Visible = False
         '
         'Label23
         '
@@ -370,6 +371,7 @@ Partial Class frm_Etiqueta_Modelo_1
         Me.Label23.Size = New System.Drawing.Size(49, 13)
         Me.Label23.TabIndex = 22
         Me.Label23.Text = "Sección:"
+        Me.Label23.Visible = False
         '
         'txtPeso
         '
