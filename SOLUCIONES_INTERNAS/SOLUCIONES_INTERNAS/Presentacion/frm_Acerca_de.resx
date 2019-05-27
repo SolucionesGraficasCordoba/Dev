@@ -126,58 +126,32 @@ Además de cargar, se podrá actualizar y eliminar registros. También se podrá
 </value>
   </data>
   <data name="TextBox2.Text" xml:space="preserve">
-    <value>FORMULARIO DE TAREA
+    <value>FORMULARIO DE PRODUCTO
+Se agregó el campo DEPOSITO en donde al cargar un producto de seleccionará el depósito original destinado a ese producto.
 
-1-	Pestaña nueva tarea:  el botón buscar colaborador trae el listado de colaboradores según el perfil. 
-	Al abrir el formulario de TAREA se cargará automáticamente en el campo del colaborador el nombre del usuario logueado.
--	Administrador: muestra todos los colaboradores registrados.
--	Supervisor: muestra todos los colaboradores del sector al que pertenece el supervisor.
--	Colaborador: muestra al colaborador logueado como usuario.
+--------------------------------------------------------------------------------------------------------------------------------
 
-2-	Pestaña consultar tareas: se habilitaron todos los campos de tareas y de observaciones para una mejor lectura del trabajo realizado.
- 
-3-	Pestaña modificar tareas: 
--	Administrador: puede modificar tareas de todos los colaboradores registrados.
--	Supervisor: puede modificar las tareas de todos los colaboradores del sector al que pertenece el supervisor.
--	Colaborador: puede modificar solamente sus tareas.
+FORMULARIO DESPACHO
+Este formulario al que se accede desde el menú principal. Consta de dos partes fundamentales: 1) Empaque , 2) Logística.
+ 1) se planificarán todas las ordenes que se entregarán al dia siguiente de la fecha actual. Se le cambiará de estado y se 
+agregarán los campos necesarios para enviar al sector logística. 
+NOTA: se pueden planificar ordenes para distintos dias de acuerdo a las necesidades. 
 
-4-	Pestaña eliminar tareas: 
--	Administrador: puede eliminar tareas de todos los colaboradores registrados.
--	Supervisor: puede eliminar las tareas de todos los colaboradores del sector al que pertenece el supervisor.
--	Colaborador: puede eliminar solamente sus tareas (si es que se le dio el permiso al ingresar al sistema).
+2)Se armarán viajes de acuerdo a la planificación. Se asignará un chofer y datos de entrega.
 
-5-	Pestaña despachos: asigna el número de remito de manager al número de orden de metrics.
+--------------------------------------------------------------------------------------------------------------------------------
 
-FUNCIONAMIENTO:
+FORMULARIO TAREA
+Se creó un segundo formulario de Tareas para el sector de offset, los mismos funcionan de manera independiente facilitando la carga para el sector mencionado.
 
-PARA LA CARGA DE TAREAS SOLO SE UTILIZARA EL FORMULARIO PRINCIPAL.
+--------------------------------------------------------------------------------------------------------------------------------
 
-1- DEL FORMULARIO PRINCIPAL SE SELECCIONARA NUEVA TAREA.
-2- SE COMPLETARAN LOS CAMPOS NECESARIOS (COMO SE VENIA HACIENDO HASTA EL DIA DE HOY) Y SE GUARDARAN LOS DATOS.
+FORMULARIO ETIQUETAS
+se modificó el fondo de etiquetas FSC y se quitó el campo sector (sin uso). 
 
-EN CASO DE QUE SE DESEE AGREGAR UNA NUEVA TAREA SE SEGUIRAN LOS PASOS 1 Y 2 (AUNQUE NO SE MUESTREN LAS TAREAS ANTERIORMENTE CARGADAS ESTAS ESTAN GUARDADAS)
-PARA VER EL LISTADO COMPLETO DE TAREAS SE IRA A CONSULTAR, DE LA PESTAÑA DE TAREAS DEL FORMULARIO PRINCIPAL.
+--------------------------------------------------------------------------------------------------------------------------------
 
------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-FORMULARIO DE TICKET
-
-Este formulario al que se accede desde el menú principal, por medio del botón "Ticket", se creó con el fin de solicitar un pedido de solución respecto a una máquina o a cualquier recurso con el cual se está trabajando.
-El usuario registrado creará un "Ticket" solicitando respuesta a su pedido, el administrador del sistema derivará el pedido al sector según corresponda y dará respuesta al usuario.
-
------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-FORMULARIO DE MENSAJE
-
-Este formulario aparecerá después de que se haya ingresado usuario y contraseña y en el caso de que el administrador del sistema haya enviado un mensaje y observación respecto a la carga de tareas.
-Se explicará brevemente cual es el motivo. El usuario registrado deberá responderlo fundamentando su respuesta, una vez respondido el formulario se cerrará permitiendo interactuar con el menú principal.
-NOTA: en el caso de que se considere que la respuesta no fue bien fundamentada, se enviará nuevamente el mensaje.
-
------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-FORMULARIO DE SUGERENCIA
-
-Este formulario al que se accede desde el menú principal, por medio del botón "Sugerencia", tiene como objetivo garantizar la participación de todos los colaboradores con el fin contribuir a un mejor funcionamiento general.
-NOTA: los mensajes serán de carácter Anónimo.</value>
+FORMULARIO ORDEN DE TRABAJO
+se filtro las ordenes según su fecha de entrega para optimizar la búsqueda. </value>
   </data>
 </root>
