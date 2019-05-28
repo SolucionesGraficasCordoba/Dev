@@ -290,75 +290,120 @@ Public Class frm_Ticket
         cargargrillaticket()
     End Sub
 
-    Private Sub btn_Exportar_PDF_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_Exportar_PDF.Click
-        Try
-            'intentar generar el documento
-            Dim doc As New Document(PageSize.A3.Rotate, 5, 5, 5, 5)
-            'path que guarda el reporte en el escritorio de windows (desktop)
-            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Ticket_" + cbo_busqueda_estado.Text + ".pdf"
-            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
-            PdfWriter.GetInstance(doc, file)
-            doc.Open()
+    Private Sub btn_Exportar_PDF_Click_1(sender As System.Object, e As System.EventArgs) Handles btn_Exportar_EXCEL.Click
 
-            Dim encabezado As New Paragraph("Estado: " + cbo_busqueda_estado.Text)
-            doc.Add(encabezado)
-            doc.Add(interlineado)
-            '  doc.Add(interlineado)
+        llenarExcel(dgv_lista_ticket)
 
-            'se crea un objeto PDFTable con el numero de columnas  del datagridview
-            Dim datatableencabezado As New PdfPTable(11)
-            Dim datatablecuerpo As New PdfPTable(11)
 
-            datatableencabezado.WidthPercentage = 100
-            datatableencabezado.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT
-            datatableencabezado.HeaderRows = 0
-            datatableencabezado.DefaultCell.BorderWidth = 1
+        'EL CODIGO EXPORTAR A PDF FUNCIONA, SOLO DE COMENTO PARA UTILIZAR EL BOTON EXPORTAR A PDF COMO EXPORTAR A EXCEL.
 
-            datatablecuerpo.WidthPercentage = 100
-            datatablecuerpo.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT
-            datatablecuerpo.HeaderRows = 1
-            datatablecuerpo.DefaultCell.BorderWidth = 0
+        'Try
+        '    'intentar generar el documento
+        '    Dim doc As New Document(PageSize.A3.Rotate, 5, 5, 5, 5)
+        '    'path que guarda el reporte en el escritorio de windows (desktop)
+        '    Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Ticket_" + cbo_busqueda_estado.Text + ".pdf"
+        '    Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+        '    PdfWriter.GetInstance(doc, file)
+        '    doc.Open()
 
-            'se capturan los nombres de las columnas del datagridview de las ordenes por remito
+        '    Dim encabezado As New Paragraph("Estado: " + cbo_busqueda_estado.Text)
+        '    doc.Add(encabezado)
+        '    doc.Add(interlineado)
+        '    '  doc.Add(interlineado)
 
-            For Z As Integer = 0 To dgv_lista_ticket.ColumnCount - 1
-                If dgv_lista_ticket.Columns(Z).Visible = True Then
-                    Try
-                        datatableencabezado.AddCell(dgv_lista_ticket.Columns(Z).HeaderText)
-                    Catch ex As Exception
-                        datatableencabezado.AddCell(" ")
-                    End Try
-                End If
-            Next
+        '    'se crea un objeto PDFTable con el numero de columnas  del datagridview
+        '    Dim datatableencabezado As New PdfPTable(11)
+        '    Dim datatablecuerpo As New PdfPTable(11)
 
-            datatableencabezado.CompleteRow()
-            doc.Add(datatableencabezado)
-            datatableencabezado.DeleteBodyRows()
-            doc.Add(interlineado)
-            'se generan las columnas del datagridview 
-            For Y As Integer = 0 To dgv_lista_ticket.RowCount - 1
-                For Z As Integer = 0 To dgv_lista_ticket.ColumnCount - 1
-                    If dgv_lista_ticket.Columns(Z).Visible = True Then
-                        Try
-                            datatablecuerpo.AddCell(dgv_lista_ticket(Z, Y).Value.ToString())
-                        Catch ex As Exception
-                            datatablecuerpo.AddCell(" ")
-                        End Try
-                    End If
-                Next
-                datatablecuerpo.CompleteRow()
-            Next
-            doc.Add(datatablecuerpo)
-            datatablecuerpo.DeleteBodyRows()
-            'Next
-            doc.Close()
-            Process.Start(filename)
-            ' Me.Close()
-        Catch ex As Exception
-            'si el mensaje es fallido mostrar msgbox
-            MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End Try
+        '    datatableencabezado.WidthPercentage = 100
+        '    datatableencabezado.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT
+        '    datatableencabezado.HeaderRows = 0
+        '    datatableencabezado.DefaultCell.BorderWidth = 1
+
+        '    datatablecuerpo.WidthPercentage = 100
+        '    datatablecuerpo.DefaultCell.HorizontalAlignment = Element.ALIGN_LEFT
+        '    datatablecuerpo.HeaderRows = 1
+        '    datatablecuerpo.DefaultCell.BorderWidth = 0
+
+        '    'se capturan los nombres de las columnas del datagridview de las ordenes por remito
+
+        '    For Z As Integer = 0 To dgv_lista_ticket.ColumnCount - 1
+        '        If dgv_lista_ticket.Columns(Z).Visible = True Then
+        '            Try
+        '                datatableencabezado.AddCell(dgv_lista_ticket.Columns(Z).HeaderText)
+        '            Catch ex As Exception
+        '                datatableencabezado.AddCell(" ")
+        '            End Try
+        '        End If
+        '    Next
+
+        '    datatableencabezado.CompleteRow()
+        '    doc.Add(datatableencabezado)
+        '    datatableencabezado.DeleteBodyRows()
+        '    doc.Add(interlineado)
+        '    'se generan las columnas del datagridview 
+        '    For Y As Integer = 0 To dgv_lista_ticket.RowCount - 1
+        '        For Z As Integer = 0 To dgv_lista_ticket.ColumnCount - 1
+        '            If dgv_lista_ticket.Columns(Z).Visible = True Then
+        '                Try
+        '                    datatablecuerpo.AddCell(dgv_lista_ticket(Z, Y).Value.ToString())
+        '                Catch ex As Exception
+        '                    datatablecuerpo.AddCell(" ")
+        '                End Try
+        '            End If
+        '        Next
+        '        datatablecuerpo.CompleteRow()
+        '    Next
+        '    doc.Add(datatablecuerpo)
+        '    datatablecuerpo.DeleteBodyRows()
+        '    'Next
+        '    doc.Close()
+        '    Process.Start(filename)
+        '    ' Me.Close()
+        'Catch ex As Exception
+        '    'si el mensaje es fallido mostrar msgbox
+        '    MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        'End Try
     End Sub
+
+    Function llenarExcel(ByVal ElGrid As DataGridView) As Boolean
+        'Creamos las variables
+        Dim exApp As New Microsoft.Office.Interop.Excel.Application
+        Dim exLibro As Microsoft.Office.Interop.Excel.Workbook
+        Dim exHoja As Microsoft.Office.Interop.Excel.Worksheet
+        Try
+            'Añadimos el Libro al programa, y la hoja al libro
+            exLibro = exApp.Workbooks.Add
+            exHoja = exLibro.Worksheets.Add()
+            ' ¿Cuantas columnas y cuantas filas?
+            Dim NCol As Integer = ElGrid.ColumnCount
+            Dim NRow As Integer = ElGrid.RowCount
+            'Aqui recorremos todas las filas, y por cada fila todas las columnas
+            'y vamos escribiendo.
+            For i As Integer = 1 To NCol
+                exHoja.Cells.Item(1, i) = ElGrid.Columns(i - 1).Name.ToString
+            Next
+            For Fila As Integer = 0 To NRow - 1
+                For Col As Integer = 0 To NCol - 1
+                    exHoja.Cells.Item(Fila + 2, Col + 1) = ElGrid.Item(Col, Fila).Value
+                Next
+            Next
+            'Titulo en negrita, Alineado al centro y que el tamaño de la columna
+            'se ajuste al texto
+            exHoja.Rows.Item(1).Font.Bold = 1
+            exHoja.Rows.Item(1).HorizontalAlignment = 3
+            exHoja.Columns.AutoFit()
+            'Aplicación visible
+            exApp.Application.Visible = True
+            exHoja = Nothing
+            exLibro = Nothing
+            exApp = Nothing
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al exportar a Excel")
+            Return False
+        End Try
+        Return True
+    End Function
 
     Private Sub btn_Solicitud_Click(sender As System.Object, e As System.EventArgs) Handles btn_Solicitud.Click
         Try
