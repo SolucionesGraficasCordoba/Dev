@@ -2362,81 +2362,64 @@ Public Class frm_Principal
     End Sub
 
     Private Sub GuardarActualizarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles GuardarActualizarToolStripMenuItem.Click
-        'frm_Tarea.Text = "Nueva Tarea"
-        'LimpiarDetalleTarea()
-        'HabilitarDetalleTarea()
-        'LimpiarTiempoEstimado()
-        'LimpiarTiempoReal()
-        'HabilitarTiempoReal()
-        'LimpiarHoraFinalizacion()
-        'HabilitarHoraFinalizacion()
-        'LimipiarObservaciones()
-        'HabilitarObservaciones()
-        'LimpiarNumeroOrden()
-        'DeshabilitarNumeroOrden()
-        'OcultarIdOrden()
-        'OcultarIdTarea()
-        'HabilitarBotonNumeroOrden()
-        'DemasCampos()
 
-        Dim CargaColaborador = (From sec In datacontext.SECTOR
-                     Join col In datacontext.COLABORADOR
-                     On col.SEC_id_sector Equals sec.SEC_id_sector
-                     Join usu In datacontext.USUARIO
-                     On usu.COL_id_colaborador Equals col.COL_id_colaborador
-                     Select usu.USU_usuario, usu.USU_id_usuario, col.COL_nombre_col, col.COL_id_colaborador, sec.SEC_id_sector, sec.SEC_nombre_sector
-                     Where USU_usuario = Me.LBL_MENU_USU.Text).ToList()(0)
+        'Dim CargaColaborador = (From sec In datacontext.SECTOR
+        '                   Join col In datacontext.COLABORADOR
+        '                   On col.SEC_id_sector Equals sec.SEC_id_sector
+        '                   Join usu In datacontext.USUARIO
+        '                   On usu.COL_id_colaborador Equals col.COL_id_colaborador
+        '                   Select usu.USU_usuario, usu.USU_id_usuario, col.COL_nombre_col, col.COL_id_colaborador, sec.SEC_id_sector, sec.SEC_nombre_sector
+        '                   Where USU_usuario = Me.LBL_MENU_USU.Text).ToList()(0)
 
-        If CargaColaborador.SEC_nombre_sector <> "Offset" Then
-            'frm_Tarea.MdiParent = Me
-            frm_GuardarActualizar_tarea.Show()
-            'frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
-            'frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
-        Else
-            frm_Tarea.MdiParent = Me
-            frm_Tarea.Show()
-            frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
-            frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
-            frm_Tarea.MaximizeBox = False
+        'If CargaColaborador.SEC_nombre_sector <> "Offset" Then
+        '    frm_GuardarActualizar_tarea.MdiParent = Me
+        '    frm_GuardarActualizar_tarea.Show()
+        '    frm_GuardarActualizar_tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
+        '    frm_GuardarActualizar_tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
+        'Else
+        '    frm_Tarea.MdiParent = Me
+        '    frm_Tarea.Show()
+        '    frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
+        '    frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
+        '    frm_Tarea.MaximizeBox = False
 
-            frm_Tarea_1.MdiParent = Me
-            frm_GuardarActualizar_tarea.Show()
+        '    frm_Tarea_1.MdiParent = Me
+        '    frm_Tarea_1.Show()
+        '    frm_Tarea_1.MaximizeBox = False
 
-            frm_Tarea_1.MaximizeBox = False
+        '    LimpiarDetalleTarea1()
+        '    HabilitarDetalleTarea1()
+        '    LimpiarTiempoEstimado1()
+        '    LimpiarTiempoReal1()
+        '    HabilitarTiempoReal1()
+        '    LimpiarHoraFinalizacion1()
+        '    HabilitarHoraFinalizacion1()
+        '    LimipiarObservaciones1()
+        '    HabilitarObservaciones1()
+        '    LimpiarNumeroOrden1()
+        '    DeshabilitarNumeroOrden1()
+        '    OcultarIdOrden1()
+        '    OcultarIdTarea1()
+        '    HabilitarBotonNumeroOrden1()
+        '    DemasCampos1()
 
-            LimpiarDetalleTarea1()
-            HabilitarDetalleTarea1()
-            LimpiarTiempoEstimado1()
-            LimpiarTiempoReal1()
-            HabilitarTiempoReal1()
-            LimpiarHoraFinalizacion1()
-            HabilitarHoraFinalizacion1()
-            LimipiarObservaciones1()
-            HabilitarObservaciones1()
-            LimpiarNumeroOrden1()
-            DeshabilitarNumeroOrden1()
-            OcultarIdOrden1()
-            OcultarIdTarea1()
-            HabilitarBotonNumeroOrden1()
-            DemasCampos1()
-
-        End If
+        ' End If
     End Sub
 
     Private Sub ListadoGuardarActualizarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ListadoGuardarActualizarToolStripMenuItem.Click
-        frm_Listado_GuardarActualizar.Text = "Modificar Tarea nuevooo"
-        frm_Listado_GuardarActualizar.btnEliminar_Tarea.Enabled = False
-        ' frm_Tarea.btnImprimirFormulario.Enabled = False
-        frm_Listado_GuardarActualizar.btnVer.Enabled = False
-        '  If frm_Listado_Tareas.cbo_sector.SelectedIndex = 0 Then
-        'MsgBox("Debe seleccionar un sector")
-        '  Exit Sub
-        ' Else
-        frm_Listado_GuardarActualizar.btnAgregar.Enabled = False
-        ' End If
-        frm_Listado_GuardarActualizar.btnExportarListado.Enabled = False
-        frm_Listado_GuardarActualizar.dtpFecha.Text = Now
-        frm_Listado_GuardarActualizar.btnAgregar.Enabled = True
-        frm_Listado_GuardarActualizar.ShowDialog()
+        'frm_Listado_GuardarActualizar.Text = "Modificar Tarea nuevooo"
+        'frm_Listado_GuardarActualizar.btnEliminar_Tarea.Enabled = False
+        '' frm_Tarea.btnImprimirFormulario.Enabled = False
+        'frm_Listado_GuardarActualizar.btnVer.Enabled = False
+        ''  If frm_Listado_Tareas.cbo_sector.SelectedIndex = 0 Then
+        ''MsgBox("Debe seleccionar un sector")
+        ''  Exit Sub
+        '' Else
+        'frm_Listado_GuardarActualizar.btnAgregar.Enabled = False
+        '' End If
+        'frm_Listado_GuardarActualizar.btnExportarListado.Enabled = False
+        'frm_Listado_GuardarActualizar.dtpFecha.Text = Now
+        'frm_Listado_GuardarActualizar.btnAgregar.Enabled = True
+        'frm_Listado_GuardarActualizar.ShowDialog()
     End Sub
 End Class
