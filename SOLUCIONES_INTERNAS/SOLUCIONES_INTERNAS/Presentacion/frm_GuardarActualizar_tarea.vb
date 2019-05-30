@@ -1665,36 +1665,127 @@
     Sub actualiza_y_guarda()
         Dim temp_txt As TextBox = New TextBox
         For i = 1 To 20
-            'txt_Id_Tarea1
-            'temp_txt.Name = CObj("txt_Id_Tarea" & i)
-            'If temp_txt.TextLength <> 0 Then
-            'MsgBox(temp_txt.Text)
-            'End If
             Select Case i
                 Case 1
                     If txt_Id_Tarea1.TextLength <> 0 Then
                         actualizar(txtTiempo_Estimado1, txtTiempo_Real1, txt_id_orden_trabajo1, txtHora_Finalizacion1, txt_detalle_tarea1, txtObservaciones1)
-                        'MsgBox(txt_Id_Tarea1.Text)
                     ElseIf txt_id_orden_trabajo1.TextLength <> 0 Then
                         guardar(txtTiempo_Estimado1, txtTiempo_Real1, txt_id_orden_trabajo1, txtHora_Finalizacion1, txt_detalle_tarea1, txtObservaciones1, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
                     End If
                 Case 2
                     If txt_Id_Tarea2.TextLength <> 0 Then
                         actualizar(txtTiempo_Estimado2, txtTiempo_Real2, txt_id_orden_trabajo2, txtHora_Finalizacion2, txt_detalle_tarea2, txtObservaciones2)
-                        'MsgBox(txt_Id_Tarea1.Text)
                     ElseIf txt_id_orden_trabajo2.TextLength <> 0 Then
                         guardar(txtTiempo_Estimado2, txtTiempo_Real2, txt_id_orden_trabajo2, txtHora_Finalizacion2, txt_detalle_tarea2, txtObservaciones2, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
                     End If
-                    'Case 3
-                    'Case 4
-                    'Case 5
-                    'Case 6
-                    'Case 7
-                    'Case 8
-                    'Case 9
-                    'Case 10
-
-
+                Case 3
+                    If txt_Id_Tarea3.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado3, txtTiempo_Real3, txt_id_orden_trabajo3, txtHora_Finalizacion3, txt_detalle_tarea3, txtObservaciones3)
+                    ElseIf txt_id_orden_trabajo3.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado3, txtTiempo_Real3, txt_id_orden_trabajo3, txtHora_Finalizacion3, txt_detalle_tarea3, txtObservaciones3, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 4
+                    If txt_Id_Tarea4.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado4, txtTiempo_Real4, txt_id_orden_trabajo4, txtHora_Finalizacion4, txt_detalle_tarea4, txtObservaciones4)
+                    ElseIf txt_id_orden_trabajo4.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado4, txtTiempo_Real4, txt_id_orden_trabajo4, txtHora_Finalizacion4, txt_detalle_tarea4, txtObservaciones4, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 5
+                    If txt_Id_Tarea5.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado5, txtTiempo_Real5, txt_id_orden_trabajo5, txtHora_Finalizacion5, txt_detalle_tarea5, txtObservaciones5)
+                    ElseIf txt_id_orden_trabajo5.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado5, txtTiempo_Real5, txt_id_orden_trabajo5, txtHora_Finalizacion5, txt_detalle_tarea5, txtObservaciones5, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 6
+                    If txt_Id_Tarea6.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado6, txtTiempo_Real6, txt_id_orden_trabajo6, txtHora_Finalizacion6, txt_detalle_tarea6, txtObservaciones6)
+                    ElseIf txt_id_orden_trabajo6.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado6, txtTiempo_Real6, txt_id_orden_trabajo6, txtHora_Finalizacion6, txt_detalle_tarea6, txtObservaciones6, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 7
+                    If txt_Id_Tarea7.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado7, txtTiempo_Real7, txt_id_orden_trabajo7, txtHora_Finalizacion7, txt_detalle_tarea7, txtObservaciones7)
+                    ElseIf txt_id_orden_trabajo7.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado7, txtTiempo_Real7, txt_id_orden_trabajo7, txtHora_Finalizacion7, txt_detalle_tarea7, txtObservaciones7, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 8
+                    If txt_Id_Tarea8.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado8, txtTiempo_Real8, txt_id_orden_trabajo8, txtHora_Finalizacion8, txt_detalle_tarea8, txtObservaciones8)
+                    ElseIf txt_id_orden_trabajo8.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado8, txtTiempo_Real8, txt_id_orden_trabajo8, txtHora_Finalizacion8, txt_detalle_tarea8, txtObservaciones8, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 9
+                    If txt_Id_Tarea9.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado9, txtTiempo_Real9, txt_id_orden_trabajo9, txtHora_Finalizacion9, txt_detalle_tarea9, txtObservaciones9)
+                    ElseIf txt_id_orden_trabajo9.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado9, txtTiempo_Real9, txt_id_orden_trabajo9, txtHora_Finalizacion9, txt_detalle_tarea9, txtObservaciones9, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 10
+                    If txt_Id_Tarea10.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado10, txtTiempo_Real10, txt_id_orden_trabajo10, txtHora_Finalizacion10, txt_detalle_tarea10, txtObservaciones10)
+                    ElseIf txt_id_orden_trabajo10.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado10, txtTiempo_Real10, txt_id_orden_trabajo10, txtHora_Finalizacion10, txt_detalle_tarea10, txtObservaciones10, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 11
+                    If txt_Id_Tarea11.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado11, txtTiempo_Real11, txt_id_orden_trabajo11, txtHora_Finalizacion11, txt_detalle_tarea11, txtObservaciones11)
+                    ElseIf txt_id_orden_trabajo11.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado11, txtTiempo_Real11, txt_id_orden_trabajo11, txtHora_Finalizacion11, txt_detalle_tarea11, txtObservaciones11, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 12
+                    If txt_Id_Tarea12.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado12, txtTiempo_Real12, txt_id_orden_trabajo12, txtHora_Finalizacion12, txt_detalle_tarea12, txtObservaciones12)
+                    ElseIf txt_id_orden_trabajo12.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado12, txtTiempo_Real12, txt_id_orden_trabajo12, txtHora_Finalizacion12, txt_detalle_tarea12, txtObservaciones12, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 13
+                    If txt_Id_Tarea13.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado13, txtTiempo_Real13, txt_id_orden_trabajo13, txtHora_Finalizacion13, txt_detalle_tarea13, txtObservaciones13)
+                    ElseIf txt_id_orden_trabajo13.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado13, txtTiempo_Real13, txt_id_orden_trabajo13, txtHora_Finalizacion13, txt_detalle_tarea13, txtObservaciones13, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 14
+                    If txt_Id_Tarea14.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado14, txtTiempo_Real14, txt_id_orden_trabajo14, txtHora_Finalizacion14, txt_detalle_tarea14, txtObservaciones14)
+                    ElseIf txt_id_orden_trabajo14.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado14, txtTiempo_Real14, txt_id_orden_trabajo14, txtHora_Finalizacion14, txt_detalle_tarea14, txtObservaciones14, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 15
+                    If txt_Id_Tarea15.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado15, txtTiempo_Real15, txt_id_orden_trabajo15, txtHora_Finalizacion15, txt_detalle_tarea15, txtObservaciones15)
+                    ElseIf txt_id_orden_trabajo15.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado15, txtTiempo_Real15, txt_id_orden_trabajo15, txtHora_Finalizacion15, txt_detalle_tarea15, txtObservaciones15, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 16
+                    If txt_Id_Tarea16.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado16, txtTiempo_Real16, txt_id_orden_trabajo16, txtHora_Finalizacion16, txt_detalle_tarea16, txtObservaciones16)
+                    ElseIf txt_id_orden_trabajo16.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado16, txtTiempo_Real16, txt_id_orden_trabajo16, txtHora_Finalizacion16, txt_detalle_tarea16, txtObservaciones16, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 17
+                    If txt_Id_Tarea17.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado17, txtTiempo_Real17, txt_id_orden_trabajo17, txtHora_Finalizacion17, txt_detalle_tarea17, txtObservaciones17)
+                    ElseIf txt_id_orden_trabajo17.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado17, txtTiempo_Real17, txt_id_orden_trabajo17, txtHora_Finalizacion17, txt_detalle_tarea17, txtObservaciones17, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 18
+                    If txt_Id_Tarea18.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado18, txtTiempo_Real18, txt_id_orden_trabajo18, txtHora_Finalizacion18, txt_detalle_tarea18, txtObservaciones18)
+                    ElseIf txt_id_orden_trabajo18.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado18, txtTiempo_Real18, txt_id_orden_trabajo18, txtHora_Finalizacion18, txt_detalle_tarea18, txtObservaciones18, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 19
+                    If txt_Id_Tarea19.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado19, txtTiempo_Real19, txt_id_orden_trabajo19, txtHora_Finalizacion19, txt_detalle_tarea19, txtObservaciones19)
+                    ElseIf txt_id_orden_trabajo19.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado19, txtTiempo_Real19, txt_id_orden_trabajo19, txtHora_Finalizacion19, txt_detalle_tarea19, txtObservaciones19, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
+                Case 20
+                    If txt_Id_Tarea20.TextLength <> 0 Then
+                        actualizar(txtTiempo_Estimado20, txtTiempo_Real20, txt_id_orden_trabajo20, txtHora_Finalizacion20, txt_detalle_tarea20, txtObservaciones20)
+                    ElseIf txt_id_orden_trabajo20.TextLength <> 0 Then
+                        guardar(txtTiempo_Estimado20, txtTiempo_Real20, txt_id_orden_trabajo20, txtHora_Finalizacion20, txt_detalle_tarea20, txtObservaciones20, txt_Carga_Horaria1, txt_id_colaborador, dtpFecha, txtEntrada, txtSalida, i)
+                    End If
                 Case Else
             End Select
         Next
@@ -1703,6 +1794,7 @@
     Private Sub btnCancelar_Tarea_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar_Tarea.Click
         actualiza_y_guarda()
     End Sub
+
     Sub guardar(ByVal estimado As Object, ByVal real As Object, ByVal odt As Object, ByVal fin As Object, ByVal detalle As Object, ByVal obs As Object, ByVal carga As Object, ByVal colab As Object, ByVal fecha As Object, ByVal entrada As Object, ByVal salida As Object, ByVal i As Integer)
         Dim tar = New TAREA
 
@@ -1735,7 +1827,9 @@
         datacontext.SubmitChanges()
 
     End Sub
+
     Sub actualizar(ByVal estimado As Object, ByVal real As Object, ByVal odt As Object, ByVal fin As Object, ByVal detalle As Object, ByVal obs As Object)
+
         Dim ActualizarTarea = (From P In datacontext.TAREA Where P.TAR_id_tarea = (txt_Id_Tarea1.Text.ToUpper)).ToList()(0)
 
         ActualizarTarea.TAR_tiempo_estimado = StrConv(estimado.Text, VbStrConv.ProperCase)
