@@ -1795,7 +1795,8 @@
         actualiza_y_guarda()
     End Sub
 
-    Sub guardar(ByVal estimado As Object, ByVal real As Object, ByVal odt As Object, ByVal fin As Object, ByVal detalle As Object, ByVal obs As Object, ByVal carga As Object, ByVal colab As Object, ByVal fecha As Object, ByVal entrada As Object, ByVal salida As Object, ByVal i As Integer)
+    Sub guardar(ByVal estimado As Object, ByVal real As Object, ByVal odt As Object, ByVal fin As Object, ByVal detalle As Object, ByVal obs As Object, ByVal carga As Object, _
+                ByVal colab As Object, ByVal fecha As Object, ByVal entrada As Object, ByVal salida As Object, ByVal i As Integer)
         Dim tar = New TAREA
 
         If estimado.Text.Length <> 0 Then
@@ -1841,4 +1842,296 @@
         datacontext.SubmitChanges()
     End Sub
 
+    Private Sub txtEntrada_LostFocus(sender As Object, e As System.EventArgs) Handles txtEntrada.LostFocus
+        Try
+            If txtEntrada.TextLength <> 0 And txtSalida.TextLength <> 0 Then
+                calcula_minutos()
+                Exit Sub
+            End If
+        Catch ex As Exception
+            MsgBox("Complete los campos 'Hora de Entrada' y 'Hora de Salida'")
+        End Try
+    End Sub
+
+    Private Sub txtEntrada_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtEntrada.TextChanged
+        Try
+            'VALIDA LA HORA INGRESADA
+            Select Case Len(txtEntrada.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtEntrada.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtEntrada.Text = Microsoft.VisualBasic.Right(txtEntrada.Text, Len(txtEntrada.Text) - 2)
+                    Else
+                        txtEntrada.Text = txtEntrada.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtEntrada.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtEntrada.Text = Microsoft.VisualBasic.Left(txtEntrada.Text, Len(txtEntrada.Text) - 2)
+                    Else
+                        txtEntrada.Text = txtEntrada.Text & ":"
+                        Me.txtEntrada.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+            MsgBox("El formato de la hora de entrada es: '00:00'")
+        End Try
+    End Sub
+
+    Private Sub txtSalida_LostFocus(sender As Object, e As System.EventArgs) Handles txtSalida.LostFocus
+        Try
+            If txtEntrada.TextLength <> 0 And txtSalida.TextLength <> 0 Then
+                calcula_minutos()
+                Exit Sub
+            End If
+        Catch ex As Exception
+            MsgBox("Complete los campos 'Hora de Entrada' y 'Hora de Salida'")
+        End Try
+    End Sub
+
+    Private Sub txtSalida_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtSalida.TextChanged
+        Try
+            'VALIDA LA HORA INGRESADA
+            Select Case Len(txtSalida.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtSalida.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtSalida.Text = Microsoft.VisualBasic.Right(txtSalida.Text, Len(txtSalida.Text) - 2)
+                    Else
+                        txtSalida.Text = txtSalida.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtSalida.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtSalida.Text = Microsoft.VisualBasic.Left(txtSalida.Text, Len(txtSalida.Text) - 2)
+                    Else
+                        txtSalida.Text = txtSalida.Text & ":"
+                        Me.txtSalida.SelectionStart = 3
+                    End If
+
+            End Select
+        Catch ex As Exception
+            MsgBox("El formato de la hora de salida es: '00:00'")
+        End Try
+    End Sub
+
+    Sub calcula_minutos()
+        Dim qtddias As TimeSpan
+        Dim totalmin As Integer = 0
+        qtddias = CDate(txtSalida.Text).Subtract(CDate(txtEntrada.Text))
+        totalmin = qtddias.TotalMinutes
+        If totalmin < 0 Then
+            totalmin = totalmin + 1440
+        End If
+        txt_Carga_Horaria1.Text = totalmin
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden2_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden2.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden2
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden3_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden3.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden3
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden4_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden4.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden4
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden5_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden5.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden5
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden6_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden6.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden6
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden7_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden7.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden7
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden8_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden8.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden8
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden9_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden9.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden9
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden10_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden10.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden10
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden11_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden11.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden11
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden12_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden12.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden12
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden13_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden13.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden13
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden14_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden14.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden14
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden15_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden15.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden15
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden16_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden16.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden16
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden17_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden17.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden17
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden18_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden18.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden18
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden19_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden19.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden19
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
+
+    Private Sub btnBuscar_Numero_Orden20_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Numero_Orden20.Click
+        frm_listado_orden_trabajo_ampliada.quienllamolistado_ot = Me
+        frm_listado_orden_trabajo_ampliada.quienllamobotonorden = Me.btnBuscar_Numero_Orden20
+        frm_listado_orden_trabajo_ampliada.Text = "Seleccionar Orden"
+        frm_listado_orden_trabajo_ampliada.GroupDetallesOrden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnAgregarProducto.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnModificar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.btnEliminar_Orden.Enabled = False
+        frm_listado_orden_trabajo_ampliada.Show()
+    End Sub
 End Class
