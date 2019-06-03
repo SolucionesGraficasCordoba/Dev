@@ -2363,6 +2363,28 @@ Public Class frm_Principal
 
     Private Sub GuardarActualizarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles GuardarActualizarToolStripMenuItem.Click
 
+        frm_Listado_GuardarActualizar.Text = "Modificar Tarea nuevooo"
+        frm_Listado_GuardarActualizar.btnEliminar_Tarea.Enabled = False
+        ' frm_Tarea.btnImprimirFormulario.Enabled = False
+        frm_Listado_GuardarActualizar.btnVer.Enabled = False
+        '  If frm_Listado_Tareas.cbo_sector.SelectedIndex = 0 Then
+        'MsgBox("Debe seleccionar un sector")
+        '  Exit Sub
+        ' Else
+        frm_Listado_GuardarActualizar.btnAgregar.Enabled = False
+        ' End If
+        frm_Listado_GuardarActualizar.btnExportarListado.Enabled = False
+        frm_Listado_GuardarActualizar.dtpFecha.Text = Now
+        frm_Listado_GuardarActualizar.btnAgregar.Enabled = True
+        frm_Listado_GuardarActualizar.ShowDialog()
+    End Sub
+
+    Private Sub ListadoGuardarActualizarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ListadoGuardarActualizarToolStripMenuItem.Click
+     
+    End Sub
+
+    Private Sub NuevaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevaToolStripMenuItem.Click
+
         Dim CargaColaborador = (From sec In datacontext.SECTOR
                            Join col In datacontext.COLABORADOR
                            On col.SEC_id_sector Equals sec.SEC_id_sector
@@ -2376,7 +2398,7 @@ Public Class frm_Principal
         frm_GuardarActualizar_tarea.Show()
         frm_GuardarActualizar_tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
         frm_GuardarActualizar_tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
-        '  Else
+        'Else
         'frm_Tarea.MdiParent = Me
         'frm_Tarea.Show()
         'frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
@@ -2402,24 +2424,6 @@ Public Class frm_Principal
         'OcultarIdTarea1()
         'HabilitarBotonNumeroOrden1()
         'DemasCampos1()
-
         'End If
-    End Sub
-
-    Private Sub ListadoGuardarActualizarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ListadoGuardarActualizarToolStripMenuItem.Click
-        'frm_Listado_GuardarActualizar.Text = "Modificar Tarea nuevooo"
-        'frm_Listado_GuardarActualizar.btnEliminar_Tarea.Enabled = False
-        '' frm_Tarea.btnImprimirFormulario.Enabled = False
-        'frm_Listado_GuardarActualizar.btnVer.Enabled = False
-        ''  If frm_Listado_Tareas.cbo_sector.SelectedIndex = 0 Then
-        ''MsgBox("Debe seleccionar un sector")
-        ''  Exit Sub
-        '' Else
-        'frm_Listado_GuardarActualizar.btnAgregar.Enabled = False
-        '' End If
-        'frm_Listado_GuardarActualizar.btnExportarListado.Enabled = False
-        'frm_Listado_GuardarActualizar.dtpFecha.Text = Now
-        'frm_Listado_GuardarActualizar.btnAgregar.Enabled = True
-        'frm_Listado_GuardarActualizar.ShowDialog()
     End Sub
 End Class

@@ -66,6 +66,10 @@ Partial Class frm_Principal
         Me.GráficosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.DiariasPorColaboradorToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MensualesPorSectorToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NuevaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GuardarActualizarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoGuardarActualizarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ConsultarToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GestiónDeProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -126,8 +130,6 @@ Partial Class frm_Principal
         Me.btn_ticket = New System.Windows.Forms.Button()
         Me.Timer_automatico = New System.Windows.Forms.Timer(Me.components)
         Me.btnManualUsuario = New System.Windows.Forms.Button()
-        Me.GuardarActualizarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ListadoGuardarActualizarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -350,7 +352,7 @@ Partial Class frm_Principal
         '
         'TareasToolStripMenuItem
         '
-        Me.TareasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaTareaToolStripMenuItem, Me.ListaTareaToolStripMenuItem, Me.EliminarTareaToolStripMenuItem, Me.ConsultarTareaToolStripMenuItem, Me.GráficosToolStripMenuItem, Me.GuardarActualizarToolStripMenuItem, Me.ListadoGuardarActualizarToolStripMenuItem})
+        Me.TareasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaTareaToolStripMenuItem, Me.ListaTareaToolStripMenuItem, Me.EliminarTareaToolStripMenuItem, Me.ConsultarTareaToolStripMenuItem, Me.GráficosToolStripMenuItem, Me.NuevaToolStripMenuItem, Me.GuardarActualizarToolStripMenuItem, Me.ListadoGuardarActualizarToolStripMenuItem, Me.ConsultarToolStripMenuItem5})
         Me.TareasToolStripMenuItem.Name = "TareasToolStripMenuItem"
         Me.TareasToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.TareasToolStripMenuItem.Text = "Tarea"
@@ -358,32 +360,32 @@ Partial Class frm_Principal
         'AltaTareaToolStripMenuItem
         '
         Me.AltaTareaToolStripMenuItem.Name = "AltaTareaToolStripMenuItem"
-        Me.AltaTareaToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.AltaTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.AltaTareaToolStripMenuItem.Text = "Nueva"
         '
         'ListaTareaToolStripMenuItem
         '
         Me.ListaTareaToolStripMenuItem.Name = "ListaTareaToolStripMenuItem"
-        Me.ListaTareaToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.ListaTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ListaTareaToolStripMenuItem.Text = "Modificar"
         '
         'EliminarTareaToolStripMenuItem
         '
         Me.EliminarTareaToolStripMenuItem.Name = "EliminarTareaToolStripMenuItem"
-        Me.EliminarTareaToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.EliminarTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.EliminarTareaToolStripMenuItem.Text = "Eliminar"
         '
         'ConsultarTareaToolStripMenuItem
         '
         Me.ConsultarTareaToolStripMenuItem.Name = "ConsultarTareaToolStripMenuItem"
-        Me.ConsultarTareaToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.ConsultarTareaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ConsultarTareaToolStripMenuItem.Text = "Consultar"
         '
         'GráficosToolStripMenuItem
         '
         Me.GráficosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DiariasPorColaboradorToolStripMenuItem1, Me.MensualesPorSectorToolStripMenuItem1})
         Me.GráficosToolStripMenuItem.Name = "GráficosToolStripMenuItem"
-        Me.GráficosToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.GráficosToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.GráficosToolStripMenuItem.Text = "Gráficos"
         '
         'DiariasPorColaboradorToolStripMenuItem1
@@ -397,6 +399,30 @@ Partial Class frm_Principal
         Me.MensualesPorSectorToolStripMenuItem1.Name = "MensualesPorSectorToolStripMenuItem1"
         Me.MensualesPorSectorToolStripMenuItem1.Size = New System.Drawing.Size(199, 22)
         Me.MensualesPorSectorToolStripMenuItem1.Text = "Mensuales por Sector"
+        '
+        'NuevaToolStripMenuItem
+        '
+        Me.NuevaToolStripMenuItem.Name = "NuevaToolStripMenuItem"
+        Me.NuevaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NuevaToolStripMenuItem.Text = "Nueva1"
+        '
+        'GuardarActualizarToolStripMenuItem
+        '
+        Me.GuardarActualizarToolStripMenuItem.Name = "GuardarActualizarToolStripMenuItem"
+        Me.GuardarActualizarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.GuardarActualizarToolStripMenuItem.Text = "Modificar1"
+        '
+        'ListadoGuardarActualizarToolStripMenuItem
+        '
+        Me.ListadoGuardarActualizarToolStripMenuItem.Name = "ListadoGuardarActualizarToolStripMenuItem"
+        Me.ListadoGuardarActualizarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ListadoGuardarActualizarToolStripMenuItem.Text = "Eliminar1"
+        '
+        'ConsultarToolStripMenuItem5
+        '
+        Me.ConsultarToolStripMenuItem5.Name = "ConsultarToolStripMenuItem5"
+        Me.ConsultarToolStripMenuItem5.Size = New System.Drawing.Size(152, 22)
+        Me.ConsultarToolStripMenuItem5.Text = "Consultar1"
         '
         'ProductoToolStripMenuItem
         '
@@ -807,18 +833,6 @@ Partial Class frm_Principal
         Me.btnManualUsuario.Text = "Manual de Usuario"
         Me.btnManualUsuario.UseVisualStyleBackColor = False
         '
-        'GuardarActualizarToolStripMenuItem
-        '
-        Me.GuardarActualizarToolStripMenuItem.Name = "GuardarActualizarToolStripMenuItem"
-        Me.GuardarActualizarToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
-        Me.GuardarActualizarToolStripMenuItem.Text = "Guardar_Actualizar"
-        '
-        'ListadoGuardarActualizarToolStripMenuItem
-        '
-        Me.ListadoGuardarActualizarToolStripMenuItem.Name = "ListadoGuardarActualizarToolStripMenuItem"
-        Me.ListadoGuardarActualizarToolStripMenuItem.Size = New System.Drawing.Size(216, 22)
-        Me.ListadoGuardarActualizarToolStripMenuItem.Text = "Listado_Guardar_Actualizar"
-        '
         'frm_Principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(96.0!, 96.0!)
@@ -946,6 +960,8 @@ Partial Class frm_Principal
     Friend WithEvents ConsultarToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents GuardarActualizarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoGuardarActualizarToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents NuevaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ConsultarToolStripMenuItem5 As System.Windows.Forms.ToolStripMenuItem
 
 
 End Class

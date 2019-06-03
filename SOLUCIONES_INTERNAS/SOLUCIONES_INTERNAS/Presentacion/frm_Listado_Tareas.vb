@@ -1686,6 +1686,7 @@ Public Class frm_Listado_Tareas
                 frm_Tarea.txtNumero_Orden_Trabajo20.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(19).Index).Value
             End If
         Else
+
             MsgBox("El Colaborador no tiene tareas por mostrar")
             Exit Sub
         End If
