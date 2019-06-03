@@ -3176,7 +3176,8 @@ Partial Class frm_GuardarActualizar_tarea
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnCancelar_Tarea)
         Me.Name = "frm_GuardarActualizar_tarea"
-        Me.Text = "frm_GuardarActualizar_tarea"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Actualizar - Agregar Tareas"
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)

@@ -38,48 +38,12 @@ Public Class frm_Listado_GuardarActualizar
 
             If dgvTarea_x_Colaborador.RowCount = 1 Then
                 flag1 = 1
-                'desab_tarea_2()
-                'desab_tarea_3()
-                'desab_tarea_4()
-                'desab_tarea_5()
-                'desab_tarea_6()
-                'desab_tarea_7()
-                'desab_tarea_8()
-                'desab_tarea_9()
-                'desab_tarea_10()
-                'desab_tarea_11()
-                'desab_tarea_12()
-                'desab_tarea_13()
-                'desab_tarea_14()
-                'desab_tarea_15()
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
+
             ElseIf dgvTarea_x_Colaborador.RowCount = 2 Then
                 flag1 = 1
                 flag2 = 1
-                'desab_tarea_3()
-                'desab_tarea_4()
-                'desab_tarea_5()
-                'desab_tarea_6()
-                'desab_tarea_7()
-                'desab_tarea_8()
-                'desab_tarea_9()
-                'desab_tarea_10()
-                'desab_tarea_11()
-                'desab_tarea_12()
-                'desab_tarea_13()
-                'desab_tarea_14()
-                'desab_tarea_15()
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -87,23 +51,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag1 = 1
                 flag2 = 1
                 flag3 = 1
-                'desab_tarea_4()
-                'desab_tarea_5()
-                'desab_tarea_6()
-                'desab_tarea_7()
-                'desab_tarea_8()
-                'desab_tarea_9()
-                'desab_tarea_10()
-                'desab_tarea_11()
-                'desab_tarea_12()
-                'desab_tarea_13()
-                'desab_tarea_14()
-                'desab_tarea_15()
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
+           
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -113,22 +61,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag2 = 1
                 flag3 = 1
                 flag4 = 1
-                'desab_tarea_5()
-                'desab_tarea_6()
-                'desab_tarea_7()
-                'desab_tarea_8()
-                'desab_tarea_9()
-                'desab_tarea_10()
-                'desab_tarea_11()
-                'desab_tarea_12()
-                'desab_tarea_13()
-                'desab_tarea_14()
-                'desab_tarea_15()
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
+       
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -140,21 +73,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag3 = 1
                 flag4 = 1
                 flag5 = 1
-                'desab_tarea_6()
-                'desab_tarea_7()
-                'desab_tarea_8()
-                'desab_tarea_9()
-                'desab_tarea_10()
-                'desab_tarea_11()
-                'desab_tarea_12()
-                'desab_tarea_13()
-                'desab_tarea_14()
-                'desab_tarea_15()
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
+           
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -168,20 +87,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag4 = 1
                 flag5 = 1
                 flag6 = 1
-                'desab_tarea_7()
-                'desab_tarea_8()
-                'desab_tarea_9()
-                'desab_tarea_10()
-                'desab_tarea_11()
-                'desab_tarea_12()
-                'desab_tarea_13()
-                'desab_tarea_14()
-                'desab_tarea_15()
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
+        
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -197,19 +103,6 @@ Public Class frm_Listado_GuardarActualizar
                 flag5 = 1
                 flag6 = 1
                 flag7 = 1
-                'desab_tarea_8()
-                'desab_tarea_9()
-                'desab_tarea_10()
-                'desab_tarea_11()
-                'desab_tarea_12()
-                'desab_tarea_13()
-                'desab_tarea_14()
-                'desab_tarea_15()
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -227,18 +120,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag6 = 1
                 flag7 = 1
                 flag8 = 1
-                'desab_tarea_9()
-                'desab_tarea_10()
-                'desab_tarea_11()
-                'desab_tarea_12()
-                'desab_tarea_13()
-                'desab_tarea_14()
-                'desab_tarea_15()
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
+         
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -258,17 +140,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag7 = 1
                 flag8 = 1
                 flag9 = 1
-                'desab_tarea_10()
-                'desab_tarea_11()
-                'desab_tarea_12()
-                'desab_tarea_13()
-                'desab_tarea_14()
-                'desab_tarea_15()
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
+     
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -290,16 +162,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag8 = 1
                 flag9 = 1
                 flag10 = 1
-                'desab_tarea_11()
-                'desab_tarea_12()
-                'desab_tarea_13()
-                'desab_tarea_14()
-                'desab_tarea_15()
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
+        
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -323,15 +186,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag9 = 1
                 flag10 = 1
                 flag11 = 1
-                'desab_tarea_12()
-                'desab_tarea_13()
-                'desab_tarea_14()
-                'desab_tarea_15()
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
+        
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -357,14 +212,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag10 = 1
                 flag11 = 1
                 flag12 = 1
-                'desab_tarea_13()
-                'desab_tarea_14()
-                'desab_tarea_15()
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
+       
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -392,13 +240,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag11 = 1
                 flag12 = 1
                 flag13 = 1
-                'desab_tarea_14()
-                'desab_tarea_15()
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
+       
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -428,12 +270,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag12 = 1
                 flag13 = 1
                 flag14 = 1
-                'desab_tarea_15()
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
+       
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -465,11 +302,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag13 = 1
                 flag14 = 1
                 flag15 = 1
-                'desab_tarea_16()
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
+        
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -503,10 +336,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag14 = 1
                 flag15 = 1
                 flag16 = 1
-                'desab_tarea_17()
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
+     
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -542,9 +372,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag15 = 1
                 flag16 = 1
                 flag17 = 1
-                'desab_tarea_18()
-                'desab_tarea_19()
-                'desab_tarea_20()
+            
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -582,8 +410,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag16 = 1
                 flag17 = 1
                 flag18 = 1
-                'desab_tarea_19()
-                'desab_tarea_20()
+               
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -623,7 +450,7 @@ Public Class frm_Listado_GuardarActualizar
                 flag17 = 1
                 flag18 = 1
                 flag19 = 1
-                'desab_tarea_20()
+
                 OcultarId()
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Enabled = False
                 frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Enabled = False
@@ -923,8 +750,6 @@ Public Class frm_Listado_GuardarActualizar
         frm_GuardarActualizar_tarea.Text = "Actualizar Tareas"
         frm_GuardarActualizar_tarea.btnImprimirFormulario.Visible = False
         frm_GuardarActualizar_tarea.txt_nombre_colaborador.Enabled = False
-
-        ' frm_Tarea.btnImprimirFormulario.Enabled = True
         frm_GuardarActualizar_tarea.btnBuscar_Colaborador.Enabled = False
         frm_GuardarActualizar_tarea.dtpFecha.Enabled = False
         frm_GuardarActualizar_tarea.txt_Carga_Horaria1.Enabled = False
@@ -936,9 +761,11 @@ Public Class frm_Listado_GuardarActualizar
         frm_GuardarActualizar_tarea.btnActualizar.Enabled = True
         frm_GuardarActualizar_tarea.txtEntrada.Enabled = True
         frm_GuardarActualizar_tarea.txtSalida.Enabled = True
+        frm_GuardarActualizar_tarea.btnNueva_Tarea.Visible = False
 
-        'frm_Tarea.MdiParent = Me
-        'frm_Tarea.Show()
+        frm_Principal.DeshabilitarNumeroOrden2()
+        frm_GuardarActualizar_tarea.btnBuscar_Colaborador.Enabled = True
+        ' frm_GuardarActualizar_tarea.MdiParent = Me
         frm_GuardarActualizar_tarea.ShowDialog()
     End Sub
 
@@ -1223,51 +1050,51 @@ Public Class frm_Listado_GuardarActualizar
     End Sub
 
     Sub OcultarId()
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo1.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo2.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo3.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo4.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo5.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo6.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo7.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo8.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo9.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo10.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo11.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo12.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo13.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo14.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo15.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo16.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo17.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo18.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo19.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_orden_trabajo20.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo1.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo2.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo3.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo4.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo5.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo6.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo7.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo8.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo9.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo10.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo11.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo12.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo13.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo14.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo15.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo16.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo17.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo18.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo19.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_orden_trabajo20.Visible = False
 
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea1.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea2.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea3.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea4.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea5.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea6.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea7.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea8.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea9.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea10.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea11.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea12.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea13.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea14.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea15.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea16.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea17.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea18.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea19.Visible = False
-        'frm_GuardarActualizar_tarea.txt_Id_Tarea20.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea1.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea2.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea3.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea4.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea5.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea6.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea7.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea8.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea9.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea10.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea11.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea12.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea13.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea14.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea15.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea16.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea17.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea18.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea19.Visible = False
+        frm_GuardarActualizar_tarea.txt_Id_Tarea20.Visible = False
 
-        'frm_GuardarActualizar_tarea.txt_id_colaborador.Visible = False
-        'frm_GuardarActualizar_tarea.txt_id_tarea.Visible = False
-        'frm_GuardarActualizar_tarea.Label1.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_colaborador.Visible = False
+        frm_GuardarActualizar_tarea.txt_id_tarea.Visible = False
+        frm_GuardarActualizar_tarea.Label1.Visible = False
 
         'frm_GuardarActualizar_tarea.btnNueva_Tarea.Enabled = False
         'frm_GuardarActualizar_tarea.btnGuardar_Tarea.Enabled = False

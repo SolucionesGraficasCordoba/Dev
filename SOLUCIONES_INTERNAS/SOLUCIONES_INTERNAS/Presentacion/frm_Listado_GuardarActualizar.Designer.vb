@@ -215,11 +215,11 @@ Partial Class frm_Listado_GuardarActualizar
         '
         'btnModificarTodas
         '
-        Me.btnModificarTodas.Location = New System.Drawing.Point(582, 246)
+        Me.btnModificarTodas.Location = New System.Drawing.Point(554, 246)
         Me.btnModificarTodas.Name = "btnModificarTodas"
-        Me.btnModificarTodas.Size = New System.Drawing.Size(104, 33)
+        Me.btnModificarTodas.Size = New System.Drawing.Size(132, 33)
         Me.btnModificarTodas.TabIndex = 4
-        Me.btnModificarTodas.Text = "Modificar Todas"
+        Me.btnModificarTodas.Text = "Modificar / Agregar"
         Me.btnModificarTodas.UseVisualStyleBackColor = True
         '
         'dtpFecha
@@ -313,6 +313,7 @@ Partial Class frm_Listado_GuardarActualizar
         Me.Controls.Add(Me.GroupListadoTareas)
         Me.Controls.Add(Me.btnEliminar_Tarea)
         Me.Name = "frm_Listado_GuardarActualizar"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_Listado_GuardarActualizar"
         Me.groupListadoDetalleTarea.ResumeLayout(False)
         Me.groupListadoDetalleTarea.PerformLayout()
