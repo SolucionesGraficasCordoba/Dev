@@ -32,21 +32,19 @@
             ActualizarTarea.COL_id_colaborador = txt_id_colaborador.Text
             ActualizarTarea.ORT_id_orden_trabajo = txt_id_orden_trabajo.Text
             ActualizarTarea.TAR_hora_fin = StrConv(txt_hora_fin.Text, VbStrConv.ProperCase)
-            ' ActualizarTarea.TAR_carga_horaria = StrConv(txt_Carga_Horaria.Text, VbStrConv.ProperCase)
             ActualizarTarea.TAR_detalle_tarea = StrConv(txt_tarea.Text, VbStrConv.ProperCase)
             ActualizarTarea.TAR_observaciones = StrConv(txt_observaciones.Text, VbStrConv.ProperCase)
-            'ActualizarTarea.TAR_fecha = dtpFecha.Text
             datacontext.SubmitChanges()
             MsgBox("Los datos se han modificado correctamente")
             Me.Close()
-            frm_Listado_Tareas.Close()
+            frm_Listado_GuardarActualizar.Close()
             vble_colaborador = frm_Listado_Tareas.dgvColaboradores.Item("COL_nombre_col", frm_Listado_Tareas.dgvColaboradores.SelectedRows(0).Index).Value
             vble_fecha = frm_Listado_Tareas.dtpFecha.Text
             Dim datagridtarea = (From o In datavistas.Vista_Tarea_x_Colaborador
                                Select o.TAR_id_tarea, o.TAR_detalle_tarea, o.TAR_tiempo_estimado, o.TAR_tiempo_real,
                                o.TAR_observaciones, o.ORT_id_orden_trabajo, o.ORT_numero_ot, o.TAR_fecha, o.TAR_carga_horaria, o.TAR_hora_fin, o.Expr1, o.COL_nombre_col
                                Where COL_nombre_col = vble_colaborador And TAR_fecha = vble_fecha)
-            frm_Listado_Tareas.mostrargrillaobligaciones(datagridtarea)
+            frm_Listado_GuardarActualizar.mostrargrillaobligaciones(datagridtarea)
             Label1.Text = frm_Listado_Tareas.dgvTarea_x_Colaborador.Rows.Count
 
         Catch ex As Exception
