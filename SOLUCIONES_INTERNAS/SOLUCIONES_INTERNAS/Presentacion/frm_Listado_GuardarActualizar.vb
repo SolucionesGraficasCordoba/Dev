@@ -1828,9 +1828,9 @@ Public Class frm_Listado_GuardarActualizar
             Exit Sub
         End If
         '  frm_Tarea.Text = "Consultar Tarea"
-        frm_GuardarActualizar_tarea.btnImprimirFormulario.Visible = True
+        frm_GuardarActualizar_tarea.btnImprimirFormulario.Visible = False
         frm_GuardarActualizar_tarea.txt_nombre_colaborador.Enabled = False
-        'DeshabilitarText()
+        DeshabilitarText()
         OcultarId()
         hab_consulta()
         frm_GuardarActualizar_tarea.ShowDialog()
