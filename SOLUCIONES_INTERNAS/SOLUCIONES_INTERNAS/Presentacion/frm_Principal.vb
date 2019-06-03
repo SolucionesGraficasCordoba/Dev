@@ -2803,4 +2803,27 @@ Public Class frm_Principal
         'DemasCampos1()
         'End If
     End Sub
+
+    Private Sub ListadoGuardarActualizarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ListadoGuardarActualizarToolStripMenuItem.Click
+
+        frm_Listado_GuardarActualizar.Text = "Eliminar Tarea"
+        frm_Listado_GuardarActualizar.btnModificar_Una.Enabled = False
+        frm_Listado_GuardarActualizar.btnAgregar.Enabled = False
+        frm_Listado_GuardarActualizar.btnVer.Enabled = False
+        frm_Listado_GuardarActualizar.btnExportarListado.Enabled = False
+        frm_Listado_GuardarActualizar.btnModificarTodas.Enabled = False
+        frm_Listado_GuardarActualizar.dtpFecha.Text = Now
+
+        frm_Listado_Tareas.ShowDialog()
+    End Sub
+
+    Private Sub ConsultarToolStripMenuItem5_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem5.Click
+        frm_Listado_GuardarActualizar.Text = "Consultar Tarea"
+        frm_Listado_GuardarActualizar.btnModificar_Una.Enabled = False
+        frm_Listado_GuardarActualizar.btnEliminar_Tarea.Enabled = False
+        frm_Listado_GuardarActualizar.btnAgregar.Enabled = False
+        frm_GuardarActualizar_tarea.dtpFecha.Text = Now
+        frm_Listado_GuardarActualizar.btnModificarTodas.Enabled = False
+        frm_Listado_GuardarActualizar.ShowDialog()
+    End Sub
 End Class

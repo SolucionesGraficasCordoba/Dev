@@ -2286,10 +2286,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.btnActualizar.Enabled = False
         frm_Tarea.txtEntrada.Enabled = False
         frm_Tarea.txtSalida.Enabled = False
-
-
-
-
     End Sub
 
     Sub hab_tarea_observ_1()
@@ -2306,8 +2302,6 @@ Public Class frm_Listado_Tareas
         frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
         frm_Tarea.txt_id_orden_trabajo1.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden1.Enabled = False
-
-    
     End Sub
 
     Sub hab_tarea_observ_2()

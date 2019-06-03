@@ -15,9 +15,7 @@ Public Class frm_Listado_GuardarActualizar
     Dim linea As New Phrase("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ")
     Dim fuente As iTextSharp.text.pdf.BaseFont = FontFactory.GetFont(FontFactory.HELVETICA).BaseFont
 
-
     Private Sub btnModificarTodas_Click(sender As System.Object, e As System.EventArgs) Handles btnModificarTodas.Click
-
         'CARGA EL ENCABEZADO DEL FORMULARIO TAREAS
         If dgvColaboradores.Rows.Count = 0 Then
             MsgBox("Debe selecconar un Sector")
@@ -769,7 +767,6 @@ Public Class frm_Listado_GuardarActualizar
         frm_GuardarActualizar_tarea.ShowDialog()
     End Sub
 
-
     Sub desab_tarea_1()
         frm_GuardarActualizar_tarea.txt_detalle_tarea1.Enabled = False
         frm_GuardarActualizar_tarea.txtTiempo_Estimado1.Enabled = False
@@ -1308,5 +1305,890 @@ Public Class frm_Listado_GuardarActualizar
 
         dgvTarea_x_Colaborador.DataSource = datasource
         dgvTarea_x_Colaborador.ClearSelection()
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar.Click
+        Me.Close()
+        Me.Dispose()
+    End Sub
+
+    Private Sub btnEliminar_Tarea_Click(sender As System.Object, e As System.EventArgs) Handles btnEliminar_Tarea.Click
+        If dgvTarea_x_Colaborador.SelectedRows.Count = 0 Then
+            MsgBox("Debe seleccionar una Tarea")
+        Else
+            Dim eliminar = (From C In datacontext.TAREA Where C.TAR_id_tarea = CInt(dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value)).ToList()(0)
+            Select Case MsgBox("Se eliminará la tares seleccionada, desea continuar?", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Eliminar tarea")
+                Case MsgBoxResult.Yes
+                    datacontext.TAREA.DeleteOnSubmit(eliminar)
+                    datacontext.SubmitChanges()
+                    MsgBox("La Tarea ha sido eliminada")
+            End Select
+            Me.Close()
+        End If
+    End Sub
+
+    Private Sub btnModificar_Una_Click(sender As System.Object, e As System.EventArgs) Handles btnModificar_Una.Click
+        If dgvColaboradores.RowCount = 0 Then
+            MsgBox("Debe seleccionar un Sector")
+            Exit Sub
+        End If
+        If Me.dgvTarea_x_Colaborador.SelectedRows.Count > 0 Then
+            frm_Actualizar_Tarea.txt_id_tarea.Text = Me.dgvTarea_x_Colaborador.Item("TAR_id_tarea", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+            frm_Actualizar_Tarea.txt_tarea.Text = Me.dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+            frm_Actualizar_Tarea.txt_tiempo_estimado.Text = Me.dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+            frm_Actualizar_Tarea.txt_tiempo_real.Text = Me.dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+            frm_Actualizar_Tarea.txt_observaciones.Text = Me.dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+            frm_Actualizar_Tarea.txt_id_orden_trabajo.Text = Me.dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+            frm_Actualizar_Tarea.txt_numero_orden.Text = Me.dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+            frm_Actualizar_Tarea.dtpFecha.Text = Me.dgvTarea_x_Colaborador.Item("TAR_fecha", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+            frm_Actualizar_Tarea.txt_Carga_Horaria.Text = Me.dgvTarea_x_Colaborador.Item("TAR_carga_horaria", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+            frm_Actualizar_Tarea.txt_hora_fin.Text = Me.dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+            frm_Actualizar_Tarea.txt_id_colaborador.Text = Me.dgvTarea_x_Colaborador.Item("Expr1", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+            frm_Actualizar_Tarea.txt_nombre_colaborador.Text = Me.dgvTarea_x_Colaborador.Item("COL_nombre_col", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+
+            'TRAE DEL GRID LA HORA DE ENTRADA Y LA HORA DE SALIDA DE LA PRIMERA FILA!!!! (SI SELECCIONABA LA SEGUNDA, TERCERA..... LA HORA DE ENTRADA Y DE SALIDA SE MOSTRABAN VACIAS)       
+
+            '   frm_Actualizar_Tarea.txtSalida.Text = Me.dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+            frm_Actualizar_Tarea.txtSalida.Text = Me.dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            frm_Actualizar_Tarea.txtEntrada.Text = Me.dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            ' frm_Actualizar_Tarea.txtEntrada.Text = Me.dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.SelectedRows(0).Index).Value
+        Else
+            MsgBox("Debe seleccionar una tarea del segundo listado")
+            Exit Sub
+        End If
+        frm_Actualizar_Tarea.Show()
+        frm_Actualizar_Tarea.btnGuardar.Enabled = False
+        frm_Actualizar_Tarea.btn_buscar_colaborador.Enabled = False
+        frm_Actualizar_Tarea.btn_buscar_numero_orden.Enabled = False
+        frm_Actualizar_Tarea.btn_buscar_numero_orden.Enabled = True
+        frm_Actualizar_Tarea.dtpFecha.Enabled = False
+        frm_Actualizar_Tarea.btnGuardar.Visible = False
+    End Sub
+
+    Private Sub btnVer_Click(sender As System.Object, e As System.EventArgs) Handles btnVer.Click
+        'CARGA EL ENCABEZADO DEL FORMULARIO TAREAS
+        If dgvColaboradores.Rows.Count = 0 Then
+            MsgBox("Debe seleccionar un Sector y luego un Colaborador")
+            Exit Sub
+        Else
+        End If
+
+        If dgvTarea_x_Colaborador.Rows.Count <> 0 Then
+            frm_GuardarActualizar_tarea.quienllamoatarea = 1
+            frm_GuardarActualizar_tarea.txt_id_colaborador.Text = Me.dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
+            frm_GuardarActualizar_tarea.txt_nombre_colaborador.Text = Me.dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value
+            frm_GuardarActualizar_tarea.dtpFecha.Text = Me.dgvTarea_x_Colaborador.Item("TAR_fecha", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            frm_GuardarActualizar_tarea.txt_Carga_Horaria1.Text = Me.dgvTarea_x_Colaborador.Item("TAR_carga_horaria", dgvTarea_x_Colaborador.Rows(0).Index).Value
+
+            frm_GuardarActualizar_tarea.txtEntrada.Text = Me.dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            frm_GuardarActualizar_tarea.txtSalida.Text = Me.dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(0).Index).Value
+
+            Dim flag1, flag2, flag3, flag4, flag5, flag6, flag7, flag8, flag9, flag10, flag11, flag12, flag13, flag14, flag15, flag16, flag17, flag18, flag19, flag20 As Integer
+
+            If dgvTarea_x_Colaborador.RowCount = 1 Then
+                flag1 = 1
+                flag2 = 0
+            ElseIf dgvTarea_x_Colaborador.RowCount = 2 Then
+                flag1 = 1
+                flag2 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 3 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 4 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 5 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 6 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 7 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 8 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 9 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 10 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 11 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 12 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 13 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 14 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+                flag14 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 15 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+                flag14 = 1
+                flag15 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 16 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+                flag14 = 1
+                flag15 = 1
+                flag16 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 17 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+                flag14 = 1
+                flag15 = 1
+                flag16 = 1
+                flag17 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 18 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+                flag14 = 1
+                flag15 = 1
+                flag16 = 1
+                flag17 = 1
+                flag18 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount = 19 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+                flag14 = 1
+                flag15 = 1
+                flag16 = 1
+                flag17 = 1
+                flag18 = 1
+                flag19 = 1
+            ElseIf dgvTarea_x_Colaborador.RowCount >= 20 Then
+                flag1 = 1
+                flag2 = 1
+                flag3 = 1
+                flag4 = 1
+                flag5 = 1
+                flag6 = 1
+                flag7 = 1
+                flag8 = 1
+                flag9 = 1
+                flag10 = 1
+                flag11 = 1
+                flag12 = 1
+                flag13 = 1
+                flag14 = 1
+                flag15 = 1
+                flag16 = 1
+                flag17 = 1
+                flag18 = 1
+                flag19 = 1
+                flag20 = 1
+
+                If dgvTarea_x_Colaborador.RowCount > 20 Then
+                    MsgBox("Sólo se muestran las primeras 20 tareas, para ver las demás exporte el Listado")
+                    btnExportarListado.Focus()
+                End If
+            End If
+
+            If flag1 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea1.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(0).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado1.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(0).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real1.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(0).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion1.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(0).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones1.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(0).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo1.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(0).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo1.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(0).Index).Value
+            End If
+
+            If flag2 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea2.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(1).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado2.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(1).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real2.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(1).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion2.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(1).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones2.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(1).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo2.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(1).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo2.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(1).Index).Value
+
+            End If
+            If flag3 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea3.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(2).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado3.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(2).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real3.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(2).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion3.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(2).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones3.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(2).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo3.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(2).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo3.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(2).Index).Value
+
+            End If
+            If flag4 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea4.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(3).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado4.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(3).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real4.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(3).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion4.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(3).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones4.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(3).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo4.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(3).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo4.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(3).Index).Value
+
+            End If
+            If flag5 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea5.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(4).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado5.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(4).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real5.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(4).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion5.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(4).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones5.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(4).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo5.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(4).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo5.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(4).Index).Value
+
+            End If
+            If flag6 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea6.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(5).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado6.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(5).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real6.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(5).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion6.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(5).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones6.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(5).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo6.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(5).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo6.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(5).Index).Value
+
+            End If
+            If flag7 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea7.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(6).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado7.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(6).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real7.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(6).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion7.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(6).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones7.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(6).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo7.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(6).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo7.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(6).Index).Value
+
+            End If
+            If flag8 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea8.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(7).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado8.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(7).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real8.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(7).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion8.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(7).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones8.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(7).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo8.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(7).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo8.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(7).Index).Value
+
+            End If
+            If flag9 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea9.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(8).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado9.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(8).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real9.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(8).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion9.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(8).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones9.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(8).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo9.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(8).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo9.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(8).Index).Value
+
+            End If
+            If flag10 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea10.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(9).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado10.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(9).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real10.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(9).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion10.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(9).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones10.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(9).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo10.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(9).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo10.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(9).Index).Value
+
+            End If
+            If flag11 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea11.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(10).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado11.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(10).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real11.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(10).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion11.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(10).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones11.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(10).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo11.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(10).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo11.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(10).Index).Value
+
+            End If
+            If flag12 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea12.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(11).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado12.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(11).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real12.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(11).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion12.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(11).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones12.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(11).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo12.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(11).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo12.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(11).Index).Value
+
+            End If
+            If flag13 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea13.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(12).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado13.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(12).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real13.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(12).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion13.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(12).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones13.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(12).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo13.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(12).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo13.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(12).Index).Value
+
+            End If
+            If flag14 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea14.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(13).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado14.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(13).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real14.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(13).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion14.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(13).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones14.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(13).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo14.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(13).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo14.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(13).Index).Value
+
+            End If
+            If flag15 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea15.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(14).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado15.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(14).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real15.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(14).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion15.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(14).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones15.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(14).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo15.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(14).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo15.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(14).Index).Value
+
+            End If
+            If flag16 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea16.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(15).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado16.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(15).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real16.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(15).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion16.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(15).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones16.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(15).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo16.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(15).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo16.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(15).Index).Value
+
+            End If
+            If flag17 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea17.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(16).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado17.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(16).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real17.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(16).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion17.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(16).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones17.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(16).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo17.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(16).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo17.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(16).Index).Value
+
+            End If
+            If flag18 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea18.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(17).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado18.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(17).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real18.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(17).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion18.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(17).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones18.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(17).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo18.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(17).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo18.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(17).Index).Value
+
+            End If
+            If flag19 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea19.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(18).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado19.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(18).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real19.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(18).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion19.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(18).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones19.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(18).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo19.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(18).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo19.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(18).Index).Value
+
+            End If
+            If flag20 = 1 Then
+                frm_GuardarActualizar_tarea.txt_detalle_tarea20.Text = dgvTarea_x_Colaborador.Item("TAR_detalle_tarea", dgvTarea_x_Colaborador.Rows(19).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Estimado20.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_estimado", dgvTarea_x_Colaborador.Rows(19).Index).Value
+                frm_GuardarActualizar_tarea.txtTiempo_Real20.Text = dgvTarea_x_Colaborador.Item("TAR_tiempo_real", dgvTarea_x_Colaborador.Rows(19).Index).Value
+                frm_GuardarActualizar_tarea.txtHora_Finalizacion20.Text = dgvTarea_x_Colaborador.Item("TAR_hora_fin", dgvTarea_x_Colaborador.Rows(19).Index).Value
+                frm_GuardarActualizar_tarea.txtObservaciones20.Text = dgvTarea_x_Colaborador.Item("TAR_observaciones", dgvTarea_x_Colaborador.Rows(19).Index).Value
+                frm_GuardarActualizar_tarea.txt_id_orden_trabajo20.Text = dgvTarea_x_Colaborador.Item("ORT_id_orden_trabajo", dgvTarea_x_Colaborador.Rows(19).Index).Value
+                frm_GuardarActualizar_tarea.txtNumero_Orden_Trabajo20.Text = dgvTarea_x_Colaborador.Item("ORT_numero_ot", dgvTarea_x_Colaborador.Rows(19).Index).Value
+
+            End If
+        Else
+            MsgBox("El Colaborador no tiene tareas por mostrar")
+            Exit Sub
+        End If
+        '  frm_Tarea.Text = "Consultar Tarea"
+        frm_GuardarActualizar_tarea.btnImprimirFormulario.Visible = True
+        frm_GuardarActualizar_tarea.txt_nombre_colaborador.Enabled = False
+        'DeshabilitarText()
+        OcultarId()
+        hab_consulta()
+        frm_GuardarActualizar_tarea.ShowDialog()
+    End Sub
+
+    Sub hab_consulta()
+        hab_tarea_observ_1()
+        hab_tarea_observ_2()
+        hab_tarea_observ_3()
+        hab_tarea_observ_4()
+        hab_tarea_observ_5()
+        hab_tarea_observ_6()
+        hab_tarea_observ_7()
+        hab_tarea_observ_8()
+        hab_tarea_observ_9()
+        hab_tarea_observ_10()
+        hab_tarea_observ_11()
+        hab_tarea_observ_12()
+        hab_tarea_observ_13()
+        hab_tarea_observ_14()
+        hab_tarea_observ_15()
+        hab_tarea_observ_16()
+        hab_tarea_observ_17()
+        hab_tarea_observ_18()
+        hab_tarea_observ_19()
+        hab_tarea_observ_20()
+
+        frm_Tarea.btnImprimirFormulario.Visible = False
+        frm_Tarea.btnBuscar_Colaborador.Enabled = False
+        frm_Tarea.dtpFecha.Enabled = False
+        frm_Tarea.txt_Carga_Horaria1.Enabled = False
+        frm_Tarea.btnNueva_Tarea.Enabled = False
+        frm_Tarea.btnGuardar_Tarea.Enabled = False
+        frm_Tarea.Label1.Visible = False
+        frm_Tarea.txt_id_colaborador.Visible = False
+        frm_Tarea.txt_id_tarea.Visible = False
+        frm_Tarea.btnActualizar.Enabled = False
+        frm_Tarea.txtEntrada.Enabled = False
+        frm_Tarea.txtSalida.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_1()
+        frm_Tarea.txt_detalle_tarea1.Enabled = True
+        frm_Tarea.txt_detalle_tarea1.ReadOnly = True
+
+        frm_Tarea.txtObservaciones1.Enabled = True
+        frm_Tarea.txtObservaciones1.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado1.Enabled = False
+        frm_Tarea.txtTiempo_Real1.Enabled = False
+        frm_Tarea.txtHora_Finalizacion1.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo1.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo1.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden1.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_2()
+        frm_Tarea.txt_detalle_tarea2.Enabled = True
+        frm_Tarea.txt_detalle_tarea2.ReadOnly = True
+
+        frm_Tarea.txtObservaciones2.Enabled = True
+        frm_Tarea.txtObservaciones2.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado2.Enabled = False
+        frm_Tarea.txtTiempo_Real2.Enabled = False
+        frm_Tarea.txtHora_Finalizacion2.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo2.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo2.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden2.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_3()
+        frm_Tarea.txt_detalle_tarea3.Enabled = True
+        frm_Tarea.txt_detalle_tarea3.ReadOnly = True
+
+        frm_Tarea.txtObservaciones3.Enabled = True
+        frm_Tarea.txtObservaciones3.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado3.Enabled = False
+        frm_Tarea.txtTiempo_Real3.Enabled = False
+        frm_Tarea.txtHora_Finalizacion3.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo3.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo3.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden3.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_4()
+        frm_Tarea.txt_detalle_tarea4.Enabled = True
+        frm_Tarea.txt_detalle_tarea4.ReadOnly = True
+
+        frm_Tarea.txtObservaciones4.Enabled = True
+        frm_Tarea.txtObservaciones4.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado4.Enabled = False
+        frm_Tarea.txtTiempo_Real4.Enabled = False
+        frm_Tarea.txtHora_Finalizacion4.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo4.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo4.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden4.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_5()
+        frm_Tarea.txt_detalle_tarea5.Enabled = True
+        frm_Tarea.txt_detalle_tarea5.ReadOnly = True
+
+        frm_Tarea.txtObservaciones5.Enabled = True
+        frm_Tarea.txtObservaciones5.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado5.Enabled = False
+        frm_Tarea.txtTiempo_Real5.Enabled = False
+        frm_Tarea.txtHora_Finalizacion5.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo5.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo5.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden5.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_6()
+        frm_Tarea.txt_detalle_tarea6.Enabled = True
+        frm_Tarea.txt_detalle_tarea6.ReadOnly = True
+
+        frm_Tarea.txtObservaciones6.Enabled = True
+        frm_Tarea.txtObservaciones6.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado6.Enabled = False
+        frm_Tarea.txtTiempo_Real6.Enabled = False
+        frm_Tarea.txtHora_Finalizacion6.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo6.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo6.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden6.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_7()
+        frm_Tarea.txt_detalle_tarea7.Enabled = True
+        frm_Tarea.txt_detalle_tarea7.ReadOnly = True
+
+        frm_Tarea.txtObservaciones7.Enabled = True
+        frm_Tarea.txtObservaciones7.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado7.Enabled = False
+        frm_Tarea.txtTiempo_Real7.Enabled = False
+        frm_Tarea.txtHora_Finalizacion7.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo7.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo7.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden7.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_8()
+        frm_Tarea.txt_detalle_tarea8.Enabled = True
+        frm_Tarea.txt_detalle_tarea8.ReadOnly = True
+
+        frm_Tarea.txtObservaciones8.Enabled = True
+        frm_Tarea.txtObservaciones8.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado8.Enabled = False
+        frm_Tarea.txtTiempo_Real8.Enabled = False
+        frm_Tarea.txtHora_Finalizacion8.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo8.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo8.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden8.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_9()
+        frm_Tarea.txt_detalle_tarea9.Enabled = True
+        frm_Tarea.txt_detalle_tarea9.ReadOnly = True
+
+        frm_Tarea.txtObservaciones9.Enabled = True
+        frm_Tarea.txtObservaciones9.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado9.Enabled = False
+        frm_Tarea.txtTiempo_Real9.Enabled = False
+        frm_Tarea.txtHora_Finalizacion9.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo9.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo9.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden9.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_10()
+        frm_Tarea.txt_detalle_tarea10.Enabled = True
+        frm_Tarea.txt_detalle_tarea10.ReadOnly = True
+
+        frm_Tarea.txtObservaciones10.Enabled = True
+        frm_Tarea.txtObservaciones10.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado10.Enabled = False
+        frm_Tarea.txtTiempo_Real10.Enabled = False
+        frm_Tarea.txtHora_Finalizacion10.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo10.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo10.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden10.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_11()
+        frm_Tarea.txt_detalle_tarea11.Enabled = True
+        frm_Tarea.txt_detalle_tarea11.ReadOnly = True
+
+        frm_Tarea.txtObservaciones11.Enabled = True
+        frm_Tarea.txtObservaciones11.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado11.Enabled = False
+        frm_Tarea.txtTiempo_Real11.Enabled = False
+        frm_Tarea.txtHora_Finalizacion11.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo11.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo11.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden11.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_12()
+        frm_Tarea.txt_detalle_tarea12.Enabled = True
+        frm_Tarea.txt_detalle_tarea12.ReadOnly = True
+
+        frm_Tarea.txtObservaciones12.Enabled = True
+        frm_Tarea.txtObservaciones12.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado12.Enabled = False
+        frm_Tarea.txtTiempo_Real12.Enabled = False
+        frm_Tarea.txtHora_Finalizacion12.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo12.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo12.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden12.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_13()
+        frm_Tarea.txt_detalle_tarea13.Enabled = True
+        frm_Tarea.txt_detalle_tarea13.ReadOnly = True
+
+        frm_Tarea.txtObservaciones13.Enabled = True
+        frm_Tarea.txtObservaciones13.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado13.Enabled = False
+        frm_Tarea.txtTiempo_Real13.Enabled = False
+        frm_Tarea.txtHora_Finalizacion13.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo13.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo13.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden13.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_14()
+        frm_Tarea.txt_detalle_tarea14.Enabled = True
+        frm_Tarea.txt_detalle_tarea14.ReadOnly = True
+
+        frm_Tarea.txtObservaciones14.Enabled = True
+        frm_Tarea.txtObservaciones14.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado14.Enabled = False
+        frm_Tarea.txtTiempo_Real14.Enabled = False
+        frm_Tarea.txtHora_Finalizacion14.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo14.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo14.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden14.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_15()
+        frm_Tarea.txt_detalle_tarea15.Enabled = True
+        frm_Tarea.txt_detalle_tarea15.ReadOnly = True
+
+        frm_Tarea.txtObservaciones15.Enabled = True
+        frm_Tarea.txtObservaciones15.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado15.Enabled = False
+        frm_Tarea.txtTiempo_Real15.Enabled = False
+        frm_Tarea.txtHora_Finalizacion15.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo15.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo15.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden15.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_16()
+        frm_Tarea.txt_detalle_tarea16.Enabled = True
+        frm_Tarea.txt_detalle_tarea16.ReadOnly = True
+
+        frm_Tarea.txtObservaciones16.Enabled = True
+        frm_Tarea.txtObservaciones16.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado16.Enabled = False
+        frm_Tarea.txtTiempo_Real16.Enabled = False
+        frm_Tarea.txtHora_Finalizacion16.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo16.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo16.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden16.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_17()
+        frm_Tarea.txt_detalle_tarea17.Enabled = True
+        frm_Tarea.txt_detalle_tarea17.ReadOnly = True
+
+        frm_Tarea.txtObservaciones17.Enabled = True
+        frm_Tarea.txtObservaciones17.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado17.Enabled = False
+        frm_Tarea.txtTiempo_Real17.Enabled = False
+        frm_Tarea.txtHora_Finalizacion17.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo17.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo17.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden17.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_18()
+        frm_Tarea.txt_detalle_tarea18.Enabled = True
+        frm_Tarea.txt_detalle_tarea18.ReadOnly = True
+
+        frm_Tarea.txtObservaciones18.Enabled = True
+        frm_Tarea.txtObservaciones18.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado18.Enabled = False
+        frm_Tarea.txtTiempo_Real18.Enabled = False
+        frm_Tarea.txtHora_Finalizacion18.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo18.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo18.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden18.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_19()
+        frm_Tarea.txt_detalle_tarea19.Enabled = True
+        frm_Tarea.txt_detalle_tarea19.ReadOnly = True
+
+        frm_Tarea.txtObservaciones19.Enabled = True
+        frm_Tarea.txtObservaciones19.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado19.Enabled = False
+        frm_Tarea.txtTiempo_Real19.Enabled = False
+        frm_Tarea.txtHora_Finalizacion19.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo19.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo19.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden19.Enabled = False
+    End Sub
+
+    Sub hab_tarea_observ_20()
+        frm_Tarea.txt_detalle_tarea20.Enabled = True
+        frm_Tarea.txt_detalle_tarea20.ReadOnly = True
+
+        frm_Tarea.txtObservaciones20.Enabled = True
+        frm_Tarea.txtObservaciones20.ReadOnly = True
+
+        frm_Tarea.txtTiempo_Estimado20.Enabled = False
+        frm_Tarea.txtTiempo_Real20.Enabled = False
+        frm_Tarea.txtHora_Finalizacion20.Enabled = False
+
+        frm_Tarea.txtNumero_Orden_Trabajo20.Enabled = False
+        frm_Tarea.txt_id_orden_trabajo20.Visible = False
+        frm_Tarea.btnBuscar_Numero_Orden20.Enabled = False
     End Sub
 End Class

@@ -2575,7 +2575,6 @@
         Else
             Label68.Text = 0
         End If
-
     End Sub
 
     Private Sub btnImprimir_Click(sender As System.Object, e As System.EventArgs) Handles btnImprimirFormulario.Click
