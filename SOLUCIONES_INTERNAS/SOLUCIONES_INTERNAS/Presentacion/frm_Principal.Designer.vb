@@ -352,7 +352,7 @@ Partial Class frm_Principal
         '
         'TareasToolStripMenuItem
         '
-        Me.TareasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaTareaToolStripMenuItem, Me.ListaTareaToolStripMenuItem, Me.EliminarTareaToolStripMenuItem, Me.ConsultarTareaToolStripMenuItem, Me.GráficosToolStripMenuItem, Me.NuevaToolStripMenuItem, Me.GuardarActualizarToolStripMenuItem, Me.ListadoGuardarActualizarToolStripMenuItem, Me.ConsultarToolStripMenuItem5})
+        Me.TareasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaTareaToolStripMenuItem, Me.ListaTareaToolStripMenuItem, Me.EliminarTareaToolStripMenuItem, Me.ConsultarTareaToolStripMenuItem, Me.NuevaToolStripMenuItem, Me.GuardarActualizarToolStripMenuItem, Me.ListadoGuardarActualizarToolStripMenuItem, Me.ConsultarToolStripMenuItem5, Me.GráficosToolStripMenuItem})
         Me.TareasToolStripMenuItem.Name = "TareasToolStripMenuItem"
         Me.TareasToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
         Me.TareasToolStripMenuItem.Text = "Tarea"

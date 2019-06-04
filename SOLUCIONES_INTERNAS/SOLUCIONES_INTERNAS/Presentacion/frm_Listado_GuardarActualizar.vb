@@ -1185,7 +1185,7 @@ Public Class frm_Listado_GuardarActualizar
         Try
             If dgvColaboradores.SelectedRows.Count > 0 Then
                 vble_id_colaborador = dgvColaboradores.Item("COL_id_colaborador", dgvColaboradores.SelectedRows(0).Index).Value
-                btnModificar_Una.Enabled = True
+                btnModificar_Una.Enabled = False
                 btnModificarTodas.Enabled = True
                 If Me.Text = "Consultar Tarea" Then
                     btnModificar_Una.Enabled = False

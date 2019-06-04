@@ -330,9 +330,7 @@
             'ACTUALIZAR PASS DESDE ADENTRO
             frm_Principal.LBL_MENU_PERFIL.Text = Buscausuario.USU_perfil.ToString
             frm_Principal.LBL_MENU_USU.Text = Buscausuario.USU_usuario.ToString
-
             frm_Principal.Show()
-
             frm_Principal.mostrar_mensaje()
             Me.Hide()
         Catch ex As Exception

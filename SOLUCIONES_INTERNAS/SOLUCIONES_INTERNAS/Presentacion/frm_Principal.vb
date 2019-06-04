@@ -817,7 +817,12 @@ Public Class frm_Principal
                      On col.SEC_id_sector Equals sec.SEC_id_sector
                      Join usu In datacontext.USUARIO
                      On usu.COL_id_colaborador Equals col.COL_id_colaborador
-                     Select usu.USU_usuario, usu.USU_id_usuario, col.COL_nombre_col, col.COL_id_colaborador, sec.SEC_id_sector, sec.SEC_nombre_sector
+                     Select usu.USU_usuario,
+                     usu.USU_id_usuario,
+                     col.COL_nombre_col,
+                     col.COL_id_colaborador,
+                     sec.SEC_id_sector,
+                     sec.SEC_nombre_sector
                      Where USU_usuario = Me.LBL_MENU_USU.Text).ToList()(0)
 
         If CargaColaborador.SEC_nombre_sector <> "Offset" Then
@@ -825,8 +830,6 @@ Public Class frm_Principal
             frm_Tarea.Show()
             frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
             frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
-
-
         Else
             frm_Tarea.MdiParent = Me
             frm_Tarea.Show()
@@ -853,7 +856,6 @@ Public Class frm_Principal
             OcultarIdTarea1()
             HabilitarBotonNumeroOrden1()
             DemasCampos1()
-
         End If
     End Sub
 
@@ -1845,6 +1847,11 @@ Public Class frm_Principal
                 'c.BackgroundImageLayout = ImageLayout.Zoom
             End If
         Next
+
+        AltaTareaToolStripMenuItem.Visible = False
+        ListaTareaToolStripMenuItem.Visible = False
+        EliminarTareaToolStripMenuItem.Visible = False
+        ConsultarTareaToolStripMenuItem.Visible = False
     End Sub
 
     Public Sub mostrar_mensaje()
@@ -2363,18 +2370,13 @@ Public Class frm_Principal
     Private Sub GuardarActualizarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles GuardarActualizarToolStripMenuItem.Click
 
         frm_Listado_GuardarActualizar.Text = "Modificar Tarea nuevooo"
-        frm_Listado_GuardarActualizar.btnEliminar_Tarea.Enabled = False
-        ' frm_Tarea.btnImprimirFormulario.Enabled = False
-        frm_Listado_GuardarActualizar.btnVer.Enabled = False
-        '  If frm_Listado_Tareas.cbo_sector.SelectedIndex = 0 Then
-        'MsgBox("Debe seleccionar un sector")
-        '  Exit Sub
-        ' Else
-        frm_Listado_GuardarActualizar.btnAgregar.Enabled = False
-        ' End If
         frm_Listado_GuardarActualizar.btnExportarListado.Enabled = False
+        frm_Listado_GuardarActualizar.btnEliminar_Tarea.Enabled = False
+        frm_Listado_GuardarActualizar.btnVer.Enabled = False
+        frm_Listado_GuardarActualizar.btnAgregar.Enabled = False
+        frm_Listado_GuardarActualizar.btnModificar_Una.Enabled = False
+        frm_Listado_GuardarActualizar.Btn_informe_diario.Enabled = False
         frm_Listado_GuardarActualizar.dtpFecha.Text = Now
-        frm_Listado_GuardarActualizar.btnAgregar.Enabled = True
         frm_Listado_GuardarActualizar.ShowDialog()
     End Sub
 
@@ -2744,21 +2746,7 @@ Public Class frm_Principal
     End Sub
 
     Private Sub NuevaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevaToolStripMenuItem.Click
-
-        Dim CargaColaborador = (From sec In datacontext.SECTOR
-                           Join col In datacontext.COLABORADOR
-                           On col.SEC_id_sector Equals sec.SEC_id_sector
-                           Join usu In datacontext.USUARIO
-                           On usu.COL_id_colaborador Equals col.COL_id_colaborador
-                           Select usu.USU_usuario, usu.USU_id_usuario, col.COL_nombre_col, col.COL_id_colaborador, sec.SEC_id_sector, sec.SEC_nombre_sector
-                           Where USU_usuario = Me.LBL_MENU_USU.Text).ToList()(0)
-
-        ' If CargaColaborador.SEC_nombre_sector <> "Offset" Then
-        frm_GuardarActualizar_tarea.MdiParent = Me
-        frm_GuardarActualizar_tarea.Show()
-        frm_GuardarActualizar_tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
-        frm_GuardarActualizar_tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
-
+        frm_GuardarActualizar_tarea.Text = "Nueva Tarea  nuevaa"
         LimpiarDetalleTarea2()
         HabilitarDetalleTarea2()
         LimpiarTiempoEstimado2()
@@ -2775,55 +2763,437 @@ Public Class frm_Principal
         HabilitarBotonNumeroOrden2()
         DemasCampos2()
 
-        'Else
-        'frm_Tarea.MdiParent = Me
-        'frm_Tarea.Show()
-        'frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
-        'frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
-        'frm_Tarea.MaximizeBox = False
+        Dim CargaColaborador = (From sec In datacontext.SECTOR
+                           Join col In datacontext.COLABORADOR
+                           On col.SEC_id_sector Equals sec.SEC_id_sector
+                           Join usu In datacontext.USUARIO
+                           On usu.COL_id_colaborador Equals col.COL_id_colaborador
+                           Select usu.USU_usuario, usu.USU_id_usuario, col.COL_nombre_col, col.COL_id_colaborador, sec.SEC_id_sector, sec.SEC_nombre_sector
+                           Where USU_usuario = Me.LBL_MENU_USU.Text).ToList()(0)
 
-        'frm_Tarea_1.MdiParent = Me
-        'frm_Tarea_1.Show()
-        'frm_Tarea_1.MaximizeBox = False
+        If CargaColaborador.SEC_nombre_sector <> "Offset" Then
+            frm_GuardarActualizar_tarea.MdiParent = Me
+            frm_GuardarActualizar_tarea.Show()
+            frm_GuardarActualizar_tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
+            frm_GuardarActualizar_tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
+        Else
 
-        'LimpiarDetalleTarea1()
-        'HabilitarDetalleTarea1()
-        'LimpiarTiempoEstimado1()
-        'LimpiarTiempoReal1()
-        'HabilitarTiempoReal1()
-        'LimpiarHoraFinalizacion1()
-        'HabilitarHoraFinalizacion1()
-        'LimipiarObservaciones1()
-        'HabilitarObservaciones1()
-        'LimpiarNumeroOrden1()
-        'DeshabilitarNumeroOrden1()
-        'OcultarIdOrden1()
-        'OcultarIdTarea1()
-        'HabilitarBotonNumeroOrden1()
-        'DemasCampos1()
-        'End If
+            'CREAR EL NUEVO FORMULARIO PARA OFFSET Y CREAR LOS SUB CORRESPONDIENTES
+            frm_GuardarActualizar_1.MdiParent = Me
+            frm_GuardarActualizar_1.Show()
+            frm_GuardarActualizar_1.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
+            frm_GuardarActualizar_1.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
+            frm_GuardarActualizar_1.MaximizeBox = False
+
+            frm_GuardarActualizar_1.MdiParent = Me
+            frm_GuardarActualizar_1.Show()
+            frm_GuardarActualizar_1.MaximizeBox = False
+
+            LimpiarDetalleTarea3()
+            HabilitarDetalleTarea3()
+            LimpiarTiempoEstimado3()
+            LimpiarTiempoReal3()
+            HabilitarTiempoReal3()
+            LimpiarHoraFinalizacion3()
+            HabilitarHoraFinalizacion3()
+            LimipiarObservaciones3()
+            HabilitarObservaciones3()
+            LimpiarNumeroOrden3()
+            DeshabilitarNumeroOrden3()
+            OcultarIdOrden3()
+            OcultarIdTarea3()
+            HabilitarBotonNumeroOrden3()
+            DemasCampos3()
+        End If
     End Sub
 
     Private Sub ListadoGuardarActualizarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ListadoGuardarActualizarToolStripMenuItem.Click
-
         frm_Listado_GuardarActualizar.Text = "Eliminar Tarea"
         frm_Listado_GuardarActualizar.btnModificar_Una.Enabled = False
         frm_Listado_GuardarActualizar.btnAgregar.Enabled = False
         frm_Listado_GuardarActualizar.btnVer.Enabled = False
         frm_Listado_GuardarActualizar.btnExportarListado.Enabled = False
         frm_Listado_GuardarActualizar.btnModificarTodas.Enabled = False
+        frm_Listado_GuardarActualizar.Btn_informe_diario.Enabled = False
         frm_Listado_GuardarActualizar.dtpFecha.Text = Now
-
-        frm_Listado_Tareas.ShowDialog()
+        frm_Listado_GuardarActualizar.ShowDialog()
     End Sub
 
     Private Sub ConsultarToolStripMenuItem5_Click(sender As System.Object, e As System.EventArgs) Handles ConsultarToolStripMenuItem5.Click
         frm_Listado_GuardarActualizar.Text = "Consultar Tarea"
         frm_Listado_GuardarActualizar.btnModificar_Una.Enabled = False
-        frm_Listado_GuardarActualizar.btnEliminar_Tarea.Enabled = False
         frm_Listado_GuardarActualizar.btnAgregar.Enabled = False
-        frm_GuardarActualizar_tarea.dtpFecha.Text = Now
+        frm_Listado_GuardarActualizar.btnVer.Enabled = True
+        frm_Listado_GuardarActualizar.btnExportarListado.Enabled = True
         frm_Listado_GuardarActualizar.btnModificarTodas.Enabled = False
+        frm_Listado_GuardarActualizar.Btn_informe_diario.Enabled = True
+        frm_Listado_GuardarActualizar.btnEliminar_Tarea.Enabled = False
+        frm_Listado_GuardarActualizar.dtpFecha.Text = Now
         frm_Listado_GuardarActualizar.ShowDialog()
+    End Sub
+
+    Sub LimpiarDetalleTarea3()
+        frm_GuardarActualizar_1.txt_detalle_tarea1.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea2.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea3.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea4.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea5.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea6.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea7.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea8.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea9.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea10.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea11.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea12.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea13.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea14.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea15.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea16.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea17.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea18.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea19.Clear()
+        frm_GuardarActualizar_1.txt_detalle_tarea20.Clear()
+    End Sub
+
+    Sub HabilitarDetalleTarea3()
+        frm_GuardarActualizar_1.txt_detalle_tarea1.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea1.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea1.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea2.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea3.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea4.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea5.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea6.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea7.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea8.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea9.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea10.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea11.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea12.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea13.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea14.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea15.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea16.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea17.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea18.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea19.Enabled = True
+        frm_GuardarActualizar_1.txt_detalle_tarea20.Enabled = True
+    End Sub
+
+    Sub LimpiarTiempoEstimado3()
+        frm_GuardarActualizar_1.txtTiempo_Estimado1.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado2.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado3.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado4.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado5.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado6.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado7.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado8.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado9.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado10.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado11.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado12.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado13.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado14.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado15.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado16.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado17.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado18.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado19.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Estimado20.Clear()
+    End Sub
+
+    Sub HabilitarTiempoEstimado3()
+        frm_GuardarActualizar_1.txtTiempo_Estimado1.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado2.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado3.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado4.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado5.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado6.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado7.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado8.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado9.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado10.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado11.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado12.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado13.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado14.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado15.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado16.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado17.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado18.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado19.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Estimado20.Enabled = True
+    End Sub
+
+    Sub LimpiarTiempoReal3()
+        frm_GuardarActualizar_1.txtTiempo_Real1.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real2.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real3.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real4.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real5.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real6.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real7.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real8.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real9.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real10.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real11.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real12.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real13.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real14.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real15.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real16.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real17.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real18.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real19.Clear()
+        frm_GuardarActualizar_1.txtTiempo_Real20.Clear()
+    End Sub
+
+    Sub HabilitarTiempoReal3()
+        frm_GuardarActualizar_1.txtTiempo_Real1.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real2.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real3.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real4.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real5.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real6.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real7.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real8.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real9.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real10.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real11.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real12.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real13.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real14.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real15.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real16.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real17.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real18.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real19.Enabled = True
+        frm_GuardarActualizar_1.txtTiempo_Real20.Enabled = True
+    End Sub
+
+    Sub LimpiarHoraFinalizacion3()
+        frm_GuardarActualizar_1.txtHora_Finalizacion1.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion2.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion3.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion4.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion5.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion6.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion7.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion8.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion9.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion10.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion11.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion12.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion13.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion14.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion15.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion16.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion17.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion18.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion19.Clear()
+        frm_GuardarActualizar_1.txtHora_Finalizacion20.Clear()
+    End Sub
+
+    Sub HabilitarHoraFinalizacion3()
+        frm_GuardarActualizar_1.txtHora_Finalizacion1.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion2.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion3.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion4.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion5.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion6.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion7.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion8.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion9.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion10.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion11.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion12.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion13.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion14.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion15.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion16.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion17.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion18.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion19.Enabled = True
+        frm_GuardarActualizar_1.txtHora_Finalizacion20.Enabled = True
+    End Sub
+
+    Sub LimipiarObservaciones3()
+        frm_GuardarActualizar_1.txtObservaciones1.Clear()
+        frm_GuardarActualizar_1.txtObservaciones2.Clear()
+        frm_GuardarActualizar_1.txtObservaciones3.Clear()
+        frm_GuardarActualizar_1.txtObservaciones4.Clear()
+        frm_GuardarActualizar_1.txtObservaciones5.Clear()
+        frm_GuardarActualizar_1.txtObservaciones6.Clear()
+        frm_GuardarActualizar_1.txtObservaciones7.Clear()
+        frm_GuardarActualizar_1.txtObservaciones8.Clear()
+        frm_GuardarActualizar_1.txtObservaciones9.Clear()
+        frm_GuardarActualizar_1.txtObservaciones10.Clear()
+        frm_GuardarActualizar_1.txtObservaciones11.Clear()
+        frm_GuardarActualizar_1.txtObservaciones12.Clear()
+        frm_GuardarActualizar_1.txtObservaciones13.Clear()
+        frm_GuardarActualizar_1.txtObservaciones14.Clear()
+        frm_GuardarActualizar_1.txtObservaciones15.Clear()
+        frm_GuardarActualizar_1.txtObservaciones16.Clear()
+        frm_GuardarActualizar_1.txtObservaciones17.Clear()
+        frm_GuardarActualizar_1.txtObservaciones18.Clear()
+        frm_GuardarActualizar_1.txtObservaciones19.Clear()
+        frm_GuardarActualizar_1.txtObservaciones20.Clear()
+    End Sub
+
+    Sub HabilitarObservaciones3()
+        frm_GuardarActualizar_1.txtObservaciones1.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones2.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones3.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones4.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones5.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones6.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones7.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones8.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones9.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones10.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones11.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones12.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones13.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones14.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones15.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones16.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones17.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones18.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones19.Enabled = True
+        frm_GuardarActualizar_1.txtObservaciones20.Enabled = True
+    End Sub
+
+    Sub LimpiarNumeroOrden3()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo1.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo2.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo3.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo4.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo5.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo6.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo7.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo8.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo9.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo10.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo11.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo12.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo13.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo14.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo15.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo16.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo17.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo18.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo19.Clear()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo20.Clear()
+    End Sub
+
+    Sub DeshabilitarNumeroOrden3()
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo1.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo2.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo3.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo4.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo5.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo6.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo7.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo8.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo9.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo10.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo11.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo12.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo13.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo14.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo15.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo16.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo17.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo18.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo19.Enabled = False
+        frm_GuardarActualizar_1.txtNumero_Orden_Trabajo20.Enabled = False
+    End Sub
+
+    Sub OcultarIdOrden3()
+        frm_GuardarActualizar_1.txt_id_orden_trabajo1.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo2.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo3.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo4.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo5.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo6.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo7.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo8.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo9.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo10.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo11.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo12.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo13.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo14.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo15.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo16.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo17.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo18.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo19.Visible = False
+        frm_GuardarActualizar_1.txt_id_orden_trabajo20.Visible = False
+    End Sub
+
+    Sub OcultarIdTarea3()
+        frm_GuardarActualizar_1.txt_Id_Tarea1.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea2.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea3.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea4.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea5.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea6.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea7.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea8.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea9.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea10.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea11.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea12.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea13.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea14.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea15.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea16.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea17.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea18.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea19.Visible = False
+        frm_GuardarActualizar_1.txt_Id_Tarea20.Visible = False
+    End Sub
+
+    Sub HabilitarBotonNumeroOrden3()
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden1.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden2.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden3.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden4.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden5.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden6.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden7.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden8.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden9.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden10.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden11.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden12.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden13.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden14.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden15.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden16.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden17.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden18.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden19.Enabled = True
+        frm_GuardarActualizar_1.btnBuscar_Numero_Orden20.Enabled = True
+    End Sub
+
+    Sub DemasCampos3()
+        frm_GuardarActualizar_1.txt_Carga_Horaria1.Enabled = False
+        frm_GuardarActualizar_1.txt_id_colaborador.Visible = False
+        frm_GuardarActualizar_1.Label1.Visible = False
+        frm_GuardarActualizar_1.txt_nombre_colaborador.Enabled = False
+        frm_GuardarActualizar_1.txt_id_tarea.Visible = False
+        frm_GuardarActualizar_1.Label1.Visible = False
+        frm_GuardarActualizar_1.dtpFecha.Text = Now
+        frm_GuardarActualizar_1.btnBuscar_Colaborador.Focus()
+        frm_GuardarActualizar_1.btnBuscar_Colaborador.Visible = True
+        frm_GuardarActualizar_1.btnNueva_Tarea.Visible = False
+        frm_GuardarActualizar_1.btnImprimirFormulario.Visible = False
+        frm_GuardarActualizar_1.btnGuardar_Tarea.Visible = True
+        frm_GuardarActualizar_1.btnCancelar_Tarea.Visible = True
+        frm_GuardarActualizar_1.btnBuscar_Colaborador.Enabled = True
+        frm_GuardarActualizar_1.btnActualizar.Enabled = False
     End Sub
 End Class
