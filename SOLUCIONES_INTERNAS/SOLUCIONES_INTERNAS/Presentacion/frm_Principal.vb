@@ -2774,16 +2774,16 @@ Public Class frm_Principal
         If CargaColaborador.SEC_nombre_sector <> "Offset" Then
             frm_GuardarActualizar_tarea.MdiParent = Me
             frm_GuardarActualizar_tarea.Show()
+
             frm_GuardarActualizar_tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
             frm_GuardarActualizar_tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
         Else
 
-            'CREAR EL NUEVO FORMULARIO PARA OFFSET Y CREAR LOS SUB CORRESPONDIENTES
-            frm_GuardarActualizar_1.MdiParent = Me
-            frm_GuardarActualizar_1.Show()
-            frm_GuardarActualizar_1.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
-            frm_GuardarActualizar_1.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
-            frm_GuardarActualizar_1.MaximizeBox = False
+            frm_GuardarActualizar_tarea.MdiParent = Me
+            frm_GuardarActualizar_tarea.Show()
+            frm_GuardarActualizar_tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
+            frm_GuardarActualizar_tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
+            frm_GuardarActualizar_tarea.MaximizeBox = False
 
             frm_GuardarActualizar_1.MdiParent = Me
             frm_GuardarActualizar_1.Show()
