@@ -319,6 +319,10 @@ Public Class frm_Colaborador
             ElseIf quienllamo_col.Name = frm_GuardarActualizar_tarea.Name Then
                 frm_GuardarActualizar_tarea.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
                 frm_GuardarActualizar_tarea.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
+
+            ElseIf quienllamo_col.Name = frm_GuardarActualizar_1.Name Then
+                frm_GuardarActualizar_1.txt_id_colaborador.Text = dgvLista_Colaboradores.SelectedCells(0).Value
+                frm_GuardarActualizar_1.txt_nombre_colaborador.Text = dgvLista_Colaboradores.SelectedCells(1).Value
             End If
             Me.Close()
         Catch ex As Exception

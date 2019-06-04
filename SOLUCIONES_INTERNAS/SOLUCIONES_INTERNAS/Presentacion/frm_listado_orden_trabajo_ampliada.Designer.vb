@@ -67,16 +67,16 @@ Partial Class frm_listado_orden_trabajo_ampliada
         Me.GroupDetallesOrden.Controls.Add(Me.Label1)
         Me.GroupDetallesOrden.Controls.Add(Me.dgv_detalle_orden)
         Me.GroupDetallesOrden.Controls.Add(Me.Label2)
-        Me.GroupDetallesOrden.Location = New System.Drawing.Point(12, 369)
+        Me.GroupDetallesOrden.Location = New System.Drawing.Point(14, 459)
         Me.GroupDetallesOrden.Name = "GroupDetallesOrden"
-        Me.GroupDetallesOrden.Size = New System.Drawing.Size(1091, 208)
+        Me.GroupDetallesOrden.Size = New System.Drawing.Size(1091, 304)
         Me.GroupDetallesOrden.TabIndex = 32
         Me.GroupDetallesOrden.TabStop = False
         Me.GroupDetallesOrden.Text = "Productos de la órden"
         '
         'btn_ODT_mostrar_listado_pdf
         '
-        Me.btn_ODT_mostrar_listado_pdf.Location = New System.Drawing.Point(556, 169)
+        Me.btn_ODT_mostrar_listado_pdf.Location = New System.Drawing.Point(556, 256)
         Me.btn_ODT_mostrar_listado_pdf.Name = "btn_ODT_mostrar_listado_pdf"
         Me.btn_ODT_mostrar_listado_pdf.Size = New System.Drawing.Size(128, 33)
         Me.btn_ODT_mostrar_listado_pdf.TabIndex = 37
@@ -85,7 +85,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         'btn_Cancelar
         '
-        Me.btn_Cancelar.Location = New System.Drawing.Point(1007, 169)
+        Me.btn_Cancelar.Location = New System.Drawing.Point(1007, 256)
         Me.btn_Cancelar.Name = "btn_Cancelar"
         Me.btn_Cancelar.Size = New System.Drawing.Size(67, 33)
         Me.btn_Cancelar.TabIndex = 39
@@ -94,7 +94,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         'btnVer
         '
-        Me.btnVer.Location = New System.Drawing.Point(690, 169)
+        Me.btnVer.Location = New System.Drawing.Point(690, 256)
         Me.btnVer.Name = "btnVer"
         Me.btnVer.Size = New System.Drawing.Size(67, 33)
         Me.btnVer.TabIndex = 37
@@ -104,7 +104,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         'btnModificarProducto
         '
-        Me.btnModificarProducto.Location = New System.Drawing.Point(763, 169)
+        Me.btnModificarProducto.Location = New System.Drawing.Point(763, 256)
         Me.btnModificarProducto.Name = "btnModificarProducto"
         Me.btnModificarProducto.Size = New System.Drawing.Size(119, 33)
         Me.btnModificarProducto.TabIndex = 38
@@ -113,7 +113,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         'btnEliminar_Producto
         '
-        Me.btnEliminar_Producto.Location = New System.Drawing.Point(888, 169)
+        Me.btnEliminar_Producto.Location = New System.Drawing.Point(888, 256)
         Me.btnEliminar_Producto.Name = "btnEliminar_Producto"
         Me.btnEliminar_Producto.Size = New System.Drawing.Size(113, 33)
         Me.btnEliminar_Producto.TabIndex = 35
@@ -124,7 +124,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         Me.Label1.AutoSize = True
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label1.Location = New System.Drawing.Point(127, 171)
+        Me.Label1.Location = New System.Drawing.Point(127, 258)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(2, 15)
         Me.Label1.TabIndex = 34
@@ -161,13 +161,13 @@ Partial Class frm_listado_orden_trabajo_ampliada
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv_detalle_orden.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgv_detalle_orden.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_detalle_orden.Size = New System.Drawing.Size(1057, 140)
+        Me.dgv_detalle_orden.Size = New System.Drawing.Size(1057, 216)
         Me.dgv_detalle_orden.TabIndex = 32
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(10, 171)
+        Me.Label2.Location = New System.Drawing.Point(10, 258)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(111, 13)
         Me.Label2.TabIndex = 33
@@ -190,7 +190,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         Me.GroupListadoPiezas.Controls.Add(Me.dgvLista_Orden_Trabajo)
         Me.GroupListadoPiezas.Location = New System.Drawing.Point(12, 12)
         Me.GroupListadoPiezas.Name = "GroupListadoPiezas"
-        Me.GroupListadoPiezas.Size = New System.Drawing.Size(1091, 351)
+        Me.GroupListadoPiezas.Size = New System.Drawing.Size(1091, 441)
         Me.GroupListadoPiezas.TabIndex = 31
         Me.GroupListadoPiezas.TabStop = False
         Me.GroupListadoPiezas.Text = "Listado de Ordenes"
@@ -199,7 +199,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.LinkArea = New System.Windows.Forms.LinkArea(0, 0)
-        Me.LinkLabel1.Location = New System.Drawing.Point(331, 327)
+        Me.LinkLabel1.Location = New System.Drawing.Point(333, 418)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(59, 13)
         Me.LinkLabel1.TabIndex = 41
@@ -208,7 +208,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         'btnAgregarProducto
         '
-        Me.btnAgregarProducto.Location = New System.Drawing.Point(711, 311)
+        Me.btnAgregarProducto.Location = New System.Drawing.Point(713, 402)
         Me.btnAgregarProducto.Name = "btnAgregarProducto"
         Me.btnAgregarProducto.Size = New System.Drawing.Size(119, 33)
         Me.btnAgregarProducto.TabIndex = 40
@@ -265,7 +265,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         'btnEliminar_Orden
         '
-        Me.btnEliminar_Orden.Location = New System.Drawing.Point(961, 311)
+        Me.btnEliminar_Orden.Location = New System.Drawing.Point(963, 402)
         Me.btnEliminar_Orden.Name = "btnEliminar_Orden"
         Me.btnEliminar_Orden.Size = New System.Drawing.Size(113, 33)
         Me.btnEliminar_Orden.TabIndex = 28
@@ -274,7 +274,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         'btnModificar_Orden
         '
-        Me.btnModificar_Orden.Location = New System.Drawing.Point(836, 311)
+        Me.btnModificar_Orden.Location = New System.Drawing.Point(838, 402)
         Me.btnModificar_Orden.Name = "btnModificar_Orden"
         Me.btnModificar_Orden.Size = New System.Drawing.Size(119, 33)
         Me.btnModificar_Orden.TabIndex = 29
@@ -285,7 +285,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         Me.Label3.AutoSize = True
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label3.Location = New System.Drawing.Point(106, 321)
+        Me.Label3.Location = New System.Drawing.Point(108, 412)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(2, 15)
         Me.Label3.TabIndex = 5
@@ -293,7 +293,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(13, 321)
+        Me.Label7.Location = New System.Drawing.Point(15, 412)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(87, 13)
         Me.Label7.TabIndex = 4
@@ -337,14 +337,14 @@ Partial Class frm_listado_orden_trabajo_ampliada
         DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgvLista_Orden_Trabajo.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.dgvLista_Orden_Trabajo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgvLista_Orden_Trabajo.Size = New System.Drawing.Size(1057, 258)
+        Me.dgvLista_Orden_Trabajo.Size = New System.Drawing.Size(1057, 351)
         Me.dgvLista_Orden_Trabajo.TabIndex = 0
         '
         'frm_listado_orden_trabajo_ampliada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1117, 587)
+        Me.ClientSize = New System.Drawing.Size(1117, 775)
         Me.Controls.Add(Me.GroupDetallesOrden)
         Me.Controls.Add(Me.GroupListadoPiezas)
         Me.Name = "frm_listado_orden_trabajo_ampliada"
