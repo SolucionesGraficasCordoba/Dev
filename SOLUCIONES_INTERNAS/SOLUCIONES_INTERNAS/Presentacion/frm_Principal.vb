@@ -795,86 +795,86 @@ Public Class frm_Principal
 
     Private Sub AltaTareaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AltaTareaToolStripMenuItem.Click
 
-        frm_Tarea.Text = "Nueva Tarea"
-        LimpiarDetalleTarea()
-        HabilitarDetalleTarea()
-        LimpiarTiempoEstimado()
-        LimpiarTiempoReal()
-        HabilitarTiempoReal()
-        LimpiarHoraFinalizacion()
-        HabilitarHoraFinalizacion()
-        LimipiarObservaciones()
-        HabilitarObservaciones()
-        LimpiarNumeroOrden()
-        DeshabilitarNumeroOrden()
-        OcultarIdOrden()
-        OcultarIdTarea()
-        HabilitarBotonNumeroOrden()
-        DemasCampos()
+        'frm_Tarea.Text = "Nueva Tarea"
+        'LimpiarDetalleTarea()
+        'HabilitarDetalleTarea()
+        'LimpiarTiempoEstimado()
+        'LimpiarTiempoReal()
+        'HabilitarTiempoReal()
+        'LimpiarHoraFinalizacion()
+        'HabilitarHoraFinalizacion()
+        'LimipiarObservaciones()
+        'HabilitarObservaciones()
+        'LimpiarNumeroOrden()
+        'DeshabilitarNumeroOrden()
+        'OcultarIdOrden()
+        'OcultarIdTarea()
+        'HabilitarBotonNumeroOrden()
+        'DemasCampos()
 
-        Dim CargaColaborador = (From sec In datacontext.SECTOR
-                     Join col In datacontext.COLABORADOR
-                     On col.SEC_id_sector Equals sec.SEC_id_sector
-                     Join usu In datacontext.USUARIO
-                     On usu.COL_id_colaborador Equals col.COL_id_colaborador
-                     Select usu.USU_usuario,
-                     usu.USU_id_usuario,
-                     col.COL_nombre_col,
-                     col.COL_id_colaborador,
-                     sec.SEC_id_sector,
-                     sec.SEC_nombre_sector
-                     Where USU_usuario = Me.LBL_MENU_USU.Text).ToList()(0)
+        'Dim CargaColaborador = (From sec In datacontext.SECTOR
+        '             Join col In datacontext.COLABORADOR
+        '             On col.SEC_id_sector Equals sec.SEC_id_sector
+        '             Join usu In datacontext.USUARIO
+        '             On usu.COL_id_colaborador Equals col.COL_id_colaborador
+        '             Select usu.USU_usuario,
+        '             usu.USU_id_usuario,
+        '             col.COL_nombre_col,
+        '             col.COL_id_colaborador,
+        '             sec.SEC_id_sector,
+        '             sec.SEC_nombre_sector
+        '             Where USU_usuario = Me.LBL_MENU_USU.Text).ToList()(0)
 
-        If CargaColaborador.SEC_nombre_sector <> "Offset" Then
-            frm_Tarea.MdiParent = Me
-            frm_Tarea.Show()
-            frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
-            frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
-        Else
-            frm_Tarea.MdiParent = Me
-            frm_Tarea.Show()
-            frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
-            frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
-            frm_Tarea.MaximizeBox = False
+        'If CargaColaborador.SEC_nombre_sector <> "Offset" Then
+        '    frm_Tarea.MdiParent = Me
+        '    frm_Tarea.Show()
+        '    frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
+        '    frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
+        'Else
+        '    frm_Tarea.MdiParent = Me
+        '    frm_Tarea.Show()
+        '    frm_Tarea.txt_id_colaborador.Text = CargaColaborador.COL_id_colaborador.ToString
+        '    frm_Tarea.txt_nombre_colaborador.Text = CargaColaborador.COL_nombre_col.ToString
+        '    frm_Tarea.MaximizeBox = False
 
-            frm_Tarea_1.MdiParent = Me
-            frm_Tarea_1.Show()
-            frm_Tarea_1.MaximizeBox = False
+        '    frm_Tarea_1.MdiParent = Me
+        '    frm_Tarea_1.Show()
+        '    frm_Tarea_1.MaximizeBox = False
 
-            LimpiarDetalleTarea1()
-            HabilitarDetalleTarea1()
-            LimpiarTiempoEstimado1()
-            LimpiarTiempoReal1()
-            HabilitarTiempoReal1()
-            LimpiarHoraFinalizacion1()
-            HabilitarHoraFinalizacion1()
-            LimipiarObservaciones1()
-            HabilitarObservaciones1()
-            LimpiarNumeroOrden1()
-            DeshabilitarNumeroOrden1()
-            OcultarIdOrden1()
-            OcultarIdTarea1()
-            HabilitarBotonNumeroOrden1()
-            DemasCampos1()
-        End If
+        '    LimpiarDetalleTarea1()
+        '    HabilitarDetalleTarea1()
+        '    LimpiarTiempoEstimado1()
+        '    LimpiarTiempoReal1()
+        '    HabilitarTiempoReal1()
+        '    LimpiarHoraFinalizacion1()
+        '    HabilitarHoraFinalizacion1()
+        '    LimipiarObservaciones1()
+        '    HabilitarObservaciones1()
+        '    LimpiarNumeroOrden1()
+        '    DeshabilitarNumeroOrden1()
+        '    OcultarIdOrden1()
+        '    OcultarIdTarea1()
+        '    HabilitarBotonNumeroOrden1()
+        '    DemasCampos1()
+        'End If
     End Sub
 
     Private Sub ListaTareaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ListaTareaToolStripMenuItem.Click
 
-        frm_Listado_Tareas.Text = "Modificar Tarea"
-        frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
-        ' frm_Tarea.btnImprimirFormulario.Enabled = False
-        frm_Listado_Tareas.btnVer.Enabled = False
-        '  If frm_Listado_Tareas.cbo_sector.SelectedIndex = 0 Then
-        'MsgBox("Debe seleccionar un sector")
-        '  Exit Sub
-        ' Else
-        frm_Listado_Tareas.btnAgregar.Enabled = False
-        ' End If
-        frm_Listado_Tareas.btnExportarListado.Enabled = False
-        frm_Listado_Tareas.dtpFecha.Text = Now
-        frm_Listado_Tareas.btnAgregar.Enabled = True
-        frm_Listado_Tareas.ShowDialog()
+        'frm_Listado_Tareas.Text = "Modificar Tarea"
+        'frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
+        '' frm_Tarea.btnImprimirFormulario.Enabled = False
+        'frm_Listado_Tareas.btnVer.Enabled = False
+        ''  If frm_Listado_Tareas.cbo_sector.SelectedIndex = 0 Then
+        ''MsgBox("Debe seleccionar un sector")
+        ''  Exit Sub
+        '' Else
+        'frm_Listado_Tareas.btnAgregar.Enabled = False
+        '' End If
+        'frm_Listado_Tareas.btnExportarListado.Enabled = False
+        'frm_Listado_Tareas.dtpFecha.Text = Now
+        'frm_Listado_Tareas.btnAgregar.Enabled = True
+        'frm_Listado_Tareas.ShowDialog()
     End Sub
 
     Private Sub NuevoClienteToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles NuevoClienteToolStripMenuItem.Click
@@ -1404,15 +1404,15 @@ Public Class frm_Principal
 
     Private Sub EliminarTareaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles EliminarTareaToolStripMenuItem.Click
 
-        frm_Listado_Tareas.Text = "Eliminar Tarea"
-        frm_Listado_Tareas.btnModificar_Una.Enabled = False
-        frm_Listado_Tareas.btnAgregar.Enabled = False
-        frm_Listado_Tareas.btnVer.Enabled = False
-        frm_Listado_Tareas.btnExportarListado.Enabled = False
-        frm_Listado_Tareas.btnModificarTodas.Enabled = False
-        frm_Listado_Tareas.dtpFecha.Text = Now
+        'frm_Listado_Tareas.Text = "Eliminar Tarea"
+        'frm_Listado_Tareas.btnModificar_Una.Enabled = False
+        'frm_Listado_Tareas.btnAgregar.Enabled = False
+        'frm_Listado_Tareas.btnVer.Enabled = False
+        'frm_Listado_Tareas.btnExportarListado.Enabled = False
+        'frm_Listado_Tareas.btnModificarTodas.Enabled = False
+        'frm_Listado_Tareas.dtpFecha.Text = Now
 
-        frm_Listado_Tareas.ShowDialog()
+        'frm_Listado_Tareas.ShowDialog()
     End Sub
 
     Private Sub TareaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -1424,13 +1424,13 @@ Public Class frm_Principal
 
     Private Sub ConsultarTareaToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ConsultarTareaToolStripMenuItem.Click
 
-        frm_Listado_Tareas.Text = "Consultar Tarea"
-        frm_Listado_Tareas.btnModificar_Una.Enabled = False
-        frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
-        frm_Listado_Tareas.btnAgregar.Enabled = False
-        frm_Listado_Tareas.dtpFecha.Text = Now
-        frm_Listado_Tareas.btnModificarTodas.Enabled = False
-        frm_Listado_Tareas.ShowDialog()
+        'frm_Listado_Tareas.Text = "Consultar Tarea"
+        'frm_Listado_Tareas.btnModificar_Una.Enabled = False
+        'frm_Listado_Tareas.btnEliminar_Tarea.Enabled = False
+        'frm_Listado_Tareas.btnAgregar.Enabled = False
+        'frm_Listado_Tareas.dtpFecha.Text = Now
+        'frm_Listado_Tareas.btnModificarTodas.Enabled = False
+        'frm_Listado_Tareas.ShowDialog()
     End Sub
 
     Public Sub DiaAnterior()
