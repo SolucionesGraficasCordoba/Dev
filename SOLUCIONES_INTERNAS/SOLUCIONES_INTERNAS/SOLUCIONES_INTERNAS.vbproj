@@ -117,6 +117,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\frm_GuardarActualizar_1.Designer.vb">
+      <DependentUpon>frm_GuardarActualizar_1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_GuardarActualizar_1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Presentacion\frm_GuardarActualizar_tarea.Designer.vb">
       <DependentUpon>frm_GuardarActualizar_tarea.vb</DependentUpon>
     </Compile>
@@ -430,6 +436,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Presentacion\frm_GuardarActualizar_1.resx">
+      <DependentUpon>frm_GuardarActualizar_1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_GuardarActualizar_tarea.resx">
       <DependentUpon>frm_GuardarActualizar_tarea.vb</DependentUpon>
     </EmbeddedResource>
