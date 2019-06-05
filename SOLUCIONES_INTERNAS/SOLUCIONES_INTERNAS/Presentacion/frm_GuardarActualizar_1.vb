@@ -1,13 +1,8 @@
 ﻿Public Class frm_GuardarActualizar_1
-
     Dim datacontext As New DataS_Interno
     Dim quienllamoboton As Button
     Public quienllamoatarea As Integer
     Dim buscartarea
-
-    Private Sub frm_GuardarActualizar_1_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
-    End Sub
 
     Private Sub btnBuscar_Colaborador_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Colaborador.Click
         frm_Colaborador.quienllamo_col = Me
@@ -1560,8 +1555,13 @@
     End Sub
 
     Private Sub btnCancelar_Tarea_Click(sender As System.Object, e As System.EventArgs) Handles btnCancelar_Tarea.Click
-        Me.Close()
-        Me.Dispose()
+        Select Case MsgBox("Realmente desea cerrar el formulario, Se perderán los cambios realizados", MsgBoxStyle.Information + MsgBoxStyle.YesNo, "Cerrando Formulario")
+            Case MsgBoxResult.No
+                Exit Sub
+            Case MsgBoxResult.Yes
+                Me.Close()
+                Me.Dispose()
+        End Select
     End Sub
 
     Sub guardar(ByVal estimado As Object, ByVal real As Object, ByVal odt As Object, ByVal fin As Object, ByVal detalle As Object, ByVal obs As Object, ByVal carga As Object, _
@@ -2245,6 +2245,972 @@
                 txt_Carga_Horaria1.Clear()
                 txt_Carga_Horaria1.Enabled = True
             End If
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado1_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado1.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado2_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado2.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado3_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado3.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado4_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado4.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado5_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado5.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado6_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado6.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado7_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado7.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado8_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado8.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado9_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado9.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado10_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado10.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado11_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado11.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado12_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado12.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado13_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado13.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado14_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado14.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado15_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado15.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado16_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado16.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado17_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado17.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado18_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado18.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado19_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado19.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Estimado20_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Estimado20.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real20_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real20.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real19_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real19.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real18_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real18.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real17_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real17.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real16_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real16.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real15_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real15.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real14_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real14.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real13_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real13.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real12_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real12.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real11_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real11.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real10_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real10.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real9_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real9.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real8_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real8.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real7_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real7.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real6_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real6.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real5_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real5.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real4_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real4.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real3_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real3.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real2_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real2.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtTiempo_Real1_KeyPress(sender As System.Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtTiempo_Real1.KeyPress
+        If Char.IsNumber(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub txtHora_Finalizacion1_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion1.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion1.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion1.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion1.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion1.Text, Len(txtHora_Finalizacion1.Text) - 2)
+                    Else
+                        txtHora_Finalizacion1.Text = txtHora_Finalizacion1.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion1.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion1.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion1.Text, Len(txtHora_Finalizacion1.Text) - 2)
+                    Else
+                        txtHora_Finalizacion1.Text = txtHora_Finalizacion1.Text & ":"
+                        Me.txtHora_Finalizacion1.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion19_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion19.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion19.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion19.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion19.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion19.Text, Len(txtHora_Finalizacion19.Text) - 2)
+                    Else
+                        txtHora_Finalizacion19.Text = txtHora_Finalizacion19.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion19.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion19.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion19.Text, Len(txtHora_Finalizacion19.Text) - 2)
+                    Else
+                        txtHora_Finalizacion19.Text = txtHora_Finalizacion19.Text & ":"
+                        Me.txtHora_Finalizacion19.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion20_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion20.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion20.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion20.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion20.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion20.Text, Len(txtHora_Finalizacion20.Text) - 2)
+                    Else
+                        txtHora_Finalizacion20.Text = txtHora_Finalizacion20.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion20.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion20.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion20.Text, Len(txtHora_Finalizacion20.Text) - 2)
+                    Else
+                        txtHora_Finalizacion20.Text = txtHora_Finalizacion20.Text & ":"
+                        Me.txtHora_Finalizacion20.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion18_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion18.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion18.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion18.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion18.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion18.Text, Len(txtHora_Finalizacion18.Text) - 2)
+                    Else
+                        txtHora_Finalizacion18.Text = txtHora_Finalizacion18.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion18.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion18.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion18.Text, Len(txtHora_Finalizacion18.Text) - 2)
+                    Else
+                        txtHora_Finalizacion18.Text = txtHora_Finalizacion18.Text & ":"
+                        Me.txtHora_Finalizacion18.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion17_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion17.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion17.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion17.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion17.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion17.Text, Len(txtHora_Finalizacion17.Text) - 2)
+                    Else
+                        txtHora_Finalizacion17.Text = txtHora_Finalizacion17.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion17.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion17.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion17.Text, Len(txtHora_Finalizacion17.Text) - 2)
+                    Else
+                        txtHora_Finalizacion17.Text = txtHora_Finalizacion17.Text & ":"
+                        Me.txtHora_Finalizacion17.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion16_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion16.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion16.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion16.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion16.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion16.Text, Len(txtHora_Finalizacion16.Text) - 2)
+                    Else
+                        txtHora_Finalizacion16.Text = txtHora_Finalizacion16.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion16.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion16.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion16.Text, Len(txtHora_Finalizacion16.Text) - 2)
+                    Else
+                        txtHora_Finalizacion16.Text = txtHora_Finalizacion16.Text & ":"
+                        Me.txtHora_Finalizacion16.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion15_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion15.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion15.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion15.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion15.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion15.Text, Len(txtHora_Finalizacion15.Text) - 2)
+                    Else
+                        txtHora_Finalizacion15.Text = txtHora_Finalizacion15.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion15.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion15.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion15.Text, Len(txtHora_Finalizacion15.Text) - 2)
+                    Else
+                        txtHora_Finalizacion15.Text = txtHora_Finalizacion15.Text & ":"
+                        Me.txtHora_Finalizacion15.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion14_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion14.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion14.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion14.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion14.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion14.Text, Len(txtHora_Finalizacion14.Text) - 2)
+                    Else
+                        txtHora_Finalizacion14.Text = txtHora_Finalizacion14.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion14.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion14.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion14.Text, Len(txtHora_Finalizacion14.Text) - 2)
+                    Else
+                        txtHora_Finalizacion14.Text = txtHora_Finalizacion14.Text & ":"
+                        Me.txtHora_Finalizacion14.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion13_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion13.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion13.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion13.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion13.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion13.Text, Len(txtHora_Finalizacion13.Text) - 2)
+                    Else
+                        txtHora_Finalizacion13.Text = txtHora_Finalizacion13.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion13.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion13.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion13.Text, Len(txtHora_Finalizacion13.Text) - 2)
+                    Else
+                        txtHora_Finalizacion13.Text = txtHora_Finalizacion13.Text & ":"
+                        Me.txtHora_Finalizacion13.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion12_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion12.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion12.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion12.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion12.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion12.Text, Len(txtHora_Finalizacion12.Text) - 2)
+                    Else
+                        txtHora_Finalizacion12.Text = txtHora_Finalizacion12.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion12.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion12.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion12.Text, Len(txtHora_Finalizacion12.Text) - 2)
+                    Else
+                        txtHora_Finalizacion12.Text = txtHora_Finalizacion12.Text & ":"
+                        Me.txtHora_Finalizacion12.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion11_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion11.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion11.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion11.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion11.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion11.Text, Len(txtHora_Finalizacion11.Text) - 2)
+                    Else
+                        txtHora_Finalizacion11.Text = txtHora_Finalizacion11.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion11.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion11.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion11.Text, Len(txtHora_Finalizacion11.Text) - 2)
+                    Else
+                        txtHora_Finalizacion11.Text = txtHora_Finalizacion11.Text & ":"
+                        Me.txtHora_Finalizacion11.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion10_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion10.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion10.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion10.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion10.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion10.Text, Len(txtHora_Finalizacion10.Text) - 2)
+                    Else
+                        txtHora_Finalizacion10.Text = txtHora_Finalizacion10.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion10.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion10.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion10.Text, Len(txtHora_Finalizacion10.Text) - 2)
+                    Else
+                        txtHora_Finalizacion10.Text = txtHora_Finalizacion10.Text & ":"
+                        Me.txtHora_Finalizacion10.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion9_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion9.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion9.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion9.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion9.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion9.Text, Len(txtHora_Finalizacion9.Text) - 2)
+                    Else
+                        txtHora_Finalizacion9.Text = txtHora_Finalizacion9.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion9.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion9.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion9.Text, Len(txtHora_Finalizacion9.Text) - 2)
+                    Else
+                        txtHora_Finalizacion9.Text = txtHora_Finalizacion9.Text & ":"
+                        Me.txtHora_Finalizacion9.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion8_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion8.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion8.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion8.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion8.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion8.Text, Len(txtHora_Finalizacion8.Text) - 2)
+                    Else
+                        txtHora_Finalizacion8.Text = txtHora_Finalizacion8.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion8.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion8.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion8.Text, Len(txtHora_Finalizacion8.Text) - 2)
+                    Else
+                        txtHora_Finalizacion8.Text = txtHora_Finalizacion8.Text & ":"
+                        Me.txtHora_Finalizacion8.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion7_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion7.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion7.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion7.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion7.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion7.Text, Len(txtHora_Finalizacion7.Text) - 2)
+                    Else
+                        txtHora_Finalizacion7.Text = txtHora_Finalizacion7.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion7.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion7.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion7.Text, Len(txtHora_Finalizacion7.Text) - 2)
+                    Else
+                        txtHora_Finalizacion7.Text = txtHora_Finalizacion7.Text & ":"
+                        Me.txtHora_Finalizacion7.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion6_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion6.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion6.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion6.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion6.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion6.Text, Len(txtHora_Finalizacion6.Text) - 2)
+                    Else
+                        txtHora_Finalizacion6.Text = txtHora_Finalizacion6.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion6.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion6.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion6.Text, Len(txtHora_Finalizacion6.Text) - 2)
+                    Else
+                        txtHora_Finalizacion6.Text = txtHora_Finalizacion6.Text & ":"
+                        Me.txtHora_Finalizacion6.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion5_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion5.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion5.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion5.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion5.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion5.Text, Len(txtHora_Finalizacion5.Text) - 2)
+                    Else
+                        txtHora_Finalizacion5.Text = txtHora_Finalizacion5.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion5.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion5.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion5.Text, Len(txtHora_Finalizacion5.Text) - 2)
+                    Else
+                        txtHora_Finalizacion5.Text = txtHora_Finalizacion5.Text & ":"
+                        Me.txtHora_Finalizacion5.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion4_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion4.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion4.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion4.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion4.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion4.Text, Len(txtHora_Finalizacion4.Text) - 2)
+                    Else
+                        txtHora_Finalizacion4.Text = txtHora_Finalizacion4.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion4.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion4.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion4.Text, Len(txtHora_Finalizacion4.Text) - 2)
+                    Else
+                        txtHora_Finalizacion4.Text = txtHora_Finalizacion4.Text & ":"
+                        Me.txtHora_Finalizacion4.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion3_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion3.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion3.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion3.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion3.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion3.Text, Len(txtHora_Finalizacion3.Text) - 2)
+                    Else
+                        txtHora_Finalizacion3.Text = txtHora_Finalizacion3.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion3.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion3.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion3.Text, Len(txtHora_Finalizacion3.Text) - 2)
+                    Else
+                        txtHora_Finalizacion3.Text = txtHora_Finalizacion3.Text & ":"
+                        Me.txtHora_Finalizacion3.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion2_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion2.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion2.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion2.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion2.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion2.Text, Len(txtHora_Finalizacion2.Text) - 2)
+                    Else
+                        txtHora_Finalizacion2.Text = txtHora_Finalizacion2.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion2.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion2.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion2.Text, Len(txtHora_Finalizacion2.Text) - 2)
+                    Else
+                        txtHora_Finalizacion2.Text = txtHora_Finalizacion2.Text & ":"
+                        Me.txtHora_Finalizacion2.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub dtpFecha_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpFecha.ValueChanged
+        If quienllamoatarea = 0 Then
+            validatar()
         End If
     End Sub
 End Class
