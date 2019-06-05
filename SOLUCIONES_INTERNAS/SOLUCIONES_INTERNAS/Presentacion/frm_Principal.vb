@@ -2369,7 +2369,7 @@ Public Class frm_Principal
 
     Private Sub GuardarActualizarToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles GuardarActualizarToolStripMenuItem.Click
 
-        frm_Listado_GuardarActualizar.Text = "Modificar Tarea nuevooo"
+        frm_Listado_GuardarActualizar.Text = "Modificar/Agregar Tarea"
         frm_Listado_GuardarActualizar.btnExportarListado.Enabled = False
         frm_Listado_GuardarActualizar.btnEliminar_Tarea.Enabled = False
         frm_Listado_GuardarActualizar.btnVer.Enabled = False
@@ -2747,7 +2747,7 @@ Public Class frm_Principal
 
     Private Sub NuevaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevaToolStripMenuItem.Click
 
-        frm_GuardarActualizar_tarea.Text = "Nueva Tarea  nuevaa"
+        frm_GuardarActualizar_tarea.Text = "Nueva Tarea"
         LimpiarDetalleTarea2()
         HabilitarDetalleTarea2()
         LimpiarTiempoEstimado2()
