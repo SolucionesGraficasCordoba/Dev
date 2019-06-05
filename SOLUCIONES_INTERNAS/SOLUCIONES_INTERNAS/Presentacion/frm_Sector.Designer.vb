@@ -23,6 +23,7 @@ Partial Class frm_Sector
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupListadoSectores = New System.Windows.Forms.GroupBox()
+        Me.btn_informe_sector = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -47,6 +48,7 @@ Partial Class frm_Sector
         '
         'GroupListadoSectores
         '
+        Me.GroupListadoSectores.Controls.Add(Me.btn_informe_sector)
         Me.GroupListadoSectores.Controls.Add(Me.Label6)
         Me.GroupListadoSectores.Controls.Add(Me.Label8)
         Me.GroupListadoSectores.Controls.Add(Me.Label5)
@@ -60,6 +62,15 @@ Partial Class frm_Sector
         Me.GroupListadoSectores.TabIndex = 5
         Me.GroupListadoSectores.TabStop = False
         Me.GroupListadoSectores.Text = "Listado de Sectores"
+        '
+        'btn_informe_sector
+        '
+        Me.btn_informe_sector.Location = New System.Drawing.Point(143, 224)
+        Me.btn_informe_sector.Name = "btn_informe_sector"
+        Me.btn_informe_sector.Size = New System.Drawing.Size(68, 22)
+        Me.btn_informe_sector.TabIndex = 8
+        Me.btn_informe_sector.Text = "Eliminar"
+        Me.btn_informe_sector.UseVisualStyleBackColor = True
         '
         'Label6
         '
@@ -257,4 +268,5 @@ Partial Class frm_Sector
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents btn_informe_sector As System.Windows.Forms.Button
 End Class

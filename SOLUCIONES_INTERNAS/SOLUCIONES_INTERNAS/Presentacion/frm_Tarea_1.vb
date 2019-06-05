@@ -1077,18 +1077,15 @@
     End Sub
 
     Private Sub btnBuscar_Colaborador_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar_Colaborador.Click
-
         frm_Colaborador.quienllamo_col = Me
         frm_Colaborador.Text = "Seleccionar colaborador"
         frm_Colaborador.Show()
         frm_Colaborador.GroupNuevoColaborador.Enabled = False
         frm_Colaborador.btnEliminar_Colaborador.Enabled = False
-
         frm_Colaborador.txt_Buscar_Colaborador.Enabled = False
         frm_Colaborador.btn_enviar_mensaje.Visible = False
         frm_Colaborador.btn_Respuesta_Fecha.Visible = False
         frm_Colaborador.btn_Ver_Respuesta.Visible = False
-
         quienllamoatarea = 0
     End Sub
 
@@ -1113,7 +1110,6 @@
                     End If
             End Select
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -1161,10 +1157,7 @@
                         Me.txtHora_Finalizacion3.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -1188,10 +1181,7 @@
                         Me.txtHora_Finalizacion4.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -1215,10 +1205,7 @@
                         Me.txtHora_Finalizacion5.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -1242,10 +1229,7 @@
                         Me.txtHora_Finalizacion6.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -1269,10 +1253,7 @@
                         Me.txtHora_Finalizacion7.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 
@@ -1296,10 +1277,7 @@
                         Me.txtHora_Finalizacion8.SelectionStart = 3
                     End If
             End Select
-
-
         Catch ex As Exception
-
         End Try
     End Sub
 

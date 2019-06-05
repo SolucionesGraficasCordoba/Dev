@@ -55,8 +55,25 @@ Public Class frm_Colaborador
                          Select usu.USU_usuario, sec.SEC_id_sector, sec.SEC_nombre_sector, col.COL_id_colaborador, col.COL_nombre_col, col.COL_apellido_col
                          Where SEC_id_sector = cualq.SEC_id_sector And COL_id_colaborador <> CInt(frm_Tarea.txt_id_colaborador.Text))
             dgvLista_Colaboradores.DataSource = cargasupervisor
-        Else
 
+        ElseIf quienllamo_col.Name = frm_GuardarActualizar_1.Name Then
+            Dim cualq = (From c In datacontext.USUARIO
+                           Join col In datacontext.COLABORADOR
+                           On c.COL_id_colaborador Equals col.COL_id_colaborador
+                           Join sec In datacontext.SECTOR
+                           On col.SEC_id_sector Equals sec.SEC_id_sector
+                           Select sec.SEC_id_sector, sec.SEC_nombre_sector, c.USU_usuario
+                           Where USU_usuario = frm_Principal.LBL_MENU_USU.Text).ToList()(0)
+
+            Dim cargasupervisor = (From sec In datacontext.SECTOR
+                         Join col In datacontext.COLABORADOR
+                         On col.SEC_id_sector Equals sec.SEC_id_sector
+                         Join usu In datacontext.USUARIO
+                         On usu.COL_id_colaborador Equals col.COL_id_colaborador
+                         Select usu.USU_usuario, sec.SEC_id_sector, sec.SEC_nombre_sector, col.COL_id_colaborador, col.COL_nombre_col, col.COL_apellido_col
+                         Where SEC_id_sector = cualq.SEC_id_sector And COL_id_colaborador <> CInt(frm_GuardarActualizar_tarea.txt_id_colaborador.Text))
+            dgvLista_Colaboradores.DataSource = cargasupervisor
+        Else
 
             If frm_Principal.LBL_MENU_PERFIL.Text = "COLABORADOR" Then
                 'TRAE SECTOR DEL USUARIO REGISTRADO
