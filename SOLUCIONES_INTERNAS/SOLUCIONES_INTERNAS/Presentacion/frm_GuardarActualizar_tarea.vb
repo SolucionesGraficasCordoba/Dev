@@ -2214,4 +2214,41 @@
     Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
         CalcularExtra()
     End Sub
+
+    Private Sub frm_GuardarActualizar_tarea_FormClosed(sender As System.Object, e As System.Windows.Forms.FormClosedEventArgs) Handles MyBase.FormClosed
+        Me.Dispose()
+    End Sub
+
+    Private Sub txt_nombre_colaborador_TextChanged(sender As System.Object, e As System.EventArgs) Handles txt_nombre_colaborador.TextChanged
+        If quienllamoatarea = 0 Then
+            validatar()
+        End If
+    End Sub
+
+    Sub validatar()
+        If txt_nombre_colaborador.TextLength <> 0 Then
+
+            buscartarea = (From ta In datacontext.TAREA
+                           Select ta.COL_id_colaborador, ta.TAR_fecha
+                           Where COL_id_colaborador = CInt(txt_id_colaborador.Text) And TAR_fecha = dtpFecha.Text).Any
+            If buscartarea = True Then
+                Dim traetarea = (From ta In datacontext.TAREA
+                           Select ta.TAR_entrada, ta.TAR_salida, ta.TAR_carga_horaria, ta.COL_id_colaborador, ta.TAR_fecha
+                           Where COL_id_colaborador = CInt(txt_id_colaborador.Text) And TAR_fecha = dtpFecha.Text).ToList(0)
+                txtEntrada.Text = traetarea.TAR_entrada
+                txtEntrada.Enabled = False
+                txtSalida.Text = traetarea.TAR_salida
+                txtSalida.Enabled = False
+                txt_Carga_Horaria1.Text = traetarea.TAR_carga_horaria
+                txt_Carga_Horaria1.Enabled = False
+            Else
+                txtEntrada.Clear()
+                txtEntrada.Enabled = True
+                txtSalida.Clear()
+                txtSalida.Enabled = True
+                txt_Carga_Horaria1.Clear()
+                txt_Carga_Horaria1.Enabled = True
+            End If
+        End If
+    End Sub
 End Class
