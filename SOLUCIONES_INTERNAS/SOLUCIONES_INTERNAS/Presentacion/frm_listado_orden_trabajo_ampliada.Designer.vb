@@ -51,6 +51,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txt_Buscar_orden_trabajo = New System.Windows.Forms.TextBox()
         Me.dgvLista_Orden_Trabajo = New System.Windows.Forms.DataGridView()
+        Me.btn_Imprimir_Orden = New System.Windows.Forms.Button()
         Me.GroupDetallesOrden.SuspendLayout()
         CType(Me.dgv_detalle_orden, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupListadoPiezas.SuspendLayout()
@@ -59,6 +60,7 @@ Partial Class frm_listado_orden_trabajo_ampliada
         '
         'GroupDetallesOrden
         '
+        Me.GroupDetallesOrden.Controls.Add(Me.btn_Imprimir_Orden)
         Me.GroupDetallesOrden.Controls.Add(Me.btn_ODT_mostrar_listado_pdf)
         Me.GroupDetallesOrden.Controls.Add(Me.btn_Cancelar)
         Me.GroupDetallesOrden.Controls.Add(Me.btnVer)
@@ -340,6 +342,15 @@ Partial Class frm_listado_orden_trabajo_ampliada
         Me.dgvLista_Orden_Trabajo.Size = New System.Drawing.Size(1057, 351)
         Me.dgvLista_Orden_Trabajo.TabIndex = 0
         '
+        'btn_Imprimir_Orden
+        '
+        Me.btn_Imprimir_Orden.Location = New System.Drawing.Point(452, 256)
+        Me.btn_Imprimir_Orden.Name = "btn_Imprimir_Orden"
+        Me.btn_Imprimir_Orden.Size = New System.Drawing.Size(98, 33)
+        Me.btn_Imprimir_Orden.TabIndex = 40
+        Me.btn_Imprimir_Orden.Text = "Imprimir Orden"
+        Me.btn_Imprimir_Orden.UseVisualStyleBackColor = True
+        '
         'frm_listado_orden_trabajo_ampliada
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -382,4 +393,5 @@ Partial Class frm_listado_orden_trabajo_ampliada
     Friend WithEvents btn_Cancelar As System.Windows.Forms.Button
     Friend WithEvents btnAgregarProducto As System.Windows.Forms.Button
     Friend WithEvents LinkLabel1 As System.Windows.Forms.LinkLabel
+    Friend WithEvents btn_Imprimir_Orden As System.Windows.Forms.Button
 End Class
