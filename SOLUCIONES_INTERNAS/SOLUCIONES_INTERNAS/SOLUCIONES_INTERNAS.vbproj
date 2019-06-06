@@ -14,7 +14,8 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -64,6 +65,11 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="itextsharp">
       <HintPath>Resources\dll\itextsharp.dll</HintPath>
     </Reference>
@@ -80,6 +86,7 @@
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -108,6 +115,14 @@
     </Compile>
     <Compile Include="Datos\DataS_Interno_Vistas.vb">
       <DependentUpon>DataS_Interno_Vistas.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\DataS_Reportes.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataS_Reportes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\DataS_Reportes.vb">
+      <DependentUpon>DataS_Reportes.xsd</DependentUpon>
     </Compile>
     <Compile Include="Modulo\Autocompletar_Textbox.vb" />
     <Compile Include="Modulo\Automatico.vb" />
@@ -434,6 +449,30 @@
     <Compile Include="Presentacion\frm_VerMasDetalles.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Reportes\frm_rpt_orden.Designer.vb">
+      <DependentUpon>frm_rpt_orden.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frm_rpt_orden.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frm_rpt_sector.Designer.vb">
+      <DependentUpon>frm_rpt_sector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frm_rpt_sector.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_orden.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_orden.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_sector1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rpt_sector.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Presentacion\frm_GuardarActualizar_1.resx">
@@ -471,6 +510,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_VerMasDetalles.resx">
       <DependentUpon>frm_VerMasDetalles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frm_rpt_orden.resx">
+      <DependentUpon>frm_rpt_orden.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frm_rpt_sector.resx">
+      <DependentUpon>frm_rpt_sector.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_orden.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_orden.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_sector.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rpt_sector1.vb</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Datos\DataS_Interno_Vistas.dbml.layout">
@@ -607,12 +660,22 @@
     <None Include="Datos\DataS_Interno.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>DataS_Interno.designer.vb</LastGenOutput>
     </None>
     <None Include="Datos\DataS_Interno_Vistas.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
       <LastGenOutput>DataS_Interno_Vistas.designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Datos\DataS_Reportes.xsc">
+      <DependentUpon>DataS_Reportes.xsd</DependentUpon>
+    </None>
+    <None Include="Datos\DataS_Reportes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataS_Reportes.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Datos\DataS_Reportes.xss">
+      <DependentUpon>DataS_Reportes.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -628,6 +691,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\solucionesgraficas1.jpg" />
