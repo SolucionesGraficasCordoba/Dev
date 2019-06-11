@@ -449,28 +449,16 @@
     <Compile Include="Presentacion\frm_VerMasDetalles.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\frm_rpt_orden.Designer.vb">
-      <DependentUpon>frm_rpt_orden.vb</DependentUpon>
+    <Compile Include="Reportes\frm_reporte_orden.Designer.vb">
+      <DependentUpon>frm_reporte_orden.vb</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\frm_rpt_orden.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\frm_rpt_sector.Designer.vb">
-      <DependentUpon>frm_rpt_sector.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Reportes\frm_rpt_sector.vb">
+    <Compile Include="Reportes\frm_reporte_orden.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\rpt_orden.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>rpt_orden.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Reportes\rpt_sector1.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>rpt_sector.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -511,19 +499,12 @@
     <EmbeddedResource Include="Presentacion\frm_VerMasDetalles.resx">
       <DependentUpon>frm_VerMasDetalles.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\frm_rpt_orden.resx">
-      <DependentUpon>frm_rpt_orden.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\frm_rpt_sector.resx">
-      <DependentUpon>frm_rpt_sector.vb</DependentUpon>
+    <EmbeddedResource Include="Reportes\frm_reporte_orden.resx">
+      <DependentUpon>frm_reporte_orden.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpt_orden.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>rpt_orden.vb</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\rpt_sector.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>rpt_sector1.vb</LastGenOutput>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Datos\DataS_Interno_Vistas.dbml.layout">
