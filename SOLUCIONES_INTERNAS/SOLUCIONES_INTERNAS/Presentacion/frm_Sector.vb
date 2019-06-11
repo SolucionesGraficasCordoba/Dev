@@ -145,15 +145,15 @@
     End Sub
 
   
-    Private Sub btn_informe_sector_Click(sender As System.Object, e As System.EventArgs) Handles btn_informe_sector.Click
-        Dim dt As New DataS_Reportes
-        For Each dr As DataGridViewRow In dgvLista_Sector.Rows
-            dt.DT_Sector.AddDT_SectorRow(dr.Cells("SEC_nombre_sector").Value)
-        Next
-        Dim rptdoc As CrystalDecisions.CrystalReports.Engine.ReportDocument
-        rptdoc = New rpt_sector
-        rptdoc.SetDataSource(dt)
-        frm_rpt_sector.CrystalReportViewer1.ReportSource = rptdoc
-        frm_rpt_sector.Show()
-    End Sub
+    'Private Sub btn_informe_sector_Click(sender As System.Object, e As System.EventArgs) Handles btn_informe_sector.Click
+    '    Dim dt As New DataS_Reportes
+    '    For Each dr As DataGridViewRow In dgvLista_Sector.Rows
+    '        dt.DT_Sector.AddDT_SectorRow(dr.Cells("SEC_nombre_sector").Value)
+    '    Next
+    '    Dim rptdoc As CrystalDecisions.CrystalReports.Engine.ReportDocument
+    '    rptdoc = New rpt_sector
+    '    rptdoc.SetDataSource(dt)
+    '    frm_rpt_sector.CrystalReportViewer1.ReportSource = rptdoc
+    '    frm_rpt_sector.Show()
+    'End Sub
 End Class

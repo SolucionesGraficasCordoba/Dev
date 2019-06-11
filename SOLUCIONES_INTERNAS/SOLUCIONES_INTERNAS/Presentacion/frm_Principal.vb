@@ -1847,7 +1847,6 @@ Public Class frm_Principal
                 'c.BackgroundImageLayout = ImageLayout.Zoom
             End If
         Next
-
         AltaTareaToolStripMenuItem.Visible = False
         ListaTareaToolStripMenuItem.Visible = False
         EliminarTareaToolStripMenuItem.Visible = False
@@ -2746,6 +2745,8 @@ Public Class frm_Principal
     End Sub
 
     Private Sub NuevaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevaToolStripMenuItem.Click
+
+
 
         frm_GuardarActualizar_tarea.Text = "Nueva Tarea"
         LimpiarDetalleTarea2()
