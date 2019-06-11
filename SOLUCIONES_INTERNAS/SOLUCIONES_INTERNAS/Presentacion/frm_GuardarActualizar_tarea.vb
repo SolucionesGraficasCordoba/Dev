@@ -2251,4 +2251,505 @@
             End If
         End If
     End Sub
+
+    Private Sub txtHora_Finalizacion1_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion1.TextChanged
+        Try
+            'VALIDA LA HORA INGRESADA
+            Select Case Len(txtHora_Finalizacion1.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion1.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion1.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion1.Text, Len(txtHora_Finalizacion1.Text) - 2)
+                    Else
+                        txtHora_Finalizacion1.Text = txtHora_Finalizacion1.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion1.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion1.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion1.Text, Len(txtHora_Finalizacion1.Text) - 2)
+                    Else
+                        txtHora_Finalizacion1.Text = txtHora_Finalizacion1.Text & ":"
+                        Me.txtHora_Finalizacion1.SelectionStart = 3
+                    End If
+
+            End Select
+        Catch ex As Exception
+            MsgBox("El formato de la hora de salida es: '00:00'")
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion2_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion2.TextChanged
+        Try
+            'VALIDA LA HORA INGRESADA
+            Select Case Len(txtHora_Finalizacion2.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion2.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion2.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion2.Text, Len(txtHora_Finalizacion2.Text) - 2)
+                    Else
+                        txtHora_Finalizacion2.Text = txtHora_Finalizacion2.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion2.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion2.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion2.Text, Len(txtHora_Finalizacion2.Text) - 2)
+                    Else
+                        txtHora_Finalizacion2.Text = txtHora_Finalizacion2.Text & ":"
+                        Me.txtHora_Finalizacion2.SelectionStart = 3
+                    End If
+
+            End Select
+        Catch ex As Exception
+            MsgBox("El formato de la hora de salida es: '00:00'")
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion3_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion3.TextChanged
+        Try
+            'VALIDA LA HORA INGRESADA
+            Select Case Len(txtHora_Finalizacion3.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion3.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion3.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion3.Text, Len(txtHora_Finalizacion3.Text) - 2)
+                    Else
+                        txtHora_Finalizacion3.Text = txtHora_Finalizacion3.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion3.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion3.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion3.Text, Len(txtHora_Finalizacion3.Text) - 2)
+                    Else
+                        txtHora_Finalizacion3.Text = txtHora_Finalizacion3.Text & ":"
+                        Me.txtHora_Finalizacion3.SelectionStart = 3
+                    End If
+
+            End Select
+        Catch ex As Exception
+            MsgBox("El formato de la hora de salida es: '00:00'")
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion4_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion4.TextChanged
+        Try
+            'VALIDA LA HORA INGRESADA
+            Select Case Len(txtHora_Finalizacion4.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion4.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion4.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion4.Text, Len(txtHora_Finalizacion4.Text) - 2)
+                    Else
+                        txtHora_Finalizacion4.Text = txtHora_Finalizacion4.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion4.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion4.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion4.Text, Len(txtHora_Finalizacion4.Text) - 2)
+                    Else
+                        txtHora_Finalizacion4.Text = txtHora_Finalizacion4.Text & ":"
+                        Me.txtHora_Finalizacion4.SelectionStart = 3
+                    End If
+
+            End Select
+        Catch ex As Exception
+            MsgBox("El formato de la hora de salida es: '00:00'")
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion5_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion5.TextChanged
+        Try
+            'VALIDA LA HORA INGRESADA
+            Select Case Len(txtHora_Finalizacion5.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion5.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion5.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion5.Text, Len(txtHora_Finalizacion5.Text) - 2)
+                    Else
+                        txtHora_Finalizacion5.Text = txtHora_Finalizacion5.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion5.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion5.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion5.Text, Len(txtHora_Finalizacion5.Text) - 2)
+                    Else
+                        txtHora_Finalizacion5.Text = txtHora_Finalizacion5.Text & ":"
+                        Me.txtHora_Finalizacion5.SelectionStart = 3
+                    End If
+
+            End Select
+        Catch ex As Exception
+            MsgBox("El formato de la hora de salida es: '00:00'")
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion6_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion6.TextChanged
+        Try
+            'VALIDA LA HORA INGRESADA
+            Select Case Len(txtHora_Finalizacion6.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion6.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion6.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion6.Text, Len(txtHora_Finalizacion6.Text) - 2)
+                    Else
+                        txtHora_Finalizacion6.Text = txtHora_Finalizacion6.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion6.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion6.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion6.Text, Len(txtHora_Finalizacion6.Text) - 2)
+                    Else
+                        txtHora_Finalizacion6.Text = txtHora_Finalizacion6.Text & ":"
+                        Me.txtHora_Finalizacion6.SelectionStart = 3
+                    End If
+
+            End Select
+        Catch ex As Exception
+            MsgBox("El formato de la hora de salida es: '00:00'")
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion7_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion7.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion7.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion7.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion7.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion7.Text, Len(txtHora_Finalizacion7.Text) - 2)
+                    Else
+                        txtHora_Finalizacion7.Text = txtHora_Finalizacion7.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion7.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion7.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion7.Text, Len(txtHora_Finalizacion7.Text) - 2)
+                    Else
+                        txtHora_Finalizacion7.Text = txtHora_Finalizacion7.Text & ":"
+                        Me.txtHora_Finalizacion7.SelectionStart = 3
+                    End If
+            End Select
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion8_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion8.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion8.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion8.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion8.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion8.Text, Len(txtHora_Finalizacion8.Text) - 2)
+                    Else
+                        txtHora_Finalizacion8.Text = txtHora_Finalizacion8.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion8.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion8.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion8.Text, Len(txtHora_Finalizacion8.Text) - 2)
+                    Else
+                        txtHora_Finalizacion8.Text = txtHora_Finalizacion8.Text & ":"
+                        Me.txtHora_Finalizacion8.SelectionStart = 3
+                    End If
+            End Select
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion9_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion9.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion9.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion9.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion9.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion9.Text, Len(txtHora_Finalizacion9.Text) - 2)
+                    Else
+                        txtHora_Finalizacion9.Text = txtHora_Finalizacion9.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion9.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion9.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion9.Text, Len(txtHora_Finalizacion9.Text) - 2)
+                    Else
+                        txtHora_Finalizacion9.Text = txtHora_Finalizacion9.Text & ":"
+                        Me.txtHora_Finalizacion9.SelectionStart = 3
+                    End If
+            End Select
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion10_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion10.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion10.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion10.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion10.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion10.Text, Len(txtHora_Finalizacion10.Text) - 2)
+                    Else
+                        txtHora_Finalizacion10.Text = txtHora_Finalizacion10.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion10.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion10.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion10.Text, Len(txtHora_Finalizacion10.Text) - 2)
+                    Else
+                        txtHora_Finalizacion10.Text = txtHora_Finalizacion10.Text & ":"
+                        Me.txtHora_Finalizacion10.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion11_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion11.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion11.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion11.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion11.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion11.Text, Len(txtHora_Finalizacion11.Text) - 2)
+                    Else
+                        txtHora_Finalizacion11.Text = txtHora_Finalizacion11.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion11.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion11.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion11.Text, Len(txtHora_Finalizacion11.Text) - 2)
+                    Else
+                        txtHora_Finalizacion11.Text = txtHora_Finalizacion11.Text & ":"
+                        Me.txtHora_Finalizacion11.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion12_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion12.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion12.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion12.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion12.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion12.Text, Len(txtHora_Finalizacion12.Text) - 2)
+                    Else
+                        txtHora_Finalizacion12.Text = txtHora_Finalizacion12.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion12.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion12.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion12.Text, Len(txtHora_Finalizacion12.Text) - 2)
+                    Else
+                        txtHora_Finalizacion12.Text = txtHora_Finalizacion12.Text & ":"
+                        Me.txtHora_Finalizacion12.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion13_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion13.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion13.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion13.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion13.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion13.Text, Len(txtHora_Finalizacion13.Text) - 2)
+                    Else
+                        txtHora_Finalizacion13.Text = txtHora_Finalizacion13.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion13.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion13.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion13.Text, Len(txtHora_Finalizacion13.Text) - 2)
+                    Else
+                        txtHora_Finalizacion13.Text = txtHora_Finalizacion13.Text & ":"
+                        Me.txtHora_Finalizacion13.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion14_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion14.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion14.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion14.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion14.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion14.Text, Len(txtHora_Finalizacion14.Text) - 2)
+                    Else
+                        txtHora_Finalizacion14.Text = txtHora_Finalizacion14.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion14.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion14.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion14.Text, Len(txtHora_Finalizacion14.Text) - 2)
+                    Else
+                        txtHora_Finalizacion14.Text = txtHora_Finalizacion14.Text & ":"
+                        Me.txtHora_Finalizacion14.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion15_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion15.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion15.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion15.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion15.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion15.Text, Len(txtHora_Finalizacion15.Text) - 2)
+                    Else
+                        txtHora_Finalizacion15.Text = txtHora_Finalizacion15.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion15.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion15.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion15.Text, Len(txtHora_Finalizacion15.Text) - 2)
+                    Else
+                        txtHora_Finalizacion15.Text = txtHora_Finalizacion15.Text & ":"
+                        Me.txtHora_Finalizacion15.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion16_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion16.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion16.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion16.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion16.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion16.Text, Len(txtHora_Finalizacion16.Text) - 2)
+                    Else
+                        txtHora_Finalizacion16.Text = txtHora_Finalizacion16.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion16.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion16.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion16.Text, Len(txtHora_Finalizacion16.Text) - 2)
+                    Else
+                        txtHora_Finalizacion16.Text = txtHora_Finalizacion16.Text & ":"
+                        Me.txtHora_Finalizacion16.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion17_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion17.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion17.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion17.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion17.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion17.Text, Len(txtHora_Finalizacion17.Text) - 2)
+                    Else
+                        txtHora_Finalizacion17.Text = txtHora_Finalizacion17.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion17.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion17.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion17.Text, Len(txtHora_Finalizacion17.Text) - 2)
+                    Else
+                        txtHora_Finalizacion17.Text = txtHora_Finalizacion17.Text & ":"
+                        Me.txtHora_Finalizacion17.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion18_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion18.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion18.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion18.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion18.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion18.Text, Len(txtHora_Finalizacion18.Text) - 2)
+                    Else
+                        txtHora_Finalizacion18.Text = txtHora_Finalizacion18.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion18.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion18.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion18.Text, Len(txtHora_Finalizacion18.Text) - 2)
+                    Else
+                        txtHora_Finalizacion18.Text = txtHora_Finalizacion18.Text & ":"
+                        Me.txtHora_Finalizacion18.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion19_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion19.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion19.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion19.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion19.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion19.Text, Len(txtHora_Finalizacion19.Text) - 2)
+                    Else
+                        txtHora_Finalizacion19.Text = txtHora_Finalizacion19.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion19.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion19.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion19.Text, Len(txtHora_Finalizacion19.Text) - 2)
+                    Else
+                        txtHora_Finalizacion19.Text = txtHora_Finalizacion19.Text & ":"
+                        Me.txtHora_Finalizacion19.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
+
+    Private Sub txtHora_Finalizacion20_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtHora_Finalizacion20.TextChanged
+        'VALIDA LA HORA INGRESADA
+        Try
+            Select Case Len(txtHora_Finalizacion20.Text)
+                Case 5
+                    If Microsoft.VisualBasic.Right(txtHora_Finalizacion20.Text, 2) > 59 Then
+                        MsgBox("Debes ingresar los minutos entre el 00 al 59", , "")
+                        txtHora_Finalizacion20.Text = Microsoft.VisualBasic.Right(txtHora_Finalizacion20.Text, Len(txtHora_Finalizacion20.Text) - 2)
+                    Else
+                        txtHora_Finalizacion20.Text = txtHora_Finalizacion20.Text & ""
+                    End If
+                Case 2
+                    If Microsoft.VisualBasic.Left(txtHora_Finalizacion20.Text, 2) > 23 Then
+                        MsgBox("Debes ingresar la hora entre el 00 al 23", , "")
+                        txtHora_Finalizacion20.Text = Microsoft.VisualBasic.Left(txtHora_Finalizacion20.Text, Len(txtHora_Finalizacion20.Text) - 2)
+                    Else
+                        txtHora_Finalizacion20.Text = txtHora_Finalizacion20.Text & ":"
+                        Me.txtHora_Finalizacion20.SelectionStart = 3
+                    End If
+            End Select
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class
