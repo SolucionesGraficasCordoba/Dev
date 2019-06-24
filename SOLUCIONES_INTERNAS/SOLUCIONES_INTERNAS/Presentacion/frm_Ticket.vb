@@ -208,8 +208,9 @@ Public Class frm_Ticket
             Me.txt_comentarios.Text = Me.dgv_lista_ticket.Item("TIC_comentarios", dgv_lista_ticket.SelectedRows(0).Index).Value
 
             TabControl1.SelectedIndex = 0
+
         Else
-            MsgBox("Debe seleccionar una ticket del listado")
+            MsgBox("Debe seleccionar un ticket del listado")
             Exit Sub
         End If
     End Sub
