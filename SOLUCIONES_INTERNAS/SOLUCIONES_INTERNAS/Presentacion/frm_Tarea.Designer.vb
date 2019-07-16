@@ -3496,13 +3496,13 @@ Partial Class frm_Tarea
     Friend WithEvents btnLimpiarTarea7 As System.Windows.Forms.Button
     Friend WithEvents btnLimpiarTarea6 As System.Windows.Forms.Button
     Friend WithEvents btnLimpiarTarea5 As System.Windows.Forms.Button
-    Friend WithEvents btnLimpiarTarea4 As System.Windows.Forms.Button
-    Friend WithEvents btnLimpiarTarea3 As System.Windows.Forms.Button
-    Friend WithEvents btnLimpiarTarea2 As System.Windows.Forms.Button
     Friend WithEvents btnLimpiarTarea1 As System.Windows.Forms.Button
     Friend WithEvents Label61 As System.Windows.Forms.Label
     Friend WithEvents Label31 As System.Windows.Forms.Label
     Friend WithEvents Label68 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
+    Friend WithEvents btnLimpiarTarea4 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea3 As System.Windows.Forms.Button
+    Friend WithEvents btnLimpiarTarea2 As System.Windows.Forms.Button
 End Class

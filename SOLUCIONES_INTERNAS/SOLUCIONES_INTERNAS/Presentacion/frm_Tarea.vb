@@ -3283,13 +3283,15 @@
     End Sub
 
     Private Sub btnLimpiarTarea2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea2.Click
-        txt_detalle_tarea2.Clear()
-        txtTiempo_Estimado2.Clear()
-        txtTiempo_Real2.Clear()
-        txt_id_orden_trabajo2.Clear()
-        txtHora_Finalizacion2.Clear()
-        txtObservaciones2.Clear()
-        txtNumero_Orden_Trabajo2.Clear()
+        'txt_detalle_tarea2.Clear()
+        'txtTiempo_Estimado2.Clear()
+        'txtTiempo_Real2.Clear()
+        'txt_id_orden_trabajo2.Clear()
+        'txtHora_Finalizacion2.Clear()
+        'txtObservaciones2.Clear()
+        'txtNumero_Orden_Trabajo2.Clear()
+
+        MsgBox("mensaje")
     End Sub
 
     Private Sub btnLimpiarTarea3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnLimpiarTarea3.Click
@@ -3606,7 +3608,13 @@
         CalcularExtra()
     End Sub
 
-    Private Sub frm_Tarea_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
-
+    Private Sub Button2_Click_1(sender As System.Object, e As System.EventArgs)
+        txt_detalle_tarea2.Clear()
+        txtTiempo_Estimado2.Clear()
+        txtTiempo_Real2.Clear()
+        txt_id_orden_trabajo2.Clear()
+        txtHora_Finalizacion2.Clear()
+        txtObservaciones2.Clear()
+        txtNumero_Orden_Trabajo2.Clear()
     End Sub
 End Class

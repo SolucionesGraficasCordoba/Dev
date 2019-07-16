@@ -2746,8 +2746,6 @@ Public Class frm_Principal
 
     Private Sub NuevaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NuevaToolStripMenuItem.Click
 
-
-
         frm_GuardarActualizar_tarea.Text = "Nueva Tarea"
         LimpiarDetalleTarea2()
         HabilitarDetalleTarea2()
