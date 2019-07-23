@@ -3422,4 +3422,10 @@
             e.Handled = True
         End If
     End Sub
+
+    Private Sub dtpFecha_ValueChanged(sender As System.Object, e As System.EventArgs) Handles dtpFecha.ValueChanged
+        If quienllamoatarea = 0 Then
+            validatar()
+        End If
+    End Sub
 End Class
