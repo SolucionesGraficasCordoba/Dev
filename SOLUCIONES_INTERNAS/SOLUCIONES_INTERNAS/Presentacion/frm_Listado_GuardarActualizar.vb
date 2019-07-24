@@ -2191,4 +2191,208 @@ Public Class frm_Listado_GuardarActualizar
         frm_Tarea.txt_id_orden_trabajo20.Visible = False
         frm_Tarea.btnBuscar_Numero_Orden20.Enabled = False
     End Sub
+
+    Private Sub btnExportarListado_Click(sender As System.Object, e As System.EventArgs) Handles btnExportarListado.Click
+        Try
+            If dgvColaboradores.SelectedRows.Count < 1 Then
+                MsgBox("Debe seleccionar un colaborador", MsgBoxStyle.Information, "Imprimir tareas")
+                Exit Sub
+            End If
+            'intentar generar el documento
+            Dim doc As New Document(PageSize.A4, 5, 5, 1, 5)
+            'path que guarda el reporte en el escritorio de windows (desktop)
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Tareas diarias.pdf"
+            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+            PdfWriter.GetInstance(doc, file)
+            doc.Open()
+            ExportarDatosPDF(doc)
+            doc.Close()
+            Process.Start(filename)
+            Me.Close()
+        Catch ex As Exception
+            'si el mensaje es fallido mostrar msgbox
+            MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Public Sub ExportarDatosPDF(ByVal document As Document)
+
+        For c = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+            If dgvTarea_x_Colaborador.Columns(c).Visible = True Then
+                contadorcolumnasvisibles = contadorcolumnasvisibles + 1
+            End If
+        Next
+        'se crea un objeto PDFTable con el numero de columnas  del datagridview
+        Dim datatable As New PdfPTable(contadorcolumnasvisibles)
+
+        'se asignan algunas propiedades para el diseño del PDF
+        datatable.DefaultCell.Padding = 3
+
+        Dim headerwidths As Single() = GetColumnsSize(dgvTarea_x_Colaborador)
+        datatable.SetWidths(headerwidths)
+
+        datatable.WidthPercentage = 100
+        datatable.DefaultCell.BorderWidth = 2
+        'datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
+
+        'se crea el encabezado en el PDF
+        Dim encabezado As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.SelectedRows(0).Index).Value, New Font(fuente, 16, Font.Bold))
+
+        'se crea el texto abajo de los horarios
+        Dim entradasalida As New Paragraph("Entrada: " + dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(0).Index).Value + " Salida: " + _
+                                           dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(0).Index).Value, New Font(fuente, 14, Font.Bold))
+
+        Dim texto As New Phrase("Fecha: " + dtpFecha.Text, New Font(fuente, 12, Font.Bold))
+
+        'se capturan los nombres de las columnas del datagridview
+        For i As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+            If dgvTarea_x_Colaborador.Columns(i).Visible = True Then
+                datatable.AddCell(dgvTarea_x_Colaborador.Columns(i).HeaderText)
+            End If
+        Next
+        datatable.HeaderRows = 1
+        datatable.DefaultCell.BorderWidth = 1
+
+        'se generan las columnas del datagridview
+
+        For i As Integer = 0 To dgvTarea_x_Colaborador.RowCount - 1
+            For j As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+                If dgvTarea_x_Colaborador.Columns(j).Visible = True Then
+                    Try
+                        datatable.AddCell(dgvTarea_x_Colaborador(j, i).Value.ToString())
+                    Catch ex As Exception
+                        datatable.AddCell(" ")
+                    End Try
+                End If
+            Next
+            datatable.CompleteRow()
+        Next
+
+        Dim TotalTareasEstimadas As New Phrase("Total Estimado de Tareas: " + Label8.Text, New Font(fuente, 10, Font.Bold))
+        Dim TotalTareas As New Phrase("Total Real de Tareas: " + Label35.Text, New Font(fuente, 10, Font.Bold))
+
+        document.Add(encabezado)
+        document.Add(entradasalida)
+        document.Add(texto)
+        document.Add(datatable)
+        document.Add(TotalTareasEstimadas)
+        document.Add(TotalTareas)
+
+    End Sub
+
+    Public Function GetColumnsSize(ByVal dg As DataGridView) As Single()
+        'funcion para obtener el tamaño de las columnas del datagridview
+        Dim indice_array As Integer = 0
+        Dim values As Single() = New Single(contadorcolumnasvisibles - 1) {}
+        For i As Integer = 0 To dg.ColumnCount - 1
+            If dgvTarea_x_Colaborador.Columns(i).Visible = True Then
+                values(indice_array) = CSng(dg.Columns(i).Width)
+                indice_array = indice_array + 1
+            End If
+        Next
+        Return values
+    End Function
+
+    Private Sub Btn_informe_diario_Click(sender As System.Object, e As System.EventArgs) Handles Btn_informe_diario.Click
+        Try
+            contadorcolumnasvisibles = 0
+
+            'intentar generar el documento
+            Dim doc As New Document(PageSize.A4, 5, 5, 5, 5)
+            'path que guarda el reporte en el escritorio de windows (desktop)
+            Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Tareas_diarias_resumen_" + cbo_sector.Text + ".pdf"
+            Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
+            PdfWriter.GetInstance(doc, file)
+            doc.Open()
+
+            Dim encabezado As New Paragraph("Sector: " + cbo_sector.Text + "              " + _
+                                       "Fecha: " + dtpFecha.Value, New Font(fuente, 16, Font.Bold))
+            doc.Add(encabezado)
+
+            For i = 0 To dgvColaboradores.RowCount - 1
+                dgvColaboradores.Rows(i).Selected = True
+                dgvColaboradores_CellClick(i, Nothing)
+                pdf_informe_diario(doc, i)
+            Next
+            doc.Close()
+            Process.Start(filename)
+            ' Me.Close()
+        Catch ex As Exception
+            'si el mensaje es fallido mostrar msgbox
+            MessageBox.Show("No se puede generar el pdf, cierre el pdf anterior y vuleva a intentar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Sub pdf_informe_diario(ByVal document As Document, ByVal colab As Integer)
+
+        If contadorcolumnasvisibles = 0 Then
+            For c = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+                If dgvTarea_x_Colaborador.Columns(c).Visible = True Then
+                    contadorcolumnasvisibles = contadorcolumnasvisibles + 1
+                End If
+            Next
+        End If
+
+        'se crea un objeto PDFTable con el numero de columnas  del datagridview
+        Dim datatable As New PdfPTable(contadorcolumnasvisibles)
+
+        'se asignan algunas propiedades para el diseño del PDF
+        datatable.DefaultCell.Padding = 3
+
+        Dim headerwidths As Single() = GetColumnsSize(dgvTarea_x_Colaborador)
+        datatable.SetWidths(headerwidths)
+
+        datatable.WidthPercentage = 100
+        datatable.DefaultCell.BorderWidth = 1
+
+        'se capturan los nombres de las columnas del datagridview
+        For i As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+            If dgvTarea_x_Colaborador.Columns(i).Visible = True Then
+                datatable.AddCell(dgvTarea_x_Colaborador.Columns(i).HeaderText)
+            End If
+        Next
+        datatable.HeaderRows = 1
+        datatable.DefaultCell.BorderWidth = 1
+
+        'se generan las columnas y filas del datagridview
+        For i As Integer = 0 To dgvTarea_x_Colaborador.RowCount - 1
+            For j As Integer = 0 To dgvTarea_x_Colaborador.ColumnCount - 1
+                If dgvTarea_x_Colaborador.Columns(j).Visible = True Then
+                    Try
+                        datatable.AddCell(dgvTarea_x_Colaborador(j, i).Value.ToString())
+                    Catch ex As Exception
+                        datatable.AddCell(" ")
+                    End Try
+                End If
+            Next
+            datatable.CompleteRow()
+        Next
+        'Se ponen las distintas partes en el pdf
+        document.Add(linea)
+        document.Add(linea)
+
+        Dim texto As New Paragraph("Tareas de: " + dgvColaboradores.Item("COL_nombre_col", dgvColaboradores.Rows(colab).Index).Value, New Font(fuente, 14, Font.Bold))
+        document.Add(texto)
+
+        If dgvTarea_x_Colaborador.Rows.Count > 1 Then
+            Try
+                Dim entradasalida As New Paragraph("Entrada: " + dgvTarea_x_Colaborador.Item("TAR_entrada", dgvTarea_x_Colaborador.Rows(0).Index).Value + " Salida: " + _
+                                                 dgvTarea_x_Colaborador.Item("TAR_salida", dgvTarea_x_Colaborador.Rows(0).Index).Value, New Font(fuente, 12, Font.Bold))
+                document.Add(entradasalida)
+            Catch ex As Exception
+                Dim entradasalida As New Paragraph("No se encontro horario de entrada y salida asociado.", New Font(fuente, 10, Font.Bold))
+            End Try
+        Else
+            Dim entradasalida As New Paragraph("Sin tareas cargadas por el momento.", New Font(fuente, 10, Font.Bold))
+            document.Add(entradasalida)
+        End If
+
+        Dim TotalTareasEstimadas As New Paragraph("Total Estimado de Tareas: " + Label8.Text, New Font(fuente, 10, Font.Bold))
+        Dim TotalTareas As New Paragraph("Total Real de Tareas: " + Label35.Text, New Font(fuente, 10, Font.Bold))
+
+        document.Add(interlineado)
+        document.Add(datatable)
+        document.Add(TotalTareasEstimadas)
+        document.Add(TotalTareas)
+    End Sub
 End Class
