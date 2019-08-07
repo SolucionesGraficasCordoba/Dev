@@ -45,11 +45,11 @@ Partial Class frm_Actualizar_Orden
         Me.txtid_vendedor = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cboDireccion_Entrega = New System.Windows.Forms.ComboBox()
         Me.txt_observaciones = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.btnActualizar = New System.Windows.Forms.Button()
         Me.btnCancelar = New System.Windows.Forms.Button()
-        Me.cboDireccion_Entrega = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -74,7 +74,7 @@ Partial Class frm_Actualizar_Orden
         '
         Me.Label46.AutoSize = True
         Me.Label46.ForeColor = System.Drawing.Color.Red
-        Me.Label46.Location = New System.Drawing.Point(164, 46)
+        Me.Label46.Location = New System.Drawing.Point(121, 46)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(11, 13)
         Me.Label46.TabIndex = 88
@@ -83,17 +83,17 @@ Partial Class frm_Actualizar_Orden
         'txtNumero_Orden_Trabajo
         '
         Me.txtNumero_Orden_Trabajo.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(181, 28)
+        Me.txtNumero_Orden_Trabajo.Location = New System.Drawing.Point(134, 28)
         Me.txtNumero_Orden_Trabajo.Multiline = True
         Me.txtNumero_Orden_Trabajo.Name = "txtNumero_Orden_Trabajo"
-        Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(118, 48)
+        Me.txtNumero_Orden_Trabajo.Size = New System.Drawing.Size(165, 48)
         Me.txtNumero_Orden_Trabajo.TabIndex = 66
         Me.txtNumero_Orden_Trabajo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(131, 54)
+        Me.Label6.Location = New System.Drawing.Point(92, 54)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(44, 26)
         Me.Label6.TabIndex = 87
@@ -270,6 +270,16 @@ Partial Class frm_Actualizar_Orden
         Me.GroupBox1.TabIndex = 91
         Me.GroupBox1.TabStop = False
         '
+        'cboDireccion_Entrega
+        '
+        Me.cboDireccion_Entrega.FormattingEnabled = True
+        Me.cboDireccion_Entrega.Items.AddRange(New Object() {"Casa Central", "Planta Industrial"})
+        Me.cboDireccion_Entrega.Location = New System.Drawing.Point(86, 201)
+        Me.cboDireccion_Entrega.MaxLength = 250
+        Me.cboDireccion_Entrega.Name = "cboDireccion_Entrega"
+        Me.cboDireccion_Entrega.Size = New System.Drawing.Size(283, 21)
+        Me.cboDireccion_Entrega.TabIndex = 129
+        '
         'txt_observaciones
         '
         Me.txt_observaciones.Location = New System.Drawing.Point(86, 236)
@@ -304,16 +314,6 @@ Partial Class frm_Actualizar_Orden
         Me.btnCancelar.TabIndex = 92
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.UseVisualStyleBackColor = True
-        '
-        'cboDireccion_Entrega
-        '
-        Me.cboDireccion_Entrega.FormattingEnabled = True
-        Me.cboDireccion_Entrega.Items.AddRange(New Object() {"Casa Central", "Planta Industrial"})
-        Me.cboDireccion_Entrega.Location = New System.Drawing.Point(86, 201)
-        Me.cboDireccion_Entrega.MaxLength = 250
-        Me.cboDireccion_Entrega.Name = "cboDireccion_Entrega"
-        Me.cboDireccion_Entrega.Size = New System.Drawing.Size(283, 21)
-        Me.cboDireccion_Entrega.TabIndex = 129
         '
         'frm_Actualizar_Orden
         '

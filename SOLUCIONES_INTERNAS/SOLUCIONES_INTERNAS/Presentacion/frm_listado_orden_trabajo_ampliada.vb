@@ -1180,7 +1180,7 @@ Where ORT_id_orden_trabajo = vble_id_orden)
                 frm_Actualizar_Orden.txt_observaciones.Text = dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
                 frm_Actualizar_Orden.cboDireccion_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
             End If
-            frm_Actualizar_Orden.txtNumero_Orden_Trabajo.Enabled = False
+            frm_Actualizar_Orden.txtNumero_Orden_Trabajo.Enabled = True
             frm_Actualizar_Orden.Label1.Visible = False
             frm_Actualizar_Orden.txt_id_orden_trabajo.Visible = False
             frm_Actualizar_Orden.txt_id_cliente.Visible = False
