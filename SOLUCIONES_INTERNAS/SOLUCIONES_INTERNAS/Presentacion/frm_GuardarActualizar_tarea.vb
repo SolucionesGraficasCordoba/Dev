@@ -1655,14 +1655,14 @@
     End Sub
 
     Private Sub txtSalida_LostFocus(sender As Object, e As System.EventArgs) Handles txtSalida.LostFocus
-        Try
-            If txtEntrada.TextLength <> 0 And txtSalida.TextLength <> 0 Then
-                calcula_minutos()
-                Exit Sub
-            End If
-        Catch ex As Exception
-            MsgBox("Complete los campos 'Hora de Entrada' y 'Hora de Salida'")
-        End Try
+        'Try
+        '    If txtEntrada.TextLength <> 0 And txtSalida.TextLength <> 0 Then
+        '        calcula_minutos()
+        '        Exit Sub
+        '    End If
+        'Catch ex As Exception
+        '    MsgBox("Complete los campos 'Hora de Entrada' y 'Hora de Salida'")
+        'End Try
     End Sub
 
     Private Sub txtSalida_TextChanged(sender As System.Object, e As System.EventArgs) Handles txtSalida.TextChanged
