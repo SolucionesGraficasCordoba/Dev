@@ -2819,6 +2819,7 @@ Public Class frm_Principal
         frm_Listado_GuardarActualizar.btnExportarListado.Enabled = False
         frm_Listado_GuardarActualizar.btnModificarTodas.Enabled = False
         frm_Listado_GuardarActualizar.Btn_informe_diario.Enabled = False
+        frm_Listado_GuardarActualizar.btnEliminar_Tarea.Enabled = True
         frm_Listado_GuardarActualizar.dtpFecha.Text = Now
         frm_Listado_GuardarActualizar.ShowDialog()
     End Sub

@@ -1776,5 +1776,250 @@ Where ORT_id_orden_trabajo = vble_id_orden)
         'frm_reporte_orden.CrystalReportViewer1.ReportSource = rptdoc
         frm_reporte_orden.Show()
     End Sub
+
+
+    'CONTROLAR LA HABILITACION Y DESHABILITACION DE CAMPOS
+    Private Sub btnDuplicar_Orden_Click(sender As System.Object, e As System.EventArgs) Handles btnDuplicar_Orden.Click
+        Try
+            frm_Orden_Trabajo_Ampliada.Text = ".:. Duplicar Orden .:."
+            If dgv_detalle_orden.SelectedRows.Count > 0 Then
+
+                '   frm_Orden_Trabajo_Ampliada.txt_id_orden_trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_id_orden_trabajo", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtNumero_Orden_Trabajo.Text = dgvLista_Orden_Trabajo.Item("ORT_numero_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.dtpFecha_Ingreso_ODT.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboTipo_Orden.Text = dgvLista_Orden_Trabajo.Item("ORT_tipo_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Text = dgvLista_Orden_Trabajo.Item("ORT_fecha_entrega", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txt_id_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_id_cliente", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txt_nombre_cliente.Text = dgvLista_Orden_Trabajo.Item("CLI_razon_social", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtid_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_id_vendedor", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtNombre_vendedor.Text = dgvLista_Orden_Trabajo.Item("VEN_nombre_ven", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txt_observaciones.Text = dgvLista_Orden_Trabajo.Item("ORT_observaciones_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboDireccion_Entrega.Text = dgvLista_Orden_Trabajo.Item("ORT_mejoras_ot", dgvLista_Orden_Trabajo.SelectedRows(0).Index).Value
+
+                frm_Orden_Trabajo_Ampliada.txt_cantidad_producto.Text = dgv_detalle_orden.Item("DOT_cantidad_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
+                ' frm_Orden_Trabajo_Ampliada.txt_id_detalle_orden_trabajo1.Text = dgv_detalle_orden.Item("id_detalle_orden_trabajo", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtTamaño_Producto.Text = dgv_detalle_orden.Item("DOT_tamaño_producto", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboPapel1.Text = dgv_detalle_orden.Item("DOT_papel_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboPapel2.Text = dgv_detalle_orden.Item("DOT_papel_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboPapel3.Text = dgv_detalle_orden.Item("DOT_papel_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboGramaje1.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboGramaje2.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboGramaje3.Text = dgv_detalle_orden.Item("DOT_gramaje_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txt_Cantidad_1_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txt_Cantidad_2_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txt_Cantidad_3_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_cantidad_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboFormato_1_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_formato_soporte_1", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboFormato_2_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_formato_soporte_2", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboFormato_3_Pliego_Entero.Text = dgv_detalle_orden.Item("DOT_formato_soporte_3", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtCantidad_1_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("cantidad_1_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtCantidad_2_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("cantidad_2_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtCantidad_3_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("cantidad_3_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboFormato_1_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("formato_1_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboFormato_2_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("formato_2_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboFormato_3_Pliego_Maquina_Offset.Text = dgv_detalle_orden.Item("formato_3_PM_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboModo_Impresion_Offset.Text = dgv_detalle_orden.Item("modo_impresion_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboTipo_Impresion_Offset.Text = dgv_detalle_orden.Item("tipo_impresion_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txt_chapa_soporte_1.Text = dgv_detalle_orden.Item("chapas_soporte1_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txt_chapa_soporte_2.Text = dgv_detalle_orden.Item("chapas_soporte2_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txt_chapa_soporte_3.Text = dgv_detalle_orden.Item("chapas_soporte3_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboImpresora_Offset.Text = dgv_detalle_orden.Item("impresora_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboMarca_Offset.Text = dgv_detalle_orden.Item("marca_offset", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtCantidad_1_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("cantidad_1_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtCantidad_2_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("cantidad_2_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtCantidad_3_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("cantidad_3_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboFormato_1_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("formato_1_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboFormato_2_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("formato_2_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboFormato_3_Pliego_Maquina_Digital.Text = dgv_detalle_orden.Item("formato_3_PM_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboTipo_Impresion_Digital.Text = dgv_detalle_orden.Item("tipo_impresion_digital", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtDato_Variable.Text = dgv_detalle_orden.Item("dato_variable", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txt_cantidad_producto_Gran_Formato.Text = dgv_detalle_orden.Item("cantidad_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txtTamaño_Producto_Gran_Formato.Text = dgv_detalle_orden.Item("tamaño_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboMaterial.Text = dgv_detalle_orden.Item("sustrato_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboCalidad_Gran_Formato.Text = dgv_detalle_orden.Item("calidad_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.cboSistema_Gran_Formato.Text = dgv_detalle_orden.Item("sistema_gran_formato", dgv_detalle_orden.SelectedRows(0).Index).Value
+                frm_Orden_Trabajo_Ampliada.txt_descripcion_terminacion.Text = dgv_detalle_orden.Item("descripcion_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value
+
+                Dim tempterminacion As String
+                tempterminacion = dgv_detalle_orden.Item("tipo_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value
+
+                If tempterminacion.Contains("T01") Then
+                    frm_Orden_Trabajo_Ampliada.chkAdhesivado.Checked = True
+                End If
+                If tempterminacion.Contains("T02") Then
+                    frm_Orden_Trabajo_Ampliada.chkArmadoRevistas.Checked = True
+                End If
+                If tempterminacion.Contains("T03") Then
+                    frm_Orden_Trabajo_Ampliada.chkBarniz.Checked = True
+                End If
+                If tempterminacion.Contains("T04") Then
+                    frm_Orden_Trabajo_Ampliada.chkCocido.Checked = True
+                End If
+                If tempterminacion.Contains("T05") Then
+                    frm_Orden_Trabajo_Ampliada.chkCuño.Checked = True
+                End If
+                If tempterminacion.Contains("T06") Then
+                    frm_Orden_Trabajo_Ampliada.chkDoblado.Checked = True
+                End If
+                If tempterminacion.Contains("T07") Then
+                    frm_Orden_Trabajo_Ampliada.chkEncuadernacion.Checked = True
+                End If
+                If tempterminacion.Contains("T08") Then
+                    frm_Orden_Trabajo_Ampliada.chkEstampado.Checked = True
+                End If
+                If tempterminacion.Contains("T09") Then
+                    frm_Orden_Trabajo_Ampliada.chkFresado.Checked = True
+                End If
+                If tempterminacion.Contains("T10") Then
+                    frm_Orden_Trabajo_Ampliada.chkGuillotinado.Checked = True
+                End If
+                If tempterminacion.Contains("T11") Then
+                    frm_Orden_Trabajo_Ampliada.chkLaca_UV.Checked = True
+                End If
+                If tempterminacion.Contains("T12") Then
+                    frm_Orden_Trabajo_Ampliada.chkLacaUVSectorizada.Checked = True
+                End If
+                If tempterminacion.Contains("T13") Then
+                    frm_Orden_Trabajo_Ampliada.chkMedio_Corte.Checked = True
+                End If
+                If tempterminacion.Contains("T14") Then
+                    frm_Orden_Trabajo_Ampliada.chkMontado.Checked = True
+                End If
+                If tempterminacion.Contains("T15") Then
+                    frm_Orden_Trabajo_Ampliada.chkOPPBrillante.Checked = True
+                End If
+                If tempterminacion.Contains("T16") Then
+                    frm_Orden_Trabajo_Ampliada.chkOPPMate.Checked = True
+                End If
+                If tempterminacion.Contains("T17") Then
+                    frm_Orden_Trabajo_Ampliada.chkOtros.Checked = True
+                End If
+                If tempterminacion.Contains("T18") Then
+                    frm_Orden_Trabajo_Ampliada.chkPegadoManual.Checked = True
+                End If
+                If tempterminacion.Contains("T19") Then
+                    frm_Orden_Trabajo_Ampliada.chkPlastificado.Checked = True
+                End If
+                If tempterminacion.Contains("T20") Then
+                    frm_Orden_Trabajo_Ampliada.chkPosicionado.Checked = True
+                End If
+                If tempterminacion.Contains("T21") Then
+                    frm_Orden_Trabajo_Ampliada.chkRuedo.Checked = True
+                End If
+                If tempterminacion.Contains("T22") Then
+                    frm_Orden_Trabajo_Ampliada.chkSoldado.Checked = True
+                End If
+                If tempterminacion.Contains("T23") Then
+                    frm_Orden_Trabajo_Ampliada.chkStamping.Checked = True
+                End If
+                If tempterminacion.Contains("T24") Then
+                    frm_Orden_Trabajo_Ampliada.chkTermosellado.Checked = True
+                End If
+                If tempterminacion.Contains("T25") Then
+                    frm_Orden_Trabajo_Ampliada.chkTrazado.Checked = True
+                End If
+                If tempterminacion.Contains("T26") Then
+                    frm_Orden_Trabajo_Ampliada.chkTroquelado.Checked = True
+                End If
+
+            Else
+                MsgBox("Seleccione un Producto del segundo listado")
+                Exit Sub
+            End If
+
+            Dim flagsoporte As Integer = 0
+
+            'CONTROLES OFFSET
+            If frm_Orden_Trabajo_Ampliada.txtCantidad_1_Pliego_Maquina_Offset.TextLength <> 0 Then
+                frm_Orden_Trabajo_Ampliada.chkOffset.Checked = True
+                frm_Orden_Trabajo_Ampliada.chkOffset.Enabled = False
+                frm_Orden_Trabajo_Ampliada.chkDigital.Enabled = False
+                frm_Orden_Trabajo_Ampliada.chkGranFormato.Enabled = False
+                frm_Orden_Trabajo_Ampliada.chkTerminacion.Enabled = False
+                frm_Orden_Trabajo_Ampliada.groupOffset.Enabled = False
+                frm_Orden_Trabajo_Ampliada.GroupProducto_Soportes.Enabled = False
+                flagsoporte = 1
+            Else
+                frm_Orden_Trabajo_Ampliada.chkOffset.Checked = False
+                frm_Orden_Trabajo_Ampliada.groupOffset.Enabled = False
+                If flagsoporte = 0 Then
+                    frm_Orden_Trabajo_Ampliada.GroupProducto_Soportes.Enabled = False
+                End If
+            End If
+
+            'CONTROLES DIGITAL
+            If frm_Orden_Trabajo_Ampliada.txtCantidad_1_Pliego_Maquina_Digital.TextLength <> 0 Then
+                frm_Orden_Trabajo_Ampliada.chkDigital.Checked = True
+                frm_Orden_Trabajo_Ampliada.chkDigital.Enabled = False
+
+                frm_Orden_Trabajo_Ampliada.GroupDigital.Enabled = False
+                frm_Orden_Trabajo_Ampliada.chkOffset.Enabled = False
+
+                frm_Orden_Trabajo_Ampliada.chkGranFormato.Enabled = False
+                frm_Orden_Trabajo_Ampliada.chkTerminacion.Enabled = False
+                frm_Orden_Trabajo_Ampliada.GroupProducto_Soportes.Enabled = False
+                flagsoporte = 1
+            Else
+                frm_Orden_Trabajo_Ampliada.chkDigital.Checked = False
+                frm_Orden_Trabajo_Ampliada.GroupDigital.Enabled = False
+                If flagsoporte = 0 Then
+                    frm_Orden_Trabajo_Ampliada.GroupProducto_Soportes.Enabled = False
+                End If
+            End If
+
+            'CONTROLES GRAN FORMATO
+            If frm_Orden_Trabajo_Ampliada.txt_cantidad_producto_Gran_Formato.TextLength <> 0 Then
+                frm_Orden_Trabajo_Ampliada.chkGranFormato.Checked = True
+                frm_Orden_Trabajo_Ampliada.chkGranFormato.Enabled = False
+                frm_Orden_Trabajo_Ampliada.GroupGranFormato.Enabled = False
+                frm_Orden_Trabajo_Ampliada.chkOffset.Enabled = False
+                frm_Orden_Trabajo_Ampliada.chkDigital.Enabled = False
+
+                frm_Orden_Trabajo_Ampliada.chkTerminacion.Enabled = False
+            Else
+                frm_Orden_Trabajo_Ampliada.chkGranFormato.Checked = False
+                frm_Orden_Trabajo_Ampliada.GroupGranFormato.Enabled = False
+            End If
+            'CONTROLES TERMINACION
+            If dgv_detalle_orden.Item("tipo_terminacion", dgv_detalle_orden.SelectedRows(0).Index).Value.ToString.Length <> 0 Then
+                frm_Orden_Trabajo_Ampliada.chkTerminacion.Checked = True
+                frm_Orden_Trabajo_Ampliada.chkTerminacion.Enabled = False
+                frm_Orden_Trabajo_Ampliada.GroupTerminacion.Enabled = False
+                frm_Orden_Trabajo_Ampliada.chkOffset.Enabled = False
+                frm_Orden_Trabajo_Ampliada.chkDigital.Enabled = False
+                frm_Orden_Trabajo_Ampliada.chkGranFormato.Enabled = False
+
+            Else
+                frm_Orden_Trabajo_Ampliada.chkTerminacion.Checked = False
+                frm_Orden_Trabajo_Ampliada.GroupTerminacion.Enabled = False
+            End If
+
+            ' frm_Orden_Trabajo_Ampliada.GroupBox4.Enabled = False
+            frm_Orden_Trabajo_Ampliada.txtNumero_Orden_Trabajo.Enabled = True
+            frm_Orden_Trabajo_Ampliada.dtpFecha_Entrega_ODT.Enabled = True
+            frm_Orden_Trabajo_Ampliada.dtpFecha_Ingreso_ODT.Enabled = True
+            frm_Orden_Trabajo_Ampliada.txtNombre_vendedor.Enabled = True
+            frm_Orden_Trabajo_Ampliada.btnBuscar_Vendedor.Enabled = True
+            frm_Orden_Trabajo_Ampliada.txt_nombre_cliente.Enabled = True
+            frm_Orden_Trabajo_Ampliada.btnBuscar_cliente.Enabled = True
+            frm_Orden_Trabajo_Ampliada.cboDireccion_Entrega.Enabled = True
+            'frm_Orden_Trabajo_Ampliada.txt_observaciones.ReadOnly = True
+            'frm_Orden_Trabajo_Ampliada.txt_observaciones.ScrollBars = True
+
+            frm_Orden_Trabajo_Ampliada.Label1.Visible = False
+            frm_Orden_Trabajo_Ampliada.txt_id_orden_trabajo.Visible = False
+            frm_Orden_Trabajo_Ampliada.cboTipo_Orden.Visible = False
+            frm_Orden_Trabajo_Ampliada.Label5.Visible = False
+            frm_Orden_Trabajo_Ampliada.Label45.Visible = False
+            frm_Orden_Trabajo_Ampliada.txt_id_detalle_orden_trabajo1.Visible = False
+            frm_Orden_Trabajo_Ampliada.txtid_vendedor.Visible = False
+            frm_Orden_Trabajo_Ampliada.txt_id_cliente.Visible = False
+            frm_Orden_Trabajo_Ampliada.btnGuardar_Orden_Trabajo.Enabled = False
+            frm_Orden_Trabajo_Ampliada.Label8.Visible = False
+
+            frm_Orden_Trabajo_Ampliada.quienllamo_listado_orden_ampliada = Me
+            frm_Orden_Trabajo_Ampliada.Show()
+        Catch ex As Exception
+        End Try
+    End Sub
 End Class
 

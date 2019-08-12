@@ -1684,7 +1684,6 @@
                         txtSalida.Text = txtSalida.Text & ":"
                         Me.txtSalida.SelectionStart = 3
                     End If
-
             End Select
         Catch ex As Exception
             MsgBox("El formato de la hora de salida es: '00:00'")
