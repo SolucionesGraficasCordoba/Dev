@@ -126,11 +126,19 @@
     </Compile>
     <Compile Include="Modulo\Autocompletar_Textbox.vb" />
     <Compile Include="Modulo\Automatico.vb" />
+    <Compile Include="Modulo\ExportarExcel.vb" />
+    <Compile Include="Modulo\Importar.vb" />
     <Compile Include="Modulo\Mail_Modulo.vb" />
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Etiqueta_Modelo_2.Designer.vb">
+      <DependentUpon>frm_Etiqueta_Modelo_2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\frm_Etiqueta_Modelo_2.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\frm_GuardarActualizar_1.Designer.vb">
       <DependentUpon>frm_GuardarActualizar_1.vb</DependentUpon>
@@ -463,6 +471,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Presentacion\frm_Etiqueta_Modelo_2.resx">
+      <DependentUpon>frm_Etiqueta_Modelo_2.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\frm_GuardarActualizar_1.resx">
       <DependentUpon>frm_GuardarActualizar_1.vb</DependentUpon>
     </EmbeddedResource>
